@@ -90,6 +90,8 @@ gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
 
+gtlitecore.machine.catalytic_reformer.name=催化重整炉
+
 #  Materials
 
 ##  Element Materials
@@ -106,7 +108,9 @@ metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精�
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
 recipemap.vacuum_chamber_recipes.name=真空室
+
 recipemap.drill_recipes.name=钻取
+recipemap.catalytic_reformer_recipes.name=催化重整
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

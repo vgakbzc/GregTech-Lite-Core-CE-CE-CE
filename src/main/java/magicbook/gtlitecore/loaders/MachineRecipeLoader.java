@@ -52,5 +52,14 @@ public class MachineRecipeLoader {
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
                 'H', HULL[UV].getStackForm(),
                 'M', ELECTRIC_MOTOR_UV.getStackForm());
+
+        //  Catalytic Reformer
+        ModHandler.addShapedRecipe(true, "catalytic_reformer", CATALYTIC_REFORMER.getStackForm(),
+                "MCM", "PHP", "MKM",
+                'M', new UnificationEntry(pipeNormalFluid, StainlessSteel),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'P', ELECTRIC_PUMP_EV.getStackForm(),
+                'H', HULL[EV].getStackForm(),
+                'K', new UnificationEntry(cableGtDouble, Aluminium));
     }
 }

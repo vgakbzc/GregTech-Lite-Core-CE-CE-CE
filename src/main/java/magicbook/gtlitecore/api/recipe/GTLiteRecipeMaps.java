@@ -14,6 +14,7 @@ public class GTLiteRecipeMaps {
 
     //  Multiblock Machine RecipeMaps
     public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES;
+    public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES;
 
 
     public GTLiteRecipeMaps() {}
@@ -37,5 +38,9 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
                 .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
                 .setSound(GTSoundEvents.MACERATOR);
+        //  Catalytic Reformer RecipeMap
+        CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer_recipes", 1, false, 0, false, 1, false, 4, true, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CRACKING, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.FURNACE);
     }
 }

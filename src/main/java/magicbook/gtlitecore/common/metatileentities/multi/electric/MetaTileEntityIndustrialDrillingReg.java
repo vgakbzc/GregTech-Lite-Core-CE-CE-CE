@@ -84,7 +84,7 @@ public class MetaTileEntityIndustrialDrillingReg extends RecipeMapMultiblockCont
                 .aisle("       ", "X     X", "   C   ", "  FCF  ", "   C   ", "  CSC  ", "  CVC  ", "X BBB X")
                 .aisle("       ", "X     X", "       ", " F   F ", "       ", "       ", "       ", "X  F  X")
                 .aisle("       ", "XXXXXXX", "X     X", "X     X", "X     X", "X     X", "X     X", "XXXXXXX")
-                .where('S', selfPredicate())
+                .where('S', this.selfPredicate())
                 .where('X', states(getCasingState()))
                 .where('F', states(getFrameState()))
                 .where('C', states(getSecondCasingState()))
