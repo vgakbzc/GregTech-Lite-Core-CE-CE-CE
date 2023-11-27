@@ -12,17 +12,21 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class GTLiteMetaBlocks {
 
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
+    public static BlockCrucible CRUCIBLE;
 
     private GTLiteMetaBlocks() {}
 
     public static void init() {
         MULTIBLOCK_CASING = new BlockMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        CRUCIBLE = new BlockCrucible();
+        CRUCIBLE.setRegistryName("crucible");
     }
 
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(MULTIBLOCK_CASING);
+        registerItemModel(CRUCIBLE);
     }
 
     @SideOnly(Side.CLIENT)

@@ -4,6 +4,19 @@ tile.multiblock_casing.substrate_casing.name=基板机械方块
 tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
 tile.multiblock_casing.drill_head.name=钻头
 
+tile.crucible.bronze.name=青铜坩埚
+tile.crucible.invar.name=殷钢坩埚
+tile.crucible.quartz.name=石英岩坩埚
+tile.crucible.chrome.name=铬坩埚
+tile.crucible.vanadium.name=钒坩埚
+tile.crucible.niobium_titanium.name=铌钛合金坩埚
+tile.crucible.iridium.name=铱坩埚
+tile.crucible.molybdenum.name=钼坩埚
+tile.crucible.tungsten.name=钨坩埚
+tile.crucible.osmium.name=锇坩埚
+tile.crucible.graphite.name=石墨坩埚
+tile.crucible.boron_nitride.name=氮化硼坩埚
+
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
 metaitem.board.gooware.tooltip=杜邦™ Pyralux® TK层压薄膜
