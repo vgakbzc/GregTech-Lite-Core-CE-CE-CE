@@ -12,6 +12,10 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> CHEMICAL_DRYER_RECIPES;
     public static final RecipeMap<SimpleRecipeBuilder> VACUUM_CHAMBER_RECIPES;
 
+    //  Multiblock Machine RecipeMaps
+    public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES;
+
+
     public GTLiteRecipeMaps() {}
 
     static {
@@ -27,5 +31,11 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Industrial Drilling Reg RecipeMap
+        DRILLING_RECIPES = new RecipeMap<>("drill_recipes", 1, false, 1, false, 0, false, 1, false, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
+                .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+                .setSound(GTSoundEvents.MACERATOR);
     }
 }

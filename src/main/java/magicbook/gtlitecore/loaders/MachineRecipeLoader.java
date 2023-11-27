@@ -1,8 +1,16 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.recipes.ModHandler;
+import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 
+import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
 public class MachineRecipeLoader {
@@ -36,5 +44,13 @@ public class MachineRecipeLoader {
 
     private static void MultiblockControllerRecipes() {
 
+        //  Industrial Drilling Reg
+        ModHandler.addShapedRecipe(true, "industrial_drilling_reg", INDUSTRIAL_DRILLING_REG.getStackForm(),
+                "PKP", "CHC", "MMM",
+                'P', ELECTRIC_PISTON_UV.getStackForm(),
+                'K', new UnificationEntry(cableGtQuadruple, YttriumBariumCuprate),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'H', HULL[UV].getStackForm(),
+                'M', ELECTRIC_MOTOR_UV.getStackForm());
     }
 }
