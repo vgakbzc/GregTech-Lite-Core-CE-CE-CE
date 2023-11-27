@@ -6,8 +6,10 @@ import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.renderer.texture.Textures;
 import magicbook.gtlitecore.api.metatileentity.single.SimpleSteamMetaTileEntity;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicator;
+import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicators;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
@@ -22,6 +24,8 @@ public class GTLiteMetaTileEntities {
 
     //  Single Machine range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
+    public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
+    public static SimpleMachineMetaTileEntity[] VACUUM_CHAMBER = new SimpleMachineMetaTileEntity[GTValues.V.length - 1];
 
     //  Multiblock Machine range: 16001-20000
 
@@ -59,5 +63,7 @@ public class GTLiteMetaTileEntities {
     public static void init() {
         //  Single Machine range: 15000-16000
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+        registerSimpleSteamMetaTileEntity(STEAM_VACUUM_CHAMBER, 15013, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, SteamProgressIndicators.COMPRESS, Textures.GAS_COLLECTOR_OVERLAY, false);
+        registerSimpleMetaTileEntity(VACUUM_CHAMBER, 15015, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, Textures.GAS_COLLECTOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
     }
 }

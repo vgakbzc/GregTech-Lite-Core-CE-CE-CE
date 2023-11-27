@@ -6,6 +6,8 @@ import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
+import magicbook.gtlitecore.loaders.RecipeManager;
+import magicbook.gtlitecore.loaders.components.MaterialComponents;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -63,12 +65,13 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         GTLiteLog.logger.info("Registering recipes...");
-
+        RecipeManager.init();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void registerMaterialComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
         GTLiteLog.logger.info("Registering material components...");
+        MaterialComponents.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)

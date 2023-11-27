@@ -28,8 +28,40 @@ gtlitecore.machine.chemical_dryer.uxv.tooltip=水分湮灭者
 gtlitecore.machine.chemical_dryer.opv.name=传奇化学脱水机
 gtlitecore.machine.chemical_dryer.opv.tooltip=水分湮灭者
 
+gtlitecore.machine.vacuum_chamber.bronze.name=蒸汽真空室
+gtlitecore.machine.vacuum_chamber.bronze.tooltip=你的第一片真空
+gtlitecore.machine.vacuum_chamber.steel.name=高压蒸汽真空室
+gtlitecore.machine.vacuum_chamber.steel.tooltip=小小真空
+gtlitecore.machine.vacuum_chamber.lv.name=基础真空室
+gtlitecore.machine.vacuum_chamber.lv.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.mv.name=进阶真空室
+gtlitecore.machine.vacuum_chamber.mv.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.hv.name=进阶真空室 II
+gtlitecore.machine.vacuum_chamber.hv.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.ev.name=进阶真空室 III
+gtlitecore.machine.vacuum_chamber.ev.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.iv.name=精英真空室
+gtlitecore.machine.vacuum_chamber.iv.tooltip=空气隔绝者
+gtlitecore.machine.vacuum_chamber.luv.name=精英真空室 II
+gtlitecore.machine.vacuum_chamber.luv.tooltip=空气隔绝者
+gtlitecore.machine.vacuum_chamber.zpm.name=精英真空室 III
+gtlitecore.machine.vacuum_chamber.zpm.tooltip=空气隔绝者
+gtlitecore.machine.vacuum_chamber.uv.name=终极真空室
+gtlitecore.machine.vacuum_chamber.uv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uhv.name=史诗真空室
+gtlitecore.machine.vacuum_chamber.uhv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uev.name=史诗真空室 II
+gtlitecore.machine.vacuum_chamber.uev.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uiv.name=史诗真空室 III
+gtlitecore.machine.vacuum_chamber.uiv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uxv.name=史诗真空室 IV
+gtlitecore.machine.vacuum_chamber.uxv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.opv.name=传奇真空室
+gtlitecore.machine.vacuum_chamber.opv.tooltip=完美真空
+
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
+recipemap.vacuum_chamber_recipes.name=真空室
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
