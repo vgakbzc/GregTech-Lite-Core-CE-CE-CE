@@ -12,10 +12,7 @@ import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicators;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityCatalyticReformer;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityHydraulicFracker;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialDrillingReg;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntitySonicator;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
@@ -36,6 +33,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
     public static MetaTileEntitySonicator SONICATOR;
     public static MetaTileEntityHydraulicFracker HYDRAULIC_FRACKER;
+    public static MetaTileEntityNanoscaleFabricator NANOSCALE_FABRICATOR;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -79,5 +77,6 @@ public class GTLiteMetaTileEntities {
         CATALYTIC_REFORMER = registerMultiMetaTileEntity(2, new MetaTileEntityCatalyticReformer(gtliteId("catalytic_reformer")));
         SONICATOR = registerMultiMetaTileEntity(3, new MetaTileEntitySonicator(gtliteId("sonicator")));
         HYDRAULIC_FRACKER = registerMultiMetaTileEntity(4, new MetaTileEntityHydraulicFracker(gtliteId("hydraulic_fracker"), ZPM));
+        NANOSCALE_FABRICATOR = registerMultiMetaTileEntity(5, new MetaTileEntityNanoscaleFabricator(gtliteId("nanoscale_fabricator")));
     }
 }
