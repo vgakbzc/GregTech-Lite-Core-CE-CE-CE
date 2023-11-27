@@ -1,11 +1,13 @@
 package magicbook.gtlitecore.common;
 
 import gregtech.api.GregTechAPI;
+import gregtech.api.block.VariantItemBlock;
 import gregtech.api.cover.CoverDefinition;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import magicbook.gtlitecore.loaders.components.MaterialComponents;
 import net.minecraft.block.Block;
@@ -41,13 +43,14 @@ public class CommonProxy {
     public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
         GTLiteLog.logger.info("Registering Blocks...");
-
+        registry.register(GTLiteMetaBlocks.MULTIBLOCK_CASING);
     }
 
     @SubscribeEvent
     public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         GTLiteLog.logger.info("Registering Items...");
+        registry.register(createItemBlock(GTLiteMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
     }
 
     @Nonnull
