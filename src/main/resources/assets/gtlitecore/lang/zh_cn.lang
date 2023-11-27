@@ -1,0 +1,35 @@
+
+
+#  Machines
+gtlitecore.machine.chemical_dryer.lv.name=基础化学脱水机
+gtlitecore.machine.chemical_dryer.lv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.mv.name=进阶化学脱水机
+gtlitecore.machine.chemical_dryer.mv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.hv.name=进阶化学脱水机 II
+gtlitecore.machine.chemical_dryer.hv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.ev.name=进阶化学脱水机 III
+gtlitecore.machine.chemical_dryer.ev.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.iv.name=精英化学脱水机
+gtlitecore.machine.chemical_dryer.iv.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dryer.luv.name=精英化学脱水机 II
+gtlitecore.machine.chemical_dryer.luv.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dryer.zpm.name=精英化学脱水机 III
+gtlitecore.machine.chemical_dryer.zpm.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dryer.uv.name=终极化学脱水机
+gtlitecore.machine.chemical_dryer.uv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uhv.name=史诗化学脱水机
+gtlitecore.machine.chemical_dryer.uhv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uev.name=史诗化学脱水机 II
+gtlitecore.machine.chemical_dryer.uev.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uiv.name=史诗化学脱水机 III
+gtlitecore.machine.chemical_dryer.uiv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uxv.name=史诗化学脱水机 IV
+gtlitecore.machine.chemical_dryer.uxv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.opv.name=传奇化学脱水机
+gtlitecore.machine.chemical_dryer.opv.tooltip=水分湮灭者
+
+#  Recipe Maps
+recipemap.chemical_dryer_recipes.name=脱水
+
+#  Recipe Properties
+gtlitecore.recipe.temperature=温度:%,d K

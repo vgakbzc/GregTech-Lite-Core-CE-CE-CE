@@ -13,6 +13,8 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preLoad() {
         super.preLoad();
+
+        GTLiteTextures.preInit();
     }
 
     @SubscribeEvent
