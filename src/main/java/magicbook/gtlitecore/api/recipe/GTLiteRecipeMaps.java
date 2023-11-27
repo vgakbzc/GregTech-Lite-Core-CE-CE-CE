@@ -5,6 +5,7 @@ import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
+import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 
 public class GTLiteRecipeMaps {
 
@@ -15,6 +16,7 @@ public class GTLiteRecipeMaps {
     //  Multiblock Machine RecipeMaps
     public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES;
     public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES;
+    public static final RecipeMap<SimpleRecipeBuilder> SONICATION_RECIPES;
 
 
     public GTLiteRecipeMaps() {}
@@ -42,5 +44,13 @@ public class GTLiteRecipeMaps {
         CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer_recipes", 1, false, 0, false, 1, false, 4, true, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_CRACKING, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.FURNACE);
+        //  Sonicator
+        SONICATION_RECIPES = new RecipeMap<>("sonication_recipes", 0, false, 1, false, 2, false, 1, false, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, true, false, GuiTextures.BREWER_OVERLAY)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSlotOverlay(true, false, true, GTLiteGuiTextures.FOIL_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.CENTRIFUGE);
     }
 }

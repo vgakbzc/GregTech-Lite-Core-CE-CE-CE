@@ -61,5 +61,15 @@ public class MachineRecipeLoader {
                 'P', ELECTRIC_PUMP_EV.getStackForm(),
                 'H', HULL[EV].getStackForm(),
                 'K', new UnificationEntry(cableGtDouble, Aluminium));
+
+        //  Sonicator
+        ModHandler.addShapedRecipe(true, "sonicator", SONICATOR.getStackForm(),
+                "LFL", "PHP", "CPC",
+                'L', new UnificationEntry(pipeLargeFluid, Naquadah),
+                'F', FIELD_GENERATOR_UV.getStackForm(),
+                'P', ELECTRIC_PUMP_UV.getStackForm(),
+                'H', HULL[UV].getStackForm(),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV)
+        );
     }
 }

@@ -15,6 +15,7 @@ import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityCatalyticReformer;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialDrillingReg;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntitySonicator;
 
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
 import static gregtech.common.metatileentities.MetaTileEntities.registerSimpleMetaTileEntity;
@@ -32,6 +33,7 @@ public class GTLiteMetaTileEntities {
     //  Multiblock Machine range: 16001-20000
     public static MetaTileEntityIndustrialDrillingReg INDUSTRIAL_DRILLING_REG;
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
+    public static MetaTileEntitySonicator SONICATOR;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -73,5 +75,6 @@ public class GTLiteMetaTileEntities {
         //  Multiblock Machine range: 16001-20000
         INDUSTRIAL_DRILLING_REG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingReg(gtliteId("industrial_drilling_reg")));
         CATALYTIC_REFORMER = registerMultiMetaTileEntity(2, new MetaTileEntityCatalyticReformer(gtliteId("catalytic_reformer")));
+        SONICATOR = registerMultiMetaTileEntity(3, new MetaTileEntitySonicator(gtliteId("sonicator")));
     }
 }

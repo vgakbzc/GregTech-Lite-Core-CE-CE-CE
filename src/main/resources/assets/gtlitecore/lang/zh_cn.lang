@@ -92,6 +92,8 @@ gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作
 
 gtlitecore.machine.catalytic_reformer.name=催化重整炉
 
+gtlitecore.machine.sonicator.name=超声震荡器
+
 #  Materials
 
 ##  Element Materials
@@ -111,6 +113,7 @@ recipemap.vacuum_chamber_recipes.name=真空室
 
 recipemap.drill_recipes.name=钻取
 recipemap.catalytic_reformer_recipes.name=催化重整
+recipemap.sonication_recipes.name=超声震荡
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
