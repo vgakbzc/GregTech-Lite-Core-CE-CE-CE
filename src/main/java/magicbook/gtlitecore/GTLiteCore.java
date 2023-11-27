@@ -3,6 +3,9 @@ package magicbook.gtlitecore;
 import gregtech.common.ConfigHolder;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.CommonProxy;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.items.GTLiteMetaItems;
+import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -35,6 +38,10 @@ public class GTLiteCore {
         GTLiteLog.init(event.getModLog());
         GTLiteLog.logger.info("Enabled highTierContent in GregTech...");
         ConfigHolder.machines.highTierContent = true;
+
+        GTLiteMetaItems.init();
+        GTLiteMetaBlocks.init();
+        GTLiteMetaTileEntities.init();
 
         proxy.preLoad();
     }

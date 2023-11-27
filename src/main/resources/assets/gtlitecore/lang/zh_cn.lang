@@ -1,0 +1,94 @@
+
+#  Blocks
+tile.multiblock_casing.substrate_casing.name=基板机械方块
+tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
+tile.multiblock_casing.drill_head.name=钻头
+
+#  Boards
+metaitem.board.gooware.name=Kapton™电路基板
+metaitem.board.gooware.tooltip=杜邦™ Pyralux® TK层压薄膜
+
+metaitem.board.optical.name=氮化镓半导体材料电路基板
+metaitem.board.optical.tooltip=绝对理想的光电器件材料
+
+metaitem.board.spintronic.name=碳纳米管磁性存储电路基板
+metaitem.board.spintronic.tooltip=第三代自旋电子技术
+
+#  Circuit Boards
+metaitem.circuit_board.gooware.name=终极电路板
+metaitem.circuit_board.gooware.tooltip=电路板上焕发生机
+
+metaitem.circuit_board.optical.name=究极电路板
+metaitem.circuit_board.optical.tooltip=半导体工业的技术之星
+
+metaitem.circuit_board.spintronic.name=无尽电路板
+metaitem.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
+
+#  Creative Tabs
+itemGroup.gtlite=格雷科技精简版
+
+#  Machines
+gtlitecore.machine.chemical_dryer.lv.name=基础化学脱水机
+gtlitecore.machine.chemical_dryer.lv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.mv.name=进阶化学脱水机
+gtlitecore.machine.chemical_dryer.mv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.hv.name=进阶化学脱水机 II
+gtlitecore.machine.chemical_dryer.hv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.ev.name=进阶化学脱水机 III
+gtlitecore.machine.chemical_dryer.ev.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dryer.iv.name=精英化学脱水机
+gtlitecore.machine.chemical_dryer.iv.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dryer.luv.name=精英化学脱水机 II
+gtlitecore.machine.chemical_dryer.luv.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dryer.zpm.name=精英化学脱水机 III
+gtlitecore.machine.chemical_dryer.zpm.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dryer.uv.name=终极化学脱水机
+gtlitecore.machine.chemical_dryer.uv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uhv.name=史诗化学脱水机
+gtlitecore.machine.chemical_dryer.uhv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uev.name=史诗化学脱水机 II
+gtlitecore.machine.chemical_dryer.uev.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uiv.name=史诗化学脱水机 III
+gtlitecore.machine.chemical_dryer.uiv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.uxv.name=史诗化学脱水机 IV
+gtlitecore.machine.chemical_dryer.uxv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dryer.opv.name=传奇化学脱水机
+gtlitecore.machine.chemical_dryer.opv.tooltip=水分湮灭者
+
+gtlitecore.machine.vacuum_chamber.bronze.name=蒸汽真空室
+gtlitecore.machine.vacuum_chamber.bronze.tooltip=你的第一片真空
+gtlitecore.machine.vacuum_chamber.steel.name=高压蒸汽真空室
+gtlitecore.machine.vacuum_chamber.steel.tooltip=小小真空
+gtlitecore.machine.vacuum_chamber.lv.name=基础真空室
+gtlitecore.machine.vacuum_chamber.lv.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.mv.name=进阶真空室
+gtlitecore.machine.vacuum_chamber.mv.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.hv.name=进阶真空室 II
+gtlitecore.machine.vacuum_chamber.hv.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.ev.name=进阶真空室 III
+gtlitecore.machine.vacuum_chamber.ev.tooltip=空气驱逐者
+gtlitecore.machine.vacuum_chamber.iv.name=精英真空室
+gtlitecore.machine.vacuum_chamber.iv.tooltip=空气隔绝者
+gtlitecore.machine.vacuum_chamber.luv.name=精英真空室 II
+gtlitecore.machine.vacuum_chamber.luv.tooltip=空气隔绝者
+gtlitecore.machine.vacuum_chamber.zpm.name=精英真空室 III
+gtlitecore.machine.vacuum_chamber.zpm.tooltip=空气隔绝者
+gtlitecore.machine.vacuum_chamber.uv.name=终极真空室
+gtlitecore.machine.vacuum_chamber.uv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uhv.name=史诗真空室
+gtlitecore.machine.vacuum_chamber.uhv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uev.name=史诗真空室 II
+gtlitecore.machine.vacuum_chamber.uev.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uiv.name=史诗真空室 III
+gtlitecore.machine.vacuum_chamber.uiv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.uxv.name=史诗真空室 IV
+gtlitecore.machine.vacuum_chamber.uxv.tooltip=完美真空
+gtlitecore.machine.vacuum_chamber.opv.name=传奇真空室
+gtlitecore.machine.vacuum_chamber.opv.tooltip=完美真空
+
+#  Recipe Maps
+recipemap.chemical_dryer_recipes.name=脱水
+recipemap.vacuum_chamber_recipes.name=真空室
+
+#  Recipe Properties
+gtlitecore.recipe.temperature=温度:%,d K
