@@ -86,6 +86,19 @@ gtlitecore.machine.vacuum_chamber.uxv.tooltip=完美真空
 gtlitecore.machine.vacuum_chamber.opv.name=传奇真空室
 gtlitecore.machine.vacuum_chamber.opv.tooltip=完美真空
 
+#  Materials
+
+##  Element Materials
+gregtech.material.orichalcum=山铜
+gregtech.material.vibranium=振金
+gregtech.material.adamantium=精金
+gregtech.material.taranium=塔兰金属
+gregtech.material.mithril=秘银
+
+#  Ore Prefixes
+item.material.oreprefix.milled=碾磨%s矿石粉
+metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
+
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
 recipemap.vacuum_chamber_recipes.name=真空室

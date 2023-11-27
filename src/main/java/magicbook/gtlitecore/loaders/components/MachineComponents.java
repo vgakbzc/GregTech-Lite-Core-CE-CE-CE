@@ -5,11 +5,12 @@ import gregtech.api.unification.stack.UnificationEntry;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
-import static gregtech.api.GTValues.UV;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.common.metatileentities.MetaTileEntities.HULL;
+import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class MachineComponents {
     public static void init() {
@@ -41,7 +42,7 @@ public class MachineComponents {
         ModHandler.addShapedRecipe(true, "drill_head", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.DRILL_HEAD),
                 "PGP", "MHM", "SSS",
                 'P', ELECTRIC_PISTON_UV.getStackForm(),
-                'G', new UnificationEntry(gear, HSSS), //TODO Orichalcum
+                'G', new UnificationEntry(gear, Orichalcum),
                 'M', ELECTRIC_MOTOR_UV.getStackForm(),
                 'H', HULL[UV].getStackForm(),
                 'S', COMPONENT_GRINDER_TUNGSTEN.getStackForm());
