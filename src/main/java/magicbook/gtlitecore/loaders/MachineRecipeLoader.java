@@ -69,7 +69,15 @@ public class MachineRecipeLoader {
                 'F', FIELD_GENERATOR_UV.getStackForm(),
                 'P', ELECTRIC_PUMP_UV.getStackForm(),
                 'H', HULL[UV].getStackForm(),
-                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV)
-        );
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV));
+
+        //  Hydraulic Fracker
+        ModHandler.addShapedRecipe(true, "fracker", HYDRAULIC_FRACKER.getStackForm(),
+                "CLC", "GHG", "PPP",
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'L', new UnificationEntry(pipeLargeFluid, Naquadah),
+                'G', new UnificationEntry(gear, NaquadahAlloy),
+                'H', HULL[ZPM].getStackForm(),
+                'P', ELECTRIC_PUMP_ZPM.getStackForm());
     }
 }

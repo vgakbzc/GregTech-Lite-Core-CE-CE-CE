@@ -94,6 +94,10 @@ gtlitecore.machine.catalytic_reformer.name=催化重整炉
 
 gtlitecore.machine.sonicator.name=超声震荡器
 
+gtlitecore.machine.hydraulic_fracker.name=压裂机
+gtlitecore.machine.hydraulic_fracker.tooltip.1=使用§6压裂液§7补充基岩下的区块流体，每次消耗1000L。
+gtlitecore.machine.hydraulic_fracker.tooltip.2=每次工作消耗§a%sEU/t§7。
+
 #  Materials
 
 ##  Element Materials
@@ -102,6 +106,9 @@ gregtech.material.vibranium=振金
 gregtech.material.adamantium=精金
 gregtech.material.taranium=塔兰金属
 gregtech.material.mithril=秘银
+
+##  Unknown Composition Materials
+gregtech.material.fracturing_fluid=压裂液
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
