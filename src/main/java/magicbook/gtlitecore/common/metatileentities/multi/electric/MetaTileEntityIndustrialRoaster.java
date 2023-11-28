@@ -45,8 +45,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static gregtech.api.GTValues.EV;
-import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.*;
 
 public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockController implements IHeatingCoil {
 
@@ -113,7 +112,7 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
                 .aisle("F   F", "FBBBF", "XPXPX", "XXXXX", " P P ")
                 .aisle("     ", "XBBBX", "XP#PX", "XPMPX", " P P ")
                 .aisle("F   F", "FBBBF", "XXSXX", "XXXXX", "     ")
-                .where('S', selfPredicate())
+                .where('S', this.selfPredicate())
                 .where('X', states(getCasingState())
                         .setMinGlobalLimited(14)
                         .or(autoAbilities(true, true, true, true, true, true, false)))

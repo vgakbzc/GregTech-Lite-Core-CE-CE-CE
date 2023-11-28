@@ -120,6 +120,8 @@ gtlitecore.machine.industrial_raoster.tooltip.2=钢燃烧室: §c1500K
 gtlitecore.machine.industrial_raoster.tooltip.3=钛燃烧室: §c2000K
 gtlitecore.machine.industrial_raoster.tooltip.4=钨钢燃烧室: §c2500K
 
+gtlitecore.machine.crystallization_crucible.name=结晶坩埚
+
 #  Materials
 
 ##  Element Materials
@@ -145,6 +147,7 @@ recipemap.catalytic_reformer_recipes.name=催化重整
 recipemap.sonication_recipes.name=超声震荡
 recipemap.molecular_beam_recipes.name=分子束外延
 recipemap.industrial_roaster_recipes.name=高温焙烧
+recipemap.crystallization_recipes.name=结晶
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

@@ -99,5 +99,14 @@ public class MachineRecipeLoader {
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
                 'H', HULL[EV].getStackForm(),
                 'P', new UnificationEntry(plate, TitaniumCarbide));
+
+        //  Crystallization Crucible
+        ModHandler.addShapedRecipe(true, "crystallization_crucible", CRYSTALLIZATION_CRUCIBLE.getStackForm(),
+                "CMC", "LHL", "PCP",
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'M', new UnificationEntry(plateDouble, MolybdenumDisilicide),
+                'L', new UnificationEntry(pipeNormalFluid, Titanium),
+                'H', HULL[EV].getStackForm(),
+                'P', new UnificationEntry(plate, Titanium));
     }
 }

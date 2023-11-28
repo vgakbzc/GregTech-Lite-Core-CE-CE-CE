@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.recipe;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
@@ -20,7 +21,7 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> SONICATION_RECIPES;
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> MOLECULAR_BEAM_RECIPES;
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> INDUSTRIAL_ROASTER_RECIPES;
-
+    public static final RecipeMap<BlastRecipeBuilder> CRYSTALLIZATION_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -68,6 +69,10 @@ public class GTLiteRecipeMaps {
         //  Industrial Roaster RecipeMap
         INDUSTRIAL_ROASTER_RECIPES = new RecipeMap<>("industrial_roaster_recipes", 3, 3, 3,  3, new NoCoilTemperatureRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.FURNACE);
+        //  Crystallization Crucible RecipeMap
+        CRYSTALLIZATION_RECIPES = new RecipeMap<>("crystallization_recipes", 6, 1, 3, 0, new BlastRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CRYSTALLIZATION, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.FURNACE);
     }
 }
