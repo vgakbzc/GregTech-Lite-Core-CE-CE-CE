@@ -8,6 +8,9 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.NoCoilTemperatureRecipeBuilder;
+import gregtech.api.recipes.builders.SimpleRecipeBuilder;
+import gregtech.core.sound.GTSoundEvents;
+
 
 public class GTLiteRecipeMaps {
 

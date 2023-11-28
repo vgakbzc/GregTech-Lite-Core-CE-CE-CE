@@ -254,5 +254,4 @@ public class MaterialComponents {
 //                {12, new UnificationEntry(OrePrefix.spring, Trinium)},
 //                {13, new UnificationEntry(OrePrefix.spring, Trinium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
-    }
 }
