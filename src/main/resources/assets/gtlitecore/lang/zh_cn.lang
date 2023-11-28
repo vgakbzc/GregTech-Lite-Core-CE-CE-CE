@@ -126,6 +126,11 @@ gtlitecore.machine.cvd_unit.name=化学气相沉积单元
 
 gtlitecore.machine.plasma_cvd_unit.name=等离子体增强化学气相沉积单元
 
+gtlitecore.machine.laser_cvd_unit.name=激光诱导化学气相沉积单元
+
+gtlitecore.machine.burner_reactor.name=燃烧反应室
+
+
 #  Materials
 
 ##  Element Materials
@@ -155,6 +160,8 @@ recipemap.crystallization_recipes.name=结晶
 recipemap.cvd_unit_recipes.name=化学气相沉积
 recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
+recipemap.burner_reactor_recipes.name=燃烧反应
+recipemap.cryogenic_reactor_recipes.name=低温反应
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

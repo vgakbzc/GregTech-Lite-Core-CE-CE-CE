@@ -25,6 +25,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CVD_UNIT_RECIPES;
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> PLASMA_CVD_UNIT_RECIPES;
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> LASER_CVD_UNIT_RECIPES;
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES;
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -88,6 +90,14 @@ public class GTLiteRecipeMaps {
         //  Laser CVD Unit RecipeMap
         LASER_CVD_UNIT_RECIPES = new RecipeMap<>("laser_cvd_unit_recipes", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.COOLING);
+        //  Burner Reactor RecipeMap
+        BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor_recipes", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ARC);
+        //  Cryogenic Reactor RecipeMap
+        CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes", 3, 2, 2, 2, new NoCoilTemperatureRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.COOLING);
     }
 }

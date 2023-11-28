@@ -138,5 +138,16 @@ public class MachineRecipeLoader {
         //        'E', EMITTER_UHV.getStackForm(),
         //        'O', OPTICAL_FIBER.getStackForm()
         //);
+
+        //  Burner Reactor
+        ModHandler.addShapedRecipe(true, "burner_reactor", BURNER_REACTOR.getStackForm(),
+                "KRK", "IHI", "CMC",
+                'K', new UnificationEntry(cableGtSingle, Platinum),
+                'R', new UnificationEntry(rotor, TungstenSteel),
+                'I', new UnificationEntry(pipeSmallFluid, Tungsten),
+                'H', HULL[IV].getStackForm(),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'M', ELECTRIC_MOTOR_IV.getStackForm()
+        );
     }
 }
