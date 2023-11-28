@@ -130,6 +130,8 @@ gtlitecore.machine.laser_cvd_unit.name=激光诱导化学气相沉积单元
 
 gtlitecore.machine.burner_reactor.name=燃烧反应室
 
+gtlitecore.machine.cryogenic_reactor.name=低温反应室
+
 
 #  Materials
 

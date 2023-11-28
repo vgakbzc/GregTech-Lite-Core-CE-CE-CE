@@ -39,6 +39,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCVDUnit CVD_UNIT;
     public static MetaTileEntityPlasmaCVDUnit PLASMA_CVD_UNIT;
     public static MetaTileEntityBurnerReactor BURNER_REACTOR;
+    public static MetaTileEntityCryogenicReactor CRYOGENIC_REACTOR;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -89,6 +90,6 @@ public class GTLiteMetaTileEntities {
         PLASMA_CVD_UNIT = registerMultiMetaTileEntity(9, new MetaTileEntityPlasmaCVDUnit(gtliteId("plasma_cvd_unit")));
         //  LASER_CVD_UNIT 10
         BURNER_REACTOR = registerMultiMetaTileEntity(11, new MetaTileEntityBurnerReactor(gtliteId("burner_reactor")));
-        //  CRYOGENIC_REACTOR 12
+        CRYOGENIC_REACTOR = registerMultiMetaTileEntity(12, new MetaTileEntityCryogenicReactor(gtliteId("cryogenic_reactor")));
     }
 }

@@ -147,7 +147,16 @@ public class MachineRecipeLoader {
                 'I', new UnificationEntry(pipeSmallFluid, Tungsten),
                 'H', HULL[IV].getStackForm(),
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
-                'M', ELECTRIC_MOTOR_IV.getStackForm()
-        );
+                'M', ELECTRIC_MOTOR_IV.getStackForm());
+
+        //  Cryogenic Reactor
+        ModHandler.addShapedRecipe(true, "cryogenic_reactor", CRYOGENIC_REACTOR.getStackForm(),
+                "KRK", "IHI", "CWC",
+                'K', new UnificationEntry(cableGtSingle, Platinum),
+                'R', new UnificationEntry(rotor, Titanium),
+                'I', new UnificationEntry(pipeSmallFluid, StainlessSteel),
+                'H', HULL[IV].getStackForm(),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'W', ELECTRIC_PUMP_IV.getStackForm());
     }
 }
