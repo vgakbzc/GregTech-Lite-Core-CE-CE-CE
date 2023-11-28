@@ -111,18 +111,18 @@ public class MaterialComponents {
         PLATE.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.plate, Orichalcum)},
                 {10, new UnificationEntry(OrePrefix.plate, Adamantium)},
-                {11, new UnificationEntry(OrePrefix.plate, Trinium)},
+//                {11, new UnificationEntry(OrePrefix.plate, Trinium)},
 //                {12, new UnificationEntry(OrePrefix.plate, Trinium)},
 //                {13, new UnificationEntry(OrePrefix.plate, Trinium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         HULL_PLATE.appendIngredients(Stream.of(new Object[][]{
-//                {9, new UnificationEntry(OrePrefix.plate, Polyetheretherketone)},
-//                {10, new UnificationEntry(OrePrefix.plate, Polyetheretherketone)},
-//                {11, new UnificationEntry(OrePrefix.plate, Kevlar)},
-//                {12, new UnificationEntry(OrePrefix.plate, Kevlar)},
-//                {13, new UnificationEntry(OrePrefix.plate, Trinium},
-//                {14, new UnificationEntry(OrePrefix.plate, Trinium},
+                {9, new UnificationEntry(OrePrefix.plate, Polyetheretherketone)},
+                {10, new UnificationEntry(OrePrefix.plate, Polyetheretherketone)},
+                {11, new UnificationEntry(OrePrefix.plate, Kevlar)},
+                {12, new UnificationEntry(OrePrefix.plate, Kevlar)},
+                {13, new UnificationEntry(OrePrefix.plate, CosmicFabric)},
+                {14, new UnificationEntry(OrePrefix.plate, CosmicFabric)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         DOUBLE_PLATE.appendIngredients(Stream.of(new Object[][]{
@@ -254,4 +254,5 @@ public class MaterialComponents {
 //                {12, new UnificationEntry(OrePrefix.spring, Trinium)},
 //                {13, new UnificationEntry(OrePrefix.spring, Trinium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
+    }
 }
