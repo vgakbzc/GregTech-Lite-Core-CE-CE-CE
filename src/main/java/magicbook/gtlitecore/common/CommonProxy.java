@@ -44,6 +44,7 @@ public class CommonProxy {
         IForgeRegistry<Block> registry = event.getRegistry();
         GTLiteLog.logger.info("Registering Blocks...");
         registry.register(GTLiteMetaBlocks.MULTIBLOCK_CASING);
+        registry.register(GTLiteMetaBlocks.CRUCIBLE);
     }
 
     @SubscribeEvent
@@ -51,6 +52,7 @@ public class CommonProxy {
         IForgeRegistry<Item> registry = event.getRegistry();
         GTLiteLog.logger.info("Registering Items...");
         registry.register(createItemBlock(GTLiteMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
     }
 
     @Nonnull

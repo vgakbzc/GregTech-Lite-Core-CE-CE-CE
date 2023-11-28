@@ -4,6 +4,19 @@ tile.multiblock_casing.substrate_casing.name=基板机械方块
 tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
 tile.multiblock_casing.drill_head.name=钻头
 
+tile.crucible.bronze.name=青铜坩埚
+tile.crucible.invar.name=殷钢坩埚
+tile.crucible.quartz.name=石英岩坩埚
+tile.crucible.chrome.name=铬坩埚
+tile.crucible.vanadium.name=钒坩埚
+tile.crucible.niobium_titanium.name=铌钛合金坩埚
+tile.crucible.iridium.name=铱坩埚
+tile.crucible.molybdenum.name=钼坩埚
+tile.crucible.tungsten.name=钨坩埚
+tile.crucible.osmium.name=锇坩埚
+tile.crucible.graphite.name=石墨坩埚
+tile.crucible.boron_nitride.name=氮化硼坩埚
+
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
 metaitem.board.gooware.tooltip=杜邦™ Pyralux® TK层压薄膜
@@ -86,9 +99,74 @@ gtlitecore.machine.vacuum_chamber.uxv.tooltip=完美真空
 gtlitecore.machine.vacuum_chamber.opv.name=传奇真空室
 gtlitecore.machine.vacuum_chamber.opv.tooltip=完美真空
 
+gtlitecore.machine.industrial_drilling_reg.name=工业钻机
+gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
+gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
+
+gtlitecore.machine.catalytic_reformer.name=催化重整炉
+
+gtlitecore.machine.sonicator.name=超声震荡器
+
+gtlitecore.machine.hydraulic_fracker.name=压裂机
+gtlitecore.machine.hydraulic_fracker.tooltip.1=使用§6压裂液§7补充基岩下的区块流体，每次消耗1000L。
+gtlitecore.machine.hydraulic_fracker.tooltip.2=每次工作消耗§a%sEU/t§7。
+
+gtlitecore.machine.nanoscale_fabricator.name=纳米级制造室
+gtlitecore.machine.nanoscale_fabricator.tooltip=坩埚的平均温度最多可超过目标温度§c250K§7。
+
+gtlitecore.machine.industrial_roaster.name=工业焙烧炉
+gtlitecore.machine.industrial_raoster.tooltip.1=青铜燃烧室: §c1000K
+gtlitecore.machine.industrial_raoster.tooltip.2=钢燃烧室: §c1500K
+gtlitecore.machine.industrial_raoster.tooltip.3=钛燃烧室: §c2000K
+gtlitecore.machine.industrial_raoster.tooltip.4=钨钢燃烧室: §c2500K
+
+gtlitecore.machine.crystallization_crucible.name=结晶坩埚
+
+gtlitecore.machine.cvd_unit.name=化学气相沉积单元
+
+gtlitecore.machine.plasma_cvd_unit.name=等离子体增强化学气相沉积单元
+
+gtlitecore.machine.laser_cvd_unit.name=激光诱导化学气相沉积单元
+
+gtlitecore.machine.burner_reactor.name=燃烧反应室
+
+gtlitecore.machine.cryogenic_reactor.name=低温反应室
+
+
+#  Materials
+
+##  Element Materials
+gregtech.material.orichalcum=山铜
+gregtech.material.vibranium=振金
+gregtech.material.adamantium=精金
+gregtech.material.taranium=塔兰金属
+gregtech.material.mithril=秘银
+
+##  Unknown Composition Materials
+gregtech.material.fracturing_fluid=压裂液
+
+#  Ore Prefixes
+item.material.oreprefix.milled=碾磨%s矿石粉
+metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
+
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
 recipemap.vacuum_chamber_recipes.name=真空室
 
+recipemap.drill_recipes.name=钻取
+recipemap.catalytic_reformer_recipes.name=催化重整
+recipemap.sonication_recipes.name=超声震荡
+recipemap.molecular_beam_recipes.name=分子束外延
+recipemap.industrial_roaster_recipes.name=高温焙烧
+recipemap.crystallization_recipes.name=结晶
+recipemap.cvd_unit_recipes.name=化学气相沉积
+recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
+recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
+recipemap.burner_reactor_recipes.name=燃烧反应
+recipemap.cryogenic_reactor_recipes.name=低温反应
+
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
+
+#  Traceability Predicates
+gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
