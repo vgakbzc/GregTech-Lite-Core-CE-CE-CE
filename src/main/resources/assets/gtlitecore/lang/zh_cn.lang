@@ -114,6 +114,12 @@ gtlitecore.machine.hydraulic_fracker.tooltip.2=每次工作消耗§a%sEU/t§7。
 gtlitecore.machine.nanoscale_fabricator.name=纳米级制造室
 gtlitecore.machine.nanoscale_fabricator.tooltip=坩埚的平均温度最多可超过目标温度§c250K§7。
 
+gtlitecore.machine.industrial_roaster.name=工业焙烧炉
+gtlitecore.machine.industrial_raoster.tooltip.1=青铜燃烧室: §c1000K
+gtlitecore.machine.industrial_raoster.tooltip.2=钢燃烧室: §c1500K
+gtlitecore.machine.industrial_raoster.tooltip.3=钛燃烧室: §c2000K
+gtlitecore.machine.industrial_raoster.tooltip.4=钨钢燃烧室: §c2500K
+
 #  Materials
 
 ##  Element Materials
@@ -138,6 +144,10 @@ recipemap.drill_recipes.name=钻取
 recipemap.catalytic_reformer_recipes.name=催化重整
 recipemap.sonication_recipes.name=超声震荡
 recipemap.molecular_beam_recipes.name=分子束外延
+recipemap.industrial_roaster_recipes.name=高温焙烧
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
+
+#  Traceability Predicates
+gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
