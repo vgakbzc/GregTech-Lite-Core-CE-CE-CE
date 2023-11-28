@@ -108,5 +108,35 @@ public class MachineRecipeLoader {
                 'L', new UnificationEntry(pipeNormalFluid, Titanium),
                 'H', HULL[EV].getStackForm(),
                 'P', new UnificationEntry(plate, Titanium));
+
+        //  CVD Unit
+        ModHandler.addShapedRecipe(true, "cvd_unit", CVD_UNIT.getStackForm(),
+                "PKP", "CHC", "ESE",
+                'P', new UnificationEntry(plate, BlueSteel),
+                'K', new UnificationEntry(cableGtSingle, Aluminium),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
+                'H', HULL[EV].getStackForm(),
+                'S', SENSOR_EV.getStackForm(),
+                'E', EMITTER_EV.getStackForm());
+
+        //  Plasma CVD Unit
+        //ModHandler.addShapedRecipe(true, "plasma_cvd_unit", PLASMA_CVD_UNIT.getStackForm(),
+        //        "PKP", "CHC", "ESE",
+        //        'P', new UnificationEntry(plate, Vibranium),
+        //        'K', new UnificationEntry(cableGtSingle, SiliconCarbide),
+        //        'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
+        //        'H', HULL[UHV].getStackForm(),
+        //        'S', SENSOR_UHV.getStackForm(),
+        //        'E', EMITTER_UHV.getStackForm());
+
+        //  Laser CVD Unit
+        //ModHandler.addShapedRecipe(true, "laser_cvd_unit", LASER_CVD_UNIT.getStackForm(),
+        //        "EOE", "CHC", "PPP",
+        //        'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
+        //        'H', HULL[UHV].getStackForm(),
+        //        'P', new UnificationEntry(plate, Orichalcum),
+        //        'E', EMITTER_UHV.getStackForm(),
+        //        'O', OPTICAL_FIBER.getStackForm()
+        //);
     }
 }

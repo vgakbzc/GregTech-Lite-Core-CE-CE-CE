@@ -37,6 +37,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityIndustrialRoaster INDUSTRIAL_ROASTER;
     public static MetaTileEntityCrystallizationCrucible CRYSTALLIZATION_CRUCIBLE;
     public static MetaTileEntityCVDUnit CVD_UNIT;
+    public static MetaTileEntityPlasmaCVDUnit PLASMA_CVD_UNIT;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -84,5 +85,6 @@ public class GTLiteMetaTileEntities {
         INDUSTRIAL_ROASTER = registerMultiMetaTileEntity(6, new MetaTileEntityIndustrialRoaster(gtliteId("industrial_roaster")));
         CRYSTALLIZATION_CRUCIBLE = registerMultiMetaTileEntity(7, new MetaTileEntityCrystallizationCrucible(gtliteId("crystallization_crucible")));
         CVD_UNIT = registerMultiMetaTileEntity(8, new MetaTileEntityCVDUnit(gtliteId("cvd_unit")));
+        PLASMA_CVD_UNIT = registerMultiMetaTileEntity(9, new MetaTileEntityPlasmaCVDUnit(gtliteId("plasma_cvd_unit")));
     }
 }

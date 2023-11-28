@@ -124,6 +124,8 @@ gtlitecore.machine.crystallization_crucible.name=结晶坩埚
 
 gtlitecore.machine.cvd_unit.name=化学气相沉积单元
 
+gtlitecore.machine.plasma_cvd_unit.name=等离子体增强化学气相沉积单元
+
 #  Materials
 
 ##  Element Materials
