@@ -3,7 +3,6 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.properties.FluidProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 
-import static gregtech.api.fluids.store.FluidStorageKeys.LIQUID;
 import static gregtech.api.unification.material.Materials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
@@ -14,9 +13,7 @@ public class GTLiteMaterialPropertyAddition {
         PalladiumRaw.setFormula("PdCl2", true);
         RarestMetalMixture.setFormula("IrOs?", true);
         IridiumMetalResidue.setFormula("Ir2O3", true);
-        FluidProperty prop = new FluidProperty();
-        prop.setPrimaryKey(LIQUID);
-        SodiumBisulfate.setProperty(PropertyKey.FLUID, prop);
+        SodiumBisulfate.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);

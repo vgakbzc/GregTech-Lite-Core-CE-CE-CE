@@ -21,6 +21,6 @@ public class RecipeManager {
     }
 
     private static void initOreProcessings() {
-        PlatinumGroupProcessing.init();
+       PlatinumGroupProcessing.init();
     }
 }

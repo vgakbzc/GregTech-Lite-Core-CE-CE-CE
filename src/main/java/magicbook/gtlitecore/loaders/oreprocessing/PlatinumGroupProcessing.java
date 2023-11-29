@@ -18,7 +18,17 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class PlatinumGroupProcessing {
 
     public static void init() {
+        removeVanillaRecipes();
+        PlatinumGroupSludgeProcess();
+        PlatinumProcess();
+        PalladiumProcess();
+        RutheniumProcess();
+        RhodiumProcess();
+        IridiumProcess();
+        OsmiumProcess();
+    }
 
+    private static void removeVanillaRecipes() {
         if (GTLiteConfigHolder.ChainOverrides.enablePlatinumGroupProcessing) {
             //  Remove Platinum Group Sludge Centrifuge recipe
             GTRecipeHandler.removeRecipesByInputs(CENTRIFUGE_RECIPES,
@@ -76,15 +86,6 @@ public class PlatinumGroupProcessing {
 
             //  Remove Iridium Metal Residue -> Iridium Chloride
             GTRecipeHandler.removeRecipesByInputs(CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, IridiumMetalResidue, 5));
-
-
-            PlatinumGroupSludgeProcess();
-            PlatinumProcess();
-            PalladiumProcess();
-            RutheniumProcess();
-            RhodiumProcess();
-            IridiumProcess();
-            OsmiumProcess();
         }
     }
 
