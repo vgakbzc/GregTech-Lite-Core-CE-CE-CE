@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.oreprocessing.PlatinumGroupProcessing;
+import magicbook.gtlitecore.loaders.oreprocessing.RareEarthProcessing;
 
 public class RecipeManager {
 
@@ -22,9 +23,6 @@ public class RecipeManager {
 
     private static void initOreProcessings() {
        PlatinumGroupProcessing.init();
-    }
-
-    private static void initBlocks() {
-        Crucibles.init();
+       RareEarthProcessing.init();
     }
 }

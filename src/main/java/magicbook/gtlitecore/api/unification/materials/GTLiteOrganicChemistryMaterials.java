@@ -102,6 +102,22 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Hydrogen, 2, Carbon, 1, Oxygen, 2)
                 .build()
                 .setFormula("HCOOH", true);
+
+        //  13010 Ethylhexanol
+        Ethylhexanol = new Material.Builder(getId(), gregtechId("ethylhexanol"))
+                .liquid()
+                .color(0xFEEA9A)
+                .components(Carbon, 8, Hydrogen, 10, Oxygen, 1)
+                .build();
+
+        //  13011 Diethylhexyl Phosphoric Acid
+        DiethylhexylPhosphoricAcid = new Material.Builder(getId(), gregtechId("diethylhexyl_phosphoric_acid"))
+                .liquid()
+                .color(0xFFFF99)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 35, Oxygen, 4, Phosphorus, 1)
+                .build()
+                .setFormula("(C8H7O)2PO2H", true);
     }
 
     private static int getId() {
