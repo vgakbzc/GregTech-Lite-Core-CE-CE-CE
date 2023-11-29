@@ -27,7 +27,7 @@ public class GTLiteConfigHolder {
         @Config.Comment({"Enable Rare Earth process.", "Default: true"})
         public boolean enableRareEarthProcessing = true;
         @Config.Comment({"Enable Platinum Group process.", "Default: true"})
-        public boolean enablePlatinumGroupProcessing = true;
+        public static boolean enablePlatinumGroupProcessing = true;
         @Config.Comment({"Enable Tungsten process.", "Default: true"})
         public boolean enableTungstenProcessing = true;
         @Config.Comment({"Enable Graphene process.", "Default: true"})

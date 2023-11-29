@@ -27,7 +27,7 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
     }
 
     public NoCoilTemperatureRecipeBuilder copy() {
-        return new NoCoilTemperatureRecipeBuilder();
+        return new NoCoilTemperatureRecipeBuilder(this);
     }
 
     public boolean applyProperty(@Nonnull String key, Object value) {

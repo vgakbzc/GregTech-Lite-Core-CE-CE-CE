@@ -101,6 +101,10 @@ repositories {
             includeGroup 'curse.maven'
         }
     }
+    maven {
+        name 'BlameJared Maven'
+        url 'https://maven.blamejared.com'
+    }
     mavenLocal() // Must be last for caching to work
 }
 
@@ -133,16 +137,20 @@ dependencies {
     implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
     //  Code Chicken Lib 1.8+
     implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
-    //  GregTech CEu 2.8.0-beta
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4904269")
-    //  Gregicality Multiblocks 1.2.6
-    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4904560")
+    //  GregTech CEu 2.8.1-beta
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:4910613")
+    //  Gregicality Multiblocks 1.2.7
+    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
     //  GregTech Food Option 1.10.2
     implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4904513")
     //  AE2 Extended Life
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
     //  The One Probe
     runtimeOnly 'curse.maven:top-245211:2667280'
+    //  Groovy Script 0.7.0
+    implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
+    //  CraftTweaker2 API
+    compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))
 
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:

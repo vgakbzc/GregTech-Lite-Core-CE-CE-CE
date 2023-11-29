@@ -142,6 +142,33 @@ gregtech.material.adamantium=精金
 gregtech.material.taranium=塔兰金属
 gregtech.material.mithril=秘银
 
+##  First Degree Materials
+gregtech.material.platinum_group_residue=铂族金属残渣
+gregtech.material.platinum_group_concentrate=铂族金属浓缩物
+gregtech.material.purified_platinum_group_concentrate=纯化铂族金属浓缩物
+gregtech.material.ammonium_hexachloroplatinate=六氯铂酸铵
+gregtech.material.ammonium_hexachloropalladate=六氯钯酸铵
+gregtech.material.sodium_nitrate=硝酸钠
+gregtech.material.hexachloroplatinic_acid.name=六氯铂酸
+gregtech.material.carbon_tetrachloride=四氯化碳
+gregtech.material.ruthenium_chloride=三氯化钌
+gregtech.material.sodium_peroxide=过氧化钠
+gregtech.material.rhodium_oxide=三氧化二钌
+gregtech.material.sulfur_dichloride=二氯化硫
+gregtech.material.thionyl_chloride=亚硫酰氯
+gregtech.material.osmium_tetrachloride=四氯化锇
+
+##  Organic Chemistry Materials
+gregtech.material.kapton_k=聚酰亚胺-K
+gregtech.material.kapton_e=聚酰亚胺-E
+gregtech.material.polyetheretherketone=聚醚醚酮（PEEK）
+gregtech.material.kevlar=凯芙拉
+gregtech.material.zylon=柴隆纤维
+gregtech.material.fullerene_polymer_matrix=富勒烯聚合物基质
+gregtech.material.cosmic_fabric=寰宇织网
+gregtech.material.methyl_formate=甲酸甲酯
+gregtech.material.formic_acid=甲酸
+
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
 

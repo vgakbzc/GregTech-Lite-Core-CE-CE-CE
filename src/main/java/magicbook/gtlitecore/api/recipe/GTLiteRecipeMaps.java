@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.api.recipe;
 
+import crafttweaker.annotations.ZenRegister;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
@@ -8,27 +9,41 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.NoCoilTemperatureRecipeBuilder;
-import gregtech.api.recipes.builders.SimpleRecipeBuilder;
-import gregtech.core.sound.GTSoundEvents;
+import stanhebben.zenscript.annotations.ZenClass;
+import stanhebben.zenscript.annotations.ZenProperty;
 
-
+@ZenClass("mods.gtlitecore.recipe.RecipeMaps")
+@ZenRegister
 public class GTLiteRecipeMaps {
 
     //  Single Machine RecipeMaps
+    @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> CHEMICAL_DRYER_RECIPES;
+    @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> VACUUM_CHAMBER_RECIPES;
 
     //  Multiblock Machine RecipeMaps
+    @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES;
+    @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES;
+    @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> SONICATION_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> MOLECULAR_BEAM_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> INDUSTRIAL_ROASTER_RECIPES;
+    @ZenProperty
     public static final RecipeMap<BlastRecipeBuilder> CRYSTALLIZATION_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CVD_UNIT_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> PLASMA_CVD_UNIT_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> LASER_CVD_UNIT_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES;
+    @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
