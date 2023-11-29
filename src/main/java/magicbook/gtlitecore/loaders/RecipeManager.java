@@ -23,4 +23,8 @@ public class RecipeManager {
     private static void initOreProcessings() {
        PlatinumGroupProcessing.init();
     }
+
+    private static void initBlocks() {
+        Crucibles.init();
+    }
 }
