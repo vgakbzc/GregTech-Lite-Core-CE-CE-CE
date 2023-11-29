@@ -157,6 +157,22 @@ gregtech.material.rhodium_oxide=三氧化二钌
 gregtech.material.sulfur_dichloride=二氯化硫
 gregtech.material.thionyl_chloride=亚硫酰氯
 gregtech.material.osmium_tetrachloride=四氯化锇
+gregtech.material.lanthanum_oxide=氧化镧
+gregtech.material.cerium_oxide=氧化铈
+gregtech.material.praseodymium_oxide=氧化镨
+gregtech.material.neodymium_oxide=氧化钕
+gregtech.material.samarium_oxide=氧化钐
+gregtech.mtaerial.europium_oxide=氧化铕
+gregtech.material.gadolinium_oxide=氧化钆
+gregtech.material.terbium_oxide=氧化铽
+gregtech.material.dysprosium_oxide=氧化镝
+gregtech.material.holmium_oxide=氧化钬
+gregtech.material.erbium_oxide=氧化铒
+gregtech.material.thulium_oxide=氧化铥
+gregtech.material.ytterbium_oxide=氧化镱
+gregtech.material.lutetium_oxide=氧化镥
+gregtech.material.scandium_oxide=氧化钪
+gregtech.material.yttrium_oxide=氧化钇
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -168,9 +184,17 @@ gregtech.material.fullerene_polymer_matrix=富勒烯聚合物基质
 gregtech.material.cosmic_fabric=寰宇织网
 gregtech.material.methyl_formate=甲酸甲酯
 gregtech.material.formic_acid=甲酸
+gregtech.material.ethylhexanol=2-乙基己醇
+gregtech.material.diethylhexyl_phosphoric_acid=二-(2-乙基己基)磷酸
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
+gregtech.material.rare_earth_hydroxides_solution=稀土氢氧化物溶液
+gregtech.material.rare_earth_chlorides_solution=稀土氯化物溶液
+gregtech.material.la_pr_nd_ce_oxides_solution=镧-镨-钕-铈氧化物溶液
+gregtech.material.sc_eu_gd_sm_oxides_solution=钪-铕-钆-钐氧化物溶液
+gregtech.material.y_tb_dy_ho_oxides_solution=钇-铽-镝-钬氧化物溶液
+gregtech.material.er_tm_yb_lu_oxides_solution=铒-铥-镱-镥氧化物溶液
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

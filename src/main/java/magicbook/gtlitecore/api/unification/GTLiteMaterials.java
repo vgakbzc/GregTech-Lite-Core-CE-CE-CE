@@ -29,6 +29,22 @@ public class GTLiteMaterials {
     public static Material SulfurDichloride;
     public static Material ThionylChloride;
     public static Material OsmiumTetrachloride;
+    public static Material LanthanumOxide;
+    public static Material CeriumOxide;
+    public static Material PraseodymiumOxide;
+    public static Material NeodymiumOxide;
+    public static Material SamariumOxide;
+    public static Material EuropiumOxide;
+    public static Material GadoliniumOxide;
+    public static Material TerbiumOxide;
+    public static Material DysprosiumOxide;
+    public static Material HolmiumOxide;
+    public static Material ErbiumOxide;
+    public static Material ThuliumOxide;
+    public static Material YtterbiumOxide;
+    public static Material LutetiumOxide;
+    public static Material ScandiumOxide;
+    public static Material YttriumOxide;
 
     //  Second Degree Materials (Range: 12001-13000)
 
@@ -42,9 +58,17 @@ public class GTLiteMaterials {
     public static Material CosmicFabric;
     public static Material MethylFormate;
     public static Material FormicAcid;
+    public static Material Ethylhexanol;
+    public static Material DiethylhexylPhosphoricAcid;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
+    public static Material RareEarthHydroxidesSolution;
+    public static Material RareEarthChloridesSolution;
+    public static Material LaPrNdCeOxidesSolution;
+    public static Material ScEuGdSmOxidesSolution;
+    public static Material YTbDyHoOxidesSolution;
+    public static Material ErTmYbLuOxidesSolution;
 
     public static void init() {
         GTLiteElementMaterials.register();
