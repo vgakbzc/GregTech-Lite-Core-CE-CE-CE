@@ -58,6 +58,12 @@ public class GTLiteMaterials {
     public static Material AdamantiumEnriched;
     public static Material VibraniumUnstable;
     public static Material DeepIron;
+    public static Material SodiumEthylate;
+    public static Material PotassiumEthylate;
+    public static Material CalciumCarbonate;
+    public static Material CarbonDisulfide;
+    public static Material SodiumEthylxanthate;
+    public static Material PotassiumEthylxanthate;
 
     //  Second Degree Materials (Range: 12001-13000)
 
@@ -117,6 +123,17 @@ public class GTLiteMaterials {
     public static Material HeavyHyperFuel;
     public static Material MediumHyperFuel;
     public static Material LightHyperFuel;
+    public static Material AlmandineFront;
+    public static Material ChalcopyriteFront;
+    public static Material MonaziteFront;
+    public static Material GrossularFront;
+    public static Material NickelFront;
+    public static Material PlatinumFront;
+    public static Material PyropeFront;
+    public static Material RedstoneFront;
+    public static Material SpessartineFront;
+    public static Material SphaleriteFront;
+    public static Material PentlanditeFront;
 
     public static void init() {
         GTLiteElementMaterials.register();

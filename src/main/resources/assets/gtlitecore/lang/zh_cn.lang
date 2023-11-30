@@ -1,8 +1,17 @@
-
 #  Blocks
 tile.multiblock_casing.substrate_casing.name=基板机械方块
 tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
 tile.multiblock_casing.drill_head.name=钻头
+tile.multiblock_casing.inconel_625_casing.name=防震镍基合金-625机器外壳
+tile.multiblock_casing.inconel_625_gearbox_casing.name=镍基合金-625球磨齿轮箱外壳
+tile.multiblock_casing.hastelloy_n_casing.name=哈斯特洛伊合金-N防水机器外壳
+tile.multiblock_casing.hastelloy_n_gearbox_casing.name=哈斯特洛伊合金-N齿轮箱外壳
+tile.multiblock_casing.red_steel_casing.name=高气密红钢机器外壳
+
+tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
+tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
+
+tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 
 tile.crucible.bronze.name=青铜坩埚
 tile.crucible.invar.name=殷钢坩埚
@@ -27,6 +36,117 @@ metaitem.board.optical.tooltip=绝对理想的光电器件材料
 metaitem.board.spintronic.name=碳纳米管磁性存储电路基板
 metaitem.board.spintronic.tooltip=第三代自旋电子技术
 
+metaitem.board.magneto_resonatic.name=磁感应电路基板
+metaitem.board.magneto_resonatic.tooltip=预处理磁共振电路板
+
+#  Circuits
+metaitem.circuit.gooware_processor.name=生物活性处理器
+metaitem.circuit.gooware_processor.tooltip=粘稠的有机浆液附着于表面/n§2ZPM级电路
+metaitem.circuit.gooware_assembly.name=生物活性处理器集群
+metaitem.circuit.gooware_assembly.tooltip=似乎能听到窃窃私语/n§2UV级电路
+metaitem.circuit.gooware_computer.name=生物活性超级计算机
+metaitem.circuit.gooware_computer.tooltip=金属之间布满了黏菌/n§2UHV级电路
+metaitem.circuit.gooware_mainframe.name=生物活性电脑主机群
+metaitem.circuit.gooware_mainframe.tooltip=菌群意识网络/n§2UEV级电路
+
+metaitem.circuit.optical_processor.name=光学存算一体处理器
+metaitem.circuit.optical_processor.tooltip=超高效光电子载运/n§6UV级电路
+metaitem.circuit.optical_assembly.name=光学存算一体处理器集群
+metaitem.circuit.optical_assembly.tooltip=光子涌流/n§6UHV级电路
+metaitem.circuit.optical_computer.name=光学存算一体超级计算机
+metaitem.circuit.optical_computer.tooltip=超大规模计算数据支持/n§6UEV级电路
+metaitem.circuit.optical_mainframe.name=光学存算一体电脑主机群
+metaitem.circuit.optical_mainframe.tooltip=计算速度无限逼近于光速/n§6UIV级电路
+
+metaitem.circuit.spintronic_processor.name=自旋电子存算一体处理器
+metaitem.circuit.spintronic_processor.tooltip=超级磁性半导体电路/n§5UHV级电路
+metaitem.circuit.spintronic_assembly.name=自旋电子存算一体处理器集群
+metaitem.circuit.spintronic_assembly.tooltip=量子随机游走/n§5UEV级电路
+metaitem.circuit.spintronic_computer.name=自旋电子存算一体超级计算机
+metaitem.circuit.spintronic_computer.tooltip=以自旋控制一切/n§5UIV级电路
+metaitem.circuit.spintronic_mainframe.name=自旋电子存算一体电脑主机群
+metaitem.circuit.spintronic_mainframe.tooltip=来自未来的电路/n§5UXV级电路
+
+metaitem.circuit.cosmic_processor.name=寰宇行星级处理器复合体
+metaitem.circuit.cosmic_processor.tooltip=手握星辰/n§8UEV级电路
+metaitem.circuit.cosmic_assembly.name=寰宇行星级处理器复合体集群
+metaitem.circuit.cosmic_assembly.tooltip=于握揽微微转动/n§8UIV级电路
+metaitem.circuit.cosmic_computer.name=寰宇行星级超级计算机复合体
+metaitem.circuit.cosmic_computer.tooltip=密度趋近于奇点的小东西/n§8UXV级电路
+metaitem.circuit.cosmic_mainframe.name=寰宇行星级电脑主机群复合体
+metaitem.circuit.cosmic_mainframe.tooltip=模拟一切，分析一切，理解一切/n§8OpV级电路
+
+metaitem.circuit.supracausal_processor.name=超因果星系级处理器复合体
+metaitem.circuit.supracausal_processor.tooltip=宇宙的法则涌现于此/n§fUIV级电路
+metaitem.circuit.supracausal_assembly.name=超因果星系级处理器复合体集群
+metaitem.circuit.supracausal_assembly.tooltip=跨过真理之门前的宏伟障壁/n§fUXV级电路
+metaitem.circuit.supracausal_computer.name=超因果星系级超级计算机复合体
+metaitem.circuit.supracausal_computer.tooltip=超越时间之影/n§fOpV级电路
+metaitem.circuit.supracausal_mainframe.name=超因果星系级电脑主机群复合体
+metaitem.circuit.supracausal_mainframe.tooltip=万物归一者，原初的神迹/n§fMAX级电路
+
+metaitem.circuit.suprachronal.ulv.name=超时空电路（§8ULV§r）
+metaitem.circuit.suprachronal.ulv.tooltip=§rULV级电路
+metaitem.circuit.suprachronal.lv.name=超时空电路（§7LV§r）
+metaitem.circuit.suprachronal.lv.tooltip=§rLV级电路
+metaitem.circuit.suprachronal.mv.name=超时空电路（§bMV§r）
+metaitem.circuit.suprachronal.mv.tooltip=§rMV级电路
+metaitem.circuit.suprachronal.hv.name=超时空电路（§6HV§r）
+metaitem.circuit.suprachronal.hv.tooltip=§rHV级电路
+metaitem.circuit.suprachronal.ev.name=超时空电路（§5EV§r）
+metaitem.circuit.suprachronal.ev.tooltip=§rEV级电路
+metaitem.circuit.suprachronal.iv.name=超时空电路（§1IV§r）
+metaitem.circuit.suprachronal.iv.tooltip=§rIV级电路
+metaitem.circuit.suprachronal.luv.name=超时空电路（§dLuV§r）
+metaitem.circuit.suprachronal.luv.tooltip=§rLuV级电路
+metaitem.circuit.suprachronal.zpm.name=超时空电路（§cZPM§r）
+metaitem.circuit.suprachronal.zpm.tooltip=§rZPM级电路
+metaitem.circuit.suprachronal.uv.name=超时空电路（§3UV§r）
+metaitem.circuit.suprachronal.uv.tooltip=§rUV级电路
+metaitem.circuit.suprachronal.uhv.name=超时空电路（§4UHV§r）
+metaitem.circuit.suprachronal.uhv.tooltip=§rUHV级电路
+metaitem.circuit.suprachronal.uev.name=超时空电路（§aUEV§r）
+metaitem.circuit.suprachronal.uev.tooltip=§rUEV级电路
+metaitem.circuit.suprachronal.uiv.name=超时空电路（§2UIV§r）
+metaitem.circuit.suprachronal.uiv.tooltip=§rUIV级电路
+metaitem.circuit.suprachronal.uxv.name=超时空电路（§eUXV§r）
+metaitem.circuit.suprachronal.uxv.tooltip=§rUXV级电路
+metaitem.circuit.suprachronal.opv.name=超时空电路（§9OpV§r）
+metaitem.circuit.suprachronal.opv.tooltip=§rOpV级电路
+metaitem.circuit.suprachronal.max.name=超时空电路（§c§lMAX§r）
+metaitem.circuit.suprachronal.max.tooltip=§rMAX级电路
+
+metaitem.circuit.magneto_resonatic.ulv.name=磁共振电路（§8ULV§r）
+metaitem.circuit.magneto_resonatic.ulv.tooltip=§dULV级电路
+metaitem.circuit.magneto_resonatic.lv.name=磁共振电路（§7LV§r）
+metaitem.circuit.magneto_resonatic.lv.tooltip=§dLV级电路
+metaitem.circuit.magneto_resonatic.mv.name=磁共振电路（§bMV§r）
+metaitem.circuit.magneto_resonatic.mv.tooltip=§dMV级电路
+metaitem.circuit.magneto_resonatic.hv.name=磁共振电路（§6HV§r）
+metaitem.circuit.magneto_resonatic.hv.tooltip=§dHV级电路
+metaitem.circuit.magneto_resonatic.ev.name=磁共振电路（§5EV§r）
+metaitem.circuit.magneto_resonatic.ev.tooltip=§dEV级电路
+metaitem.circuit.magneto_resonatic.iv.name=磁共振电路（§1IV§r）
+metaitem.circuit.magneto_resonatic.iv.tooltip=§dIV级电路
+metaitem.circuit.magneto_resonatic.luv.name=磁共振电路（§dLuV§r）
+metaitem.circuit.magneto_resonatic.luv.tooltip=§dLuV级电路
+metaitem.circuit.magneto_resonatic.zpm.name=磁共振电路（§cZPM§r）
+metaitem.circuit.magneto_resonatic.zpm.tooltip=§dZPM级电路
+metaitem.circuit.magneto_resonatic.uv.name=磁共振电路（§3UV§r）
+metaitem.circuit.magneto_resonatic.uv.tooltip=§dUV级电路
+metaitem.circuit.magneto_resonatic.uhv.name=磁共振电路（§4UHV§r）
+metaitem.circuit.magneto_resonatic.uhv.tooltip=§dUHV级电路
+metaitem.circuit.magneto_resonatic.uev.name=磁共振电路（§aUEV§r）
+metaitem.circuit.magneto_resonatic.uev.tooltip=§dUEV级电路
+metaitem.circuit.magneto_resonatic.uiv.name=磁共振电路（§2UIV§r）
+metaitem.circuit.magneto_resonatic.uiv.tooltip=§dUIV级电路
+metaitem.circuit.magneto_resonatic.uxv.name=磁共振电路（§eUXV§r）
+metaitem.circuit.magneto_resonatic.uxv.tooltip=§dUXV级电路
+metaitem.circuit.magneto_resonatic.opv.name=磁共振电路（§9OpV§r）
+metaitem.circuit.magneto_resonatic.opv.tooltip=§dOpV级电路
+metaitem.circuit.magneto_resonatic.max.name=磁共振电路（§c§lMAX§r）
+metaitem.circuit.magneto_resonatic.max.tooltip=§dMAX级电路
+
 #  Circuit Boards
 metaitem.circuit_board.gooware.name=终极电路板
 metaitem.circuit_board.gooware.tooltip=电路板上焕发生机
@@ -36,6 +156,9 @@ metaitem.circuit_board.optical.tooltip=半导体工业的技术之星
 
 metaitem.circuit_board.spintronic.name=无尽电路板
 metaitem.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
+
+metaitem.circuit_board.magneto_resonatic.name=压印磁共振电路板
+metaitem.circuit_board.magneto_resonatic.tooltip=共振紫晶电路板
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
@@ -141,6 +264,17 @@ gtlitecore.machine.burner_reactor.name=燃烧反应室
 
 gtlitecore.machine.cryogenic_reactor.name=低温反应室
 
+gtlitecore.machine.isa_mill.name=艾萨研磨机
+gtlitecore.machine.isa_mill.tooltip=工业级卧式湿法碾磨机
+gtlitecore.machine.grind_ball_hatch.name=研磨球仓
+gtlitecore.machine.isa_mill.grindball_hatch.only=仅能放入研磨球
+gtlitecore.machine.isa_mill.grind_ball.soapstone=研磨球材质：皂石
+gtlitecore.machine.isa_mill.grind_ball.aluminium=研磨球材质：铝
+
+gtlitecore.machine.flotation_cell_regulator.name=工业浮选机
+gtlitecore.machine.flotation_cell_regulator.tooltip=工业级浮游选矿池
+
+gtlitecore.machine.vacuum_drying_furnace.name=真空干燥炉
 
 #  Materials
 
@@ -195,6 +329,12 @@ gregtech.material.adamantium_unstable=不稳定精金
 gregtech.material.adamantium_enriched=富集精金
 gregtech.material.vibranium_unstable=不稳定振金
 gregtech.material.deep_iron=深铁
+gregtech.material.sodium_ethylate=乙醇钠
+gregtech.material.potassium_ethylate=乙醇钾
+gregtech.material.calcium_carbonate=碳酸钙
+gregtech.material.carbon_disulfide=二硫化碳
+gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
+gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -252,6 +392,21 @@ gregtech.material.energetic_naquadria=充能硅岩
 gregtech.material.heavy_hyper_fuel=重超能燃料
 gregtech.material.medium_hyper_fuel=超能燃料
 gregtech.material.light_hyper_fuel=轻超能燃料
+gregtech.material.almandine_front=铁铝榴石矿石泡沫
+gregtech.material.chalcopyrite_front=黄铜矿矿石泡沫
+gregtech.material.monazite_front=独居石矿石泡沫
+gregtech.material.grossular_front=钙铝榴石矿石泡沫
+gregtech.material.nickel_front=镍矿石泡沫
+gregtech.material.platinum_front=铂矿石泡沫
+gregtech.material.pyrope_front=镁铝榴石矿石泡沫
+gregtech.material.redstone_front=红石矿石泡沫
+gregtech.material.spessartine_front=锰铝榴石矿石泡沫
+gregtech.material.sphalerite_front=闪锌矿矿石泡沫
+gregtech.material.pentlandite_front=镍黄铁矿矿石泡沫
+
+#  Others
+metaitem.grindball.soapstone.name=皂石研磨球
+metaitem.grindball.aluminium.name=铝研磨球
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
@@ -272,7 +427,12 @@ recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
-recipemap.naquadah_reactor_recipes.name=硅岩聚变
+recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
+recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
+recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
+recipemap.isa_mill_recipes.name=湿法碾磨
+recipemap.flotation_recipes.name=浮游选矿
+recipemap.vacuum_drying_recipes.name=真空干燥
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
