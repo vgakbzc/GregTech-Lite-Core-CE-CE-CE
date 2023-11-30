@@ -254,6 +254,116 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(SHINY)
                 .components(Yttrium, 2, Oxygen, 3)
                 .build();
+
+        //  11031 Ammonium Nitrate
+        AmmoniumNitrate = new Material.Builder(getId(), gregtechId("ammonium_nitrate"))
+                .dust()
+                .liquid()
+                .color(0xA59ED7)
+                .iconSet(METALLIC)
+                .components(Ammonia, 1, NitricAcid, 1)
+                .build()
+                .setFormula("NH4NO3", true);
+
+        //  11032 Heavy Taranium Fuel
+        HeavyTaraniumFuel = new Material.Builder(getId(), gregtechId("heavy_taranium_fuel"))
+                .liquid()
+                .color(0x141414)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        //  11033 Medium Taranium Fuel
+        MediumTaraniumFuel = new Material.Builder(getId(), gregtechId("medium_taranium_fuel"))
+                .liquid()
+                .color(0x181818)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        //  11034 Light Taranium Fuel
+        LightTaraniumFuel = new Material.Builder(getId(), gregtechId("light_taranium_fuel"))
+                .liquid()
+                .color(0x1C1C1C)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        //  11035 Heavy Enriched Taranium Fuel
+        HeavyEnrichedTaraniumFuel = new Material.Builder(getId(), gregtechId("heavy_enriched_taranium_fuel"))
+                .liquid()
+                .color(0x0F1414)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        //  11036 Medium Enriched Taranium Fuel
+        MediumEnrichedTaraniumFuel = new Material.Builder(getId(), gregtechId("medium_enriched_taranium_fuel"))
+                .liquid()
+                .color(0x0F1818)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        //  11037 Light Enriched Taranium Fuel
+        LightEnrichedTaraniumFuel = new Material.Builder(getId(), gregtechId("light_enriched_taranium_fuel"))
+                .liquid()
+                .color(0x0F1C1C)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Taranium, 1)
+                .build();
+
+        //  11038 Orichalcum Energized
+        OrichalcumEnergized = new Material.Builder(getId(), gregtechId("orichalcum_energized"))
+                .dust()
+                .color(0xF4FC0C)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Orichalcum, 1)
+                .build();
+
+        //  11039 Adamantite
+        Adamantite = new Material.Builder(getId(), gregtechId("adamantite"))
+                .dust()
+                .color(0xC83C3C)
+                .iconSet(ROUGH)
+                .components(Adamantium, 3, Oxygen, 4)
+                .build();
+
+        //  11040 Adamantium Unstable
+        AdamantiumUnstable = new Material.Builder(getId(), gregtechId("adamantium_unstable"))
+                .liquid()
+                .color(0xFF763C)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Adamantium, 1)
+                .build();
+
+        //  11041 Adamantium Enriched
+        AdamantiumEnriched = new Material.Builder(getId(), gregtechId("adamantium_enriched"))
+                .dust()
+                .color(0x64B4FF)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Vibranium, 1, RareEarth, 1)
+                .build();
+
+        //  11042 Vibranium Unstable
+        VibraniumUnstable = new Material.Builder(getId(), gregtechId("vibranium_unstable"))
+                .liquid()
+                .color(0xFF7832)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Vibranium, 1)
+                .build();
+
+        //  11043 Deep Iron
+        DeepIron = new Material.Builder(getId(), gregtechId("deep_iron"))
+                .dust()
+                .color(0x968C8C)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Iron, 2, Trinium, 1, Indium, 1)
+                .build();
+
     }
 
     private static int getId() {

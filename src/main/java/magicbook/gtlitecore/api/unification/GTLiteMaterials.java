@@ -45,6 +45,19 @@ public class GTLiteMaterials {
     public static Material LutetiumOxide;
     public static Material ScandiumOxide;
     public static Material YttriumOxide;
+    public static Material AmmoniumNitrate;
+    public static Material HeavyTaraniumFuel;
+    public static Material MediumTaraniumFuel;
+    public static Material LightTaraniumFuel;
+    public static Material HeavyEnrichedTaraniumFuel;
+    public static Material MediumEnrichedTaraniumFuel;
+    public static Material LightEnrichedTaraniumFuel;
+    public static Material OrichalcumEnergized;
+    public static Material Adamantite;
+    public static Material AdamantiumUnstable;
+    public static Material AdamantiumEnriched;
+    public static Material VibraniumUnstable;
+    public static Material DeepIron;
 
     //  Second Degree Materials (Range: 12001-13000)
 
@@ -69,6 +82,41 @@ public class GTLiteMaterials {
     public static Material ScEuGdSmOxidesSolution;
     public static Material YTbDyHoOxidesSolution;
     public static Material ErTmYbLuOxidesSolution;
+    public static Material Bedrock;
+    public static Material BedrockSmoke;
+    public static Material BedrockSootSolution;
+    public static Material CleanBedrockSolution;
+    public static Material HeavyBedrockSmoke;
+    public static Material MediumBedrockSmoke;
+    public static Material LightBedrockSmoke;
+    public static Material UltralightBedrockSmoke;
+    public static Material HeavyTaraniumGas;
+    public static Material MediumTaraniumGas;
+    public static Material LightTaraniumGas;
+    public static Material BedrockGas;
+    public static Material CrackedHeavyTaranium;
+    public static Material CrackedMediumTaranium;
+    public static Material CrackedLightTaranium;
+    public static Material EnrichedBedrockSootSolution;
+    public static Material CleanEnrichedBedrockSolution;
+    public static Material HeavyEnrichedBedrockSmoke;
+    public static Material MediumEnrichedBedrockSmoke;
+    public static Material LightEnrichedBedrockSmoke;
+    public static Material HeavyEnrichedTaraniumGas;
+    public static Material MediumEnrichedTaraniumGas;
+    public static Material LightEnrichedTaraniumGas;
+    public static Material CrackedHeavyEnrichedTaranium;
+    public static Material CrackedMediumEnrichedTaranium;
+    public static Material CrackedLightEnrichedTaranium;
+    public static Material CrudeNaquadahFuel;
+    public static Material HeavyNaquadahFuel;
+    public static Material MediumNaquadahFuel;
+    public static Material LightNaquadahFuel;
+    public static Material NaquadahGas;
+    public static Material EnergeticNaquadria;
+    public static Material HeavyHyperFuel;
+    public static Material MediumHyperFuel;
+    public static Material LightHyperFuel;
 
     public static void init() {
         GTLiteElementMaterials.register();

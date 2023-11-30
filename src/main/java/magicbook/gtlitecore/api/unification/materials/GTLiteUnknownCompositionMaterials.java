@@ -3,9 +3,8 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.Material;
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.Materials.Water;
-import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -68,6 +67,220 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0xFFB3FF)
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .components(ErbiumOxide, 1, ThuliumOxide, 1, YtterbiumOxide, 1, LutetiumOxide, 1)
+                .build();
+
+        //  18007 Bedrock
+        Bedrock = new Material.Builder(getId(), gregtechId("bedrock"))
+                .dust()
+                .liquid()
+                .color(0x404040)
+                .iconSet(ROUGH)
+                .build();
+
+        //  18008 Bedrock Smoke
+        BedrockSmoke = new Material.Builder(getId(), gregtechId("bedrock_smoke"))
+                .gas()
+                .color(0x525252)
+                .build();
+
+        //  18009 Bedrock Soot Solution
+        BedrockSootSolution = new Material.Builder(getId(), gregtechId("bedrock_soot_solution"))
+                .liquid()
+                .color(0x1E2430)
+                .build();
+
+        //  18010 Clean Bedrock Solution
+        CleanBedrockSolution = new Material.Builder(getId(), gregtechId("clean_bedrock_solution"))
+                .liquid()
+                .color(0xA89F9E)
+                .build();
+
+        //  18011 Heavy Bedrock Smoke
+        HeavyBedrockSmoke = new Material.Builder(getId(), gregtechId("heavy_bedrock_smoke"))
+                .gas()
+                .color(0x242222)
+                .build();
+
+        //  18012 Medium Bedrock Smoke
+        MediumBedrockSmoke = new Material.Builder(getId(), gregtechId("medium_bedrock_smoke"))
+                .gas()
+                .color(0x2E2C2C)
+                .build();
+
+        //  18013 Light Bedrock Smoke
+        LightBedrockSmoke = new Material.Builder(getId(), gregtechId("light_bedrock_smoke"))
+                .gas()
+                .color(0x363333)
+                .build();
+
+        //  18014 Ultralight Bedrock Smoke
+        UltralightBedrockSmoke = new Material.Builder(getId(), gregtechId("ultralight_bedrock_smoke"))
+                .gas()
+                .color(0x403D3D)
+                .build();
+
+        //  18015 Heavy Taranium Gas
+        HeavyTaraniumGas = new Material.Builder(getId(), gregtechId("heavy_taranium_gas"))
+                .gas()
+                .color(0x262626)
+                .build();
+
+        //  18016 Medium Taranium Gas
+        MediumTaraniumGas = new Material.Builder(getId(), gregtechId("medium_taranium_gas"))
+                .gas()
+                .color(0x313131)
+                .build();
+
+        //  18017 Light Taranium Gas
+        LightTaraniumGas = new Material.Builder(getId(), gregtechId("light_taranium_gas"))
+                .gas()
+                .color(0x404040)
+                .build();
+
+        //  18018 Bedrock Gas
+        BedrockGas = new Material.Builder(getId(), gregtechId("bedrock_gas"))
+                .gas()
+                .color(0x575757)
+                .build();
+
+        //  18019 Cracked Heavy Taranium
+        CrackedHeavyTaranium = new Material.Builder(getId(), gregtechId("cracked_heavy_taranium"))
+                .liquid()
+                .color(0x1F2B2E)
+                .build();
+
+        //  18020 Cracked Medium Taranium
+        CrackedMediumTaranium = new Material.Builder(getId(), gregtechId("cracked_medium_taranium"))
+                .liquid()
+                .color(0x29393D)
+                .build();
+
+        //  18021 Cracked Light Taranium
+        CrackedLightTaranium = new Material.Builder(getId(), gregtechId("cracked_light_taranium"))
+                .liquid()
+                .color(0x374C52)
+                .build();
+
+        //  18022 Enriched Bedrock Soot Solution
+        EnrichedBedrockSootSolution = new Material.Builder(getId(), gregtechId("enriched_bedrock_soot_solution"))
+                .liquid()
+                .color(0x280C26)
+                .build();
+
+        //  18023 Clean Enriched Bedrock Solution
+        CleanEnrichedBedrockSolution = new Material.Builder(getId(), gregtechId("clean_enriched_bedrock_solution"))
+                .liquid()
+                .color(0x828C8C)
+                .build();
+
+        //  18024 Heavy Enriched Bedrock Smoke
+        HeavyEnrichedBedrockSmoke = new Material.Builder(getId(), gregtechId("heavy_enriched_bedrock_smoke"))
+                .gas()
+                .color(0x1A2222)
+                .build();
+
+        //  18025 Medium Enriched Bedrock Smoke
+        MediumEnrichedBedrockSmoke = new Material.Builder(getId(), gregtechId("medium_enriched_bedrock_smoke"))
+                .gas()
+                .color(0x1E2C2C)
+                .build();
+
+        //  18026 Light Enriched Bedrock Smoke
+        LightEnrichedBedrockSmoke = new Material.Builder(getId(), gregtechId("light_enriched_bedrock_smoke"))
+                .gas()
+                .color(0x163333)
+                .build();
+
+        //  18027 Heavy Enriched Taranium Gas
+        HeavyEnrichedTaraniumGas = new Material.Builder(getId(), gregtechId("heavy_enriched_taranium_gas"))
+                .gas()
+                .color(0x1F2626)
+                .build();
+
+        //  18028 Medium Enriched Taranium Gas
+        MediumEnrichedTaraniumGas = new Material.Builder(getId(), gregtechId("medium_enriched_taranium_gas"))
+                .gas()
+                .color(0x1F3131)
+                .build();
+
+        //  18029 Light Enriched Taranium Gas
+        LightEnrichedTaraniumGas = new Material.Builder(getId(), gregtechId("light_enriched_taranium_gas"))
+                .gas()
+                .color(0x1F4040)
+                .build();
+
+        //  18030 Cracked Heavy Enriched Taranium
+        CrackedHeavyEnrichedTaranium = new Material.Builder(getId(), gregtechId("cracked_heavy_enriched_taranium"))
+                .liquid()
+                .color(0x2E1F2E)
+                .build();
+
+        //  18031 Cracked Medium Enriched Taranium
+        CrackedMediumEnrichedTaranium = new Material.Builder(getId(), gregtechId("cracked_medium_enriched_taranium"))
+                .liquid()
+                .color(0x29393D)
+                .build();
+
+        //  18032 Cracked Light Enriched Taranium
+        CrackedLightEnrichedTaranium = new Material.Builder(getId(), gregtechId("cracked_light_enriched_taranium"))
+                .liquid()
+                .color(0x374C52)
+                .build();
+
+        //  18033 Crude Naquadah Fuel
+        CrudeNaquadahFuel = new Material.Builder(getId(), gregtechId("crude_naquadah_fuel"))
+                .liquid()
+                .color(0x077F4E)
+                .iconSet(DULL)
+                .build();
+
+        //  18034 Heavy Naquadah Fuel
+        HeavyNaquadahFuel = new Material.Builder(getId(), gregtechId("heavy_naquadah_fuel"))
+                .liquid()
+                .color(0x088C56)
+                .build();
+
+        //  18035 Medium Naquadah Fuel
+        MediumNaquadahFuel = new Material.Builder(getId(), gregtechId("medium_naquadah_fuel"))
+                .liquid()
+                .color(0x09A566)
+                .build();
+
+        //  18036 Light Naquadah Fuel
+        LightNaquadahFuel = new Material.Builder(getId(), gregtechId("light_naquadah_fuel"))
+                .liquid()
+                .color(0x0BBF75)
+                .build();
+
+        //  18037 Naquadah Gas
+        NaquadahGas = new Material.Builder(getId(), gregtechId("naquadah_gas"))
+                .gas()
+                .color(0x0CD985)
+                .build();
+
+        //  18038 Energetic Naquadria
+        EnergeticNaquadria = new Material.Builder(getId(), gregtechId("energetic_naquadria"))
+                .liquid()
+                .color(0x202020)
+                .build()
+                .setFormula("Nq?", false);
+
+        //  18039 Heavy Hyper Fuel
+        HeavyHyperFuel = new Material.Builder(getId(), gregtechId("heavy_hyper_fuel"))
+                .liquid()
+                .color(0x1E5064)
+                .build();
+
+        //  18040 Medium Hyper Fuel
+        MediumHyperFuel = new Material.Builder(getId(), gregtechId("medium_hyper_fuel"))
+                .liquid()
+                .color(0xDC0A0A)
+                .build();
+
+        //  18041 Light Hyper Fuel
+        LightHyperFuel = new Material.Builder(getId(), gregtechId("light_hyper_fuel"))
+                .liquid()
+                .color(0x8C148C)
                 .build();
     }
 
