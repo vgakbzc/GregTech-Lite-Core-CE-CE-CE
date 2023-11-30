@@ -62,6 +62,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<BlastRecipeBuilder> VACUUM_DRYING_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -168,5 +170,15 @@ public class GTLiteRecipeMaps {
         FLOTATION_RECIPES = new RecipeMap<>("flotation_recipes", 6, 0, 1, 1, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.BATH);
+        //  Vacuum Drying Furnace RecipeMap
+        VACUUM_DRYING_RECIPES = new RecipeMap<>("vacuum_drying_recipes", 1, 9, 2, 3, new BlastRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)
+                .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)
+                .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSound(GTSoundEvents.FURNACE);
     }
 }

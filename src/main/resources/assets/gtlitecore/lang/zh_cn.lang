@@ -6,6 +6,7 @@ tile.multiblock_casing.inconel_625_casing.name=防震镍基合金-625机器外�
 tile.multiblock_casing.inconel_625_gearbox_casing.name=镍基合金-625球磨齿轮箱外壳
 tile.multiblock_casing.hastelloy_n_casing.name=哈斯特洛伊合金-N防水机器外壳
 tile.multiblock_casing.hastelloy_n_gearbox_casing.name=哈斯特洛伊合金-N齿轮箱外壳
+tile.multiblock_casing.red_steel_casing.name=高气密红钢机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -273,6 +274,8 @@ gtlitecore.machine.isa_mill.grind_ball.aluminium=研磨球材质：铝
 gtlitecore.machine.flotation_cell_regulator.name=工业浮选机
 gtlitecore.machine.flotation_cell_regulator.tooltip=工业级浮游选矿池
 
+gtlitecore.machine.vacuum_drying_furnace.name=真空干燥炉
+
 #  Materials
 
 ##  Element Materials
@@ -412,6 +415,8 @@ recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
 recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
 recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
 recipemap.isa_mill_recipes.name=湿法碾磨
+recipemap.flotation_recipes.name=浮游选矿
+recipemap.vacuum_drying_recipes.name=真空干燥
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

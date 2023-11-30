@@ -48,6 +48,7 @@ public class GTLiteMetaTileEntities {
 
     public static MetaTileEntityIsaMill ISA_MILL;
     public static MetaTileEntityFlotationCellRegulator FLOTATION_CELL_REGULATOR;
+    public static MetaTileEntityVacuumDryingFurnace VACUUM_DRYING_FURNACE;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -113,5 +114,6 @@ public class GTLiteMetaTileEntities {
         //  HYPER REACTOR Mk3 16
         ISA_MILL = registerMultiMetaTileEntity(17, new MetaTileEntityIsaMill(gtliteId("isa_mill")));
         FLOTATION_CELL_REGULATOR = registerMultiMetaTileEntity(18, new MetaTileEntityFlotationCellRegulator(gtliteId("flotation_cell_regulator")));
+        VACUUM_DRYING_FURNACE = registerMultiMetaTileEntity(19, new MetaTileEntityVacuumDryingFurnace(gtliteId("vacuum_drying_furnace")));
     }
 }

@@ -49,6 +49,14 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/hastelloy_n_gearbox_casing"
         }
+      },
+      "red_steel_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/red_steel_casing_top",
+          "side": "gtlitecore:blocks/casings/red_steel_casing_side",
+          "bottom": "#side"
+        }
       }
     }
   }
