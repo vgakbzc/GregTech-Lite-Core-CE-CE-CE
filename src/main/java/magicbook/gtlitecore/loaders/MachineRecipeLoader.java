@@ -41,6 +41,14 @@ public class MachineRecipeLoader {
                 'G', CraftingComponent.GLASS,
                 'H', CraftingComponent.HULL);
 
+        //  Naquadah Reactor
+        MetaTileEntityLoader.registerMachineRecipe(true, NAQUADAH_REACTOR,
+                "RCR", "FHF", "WCW",
+                'R', CraftingComponent.STICK_RADIOACTIVE,
+                'C', CraftingComponent.CIRCUIT,
+                'F', CraftingComponent.FIELD_GENERATOR,
+                'W', CraftingComponent.CABLE,
+                'H', CraftingComponent.HULL);
     }
 
     private static void MultiblockControllerRecipes() {

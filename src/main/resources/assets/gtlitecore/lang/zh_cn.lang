@@ -99,6 +99,15 @@ gtlitecore.machine.vacuum_chamber.uxv.tooltip=完美真空
 gtlitecore.machine.vacuum_chamber.opv.name=传奇真空室
 gtlitecore.machine.vacuum_chamber.opv.tooltip=完美真空
 
+gtlitecore.machine.naquadah_reactor.iv.name=精英硅岩反应堆
+gtlitecore.machine.naquadah_reactor.iv.tooltip=取之有度，用之有节
+gtlitecore.machine.naquadah_reactor.luv.name=精英硅岩反应堆 II
+gtlitecore.machine.naquadah_reactor.luv.tooltip=取之有度，用之有节
+gtlitecore.machine.naquadah_reactor.zpm.name=精英硅岩反应堆 III
+gtlitecore.machine.naquadah_reactor.zpm.tooltip=取之有度，用之有节
+gtlitecore.machine.naquadah_reactor.uv.name=终极硅岩反应堆
+gtlitecore.machine.naquadah_reactor.uv.tooltip=取之有度，用之有节
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -173,6 +182,19 @@ gregtech.material.ytterbium_oxide=氧化镱
 gregtech.material.lutetium_oxide=氧化镥
 gregtech.material.scandium_oxide=氧化钪
 gregtech.material.yttrium_oxide=氧化钇
+gregtech.material.ammonium_nitrate=硝酸铵
+gregtech.material.heavy_taranium_fuel=重塔兰金属燃料
+gregtech.material.medium_taranium_fuel=塔兰金属燃料
+gregtech.material.light_taranium_fuel=轻塔兰金属燃料
+gregtech.material.heavy_enriched_taranium_fuel=重富集塔兰金属燃料
+gregtech.material.medium_enriched_taranium_fuel=富集塔兰金属燃料
+gregtech.material.light_enriched_taranium_fuel=轻富集塔兰金属燃料
+gregtech.material.orichalcum_energized=充能山铜
+gregtech.material.adamantite=精金石
+gregtech.material.adamantium_unstable=不稳定精金
+gregtech.material.adamantium_enriched=富集精金
+gregtech.material.vibranium_unstable=不稳定振金
+gregtech.material.deep_iron=深铁
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -195,6 +217,41 @@ gregtech.material.la_pr_nd_ce_oxides_solution=镧-镨-钕-铈氧化物溶液
 gregtech.material.sc_eu_gd_sm_oxides_solution=钪-铕-钆-钐氧化物溶液
 gregtech.material.y_tb_dy_ho_oxides_solution=钇-铽-镝-钬氧化物溶液
 gregtech.material.er_tm_yb_lu_oxides_solution=铒-铥-镱-镥氧化物溶液
+gregtech.material.bedrock=基岩
+gregtech.material.bedrock_smoke=粗基岩烟
+gregtech.material.bedrock_soot_solution=基岩烟灰溶液
+gregtech.material.clean_bedrock_solution=洁净基岩烟灰溶液
+gregtech.material.heavy_bedrock_smoke=重基岩烟
+gregtech.material.medium_bedrock_smoke=基岩烟
+gregtech.material.light_bedrock_smoke=轻基岩烟
+gregtech.material.ultralight_bedrock_smoke=超轻基岩烟
+gregtech.material.heavy_taranium_gas=重塔兰金属气
+gregtech.material.medium_taranium_gas=塔兰金属气
+gregtech.material.light_taranium_gas=轻塔兰金属气
+gregtech.material.bedrock_gas=基岩气
+gregtech.material.cracked_heavy_taranium=氟裂化重塔兰金属气
+gregtech.material.cracked_medium_taranium=氟裂化塔兰金属气
+gregtech.material.cracked_light_taranium=氟裂化轻塔兰金属气
+gregtech.material.enriched_bedrock_soot_solution=富集基岩烟灰溶液
+gregtech.material.clean_enriched_bedrock_solution=洁净富集基岩烟灰溶液
+gregtech.material.heavy_enriched_bedrock_smoke=重富集基岩烟
+gregtech.material.medium_enriched_bedrock_smoke=富集基岩烟
+gregtech.material.light_enriched_bedrock_smoke=轻富集基岩烟
+gregtech.material.heavy_enriched_taranium_gas=重富集塔兰金属气
+gregtech.material.medium_enriched_taranium_gas=富集塔兰金属气
+gregtech.material.light_enriched_taranium_gas=轻富集塔兰金属气
+gregtech.material.cracked_heavy_enriched_taranium=氡裂化重富集塔兰金属气
+gregtech.material.cracked_medium_enriched_taranium=氡裂化富集塔兰金属气
+gregtech.material.cracked_light_enriched_taranium=氡裂化轻富集塔兰金属气
+gregtech.material.crude_naquadah_fuel=粗制硅岩燃料
+gregtech.material.heavy_naquadah_fuel=重硅岩燃料
+gregtech.material.medium_naquadah_fuel=硅岩燃料
+gregtech.material.light_naquadah_fuel=轻硅岩燃料
+gregtech.material.naquadah_gas=硅岩气
+gregtech.material.energetic_naquadria=充能硅岩
+gregtech.material.heavy_hyper_fuel=重超能燃料
+gregtech.material.medium_hyper_fuel=超能燃料
+gregtech.material.light_hyper_fuel=轻超能燃料
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
@@ -215,6 +272,7 @@ recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
+recipemap.naquadah_reactor_recipes.name=硅岩聚变
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
