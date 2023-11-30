@@ -427,7 +427,6 @@ recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
-recipemap.naquadah_reactor_recipes.name=硅岩聚变
 recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
 recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
 recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
