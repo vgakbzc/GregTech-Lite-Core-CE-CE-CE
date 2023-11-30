@@ -68,7 +68,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .flags(DECOMPOSITION_BY_CENTRIFUGING)
                 .components(ErbiumOxide, 1, ThuliumOxide, 1, YtterbiumOxide, 1, LutetiumOxide, 1)
                 .build();
-
+      
         //  18007 Bedrock
         Bedrock = new Material.Builder(getId(), gregtechId("bedrock"))
                 .dust()

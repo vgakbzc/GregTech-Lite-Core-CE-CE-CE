@@ -363,7 +363,6 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Iron, 2, Trinium, 1, Indium, 1)
                 .build();
-
     }
 
     private static int getId() {
