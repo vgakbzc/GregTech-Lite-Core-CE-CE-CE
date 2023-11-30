@@ -329,6 +329,12 @@ gregtech.material.adamantium_unstable=不稳定精金
 gregtech.material.adamantium_enriched=富集精金
 gregtech.material.vibranium_unstable=不稳定振金
 gregtech.material.deep_iron=深铁
+gregtech.material.sodium_ethylate=乙醇钠
+gregtech.material.potassium_ethylate=乙醇钾
+gregtech.material.calcium_carbonate=碳酸钙
+gregtech.material.carbon_disulfide=二硫化碳
+gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
+gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -386,6 +392,17 @@ gregtech.material.energetic_naquadria=充能硅岩
 gregtech.material.heavy_hyper_fuel=重超能燃料
 gregtech.material.medium_hyper_fuel=超能燃料
 gregtech.material.light_hyper_fuel=轻超能燃料
+gregtech.material.almandine_front=铁铝榴石矿石泡沫
+gregtech.material.chalcopyrite_front=黄铜矿矿石泡沫
+gregtech.material.monazite_front=独居石矿石泡沫
+gregtech.material.grossular_front=钙铝榴石矿石泡沫
+gregtech.material.nickel_front=镍矿石泡沫
+gregtech.material.platinum_front=铂矿石泡沫
+gregtech.material.pyrope_front=镁铝榴石矿石泡沫
+gregtech.material.redstone_front=红石矿石泡沫
+gregtech.material.spessartine_front=锰铝榴石矿石泡沫
+gregtech.material.sphalerite_front=闪锌矿矿石泡沫
+gregtech.material.pentlandite_front=镍黄铁矿矿石泡沫
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

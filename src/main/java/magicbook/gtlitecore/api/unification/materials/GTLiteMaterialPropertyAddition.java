@@ -1,8 +1,6 @@
 package magicbook.gtlitecore.api.unification.materials;
 
-import gregtech.api.unification.material.properties.DustProperty;
-import gregtech.api.unification.material.properties.FluidProperty;
-import gregtech.api.unification.material.properties.PropertyKey;
+import gregtech.api.unification.material.properties.*;
 
 import static gregtech.api.unification.material.Materials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
@@ -26,7 +24,21 @@ public class GTLiteMaterialPropertyAddition {
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
-      
+
+        //  Isa Mill Ore Process
+        Thallium.setProperty(PropertyKey.DUST, new DustProperty());
+        Rhenium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Selenium.setProperty(PropertyKey.DUST, new DustProperty());
+        Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
+        Strontium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Strontium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Germanium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGH));
+        Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Promethium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Hafnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Hafnium.setProperty(PropertyKey.FLUID, new FluidProperty());
+
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
         Chalcopyrite.addFlags(GENERATE_MILLED);
@@ -38,5 +50,6 @@ public class GTLiteMaterialPropertyAddition {
         Redstone.addFlags(GENERATE_MILLED);
         Spessartine.addFlags(GENERATE_MILLED);
         Sphalerite.addFlags(GENERATE_MILLED);
+        Pentlandite.addFlags(GENERATE_MILLED);
     }
 }

@@ -2,6 +2,7 @@ package magicbook.gtlitecore.loaders;
 
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
+import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.PlatinumGroupProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.RareEarthProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.TaraniumProcessing;
@@ -26,5 +27,7 @@ public class RecipeManager {
        PlatinumGroupProcessing.init();
        RareEarthProcessing.init();
        TaraniumProcessing.init();
+
+       IsaMillOreProcessing.init();
     }
 }

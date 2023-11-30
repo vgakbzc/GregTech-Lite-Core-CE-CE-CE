@@ -363,6 +363,53 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Iron, 2, Trinium, 1, Indium, 1)
                 .build();
+
+        //  11044 Sodium Ethylate
+        SodiumEthylate = new Material.Builder(getId(), gregtechId("sodium_ethylate"))
+                .dust()
+                .color(0xD0FC8F)
+                .iconSet(DULL)
+                .components(Carbon, 2, Hydrogen, 5, Oxygen, 1, Sodium, 1)
+                .build();
+
+        //  11045 Potassium Ethylate
+        PotassiumEthylate = new Material.Builder(getId(), gregtechId("potassium_ethylate"))
+                .dust()
+                .color(0xFBC47D)
+                .iconSet(DULL)
+                .components(Carbon, 2, Hydrogen, 5, Oxygen, 1, Potassium, 1)
+                .build();
+
+        //  11046 Calcium Carbonate
+        CalciumCarbonate = new Material.Builder(getId(), gregtechId("calcium_carbonate"))
+                .dust()
+                .color(0xE8E8CB)
+                .iconSet(ROUGH)
+                .components(Calcium, 1, Carbon, 1, Oxygen, 3)
+                .build();
+
+        //  11047 Carbon Disulfide
+        CarbonDisulfide = new Material.Builder(getId(), gregtechId("carbon_disulfide"))
+                .fluid()
+                .color(0x1F80C8)
+                .components(Carbon, 1, Sulfur, 2)
+                .build();
+
+        //  11048 Sodium Ethylxanthate
+        SodiumEthylxanthate = new Material.Builder(getId(), gregtechId("sodium_ethylxanthate"))
+                .dust()
+                .color(0xF3F311)
+                .iconSet(SHINY)
+                .components(Carbon, 3, Hydrogen, 5, Sodium, 1, Oxygen, 1, Sulfur, 2)
+                .build();
+
+        //  11049 Potassium Ethylxanthate
+        PotassiumEthylxanthate = new Material.Builder(getId(), gregtechId("potassium_ethylxanthate"))
+                .dust()
+                .color(0xB9AD83)
+                .iconSet(SHINY)
+                .components(Carbon, 3, Hydrogen, 5, Potassium, 1, Oxygen, 1, Sulfur, 2)
+                .build();
     }
 
     private static int getId() {
