@@ -37,6 +37,18 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/inconel_625_gearbox_casing"
         }
+      },
+      "hastelloy_n_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_n_casing"
+        }
+      },
+      "hastelloy_n_gearbox_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_n_gearbox_casing"
+        }
       }
     }
   }

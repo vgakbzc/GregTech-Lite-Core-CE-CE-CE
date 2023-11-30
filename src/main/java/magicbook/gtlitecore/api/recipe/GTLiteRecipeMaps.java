@@ -60,6 +60,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK3_RECIPES;
     @ZenProperty
     public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -162,5 +164,9 @@ public class GTLiteRecipeMaps {
         ISA_MILL_RECIPES = new RecipeMap<>("isa_mill_recipes", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.MACERATOR);
+        //  Flotation Cell Regulator RecipeMap
+        FLOTATION_RECIPES = new RecipeMap<>("flotation_recipes", 6, 0, 1, 1, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.BATH);
     }
 }

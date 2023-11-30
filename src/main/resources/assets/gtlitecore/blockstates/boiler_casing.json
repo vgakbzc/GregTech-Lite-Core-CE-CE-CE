@@ -7,6 +7,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/inconel_625_pipe"
         }
+      },
+      "hastelloy_n_pipe": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_n_pipe"
+        }
       }
     }
   }

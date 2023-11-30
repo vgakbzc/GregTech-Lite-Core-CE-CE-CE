@@ -45,6 +45,7 @@ public class CommonProxy {
         GTLiteLog.logger.info("Registering Blocks...");
         registry.register(GTLiteMetaBlocks.MULTIBLOCK_CASING);
         registry.register(GTLiteMetaBlocks.BOILER_CASING);
+        registry.register(GTLiteMetaBlocks.UNIQUE_CASING);
         registry.register(GTLiteMetaBlocks.CRUCIBLE);
     }
 
@@ -54,6 +55,7 @@ public class CommonProxy {
         GTLiteLog.logger.info("Registering Items...");
         registry.register(createItemBlock(GTLiteMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.BOILER_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.UNIQUE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
     }
 

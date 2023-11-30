@@ -13,15 +13,15 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasingType> {
-    public BlockBoilerCasing() {
+public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasingType> {
+    public BlockUniqueCasing() {
         super(Material.IRON);
-        this.setTranslationKey("boiler_casing");
+        this.setTranslationKey("unique_casing");
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel("wrench", 1);
-        this.setDefaultState(this.getState(BoilerCasingType.INCONEL625));
+        this.setHarvestLevel("wrench", 2);
+        this.setDefaultState(this.getState(UniqueCasingType.FLOTATION_CELL));
     }
 
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
@@ -31,13 +31,12 @@ public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasi
         return false;
     }
 
-    public enum BoilerCasingType implements IStringSerializable {
-        INCONEL625("inconel_625_pipe"),
-        HASTELLOY_N("hastelloy_n_pipe");
+    public enum UniqueCasingType implements IStringSerializable {
+        FLOTATION_CELL("flotation_cell");
 
         private final String name;
 
-        BoilerCasingType(String name) {
+        UniqueCasingType(String name) {
             this.name = name;
         }
 
