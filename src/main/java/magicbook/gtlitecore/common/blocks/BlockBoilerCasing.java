@@ -13,15 +13,15 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.MultiblockCasingType> {
-    public BlockMultiblockCasing() {
+public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasingType> {
+    public BlockBoilerCasing() {
         super(Material.IRON);
-        this.setTranslationKey("multiblock_casing");
+        this.setTranslationKey("boiler_casing");
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel("wrench", 2);
-        this.setDefaultState(this.getState(MultiblockCasingType.SUBSTRATE_CASING));
+        this.setHarvestLevel("wrench", 1);
+        this.setDefaultState(this.getState(BoilerCasingType.INCONEL625));
     }
 
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
@@ -31,16 +31,12 @@ public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.Mu
         return false;
     }
 
-    public enum MultiblockCasingType implements IStringSerializable {
-        SUBSTRATE_CASING("substrate_casing"),
-        ADVANCED_SUBSTRATE_CASING("advanced_substrate_casing"),
-        DRILL_HEAD("drill_head"),
-        INCONEL625_CASING("inconel_625_casing"),
-        INCONEL625_GEARBOX_CASING("inconel_625_gearbox_casing");
+    public enum BoilerCasingType implements IStringSerializable {
+        INCONEL625("inconel_625_pipe");
 
         private final String name;
 
-        MultiblockCasingType(String name) {
+        BoilerCasingType(String name) {
             this.name = name;
         }
 

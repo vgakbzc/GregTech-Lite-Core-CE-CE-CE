@@ -71,6 +71,10 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MAGNETO_RESONATIC_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem MAGNETO_RESONATIC_CIRCUIT_MAX;
 
+    //  Others
+    public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
+    public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
+
     private GTLiteMetaItems() {}
 
     public static void init() {

@@ -10,6 +10,7 @@ import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
+import magicbook.gtlitecore.api.recipe.builder.GrindBallRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.builder.NoCoilTemperatureRecipeBuilder;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -57,6 +58,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK2_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK3_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -143,17 +146,21 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : GTSoundEvents.CHEMICAL_REACTOR);
-        //  Hyper Reactor Mk I Recipemap
+        //  Hyper Reactor Mk I RecipeMap
         HYPER_REACTOR_MK1_RECIPES = new RecipeMap<>("hyper_reactor_mk1_recipes", 0, 0, 1,0 , new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
-        //  Hyper Reactor Mk II Recipemap
+        //  Hyper Reactor Mk II RecipeMap
         HYPER_REACTOR_MK2_RECIPES = new RecipeMap<>("hyper_reactor_mk2_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
-        //  Hyper Reactor Mk III Recipemap
+        //  Hyper Reactor Mk III RecipeMap
         HYPER_REACTOR_MK3_RECIPES = new RecipeMap<>("hyper_reactor_mk3_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
+        //  Isa Mill RecipeMap
+        ISA_MILL_RECIPES = new RecipeMap<>("isa_mill_recipes", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.MACERATOR);
     }
 }

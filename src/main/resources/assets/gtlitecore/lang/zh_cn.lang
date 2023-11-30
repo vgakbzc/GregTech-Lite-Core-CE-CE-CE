@@ -2,6 +2,10 @@
 tile.multiblock_casing.substrate_casing.name=基板机械方块
 tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
 tile.multiblock_casing.drill_head.name=钻头
+tile.multiblock_casing.inconel_625_casing.name=镍基合金-625机器外壳
+tile.multiblock_casing.inconel_625_gearbox_casing.name=镍基合金-625球磨齿轮箱外壳
+
+tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 
 tile.crucible.bronze.name=青铜坩埚
 tile.crucible.invar.name=殷钢坩埚
@@ -254,6 +258,11 @@ gtlitecore.machine.burner_reactor.name=燃烧反应室
 
 gtlitecore.machine.cryogenic_reactor.name=低温反应室
 
+gtlitecore.machine.isa_mill.name=艾萨研磨机
+gtlitecore.machine.grind_ball_hatch.name=研磨球仓
+gtlitecore.machine.isa_mill.grindball_hatch.only=仅能放入研磨球
+gtlitecore.machine.isa_mill.grind_ball.soapstone=研磨球材质：皂石
+gtlitecore.machine.isa_mill.grind_ball.aluminium=研磨球材质：铝
 
 #  Materials
 
@@ -366,6 +375,10 @@ gregtech.material.heavy_hyper_fuel=重超能燃料
 gregtech.material.medium_hyper_fuel=超能燃料
 gregtech.material.light_hyper_fuel=轻超能燃料
 
+#  Others
+metaitem.grindball.soapstone.name=皂石研磨球
+metaitem.grindball.aluminium.name=铝研磨球
+
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
@@ -386,6 +399,10 @@ recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
 recipemap.naquadah_reactor_recipes.name=硅岩聚变
+recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
+recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
+recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
+recipemap.isa_mill_recipes.name=湿法碾磨
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
