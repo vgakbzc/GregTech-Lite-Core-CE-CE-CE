@@ -31,7 +31,7 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Nickel, 8, Chrome, 6, Molybdenum, 4, Niobium, 4, Titanium, 3, Iron, 2, Aluminium, 2)
                 .fluidPipeProperties(4500, 340, true, true, true, false)
                 .build();
-
+      
         //  12002 Hastelloy-N
         HastelloyN = new Material.Builder(getId(), gregtechId("hastelloy_n"))
                 .ingot()
