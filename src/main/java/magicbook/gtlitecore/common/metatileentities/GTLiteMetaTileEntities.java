@@ -53,6 +53,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityVacuumDryingFurnace VACUUM_DRYING_FURNACE;
     public static MetaTileEntityVolcanus VOLCANUS;
     public static MetaTileEntityCryogenicFreezer CRYOGENIC_FREEZER;
+    public static MetaTileEntityFuelRefineFactory FUEL_REFINE_FACTORY;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -121,5 +122,6 @@ public class GTLiteMetaTileEntities {
         VACUUM_DRYING_FURNACE = registerMultiMetaTileEntity(19, new MetaTileEntityVacuumDryingFurnace(gtliteId("vacuum_drying_furnace")));
         VOLCANUS = registerMultiMetaTileEntity(20, new MetaTileEntityVolcanus(gtliteId("volcanus")));
         CRYOGENIC_FREEZER = registerMultiMetaTileEntity(21, new MetaTileEntityCryogenicFreezer(gtliteId("cryogenic_freezer")));
+        FUEL_REFINE_FACTORY = registerMultiMetaTileEntity(22, new MetaTileEntityFuelRefineFactory(gtliteId("fuel_refine_factory")));
     }
 }

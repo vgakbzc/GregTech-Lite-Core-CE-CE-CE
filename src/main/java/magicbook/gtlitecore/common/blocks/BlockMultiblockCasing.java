@@ -41,7 +41,8 @@ public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.Mu
         HASTELLOY_N_GEARBOX_CASING("hastelloy_n_gearbox_casing"),
         RED_STEEL_CASING("red_steel_casing"),
         ADVANCED_INVAR_CASING("advanced_invar_casing"),
-        ADVANCED_ALUMINIUM_CASING("advanced_aluminium_casing");
+        ADVANCED_ALUMINIUM_CASING("advanced_aluminium_casing"),
+        TALONITE_CASING("talonite_casing");
 
         private final String name;
 

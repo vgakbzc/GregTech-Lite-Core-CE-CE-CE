@@ -9,6 +9,7 @@ tile.multiblock_casing.hastelloy_n_gearbox_casing.name=哈斯特洛伊合金-N�
 tile.multiblock_casing.red_steel_casing.name=高气密红钢机器外壳
 tile.multiblock_casing.advanced_invar_casing.name=镀层殷钢绝热机器外壳
 tile.multiblock_casing.advanced_aluminium_casing.name=镀层铝制防冻机器外壳
+tile.multiblock_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -306,6 +307,8 @@ gtlitecore.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
 gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极速下降！
 gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
+gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
+
 #  Materials
 
 ##  Element Materials
@@ -371,6 +374,7 @@ gregtech.material.inconel_625=镍基合金-625
 gregtech.material.hastelloy_n=哈斯特洛伊合金-N
 gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈钢-904L
 gregtech.material.tanmolyium_beta_c=钛钼合金β-C
+gregtech.material.talonite=铬钴磷酸盐合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -482,6 +486,7 @@ recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
 recipemap.isa_mill_recipes.name=湿法碾磨
 recipemap.flotation_recipes.name=浮游选矿
 recipemap.vacuum_drying_recipes.name=真空干燥
+recipemap.fuel_refine_factory_recipes.name=燃料精炼
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

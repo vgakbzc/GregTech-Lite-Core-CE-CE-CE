@@ -74,6 +74,19 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Titanium, 5, Molybdenum, 5, Vanadium, 2, Chrome, 3, Aluminium, 1)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
+
+        //  12005 Talonite
+        Talonite = new Material.Builder(getId(), gregtechId("talonite"))
+                .ingot()
+                .fluid()
+                .color(0x9991A5)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .blastStats(VA[EV], 3454)
+                        .vacuumStats(VA[MV], 280))
+                .components(Cobalt, 4, Chrome, 3, Phosphorus, 2, Molybdenum, 1)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
     }
 
     private static int getId() {

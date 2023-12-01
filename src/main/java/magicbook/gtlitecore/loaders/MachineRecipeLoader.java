@@ -363,6 +363,21 @@ public class MachineRecipeLoader {
                 'F', new UnificationEntry(frameGt, Polybenzimidazole),
                 'P', new UnificationEntry(pipeNormalFluid, Polybenzimidazole),
                 'A', new UnificationEntry(plate, Polybenzimidazole));
+
+        //  Talonite Casing
+        ModHandler.addShapedRecipe(true, "talonite_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TALONITE_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Talonite),
+                'F', new UnificationEntry(frameGt, Talonite));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Talonite, 6)
+                .input(frameGt, Talonite)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TALONITE_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 
 }

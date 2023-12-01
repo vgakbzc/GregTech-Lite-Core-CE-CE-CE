@@ -30,6 +30,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer RED_STEEL_CASING = new GTLiteOverlayRenderer("casings/red_steel_casing_top");
     public static GTLiteOverlayRenderer ADVANCED_INVAR_CASING = new GTLiteOverlayRenderer("casings/advanced_invar_casing");
     public static GTLiteOverlayRenderer ADVANCED_ALUMINIUM_CASING = new GTLiteOverlayRenderer("casings/advanced_aluminium_casing");
+    public static GTLiteOverlayRenderer TALONITE_CASING = new GTLiteOverlayRenderer("casings/talonite_casing");
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  Custom Renderer
