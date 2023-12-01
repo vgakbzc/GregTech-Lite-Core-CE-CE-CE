@@ -14,6 +14,7 @@ public class GTLiteMetaBlocks {
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
     public static BlockBoilerCasing BOILER_CASING;
     public static BlockUniqueCasing UNIQUE_CASING;
+    public static BlockFusionCasing FUSION_CASING;
     public static BlockTransparentCasing TRANSPARENT_CASING;
     public static BlockCrucible CRUCIBLE;
 
@@ -26,6 +27,8 @@ public class GTLiteMetaBlocks {
         BOILER_CASING.setRegistryName("boiler_casing");
         UNIQUE_CASING = new BlockUniqueCasing();
         UNIQUE_CASING.setRegistryName("unique_casing");
+        FUSION_CASING = new BlockFusionCasing();
+        FUSION_CASING.setRegistryName("fusion_casing");
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
         CRUCIBLE = new BlockCrucible();
@@ -37,6 +40,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(MULTIBLOCK_CASING);
         registerItemModel(BOILER_CASING);
         registerItemModel(UNIQUE_CASING);
+        registerItemModel(FUSION_CASING);
         registerItemModel(CRUCIBLE);
 
         TRANSPARENT_CASING.onModelRegister();

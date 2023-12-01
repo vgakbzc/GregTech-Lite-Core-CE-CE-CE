@@ -81,6 +81,24 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
 
+
+        //  Boules and Wafers
+        NANO_PIC_WAFER = this.addItem(200, "wafer.nano_pic");
+        NANO_PIC_CHIP = this.addItem(201, "wafer.chip.nano_pic");
+        PICO_PIC_WAFER = this.addItem(202, "wafer.pico_pic");
+        PICO_PIC_CHIP = this.addItem(203, "wafer.chip.pico_pic");
+        FEMTO_PIC_WAFER = this.addItem(204, "wafer.femto_pic");
+        FEMTO_PIC_CHIP = this.addItem(205, "wafer.chip.femto_pic");
+        DUBNIUM_BOULE = this.addItem(206, "boule.dubnium");
+        DUBNIUM_WAFER = this.addItem(207, "wafer.dubnium");
+
+        //  Voltage Coils
+        VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");
+        VOLTAGE_COIL_UEV = this.addItem(251, "voltage_coil.uev");
+        VOLTAGE_COIL_UIV = this.addItem(252, "voltage_coil.uiv");
+        VOLTAGE_COIL_UXV = this.addItem(253, "voltage_coil.uxv");
+        VOLTAGE_COIL_OpV = this.addItem(254, "voltage_coil.opv");
+
         //  Others
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior());

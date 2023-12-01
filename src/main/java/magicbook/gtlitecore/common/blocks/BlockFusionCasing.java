@@ -13,15 +13,15 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.MultiblockCasingType> {
-    public BlockMultiblockCasing() {
+public class BlockFusionCasing extends VariantBlock<BlockFusionCasing.FusionCasingType> {
+    public BlockFusionCasing() {
         super(Material.IRON);
-        this.setTranslationKey("multiblock_casing");
+        this.setTranslationKey("fusion_casing");
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel("wrench", 2);
-        this.setDefaultState(this.getState(MultiblockCasingType.SUBSTRATE_CASING));
+        this.setHarvestLevel("wrench", 3);
+        this.setDefaultState(this.getState(FusionCasingType.FUSION_CASING_MK4));
     }
 
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
@@ -31,24 +31,21 @@ public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.Mu
         return false;
     }
 
-    public enum MultiblockCasingType implements IStringSerializable {
-        SUBSTRATE_CASING("substrate_casing"),
-        ADVANCED_SUBSTRATE_CASING("advanced_substrate_casing"),
-        DRILL_HEAD("drill_head"),
-        INCONEL625_CASING("inconel_625_casing"),
-        INCONEL625_GEARBOX_CASING("inconel_625_gearbox_casing"),
-        HASTELLOY_N_CASING("hastelloy_n_casing"),
-        HASTELLOY_N_GEARBOX_CASING("hastelloy_n_gearbox_casing"),
-        RED_STEEL_CASING("red_steel_casing"),
-        ADVANCED_INVAR_CASING("advanced_invar_casing"),
-        ADVANCED_ALUMINIUM_CASING("advanced_aluminium_casing"),
-        TALONITE_CASING("talonite_casing"),
-        NAQUADRIA_CASING("naquadria_casing"),
-        HASTELLOY_X78_CASING("hastelloy_x78_casing");
+    public enum FusionCasingType implements IStringSerializable {
+        FUSION_CASING_MK4("fusion_casing_mk4"),
+        FUSION_CASING_MK5("fusion_casing_mk5"),
+        CRYOSTAT("cryostat"),
+        ADVANCED_CRYOSTAT("advanced_cryostat"),
+        DIVERTOR("divertor"),
+        ADVANCED_DIVERTOR("advanced_divertor"),
+        VACUUM("vacuum"),
+        ADVANCED_VACUUM("advanced_vacuum"),
+        FUSION_COIL_MK2("fusion_coil_mk2"),
+        FUSION_COIL_MK3("fusion_coil_mk3");
 
         private final String name;
 
-        MultiblockCasingType(String name) {
+        FusionCasingType(String name) {
             this.name = name;
         }
 

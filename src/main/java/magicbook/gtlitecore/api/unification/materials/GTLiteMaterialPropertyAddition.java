@@ -2,6 +2,7 @@ package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.unification.material.properties.*;
 
+import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
@@ -40,6 +41,14 @@ public class GTLiteMaterialPropertyAddition {
         Hafnium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Hafnium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
+        //  Elements
+        Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Dubnium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Rutherfordium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Rutherfordium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Polonium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Polonium.setProperty(PropertyKey.FLUID, new FluidProperty());
+
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
         Chalcopyrite.addFlags(GENERATE_MILLED);
@@ -53,7 +62,17 @@ public class GTLiteMaterialPropertyAddition {
         Sphalerite.addFlags(GENERATE_MILLED);
         Pentlandite.addFlags(GENERATE_MILLED);
 
+        //  Double Plate
+        HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
+
         //  Frame
         Polybenzimidazole.addFlags(GENERATE_FRAME);
+        Naquadria.addFlags(GENERATE_FRAME);
+
+        //  Stick
+        Dubnium.addFlags(GENERATE_ROD);
+
+        //  Bolt & Screw
+        Dubnium.addFlags(GENERATE_BOLT_SCREW);
     }
 }

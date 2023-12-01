@@ -67,6 +67,8 @@ public class GTLiteMaterials {
     public static Material HastelloyN;
     public static Material AusteniticStainlessSteel904L;
     public static Material TanmolyiumBetaC;
+    public static Material Talonite;
+    public static Material HastelloyX78;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

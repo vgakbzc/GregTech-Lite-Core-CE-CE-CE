@@ -69,6 +69,24 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/advanced_aluminium_casing"
         }
+      },
+      "talonite_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/talonite_casing"
+        }
+      },
+      "naquadria_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadria_casing"
+        }
+      },
+      "hastelloy_x78_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_x78_casing"
+        }
       }
     }
   }

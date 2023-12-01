@@ -22,6 +22,9 @@ public class RecipeManager {
         MachineRecipeLoader.init();
         initChains();
         initOreProcessings();
+
+        FusionLoader.init();
+        OverrideRecipeLoader.init();
     }
 
     private static void initBlocks() {

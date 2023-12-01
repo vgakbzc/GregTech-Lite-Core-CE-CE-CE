@@ -71,6 +71,23 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MAGNETO_RESONATIC_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem MAGNETO_RESONATIC_CIRCUIT_MAX;
 
+    //  Boules and Wafers
+    public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem NANO_PIC_CHIP;
+    public static MetaItem<?>.MetaValueItem PICO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem PICO_PIC_CHIP;
+    public static MetaItem<?>.MetaValueItem FEMTO_PIC_WAFER;
+    public static MetaItem<?>.MetaValueItem FEMTO_PIC_CHIP;
+    public static MetaItem<?>.MetaValueItem DUBNIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem DUBNIUM_WAFER;
+
+    //  Voltage Coils
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UEV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UIV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UXV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_OpV;
+
     //  Others
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;

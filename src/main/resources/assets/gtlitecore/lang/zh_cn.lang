@@ -9,12 +9,26 @@ tile.multiblock_casing.hastelloy_n_gearbox_casing.name=哈斯特洛伊合金-N�
 tile.multiblock_casing.red_steel_casing.name=高气密红钢机器外壳
 tile.multiblock_casing.advanced_invar_casing.name=镀层殷钢绝热机器外壳
 tile.multiblock_casing.advanced_aluminium_casing.name=镀层铝制防冻机器外壳
+tile.multiblock_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器外壳
+tile.multiblock_casing.naquadria_casing.name=抗辐射超能硅岩机器外壳
+tile.multiblock_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
 tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
+
+tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
+tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
+tile.fusion_casing.cryostat.name=聚变反应堆恒温仓
+tile.fusion_casing.advanced_cryostat.name=高级聚变反应堆恒温仓
+tile.fusion_casing.divertor.name=聚变反应堆偏滤仓
+tile.fusion_casing.advanced_divertor.name=高级聚变反应堆偏滤仓
+tile.fusion_casing.vacuum.name=聚变反应堆真空仓
+tile.fusion_casing.advanced_vacuum.name=高级聚变反应堆真空仓
+tile.fusion_casing.fusion_coil_mk2.name=高级聚变线圈方块
+tile.fusion_casing.fusion_coil_mk3.name=终极聚变线圈方块
 
 tile.transparent_casing.bpa_polycarbonate_glass.name=BPA聚碳酸酯玻璃
 tile.transparent_casing.bpa_polycarbonate_glass.tooltip=灰色石英
@@ -50,6 +64,24 @@ metaitem.board.spintronic.tooltip=第三代自旋电子技术
 
 metaitem.board.magneto_resonatic.name=磁感应电路基板
 metaitem.board.magneto_resonatic.tooltip=预处理磁共振电路板
+
+#  Boules and Wafers
+metaitem.wafer.nano_pic.name=纳米功率集成电路（NPIC）晶圆
+metaitem.wafer.nano_pic.tooltip=纳米功率集成电路原料
+metaitem.wafer.chip.nano_pic.name=纳米功率集成电路（NPIC）晶片
+metaitem.wafer.chip.nano_pic.tooltip=纳米功率集成电路
+metaitem.wafer.pico_pic.name=皮米功率集成电路（PPIC）晶圆
+metaitem.wafer.pico_pic.tooltip=皮米功率集成电路原料
+metaitem.wafer.chip.pico_pic.name=皮米功率集成电路（PPIC）晶片
+metaitem.wafer.chip.pico_pic.tooltip=皮米功率集成电路
+metaitem.wafer.femto_pic.name=飞米功率集成电路（FPIC）晶圆
+metaitem.wafer.femto_pic.tooltip=飞米功率集成电路原料
+metaitem.wafer.chip.femto_pic.name=飞米功率集成电路（FPIC）晶片
+metaitem.wafer.chip.femto_pic.tooltip=飞米功率集成电路
+metaitem.boule.dubnium.name=钅杜掺杂的单晶硅
+metaitem.boule.dubnium.tooltip=待处理电路
+metaitem.wafer.dubnium.name=钅杜掺杂的晶圆
+metaitem.wafer.dubnium.tooltip=待处理电路
 
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
@@ -276,6 +308,10 @@ gtlitecore.machine.burner_reactor.name=燃烧反应室
 
 gtlitecore.machine.cryogenic_reactor.name=低温反应室
 
+gtlitecore.machine.large_naquadah_reactor.name=大型硅岩反应堆
+gtlitecore.machine.large_naquadah_reactor.tooltip.1=取之不尽，用之不竭
+gtlitecore.machine.large_naquadah_reactor.tooltip.2=最高产生§4UHV§7级的能量
+
 gtlitecore.machine.isa_mill.name=艾萨研磨机
 gtlitecore.machine.isa_mill.tooltip=工业级卧式湿法碾磨机
 gtlitecore.machine.grind_ball_hatch.name=研磨球仓
@@ -305,6 +341,14 @@ gtlitecore.machine.cryogenic_freezer.tooltip.4=最大并行数：§e16§7
 gtlitecore.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
 gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极速下降！
 gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
+
+gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
+
+gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
+
+gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
 
 #  Materials
 
@@ -371,6 +415,8 @@ gregtech.material.inconel_625=镍基合金-625
 gregtech.material.hastelloy_n=哈斯特洛伊合金-N
 gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈钢-904L
 gregtech.material.tanmolyium_beta_c=钛钼合金β-C
+gregtech.material.talonite=铬钴磷酸盐合金
+gregtech.material.hastelloy_x_78=哈斯特洛伊合金-X78
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -476,12 +522,14 @@ recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
+recipemap.naquadah_reactor_recipes.name=硅岩聚变
 recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
 recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
 recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
 recipemap.isa_mill_recipes.name=湿法碾磨
 recipemap.flotation_recipes.name=浮游选矿
 recipemap.vacuum_drying_recipes.name=真空干燥
+recipemap.fuel_refine_factory_recipes.name=燃料精炼
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
