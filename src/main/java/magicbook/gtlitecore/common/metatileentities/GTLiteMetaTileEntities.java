@@ -17,6 +17,7 @@ import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityCryogenicFreezer;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityVolcanus;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityLargeNaquadahReactor;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
 
 import static gregtech.api.GTValues.*;
@@ -47,6 +48,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityPlasmaCVDUnit PLASMA_CVD_UNIT;
     public static MetaTileEntityBurnerReactor BURNER_REACTOR;
     public static MetaTileEntityCryogenicReactor CRYOGENIC_REACTOR;
+    public static MetaTileEntityLargeNaquadahReactor LARGE_NAQUADAH_REACTOR;
 
     public static MetaTileEntityIsaMill ISA_MILL;
     public static MetaTileEntityFlotationCellRegulator FLOTATION_CELL_REGULATOR;
@@ -113,7 +115,7 @@ public class GTLiteMetaTileEntities {
         //  LASER_CVD_UNIT 10
         BURNER_REACTOR = registerMultiMetaTileEntity(11, new MetaTileEntityBurnerReactor(gtliteId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMultiMetaTileEntity(12, new MetaTileEntityCryogenicReactor(gtliteId("cryogenic_reactor")));
-        //  LARGE_NAQUADAH_REACTOR 13
+        LARGE_NAQUADAH_REACTOR = registerMultiMetaTileEntity(13, new MetaTileEntityLargeNaquadahReactor(gtliteId("large_naquadah_reactor")));
         //  HYPER REACTOR Mk1 14
         //  HYPER REACTOR Mk2 15
         //  HYPER REACTOR Mk3 16

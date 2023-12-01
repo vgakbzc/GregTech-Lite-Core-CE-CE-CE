@@ -178,6 +178,22 @@ public class MachineRecipeLoader {
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
                 'W', ELECTRIC_PUMP_IV.getStackForm());
 
+        //  Large Naquadah Reactor
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(NAQUADAH_REACTOR[3])
+                .input(frameGt, Naquadria, 2)
+                .input(ELECTRIC_PUMP_UHV, 2)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(plate, Tritanium, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 16)
+                .input(wireGtQuadruple, YttriumBariumCuprate, 4)
+                .fluidInputs(Orichalcum.getFluid(L * 4))
+                .output(LARGE_NAQUADAH_REACTOR)
+                .EUt(VA[UHV])
+                .duration(600)
+                .buildAndRegister();
+
         //  TODO Isa Mill
 
         //  TODO Flotation Cell Regulator
@@ -375,6 +391,21 @@ public class MachineRecipeLoader {
                 .input(frameGt, Talonite)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TALONITE_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Naquadria Casing
+        ModHandler.addShapedRecipe(true, "naquadria_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.NAQUADRIA_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Naquadria),
+                'F', new UnificationEntry(frameGt, NaquadahAlloy));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Naquadria, 6)
+                .input(frameGt, NaquadahAlloy)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.NAQUADRIA_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

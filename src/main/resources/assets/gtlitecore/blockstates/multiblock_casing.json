@@ -75,6 +75,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/talonite_casing"
         }
+      },
+      "naquadria_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadria_casing"
+        }
       }
     }
   }

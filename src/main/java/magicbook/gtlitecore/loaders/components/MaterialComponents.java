@@ -5,6 +5,7 @@ import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.items.MetaItems;
 import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -215,11 +216,13 @@ public class MaterialComponents {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         STICK_RADIOACTIVE.appendIngredients(Stream.of(new Object[][]{
-//                {9, new UnificationEntry(OrePrefix.stick, Dubnium)},
-//                {10, new UnificationEntry(OrePrefix.stick, Livermorium)},
-//                {11, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
-//                {12, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
-//                {13, new UnificationEntry(OrePrefix.stick, Trinium)},
+                {8, new UnificationEntry(OrePrefix.stick, Dubnium)},
+//                {9, new UnificationEntry(OrePrefix.stick, Livermorium)},
+//                {10, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
+//                {11, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
+//                {12, new UnificationEntry(OrePrefix.stick, SuperHeavyLAlloy)},
+//                {13, new UnificationEntry(OrePrefix.stick, SuperHeavyHAlloy)},
+//                {14, new UnificationEntry(OrePrefix.stick, Periodicium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         //  TODO PEEK, Kevlar, Zylon Fluid pipes
@@ -232,26 +235,24 @@ public class MaterialComponents {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         POWER_COMPONENT.appendIngredients(Stream.of(new Object[][]{
-//                {8, EPMetaItems.NANO_PIC_CHIP},
-//                {9, EPMetaItems.NANO_PIC_CHIP},
-//                {10, EPMetaItems.PICO_PIC_CHIP},
-//                {11, EPMetaItems.PICO_PIC_CHIP},
-//                {12, EPMetaItems.FEMTO_PIC_CHIP},
-//                {13, EPMetaItems.ATTO_PIC_CHIP},
-//                {14, EPMetaItems.ZEPTO_PIC_CHIP},
+                {9, GTLiteMetaItems.NANO_PIC_CHIP},
+                {10, GTLiteMetaItems.NANO_PIC_CHIP},
+                {11, GTLiteMetaItems.PICO_PIC_CHIP},
+                {12, GTLiteMetaItems.PICO_PIC_CHIP},
+                {13, GTLiteMetaItems.FEMTO_PIC_CHIP},
+                {14, GTLiteMetaItems.FEMTO_PIC_CHIP}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         VOLTAGE_COIL.appendIngredients(Stream.of(new Object[][]{
-//                {9, EPMetaItems.VOLTAGE_COIL_UHV},
-//                {10, EPMetaItems.VOLTAGE_COIL_UEV},
-//                {11, EPMetaItems.VOLTAGE_COIL_UIV},
-//                {12, EPMetaItems.VOLTAGE_COIL_UXV},
-//                {13, EPMetaItems.VOLTAGE_COIL_OPV},
-//                {14, EPMetaItems.VOLTAGE_COIL_MAX},
+                {9, GTLiteMetaItems.VOLTAGE_COIL_UHV},
+                {10, GTLiteMetaItems.VOLTAGE_COIL_UEV},
+                {11, GTLiteMetaItems.VOLTAGE_COIL_UIV},
+                {12, GTLiteMetaItems.VOLTAGE_COIL_UXV},
+                {13, GTLiteMetaItems.VOLTAGE_COIL_OpV}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         SPRING.appendIngredients(Stream.of(new Object[][]{
-//                {10, new UnificationEntry(OrePrefix.spring, PedotTMA)},
+//                {10, new UnificationEntry(OrePrefix.spring, CarbonNanotube)},
 //                {11, new UnificationEntry(OrePrefix.spring, RutheniumTriniumAmericiumNeutronate)},
 //                {12, new UnificationEntry(OrePrefix.spring, Trinium)},
 //                {13, new UnificationEntry(OrePrefix.spring, Trinium)},

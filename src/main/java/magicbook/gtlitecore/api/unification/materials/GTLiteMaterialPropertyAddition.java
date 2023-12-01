@@ -39,6 +39,8 @@ public class GTLiteMaterialPropertyAddition {
         Promethium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Hafnium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Hafnium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Dubnium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
@@ -55,5 +57,12 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Frame
         Polybenzimidazole.addFlags(GENERATE_FRAME);
+        Naquadria.addFlags(GENERATE_FRAME);
+
+        //  Stick
+        Dubnium.addFlags(GENERATE_ROD);
+
+        //  Bolt & Screw
+        Dubnium.addFlags(GENERATE_BOLT_SCREW);
     }
 }
