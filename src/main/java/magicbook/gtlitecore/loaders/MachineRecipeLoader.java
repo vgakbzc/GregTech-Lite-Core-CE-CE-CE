@@ -426,7 +426,6 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
-
     }
 
 }
