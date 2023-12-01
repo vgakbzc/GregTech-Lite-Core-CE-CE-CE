@@ -177,8 +177,7 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
             }
             textList.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.max_temperature", blastFurnaceTemperature)
                     .setStyle(new Style().setColor(TextFormatting.RED)));
-            textList.add(new TextComponentTranslation("gtlitecore.machine.volcanus.heating_coil_level", heatingCoilLevel));
-            textList.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.heating_coil_discount", heatingCoilDiscount));
+            textList.add(new TextComponentTranslation("gregtech.multiblock.multi_furnace.heating_coil_discount", heatingCoilDiscount));
         }
         super.addDisplayText(textList);
     }
