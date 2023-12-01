@@ -4,6 +4,7 @@ import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
@@ -203,6 +204,74 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xDFDFDF)
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
                 .components(Carbon, 9, Hydrogen, 14, Oxygen, 3)
+                .build();
+
+        //  13023 Butanediol
+        Butanediol = new Material.Builder(getId(), gregtechId("butanediol"))
+                .liquid()
+                .color(0xAAC4DA)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 2)
+                .build()
+                .setFormula("C4H8(OH)2", true);
+
+        //  13024 Diacetyl
+        Diacetyl = new Material.Builder(getId(),  gregtechId("diacetyl"))
+                .liquid()
+                .color(0xF7FF65)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        //  13025 Ethylene Glycol
+        EthyleneGlycol = new Material.Builder(getId(), gregtechId("ethylene_glycol"))
+                .liquid()
+                .color(0x286632)
+                .components(Carbon, 2, Hydrogen, 6, Oxygen, 2)
+                .build()
+                .setFormula("C2H4(OH)2", true);
+
+        //  13026 EDOT
+        Edot = new Material.Builder(getId(), gregtechId("edot"))
+                .liquid()
+                .color(11665367)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2, Sulfur, 1)
+                .build();
+
+        //  13027 Polystyrene
+        Polystyrene = new Material.Builder(getId(), gregtechId("polystyrene"))
+                .fluid()
+                .color(14795458)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 8)
+                .build();
+
+        //  13028 Polystyrene Sulfonate
+        PolystyreneSulfonate = new Material.Builder(getId(), gregtechId("polystyrene_sulfonate"))
+                .polymer()
+                .liquid()
+                .color(14777458)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(Carbon, 8, Hydrogen, 8, Sulfur, 1, Oxygen, 3)
+                .build();
+
+        //  13029 PEDOT:PSS
+        PedotPSS = new Material.Builder(getId(), gregtechId("pedot_pss"))
+                .polymer()
+                .liquid()
+                .color(14771623)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_FINE_WIRE)
+                .components(Edot, 1, PolystyreneSulfonate, 1)
+                .cableProperties(V[UHV], 24, 0, true)
+                .build();
+
+        //  13030 PEDOT-TMA
+        PedotTMA = new Material.Builder(getId(), gregtechId("pedot_tma"))
+                .polymer()
+                .liquid()
+                .color(0x5E9EE1)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING)
+                .components(Edot, 1, PMMA, 2)
+                .cableProperties(V[UEV], 8, 6, false)
                 .build();
     }
 

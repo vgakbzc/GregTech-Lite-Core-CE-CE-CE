@@ -93,6 +93,14 @@ public class GTLiteMaterials {
     public static Material Dimethylketene;
     public static Material Tetramethylcyclobutanediol;
     public static Material CBDOPolycarbonate;
+    public static Material Butanediol;
+    public static Material Diacetyl;
+    public static Material EthyleneGlycol;
+    public static Material Edot;
+    public static Material Polystyrene;
+    public static Material PolystyreneSulfonate;
+    public static Material PedotPSS;
+    public static Material PedotTMA;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
