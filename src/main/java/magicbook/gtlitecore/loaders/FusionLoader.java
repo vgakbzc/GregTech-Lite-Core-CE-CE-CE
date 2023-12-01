@@ -37,5 +37,6 @@ public class FusionLoader {
                 .duration(200)
                 .EUToStart(650000000L)
                 .buildAndRegister();
+      
     }
 }

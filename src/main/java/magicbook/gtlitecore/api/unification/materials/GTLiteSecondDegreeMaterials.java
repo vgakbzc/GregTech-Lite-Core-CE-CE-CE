@@ -116,6 +116,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[EV], 280))
                 .cableProperties(V[UHV], 6, 8, false)
                 .build();
+
     }
 
     private static int getId() {
