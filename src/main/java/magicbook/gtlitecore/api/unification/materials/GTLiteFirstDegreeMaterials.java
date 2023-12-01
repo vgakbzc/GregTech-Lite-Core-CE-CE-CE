@@ -410,6 +410,24 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(SHINY)
                 .components(Carbon, 3, Hydrogen, 5, Potassium, 1, Oxygen, 1, Sulfur, 2)
                 .build();
+
+        //  11050 Calcium Carbide
+        CalciumCarbide = new Material.Builder(getId(), gregtechId("calcium_carbide"))
+                .dust()
+                .color(0x807B70)
+                .iconSet(DULL)
+                .components(Calcium, 1, Carbon, 2)
+                .build();
+
+        //  11051 Calcium Hydroxide
+        CalciumHydroxide = new Material.Builder(getId(), gregtechId("calcium_hydroxide"))
+                .dust()
+                .color(0x5F8764)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Calcium, 1, Hydrogen, 2, Oxygen, 2)
+                .build()
+                .setFormula("Ca(OH)2", true);
     }
 
     private static int getId() {

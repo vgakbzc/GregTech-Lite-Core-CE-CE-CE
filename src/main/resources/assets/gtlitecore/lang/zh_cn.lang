@@ -409,6 +409,8 @@ gregtech.material.calcium_carbonate=碳酸钙
 gregtech.material.carbon_disulfide=二硫化碳
 gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
 gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
+gregtech.material.calcium_carbide=碳化钙
+gregtech.material.calcium_hydroxide=氢氧化钙
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -523,6 +525,8 @@ gregtech.material.sphalerite_front=闪锌矿矿石泡沫
 gregtech.material.pentlandite_front=镍黄铁矿矿石泡沫
 gregtech.material.blazing_pyrotheum=烈焰之炽焱
 gregtech.material.gelid_cryotheum=极寒之凛冰
+gregtech.material.rich_nitrogen_mixture=富氮混合物
+gregtech.material.rich_ammonia_mixture=富氨混合物
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

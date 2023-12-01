@@ -32,6 +32,8 @@ public class GTLiteConfigHolder {
         public boolean enableTungstenProcessing = true;
         @Config.Comment({"Enable Graphene process.", "Default: true"})
         public boolean enableGrapheneProcessing = true;
+        @Config.Comment({"Enable Ammonia process", "Default: true"})
+        public boolean enableAmmoniaProcessing = true;
     }
 
     public static class SteamOverrides {

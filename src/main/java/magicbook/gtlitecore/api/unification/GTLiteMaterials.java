@@ -61,6 +61,8 @@ public class GTLiteMaterials {
     public static Material CarbonDisulfide;
     public static Material SodiumEthylxanthate;
     public static Material PotassiumEthylxanthate;
+    public static Material CalciumCarbide;
+    public static Material CalciumHydroxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -175,6 +177,8 @@ public class GTLiteMaterials {
     public static Material PentlanditeFront;
     public static Material BlazingPyrotheum;
     public static Material GelidCryotheum;
+    public static Material RichNitrogenMixture;
+    public static Material RichAmmoniaMixture;
 
     public static void init() {
         GTLiteElementMaterials.register();

@@ -36,6 +36,8 @@ public class RecipeManager {
         PEDOTChain.init();
         KaptonChain.init();
         KevlarChain.init();
+        AcetyleneChain.init();
+        AmmoniaChain.init();
     }
 
     private static void initOreProcessings() {
