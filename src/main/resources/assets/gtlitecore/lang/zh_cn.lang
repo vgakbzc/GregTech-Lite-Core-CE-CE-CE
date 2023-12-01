@@ -458,6 +458,14 @@ gregtech.material.phthalic_anhydride=邻苯二甲酸酐
 gregtech.material.biphenyl_tetracarboxylic_acid_dianhydride=联苯四甲酸二酐（BPDA）
 gregtech.material.nitroaniline=4-硝基苯胺
 gregtech.material.para_phenylenediamine=对苯二胺
+gregtech.material.bistrichloromethylbenzene=1,4-双（三氯甲基）苯
+gregtech.material.acetylene=乙炔
+gregtech.material.tetrabromoethane=四溴乙烷
+gregtech.material.terephthalic_acid=对苯二甲酸（PTA）
+gregtech.material.terephthaloyl_chloride=对苯二甲酰氯
+gregtech.material.gamma_butyrolactone=γ-丁内酯
+gregtech.material.methylamine=甲胺
+gregtech.material.n_methyl_pyrrolidone=N-甲基-2-吡咯烷酮
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

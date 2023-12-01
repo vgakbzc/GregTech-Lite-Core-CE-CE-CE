@@ -356,6 +356,67 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("H2NC6H4NH2", true);
 
+        //  13040 Bistrichloromethylbenzene
+        Bistrichloromethylbenzene = new Material.Builder(getId(), gregtechId("bistrichloromethylbenzene"))
+                .liquid()
+                .color(0xCF8498)
+                .components(Carbon, 8, Hydrogen, 4, Chlorine, 6)
+                .build()
+                .setFormula("C6H4(CCl3)2", true);
+
+        //  13041 Acetylene
+        Acetylene = new Material.Builder(getId(), gregtechId("acetylene"))
+                .liquid()
+                .color(0x959C60)
+                .components(Carbon, 2, Hydrogen, 2)
+                .build();
+
+        //  13042 Tetrabromoethane
+        Tetrabromoethane = new Material.Builder(getId(), gregtechId("tetrabromoethane"))
+                .liquid()
+                .color(0x5AAADA)
+                .components(Carbon, 2, Hydrogen, 2, Bromine, 4)
+                .build();
+
+        //  13043 Terephthalic Acid
+        TerephthalicAcid = new Material.Builder(getId(), gregtechId("terephthalic_acid"))
+                .dust()
+                .color(0x5ACCDA)
+                .iconSet(ROUGH)
+                .components(Carbon, 8, Hydrogen, 6, Oxygen, 4)
+                .build()
+                .setFormula("C6H4(CO2H)2", true);
+
+        //  13044 Terephthaloyl Chloride
+        TerephthaloylChloride = new Material.Builder(getId(), gregtechId("terephthaloyl_chloride"))
+                .dust()
+                .color(0xFAC4DA)
+                .iconSet(SHINY)
+                .components(Carbon, 8, Hydrogen, 4, Oxygen, 2, Chlorine, 2)
+                .build()
+                .setFormula("C6H4(COCl)2", true);
+
+        //  13045 γ-Butyrolactone
+        GammaButyrolactone = new Material.Builder(getId(), gregtechId("gamma_butyrolactone"))
+                .liquid()
+                .color(0xAF04D6)
+                .components(Carbon, 4, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        //  13046 Methylamine
+        Methylamine = new Material.Builder(getId(), gregtechId("methylamine"))
+                .gas()
+                .color(0xAA6600)
+                .components(Carbon, 1, Hydrogen, 5, Nitrogen, 1)
+                .build()
+                .setFormula("CH3NH2", true);
+
+        //  13047 N-Methyl Pyrrolidone
+        NMethylPyrrolidone = new Material.Builder(getId(), gregtechId("n_methyl_pyrrolidone"))
+                .liquid()
+                .color(0xA504D6)
+                .components(Carbon, 5, Hydrogen, 9, Nitrogen, 1, Oxygen, 1)
+                .build();
     }
 
     private static int getId() {

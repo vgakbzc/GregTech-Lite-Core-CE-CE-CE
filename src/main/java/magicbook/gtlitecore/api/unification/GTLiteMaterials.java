@@ -110,6 +110,14 @@ public class GTLiteMaterials {
     public static Material BiphenylTetracarboxylicAcidDianhydride;
     public static Material Nitroaniline;
     public static Material ParaPhenylenediamine;
+    public static Material Bistrichloromethylbenzene;
+    public static Material Acetylene;
+    public static Material Tetrabromoethane;
+    public static Material TerephthalicAcid;
+    public static Material TerephthaloylChloride;
+    public static Material GammaButyrolactone;
+    public static Material Methylamine;
+    public static Material NMethylPyrrolidone;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

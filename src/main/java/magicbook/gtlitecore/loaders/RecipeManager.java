@@ -35,6 +35,7 @@ public class RecipeManager {
         CyanogenChain.init();
         PEDOTChain.init();
         KaptonChain.init();
+        KevlarChain.init();
     }
 
     private static void initOreProcessings() {

@@ -48,6 +48,7 @@ public class GTLiteMaterialPropertyAddition {
         Rutherfordium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Polonium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Polonium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
