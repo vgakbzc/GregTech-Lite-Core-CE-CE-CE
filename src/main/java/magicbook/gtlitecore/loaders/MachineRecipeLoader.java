@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
@@ -176,6 +177,32 @@ public class MachineRecipeLoader {
                 'H', HULL[IV].getStackForm(),
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
                 'W', ELECTRIC_PUMP_IV.getStackForm());
+
+        //  TODO Isa Mill
+
+        //  TODO Flotation Cell Regulator
+
+        //  TODO Vacuum Drying Furnace
+
+        //  Volcanus
+        ModHandler.addShapedRecipe(true, "volcanus", VOLCANUS.getStackForm(),
+                "GXG", "RHR", "PWP",
+                'G', new UnificationEntry(gear, HSSG),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
+                'H', ELECTRIC_BLAST_FURNACE.getStackForm(),
+                'R', ROBOT_ARM_IV.getStackForm(),
+                'P', new UnificationEntry(plate, AusteniticStainlessSteel904L),
+                'W', VOLTAGE_COIL_IV.getStackForm());
+
+        //  Cryogenic Freezer
+        ModHandler.addShapedRecipe(true, "cryogenic_freezer", CRYOGENIC_FREEZER.getStackForm(),
+                "SXS", "EHE", "PWP",
+                'S', new UnificationEntry(spring, HSSG),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
+                'H', VACUUM_FREEZER.getStackForm(),
+                'E', ELECTRIC_PUMP_IV.getStackForm(),
+                'P', new UnificationEntry(plate, TanmolyiumBetaC),
+                'W', new UnificationEntry(cableGtSingle, Platinum));
     }
 
     private static void MachineCasingRecipes() {
@@ -309,5 +336,32 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Advanced Invar Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF))
+                .circuitMeta(6)
+                .fluidInputs(AusteniticStainlessSteel904L.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ADVANCED_INVAR_CASING))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Advanced Aluminium Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.ALUMINIUM_FROSTPROOF))
+                .circuitMeta(6)
+                .fluidInputs(TanmolyiumBetaC.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ADVANCED_ALUMINIUM_CASING))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Polybenzimidazole Pipe Casing
+        ModHandler.addShapedRecipe(true, "polybenzimidazole_pipe", GTLiteMetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.POLYBENZIMIDAZOLE, 2),
+                "APA", "PFP", "APA",
+                'F', new UnificationEntry(frameGt, Polybenzimidazole),
+                'P', new UnificationEntry(pipeNormalFluid, Polybenzimidazole),
+                'A', new UnificationEntry(plate, Polybenzimidazole));
     }
 }

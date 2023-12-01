@@ -369,6 +369,8 @@ gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
 gregtech.material.hastelloy_n=哈斯特洛伊合金-N
+gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈钢-904L
+gregtech.material.tanmolyium_beta_c=钛钼合金β-C
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
