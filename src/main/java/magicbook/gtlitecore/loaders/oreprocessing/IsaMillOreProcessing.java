@@ -25,7 +25,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Almandine, 16)
@@ -63,7 +63,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Chalcopyrite, 16)
@@ -101,7 +101,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Grossular, 16)
@@ -139,7 +139,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Monazite, 16)
@@ -177,7 +177,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Nickel, 16)
@@ -215,7 +215,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Platinum, 16)
@@ -253,7 +253,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Pyrope, 16)
@@ -291,7 +291,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Redstone, 16)
@@ -329,7 +329,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Spessartine, 16)
@@ -367,7 +367,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Sphalerite, 16)
@@ -405,7 +405,7 @@ public class IsaMillOreProcessing {
                 .EUt(VA[EV])
                 .duration(3000)
                 .grindBallTier(1)
-                .build();
+                .buildAndRegister();
 
         ISA_MILL_RECIPES.recipeBuilder()
                 .input(ore, Pentlandite, 16)
@@ -646,7 +646,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Manganese, 26)
                 .output(dust, Yttrium, 25)
                 .output(dust, Ytterbium, 15)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -662,7 +661,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Iron, 44)
                 .output(dust, Cadmium, 50)
                 .output(dust, Indium, 10)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(4500)
@@ -678,7 +676,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Aluminium, 46)
                 .output(dust, Tungsten, 60)
                 .output(dust, Thallium, 15)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -692,7 +689,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Lanthanum, 32)
                 .output(dust, Lutetium, 16)
                 .output(dust, Europium, 8)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[ZPM])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -708,7 +704,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Cobalt, 56)
                 .output(dust, Rhodium, 32)
                 .output(dust, Ruthenium, 16)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(4500)
@@ -723,7 +718,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Selenium, 40)
                 .output(dust, Osmium, 20)
                 .output(dust, Tellurium, 10)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -738,7 +732,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Manganese, 6)
                 .output(dust, Boron, 60)
                 .output(dust, Rhenium, 20)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[EV])
                 .duration(2400)
                 .blastFurnaceTemp(3500)
@@ -754,7 +747,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Chrome, 60)
                 .output(dust, Rutile, 48)
                 .output(dust, Dysprosium, 16)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(4500)
@@ -770,7 +762,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Aluminium, 26)
                 .output(dust, Palladium, 30)
                 .output(dust, Strontium, 20)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -786,7 +777,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Iron, 56)
                 .output(dust, Indium, 64)
                 .output(dust, Germanium, 15)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -802,7 +792,6 @@ public class IsaMillOreProcessing {
                 .output(dust, Nickel, 36)
                 .output(dust, Promethium, 20)
                 .output(dust, Hafnium, 10)
-                .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)

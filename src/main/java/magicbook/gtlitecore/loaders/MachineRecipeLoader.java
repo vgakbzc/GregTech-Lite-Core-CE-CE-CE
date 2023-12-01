@@ -3,21 +3,31 @@ package magicbook.gtlitecore.loaders;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.MetaBlocks;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
+import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
+import magicbook.gtlitecore.common.blocks.BlockUniqueCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
 public class MachineRecipeLoader {
     public static void init() {
         SingleMachineRecipes();
         MultiblockControllerRecipes();
+        MachineCasingRecipes();
     }
 
     private static void SingleMachineRecipes() {
@@ -166,5 +176,138 @@ public class MachineRecipeLoader {
                 'H', HULL[IV].getStackForm(),
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
                 'W', ELECTRIC_PUMP_IV.getStackForm());
+    }
+
+    private static void MachineCasingRecipes() {
+
+        //  Inconel-625 Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[EV], 2)
+                .input(plate, Inconel625, 4)
+                .input(plate, HSSE, 8)
+                .input(ring, Inconel625, 8)
+                .input(bolt, Inconel625, 16)
+                .fluidInputs(Titanium.getFluid(L * 8))
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.INCONEL625_CASING, 2))
+                .EUt(VA[EV])
+                .duration(240)
+                .buildAndRegister();
+
+        //  Inconel-625 Gearbox Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HSSS)
+                .input(gear, Inconel625, 3)
+                .input(gearSmall, HSSG, 6)
+                .input(bolt, HSSE, 16)
+                .input(COMPONENT_GRINDER_TUNGSTEN, 2)
+                .fluidInputs(Zeron100.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.INCONEL625_GEARBOX_CASING, 2))
+                .EUt(VA[LuV])
+                .duration(300)
+                .buildAndRegister();
+
+        //  Inconel-625 Pipe Casing
+        ModHandler.addShapedRecipe(true, "inconel_625_pipe", GTLiteMetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.INCONEL625, 2),
+                "APA", "PFP", "APA",
+                'F', new UnificationEntry(frameGt, MaragingSteel300),
+                'P', new UnificationEntry(pipeNormalFluid, Inconel625),
+                'A', new UnificationEntry(plate, NiobiumTitanium));
+
+        //  Grindball Hatch
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(dust, Soapstone, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .circuitMeta(1)
+                .output(GRINDBALL_SOAPSTONE)
+                .EUt(VA[MV])
+                .duration(300)
+                .buildAndRegister();
+
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(dust, Aluminium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .circuitMeta(1)
+                .output(GRINDBALL_ALUMINIUM)
+                .EUt(VA[HV])
+                .duration(300)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[EV])
+                .input(frameGt, TungstenSteel)
+                .input(gear, Titanium, 4)
+                .input(COMPONENT_GRINDER_TUNGSTEN)
+                .input(wireFine, Tungsten, 16)
+                .fluidInputs(RTMAlloy.getFluid(L * 4))
+                .output(MULTIPART_GRIND_BALL_HATCH)
+                .EUt(VA[IV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  Hatelloy-N Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[EV], 2)
+                .input(plate, Nichrome, 4)
+                .input(plate, WatertightSteel, 4)
+                .input(stickLong, HSSG, 2)
+                .input(bolt, HastelloyN, 16)
+                .fluidInputs(StainlessSteel.getFluid(L * 8))
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.HASTELLOY_N_CASING, 2))
+                .EUt(VA[IV])
+                .duration(280)
+                .buildAndRegister();
+
+        //  Hastelloy-N Gearbox Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HSSG)
+                .input(plate, HSSG, 4)
+                .input(gear, HastelloyN, 3)
+                .input(gearSmall, HSSG, 6)
+                .input(bolt, TungstenCarbide, 16)
+                .fluidInputs(HastelloyX.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.HASTELLOY_N_GEARBOX_CASING, 2))
+                .EUt(VA[LuV])
+                .duration(140)
+                .buildAndRegister();
+
+        //  Hastelloy-N Pipe Casing
+        ModHandler.addShapedRecipe(true, "hastelloy_n_pipe", GTLiteMetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.HASTELLOY_N, 2),
+                "APA", "PFP", "APA",
+                'F', new UnificationEntry(frameGt, WatertightSteel),
+                'P', new UnificationEntry(pipeNormalFluid, HastelloyN),
+                'A', new UnificationEntry(plate, VanadiumGallium));
+
+        //  Flotation Cell
+        ModHandler.addShapedRecipe(true, "flotation_cell", GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.FLOTATION_CELL, 2),
+                "AAA", "AGA", "APA",
+                'P', ELECTRIC_PUMP_IV,
+                'A', new UnificationEntry(plate, HastelloyN),
+                'G', MetaBlocks.MULTIBLOCK_CASING.getItemVariant(gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, HastelloyN, 7)
+                .inputs(MetaBlocks.MULTIBLOCK_CASING.getItemVariant(gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING))
+                .input(ELECTRIC_PUMP_IV)
+                .outputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.FLOTATION_CELL, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Red Steel Casing
+        ModHandler.addShapedRecipe(true, "vacuum_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.RED_STEEL_CASING, 2),
+                "PhP", "TFT","PwP",
+                'P', new UnificationEntry(plateDouble, RedSteel),
+                'T', new UnificationEntry(plate, TitaniumCarbide),
+                'F', new UnificationEntry(frameGt, CobaltBrass));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plateDouble, RedSteel, 4)
+                .input(plate, TitaniumCarbide, 2)
+                .input(frameGt, CobaltBrass)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.RED_STEEL_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

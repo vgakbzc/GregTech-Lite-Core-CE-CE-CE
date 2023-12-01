@@ -1,10 +1,7 @@
 package magicbook.gtlitecore.api.unification;
 
 import gregtech.api.unification.material.Material;
-import magicbook.gtlitecore.api.unification.materials.GTLiteElementMaterials;
-import magicbook.gtlitecore.api.unification.materials.GTLiteFirstDegreeMaterials;
-import magicbook.gtlitecore.api.unification.materials.GTLiteOrganicChemistryMaterials;
-import magicbook.gtlitecore.api.unification.materials.GTLiteUnknownCompositionMaterials;
+import magicbook.gtlitecore.api.unification.materials.*;
 
 public class GTLiteMaterials {
     //  Element Materials (Range: 10000-11000)
@@ -66,6 +63,8 @@ public class GTLiteMaterials {
     public static Material PotassiumEthylxanthate;
 
     //  Second Degree Materials (Range: 12001-13000)
+    public static Material Inconel625;
+    public static Material HastelloyN;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -79,6 +78,17 @@ public class GTLiteMaterials {
     public static Material FormicAcid;
     public static Material Ethylhexanol;
     public static Material DiethylhexylPhosphoricAcid;
+    public static Material AcetoneCyanohydrin;
+    public static Material PMMA;
+    public static Material DimethylCarbonate;
+    public static Material DiphenylCarbonate;
+    public static Material BPAPolycarbonate;
+    public static Material Propadiene;
+    public static Material IsobutyricAcid;
+    public static Material IsobutyricAnhydride;
+    public static Material Dimethylketene;
+    public static Material Tetramethylcyclobutanediol;
+    public static Material CBDOPolycarbonate;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -138,6 +148,7 @@ public class GTLiteMaterials {
     public static void init() {
         GTLiteElementMaterials.register();
         GTLiteFirstDegreeMaterials.register();
+        GTLiteSecondDegreeMaterials.register();
         GTLiteOrganicChemistryMaterials.register();
         GTLiteUnknownCompositionMaterials.register();
     }
