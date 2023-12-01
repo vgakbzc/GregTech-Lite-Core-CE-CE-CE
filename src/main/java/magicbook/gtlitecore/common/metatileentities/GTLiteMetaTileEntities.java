@@ -15,6 +15,7 @@ import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityVolcanus;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
 
 import static gregtech.api.GTValues.*;
@@ -49,6 +50,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityIsaMill ISA_MILL;
     public static MetaTileEntityFlotationCellRegulator FLOTATION_CELL_REGULATOR;
     public static MetaTileEntityVacuumDryingFurnace VACUUM_DRYING_FURNACE;
+    public static MetaTileEntityVolcanus VOLCANUS;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -115,5 +117,6 @@ public class GTLiteMetaTileEntities {
         ISA_MILL = registerMultiMetaTileEntity(17, new MetaTileEntityIsaMill(gtliteId("isa_mill")));
         FLOTATION_CELL_REGULATOR = registerMultiMetaTileEntity(18, new MetaTileEntityFlotationCellRegulator(gtliteId("flotation_cell_regulator")));
         VACUUM_DRYING_FURNACE = registerMultiMetaTileEntity(19, new MetaTileEntityVacuumDryingFurnace(gtliteId("vacuum_drying_furnace")));
+        VOLCANUS = registerMultiMetaTileEntity(20, new MetaTileEntityVolcanus(gtliteId("volcanus")));
     }
 }

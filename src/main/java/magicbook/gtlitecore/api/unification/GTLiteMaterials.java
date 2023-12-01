@@ -144,6 +144,8 @@ public class GTLiteMaterials {
     public static Material SpessartineFront;
     public static Material SphaleriteFront;
     public static Material PentlanditeFront;
+    public static Material BlazingPyrotheum;
+    public static Material GelidCryotheum;
 
     public static void init() {
         GTLiteElementMaterials.register();

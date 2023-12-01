@@ -33,7 +33,8 @@ public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasi
 
     public enum BoilerCasingType implements IStringSerializable {
         INCONEL625("inconel_625_pipe"),
-        HASTELLOY_N("hastelloy_n_pipe");
+        HASTELLOY_N("hastelloy_n_pipe"),
+        POLYBENZIMIDAZOLE("polybenzimidazole_pipe");
 
         private final String name;
 
