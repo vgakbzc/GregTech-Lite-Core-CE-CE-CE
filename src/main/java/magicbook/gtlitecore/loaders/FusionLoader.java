@@ -27,5 +27,15 @@ public class FusionLoader {
                 .duration(120)
                 .EUToStart(250000000L)
                 .buildAndRegister();
+
+        //  Plutonium-241 + Titanium -> Livermorium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Plutonium241.getFluid(32))
+                .fluidInputs(Titanium.getFluid(32))
+                .fluidOutputs(Livermorium.getFluid(64))
+                .EUt(VA[UV])
+                .duration(200)
+                .EUToStart(650000000L)
+                .buildAndRegister();
     }
 }

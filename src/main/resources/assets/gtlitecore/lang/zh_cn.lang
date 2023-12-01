@@ -411,6 +411,20 @@ gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
 gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
 gregtech.material.calcium_carbide=碳化钙
 gregtech.material.calcium_hydroxide=氢氧化钙
+gregtech.material.boric_acid=硼酸
+gregtech.material.boron_trioxide=三氧化二硼
+gregtech.material.boron_trifluoride=三氟化硼
+gregtech.material.lithium_hydride=氢化锂
+gregtech.material.lithium_tetrafluoroborate=四氟硼酸锂
+gregtech.material.diborane=乙硼烷
+gregtech.material.borazine=环氮硼烷
+gregtech.material.boron_trichloride=三氯化硼
+gregtech.material.trichloroborazine=三氯环硼氮烷
+gregtech.material.hexagonal_boron_nitride=六方氮化硼
+gregtech.material.cubic_boron_nitride=立方氮化硼
+gregtech.material.amorphous_boron_nitride=非晶氮化硼
+gregtech.material.heterodiamond=杂金刚石
+gregtech.material.cubic_heterodiamond=立方杂金刚石
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -419,6 +433,7 @@ gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈�
 gregtech.material.tanmolyium_beta_c=钛钼合金β-C
 gregtech.material.talonite=铬钴磷酸盐合金
 gregtech.material.hastelloy_x_78=哈斯特洛伊合金-X78
+gregtech.material.silicon_carbide=碳化硅
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -531,6 +546,7 @@ gregtech.material.rich_ammonia_mixture=富氨混合物
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
+metaitem.component.grinder.boron_nitride.name=氮化硼磨头
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

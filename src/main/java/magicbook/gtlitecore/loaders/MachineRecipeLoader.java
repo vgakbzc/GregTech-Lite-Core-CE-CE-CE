@@ -1,16 +1,15 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
-import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
-import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
-import magicbook.gtlitecore.common.blocks.BlockUniqueCasing;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.blocks.*;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -219,6 +218,42 @@ public class MachineRecipeLoader {
                 'E', ELECTRIC_PUMP_IV.getStackForm(),
                 'P', new UnificationEntry(plate, TanmolyiumBetaC),
                 'W', new UnificationEntry(cableGtSingle, Platinum));
+
+        //  Fuel Refine Factory
+        ModHandler.addShapedRecipe(true, "fuel_refine_factory", FUEL_REFINE_FACTORY.getStackForm(),
+                "RFR", "CHC", "PWP",
+                'H', MetaTileEntities.HULL[UHV].getStackForm(),
+                'P', ELECTRIC_PUMP_UHV,
+                'F', new UnificationEntry(pipeHugeFluid, Duranium),
+                'R', new UnificationEntry(rotor, Orichalcum),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'W', new UnificationEntry(cableGtQuadruple, SiliconCarbide));
+
+        //  TODO  ION_IMPLANTATOR 23 and 24-29
+
+        //  Fusion Reactor Mk IV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
+                .input(circuit, MarkerMaterials.Tier.UEV, 4)
+                .input(GRAVI_STAR)
+                .input(plateDouble, Dubnium)
+                .input(FIELD_GENERATOR_UV, 2)
+                .input(NANO_PIC_CHIP, 64)
+                .input(NANO_PIC_CHIP, 64)
+                .input(wireGtSingle, PedotPSS, 32)
+                .fluidInputs(SolderingAlloy.getFluid(2304))
+                .fluidInputs(Europium.getFluid(2304))
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(ADVANCED_FUSION_REACTOR[0])
+                .EUt(VA[UV])
+                .duration(1000)
+                .stationResearch(b -> b
+                        .researchStack(FUSION_REACTOR[2].getStackForm())
+                        .CWUt(192)
+                        .EUt(VA[UHV]))
+                .buildAndRegister();
+
+        //  Fusion Reactor Mk V
     }
 
     private static void MachineCasingRecipes() {
@@ -426,6 +461,65 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
-    }
 
+        //  Fusion Casing Mk IV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UHV])
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
+                .input(VOLTAGE_COIL_UHV, 2)
+                .input(FIELD_GENERATOR_UV)
+                .input(plate, Dubnium, 6)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_CASING_MK4, 2))
+                .EUt(VA[UHV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Fusion Casing Mk V
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UEV])
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
+                .input(VOLTAGE_COIL_UEV, 2)
+                .input(FIELD_GENERATOR_UHV)
+                .input(plate, Livermorium, 6)
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_CASING_MK5, 2))
+                .EUt(VA[UEV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Fusion Coil Mk 2
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.FUSION_CASING.getItemVariant(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL))
+                .input(FIELD_GENERATOR_LuV, 2)
+                .input(ELECTRIC_PUMP_LuV)
+                .input(NEUTRON_REFLECTOR, 2)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(pipeSmallFluid, Europium, 4)
+                .input(plate, Americium, 4)
+                .fluidInputs(YttriumBariumCuprate.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
+                .EUt(VA[UV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Fusion Coil Mk 3
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
+                .input(FIELD_GENERATOR_ZPM, 2)
+                .input(ELECTRIC_PUMP_ZPM)
+                .input(NEUTRON_REFLECTOR, 2)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(pipeSmallFluid, Duranium, 4)
+                .input(plate, Dubnium, 4)
+                .fluidInputs(Europium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
+                .EUt(VA[UHV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
 }

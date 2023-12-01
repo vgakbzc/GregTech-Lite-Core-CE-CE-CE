@@ -101,6 +101,21 @@ public class GTLiteSecondDegreeMaterials {
                 .components(NaquadahAlloy, 10, Rhenium, 5, Naquadria, 4, Gadolinium, 3, Strontium, 2, Polonium, 3, Rutherfordium, 2)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
+
+        //  12007 Silicon Carbide
+        SiliconCarbide = new Material.Builder(getId(), gregtechId("silicon_carbide"))
+                .dust()
+                .fluid()
+                .color(0x4D4D4D)
+                .iconSet(METALLIC)
+                .flags(GENERATE_FINE_WIRE)
+                .components(Silicon, 1, Carbon, 1)
+                .blast(b -> b
+                        .temp(2500, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[UV])
+                        .vacuumStats(VA[EV], 280))
+                .cableProperties(V[UHV], 6, 8, false)
+                .build();
     }
 
     private static int getId() {

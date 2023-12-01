@@ -17,6 +17,7 @@ public class RecipeManager {
         MachineComponents.init();
         MaterialInfoLoader.init();
         MachineRecipeLoader.init();
+        MiscRecipes.init();
         initChains();
         initOreProcessings();
 
@@ -38,6 +39,7 @@ public class RecipeManager {
         KevlarChain.init();
         AcetyleneChain.init();
         AmmoniaChain.init();
+        BoronNitrideChain.init();
     }
 
     private static void initOreProcessings() {

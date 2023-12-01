@@ -148,15 +148,15 @@ public class MaterialComponents {
                 {6, MetaItems.COMPONENT_GRINDER_TUNGSTEN.getStackForm()},
                 {7, MetaItems.COMPONENT_GRINDER_TUNGSTEN.getStackForm()},
                 {8, MetaItems.COMPONENT_GRINDER_TUNGSTEN.getStackForm()},
-//                {9, GTLiteMetaItems.BORON_NITRIDE_GRINDER.getStackForm()},
-//                {10, GTLiteMetaItems.BORON_NITRIDE_GRINDER.getStackForm()},
-//                {11, GTLiteMetaItems.BORON_NITRIDE_GRINDER.getStackForm()},
+                {9, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
+                {10, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
+                {11, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
 //                {12, },
 //                {13, },
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         SAWBLADE.appendIngredients(Stream.of(new Object[][]{
-//                {9, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, CubicBoronNitride)},
+                {9, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, CubicBoronNitride)},
 //                {10, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, BlackTitanium)},
 //                {11, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Hypogen)},
 //                {12, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Trinium)},
@@ -180,7 +180,7 @@ public class MaterialComponents {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         COIL_ELECTRIC.appendIngredients(Stream.of(new Object[][]{
-//                {9, new UnificationEntry(OrePrefix.wireGtOctal, AwakenedDraconium)},
+                {9, new UnificationEntry(OrePrefix.wireGtOctal, SiliconCarbide)},
 //                {10, new UnificationEntry(OrePrefix.wireGtOctal, Seaborgium)},
 //                {11, new UnificationEntry(OrePrefix.wireGtOctal, BlackDwarfMatter)},
 //                  {12, new UnificationEntry(OrePrefix.wireGtOctal, Trinium)},
@@ -217,7 +217,7 @@ public class MaterialComponents {
 
         STICK_RADIOACTIVE.appendIngredients(Stream.of(new Object[][]{
                 {8, new UnificationEntry(OrePrefix.stick, Dubnium)},
-//                {9, new UnificationEntry(OrePrefix.stick, Livermorium)},
+                {9, new UnificationEntry(OrePrefix.stick, Livermorium)},
 //                {10, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
 //                {11, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
 //                {12, new UnificationEntry(OrePrefix.stick, SuperHeavyLAlloy)},

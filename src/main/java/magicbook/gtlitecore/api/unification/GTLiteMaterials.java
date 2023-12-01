@@ -63,6 +63,20 @@ public class GTLiteMaterials {
     public static Material PotassiumEthylxanthate;
     public static Material CalciumCarbide;
     public static Material CalciumHydroxide;
+    public static Material BoricAcid;
+    public static Material BoronTrioxide;
+    public static Material BoronTrifluoride;
+    public static Material LithiumHydride;
+    public static Material LithiumTetrafluoroborate;
+    public static Material Diborane;
+    public static Material Borazine;
+    public static Material BoronTrichloride;
+    public static Material Trichloroborazine;
+    public static Material HexagonalBoronNitride;
+    public static Material CubicBoronNitride;
+    public static Material AmorphousBoronNitride;
+    public static Material Heterodiamond;
+    public static Material CubicHeterodiamond;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -71,6 +85,7 @@ public class GTLiteMaterials {
     public static Material TanmolyiumBetaC;
     public static Material Talonite;
     public static Material HastelloyX78;
+    public static Material SiliconCarbide;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
