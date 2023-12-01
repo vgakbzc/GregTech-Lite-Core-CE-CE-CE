@@ -449,6 +449,15 @@ gregtech.material.polystyrene=聚苯乙烯（PS）
 gregtech.material.polystyrene_sulfonate=聚苯乙烯磺酸（PSS）
 gregtech.material.pedot_pss=PEDOT:PSS
 gregtech.material.pedot_tma=PEDOT-TMA
+gregtech.material.para_xylene=对二甲苯
+gregtech.material.durene=均四甲苯
+gregtech.material.pyromellitic_dianhydride=均苯四酸二酐（PDMA）
+gregtech.material.oxydianiline=4,4'-二氨基二苯醚（ODA）
+gregtech.material.dimethylformamide=二甲基甲酰胺（DMF）
+gregtech.material.phthalic_anhydride=邻苯二甲酸酐
+gregtech.material.biphenyl_tetracarboxylic_acid_dianhydride=联苯四甲酸二酐（BPDA）
+gregtech.material.nitroaniline=4-硝基苯胺
+gregtech.material.para_phenylenediamine=对苯二胺
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

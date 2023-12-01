@@ -101,6 +101,15 @@ public class GTLiteMaterials {
     public static Material PolystyreneSulfonate;
     public static Material PedotPSS;
     public static Material PedotTMA;
+    public static Material ParaXylene;
+    public static Material Durene;
+    public static Material PyromelliticDianhydride;
+    public static Material Oxydianiline;
+    public static Material Dimethylformamide;
+    public static Material PhthalicAnhydride;
+    public static Material BiphenylTetracarboxylicAcidDianhydride;
+    public static Material Nitroaniline;
+    public static Material ParaPhenylenediamine;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

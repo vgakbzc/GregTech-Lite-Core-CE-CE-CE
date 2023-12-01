@@ -34,6 +34,7 @@ public class RecipeManager {
         CBDOPolycarbonateChain.init();
         CyanogenChain.init();
         PEDOTChain.init();
+        KaptonChain.init();
     }
 
     private static void initOreProcessings() {

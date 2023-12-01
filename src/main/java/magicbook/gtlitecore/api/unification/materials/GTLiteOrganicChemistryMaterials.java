@@ -273,6 +273,89 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Edot, 1, PMMA, 2)
                 .cableProperties(V[UEV], 8, 6, false)
                 .build();
+
+        //  13031 Para Xylene
+        ParaXylene = new Material.Builder(getId(), gregtechId("para_xylene"))
+                .liquid()
+                .color(0x666040)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 10)
+                .build()
+                .setFormula("C6H4(CH3)2", true);
+
+        //  13032 Durene
+        Durene = new Material.Builder(getId(), gregtechId("durene"))
+                .dust()
+                .color(0x336040)
+                .iconSet(FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 14)
+                .build()
+                .setFormula("C6H2(CH3)4", true);
+
+        //  13033 Pyromellitic Dianhydride
+        PyromelliticDianhydride = new Material.Builder(getId(), gregtechId("pyromellitic_dianhydride"))
+                .dust()
+                .color(0xF0EAD6)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 2, Oxygen, 6)
+                .build()
+                .setFormula("C6H2(C2O3)2", true);
+
+        //  13034 Oxydianiline
+        Oxydianiline = new Material.Builder(getId(), gregtechId("oxydianiline"))
+                .dust()
+                .color(0xF0E130)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 12, Hydrogen, 12, Nitrogen, 2, Oxygen, 1)
+                .build()
+                .setFormula("O(C6H4NH2)2", true);
+
+        //  13035 Dimethylformamide
+        Dimethylformamide = new Material.Builder(getId(), gregtechId("dimethylformamide"))
+                .liquid()
+                .color(0x42BDFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 3, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
+                .build()
+                .setFormula("(CH3)2NC(O)H", true);
+
+        //  13036 Phthalic Anhydride
+        PhthalicAnhydride = new Material.Builder(getId(), gregtechId("phthalic_anhydride"))
+                .dust()
+                .color(0xEEAAEE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 4, Oxygen, 3)
+                .build()
+                .setFormula("C6H4(CO)2O", true);
+
+        //  13037 Biphenyl Tetracarboxylic Acid Dianhydride
+        BiphenylTetracarboxylicAcidDianhydride = new Material.Builder(getId(), gregtechId("biphenyl_tetracarboxylic_acid_dianhydride"))
+                .dust()
+                .color(0xFF7F50)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 6, Oxygen, 6)
+                .build()
+                .setFormula("(C8H3O3)2", true);
+
+        //  13038 Nitroaniline
+        Nitroaniline = new Material.Builder(getId(), gregtechId("nitroaniline"))
+                .liquid()
+                .color(0x2A6E68)
+                .components(Carbon, 6, Hydrogen, 6, Nitrogen, 2, Oxygen, 2)
+                .build()
+                .setFormula("H2NC6H4NO2", true);
+
+        //  13039 Para Phenylenediamine
+        ParaPhenylenediamine = new Material.Builder(getId(), gregtechId("para_phenylenediamine"))
+                .dust()
+                .color(0x4A8E7B)
+                .iconSet(ROUGH)
+                .components(Carbon, 6, Hydrogen, 8, Nitrogen, 2)
+                .build()
+                .setFormula("H2NC6H4NH2", true);
+
     }
 
     private static int getId() {
