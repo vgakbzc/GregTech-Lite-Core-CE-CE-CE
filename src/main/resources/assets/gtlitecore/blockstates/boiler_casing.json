@@ -13,6 +13,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/hastelloy_n_pipe"
         }
+      },
+      "polybenzimidazole_pipe": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/polybenzimidazole_pipe"
+        }
       }
     }
   }

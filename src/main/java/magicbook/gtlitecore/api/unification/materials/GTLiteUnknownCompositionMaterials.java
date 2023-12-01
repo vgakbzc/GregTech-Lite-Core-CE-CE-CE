@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.api.unification.materials;
 
+import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.unification.material.Material;
 
 import static gregtech.api.unification.material.Materials.*;
@@ -368,6 +369,21 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(Pentlandite.getMaterialRGB())
                 .components(Pentlandite.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  18053 Blazing Pyrotheum
+        BlazingPyrotheum = new Material.Builder(getId(), gregtechId("blazing_pyrotheum"))
+                .liquid(new FluidBuilder().temperature(8000).customStill().customFlow())
+                .components(Blaze, 2, Redstone, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  18054 Gelid Cryotheum
+        GelidCryotheum = new Material.Builder(getId(), gregtechId("gelid_cryotheum"))
+                .liquid(new FluidBuilder().temperature(8).customStill().customFlow())
+                .color(0x40B8FB)
+                .components(Ice, 2, Electrotine, 1, Water, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
     }

@@ -39,7 +39,9 @@ public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.Mu
         INCONEL625_GEARBOX_CASING("inconel_625_gearbox_casing"),
         HASTELLOY_N_CASING("hastelloy_n_casing"),
         HASTELLOY_N_GEARBOX_CASING("hastelloy_n_gearbox_casing"),
-        RED_STEEL_CASING("red_steel_casing");
+        RED_STEEL_CASING("red_steel_casing"),
+        ADVANCED_INVAR_CASING("advanced_invar_casing"),
+        ADVANCED_ALUMINIUM_CASING("advanced_aluminium_casing");
 
         private final String name;
 

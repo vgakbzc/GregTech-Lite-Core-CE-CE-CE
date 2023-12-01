@@ -65,6 +65,8 @@ public class GTLiteMaterials {
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
     public static Material HastelloyN;
+    public static Material AusteniticStainlessSteel904L;
+    public static Material TanmolyiumBetaC;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -144,6 +146,8 @@ public class GTLiteMaterials {
     public static Material SpessartineFront;
     public static Material SphaleriteFront;
     public static Material PentlanditeFront;
+    public static Material BlazingPyrotheum;
+    public static Material GelidCryotheum;
 
     public static void init() {
         GTLiteElementMaterials.register();

@@ -7,9 +7,12 @@ tile.multiblock_casing.inconel_625_gearbox_casing.name=镍基合金-625球磨齿
 tile.multiblock_casing.hastelloy_n_casing.name=哈斯特洛伊合金-N防水机器外壳
 tile.multiblock_casing.hastelloy_n_gearbox_casing.name=哈斯特洛伊合金-N齿轮箱外壳
 tile.multiblock_casing.red_steel_casing.name=高气密红钢机器外壳
+tile.multiblock_casing.advanced_invar_casing.name=镀层殷钢绝热机器外壳
+tile.multiblock_casing.advanced_aluminium_casing.name=镀层铝制防冻机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
+tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 
@@ -285,6 +288,24 @@ gtlitecore.machine.flotation_cell_regulator.tooltip=工业级浮游选矿池
 
 gtlitecore.machine.vacuum_drying_furnace.name=真空干燥炉
 
+gtlitecore.machine.volcanus.name=炽焱高炉
+gtlitecore.machine.volcanus.tooltip.1=需要提供§c烈焰之炽焱§7以工作。
+gtlitecore.machine.volcanus.tooltip.2=未提供§c烈焰之炽焱§7时，炽焱高炉将会停机。
+gtlitecore.machine.volcanus.tooltip.3=比相同电压等级的§r电力高炉§7快一倍
+gtlitecore.machine.volcanus.tooltip.4=线圈等级决定最大并行数量，每提升一级都会使得最大并行数量提高至原本数量的两倍。
+gtlitecore.machine.volcanus.amount=烈焰之炽焱储量：%sL
+gtlitecore.machine.volcanus.heat=烈焰之炽焱正在转换为热量！
+gtlitecore.machine.volcanus.warning=烈焰之炽焱不足
+
+gtlitecore.machine.cryogenic_freezer.name=凛冰冷冻机
+gtlitecore.machine.cryogenic_freezer.tooltip.1=需要提供§b极寒之凛冰§7以工作
+gtlitecore.machine.cryogenic_freezer.tooltip.2=未提供§b极寒之凛冰§7时，凛冰冷冻机将会停机
+gtlitecore.machine.cryogenic_freezer.tooltip.3=配方时间减少至原本的0.8倍
+gtlitecore.machine.cryogenic_freezer.tooltip.4=最大并行数：§e16§7
+gtlitecore.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
+gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极速下降！
+gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
+
 #  Materials
 
 ##  Element Materials
@@ -348,6 +369,8 @@ gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
 gregtech.material.hastelloy_n=哈斯特洛伊合金-N
+gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈钢-904L
+gregtech.material.tanmolyium_beta_c=钛钼合金β-C
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -427,6 +450,8 @@ gregtech.material.redstone_front=红石矿石泡沫
 gregtech.material.spessartine_front=锰铝榴石矿石泡沫
 gregtech.material.sphalerite_front=闪锌矿矿石泡沫
 gregtech.material.pentlandite_front=镍黄铁矿矿石泡沫
+gregtech.material.blazing_pyrotheum=烈焰之炽焱
+gregtech.material.gelid_cryotheum=极寒之凛冰
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

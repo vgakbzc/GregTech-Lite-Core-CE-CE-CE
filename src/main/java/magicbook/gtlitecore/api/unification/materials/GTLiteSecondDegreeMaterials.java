@@ -31,6 +31,7 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Nickel, 8, Chrome, 6, Molybdenum, 4, Niobium, 4, Titanium, 3, Iron, 2, Aluminium, 2)
                 .fluidPipeProperties(4500, 340, true, true, true, false)
                 .build();
+      
         //  12002 Hastelloy-N
         HastelloyN = new Material.Builder(getId(), gregtechId("hastelloy_n"))
                 .ingot()
@@ -44,6 +45,34 @@ public class GTLiteSecondDegreeMaterials {
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_BOLT_SCREW, GENERATE_ROTOR, GENERATE_FRAME)
                 .components(Nickel, 15, Molybdenum, 4, Chrome, 2, Titanium, 2, Yttrium, 2)
                 .fluidPipeProperties(4380, 300, true, true, true,false)
+                .build();
+
+        //  12003 Austenitic Stainless Steel-904L
+        AusteniticStainlessSteel904L = new Material.Builder(getId(), gregtechId("super_austenitic_stainless_steel_904_l"))
+                .ingot()
+                .fluid()
+                .color(0x881357)
+                .iconSet(METALLIC)
+                .blast(b -> b
+                        .temp(4960, BlastProperty.GasTier.MID)
+                        .blastStats(VA[EV], 944)
+                        .vacuumStats(VA[HV], 320))
+                .components(StainlessSteel, 8, NickelZincFerrite, 4, Kanthal, 4, Molybdenum, 4)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_BOLT_SCREW)
+                .build();
+
+        //  12004 Tanmolyium Beta-C
+        TanmolyiumBetaC = new Material.Builder(getId(), gregtechId("tanmolyium_beta_c"))
+                .ingot()
+                .fluid()
+                .color(0xc72fcc)
+                .iconSet(METALLIC)
+                .blast(b -> b
+                        .temp(5300, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[IV], 1800)
+                        .vacuumStats(VA[HV], 400))
+                .components(Titanium, 5, Molybdenum, 5, Vanadium, 2, Chrome, 3, Aluminium, 1)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
     }
 

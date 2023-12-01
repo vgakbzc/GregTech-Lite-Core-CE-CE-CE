@@ -57,6 +57,18 @@
           "side": "gtlitecore:blocks/casings/red_steel_casing_side",
           "bottom": "#side"
         }
+      },
+      "advanced_invar_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_invar_casing"
+        }
+      },
+      "advanced_aluminium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_aluminium_casing"
+        }
       }
     }
   }

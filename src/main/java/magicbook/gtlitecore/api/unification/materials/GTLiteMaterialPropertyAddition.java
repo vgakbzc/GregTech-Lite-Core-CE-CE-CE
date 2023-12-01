@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.properties.*;
 
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
 public class GTLiteMaterialPropertyAddition {
@@ -51,5 +52,8 @@ public class GTLiteMaterialPropertyAddition {
         Spessartine.addFlags(GENERATE_MILLED);
         Sphalerite.addFlags(GENERATE_MILLED);
         Pentlandite.addFlags(GENERATE_MILLED);
+
+        //  Frame
+        Polybenzimidazole.addFlags(GENERATE_FRAME);
     }
 }
