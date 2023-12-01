@@ -17,5 +17,15 @@ public class FusionLoader {
                 .duration(160)
                 .EUToStart(380000000L)
                 .buildAndRegister();
+
+        //  Plutonium-241 + Neon -> Rutherfordium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Plutonium241.getFluid(16))
+                .fluidInputs(Neon.getFluid(16))
+                .fluidOutputs(Rutherfordium.getFluid(16))
+                .EUt(VA[LuV])
+                .duration(120)
+                .EUToStart(150000000L)
+                .buildAndRegister();
     }
 }

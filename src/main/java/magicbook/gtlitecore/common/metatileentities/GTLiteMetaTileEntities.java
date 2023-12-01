@@ -46,6 +46,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCrystallizationCrucible CRYSTALLIZATION_CRUCIBLE;
     public static MetaTileEntityCVDUnit CVD_UNIT;
     public static MetaTileEntityPlasmaCVDUnit PLASMA_CVD_UNIT;
+    public static MetaTileEntityLaserCVDUnit LASER_CVD_UNIT;
     public static MetaTileEntityBurnerReactor BURNER_REACTOR;
     public static MetaTileEntityCryogenicReactor CRYOGENIC_REACTOR;
     public static MetaTileEntityLargeNaquadahReactor LARGE_NAQUADAH_REACTOR;
@@ -112,7 +113,7 @@ public class GTLiteMetaTileEntities {
         CRYSTALLIZATION_CRUCIBLE = registerMultiMetaTileEntity(7, new MetaTileEntityCrystallizationCrucible(gtliteId("crystallization_crucible")));
         CVD_UNIT = registerMultiMetaTileEntity(8, new MetaTileEntityCVDUnit(gtliteId("cvd_unit")));
         PLASMA_CVD_UNIT = registerMultiMetaTileEntity(9, new MetaTileEntityPlasmaCVDUnit(gtliteId("plasma_cvd_unit")));
-        //  LASER_CVD_UNIT 10
+        LASER_CVD_UNIT = registerMultiMetaTileEntity(10, new MetaTileEntityLaserCVDUnit(gtliteId("laser_cvd_unit")));
         BURNER_REACTOR = registerMultiMetaTileEntity(11, new MetaTileEntityBurnerReactor(gtliteId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMultiMetaTileEntity(12, new MetaTileEntityCryogenicReactor(gtliteId("cryogenic_reactor")));
         LARGE_NAQUADAH_REACTOR = registerMultiMetaTileEntity(13, new MetaTileEntityLargeNaquadahReactor(gtliteId("large_naquadah_reactor")));

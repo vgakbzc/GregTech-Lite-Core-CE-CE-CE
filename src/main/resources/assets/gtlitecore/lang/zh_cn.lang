@@ -11,6 +11,7 @@ tile.multiblock_casing.advanced_invar_casing.name=镀层殷钢绝热机器外壳
 tile.multiblock_casing.advanced_aluminium_casing.name=镀层铝制防冻机器外壳
 tile.multiblock_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器外壳
 tile.multiblock_casing.naquadria_casing.name=抗辐射超能硅岩机器外壳
+tile.multiblock_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -66,6 +67,10 @@ metaitem.wafer.femto_pic.name=飞米功率集成电路（FPIC）晶圆
 metaitem.wafer.femto_pic.tooltip=飞米功率集成电路原料
 metaitem.wafer.chip.femto_pic.name=飞米功率集成电路（FPIC）晶片
 metaitem.wafer.chip.femto_pic.tooltip=飞米功率集成电路
+metaitem.boule.dubnium.name=钅杜掺杂的单晶硅
+metaitem.boule.dubnium.tooltip=待处理电路
+metaitem.wafer.dubnium.name=钅杜掺杂的晶圆
+metaitem.wafer.dubnium.tooltip=待处理电路
 
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
@@ -394,6 +399,7 @@ gregtech.material.hastelloy_n=哈斯特洛伊合金-N
 gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈钢-904L
 gregtech.material.tanmolyium_beta_c=钛钼合金β-C
 gregtech.material.talonite=铬钴磷酸盐合金
+gregtech.material.hastelloy_x_78=哈斯特洛伊合金-X78
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

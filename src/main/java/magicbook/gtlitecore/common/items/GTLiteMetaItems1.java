@@ -89,7 +89,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         PICO_PIC_CHIP = this.addItem(203, "wafer.chip.pico_pic");
         FEMTO_PIC_WAFER = this.addItem(204, "wafer.femto_pic");
         FEMTO_PIC_CHIP = this.addItem(205, "wafer.chip.femto_pic");
-
+        DUBNIUM_BOULE = this.addItem(206, "boule.dubnium");
+        DUBNIUM_WAFER = this.addItem(207, "wafer.dubnium");
 
         //  Voltage Coils
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");

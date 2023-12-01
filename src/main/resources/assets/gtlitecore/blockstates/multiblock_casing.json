@@ -81,6 +81,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/naquadria_casing"
         }
+      },
+      "hastelloy_x78_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_x78_casing"
+        }
       }
     }
   }

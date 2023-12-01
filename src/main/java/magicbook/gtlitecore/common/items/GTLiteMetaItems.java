@@ -78,6 +78,8 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem PICO_PIC_CHIP;
     public static MetaItem<?>.MetaValueItem FEMTO_PIC_WAFER;
     public static MetaItem<?>.MetaValueItem FEMTO_PIC_CHIP;
+    public static MetaItem<?>.MetaValueItem DUBNIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem DUBNIUM_WAFER;
 
     //  Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;

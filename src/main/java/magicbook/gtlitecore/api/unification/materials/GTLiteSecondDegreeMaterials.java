@@ -69,7 +69,7 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(METALLIC)
                 .blast(b -> b
                         .temp(5300, BlastProperty.GasTier.HIGHER)
-                        .blastStats(VA[IV], 1800)
+                        .blastStats(VA[IV], 800)
                         .vacuumStats(VA[HV], 400))
                 .components(Titanium, 5, Molybdenum, 5, Vanadium, 2, Chrome, 3, Aluminium, 1)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
@@ -82,9 +82,23 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x9991A5)
                 .iconSet(SHINY)
                 .blast(b -> b
-                        .blastStats(VA[EV], 3454)
+                        .blastStats(VA[EV], 454)
                         .vacuumStats(VA[MV], 280))
                 .components(Cobalt, 4, Chrome, 3, Phosphorus, 2, Molybdenum, 1)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12006 Hastelloy-X78
+        HastelloyX78 = new Material.Builder(getId(), gregtechId("hastelloy_x_78"))
+                .ingot()
+                .fluid()
+                .color(0x6BA3E3)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(12800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1997)
+                        .vacuumStats(VA[LuV], 340))
+                .components(NaquadahAlloy, 10, Rhenium, 5, Naquadria, 4, Gadolinium, 3, Strontium, 2, Polonium, 3, Rutherfordium, 2)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
     }
