@@ -319,7 +319,7 @@ public class GTLiteUnknownCompositionMaterials {
         NickelFront = new Material.Builder(getId(), gregtechId("nickel_front"))
                 .liquid()
                 .color(Nickel.getMaterialRGB())
-                .components(Nickel.getMaterialComponents())
+                .components(Nickel, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
@@ -327,7 +327,7 @@ public class GTLiteUnknownCompositionMaterials {
         PlatinumFront = new Material.Builder(getId(), gregtechId("platinum_front"))
                 .liquid()
                 .color(Platinum.getMaterialRGB())
-                .components(Platinum.getMaterialComponents())
+                .components(Platinum, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 

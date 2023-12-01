@@ -171,7 +171,7 @@ public class GTLiteRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.BATH);
         //  Vacuum Drying Furnace RecipeMap
-        VACUUM_DRYING_RECIPES = new RecipeMap<>("vacuum_drying_recipes", 1, 9, 2, 3, new BlastRecipeBuilder(), false)
+        VACUUM_DRYING_RECIPES = new RecipeMap<>("vacuum_drying_recipes", 1, 9, 2, 0, new BlastRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL)
                 .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)
                 .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)

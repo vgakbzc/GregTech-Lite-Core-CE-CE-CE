@@ -1,6 +1,10 @@
 package magicbook.gtlitecore.loaders;
 
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
+import magicbook.gtlitecore.loaders.chain.BPAPolycarbonateChain;
+import magicbook.gtlitecore.loaders.chain.CBDOPolycarbonateChain;
+import magicbook.gtlitecore.loaders.chain.CyanogenChain;
+import magicbook.gtlitecore.loaders.chain.PMMAChain;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.PlatinumGroupProcessing;
@@ -16,11 +20,19 @@ public class RecipeManager {
         MachineComponents.init();
         MaterialInfoLoader.init();
         MachineRecipeLoader.init();
+        initChains();
         initOreProcessings();
     }
 
     private static void initBlocks() {
         Crucibles.init();
+    }
+
+    private static void initChains() {
+        PMMAChain.init();
+        BPAPolycarbonateChain.init();
+        CBDOPolycarbonateChain.init();
+        CyanogenChain.init();
     }
 
     private static void initOreProcessings() {

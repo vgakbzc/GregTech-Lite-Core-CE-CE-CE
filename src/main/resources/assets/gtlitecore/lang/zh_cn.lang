@@ -13,6 +13,15 @@ tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外�
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 
+tile.transparent_casing.bpa_polycarbonate_glass.name=BPA聚碳酸酯玻璃
+tile.transparent_casing.bpa_polycarbonate_glass.tooltip=灰色石英
+tile.transparent_casing.pmma_glass.name=PMMA玻璃
+tile.transparent_casing.pmma_glass.tooltip=亚克力玻璃
+tile.transparent_casing.cbdo_polycarbonate_glass.name=CBDO聚碳酸酯玻璃
+tile.transparent_casing.cbdo_polycarbonate_glass.tooltip=并不是挡风玻璃
+tile.transparent_casing.infinity_glass.name=无尽玻璃
+tile.transparent_casing.infinity_glass.tooltip=彩虹玻璃
+
 tile.crucible.bronze.name=青铜坩埚
 tile.crucible.invar.name=殷钢坩埚
 tile.crucible.quartz.name=石英岩坩埚
@@ -336,6 +345,10 @@ gregtech.material.carbon_disulfide=二硫化碳
 gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
 gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
 
+##  Second Degree Materials
+gregtech.material.inconel_625=镍基合金-625
+gregtech.material.hastelloy_n=哈斯特洛伊合金-N
+
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
 gregtech.material.kapton_e=聚酰亚胺-E
@@ -348,6 +361,17 @@ gregtech.material.methyl_formate=甲酸甲酯
 gregtech.material.formic_acid=甲酸
 gregtech.material.ethylhexanol=2-乙基己醇
 gregtech.material.diethylhexyl_phosphoric_acid=二-(2-乙基己基)磷酸
+gregtech.material.acetone_cyanohydrin=丙酮氰醇
+gregtech.material.polymethylmethacrylate=聚甲基丙烯酸甲酯（PMMA）
+gregtech.material.dimethyl_carbonate=碳酸二甲酯
+gregtech.material.diphenyl_carbonate=碳酸二苯酯
+gregtech.material.bpa_polycarbonate=双酚A聚碳酸酯
+gregtech.material.propadiene=丙二烯
+gregtech.material.isobutyric_acid=异丁酸
+gregtech.material.isobutyric_anhydride=异丁酸酐
+gregtech.material.dimethylketene=二甲基乙烯酮
+gregtech.material.tetramethylcyclobutanediol=2,2,4,4-四甲基-1,3-环丁二醇（CBDO）
+gregtech.material.cbdo_polycarbonate=CBDO聚碳酸酯
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
