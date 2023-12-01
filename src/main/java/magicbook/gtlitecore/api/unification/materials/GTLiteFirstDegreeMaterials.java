@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.ToolProperty;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -410,6 +411,148 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(SHINY)
                 .components(Carbon, 3, Hydrogen, 5, Potassium, 1, Oxygen, 1, Sulfur, 2)
                 .build();
+
+        //  11050 Calcium Carbide
+        CalciumCarbide = new Material.Builder(getId(), gregtechId("calcium_carbide"))
+                .dust()
+                .color(0x807B70)
+                .iconSet(DULL)
+                .components(Calcium, 1, Carbon, 2)
+                .build();
+
+        //  11051 Calcium Hydroxide
+        CalciumHydroxide = new Material.Builder(getId(), gregtechId("calcium_hydroxide"))
+                .dust()
+                .color(0x5F8764)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Calcium, 1, Hydrogen, 2, Oxygen, 2)
+                .build()
+                .setFormula("Ca(OH)2", true);
+
+        //  11052 Boric Acid
+        BoricAcid = new Material.Builder(getId(), gregtechId("boric_acid"))
+                .dust()
+                .liquid()
+                .color(0xFAFAFA)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 3, Boron, 1, Oxygen, 3)
+                .build();
+
+        //  11053 Boron Trioxide
+        BoronTrioxide = new Material.Builder(getId(), gregtechId("boron_trioxide"))
+                .dust()
+                .color(0xE9FAC0)
+                .iconSet(METALLIC)
+                .components(Boron, 2, Oxygen, 3)
+                .build();
+
+        //  11054 Boron Trifluoride
+        BoronTrifluoride = new Material.Builder(getId(), gregtechId("boron_trifluoride"))
+                .gas()
+                .color(0xFAF191)
+                .components(Boron, 1, Fluorine, 3)
+                .build();
+
+        //  11055 Lithium Hydride
+        LithiumHydride = new Material.Builder(getId(), gregtechId("lithium_hydride"))
+                .ingot()
+                .color(0x9BAFDB)
+                .iconSet(METALLIC)
+                .components(Lithium, 1, Hydrogen, 1)
+                .build();
+
+        //  11056 Lithium Tetrafluoroborate
+        LithiumTetrafluoroborate = new Material.Builder(getId(), gregtechId("lithium_tetrafluoroborate"))
+                .dust()
+                .color(0x90FAF6)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Lithium, 1, Boron, 1, Fluorine, 4)
+                .build();
+
+        //  11057 Diborane
+        Diborane = new Material.Builder(getId(), gregtechId("diborane"))
+                .gas()
+                .color(0x3F3131)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Boron, 2, Hydrogen, 6)
+                .build();
+
+        //  11058 Borazine
+        Borazine = new Material.Builder(getId(), gregtechId("borazine"))
+                .liquid()
+                .color(0x542828)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Boron, 3, Hydrogen, 6, Nitrogen, 3)
+                .build();
+
+        //  11059 Boron Trichloride
+        BoronTrichloride = new Material.Builder(getId(), gregtechId("boron_trichloride"))
+                .gas()
+                .color(0x033F1B)
+                .components(Boron, 1, Chlorine, 3)
+                .build();
+
+        //  11060 Trichloroborazine
+        Trichloroborazine = new Material.Builder(getId(), gregtechId("trichloroborazine"))
+                .liquid()
+                .color(0xD62929)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Boron, 3, Chlorine, 3, Hydrogen, 3, Nitrogen, 3)
+                .build();
+
+        //  11061 Hexagonal Boron Nitride
+        HexagonalBoronNitride = new Material.Builder(getId(), gregtechId("hexagonal_boron_nitride"))
+                .gem()
+                .color(0x6A6A72)
+                .iconSet(GEM_VERTICAL)
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
+                .components(Boron, 1, Nitrogen, 1)
+                .build()
+                .setFormula("h-BN", true);
+
+        //  11062 Cubic Boron Nitride
+        CubicBoronNitride = new Material.Builder(getId(), gregtechId("cubic_boron_nitride"))
+                .gem()
+                .color(0x545572)
+                .iconSet(DIAMOND)
+                //  TODO DISABLE_CRYSTALLIZATION
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, FLAMMABLE, EXPLOSIVE)
+                .components(Boron, 1, Nitrogen, 1)
+                .toolStats(new ToolProperty(14.0F, 9.0F, 12400, 15))
+                .build()
+                .setFormula("c-BN", true);
+
+        //  11063 Amorphous Boron Nitride
+        AmorphousBoronNitride = new Material.Builder(getId(), gregtechId("amorphous_boron_nitride"))
+                .ingot()
+                .color(0x9193C5)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING)
+                .components(Boron, 1, Nitrogen, 1)
+                .build()
+                .setFormula("a-BN", true);
+
+        //  11064 Heterodiamond
+        Heterodiamond = new Material.Builder(getId(), gregtechId("heterodiamond"))
+                .gem()
+                .color(0x512A72)
+                .iconSet(GEM_HORIZONTAL)
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
+                .components(Boron, 1, Carbon, 1, Nitrogen, 1)
+                .build();
+
+        //  11065 Cubic Heterodiamond
+        CubicHeterodiamond = new Material.Builder(getId(), gregtechId("cubic_heterodiamond"))
+                .gem()
+                .color(0x753DA6)
+                .iconSet(DIAMOND)
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION)
+                .components(Boron, 1, Carbon, 2, Nitrogen, 1)
+                .build()
+                .setFormula("c-BC2N", true);
     }
 
     private static int getId() {

@@ -386,6 +386,18 @@ public class GTLiteUnknownCompositionMaterials {
                 .components(Ice, 2, Electrotine, 1, Water, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  18055 Rich Nitrogen Mixture
+        RichNitrogenMixture = new Material.Builder(getId(), gregtechId("rich_nitrogen_mixture"))
+                .gas()
+                .color(0x6891D8)
+                .build();
+
+        //  18056 Rich Ammonia Mixture
+        RichAmmoniaMixture = new Material.Builder(getId(), gregtechId("rich_ammonia_mixture"))
+                .liquid()
+                .color(0x708ACD)
+                .build();
     }
 
     private static int getId() {

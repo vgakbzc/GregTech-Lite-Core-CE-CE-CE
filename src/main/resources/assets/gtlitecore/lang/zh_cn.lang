@@ -409,6 +409,22 @@ gregtech.material.calcium_carbonate=碳酸钙
 gregtech.material.carbon_disulfide=二硫化碳
 gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
 gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
+gregtech.material.calcium_carbide=碳化钙
+gregtech.material.calcium_hydroxide=氢氧化钙
+gregtech.material.boric_acid=硼酸
+gregtech.material.boron_trioxide=三氧化二硼
+gregtech.material.boron_trifluoride=三氟化硼
+gregtech.material.lithium_hydride=氢化锂
+gregtech.material.lithium_tetrafluoroborate=四氟硼酸锂
+gregtech.material.diborane=乙硼烷
+gregtech.material.borazine=环氮硼烷
+gregtech.material.boron_trichloride=三氯化硼
+gregtech.material.trichloroborazine=三氯环硼氮烷
+gregtech.material.hexagonal_boron_nitride=六方氮化硼
+gregtech.material.cubic_boron_nitride=立方氮化硼
+gregtech.material.amorphous_boron_nitride=非晶氮化硼
+gregtech.material.heterodiamond=杂金刚石
+gregtech.material.cubic_heterodiamond=立方杂金刚石
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -417,6 +433,7 @@ gregtech.material.super_austenitic_stainless_steel_904_l=超级奥氏体不锈�
 gregtech.material.tanmolyium_beta_c=钛钼合金β-C
 gregtech.material.talonite=铬钴磷酸盐合金
 gregtech.material.hastelloy_x_78=哈斯特洛伊合金-X78
+gregtech.material.silicon_carbide=碳化硅
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -441,6 +458,31 @@ gregtech.material.isobutyric_anhydride=异丁酸酐
 gregtech.material.dimethylketene=二甲基乙烯酮
 gregtech.material.tetramethylcyclobutanediol=2,2,4,4-四甲基-1,3-环丁二醇（CBDO）
 gregtech.material.cbdo_polycarbonate=CBDO聚碳酸酯
+gregtech.material.butanediol=1,4-丁二醇
+gregtech.material.diacetyl=丁二酮
+gregtech.material.ethylene_glycol=乙二醇
+gregtech.material.edot=3,4-乙撑二氧噻吩（EDOT）
+gregtech.material.polystyrene=聚苯乙烯（PS）
+gregtech.material.polystyrene_sulfonate=聚苯乙烯磺酸（PSS）
+gregtech.material.pedot_pss=PEDOT:PSS
+gregtech.material.pedot_tma=PEDOT-TMA
+gregtech.material.para_xylene=对二甲苯
+gregtech.material.durene=均四甲苯
+gregtech.material.pyromellitic_dianhydride=均苯四酸二酐（PDMA）
+gregtech.material.oxydianiline=4,4'-二氨基二苯醚（ODA）
+gregtech.material.dimethylformamide=二甲基甲酰胺（DMF）
+gregtech.material.phthalic_anhydride=邻苯二甲酸酐
+gregtech.material.biphenyl_tetracarboxylic_acid_dianhydride=联苯四甲酸二酐（BPDA）
+gregtech.material.nitroaniline=4-硝基苯胺
+gregtech.material.para_phenylenediamine=对苯二胺
+gregtech.material.bistrichloromethylbenzene=1,4-双（三氯甲基）苯
+gregtech.material.acetylene=乙炔
+gregtech.material.tetrabromoethane=四溴乙烷
+gregtech.material.terephthalic_acid=对苯二甲酸（PTA）
+gregtech.material.terephthaloyl_chloride=对苯二甲酰氯
+gregtech.material.gamma_butyrolactone=γ-丁内酯
+gregtech.material.methylamine=甲胺
+gregtech.material.n_methyl_pyrrolidone=N-甲基-2-吡咯烷酮
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -498,10 +540,13 @@ gregtech.material.sphalerite_front=闪锌矿矿石泡沫
 gregtech.material.pentlandite_front=镍黄铁矿矿石泡沫
 gregtech.material.blazing_pyrotheum=烈焰之炽焱
 gregtech.material.gelid_cryotheum=极寒之凛冰
+gregtech.material.rich_nitrogen_mixture=富氮混合物
+gregtech.material.rich_ammonia_mixture=富氨混合物
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
+metaitem.component.grinder.boron_nitride.name=氮化硼磨头
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

@@ -48,6 +48,9 @@ public class GTLiteMaterialPropertyAddition {
         Rutherfordium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Polonium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Polonium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
@@ -62,8 +65,17 @@ public class GTLiteMaterialPropertyAddition {
         Sphalerite.addFlags(GENERATE_MILLED);
         Pentlandite.addFlags(GENERATE_MILLED);
 
+        //  Plate
+        Dubnium.addFlags(GENERATE_PLATE);
+        Livermorium.addFlags(GENERATE_PLATE);
+
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
+        Dubnium.addFlags(GENERATE_DOUBLE_PLATE);
+        Livermorium.addFlags(GENERATE_DOUBLE_PLATE);
+
+        //  Foil
+        Nickel.addFlags(GENERATE_FOIL);
 
         //  Frame
         Polybenzimidazole.addFlags(GENERATE_FRAME);

@@ -91,6 +91,7 @@ public class GTLiteMetaItems {
     //  Others
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
+    public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
 
     private GTLiteMetaItems() {}
 

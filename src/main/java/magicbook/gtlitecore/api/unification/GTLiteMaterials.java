@@ -61,6 +61,22 @@ public class GTLiteMaterials {
     public static Material CarbonDisulfide;
     public static Material SodiumEthylxanthate;
     public static Material PotassiumEthylxanthate;
+    public static Material CalciumCarbide;
+    public static Material CalciumHydroxide;
+    public static Material BoricAcid;
+    public static Material BoronTrioxide;
+    public static Material BoronTrifluoride;
+    public static Material LithiumHydride;
+    public static Material LithiumTetrafluoroborate;
+    public static Material Diborane;
+    public static Material Borazine;
+    public static Material BoronTrichloride;
+    public static Material Trichloroborazine;
+    public static Material HexagonalBoronNitride;
+    public static Material CubicBoronNitride;
+    public static Material AmorphousBoronNitride;
+    public static Material Heterodiamond;
+    public static Material CubicHeterodiamond;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -69,6 +85,7 @@ public class GTLiteMaterials {
     public static Material TanmolyiumBetaC;
     public static Material Talonite;
     public static Material HastelloyX78;
+    public static Material SiliconCarbide;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -93,6 +110,31 @@ public class GTLiteMaterials {
     public static Material Dimethylketene;
     public static Material Tetramethylcyclobutanediol;
     public static Material CBDOPolycarbonate;
+    public static Material Butanediol;
+    public static Material Diacetyl;
+    public static Material EthyleneGlycol;
+    public static Material Edot;
+    public static Material Polystyrene;
+    public static Material PolystyreneSulfonate;
+    public static Material PedotPSS;
+    public static Material PedotTMA;
+    public static Material ParaXylene;
+    public static Material Durene;
+    public static Material PyromelliticDianhydride;
+    public static Material Oxydianiline;
+    public static Material Dimethylformamide;
+    public static Material PhthalicAnhydride;
+    public static Material BiphenylTetracarboxylicAcidDianhydride;
+    public static Material Nitroaniline;
+    public static Material ParaPhenylenediamine;
+    public static Material Bistrichloromethylbenzene;
+    public static Material Acetylene;
+    public static Material Tetrabromoethane;
+    public static Material TerephthalicAcid;
+    public static Material TerephthaloylChloride;
+    public static Material GammaButyrolactone;
+    public static Material Methylamine;
+    public static Material NMethylPyrrolidone;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -150,6 +192,8 @@ public class GTLiteMaterials {
     public static Material PentlanditeFront;
     public static Material BlazingPyrotheum;
     public static Material GelidCryotheum;
+    public static Material RichNitrogenMixture;
+    public static Material RichAmmoniaMixture;
 
     public static void init() {
         GTLiteElementMaterials.register();
