@@ -3,6 +3,7 @@ package magicbook.gtlitecore.common;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.cover.CoverDefinition;
+import gregtech.api.recipes.recipeproperties.FusionEUToStartProperty;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
@@ -46,6 +47,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.MULTIBLOCK_CASING);
         registry.register(GTLiteMetaBlocks.BOILER_CASING);
         registry.register(GTLiteMetaBlocks.UNIQUE_CASING);
+        registry.register(GTLiteMetaBlocks.FUSION_CASING);
         registry.register(GTLiteMetaBlocks.TRANSPARENT_CASING);
         registry.register(GTLiteMetaBlocks.CRUCIBLE);
     }
@@ -57,6 +59,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.MULTIBLOCK_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.BOILER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.UNIQUE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.FUSION_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
     }
@@ -76,6 +79,8 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         GTLiteLog.logger.info("Registering recipes...");
+        FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
+        FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
         RecipeManager.init();
     }
 

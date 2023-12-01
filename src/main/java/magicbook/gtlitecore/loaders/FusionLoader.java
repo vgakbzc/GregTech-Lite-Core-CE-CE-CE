@@ -25,7 +25,7 @@ public class FusionLoader {
                 .fluidOutputs(Rutherfordium.getFluid(16))
                 .EUt(VA[LuV])
                 .duration(120)
-                .EUToStart(150000000L)
+                .EUToStart(250000000L)
                 .buildAndRegister();
     }
 }

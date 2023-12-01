@@ -19,6 +19,17 @@ tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 
+tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
+tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
+tile.fusion_casing.cryostat.name=聚变反应堆恒温仓
+tile.fusion_casing.advanced_cryostat.name=高级聚变反应堆恒温仓
+tile.fusion_casing.divertor.name=聚变反应堆偏滤仓
+tile.fusion_casing.advanced_divertor.name=高级聚变反应堆偏滤仓
+tile.fusion_casing.vacuum.name=聚变反应堆真空仓
+tile.fusion_casing.advanced_vacuum.name=高级聚变反应堆真空仓
+tile.fusion_casing.fusion_coil_mk2.name=高级聚变线圈方块
+tile.fusion_casing.fusion_coil_mk3.name=终极聚变线圈方块
+
 tile.transparent_casing.bpa_polycarbonate_glass.name=BPA聚碳酸酯玻璃
 tile.transparent_casing.bpa_polycarbonate_glass.tooltip=灰色石英
 tile.transparent_casing.pmma_glass.name=PMMA玻璃
@@ -332,6 +343,12 @@ gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极
 gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
 gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
+
+gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
+
+gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
 
 #  Materials
 
