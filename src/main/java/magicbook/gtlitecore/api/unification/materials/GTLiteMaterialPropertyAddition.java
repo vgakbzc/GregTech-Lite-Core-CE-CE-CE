@@ -88,5 +88,10 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
+
+        //  Conflict Solutions
+        RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
+        Salt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Sodium Chlorate and Salt Electrolysis
+
     }
 }

@@ -425,6 +425,9 @@ gregtech.material.cubic_boron_nitride=立方氮化硼
 gregtech.material.amorphous_boron_nitride=非晶氮化硼
 gregtech.material.heterodiamond=杂金刚石
 gregtech.material.cubic_heterodiamond=立方杂金刚石
+gregtech.material.hydrobromic_acid=氢溴酸
+gregtech.material.potassium_hydroxide=氢氧化钾
+gregtech.material.potassium_bromate=溴酸钾
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -483,6 +486,10 @@ gregtech.material.terephthaloyl_chloride=对苯二甲酰氯
 gregtech.material.gamma_butyrolactone=γ-丁内酯
 gregtech.material.methylamine=甲胺
 gregtech.material.n_methyl_pyrrolidone=N-甲基-2-吡咯烷酮
+gregtech.material.dichloroethane=1,2-二氯乙烷
+gregtech.material.trichloroethylene=三氯乙烯
+gregtech.material.chloroacetic_acid=氯乙酸
+gregtech.material.malonic_acid=丙二酸
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -551,6 +558,7 @@ gregtech.material.bromine_sulfate_solution=硫酸溴溶液
 gregtech.material.overheated_bromine_sulfate_gas=过热硫酸溴气
 gregtech.material.wet_bromine=湿溴气
 gregtech.material.debrominated_water=脱溴盐水
+gregtech.material.bz_medium=别洛索夫-扎鲍京斯基振荡反应液
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

@@ -417,6 +417,40 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xA504D6)
                 .components(Carbon, 5, Hydrogen, 9, Nitrogen, 1, Oxygen, 1)
                 .build();
+
+        //  13048 Dichloroethane
+        Dichloroethane = new Material.Builder(getId(), gregtechId("dichloroethane"))
+                .liquid()
+                .color(0xDAAED3)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 4, Chlorine, 2)
+                .build();
+
+        //  13049 Trichloroethylene
+        Trichloroethylene = new Material.Builder(getId(), gregtechId("trichloroethylene"))
+                .liquid()
+                .color(0xB685B1)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 1, Chlorine, 3)
+                .build();
+
+        //  13050 Chloroacetic Acid
+        ChloroaceticAcid = new Material.Builder(getId(), gregtechId("chloroacetic_acid"))
+                .dust()
+                .color(0x38541A)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(SHINY)
+                .components(Carbon, 2, Hydrogen, 3, Chlorine, 1, Oxygen, 2)
+                .build();
+
+        //  13051 Malonic Acid
+        MalonicAcid = new Material.Builder(getId(), gregtechId("malonic_acid"))
+                .dust()
+                .color(0x61932E)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(SHINY)
+                .components(Carbon, 3, Hydrogen, 4, Oxygen, 4)
+                .build();
     }
 
     private static int getId() {

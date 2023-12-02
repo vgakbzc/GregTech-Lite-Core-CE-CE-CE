@@ -457,12 +457,20 @@ public class GTLiteUnknownCompositionMaterials {
                 .iconSet(DULL)
                 .build()
                 .setFormula("Br(H2O)", true);
-        //  24048 Debrominated Water
+
+        //  24044 Debrominated Water
         DebrominatedWater = new Material.Builder(getId(), gregtechId("debrominated_water"))
                 .liquid()
                 .color(0x24A3A3)
                 .components(Hydrogen, 2, Oxygen, 1)
                 .build();
+
+        //  24045 BZ Medium
+        BZMedium = new Material.Builder(getId(), gregtechId("bz_medium"))
+                .liquid()
+                .color(10681653)
+                .build();
+
     }
 
     private static int getId() {

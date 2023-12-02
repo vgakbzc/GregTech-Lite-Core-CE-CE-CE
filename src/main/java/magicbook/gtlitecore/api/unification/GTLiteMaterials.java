@@ -77,6 +77,9 @@ public class GTLiteMaterials {
     public static Material AmorphousBoronNitride;
     public static Material Heterodiamond;
     public static Material CubicHeterodiamond;
+    public static Material HydrobromicAcid;
+    public static Material PotassiumHydroxide;
+    public static Material PotassiumBromate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -135,6 +138,11 @@ public class GTLiteMaterials {
     public static Material GammaButyrolactone;
     public static Material Methylamine;
     public static Material NMethylPyrrolidone;
+    public static Material Dichloroethane;
+    public static Material Trichloroethylene;
+    public static Material ChloroaceticAcid;
+    public static Material MalonicAcid;
+    public static Material BZMedium;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

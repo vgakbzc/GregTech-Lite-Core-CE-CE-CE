@@ -553,6 +553,32 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Boron, 1, Carbon, 2, Nitrogen, 1)
                 .build()
                 .setFormula("c-BC2N", true);
+
+        //  11066 Hydrobromic Acid
+        HydrobromicAcid = new Material.Builder(getId(), gregtechId("hydrobromic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x8D1212)
+                .components(Hydrogen, 1, Bromine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11067 Potassium Hydroxide
+        PotassiumHydroxide = new Material.Builder(getId(), gregtechId("potassium_hydroxide"))
+                .dust()
+                .liquid(new FluidBuilder().temperature(633))
+                .color(0xFA9849)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Potassium, 1, Oxygen, 1, Hydrogen, 1)
+                .build();
+
+        //  11068 Potassium Bromate
+        PotassiumBromate = new Material.Builder(getId(), gregtechId("potassium_bromate"))
+                .dust()
+                .color(0x782828)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(ROUGH)
+                .components(Potassium, 1, Bromine, 1, Oxygen, 3)
+                .build();
     }
 
     private static int getId() {
