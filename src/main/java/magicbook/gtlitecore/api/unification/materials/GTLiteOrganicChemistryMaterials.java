@@ -457,8 +457,44 @@ public class GTLiteOrganicChemistryMaterials {
                 .liquid()
                 .color(0xE3EBDC)
                 .components(Dimethylamine, 1, HydrochloricAcid, 1)
+                .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("C2H8NCl", true);
+
+        //  13053 Ethylenediamine
+        Ethylenediamine = new Material.Builder(getId(), gregtechId("ethylenediamine"))
+                .liquid()
+                .color(0xD00ED0)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 8, Nitrogen, 2)
+                .build()
+                .setFormula("C2H4(NH2)2", true);
+
+        //  13054 Formaldehyde
+        Formaldehyde = new Material.Builder(getId(), gregtechId("formaldehyde"))
+                .liquid()
+                .color(0x858F40)
+                .components(Carbon, 1, Hydrogen, 2, Oxygen, 1)
+                .build();
+
+        //  13055 Tetrasodium EDTA
+        TetrasodiumEDTA = new Material.Builder(getId(), gregtechId("tetrasodium_edta"))
+                .dust()
+                .color(0x8890E0)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 12, Nitrogen, 2, Oxygen, 8, Sodium, 4)
+                .build();
+
+        //  13056 Ethylenediaminetetraacetic Acid
+        EthylenediaminetetraaceticAcid = new Material.Builder(getId(), gregtechId("ethylenediaminetetraacetic_acid"))
+                .dust()
+                .liquid()
+                .color(0x87E6D9)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 8)
+                .build();
     }
 
     private static int getId() {

@@ -587,6 +587,14 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(DULL)
                 .components(Carbon, 1, Hydrogen, 3, Oxygen, 1, Potassium, 1)
                 .build();
+
+        //  11070 Copper Chloride
+        CopperChloride = new Material.Builder(getId(), gregtechId("copper_chloride"))
+                .dust()
+                .color(0x3FB3B8)
+                .iconSet(ROUGH)
+                .components(Copper, 1, Chlorine, 2)
+                .build();
     }
 
     private static int getId() {

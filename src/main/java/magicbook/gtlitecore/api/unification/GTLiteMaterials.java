@@ -81,6 +81,7 @@ public class GTLiteMaterials {
     public static Material PotassiumHydroxide;
     public static Material PotassiumBromate;
     public static Material PotassiumFormate;
+    public static Material CopperChloride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -144,6 +145,10 @@ public class GTLiteMaterials {
     public static Material ChloroaceticAcid;
     public static Material MalonicAcid;
     public static Material DimethylamineHydrochloride;
+    public static Material Ethylenediamine;
+    public static Material Formaldehyde;
+    public static Material TetrasodiumEDTA;
+    public static Material EthylenediaminetetraaceticAcid;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

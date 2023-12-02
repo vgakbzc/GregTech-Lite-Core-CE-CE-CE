@@ -44,6 +44,8 @@ public class RecipeManager {
         BrineChain.init();
         BZMediumChain.init();
         DimethylformamideChain.init();
+        EDTAChain.init();
+        EtchingMaterialsChain.init();
     }
 
     private static void initOreProcessings() {

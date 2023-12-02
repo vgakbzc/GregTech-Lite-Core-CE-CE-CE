@@ -429,6 +429,7 @@ gregtech.material.hydrobromic_acid=氢溴酸
 gregtech.material.potassium_hydroxide=氢氧化钾
 gregtech.material.potassium_bromate=溴酸钾
 gregtech.material.potassium_formate=甲醇钾
+gregtech.material.copper_chloride=氯化铜
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -492,6 +493,10 @@ gregtech.material.trichloroethylene=三氯乙烯
 gregtech.material.chloroacetic_acid=氯乙酸
 gregtech.material.malonic_acid=丙二酸
 gregtech.material.dimethylamine_hydrochloride=盐酸二甲胺
+gregtech.material.ethylenediamine=乙二胺
+gregtech.material.formaldehyde=甲醛
+gregtech.material.tetrasodium_edta=乙二胺四乙酸四钠
+gregtech.material.ethylenediaminetetraacetic_acid=乙二胺四乙酸（EDTA）
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
