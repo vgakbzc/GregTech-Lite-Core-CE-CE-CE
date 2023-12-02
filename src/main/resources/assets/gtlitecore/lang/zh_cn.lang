@@ -451,6 +451,16 @@ gregtech.material.trimethyltin_chloride=三甲基氯化锡
 gregtech.material.potassium_tetrachloroplatinate=氯铂酸钾
 gregtech.material.ammonium_sulfate=硫酸铵
 gregtech.material.ammonium_persulfate=过硫酸铵
+gregtech.material.white_phosphorus=白磷
+gregtech.material.red_phosphorus=红磷
+gregtech.material.violet_phosphorus=紫磷
+gregtech.material.black_phosphorus=黑磷
+gregtech.material.blue_phosphorus=蓝磷
+gregtech.material.wollastonite=硅灰石
+gregtech.material.phosphorene=磷烯
+gregtech.material.phosphorus_trichloride=三氯化磷
+gregtech.material.phosphoryl_chloride=磷酰氯
+gregtech.material.phosphine=磷化氢
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -617,6 +627,7 @@ gregtech.material.edp=乙二胺邻苯二酚（EDP）
 gregtech.material.sodio_indene=钠-茚
 gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
 gregtech.material.methylamine_mixture=甲基胺混合物
+gregtech.material.phosphorene_solution=磷烯剥离溶液
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

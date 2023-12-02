@@ -54,8 +54,11 @@ public class RecipeManager {
         //  TODO MagneticsChain.init();
         MethylamineChain.init();
         NanotubesChain.init();
-
+        OilChain.init();
         PEDOTChain.init();
+        PhosphorusChain.init();
+
+
         PMMAChain.init();
     }
 

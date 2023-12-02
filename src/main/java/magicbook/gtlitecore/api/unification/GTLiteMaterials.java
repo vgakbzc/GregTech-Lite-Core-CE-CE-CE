@@ -103,6 +103,16 @@ public class GTLiteMaterials {
     public static Material PotassiumTetrachloroplatinate;
     public static Material AmmoniumSulfate;
     public static Material AmmoniumPersulfate;
+    public static Material WhitePhosphorus;
+    public static Material RedPhosphorus;
+    public static Material VioletPhosphorus;
+    public static Material BlackPhosphorus;
+    public static Material BluePhosphorus;
+    public static Material Wollastonite;
+    public static Material Phosphorene;
+    public static Material PhosphorusTrichloride;
+    public static Material PhosphorylChloride;
+    public static Material Phosphine;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -269,6 +279,7 @@ public class GTLiteMaterials {
     public static Material SodioIndene;
     public static Material SteamCrackedSodioIndene;
     public static Material MethylamineMixture;
+    public static Material PhosphoreneSolution;
 
     public static void init() {
         GTLiteElementMaterials.register();
