@@ -80,7 +80,52 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
         MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
 
+        //  SMDs
+        OPTICAL_TRANSISTOR = this.addItem(58, "component.optical_smd.transistor");
+        OPTICAL_RESISTOR = this.addItem(59, "component.optical_smd.resistor");
+        OPTICAL_CAPACITOR = this.addItem(60, "component.optical_smd.capacitor");
+        OPTICAL_DIODE = this.addItem(61, "component.optical_smd.diode");
+        OPTICAL_INDUCTOR = this.addItem(62, "component.optical_smd.inductor");
+        SPINTRONIC_TRANSISTOR = this.addItem(63, "component.spintronic_smd.transistor");
+        SPINTRONIC_RESISTOR = this.addItem(64, "component.spintronic_smd.resistor");
+        SPINTRONIC_CAPACITOR = this.addItem(65, "component.spintronic_smd.capacitor");
+        SPINTRONIC_DIODE = this.addItem(66, "component.spintronic_smd.diode");
+        SPINTRONIC_INDUCTOR = this.addItem(67, "component.spintronic_smd.inductor");
+        COSMIC_TRANSISTOR = this.addItem(68, "component.cosmic_smd.transistor");
+        COSMIC_RESISTOR = this.addItem(69, "component.cosmic_smd.resistor");
+        COSMIC_CAPACITOR = this.addItem(70, "component.cosmic_smd.capacitor");
+        COSMIC_DIODE = this.addItem(71, "component.cosmic_smd.diode");
+        COSMIC_INDUCTOR = this.addItem(72, "component.cosmic_smd.inductor");
+        SUPRACAUSAL_TRANSISTOR = this.addItem(73, "component.supracausal_smd.transistor");
+        SUPRACAUSAL_RESISTOR = this.addItem(74, "component.supracausal_smd.resistor");
+        SUPRACAUSAL_CAPACITOR = this.addItem(75, "component.supracausal_smd.capacitor");
+        SUPRACAUSAL_DIODE = this.addItem(76, "component.supracausal_smd.diode");
+        SUPRACAUSAL_INDUCTOR = this.addItem(77, "component.supracausal_smd.inductor");
 
+        //  Circuit Components
+        BZ_REACTION_CHAMBER = this.addItem(78, "component.gooware.reaction_chamber");
+        NONLINEAR_CHEMICAL_OSCILLATOR = this.addItem(79, "component.gooware.nonlinear_chemical_oscillator");
+        OPTICAL_LASER_CONTROL_UNIT = this.addItem(80, "component.optical.optical_laser_control_unit");
+        ESR_COMPUTATION_UNIT = this.addItem(81, "component.spintronic.esr_computation_unit");
+        COSMIC_INFORMATION_MODULE = this.addItem(82, "component.cosmic.information_module");
+        HOLOGRAPHIC_INFORMATION_IMC = this.addItem(83, "component.cosmic.holographic_imc");
+        SPACETIME_CONDENSER = this.addItem(84, "component.supracausal.spacetime_condenser");
+        LIGHT_CONE_MODULE = this.addItem(85, "component.supracausal.light_cone_module");
+        OPTICAL_FIBER = this.addItem(86, "component.optical.optical_fiber");
+        DIELECTRIC_MIRROR = this.addItem(87, "component.optical.dielectric_mirror");
+        EMPTY_LASER_ASSEMBLY = this.addItem(88, "component.optical.emitter.empty");
+        HELIUM_NEON_LASER = this.addItem(89, "component.optical.emitter.helium_neon");
+        ND_YAG_LASER = this.addItem(90, "component.optical.emitter.nd_yag");
+        TOPOLOGICAL_INSULATOR_TUBE = this.addItem(91, "component.spintronic.topological_insulator");
+        BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT = this.addItem(92, "component.spintronic.bose_einstein_condensate_containment_unit");
+        BOSE_EINSTEIN_CONDENSATE = this.addItem(93, "component.spintronic.bose_einstein_condensate");
+        CLADDED_OPTICAL_FIBER_CORE = this.addItem(94, "component.cosmic.cladded_optical_fiber_core");
+        CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = addItem(95, "component.cosmic.closed_timelike_curve_computational_unit");
+        CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = addItem(96, "component.cosmic.closed_timelike_curve_guidance_unit");
+        NUCLEAR_CLOCK = addItem(97, "component.cosmic.nuclear_clock");
+        MANIFOLD_OSCILLATORY_POWER_CELL = addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
+        SCINTILLATOR = addItem(99, "component.cosmic.scintillator");
+        SCINTILLATOR_CRYSTAL = addItem(100, "component.cosmic.scintillator_crystal");
 
         //  Boules and Wafers
         NANO_PIC_WAFER = this.addItem(200, "wafer.nano_pic");

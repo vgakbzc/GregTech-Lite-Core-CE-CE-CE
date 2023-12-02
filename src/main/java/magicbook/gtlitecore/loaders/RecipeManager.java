@@ -54,9 +54,13 @@ public class RecipeManager {
         //  TODO MagneticsChain.init();
         MethylamineChain.init();
         NanotubesChain.init();
-
+        OilChain.init();
         PEDOTChain.init();
+        PhosphorusChain.init();
+        //  TODO PhotoresistivesChain.init();
         PMMAChain.init();
+        //  TODO SeleniiumTelluriumChain.init();
+        //  TODO TurpentineChain.init();
     }
 
     private static void initOreProcessings() {

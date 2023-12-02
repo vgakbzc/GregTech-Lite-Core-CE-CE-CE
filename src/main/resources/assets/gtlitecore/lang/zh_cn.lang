@@ -204,6 +204,53 @@ metaitem.circuit_board.spintronic.tooltip=自旋转移矩效应的最好实现
 metaitem.circuit_board.magneto_resonatic.name=压印磁共振电路板
 metaitem.circuit_board.magneto_resonatic.tooltip=共振紫晶电路板
 
+#  Circuit Components
+metaitem.component.gooware.reaction_chamber.name=别洛索夫-扎鲍京斯基振荡反应室
+metaitem.component.gooware.nonlinear_chemical_oscillator.name=非线性化学振荡器
+metaitem.component.gooware.nonlinear_chemical_oscillator.tooltip=非平衡热力学！
+metaitem.component.optical.optical_laser_control_unit.name=光学激光控制器
+metaitem.component.optical.optical_laser_control_unit.tooltip=激光信息传输
+metaitem.component.spintronic.esr_computation_unit.name=电子自旋共振计算单元
+metaitem.component.spintronic.esr_computation_unit.tooltip=电子自旋共振量子计算！
+metaitem.component.cosmic.information_module.name=宇宙信息承载模块
+metaitem.component.cosmic.information_module.tooltip=宇宙在我手中
+metaitem.component.cosmic.holographic_imc.name=存算一体全息存储器
+metaitem.component.cosmic.holographic_imc.tooltip=天穹对偶引力散射！
+metaitem.component.supracausal.spacetime_condenser.name=超因果时空凝聚器
+metaitem.component.supracausal.spacetime_condenser.tooltip=超空间稳定器
+metaitem.component.supracausal.light_cone_module.name=时空光锥稳定模块
+metaitem.component.supracausal.light_cone_module.tooltip=自旋泡沫路径积分计算！
+metaitem.component.optical.optical_fiber.name=光纤
+metaitem.component.optical.optical_fiber.tooltip=透光玻璃
+metaitem.component.optical.dielectric_mirror.name=介电镜
+metaitem.component.optical.dielectric_mirror.tooltip=布氏镜
+metaitem.component.optical.emitter.empty.name=空激光组件
+metaitem.component.optical.emitter.empty.tooltip=需要导光介质填充
+metaitem.component.optical.emitter.helium_neon.name=氦-氖混合气激光镭射器
+metaitem.component.optical.emitter.helium_neon.tooltip=用于弱光学设备
+metaitem.component.optical.emitter.nd_yag.name=钕掺杂的钇铝榴石激光镭射器
+metaitem.component.optical.emitter.nd_yag.tooltip=用于强光学设备
+metaitem.component.spintronic.topological_insulator.name=拓扑绝缘管
+metaitem.component.spintronic.topological_insulator.tooltip=导电表面态
+metaitem.component.spintronic.bose_einstein_condensate_containment_unit.name=凝聚态物质遏制装置
+metaitem.component.spintronic.bose_einstein_condensate_containment_unit.tooltip=电磁蒸发冷却
+metaitem.component.spintronic.bose_einstein_condensate.name=玻色-爱因斯坦凝聚态物质遏制装置
+metaitem.component.spintronic.bose_einstein_condensate.tooltip=在 §b170nK§7 下有整整 2,000 个 §cRb-87§7 原子！
+metaitem.component.cosmic.cladded_optical_fiber_core.name=包层光导纤维内芯
+metaitem.component.cosmic.cladded_optical_fiber_core.tooltip=光纤
+metaitem.component.cosmic.closed_timelike_curve_computational_unit.name=封闭类时曲线计算单元
+metaitem.component.cosmic.closed_timelike_curve_computational_unit.tooltip=宇宙计算器
+metaitem.component.cosmic.closed_timelike_curve_guidance_unit.name=封闭类时曲线引导单元
+metaitem.component.cosmic.closed_timelike_curve_guidance_unit.tooltip=时空向导
+metaitem.component.cosmic.nuclear_clock.name=核时钟
+metaitem.component.cosmic.nuclear_clock.tooltip=时针接近零时
+metaitem.component.cosmic.manifold_oscillatory_power_cell.name=流形振荡能量单元
+metaitem.component.cosmic.manifold_oscillatory_power_cell.tooltip=爆炸将产生时空灾害
+metaitem.component.cosmic.scintillator.name=闪烁体
+metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
+metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
+metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
+
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
 
@@ -451,6 +498,16 @@ gregtech.material.trimethyltin_chloride=三甲基氯化锡
 gregtech.material.potassium_tetrachloroplatinate=氯铂酸钾
 gregtech.material.ammonium_sulfate=硫酸铵
 gregtech.material.ammonium_persulfate=过硫酸铵
+gregtech.material.white_phosphorus=白磷
+gregtech.material.red_phosphorus=红磷
+gregtech.material.violet_phosphorus=紫磷
+gregtech.material.black_phosphorus=黑磷
+gregtech.material.blue_phosphorus=蓝磷
+gregtech.material.wollastonite=硅灰石
+gregtech.material.phosphorene=磷烯
+gregtech.material.phosphorus_trichloride=三氯化磷
+gregtech.material.phosphoryl_chloride=磷酰氯
+gregtech.material.phosphine=磷化氢
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -617,6 +674,7 @@ gregtech.material.edp=乙二胺邻苯二酚（EDP）
 gregtech.material.sodio_indene=钠-茚
 gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
 gregtech.material.methylamine_mixture=甲基胺混合物
+gregtech.material.phosphorene_solution=磷烯剥离溶液
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
@@ -658,6 +716,51 @@ recipemap.fuel_refine_factory_recipes.name=燃料精炼
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
+
+#  SMDs
+metaitem.component.optical_smd.transistor.name=光学晶体管
+metaitem.component.optical_smd.transistor.tooltip=光电子晶体管
+metaitem.component.optical_smd.resistor.name=光敏电阻
+metaitem.component.optical_smd.resistor.tooltip=光电子电阻
+metaitem.component.optical_smd.capacitor.name=光学整合器
+metaitem.component.optical_smd.capacitor.tooltip=光电子电容
+metaitem.component.optical_smd.diode.name=光频隔离器
+metaitem.component.optical_smd.diode.tooltip=光电子二极管
+metaitem.component.optical_smd.inductor.name=光学偏振器
+metaitem.component.optical_smd.inductor.tooltip=光电子电感
+
+metaitem.component.spintronic_smd.transistor.name=自旋金属-氧半场效晶体管
+metaitem.component.spintronic_smd.transistor.tooltip=自旋电子晶体管
+metaitem.component.spintronic_smd.resistor.name=磁阻器
+metaitem.component.spintronic_smd.resistor.tooltip=自旋电子电阻
+metaitem.component.spintronic_smd.capacitor.name=超级电容
+metaitem.component.spintronic_smd.capacitor.tooltip=自旋电子电容
+metaitem.component.spintronic_smd.diode.name=肖氏势垒二极管
+metaitem.component.spintronic_smd.diode.tooltip=自旋电子二极管
+metaitem.component.spintronic_smd.inductor.name=自旋偏振器
+metaitem.component.spintronic_smd.inductor.tooltip=自旋电子电感
+
+metaitem.component.cosmic_smd.transistor.name=晶体信息载荷
+metaitem.component.cosmic_smd.transistor.tooltip=寰宇晶体管
+metaitem.component.cosmic_smd.resistor.name=微型星际物质信息壁
+metaitem.component.cosmic_smd.resistor.tooltip=寰宇电阻
+metaitem.component.cosmic_smd.capacitor.name=全息能量荷
+metaitem.component.cosmic_smd.capacitor.tooltip=寰宇电容
+metaitem.component.cosmic_smd.diode.name=宇宙离子极管
+metaitem.component.cosmic_smd.diode.tooltip=寰宇二极管
+metaitem.component.cosmic_smd.inductor.name=天顶星偏振器
+metaitem.component.cosmic_smd.inductor.tooltip=寰宇电感
+
+metaitem.component.supracausal_smd.transistor.name=卡鲁扎-克莱因额外维胀子场效应管
+metaitem.component.supracausal_smd.transistor.tooltip=超因果晶体管
+metaitem.component.supracausal_smd.resistor.name=非反常量子主约束生成器
+metaitem.component.supracausal_smd.resistor.tooltip=超因果电阻
+metaitem.component.supracausal_smd.capacitor.name=能量-动量-应力张量存储器
+metaitem.component.supracausal_smd.capacitor.tooltip=超因果电容
+metaitem.component.supracausal_smd.diode.name=自旋网络载波极管
+metaitem.component.supracausal_smd.diode.tooltip=超因果二极管
+metaitem.component.supracausal_smd.inductor.name=超对称共形偏振器
+metaitem.component.supracausal_smd.inductor.tooltip=超因果电感
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块

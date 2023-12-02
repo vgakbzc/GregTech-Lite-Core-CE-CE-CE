@@ -494,6 +494,12 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(0xAA4400)
                 .build();
+
+        //  24050 Phosphorene Solution
+        PhosphoreneSolution = new Material.Builder(getId(), gregtechId("phosphorene_solution"))
+                .liquid()
+                .color(0x465966)
+                .build();
     }
 
     private static int getId() {
