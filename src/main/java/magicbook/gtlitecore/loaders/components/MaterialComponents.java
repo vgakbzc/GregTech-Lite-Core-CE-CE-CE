@@ -209,10 +209,10 @@ public class MaterialComponents {
                 {7, new UnificationEntry(OrePrefix.stick, VanadiumGallium)},
                 {8, new UnificationEntry(OrePrefix.stickLong, VanadiumGallium)},
                 {9, new UnificationEntry(OrePrefix.stickLong, VanadiumGallium)},
-//                {10, new UnificationEntry(OrePrefix.stick, CarbonNanotube)},
-//                {11, new UnificationEntry(OrePrefix.stick, CarbonNanotube)},
-//                {12, new UnificationEntry(OrePrefix.stickLong, CarbonNanotube)},
-//                {13, new UnificationEntry(OrePrefix.stickLong, CarbonNanotube)},
+                {10, new UnificationEntry(OrePrefix.stick, CarbonNanotube)},
+                {11, new UnificationEntry(OrePrefix.stick, CarbonNanotube)},
+                {12, new UnificationEntry(OrePrefix.stickLong, CarbonNanotube)},
+                {13, new UnificationEntry(OrePrefix.stickLong, CarbonNanotube)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         STICK_RADIOACTIVE.appendIngredients(Stream.of(new Object[][]{
@@ -252,7 +252,7 @@ public class MaterialComponents {
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         SPRING.appendIngredients(Stream.of(new Object[][]{
-//                {10, new UnificationEntry(OrePrefix.spring, CarbonNanotube)},
+                {10, new UnificationEntry(OrePrefix.spring, CarbonNanotube)},
 //                {11, new UnificationEntry(OrePrefix.spring, RutheniumTriniumAmericiumNeutronate)},
 //                {12, new UnificationEntry(OrePrefix.spring, Trinium)},
 //                {13, new UnificationEntry(OrePrefix.spring, Trinium)},

@@ -417,6 +417,298 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xA504D6)
                 .components(Carbon, 5, Hydrogen, 9, Nitrogen, 1, Oxygen, 1)
                 .build();
+
+        //  13048 Dichloroethane
+        Dichloroethane = new Material.Builder(getId(), gregtechId("dichloroethane"))
+                .liquid()
+                .color(0xDAAED3)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 4, Chlorine, 2)
+                .build();
+
+        //  13049 Trichloroethylene
+        Trichloroethylene = new Material.Builder(getId(), gregtechId("trichloroethylene"))
+                .liquid()
+                .color(0xB685B1)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 1, Chlorine, 3)
+                .build();
+
+        //  13050 Chloroacetic Acid
+        ChloroaceticAcid = new Material.Builder(getId(), gregtechId("chloroacetic_acid"))
+                .dust()
+                .color(0x38541A)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(SHINY)
+                .components(Carbon, 2, Hydrogen, 3, Chlorine, 1, Oxygen, 2)
+                .build();
+
+        //  13051 Malonic Acid
+        MalonicAcid = new Material.Builder(getId(), gregtechId("malonic_acid"))
+                .dust()
+                .color(0x61932E)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(SHINY)
+                .components(Carbon, 3, Hydrogen, 4, Oxygen, 4)
+                .build();
+
+        //  13052 Dimethylamine Hydrochloride
+        DimethylamineHydrochloride = new Material.Builder(getId(), gregtechId("dimethylamine_hydrochloride"))
+                .liquid()
+                .color(0xE3EBDC)
+                .components(Dimethylamine, 1, HydrochloricAcid, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C2H8NCl", true);
+
+        //  13053 Ethylenediamine
+        Ethylenediamine = new Material.Builder(getId(), gregtechId("ethylenediamine"))
+                .liquid()
+                .color(0xD00ED0)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 8, Nitrogen, 2)
+                .build()
+                .setFormula("C2H4(NH2)2", true);
+
+        //  13054 Formaldehyde
+        Formaldehyde = new Material.Builder(getId(), gregtechId("formaldehyde"))
+                .liquid()
+                .color(0x858F40)
+                .components(Carbon, 1, Hydrogen, 2, Oxygen, 1)
+                .build();
+
+        //  13055 Tetrasodium EDTA
+        TetrasodiumEDTA = new Material.Builder(getId(), gregtechId("tetrasodium_edta"))
+                .dust()
+                .color(0x8890E0)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 12, Nitrogen, 2, Oxygen, 8, Sodium, 4)
+                .build();
+
+        //  13056 Ethylenediaminetetraacetic Acid
+        EthylenediaminetetraaceticAcid = new Material.Builder(getId(), gregtechId("ethylenediaminetetraacetic_acid"))
+                .dust()
+                .liquid()
+                .color(0x87E6D9)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 8)
+                .build();
+
+        //  13057 Trimethylamine
+        Trimethylamine = new Material.Builder(getId(), gregtechId("trimethylamine"))
+                .gas()
+                .color(0xBB7700)
+                .components(Carbon, 3, Hydrogen, 9, Nitrogen, 1)
+                .build()
+                .setFormula("(CH3)3N", true);
+
+        //  13058 Tetramethylammonium Chloride
+        TetramethylammoniumChloride = new Material.Builder(getId(), gregtechId("tetramethylammonium_chloride"))
+                .dust()
+                .color(0x27FF81)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(METALLIC)
+                .components(Carbon, 4, Hydrogen, 12, Nitrogen, 1, Chlorine, 1)
+                .build()
+                .setFormula("N(CH3)4Cl", true);
+
+        //  13059 Tetramethylammonium Hydroxide
+        TetramethylammoniumHydroxide = new Material.Builder(getId(), gregtechId("tetramethylammonium_hydroxide"))
+                .liquid()
+                .color(4259798)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 1, Carbon, 4, Hydrogen, 12, Oxygen, 1, Hydrogen, 1)
+                .build()
+                .setFormula("N(CH3)4OH", true);
+
+        //  13060 Hydrogen Peroxide
+        HydrogenPeroxide = new Material.Builder(getId(), gregtechId("hydrogen_peroxide"))
+                .liquid()
+                .color(0xD2FFFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Oxygen, 2)
+                .build();
+
+        //  13061 Pyrocatechol
+        Pyrocatechol = new Material.Builder(getId(), gregtechId("pyrocatechol"))
+                .dust()
+                .color(0x784421)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(DULL)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        //  13062 Ethylene Oxide
+        EthyleneOxide = new Material.Builder(getId(), gregtechId("ethylene_oxide"))
+                .gas()
+                .color(0xDCBFE1)
+                .components(Carbon, 2, Hydrogen, 4, Oxygen, 1)
+                .build();
+
+        //  13063 Indene
+        Indene = new Material.Builder(getId(), gregtechId("indene"))
+                .liquid()
+                .color(0x171429)
+                .components(Carbon, 9, Hydrogen, 8)
+                .build();
+
+        //  13064 Indanone
+        Indanone = new Material.Builder(getId(), gregtechId("indanone"))
+                .dust()
+                .color(0x2E1616)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 9, Hydrogen, 8, Oxygen, 1)
+                .build();
+
+        //  13065 Truxene
+        Truxene = new Material.Builder(getId(), gregtechId("truxene"))
+                .liquid()
+                .color(0x1A3336)
+                .components(Carbon, 27, Hydrogen, 18)
+                .build();
+
+        //  13066 Bromomethane
+        Bromomethane = new Material.Builder(getId(), gregtechId("bromomethane"))
+                .gas()
+                .color(0xC82C31)
+                .components(Carbon, 1, Hydrogen, 3, Bromine, 1)
+                .build();
+
+        //  13067 Bromo Bromomethyl Naphthalene
+        BromoBromomethylNaphthalene = new Material.Builder(getId(), gregtechId("bromo_bromomethyl_naphthalene"))
+                .liquid()
+                .color(0x52122E)
+                .components(Carbon, 11, Hydrogen, 8, Bromine, 2)
+                .build();
+
+        //  13068 Butanol
+        Butanol = new Material.Builder(getId(), gregtechId("butanol"))
+                .liquid()
+                .color(0xC7AF2E)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 1)
+                .build()
+                .setFormula("C4H9OH", true);
+
+        //  13069 Bromobutane
+        Bromobutane = new Material.Builder(getId(), gregtechId("bromobutane"))
+                .gas()
+                .color(0xE6E8A2)
+                .components(Butene, 1, HydrobromicAcid, 1)
+                .build()
+                .setFormula("C4H9Br", true);
+
+        //  13070 Butyllithium
+        Butyllithium = new Material.Builder(getId(), gregtechId("butyllithium"))
+                .liquid()
+                .color(0xE683B6B)
+                .components(Butene, 1, Hydrogen, 1, Lithium, 1)
+                .build()
+                .setFormula("C4H9Li", true);
+
+        //  13071 Palladium Acetate
+        PalladiumAcetate = new Material.Builder(getId(), gregtechId("palladium_acetate"))
+                .dust()
+                .color(0x693C2D)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Palladium, 1, AceticAcid, 2)
+                .build()
+                .setFormula("Pd(CH3COOH)2", true);
+
+        //  13072 Geodesic Polyarene
+        GeodesicPolyarene = new Material.Builder(getId(), gregtechId("geodesic_polyarene"))
+                .dust()
+                .color(0x9E81A8)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 60, Hydrogen, 30)
+                .build();
+
+        //  13073 Hydrazine
+        Hydrazine = new Material.Builder(getId(), gregtechId("hydrazine"))
+                .liquid()
+                .color(0xB50707)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 2, Hydrogen, 4)
+                .build();
+
+        //  13074 Ethylanthraquinone
+        Ethylanthraquinone = new Material.Builder(getId(), gregtechId("ethylanthraquinone"))
+                .liquid()
+                .color(0xCC865A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 12, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(CO)2C6H3Et", true);
+
+        //  13075 Ethylanthrahydroquinone
+        Ethylanthrahydroquinone = new Material.Builder(getId(), gregtechId("ethylanthrahydroquinone"))
+                .liquid()
+                .color(0xAD531A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 18, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(CH2OH)2C6H3Et", true);
+
+        //  13076 Cycloparaphenylene
+        Cycloparaphenylene = new Material.Builder(getId(), gregtechId("cycloparaphenylene"))
+                .liquid()
+                .color(0x60545A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 6, Hydrogen, 4)
+                .build();
+
+        //  13077 Cyclooctadiene
+        Cyclooctadiene = new Material.Builder(getId(), gregtechId("cyclooctadiene"))
+                .liquid()
+                .color(0x40AC40)
+                .components(Carbon, 8, Hydrogen, 12)
+                .build();
+
+        //  13078 Dichlorocyclooctadieneplatinium
+        Dichlorocyclooctadieneplatinium = new Material.Builder(getId(), gregtechId("dichlorocyclooctadieneplatinium"))
+                .dust()
+                .color(0xD4E982)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 12, Chlorine, 2, Platinum, 1)
+                .build();
+
+        //  13079 Diiodobiphenyl
+        Diiodobiphenyl = new Material.Builder(getId(), gregtechId("diiodobiphenyl"))
+                .dust()
+                .color(0x000C52)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 12, Hydrogen, 8, Iodine, 2)
+                .build();
+
+        //  13080 Hydroxylamine Disulfate
+        HydroxylamineDisulfate = new Material.Builder(getId(), gregtechId("hydroxylamine_disulfate"))
+                .liquid()
+                .color(0x91A6D2)
+                .components(Nitrogen, 4, Hydrogen, 16, Oxygen, 10, Sulfur, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(NH3OH)2(NH4)2(SO4)2", true);
+
+        //  13081 Hydroxylamine
+        Hydroxylamine = new Material.Builder(getId(), gregtechId("hydroxylamine"))
+                .liquid()
+                .color(0x91C791)
+                .components(Hydrogen, 3, Nitrogen, 1, Oxygen, 1)
+                .build()
+                .setFormula("H3NO", true);
+
+        //  13082 Octene
+        Octene = new Material.Builder(getId(), gregtechId("octene"))
+                .liquid()
+                .color(0x818022)
+                .components(Carbon, 8, Hydrogen, 16)
+                .build();
     }
 
     private static int getId() {

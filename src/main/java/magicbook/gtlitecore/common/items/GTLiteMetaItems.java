@@ -93,6 +93,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
     public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
 
+    public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
+    public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
+
+    public static MetaItem<?>.MetaValueItem MAGNETRON;
+
     private GTLiteMetaItems() {}
 
     public static void init() {

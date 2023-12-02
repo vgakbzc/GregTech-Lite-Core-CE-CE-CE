@@ -49,6 +49,8 @@ public class GTLiteMaterialPropertyAddition {
         Polonium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Polonium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Iodine.setProperty(PropertyKey.DUST, new DustProperty());
+        Iodine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
@@ -68,11 +70,13 @@ public class GTLiteMaterialPropertyAddition {
         //  Plate
         Dubnium.addFlags(GENERATE_PLATE);
         Livermorium.addFlags(GENERATE_PLATE);
+        Rhenium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
         Dubnium.addFlags(GENERATE_DOUBLE_PLATE);
         Livermorium.addFlags(GENERATE_DOUBLE_PLATE);
+        Rhenium.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);
@@ -86,5 +90,10 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
+
+        //  Conflict Solutions
+        RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
+        Salt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Sodium Chlorate and Salt Electrolysis
+
     }
 }

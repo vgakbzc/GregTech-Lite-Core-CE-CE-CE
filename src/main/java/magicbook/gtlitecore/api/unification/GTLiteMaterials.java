@@ -77,6 +77,32 @@ public class GTLiteMaterials {
     public static Material AmorphousBoronNitride;
     public static Material Heterodiamond;
     public static Material CubicHeterodiamond;
+    public static Material HydrobromicAcid;
+    public static Material PotassiumHydroxide;
+    public static Material PotassiumBromate;
+    public static Material PotassiumFormate;
+    public static Material CopperChloride;
+    public static Material PalladiumNitrate;
+    public static Material Fullerene;
+    public static Material Trimethylaluminium;
+    public static Material GalliumTrichloride;
+    public static Material AluminiumTrichloride;
+    public static Material Trimethylgallium;
+    public static Material AluminiumHydroxide;
+    public static Material Alumina;
+    public static Material GalliumTrioxide;
+    public static Material GalliumNitride;
+    public static Material BerylliumOxide;
+    public static Material GrapheneOxide;
+    public static Material CarbonNanotube;
+    public static Material SilverChloride;
+    public static Material SilverOxide;
+    public static Material SilverTetrafluoroborate;
+    public static Material TinChloride;
+    public static Material TrimethyltinChloride;
+    public static Material PotassiumTetrachloroplatinate;
+    public static Material AmmoniumSulfate;
+    public static Material AmmoniumPersulfate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -135,6 +161,41 @@ public class GTLiteMaterials {
     public static Material GammaButyrolactone;
     public static Material Methylamine;
     public static Material NMethylPyrrolidone;
+    public static Material Dichloroethane;
+    public static Material Trichloroethylene;
+    public static Material ChloroaceticAcid;
+    public static Material MalonicAcid;
+    public static Material DimethylamineHydrochloride;
+    public static Material Ethylenediamine;
+    public static Material Formaldehyde;
+    public static Material TetrasodiumEDTA;
+    public static Material EthylenediaminetetraaceticAcid;
+    public static Material Trimethylamine;
+    public static Material TetramethylammoniumChloride;
+    public static Material TetramethylammoniumHydroxide;
+    public static Material HydrogenPeroxide;
+    public static Material Pyrocatechol;
+    public static Material EthyleneOxide;
+    public static Material Indene;
+    public static Material Indanone;
+    public static Material Truxene;
+    public static Material Bromomethane;
+    public static Material BromoBromomethylNaphthalene;
+    public static Material Butanol;
+    public static Material Bromobutane;
+    public static Material Butyllithium;
+    public static Material PalladiumAcetate;
+    public static Material GeodesicPolyarene;
+    public static Material Hydrazine;
+    public static Material Ethylanthraquinone;
+    public static Material Ethylanthrahydroquinone;
+    public static Material Cycloparaphenylene;
+    public static Material Cyclooctadiene;
+    public static Material Dichlorocyclooctadieneplatinium;
+    public static Material Diiodobiphenyl;
+    public static Material HydroxylamineDisulfate;
+    public static Material Hydroxylamine;
+    public static Material Octene;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -194,6 +255,20 @@ public class GTLiteMaterials {
     public static Material GelidCryotheum;
     public static Material RichNitrogenMixture;
     public static Material RichAmmoniaMixture;
+    public static Material IodizedBrine;
+    public static Material IodineBrineMixture;
+    public static Material BrominatedBrine;
+    public static Material IodineSlurry;
+    public static Material AcidicBrominatedBrine;
+    public static Material BromineSulfateSolution;
+    public static Material OverheatedBromineSulfateSolution;
+    public static Material WetBromine;
+    public static Material DebrominatedWater;
+    public static Material BZMedium;
+    public static Material EDP;
+    public static Material SodioIndene;
+    public static Material SteamCrackedSodioIndene;
+    public static Material MethylamineMixture;
 
     public static void init() {
         GTLiteElementMaterials.register();

@@ -5,6 +5,8 @@ import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.ToolProperty;
 
+import static gregtech.api.GTValues.UEV;
+import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
@@ -553,6 +555,234 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Boron, 1, Carbon, 2, Nitrogen, 1)
                 .build()
                 .setFormula("c-BC2N", true);
+
+        //  11066 Hydrobromic Acid
+        HydrobromicAcid = new Material.Builder(getId(), gregtechId("hydrobromic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x8D1212)
+                .components(Hydrogen, 1, Bromine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11067 Potassium Hydroxide
+        PotassiumHydroxide = new Material.Builder(getId(), gregtechId("potassium_hydroxide"))
+                .dust()
+                .liquid(new FluidBuilder().temperature(633))
+                .color(0xFA9849)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Potassium, 1, Oxygen, 1, Hydrogen, 1)
+                .build();
+
+        //  11068 Potassium Bromate
+        PotassiumBromate = new Material.Builder(getId(), gregtechId("potassium_bromate"))
+                .dust()
+                .color(0x782828)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(ROUGH)
+                .components(Potassium, 1, Bromine, 1, Oxygen, 3)
+                .build();
+
+        //  11069 Potassium Formate
+        PotassiumFormate = new Material.Builder(getId(), gregtechId("potassium_formate"))
+                .dust()
+                .color(0x74B5A9)
+                .iconSet(DULL)
+                .components(Carbon, 1, Hydrogen, 3, Oxygen, 1, Potassium, 1)
+                .build();
+
+        //  11070 Copper Chloride
+        CopperChloride = new Material.Builder(getId(), gregtechId("copper_chloride"))
+                .dust()
+                .color(0x3FB3B8)
+                .iconSet(ROUGH)
+                .components(Copper, 1, Chlorine, 2)
+                .build();
+
+        //  11071 Palladium Nitrate
+        PalladiumNitrate = new Material.Builder(getId(), gregtechId("palladium_nitrate"))
+                .dust()
+                .color(0x82312A)
+                .iconSet(METALLIC)
+                .components(Palladium, 1, Nitrogen, 2, Oxygen, 6)
+                .build()
+                .setFormula("Pd(NO3)2", true);
+
+        //  11072 Fullerene
+        Fullerene = new Material.Builder(getId(), gregtechId("fullerene"))
+                .ingot()
+                .color(0x72556A)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING, GENERATE_FRAME)
+                .components(Carbon, 60)
+                .build();
+
+        //  11073 Trimethylaluminium
+        Trimethylaluminium = new Material.Builder(getId(), gregtechId("trimethylaluminium"))
+                .liquid()
+                .color(0x6ECCFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 2, Carbon, 6, Hydrogen, 18)
+                .build()
+                .setFormula("Al2(CH3)6", true);
+
+        //  11074 Gallium Trichloride
+        GalliumTrichloride = new Material.Builder(getId(), gregtechId("gallium_trichloride"))
+                .dust()
+                .color(0x6EB4FF)
+                .iconSet(ROUGH)
+                .components(Gallium, 1, Chlorine, 3)
+                .build();
+
+        //  11075 Aluminium Trichloride
+        AluminiumTrichloride = new Material.Builder(getId(), gregtechId("aluminium_trichloride"))
+                .dust()
+                .color(0x78C3EB)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Chlorine, 3)
+                .build();
+
+        //  11076 Trimethylgallium
+        Trimethylgallium = new Material.Builder(getId(), gregtechId("trimethylgallium"))
+                .liquid()
+                .color(0x4F92FF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gallium, 1, Carbon, 3, Hydrogen, 9)
+                .build()
+                .setFormula("Ga(CH3)3", true);
+
+        //  11077 Aluminium Hydroxide
+        AluminiumHydroxide = new Material.Builder(getId(), gregtechId("aluminium_hydroxide"))
+                .dust()
+                .color(0xBEBEC8)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Oxygen, 3, Hydrogen, 3)
+                .build()
+                .setFormula("Al(OH)3", true);
+
+        //  11078 Alumina
+        Alumina = new Material.Builder(getId(), gregtechId("alumina"))
+                .dust()
+                .color(0x78c3eb)
+                .iconSet(METALLIC)
+                .components(Aluminium, 2, Oxygen, 3)
+                .build();
+
+        //  11079 Gallium Trioxide
+        GalliumTrioxide = new Material.Builder(getId(), gregtechId("gallium_trioxide"))
+                .dust()
+                .liquid(new FluidBuilder().temperature(2170))
+                .color(0xE4CDFF)
+                .iconSet(METALLIC)
+                .components(Gallium, 1, Oxygen, 3)
+                .build();
+
+        //  11080 Gallium Nitride
+        GalliumNitride = new Material.Builder(getId(), gregtechId("gallium_nitride"))
+                .ingot()
+                .color(0xFFF458)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE)
+                .components(Gallium, 1, Nitrogen, 1)
+                .build();
+
+        //  11081 Beryllium Oxide
+        BerylliumOxide = new Material.Builder(getId(), gregtechId("beryllium_oxide"))
+                .ingot()
+                .color(0x54C757)
+                .flags(GENERATE_ROD, GENERATE_RING)
+                .components(Beryllium, 1, Oxygen, 1)
+                .build();
+
+        //  11082 Graphene Oxide
+        GrapheneOxide = new Material.Builder(getId(), gregtechId("graphene_oxide"))
+                .dust()
+                .color(0x777777)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Graphene, 1, Oxygen, 1)
+                .build();
+
+        //  11083 Carbon Nanotube
+        CarbonNanotube = new Material.Builder(getId(), gregtechId("carbon_nanotube"))
+                .ingot()
+                .liquid()
+                .color(0x05090C)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING)
+                .cableProperties(V[UEV], 8, 6, false)
+                .components(Carbon, 48)
+                .build()
+                .setFormula("CNT", false);
+
+        //  11084 Silver Chloride
+        SilverChloride = new Material.Builder(getId(), gregtechId("silver_chloride"))
+                .dust()
+                .color(0x8D8D8D)
+                .iconSet(METALLIC)
+                .components(Silver, 1, Chlorine, 1)
+                .build();
+
+        //  11085 Silver Oxide
+        SilverOxide = new Material.Builder(getId(), gregtechId("silver_oxide"))
+                .dust()
+                .color(0xA4A4A4)
+                .components(Silver, 2, Oxygen, 1)
+                .build();
+
+        //  11086 Silver Tetrafluoroborate
+        SilverTetrafluoroborate = new Material.Builder(getId(), gregtechId("silver_tetrafluoroborate"))
+                .liquid()
+                .color(0x818024)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Silver, 1, Boron, 1, Fluorine, 4)
+                .build()
+                .setFormula("AgBF4", true);
+
+        //  11087 Tin Chloride
+        TinChloride = new Material.Builder(getId(), gregtechId("tin_chloride"))
+                .dust()
+                .liquid()
+                .color(0xDBDBDB)
+                .iconSet(METALLIC)
+                .components(Tin, 1, Chlorine, 2)
+                .build();
+
+        //  11088 Trimethyltin Chloride
+        TrimethyltinChloride = new Material.Builder(getId(), gregtechId("trimethyltin_chloride"))
+                .liquid()
+                .color(0x7F776F)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 3, Hydrogen, 6, Tin, 1, Chlorine, 1)
+                .build()
+                .setFormula("(CH3)3SnCl", true);
+
+        //  11089 Potassium Tetrachloroplatinate
+        PotassiumTetrachloroplatinate = new Material.Builder(getId(), gregtechId("potassium_tetrachloroplatinate"))
+                .dust()
+                .color(0xF1B04F)
+                .iconSet(SHINY)
+                .components(Potassium, 2, Platinum, 1, Chlorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("K2PtCl4", true);
+
+        //  11090 Ammonium Sulfate
+        AmmoniumSulfate = new Material.Builder(getId(), gregtechId("ammonium_sulfate"))
+                .liquid()
+                .color(0x5858F4)
+                .components(Nitrogen, 4, Hydrogen, 8, Sulfur, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(NH2)4SO4", true);
+
+        //  11091 Ammonium Persulfate
+        AmmoniumPersulfate = new Material.Builder(getId(), gregtechId("ammonium_persulfate"))
+                .liquid()
+                .color(0x4242B7)
+                .components(Nitrogen, 2, Hydrogen, 8, Sulfur, 2, Oxygen, 8)
+                .build()
+                .setFormula("(NH4)2S2O8", true);
     }
 
     private static int getId() {
