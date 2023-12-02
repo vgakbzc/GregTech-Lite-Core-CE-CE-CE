@@ -154,6 +154,7 @@ public class GTLiteMaterials {
     public static Material TetramethylammoniumHydroxide;
     public static Material HydrogenPeroxide;
     public static Material Pyrocatechol;
+    public static Material EthyleneOxide;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

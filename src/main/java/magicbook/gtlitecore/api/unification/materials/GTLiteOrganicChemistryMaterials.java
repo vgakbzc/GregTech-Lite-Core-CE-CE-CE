@@ -539,6 +539,13 @@ public class GTLiteOrganicChemistryMaterials {
                 .iconSet(DULL)
                 .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
                 .build();
+
+        //  13062 Ethylene Oxide
+        EthyleneOxide = new Material.Builder(getId(), gregtechId("ethylene_oxide"))
+                .gas()
+                .color(0xDCBFE1)
+                .components(Carbon, 2, Hydrogen, 4, Oxygen, 1)
+                .build();
     }
 
     private static int getId() {

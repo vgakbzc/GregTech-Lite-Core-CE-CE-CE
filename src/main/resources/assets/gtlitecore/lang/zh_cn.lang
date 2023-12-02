@@ -572,6 +572,7 @@ gregtech.material.wet_bromine=湿溴气
 gregtech.material.debrominated_water=脱溴盐水
 gregtech.material.bz_medium=别洛索夫-扎鲍京斯基振荡反应液
 gregtech.material.edp=乙二胺邻苯二酚（EDP）
+gregtech.material.ethylene_oxide=环氧乙烷
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

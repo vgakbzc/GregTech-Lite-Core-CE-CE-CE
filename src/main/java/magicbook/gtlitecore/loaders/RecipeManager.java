@@ -46,6 +46,7 @@ public class RecipeManager {
         DimethylformamideChain.init();
         EDTAChain.init();
         EtchingMaterialsChain.init();
+        EthyleneGlycolChain.init();
     }
 
     private static void initOreProcessings() {
