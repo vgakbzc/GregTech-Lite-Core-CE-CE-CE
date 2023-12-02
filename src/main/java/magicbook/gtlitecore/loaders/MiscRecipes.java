@@ -18,6 +18,16 @@ public class MiscRecipes {
 
     public static void init() {
 
+        //  Silicon Carbide
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Graphite)
+                .input(dust, Silicon)
+                .circuitMeta(2)
+                .output(dust, SiliconCarbide, 2)
+                .duration(300)
+                .EUt(VA[EV])
+                .buildAndRegister();
+
         //  Fracturing Fluid
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Alumina)

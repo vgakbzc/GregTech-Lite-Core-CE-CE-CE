@@ -71,6 +71,38 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MAGNETO_RESONATIC_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem MAGNETO_RESONATIC_CIRCUIT_MAX;
 
+    //  SMDs
+    public static MetaItem<?>.MetaValueItem OPTICAL_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_RESISTOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_DIODE;
+    public static MetaItem<?>.MetaValueItem OPTICAL_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_RESISTOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_DIODE;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_RESISTOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem COSMIC_DIODE;
+    public static MetaItem<?>.MetaValueItem COSMIC_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_RESISTOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_DIODE;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_INDUCTOR;
+
+    //  Circuit Components
+    public static MetaItem<?>.MetaValueItem BZ_REACTION_CHAMBER;
+    public static MetaItem<?>.MetaValueItem NONLINEAR_CHEMICAL_OSCILLATOR;
+    public static MetaItem<?>.MetaValueItem OPTICAL_LASER_CONTROL_UNIT;
+    public static MetaItem<?>.MetaValueItem ESR_COMPUTATION_UNIT;
+    public static MetaItem<?>.MetaValueItem COSMIC_INFORMATION_MODULE;
+    public static MetaItem<?>.MetaValueItem HOLOGRAPHIC_INFORMATION_IMC;
+    public static MetaItem<?>.MetaValueItem SPACETIME_CONDENSER;
+    public static MetaItem<?>.MetaValueItem LIGHT_CONE_MODULE;
+
     //  Boules and Wafers
     public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;
     public static MetaItem<?>.MetaValueItem NANO_PIC_CHIP;
