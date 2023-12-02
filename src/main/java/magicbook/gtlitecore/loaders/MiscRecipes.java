@@ -7,18 +7,27 @@ import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.unification.material.Materials.Neutronium;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.GRAVI_STAR;
-import static gregtech.common.items.MetaItems.QUANTUM_STAR;
+import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class MiscRecipes {
 
     public static void init() {
 
-        //  TODO Fracturing Fluid
+        //  Fracturing Fluid
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Alumina)
+                .input(dust, Iodine)
+                .input("blockSand", 3)
+                .fluidInputs(Water.getFluid(1000))
+                .fluidOutputs(FracuringFluid.getFluid(1000))
+                .duration(100)
+                .EUt(VA[IV])
+                .buildAndRegister();
 
         //  Gravi Star
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES,

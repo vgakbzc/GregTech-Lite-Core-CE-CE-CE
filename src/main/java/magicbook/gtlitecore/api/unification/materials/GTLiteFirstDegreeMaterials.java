@@ -613,6 +613,76 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING, GENERATE_FRAME)
                 .components(Carbon, 60)
                 .build();
+
+        //  11073 Trimethylaluminium
+        Trimethylaluminium = new Material.Builder(getId(), gregtechId("trimethylaluminium"))
+                .liquid()
+                .color(0x6ECCFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 2, Carbon, 6, Hydrogen, 18)
+                .build()
+                .setFormula("Al2(CH3)6", true);
+
+        //  11074 Gallium Trichloride
+        GalliumTrichloride = new Material.Builder(getId(), gregtechId("gallium_trichloride"))
+                .dust()
+                .color(0x6EB4FF)
+                .iconSet(ROUGH)
+                .components(Gallium, 1, Chlorine, 3)
+                .build();
+
+        //  11075 Aluminium Trichloride
+        AluminiumTrichloride = new Material.Builder(getId(), gregtechId("aluminium_trichloride"))
+                .dust()
+                .color(0x78C3EB)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Chlorine, 3)
+                .build();
+
+        //  11076 Trimethylgallium
+        Trimethylgallium = new Material.Builder(getId(), gregtechId("trimethylgallium"))
+                .liquid()
+                .color(0x4F92FF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gallium, 1, Carbon, 3, Hydrogen, 9)
+                .build()
+                .setFormula("Ga(CH3)3", true);
+
+        //  11077 Aluminium Hydroxide
+        AluminiumHydroxide = new Material.Builder(getId(), gregtechId("aluminium_hydroxide"))
+                .dust()
+                .color(0xBEBEC8)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Aluminium, 1, Oxygen, 3, Hydrogen, 3)
+                .build()
+                .setFormula("Al(OH)3", true);
+
+        //  11078 Alumina
+        Alumina = new Material.Builder(getId(), gregtechId("alumina"))
+                .dust()
+                .color(0x78c3eb)
+                .iconSet(METALLIC)
+                .components(Aluminium, 2, Oxygen, 3)
+                .build();
+
+        //  11079 Gallium Trioxide
+        GalliumTrioxide = new Material.Builder(getId(), gregtechId("gallium_trioxide"))
+                .dust()
+                .liquid(new FluidBuilder().temperature(2170))
+                .color(0xE4CDFF)
+                .iconSet(METALLIC)
+                .components(Gallium, 1, Oxygen, 3)
+                .build();
+
+        //  11080 Gallium Nitride
+        GalliumNitride = new Material.Builder(getId(), gregtechId("gallium_nitride"))
+                .ingot()
+                .color(0xFFF458)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE)
+                .components(Gallium, 1, Nitrogen, 1)
+                .build();
     }
 
     private static int getId() {

@@ -48,6 +48,7 @@ public class RecipeManager {
         EtchingMaterialsChain.init();
         EthyleneGlycolChain.init();
         FullereneChain.init();
+        GalliumNitrideChain.init();
     }
 
     private static void initOreProcessings() {

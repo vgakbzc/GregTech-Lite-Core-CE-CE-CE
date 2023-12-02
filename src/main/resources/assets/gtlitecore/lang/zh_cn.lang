@@ -432,6 +432,14 @@ gregtech.material.potassium_formate=甲醇钾
 gregtech.material.copper_chloride=氯化铜
 gregtech.material.palladium_nitrate=硝酸钯
 gregtech.material.fullerene=富勒烯
+gregtech.material.trimethylaluminium=三甲基铝
+gregtech.material.gallium_trichloride=三氯化镓
+gregtech.material.aluminium_trichloride=三氯化铝
+gregtech.material.trimethylgallium=三甲基镓
+gregtech.material.aluminium_hydroxide=氢氧化铝
+gregtech.material.alumina=三氧化二铝
+gregtech.material.gallium_trioxide=三氧化镓
+gregtech.material.gallium_nitride=氮化镓
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

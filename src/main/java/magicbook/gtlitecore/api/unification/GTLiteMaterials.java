@@ -84,6 +84,14 @@ public class GTLiteMaterials {
     public static Material CopperChloride;
     public static Material PalladiumNitrate;
     public static Material Fullerene;
+    public static Material Trimethylaluminium;
+    public static Material GalliumTrichloride;
+    public static Material AluminiumTrichloride;
+    public static Material Trimethylgallium;
+    public static Material AluminiumHydroxide;
+    public static Material Alumina;
+    public static Material GalliumTrioxide;
+    public static Material GalliumNitride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
