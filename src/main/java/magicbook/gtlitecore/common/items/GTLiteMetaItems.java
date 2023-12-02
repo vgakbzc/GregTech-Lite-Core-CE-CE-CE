@@ -145,6 +145,21 @@ public class GTLiteMetaItems {
 
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_MV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_HV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_EV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_IV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_LuV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_ZPM;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_UV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_UHV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_UEV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_UIV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_UXV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_OpV;
+    public static MetaItem<?>.MetaValueItem MINING_DRONE_MAX;
+
     private GTLiteMetaItems() {}
 
     public static void init() {

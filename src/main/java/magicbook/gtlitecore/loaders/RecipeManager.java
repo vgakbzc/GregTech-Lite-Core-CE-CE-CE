@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
 import magicbook.gtlitecore.loaders.chain.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
+import magicbook.gtlitecore.loaders.multiblock.DroneAirport;
 import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.PlatinumGroupProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.RareEarthProcessing;
@@ -22,6 +23,7 @@ public class RecipeManager {
       
         initChains();
         initOreProcessings();
+        initMultiRecipes();
 
         FusionLoader.init();
         OverrideRecipeLoader.init();
@@ -59,6 +61,7 @@ public class RecipeManager {
         PhosphorusChain.init();
         //  TODO PhotoresistivesChain.init();
         PMMAChain.init();
+        RocketFuelChain.init();
         //  TODO SeleniiumTelluriumChain.init();
         //  TODO TurpentineChain.init();
     }
@@ -69,5 +72,9 @@ public class RecipeManager {
        TaraniumProcessing.init();
 
        IsaMillOreProcessing.init();
+    }
+
+    private static void initMultiRecipes() {
+        DroneAirport.init();
     }
 }

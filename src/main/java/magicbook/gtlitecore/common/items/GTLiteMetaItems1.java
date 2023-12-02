@@ -153,5 +153,20 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
 
         MAGNETRON = this.addItem(310, "magnetron");
+
+        MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
+        MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
+        MINING_DRONE_HV = this.addItem(322, "mining_drone.hv");
+        MINING_DRONE_EV = this.addItem(323, "mining_drone.ev");
+        MINING_DRONE_IV = this.addItem(324, "mining_drone.iv");
+        MINING_DRONE_LuV = this.addItem(325, "mining_drone.luv");
+        MINING_DRONE_ZPM = this.addItem(326, "mining_drone.zpm");
+        MINING_DRONE_UV = this.addItem(327, "mining_drone.uv");
+        MINING_DRONE_UHV = this.addItem(328, "mining_drone.uhv");
+        MINING_DRONE_UEV = this.addItem(329, "mining_drone.uev");
+        MINING_DRONE_UIV = this.addItem(330, "mining_drone.uiv");
+        MINING_DRONE_UXV = this.addItem(331, "mining_drone.uxv");
+        MINING_DRONE_OpV = this.addItem(332, "mining_drone.opv");
+        MINING_DRONE_MAX = this.addItem(333, "mining_drone.max");
     }
 }

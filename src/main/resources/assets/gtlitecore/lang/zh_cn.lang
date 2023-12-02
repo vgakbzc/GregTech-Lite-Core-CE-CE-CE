@@ -322,6 +322,13 @@ gtlitecore.machine.naquadah_reactor.zpm.tooltip=取之有度，用之有节
 gtlitecore.machine.naquadah_reactor.uv.name=终极硅岩反应堆
 gtlitecore.machine.naquadah_reactor.uv.tooltip=取之有度，用之有节
 
+gtlitecore.machine.rocket_engine.hv.name=进阶火箭引擎 II
+gtlitecore.machine.rocket_engine.hv.tooltip=嗡嗡作响
+gtlitecore.machine.rocket_engine.ev.name=进阶火箭引擎 III
+gtlitecore.machine.rocket_engine.ev.tooltip=嗡嗡作响
+gtlitecore.machine.rocket_engine.iv.name=精英火箭引擎
+gtlitecore.machine.rocket_engine.iv.tooltip=嗡嗡作响
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -391,11 +398,21 @@ gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
 gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
 
+gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
+gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
+gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
+
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 
 gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
 gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
+
+gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
+gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
 
 #  Materials
 
@@ -601,6 +618,7 @@ gregtech.material.diiodobiphenyl=二碘代联苯
 gregtech.material.hydroxylamine_disulfate=硫酸羟胺
 gregtech.material.hydroxylamine=羟胺
 gregtech.material.octene=辛烯
+gregtech.material.methylhydrazine=甲肼
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -675,6 +693,9 @@ gregtech.material.sodio_indene=钠-茚
 gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
 gregtech.material.methylamine_mixture=甲基胺混合物
 gregtech.material.phosphorene_solution=磷烯剥离溶液
+gregtech.material.rp_1_rocket_fuel=RP-1火箭燃料
+gregtech.material.dense_hydrazine_mixture_fuel=混合浓缩肼火箭燃料
+gregtech.material.methylhydrazine_nitrate_rocket_fuel=硝酸甲肼火箭燃料
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
@@ -686,6 +707,21 @@ metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
 
 metaitem.magnetron.name=磁控管
 
+metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
+metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）
+metaitem.mining_drone.hv.name=采矿无人机（§6HV§r）
+metaitem.mining_drone.ev.name=采矿无人机（§5EV§r）
+metaitem.mining_drone.iv.name=采矿无人机（§1IV§r）
+metaitem.mining_drone.luv.name=采矿无人机（§dLuV§r）
+metaitem.mining_drone.zpm.name=采矿无人机（§cZPM§r）
+metaitem.mining_drone.uv.name=采矿无人机（§3UV§r）
+metaitem.mining_drone.uhv.name=采矿无人机（§4UHV§r）
+metaitem.mining_drone.uev.name=采矿无人机（§aUEV§r）
+metaitem.mining_drone.uiv.name=采矿无人机（§2UIV§r）
+metaitem.mining_drone.uxv.name=采矿无人机（§eUXV§r）
+metaitem.mining_drone.opv.name=采矿无人机（§9OpV§r）
+metaitem.mining_drone.max.name=采矿无人机（§c§lMAX§r）
+
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
@@ -693,6 +729,8 @@ metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精�
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
 recipemap.vacuum_chamber_recipes.name=真空室
+recipemap.naquadah_reactor_recipes.name=硅岩聚变
+recipemap.rocket_engine_recipes.name=火箭引擎
 
 recipemap.drill_recipes.name=钻取
 recipemap.catalytic_reformer_recipes.name=催化重整
@@ -705,7 +743,6 @@ recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
-recipemap.naquadah_reactor_recipes.name=硅岩聚变
 recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
 recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
 recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III
@@ -713,6 +750,7 @@ recipemap.isa_mill_recipes.name=湿法碾磨
 recipemap.flotation_recipes.name=浮游选矿
 recipemap.vacuum_drying_recipes.name=真空干燥
 recipemap.fuel_refine_factory_recipes.name=燃料精炼
+recipemap.drone_airport_recipes.name=采矿无人机
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

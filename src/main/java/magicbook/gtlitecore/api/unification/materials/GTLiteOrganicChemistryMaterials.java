@@ -709,6 +709,13 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x818022)
                 .components(Carbon, 8, Hydrogen, 16)
                 .build();
+
+        //  13083 Methylhydrazine
+        Methylhydrazine = new Material.Builder(getId(), gregtechId("methylhydrazine"))
+                .liquid()
+                .color(0x321452)
+                .components(Carbon, 1, Hydrogen, 6, Nitrogen, 2)
+                .build();
     }
 
     private static int getId() {

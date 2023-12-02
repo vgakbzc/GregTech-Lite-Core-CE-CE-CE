@@ -24,7 +24,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0x72A0C1)
                 .iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME)
                 .element(GTLiteElements.Or)
                 .toolStats(ToolProperty.Builder.of(7.0F, 25.0F, 17000, 22)
                                        .magnetic()

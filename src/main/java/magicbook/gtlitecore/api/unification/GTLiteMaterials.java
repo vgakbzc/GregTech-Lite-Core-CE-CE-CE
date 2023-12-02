@@ -206,6 +206,7 @@ public class GTLiteMaterials {
     public static Material HydroxylamineDisulfate;
     public static Material Hydroxylamine;
     public static Material Octene;
+    public static Material Methylhydrazine;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -280,6 +281,9 @@ public class GTLiteMaterials {
     public static Material SteamCrackedSodioIndene;
     public static Material MethylamineMixture;
     public static Material PhosphoreneSolution;
+    public static Material RP1RocketFuel;
+    public static Material DenseHydrazineMixtureFuel;
+    public static Material MethylhydrazineNitrateRocketFuel;
 
     public static void init() {
         GTLiteElementMaterials.register();
