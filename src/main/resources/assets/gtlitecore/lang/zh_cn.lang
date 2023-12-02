@@ -408,6 +408,12 @@ gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
 gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
 
+gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
+gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
+
 #  Materials
 
 ##  Element Materials

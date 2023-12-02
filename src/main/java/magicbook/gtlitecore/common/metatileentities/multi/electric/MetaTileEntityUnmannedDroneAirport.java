@@ -12,6 +12,7 @@ import gregtech.api.pattern.MultiblockShapeInfo;
 import gregtech.api.unification.material.Materials;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.*;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
@@ -31,8 +32,7 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static gregtech.api.GTValues.HV;
-import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.*;
 
 public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockController {
 
@@ -113,7 +113,7 @@ public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockContr
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gregtech.machine.perfect_oc"));
+        tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
         tooltip.add(I18n.format("gtlitecore.machine.unmanned_drone_airport.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.unmanned_drone_airport.tooltip.2"));
     }
