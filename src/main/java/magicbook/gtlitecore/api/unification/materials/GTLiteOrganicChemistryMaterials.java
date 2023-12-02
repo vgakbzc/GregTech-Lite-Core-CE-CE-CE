@@ -626,6 +626,14 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 60, Hydrogen, 30)
                 .build();
+
+        //  13073 Hydrazine
+        Hydrazine = new Material.Builder(getId(), gregtechId("hydrazine"))
+                .liquid()
+                .color(0xB50707)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 2, Hydrogen, 4)
+                .build();
     }
 
     private static int getId() {

@@ -440,6 +440,8 @@ gregtech.material.aluminium_hydroxide=氢氧化铝
 gregtech.material.alumina=三氧化二铝
 gregtech.material.gallium_trioxide=三氧化镓
 gregtech.material.gallium_nitride=氮化镓
+gregtech.material.beryllium_oxide=氧化铍
+gregtech.material.graphene_oxide=氧化石墨烯
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -523,6 +525,7 @@ gregtech.material.bromobutane=1-溴丁烷
 gregtech.material.butyllithium=正丁基锂
 gregtech.material.palladium_acetate=乙酸钯
 gregtech.material.geodesic_polyarene=拱形芳烃聚合物
+gregtech.material.hydrazine=肼
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -600,6 +603,8 @@ gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
 metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
 metaitem.component.grinder.boron_nitride.name=氮化硼磨头
+
+metaitem.magnetron.name=磁控管
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

@@ -92,6 +92,8 @@ public class GTLiteMaterials {
     public static Material Alumina;
     public static Material GalliumTrioxide;
     public static Material GalliumNitride;
+    public static Material BerylliumOxide;
+    public static Material GrapheneOxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -175,6 +177,7 @@ public class GTLiteMaterials {
     public static Material Butyllithium;
     public static Material PalladiumAcetate;
     public static Material GeodesicPolyarene;
+    public static Material Hydrazine;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

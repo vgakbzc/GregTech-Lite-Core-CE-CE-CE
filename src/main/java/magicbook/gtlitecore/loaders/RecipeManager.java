@@ -49,6 +49,7 @@ public class RecipeManager {
         EthyleneGlycolChain.init();
         FullereneChain.init();
         GalliumNitrideChain.init();
+        GrapheneChain.init();
     }
 
     private static void initOreProcessings() {

@@ -683,6 +683,23 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(GENERATE_PLATE)
                 .components(Gallium, 1, Nitrogen, 1)
                 .build();
+
+        //  11081 Beryllium Oxide
+        BerylliumOxide = new Material.Builder(getId(), gregtechId("beryllium_oxide"))
+                .ingot()
+                .color(0x54C757)
+                .flags(GENERATE_ROD, GENERATE_RING)
+                .components(Beryllium, 1, Oxygen, 1)
+                .build();
+
+        //  11082 Graphene Oxide
+        GrapheneOxide = new Material.Builder(getId(), gregtechId("graphene_oxide"))
+                .dust()
+                .color(0x777777)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Graphene, 1, Oxygen, 1)
+                .build();
     }
 
     private static int getId() {

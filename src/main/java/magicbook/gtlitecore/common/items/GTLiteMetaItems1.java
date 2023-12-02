@@ -103,5 +103,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         COMPONENT_GRINDER_BORON_NITRIDE = this.addItem(302, "component.grinder.boron_nitride");
+
+        MAGNETRON = this.addItem(310, "magnetron");
     }
 }
