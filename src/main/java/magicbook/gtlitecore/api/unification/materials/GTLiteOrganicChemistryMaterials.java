@@ -495,6 +495,50 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 8)
                 .build();
+
+        //  13057 Trimethylamine
+        Trimethylamine = new Material.Builder(getId(), gregtechId("trimethylamine"))
+                .gas()
+                .color(0xBB7700)
+                .components(Carbon, 3, Hydrogen, 9, Nitrogen, 1)
+                .build()
+                .setFormula("(CH3)3N", true);
+
+        //  13058 Tetramethylammonium Chloride
+        TetramethylammoniumChloride = new Material.Builder(getId(), gregtechId("tetramethylammonium_chloride"))
+                .dust()
+                .color(0x27FF81)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(METALLIC)
+                .components(Carbon, 4, Hydrogen, 12, Nitrogen, 1, Chlorine, 1)
+                .build()
+                .setFormula("N(CH3)4Cl", true);
+
+        //  13059 Tetramethylammonium Hydroxide
+        TetramethylammoniumHydroxide = new Material.Builder(getId(), gregtechId("tetramethylammonium_hydroxide"))
+                .liquid()
+                .color(4259798)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 1, Carbon, 4, Hydrogen, 12, Oxygen, 1, Hydrogen, 1)
+                .build()
+                .setFormula("N(CH3)4OH", true);
+
+        //  13060 Hydrogen Peroxide
+        HydrogenPeroxide = new Material.Builder(getId(), gregtechId("hydrogen_peroxide"))
+                .liquid()
+                .color(0xD2FFFF)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Oxygen, 2)
+                .build();
+
+        //  13061 Pyrocatechol
+        Pyrocatechol = new Material.Builder(getId(), gregtechId("pyrocatechol"))
+                .dust()
+                .color(0x784421)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(DULL)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build();
     }
 
     private static int getId() {

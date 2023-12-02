@@ -149,6 +149,11 @@ public class GTLiteMaterials {
     public static Material Formaldehyde;
     public static Material TetrasodiumEDTA;
     public static Material EthylenediaminetetraaceticAcid;
+    public static Material Trimethylamine;
+    public static Material TetramethylammoniumChloride;
+    public static Material TetramethylammoniumHydroxide;
+    public static Material HydrogenPeroxide;
+    public static Material Pyrocatechol;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -218,6 +223,7 @@ public class GTLiteMaterials {
     public static Material WetBromine;
     public static Material DebrominatedWater;
     public static Material BZMedium;
+    public static Material EDP;
 
     public static void init() {
         GTLiteElementMaterials.register();

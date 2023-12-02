@@ -471,6 +471,11 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(10681653)
                 .build();
 
+        //  24046 EDP
+        EDP = new Material.Builder(getId(), gregtechId("edp"))
+                .liquid()
+                .color(16514839)
+                .build();
     }
 
     private static int getId() {

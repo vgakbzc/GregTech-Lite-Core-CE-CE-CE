@@ -497,6 +497,11 @@ gregtech.material.ethylenediamine=乙二胺
 gregtech.material.formaldehyde=甲醛
 gregtech.material.tetrasodium_edta=乙二胺四乙酸四钠
 gregtech.material.ethylenediaminetetraacetic_acid=乙二胺四乙酸（EDTA）
+gregtech.material.trimethylamine=三甲胺
+gregtech.material.tetramethylammonium_chloride=四甲基氯化铵
+gregtech.material.tetramethylammonium_hydroxide=四甲基氢氧化铵（TMAH）
+gregtech.material.hydrogen_peroxide=过氧化氢
+gregtech.material.pyrocatechol=邻苯二酚
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -566,6 +571,7 @@ gregtech.material.overheated_bromine_sulfate_gas=过热硫酸溴气
 gregtech.material.wet_bromine=湿溴气
 gregtech.material.debrominated_water=脱溴盐水
 gregtech.material.bz_medium=别洛索夫-扎鲍京斯基振荡反应液
+gregtech.material.edp=乙二胺邻苯二酚（EDP）
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
