@@ -70,11 +70,13 @@ public class GTLiteMaterialPropertyAddition {
         //  Plate
         Dubnium.addFlags(GENERATE_PLATE);
         Livermorium.addFlags(GENERATE_PLATE);
+        Rhenium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
         Dubnium.addFlags(GENERATE_DOUBLE_PLATE);
         Livermorium.addFlags(GENERATE_DOUBLE_PLATE);
+        Rhenium.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);

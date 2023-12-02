@@ -5,6 +5,8 @@ import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.ToolProperty;
 
+import static gregtech.api.GTValues.UEV;
+import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
@@ -700,6 +702,87 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Graphene, 1, Oxygen, 1)
                 .build();
+
+        //  11083 Carbon Nanotube
+        CarbonNanotube = new Material.Builder(getId(), gregtechId("carbon_nanotube"))
+                .ingot()
+                .liquid()
+                .color(0x05090C)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FINE_WIRE, GENERATE_SPRING)
+                .cableProperties(V[UEV], 8, 6, false)
+                .components(Carbon, 48)
+                .build()
+                .setFormula("CNT", false);
+
+        //  11084 Silver Chloride
+        SilverChloride = new Material.Builder(getId(), gregtechId("silver_chloride"))
+                .dust()
+                .color(0x8D8D8D)
+                .iconSet(METALLIC)
+                .components(Silver, 1, Chlorine, 1)
+                .build();
+
+        //  11085 Silver Oxide
+        SilverOxide = new Material.Builder(getId(), gregtechId("silver_oxide"))
+                .dust()
+                .color(0xA4A4A4)
+                .components(Silver, 2, Oxygen, 1)
+                .build();
+
+        //  11086 Silver Tetrafluoroborate
+        SilverTetrafluoroborate = new Material.Builder(getId(), gregtechId("silver_tetrafluoroborate"))
+                .liquid()
+                .color(0x818024)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Silver, 1, Boron, 1, Fluorine, 4)
+                .build()
+                .setFormula("AgBF4", true);
+
+        //  11087 Tin Chloride
+        TinChloride = new Material.Builder(getId(), gregtechId("tin_chloride"))
+                .dust()
+                .liquid()
+                .color(0xDBDBDB)
+                .iconSet(METALLIC)
+                .components(Tin, 1, Chlorine, 2)
+                .build();
+
+        //  11088 Trimethyltin Chloride
+        TrimethyltinChloride = new Material.Builder(getId(), gregtechId("trimethyltin_chloride"))
+                .liquid()
+                .color(0x7F776F)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 3, Hydrogen, 6, Tin, 1, Chlorine, 1)
+                .build()
+                .setFormula("(CH3)3SnCl", true);
+
+        //  11089 Potassium Tetrachloroplatinate
+        PotassiumTetrachloroplatinate = new Material.Builder(getId(), gregtechId("potassium_tetrachloroplatinate"))
+                .dust()
+                .color(0xF1B04F)
+                .iconSet(SHINY)
+                .components(Potassium, 2, Platinum, 1, Chlorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("K2PtCl4", true);
+
+        //  11090 Ammonium Sulfate
+        AmmoniumSulfate = new Material.Builder(getId(), gregtechId("ammonium_sulfate"))
+                .liquid()
+                .color(0x5858F4)
+                .components(Nitrogen, 4, Hydrogen, 8, Sulfur, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(NH2)4SO4", true);
+
+        //  11091 Ammonium Persulfate
+        AmmoniumPersulfate = new Material.Builder(getId(), gregtechId("ammonium_persulfate"))
+                .liquid()
+                .color(0x4242B7)
+                .components(Nitrogen, 2, Hydrogen, 8, Sulfur, 2, Oxygen, 8)
+                .build()
+                .setFormula("(NH4)2S2O8", true);
     }
 
     private static int getId() {

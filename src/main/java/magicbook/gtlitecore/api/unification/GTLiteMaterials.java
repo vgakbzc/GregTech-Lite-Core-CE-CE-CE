@@ -94,6 +94,15 @@ public class GTLiteMaterials {
     public static Material GalliumNitride;
     public static Material BerylliumOxide;
     public static Material GrapheneOxide;
+    public static Material CarbonNanotube;
+    public static Material SilverChloride;
+    public static Material SilverOxide;
+    public static Material SilverTetrafluoroborate;
+    public static Material TinChloride;
+    public static Material TrimethyltinChloride;
+    public static Material PotassiumTetrachloroplatinate;
+    public static Material AmmoniumSulfate;
+    public static Material AmmoniumPersulfate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -180,6 +189,13 @@ public class GTLiteMaterials {
     public static Material Hydrazine;
     public static Material Ethylanthraquinone;
     public static Material Ethylanthrahydroquinone;
+    public static Material Cycloparaphenylene;
+    public static Material Cyclooctadiene;
+    public static Material Dichlorocyclooctadieneplatinium;
+    public static Material Diiodobiphenyl;
+    public static Material HydroxylamineDisulfate;
+    public static Material Hydroxylamine;
+    public static Material Octene;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

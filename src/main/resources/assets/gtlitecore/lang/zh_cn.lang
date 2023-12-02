@@ -366,7 +366,7 @@ gregtech.material.purified_platinum_group_concentrate=纯化铂族金属浓缩�
 gregtech.material.ammonium_hexachloroplatinate=六氯铂酸铵
 gregtech.material.ammonium_hexachloropalladate=六氯钯酸铵
 gregtech.material.sodium_nitrate=硝酸钠
-gregtech.material.hexachloroplatinic_acid.name=六氯铂酸
+gregtech.material.hexachloroplatinic_acid=六氯铂酸
 gregtech.material.carbon_tetrachloride=四氯化碳
 gregtech.material.ruthenium_chloride=三氯化钌
 gregtech.material.sodium_peroxide=过氧化钠
@@ -442,6 +442,15 @@ gregtech.material.gallium_trioxide=三氧化镓
 gregtech.material.gallium_nitride=氮化镓
 gregtech.material.beryllium_oxide=氧化铍
 gregtech.material.graphene_oxide=氧化石墨烯
+gregtech.material.carbon_nanotube=碳纳米管
+gregtech.material.silver_chloride=氯化银
+gregtech.material.silver_oxide=氧化银
+gregtech.material.silver_tetrafluoroborate=四氟硼酸银
+gregtech.material.tin_chloride=氯化锡
+gregtech.material.trimethyltin_chloride=三甲基氯化锡
+gregtech.material.potassium_tetrachloroplatinate=氯铂酸钾
+gregtech.material.ammonium_sulfate=硫酸铵
+gregtech.material.ammonium_persulfate=过硫酸铵
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -528,6 +537,13 @@ gregtech.material.geodesic_polyarene=拱形芳烃聚合物
 gregtech.material.hydrazine=肼
 gregtech.material.ethylanthraquinone=2-乙基蒽醌
 gregtech.material.ethylanthrahydroquinone=2-乙基蒽氢醌
+gregtech.material.cycloparaphenylene=环对苯撑（CPP）
+gregtech.material.cyclooctadiene=环辛二烯
+gregtech.material.dichlorocyclooctadieneplatinium=（1,5-环辛二烯）二氯化铂
+gregtech.material.diiodobiphenyl=二碘代联苯
+gregtech.material.hydroxylamine_disulfate=硫酸羟胺
+gregtech.material.hydroxylamine=羟胺
+gregtech.material.octene=辛烯
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -606,6 +622,9 @@ gregtech.material.methylamine_mixture=甲基胺混合物
 metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
 metaitem.component.grinder.boron_nitride.name=氮化硼磨头
+
+metaitem.cnt.graphene_aligned.name=石墨烯排列碳纳米管
+metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
 
 metaitem.magnetron.name=磁控管
 

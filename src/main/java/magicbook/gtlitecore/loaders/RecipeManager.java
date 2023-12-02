@@ -31,18 +31,14 @@ public class RecipeManager {
     }
 
     private static void initChains() {
-        PMMAChain.init();
-        BPAPolycarbonateChain.init();
-        CBDOPolycarbonateChain.init();
-        CyanogenChain.init();
-        PEDOTChain.init();
-        KaptonChain.init();
-        KevlarChain.init();
         AcetyleneChain.init();
         AmmoniaChain.init();
         BoronNitrideChain.init();
         BrineChain.init();
+        BPAPolycarbonateChain.init();
         BZMediumChain.init();
+        CBDOPolycarbonateChain.init();
+        CyanogenChain.init();
         DimethylformamideChain.init();
         EDTAChain.init();
         EtchingMaterialsChain.init();
@@ -52,8 +48,14 @@ public class RecipeManager {
         GrapheneChain.init();
         HydrogenPeroxideChain.init();
         //  TODO IsotopesChain.init();
+        KaptonChain.init();
+        KevlarChain.init();
         //  TODO MagneticsChain.init();
         MethylamineChain.init();
+        NanotubesChain.init();
+
+        PEDOTChain.init();
+        PMMAChain.init();
     }
 
     private static void initOreProcessings() {

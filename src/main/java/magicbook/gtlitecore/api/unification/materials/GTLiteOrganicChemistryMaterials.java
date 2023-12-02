@@ -652,6 +652,63 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Carbon, 16, Hydrogen, 18, Oxygen, 2)
                 .build()
                 .setFormula("C6H4(CH2OH)2C6H3Et", true);
+
+        //  13076 Cycloparaphenylene
+        Cycloparaphenylene = new Material.Builder(getId(), gregtechId("cycloparaphenylene"))
+                .liquid()
+                .color(0x60545A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 6, Hydrogen, 4)
+                .build();
+
+        //  13077 Cyclooctadiene
+        Cyclooctadiene = new Material.Builder(getId(), gregtechId("cyclooctadiene"))
+                .liquid()
+                .color(0x40AC40)
+                .components(Carbon, 8, Hydrogen, 12)
+                .build();
+
+        //  13078 Dichlorocyclooctadieneplatinium
+        Dichlorocyclooctadieneplatinium = new Material.Builder(getId(), gregtechId("dichlorocyclooctadieneplatinium"))
+                .dust()
+                .color(0xD4E982)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 8, Hydrogen, 12, Chlorine, 2, Platinum, 1)
+                .build();
+
+        //  13079 Diiodobiphenyl
+        Diiodobiphenyl = new Material.Builder(getId(), gregtechId("diiodobiphenyl"))
+                .dust()
+                .color(0x000C52)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 12, Hydrogen, 8, Iodine, 2)
+                .build();
+
+        //  13080 Hydroxylamine Disulfate
+        HydroxylamineDisulfate = new Material.Builder(getId(), gregtechId("hydroxylamine_disulfate"))
+                .liquid()
+                .color(0x91A6D2)
+                .components(Nitrogen, 4, Hydrogen, 16, Oxygen, 10, Sulfur, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(NH3OH)2(NH4)2(SO4)2", true);
+
+        //  13081 Hydroxylamine
+        Hydroxylamine = new Material.Builder(getId(), gregtechId("hydroxylamine"))
+                .liquid()
+                .color(0x91C791)
+                .components(Hydrogen, 3, Nitrogen, 1, Oxygen, 1)
+                .build()
+                .setFormula("H3NO", true);
+
+        //  13082 Octene
+        Octene = new Material.Builder(getId(), gregtechId("octene"))
+                .liquid()
+                .color(0x818022)
+                .components(Carbon, 8, Hydrogen, 16)
+                .build();
     }
 
     private static int getId() {
