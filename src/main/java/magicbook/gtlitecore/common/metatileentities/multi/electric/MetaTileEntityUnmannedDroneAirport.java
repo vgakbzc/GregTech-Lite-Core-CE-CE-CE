@@ -8,14 +8,19 @@ import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.pattern.MultiblockShapeInfo;
 import gregtech.api.unification.material.Materials;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.*;
+import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
+import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -23,7 +28,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+import java.util.ArrayList;
 import java.util.List;
+
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.LV;
 
 public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockController {
 
@@ -49,11 +58,12 @@ public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockContr
                 .aisle("F          ", "F          ", "FFFFFCXXXCF", " AAAF     F", " ASA       ", "           ")
                 .aisle("    F     F", "    F     F", "     FCCCF ", "     F   F ", "           ", "           ")
                 .where('S', this.selfPredicate())
-                .where('C', states(getCasingState()))
+                .where('C', states(getCasingState())
+                        .or(states(getAnotherCasingState())))
                 .where('X', states(getSecondCasingState()))
                 .where('A', states(getThirdCasingState())
                         .setMinGlobalLimited(25)
-                        .or(autoAbilities()))
+                        .or(autoAbilities(true, true, true, true, true, false, false)))
                 .where('G', states(getFourthCasingState()))
                 .where('P', states(getBoilerCasingState()))
                 .where('F', states(getFrameState()))
@@ -65,6 +75,10 @@ public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockContr
 
     private static IBlockState getCasingState() {
         return MetaBlocks.WARNING_SIGN.getState(BlockWarningSign.SignType.YELLOW_STRIPES);
+    }
+
+    private static IBlockState getAnotherCasingState() {
+        return MetaBlocks.WARNING_SIGN.getState(BlockWarningSign.SignType.SMALL_YELLOW_STRIPES);
     }
 
     private static IBlockState getSecondCasingState() {
@@ -107,5 +121,40 @@ public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockContr
     @Override
     public boolean hasMufflerMechanics() {
         return true;
+    }
+
+    @Override
+    public List<MultiblockShapeInfo> getMatchingShapes() {
+        List<MultiblockShapeInfo> shapeInfos = new ArrayList<>();
+        MultiblockShapeInfo.Builder baseBuilder = null;
+        if (Blocks.AIR != null) {
+            baseBuilder = MultiblockShapeInfo.builder()
+                    .aisle("    F     F", "    F     F", "     FCCCF ", "     F   F ", "           ", "           ")
+                    .aisle("F          ", "F          ", "FFFFFCXXXCF", " WEEF     F", " AAA       ", "           ")
+                    .aisle("           ", "           ", "FAAACXXXXXC", "P###P      ", "P###P      ", " AAA       ")
+                    .aisle("           ", "           ", "FAAACXXXXXC", "A#G#A      ", "A#G#A      ", " AMA       ")
+                    .aisle("           ", "           ", "FAAACXXXXXC", "P###P      ", "P###P      ", " AAA       ")
+                    .aisle("F          ", "F          ", "FFFFFCXXXCF", " OYZF     F", " ASA       ", "           ")
+                    .aisle("    F     F", "    F     F", "     FCCCF ", "     F   F ", "           ", "           ")
+                    .where('S', GTLiteMetaTileEntities.UNMANNED_DRONE_AIRPORT, EnumFacing.SOUTH)
+                    .where('C', getAnotherCasingState())
+                    .where('X', getSecondCasingState())
+                    .where('A', getThirdCasingState())
+                    .where('G', getFourthCasingState())
+                    .where('P', getBoilerCasingState())
+                    .where('F', getFrameState())
+                    .where('M', MetaTileEntities.MUFFLER_HATCH[LV], EnumFacing.UP)
+                    .where('W', MetaTileEntities.MAINTENANCE_HATCH, EnumFacing.NORTH)
+                    .where('E', MetaTileEntities.ENERGY_INPUT_HATCH[HV], EnumFacing.NORTH)
+                    .where('O', MetaTileEntities.ITEM_IMPORT_BUS[LV], EnumFacing.SOUTH)
+                    .where('Y', MetaTileEntities.ITEM_EXPORT_BUS[LV], EnumFacing.SOUTH)
+                    .where('Z', MetaTileEntities.FLUID_IMPORT_HATCH[LV], EnumFacing.SOUTH)
+                    .where('#', Blocks.AIR.getDefaultState());
+        }
+        if (baseBuilder != null) {
+            shapeInfos.add(baseBuilder.shallowCopy().where('C', getCasingState()).build());
+            shapeInfos.add(baseBuilder.build());
+        }
+        return shapeInfos;
     }
 }
