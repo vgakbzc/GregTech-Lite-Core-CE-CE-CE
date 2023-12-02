@@ -80,6 +80,7 @@ public class GTLiteMaterials {
     public static Material HydrobromicAcid;
     public static Material PotassiumHydroxide;
     public static Material PotassiumBromate;
+    public static Material PotassiumFormate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -142,7 +143,7 @@ public class GTLiteMaterials {
     public static Material Trichloroethylene;
     public static Material ChloroaceticAcid;
     public static Material MalonicAcid;
-    public static Material BZMedium;
+    public static Material DimethylamineHydrochloride;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -211,6 +212,7 @@ public class GTLiteMaterials {
     public static Material OverheatedBromineSulfateSolution;
     public static Material WetBromine;
     public static Material DebrominatedWater;
+    public static Material BZMedium;
 
     public static void init() {
         GTLiteElementMaterials.register();

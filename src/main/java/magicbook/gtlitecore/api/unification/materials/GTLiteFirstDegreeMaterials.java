@@ -579,6 +579,14 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(ROUGH)
                 .components(Potassium, 1, Bromine, 1, Oxygen, 3)
                 .build();
+
+        //  11069 Potassium Formate
+        PotassiumFormate = new Material.Builder(getId(), gregtechId("potassium_formate"))
+                .dust()
+                .color(0x74B5A9)
+                .iconSet(DULL)
+                .components(Carbon, 1, Hydrogen, 3, Oxygen, 1, Potassium, 1)
+                .build();
     }
 
     private static int getId() {

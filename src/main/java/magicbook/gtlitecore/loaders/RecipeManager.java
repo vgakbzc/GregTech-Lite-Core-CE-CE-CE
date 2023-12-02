@@ -43,6 +43,7 @@ public class RecipeManager {
         BoronNitrideChain.init();
         BrineChain.init();
         BZMediumChain.init();
+        DimethylformamideChain.init();
     }
 
     private static void initOreProcessings() {

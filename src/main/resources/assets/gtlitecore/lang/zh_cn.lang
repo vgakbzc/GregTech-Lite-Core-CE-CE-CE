@@ -428,6 +428,7 @@ gregtech.material.cubic_heterodiamond=立方杂金刚石
 gregtech.material.hydrobromic_acid=氢溴酸
 gregtech.material.potassium_hydroxide=氢氧化钾
 gregtech.material.potassium_bromate=溴酸钾
+gregtech.material.potassium_formate=甲醇钾
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -490,6 +491,7 @@ gregtech.material.dichloroethane=1,2-二氯乙烷
 gregtech.material.trichloroethylene=三氯乙烯
 gregtech.material.chloroacetic_acid=氯乙酸
 gregtech.material.malonic_acid=丙二酸
+gregtech.material.dimethylamine_hydrochloride=盐酸二甲胺
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

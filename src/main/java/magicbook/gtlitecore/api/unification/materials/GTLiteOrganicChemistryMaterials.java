@@ -451,6 +451,14 @@ public class GTLiteOrganicChemistryMaterials {
                 .iconSet(SHINY)
                 .components(Carbon, 3, Hydrogen, 4, Oxygen, 4)
                 .build();
+
+        //  13052 Dimethylamine Hydrochloride
+        DimethylamineHydrochloride = new Material.Builder(getId(), gregtechId("dimethylamine_hydrochloride"))
+                .liquid()
+                .color(0xE3EBDC)
+                .components(Dimethylamine, 1, HydrochloricAcid, 1)
+                .build()
+                .setFormula("C2H8NCl", true);
     }
 
     private static int getId() {
