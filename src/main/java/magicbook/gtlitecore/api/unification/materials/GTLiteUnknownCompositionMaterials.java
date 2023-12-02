@@ -476,6 +476,18 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(16514839)
                 .build();
+
+        //  24047 Sodio Indene
+        SodioIndene = new Material.Builder(getId(), gregtechId("sodio_indene"))
+                .liquid()
+                .color(0x1D1C24)
+                .build();
+
+        //  24048 Steam Cracked Sodio Indene
+        SteamCrackedSodioIndene = new Material.Builder(getId(), gregtechId("steam_cracked_sodio_indene"))
+                .liquid(new FluidBuilder().temperature(1105))
+                .color(0x1C1A29)
+                .build();
     }
 
     private static int getId() {

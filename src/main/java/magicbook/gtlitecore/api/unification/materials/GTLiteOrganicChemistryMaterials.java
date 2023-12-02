@@ -546,6 +546,86 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xDCBFE1)
                 .components(Carbon, 2, Hydrogen, 4, Oxygen, 1)
                 .build();
+
+        //  13063 Indene
+        Indene = new Material.Builder(getId(), gregtechId("indene"))
+                .liquid()
+                .color(0x171429)
+                .components(Carbon, 9, Hydrogen, 8)
+                .build();
+
+        //  13064 Indanone
+        Indanone = new Material.Builder(getId(), gregtechId("indanone"))
+                .dust()
+                .color(0x2E1616)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 9, Hydrogen, 8, Oxygen, 1)
+                .build();
+
+        //  13065 Truxene
+        Truxene = new Material.Builder(getId(), gregtechId("truxene"))
+                .liquid()
+                .color(0x1A3336)
+                .components(Carbon, 27, Hydrogen, 18)
+                .build();
+
+        //  13066 Bromomethane
+        Bromomethane = new Material.Builder(getId(), gregtechId("bromomethane"))
+                .gas()
+                .color(0xC82C31)
+                .components(Carbon, 1, Hydrogen, 3, Bromine, 1)
+                .build();
+
+        //  13067 Bromo Bromomethyl Naphthalene
+        BromoBromomethylNaphthalene = new Material.Builder(getId(), gregtechId("bromo_bromomethyl_naphthalene"))
+                .liquid()
+                .color(0x52122E)
+                .components(Carbon, 11, Hydrogen, 8, Bromine, 2)
+                .build();
+
+        //  13068 Butanol
+        Butanol = new Material.Builder(getId(), gregtechId("butanol"))
+                .liquid()
+                .color(0xC7AF2E)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 1)
+                .build()
+                .setFormula("C4H9OH", true);
+
+        //  13069 Bromobutane
+        Bromobutane = new Material.Builder(getId(), gregtechId("bromobutane"))
+                .gas()
+                .color(0xE6E8A2)
+                .components(Butene, 1, HydrobromicAcid, 1)
+                .build()
+                .setFormula("C4H9Br", true);
+
+        //  13070 Butyllithium
+        Butyllithium = new Material.Builder(getId(), gregtechId("butyllithium"))
+                .liquid()
+                .color(0xE683B6B)
+                .components(Butene, 1, Hydrogen, 1, Lithium, 1)
+                .build()
+                .setFormula("C4H9Li", true);
+
+        //  13071 Palladium Acetate
+        PalladiumAcetate = new Material.Builder(getId(), gregtechId("palladium_acetate"))
+                .dust()
+                .color(0x693C2D)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Palladium, 1, AceticAcid, 2)
+                .build()
+                .setFormula("Pd(CH3COOH)2", true);
+
+        //  13072 Geodesic Polyarene
+        GeodesicPolyarene = new Material.Builder(getId(), gregtechId("geodesic_polyarene"))
+                .dust()
+                .color(0x9E81A8)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 60, Hydrogen, 30)
+                .build();
     }
 
     private static int getId() {

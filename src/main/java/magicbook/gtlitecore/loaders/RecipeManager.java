@@ -47,6 +47,7 @@ public class RecipeManager {
         EDTAChain.init();
         EtchingMaterialsChain.init();
         EthyleneGlycolChain.init();
+        FullereneChain.init();
     }
 
     private static void initOreProcessings() {

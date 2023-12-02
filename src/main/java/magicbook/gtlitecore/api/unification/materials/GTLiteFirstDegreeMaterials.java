@@ -595,6 +595,24 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(ROUGH)
                 .components(Copper, 1, Chlorine, 2)
                 .build();
+
+        //  11071 Palladium Nitrate
+        PalladiumNitrate = new Material.Builder(getId(), gregtechId("palladium_nitrate"))
+                .dust()
+                .color(0x82312A)
+                .iconSet(METALLIC)
+                .components(Palladium, 1, Nitrogen, 2, Oxygen, 6)
+                .build()
+                .setFormula("Pd(NO3)2", true);
+
+        //  11072 Fullerene
+        Fullerene = new Material.Builder(getId(), gregtechId("fullerene"))
+                .ingot()
+                .color(0x72556A)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING, GENERATE_FRAME)
+                .components(Carbon, 60)
+                .build();
     }
 
     private static int getId() {

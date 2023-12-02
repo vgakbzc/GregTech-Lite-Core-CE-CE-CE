@@ -82,6 +82,8 @@ public class GTLiteMaterials {
     public static Material PotassiumBromate;
     public static Material PotassiumFormate;
     public static Material CopperChloride;
+    public static Material PalladiumNitrate;
+    public static Material Fullerene;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -155,6 +157,16 @@ public class GTLiteMaterials {
     public static Material HydrogenPeroxide;
     public static Material Pyrocatechol;
     public static Material EthyleneOxide;
+    public static Material Indene;
+    public static Material Indanone;
+    public static Material Truxene;
+    public static Material Bromomethane;
+    public static Material BromoBromomethylNaphthalene;
+    public static Material Butanol;
+    public static Material Bromobutane;
+    public static Material Butyllithium;
+    public static Material PalladiumAcetate;
+    public static Material GeodesicPolyarene;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -225,6 +237,8 @@ public class GTLiteMaterials {
     public static Material DebrominatedWater;
     public static Material BZMedium;
     public static Material EDP;
+    public static Material SodioIndene;
+    public static Material SteamCrackedSodioIndene;
 
     public static void init() {
         GTLiteElementMaterials.register();

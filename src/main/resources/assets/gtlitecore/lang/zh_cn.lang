@@ -430,6 +430,8 @@ gregtech.material.potassium_hydroxide=氢氧化钾
 gregtech.material.potassium_bromate=溴酸钾
 gregtech.material.potassium_formate=甲醇钾
 gregtech.material.copper_chloride=氯化铜
+gregtech.material.palladium_nitrate=硝酸钯
+gregtech.material.fullerene=富勒烯
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -502,6 +504,17 @@ gregtech.material.tetramethylammonium_chloride=四甲基氯化铵
 gregtech.material.tetramethylammonium_hydroxide=四甲基氢氧化铵（TMAH）
 gregtech.material.hydrogen_peroxide=过氧化氢
 gregtech.material.pyrocatechol=邻苯二酚
+gregtech.material.ethylene_oxide=环氧乙烷
+gregtech.material.indene=茚
+gregtech.material.indanone=茚酮
+gregtech.material.truxene=三聚茚
+gregtech.material.bromomethane=溴甲烷
+gregtech.material.bromo_bromomethyl_naphthalene=1-溴-2-(溴甲基)萘
+gregtech.material.butanol=丁醇
+gregtech.material.bromobutane=1-溴丁烷
+gregtech.material.butyllithium=正丁基锂
+gregtech.material.palladium_acetate=乙酸钯
+gregtech.material.geodesic_polyarene=拱形芳烃聚合物
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -572,7 +585,8 @@ gregtech.material.wet_bromine=湿溴气
 gregtech.material.debrominated_water=脱溴盐水
 gregtech.material.bz_medium=别洛索夫-扎鲍京斯基振荡反应液
 gregtech.material.edp=乙二胺邻苯二酚（EDP）
-gregtech.material.ethylene_oxide=环氧乙烷
+gregtech.material.sodio_indene=钠-茚
+gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
