@@ -500,6 +500,30 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(0x465966)
                 .build();
+
+        //  24051 RP-1 Rocket Fuel
+        RP1RocketFuel = new Material.Builder(getId(), gregtechId("rp_1_rocket_fuel"))
+                .liquid()
+                .color(0xFB2A08)
+                .components(CoalTar, 1, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24052 Dense Hydrazine Mixture Fuel
+        DenseHydrazineMixtureFuel = new Material.Builder(getId(), gregtechId("dense_hydrazine_mixture_fuel"))
+                .liquid()
+                .color(0x912565)
+                .components(Dimethylhydrazine, 1, Methanol, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24053 Methylhydrazine Nitrate Rocket Fuel
+        MethylhydrazineNitrateRocketFuel = new Material.Builder(getId(), gregtechId("methylhydrazine_nitrate_rocket_fuel"))
+                .liquid()
+                .color(0x607186)
+                .components(Methylhydrazine, 1, Tetranitromethane, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

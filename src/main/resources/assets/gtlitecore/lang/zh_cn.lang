@@ -322,6 +322,13 @@ gtlitecore.machine.naquadah_reactor.zpm.tooltip=取之有度，用之有节
 gtlitecore.machine.naquadah_reactor.uv.name=终极硅岩反应堆
 gtlitecore.machine.naquadah_reactor.uv.tooltip=取之有度，用之有节
 
+gtlitecore.machine.rocket_engine.hv.name=进阶火箭引擎 II
+gtlitecore.machine.rocket_engine.hv.tooltip=嗡嗡作响
+gtlitecore.machine.rocket_engine.ev.name=进阶火箭引擎 III
+gtlitecore.machine.rocket_engine.ev.tooltip=嗡嗡作响
+gtlitecore.machine.rocket_engine.iv.name=精英火箭引擎
+gtlitecore.machine.rocket_engine.iv.tooltip=嗡嗡作响
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -605,6 +612,7 @@ gregtech.material.diiodobiphenyl=二碘代联苯
 gregtech.material.hydroxylamine_disulfate=硫酸羟胺
 gregtech.material.hydroxylamine=羟胺
 gregtech.material.octene=辛烯
+gregtech.material.methylhydrazine=甲肼
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -679,6 +687,9 @@ gregtech.material.sodio_indene=钠-茚
 gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
 gregtech.material.methylamine_mixture=甲基胺混合物
 gregtech.material.phosphorene_solution=磷烯剥离溶液
+gregtech.material.rp_1_rocket_fuel=RP-1火箭燃料
+gregtech.material.dense_hydrazine_mixture_fuel=混合浓缩肼火箭燃料
+gregtech.material.methylhydrazine_nitrate_rocket_fuel=硝酸甲肼火箭燃料
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
@@ -712,6 +723,8 @@ metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精�
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
 recipemap.vacuum_chamber_recipes.name=真空室
+recipemap.naquadah_reactor_recipes.name=硅岩聚变
+recipemap.rocket_engine_recipes.name=火箭引擎
 
 recipemap.drill_recipes.name=钻取
 recipemap.catalytic_reformer_recipes.name=催化重整
@@ -724,7 +737,6 @@ recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
-recipemap.naquadah_reactor_recipes.name=硅岩聚变
 recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
 recipemap.hyper_reactor_mk2_recipes.name=超能聚变 Mk II
 recipemap.hyper_reactor_mk3_recipes.name=超能聚变 Mk III

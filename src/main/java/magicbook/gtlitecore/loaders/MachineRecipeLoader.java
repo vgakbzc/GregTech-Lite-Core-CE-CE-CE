@@ -59,6 +59,16 @@ public class MachineRecipeLoader {
                 'F', CraftingComponent.FIELD_GENERATOR,
                 'W', CraftingComponent.CABLE,
                 'H', CraftingComponent.HULL);
+
+        //  Rocket Engine
+        MetaTileEntityLoader.registerMachineRecipe(true, ROCKET_ENGINE,
+                "PXP", "MHM", "DWD",
+                'P', CraftingComponent.PISTON,
+                'X', CraftingComponent.CIRCUIT,
+                'M', CraftingComponent.MOTOR,
+                'H', CraftingComponent.HULL,
+                'D', CraftingComponent.DOUBLE_PLATE,
+                'W', CraftingComponent.CABLE);
     }
 
     private static void MultiblockControllerRecipes() {
@@ -138,24 +148,24 @@ public class MachineRecipeLoader {
                 'E', EMITTER_EV.getStackForm());
 
         //  Plasma CVD Unit
-        //ModHandler.addShapedRecipe(true, "plasma_cvd_unit", PLASMA_CVD_UNIT.getStackForm(),
-        //        "PKP", "CHC", "ESE",
-        //        'P', new UnificationEntry(plate, Vibranium),
-        //        'K', new UnificationEntry(cableGtSingle, SiliconCarbide),
-        //        'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
-        //        'H', HULL[UHV].getStackForm(),
-        //        'S', SENSOR_UHV.getStackForm(),
-        //        'E', EMITTER_UHV.getStackForm());
+        ModHandler.addShapedRecipe(true, "plasma_cvd_unit", PLASMA_CVD_UNIT.getStackForm(),
+                "PKP", "CHC", "ESE",
+                'P', new UnificationEntry(plate, Vibranium),
+                'K', new UnificationEntry(cableGtSingle, SiliconCarbide),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
+                'H', HULL[UHV].getStackForm(),
+                'S', SENSOR_UHV.getStackForm(),
+                'E', EMITTER_UHV.getStackForm());
 
         //  Laser CVD Unit
-        //ModHandler.addShapedRecipe(true, "laser_cvd_unit", LASER_CVD_UNIT.getStackForm(),
-        //        "EOE", "CHC", "PPP",
-        //        'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
-        //        'H', HULL[UHV].getStackForm(),
-        //        'P', new UnificationEntry(plate, Orichalcum),
-        //        'E', EMITTER_UHV.getStackForm(),
-        //        'O', OPTICAL_FIBER.getStackForm()
-        //);
+        ModHandler.addShapedRecipe(true, "laser_cvd_unit", LASER_CVD_UNIT.getStackForm(),
+                "EOE", "CHC", "PPP",
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
+                'H', HULL[UHV].getStackForm(),
+                'P', new UnificationEntry(plate, Orichalcum),
+                'E', EMITTER_UHV.getStackForm(),
+                'O', OPTICAL_FIBER.getStackForm()
+        );
 
         //  Burner Reactor
         ModHandler.addShapedRecipe(true, "burner_reactor", BURNER_REACTOR.getStackForm(),

@@ -84,6 +84,8 @@ public class GTLiteMaterialPropertyAddition {
         //  Frame
         Polybenzimidazole.addFlags(GENERATE_FRAME);
         Naquadria.addFlags(GENERATE_FRAME);
+        RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
+        Darmstadtium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

@@ -26,6 +26,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> VACUUM_CHAMBER_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES;
 
     //  Multiblock Machine RecipeMaps
     @ZenProperty
@@ -85,6 +87,9 @@ public class GTLiteRecipeMaps {
         //  Naquadah Reactor RecipeMap
         NAQUADAH_REACTOR_RECIPES = new RecipeMap<>("naquadah_reactor_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.COMBUSTION);
+        //  Rocket Engine RecipeMap
+        ROCKET_ENGINE_RECIPES = new RecipeMap<>("rocket_engine_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setSound(GTSoundEvents.COMBUSTION);
 
         //  Industrial Drilling Reg RecipeMap
@@ -183,7 +188,7 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
                 .setSound(GTSoundEvents.FURNACE);
         //  Drone Airport RecipeMap
-        DRONE_AIRPORT_RECIPES = new RecipeMap<>("drone_airport_recipes", 2, 9, 3, 1, new SimpleRecipeBuilder(), false)
+        DRONE_AIRPORT_RECIPES = new RecipeMap<>("drone_airport_recipes", 2, 9, 1, 0, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
                 .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
                 .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
