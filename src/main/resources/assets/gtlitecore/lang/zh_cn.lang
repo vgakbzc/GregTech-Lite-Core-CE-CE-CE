@@ -391,6 +391,10 @@ gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
 gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
 
+gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
+gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
+gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
+
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 
@@ -686,6 +690,21 @@ metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
 
 metaitem.magnetron.name=磁控管
 
+metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
+metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）
+metaitem.mining_drone.hv.name=采矿无人机（§6HV§r）
+metaitem.mining_drone.ev.name=采矿无人机（§5EV§r）
+metaitem.mining_drone.iv.name=采矿无人机（§1IV§r）
+metaitem.mining_drone.luv.name=采矿无人机（§dLuV§r）
+metaitem.mining_drone.zpm.name=采矿无人机（§cZPM§r）
+metaitem.mining_drone.uv.name=采矿无人机（§3UV§r）
+metaitem.mining_drone.uhv.name=采矿无人机（§4UHV§r）
+metaitem.mining_drone.uev.name=采矿无人机（§aUEV§r）
+metaitem.mining_drone.uiv.name=采矿无人机（§2UIV§r）
+metaitem.mining_drone.uxv.name=采矿无人机（§eUXV§r）
+metaitem.mining_drone.opv.name=采矿无人机（§9OpV§r）
+metaitem.mining_drone.max.name=采矿无人机（§c§lMAX§r）
+
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
@@ -713,6 +732,7 @@ recipemap.isa_mill_recipes.name=湿法碾磨
 recipemap.flotation_recipes.name=浮游选矿
 recipemap.vacuum_drying_recipes.name=真空干燥
 recipemap.fuel_refine_factory_recipes.name=燃料精炼
+recipemap.drone_airport_recipes.name=采矿无人机
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

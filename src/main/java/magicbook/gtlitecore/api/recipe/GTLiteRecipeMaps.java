@@ -64,6 +64,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_RECIPES;
     @ZenProperty
     public static final RecipeMap<BlastRecipeBuilder> VACUUM_DRYING_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> DRONE_AIRPORT_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -180,5 +182,11 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
                 .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
                 .setSound(GTSoundEvents.FURNACE);
+        //  Drone Airport RecipeMap
+        DRONE_AIRPORT_RECIPES = new RecipeMap<>("drone_airport_recipes", 2, 9, 3, 1, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSound(GTSoundEvents.COMPUTATION);
     }
 }
