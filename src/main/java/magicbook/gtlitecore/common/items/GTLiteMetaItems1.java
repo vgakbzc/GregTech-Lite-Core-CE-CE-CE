@@ -111,6 +111,21 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         HOLOGRAPHIC_INFORMATION_IMC = this.addItem(83, "component.cosmic.holographic_imc");
         SPACETIME_CONDENSER = this.addItem(84, "component.supracausal.spacetime_condenser");
         LIGHT_CONE_MODULE = this.addItem(85, "component.supracausal.light_cone_module");
+        OPTICAL_FIBER = this.addItem(86, "component.optical.optical_fiber");
+        DIELECTRIC_MIRROR = this.addItem(87, "component.optical.dielectric_mirror");
+        EMPTY_LASER_ASSEMBLY = this.addItem(88, "component.optical.emitter.empty");
+        HELIUM_NEON_LASER = this.addItem(89, "component.optical.emitter.helium_neon");
+        ND_YAG_LASER = this.addItem(90, "component.optical.emitter.nd_yag");
+        TOPOLOGICAL_INSULATOR_TUBE = this.addItem(91, "component.spintronic.topological_insulator");
+        BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT = this.addItem(92, "component.spintronic.bose_einstein_condensate_containment_unit");
+        BOSE_EINSTEIN_CONDENSATE = this.addItem(93, "component.spintronic.bose_einstein_condensate");
+        CLADDED_OPTICAL_FIBER_CORE = this.addItem(94, "component.cosmic.cladded_optical_fiber_core");
+        CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = addItem(95, "component.cosmic.closed_timelike_curve_computational_unit");
+        CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = addItem(96, "component.cosmic.closed_timelike_curve_guidance_unit");
+        NUCLEAR_CLOCK = addItem(97, "component.cosmic.nuclear_clock");
+        MANIFOLD_OSCILLATORY_POWER_CELL = addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
+        SCINTILLATOR = addItem(99, "component.cosmic.scintillator");
+        SCINTILLATOR_CRYSTAL = addItem(100, "component.cosmic.scintillator_crystal");
 
         //  Boules and Wafers
         NANO_PIC_WAFER = this.addItem(200, "wafer.nano_pic");

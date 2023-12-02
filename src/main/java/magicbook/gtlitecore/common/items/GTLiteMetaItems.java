@@ -102,6 +102,21 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem HOLOGRAPHIC_INFORMATION_IMC;
     public static MetaItem<?>.MetaValueItem SPACETIME_CONDENSER;
     public static MetaItem<?>.MetaValueItem LIGHT_CONE_MODULE;
+    public static MetaItem<?>.MetaValueItem OPTICAL_FIBER;
+    public static MetaItem<?>.MetaValueItem DIELECTRIC_MIRROR;
+    public static MetaItem<?>.MetaValueItem EMPTY_LASER_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem HELIUM_NEON_LASER;
+    public static MetaItem<?>.MetaValueItem ND_YAG_LASER;
+    public static MetaItem<?>.MetaValueItem TOPOLOGICAL_INSULATOR_TUBE;
+    public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT;
+    public static MetaItem<?>.MetaValueItem BOSE_EINSTEIN_CONDENSATE;
+    public static MetaItem<?>.MetaValueItem CLADDED_OPTICAL_FIBER_CORE;
+    public static MetaItem<?>.MetaValueItem CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT;
+    public static MetaItem<?>.MetaValueItem CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT;
+    public static MetaItem<?>.MetaValueItem NUCLEAR_CLOCK;
+    public static MetaItem<?>.MetaValueItem MANIFOLD_OSCILLATORY_POWER_CELL;
+    public static MetaItem<?>.MetaValueItem SCINTILLATOR;
+    public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
 
     //  Boules and Wafers
     public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;
