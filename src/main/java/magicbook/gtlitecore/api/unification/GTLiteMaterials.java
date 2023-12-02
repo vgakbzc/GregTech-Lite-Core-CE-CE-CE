@@ -194,6 +194,15 @@ public class GTLiteMaterials {
     public static Material GelidCryotheum;
     public static Material RichNitrogenMixture;
     public static Material RichAmmoniaMixture;
+    public static Material IodizedBrine;
+    public static Material IodineBrineMixture;
+    public static Material BrominatedBrine;
+    public static Material IodineSlurry;
+    public static Material AcidicBrominatedBrine;
+    public static Material BromineSulfateSolution;
+    public static Material OverheatedBromineSulfateSolution;
+    public static Material WetBromine;
+    public static Material DebrominatedWater;
 
     public static void init() {
         GTLiteElementMaterials.register();

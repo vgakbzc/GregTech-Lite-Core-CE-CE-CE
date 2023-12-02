@@ -40,6 +40,7 @@ public class RecipeManager {
         AcetyleneChain.init();
         AmmoniaChain.init();
         BoronNitrideChain.init();
+        BrineChain.init();
     }
 
     private static void initOreProcessings() {

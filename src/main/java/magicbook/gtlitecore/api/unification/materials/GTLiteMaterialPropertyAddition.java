@@ -49,6 +49,8 @@ public class GTLiteMaterialPropertyAddition {
         Polonium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Polonium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Bromine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Iodine.setProperty(PropertyKey.DUST, new DustProperty());
+        Iodine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
 

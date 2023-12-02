@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 
 import static gregtech.api.unification.material.Materials.*;
@@ -397,6 +398,70 @@ public class GTLiteUnknownCompositionMaterials {
         RichAmmoniaMixture = new Material.Builder(getId(), gregtechId("rich_ammonia_mixture"))
                 .liquid()
                 .color(0x708ACD)
+                .build();
+
+        //  18057 Iodized Brine
+        IodizedBrine = new Material.Builder(getId(), gregtechId("iodized_brine"))
+                .liquid()
+                .color(0x525246)
+                .build()
+                .setFormula("I?", false);
+
+        //  18058 Iodine Brine Mixture
+        IodineBrineMixture = new Material.Builder(getId(), gregtechId("iodine_brine_mixture"))
+                .liquid()
+                .color(0x525234)
+                .build()
+                .setFormula("I?Cl", false);
+
+        //  18059 Brominated Brine
+        BrominatedBrine = new Material.Builder(getId(), gregtechId("brominated_brine"))
+                .liquid()
+                .color(0xA9A990)
+                .build()
+                .setFormula("Br?", false);
+
+        //  24039 Iodine Slurry
+        IodineSlurry = new Material.Builder(getId(), gregtechId("iodine_slurry"))
+                .liquid()
+                .color(0x292923)
+                .build()
+                .setFormula("I?", false);
+
+        //  24040 Acidic Brominated Brine
+        AcidicBrominatedBrine = new Material.Builder(getId(), gregtechId("acidic_brominated_brine"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xC6A76F)
+                .build()
+                .setFormula("Br?(H2SO4)Cl", true);
+
+        //  24041 Bromine Sulfate Solution
+        BromineSulfateSolution = new Material.Builder(getId(), gregtechId("bromine_sulfate_solution"))
+                .liquid()
+                .color(0xCC9966)
+                .build()
+                .setFormula("H2SO4Br(H2O)Cl2", true);
+
+        //  24042 Overheated Bromine Sulfate Gas
+        OverheatedBromineSulfateSolution = new Material.Builder(getId(), gregtechId("overheated_bromine_sulfate_gas"))
+                .gas()
+                .color(0xC69337)
+                .iconSet(DULL)
+                .build()
+                .setFormula("H2SO4Br(H2O)2Cl2", true);
+
+        //  24043 Wet Bromine
+        WetBromine = new Material.Builder(getId(), gregtechId("wet_bromine"))
+                .gas()
+                .color(0xDB5C5C)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Br(H2O)", true);
+        //  24048 Debrominated Water
+        DebrominatedWater = new Material.Builder(getId(), gregtechId("debrominated_water"))
+                .liquid()
+                .color(0x24A3A3)
+                .components(Hydrogen, 2, Oxygen, 1)
                 .build();
     }
 

@@ -542,6 +542,15 @@ gregtech.material.blazing_pyrotheum=烈焰之炽焱
 gregtech.material.gelid_cryotheum=极寒之凛冰
 gregtech.material.rich_nitrogen_mixture=富氮混合物
 gregtech.material.rich_ammonia_mixture=富氨混合物
+gregtech.material.iodized_brine=含碘盐水
+gregtech.material.iodine_brine_mixture=浓缩碘盐水混合物
+gregtech.material.brominated_brine=含溴盐水
+gregtech.material.iodine_slurry=碘浆液
+gregtech.material.acidic_brominated_brine=酸化含溴盐水
+gregtech.material.bromine_sulfate_solution=硫酸溴溶液
+gregtech.material.overheated_bromine_sulfate_gas=过热硫酸溴气
+gregtech.material.wet_bromine=湿溴气
+gregtech.material.debrominated_water=脱溴盐水
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
