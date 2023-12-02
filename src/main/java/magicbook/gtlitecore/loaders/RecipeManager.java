@@ -19,6 +19,7 @@ public class RecipeManager {
         MachineRecipeLoader.init();
         MiscRecipes.init();
         RecipeConflicts.init();
+      
         initChains();
         initOreProcessings();
 
