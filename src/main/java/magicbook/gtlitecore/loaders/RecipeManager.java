@@ -50,6 +50,10 @@ public class RecipeManager {
         FullereneChain.init();
         GalliumNitrideChain.init();
         GrapheneChain.init();
+        HydrogenPeroxideChain.init();
+        //  TODO IsotopesChain.init();
+        //  TODO MagneticsChain.init();
+        MethylamineChain.init();
     }
 
     private static void initOreProcessings() {

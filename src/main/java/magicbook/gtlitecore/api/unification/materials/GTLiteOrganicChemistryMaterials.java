@@ -634,6 +634,24 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Nitrogen, 2, Hydrogen, 4)
                 .build();
+
+        //  13074 Ethylanthraquinone
+        Ethylanthraquinone = new Material.Builder(getId(), gregtechId("ethylanthraquinone"))
+                .liquid()
+                .color(0xCC865A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 12, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(CO)2C6H3Et", true);
+
+        //  13075 Ethylanthrahydroquinone
+        Ethylanthrahydroquinone = new Material.Builder(getId(), gregtechId("ethylanthrahydroquinone"))
+                .liquid()
+                .color(0xAD531A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 16, Hydrogen, 18, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(CH2OH)2C6H3Et", true);
     }
 
     private static int getId() {

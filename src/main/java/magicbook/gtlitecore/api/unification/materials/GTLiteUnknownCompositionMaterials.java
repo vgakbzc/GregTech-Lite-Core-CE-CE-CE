@@ -488,6 +488,12 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid(new FluidBuilder().temperature(1105))
                 .color(0x1C1A29)
                 .build();
+
+        //  24049 MethylamineMixture
+        MethylamineMixture = new Material.Builder(getId(), gregtechId("methylamine_mixture"))
+                .liquid()
+                .color(0xAA4400)
+                .build();
     }
 
     private static int getId() {

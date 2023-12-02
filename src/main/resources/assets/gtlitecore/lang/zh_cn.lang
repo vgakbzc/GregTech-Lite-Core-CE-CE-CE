@@ -526,6 +526,8 @@ gregtech.material.butyllithium=正丁基锂
 gregtech.material.palladium_acetate=乙酸钯
 gregtech.material.geodesic_polyarene=拱形芳烃聚合物
 gregtech.material.hydrazine=肼
+gregtech.material.ethylanthraquinone=2-乙基蒽醌
+gregtech.material.ethylanthrahydroquinone=2-乙基蒽氢醌
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -598,6 +600,7 @@ gregtech.material.bz_medium=别洛索夫-扎鲍京斯基振荡反应液
 gregtech.material.edp=乙二胺邻苯二酚（EDP）
 gregtech.material.sodio_indene=钠-茚
 gregtech.material.steam_cracked_sodio_indene=蒸汽裂化钠-茚
+gregtech.material.methylamine_mixture=甲基胺混合物
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

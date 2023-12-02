@@ -178,6 +178,8 @@ public class GTLiteMaterials {
     public static Material PalladiumAcetate;
     public static Material GeodesicPolyarene;
     public static Material Hydrazine;
+    public static Material Ethylanthraquinone;
+    public static Material Ethylanthrahydroquinone;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -250,6 +252,7 @@ public class GTLiteMaterials {
     public static Material EDP;
     public static Material SodioIndene;
     public static Material SteamCrackedSodioIndene;
+    public static Material MethylamineMixture;
 
     public static void init() {
         GTLiteElementMaterials.register();
