@@ -5,22 +5,22 @@ import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.metatileentity.single.SimpleSteamMetaTileEntity;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicator;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicators;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
+import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityCryogenicFreezer;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityMegaChemicalReactor;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityVolcanus;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityLargeNaquadahReactor;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
 
@@ -67,6 +67,8 @@ public class GTLiteMetaTileEntities {
 
     public static final MetaTileEntityAdvancedFusionReactor[] ADVANCED_FUSION_REACTOR = new MetaTileEntityAdvancedFusionReactor[2];
     public static MetaTileEntityPreciseAssembler PRECISE_ASSEMBLER;
+
+    public static final MetaTileEntityCompressedFusionReactor[] COMPRESSED_FUSION_REACTOR = new MetaTileEntityCompressedFusionReactor[5];
 
     public static MetaTileEntityMegaChemicalReactor MEGA_CHEMICAL_REACTOR;
 
@@ -150,11 +152,11 @@ public class GTLiteMetaTileEntities {
         PRECISE_ASSEMBLER = registerMultiMetaTileEntity(32, new MetaTileEntityPreciseAssembler(gtliteId("precise_assembler")));
         //  33 COMPONENT_ASSEMBLY_LINE
         //  34 UNIVERSAL_PROCESSING_FACTORY
-        //  35 COMPRESSED_FUSION_REACTOR Mk I
-        //  36 COMPRESSED_FUSION_REACTOR Mk II
-        //  37 COMPRESSED_FUSION_REACTOR Mk III
-        //  38 COMPRESSED_FUSION_REACTOR Mk IV
-        //  39 COMPRESSED_FUSION_REACTOR Mk V
+        COMPRESSED_FUSION_REACTOR[0] = registerMultiMetaTileEntity(35, new MetaTileEntityCompressedFusionReactor(gtliteId("compressed_fusion_reactor.luv"), LuV, MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_CASING), MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL), MetaBlocks.FRAMES.get(Materials.Naquadah).getBlock(Materials.Naquadah)));
+        COMPRESSED_FUSION_REACTOR[1] = registerMultiMetaTileEntity(36, new MetaTileEntityCompressedFusionReactor(gtliteId("compressed_fusion_reactor.zpm"), ZPM, MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_CASING_MK2), MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL), MetaBlocks.FRAMES.get(Materials.NaquadahEnriched).getBlock(Materials.NaquadahEnriched)));
+        COMPRESSED_FUSION_REACTOR[2] = registerMultiMetaTileEntity(37, new MetaTileEntityCompressedFusionReactor(gtliteId("compressed_fusion_reactor.uv"), UV, MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_CASING_MK3), MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL), MetaBlocks.FRAMES.get(Materials.Naquadria).getBlock(Materials.Naquadria)));
+        COMPRESSED_FUSION_REACTOR[3] = registerMultiMetaTileEntity(38, new MetaTileEntityCompressedFusionReactor(gtliteId("compressed_fusion_reactor.uhv"), UHV, GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_CASING_MK4), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2), MetaBlocks.FRAMES.get(GTLiteMaterials.Orichalcum).getBlock(GTLiteMaterials.Orichalcum)));
+        COMPRESSED_FUSION_REACTOR[4] = registerMultiMetaTileEntity(39, new MetaTileEntityCompressedFusionReactor(gtliteId("compressed_fusion_reactor.uev"), UEV, GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_CASING_MK5), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3), MetaBlocks.FRAMES.get(GTLiteMaterials.Adamantium).getBlock(GTLiteMaterials.Adamantium)));
         //  40 MEGA_ALLOY_SMELTER
         MEGA_CHEMICAL_REACTOR = registerMultiMetaTileEntity(41, new MetaTileEntityMegaChemicalReactor(gtliteId("mega_chemical_reactor")));
         //  42 MEGA_OIL_CRACKING_UNIT

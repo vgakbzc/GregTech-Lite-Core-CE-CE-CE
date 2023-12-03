@@ -455,6 +455,19 @@ gtlitecore.machine.precise_assembler.tier.1=MK1
 gtlitecore.machine.precise_assembler.tier.2=MK2
 gtlitecore.machine.precise_assembler.tier.3=MK3
 
+gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
+gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
+gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
+gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹
+gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=用于抹杀物质与能量的界限
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
+gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
+gtlitecore.machine.compressed_fusion_reactor.tooltip.2=最大并行数：§e32 * (聚变反应堆等级 - 4)§e7
+
 gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
 gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。

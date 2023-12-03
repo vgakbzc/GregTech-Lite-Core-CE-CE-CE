@@ -90,6 +90,8 @@ public class GTLiteMaterialPropertyAddition {
         Naquadria.addFlags(GENERATE_FRAME);
         RhodiumPlatedPalladium.addFlags(GENERATE_FRAME);
         Darmstadtium.addFlags(GENERATE_FRAME);
+        Naquadah.addFlags(GENERATE_FRAME);
+        NaquadahEnriched.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
