@@ -117,6 +117,103 @@ public class GTLiteSecondDegreeMaterials {
                 .cableProperties(V[UHV], 6, 8, false)
                 .build();
 
+        //  12008 MAR-M200 Steel
+        MARM200Steel = new Material.Builder(getId(), gregtechId("mar_m_200_steel"))
+                .ingot()
+                .fluid()
+                .color(0x515151)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(5000, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[IV], 200)
+                        .vacuumStats(VA[HV], 120))
+                .components(Niobium, 2, Chrome, 9, Aluminium, 5, Titanium, 2, Cobalt, 10, Tungsten, 13, Nickel, 18)
+                .flags(GENERATE_PLATE, GENERATE_ROTOR, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12009 MAR-M200-Ce Steel
+        MARM200CeSteel = new Material.Builder(getId(), gregtechId("mar_m_200_ce_steel"))
+                .ingot()
+                .fluid()
+                .color(0x383030)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(7500, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 432)
+                        .vacuumStats(VA[EV], 180))
+                .components(MARM200Steel, 18, Cerium, 1)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .build();
+
+        //  12010 Stellite
+        Stellite = new Material.Builder(getId(), gregtechId("stellite"))
+                .ingot()
+                .fluid()
+                .color(0x9991A5)
+                .iconSet(METALLIC)
+                .blast(b -> b
+                        .temp(4310, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[EV], 220)
+                        .vacuumStats(VA[MV], 90))
+                .components(Chrome, 9, Cobalt, 9, Manganese, 5, Titanium, 2)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .build();
+
+        //  12011 Hastelloy-C59
+        HastelloyC59 = new Material.Builder(getId(), gregtechId("hastelloy_c_59"))
+                .ingot()
+                .fluid()
+                .color(0xD6D0F0)
+                .iconSet(DULL)
+                .blast(b -> b
+                        .temp(7600, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 559)
+                        .vacuumStats(VA[EV], 300))
+                .components(Nickel, 18, Chrome, 16, TinAlloy, 8, Cobalt, 6, Niobium, 4, Aluminium, 4)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12012 HMS-1J79Alloy
+        HMS1J79Alloy = new Material.Builder(getId(), gregtechId("hms_1_j_79_alloy"))
+                .ingot()
+                .fluid()
+                .color(0xD1CB0B)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(8100, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 886)
+                        .vacuumStats(VA[EV], 400))
+                .components(Nickel, 14, Iron, 12, Molybdenum, 11, CobaltBrass, 8, Chrome, 6, Silicon, 4)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .build();
+
+        //  12013 High Strength Structural Steel-HY130-1
+        HY1301 = new Material.Builder(getId(), gregtechId("hy_1301"))
+                .ingot()
+                .fluid()
+                .color(0x6F3E57)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(7850, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 766)
+                        .vacuumStats(VA[EV], 357))
+                .components(Nickel, 9, NickelZincFerrite, 6, Chrome, 4, Nichrome, 4, Iron, 4, Molybdenum, 4, Rhenium, 2)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .build();
+
+        //  12014 Incoloy-MA813
+        IncoloyMA813 = new Material.Builder(getId(), gregtechId("incoloy_ma_813"))
+                .ingot()
+                .fluid()
+                .color(0x6CF076)
+                .iconSet(SHINY)
+                .components(VanadiumSteel, 4, Osmiridium, 2, HSSS, 3, Germanium, 4, Duranium, 5)
+                .blast(b -> b
+                        .temp(8400, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[ZPM], 1277)
+                        .vacuumStats(VA[IV], 400))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .build();
     }
 
     private static int getId() {

@@ -30,6 +30,10 @@ tile.fusion_casing.advanced_vacuum.name=高级聚变反应堆真空仓
 tile.fusion_casing.fusion_coil_mk2.name=高级聚变线圈方块
 tile.fusion_casing.fusion_coil_mk3.name=终极聚变线圈方块
 
+tile.precise_assembler_casing.mk1.name=精密电子单元机械方块 Mk I
+tile.precise_assembler_casing.mk2.name=精密电子单元机械方块 Mk II
+tile.precise_assembler_casing.mk3.name=精密电子单元机械方块 Mk III
+
 tile.transparent_casing.bpa_polycarbonate_glass.name=BPA聚碳酸酯玻璃
 tile.transparent_casing.bpa_polycarbonate_glass.tooltip=灰色石英
 tile.transparent_casing.pmma_glass.name=PMMA玻璃
@@ -440,6 +444,34 @@ gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
 gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
 
+gtlitecore.machine.precise_assembler.name=精密自动组装机MT-3662
+gtlitecore.machine.precise_assembler.tooltip.1=误差不超过7nm
+gtlitecore.machine.precise_assembler.tooltip.2=可运行一般的§r组装机§7配方，亦可用于组装精密器件
+gtlitecore.machine.precise_assembler.tooltip.3=使用不同的机器外壳判定机器等级
+gtlitecore.machine.precise_assembler.tooltip.4=运行§r组装机§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.precise_assembler.tooltip.5=运行§r组装机§7配方时，获得§r2^(机器外壳等级+4)§7次并行。
+gtlitecore.machine.precise_assembler.tier=机器外壳等级：
+gtlitecore.machine.precise_assembler.tier.1=MK1
+gtlitecore.machine.precise_assembler.tier.2=MK2
+gtlitecore.machine.precise_assembler.tier.3=MK3
+
+gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
+gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
+gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
+gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹
+gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=用于抹杀物质与能量的界限
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
+gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
+gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv=最大并行数：§e64§7
+gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm=最大并行数：§e128§7
+gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=最大并行数：§e256§7
+gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv=最大并行数：§e512§7
+gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev=最大并行数：§e1024§7
+
 gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
 gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
@@ -567,6 +599,13 @@ gregtech.material.tanmolyium_beta_c=钛钼合金β-C
 gregtech.material.talonite=铬钴磷酸盐合金
 gregtech.material.hastelloy_x_78=哈斯特洛伊合金-X78
 gregtech.material.silicon_carbide=碳化硅
+gregtech.material.mar_m_200_steel=MAR-M200特种钢
+gregtech.material.mar_m_200_ce_steel=MAR-Ce-M200特种钢
+gregtech.material.stellite=铬钴锰钛合金
+gregtech.material.hastelloy_c_59=哈斯特洛伊合金-C59
+gregtech.material.hms_1_j_79_alloy=高饱和磁感应软磁合金-1J79
+gregtech.material.hy_1301=高强度结构钢HY130-1
+gregtech.material.incoloy_ma_813=耐热铬铁合金-MA813
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -788,6 +827,7 @@ recipemap.flotation_recipes.name=浮游选矿
 recipemap.vacuum_drying_recipes.name=真空干燥
 recipemap.fuel_refine_factory_recipes.name=燃料精炼
 recipemap.drone_airport_recipes.name=采矿无人机
+recipemap.precise_assembler_recipes.name=精密组装
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

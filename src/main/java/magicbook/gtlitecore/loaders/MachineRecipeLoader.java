@@ -4,6 +4,7 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
@@ -12,6 +13,7 @@ import gregtech.loaders.recipe.MetaTileEntityLoader;
 import magicbook.gtlitecore.common.blocks.*;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
+import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -286,7 +288,119 @@ public class MachineRecipeLoader {
                         .EUt(VA[UHV]))
                 .buildAndRegister();
 
-        //  Fusion Reactor Mk V
+        //  TODO Fusion Reactor Mk V
+
+        //  Precise Assembler
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .inputs(LARGE_ASSEMBLER.getStackForm())
+                .input(frameGt, MARM200Steel, 4)
+                .input(ROBOT_ARM_IV, 2)
+                .input(CONVEYOR_MODULE_IV, 2)
+                .input(plate, Stellite100, 4)
+                .input(gear, TanmolyiumBetaC, 4)
+                .input(cableGtQuadruple, Naquadah, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 6))
+                .fluidInputs(Lubricant.getFluid(3000))
+                .fluidInputs(HastelloyN.getFluid(L * 2))
+                .outputs(PRECISE_ASSEMBLER.getStackForm())
+                .scannerResearch(b -> b
+                        .researchStack(LARGE_ASSEMBLER.getStackForm())
+                        .EUt(VA[IV])
+                        .duration(1200))
+                .EUt(VA[LuV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  TODO Component Assembly Line
+
+        //  Compressed Fusion Reactor Mk I
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[LuV])
+                .input(FUSION_REACTOR[0], 16)
+                .input(plate, Europium, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(ELECTRIC_PUMP_LuV, 2)
+                .input(FIELD_GENERATOR_LuV, 2)
+                .input(cableGtQuadruple, NiobiumTitanium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Ruridit.getFluid(L * 10))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[0])
+                .scannerResearch(b -> b
+                        .researchStack(FUSION_REACTOR[0].getStackForm())
+                        .EUt(VA[LuV])
+                        .duration(1200))
+                .EUt(VA[LuV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Compressed Fusion Reactor Mk II
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(FUSION_REACTOR[1], 16)
+                .input(plate, Americium, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(FIELD_GENERATOR_ZPM, 2)
+                .input(cableGtQuadruple, VanadiumGallium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Osmiridium.getFluid(L * 10))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[1])
+                .scannerResearch(b -> b
+                        .researchStack(FUSION_REACTOR[1].getStackForm())
+                        .EUt(VA[ZPM])
+                        .duration(1200))
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Compressed Fusion Reactor Mk III
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(FUSION_REACTOR[2], 16)
+                .input(plate, Dubnium, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ELECTRIC_PUMP_UV, 2)
+                .input(FIELD_GENERATOR_UV, 2)
+                .input(cableGtQuadruple, YttriumBariumCuprate, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Tritanium.getFluid(L * 10))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[2])
+                .stationResearch(b -> b
+                        .researchStack(FUSION_REACTOR[2].getStackForm())
+                        .EUt(VA[UV])
+                        .CWUt(64))
+                .EUt(VA[UV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Compressed Fusion Reactor Mk IV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UHV])
+                .input(ADVANCED_FUSION_REACTOR[0], 16)
+                .input(plate, Livermorium, 4)
+                .input(circuit, MarkerMaterials.Tier.UEV, 4)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.CRYOSTAT, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.DIVERTOR, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.VACUUM, 4))
+                .input(ELECTRIC_PUMP_UHV, 2)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(cableGtQuadruple, Europium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Adamantium.getFluid(L * 10))
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[3])
+                .stationResearch(b -> b
+                        .researchStack(ADVANCED_FUSION_REACTOR[0].getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(128))
+                .EUt(VA[UHV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  TODO Compressed Fusion Reactor Mk V
     }
 
     private static void MachineCasingRecipes() {
@@ -553,6 +667,55 @@ public class MachineRecipeLoader {
                 .EUt(VA[UHV])
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+
+        //  Precise Assembler Casing Mk I
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LuV))
+                .input(ROBOT_ARM_EV, 2)
+                .input(plateDouble, MARM200CeSteel, 2)
+                .input(circuit, MarkerMaterials.Tier.LuV)
+                .input(gearSmall, Stellite, 4)
+                .input(cableGtQuadruple, Naquadah, 2)
+                .input(screw, HSSG, 32)
+                .fluidInputs(BlackSteel.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK1, 4))
+                .EUt(VA[IV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Precise Assembler Casing Mk II
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.ZPM))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK1))
+                .input(ROBOT_ARM_IV, 2)
+                .input(plateDouble, HastelloyC59, 2)
+                .input(circuit, MarkerMaterials.Tier.ZPM)
+                .input(gearSmall, TanmolyiumBetaC, 8)
+                .input(cableGtQuadruple, Tritanium, 2)
+                .input(screw, HSSE, 32)
+                .fluidInputs(Zeron100.getFluid(576))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK2, 4))
+                .EUt(VA[LuV])
+                .duration(400)
+                .buildAndRegister();
+
+
+        //  Precise Assembler Casing Mk III
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UV))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK2))
+                .input(ROBOT_ARM_LuV, 2)
+                .input(plateDouble, HMS1J79Alloy, 2)
+                .input(circuit, MarkerMaterials.Tier.UV)
+                .input(gearSmall, HY1301, 8)
+                .input(cableGtQuadruple, SiliconCarbide, 2)
+                .input(screw, HSSS, 32)
+                .fluidInputs(IncoloyMA813.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3, 4))
+                .EUt(VA[ZPM])
+                .duration(800)
                 .buildAndRegister();
     }
 }

@@ -34,6 +34,10 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer TALONITE_CASING = new GTLiteOverlayRenderer("casings/talonite_casing");
     public static GTLiteOverlayRenderer NAQUADRIA_CASING = new GTLiteOverlayRenderer("casings/naquadria_casing");
     public static GTLiteOverlayRenderer HASTELLOY_X78_CASING = new GTLiteOverlayRenderer("casings/hastelloy_x78_casing");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK1 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk1");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK2 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk2");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK3 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk3");
+
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  Custom Renderer

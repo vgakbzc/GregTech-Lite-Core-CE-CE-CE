@@ -10,8 +10,10 @@ import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
+import magicbook.gtlitecore.api.recipe.builder.AssemblyCasingTierRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.builder.GrindBallRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.builder.NoCoilTemperatureRecipeBuilder;
+import magicbook.gtlitecore.api.recipe.machines.RecipeMapPreciseAssembler;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
 
@@ -70,6 +72,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> DRONE_AIRPORT_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> ION_IMPLANTATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<AssemblyCasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -199,5 +203,11 @@ public class GTLiteRecipeMaps {
         ION_IMPLANTATOR_RECIPES = new RecipeMap<>("ion_implantator_recipes", 3, 1, 1, 0, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ELECTROLYZER);
+        //  Precise Assembler RecipeMap
+        PRECISE_ASSEMBLER_RECIPES = new RecipeMapPreciseAssembler<>("precise_assembler_recipes", 4, 1, 4, 0, new AssemblyCasingTierRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
+                .setSound(GTSoundEvents.ASSEMBLER);
     }
 }
