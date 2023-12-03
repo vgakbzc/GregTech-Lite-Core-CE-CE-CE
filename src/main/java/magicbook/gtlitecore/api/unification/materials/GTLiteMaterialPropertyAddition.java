@@ -55,6 +55,9 @@ public class GTLiteMaterialPropertyAddition {
         Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
+        //  Zirconium Chain
+        Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
+
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
         Chalcopyrite.addFlags(GENERATE_MILLED);

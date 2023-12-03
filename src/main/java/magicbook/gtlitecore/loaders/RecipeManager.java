@@ -67,6 +67,7 @@ public class RecipeManager {
         RocketFuelChain.init();
         //  TODO SeleniiumTelluriumChain.init();
         //  TODO TurpentineChain.init();
+        ZirconiumChain.init();
     }
 
     private static void initOreProcessings() {

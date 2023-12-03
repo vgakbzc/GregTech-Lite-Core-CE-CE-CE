@@ -113,6 +113,7 @@ public class GTLiteMaterials {
     public static Material PhosphorusTrichloride;
     public static Material PhosphorylChloride;
     public static Material Phosphine;
+    public static Material CubicZirconia;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

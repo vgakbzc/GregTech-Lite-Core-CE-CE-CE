@@ -867,6 +867,16 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DECOMPOSITION_BY_ELECTROLYZING, FLAMMABLE)
                 .components(Phosphorus, 1, Hydrogen, 3)
                 .build();
+
+        //  11102 Cubic Zirconia
+        CubicZirconia = new Material.Builder(getId(), gregtechId("cubic_zirconia"))
+                .gem()
+                .color(0xFFDFE2)
+                .iconSet(DIAMOND)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Zirconium, 1, Oxygen, 2)
+                .build()
+                .setFormula("c-ZrO2", true);
     }
 
     private static int getId() {

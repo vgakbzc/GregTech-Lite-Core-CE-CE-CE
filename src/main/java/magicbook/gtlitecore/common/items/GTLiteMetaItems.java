@@ -140,6 +140,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_NAND_MEMORY_CHIP;
 
+    public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
+
     //  Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UEV;
