@@ -165,13 +165,13 @@ public class GTLiteMetaTileEntities {
         //  42 MEGA_OIL_CRACKING_UNIT
         //  43 STELLAR_FURNACE
         //  44 PLASMA_CONDENSER
-        //  45 DANGOTE_DISTILLERY
+        //  45 COSMIC_RAY_DETECTOR
         //  46
-        //  47
+        //  47 DANGOTE_DISTILLERY
         //  48
         //  49
         //  50 LARGE_STEAM_COMPRESSOR
-        //  51 INDUSTRIAL_PRIMITIVE_BLAST_FURNACE
+        //  51 LARGE_PRIMITIVE_BLAST_FURNACE
         //  52
         //  53
         //  54

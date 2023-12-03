@@ -10,6 +10,10 @@ public class GTLiteMaterials {
     public static Material Adamantium;
     public static Material Taranium;
     public static Material Mithril;
+    public static Material Infinity;
+    public static Material CrystalMatrix;
+    public static Material Ichorium;
+    public static Material IchorLiquid;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -130,6 +134,7 @@ public class GTLiteMaterials {
     public static Material HMS1J79Alloy;
     public static Material HY1301;
     public static Material IncoloyMA813;
+    public static Material Lafium;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

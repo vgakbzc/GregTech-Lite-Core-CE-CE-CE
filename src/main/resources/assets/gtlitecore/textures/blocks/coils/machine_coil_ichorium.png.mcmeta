@@ -1,0 +1,17 @@
+{
+    "animation": {
+        "frametime": 6
+    },
+    "ctm": {
+        "ctm_version": 1,
+        "type": "CTM",
+        "layer": "SOLID",
+        "gregtech": true,
+        "textures": [
+            "gtlitecore:blocks/machine_coil_ichorium_ctm"
+        ],
+        "extra": {
+            "connect_inside": true
+        }
+    }
+}

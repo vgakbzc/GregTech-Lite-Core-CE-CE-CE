@@ -214,6 +214,20 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[IV], 400))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
                 .build();
+
+        //  12015 Lafium
+        Lafium = new Material.Builder(getId(), gregtechId("lafium"))
+                .ingot()
+                .fluid()
+                .color(0x0D0D60)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(9865, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1860)
+                        .vacuumStats(VA[ZPM], 960))
+                .components(HastelloyN, 8, Naquadria, 4, Samarium, 2, Tungsten, 4, Aluminium, 6, Nickel, 8, Titanium, 4, Carbon, 2, Argon, 2)
+                .fluidPipeProperties(23000, 8000, true, true, true, true)
+                .build();
     }
 
     private static int getId() {

@@ -34,6 +34,9 @@ tile.precise_assembler_casing.mk1.name=精密电子单元机械方块 Mk I
 tile.precise_assembler_casing.mk2.name=精密电子单元机械方块 Mk II
 tile.precise_assembler_casing.mk3.name=精密电子单元机械方块 Mk III
 
+tile.wire_coil.adamantium.name=精金线圈方块
+tile.wire_coil.ichorium.name=灵宝线圈方块
+
 tile.transparent_casing.bpa_polycarbonate_glass.name=BPA聚碳酸酯玻璃
 tile.transparent_casing.bpa_polycarbonate_glass.tooltip=灰色石英
 tile.transparent_casing.pmma_glass.name=PMMA玻璃
@@ -486,6 +489,10 @@ gregtech.material.vibranium=振金
 gregtech.material.adamantium=精金
 gregtech.material.taranium=塔兰金属
 gregtech.material.mithril=秘银
+gregtech.material.infinity=无尽
+gregtech.material.crystal_matrix=水晶矩阵
+gregtech.material.ichorium=灵宝
+gregtech.material.ichor_liquid=灵液
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -606,6 +613,7 @@ gregtech.material.hastelloy_c_59=哈斯特洛伊合金-C59
 gregtech.material.hms_1_j_79_alloy=高饱和磁感应软磁合金-1J79
 gregtech.material.hy_1301=高强度结构钢HY130-1
 gregtech.material.incoloy_ma_813=耐热铬铁合金-MA813
+gregtech.material.lafium=路菲恩
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

@@ -31,6 +31,8 @@ import javax.annotation.Nonnull;
 import java.util.Objects;
 import java.util.function.Function;
 
+import static gregtech.api.GregTechAPI.HEATING_COILS;
+
 @Mod.EventBusSubscriber(modid = GTLiteCore.MODID)
 public class CommonProxy {
 
@@ -52,6 +54,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.UNIQUE_CASING);
         registry.register(GTLiteMetaBlocks.FUSION_CASING);
         registry.register(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING);
+        registry.register(GTLiteMetaBlocks.WIRE_COIL);
         registry.register(GTLiteMetaBlocks.TRANSPARENT_CASING);
         registry.register(GTLiteMetaBlocks.CRUCIBLE);
     }
@@ -65,6 +68,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.UNIQUE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.FUSION_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
     }
@@ -109,6 +113,8 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerWireCoil(GregTechAPI.RegisterEvent<BlockWireCoil> event) {
         GTLiteLog.logger.info("Registering wire coils...");
-
+        for (magicbook.gtlitecore.common.blocks.BlockWireCoil.CoilType type : magicbook.gtlitecore.common.blocks.BlockWireCoil.CoilType.values()) {
+            HEATING_COILS.put(GTLiteMetaBlocks.WIRE_COIL.getState(type), type);
+        }
     }
 }

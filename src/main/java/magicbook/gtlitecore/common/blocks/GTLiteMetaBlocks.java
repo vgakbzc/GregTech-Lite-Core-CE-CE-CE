@@ -16,6 +16,7 @@ public class GTLiteMetaBlocks {
     public static BlockUniqueCasing UNIQUE_CASING;
     public static BlockFusionCasing FUSION_CASING;
     public static BlockPreciseAssemblerCasing PRECISE_ASSEMBLER_CASING;
+    public static BlockWireCoil WIRE_COIL;
     public static BlockTransparentCasing TRANSPARENT_CASING;
     public static BlockCrucible CRUCIBLE;
 
@@ -32,6 +33,8 @@ public class GTLiteMetaBlocks {
         FUSION_CASING.setRegistryName("fusion_casing");
         PRECISE_ASSEMBLER_CASING = new BlockPreciseAssemblerCasing();
         PRECISE_ASSEMBLER_CASING.setRegistryName("precise_assembler_casing");
+        WIRE_COIL = new BlockWireCoil();
+        WIRE_COIL.setRegistryName("wire_coil");
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
         CRUCIBLE = new BlockCrucible();
@@ -47,6 +50,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(PRECISE_ASSEMBLER_CASING);
         registerItemModel(CRUCIBLE);
 
+        WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();
     }
 

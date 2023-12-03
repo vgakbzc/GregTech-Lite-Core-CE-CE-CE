@@ -8,8 +8,11 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import magicbook.gtlitecore.api.block.IBlockTier;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.common.blocks.BlockPreciseAssemblerCasing;
+import magicbook.gtlitecore.common.blocks.BlockWireCoil;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
+
+import static gregtech.api.GregTechAPI.HEATING_COILS;
 
 public class GTLiteAPI {
 
@@ -21,6 +24,11 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_INTERNAL_CASING = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
+
+        //  Wire Coil Init
+        for (BlockWireCoil.CoilType type : BlockWireCoil.CoilType.values()) {
+            HEATING_COILS.put(GTLiteMetaBlocks.WIRE_COIL.getState(type), type);
+        }
 
         //  Precise Assembler Casing Tier
         MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK1),
