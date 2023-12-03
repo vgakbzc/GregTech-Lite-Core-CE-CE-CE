@@ -10,4 +10,8 @@ public class GTLiteElements {
     public static final Element Ad = Elements.add(222, 580, -1, null, "Adamantium", "Ad", false);
     public static final Element Tn = Elements.add(321, 478, -1, null, "Taranium", "Tn", false);
     public static final Element Mh = Elements.add(405, 564, -1, null, "Mithril", "Mh", false);
+    public static final Element CrystalMatrix = Elements.add(888, 888, -1, null, "CrystalMatrix", "◊◇◊", false);
+    public static final Element Infinity = Elements.add(999, 999, -1, null, "Infinity", "∞", false);
+    public static final Element Ichorium = Elements.add(165, 280, -1, null, "Ichorium", "✦☯✧", false);
+    public static final Element IchorLiquid = Elements.add(165, 279, -1, null, "IchorLiquid", "☯", false);
 }

@@ -43,6 +43,7 @@ public class GTLiteMaterialPropertyAddition {
         Hafnium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Elements
+        Calcium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Dubnium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Dubnium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Rutherfordium.setProperty(PropertyKey.INGOT, new IngotProperty());
@@ -54,9 +55,16 @@ public class GTLiteMaterialPropertyAddition {
         Iodine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Livermorium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Seaborgium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Seaborgium.setProperty(PropertyKey.WIRE, new WireProperties((int) V[UEV], 32, 32, false));
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
+        Zirconium.setProperty(PropertyKey.FLUID, new FluidProperty());
+
+        //  Ichorium Chain
+        NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
@@ -95,6 +103,11 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
+
+        //  Spring
+        Trinium.addFlags(GENERATE_SPRING);
+        Tritanium.addFlags(GENERATE_SPRING);
+        RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_SPRING);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);

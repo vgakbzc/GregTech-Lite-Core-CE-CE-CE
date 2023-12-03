@@ -4,7 +4,10 @@ import codechicken.lib.texture.TextureUtils;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
+
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
 
 public class GTLiteTextures {
 
@@ -43,10 +46,15 @@ public class GTLiteTextures {
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
 
+    //  Multi Renderer
+    public static TextureAtlasSprite HALO;
 
     public GTLiteTextures() {}
 
-    public static void register(TextureMap textureMap) {}
+    public static void register(TextureMap textureMap) {
+
+        HALO = textureMap.registerSprite(gtliteId("items/halo"));
+    }
 
     public static void preInit() {
         TextureUtils.addIconRegister(GTLiteTextures::register);

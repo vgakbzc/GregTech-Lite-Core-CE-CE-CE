@@ -46,6 +46,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x45433D)
                 .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
                 .components(Carbon, 20, Hydrogen, 12, Oxygen, 3)
+                .fluidPipeProperties(2000, 700, true)
                 .build();
 
         //  13004 Kevlar
