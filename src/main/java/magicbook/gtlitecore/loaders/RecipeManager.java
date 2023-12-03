@@ -2,7 +2,7 @@ package magicbook.gtlitecore.loaders;
 
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
 import magicbook.gtlitecore.loaders.chains.*;
-import magicbook.gtlitecore.loaders.circuits.GoowareCircuits;
+import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.multiblock.DroneAirport;
 import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
@@ -78,7 +78,13 @@ public class RecipeManager {
     }
 
     private static void initCircuits() {
+        ProcessorCircuits.init();
+        NanoCircuits.init();
+        QuantumCircuits.init();
+        CrystalCircuits.init();
+        WetwareCircuits.init();
         GoowareCircuits.init();
+        OpticalCircuits.init();
     }
 
     private static void initMultiRecipes() {

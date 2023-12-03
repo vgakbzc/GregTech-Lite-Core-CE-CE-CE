@@ -144,6 +144,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FEMTO_PIC_CHIP = this.addItem(205, "wafer.chip.femto_pic");
         DUBNIUM_BOULE = this.addItem(206, "boule.dubnium");
         DUBNIUM_WAFER = this.addItem(207, "wafer.dubnium");
+        PHASE_CHANGE_MEMORY = this.addItem(208, "wafer.chip.phase_change_memory");
+        OPTICAL_NOR_MEMORY_CHIP = this.addItem(209, "wafer.chip.optical_nor_memory_chip");
+        SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(210, "wafer.chip.spin_transfer_torque_memory");
+        SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(211, "wafer.chip.spintronic_nand_memory_chip");
 
         //  Voltage Coils
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");

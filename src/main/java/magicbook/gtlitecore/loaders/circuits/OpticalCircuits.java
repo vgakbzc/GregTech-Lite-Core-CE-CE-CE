@@ -74,9 +74,65 @@ public class OpticalCircuits {
         //  TODO SoC
 
         //  Assembly
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_CIRCUIT_BOARD)
+                .input(OPTICAL_PROCESSOR, 2)
+                .input(OPTICAL_INDUCTOR, 6)
+                .input(OPTICAL_CAPACITOR, 12)
+                .input(PHASE_CHANGE_MEMORY, 24)
+                .input(OPTICAL_FIBER, 16)
+                .output(OPTICAL_ASSEMBLY, 2)
+                .solderMultiplier(2)
+                .duration(400)
+                .EUt(VA[UHV])
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
         //  Computer
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(OPTICAL_CIRCUIT_BOARD)
+                .input(OPTICAL_ASSEMBLY, 2)
+                .input(OPTICAL_DIODE, 8)
+                .input(OPTICAL_NOR_MEMORY_CHIP, 16)
+                .input(PHASE_CHANGE_MEMORY, 32)
+                .input(OPTICAL_FIBER, 24)
+                .input(foil, KaptonE, 32)
+                .input(plate, Tritanium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 12))
+                .fluidInputs(Orichalcum.getFluid(L * 3))
+                .output(OPTICAL_COMPUTER)
+                .duration(400)
+                .EUt(VA[UHV])
+                .stationResearch(b -> b
+                        .researchStack(OPTICAL_ASSEMBLY.getStackForm())
+                        .CWUt(64)
+                        .EUt(VA[UHV]))
+                .buildAndRegister();
 
         //  Mainframe
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .input(frameGt, Orichalcum, 2)
+        //        .input(OPTICAL_COMPUTER, 2)
+        //        .input(OPTICAL_DIODE, 16)
+        //        .input(OPTICAL_CAPACITOR, 16)
+        //        .input(OPTICAL_TRANSISTOR, 16)
+        //        .input(OPTICAL_RESISTOR, 16)
+        //        .input(OPTICAL_INDUCTOR, 16)
+        //        .input(foil, KaptonE, 64)
+        //        .input(PHASE_CHANGE_MEMORY, 32)
+        //        .input(wireGtDouble, , 16) //UEV Superconductor
+        //        .input(plate, Tritanium, 8)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 20))
+        //        .fluidInputs(Kevlar.getFluid(L * 12))
+        //        .fluidInputs(Polyetheretherketone.getFluid(L * 9))
+        //        .fluidInputs(Draconium.getFluid(L * 6))
+        //        .output(OPTICAL_MAINFRAME)
+        //        .duration(1200)
+        //        .EUt(VA[UEV])
+        //        .stationResearch(b -> b
+        //                .researchStack(OPTICAL_COMPUTER.getStackForm())
+        //                .CWUt(384)
+        //                .EUt(VA[UEV]))
+        //        .buildAndRegister();
     }
 }

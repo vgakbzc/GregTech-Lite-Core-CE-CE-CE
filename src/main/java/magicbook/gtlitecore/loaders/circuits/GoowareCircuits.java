@@ -102,7 +102,7 @@ public class GoowareCircuits {
                 .input(ADVANCED_SMD_CAPACITOR, 32)
                 .input(RANDOM_ACCESS_MEMORY, 40)
                 .input(wireFine, Europium, 16)
-                .output(GOOWARE_ASSEMBLY)
+                .output(GOOWARE_ASSEMBLY, 2)
                 .solderMultiplier(2)
                 .duration(400)
                 .EUt(VA[UV])
