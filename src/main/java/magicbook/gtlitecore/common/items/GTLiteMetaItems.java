@@ -118,6 +118,14 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SCINTILLATOR;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
 
+    public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;
+    public static MetaItem<?>.MetaValueItem RUBY_CHIP;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
+    public static MetaItem<?>.MetaValueItem DIAMOND_MODULATOR;
+    public static MetaItem<?>.MetaValueItem RUBY_MODULATOR;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_MODULATOR;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SOC_SOCKET;
+
     //  Boules and Wafers
     public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;
     public static MetaItem<?>.MetaValueItem NANO_PIC_CHIP;
@@ -127,6 +135,15 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem FEMTO_PIC_CHIP;
     public static MetaItem<?>.MetaValueItem DUBNIUM_BOULE;
     public static MetaItem<?>.MetaValueItem DUBNIUM_WAFER;
+    public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
+    public static MetaItem<?>.MetaValueItem OPTICAL_NOR_MEMORY_CHIP;
+    public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
+    public static MetaItem<?>.MetaValueItem SPINTRONIC_NAND_MEMORY_CHIP;
+
+    public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
 
     //  Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;

@@ -716,6 +716,21 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x321452)
                 .components(Carbon, 1, Hydrogen, 6, Nitrogen, 2)
                 .build();
+
+        //  13084 Hexafluoropropylene
+        Hexafluoropropylene = new Material.Builder(getId(), gregtechId("hexafluoropropylene"))
+                .liquid()
+                .color(0x141D6F)
+                .components(Carbon, 3, Fluorine, 6)
+                .build();
+
+        //  13085 Fluorinated Ethylene Propylene
+        FluorinatedEthylenePropylene = new Material.Builder(getId(), gregtechId("fluorinated_ethylene_propylene"))
+                .liquid() // TODO polymer?
+                .color(0xC8C8C8)
+                .iconSet(DULL)
+                .components(Carbon, 5, Fluorine, 10)
+                .build();
     }
 
     private static int getId() {

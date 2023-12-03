@@ -239,7 +239,15 @@ public class MachineRecipeLoader {
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
                 'W', new UnificationEntry(cableGtQuadruple, SiliconCarbide));
 
-        //  TODO  ION_IMPLANTATOR (id23)
+        //  Ion Implantator
+        ModHandler.addShapedRecipe(true, "ion_implantator", ION_IMPLANTATOR.getStackForm(),
+                "WCW", "EHP", "WKW",
+                'E', EMITTER_UHV.getStackForm(),
+                'P', ELECTRIC_PUMP_UHV.getStackForm(),
+                'H', HULL[UHV].getStackForm(),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'K', new UnificationEntry(cableGtSingle, Europium),
+                'W', new UnificationEntry(plate, Adamantium));
 
         //  Unmanned Drone Airport
         ASSEMBLER_RECIPES.recipeBuilder()

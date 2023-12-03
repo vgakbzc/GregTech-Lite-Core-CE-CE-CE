@@ -1,7 +1,8 @@
 package magicbook.gtlitecore.loaders;
 
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
-import magicbook.gtlitecore.loaders.chain.*;
+import magicbook.gtlitecore.loaders.chains.*;
+import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.multiblock.DroneAirport;
 import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
@@ -23,6 +24,7 @@ public class RecipeManager {
       
         initChains();
         initOreProcessings();
+        initCircuits();
         initMultiRecipes();
 
         FusionLoader.init();
@@ -46,6 +48,7 @@ public class RecipeManager {
         EDTAChain.init();
         EtchingMaterialsChain.init();
         EthyleneGlycolChain.init();
+        FEPChain.init();
         FullereneChain.init();
         GalliumNitrideChain.init();
         GrapheneChain.init();
@@ -64,6 +67,7 @@ public class RecipeManager {
         RocketFuelChain.init();
         //  TODO SeleniiumTelluriumChain.init();
         //  TODO TurpentineChain.init();
+        ZirconiumChain.init();
     }
 
     private static void initOreProcessings() {
@@ -72,6 +76,16 @@ public class RecipeManager {
        TaraniumProcessing.init();
 
        IsaMillOreProcessing.init();
+    }
+  
+    private static void initCircuits() {
+        ProcessorCircuits.init();
+        NanoCircuits.init();
+        QuantumCircuits.init();
+        CrystalCircuits.init();
+        WetwareCircuits.init();
+        GoowareCircuits.init();
+        OpticalCircuits.init();
     }
 
     private static void initMultiRecipes() {

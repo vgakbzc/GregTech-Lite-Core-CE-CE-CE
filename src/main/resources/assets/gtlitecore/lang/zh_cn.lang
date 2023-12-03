@@ -82,6 +82,22 @@ metaitem.boule.dubnium.name=钅杜掺杂的单晶硅
 metaitem.boule.dubnium.tooltip=待处理电路
 metaitem.wafer.dubnium.name=钅杜掺杂的晶圆
 metaitem.wafer.dubnium.tooltip=待处理电路
+metaitem.wafer.chip.phase_change_memory.name=相变随机存取存储器（PRAM）晶片
+metaitem.wafer.chip.phase_change_memory.tooltip=相变随机存取存储器
+metaitem.wafer.chip.optical_nor_memory_chip.name=全光级联逻辑或非门（ACNOR）晶片
+metaitem.wafer.chip.optical_nor_memory_chip.tooltip=全光级联逻辑或非门
+metaitem.wafer.chip.spin_transfer_torque_memory.name=自旋转移力矩存储器（STTRAM）晶片
+metaitem.wafer.chip.spin_transfer_torque_memory.tooltip=自旋转移力矩存储器
+metaitem.wafer.chip.spintronic_nand_memory_chip.name=磁畴壁反相逻辑与非门（MDNAND）晶片
+metaitem.wafer.chip.spintronic_nand_memory_chip.tooltip=磁畴壁反相逻辑与非门
+metaitem.boule.cubic_zirconia.europium.name=铕掺杂的单晶立方氧化锆
+metaitem.boule.cubic_zirconia.europium.tooltip=待处理晶体
+metaitem.wafer.cubic_zirconia.europium.name=铕掺杂的立方氧化锆晶圆
+metaitem.wafer.cubic_zirconia.europium.tooltip=待处理晶体
+metaitem.wafer.crystal_interface.name=晶体触面晶圆
+metaitem.wafer.crystal_interface.tooltip=待处理晶体接口
+metaitem.wafer.chip.crystal_interface.name=晶体触面晶片
+metaitem.wafer.chip.crystal_interface.tooltip=晶体接口
 
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
@@ -250,6 +266,20 @@ metaitem.component.cosmic.scintillator.name=闪烁体
 metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
 metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
 metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
+metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
+metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
+metaitem.component.crystal.ruby_chip.name=刻蚀红宝石晶片
+metaitem.component.crystal.ruby_chip.tooltip=待处理晶体控制电路
+metaitem.component.crystal.sapphire_chip.name=刻蚀蓝宝石晶片
+metaitem.component.crystal.sapphire_chip.tooltip=待处理晶体转换电路
+metaitem.component.crystal.diamond_modulator.name=钻石晶体调节器
+metaitem.component.crystal.diamond_modulator.tooltip=逻辑处理电路
+metaitem.component.crystal.ruby_modulator.name=红宝石晶体调节器
+metaitem.component.crystal.ruby_modulator.tooltip=控制处理电路
+metaitem.component.crystal.sapphire_modulator.name=蓝宝石晶体调节器
+metaitem.component.crystal.sapphire_modulator.tooltip=转换处理电路
+metaitem.component.crystal.system_on_chip_socket.name=晶体SoC插槽
+metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
@@ -398,6 +428,8 @@ gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
 gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
 
+gtlitecore.machine.ion_implantator.name=离子注入机
+
 gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
 gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
 gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
@@ -525,6 +557,7 @@ gregtech.material.phosphorene=磷烯
 gregtech.material.phosphorus_trichloride=三氯化磷
 gregtech.material.phosphoryl_chloride=磷酰氯
 gregtech.material.phosphine=磷化氢
+gregtech.material.cubic_zirconia=立方氧化锆
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -619,6 +652,8 @@ gregtech.material.hydroxylamine_disulfate=硫酸羟胺
 gregtech.material.hydroxylamine=羟胺
 gregtech.material.octene=辛烯
 gregtech.material.methylhydrazine=甲肼
+gregtech.material.hexafluoropropylene=六氟丙烯
+gregtech.material.fluorinated_ethylene_propylene=聚全氟乙丙烯（FEP）
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -725,6 +760,8 @@ metaitem.mining_drone.max.name=采矿无人机（§c§lMAX§r）
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
+item.material.oreprefix.seedCrystal=%s晶种
+item.material.oreprefix.boule=人造%s
 
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水

@@ -120,12 +120,20 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT = this.addItem(92, "component.spintronic.bose_einstein_condensate_containment_unit");
         BOSE_EINSTEIN_CONDENSATE = this.addItem(93, "component.spintronic.bose_einstein_condensate");
         CLADDED_OPTICAL_FIBER_CORE = this.addItem(94, "component.cosmic.cladded_optical_fiber_core");
-        CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = addItem(95, "component.cosmic.closed_timelike_curve_computational_unit");
-        CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = addItem(96, "component.cosmic.closed_timelike_curve_guidance_unit");
-        NUCLEAR_CLOCK = addItem(97, "component.cosmic.nuclear_clock");
-        MANIFOLD_OSCILLATORY_POWER_CELL = addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
-        SCINTILLATOR = addItem(99, "component.cosmic.scintillator");
-        SCINTILLATOR_CRYSTAL = addItem(100, "component.cosmic.scintillator_crystal");
+        CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = this.addItem(95, "component.cosmic.closed_timelike_curve_computational_unit");
+        CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = this.addItem(96, "component.cosmic.closed_timelike_curve_guidance_unit");
+        NUCLEAR_CLOCK = this.addItem(97, "component.cosmic.nuclear_clock");
+        MANIFOLD_OSCILLATORY_POWER_CELL = this.addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
+        SCINTILLATOR = this.addItem(99, "component.cosmic.scintillator");
+        SCINTILLATOR_CRYSTAL = this.addItem(100, "component.cosmic.scintillator_crystal");
+
+        DIAMOND_CHIP = this.addItem(150, "component.crystal.diamond_chip");
+        RUBY_CHIP = this.addItem(151, "component.crystal.ruby_chip");
+        SAPPHIRE_CHIP = this.addItem(152, "component.crystal.sapphire_chip");
+        DIAMOND_MODULATOR = this.addItem(153, "component.crystal.diamond_modulator");
+        RUBY_MODULATOR = this.addItem(154, "component.crystal.ruby_modulator");
+        SAPPHIRE_MODULATOR = this.addItem(155, "component.crystal.sapphire_modulator");
+        CRYSTAL_SOC_SOCKET = this.addItem(156, "component.crystal.system_on_chip_socket");
 
         //  Boules and Wafers
         NANO_PIC_WAFER = this.addItem(200, "wafer.nano_pic");
@@ -136,6 +144,15 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FEMTO_PIC_CHIP = this.addItem(205, "wafer.chip.femto_pic");
         DUBNIUM_BOULE = this.addItem(206, "boule.dubnium");
         DUBNIUM_WAFER = this.addItem(207, "wafer.dubnium");
+        PHASE_CHANGE_MEMORY = this.addItem(208, "wafer.chip.phase_change_memory");
+        OPTICAL_NOR_MEMORY_CHIP = this.addItem(209, "wafer.chip.optical_nor_memory_chip");
+        SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(210, "wafer.chip.spin_transfer_torque_memory");
+        SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(211, "wafer.chip.spintronic_nand_memory_chip");
+
+        CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(220, "boule.cubic_zirconia.europium");
+        CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(221, "wafer.cubic_zirconia.europium");
+        CRYSTAL_INTERFACE_WAFER = this.addItem(222, "wafer.crystal_interface");
+        CRYSTAL_INTERFACE_CHIP = this.addItem(223, "wafer.chip.crystal_interface");
 
         //  Voltage Coils
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");

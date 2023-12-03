@@ -428,8 +428,7 @@ public class TaraniumProcessing {
                 .input(dust, Bedrock)
                 .chancedOutput(dust, Adamantite, 3000, 500)
                 .chancedOutput(dust, Monazite, 2, 3000, 0)
-                .chancedOutput(dust, Zirconium, 3, 3000, 0)
-                .chancedOutput(dust, Graphite, 3, 3000, 0)
+                .chancedOutput(dust, Zirconium, 3, 6000, 0)
                 .duration(120)
                 .EUt(VA[IV])
                 .buildAndRegister();

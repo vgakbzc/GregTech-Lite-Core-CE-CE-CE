@@ -113,6 +113,7 @@ public class GTLiteMaterials {
     public static Material PhosphorusTrichloride;
     public static Material PhosphorylChloride;
     public static Material Phosphine;
+    public static Material CubicZirconia;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -207,6 +208,8 @@ public class GTLiteMaterials {
     public static Material Hydroxylamine;
     public static Material Octene;
     public static Material Methylhydrazine;
+    public static Material Hexafluoropropylene;
+    public static Material FluorinatedEthylenePropylene;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

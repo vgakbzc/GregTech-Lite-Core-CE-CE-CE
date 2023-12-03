@@ -9,6 +9,7 @@ import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import magicbook.gtlitecore.loaders.components.MaterialComponents;
 import net.minecraft.block.Block;
@@ -82,6 +83,12 @@ public class CommonProxy {
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
         RecipeManager.init();
+    }
+
+    @SubscribeEvent
+    public static void registerRecipeHandlers(RegistryEvent.Register<IRecipe> event) {
+        GTLiteLog.logger.info("Registering recipe handlers...");
+        RecipeHandler.init();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
