@@ -5,12 +5,17 @@ import gregtech.api.pattern.TraceabilityPredicate;
 import gregtech.api.util.BlockInfo;
 import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.MetaBlocks;
+import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
+import magicbook.gtlitecore.api.pattern.predicates.TierTraceabilityPredicate;
 import net.minecraft.block.state.IBlockState;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.function.Supplier;
+
+import static magicbook.gtlitecore.api.GTLiteAPI.*;
 
 public class GTLiteTraceabilityPredicate {
 
@@ -31,5 +36,11 @@ public class GTLiteTraceabilityPredicate {
             .map(type -> new BlockInfo(MetaBlocks.BOILER_FIREBOX_CASING.getState(type), null))
             .toArray(BlockInfo[]::new)))
             .addTooltips("gtlitecore.machine.pattern.firebox");
+
+    public static Supplier<TierTraceabilityPredicate> EP_PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
+
+    public static Supplier<TierTraceabilityPredicate> EP_PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_INTERNAL_CASING.get(s)).getIntTier()), "PAInternalCasing", null);
 
 }

@@ -19,6 +19,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityCryogenicFreezer;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityMegaChemicalReactor;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityVolcanus;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityLargeNaquadahReactor;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
@@ -65,6 +66,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityUnmannedDroneAirport UNMANNED_DRONE_AIRPORT;
 
     public static final MetaTileEntityAdvancedFusionReactor[] ADVANCED_FUSION_REACTOR = new MetaTileEntityAdvancedFusionReactor[2];
+    public static MetaTileEntityPreciseAssembler PRECISE_ASSEMBLER;
 
     public static MetaTileEntityMegaChemicalReactor MEGA_CHEMICAL_REACTOR;
 
@@ -130,9 +132,9 @@ public class GTLiteMetaTileEntities {
         BURNER_REACTOR = registerMultiMetaTileEntity(11, new MetaTileEntityBurnerReactor(gtliteId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMultiMetaTileEntity(12, new MetaTileEntityCryogenicReactor(gtliteId("cryogenic_reactor")));
         LARGE_NAQUADAH_REACTOR = registerMultiMetaTileEntity(13, new MetaTileEntityLargeNaquadahReactor(gtliteId("large_naquadah_reactor")));
-        //  HYPER REACTOR Mk1 14
-        //  HYPER REACTOR Mk2 15
-        //  HYPER REACTOR Mk3 16
+        //  14 HYPER REACTOR Mk I
+        //  15 HYPER REACTOR Mk II
+        //  16 HYPER REACTOR Mk III
         ISA_MILL = registerMultiMetaTileEntity(17, new MetaTileEntityIsaMill(gtliteId("isa_mill")));
         FLOTATION_CELL_REGULATOR = registerMultiMetaTileEntity(18, new MetaTileEntityFlotationCellRegulator(gtliteId("flotation_cell_regulator")));
         VACUUM_DRYING_FURNACE = registerMultiMetaTileEntity(19, new MetaTileEntityVacuumDryingFurnace(gtliteId("vacuum_drying_furnace")));
@@ -145,9 +147,29 @@ public class GTLiteMetaTileEntities {
         //  26 VIRTUAL_COSMOS_SIMULATOR
         ADVANCED_FUSION_REACTOR[0] = registerMultiMetaTileEntity(30, new MetaTileEntityAdvancedFusionReactor(gtliteId("fusion_reactor_mk4"), UHV, GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_CASING_MK4), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.CRYOSTAT), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.DIVERTOR), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.VACUUM)));
         ADVANCED_FUSION_REACTOR[1] = registerMultiMetaTileEntity(31, new MetaTileEntityAdvancedFusionReactor(gtliteId("fusion_reactor_mk5"), UEV, GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_CASING_MK5), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.ADVANCED_CRYOSTAT), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.ADVANCED_DIVERTOR), GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.ADVANCED_VACUUM)));
-
-        //  MEGA_ALLOY_SMELTER 40
+        PRECISE_ASSEMBLER = registerMultiMetaTileEntity(32, new MetaTileEntityPreciseAssembler(gtliteId("precise_assembler")));
+        //  33 COMPONENT_ASSEMBLY_LINE
+        //  34 UNIVERSAL_PROCESSING_FACTORY
+        //  35 COMPRESSED_FUSION_REACTOR Mk I
+        //  36 COMPRESSED_FUSION_REACTOR Mk II
+        //  37 COMPRESSED_FUSION_REACTOR Mk III
+        //  38 COMPRESSED_FUSION_REACTOR Mk IV
+        //  39 COMPRESSED_FUSION_REACTOR Mk V
+        //  40 MEGA_ALLOY_SMELTER
         MEGA_CHEMICAL_REACTOR = registerMultiMetaTileEntity(41, new MetaTileEntityMegaChemicalReactor(gtliteId("mega_chemical_reactor")));
-        //  MEGA_OIL_CRACKING_UNIT 42
+        //  42 MEGA_OIL_CRACKING_UNIT
+        //  43 STELLAR_FURNACE
+        //  44 PLASMA_CONDENSER
+        //  45 DANGOTE_DISTILLERY
+        //  46
+        //  47
+        //  48
+        //  49
+        //  50 LARGE_STEAM_COMPRESSOR
+        //  51 INDUSTRIAL_PRIMITIVE_BLAST_FURNACE
+
+        //  60 MEGA_STEAM_TURBINE
+        //  61 MEGA_GAS_TURBINE
+        //  62 MEGA_PLASMA_TURBINE
     }
 }

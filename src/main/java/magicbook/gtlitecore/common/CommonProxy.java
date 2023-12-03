@@ -7,12 +7,14 @@ import gregtech.api.recipes.recipeproperties.FusionEUToStartProperty;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
+import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import magicbook.gtlitecore.loaders.components.MaterialComponents;
 import net.minecraft.block.Block;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
@@ -49,6 +51,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.BOILER_CASING);
         registry.register(GTLiteMetaBlocks.UNIQUE_CASING);
         registry.register(GTLiteMetaBlocks.FUSION_CASING);
+        registry.register(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING);
         registry.register(GTLiteMetaBlocks.TRANSPARENT_CASING);
         registry.register(GTLiteMetaBlocks.CRUCIBLE);
     }
@@ -61,6 +64,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.BOILER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.UNIQUE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.FUSION_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
     }
@@ -80,8 +84,13 @@ public class CommonProxy {
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         GTLiteLog.logger.info("Registering recipes...");
+        //  Fusion Tier extends
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
+        //  Precise Assembly Tiers
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(1, I18n.format("gtlitecore.machine.precise_assembler.tier.1"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(2, I18n.format("gtlitecore.machine.precise_assembler.tier.2"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(3, I18n.format("gtlitecore.machine.precise_assembler.tier.3"));
         RecipeManager.init();
     }
 

@@ -123,6 +123,13 @@ public class GTLiteMaterials {
     public static Material Talonite;
     public static Material HastelloyX78;
     public static Material SiliconCarbide;
+    public static Material MARM200Steel;
+    public static Material MARM200CeSteel;
+    public static Material Stellite;
+    public static Material HastelloyC59;
+    public static Material HMS1J79Alloy;
+    public static Material HY1301;
+    public static Material IncoloyMA813;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

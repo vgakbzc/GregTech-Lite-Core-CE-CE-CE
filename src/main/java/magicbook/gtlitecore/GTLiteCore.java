@@ -1,6 +1,7 @@
 package magicbook.gtlitecore;
 
 import gregtech.common.ConfigHolder;
+import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -41,6 +42,7 @@ public class GTLiteCore {
 
         GTLiteMetaItems.init();
         GTLiteMetaBlocks.init();
+        GTLiteAPI.init();
         GTLiteMetaTileEntities.init();
 
         proxy.preLoad();
