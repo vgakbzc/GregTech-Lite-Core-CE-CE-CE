@@ -68,6 +68,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<BlastRecipeBuilder> VACUUM_DRYING_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> DRONE_AIRPORT_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> ION_IMPLANTATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -193,5 +195,9 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
                 .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
                 .setSound(GTSoundEvents.COMPUTATION);
+        //  Ion Implantator RecipeMap
+        ION_IMPLANTATOR_RECIPES = new RecipeMap<>("ion_implantator_recipes", 3, 1, 1, 0, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ELECTROLYZER);
     }
 }

@@ -250,6 +250,20 @@ metaitem.component.cosmic.scintillator.name=闪烁体
 metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
 metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
 metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
+metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
+metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
+metaitem.component.crystal.ruby_chip.name=刻蚀红宝石晶片
+metaitem.component.crystal.ruby_chip.tooltip=待处理晶体控制电路
+metaitem.component.crystal.sapphire_chip.name=刻蚀蓝宝石晶片
+metaitem.component.crystal.sapphire_chip.tooltip=待处理晶体转换电路
+metaitem.component.crystal.diamond_modulator.name=钻石晶体调节器
+metaitem.component.crystal.diamond_modulator.tooltip=逻辑处理电路
+metaitem.component.crystal.ruby_modulator.name=红宝石晶体调节器
+metaitem.component.crystal.ruby_modulator.tooltip=控制处理电路
+metaitem.component.crystal.sapphire_modulator.name=蓝宝石晶体调节器
+metaitem.component.crystal.sapphire_modulator.tooltip=转换处理电路
+metaitem.component.crystal.system_on_chip_socket.name=晶体SoC插槽
+metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
@@ -397,6 +411,8 @@ gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极
 gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
 gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
+
+gtlitecore.machine.ion_implantator.name=离子注入机
 
 gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
 gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
@@ -619,6 +635,8 @@ gregtech.material.hydroxylamine_disulfate=硫酸羟胺
 gregtech.material.hydroxylamine=羟胺
 gregtech.material.octene=辛烯
 gregtech.material.methylhydrazine=甲肼
+gregtech.material.hexafluoropropylene=六氟丙烯
+gregtech.material.fluorinated_ethylene_propylene=聚全氟乙丙烯（FEP）
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -725,6 +743,8 @@ metaitem.mining_drone.max.name=采矿无人机（§c§lMAX§r）
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
+item.material.oreprefix.seedCrystal=%s晶种
+item.material.oreprefix.boule=人造%s
 
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水

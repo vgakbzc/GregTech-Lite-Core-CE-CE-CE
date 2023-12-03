@@ -118,6 +118,14 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SCINTILLATOR;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
 
+    public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;
+    public static MetaItem<?>.MetaValueItem RUBY_CHIP;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
+    public static MetaItem<?>.MetaValueItem DIAMOND_MODULATOR;
+    public static MetaItem<?>.MetaValueItem RUBY_MODULATOR;
+    public static MetaItem<?>.MetaValueItem SAPPHIRE_MODULATOR;
+    public static MetaItem<?>.MetaValueItem CRYSTAL_SOC_SOCKET;
+
     //  Boules and Wafers
     public static MetaItem<?>.MetaValueItem NANO_PIC_WAFER;
     public static MetaItem<?>.MetaValueItem NANO_PIC_CHIP;

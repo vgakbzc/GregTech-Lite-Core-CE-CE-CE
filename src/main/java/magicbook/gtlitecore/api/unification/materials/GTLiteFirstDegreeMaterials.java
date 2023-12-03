@@ -5,13 +5,13 @@ import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.ToolProperty;
 
-import static gregtech.api.GTValues.UEV;
-import static gregtech.api.GTValues.V;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
 public class GTLiteFirstDegreeMaterials {
 
@@ -520,8 +520,7 @@ public class GTLiteFirstDegreeMaterials {
                 .gem()
                 .color(0x545572)
                 .iconSet(DIAMOND)
-                //  TODO DISABLE_CRYSTALLIZATION
-                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, FLAMMABLE, EXPLOSIVE)
+                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, DISABLE_CRYSTALLIZATION, FLAMMABLE, EXPLOSIVE)
                 .components(Boron, 1, Nitrogen, 1)
                 .toolStats(new ToolProperty(14.0F, 9.0F, 12400, 15))
                 .build()

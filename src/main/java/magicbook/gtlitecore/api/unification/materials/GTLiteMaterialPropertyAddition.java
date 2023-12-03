@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.properties.*;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
@@ -93,9 +94,24 @@ public class GTLiteMaterialPropertyAddition {
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
 
+        //  Crystallization
+        Monazite.addFlags(DISABLE_CRYSTALLIZATION);
+        Sapphire.addFlags(CRYSTALLIZABLE);
+        Ruby.addFlags(CRYSTALLIZABLE);
+        Emerald.addFlags(CRYSTALLIZABLE);
+        Olivine.addFlags(CRYSTALLIZABLE);
+        Amethyst.addFlags(CRYSTALLIZABLE);
+        Opal.addFlags(CRYSTALLIZABLE);
+        //NetherStar.addFlags(CRYSTALLIZABLE); // TODO Another Nether Star recipe, may be set components
+
         //  Conflict Solutions
         RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
         Salt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Sodium Chlorate and Salt Electrolysis
 
+        //  Cable Properties
+        WireProperties wireProp = RutheniumTriniumAmericiumNeutronate.getProperty(PropertyKey.WIRE);
+        wireProp.setSuperconductor(false);
+        wireProp.setLossPerBlock(32);
+        wireProp.setVoltage((int) V[UIV]);
     }
 }
