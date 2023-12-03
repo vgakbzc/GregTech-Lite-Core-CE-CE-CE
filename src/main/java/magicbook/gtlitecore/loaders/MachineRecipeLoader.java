@@ -71,6 +71,16 @@ public class MachineRecipeLoader {
                 'H', CraftingComponent.HULL,
                 'D', CraftingComponent.DOUBLE_PLATE,
                 'W', CraftingComponent.CABLE);
+
+        //  Component Assembler
+        MetaTileEntityLoader.registerMachineRecipe(true, COMPONENT_ASSEMBLER,
+                "PPP", "CHR", "WXW",
+                'P', CraftingComponent.PLATE,
+                'H', CraftingComponent.HULL,
+                'C', CraftingComponent.CONVEYOR,
+                'R', CraftingComponent.ROBOT_ARM,
+                'W', CraftingComponent.CABLE,
+                'X', CraftingComponent.CIRCUIT);
     }
 
     private static void MultiblockControllerRecipes() {
@@ -311,7 +321,29 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .buildAndRegister();
 
-        //  TODO Component Assembly Line
+        //  Component Assembly Line
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .inputs(ASSEMBLY_LINE.getStackForm())
+                .input(frameGt, Cinobite, 4)
+                .inputs(PRECISE_ASSEMBLER.getStackForm(4))
+                .inputs(COMPONENT_ASSEMBLER[IV].getStackForm(16))
+                .input(ROBOT_ARM_UV, 4)
+                .input(CONVEYOR_MODULE_UV, 4)
+                .input(plateDouble, IncoloyMA813, 8)
+                .input(plateDouble, Pikyonium64B, 4)
+                .input(gear, TitanSteel)
+                .input(gearSmall, TitanSteel, 3)
+                .input(wireGtQuadruple, EnrichedNaquadahTriniumEuropiumDuranide, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .outputs(COMPONENT_ASSEMBLY_LINE.getStackForm())
+                .EUt(VA[UV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(COMPONENT_ASSEMBLER[IV].getStackForm())
+                        .CWUt(32)
+                        .EUt(VA[UV]))
+                .buildAndRegister();
 
         //  Compressed Fusion Reactor Mk I
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -701,7 +733,6 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .buildAndRegister();
 
-
         //  Precise Assembler Casing Mk III
         ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UV))
@@ -717,5 +748,209 @@ public class MachineRecipeLoader {
                 .EUt(VA[ZPM])
                 .duration(800)
                 .buildAndRegister();
+
+        //  Iridium Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.STEEL_SOLID))
+                .fluidInputs(Iridium.getFluid(L * 2))
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.IRIDIUM_CASING))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Advanced Filter Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Iridium)
+                .inputs(MetaBlocks.CLEANROOM_CASING.getItemVariant(gregtech.common.blocks.BlockCleanroomCasing.CasingType.FILTER_CASING))
+                .input(ELECTRIC_MOTOR_UV)
+                .input(rotor, Iridium)
+                .input(ITEM_FILTER)
+                .input(FLUID_FILTER)
+                .input(stickLong, Iridium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.CLEANROOM_CASING.getItemVariant(BlockCleanroomCasing.CleanroomCasingType.ADVANCED_FILTER_CASING))
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Component Assembly Line Casings
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Steel, 1)
+                .input(plateDense, Steel, 4)
+                .input(ROBOT_ARM_LV, 4)
+                .input(ELECTRIC_PISTON_LV, 8)
+                .input(ELECTRIC_MOTOR_LV, 10)
+                .input(gear, Steel, 4)
+                .input(wireGtQuadruple, Tin, 6)
+                .input(circuit, MarkerMaterials.Tier.LV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(576))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.LV, 4))
+                .EUt(VA[LV])
+                .duration(320)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Aluminium, 1)
+                .input(plateDense, Aluminium, 4)
+                .input(ROBOT_ARM_MV, 4)
+                .input(ELECTRIC_PISTON_MV, 8)
+                .input(ELECTRIC_MOTOR_MV, 10)
+                .input(gear, Aluminium, 4)
+                .input(wireGtQuadruple, Copper, 6)
+                .input(circuit, MarkerMaterials.Tier.MV, 8)
+                .input(circuit, MarkerMaterials.Tier.LV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(576))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.MV, 4))
+                .EUt(VA[MV])
+                .duration(320)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, StainlessSteel, 1)
+                .input(plateDense, StainlessSteel, 4)
+                .input(ROBOT_ARM_HV, 4)
+                .input(ELECTRIC_PISTON_HV, 8)
+                .input(ELECTRIC_MOTOR_HV, 10)
+                .input(gear, StainlessSteel, 4)
+                .input(wireGtQuadruple, Gold, 6)
+                .input(circuit, MarkerMaterials.Tier.HV, 8)
+                .input(circuit, MarkerMaterials.Tier.MV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(576))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.HV, 4))
+                .EUt(VA[HV])
+                .duration(320)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Titanium, 1)
+                .input(plateDense, Titanium, 4)
+                .input(ROBOT_ARM_EV, 4)
+                .input(ELECTRIC_PISTON_EV, 8)
+                .input(ELECTRIC_MOTOR_EV, 10)
+                .input(gear, Titanium, 4)
+                .input(wireGtQuadruple, Aluminium, 6)
+                .input(circuit, MarkerMaterials.Tier.EV, 8)
+                .input(circuit, MarkerMaterials.Tier.HV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(576))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.EV, 4))
+                .EUt(VA[EV])
+                .duration(320)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenSteel, 1)
+                .input(plateDense, TungstenSteel, 4)
+                .input(ROBOT_ARM_IV, 4)
+                .input(ELECTRIC_PISTON_IV, 8)
+                .input(ELECTRIC_MOTOR_IV, 10)
+                .input(gear, TungstenSteel, 4)
+                .input(wireGtQuadruple, Tungsten, 6)
+                .input(circuit, MarkerMaterials.Tier.IV, 8)
+                .input(circuit, MarkerMaterials.Tier.EV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(576))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.IV, 4))
+                .EUt(VA[IV])
+                .duration(320)
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, RhodiumPlatedPalladium)
+                .input(plateDense, RhodiumPlatedPalladium, 6)
+                .input(ROBOT_ARM_LuV, 8)
+                .input(ELECTRIC_PISTON_LUV, 10)
+                .input(ELECTRIC_MOTOR_LuV, 16)
+                .input(gear, RhodiumPlatedPalladium, 4)
+                .input(gearSmall, RhodiumPlatedPalladium, 16)
+                .input(cableGtQuadruple, NiobiumTitanium, 8)
+                .input(circuit, MarkerMaterials.Tier.LuV, 8)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(Zeron100.getFluid(1728))
+                .fluidInputs(TanmolyiumBetaC.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.LuV, 4))
+                .EUt(VA[LuV])
+                .duration(600)
+                .scannerResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.IV))
+                        .EUt(VA[IV])
+                        .duration(1200))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, NaquadahAlloy)
+                .input(plateDense, NaquadahAlloy, 6)
+                .input(ROBOT_ARM_ZPM, 8)
+                .input(ELECTRIC_PISTON_ZPM, 10)
+                .input(ELECTRIC_MOTOR_ZPM, 16)
+                .input(gear, NaquadahAlloy, 4)
+                .input(gearSmall, NaquadahAlloy, 16)
+                .input(cableGtQuadruple, VanadiumGallium, 8)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 8)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(MARM200CeSteel.getFluid(1728))
+                .fluidInputs(HastelloyC59.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.ZPM, 4))
+                .EUt(VA[ZPM])
+                .duration(600)
+                .scannerResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.LuV))
+                        .EUt(VA[LuV])
+                        .duration(1200))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Darmstadtium)
+                .input(plateDense, Darmstadtium, 6)
+                .input(ROBOT_ARM_UV, 8)
+                .input(ELECTRIC_PISTON_UV, 10)
+                .input(ELECTRIC_MOTOR_UV, 16)
+                .input(gear, Darmstadtium, 4)
+                .input(gearSmall, Darmstadtium, 16)
+                .input(cableGtQuadruple, YttriumBariumCuprate, 8)
+                .input(circuit, MarkerMaterials.Tier.UV, 8)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(HMS1J79Alloy.getFluid(1728))
+                .fluidInputs(Pikyonium64B.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UV, 4))
+                .EUt(VA[UV])
+                .duration(600)
+                .scannerResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.ZPM))
+                        .EUt(VA[ZPM])
+                        .duration(1200))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(plateDense, Orichalcum, 6)
+                .input(ROBOT_ARM_UHV, 8)
+                .input(ELECTRIC_PISTON_UHV, 10)
+                .input(ELECTRIC_MOTOR_UHV, 16)
+                .input(gear, Orichalcum, 4)
+                .input(gearSmall, Orichalcum, 16)
+                .input(cableGtQuadruple, Europium, 8)
+                .input(circuit, MarkerMaterials.Tier.UHV, 8)
+                .input(circuit, MarkerMaterials.Tier.UV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(TitanSteel.getFluid(1728))
+                .fluidInputs(Cinobite.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UHV, 4))
+                .EUt(VA[UHV])
+                .duration(600)
+                .scannerResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UV))
+                        .EUt(VA[UV])
+                        .duration(1200))
+                .buildAndRegister();
+
+        //  TODO UEV-MAX Component Assembly Line Casings
     }
 }

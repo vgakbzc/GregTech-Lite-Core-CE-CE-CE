@@ -12,6 +12,7 @@ tile.multiblock_casing.advanced_aluminium_casing.name=镀层铝制防冻机器�
 tile.multiblock_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器外壳
 tile.multiblock_casing.naquadria_casing.name=抗辐射超能硅岩机器外壳
 tile.multiblock_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
+tile.multiblock_casing.iridium_casing.name=镀铱强化机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -30,9 +31,41 @@ tile.fusion_casing.advanced_vacuum.name=高级聚变反应堆真空仓
 tile.fusion_casing.fusion_coil_mk2.name=高级聚变线圈方块
 tile.fusion_casing.fusion_coil_mk3.name=终极聚变线圈方块
 
+tile.cleanroom_casing.advanced_filter_casing.name=高级过滤外壳
+tile.cleanroom_casing.advanced_filter_casing.tooltip=为多方块结构提供§a洁净§7功能
+
 tile.precise_assembler_casing.mk1.name=精密电子单元机械方块 Mk I
 tile.precise_assembler_casing.mk2.name=精密电子单元机械方块 Mk II
 tile.precise_assembler_casing.mk3.name=精密电子单元机械方块 Mk III
+
+tile.component_assembly_line_casing.lv.name=部件装配线外壳（LV）
+tile.component_assembly_line_casing.lv.tooltip=简易装配单元
+tile.component_assembly_line_casing.mv.name=部件装配线外壳（MV）
+tile.component_assembly_line_casing.mv.tooltip=粗制装配单元
+tile.component_assembly_line_casing.hv.name=部件装配线外壳（HV）
+tile.component_assembly_line_casing.hv.tooltip=优质装配单元
+tile.component_assembly_line_casing.ev.name=部件装配线外壳（EV）
+tile.component_assembly_line_casing.ev.tooltip=进阶装配单元
+tile.component_assembly_line_casing.iv.name=部件装配线外壳（IV）
+tile.component_assembly_line_casing.iv.tooltip=高级装配单元
+tile.component_assembly_line_casing.luv.name=部件装配线外壳（LuV）
+tile.component_assembly_line_casing.luv.tooltip=高精度装配单元
+tile.component_assembly_line_casing.zpm.name=部件装配线外壳（ZPM）
+tile.component_assembly_line_casing.zpm.tooltip=超高精度装配单元
+tile.component_assembly_line_casing.uv.name=部件装配线外壳（UV）
+tile.component_assembly_line_casing.uv.tooltip=极限精度装配单元
+tile.component_assembly_line_casing.uhv.name=部件装配线外壳（UHV）
+tile.component_assembly_line_casing.uhv.tooltip=极高精度装配单元
+tile.component_assembly_line_casing.uev.name=部件装配线外壳（UEV）
+tile.component_assembly_line_casing.uev.tooltip=结构装配单元
+tile.component_assembly_line_casing.uiv.name=部件装配线外壳（UIV）
+tile.component_assembly_line_casing.uiv.tooltip=大尺度结构装配单元
+tile.component_assembly_line_casing.uxv.name=部件装配线外壳（UXV）
+tile.component_assembly_line_casing.uxv.tooltip=超结构装配单元
+tile.component_assembly_line_casing.opv.name=部件装配线外壳（OpV）
+tile.component_assembly_line_casing.opv.tooltip=宇宙装配单元
+tile.component_assembly_line_casing.max.name=部件装配线外壳（MAX）
+tile.component_assembly_line_casing.max.tooltip=时空装配单元
 
 tile.wire_coil.adamantium.name=精金线圈方块
 tile.wire_coil.ichorium.name=灵宝线圈方块
@@ -366,6 +399,17 @@ gtlitecore.machine.rocket_engine.ev.tooltip=嗡嗡作响
 gtlitecore.machine.rocket_engine.iv.name=精英火箭引擎
 gtlitecore.machine.rocket_engine.iv.tooltip=嗡嗡作响
 
+gtlitecore.machine.component_assembler.lv.name=基础部件组装机
+gtlitecore.machine.component_assembler.lv.tooltip=零部件工厂
+gtlitecore.machine.component_assembler.mv.name=进阶部件组装机
+gtlitecore.machine.component_assembler.mv.tooltip=零部件工厂
+gtlitecore.machine.component_assembler.hv.name=进阶部件组装机 II
+gtlitecore.machine.component_assembler.hv.tooltip=零部件工厂
+gtlitecore.machine.component_assembler.ev.name=进阶部件组装机 III
+gtlitecore.machine.component_assembler.ev.tooltip=零部件工厂
+gtlitecore.machine.component_assembler.iv.name=精英部件组装机
+gtlitecore.machine.component_assembler.iv.tooltip=零部件工厂
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -457,6 +501,28 @@ gtlitecore.machine.precise_assembler.tier=机器外壳等级：
 gtlitecore.machine.precise_assembler.tier.1=MK1
 gtlitecore.machine.precise_assembler.tier.2=MK2
 gtlitecore.machine.precise_assembler.tier.3=MK3
+
+gtlitecore.machine.component_assembly_line.name=部件装配线
+gtlitecore.machine.component_assembly_line.tooltip.1=批量装配各式各样的零部件
+gtlitecore.machine.component_assembly_line.tooltip.2=效率碾压同等级组装机/装配线！
+gtlitecore.machine.component_assembly_line.tooltip.3=需要不同等级的§6部件装配线外壳§7
+gtlitecore.machine.component_assembly_line.tooltip.4=部件装配线外壳限制了机器可执行的§r配方等级§7
+gtlitecore.machine.component_assembly_line.casing_tier=装配外壳等级：%s
+gtlitecore.machine.component_assembly_line.tier=装配外壳等级：
+gtlitecore.machine.component_assembly_line.tier.1=简易 (LV)
+gtlitecore.machine.component_assembly_line.tier.2=粗制 (MV)
+gtlitecore.machine.component_assembly_line.tier.3=优质 (HV)
+gtlitecore.machine.component_assembly_line.tier.4=进阶 (EV)
+gtlitecore.machine.component_assembly_line.tier.5=高级 (IV)
+gtlitecore.machine.component_assembly_line.tier.6=高精度 (LuV)
+gtlitecore.machine.component_assembly_line.tier.7=超高精度 (ZPM)
+gtlitecore.machine.component_assembly_line.tier.8=极限精度 (UV)
+gtlitecore.machine.component_assembly_line.tier.9=极高精度 (UHV)
+gtlitecore.machine.component_assembly_line.tier.10=结构 (UEV)
+gtlitecore.machine.component_assembly_line.tier.11=大尺度结构 (UIV)
+gtlitecore.machine.component_assembly_line.tier.12=超结构 (UXV)
+gtlitecore.machine.component_assembly_line.tier.13=宇宙 (OpV)
+gtlitecore.machine.component_assembly_line.tier.14=时空 (MAX)
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
 gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
@@ -614,6 +680,12 @@ gregtech.material.hms_1_j_79_alloy=高饱和磁感应软磁合金-1J79
 gregtech.material.hy_1301=高强度结构钢HY130-1
 gregtech.material.incoloy_ma_813=耐热铬铁合金-MA813
 gregtech.material.lafium=路菲恩
+gregtech.material.inconel_792=镍基合金-792
+gregtech.material.eglin_steel_base=埃格林钢粗胚
+gregtech.material.eglin_steel=埃格林钢
+gregtech.material.pikyonium_64_b=皮卡优合金-64B
+gregtech.material.cinobite=西诺柏
+gregtech.material.titan_steel=泰坦精钢
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -836,6 +908,8 @@ recipemap.vacuum_drying_recipes.name=真空干燥
 recipemap.fuel_refine_factory_recipes.name=燃料精炼
 recipemap.drone_airport_recipes.name=采矿无人机
 recipemap.precise_assembler_recipes.name=精密组装
+recipemap.component_assembler_recipes.name=部件组装机
+recipemap.component_assembly_line_recipes.name=部件装配线
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

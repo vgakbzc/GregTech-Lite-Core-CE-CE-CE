@@ -11,8 +11,10 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.AssemblyCasingTierRecipeBuilder;
+import magicbook.gtlitecore.api.recipe.builder.ComponentCasingTierRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.builder.GrindBallRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.builder.NoCoilTemperatureRecipeBuilder;
+import magicbook.gtlitecore.api.recipe.machines.RecipeMapComponentAssemblyLine;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapPreciseAssembler;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -74,6 +76,10 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> ION_IMPLANTATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<AssemblyCasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<ComponentCasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -208,6 +214,15 @@ public class GTLiteRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
                 .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
+                .setSound(GTSoundEvents.ASSEMBLER);
+        //  Component Assembler RecipeMap
+        COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>("component_assembler_recipes", 6, 1, 1, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
+                .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Component Assembly Line RecipeMap
+        COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>("component_assembly_line_recipes", 12, 1, 12, 0, new ComponentCasingTierRecipeBuilder(), false)
                 .setSound(GTSoundEvents.ASSEMBLER);
     }
 }

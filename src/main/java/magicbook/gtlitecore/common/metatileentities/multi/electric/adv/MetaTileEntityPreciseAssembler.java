@@ -133,14 +133,14 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                 .aisle("CMMMMMMMC", "CGGGGGGGC", "CGGGGGGGC", "CGGGGGGGC", "DDDDDDDDD")
                 .aisle("DDDDSDDDD", "F       F", "F       F", "F       F", "DDDDDDDDD")
                 .where('S', this.selfPredicate())
-                .where('C', GTLiteTraceabilityPredicate.EP_PA_CASING.get())
-                .where('D', GTLiteTraceabilityPredicate.EP_PA_CASING.get()
+                .where('C', GTLiteTraceabilityPredicate.PA_CASING.get())
+                .where('D', GTLiteTraceabilityPredicate.PA_CASING.get()
                         .setMinGlobalLimited(42)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
                 .where('F', states(getFrameState()))
                 .where('G', states(getGlassState()))
                 .where('O', abilities(MultiblockAbility.MUFFLER_HATCH))
-                .where('M', GTLiteTraceabilityPredicate.EP_PA_INTERNAL_CASING.get())
+                .where('M', GTLiteTraceabilityPredicate.PA_INTERNAL_CASING.get())
                 .build();
     }
 

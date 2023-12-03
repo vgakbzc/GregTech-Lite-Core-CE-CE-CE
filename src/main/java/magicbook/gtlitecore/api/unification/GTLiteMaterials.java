@@ -135,6 +135,12 @@ public class GTLiteMaterials {
     public static Material HY1301;
     public static Material IncoloyMA813;
     public static Material Lafium;
+    public static Material Inconel792;
+    public static Material EglinSteelBase;
+    public static Material EglinSteel;
+    public static Material Pikyonium64B;
+    public static Material Cinobite;
+    public static Material TitanSteel;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

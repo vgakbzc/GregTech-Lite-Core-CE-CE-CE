@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 
+import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -227,6 +228,84 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 960))
                 .components(HastelloyN, 8, Naquadria, 4, Samarium, 2, Tungsten, 4, Aluminium, 6, Nickel, 8, Titanium, 4, Carbon, 2, Argon, 2)
                 .fluidPipeProperties(23000, 8000, true, true, true, true)
+                .build();
+
+        //  12016 Inconel-792
+        Inconel792 = new Material.Builder(getId(), gregtechId("inconel_792"))
+                .ingot()
+                .fluid()
+                .color(0x6CF076)
+                .iconSet(SHINY)
+                .components(Nickel, 2, Niobium, 1, Aluminium, 2, Nichrome, 1)
+                .blast(b -> b
+                        .temp(6200, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[IV], 866)
+                        .vacuumStats(VA[HV], 230))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_ROTOR)
+                .fluidPipeProperties(4900, 220, true, true, true, false)
+                .build();
+
+        //  12017 Eglin Steel Base
+        EglinSteelBase = new Material.Builder(getId(), gregtechId("eglin_steel_base"))
+                .dust()
+                .color(0x8B4513)
+                .iconSet(SAND)
+                .components(Iron, 4, Kanthal, 1, Invar, 5)
+                .build();
+
+        //  12018 Eglin Steel
+        EglinSteel = new Material.Builder(getId(), gregtechId("eglin_steel"))
+                .ingot()
+                .fluid()
+                .color(0x8B4513)
+                .iconSet(METALLIC)
+                .components(EglinSteelBase, 10, Sulfur, 1, Silicon, 1, Carbon, 1)
+                .blast(b -> b
+                        .temp(1048, BlastProperty.GasTier.LOW)
+                        .blastStats(VA[MV], 24))
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12019 Pikyonium-64B
+        Pikyonium64B = new Material.Builder(getId(), gregtechId("pikyonium_64_b"))
+                .ingot()
+                .fluid()
+                .color(0x3467BA)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(10400, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[ZPM], 1487)
+                        .vacuumStats(VA[IV], 670))
+                .components(Inconel792, 8, EglinSteel, 5, NaquadahAlloy, 4, TungstenSteel, 4, Cerium, 3, Antimony, 2, Platinum, 2, Ytterbium, 1)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .build();
+
+        //  12020 Cinobite
+        Cinobite = new Material.Builder(getId(), gregtechId("cinobite"))
+                .ingot()
+                .fluid()
+                .color(0x010101)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(10460, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[UV], 3608)
+                        .vacuumStats(VA[LuV], 1080))
+                .components(Zeron100, 8, Stellite100, 6, Titanium, 6, Naquadria, 4, Osmiridium, 3, Aluminium, 2, Tin, 1, Mercury, 1)
+                .flags(GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12021 Titan Steel
+        TitanSteel = new Material.Builder(getId(), gregtechId("titan_steel"))
+                .ingot()
+                .fluid()
+                .color(0xAA0D0D)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(10600, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 4550)
+                        .vacuumStats(VA[ZPM], 1440))
+                .components(TitaniumTungstenCarbide, 6, AusteniticStainlessSteel904L, 3, Ruby, 3)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
     }
 
