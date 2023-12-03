@@ -280,9 +280,6 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
 
-        tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", calculateEnergyStorageFactor(16) / 1000000L));
-        tooltip.add(I18n.format("gregtech.machine.fusion_reactor.overclocking"));
-
         switch (this.tier) {
             case (LuV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.luv"));
             case (ZPM) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm"));
@@ -291,8 +288,18 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             case (UEV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.uev"));
         }
 
+        tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", calculateEnergyStorageFactor(16) / 1000000L));
+        tooltip.add(I18n.format("gregtech.machine.fusion_reactor.overclocking"));
+
         tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.1"));
-        tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.2"));
+
+        switch (this.tier) {
+            case (LuV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv"));
+            case (ZPM) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm"));
+            case (UV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv"));
+            case (UHV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv"));
+            case (UEV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev"));
+        }
     }
 
     @Override
@@ -377,12 +384,19 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             heat = compound.getLong("Heat");
         }
 
-        /**
-         * @return Parallel = 32 * (tier - 4), i.e. LuV 64, ZPM, 96, UV, 128, UHV, 160, UEV, 192
-         */
         @Override
         public int getParallelLimit() {
-            return 32 * ((tier - 4));
+            if (tier == LuV) {
+                return 64;
+            } else if (tier == ZPM) {
+                return 128;
+            } else if (tier == UV) {
+                return 256;
+            } else if (tier == UHV) {
+                return 512;
+            } else {
+                return 1024;
+            }
         }
     }
 }

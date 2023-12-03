@@ -288,7 +288,7 @@ public class MachineRecipeLoader {
                         .EUt(VA[UHV]))
                 .buildAndRegister();
 
-        //  Fusion Reactor Mk V
+        //  TODO Fusion Reactor Mk V
 
         //  Precise Assembler
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -310,6 +310,97 @@ public class MachineRecipeLoader {
                 .EUt(VA[LuV])
                 .duration(1200)
                 .buildAndRegister();
+
+        //  TODO Component Assembly Line
+
+        //  Compressed Fusion Reactor Mk I
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[LuV])
+                .input(FUSION_REACTOR[0], 16)
+                .input(plate, Europium, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(ELECTRIC_PUMP_LuV, 2)
+                .input(FIELD_GENERATOR_LuV, 2)
+                .input(cableGtQuadruple, NiobiumTitanium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Ruridit.getFluid(L * 10))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[0])
+                .scannerResearch(b -> b
+                        .researchStack(FUSION_REACTOR[0].getStackForm())
+                        .EUt(VA[LuV])
+                        .duration(1200))
+                .EUt(VA[LuV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Compressed Fusion Reactor Mk II
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(FUSION_REACTOR[1], 16)
+                .input(plate, Americium, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(FIELD_GENERATOR_ZPM, 2)
+                .input(cableGtQuadruple, VanadiumGallium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Osmiridium.getFluid(L * 10))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[1])
+                .scannerResearch(b -> b
+                        .researchStack(FUSION_REACTOR[1].getStackForm())
+                        .EUt(VA[ZPM])
+                        .duration(1200))
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Compressed Fusion Reactor Mk III
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(FUSION_REACTOR[2], 16)
+                .input(plate, Dubnium, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ELECTRIC_PUMP_UV, 2)
+                .input(FIELD_GENERATOR_UV, 2)
+                .input(cableGtQuadruple, YttriumBariumCuprate, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Tritanium.getFluid(L * 10))
+                .fluidInputs(Polybenzimidazole.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[2])
+                .stationResearch(b -> b
+                        .researchStack(FUSION_REACTOR[2].getStackForm())
+                        .EUt(VA[UV])
+                        .CWUt(64))
+                .EUt(VA[UV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Compressed Fusion Reactor Mk IV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UHV])
+                .input(ADVANCED_FUSION_REACTOR[0], 16)
+                .input(plate, Livermorium, 4)
+                .input(circuit, MarkerMaterials.Tier.UEV, 4)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.CRYOSTAT, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.DIVERTOR, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.VACUUM, 4))
+                .input(ELECTRIC_PUMP_UHV, 2)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(cableGtQuadruple, Europium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Adamantium.getFluid(L * 10))
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[3])
+                .stationResearch(b -> b
+                        .researchStack(ADVANCED_FUSION_REACTOR[0].getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(128))
+                .EUt(VA[UHV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  TODO Compressed Fusion Reactor Mk V
     }
 
     private static void MachineCasingRecipes() {
