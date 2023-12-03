@@ -77,7 +77,7 @@ public class RecipeManager {
 
        IsaMillOreProcessing.init();
     }
-
+  
     private static void initCircuits() {
         ProcessorCircuits.init();
         NanoCircuits.init();
