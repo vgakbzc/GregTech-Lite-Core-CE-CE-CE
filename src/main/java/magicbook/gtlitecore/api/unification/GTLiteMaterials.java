@@ -132,6 +132,14 @@ public class GTLiteMaterials {
     public static Material SeleniumDioxide;
     public static Material TelluriumDioxide;
     public static Material SelenousAcid;
+    public static Material GermaniumDioxide;
+    public static Material RoastedSphalerite;
+    public static Material ZincRichSphalerite;
+    public static Material ZincOxide;
+    public static Material WaelzOxide;
+    public static Material WaelzSlag;
+    public static Material ImpureGermaniumDioxide;
+    public static Material GermaniumTetrachloride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

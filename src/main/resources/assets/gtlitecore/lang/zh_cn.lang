@@ -702,6 +702,14 @@ gregtech.material.sodium_tellurite=亚碲酸钠
 gregtech.material.selenium_dioxide=二氧化硒
 gregtech.material.tellurium_dioxide=二氧化碲
 gregtech.material.selenous_acid=亚硒酸
+gregtech.material.germanium_dioxide=二氧化锗
+gregtech.material.roasted_sphalerite=焙烧闪锌矿
+gregtech.material.zinc_rich_sphalerite=富锌闪锌矿
+gregtech.material.zinc_oxide=氧化锌
+gregtech.material.waelz_oxide=威氏氧化物
+gregtech.material.waelz_slag=威氏浸出渣
+gregtech.material.impure_germanium_dioxide=含杂氧化锗
+gregtech.material.germanium_tetrachloride=四氯化锗
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

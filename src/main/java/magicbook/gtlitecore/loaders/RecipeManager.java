@@ -8,10 +8,7 @@ import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.multiblock.ComponentAssembler;
 import magicbook.gtlitecore.loaders.multiblock.ComponentAssemblyLine;
 import magicbook.gtlitecore.loaders.multiblock.DroneAirport;
-import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
-import magicbook.gtlitecore.loaders.oreprocessing.PlatinumGroupProcessing;
-import magicbook.gtlitecore.loaders.oreprocessing.RareEarthProcessing;
-import magicbook.gtlitecore.loaders.oreprocessing.TaraniumProcessing;
+import magicbook.gtlitecore.loaders.oreprocessing.*;
 
 public class RecipeManager {
 
@@ -77,11 +74,12 @@ public class RecipeManager {
     }
 
     private static void initOreProcessings() {
-       PlatinumGroupProcessing.init();
-       RareEarthProcessing.init();
-       TaraniumProcessing.init();
+        GermaniumProcessing.init();
+        PlatinumGroupProcessing.init();
+        RareEarthProcessing.init();
+        TaraniumProcessing.init();
 
-       IsaMillOreProcessing.init();
+        IsaMillOreProcessing.init();
     }
   
     private static void initCircuits() {
