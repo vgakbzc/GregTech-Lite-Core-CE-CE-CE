@@ -922,6 +922,42 @@ public class GTLiteFirstDegreeMaterials {
                 .build();
 
         ChromiumGermaniumTelluride.getProperty(PropertyKey.INGOT).setMagneticMaterial(ChromiumGermaniumTellurideMagnetic);
+
+        //  11107 Sodium Tellurite
+        SodiumTellurite = new Material.Builder(getId(), gregtechId("sodium_tellurite"))
+                .dust()
+                .color(0xC6C9BE)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 2, Tellurium, 1, Oxygen, 3)
+                .build();
+
+        //  11108 Selenium Dioxide
+        SeleniumDioxide = new Material.Builder(getId(), gregtechId("selenium_dioxide"))
+                .dust()
+                .color(0xE0DDD8)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Selenium, 1, Oxygen, 2)
+                .build();
+
+        //  11109 Tellurium Dioxide
+        TelluriumDioxide = new Material.Builder(getId(), gregtechId("tellurium_dioxide"))
+                .dust()
+                .color(0xE3DDB8)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tellurium, 1, Oxygen, 2)
+                .build();
+
+        //  11110 Selenous Acid
+        SelenousAcid = new Material.Builder(getId(), gregtechId("selenous_acid"))
+                .dust()
+                .color(0xE0E083)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Selenium, 1, Oxygen, 3)
+                .build();
     }
 
     private static int getId() {

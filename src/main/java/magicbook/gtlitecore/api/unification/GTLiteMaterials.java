@@ -128,6 +128,10 @@ public class GTLiteMaterials {
     public static Material SodiumTrifluoroethanolate;
     public static Material ChromiumGermaniumTelluride;
     public static Material ChromiumGermaniumTellurideMagnetic;
+    public static Material SodiumTellurite;
+    public static Material SeleniumDioxide;
+    public static Material TelluriumDioxide;
+    public static Material SelenousAcid;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -324,6 +328,7 @@ public class GTLiteMaterials {
     public static Material DragonBreath;
     public static Material ConcentrateDragonBreath;
     public static Material DragonBlood;
+    public static Material ChalcogenAnodeMud;
 
     public static void init() {
         GTLiteElementMaterials.register();

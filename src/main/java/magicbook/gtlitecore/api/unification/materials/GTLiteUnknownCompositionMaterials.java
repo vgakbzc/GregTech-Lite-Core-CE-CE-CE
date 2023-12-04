@@ -546,6 +546,13 @@ public class GTLiteUnknownCompositionMaterials {
                 .iconSet(DULL)
                 .build()
                 .setFormula("*Dc*Rn?", true);
+
+        //  24057 Chalcogen Anode Mud
+        ChalcogenAnodeMud = new Material.Builder(getId(), gregtechId("chalcogen_anode_mud"))
+                .dust()
+                .color(0x8A3324)
+                .iconSet(FINE)
+                .build();
     }
 
     private static int getId() {

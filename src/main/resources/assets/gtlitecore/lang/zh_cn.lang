@@ -698,6 +698,10 @@ gregtech.material.sodium_fluoride=氟化钠
 gregtech.material.sodium_trifluoroethanolate=三氟乙醇钠
 gregtech.material.chromium_germanium_telluride=碲化锗铬
 gregtech.material.magnetic_chromium_germanium_telluride=磁化碲化锗铬
+gregtech.material.sodium_tellurite=亚碲酸钠
+gregtech.material.selenium_dioxide=二氧化硒
+gregtech.material.tellurium_dioxide=二氧化碲
+gregtech.material.selenous_acid=亚硒酸
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -894,6 +898,7 @@ gregtech.material.methylhydrazine_nitrate_rocket_fuel=硝酸甲肼火箭燃料
 gregtech.material.dragon_breath=龙息
 gregtech.material.concentrate_dragon_breath=浓缩龙息
 gregtech.material.dragon_blood=龙血
+gregtech.material.chalcogen_anode_mud=硫系元素阳极泥
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

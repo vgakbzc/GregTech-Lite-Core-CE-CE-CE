@@ -110,6 +110,9 @@ public class GTLiteMaterialPropertyAddition {
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
 
+        //  Long Stick
+        IronMagnetic.addFlags(GENERATE_LONG_ROD);
+
         //  Spring
         Trinium.addFlags(GENERATE_SPRING);
         Tritanium.addFlags(GENERATE_SPRING);
