@@ -5,6 +5,8 @@ import magicbook.gtlitecore.loaders.blocks.WireCoils;
 import magicbook.gtlitecore.loaders.chains.*;
 import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
+import magicbook.gtlitecore.loaders.multiblock.ComponentAssembler;
+import magicbook.gtlitecore.loaders.multiblock.ComponentAssemblyLine;
 import magicbook.gtlitecore.loaders.multiblock.DroneAirport;
 import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
 import magicbook.gtlitecore.loaders.oreprocessing.PlatinumGroupProcessing;
@@ -93,5 +95,7 @@ public class RecipeManager {
 
     private static void initMultiRecipes() {
         DroneAirport.init();
+        ComponentAssembler.init();
+        ComponentAssemblyLine.init();
     }
 }

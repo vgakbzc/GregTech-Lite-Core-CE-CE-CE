@@ -152,6 +152,24 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UXV;
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_OpV;
 
+    //  Covers
+    public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_ULV;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PISTON_ULV;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PUMP_ULV;
+    public static MetaItem<?>.MetaValueItem CONVEYOR_MODULE_ULV;
+    public static MetaItem<?>.MetaValueItem ROBOT_ARM_ULV;
+    public static MetaItem<?>.MetaValueItem EMITTER_ULV;
+    public static MetaItem<?>.MetaValueItem SENSOR_ULV;
+    public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_ULV;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_MAX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PISTON_MAX;
+    public static MetaItem<?>.MetaValueItem ELECTRIC_PUMP_MAX;
+    public static MetaItem<?>.MetaValueItem CONVEYOR_MODULE_MAX;
+    public static MetaItem<?>.MetaValueItem ROBOT_ARM_MAX;
+    public static MetaItem<?>.MetaValueItem EMITTER_MAX;
+    public static MetaItem<?>.MetaValueItem SENSOR_MAX;
+    public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_MAX;
+
     //  Others
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;

@@ -11,6 +11,7 @@ import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.recipe.properties.ComponentCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import magicbook.gtlitecore.loaders.components.MaterialComponents;
@@ -90,6 +91,7 @@ public class CommonProxy {
     @SubscribeEvent
     public static void registerCoverBehavior(GregTechAPI.RegisterEvent<CoverDefinition> event) {
         GTLiteLog.logger.info("Registering Cover Behaviors...");
+        GTLiteCoverBehavior.init();
     }
 
     @SubscribeEvent(priority = EventPriority.LOW)
