@@ -120,6 +120,8 @@ public class GTLiteMaterials {
     public static Material CubicZirconia;
     public static Material SodiumFluoride;
     public static Material SodiumTrifluoroethanolate;
+    public static Material ChromiumGermaniumTelluride;
+    public static Material ChromiumGermaniumTellurideMagnetic;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

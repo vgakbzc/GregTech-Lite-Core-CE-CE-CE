@@ -11,6 +11,7 @@ import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.MultiblockShapeInfo;
 import gregtech.api.pattern.PatternMatchContext;
+import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.client.renderer.ICubeRenderer;
@@ -24,6 +25,7 @@ import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
+import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
@@ -110,6 +112,12 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         this.tier = this.CasingTier = this.InternalCasingTier;
 
         this.writeCustomData(GTLiteDataCode.ChannelPreciseAssembler1, buf -> buf.writeInt(this.CasingTier));
+    }
+
+    @Override
+    public boolean checkRecipe(@Nonnull Recipe recipe,
+                               boolean consumeIfSuccess) {
+        return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(AssemblyCasingTierProperty.getInstance(), 0) <= tier;
     }
 
     @Override
