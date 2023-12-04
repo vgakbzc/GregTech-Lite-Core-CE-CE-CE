@@ -524,6 +524,28 @@ public class GTLiteUnknownCompositionMaterials {
                 .components(Methylhydrazine, 1, Tetranitromethane, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24054 Dragon Breath
+        DragonBreath = new Material.Builder(getId(), gregtechId("dragon_breath"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x9400D3)
+                .build()
+                .setFormula("Dc?", false);
+
+        //  24055 Concentrate Dragon Breath
+        ConcentrateDragonBreath = new Material.Builder(getId(), gregtechId("concentrate_dragon_breath"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x9400D3)
+                .build()
+                .setFormula("Dc2?", true);
+
+        //  24056 Dragon Blood
+        DragonBlood = new Material.Builder(getId(), gregtechId("dragon_blood"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xDC2814)
+                .iconSet(DULL)
+                .build()
+                .setFormula("*Dc*Rn?", true);
     }
 
     private static int getId() {

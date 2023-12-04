@@ -49,6 +49,7 @@ public class RecipeManager {
         CBDOPolycarbonateChain.init();
         CyanogenChain.init();
         DimethylformamideChain.init();
+        DragonChain.init();
         EDTAChain.init();
         EtchingMaterialsChain.init();
         EthyleneGlycolChain.init();

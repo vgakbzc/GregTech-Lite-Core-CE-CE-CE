@@ -135,7 +135,7 @@ public class GTLiteElementMaterials {
         CosmicNeutronium = new Material.Builder(getId(), gregtechId("cosmic_neutronium"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature(2000000000))
-                .color(0x323232)
+                .color(0xF3F3F3)
                 .iconSet(BRIGHT)
                 .blast(b -> b
                         .temp(15000, BlastProperty.GasTier.HIGHEST)
@@ -158,6 +158,53 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.SpaceTime)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  10010 Solarium
+        Solarium = new Material.Builder(getId(), gregtechId("solarium"))
+                .ingot()
+                .liquid()
+                .color(0xFFFF33)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Sol)
+                .blast(b -> b
+                        .temp(14800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV]))
+                .cableProperties(V[UIV], 16, 8, false)
+                .build();
+
+        //  10011 Rhugnor
+        Rhugnor = new Material.Builder(getId(), gregtechId("rhugnor"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature((int) (V[UIV] - V[UV])))
+                .color(0xBE00FF)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Rhugnor)
+                .blast(b -> b
+                        .temp(12000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 3340))
+                .flags(GENERATE_PLATE)
+                .build();
+
+        //  10012 Hypogen
+        Hypogen = new Material.Builder(getId(), gregtechId("hypogen"))
+                .ingot()
+                .liquid()
+                .plasma(new FluidBuilder().temperature((int) (V[UXV] - V[LuV])))
+                .element(GTLiteElements.Hypogen)
+                .color(0xDC784B)
+                .iconSet(BRIGHT)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .cableProperties(V[UXV], 32, 16, false)
+                .build();
+
+        //  10013 Void Metal
+        VoidMetal = new Material.Builder(getId(), gregtechId("void_metal"))
+                .ingot()
+                .liquid()
+                .color(0x20142C)
+                .iconSet(DULL)
+                .element(GTLiteElements.VoidMetal)
+                .build();
     }
 
     private static int getId() {

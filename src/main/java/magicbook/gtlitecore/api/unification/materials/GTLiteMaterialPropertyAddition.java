@@ -119,8 +119,14 @@ public class GTLiteMaterialPropertyAddition {
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
         Darmstadtium.addFlags(GENERATE_GEAR);
 
+        //  Small Gear
+        WroughtIron.addFlags(GENERATE_SMALL_GEAR);
+
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
+
+        //  Rotor
+        WroughtIron.addFlags(GENERATE_ROTOR);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

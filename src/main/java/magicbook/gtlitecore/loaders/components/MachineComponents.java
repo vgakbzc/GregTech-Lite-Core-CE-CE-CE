@@ -7,12 +7,13 @@ import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MachineComponents {
     public static void init() {
@@ -59,6 +60,14 @@ public class MachineComponents {
 
     private static void ElectricMotor() {
 
+        //  ULV
+        ModHandler.addShapedRecipe(true, "electric_motor.ulv", ELECTRIC_MOTOR_ULV.getStackForm(),
+                "CWR", "WMW", "RWC",
+                'C', new UnificationEntry(pipeTinyFluid, Bronze),
+                'W', new UnificationEntry(wireGtSingle, Lead),
+                'M', new UnificationEntry(stick, IronMagnetic),
+                'R', new UnificationEntry(stick, WroughtIron));
+
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(stickLong, ChromiumGermaniumTellurideMagnetic)
@@ -83,6 +92,13 @@ public class MachineComponents {
     }
 
     private static void ConveyorModule() {
+
+        //  ULV
+        ModHandler.addShapedRecipe(true, "conveyor_module.ulv", CONVEYOR_MODULE_ULV.getStackForm(),
+                "RRR", "MCM", "RRR",
+                'R', "wool",
+                'M', ELECTRIC_MOTOR_ULV.getStackForm(),
+                'C', new UnificationEntry(pipeTinyFluid, Bronze));
 
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -110,6 +126,15 @@ public class MachineComponents {
 
     private static void ElectricPiston() {
 
+        //  ULV
+        ModHandler.addShapedRecipe(true, "electric_piston.ulv", ELECTRIC_PISTON_ULV.getStackForm(),
+                "PPP", "CRR", "CMG",
+                'P', new UnificationEntry(plate, WroughtIron),
+                'C', new UnificationEntry(pipeTinyFluid, Bronze),
+                'R', new UnificationEntry(stick, WroughtIron),
+                'M', ELECTRIC_MOTOR_ULV.getStackForm(),
+                'G', new UnificationEntry(gearSmall, WroughtIron));
+
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ELECTRIC_MOTOR_UHV)
@@ -136,6 +161,15 @@ public class MachineComponents {
     }
 
     private static void RobotArm() {
+
+        //  ULV
+        ModHandler.addShapedRecipe(true, "robot_arm.ulv", ROBOT_ARM_ULV.getStackForm(),
+                "CCC", "MRM", "PXR",
+                'C', new UnificationEntry(pipeTinyFluid, Bronze),
+                'M', ELECTRIC_MOTOR_ULV.getStackForm(),
+                'R', new UnificationEntry(stick, WroughtIron),
+                'P', ELECTRIC_PISTON_ULV.getStackForm(),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ULV));
 
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -165,6 +199,15 @@ public class MachineComponents {
 
     private static void ElectricPump() {
 
+        ModHandler.addShapedRecipe(true, "electric_pump.ulv", ELECTRIC_PUMP_ULV.getStackForm(),
+                "SXR", "dPw", "RMC",
+                'S', new UnificationEntry(screw, WroughtIron),
+                'X', new UnificationEntry(rotor, WroughtIron),
+                'P', new UnificationEntry(pipeNormalFluid, Copper),
+                'R', "wool",
+                'C', new UnificationEntry(pipeTinyFluid, Bronze),
+                'M', ELECTRIC_MOTOR_ULV.getStackForm());
+
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ELECTRIC_MOTOR_UHV)
@@ -190,6 +233,14 @@ public class MachineComponents {
     }
 
     private static void Emitter() {
+
+        //  ULV
+        ModHandler.addShapedRecipe(true, "emitter.ulv", EMITTER_ULV.getStackForm(),
+                "CRX", "RGR", "XRC",
+                'R', new UnificationEntry(stick, TinAlloy),
+                'C', new UnificationEntry(pipeTinyFluid, Bronze),
+                'G', new UnificationEntry(gem, Sapphire),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ULV));
 
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -217,6 +268,14 @@ public class MachineComponents {
 
     private static void Sensor() {
 
+        //  ULV
+        ModHandler.addShapedRecipe(true, "sensor.ulv", SENSOR_ULV.getStackForm(),
+                "P G", "PR ", "XPP",
+                'P', new UnificationEntry(plate, WroughtIron),
+                'R', new UnificationEntry(stick, TinAlloy),
+                'G', new UnificationEntry(gem, Sapphire),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ULV));
+
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Adamantium)
@@ -242,6 +301,14 @@ public class MachineComponents {
     }
 
     private static void FieldGenerator() {
+
+        //  ULV
+        ModHandler.addShapedRecipe(true, "field_generator.ulv", FIELD_GENERATOR_ULV.getStackForm(),
+                "WPW", "XGX", "WPW",
+                'W', new UnificationEntry(pipeLargeFluid, Lead),
+                'P', new UnificationEntry(plate, WroughtIron),
+                'G', new UnificationEntry(gem, Ruby),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ULV));
 
         //  UHV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()

@@ -586,6 +586,10 @@ gregtech.material.ichorium=灵宝
 gregtech.material.ichor_liquid=灵液
 gregtech.material.cosmic_neutronium=宇宙中子素
 gregtech.material.spacetime=时空
+gregtech.material.solarium=阳光合金
+gregtech.material.rhugnor=鲁格诺
+gregtech.material.hypogen=海珀珍
+gregtech.material.void_metal=虚空金属
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -887,6 +891,9 @@ gregtech.material.phosphorene_solution=磷烯剥离溶液
 gregtech.material.rp_1_rocket_fuel=RP-1火箭燃料
 gregtech.material.dense_hydrazine_mixture_fuel=混合浓缩肼火箭燃料
 gregtech.material.methylhydrazine_nitrate_rocket_fuel=硝酸甲肼火箭燃料
+gregtech.material.dragon_breath=龙息
+gregtech.material.concentrate_dragon_breath=浓缩龙息
+gregtech.material.dragon_blood=龙血
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

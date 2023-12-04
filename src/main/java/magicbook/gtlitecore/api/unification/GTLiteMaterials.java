@@ -16,6 +16,10 @@ public class GTLiteMaterials {
     public static Material IchorLiquid;
     public static Material CosmicNeutronium;
     public static Material Spacetime;
+    public static Material Solarium;
+    public static Material Rhugnor;
+    public static Material Hypogen;
+    public static Material VoidMetal;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -317,6 +321,9 @@ public class GTLiteMaterials {
     public static Material RP1RocketFuel;
     public static Material DenseHydrazineMixtureFuel;
     public static Material MethylhydrazineNitrateRocketFuel;
+    public static Material DragonBreath;
+    public static Material ConcentrateDragonBreath;
+    public static Material DragonBlood;
 
     public static void init() {
         GTLiteElementMaterials.register();
