@@ -922,6 +922,149 @@ public class GTLiteFirstDegreeMaterials {
                 .build();
 
         ChromiumGermaniumTelluride.getProperty(PropertyKey.INGOT).setMagneticMaterial(ChromiumGermaniumTellurideMagnetic);
+
+        //  11107 Sodium Tellurite
+        SodiumTellurite = new Material.Builder(getId(), gregtechId("sodium_tellurite"))
+                .dust()
+                .color(0xC6C9BE)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 2, Tellurium, 1, Oxygen, 3)
+                .build();
+
+        //  11108 Selenium Dioxide
+        SeleniumDioxide = new Material.Builder(getId(), gregtechId("selenium_dioxide"))
+                .dust()
+                .color(0xE0DDD8)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Selenium, 1, Oxygen, 2)
+                .build();
+
+        //  11109 Tellurium Dioxide
+        TelluriumDioxide = new Material.Builder(getId(), gregtechId("tellurium_dioxide"))
+                .dust()
+                .color(0xE3DDB8)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tellurium, 1, Oxygen, 2)
+                .build();
+
+        //  11110 Selenous Acid
+        SelenousAcid = new Material.Builder(getId(), gregtechId("selenous_acid"))
+                .dust()
+                .color(0xE0E083)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 2, Selenium, 1, Oxygen, 3)
+                .build();
+
+        //  11111 Germanium Dioxide
+        GermaniumDioxide = new Material.Builder(getId(), gregtechId("germanium_dioxide"))
+                .dust()
+                .color(0x666666)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Oxygen, 2)
+                .build();
+
+        //  11112 Roasted Sphalerite
+        RoastedSphalerite = new Material.Builder(getId(), gregtechId("roasted_sphalerite"))
+                .dust()
+                .color(0xAC8B5C)
+                .iconSet(FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gallium, 1, GermaniumDioxide, 1)
+                .build();
+
+        //  11113 Zinc Rich Sphalerite
+        ZincRichSphalerite = new Material.Builder(getId(), gregtechId("zinc_rich_sphalerite"))
+                .dust()
+                .color(0xC3AC8F)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Zinc, 2, RoastedSphalerite, 3)
+                .build()
+                .setFormula("Zn2(GaGeO2)", true);
+
+        //  11114 Zinc Oxide
+        ZincOxide = new Material.Builder(getId(), gregtechId("zinc_oxide"))
+                .dust()
+                .color(0xB85C34)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Zinc, 1, Oxygen, 1)
+                .build();
+
+        //  11115 Waelz Oxide
+        WaelzOxide = new Material.Builder(getId(), gregtechId("waelz_oxide"))
+                .dust()
+                .color(0xB8B8B8)
+                .iconSet(FINE)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Zinc, 1, GermaniumDioxide, 1)
+                .build();
+
+        //  11116 Waelz Slag
+        WaelzSlag = new Material.Builder(getId(), gregtechId("waelz_slag"))
+                .dust()
+                .color(0xAC8B5C)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Gallium, 1, Zinc, 1, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        //  11117 Impure Germanium Dioxide
+        ImpureGermaniumDioxide = new Material.Builder(getId(), gregtechId("impure_germanium_dioxide"))
+                .dust()
+                .color(0x666666)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(GermaniumDioxide, 1)
+                .build()
+                .setFormula("GeO2?", true);
+
+        //  11118 Germanium Tetrachloride
+        GermaniumTetrachloride = new Material.Builder(getId(), gregtechId("germanium_tetrachloride"))
+                .liquid()
+                .color(0x787878)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Germanium, 1, Chlorine, 4)
+                .build();
+
+        //  11119 Molybdenum Trioxide
+        MolybdenumTrioxide = new Material.Builder(getId(), gregtechId("molybdenum_trioxide"))
+                .dust()
+                .color(0xCBCFDA)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Molybdenum, 1, Oxygen, 3)
+                .build();
+
+        //  11120 Lead Chloride
+        LeadChloride = new Material.Builder(getId(), gregtechId("lead_chloride"))
+                .dust()
+                .color(0xF3F3F3)
+                .iconSet(ROUGH)
+                .components(Lead, 1, Chlorine, 2)
+                .build();
+
+        //  11121 Perrhenic Acid
+        PerrhenicAcid = new Material.Builder(getId(), gregtechId("perrhenic_acid"))
+                .dust()
+                .color(0xE6DC70)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 1, Rhenium, 1, Oxygen, 4)
+                .build();
+
+        //  11122 Ammonium Perrhenate
+        AmmoniumPerrhenate = new Material.Builder(getId(), gregtechId("ammonium_perrhenate"))
+                .dust()
+                .liquid()
+                .color(0xA69970)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 1, Hydrogen, 4, Rhenium, 1, Oxygen, 4)
+                .build();
     }
 
     private static int getId() {

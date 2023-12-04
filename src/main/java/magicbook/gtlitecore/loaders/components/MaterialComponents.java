@@ -27,8 +27,8 @@ public class MaterialComponents {
         WIRE_QUAD.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.wireGtQuadruple, Europium)},
                 {10, new UnificationEntry(OrePrefix.wireGtQuadruple, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.wireGtQuadruple, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.wireGtQuadruple, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.wireGtQuadruple, Solarium)},
+                {12, new UnificationEntry(OrePrefix.wireGtQuadruple, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.wireGtQuadruple, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.wireGtQuadruple, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
@@ -36,8 +36,8 @@ public class MaterialComponents {
         WIRE_OCT.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.wireGtOctal, Europium)},
                 {10, new UnificationEntry(OrePrefix.wireGtOctal, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.wireGtOctal, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.wireGtOctal, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.wireGtOctal, Solarium)},
+                {12, new UnificationEntry(OrePrefix.wireGtOctal, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.wireGtOctal, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.wireGtOctal, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
@@ -45,48 +45,48 @@ public class MaterialComponents {
         WIRE_HEX.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.wireGtHex, Europium)},
                 {10, new UnificationEntry(OrePrefix.wireGtHex, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.wireGtHex, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.wireGtHex, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.wireGtHex, Solarium)},
+                {12, new UnificationEntry(OrePrefix.wireGtHex, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.wireGtHex, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.wireGtHex, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         CABLE.appendIngredients(Stream.of(new Object[][]{
                 {10, new UnificationEntry(OrePrefix.cableGtSingle, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.cableGtSingle, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.cableGtSingle, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.cableGtSingle, Solarium)},
+                {12, new UnificationEntry(OrePrefix.cableGtSingle, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.cableGtSingle, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.cableGtSingle, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         CABLE_QUAD.appendIngredients(Stream.of(new Object[][]{
                 {10, new UnificationEntry(OrePrefix.cableGtQuadruple, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.cableGtQuadruple, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.cableGtQuadruple, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.cableGtQuadruple, Solarium)},
+                {12, new UnificationEntry(OrePrefix.cableGtQuadruple, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.cableGtQuadruple, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.cableGtQuadruple, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         CABLE_OCT.appendIngredients(Stream.of(new Object[][]{
                 {10, new UnificationEntry(OrePrefix.cableGtOctal, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.cableGtOctal, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.cableGtOctal, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.cableGtOctal, Solarium)},
+                {12, new UnificationEntry(OrePrefix.cableGtOctal, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.cableGtOctal, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.cableGtOctal, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         CABLE_HEX.appendIngredients(Stream.of(new Object[][]{
                 {10, new UnificationEntry(OrePrefix.cableGtHex, PedotTMA)},
-//                {11, new UnificationEntry(OrePrefix.cableGtHex, Solarium)},
-//                {12, new UnificationEntry(OrePrefix.cableGtHex, Hypogen)},
+                {11, new UnificationEntry(OrePrefix.cableGtHex, Solarium)},
+                {12, new UnificationEntry(OrePrefix.cableGtHex, Hypogen)},
 //                {13, new UnificationEntry(OrePrefix.cableGtHex, Galaxium)},
 //                {14, new UnificationEntry(OrePrefix.cableGtHex, Universium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         CABLE_TIER_UP.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.cableGtSingle, PedotTMA)},
-//                {10, new UnificationEntry(OrePrefix.cableGtSingle, Solarium)},
-//                {11, new UnificationEntry(OrePrefix.cableGtSingle, Hypogen)},
+                {10, new UnificationEntry(OrePrefix.cableGtSingle, Solarium)},
+                {11, new UnificationEntry(OrePrefix.cableGtSingle, Hypogen)},
 //                {12, new UnificationEntry(OrePrefix.cableGtSingle, Galaxium)},
 //                {13, new UnificationEntry(OrePrefix.cableGtSingle, Universium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));

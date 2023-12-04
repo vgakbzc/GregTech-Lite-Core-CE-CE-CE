@@ -114,14 +114,37 @@ public class MaterialInfoLoader {
                 .buildAndRegister();
 
         //  UEV Hull
-        //ASSEMBLER_RECIPES.recipeBuilder()
-        //        .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV))
-        //        .input(cableGtSingle, PedotTMA, 2)
-        //        .fluidInputs(Polyetheretherketone.getFluid(L * 2))
-        //        .output(MetaTileEntities.HULL[10])
-        //        .EUt(16)
-        //        .duration(50)
-        //        .buildAndRegister();
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV))
+                .input(cableGtSingle, PedotTMA, 2)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 2))
+                .output(MetaTileEntities.HULL[10])
+                .EUt(16)
+                .duration(50)
+                .buildAndRegister();
+
+        //  UIV Casing
+        ModHandler.addShapedRecipe(true, "casing_uiv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV),
+                "PPP", "PwP", "PPP",
+                'P', new UnificationEntry(plate, Infinity));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Infinity, 8)
+                .circuitMeta(8)
+                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV))
+                .duration(50)
+                .EUt(16)
+                .buildAndRegister();
+
+        //  UIV Hull
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV))
+                .input(cableGtSingle, Solarium, 2)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 2))
+                .output(MetaTileEntities.HULL[11])
+                .EUt(16)
+                .duration(50)
+                .buildAndRegister();
     }
 
     private static void Glasses() {

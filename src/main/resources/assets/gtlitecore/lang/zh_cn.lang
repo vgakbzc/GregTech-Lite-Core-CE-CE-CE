@@ -586,6 +586,10 @@ gregtech.material.ichorium=灵宝
 gregtech.material.ichor_liquid=灵液
 gregtech.material.cosmic_neutronium=宇宙中子素
 gregtech.material.spacetime=时空
+gregtech.material.solarium=阳光合金
+gregtech.material.rhugnor=鲁格诺
+gregtech.material.hypogen=海珀珍
+gregtech.material.void_metal=虚空金属
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -694,6 +698,22 @@ gregtech.material.sodium_fluoride=氟化钠
 gregtech.material.sodium_trifluoroethanolate=三氟乙醇钠
 gregtech.material.chromium_germanium_telluride=碲化锗铬
 gregtech.material.magnetic_chromium_germanium_telluride=磁化碲化锗铬
+gregtech.material.sodium_tellurite=亚碲酸钠
+gregtech.material.selenium_dioxide=二氧化硒
+gregtech.material.tellurium_dioxide=二氧化碲
+gregtech.material.selenous_acid=亚硒酸
+gregtech.material.germanium_dioxide=二氧化锗
+gregtech.material.roasted_sphalerite=焙烧闪锌矿
+gregtech.material.zinc_rich_sphalerite=富锌闪锌矿
+gregtech.material.zinc_oxide=氧化锌
+gregtech.material.waelz_oxide=威氏氧化物
+gregtech.material.waelz_slag=威氏浸出渣
+gregtech.material.impure_germanium_dioxide=含杂氧化锗
+gregtech.material.germanium_tetrachloride=四氯化锗
+gregtech.material.molybdenum_trioxide=三氧化钼
+gregtech.material.lead_chloride=二氯化铅
+gregtech.material.perrhenic_acid=高铼酸
+gregtech.material.ammonium_perrhenate=高铼酸铵
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -810,6 +830,7 @@ gregtech.material.acrylonitrile=丙烯腈
 gregtech.material.phosphonitrilic_chloride_trimer=六氯环三磷腈
 gregtech.material.fluorobenzene=氟苯
 gregtech.material.octafluoro_pentanol=八氟戊醇
+gregtech.material.turpentine=松油
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -887,6 +908,14 @@ gregtech.material.phosphorene_solution=磷烯剥离溶液
 gregtech.material.rp_1_rocket_fuel=RP-1火箭燃料
 gregtech.material.dense_hydrazine_mixture_fuel=混合浓缩肼火箭燃料
 gregtech.material.methylhydrazine_nitrate_rocket_fuel=硝酸甲肼火箭燃料
+gregtech.material.dragon_breath=龙息
+gregtech.material.concentrate_dragon_breath=浓缩龙息
+gregtech.material.dragon_blood=龙血
+gregtech.material.chalcogen_anode_mud=硫系元素阳极泥
+gregtech.material.molybdenum_flue=钼烟气
+gregtech.material.trace_rhenium_flue=微量铼烟气
+gregtech.material.leached_turpentine=松油浸出物
+gregtech.material.steam_cracked_turpentine=蒸汽裂化的松油浸出物
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

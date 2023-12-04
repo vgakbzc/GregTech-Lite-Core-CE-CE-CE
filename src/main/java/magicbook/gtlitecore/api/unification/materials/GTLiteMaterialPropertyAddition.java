@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.unification.material.properties.*;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -110,6 +111,9 @@ public class GTLiteMaterialPropertyAddition {
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
 
+        //  Long Stick
+        IronMagnetic.addFlags(GENERATE_LONG_ROD);
+
         //  Spring
         Trinium.addFlags(GENERATE_SPRING);
         Tritanium.addFlags(GENERATE_SPRING);
@@ -119,8 +123,14 @@ public class GTLiteMaterialPropertyAddition {
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
         Darmstadtium.addFlags(GENERATE_GEAR);
 
+        //  Small Gear
+        WroughtIron.addFlags(GENERATE_SMALL_GEAR);
+
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
+
+        //  Rotor
+        WroughtIron.addFlags(GENERATE_ROTOR);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
@@ -141,5 +151,13 @@ public class GTLiteMaterialPropertyAddition {
         wireProp.setSuperconductor(false);
         wireProp.setLossPerBlock(32);
         wireProp.setVoltage((int) V[UIV]);
+
+        if (GTLiteConfigHolder.chainOverrides.enableMolybdenumProcessing) {
+            Molybdenite.addFlags(DISABLE_DECOMPOSITION);
+            OreProperty oreProp = Molybdenite.getProperty(PropertyKey.ORE);
+            oreProp.setDirectSmeltResult(null);
+            Powellite.addFlags(DISABLE_DECOMPOSITION);
+            Wulfenite.addFlags(DISABLE_DECOMPOSITION);
+        }
     }
 }

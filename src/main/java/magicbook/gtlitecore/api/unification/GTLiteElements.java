@@ -16,4 +16,8 @@ public class GTLiteElements {
     public static final Element IchorLiquid = Elements.add(165, 279, -1, null, "IchorLiquid", "☯", false);
     public static final Element SpNt = Elements.add(9999, 9999, -1, null, "CosmicNeutronium", "SpNt", false);
     public static final Element SpaceTime = Elements.add(10000, 10000, -1, null, "SpaceTime", "", false);
+    public static final Element Sol = Elements.add(159, 278, -1, null, "Solarium", "Sol", false);
+    public static final Element Rhugnor = Elements.add(184, 142, -1, null, "Rhugnor", "Fs⚶", false);
+    public static final Element Hypogen = Elements.add(240, 251, -1, null, "Hypogen", "Hy⚶", false);
+    public static final Element VoidMetal = Elements.add(165, 281, -1, null, "VoidMetal", "⚶", false);
 }

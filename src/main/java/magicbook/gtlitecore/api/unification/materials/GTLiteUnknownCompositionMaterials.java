@@ -524,6 +524,61 @@ public class GTLiteUnknownCompositionMaterials {
                 .components(Methylhydrazine, 1, Tetranitromethane, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24054 Dragon Breath
+        DragonBreath = new Material.Builder(getId(), gregtechId("dragon_breath"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x9400D3)
+                .build()
+                .setFormula("Dc?", false);
+
+        //  24055 Concentrate Dragon Breath
+        ConcentrateDragonBreath = new Material.Builder(getId(), gregtechId("concentrate_dragon_breath"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x9400D3)
+                .build()
+                .setFormula("Dc2?", true);
+
+        //  24056 Dragon Blood
+        DragonBlood = new Material.Builder(getId(), gregtechId("dragon_blood"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xDC2814)
+                .iconSet(DULL)
+                .build()
+                .setFormula("*Dc*Rn?", true);
+
+        //  24057 Chalcogen Anode Mud
+        ChalcogenAnodeMud = new Material.Builder(getId(), gregtechId("chalcogen_anode_mud"))
+                .dust()
+                .color(0x8A3324)
+                .iconSet(FINE)
+                .build();
+
+        //  24058 Molybdenum Flue
+        MolybdenumFlue = new Material.Builder(getId(), gregtechId("molybdenum_flue"))
+                .gas()
+                .color(0x39194A)
+                .build();
+
+        //  24059 Trace Rhenium Flue
+        TraceRheniumFlue = new Material.Builder(getId(), gregtechId("trace_rhenium_flue"))
+                .gas()
+                .color(0x96D6D5)
+                .build();
+
+        //  24061 Leached Turpentine
+        LeachedTurpentine = new Material.Builder(getId(), gregtechId("leached_turpentine"))
+                .liquid()
+                .color(0x330D16)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C10H16?");
+
+        //  24062 Steam Cracked Turpentine
+        SteamCrackedTurpentine = new Material.Builder(getId(), gregtechId("steam_cracked_turpentine"))
+                .liquid()
+                .color(0x634D56)
+                .build();
     }
 
     private static int getId() {

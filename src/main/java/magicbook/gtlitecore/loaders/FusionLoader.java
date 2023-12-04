@@ -106,5 +106,25 @@ public class FusionLoader {
                 .duration(240)
                 .EUToStart(2560000000L)
                 .buildAndRegister();
+
+        //  Void Metal + Bedrock -> Rhugnor
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(VoidMetal.getFluid(L * 2))
+                .fluidInputs(Bedrock.getFluid(1000))
+                .fluidOutputs(Rhugnor.getFluid(L * 4))
+                .EUt(VA[UHV])
+                .duration(160)
+                .EUToStart(900000000L)
+                .buildAndRegister();
+
+        //  Dragon Blood + Rhugnor -> Hypogen
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(DragonBlood.getFluid(L * 4))
+                .fluidInputs(Rhugnor.getFluid(L * 4))
+                .fluidOutputs(Hypogen.getPlasma(L * 8))
+                .EUt(VA[UEV])
+                .duration(320)
+                .EUToStart(2530000000L)
+                .buildAndRegister();
     }
 }
