@@ -161,6 +161,24 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         VOLTAGE_COIL_UXV = this.addItem(253, "voltage_coil.uxv");
         VOLTAGE_COIL_OpV = this.addItem(254, "voltage_coil.opv");
 
+        //  Covers
+        ELECTRIC_MOTOR_ULV = this.addItem(255, "cover.electric_motor.ulv");
+        ELECTRIC_PISTON_ULV = this.addItem(256, "cover.electric_piston.ulv");
+        ELECTRIC_PUMP_ULV = this.addItem(257, "cover.electric_pump.ulv");
+        CONVEYOR_MODULE_ULV = this.addItem(258, "cover.conveyor_module.ulv");
+        ROBOT_ARM_ULV = this.addItem(259, "cover.robot_arm.ulv");
+        EMITTER_ULV = this.addItem(260, "cover.emitter.ulv");
+        SENSOR_ULV = this.addItem(261, "cover.sensor.ulv");
+        FIELD_GENERATOR_ULV = this.addItem(262, "cover.field_generator.ulv");
+        ELECTRIC_MOTOR_MAX = this.addItem(263, "cover.electric_motor.max");
+        ELECTRIC_PISTON_MAX = this.addItem(264, "cover.electric_piston.max");
+        ELECTRIC_PUMP_MAX = this.addItem(265, "cover.electric_pump.max");
+        CONVEYOR_MODULE_MAX = this.addItem(266, "cover.conveyor_module.max");
+        ROBOT_ARM_MAX = this.addItem(267, "cover.robot_arm.max");
+        EMITTER_MAX = this.addItem(268, "cover.emitter.max");
+        SENSOR_MAX = this.addItem(269, "cover.sensor.max");
+        FIELD_GENERATOR_MAX = this.addItem(270, "cover.field_generator.max");
+
         //  Others
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior());
