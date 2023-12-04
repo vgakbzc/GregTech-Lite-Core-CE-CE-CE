@@ -37,10 +37,13 @@ public class GTLiteTraceabilityPredicate {
             .toArray(BlockInfo[]::new)))
             .addTooltips("gtlitecore.machine.pattern.firebox");
 
-    public static Supplier<TierTraceabilityPredicate> EP_PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
+    public static Supplier<TierTraceabilityPredicate> PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
 
-    public static Supplier<TierTraceabilityPredicate> EP_PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
+    public static Supplier<TierTraceabilityPredicate> PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_INTERNAL_CASING.get(s)).getIntTier()), "PAInternalCasing", null);
+
+    public static Supplier<TierTraceabilityPredicate> CA_CASING = () -> new TierTraceabilityPredicate(MAP_CA_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_CA_CASING.get(s)).getIntTier()), "CACasing", null);
 
 }

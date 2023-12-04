@@ -3,6 +3,8 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.material.properties.ToolProperty;
 
 import static gregtech.api.GTValues.*;
@@ -877,6 +879,49 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Zirconium, 1, Oxygen, 2)
                 .build()
                 .setFormula("c-ZrO2", true);
+
+        //  11103 Sodium Fluoride
+        SodiumFluoride = new Material.Builder(getId(), gregtechId("sodium_fluoride"))
+                .dust()
+                .color(0x460012)
+                .iconSet(DULL)
+                .components(Sodium, 1, Fluorine, 1)
+                .build();
+
+        //  11104 Sodium Trifluoroethanolate
+        SodiumTrifluoroethanolate = new Material.Builder(getId(), gregtechId("sodium_trifluoroethanolate"))
+                .dust()
+                .color(0x50083E)
+                .iconSet(ROUGH)
+                .components(Sodium, 1, Carbon, 2, Hydrogen, 4, Oxygen, 1, Fluorine, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11105 Chromium Germanium Telluride
+        ChromiumGermaniumTelluride = new Material.Builder(getId(), gregtechId("chromium_germanium_telluride"))
+                .ingot()
+                .fluid()
+                .color(0x8F103E)
+                .iconSet(METALLIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD)
+                .components(Chrome, 1, Germanium, 1, Tellurium, 3)
+                .blast(b -> b
+                        .temp(2900, BlastProperty.GasTier.HIGHER))
+                .build();
+
+        //  11106 Magnetic Chromium Germanium Telluride
+        ChromiumGermaniumTellurideMagnetic = new Material.Builder(getId(), gregtechId("magnetic_chromium_germanium_telluride"))
+                .ingot()
+                .color(0x8F103E)
+                .iconSet(MAGNETIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, IS_MAGNETIC)
+                .components(ChromiumGermaniumTelluride, 1)
+                .ingotSmeltInto(ChromiumGermaniumTelluride)
+                .arcSmeltInto(ChromiumGermaniumTelluride)
+                .macerateInto(ChromiumGermaniumTelluride)
+                .build();
+
+        ChromiumGermaniumTelluride.getProperty(PropertyKey.INGOT).setMagneticMaterial(ChromiumGermaniumTellurideMagnetic);
     }
 
     private static int getId() {

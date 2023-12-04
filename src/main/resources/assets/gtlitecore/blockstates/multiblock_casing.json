@@ -87,6 +87,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/hastelloy_x78_casing"
         }
+      },
+      "iridium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/iridium_casing"
+        }
       }
     }
   }

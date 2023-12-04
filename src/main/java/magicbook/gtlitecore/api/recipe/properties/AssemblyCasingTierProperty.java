@@ -26,7 +26,11 @@ public class AssemblyCasingTierProperty extends RecipeProperty<Integer> {
     }
 
     @Override
-    public void drawInfo(Minecraft minecraft, int x, int y, int color, Object value) {
+    public void drawInfo(Minecraft minecraft,
+                         int x,
+                         int y,
+                         int color,
+                         Object value) {
         minecraft.fontRenderer.drawString(I18n.format("gtlitecore.machine.precise_assembler.tier",
                 castValue(value).toString()) + getAssemblyCasingTier(castValue(value)), x, y, color);
     }
@@ -41,7 +45,8 @@ public class AssemblyCasingTierProperty extends RecipeProperty<Integer> {
         return String.format("%s", mapEntry.getValue());
     }
 
-    public static void registerAssemblyCasingTier(int tier, String shortName) {
+    public static void registerAssemblyCasingTier(int tier,
+                                                  String shortName) {
         Validate.notNull(shortName);
         registeredAssemblyCasingTiers.put(tier, shortName);
     }

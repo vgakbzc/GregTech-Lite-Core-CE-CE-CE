@@ -118,6 +118,10 @@ public class GTLiteMaterials {
     public static Material PhosphorylChloride;
     public static Material Phosphine;
     public static Material CubicZirconia;
+    public static Material SodiumFluoride;
+    public static Material SodiumTrifluoroethanolate;
+    public static Material ChromiumGermaniumTelluride;
+    public static Material ChromiumGermaniumTellurideMagnetic;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -135,6 +139,12 @@ public class GTLiteMaterials {
     public static Material HY1301;
     public static Material IncoloyMA813;
     public static Material Lafium;
+    public static Material Inconel792;
+    public static Material EglinSteelBase;
+    public static Material EglinSteel;
+    public static Material Pikyonium64B;
+    public static Material Cinobite;
+    public static Material TitanSteel;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -222,6 +232,12 @@ public class GTLiteMaterials {
     public static Material Methylhydrazine;
     public static Material Hexafluoropropylene;
     public static Material FluorinatedEthylenePropylene;
+    public static Material NitrileButadieneRubber;
+    public static Material PolyPhosphonitrileFluoroRubber;
+    public static Material Acrylonitrile;
+    public static Material PhosphonitrilicChlorideTrimer;
+    public static Material Fluorobenzene;
+    public static Material OctafluoroPentanol;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

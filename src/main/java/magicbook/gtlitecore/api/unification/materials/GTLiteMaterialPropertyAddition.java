@@ -66,6 +66,9 @@ public class GTLiteMaterialPropertyAddition {
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 
+        //  Organic Chemistry
+        AmmoniumChloride.setProperty(PropertyKey.FLUID, new FluidProperty());
+
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
         Chalcopyrite.addFlags(GENERATE_MILLED);
@@ -90,6 +93,9 @@ public class GTLiteMaterialPropertyAddition {
         Livermorium.addFlags(GENERATE_DOUBLE_PLATE);
         Rhenium.addFlags(GENERATE_DOUBLE_PLATE);
 
+        //  Dense
+        Steel.addFlags(GENERATE_DENSE);
+
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);
 
@@ -108,6 +114,10 @@ public class GTLiteMaterialPropertyAddition {
         Trinium.addFlags(GENERATE_SPRING);
         Tritanium.addFlags(GENERATE_SPRING);
         RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_SPRING);
+
+        //  Gear
+        RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
+        Darmstadtium.addFlags(GENERATE_GEAR);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);

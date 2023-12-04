@@ -4,6 +4,7 @@ import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.stack.UnificationEntry;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -17,6 +18,67 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class MiscRecipes {
 
     public static void init() {
+
+        //  Blazing Pyrotheum
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Redstone)
+                .input(dust, Sulfur)
+                .fluidInputs(Blaze.getFluid(L * 2))
+                .fluidOutputs(BlazingPyrotheum.getFluid(4000))
+                .EUt(VA[MV])
+                .duration(120)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(BlazingPyrotheum.getFluid(4000))
+                .output(dust, Redstone)
+                .output(dust, Sulfur)
+                .fluidOutputs(Blaze.getFluid(L * 2))
+                .EUt(VA[LV])
+                .duration(240)
+                .buildAndRegister();
+
+        //  Gelid Cryotheum
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Electrotine)
+                .input(Items.SNOWBALL)
+                .fluidInputs(Ice.getFluid(2000))
+                .fluidOutputs(GelidCryotheum.getFluid(4000))
+                .EUt(VA[MV])
+                .duration(120)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(GelidCryotheum.getFluid(4000))
+                .output(dust, Electrotine)
+                .output(Items.SNOWBALL)
+                .fluidOutputs(Ice.getFluid(2000))
+                .EUt(VA[LV])
+                .duration(240)
+                .buildAndRegister();
+
+        //  Eglin Steel Base
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Iron, 4)
+                .input(dust, Kanthal)
+                .input(dust, Invar, 5)
+                .circuitMeta(10)
+                .output(dust, EglinSteelBase, 10)
+                .EUt(VA[MV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Eglin Steel
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, EglinSteelBase, 10)
+                .input(dust, Sulfur)
+                .input(dust, Silicon)
+                .input(dust, Carbon)
+                .circuitMeta(13)
+                .output(dust, EglinSteel, 13)
+                .EUt(VA[MV])
+                .duration(120)
+                .buildAndRegister();
 
         //  Silicon Carbide
         MIXER_RECIPES.recipeBuilder()

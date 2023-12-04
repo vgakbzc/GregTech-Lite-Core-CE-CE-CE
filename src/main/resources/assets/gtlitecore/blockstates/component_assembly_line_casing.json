@@ -1,0 +1,91 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "lv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/lv"
+        }
+      },
+      "mv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/mv"
+        }
+      },
+      "hv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/hv"
+        }
+      },
+      "ev": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/ev"
+        }
+      },
+      "iv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/iv"
+        }
+      },
+      "luv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/luv"
+        }
+      },
+      "zpm": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/zpm"
+        }
+      },
+      "uv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/uv"
+        }
+      },
+      "uhv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/uhv"
+        }
+      },
+      "uev": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/uev"
+        }
+      },
+      "uiv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/uiv"
+        }
+      },
+      "uxv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/uxv"
+        }
+      },
+      "opv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/opv"
+        }
+      },
+      "max": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/components/max"
+        }
+      }
+    }
+  }
+}
