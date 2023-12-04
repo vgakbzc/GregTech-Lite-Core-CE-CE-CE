@@ -710,6 +710,10 @@ gregtech.material.waelz_oxide=威氏氧化物
 gregtech.material.waelz_slag=威氏浸出渣
 gregtech.material.impure_germanium_dioxide=含杂氧化锗
 gregtech.material.germanium_tetrachloride=四氯化锗
+gregtech.material.molybdenum_trioxide=三氧化钼
+gregtech.material.lead_chloride=二氯化铅
+gregtech.material.perrhenic_acid=高铼酸
+gregtech.material.ammonium_perrhenate=高铼酸铵
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -826,6 +830,7 @@ gregtech.material.acrylonitrile=丙烯腈
 gregtech.material.phosphonitrilic_chloride_trimer=六氯环三磷腈
 gregtech.material.fluorobenzene=氟苯
 gregtech.material.octafluoro_pentanol=八氟戊醇
+gregtech.material.turpentine=松油
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -907,6 +912,10 @@ gregtech.material.dragon_breath=龙息
 gregtech.material.concentrate_dragon_breath=浓缩龙息
 gregtech.material.dragon_blood=龙血
 gregtech.material.chalcogen_anode_mud=硫系元素阳极泥
+gregtech.material.molybdenum_flue=钼烟气
+gregtech.material.trace_rhenium_flue=微量铼烟气
+gregtech.material.leached_turpentine=松油浸出物
+gregtech.material.steam_cracked_turpentine=蒸汽裂化的松油浸出物
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

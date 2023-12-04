@@ -69,12 +69,13 @@ public class RecipeManager {
         RocketFuelChain.init();
         RubberChain.init();
         SeleniumTelluriumChain.init();
-        //  TODO TurpentineChain.init();
+        TurpentineChain.init();
         ZirconiumChain.init();
     }
 
     private static void initOreProcessings() {
         GermaniumProcessing.init();
+        MolybdenumProcessing.init();
         PlatinumGroupProcessing.init();
         RareEarthProcessing.init();
         TaraniumProcessing.init();

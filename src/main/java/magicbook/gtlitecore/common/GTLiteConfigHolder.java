@@ -30,6 +30,10 @@ public class GTLiteConfigHolder {
         public static boolean enablePlatinumGroupProcessing = true;
         @Config.Comment({"Enable Tungsten process.", "Default: true"})
         public boolean enableTungstenProcessing = true;
+
+        @Config.Comment({"Enable Molybdenum process.", "Default: true"})
+        public boolean enableMolybdenumProcessing = true;
+
         @Config.Comment({"Enable Graphene process.", "Default: true"})
         public boolean enableGrapheneProcessing = true;
         @Config.Comment({"Enable Ammonia process", "Default: true"})

@@ -140,6 +140,10 @@ public class GTLiteMaterials {
     public static Material WaelzSlag;
     public static Material ImpureGermaniumDioxide;
     public static Material GermaniumTetrachloride;
+    public static Material MolybdenumTrioxide;
+    public static Material LeadChloride;
+    public static Material PerrhenicAcid;
+    public static Material AmmoniumPerrhenate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -256,6 +260,7 @@ public class GTLiteMaterials {
     public static Material PhosphonitrilicChlorideTrimer;
     public static Material Fluorobenzene;
     public static Material OctafluoroPentanol;
+    public static Material Turpentine;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -337,6 +342,10 @@ public class GTLiteMaterials {
     public static Material ConcentrateDragonBreath;
     public static Material DragonBlood;
     public static Material ChalcogenAnodeMud;
+    public static Material MolybdenumFlue;
+    public static Material TraceRheniumFlue;
+    public static Material LeachedTurpentine;
+    public static Material SteamCrackedTurpentine;
 
     public static void init() {
         GTLiteElementMaterials.register();

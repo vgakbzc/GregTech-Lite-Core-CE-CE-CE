@@ -779,6 +779,14 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xE5EBDE)
                 .components(Carbon, 5, Hydrogen, 4, Fluorine, 8, Oxygen, 1)
                 .build();
+
+        //  13092 Turpentine
+        Turpentine = new Material.Builder(getId(), gregtechId("turpentine"))
+                .liquid()
+                .color(0x93BD46)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 10, Hydrogen, 16)
+                .build();
     }
 
     private static int getId() {

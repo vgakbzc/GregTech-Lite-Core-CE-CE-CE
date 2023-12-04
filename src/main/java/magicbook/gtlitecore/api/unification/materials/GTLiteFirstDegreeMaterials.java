@@ -1029,6 +1029,42 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Germanium, 1, Chlorine, 4)
                 .build();
+
+        //  11119 Molybdenum Trioxide
+        MolybdenumTrioxide = new Material.Builder(getId(), gregtechId("molybdenum_trioxide"))
+                .dust()
+                .color(0xCBCFDA)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Molybdenum, 1, Oxygen, 3)
+                .build();
+
+        //  11120 Lead Chloride
+        LeadChloride = new Material.Builder(getId(), gregtechId("lead_chloride"))
+                .dust()
+                .color(0xF3F3F3)
+                .iconSet(ROUGH)
+                .components(Lead, 1, Chlorine, 2)
+                .build();
+
+        //  11121 Perrhenic Acid
+        PerrhenicAcid = new Material.Builder(getId(), gregtechId("perrhenic_acid"))
+                .dust()
+                .color(0xE6DC70)
+                .iconSet(SHINY)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Hydrogen, 1, Rhenium, 1, Oxygen, 4)
+                .build();
+
+        //  11122 Ammonium Perrhenate
+        AmmoniumPerrhenate = new Material.Builder(getId(), gregtechId("ammonium_perrhenate"))
+                .dust()
+                .liquid()
+                .color(0xA69970)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 1, Hydrogen, 4, Rhenium, 1, Oxygen, 4)
+                .build();
     }
 
     private static int getId() {
