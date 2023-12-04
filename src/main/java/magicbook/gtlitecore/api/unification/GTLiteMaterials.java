@@ -14,6 +14,8 @@ public class GTLiteMaterials {
     public static Material CrystalMatrix;
     public static Material Ichorium;
     public static Material IchorLiquid;
+    public static Material CosmicNeutronium;
+    public static Material Spacetime;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;

@@ -49,12 +49,47 @@ public class GTLiteTextures {
 
     //  Multi Renderer
     public static TextureAtlasSprite HALO;
+    public static TextureAtlasSprite HALO_NOISE;
+    public static TextureAtlasSprite[] COSMIC;
+    public static TextureAtlasSprite COSMIC_0;
+    public static TextureAtlasSprite COSMIC_1;
+    public static TextureAtlasSprite COSMIC_2;
+    public static TextureAtlasSprite COSMIC_3;
+    public static TextureAtlasSprite COSMIC_4;
+    public static TextureAtlasSprite COSMIC_5;
+    public static TextureAtlasSprite COSMIC_6;
+    public static TextureAtlasSprite COSMIC_7;
+    public static TextureAtlasSprite COSMIC_8;
+    public static TextureAtlasSprite COSMIC_9;
 
     public GTLiteTextures() {}
 
     public static void register(TextureMap textureMap) {
 
         HALO = textureMap.registerSprite(gtliteId("items/halo"));
+        HALO_NOISE = textureMap.registerSprite(gtliteId("items/halo_noise"));
+        COSMIC_0 = textureMap.registerSprite(gtliteId("shader/cosmic_0"));
+        COSMIC_1 = textureMap.registerSprite(gtliteId("shader/cosmic_1"));
+        COSMIC_2 = textureMap.registerSprite(gtliteId("shader/cosmic_2"));
+        COSMIC_3 = textureMap.registerSprite(gtliteId("shader/cosmic_3"));
+        COSMIC_4 = textureMap.registerSprite(gtliteId("shader/cosmic_4"));
+        COSMIC_5 = textureMap.registerSprite(gtliteId("shader/cosmic_5"));
+        COSMIC_6 = textureMap.registerSprite(gtliteId("shader/cosmic_6"));
+        COSMIC_7 = textureMap.registerSprite(gtliteId("shader/cosmic_7"));
+        COSMIC_8 = textureMap.registerSprite(gtliteId("shader/cosmic_8"));
+        COSMIC_9 = textureMap.registerSprite(gtliteId("shader/cosmic_9"));
+        COSMIC = new TextureAtlasSprite[] {
+                COSMIC_0,
+                COSMIC_1,
+                COSMIC_2,
+                COSMIC_3,
+                COSMIC_4,
+                COSMIC_5,
+                COSMIC_6,
+                COSMIC_7,
+                COSMIC_8,
+                COSMIC_9
+        };
     }
 
     public static void preInit() {

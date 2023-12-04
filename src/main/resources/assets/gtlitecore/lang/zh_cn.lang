@@ -559,6 +559,8 @@ gregtech.material.infinity=无尽
 gregtech.material.crystal_matrix=水晶矩阵
 gregtech.material.ichorium=灵宝
 gregtech.material.ichor_liquid=灵液
+gregtech.material.cosmic_neutronium=宇宙中子素
+gregtech.material.spacetime=时空
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣

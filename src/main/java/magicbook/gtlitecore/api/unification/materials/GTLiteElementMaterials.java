@@ -6,6 +6,7 @@ import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
 import net.minecraft.init.Enchantments;
+import net.minecraft.util.text.TextFormatting;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.GTValues.UHV;
@@ -13,7 +14,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_INFINITY;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
 public class GTLiteElementMaterials {
 
@@ -129,6 +130,34 @@ public class GTLiteElementMaterials {
                 .color(0xE5A559)
                 .element(GTLiteElements.IchorLiquid)
                 .build();
+
+        //  10008 Cosmic Neutronium
+        CosmicNeutronium = new Material.Builder(getId(), gregtechId("cosmic_neutronium"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature(2000000000))
+                .color(0x323232)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(15000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 200)
+                        .blastStats(VA[UXV], 200))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME)
+                .element(GTLiteElements.SpNt)
+                .build();
+
+        //  10009 Spacetime
+        Spacetime = new Material.Builder(getId(), gregtechId("spacetime"))
+                .ingot()
+                .liquid(new FluidBuilder().customStill())
+                .iconSet(CUSTOM_SPACETIME)
+                .blast(b -> b
+                        .temp(16000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[OpV], 100)
+                        .vacuumStats(VA[OpV], 100))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME)
+                .element(GTLiteElements.SpaceTime)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
     }
 
     private static int getId() {

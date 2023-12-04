@@ -115,9 +115,9 @@ public class MaterialComponents {
                 {9, new UnificationEntry(OrePrefix.plate, Orichalcum)},
                 {10, new UnificationEntry(OrePrefix.plate, Adamantium)},
                 {11, new UnificationEntry(OrePrefix.plate, Infinity)},
-//                {12, new UnificationEntry(OrePrefix.plate, SpaceTime)},
+                {12, new UnificationEntry(OrePrefix.plate, CosmicNeutronium)},
+                {13, new UnificationEntry(OrePrefix.plate, Spacetime)},
 //                {13, new UnificationEntry(OrePrefix.plate, Eternal)},
-//                {13, new UnificationEntry(OrePrefix.plate, CosmicNeutronium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         HULL_PLATE.appendIngredients(Stream.of(new Object[][]{
