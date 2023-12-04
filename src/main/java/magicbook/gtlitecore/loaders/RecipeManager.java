@@ -67,6 +67,7 @@ public class RecipeManager {
         //  TODO PhotoresistivesChain.init();
         PMMAChain.init();
         RocketFuelChain.init();
+        RubberChain.init();
         //  TODO SeleniiumTelluriumChain.init();
         //  TODO TurpentineChain.init();
         ZirconiumChain.init();

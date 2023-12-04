@@ -156,7 +156,7 @@ public class GTLiteRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
         //  Cryogenic Reactor RecipeMap
-        CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes", 3, 2, 2, 2, new NoCoilTemperatureRecipeBuilder(), false)
+        CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes", 3, 2, 3, 2, new NoCoilTemperatureRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.COOLING);
         //  Fuel Refine Factory RecipeMap

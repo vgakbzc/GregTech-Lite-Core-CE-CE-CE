@@ -663,6 +663,10 @@ gregtech.material.phosphorus_trichloride=三氯化磷
 gregtech.material.phosphoryl_chloride=磷酰氯
 gregtech.material.phosphine=磷化氢
 gregtech.material.cubic_zirconia=立方氧化锆
+gregtech.material.sodium_fluoride=氟化钠
+gregtech.material.sodium_trifluoroethanolate=三氟乙醇钠
+gregtech.material.fluorobenzene=氟苯
+gregtech.material.octafluoro_pentanol=八氟戊醇
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -773,6 +777,10 @@ gregtech.material.octene=辛烯
 gregtech.material.methylhydrazine=甲肼
 gregtech.material.hexafluoropropylene=六氟丙烯
 gregtech.material.fluorinated_ethylene_propylene=聚全氟乙丙烯（FEP）
+gregtech.material.nitrile_butadiene_rubber=丁腈橡胶
+gregtech.material.poly_phosphonitrile_fluoro_rubber=聚膦腈氟橡胶
+gregtech.material.acrylonitrile=丙烯腈
+gregtech.material.phosphonitrilic_chloride_trimer=六氯环三磷腈
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

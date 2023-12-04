@@ -732,6 +732,53 @@ public class GTLiteOrganicChemistryMaterials {
                 .iconSet(DULL)
                 .components(Carbon, 5, Fluorine, 10)
                 .build();
+
+        //  13086 Nitrile Butadiene Rubber
+        NitrileButadieneRubber = new Material.Builder(getId(), gregtechId("nitrile_butadiene_rubber"))
+                .polymer()
+                .liquid(new FluidBuilder().temperature(433))
+                .color(0x211A18)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_RING)
+                .components(Carbon, 7, Hydrogen, 9, Nitrogen, 1)
+                .build();
+
+        //  13087 Poly (Phosphonitrile Fluoro) Rubber
+        PolyPhosphonitrileFluoroRubber = new Material.Builder(getId(), gregtechId("poly_phosphonitrile_fluoro_rubber"))
+                .polymer()
+                .liquid()
+                .color(0x372B28)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_RING)
+                .components(Carbon, 24, Hydrogen, 16, Oxygen, 8, Nitrogen, 4, Phosphorus, 4, Fluorine, 40)
+                .build();
+
+        //  13088 Acrylonitrile
+        Acrylonitrile = new Material.Builder(getId(), gregtechId("acrylonitrile"))
+                .liquid()
+                .color(Propene.getMaterialRGB())
+                .components(Carbon, 3, Hydrogen, 3, Nitrogen, 1)
+                .build();
+
+        //  13089 Phosphonitrilic Chloride Trimer
+        PhosphonitrilicChlorideTrimer = new Material.Builder(getId(), gregtechId("phosphonitrilic_chloride_trimer"))
+                .liquid()
+                .color(0x082C38)
+                .components(Chlorine, 6, Nitrogen, 3, Phosphorus, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13090 Fluorobenzene
+        Fluorobenzene = new Material.Builder(getId(), gregtechId("fluorobenzene"))
+                .liquid()
+                .color(0x7CCA88)
+                .components(Carbon, 6, Hydrogen, 5, Fluorine, 1)
+                .build();
+
+        //  13091 Octafluoro Pentanol
+        OctafluoroPentanol = new Material.Builder(getId(), gregtechId("octafluoro_pentanol"))
+                .liquid()
+                .color(0xE5EBDE)
+                .components(Carbon, 5, Hydrogen, 4, Fluorine, 8, Oxygen, 1)
+                .build();
     }
 
     private static int getId() {

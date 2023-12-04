@@ -877,6 +877,23 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Zirconium, 1, Oxygen, 2)
                 .build()
                 .setFormula("c-ZrO2", true);
+
+        //  11103 Sodium Fluoride
+        SodiumFluoride = new Material.Builder(getId(), gregtechId("sodium_fluoride"))
+                .dust()
+                .color(0x460012)
+                .iconSet(DULL)
+                .components(Sodium, 1, Fluorine, 1)
+                .build();
+
+        //  11104 Sodium Trifluoroethanolate
+        SodiumTrifluoroethanolate = new Material.Builder(getId(), gregtechId("sodium_trifluoroethanolate"))
+                .dust()
+                .color(0x50083E)
+                .iconSet(ROUGH)
+                .components(Sodium, 1, Carbon, 2, Hydrogen, 4, Oxygen, 1, Fluorine, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

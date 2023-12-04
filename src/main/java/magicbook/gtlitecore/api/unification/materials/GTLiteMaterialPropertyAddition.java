@@ -66,6 +66,9 @@ public class GTLiteMaterialPropertyAddition {
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 
+        //  Organic Chemistry
+        AmmoniumChloride.setProperty(PropertyKey.FLUID, new FluidProperty());
+
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
         Chalcopyrite.addFlags(GENERATE_MILLED);
