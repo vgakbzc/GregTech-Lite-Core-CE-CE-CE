@@ -37,6 +37,7 @@ public class GTLiteElementMaterials {
                                        .build())
                 .blast(9000, BlastProperty.GasTier.HIGH)
                 .build();
+
         //  10001 Vibranium
         Vibranium = new Material.Builder(getId(), gregtechId("vibranium"))
                 .ingot()
@@ -48,6 +49,7 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.Vb)
                 .blast(4852, BlastProperty.GasTier.HIGH)
                 .build();
+
         //  10001 Adamantium
         Adamantium = new Material.Builder(getId(), gregtechId("adamantium"))
                 .ingot()
@@ -60,6 +62,7 @@ public class GTLiteElementMaterials {
                 .blast(5225, BlastProperty.GasTier.HIGH)
                 .cableProperties(V[UHV], 24, 24, false)
                 .build();
+
         //  10002 Taranium
         Taranium = new Material.Builder(getId(), gregtechId("taranium"))
                 .ingot()
@@ -69,6 +72,7 @@ public class GTLiteElementMaterials {
                 .iconSet(METALLIC)
                 .element(GTLiteElements.Tn)
                 .build();
+
         //  10003 Mithril
         Mithril = new Material.Builder(getId(), gregtechId("mithril"))
                 .ingot()
@@ -204,6 +208,35 @@ public class GTLiteElementMaterials {
                 .color(0x20142C)
                 .iconSet(DULL)
                 .element(GTLiteElements.VoidMetal)
+                .build();
+
+        //  10014 Astral Titanium
+        AstralTitanium = new Material.Builder(getId(), gregtechId("astral_titanium"))
+                .ingot()
+                .liquid()
+                .plasma()
+                .color(0xDCA0F0)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(12000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV]))
+                .element(GTLiteElements.AstralTitanium)
+                .cableProperties(V[UIV], 32, 12, false)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .build();
+
+        //  10015 Celestial Tungsten
+        CelestialTungsten = new Material.Builder(getId(), gregtechId("celestial_tungsten"))
+                .ingot()
+                .liquid()
+                .plasma()
+                .color(0x323232)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(12000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV]))
+                .element(GTLiteElements.CelestialTungsten)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .build();
     }
 

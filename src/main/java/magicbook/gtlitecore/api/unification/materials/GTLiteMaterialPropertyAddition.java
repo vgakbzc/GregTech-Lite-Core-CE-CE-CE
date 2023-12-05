@@ -136,6 +136,9 @@ public class GTLiteMaterialPropertyAddition {
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
 
+        //  Wire Fine
+        Seaborgium.addFlags(GENERATE_FINE_WIRE);
+
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
         Sapphire.addFlags(CRYSTALLIZABLE);

@@ -20,6 +20,8 @@ public class GTLiteMaterials {
     public static Material Rhugnor;
     public static Material Hypogen;
     public static Material VoidMetal;
+    public static Material AstralTitanium;
+    public static Material CelestialTungsten;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;

@@ -595,6 +595,8 @@ gregtech.material.solarium=阳光合金
 gregtech.material.rhugnor=鲁格诺
 gregtech.material.hypogen=海珀珍
 gregtech.material.void_metal=虚空金属
+gregtech.material.astral_titanium=星体钛
+gregtech.material.celestial_tungsten=天体钨
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
