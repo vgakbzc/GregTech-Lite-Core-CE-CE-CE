@@ -20,4 +20,6 @@ public class GTLiteElements {
     public static final Element Rhugnor = Elements.add(184, 142, -1, null, "Rhugnor", "Fs⚶", false);
     public static final Element Hypogen = Elements.add(240, 251, -1, null, "Hypogen", "Hy⚶", false);
     public static final Element VoidMetal = Elements.add(165, 281, -1, null, "VoidMetal", "⚶", false);
+    public static final Element AstralTitanium = Elements.add(145, 133, -1, null, "AstralTitanium", "✧◇✧", false);
+    public static final Element CelestialTungsten = Elements.add(160, 101, -1, null, "CelestialTungsten", "✦◆✦", false);
 }

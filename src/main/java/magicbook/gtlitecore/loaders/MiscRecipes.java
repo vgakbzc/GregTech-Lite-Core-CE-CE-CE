@@ -91,6 +91,28 @@ public class MiscRecipes {
                 .EUt(VA[EV])
                 .buildAndRegister();
 
+        //  Tanmolyium Beta-C
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Titanium, 5)
+                .input(dust, Molybdenum, 5)
+                .input(dust, Vanadium, 2)
+                .input(dust, Chrome, 3)
+                .input(dust, Aluminium)
+                .circuitMeta(5)
+                .output(dust, TanmolyiumBetaC, 16)
+                .EUt(VA[IV])
+                .duration(120)
+                .buildAndRegister();
+
+        //  MAR-Ce-M200 Steel
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, MARM200Steel, 18)
+                .input(dust, Cerium)
+                .output(dust, MARM200CeSteel, 19)
+                .EUt(VA[IV])
+                .duration(350)
+                .buildAndRegister();
+
         //  Fracturing Fluid
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Alumina)

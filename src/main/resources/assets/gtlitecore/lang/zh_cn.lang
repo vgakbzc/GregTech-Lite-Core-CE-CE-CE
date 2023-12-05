@@ -595,6 +595,8 @@ gregtech.material.solarium=阳光合金
 gregtech.material.rhugnor=鲁格诺
 gregtech.material.hypogen=海珀珍
 gregtech.material.void_metal=虚空金属
+gregtech.material.astral_titanium=星体钛
+gregtech.material.celestial_tungsten=天体钨
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -752,6 +754,18 @@ gregtech.material.neodymium_doped_yttrium_oxide=钕掺杂的氧化钇
 gregtech.material.aluminium_nitrate=硝酸铝
 gregtech.material.alumina_solution=三氧化二铝混合溶液
 gregtech.material.unprocessed_nd_yag_solution=未处理钕掺杂的钇铝榴石溶液
+gregtech.material.niobium_pentachloride=五氯化铌
+gregtech.material.lithium_niobate=铌酸锂
+gregtech.material.roasted_vanadium_magnetite=焙烧钒磁铁矿
+gregtech.material.sodium_vanadate=钒酸钠
+gregtech.material.ammonium_vanadate=钒酸铵
+gregtech.material.bismuth_nitrate_solution=硝酸铋溶液
+gregtech.material.bismuth_vanadate_solution=钒酸铋溶液
+gregtech.material.bismuth_vanadate=钒酸铋
+gregtech.material.lu_tm_y_chlorides_solution=镥-铥-钇氯化物溶液
+gregtech.material.lu_tm_doped_yttrium_vanadate_deposition=镥铥掺杂的钒酸钇沉淀
+gregtech.material.ammonium_carbonate=碳酸铵
+gregtech.material.lu_tm_yvo=镥铥掺杂的钒酸钇
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -776,6 +790,10 @@ gregtech.material.pikyonium_64_b=皮卡优合金-64B
 gregtech.material.cinobite=西诺柏
 gregtech.material.titan_steel=泰坦精钢
 gregtech.material.quantum_alloy=量子合金
+gregtech.material.prasiolite=堇云石
+gregtech.material.bismuth_tellurite=碲化铋
+gregtech.material.magneto_resonatic=共振紫晶
+gregtech.material.hdcs=高强度复合钢
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

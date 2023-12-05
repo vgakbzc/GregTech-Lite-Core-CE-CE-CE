@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.ingotHot;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class FusionLoader {
@@ -125,6 +126,35 @@ public class FusionLoader {
                 .EUt(VA[UEV])
                 .duration(320)
                 .EUToStart(2530000000L)
+                .buildAndRegister();
+
+        //  Neon + Bedrock -> Taranium plasma
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Neon.getFluid(L))
+                .fluidInputs(Bedrock.getFluid(L))
+                .fluidOutputs(Taranium.getPlasma(L * 2))
+                .EUt(VA[UV])
+                .duration(64)
+                .EUToStart(360000000L)
+                .buildAndRegister();
+
+        //  Titanium + Taranium plasma -> Astral Titanium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Titanium.getFluid(L * 2))
+                .fluidInputs(Taranium.getPlasma(L * 2))
+                .fluidOutputs(AstralTitanium.getPlasma(L * 4))
+                .EUt(VA[UEV])
+                .duration(32)
+                .EUToStart(1800000000L)
+                .buildAndRegister();
+
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Tungsten.getFluid(L * 2))
+                .fluidInputs(Taranium.getPlasma(L * 2))
+                .fluidOutputs(CelestialTungsten.getPlasma(L * 4))
+                .EUt(VA[UEV])
+                .duration(32)
+                .EUToStart(1800000000L)
                 .buildAndRegister();
     }
 }

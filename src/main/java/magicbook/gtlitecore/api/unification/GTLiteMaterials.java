@@ -20,6 +20,8 @@ public class GTLiteMaterials {
     public static Material Rhugnor;
     public static Material Hypogen;
     public static Material VoidMetal;
+    public static Material AstralTitanium;
+    public static Material CelestialTungsten;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -177,6 +179,18 @@ public class GTLiteMaterials {
     public static Material AluminiumNitrate;
     public static Material AluminaSolution;
     public static Material UnprocessedNdYAGSolution;
+    public static Material NiobiumPentachloride;
+    public static Material LithiumNiobate;
+    public static Material RoastedVanadiumMagnetite;
+    public static Material SodiumVanadate;
+    public static Material AmmoniumVanadate;
+    public static Material BismuthNitrateSolution;
+    public static Material BismuthVanadateSolution;
+    public static Material BismuthVanadate;
+    public static Material LuTmYChloridesSolution;
+    public static Material LuTmDopedYttriumVanadateDeposition;
+    public static Material AmmoniumCarbonate;
+    public static Material LuTmYVO;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -201,6 +215,10 @@ public class GTLiteMaterials {
     public static Material Cinobite;
     public static Material TitanSteel;
     public static Material QuantumAlloy;
+    public static Material Prasiolite;
+    public static Material BismuthTellurite;
+    public static Material MagnetoResonatic;
+    public static Material Hdcs;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

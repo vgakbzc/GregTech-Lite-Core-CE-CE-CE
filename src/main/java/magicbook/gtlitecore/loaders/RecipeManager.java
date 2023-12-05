@@ -60,6 +60,7 @@ public class RecipeManager {
         KaptonChain.init();
         KevlarChain.init();
         //  TODO MagneticsChain.init();
+        MagnetoResonaticChain.init();
         MethylamineChain.init();
         NanotubesChain.init();
         NdYAGChain.init();
@@ -68,6 +69,7 @@ public class RecipeManager {
         PhosphorusChain.init();
         PhotoresistivesChain.init();
         PMMAChain.init();
+        PowerIntCircuitChain.init();
         RocketFuelChain.init();
         RubberChain.init();
         SeleniumTelluriumChain.init();
@@ -86,6 +88,7 @@ public class RecipeManager {
         TaraniumProcessing.init();
         ThalliumProcessing.init();
         TungstenProcessing.init();
+        VanadiumProcessing.init();
     }
   
     private static void initCircuits() {

@@ -1347,6 +1347,115 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(DULL)
                 .build()
                 .setFormula("Nd:YAG?", false);
+
+        //  11156 Niobium Pentachloride
+        NiobiumPentachloride = new Material.Builder(getId(), gregtechId("niobium_pentachloride"))
+                .dust()
+                .color(Niobium.getMaterialRGB() + Chlorine.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Niobium, 1, Chlorine, 5)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11157 Lithium Niobate
+        LithiumNiobate = new Material.Builder(getId(), gregtechId("lithium_niobate"))
+                .ingot()
+                .color(0xD27700)
+                .iconSet(SHINY)
+                .components(Lithium, 1, Niobium, 1, Oxygen, 4)
+                .blast(6700)
+                .flags(DISABLE_DECOMPOSITION)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
+                .build();
+
+        //  11158 Roasted Vanadium Magnetite
+        RoastedVanadiumMagnetite = new Material.Builder(getId(), gregtechId("roasted_vanadium_magnetite"))
+                .dust()
+                .color(0xCC9933)
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Vanadium, 1, Oxygen, 1)
+                .build();
+
+        //  11159 Sodium Vanadate
+        SodiumVanadate = new Material.Builder(getId(), gregtechId("sodium_vanadate"))
+                .dust()
+                .color(0xCC9933)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Sodium, 3, Vanadium, 1, Oxygen, 4)
+                .build();
+
+        //  11160 Ammonium Vanadate
+        AmmoniumVanadate = new Material.Builder(getId(), gregtechId("ammonium_vanadate"))
+                .dust()
+                .color(0xCC9933)
+                .iconSet(ROUGH)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Nitrogen, 1, Hydrogen, 4, Vanadium, 1, Oxygen, 3)
+                .build();
+
+        //  11161 Bismuth Nitrate Solution
+        BismuthNitrateSolution = new Material.Builder(getId(), gregtechId("bismuth_nitrate_solution"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x3ABF50)
+                .components(Bismuth, 1, Nitrogen, 3, Oxygen, 10, Hydrogen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Bi(NO3)3(H2O)");
+
+        //  11162 Bismuth Vanadate Solution
+        BismuthVanadateSolution = new Material.Builder(getId(), gregtechId("bismuth_vanadate_solution"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xFFAF33)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Bismuth, 1, Vanadium, 1, Hydrogen, 2, Oxygen, 5)
+                .build()
+                .setFormula("BiVO4(H2O)", true);
+
+        //  11163 Bismuth Vanadate
+        BismuthVanadate = new Material.Builder(getId(), gregtechId("bismuth_vanadate"))
+                .dust()
+                .color(0xFFAF33)
+                .iconSet(SHINY)
+                .components(Bismuth, 1, Vanadium, 1, Oxygen, 4)
+                .build();
+
+        //  11164 Lu-Tm-Y Chlorides Solution
+        LuTmYChloridesSolution = new Material.Builder(getId(), gregtechId("lu_tm_y_chlorides_solution"))
+                .liquid()
+                .color(Lutetium.getMaterialRGB() + Thulium.getMaterialRGB() + Yttrium.getMaterialRGB())
+                .components(Lutetium, 2, Thulium, 2, Yttrium, 6, Chlorine, 30, Hydrogen, 30, Oxygen, 15)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(LuCl3)2(TmCl3)2(YCl3)6(H2O)15", true);
+
+        //  11165 Lu-Tm-doped Yttrium Vanadate Deposition
+        LuTmDopedYttriumVanadateDeposition = new Material.Builder(getId(), gregtechId("lu_tm_doped_yttrium_vanadate_deposition"))
+                .dust()
+                .color(Yttrium.getMaterialRGB() + Vanadium.getMaterialRGB() + Lutetium.getMaterialRGB())
+                .iconSet(FINE)
+                .build()
+                .setFormula("Lu/Tm:YVO?", false);
+
+        //  11166 Ammonium Carbonate
+        AmmoniumCarbonate = new Material.Builder(getId(), gregtechId("ammonium_carbonate"))
+                .dust()
+                .color(0x7C89D9)
+                .iconSet(SHINY)
+                .components(Carbon, 1, Hydrogen, 8, Oxygen, 3, Nitrogen, 2)
+                .build()
+                .setFormula("(NH4)2CO3", true);
+
+        //  11167 Lu/Tm:YVO
+        LuTmYVO = new Material.Builder(getId(), gregtechId("lu_tm_yvo"))
+                .gem()
+                .color(0x8C1B23)
+                .iconSet(GEM_HORIZONTAL)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_LENS, CRYSTALLIZABLE)
+                .components(Yttrium, 1, Vanadium, 1, Oxygen, 1, Lutetium, 1, Thulium, 1)
+                .build()
+                .setFormula("Lu/Tm:YVO", false);
     }
 
     private static int getId() {

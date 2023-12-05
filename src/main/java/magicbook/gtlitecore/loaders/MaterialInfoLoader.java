@@ -26,12 +26,15 @@ import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.HER
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.VOLTAGE_COIL_UEV;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.VOLTAGE_COIL_UHV;
 
 public class MaterialInfoLoader {
 
     public static void init() {
         MachineCasings();
         Glasses();
+        VoltageCoils();
     }
 
     private static void MachineCasings() {
@@ -191,6 +194,50 @@ public class MaterialInfoLoader {
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.CBDO_POLYCARBONATE_GLASS),
                 new ItemMaterialInfo(new MaterialStack(CBDOPolycarbonate, M * 4)));
 
-        //  TODO Infinity Glass
+        //  Infinity Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, Infinity, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS),
+                new ItemMaterialInfo(new MaterialStack(Infinity, M * 4)));
+    }
+
+    private static void VoltageCoils() {
+        //  UHV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTellurideMagnetic)
+                .input(wireFine, Vibranium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UHV)
+                .EUt(VA[UHV])
+                .duration(200)
+                .buildAndRegister();
+
+        OreDictUnifier.registerOre(VOLTAGE_COIL_UHV.getStackForm(), new ItemMaterialInfo (
+                new MaterialStack(ChromiumGermaniumTellurideMagnetic, M / 2),
+                new MaterialStack(Vibranium, M * 2)));
+
+        //  UEV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTellurideMagnetic)
+                .input(wireFine, Mithril, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UEV)
+                .EUt(VA[UEV])
+                .duration(200)
+                .buildAndRegister();
+
+        OreDictUnifier.registerOre(VOLTAGE_COIL_UEV.getStackForm(), new ItemMaterialInfo (
+                new MaterialStack(ChromiumGermaniumTellurideMagnetic, M / 2),
+                new MaterialStack(Mithril, M * 2)));
+
+        //  UIV Voltage Coil
     }
 }

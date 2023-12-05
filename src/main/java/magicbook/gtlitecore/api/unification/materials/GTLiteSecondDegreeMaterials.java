@@ -2,6 +2,7 @@ package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
+import gregtech.api.unification.material.properties.ToolProperty;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -320,6 +321,49 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[LuV], 240))
                 .components(Stellite, 15, CadmiumSelenide, 8, Emerald, 5, Gallium, 5, Americium, 5, Palladium, 5, Bismuth, 5, Germanium, 5)
                 .cableProperties(V[UEV], 32, 0, true)
+                .build();
+
+        //  12023 Prasiolite
+        Prasiolite = new Material.Builder(getId(), gregtechId("prasiolite"))
+                .gem()
+                .color(0x9EB749)
+                .iconSet(QUARTZ)
+                .flags(CRYSTALLIZABLE, GENERATE_LENS)
+                .components(SiliconDioxide, 5, Iron, 1)
+                .build();
+
+        //  12024 Bismuth Tellurite
+        BismuthTellurite = new Material.Builder(getId(), gregtechId("bismuth_tellurite"))
+                .dust()
+                .color(0x0E8933)
+                .iconSet(DULL)
+                .components(Bismuth, 2, Tellurium, 3)
+                .build();
+
+        //  12025 Magneto Resonatic
+        MagnetoResonatic = new Material.Builder(getId(), gregtechId("magneto_resonatic"))
+                .gem()
+                .color(0xFF97FF)
+                .iconSet(MAGNETIC)
+                .components(Prasiolite, 3, BismuthTellurite, 6, CubicZirconia, 1, SteelMagnetic, 1)
+                .flags(NO_SMELTING, GENERATE_LENS)
+                .build();
+
+        //  12026 HDCS (High Durability Compound Steel)
+        Hdcs = new Material.Builder(getId(), gregtechId("hdcs"))
+                .ingot()
+                .fluid()
+                .color(0x334433)
+                .iconSet(SHINY)
+                .toolStats(ToolProperty.Builder.of(20.0F, 10.0F, 18000, 18)
+                                       .magnetic()
+                                       .build())
+                .blast(b -> b
+                        .temp(11900, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1800)
+                        .vacuumStats(VA[LuV]))
+                .components(TungstenSteel, 12, HSSS, 9, HSSG, 6, Ruridit, 3, MagnetoResonatic, 2, Plutonium241, 1)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
     }
 
