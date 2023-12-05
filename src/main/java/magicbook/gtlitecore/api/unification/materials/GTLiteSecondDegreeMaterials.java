@@ -224,8 +224,8 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(SHINY)
                 .blast(b -> b
                         .temp(9865, BlastProperty.GasTier.HIGHEST)
-                        .blastStats(VA[UHV], 1860)
-                        .vacuumStats(VA[ZPM], 960))
+                        .blastStats(VA[UHV], 860)
+                        .vacuumStats(VA[ZPM], 260))
                 .components(HastelloyN, 8, Naquadria, 4, Samarium, 2, Tungsten, 4, Aluminium, 6, Nickel, 8, Titanium, 4, Carbon, 2, Argon, 2)
                 .fluidPipeProperties(23000, 8000, true, true, true, true)
                 .build();
@@ -239,8 +239,8 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Nickel, 2, Niobium, 1, Aluminium, 2, Nichrome, 1)
                 .blast(b -> b
                         .temp(6200, BlastProperty.GasTier.HIGH)
-                        .blastStats(VA[IV], 866)
-                        .vacuumStats(VA[HV], 230))
+                        .blastStats(VA[IV], 466)
+                        .vacuumStats(VA[HV], 130))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_ROTOR)
                 .fluidPipeProperties(4900, 220, true, true, true, false)
                 .build();
@@ -274,8 +274,8 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(SHINY)
                 .blast(b -> b
                         .temp(10400, BlastProperty.GasTier.HIGHEST)
-                        .blastStats(VA[ZPM], 1487)
-                        .vacuumStats(VA[IV], 670))
+                        .blastStats(VA[ZPM], 487)
+                        .vacuumStats(VA[IV], 170))
                 .components(Inconel792, 8, EglinSteel, 5, NaquadahAlloy, 4, TungstenSteel, 4, Cerium, 3, Antimony, 2, Platinum, 2, Ytterbium, 1)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
                 .build();
@@ -288,8 +288,8 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(SHINY)
                 .blast(b -> b
                         .temp(10460, BlastProperty.GasTier.HIGHER)
-                        .blastStats(VA[UV], 3608)
-                        .vacuumStats(VA[LuV], 1080))
+                        .blastStats(VA[UV], 800)
+                        .vacuumStats(VA[LuV], 140))
                 .components(Zeron100, 8, Stellite100, 6, Titanium, 6, Naquadria, 4, Osmiridium, 3, Aluminium, 2, Tin, 1, Mercury, 1)
                 .flags(GENERATE_ROD, GENERATE_FRAME)
                 .build();
@@ -302,10 +302,24 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(SHINY)
                 .blast(b -> b
                         .temp(10600, BlastProperty.GasTier.HIGHEST)
-                        .blastStats(VA[UHV], 4550)
-                        .vacuumStats(VA[ZPM], 1440))
+                        .blastStats(VA[UHV], 1200)
+                        .vacuumStats(VA[ZPM], 180))
                 .components(TitaniumTungstenCarbide, 6, AusteniticStainlessSteel904L, 3, Ruby, 3)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .build();
+
+        //  12022 Quantum Alloy
+        QuantumAlloy = new Material.Builder(getId(), gregtechId("quantum_alloy"))
+                .ingot()
+                .fluid()
+                .color(0x954FE0)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(13501, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1400)
+                        .vacuumStats(VA[LuV], 240))
+                .components(Stellite, 15, CadmiumSelenide, 8, Emerald, 5, Gallium, 5, Americium, 5, Palladium, 5, Bismuth, 5, Germanium, 5)
+                .cableProperties(V[UEV], 32, 0, true)
                 .build();
     }
 

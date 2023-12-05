@@ -1147,6 +1147,206 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Tungsten, 1, Oxygen, 3)
                 .build();
+
+        //  11133 GST Glass
+        GSTGlass = new Material.Builder(getId(), gregtechId("gst_glass"))
+                .ingot()
+                .fluid()
+                .color(0xCFFFFF)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, NO_SMASHING, NO_WORKING, DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Germanium, 2, Antimony, 2, Tellurium, 5)
+                .blast(b -> b
+                        .temp(873, BlastProperty.GasTier.MID))
+                .build();
+
+        //  11134 ZBLAN Glass
+        ZBLANGlass = new Material.Builder(getId(), gregtechId("zblan_glass"))
+                .ingot()
+                .fluid()
+                .color(0xACB4BC)
+                .iconSet(SHINY)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_FINE_WIRE)
+                .components(Zirconium, 5, Barium, 2, Lanthanum, 1, Aluminium, 1, Sodium, 2, Fluorine, 6)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2", true);
+
+        //  11135 Erbium-doped ZBLAN Glass
+        ErbiumDopedZBLANGlass = new Material.Builder(getId(), gregtechId("erbium_doped_zblan_glass"))
+                .ingot()
+                .color(0x505444)
+                .iconSet(BRIGHT)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(ZBLANGlass, 1, Erbium, 1)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Er", true);
+
+        //  11136 PraseodymiumDopedZBLANGlass
+        PraseodymiumDopedZBLANGlass = new Material.Builder(getId(), gregtechId("praseodymium_doped_zblan_glass"))
+                .ingot()
+                .color(0xC5C88D)
+                .iconSet(BRIGHT)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(ZBLANGlass, 1, Praseodymium, 1)
+                .build()
+                .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Pr", true);
+
+        //  11137 Silicon Tetrachloride
+        SiliconTetrachloride = new Material.Builder(getId(), gregtechId("silicon_tetrachloride"))
+                .liquid()
+                .color(0x5B5B7A)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Silicon, 1, Chlorine, 4)
+                .build();
+
+        //  11138 Helium-Neon Gas
+        HeliumNeon = new Material.Builder(getId(), gregtechId("helium_neon"))
+                .gas()
+                .color(0xFF0080)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .components(Helium, 1, Neon, 1)
+                .build();
+
+        //  11139 Nd:YAG
+        NdYAG = new Material.Builder(getId(), gregtechId("nd_yag"))
+                .gem()
+                .color(0xD99DE4)
+                .iconSet(GEM_VERTICAL)
+                .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING, GENERATE_LENS)
+                .components(YttriumOxide, 2, NeodymiumOxide, 1, Alumina, 5)
+                .build()
+                .setFormula("NdY2Al5O12", true);
+
+        //  11140 HRA Magnesium
+        HRAMagnesium = new Material.Builder(getId(), gregtechId("hra_magnesium"))
+                .dust()
+                .color(Magnesium.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Magnesium, 1)
+                .build();
+
+        //  11141 Cadmium Bromide
+        CadmiumBromide = new Material.Builder(getId(), gregtechId("cadmium_bromide"))
+                .dust()
+                .color(0xFF1774)
+                .iconSet(SHINY)
+                .components(Cadmium, 1, Bromine, 2)
+                .build();
+
+        //  11142 Magnesium Bromide
+        MagnesiumBromide = new Material.Builder(getId(), gregtechId("magnesium_bromide"))
+                .dust()
+                .color(0x5F4C32)
+                .iconSet(METALLIC)
+                .components(Magnesium, 1, Bromine, 2)
+                .build();
+
+        //  11143 Dimethylcadmium
+        Dimethylcadmium = new Material.Builder(getId(), gregtechId("dimethylcadmium"))
+                .liquid()
+                .color(0x5C037F)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 6, Cadmium, 1)
+                .build()
+                .setFormula("(CH3)2Cd", true);
+
+        //  11144 Cadmium Sulfide
+        CadmiumSulfide = new Material.Builder(getId(), gregtechId("cadmium_sulfide"))
+                .dust()
+                .color(0xC8C43C)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING, GENERATE_PLATE)
+                .iconSet(METALLIC)
+                .components(Cadmium, 1, Sulfur, 1)
+                .build();
+
+        //  11145 Aluminium Selenide
+        AluminiumSelenide = new Material.Builder(getId(), gregtechId("aluminium_selenide"))
+                .dust()
+                .color(0x969651)
+                .components(Aluminium, 2, Selenium, 3)
+                .build();
+
+        //  11146 Hydrogen Selenide
+        HydrogenSelenide = new Material.Builder(getId(), gregtechId("hydrogen_selenide"))
+                .gas()
+                .color(0x42f554)
+                .components(Hydrogen, 2, Selenium, 1)
+                .build();
+
+        //  11147 Cadmium Selenide
+        CadmiumSelenide = new Material.Builder(getId(), gregtechId("cadmium_selenide"))
+                .dust()
+                .color(0x983034)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .iconSet(METALLIC)
+                .components(Cadmium, 1, Selenium, 1)
+                .build();
+
+        //  11148 Potassium Manganate
+        PotassiumManganate = new Material.Builder(getId(), gregtechId("potassium_manganate"))
+                .dust()
+                .color(0x873883)
+                .iconSet(METALLIC)
+                .components(Potassium, 2, Manganese, 1, Oxygen, 4)
+                .build();
+
+        //  11149 Potassium Manganate
+        PotassiumPermanganate = new Material.Builder(getId(), gregtechId("potassium_permanganate"))
+                .dust()
+                .color(0x871D82)
+                .iconSet(DULL)
+                .components(Potassium, 1, Manganese, 1, Oxygen, 4)
+                .build();
+
+        //  11150 Manganese Sulfate
+        ManganeseSulfate = new Material.Builder(getId(), gregtechId("manganese_sulfate"))
+                .dust()
+                .color(0xF0F895)
+                .iconSet(ROUGH)
+                .components(Manganese, 1, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        //  11151 Potassium Sulfate
+        PotassiumSulfate = new Material.Builder(getId(), gregtechId("potassium_sulfate"))
+                .dust()
+                .color(0xF4FBB0)
+                .iconSet(DULL)
+                .components(Potassium, 2, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        //  11152 Neodymium-Doped Yttrium Oxide
+        NeodymiumDopedYttriumOxide = new Material.Builder(getId(), gregtechId("neodymium_doped_yttrium_oxide"))
+                .dust()
+                .color(0x5AD55F)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Nd:Y?", false);
+
+        //  11153 Aluminium Nitrate
+        AluminiumNitrate = new Material.Builder(getId(), gregtechId("aluminium_nitrate"))
+                .dust()
+                .color(0x3AB3AA)
+                .iconSet(SHINY)
+                .components(Aluminium, 1, Nitrogen, 3, Oxygen, 9)
+                .build()
+                .setFormula("Al(NO3)3", true);
+
+        //  11154 Alumina Solution
+        AluminaSolution = new Material.Builder(getId(), gregtechId("alumina_solution"))
+                .liquid()
+                .color(0x6C4DC1)
+                .components(Alumina, 1, Carbon, 25, Hydrogen, 56, Chlorine, 2, Nitrogen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(Al2O3)(CH2Cl2)(C12H27N)2", true);
+
+        //  11155 Unprocessed Nd:YAG Solution
+        UnprocessedNdYAGSolution = new Material.Builder(getId(), gregtechId("unprocessed_nd_yag_solution"))
+                .liquid()
+                .color(0x6f20af)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Nd:YAG?", false);
     }
 
     private static int getId() {

@@ -787,6 +787,70 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Carbon, 10, Hydrogen, 16)
                 .build();
+
+        //  13093 Tetrahydrofuran
+        Tetrahydrofuran = new Material.Builder(getId(), gregtechId("tetrahydrofuran"))
+                .liquid()
+                .color(0x0BCF52)
+                .components(Carbon, 4, Hydrogen, 8, Oxygen, 1)
+                .build()
+                .setFormula("(CH2)4O", true);
+
+        //  13094 Ethylene Dibromide
+        EthyleneDibromide = new Material.Builder(getId(), gregtechId("ethylene_dibromide"))
+                .liquid()
+                .color(0x4F1743)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 2, Hydrogen, 4, Bromine, 2)
+                .build();
+
+        //  13095 Grignard Reagent
+        GrignardReagent = new Material.Builder(getId(), gregtechId("grignard_reagent"))
+                .liquid()
+                .color(0xA12AA1)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 1, Hydrogen, 3, Magnesium, 1, Bromine, 1)
+                .build();
+
+        //  13096 Diethyl Suflide
+        DiethylSuflide = new Material.Builder(getId(), gregtechId("diethyl_sulfide"))
+                .liquid()
+                .color(0xFF7E4B)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Ethylene, 2, Sulfur, 1)
+                .build()
+                .setFormula("(C2H5)2S", true);
+
+        //  13097 Ammonium Cyanate
+        AmmoniumCyanate = new Material.Builder(getId(), gregtechId("ammonium_cyanate"))
+                .liquid()
+                .color(0x3a5dcf)
+                .components(Hydrogen, 4, Nitrogen, 2, Carbon, 1, Oxygen, 1)
+                .build()
+                .setFormula("NH4CNO", true);
+
+        //  13098 Carbamide
+        Carbamide = new Material.Builder(getId(), gregtechId("carbamide"))
+                .dust()
+                .color(0x16EF57)
+                .iconSet(ROUGH)
+                .components(Carbon, 1, Hydrogen, 4, Nitrogen, 2, Oxygen, 1)
+                .build();
+
+        //  13099 Tributylamine
+        Tributylamine = new Material.Builder(getId(), gregtechId("tributylamine"))
+                .liquid()
+                .color(0x801a80)
+                .components(Carbon, 12, Hydrogen, 27, Nitrogen, 1)
+                .build()
+                .setFormula("(C4H9)3N", true);
+
+        //  13100 Dichloromethane
+        Dichloromethane = new Material.Builder(getId(), gregtechId("dichloromethane"))
+                .liquid()
+                .color(0xB87FC7)
+                .components(Carbon, 1, Hydrogen, 2, Chlorine, 2)
+                .build();
     }
 
     private static int getId() {

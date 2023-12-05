@@ -187,6 +187,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         CARBON_ALLOTROPE_MIXTURE = this.addItem(305, "mixture.carbon_allotrope");
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
 
+        UNSTABLE_STAR = this.addItem(307, "unstable_star");
+
         MAGNETRON = this.addItem(310, "magnetron");
 
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");

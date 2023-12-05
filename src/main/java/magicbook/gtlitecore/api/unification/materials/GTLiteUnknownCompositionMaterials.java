@@ -579,6 +579,15 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(0x634D56)
                 .build();
+
+        //  24063 Chlorinated Solvents
+        ChlorinatedSolvents = new Material.Builder(getId(), gregtechId("chlorinated_solvents"))
+                .liquid()
+                .color(0x40804c)
+                .components(Carbon, 2, Hydrogen, 8, Chlorine, 5)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH4)2Cl5", true);
     }
 
     private static int getId() {

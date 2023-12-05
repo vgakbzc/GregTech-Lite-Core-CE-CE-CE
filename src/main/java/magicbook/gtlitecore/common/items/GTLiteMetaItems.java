@@ -178,6 +178,8 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
 
+    public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
+
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
     public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;

@@ -122,7 +122,7 @@ public class GTLiteRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_EXTRACT, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.CENTRIFUGE);
         //  Nanoscale Fabricator RecipeMap
-        MOLECULAR_BEAM_RECIPES = new RecipeMap<>("molecular_beam_recipes", 5, 1, 2,  0, new NoCoilTemperatureRecipeBuilder(), false)
+        MOLECULAR_BEAM_RECIPES = new RecipeMap<>("molecular_beam_recipes", 6, 1, 2,  0, new NoCoilTemperatureRecipeBuilder(), false)
                 .setSlotOverlay(false, false, false, GTLiteGuiTextures.NANOSCALE_OVERLAY_1)
                 .setSlotOverlay(false, false, true, GTLiteGuiTextures.NANOSCALE_OVERLAY_1)
                 .setSlotOverlay(false, true, false, GTLiteGuiTextures.NANOSCALE_OVERLAY_2)
