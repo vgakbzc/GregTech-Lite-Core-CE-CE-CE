@@ -34,6 +34,9 @@ public class GTLiteConfigHolder {
         @Config.Comment({"Enable Molybdenum process.", "Default: true"})
         public boolean enableMolybdenumProcessing = true;
 
+        @Config.Comment({"Enable Niobium and Tantalum process.", "Default: true"})
+        public boolean enableNiobiumTantalumProcessing = true;
+
         @Config.Comment({"Enable Graphene process.", "Default: true"})
         public boolean enableGrapheneProcessing = true;
         @Config.Comment({"Enable Ammonia process", "Default: true"})

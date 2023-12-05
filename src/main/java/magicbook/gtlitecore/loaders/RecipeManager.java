@@ -76,6 +76,7 @@ public class RecipeManager {
     private static void initOreProcessings() {
         GermaniumProcessing.init();
         MolybdenumProcessing.init();
+        NiobiumTantalumProcessing.init();
         PlatinumGroupProcessing.init();
         RareEarthProcessing.init();
         TaraniumProcessing.init();

@@ -144,6 +144,10 @@ public class GTLiteMaterials {
     public static Material LeadChloride;
     public static Material PerrhenicAcid;
     public static Material AmmoniumPerrhenate;
+    public static Material NiobiumPentoxide;
+    public static Material TantalumPentoxide;
+    public static Material CalciumDifluoride;
+    public static Material ManganeseDifluoride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

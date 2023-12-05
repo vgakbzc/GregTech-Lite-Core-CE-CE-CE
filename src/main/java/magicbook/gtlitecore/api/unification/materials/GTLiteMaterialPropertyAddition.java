@@ -159,5 +159,10 @@ public class GTLiteMaterialPropertyAddition {
             Powellite.addFlags(DISABLE_DECOMPOSITION);
             Wulfenite.addFlags(DISABLE_DECOMPOSITION);
         }
+
+        if (GTLiteConfigHolder.chainOverrides.enableNiobiumTantalumProcessing) {
+            Pyrochlore.addFlags(DISABLE_DECOMPOSITION);
+            Tantalite.addFlags(DISABLE_DECOMPOSITION);
+        }
     }
 }

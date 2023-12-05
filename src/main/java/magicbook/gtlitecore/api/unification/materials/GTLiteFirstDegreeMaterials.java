@@ -1065,6 +1065,38 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Nitrogen, 1, Hydrogen, 4, Rhenium, 1, Oxygen, 4)
                 .build();
+
+        //  11123 Niobium Pentoxide
+        NiobiumPentoxide = new Material.Builder(getId(), gregtechId("niobium_pentoxide"))
+                .dust()
+                .color(0xBAB0C3)
+                .iconSet(ROUGH)
+                .components(Niobium, 2, Oxygen, 5)
+                .build();
+
+        //  11124 Tantalum Pentoxide
+        TantalumPentoxide = new Material.Builder(getId(), gregtechId("tantalum_pentoxide"))
+                .dust()
+                .color(0x72728A)
+                .iconSet(ROUGH)
+                .components(Tantalum, 2, Oxygen, 5)
+                .build();
+
+        //  11125 Calcium Difluoride
+        CalciumDifluoride = new Material.Builder(getId(), gregtechId("calcium_difluoride"))
+                .dust()
+                .color(0xFFFC9E)
+                .iconSet(ROUGH)
+                .components(Calcium, 1, Fluorine, 2)
+                .build();
+
+        //  11126 Manganese Difluoride
+        ManganeseDifluoride = new Material.Builder(getId(), gregtechId("manganese_difluoride"))
+                .dust()
+                .color(0xEF4B3D)
+                .iconSet(ROUGH)
+                .components(Manganese, 1, Fluorine, 2)
+                .build();
     }
 
     private static int getId() {
