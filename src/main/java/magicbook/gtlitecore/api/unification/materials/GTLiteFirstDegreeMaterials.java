@@ -1065,6 +1065,88 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Nitrogen, 1, Hydrogen, 4, Rhenium, 1, Oxygen, 4)
                 .build();
+
+        //  11123 Niobium Pentoxide
+        NiobiumPentoxide = new Material.Builder(getId(), gregtechId("niobium_pentoxide"))
+                .dust()
+                .color(0xBAB0C3)
+                .iconSet(ROUGH)
+                .components(Niobium, 2, Oxygen, 5)
+                .build();
+
+        //  11124 Tantalum Pentoxide
+        TantalumPentoxide = new Material.Builder(getId(), gregtechId("tantalum_pentoxide"))
+                .dust()
+                .color(0x72728A)
+                .iconSet(ROUGH)
+                .components(Tantalum, 2, Oxygen, 5)
+                .build();
+
+        //  11125 Calcium Difluoride
+        CalciumDifluoride = new Material.Builder(getId(), gregtechId("calcium_difluoride"))
+                .dust()
+                .color(0xFFFC9E)
+                .iconSet(ROUGH)
+                .components(Calcium, 1, Fluorine, 2)
+                .build();
+
+        //  11126 Manganese Difluoride
+        ManganeseDifluoride = new Material.Builder(getId(), gregtechId("manganese_difluoride"))
+                .dust()
+                .color(0xEF4B3D)
+                .iconSet(ROUGH)
+                .components(Manganese, 1, Fluorine, 2)
+                .build();
+
+        //  11127 Heavy Alkali Chloride Solution
+        HeavyAlkaliChlorideSolution = new Material.Builder(getId(), gregtechId("heavy_alkali_chloride_solution"))
+                .liquid()
+                .color(0x8F5353)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Rubidium, 1, Caesium, 2, Chlorine, 6, Water, 2)
+                .build()
+                .setFormula("RbCl(CsCl)2Cl3(H2O)2", true);
+
+        //  11128 Stannic Chloride
+        StannicChloride = new Material.Builder(getId(), gregtechId("stannic_chloride"))
+                .liquid()
+                .color(0x33BBF5)
+                .components(Tin, 1, Chlorine, 4)
+                .build();
+
+        //  11129 Rubidium Chlorostannate
+        RubidiumChlorostannate = new Material.Builder(getId(), gregtechId("rubidium_chlorostannate"))
+                .dust()
+                .color(0xBD888A)
+                .iconSet(METALLIC)
+                .components(Rubidium, 2, Tin, 1, Chlorine, 6)
+                .build();
+
+        //  11130 Caesium Chlorostannate
+        CaesiumChlorostannate = new Material.Builder(getId(), gregtechId("caesium_chlorostannate"))
+                .dust()
+                .color(0xBDAD88)
+                .iconSet(SHINY)
+                .components(Caesium, 2, Tin, 1, Chlorine, 6)
+                .build();
+
+        //  11131 Thallium Sulfate
+        ThalliumSulfate = new Material.Builder(getId(), gregtechId("thallium_sulfate"))
+                .dust()
+                .color(0x9C222C)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Thallium, 2, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        //  11132 Tungsten Trioxide
+        TungstenTrioxide = new Material.Builder(getId(), gregtechId("tungsten_trioxide"))
+                .dust()
+                .color(0xC7D300)
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tungsten, 1, Oxygen, 3)
+                .build();
     }
 
     private static int getId() {

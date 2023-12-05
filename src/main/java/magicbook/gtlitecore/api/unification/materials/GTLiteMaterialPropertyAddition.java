@@ -64,6 +64,9 @@ public class GTLiteMaterialPropertyAddition {
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
         Zirconium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
+        //  Rubidium Chain
+        Rubidium.setProperty(PropertyKey.DUST, new DustProperty());
+
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 
@@ -158,6 +161,11 @@ public class GTLiteMaterialPropertyAddition {
             oreProp.setDirectSmeltResult(null);
             Powellite.addFlags(DISABLE_DECOMPOSITION);
             Wulfenite.addFlags(DISABLE_DECOMPOSITION);
+        }
+
+        if (GTLiteConfigHolder.chainOverrides.enableNiobiumTantalumProcessing) {
+            Pyrochlore.addFlags(DISABLE_DECOMPOSITION);
+            Tantalite.addFlags(DISABLE_DECOMPOSITION);
         }
     }
 }

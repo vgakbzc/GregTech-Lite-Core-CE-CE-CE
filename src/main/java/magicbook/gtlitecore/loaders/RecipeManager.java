@@ -75,12 +75,15 @@ public class RecipeManager {
 
     private static void initOreProcessings() {
         GermaniumProcessing.init();
+        IsaMillOreProcessing.init();
         MolybdenumProcessing.init();
+        NiobiumTantalumProcessing.init();
         PlatinumGroupProcessing.init();
         RareEarthProcessing.init();
+        RubidiumProcessing.init();
         TaraniumProcessing.init();
-
-        IsaMillOreProcessing.init();
+        ThalliumProcessing.init();
+        TungstenProcessing.init();
     }
   
     private static void initCircuits() {
