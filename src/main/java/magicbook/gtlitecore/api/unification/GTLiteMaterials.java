@@ -153,6 +153,7 @@ public class GTLiteMaterials {
     public static Material RubidiumChlorostannate;
     public static Material CaesiumChlorostannate;
     public static Material ThalliumSulfate;
+    public static Material TungstenTrioxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

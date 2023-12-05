@@ -723,6 +723,7 @@ gregtech.material.stannic_chloride=四氯化锡
 gregtech.material.rubidium_chlorostannate=六氯锡酸铷
 gregtech.material.caesium_chlorostannate=六氯锡酸铯
 gregtech.material.thallium_sulfate=硫酸铊
+gregtech.material.tungsten_trioxide=三氧化钨
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

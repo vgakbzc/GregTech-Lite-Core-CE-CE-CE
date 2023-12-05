@@ -1138,6 +1138,15 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .components(Thallium, 2, Sulfur, 1, Oxygen, 4)
                 .build();
+
+        //  11132 Tungsten Trioxide
+        TungstenTrioxide = new Material.Builder(getId(), gregtechId("tungsten_trioxide"))
+                .dust()
+                .color(0xC7D300)
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Tungsten, 1, Oxygen, 3)
+                .build();
     }
 
     private static int getId() {
