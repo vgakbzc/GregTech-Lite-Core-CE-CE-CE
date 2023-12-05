@@ -66,6 +66,7 @@ public class RecipeManager {
         NdYAGChain.init();
         OilChain.init();
         PEDOTChain.init();
+        PEEKChain.init();
         PhosphorusChain.init();
         PhotoresistivesChain.init();
         PMMAChain.init();

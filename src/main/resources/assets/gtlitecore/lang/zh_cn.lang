@@ -903,6 +903,10 @@ gregtech.material.ammonium_cyanate=氰酸铵
 gregtech.material.carbamide=碳酰胺
 gregtech.material.tributylamine=三丁胺
 gregtech.material.dichloromethane=二氯甲烷
+gregtech.material.difluorobenzophenone=二氟二苯甲酮
+gregtech.material.hydroquinone=对苯二酚
+gregtech.material.fluorotoluene=氟甲苯
+gregtech.material.resorcinol=间苯二酚
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

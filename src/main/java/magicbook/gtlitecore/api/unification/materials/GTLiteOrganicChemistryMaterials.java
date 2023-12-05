@@ -851,6 +851,37 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xB87FC7)
                 .components(Carbon, 1, Hydrogen, 2, Chlorine, 2)
                 .build();
+
+        //  13101 Difluorobenzophenone
+        Difluorobenzophenone = new Material.Builder(getId(), gregtechId("difluorobenzophenone"))
+                .dust()
+                .color(0xC44DA5)
+                .iconSet(SHINY)
+                .components(Carbon, 13, Hydrogen, 8, Oxygen, 1, Fluorine, 2)
+                .build()
+                .setFormula("(FC6H4)2CO", true);
+
+        //  13102 Hydroquinone
+        Hydroquinone = new Material.Builder(getId(), gregtechId("hydroquinone"))
+                .liquid()
+                .color(0x83251A)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(OH)2", true);
+
+        //  13103 Fluorotoluene
+        Fluorotoluene = new Material.Builder(getId(), gregtechId("fluorotoluene"))
+                .liquid()
+                .color(0x6EC5B8)
+                .components(Carbon, 7, Hydrogen, 7, Fluorine, 1)
+                .build();
+
+        //  13104 Resorcinol
+        Resorcinol = new Material.Builder(getId(), gregtechId("resorcinol"))
+                .liquid()
+                .color(0x9DA38D)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build();
     }
 
     private static int getId() {

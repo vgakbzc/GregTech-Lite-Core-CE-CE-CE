@@ -328,6 +328,10 @@ public class GTLiteMaterials {
     public static Material Carbamide;
     public static Material Tributylamine;
     public static Material Dichloromethane;
+    public static Material Difluorobenzophenone;
+    public static Material Hydroquinone;
+    public static Material Fluorotoluene;
+    public static Material Resorcinol;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
