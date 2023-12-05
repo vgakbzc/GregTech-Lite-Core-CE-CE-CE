@@ -851,6 +851,77 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xB87FC7)
                 .components(Carbon, 1, Hydrogen, 2, Chlorine, 2)
                 .build();
+
+        //  13101 Difluorobenzophenone
+        Difluorobenzophenone = new Material.Builder(getId(), gregtechId("difluorobenzophenone"))
+                .dust()
+                .color(0xC44DA5)
+                .iconSet(SHINY)
+                .components(Carbon, 13, Hydrogen, 8, Oxygen, 1, Fluorine, 2)
+                .build()
+                .setFormula("(FC6H4)2CO", true);
+
+        //  13102 Hydroquinone
+        Hydroquinone = new Material.Builder(getId(), gregtechId("hydroquinone"))
+                .liquid()
+                .color(0x83251A)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build()
+                .setFormula("C6H4(OH)2", true);
+
+        //  13103 Fluorotoluene
+        Fluorotoluene = new Material.Builder(getId(), gregtechId("fluorotoluene"))
+                .liquid()
+                .color(0x6EC5B8)
+                .components(Carbon, 7, Hydrogen, 7, Fluorine, 1)
+                .build();
+
+        //  13104 Resorcinol
+        Resorcinol = new Material.Builder(getId(), gregtechId("resorcinol"))
+                .liquid()
+                .color(0x9DA38D)
+                .components(Carbon, 6, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        //  13105 Pre Zylon
+        PreZylon = new Material.Builder(getId(), gregtechId("pre_zylon"))
+                .dust()
+                .color(0x623250)
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING)
+                .components(Carbon, 20, Hydrogen, 22, Nitrogen, 2, Oxygen, 2)
+                .build();
+
+        //  13106 Terephthalaldehyde
+        Terephthalaldehyde = new Material.Builder(getId(), gregtechId("terephthalaldehyde"))
+                .dust()
+                .color(0x567C2D)
+                .iconSet(ROUGH)
+                .components(Carbon, 8, Hydrogen, 6, Oxygen, 2)
+                .build();
+
+        //  13107 Dinitrodipropanyloxybenzene
+        Dinitrodipropanyloxybenzene = new Material.Builder(getId(), gregtechId("dinitrodipropanyloxybenzene"))
+                .liquid()
+                .color(0x9FAD1D)
+                .components(Carbon, 12, Hydrogen, 16, Oxygen, 6, Nitrogen, 2)
+                .build()
+                .setFormula("C12H16O2(NO2)2", true);
+
+        //  13108 Isochloropropane
+        Isochloropropane = new Material.Builder(getId(), gregtechId("isochloropropane"))
+                .liquid()
+                .color(0xC3AC65)
+                .components(Carbon, 3, Hydrogen, 7, Chlorine, 1)
+                .build()
+                .setFormula("CH3CHClCH3", true);
+
+        //  13109 Dibromomethylbenzene
+        Dibromomethylbenzene = new Material.Builder(getId(), gregtechId("dibromomethylbenzene"))
+                .liquid()
+                .color(0x9F4839)
+                .components(Carbon, 7, Hydrogen, 6, Bromine, 2)
+                .build();
     }
 
     private static int getId() {

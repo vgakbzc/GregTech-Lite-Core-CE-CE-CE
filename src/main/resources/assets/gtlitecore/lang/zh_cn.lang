@@ -766,6 +766,15 @@ gregtech.material.lu_tm_y_chlorides_solution=镥-铥-钇氯化物溶液
 gregtech.material.lu_tm_doped_yttrium_vanadate_deposition=镥铥掺杂的钒酸钇沉淀
 gregtech.material.ammonium_carbonate=碳酸铵
 gregtech.material.lu_tm_yvo=镥铥掺杂的钒酸钇
+gregtech.material.pr_ho_y_nitrates_solution=硝酸镨-钬-钇溶液
+gregtech.material.lithium_fluoride=氟化锂
+gregtech.material.hexafluorosilicic_acid=六氟硅酸
+gregtech.material.ammonium_fluoride=氟化铵
+gregtech.material.ammonium_difluoride=二氟化铵
+gregtech.material.beryllium_difluoride=二氟化铍
+gregtech.material.pr_ho_ylf=镨钬掺杂的氟化锂钇
+gregtech.material.sodium_acetate=乙酸钠
+gregtech.material.sodium_oxide=氧化钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -896,6 +905,15 @@ gregtech.material.ammonium_cyanate=氰酸铵
 gregtech.material.carbamide=碳酰胺
 gregtech.material.tributylamine=三丁胺
 gregtech.material.dichloromethane=二氯甲烷
+gregtech.material.difluorobenzophenone=二氟二苯甲酮
+gregtech.material.hydroquinone=对苯二酚
+gregtech.material.fluorotoluene=氟甲苯
+gregtech.material.resorcinol=间苯二酚
+gregtech.material.pre_zylon=预处理柴隆纤维
+gregtech.material.terephthalaldehyde=对苯二甲醛
+gregtech.material.dinitrodipropanyloxybenzene=二硝基二丙氧基苯
+gregtech.material.isochloropropane=异氯丙烷
+gregtech.material.dibromomethylbenzene=二溴甲苯
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

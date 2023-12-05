@@ -66,6 +66,7 @@ public class RecipeManager {
         NdYAGChain.init();
         OilChain.init();
         PEDOTChain.init();
+        PEEKChain.init();
         PhosphorusChain.init();
         PhotoresistivesChain.init();
         PMMAChain.init();
@@ -75,6 +76,7 @@ public class RecipeManager {
         SeleniumTelluriumChain.init();
         TurpentineChain.init();
         ZirconiumChain.init();
+        ZylonChain.init();
     }
 
     private static void initOreProcessings() {

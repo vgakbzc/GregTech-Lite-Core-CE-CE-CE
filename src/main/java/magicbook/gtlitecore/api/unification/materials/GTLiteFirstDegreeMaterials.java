@@ -1456,6 +1456,81 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Yttrium, 1, Vanadium, 1, Oxygen, 1, Lutetium, 1, Thulium, 1)
                 .build()
                 .setFormula("Lu/Tm:YVO", false);
+
+        //  11168 Pr-Ho-Y Nitrates Solution
+        PrHoYNitratesSolution = new Material.Builder(getId(), gregtechId("pr_ho_y_nitrates_solution"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(Praseodymium.getMaterialRGB() + Holmium.getMaterialRGB() + Yttrium.getMaterialRGB())
+                .components(Praseodymium, 2, Holmium, 2, Yttrium, 6, Nitrogen, 30, Oxygen, 105, Hydrogen, 30)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(Pr(NO3)3)2(Ho(NO3)3)2(Y(NO3)3)6(H2O)15", true);
+
+        //  11169 Lithium Fluoride
+        LithiumFluoride = new Material.Builder(getId(), gregtechId("lithium_fluoride"))
+                .dust()
+                .color(Lithium.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Lithium, 1, Fluorine, 1)
+                .build();
+
+        //  11170 Hexafluorosilicic Acid
+        HexafluorosilicicAcid = new Material.Builder(getId(), gregtechId("hexafluorosilicic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(Silicon.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .components(Hydrogen, 2, Silicon, 1, Fluorine, 6)
+                .build();
+
+        //  11171 Ammonium Fluoride
+        AmmoniumFluoride = new Material.Builder(getId(), gregtechId("ammonium_fluoride"))
+                .liquid()
+                .color(Ammonia.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .components(Nitrogen, 1, Hydrogen, 4, Fluorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11172 Ammonium Difluoride
+        AmmoniumDifluoride = new Material.Builder(getId(), gregtechId("ammonium_difluoride"))
+                .dust()
+                .color(AmmoniumFluoride.getMaterialRGB())
+                .iconSet(FINE)
+                .components(Nitrogen, 1, Hydrogen, 5, Fluorine, 2)
+                .build()
+                .setFormula("NH4HF2", true);
+
+        //  11173 Beryllium Difluoride
+        BerylliumDifluoride = new Material.Builder(getId(), gregtechId("beryllium_difluoride"))
+                .dust()
+                .color(Beryllium.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Beryllium, 1, Fluorine, 2)
+                .build();
+
+        //  11174 Pr:Ho/YLF
+        PrHoYLF = new Material.Builder(getId(), gregtechId("pr_ho_ylf"))
+                .gem()
+                .color(Praseodymium.getMaterialRGB() + Holmium.getMaterialRGB() + Yttrium.getMaterialRGB() + Lithium.getMaterialRGB())
+                .iconSet(RUBY)
+                .components(Praseodymium, 1, Holmium, 1, Lithium, 1, Yttrium, 1, Fluorine, 4)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_LENS, CRYSTALLIZABLE)
+                .build()
+                .setFormula("Pr/Ho:YLF", false);
+
+        //  11175 Sodium Acetate
+        SodiumAcetate = new Material.Builder(getId(), gregtechId("sodium_acetate"))
+                .liquid()
+                .color(0xC5D624)
+                .components(SodiumHydroxide, 1, Ethenone, 1)
+                .build()
+                .setFormula("C2H3NaO2", true);
+
+        //  11176 Sodium Oxide
+        SodiumOxide = new Material.Builder(getId(), gregtechId("sodium_oxide"))
+                .dust()
+                .color(0x2C96FC)
+                .iconSet(BRIGHT)
+                .components(Sodium, 2, Oxygen, 1)
+                .build();
     }
 
     private static int getId() {
