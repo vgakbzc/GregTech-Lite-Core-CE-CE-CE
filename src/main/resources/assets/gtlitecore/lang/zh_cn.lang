@@ -776,6 +776,10 @@ gregtech.material.pikyonium_64_b=皮卡优合金-64B
 gregtech.material.cinobite=西诺柏
 gregtech.material.titan_steel=泰坦精钢
 gregtech.material.quantum_alloy=量子合金
+gregtech.material.prasiolite=堇云石
+gregtech.material.bismuth_tellurite=碲化铋
+gregtech.material.magneto_resonatic=共振紫晶
+gregtech.material.hdcs=高强度复合钢
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

@@ -201,6 +201,10 @@ public class GTLiteMaterials {
     public static Material Cinobite;
     public static Material TitanSteel;
     public static Material QuantumAlloy;
+    public static Material Prasiolite;
+    public static Material BismuthTellurite;
+    public static Material MagnetoResonatic;
+    public static Material Hdcs;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

@@ -60,6 +60,7 @@ public class RecipeManager {
         KaptonChain.init();
         KevlarChain.init();
         //  TODO MagneticsChain.init();
+        MagnetoResonaticChain.init();
         MethylamineChain.init();
         NanotubesChain.init();
         NdYAGChain.init();
