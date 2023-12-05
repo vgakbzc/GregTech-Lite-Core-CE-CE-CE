@@ -154,6 +154,21 @@ public class GTLiteMaterials {
     public static Material CaesiumChlorostannate;
     public static Material ThalliumSulfate;
     public static Material TungstenTrioxide;
+    public static Material GSTGlass;
+    public static Material ZBLANGlass;
+    public static Material ErbiumDopedZBLANGlass;
+    public static Material PraseodymiumDopedZBLANGlass;
+    public static Material SiliconTetrachloride;
+    public static Material HeliumNeon;
+    public static Material NdYAG;
+    public static Material HRAMagnesium;
+    public static Material CadmiumBromide;
+    public static Material MagnesiumBromide;
+    public static Material Dimethylcadmium;
+    public static Material CadmiumSulfide;
+    public static Material AluminiumSelenide;
+    public static Material HydrogenSelenide;
+    public static Material CadmiumSelenide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -177,6 +192,7 @@ public class GTLiteMaterials {
     public static Material Pikyonium64B;
     public static Material Cinobite;
     public static Material TitanSteel;
+    public static Material QuantumAlloy;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -271,6 +287,10 @@ public class GTLiteMaterials {
     public static Material Fluorobenzene;
     public static Material OctafluoroPentanol;
     public static Material Turpentine;
+    public static Material Tetrahydrofuran;
+    public static Material EthyleneDibromide;
+    public static Material GrignardReagent;
+    public static Material DiethylSuflide;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

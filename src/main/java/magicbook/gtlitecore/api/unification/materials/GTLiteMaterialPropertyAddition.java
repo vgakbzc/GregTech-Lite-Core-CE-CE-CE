@@ -102,6 +102,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);
+        Germanium.addFlags(GENERATE_FOIL);
 
         //  Frame
         Polybenzimidazole.addFlags(GENERATE_FRAME);

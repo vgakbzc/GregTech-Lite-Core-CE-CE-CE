@@ -64,7 +64,7 @@ public class RecipeManager {
         OilChain.init();
         PEDOTChain.init();
         PhosphorusChain.init();
-        //  TODO PhotoresistivesChain.init();
+        PhotoresistivesChain.init();
         PMMAChain.init();
         RocketFuelChain.init();
         RubberChain.init();

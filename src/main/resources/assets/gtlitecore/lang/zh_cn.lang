@@ -724,6 +724,21 @@ gregtech.material.rubidium_chlorostannate=六氯锡酸铷
 gregtech.material.caesium_chlorostannate=六氯锡酸铯
 gregtech.material.thallium_sulfate=硫酸铊
 gregtech.material.tungsten_trioxide=三氧化钨
+gregtech.material.gst_glass=GST玻璃
+gregtech.material.zblan_glass=ZBLAN玻璃
+gregtech.material.erbium_doped_zblan_glass=铒掺杂的ZBLAN玻璃
+gregtech.material.praseodymium_doped_zblan_glass=镨掺杂的ZBLAN玻璃
+gregtech.material.silicon_tetrachloride=四氯化硅
+gregtech.material.helium_neon=氦-氖混合气
+gregtech.material.nd_yag=钕掺杂的钇铝榴石
+gregtech.material.hra_magnesium=高反应活化镁
+gregtech.material.cadmium_bromide=二溴化镉
+gregtech.material.magnesium_bromide=二溴化镁
+gregtech.material.dimethylcadmium=二甲基镉
+gregtech.material.cadmium_sulfide=硫化镉
+gregtech.material.aluminium_selenide=硒化铝
+gregtech.material.hydrogen_selenide=硒化氢
+gregtech.material.cadmium_selenide=硒化镉
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -747,6 +762,7 @@ gregtech.material.eglin_steel=埃格林钢
 gregtech.material.pikyonium_64_b=皮卡优合金-64B
 gregtech.material.cinobite=西诺柏
 gregtech.material.titan_steel=泰坦精钢
+gregtech.material.quantum_alloy=量子合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -841,6 +857,10 @@ gregtech.material.phosphonitrilic_chloride_trimer=六氯环三磷腈
 gregtech.material.fluorobenzene=氟苯
 gregtech.material.octafluoro_pentanol=八氟戊醇
 gregtech.material.turpentine=松油
+gregtech.material.tetrahydrofuran=四氢呋喃
+gregtech.material.ethylene_dibromide=1,2-二溴乙烷
+gregtech.material.grignard_reagent=格式试剂
+gregtech.material.diethyl_sulfide=二乙硫醚
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -973,6 +993,7 @@ recipemap.crystallization_recipes.name=结晶
 recipemap.cvd_unit_recipes.name=化学气相沉积
 recipemap.plasma_cvd_unit_recipes.name=等离子体增强化学气相沉积
 recipemap.laser_cvd_unit_recipes.name=激光诱导化学气相沉积
+recipemap.ion_implantator_recipes.name=离子注入
 recipemap.burner_reactor_recipes.name=燃烧反应
 recipemap.cryogenic_reactor_recipes.name=低温反应
 recipemap.hyper_reactor_mk1_recipes.name=超能聚变 Mk I
