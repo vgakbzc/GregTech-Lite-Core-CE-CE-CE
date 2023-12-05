@@ -766,6 +766,13 @@ gregtech.material.lu_tm_y_chlorides_solution=镥-铥-钇氯化物溶液
 gregtech.material.lu_tm_doped_yttrium_vanadate_deposition=镥铥掺杂的钒酸钇沉淀
 gregtech.material.ammonium_carbonate=碳酸铵
 gregtech.material.lu_tm_yvo=镥铥掺杂的钒酸钇
+gregtech.material.pr_ho_y_nitrates_solution=硝酸镨-钬-钇溶液
+gregtech.material.lithium_fluoride=氟化锂
+gregtech.material.hexafluorosilicic_acid=六氟硅酸
+gregtech.material.ammonium_fluoride=氟化铵
+gregtech.material.ammonium_difluoride=二氟化铵
+gregtech.material.beryllium_difluoride=二氟化铍
+gregtech.material.pr_ho_ylf=镨钬掺杂的氟化锂钇
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

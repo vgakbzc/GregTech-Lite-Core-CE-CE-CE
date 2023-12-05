@@ -45,7 +45,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0xC880FF)
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
                 .element(GTLiteElements.Vb)
                 .blast(4852, BlastProperty.GasTier.HIGH)
                 .build();

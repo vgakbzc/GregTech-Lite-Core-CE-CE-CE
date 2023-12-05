@@ -191,6 +191,13 @@ public class GTLiteMaterials {
     public static Material LuTmDopedYttriumVanadateDeposition;
     public static Material AmmoniumCarbonate;
     public static Material LuTmYVO;
+    public static Material PrHoYNitratesSolution;
+    public static Material LithiumFluoride;
+    public static Material HexafluorosilicicAcid;
+    public static Material AmmoniumFluoride;
+    public static Material AmmoniumDifluoride;
+    public static Material BerylliumDifluoride;
+    public static Material PrHoYLF;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

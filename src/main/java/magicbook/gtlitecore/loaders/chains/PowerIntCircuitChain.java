@@ -101,7 +101,7 @@ public class PowerIntCircuitChain {
                 .input(dust, ThuliumOxide)
                 .input(dust, YttriumOxide, 3)
                 .fluidInputs(HydrochloricAcid.getFluid(30000))
-                .fluidOutputs(LuTmYChloridesSolution.getFluid(1000))
+                .fluidOutputs(LuTmYChloridesSolution.getFluid(30000))
                 .EUt(VA[EV])
                 .duration(200)
                 .buildAndRegister();
@@ -170,6 +170,109 @@ public class PowerIntCircuitChain {
 
     private static void FemtoPIC() {
 
-        //  TODO Pr/Ho:YLF
+        //  LiH + HF -> LiF + 2H
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, LithiumHydride, 2)
+                .fluidInputs(HydrofluoricAcid.getFluid(1000))
+                .output(dust, LithiumFluoride, 2)
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[MV])
+                .duration(120)
+                .buildAndRegister();
+
+        //  SiF4 + 2HF -> H2SiF6
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(SiliconTetrachloride.getFluid(1000))
+                .fluidInputs(HydrofluoricAcid.getFluid(2000))
+                .fluidOutputs(HexafluorosilicicAcid.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  H2SiF6 + 6NH3 + 2H2O -> SiO2 + 6NH4F
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(HexafluorosilicicAcid.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(6000))
+                .fluidInputs(Water.getFluid(2000))
+                .circuitMeta(9)
+                .output(dust, SiliconDioxide, 3)
+                .fluidOutputs(AmmoniumFluoride.getFluid(6000))
+                .EUt(VA[HV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  2NH4F -> NH4HF2 + NH3
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(AmmoniumFluoride.getFluid(2000))
+                .output(dust, AmmoniumDifluoride, 8)
+                .fluidOutputs(Ammonia.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(340)
+                .buildAndRegister();
+
+        //  Pr2O3 + Ho2O3 + 3Y2O3 -> (Pr(NO3)3)2(Ho(NO3)3)2(Y(NO3)3)6(H2O)15
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, PraseodymiumOxide, 5)
+                .input(dust, HolmiumOxide, 5)
+                .input(dust, YttriumOxide, 15)
+                .fluidInputs(NitricAcid.getFluid(30000))
+                .fluidOutputs(PrHoYNitratesSolution.getFluid(30000))
+                .EUt(VA[EV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Be + LiF + 2NH4HF2 + 2(Pr(NO3)3)2(Ho(NO3)3)2(Y(NO3)3)6(H2O)15 + CO -> Pr/Ho:YLF + BeF2 + 2NH4NO3 + 2HF + CO2
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Beryllium)
+                .input(dust, LithiumFluoride, 2)
+                .input(dust, AmmoniumDifluoride, 16)
+                .notConsumable(EthylenediaminetetraaceticAcid.getFluid(1))
+                .fluidInputs(PrHoYNitratesSolution.getFluid(2000))
+                .fluidInputs(CarbonMonoxide.getFluid(1000))
+                .output(dust, PrHoYLF, 2)
+                .output(dust, BerylliumDifluoride, 3)
+                .fluidOutputs(AmmoniumNitrate.getFluid(2000))
+                .fluidOutputs(HydrofluoricAcid.getFluid(2000))
+                .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .EUt(VA[IV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Femto PIC
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(PICO_PIC_WAFER)
+                .notConsumable(lens, PrHoYLF)
+                .output(FEMTO_PIC_WAFER)
+                .EUt(VA[UEV])
+                .duration(60)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(FEMTO_PIC_WAFER)
+                .fluidInputs(Water.getFluid(1000))
+                .output(FEMTO_PIC_CHIP, 2)
+                .EUt(VA[UHV])
+                .duration(1800)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(FEMTO_PIC_WAFER)
+                .fluidInputs(DistilledWater.getFluid(750))
+                .output(FEMTO_PIC_CHIP, 2)
+                .EUt(VA[UHV])
+                .duration(1350)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(FEMTO_PIC_WAFER)
+                .fluidInputs(Lubricant.getFluid(250))
+                .output(FEMTO_PIC_CHIP, 2)
+                .EUt(VA[UHV])
+                .duration(900)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 }
