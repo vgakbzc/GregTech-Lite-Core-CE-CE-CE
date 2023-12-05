@@ -262,17 +262,13 @@ public class MachineRecipeLoader {
                 'W', new UnificationEntry(plate, Adamantium));
 
         //  Unmanned Drone Airport
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[HV])
-                .input(plate, StainlessSteel, 4)
-                .input(circuit, MarkerMaterials.Tier.HV, 2)
-                .input(ELECTRIC_MOTOR_HV, 2)
-                .input(cableGtSingle, Gold, 4)
-                .fluidInputs(BlackSteel.getFluid(L * 4))
-                .output(UNMANNED_DRONE_AIRPORT)
-                .EUt(VA[HV])
-                .duration(600)
-                .buildAndRegister();
+        ModHandler.addShapedRecipe(true, "unmanned_drone_airport", UNMANNED_DRONE_AIRPORT.getStackForm(),
+                "PDP", "CHC", "WWW",
+                'H', HULL[HV].getStackForm(),
+                'D', MINING_DRONE_HV.getStackForm(),
+                'C', CONVEYOR_MODULE_HV.getStackForm(),
+                'W', new UnificationEntry(cableGtSingle, Gold),
+                'P', new UnificationEntry(plate, StainlessSteel));
 
         //   TODO id25-29
 
@@ -298,7 +294,27 @@ public class MachineRecipeLoader {
                         .EUt(VA[UHV]))
                 .buildAndRegister();
 
-        //  TODO Fusion Reactor Mk V
+        //  Fusion Reactor Mk V
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
+                .input(circuit, MarkerMaterials.Tier.UIV, 4)
+                .input(UNSTABLE_STAR)
+                .input(plateDouble, Livermorium)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(PICO_PIC_CHIP, 64)
+                .input(PICO_PIC_CHIP, 64)
+                .input(wireGtSingle, QuantumAlloy, 32)
+                .fluidInputs(SolderingAlloy.getFluid(4608))
+                .fluidInputs(Americium.getFluid(4608))
+                .fluidInputs(Kevlar.getFluid(L * 4))
+                .output(ADVANCED_FUSION_REACTOR[1])
+                .EUt(VA[UHV])
+                .duration(1000)
+                .stationResearch(b -> b
+                        .researchStack(ADVANCED_FUSION_REACTOR[0].getStackForm())
+                        .CWUt(384)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
 
         //  Precise Assembler
         ASSEMBLY_LINE_RECIPES.recipeBuilder()

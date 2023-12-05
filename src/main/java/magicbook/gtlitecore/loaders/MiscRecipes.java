@@ -14,6 +14,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.UNSTABLE_STAR;
 
 public class MiscRecipes {
 
@@ -110,8 +111,17 @@ public class MiscRecipes {
                 .input(QUANTUM_STAR)
                 .fluidInputs(Orichalcum.getFluid(288))
                 .output(GRAVI_STAR)
-                .EUt(7680)
+                .EUt(VA[IV])
                 .duration(480)
+                .buildAndRegister();
+
+        //  Unstable Star
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(GRAVI_STAR)
+                .fluidInputs(Rhugnor.getFluid(288))
+                .output(UNSTABLE_STAR)
+                .EUt(VA[LuV])
+                .duration(240)
                 .buildAndRegister();
 
         //  c-BN sawblade

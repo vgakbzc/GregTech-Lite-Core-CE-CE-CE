@@ -566,6 +566,11 @@ gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=最大并行数
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv=最大并行数：§e512§7
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev=最大并行数：§e1024§7
 
+gtlitecore.machine.mega_alloy_blast_smelter.name=大型合金冶炼厂
+gtlitecore.machine.mega_alloy_blast_smelter.tooltip.1=根据线圈等级获得并行与配方时间减免
+gtlitecore.machine.mega_alloy_blast_smelter.tooltip.2=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
+gtlitecore.machine.mega_alloy_blast_smelter.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
+
 gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
 gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
@@ -954,6 +959,9 @@ metaitem.component.grinder.boron_nitride.name=氮化硼磨头
 
 metaitem.cnt.graphene_aligned.name=石墨烯排列碳纳米管
 metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
+
+metaitem.unstable_star.name=易变之星
+metaitem.unstable_star.tooltip=极不稳定下界之星
 
 metaitem.magnetron.name=磁控管
 
