@@ -79,6 +79,7 @@ public class RecipeManager {
         NiobiumTantalumProcessing.init();
         PlatinumGroupProcessing.init();
         RareEarthProcessing.init();
+        RubidiumProcessing.init();
         TaraniumProcessing.init();
 
         IsaMillOreProcessing.init();

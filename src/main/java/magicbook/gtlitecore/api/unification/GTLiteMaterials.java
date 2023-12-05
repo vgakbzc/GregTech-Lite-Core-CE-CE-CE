@@ -148,6 +148,10 @@ public class GTLiteMaterials {
     public static Material TantalumPentoxide;
     public static Material CalciumDifluoride;
     public static Material ManganeseDifluoride;
+    public static Material HeavyAlkaliChlorideSolution;
+    public static Material StannicChloride;
+    public static Material RubidiumChlorostannate;
+    public static Material CaesiumChlorostannate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

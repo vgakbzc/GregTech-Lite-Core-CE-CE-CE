@@ -1097,6 +1097,38 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(ROUGH)
                 .components(Manganese, 1, Fluorine, 2)
                 .build();
+
+        //  11127 Heavy Alkali Chloride Solution
+        HeavyAlkaliChlorideSolution = new Material.Builder(getId(), gregtechId("heavy_alkali_chloride_solution"))
+                .liquid()
+                .color(0x8F5353)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Rubidium, 1, Caesium, 2, Chlorine, 6, Water, 2)
+                .build()
+                .setFormula("RbCl(CsCl)2Cl3(H2O)2", true);
+
+        //  11128 Stannic Chloride
+        StannicChloride = new Material.Builder(getId(), gregtechId("stannic_chloride"))
+                .liquid()
+                .color(0x33BBF5)
+                .components(Tin, 1, Chlorine, 4)
+                .build();
+
+        //  11129 Rubidium Chlorostannate
+        RubidiumChlorostannate = new Material.Builder(getId(), gregtechId("rubidium_chlorostannate"))
+                .dust()
+                .color(0xBD888A)
+                .iconSet(METALLIC)
+                .components(Rubidium, 2, Tin, 1, Chlorine, 6)
+                .build();
+
+        //  11130 Caesium Chlorostannate
+        CaesiumChlorostannate = new Material.Builder(getId(), gregtechId("caesium_chlorostannate"))
+                .dust()
+                .color(0xBDAD88)
+                .iconSet(SHINY)
+                .components(Caesium, 2, Tin, 1, Chlorine, 6)
+                .build();
     }
 
     private static int getId() {

@@ -64,6 +64,9 @@ public class GTLiteMaterialPropertyAddition {
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
         Zirconium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
+        //  Rubidium Chain
+        Rubidium.setProperty(PropertyKey.DUST, new DustProperty());
+
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 

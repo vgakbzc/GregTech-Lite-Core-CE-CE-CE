@@ -718,6 +718,10 @@ gregtech.material.niobium_pentoxide=五氧化二铌
 gregtech.material.tantalum_pentoxide=五氧化二钽
 gregtech.material.calcium_difluoride=二氟化钙
 gregtech.material.manganese_difluoride=二氟化锰
+gregtech.material.heavy_alkali_chloride_solution=重碱氯化物溶液
+gregtech.material.stannic_chloride=四氯化锡
+gregtech.material.rubidium_chlorostannate=六氯锡酸铷
+gregtech.material.caesium_chlorostannate=六氯锡酸铯
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
