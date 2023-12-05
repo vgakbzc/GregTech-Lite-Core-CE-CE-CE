@@ -76,6 +76,7 @@ public class RecipeManager {
         SeleniumTelluriumChain.init();
         TurpentineChain.init();
         ZirconiumChain.init();
+        ZylonChain.init();
     }
 
     private static void initOreProcessings() {

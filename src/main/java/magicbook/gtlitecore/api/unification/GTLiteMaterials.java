@@ -198,6 +198,8 @@ public class GTLiteMaterials {
     public static Material AmmoniumDifluoride;
     public static Material BerylliumDifluoride;
     public static Material PrHoYLF;
+    public static Material SodiumAcetate;
+    public static Material SodiumOxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -332,6 +334,11 @@ public class GTLiteMaterials {
     public static Material Hydroquinone;
     public static Material Fluorotoluene;
     public static Material Resorcinol;
+    public static Material PreZylon;
+    public static Material Terephthalaldehyde;
+    public static Material Dinitrodipropanyloxybenzene;
+    public static Material Isochloropropane;
+    public static Material Dibromomethylbenzene;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

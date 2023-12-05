@@ -11,6 +11,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class Crucibles {
     public static void init() {
@@ -135,16 +136,15 @@ public class Crucibles {
                     .buildAndRegister();
 
             //  Boron Nitride Crucibles (5328 K, UV Stage)
-            //  TODO Boron Nitride Chain
-            //VACUUM_CHAMBER_RECIPES.recipeBuilder()
-            //        .input(plate, HexagonalBoronNitride, 5)
-            //        .fluidInputs(RhodiumPlatedPalladium.getFluid(L * 2))
-            //        .circuitMeta(5)
-            //        .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE)))
-            //        .EUt(VA[UV])
-            //        .duration(1200)
-            //        .cleanroom(CleanroomType.CLEANROOM)
-            //        .buildAndRegister();
+            VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                    .input(plate, HexagonalBoronNitride, 5)
+                    .fluidInputs(RhodiumPlatedPalladium.getFluid(L * 2))
+                    .circuitMeta(5)
+                    .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE))
+                    .EUt(VA[UV])
+                    .duration(1200)
+                    .cleanroom(CleanroomType.CLEANROOM)
+                    .buildAndRegister();
         } else {
 
             //  Bronze Crucible (1696 K)
@@ -203,9 +203,9 @@ public class Crucibles {
                     'P', new UnificationEntry(plate, Graphene));
 
             //  Boron Nitride Crucibles (5328 K)
-            //ModHandler.addShapedRecipe(true, "boron_nitride_crucibles", GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE),
-            //        "P P", "PhP", "PPP",
-            //        'P', new UnificationEntry(plate, HexagonalBoronNitride, 5));
+            ModHandler.addShapedRecipe(true, "boron_nitride_crucibles", GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE),
+                    "P P", "PhP", "PPP",
+                    'P', new UnificationEntry(plate, HexagonalBoronNitride));
         }
     }
 }

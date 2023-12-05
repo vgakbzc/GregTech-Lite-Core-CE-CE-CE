@@ -1515,6 +1515,22 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION, GENERATE_LENS, CRYSTALLIZABLE)
                 .build()
                 .setFormula("Pr/Ho:YLF", false);
+
+        //  11175 Sodium Acetate
+        SodiumAcetate = new Material.Builder(getId(), gregtechId("sodium_acetate"))
+                .liquid()
+                .color(0xC5D624)
+                .components(SodiumHydroxide, 1, Ethenone, 1)
+                .build()
+                .setFormula("C2H3NaO2", true);
+
+        //  11176 Sodium Oxide
+        SodiumOxide = new Material.Builder(getId(), gregtechId("sodium_oxide"))
+                .dust()
+                .color(0x2C96FC)
+                .iconSet(BRIGHT)
+                .components(Sodium, 2, Oxygen, 1)
+                .build();
     }
 
     private static int getId() {
