@@ -1281,6 +1281,72 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(METALLIC)
                 .components(Cadmium, 1, Selenium, 1)
                 .build();
+
+        //  11148 Potassium Manganate
+        PotassiumManganate = new Material.Builder(getId(), gregtechId("potassium_manganate"))
+                .dust()
+                .color(0x873883)
+                .iconSet(METALLIC)
+                .components(Potassium, 2, Manganese, 1, Oxygen, 4)
+                .build();
+
+        //  11149 Potassium Manganate
+        PotassiumPermanganate = new Material.Builder(getId(), gregtechId("potassium_permanganate"))
+                .dust()
+                .color(0x871D82)
+                .iconSet(DULL)
+                .components(Potassium, 1, Manganese, 1, Oxygen, 4)
+                .build();
+
+        //  11150 Manganese Sulfate
+        ManganeseSulfate = new Material.Builder(getId(), gregtechId("manganese_sulfate"))
+                .dust()
+                .color(0xF0F895)
+                .iconSet(ROUGH)
+                .components(Manganese, 1, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        //  11151 Potassium Sulfate
+        PotassiumSulfate = new Material.Builder(getId(), gregtechId("potassium_sulfate"))
+                .dust()
+                .color(0xF4FBB0)
+                .iconSet(DULL)
+                .components(Potassium, 2, Sulfur, 1, Oxygen, 4)
+                .build();
+
+        //  11152 Neodymium-Doped Yttrium Oxide
+        NeodymiumDopedYttriumOxide = new Material.Builder(getId(), gregtechId("neodymium_doped_yttrium_oxide"))
+                .dust()
+                .color(0x5AD55F)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Nd:Y?", false);
+
+        //  11153 Aluminium Nitrate
+        AluminiumNitrate = new Material.Builder(getId(), gregtechId("aluminium_nitrate"))
+                .dust()
+                .color(0x3AB3AA)
+                .iconSet(SHINY)
+                .components(Aluminium, 1, Nitrogen, 3, Oxygen, 9)
+                .build()
+                .setFormula("Al(NO3)3", true);
+
+        //  11154 Alumina Solution
+        AluminaSolution = new Material.Builder(getId(), gregtechId("alumina_solution"))
+                .liquid()
+                .color(0x6C4DC1)
+                .components(Alumina, 1, Carbon, 25, Hydrogen, 56, Chlorine, 2, Nitrogen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(Al2O3)(CH2Cl2)(C12H27N)2", true);
+
+        //  11155 Unprocessed Nd:YAG Solution
+        UnprocessedNdYAGSolution = new Material.Builder(getId(), gregtechId("unprocessed_nd_yag_solution"))
+                .liquid()
+                .color(0x6f20af)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Nd:YAG?", false);
     }
 
     private static int getId() {

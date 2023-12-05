@@ -820,6 +820,37 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Ethylene, 2, Sulfur, 1)
                 .build()
                 .setFormula("(C2H5)2S", true);
+
+        //  13097 Ammonium Cyanate
+        AmmoniumCyanate = new Material.Builder(getId(), gregtechId("ammonium_cyanate"))
+                .liquid()
+                .color(0x3a5dcf)
+                .components(Hydrogen, 4, Nitrogen, 2, Carbon, 1, Oxygen, 1)
+                .build()
+                .setFormula("NH4CNO", true);
+
+        //  13098 Carbamide
+        Carbamide = new Material.Builder(getId(), gregtechId("carbamide"))
+                .dust()
+                .color(0x16EF57)
+                .iconSet(ROUGH)
+                .components(Carbon, 1, Hydrogen, 4, Nitrogen, 2, Oxygen, 1)
+                .build();
+
+        //  13099 Tributylamine
+        Tributylamine = new Material.Builder(getId(), gregtechId("tributylamine"))
+                .liquid()
+                .color(0x801a80)
+                .components(Carbon, 12, Hydrogen, 27, Nitrogen, 1)
+                .build()
+                .setFormula("(C4H9)3N", true);
+
+        //  13100 Dichloromethane
+        Dichloromethane = new Material.Builder(getId(), gregtechId("dichloromethane"))
+                .liquid()
+                .color(0xB87FC7)
+                .components(Carbon, 1, Hydrogen, 2, Chlorine, 2)
+                .build();
     }
 
     private static int getId() {

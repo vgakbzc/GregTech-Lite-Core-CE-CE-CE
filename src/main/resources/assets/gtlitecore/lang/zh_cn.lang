@@ -744,6 +744,14 @@ gregtech.material.cadmium_sulfide=硫化镉
 gregtech.material.aluminium_selenide=硒化铝
 gregtech.material.hydrogen_selenide=硒化氢
 gregtech.material.cadmium_selenide=硒化镉
+gregtech.material.potassium_manganate=锰酸钾
+gregtech.material.potassium_permanganate=高锰酸钾
+gregtech.material.manganese_sulfate=硫酸锰
+gregtech.material.potassium_sulfate=硫酸钾
+gregtech.material.neodymium_doped_yttrium_oxide=钕掺杂的氧化钇
+gregtech.material.aluminium_nitrate=硝酸铝
+gregtech.material.alumina_solution=三氧化二铝混合溶液
+gregtech.material.unprocessed_nd_yag_solution=未处理钕掺杂的钇铝榴石溶液
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -866,6 +874,10 @@ gregtech.material.tetrahydrofuran=四氢呋喃
 gregtech.material.ethylene_dibromide=1,2-二溴乙烷
 gregtech.material.grignard_reagent=格式试剂
 gregtech.material.diethyl_sulfide=二乙硫醚
+gregtech.material.ammonium_cyanate=氰酸铵
+gregtech.material.carbamide=碳酰胺
+gregtech.material.tributylamine=三丁胺
+gregtech.material.dichloromethane=二氯甲烷
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -951,6 +963,7 @@ gregtech.material.molybdenum_flue=钼烟气
 gregtech.material.trace_rhenium_flue=微量铼烟气
 gregtech.material.leached_turpentine=松油浸出物
 gregtech.material.steam_cracked_turpentine=蒸汽裂化的松油浸出物
+gregtech.material.chlorinated_solvents=有机氯溶液
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

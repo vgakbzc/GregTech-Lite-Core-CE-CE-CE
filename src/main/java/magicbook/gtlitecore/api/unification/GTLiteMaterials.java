@@ -169,6 +169,14 @@ public class GTLiteMaterials {
     public static Material AluminiumSelenide;
     public static Material HydrogenSelenide;
     public static Material CadmiumSelenide;
+    public static Material PotassiumManganate;
+    public static Material PotassiumPermanganate;
+    public static Material ManganeseSulfate;
+    public static Material PotassiumSulfate;
+    public static Material NeodymiumDopedYttriumOxide;
+    public static Material AluminiumNitrate;
+    public static Material AluminaSolution;
+    public static Material UnprocessedNdYAGSolution;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -291,6 +299,10 @@ public class GTLiteMaterials {
     public static Material EthyleneDibromide;
     public static Material GrignardReagent;
     public static Material DiethylSuflide;
+    public static Material AmmoniumCyanate;
+    public static Material Carbamide;
+    public static Material Tributylamine;
+    public static Material Dichloromethane;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
@@ -376,6 +388,7 @@ public class GTLiteMaterials {
     public static Material TraceRheniumFlue;
     public static Material LeachedTurpentine;
     public static Material SteamCrackedTurpentine;
+    public static Material ChlorinatedSolvents;
 
     public static void init() {
         GTLiteElementMaterials.register();

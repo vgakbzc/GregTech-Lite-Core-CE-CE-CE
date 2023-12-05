@@ -44,6 +44,7 @@ public class RecipeManager {
         BPAPolycarbonateChain.init();
         BZMediumChain.init();
         CBDOPolycarbonateChain.init();
+        ChlorineChain.init();
         CyanogenChain.init();
         DimethylformamideChain.init();
         DragonChain.init();
@@ -61,6 +62,7 @@ public class RecipeManager {
         //  TODO MagneticsChain.init();
         MethylamineChain.init();
         NanotubesChain.init();
+        NdYAGChain.init();
         OilChain.init();
         PEDOTChain.init();
         PhosphorusChain.init();
