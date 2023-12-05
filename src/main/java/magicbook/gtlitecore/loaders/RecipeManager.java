@@ -69,6 +69,7 @@ public class RecipeManager {
         PhosphorusChain.init();
         PhotoresistivesChain.init();
         PMMAChain.init();
+        PowerIntCircuitChain.init();
         RocketFuelChain.init();
         RubberChain.init();
         SeleniumTelluriumChain.init();
@@ -87,6 +88,7 @@ public class RecipeManager {
         TaraniumProcessing.init();
         ThalliumProcessing.init();
         TungstenProcessing.init();
+        VanadiumProcessing.init();
     }
   
     private static void initCircuits() {

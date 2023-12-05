@@ -179,6 +179,18 @@ public class GTLiteMaterials {
     public static Material AluminiumNitrate;
     public static Material AluminaSolution;
     public static Material UnprocessedNdYAGSolution;
+    public static Material NiobiumPentachloride;
+    public static Material LithiumNiobate;
+    public static Material RoastedVanadiumMagnetite;
+    public static Material SodiumVanadate;
+    public static Material AmmoniumVanadate;
+    public static Material BismuthNitrateSolution;
+    public static Material BismuthVanadateSolution;
+    public static Material BismuthVanadate;
+    public static Material LuTmYChloridesSolution;
+    public static Material LuTmDopedYttriumVanadateDeposition;
+    public static Material AmmoniumCarbonate;
+    public static Material LuTmYVO;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

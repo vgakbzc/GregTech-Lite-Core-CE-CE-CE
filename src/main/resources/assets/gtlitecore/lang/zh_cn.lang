@@ -754,6 +754,18 @@ gregtech.material.neodymium_doped_yttrium_oxide=钕掺杂的氧化钇
 gregtech.material.aluminium_nitrate=硝酸铝
 gregtech.material.alumina_solution=三氧化二铝混合溶液
 gregtech.material.unprocessed_nd_yag_solution=未处理钕掺杂的钇铝榴石溶液
+gregtech.material.niobium_pentachloride=五氯化铌
+gregtech.material.lithium_niobate=铌酸锂
+gregtech.material.roasted_vanadium_magnetite=焙烧钒磁铁矿
+gregtech.material.sodium_vanadate=钒酸钠
+gregtech.material.ammonium_vanadate=钒酸铵
+gregtech.material.bismuth_nitrate_solution=硝酸铋溶液
+gregtech.material.bismuth_vanadate_solution=钒酸铋溶液
+gregtech.material.bismuth_vanadate=钒酸铋
+gregtech.material.lu_tm_y_chlorides_solution=镥-铥-钇氯化物溶液
+gregtech.material.lu_tm_doped_yttrium_vanadate_deposition=镥铥掺杂的钒酸钇沉淀
+gregtech.material.ammonium_carbonate=碳酸铵
+gregtech.material.lu_tm_yvo=镥铥掺杂的钒酸钇
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
