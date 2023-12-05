@@ -75,6 +75,7 @@ public class GTLiteMetaTileEntities {
 
     public static MetaTileEntityMegaChemicalReactor MEGA_CHEMICAL_REACTOR;
     public static MetaTileEntityMegaAlloyBlastSmelter MEGA_ALLOY_BLAST_SMELTER;
+    public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -171,7 +172,7 @@ public class GTLiteMetaTileEntities {
         //  43 STELLAR_FURNACE
         //  44 PLASMA_CONDENSER
         //  45 COSMIC_RAY_DETECTOR
-        //  46
+        //  46 COMET
         //  47 DANGOTE_DISTILLERY
         //  48
         //  49
@@ -180,7 +181,7 @@ public class GTLiteMetaTileEntities {
         //  52
         //  53
         //  54
-        //  55
+        TREE_GROWTH_FACTORY = registerMultiMetaTileEntity(55, new MetaTileEntityTreeGrowthFactory(gtliteId("tree_growth_factory")));
         //  56
         //  57
         //  58

@@ -449,6 +449,17 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  TODO Compressed Fusion Reactor Mk V
+
+        //  Tree Growth Factory
+        ModHandler.addShapedRecipe(true, "tree_growth_factory", TREE_GROWTH_FACTORY.getStackForm(),
+                "RSR", "PHP", "WCW",
+                'S', COVER_SCREEN,
+                'R', new UnificationEntry(spring, Steel),
+                'H', HULL[MV].getStackForm(),
+                'P', ELECTRIC_PUMP_MV,
+                'C', new UnificationEntry(toolHeadBuzzSaw, Aluminium),
+                'W', new UnificationEntry(cableGtSingle, Copper));
+
     }
 
     private static void MachineCasingRecipes() {
@@ -968,5 +979,20 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  TODO UEV-MAX Component Assembly Line Casings
+
+        //  Farm Casing
+        ModHandler.addShapedRecipe(true, "farm_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ASEPTIC_FARM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, TreatedWood),
+                'F', new UnificationEntry(frameGt, Aluminium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, TreatedWood, 6)
+                .input(frameGt, Aluminium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ASEPTIC_FARM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

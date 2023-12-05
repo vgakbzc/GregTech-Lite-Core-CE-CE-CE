@@ -13,6 +13,7 @@ tile.multiblock_casing.talonite_casing.name=低摩擦铬钴磷酸盐合金机器
 tile.multiblock_casing.naquadria_casing.name=抗辐射超能硅岩机器外壳
 tile.multiblock_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
 tile.multiblock_casing.iridium_casing.name=镀铱强化机器外壳
+tile.multiblock_casing.aseptic_farm_casing.name=富生农场机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -577,6 +578,10 @@ gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级
 gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
 
+gtlitecore.machine.tree_growth_factory.name=林海树场
+gtlitecore.machine.tree_growth_factory.tooltip.1=生态环保型机器
+gtlitecore.machine.tree_growth_factory.tooltip.2=当输入电压大于§6HV§7时，获得§e(2 * 电压等级^2 - 2 * 电压等级 + 5)§7次并行。
+
 #  Materials
 
 ##  Element Materials
@@ -1064,6 +1069,7 @@ recipemap.drone_airport_recipes.name=采矿无人机
 recipemap.precise_assembler_recipes.name=精密组装
 recipemap.component_assembler_recipes.name=部件组装机
 recipemap.component_assembly_line_recipes.name=部件装配线
+recipemap.tree_growth_recipes.name=树木催生
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

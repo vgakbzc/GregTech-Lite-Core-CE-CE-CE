@@ -80,6 +80,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES;
     @ZenProperty
     public static final RecipeMap<ComponentCasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> TREE_GROWTH_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -224,5 +226,12 @@ public class GTLiteRecipeMaps {
         //  Component Assembly Line RecipeMap
         COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>("component_assembly_line_recipes", 12, 1, 12, 0, new ComponentCasingTierRecipeBuilder(), false)
                 .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Tree Growth Factory RecipeMap
+        TREE_GROWTH_RECIPES = new RecipeMap<>("tree_growth_recipes", 2, 4, 2, 0, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSound(GTSoundEvents.CHAINSAW_TOOL);
     }
 }
