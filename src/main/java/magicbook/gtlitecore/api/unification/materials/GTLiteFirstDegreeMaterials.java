@@ -1129,6 +1129,15 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(SHINY)
                 .components(Caesium, 2, Tin, 1, Chlorine, 6)
                 .build();
+
+        //  11131 Thallium Sulfate
+        ThalliumSulfate = new Material.Builder(getId(), gregtechId("thallium_sulfate"))
+                .dust()
+                .color(0x9C222C)
+                .iconSet(METALLIC)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Thallium, 2, Sulfur, 1, Oxygen, 4)
+                .build();
     }
 
     private static int getId() {

@@ -152,6 +152,7 @@ public class GTLiteMaterials {
     public static Material StannicChloride;
     public static Material RubidiumChlorostannate;
     public static Material CaesiumChlorostannate;
+    public static Material ThalliumSulfate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
