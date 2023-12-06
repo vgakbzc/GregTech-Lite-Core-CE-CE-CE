@@ -7,6 +7,18 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/flotation_cell"
         }
+      },
+      "hyper_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hyper_casing"
+        }
+      },
+      "advanced_hyper_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_hyper_casing"
+        }
       }
     }
   }

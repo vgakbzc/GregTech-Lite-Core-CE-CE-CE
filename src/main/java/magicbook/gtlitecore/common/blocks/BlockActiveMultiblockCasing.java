@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.common.blocks;
 
-import gregtech.api.block.VariantBlock;
+import gregtech.api.block.VariantActiveBlock;
+import gregtech.api.items.toolitem.ToolClasses;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -10,20 +11,19 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasingType> {
-    public BlockUniqueCasing() {
+public class BlockActiveMultiblockCasing extends VariantActiveBlock<BlockActiveMultiblockCasing.ActiveCasingType> {
+    public BlockActiveMultiblockCasing() {
         super(Material.IRON);
-        this.setTranslationKey("unique_casing");
-        this.setHardness(5.0F);
-        this.setResistance(10.0F);
-        this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel("wrench", 2);
-        this.setDefaultState(this.getState(UniqueCasingType.FLOTATION_CELL));
+        setTranslationKey("active_multiblock_casing");
+        setHardness(5.0f);
+        setResistance(10.0f);
+        setSoundType(SoundType.METAL);
+        setHarvestLevel(ToolClasses.WRENCH, 2);
+        setDefaultState(this.getState(ActiveCasingType.HYPER_CORE_MK1));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,
@@ -31,21 +31,21 @@ public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasi
         return false;
     }
 
-    public enum UniqueCasingType implements IStringSerializable {
-        FLOTATION_CELL("flotation_cell"),
-        HYPER_CASING("hyper_casing"),
-        ADVANCED_HYPER_CASING("advanced_hyper_casing");
+    public enum ActiveCasingType implements IStringSerializable {
+        HYPER_CORE_MK1("hyper_core_mk1"),
+        HYPER_CORE_MK2("hyper_core_mk2"),
+        HYPER_CORE_MK3("hyper_core_mk3");
 
         private final String name;
 
-        UniqueCasingType(String name) {
+        ActiveCasingType(String name) {
             this.name = name;
         }
 
         @Nonnull
         @Override
         public String getName() {
-            return name;
+            return this.name;
         }
     }
 }
