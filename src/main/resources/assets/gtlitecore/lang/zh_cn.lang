@@ -20,6 +20,8 @@ tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外�
 tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
+tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
+tile.unique_casing.advanced_hyper_casing.name=黑矮星物质强化超能硅岩机器外壳
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -39,34 +41,38 @@ tile.precise_assembler_casing.mk1.name=精密电子单元机械方块 Mk I
 tile.precise_assembler_casing.mk2.name=精密电子单元机械方块 Mk II
 tile.precise_assembler_casing.mk3.name=精密电子单元机械方块 Mk III
 
-tile.component_assembly_line_casing.lv.name=部件装配线外壳（LV）
+tile.component_assembly_line_casing.lv.name=部件装配线外壳（§7LV§r）
 tile.component_assembly_line_casing.lv.tooltip=简易装配单元
-tile.component_assembly_line_casing.mv.name=部件装配线外壳（MV）
+tile.component_assembly_line_casing.mv.name=部件装配线外壳（§bMV§r）
 tile.component_assembly_line_casing.mv.tooltip=粗制装配单元
-tile.component_assembly_line_casing.hv.name=部件装配线外壳（HV）
+tile.component_assembly_line_casing.hv.name=部件装配线外壳（§6HV§r）
 tile.component_assembly_line_casing.hv.tooltip=优质装配单元
-tile.component_assembly_line_casing.ev.name=部件装配线外壳（EV）
+tile.component_assembly_line_casing.ev.name=部件装配线外壳（§5EV§r）
 tile.component_assembly_line_casing.ev.tooltip=进阶装配单元
-tile.component_assembly_line_casing.iv.name=部件装配线外壳（IV）
+tile.component_assembly_line_casing.iv.name=部件装配线外壳（§1IV§r）
 tile.component_assembly_line_casing.iv.tooltip=高级装配单元
-tile.component_assembly_line_casing.luv.name=部件装配线外壳（LuV）
+tile.component_assembly_line_casing.luv.name=部件装配线外壳（§dLuV§r）
 tile.component_assembly_line_casing.luv.tooltip=高精度装配单元
-tile.component_assembly_line_casing.zpm.name=部件装配线外壳（ZPM）
+tile.component_assembly_line_casing.zpm.name=部件装配线外壳（§cZPM§r）
 tile.component_assembly_line_casing.zpm.tooltip=超高精度装配单元
-tile.component_assembly_line_casing.uv.name=部件装配线外壳（UV）
+tile.component_assembly_line_casing.uv.name=部件装配线外壳（§3UV§r）
 tile.component_assembly_line_casing.uv.tooltip=极限精度装配单元
-tile.component_assembly_line_casing.uhv.name=部件装配线外壳（UHV）
+tile.component_assembly_line_casing.uhv.name=部件装配线外壳（§4UHV§r）
 tile.component_assembly_line_casing.uhv.tooltip=极高精度装配单元
-tile.component_assembly_line_casing.uev.name=部件装配线外壳（UEV）
+tile.component_assembly_line_casing.uev.name=部件装配线外壳（§aUEV§r）
 tile.component_assembly_line_casing.uev.tooltip=结构装配单元
-tile.component_assembly_line_casing.uiv.name=部件装配线外壳（UIV）
+tile.component_assembly_line_casing.uiv.name=部件装配线外壳（§2UIV§r）
 tile.component_assembly_line_casing.uiv.tooltip=大尺度结构装配单元
-tile.component_assembly_line_casing.uxv.name=部件装配线外壳（UXV）
+tile.component_assembly_line_casing.uxv.name=部件装配线外壳（§eUXV§r）
 tile.component_assembly_line_casing.uxv.tooltip=超结构装配单元
-tile.component_assembly_line_casing.opv.name=部件装配线外壳（OpV）
+tile.component_assembly_line_casing.opv.name=部件装配线外壳（§9OpV§r）
 tile.component_assembly_line_casing.opv.tooltip=宇宙装配单元
-tile.component_assembly_line_casing.max.name=部件装配线外壳（MAX）
+tile.component_assembly_line_casing.max.name=部件装配线外壳（§c§lMAX§r）
 tile.component_assembly_line_casing.max.tooltip=时空装配单元
+
+tile.active_multiblock_casing.hyper_core_mk1.name=超能核心 Mk I
+tile.active_multiblock_casing.hyper_core_mk2.name=超能核心 Mk II
+tile.active_multiblock_casing.hyper_core_mk3.name=超能核心 Mk III
 
 tile.wire_coil.adamantium.name=精金线圈方块
 tile.wire_coil.ichorium.name=灵宝线圈方块
@@ -472,6 +478,18 @@ gtlitecore.machine.cryogenic_reactor.name=低温反应室
 gtlitecore.machine.large_naquadah_reactor.name=大型硅岩反应堆
 gtlitecore.machine.large_naquadah_reactor.tooltip.1=取之不尽，用之不竭
 gtlitecore.machine.large_naquadah_reactor.tooltip.2=最高产生§4UHV§7级的能量
+
+gtlitecore.machine.hyper_reactor_mk1.name=超能反应堆 Mk I
+gtlitecore.machine.hyper_reactor_mk1.tooltip.1=磁约束超能聚变
+gtlitecore.machine.hyper_reactor_mk1.tooltip.2=最高产生§aUEV§7级的能量
+
+gtlitecore.machine.hyper_reactor_mk2.name=超能反应堆 Mk II
+gtlitecore.machine.hyper_reactor_mk2.tooltip.1=力场约束超能聚变
+gtlitecore.machine.hyper_reactor_mk2.tooltip.2=最高产生§2UIV§7级的能量
+
+gtlitecore.machine.hyper_reactor_mk3.name=超能反应堆 Mk III
+gtlitecore.machine.hyper_reactor_mk3.tooltip.1=自控制超能聚变
+gtlitecore.machine.hyper_reactor_mk3.tooltip.2=最高产生§eUXV§7级的能量
 
 gtlitecore.machine.isa_mill.name=艾萨研磨机
 gtlitecore.machine.isa_mill.tooltip=工业级卧式湿法碾磨机

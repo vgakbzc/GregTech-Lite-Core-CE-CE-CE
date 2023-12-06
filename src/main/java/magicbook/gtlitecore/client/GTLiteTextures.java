@@ -43,7 +43,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK3 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk3");
     public static GTLiteOverlayRenderer IRIDIUM_CASING = new GTLiteOverlayRenderer("casings/iridium_casing");
     public static GTLiteOverlayRenderer FARM_CASING = new GTLiteOverlayRenderer("casings/aseptic_farm_casing");
-
+    public static GTLiteOverlayRenderer HYPER_CASING = new GTLiteOverlayRenderer("casings/hyper_casing");
+    public static GTLiteOverlayRenderer ADVANCED_HYPER_CASING = new GTLiteOverlayRenderer("casings/advanced_hyper_casing");
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  Custom Renderer

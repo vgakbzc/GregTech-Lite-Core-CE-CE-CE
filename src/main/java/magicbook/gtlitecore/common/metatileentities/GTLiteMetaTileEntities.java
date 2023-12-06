@@ -22,6 +22,9 @@ import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkI;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkII;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkIII;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityLargeNaquadahReactor;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
@@ -58,7 +61,9 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityBurnerReactor BURNER_REACTOR;
     public static MetaTileEntityCryogenicReactor CRYOGENIC_REACTOR;
     public static MetaTileEntityLargeNaquadahReactor LARGE_NAQUADAH_REACTOR;
-
+    public static MetaTileEntityHyperReactorMkI HYPER_REACTOR_MK1;
+    public static MetaTileEntityHyperReactorMkII HYPER_REACTOR_MK2;
+    public static MetaTileEntityHyperReactorMkIII HYPER_REACTOR_MK3;
     public static MetaTileEntityIsaMill ISA_MILL;
     public static MetaTileEntityFlotationCellRegulator FLOTATION_CELL_REGULATOR;
     public static MetaTileEntityVacuumDryingFurnace VACUUM_DRYING_FURNACE;
@@ -143,9 +148,9 @@ public class GTLiteMetaTileEntities {
         BURNER_REACTOR = registerMultiMetaTileEntity(11, new MetaTileEntityBurnerReactor(gtliteId("burner_reactor")));
         CRYOGENIC_REACTOR = registerMultiMetaTileEntity(12, new MetaTileEntityCryogenicReactor(gtliteId("cryogenic_reactor")));
         LARGE_NAQUADAH_REACTOR = registerMultiMetaTileEntity(13, new MetaTileEntityLargeNaquadahReactor(gtliteId("large_naquadah_reactor")));
-        //  14 HYPER REACTOR Mk I
-        //  15 HYPER REACTOR Mk II
-        //  16 HYPER REACTOR Mk III
+        HYPER_REACTOR_MK1 = registerMultiMetaTileEntity(14, new MetaTileEntityHyperReactorMkI(gtliteId("hyper_reactor_mk1")));
+        HYPER_REACTOR_MK2 = registerMultiMetaTileEntity(15, new MetaTileEntityHyperReactorMkII(gtliteId("hyper_reactor_mk2")));
+        HYPER_REACTOR_MK3 = registerMultiMetaTileEntity(16, new MetaTileEntityHyperReactorMkIII(gtliteId("hyper_reactor_mk3")));
         ISA_MILL = registerMultiMetaTileEntity(17, new MetaTileEntityIsaMill(gtliteId("isa_mill")));
         FLOTATION_CELL_REGULATOR = registerMultiMetaTileEntity(18, new MetaTileEntityFlotationCellRegulator(gtliteId("flotation_cell_regulator")));
         VACUUM_DRYING_FURNACE = registerMultiMetaTileEntity(19, new MetaTileEntityVacuumDryingFurnace(gtliteId("vacuum_drying_furnace")));
