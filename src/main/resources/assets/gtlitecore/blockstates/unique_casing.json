@@ -19,6 +19,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/advanced_hyper_casing"
         }
+      },
+      "stellar_containment_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/stellar_containment_casing"
+        }
       }
     }
   }

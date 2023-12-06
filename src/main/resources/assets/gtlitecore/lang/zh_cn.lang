@@ -14,6 +14,7 @@ tile.multiblock_casing.naquadria_casing.name=抗辐射超能硅岩机器外壳
 tile.multiblock_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
 tile.multiblock_casing.iridium_casing.name=镀铱强化机器外壳
 tile.multiblock_casing.aseptic_farm_casing.name=富生农场机器外壳
+tile.multiblock_casing.tritanium_casing.name=极限强度三钛合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -22,6 +23,7 @@ tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
 tile.unique_casing.advanced_hyper_casing.name=黑矮星物质强化超能硅岩机器外壳
+tile.unique_casing.stellar_containment_casing.name=恒星热力容器
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -33,6 +35,7 @@ tile.fusion_casing.vacuum.name=聚变反应堆真空仓
 tile.fusion_casing.advanced_vacuum.name=高级聚变反应堆真空仓
 tile.fusion_casing.fusion_coil_mk2.name=高级聚变线圈方块
 tile.fusion_casing.fusion_coil_mk3.name=终极聚变线圈方块
+tile.fusion_casing.fusion_coil_mk4.name=恒星聚变线圈方块
 
 tile.cleanroom_casing.advanced_filter_casing.name=高级过滤外壳
 tile.cleanroom_casing.advanced_filter_casing.tooltip=为多方块结构提供§a洁净§7功能
@@ -73,6 +76,28 @@ tile.component_assembly_line_casing.max.tooltip=时空装配单元
 tile.active_multiblock_casing.hyper_core_mk1.name=超能核心 Mk I
 tile.active_multiblock_casing.hyper_core_mk2.name=超能核心 Mk II
 tile.active_multiblock_casing.hyper_core_mk3.name=超能核心 Mk III
+
+tile.science_casing.high_energy_casing.name=超能机械方块
+tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
+tile.science_casing.advanced_high_energy_casing.name=进阶超能机械方块
+tile.science_casing.advanced_high_energy_casing.tooltip=用于极端情况下的超高能物理实验
+tile.science_casing.molecular_coil.name=分子线圈方块
+tile.science_casing.molecular_coil.tooltip=用于偏转离子束
+tile.science_casing.hollow_casing.name=中空结构方块
+tile.science_casing.hollow_casing.tooltip=用于强化加速器通道
+tile.science_casing.spacetime_casing.name=时空扭曲机械方块
+tile.science_casing.spacetime_casing.tooltip=光速不再是限制
+tile.science_casing.dimensional_bridge_casing.name=维度桥接机械方块
+tile.science_casing.dimensional_bridge_casing.tooltip=用于连接不同维度的时间与空间
+
+tile.field_casing.zpm.name=遏制场发生器（§cZPM§r）
+tile.field_casing.uv.name=遏制场发生器（§3UV§r）
+tile.field_casing.uhv.name=遏制场发生器（§4UHV§r）
+tile.field_casing.uev.name=遏制场发生器（§aUEV§r）
+tile.field_casing.uiv.name=遏制场发生器（§2UIV§r）
+tile.field_casing.uxv.name=遏制场发生器（§eUXV§r）
+tile.field_casing.opv.name=遏制场发生器（§9OpV§r）
+tile.field_casing.max.name=遏制场发生器（§c§lMAX§r）
 
 tile.wire_coil.adamantium.name=精金线圈方块
 tile.wire_coil.ichorium.name=灵宝线圈方块
@@ -329,29 +354,29 @@ metaitem.component.crystal.system_on_chip_socket.name=晶体SoC插槽
 metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 
 #  Covers
-metaitem.cover.electric_motor.ulv.name=电动马达（ULV）
-metaitem.cover.electric_piston.ulv.name=电力活塞（ULV）
-metaitem.cover.electric_pump.ulv.name=电动泵（ULV）
+metaitem.cover.electric_motor.ulv.name=电动马达（§8ULV§r）
+metaitem.cover.electric_piston.ulv.name=电力活塞（§8ULV§r）
+metaitem.cover.electric_pump.ulv.name=电动泵（§8ULV§r）
 metaitem.cover.electric_pump.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f32 L/t§7
-metaitem.cover.conveyor_module.ulv.name=传送带（ULV）
+metaitem.cover.conveyor_module.ulv.name=传送带（§8ULV§r）
 metaitem.cover.conveyor_module.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f4 件物品/s§7
-metaitem.cover.robot_arm.ulv.name=机械臂（ULV）
+metaitem.cover.robot_arm.ulv.name=机械臂（§8ULV§r）
 metaitem.cover.robot_arm.ulv.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f4 件物品/s§7
-metaitem.cover.emitter.ulv.name=发射器（ULV）
-metaitem.cover.sensor.ulv.name=传感器（ULV）
-metaitem.cover.field_generator.ulv.name=力场发生器（ULV）
+metaitem.cover.emitter.ulv.name=发射器（§8ULV§r）
+metaitem.cover.sensor.ulv.name=传感器（§8ULV§r）
+metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
 
-metaitem.cover.electric_motor.max.name=电动马达（MAX）
-metaitem.cover.electric_piston.max.name=电力活塞（MAX）
-metaitem.cover.electric_pump.max.name=电动泵（MAX）
+metaitem.cover.electric_motor.max.name=电动马达（§c§lMAX§r）
+metaitem.cover.electric_piston.max.name=电力活塞（§c§lMAX§r）
+metaitem.cover.electric_pump.max.name=电动泵（§c§lMAX§r）
 metaitem.cover.electric_pump.max.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
-metaitem.cover.conveyor_module.max.name=传送带（MAX）
+metaitem.cover.conveyor_module.max.name=传送带（§c§lMAX§r）
 metaitem.cover.conveyor_module.max.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
-metaitem.cover.robot_arm.max.name=机械臂（MAX）
+metaitem.cover.robot_arm.max.name=机械臂（§c§lMAX§r）
 metaitem.cover.robot_arm.max.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
-metaitem.cover.emitter.max.name=发射器（MAX）
-metaitem.cover.sensor.max.name=传感器（MAX）
-metaitem.cover.field_generator.max.name=力场发生器（MAX）
+metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
+metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
+metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
@@ -529,6 +554,15 @@ gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
 gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
 gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
 
+gtlitecore.machine.collider.name=粒子对撞机
+gtlitecore.machine.collider.tier=遏制场发生器等级：
+gtlitecore.machine.collider.tooltip.1=高能物理学，从入门到入土
+gtlitecore.machine.collider.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
+
+gtlitecore.machine.dimensional_oscillator.name=维度震荡仪
+gtlitecore.machine.dimensional_oscillator.tooltip.1=长时间开机或导致时空乱流现象的发生
+gtlitecore.machine.dimensional_oscillator.tooltip.2=用于破坏维度的时空平衡以制造极端环境
+
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 
@@ -600,6 +634,13 @@ gtlitecore.machine.mega_oil_cracking_unit.name=大型石油裂化厂
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.1=根据线圈等级获得并行与配方能耗减免
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.2=线圈每比白铜高一个层级，配方能耗减少10%%。
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
+
+gtlitecore.machine.stellar_furnace.name=恒星炎炀锻炉
+gtlitecore.machine.stellar_furnace.tooltip.1=长时间开机或导致宇宙热寂
+gtlitecore.machine.stellar_furnace.tooltip.2=驾驭恒星之力
+gtlitecore.machine.stellar_furnace.tooltip.3=需要使用不同的§c爆弹§7在机器内部引发超新星爆发
+gtlitecore.machine.stellar_furnace.tooltip.4=产物以极高温的等离子喷流或等离子聚合液体的形态产出
+gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6遏制装置§7约束后方可冷凝
 
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
@@ -1095,6 +1136,9 @@ recipemap.precise_assembler_recipes.name=精密组装
 recipemap.component_assembler_recipes.name=部件组装机
 recipemap.component_assembly_line_recipes.name=部件装配线
 recipemap.tree_growth_recipes.name=树木催生
+recipemap.collider_recipes.name=粒子对撞
+recipemap.dimensional_oscillator_recipes.name=超维度震荡
+recipemap.stellar_furnace_recipes.name=恒星热能熔炼
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

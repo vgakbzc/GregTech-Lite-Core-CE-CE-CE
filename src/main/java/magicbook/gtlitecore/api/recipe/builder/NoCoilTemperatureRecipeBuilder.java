@@ -30,8 +30,9 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
         return new NoCoilTemperatureRecipeBuilder(this);
     }
 
+    @Override
     public boolean applyProperty(@Nonnull String key, Object value) {
-        if (key.equals("temperature")) {
+        if (key.equals(NoCoilTemperatureProperty.KEY)) {
             temperature(((Number) value).intValue());
             return true;
         }

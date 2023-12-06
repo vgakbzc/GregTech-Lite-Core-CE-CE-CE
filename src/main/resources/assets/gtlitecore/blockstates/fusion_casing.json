@@ -61,6 +61,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/fusion_coil_mk3"
         }
+      },
+      "fusion_coil_mk4": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fusion_coil_mk4"
+        }
       }
     }
   }

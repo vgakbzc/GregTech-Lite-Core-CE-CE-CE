@@ -46,4 +46,6 @@ public class GTLiteTraceabilityPredicate {
     public static Supplier<TierTraceabilityPredicate> CA_CASING = () -> new TierTraceabilityPredicate(MAP_CA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_CA_CASING.get(s)).getIntTier()), "CACasing", null);
 
+    public static Supplier<TierTraceabilityPredicate> FIELD_CASING = () -> new TierTraceabilityPredicate(MAP_FIELD_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_FIELD_CASING.get(s)).getIntTier()), "FieldCasing", null);
 }

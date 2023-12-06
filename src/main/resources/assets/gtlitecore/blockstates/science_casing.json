@@ -1,0 +1,45 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "high_energy_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/high_energy_casing"
+        }
+      },
+      "advanced_high_energy_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_high_energy_casing"
+        }
+      },
+      "molecular_coil": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/molecular_coil_top",
+          "side": "gtlitecore:blocks/casings/molecular_coil",
+          "bottom": "#side"
+        }
+      },
+      "hollow_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hollow_casing"
+        }
+      },
+      "spacetime_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spacetime_casing"
+        }
+      },
+      "dimensional_bridge_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/dimensional_bridge_casing"
+        }
+      }
+    }
+  }
+}

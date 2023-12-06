@@ -34,7 +34,8 @@ public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasi
     public enum UniqueCasingType implements IStringSerializable {
         FLOTATION_CELL("flotation_cell"),
         HYPER_CASING("hyper_casing"),
-        ADVANCED_HYPER_CASING("advanced_hyper_casing");
+        ADVANCED_HYPER_CASING("advanced_hyper_casing"),
+        STELLAR_CONTAINMENT_CASING("stellar_containment_casing");
 
         private final String name;
 

@@ -50,7 +50,7 @@
         "all": "gtlitecore:blocks/casings/infinity_glass"
       }
     },
-    "active_true,variant=infinity_glass": {
+    "active=true,variant=infinity_glass": {
       "model": "minecraft:cube_all",
       "ambientocclusion": false,
       "textures": {

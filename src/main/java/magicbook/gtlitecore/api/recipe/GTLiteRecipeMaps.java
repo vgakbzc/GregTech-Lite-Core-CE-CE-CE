@@ -10,10 +10,7 @@ import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
-import magicbook.gtlitecore.api.recipe.builder.AssemblyCasingTierRecipeBuilder;
-import magicbook.gtlitecore.api.recipe.builder.ComponentCasingTierRecipeBuilder;
-import magicbook.gtlitecore.api.recipe.builder.GrindBallRecipeBuilder;
-import magicbook.gtlitecore.api.recipe.builder.NoCoilTemperatureRecipeBuilder;
+import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapComponentAssemblyLine;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapPreciseAssembler;
 import stanhebben.zenscript.annotations.ZenClass;
@@ -82,6 +79,12 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<ComponentCasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> TREE_GROWTH_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FieldCasingTierRecipeBuilder> COLLIDER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> DIMENSIONAL_OSCILLATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> STELLAR_FURNACE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -233,5 +236,35 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setSound(GTSoundEvents.CHAINSAW_TOOL);
+
+        //  Collider RecipeMap
+        COLLIDER_RECIPES = new RecipeMap<>("collider_recipes", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(true, false, false, GuiTextures.IMPLOSION_OVERLAY_1)
+                .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+                .setSound(GTSoundEvents.SCIENCE);
+
+        //  Dimensional Oscillator RecipeMap
+        DIMENSIONAL_OSCILLATOR_RECIPES = new RecipeMap<>("dimensional_oscillator_recipes", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_1)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_1)
+                .setSlotOverlay(true, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
+                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
+                .setSound(GTSoundEvents.SCIENCE);
+
+        //  Stellar Furnace RecipeMap
+        STELLAR_FURNACE_RECIPES = new RecipeMap<>("stellar_furnace_recipes", 6, 6, 6, 6, new NoCoilHigherTemperatureRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSound(GTSoundEvents.ARC);
     }
 }

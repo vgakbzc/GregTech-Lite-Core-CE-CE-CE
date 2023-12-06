@@ -99,6 +99,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/aseptic_farm_casing"
         }
+      },
+      "tritanium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/tritanium_casing"
+        }
       }
     }
   }
