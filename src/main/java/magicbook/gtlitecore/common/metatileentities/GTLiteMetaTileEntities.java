@@ -24,6 +24,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityLargeNaquadahReactor;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
+import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
@@ -75,6 +76,7 @@ public class GTLiteMetaTileEntities {
 
     public static MetaTileEntityMegaChemicalReactor MEGA_CHEMICAL_REACTOR;
     public static MetaTileEntityMegaAlloyBlastSmelter MEGA_ALLOY_BLAST_SMELTER;
+    public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
 
     /**
@@ -176,7 +178,7 @@ public class GTLiteMetaTileEntities {
         //  47 DANGOTE_DISTILLERY
         //  48
         //  49
-        //  50 LARGE_STEAM_COMPRESSOR
+        LARGE_STEAM_COMPRESSOR = registerMultiMetaTileEntity(50, new MetaTileEntityLargeSteamCompressor(gtliteId("large_steam_compressor")));
         //  51 LARGE_PRIMITIVE_BLAST_FURNACE
         //  52
         //  53

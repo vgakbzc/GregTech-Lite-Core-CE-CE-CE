@@ -5,6 +5,10 @@ import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockSteamCasing;
+import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.metatileentities.MetaTileEntities;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -22,6 +26,7 @@ public class OverrideRecipeLoader {
     public static void init() {
         SiliconWaferOverrides();
         RubberOverrides();
+        SteamStageOverrides();
     }
 
     private static void SiliconWaferOverrides() {
@@ -749,5 +754,70 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
 
         //  TODO LuV-UV
+    }
+
+    private static void SteamStageOverrides() {
+
+        if (GTLiteConfigHolder.steamOverrides.enableHarderSteamMachineRecipe) {
+
+            ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_bronze");
+            ModHandler.addShapedRecipe(true, "steam_boiler_coal_bronze", MetaTileEntities.STEAM_BOILER_COAL_BRONZE.getStackForm(),
+                    "PPP", "CHC", "BFB",
+                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
+                    'C', CONVEYOR_MODULE_ULV,
+                    'P', new UnificationEntry(plate, Bronze),
+                    'B', new UnificationEntry(block, Brick),
+                    'F', "craftingFurnace");
+
+            ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_steel");
+            ModHandler.addShapedRecipe(true, "steam_boiler_coal_steel", MetaTileEntities.STEAM_BOILER_COAL_STEEL.getStackForm(),
+                    "PPP", "RHC", "BFB",
+                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
+                    'C', CONVEYOR_MODULE_ULV,
+                    'R', ROBOT_ARM_ULV,
+                    'P', new UnificationEntry(plate, Steel),
+                    'B', new UnificationEntry(block, Brick),
+                    'F', "craftingFurnace");
+
+            ModHandler.removeRecipeByName("gregtech:steam_boiler_solar_bronze");
+            ModHandler.addShapedRecipe(true, "steam_boiler_solar_bronze", MetaTileEntities.STEAM_BOILER_SOLAR_BRONZE.getStackForm(),
+                    "PPP", "CHU", "BAB",
+                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
+                    'C', CONVEYOR_MODULE_ULV,
+                    'U', ELECTRIC_PUMP_ULV,
+                    'P', new UnificationEntry(plate, Bronze),
+                    'B', new UnificationEntry(block, Brick),
+                    'A', new UnificationEntry(pipeSmallFluid, Bronze));
+
+            ModHandler.removeRecipeByName("gregtech:steam_boiler_solar_steel");
+            ModHandler.addShapedRecipe(true, "steam_boiler_solar_steel", MetaTileEntities.STEAM_BOILER_SOLAR_STEEL.getStackForm(),
+                    "PGP", "CHU", "BRB",
+                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
+                    'C', CONVEYOR_MODULE_ULV,
+                    'U', ELECTRIC_PUMP_ULV,
+                    'R', ROBOT_ARM_ULV,
+                    'B', new UnificationEntry(pipeSmallFluid, TinAlloy),
+                    'P', new UnificationEntry(plate, Steel),
+                    'G', new UnificationEntry(plate, Glass));
+
+            ModHandler.removeRecipeByName("gregtech:steam_boiler_lava_bronze");
+            ModHandler.addShapedRecipe(true, "steam_boiler_lava_bronze", MetaTileEntities.STEAM_BOILER_LAVA_BRONZE.getStackForm(),
+                    "PPP", "UHU", "BAB",
+                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
+                    'U', ELECTRIC_PUMP_ULV,
+                    'P', new UnificationEntry(plate, Bronze),
+                    'B', new UnificationEntry(block, Brick),
+                    'A', new UnificationEntry(pipeSmallFluid, Bronze));
+
+            ModHandler.removeRecipeByName("gregtech:steam_boiler_lava_steel");
+            ModHandler.addShapedRecipe(true, "steam_boiler_lava_steel", MetaTileEntities.STEAM_BOILER_LAVA_STEEL.getStackForm(),
+                    "PPP", "UHR", "BAB",
+                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
+                    'U', ELECTRIC_PUMP_ULV,
+                    'R', ROBOT_ARM_ULV,
+                    'P', new UnificationEntry(plate, Steel),
+                    'B', new UnificationEntry(block, Brick),
+                    'A', new UnificationEntry(pipeSmallFluid, TinAlloy));
+        }
     }
 }
