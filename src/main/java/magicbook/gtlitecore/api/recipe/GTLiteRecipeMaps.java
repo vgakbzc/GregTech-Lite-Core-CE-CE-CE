@@ -81,6 +81,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> TREE_GROWTH_RECIPES;
     @ZenProperty
     public static final RecipeMap<FieldCasingTierRecipeBuilder> COLLIDER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> DIMENSIONAL_OSCILLATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -239,6 +241,19 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
                 .setSlotOverlay(true, false, false, GuiTextures.IMPLOSION_OVERLAY_1)
                 .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+                .setSound(GTSoundEvents.SCIENCE);
+
+        //  Dimensional Oscillator RecipeMap
+        DIMENSIONAL_OSCILLATOR_RECIPES = new RecipeMap<>("dimensional_oscillator_recipes", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_1)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_1)
+                .setSlotOverlay(true, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+                .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
+                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
                 .setSound(GTSoundEvents.SCIENCE);
     }
 }

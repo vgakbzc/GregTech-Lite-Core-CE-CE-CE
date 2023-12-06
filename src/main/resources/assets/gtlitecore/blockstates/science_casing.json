@@ -33,6 +33,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/spacetime_casing"
         }
+      },
+      "dimensional_bridge_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/dimensional_bridge_casing"
+        }
       }
     }
   }

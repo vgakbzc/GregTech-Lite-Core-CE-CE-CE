@@ -36,7 +36,8 @@ public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceC
         ADVANCED_HIGH_ENERGY_CASING("advanced_high_energy_casing"),
         MOLECULAR_COIL("molecular_coil"),
         HOLLOW_CASING("hollow_casing"),
-        SPACETIME_CASING("spacetime_casing");
+        SPACETIME_CASING("spacetime_casing"),
+        DIMENSIONAL_BRIDGE_CASING("dimensional_bridge_casing");
 
         private final String name;
 

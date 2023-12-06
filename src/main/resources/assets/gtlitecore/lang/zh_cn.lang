@@ -84,6 +84,8 @@ tile.science_casing.hollow_casing.name=中空结构方块
 tile.science_casing.hollow_casing.tooltip=用于强化加速器通道
 tile.science_casing.spacetime_casing.name=时空扭曲机械方块
 tile.science_casing.spacetime_casing.tooltip=光速不再是限制
+tile.science_casing.dimensional_bridge_casing.name=维度桥接机械方块
+tile.science_casing.dimensional_bridge_casing.tooltip=用于连接不同维度的时间与空间
 
 tile.field_casing.zpm.name=遏制场发生器（§cZPM§r）
 tile.field_casing.uv.name=遏制场发生器（§3UV§r）
@@ -553,6 +555,10 @@ gtlitecore.machine.collider.name=粒子对撞机
 gtlitecore.machine.collider.tier=遏制场发生器等级：
 gtlitecore.machine.collider.tooltip.1=高能物理学，从入门到入土
 gtlitecore.machine.collider.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
+
+gtlitecore.machine.dimensional_oscillator.name=维度震荡仪
+gtlitecore.machine.dimensional_oscillator.tooltip.1=长时间开机或导致时空乱流现象的发生
+gtlitecore.machine.dimensional_oscillator.tooltip.2=用于破坏维度的时空平衡以制造极端环境
 
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
@@ -1121,6 +1127,7 @@ recipemap.component_assembler_recipes.name=部件组装机
 recipemap.component_assembly_line_recipes.name=部件装配线
 recipemap.tree_growth_recipes.name=树木催生
 recipemap.collider_recipes.name=粒子对撞
+recipemap.dimensional_oscillator_recipes.name=超维度震荡
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
