@@ -578,6 +578,11 @@ gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级
 gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
 
+gtlitecore.machine.mega_oil_cracking_unit.name=大型石油裂化厂
+gtlitecore.machine.mega_oil_cracking_unit.tooltip.1=根据线圈等级获得并行与配方能耗减免
+gtlitecore.machine.mega_oil_cracking_unit.tooltip.2=线圈每比白铜高一个层级，配方能耗减少10%%。
+gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
+
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
 gtlitecore.machine.tree_growth_factory.name=林海树场
