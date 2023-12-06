@@ -7,10 +7,7 @@ import gregtech.common.items.MetaItems;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import magicbook.gtlitecore.api.block.IBlockTier;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.common.blocks.BlockComponentAssemblyLineCasing;
-import magicbook.gtlitecore.common.blocks.BlockPreciseAssemblerCasing;
-import magicbook.gtlitecore.common.blocks.BlockWireCoil;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.blocks.*;
 import net.minecraft.block.state.IBlockState;
 
 import static gregtech.api.GregTechAPI.HEATING_COILS;
@@ -24,6 +21,7 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_INTERNAL_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_CA_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FIELD_CASING = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -75,5 +73,23 @@ public class GTLiteAPI {
                 new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.OpV, 13));
         MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.MAX),
                 new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.MAX, 14));
+
+        //  Field Casing Tier
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.ZPM),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.ZPM, 1));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UV),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UV, 2));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UHV),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UHV, 3));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UEV),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UEV, 4));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UIV),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UIV, 5));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UXV),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UXV, 6));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.OpV),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.OpV, 7));
+        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.MAX),
+                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.MAX, 8));
     }
 }

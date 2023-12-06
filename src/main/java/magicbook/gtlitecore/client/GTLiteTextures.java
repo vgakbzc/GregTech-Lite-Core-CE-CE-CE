@@ -28,7 +28,8 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer CRYOGENIC_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/cryogenic_reactor");
     public static OrientedOverlayRenderer ISA_MILL_OVERLAY = new OrientedOverlayRenderer("multiblocks/isa_mill");
     public static OrientedOverlayRenderer FARM_OVERLAY = new OrientedOverlayRenderer("multiblocks/tree_growth_factory");
-
+    public static OrientedOverlayRenderer COLLIDER_OVERLAY = new OrientedOverlayRenderer("multiblocks/collider");
+    public static OrientedOverlayRenderer VIRTUAL_COSMOS_SIMULATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/virtual_cosmos_simulator");
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
     public static GTLiteOverlayRenderer HASTELLOY_N_CASING = new GTLiteOverlayRenderer("casings/hastelloy_n_casing");
@@ -45,6 +46,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer FARM_CASING = new GTLiteOverlayRenderer("casings/aseptic_farm_casing");
     public static GTLiteOverlayRenderer HYPER_CASING = new GTLiteOverlayRenderer("casings/hyper_casing");
     public static GTLiteOverlayRenderer ADVANCED_HYPER_CASING = new GTLiteOverlayRenderer("casings/advanced_hyper_casing");
+    public static GTLiteOverlayRenderer HIGH_ENERGY_CASING = new GTLiteOverlayRenderer("casings/high_energy_casing");
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  Custom Renderer

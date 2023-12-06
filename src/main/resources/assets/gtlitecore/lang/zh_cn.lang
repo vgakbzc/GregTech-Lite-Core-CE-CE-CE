@@ -74,6 +74,26 @@ tile.active_multiblock_casing.hyper_core_mk1.name=超能核心 Mk I
 tile.active_multiblock_casing.hyper_core_mk2.name=超能核心 Mk II
 tile.active_multiblock_casing.hyper_core_mk3.name=超能核心 Mk III
 
+tile.science_casing.high_energy_casing.name=超能机械方块
+tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
+tile.science_casing.advanced_high_energy_casing.name=进阶超能机械方块
+tile.science_casing.advanced_high_energy_casing.tooltip=用于极端情况下的超高能物理实验
+tile.science_casing.molecular_coil.name=分子线圈方块
+tile.science_casing.molecular_coil.tooltip=用于偏转离子束
+tile.science_casing.hollow_casing.name=中空结构方块
+tile.science_casing.hollow_casing.tooltip=用于强化加速器通道
+tile.science_casing.spacetime_casing.name=时空扭曲机械方块
+tile.science_casing.spacetime_casing.tooltip=光速不再是限制
+
+tile.field_casing.zpm.name=遏制场发生器（§cZPM§r）
+tile.field_casing.uv.name=遏制场发生器（§3UV§r）
+tile.field_casing.uhv.name=遏制场发生器（§4UHV§r）
+tile.field_casing.uev.name=遏制场发生器（§aUEV§r）
+tile.field_casing.uiv.name=遏制场发生器（§2UIV§r）
+tile.field_casing.uxv.name=遏制场发生器（§eUXV§r）
+tile.field_casing.opv.name=遏制场发生器（§9OpV§r）
+tile.field_casing.max.name=遏制场发生器（§c§lMAX§r）
+
 tile.wire_coil.adamantium.name=精金线圈方块
 tile.wire_coil.ichorium.name=灵宝线圈方块
 
@@ -329,29 +349,29 @@ metaitem.component.crystal.system_on_chip_socket.name=晶体SoC插槽
 metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 
 #  Covers
-metaitem.cover.electric_motor.ulv.name=电动马达（ULV）
-metaitem.cover.electric_piston.ulv.name=电力活塞（ULV）
-metaitem.cover.electric_pump.ulv.name=电动泵（ULV）
+metaitem.cover.electric_motor.ulv.name=电动马达（§8ULV§r）
+metaitem.cover.electric_piston.ulv.name=电力活塞（§8ULV§r）
+metaitem.cover.electric_pump.ulv.name=电动泵（§8ULV§r）
 metaitem.cover.electric_pump.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f32 L/t§7
-metaitem.cover.conveyor_module.ulv.name=传送带（ULV）
+metaitem.cover.conveyor_module.ulv.name=传送带（§8ULV§r）
 metaitem.cover.conveyor_module.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f4 件物品/s§7
-metaitem.cover.robot_arm.ulv.name=机械臂（ULV）
+metaitem.cover.robot_arm.ulv.name=机械臂（§8ULV§r）
 metaitem.cover.robot_arm.ulv.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f4 件物品/s§7
-metaitem.cover.emitter.ulv.name=发射器（ULV）
-metaitem.cover.sensor.ulv.name=传感器（ULV）
-metaitem.cover.field_generator.ulv.name=力场发生器（ULV）
+metaitem.cover.emitter.ulv.name=发射器（§8ULV§r）
+metaitem.cover.sensor.ulv.name=传感器（§8ULV§r）
+metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
 
-metaitem.cover.electric_motor.max.name=电动马达（MAX）
-metaitem.cover.electric_piston.max.name=电力活塞（MAX）
-metaitem.cover.electric_pump.max.name=电动泵（MAX）
+metaitem.cover.electric_motor.max.name=电动马达（§c§lMAX§r）
+metaitem.cover.electric_piston.max.name=电力活塞（§c§lMAX§r）
+metaitem.cover.electric_pump.max.name=电动泵（§c§lMAX§r）
 metaitem.cover.electric_pump.max.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
-metaitem.cover.conveyor_module.max.name=传送带（MAX）
+metaitem.cover.conveyor_module.max.name=传送带（§c§lMAX§r）
 metaitem.cover.conveyor_module.max.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
-metaitem.cover.robot_arm.max.name=机械臂（MAX）
+metaitem.cover.robot_arm.max.name=机械臂（§c§lMAX§r）
 metaitem.cover.robot_arm.max.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
-metaitem.cover.emitter.max.name=发射器（MAX）
-metaitem.cover.sensor.max.name=传感器（MAX）
-metaitem.cover.field_generator.max.name=力场发生器（MAX）
+metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
+metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
+metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
@@ -528,6 +548,11 @@ gtlitecore.machine.ion_implantator.name=离子注入机
 gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
 gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
 gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
+
+gtlitecore.machine.collider.name=粒子对撞机
+gtlitecore.machine.collider.tier=遏制场发生器等级：
+gtlitecore.machine.collider.tooltip.1=高能物理学，从入门到入土
+gtlitecore.machine.collider.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
@@ -1095,6 +1120,7 @@ recipemap.precise_assembler_recipes.name=精密组装
 recipemap.component_assembler_recipes.name=部件组装机
 recipemap.component_assembly_line_recipes.name=部件装配线
 recipemap.tree_growth_recipes.name=树木催生
+recipemap.collider_recipes.name=粒子对撞
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

@@ -9,6 +9,7 @@ import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.recipe.properties.ComponentCasingTierProperty;
+import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
@@ -59,6 +60,8 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING);
         registry.register(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING);
         registry.register(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING);
+        registry.register(GTLiteMetaBlocks.SCIENCE_CASING);
+        registry.register(GTLiteMetaBlocks.FIELD_CASING);
         registry.register(GTLiteMetaBlocks.WIRE_COIL);
         registry.register(GTLiteMetaBlocks.TRANSPARENT_CASING);
         registry.register(GTLiteMetaBlocks.CRUCIBLE);
@@ -76,6 +79,8 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.SCIENCE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.FIELD_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.WIRE_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
@@ -119,6 +124,16 @@ public class CommonProxy {
         ComponentCasingTierProperty.registerComponentCasingTier(12, I18n.format("gtlitecore.machine.component_assembly_line.tier.12"));
         ComponentCasingTierProperty.registerComponentCasingTier(13, I18n.format("gtlitecore.machine.component_assembly_line.tier.13"));
         ComponentCasingTierProperty.registerComponentCasingTier(14, I18n.format("gtlitecore.machine.component_assembly_line.tier.14"));
+        //  Field Casing Tiers
+        FieldCasingTierProperty.registerFieldCasingTier(1, "1 (ZPM)");
+        FieldCasingTierProperty.registerFieldCasingTier(2, "2 (UV)");
+        FieldCasingTierProperty.registerFieldCasingTier(3, "3 (UHV)");
+        FieldCasingTierProperty.registerFieldCasingTier(4, "4 (UEV)");
+        FieldCasingTierProperty.registerFieldCasingTier(5, "5 (UIV)");
+        FieldCasingTierProperty.registerFieldCasingTier(6, "6 (UXV)");
+        FieldCasingTierProperty.registerFieldCasingTier(7, "7 (OpV)");
+        FieldCasingTierProperty.registerFieldCasingTier(8, "8 (MAX)");
+
         RecipeManager.init();
     }
 

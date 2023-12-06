@@ -1,0 +1,55 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "zpm": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.zpm"
+        }
+      },
+      "uv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.uv"
+        }
+      },
+      "uhv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.uhv"
+        }
+      },
+      "uev": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.uev"
+        }
+      },
+      "uiv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.uiv"
+        }
+      },
+      "uxv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.uxv"
+        }
+      },
+      "opv": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.opv"
+        }
+      },
+      "max": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fields/field_casing.max"
+        }
+      }
+    }
+  }
+}
