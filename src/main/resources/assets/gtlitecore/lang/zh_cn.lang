@@ -14,6 +14,7 @@ tile.multiblock_casing.naquadria_casing.name=抗辐射超能硅岩机器外壳
 tile.multiblock_casing.hastelloy_x78_casing.name=矩阵强化哈斯特洛伊合金-X78机器外壳
 tile.multiblock_casing.iridium_casing.name=镀铱强化机器外壳
 tile.multiblock_casing.aseptic_farm_casing.name=富生农场机器外壳
+tile.multiblock_casing.tritanium_casing.name=极限强度三钛合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -22,6 +23,7 @@ tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
 tile.unique_casing.advanced_hyper_casing.name=黑矮星物质强化超能硅岩机器外壳
+tile.unique_casing.stellar_containment_casing.name=恒星热力容器
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -33,6 +35,7 @@ tile.fusion_casing.vacuum.name=聚变反应堆真空仓
 tile.fusion_casing.advanced_vacuum.name=高级聚变反应堆真空仓
 tile.fusion_casing.fusion_coil_mk2.name=高级聚变线圈方块
 tile.fusion_casing.fusion_coil_mk3.name=终极聚变线圈方块
+tile.fusion_casing.fusion_coil_mk4.name=恒星聚变线圈方块
 
 tile.cleanroom_casing.advanced_filter_casing.name=高级过滤外壳
 tile.cleanroom_casing.advanced_filter_casing.tooltip=为多方块结构提供§a洁净§7功能
@@ -632,6 +635,13 @@ gtlitecore.machine.mega_oil_cracking_unit.tooltip.1=根据线圈等级获得并�
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.2=线圈每比白铜高一个层级，配方能耗减少10%%。
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
 
+gtlitecore.machine.stellar_furnace.name=恒星炎炀锻炉
+gtlitecore.machine.stellar_furnace.tooltip.1=长时间开机或导致宇宙热寂
+gtlitecore.machine.stellar_furnace.tooltip.2=驾驭恒星之力
+gtlitecore.machine.stellar_furnace.tooltip.3=需要使用不同的§c爆弹§7在机器内部引发超新星爆发
+gtlitecore.machine.stellar_furnace.tooltip.4=产物以极高温的等离子喷流或等离子聚合液体的形态产出
+gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6遏制装置§7约束后方可冷凝
+
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
 gtlitecore.machine.tree_growth_factory.name=林海树场
@@ -1128,6 +1138,7 @@ recipemap.component_assembly_line_recipes.name=部件装配线
 recipemap.tree_growth_recipes.name=树木催生
 recipemap.collider_recipes.name=粒子对撞
 recipemap.dimensional_oscillator_recipes.name=超维度震荡
+recipemap.stellar_furnace_recipes.name=恒星热能熔炼
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

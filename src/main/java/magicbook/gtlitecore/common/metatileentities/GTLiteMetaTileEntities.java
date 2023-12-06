@@ -85,6 +85,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaChemicalReactor MEGA_CHEMICAL_REACTOR;
     public static MetaTileEntityMegaAlloyBlastSmelter MEGA_ALLOY_BLAST_SMELTER;
     public static MetaTileEntityMegaOilCrackingUnit MEGA_OIL_CRACKING_UNIT;
+    public static MetaTileEntityStellarFurnace STELLAR_FURNACE;
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
 
@@ -180,7 +181,7 @@ public class GTLiteMetaTileEntities {
         MEGA_ALLOY_BLAST_SMELTER = registerMultiMetaTileEntity(40, new MetaTileEntityMegaAlloyBlastSmelter(gtliteId("mega_alloy_blast_smelter")));
         MEGA_CHEMICAL_REACTOR = registerMultiMetaTileEntity(41, new MetaTileEntityMegaChemicalReactor(gtliteId("mega_chemical_reactor")));
         MEGA_OIL_CRACKING_UNIT = registerMultiMetaTileEntity(42, new MetaTileEntityMegaOilCrackingUnit(gtliteId("mega_oil_cracking_unit")));
-        //  43 STELLAR_FURNACE
+        STELLAR_FURNACE = registerMultiMetaTileEntity(43, new MetaTileEntityStellarFurnace(gtliteId("stellar_furnace")));
         //  44 PLASMA_CONDENSER
         //  45 COSMIC_RAY_DETECTOR
         //  46 COMET

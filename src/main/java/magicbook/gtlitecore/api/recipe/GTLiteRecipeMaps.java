@@ -83,6 +83,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FieldCasingTierRecipeBuilder> COLLIDER_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> DIMENSIONAL_OSCILLATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> STELLAR_FURNACE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -255,5 +257,14 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  Stellar Furnace RecipeMap
+        STELLAR_FURNACE_RECIPES = new RecipeMap<>("stellar_furnace_recipes", 6, 6, 6, 6, new NoCoilHigherTemperatureRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
+                .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
+                .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSound(GTSoundEvents.ARC);
     }
 }

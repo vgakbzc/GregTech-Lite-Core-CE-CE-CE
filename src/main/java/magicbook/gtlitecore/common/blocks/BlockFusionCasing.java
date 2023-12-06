@@ -41,7 +41,8 @@ public class BlockFusionCasing extends VariantBlock<BlockFusionCasing.FusionCasi
         VACUUM("vacuum"),
         ADVANCED_VACUUM("advanced_vacuum"),
         FUSION_COIL_MK2("fusion_coil_mk2"),
-        FUSION_COIL_MK3("fusion_coil_mk3");
+        FUSION_COIL_MK3("fusion_coil_mk3"),
+        FUSION_COIL_MK4("fusion_coil_mk4");
 
         private final String name;
 
