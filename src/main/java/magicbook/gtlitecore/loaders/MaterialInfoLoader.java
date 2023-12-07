@@ -121,7 +121,7 @@ public class MaterialInfoLoader {
                 .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV))
                 .input(cableGtSingle, PedotTMA, 2)
                 .fluidInputs(Polyetheretherketone.getFluid(L * 2))
-                .output(MetaTileEntities.HULL[10])
+                .output(MetaTileEntities.HULL[UEV])
                 .EUt(16)
                 .duration(50)
                 .buildAndRegister();
@@ -144,9 +144,45 @@ public class MaterialInfoLoader {
                 .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV))
                 .input(cableGtSingle, Solarium, 2)
                 .fluidInputs(Polyetheretherketone.getFluid(L * 2))
-                .output(MetaTileEntities.HULL[11])
+                .output(MetaTileEntities.HULL[UIV])
                 .EUt(16)
                 .duration(50)
+                .buildAndRegister();
+
+        //  UXV Casing
+        ModHandler.addShapedRecipe(true, "casing_uxv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV),
+                "PPP", "PwP", "PPP",
+                'P', new UnificationEntry(plate, CosmicNeutronium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, CosmicNeutronium, 8)
+                .circuitMeta(8)
+                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV))
+                .duration(50)
+                .EUt(16)
+                .buildAndRegister();
+
+        //  UXV Hull
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV))
+                .input(cableGtSingle, Hypogen, 2)
+                .fluidInputs(Zylon.getFluid(L * 2))
+                .output(MetaTileEntities.HULL[UXV])
+                .EUt(16)
+                .duration(50)
+                .buildAndRegister();
+
+        //  OpV Casing
+        ModHandler.addShapedRecipe(true, "casing_opv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV),
+                "PPP", "PwP", "PPP",
+                'P', new UnificationEntry(plate, Spacetime));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Spacetime, 8)
+                .circuitMeta(8)
+                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV))
+                .duration(50)
+                .EUt(16)
                 .buildAndRegister();
     }
 

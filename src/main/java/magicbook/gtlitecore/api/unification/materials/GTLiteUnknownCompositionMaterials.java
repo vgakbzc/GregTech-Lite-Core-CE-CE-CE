@@ -596,6 +596,44 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0x507BB3)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED  + "a" + TextFormatting.RESET + "§ee" + TextFormatting.OBFUSCATED + "a", false);
+
+        //  24065 Oganesson Breeding Base
+        OganessonBreedingBase = new Material.Builder(getId(), gregtechId("oganesson_breeding_base"))
+                .liquid()
+                .color(0xA65A7F)
+                .components(Oganesson, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24066 Quasi-fissioning Plasma
+        QuasifissioningPlasma = new Material.Builder(getId(), gregtechId("quasi_fissioning_plasma"))
+                .plasma(new FluidBuilder().temperature(230490))
+                .color(0xB0A2C3)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24067 Flerovium-Ytterbium Plasma
+        FleroviumYtterbiumPlasma = new Material.Builder(getId(), gregtechId("flerovium_ytterbium_plasma"))
+                .plasma(new FluidBuilder().temperature(300))
+                .components(Flerovium, 1, Ytterbium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24068 Radium-Radon Mixture
+        RadiumRadonMixture = new Material.Builder(getId(), gregtechId("radium_radon_mixture"))
+                .liquid()
+                .color(Radium.getMaterialRGB() + Radon.getMaterialRGB())
+                .components(Radium, 1, Radon, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24069 Scandium-Titanium Mixture
+        ScandiumTitaniumMixture = new Material.Builder(getId(), gregtechId("scandium_titanium_mixture"))
+                .liquid()
+                .color(Scandium.getMaterialRGB() + Titanium.getMaterialRGB())
+                .components(Scandium, 1, Titanium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -218,6 +219,52 @@ public class MiscRecipes {
                 .output(dust, TanmolyiumBetaC, 16)
                 .EUt(VA[EV])
                 .duration(400)
+                .buildAndRegister();
+
+        //  Oganesson Breeding Base
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Titanium.getFluid(L * 2))
+                .fluidInputs(Californium.getFluid(L * 2))
+                .fluidOutputs(OganessonBreedingBase.getFluid(L * 4))
+                .EUt(VA[IV])
+                .duration(120)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Radium-Radon Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Radium.getFluid(1000))
+                .fluidInputs(Radon.getFluid(1000))
+                .fluidOutputs(RadiumRadonMixture.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(RadiumRadonMixture.getFluid(1000))
+                .fluidOutputs(Radium.getFluid(1000))
+                .fluidOutputs(Radon.getFluid(1000))
+                .EUt(VA[LV])
+                .duration(360)
+                .buildAndRegister();
+
+        //  Scandium-Titanium Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Scandium.getFluid(L))
+                .fluidInputs(Titanium.getFluid(L))
+                .fluidOutputs(ScandiumTitaniumMixture.getFluid(L * 2))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(ScandiumTitaniumMixture.getFluid(L * 2))
+                .fluidOutputs(Scandium.getFluid(L))
+                .fluidOutputs(Titanium.getFluid(L))
+                .EUt(VA[LV])
+                .duration(360)
                 .buildAndRegister();
 
         //  Fracturing Fluid

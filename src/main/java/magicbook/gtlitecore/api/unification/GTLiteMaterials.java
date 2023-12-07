@@ -22,6 +22,9 @@ public class GTLiteMaterials {
     public static Material VoidMetal;
     public static Material AstralTitanium;
     public static Material CelestialTungsten;
+    public static Material MetastableOganesson;
+    public static Material MetastableFlerovium;
+    public static Material MetastableHassium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -433,6 +436,11 @@ public class GTLiteMaterials {
     public static Material SteamCrackedTurpentine;
     public static Material ChlorinatedSolvents;
     public static Material FreeElectronGas;
+    public static Material OganessonBreedingBase;
+    public static Material QuasifissioningPlasma;
+    public static Material FleroviumYtterbiumPlasma;
+    public static Material RadiumRadonMixture;
+    public static Material ScandiumTitaniumMixture;
 
     public static void init() {
         GTLiteElementMaterials.register();

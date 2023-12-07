@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.fluids.FluidBuilder;
+import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
@@ -237,6 +238,39 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.CelestialTungsten)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .build();
+
+        //  10016 Metastable Oganesson
+        MetastableOganesson = new Material.Builder(getId(), gregtechId("metastable_oganesson"))
+                .ingot()
+                .gas()
+                .color(0xE61C24)
+                .iconSet(SHINY)
+                .element(Elements.Og)
+                .flags(GENERATE_PLATE)
+                .blast(10380, BlastProperty.GasTier.HIGHEST)
+                .build();
+
+        //  10017 Metastable Flerovium
+        MetastableFlerovium = new Material.Builder(getId(), gregtechId("metastable_flerovium"))
+                .ingot()
+                .liquid()
+                .color(0x521973)
+                .iconSet(SHINY)
+                .element(Elements.Fl)
+                .blast(11000, BlastProperty.GasTier.HIGHEST)
+                .flags(GENERATE_ROD)
+                .build();
+
+        //  10018 Metastable Hassium
+        MetastableHassium = new Material.Builder(getId(), gregtechId("metastable_hassium"))
+                .ingot()
+                .fluid()
+                .color(0x2D3A9D)
+                .iconSet(BRIGHT)
+                .element(Elements.Hs)
+                .flags(GENERATE_ROD, GENERATE_PLATE)
+                .blast(14000, BlastProperty.GasTier.HIGHEST)
                 .build();
     }
 

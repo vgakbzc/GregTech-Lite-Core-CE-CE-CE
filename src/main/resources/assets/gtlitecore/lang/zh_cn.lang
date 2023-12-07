@@ -676,6 +676,9 @@ gregtech.material.hypogen=海珀珍
 gregtech.material.void_metal=虚空金属
 gregtech.material.astral_titanium=星体钛
 gregtech.material.celestial_tungsten=天体钨
+gregtech.material.metastable_oganesson=亚稳态气奥
+gregtech.material.metastable_flerovium=亚稳态钅夫
+gregtech.material.metastable_hassium=亚稳态钅黑
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -1087,6 +1090,11 @@ gregtech.material.leached_turpentine=松油浸出物
 gregtech.material.steam_cracked_turpentine=蒸汽裂化的松油浸出物
 gregtech.material.chlorinated_solvents=有机氯溶液
 gregtech.material.free_electron_gas=自由电子气体
+gregtech.material.oganesson_breeding_base=气奥增殖基
+gregtech.material.quasi_fissioning_plasma=拟裂变
+gregtech.material.flerovium_ytterbium_plasma=钅夫-镱
+gregtech.material.radium_radon_mixture=镭-氡混合物
+gregtech.material.scandium_titanium_mixture=钪-钛混合物
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
@@ -1122,6 +1130,9 @@ item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
 item.material.oreprefix.seedCrystal=%s晶种
 item.material.oreprefix.boule=人造%s
+
+#  Particles
+metaitem.particle.alpha.name=α粒子
 
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水

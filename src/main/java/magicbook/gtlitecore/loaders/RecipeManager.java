@@ -107,5 +107,6 @@ public class RecipeManager {
         DroneAirport.init();
         TreeGrowthFactory.init();
         Collider.init();
+        DecayGenerator.init();
     }
 }
