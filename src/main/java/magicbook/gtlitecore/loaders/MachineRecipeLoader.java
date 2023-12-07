@@ -521,6 +521,21 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .buildAndRegister();
 
+        //  Decay Generator
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, NaquadahAlloy)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.HIGH_ENERGY_CASING))
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(plate, IncoloyMA813, 4)
+                .input(FIELD_GENERATOR_ZPM, 4)
+                .inputs(NEUTRON_REFLECTOR.getStackForm(2))
+                .input(cableGtQuadruple, VanadiumGallium, 2)
+                .fluidInputs(Tantalloy61.getFluid(L * 4))
+                .outputs(DECAY_GENERATOR.getStackForm())
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
+
         //  Mega Oil Cracking Unit
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, HMS1J22Alloy, 4)

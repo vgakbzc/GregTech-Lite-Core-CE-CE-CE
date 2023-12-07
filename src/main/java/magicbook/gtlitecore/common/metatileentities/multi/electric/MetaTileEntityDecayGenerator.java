@@ -7,6 +7,8 @@ import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.MultiblockShapeInfo;
+import gregtech.api.pattern.PatternMatchContext;
+import gregtech.api.recipes.Recipe;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.metatileentities.MetaTileEntities;
@@ -14,6 +16,8 @@ import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
+import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
+import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockScienceCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -37,6 +41,8 @@ import static gregtech.api.GTValues.*;
 
 public class MetaTileEntityDecayGenerator extends RecipeMapMultiblockController {
 
+    private int casingTier;
+
     public MetaTileEntityDecayGenerator(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.DECAY_GENERATOR_RECIPES);
     }
@@ -44,6 +50,26 @@ public class MetaTileEntityDecayGenerator extends RecipeMapMultiblockController 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityDecayGenerator(metaTileEntityId);
+    }
+
+    @Override
+    protected void formStructure(PatternMatchContext context) {
+        super.formStructure(context);
+        Object type = context.get("FieldCasingTieredStats");
+        this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
+                () -> ((WrappedIntTier) type).getIntTier(), 0);
+    }
+
+    @Override
+    public void invalidateStructure() {
+        super.invalidateStructure();
+        this.casingTier = 0;
+    }
+
+    @Override
+    public boolean checkRecipe(@Nonnull Recipe recipe,
+                               boolean consumeIfSuccess) {
+        return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(FieldCasingTierProperty.getInstance(), 0) <= casingTier;
     }
 
     @Nonnull
