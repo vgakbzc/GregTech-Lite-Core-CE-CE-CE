@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "zirconium_carbide_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/zirconium_carbide_casing"
+        }
+      }
+    }
+  }
+}

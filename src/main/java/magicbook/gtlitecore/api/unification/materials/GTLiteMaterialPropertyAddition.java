@@ -59,6 +59,9 @@ public class GTLiteMaterialPropertyAddition {
         Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Seaborgium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Seaborgium.setProperty(PropertyKey.WIRE, new WireProperties((int) V[UEV], 32, 32, false));
+        Actinium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Caesium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Astatine.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -90,12 +93,14 @@ public class GTLiteMaterialPropertyAddition {
         Dubnium.addFlags(GENERATE_PLATE);
         Livermorium.addFlags(GENERATE_PLATE);
         Rhenium.addFlags(GENERATE_PLATE);
+        RTMAlloy.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
         Dubnium.addFlags(GENERATE_DOUBLE_PLATE);
         Livermorium.addFlags(GENERATE_DOUBLE_PLATE);
         Rhenium.addFlags(GENERATE_DOUBLE_PLATE);
+        IncoloyMA956.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -111,6 +116,7 @@ public class GTLiteMaterialPropertyAddition {
         Darmstadtium.addFlags(GENERATE_FRAME);
         Naquadah.addFlags(GENERATE_FRAME);
         NaquadahEnriched.addFlags(GENERATE_FRAME);
+        Osmiridium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -138,6 +144,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Wire Fine
         Seaborgium.addFlags(GENERATE_FINE_WIRE);
+        Kanthal.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

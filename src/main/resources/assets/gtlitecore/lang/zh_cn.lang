@@ -16,6 +16,8 @@ tile.multiblock_casing.iridium_casing.name=镀铱强化机器外壳
 tile.multiblock_casing.aseptic_farm_casing.name=富生农场机器外壳
 tile.multiblock_casing.tritanium_casing.name=极限强度三钛合金机器外壳
 
+tile.metal_casing.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
+
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
 tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
@@ -563,6 +565,10 @@ gtlitecore.machine.dimensional_oscillator.name=维度震荡仪
 gtlitecore.machine.dimensional_oscillator.tooltip.1=长时间开机或导致时空乱流现象的发生
 gtlitecore.machine.dimensional_oscillator.tooltip.2=用于破坏维度的时空平衡以制造极端环境
 
+gtlitecore.machine.decay_generator.name=衰变发生器
+gtlitecore.machine.decay_generator.tooltip.1=抹杀一切超长的衰变周期
+gtlitecore.machine.decay_generator.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
+
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 
@@ -641,6 +647,8 @@ gtlitecore.machine.stellar_furnace.tooltip.2=驾驭恒星之力
 gtlitecore.machine.stellar_furnace.tooltip.3=需要使用不同的§c爆弹§7在机器内部引发超新星爆发
 gtlitecore.machine.stellar_furnace.tooltip.4=产物以极高温的等离子喷流或等离子聚合液体的形态产出
 gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6遏制装置§7约束后方可冷凝
+
+gtlitecore.machine.plasma_condenser.name=等离子冷凝器
 
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
@@ -874,6 +882,13 @@ gregtech.material.prasiolite=堇云石
 gregtech.material.bismuth_tellurite=碲化铋
 gregtech.material.magneto_resonatic=共振紫晶
 gregtech.material.hdcs=高强度复合钢
+gregtech.material.zirconium_carbide=碳化锆
+gregtech.material.maraging_steel_250=马氏体时效钢250
+gregtech.material.hms_1_j_22_alloy=高饱和磁感应软磁合金-1J22
+gregtech.material.hg_1223=HG-1223
+gregtech.material.staballoy=贫铀合金
+gregtech.material.incoloy_ds=耐热铬铁合金-DS
+gregtech.material.tantalloy_61=钽钨合金-61
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1071,6 +1086,7 @@ gregtech.material.trace_rhenium_flue=微量铼烟气
 gregtech.material.leached_turpentine=松油浸出物
 gregtech.material.steam_cracked_turpentine=蒸汽裂化的松油浸出物
 gregtech.material.chlorinated_solvents=有机氯溶液
+gregtech.material.free_electron_gas=自由电子气体
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
@@ -1083,6 +1099,7 @@ metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
 metaitem.unstable_star.name=易变之星
 metaitem.unstable_star.tooltip=极不稳定下界之星
 
+metaitem.quantum_anomaly.name=量子反常
 metaitem.magnetron.name=磁控管
 
 metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
@@ -1139,6 +1156,8 @@ recipemap.tree_growth_recipes.name=树木催生
 recipemap.collider_recipes.name=粒子对撞
 recipemap.dimensional_oscillator_recipes.name=超维度震荡
 recipemap.stellar_furnace_recipes.name=恒星热能熔炼
+recipemap.plasma_condenser_recipes.name=等离子冷凝
+recipemap.decay_generator_recipes.name=衰变发生
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

@@ -228,6 +228,13 @@ public class GTLiteMaterials {
     public static Material BismuthTellurite;
     public static Material MagnetoResonatic;
     public static Material Hdcs;
+    public static Material ZirconiumCarbide;
+    public static Material MaragingSteel250;
+    public static Material HMS1J22Alloy;
+    public static Material HG1223;
+    public static Material Staballoy;
+    public static Material IncoloyDS;
+    public static Material Tantalloy61;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -425,6 +432,7 @@ public class GTLiteMaterials {
     public static Material LeachedTurpentine;
     public static Material SteamCrackedTurpentine;
     public static Material ChlorinatedSolvents;
+    public static Material FreeElectronGas;
 
     public static void init() {
         GTLiteElementMaterials.register();

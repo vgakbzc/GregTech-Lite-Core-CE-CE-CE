@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
+import net.minecraft.util.text.TextFormatting;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -588,6 +589,13 @@ public class GTLiteUnknownCompositionMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("(CH4)2Cl5", true);
+
+        //  24064 Free Electron Gas
+        FreeElectronGas = new Material.Builder(getId(), gregtechId("free_electron_gas"))
+                .gas()
+                .color(0x507BB3)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED  + "a" + TextFormatting.RESET + "§ee" + TextFormatting.OBFUSCATED + "a", false);
     }
 
     private static int getId() {

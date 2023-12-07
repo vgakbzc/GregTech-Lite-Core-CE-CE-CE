@@ -189,6 +189,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         UNSTABLE_STAR = this.addItem(307, "unstable_star");
 
+        QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
 
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
