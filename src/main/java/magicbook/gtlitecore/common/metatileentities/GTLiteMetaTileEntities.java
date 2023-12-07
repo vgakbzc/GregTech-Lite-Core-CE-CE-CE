@@ -76,6 +76,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCollider COLLIDER;
     public static MetaTileEntityDimensionalOscillator DIMENSIONAL_OSCILLATOR;
     public static MetaTileEntityDecayGenerator DECAY_GENERATOR;
+
     public static final MetaTileEntityAdvancedFusionReactor[] ADVANCED_FUSION_REACTOR = new MetaTileEntityAdvancedFusionReactor[2];
     public static MetaTileEntityPreciseAssembler PRECISE_ASSEMBLER;
     public static MetaTileEntityComponentAssemblyLine COMPONENT_ASSEMBLY_LINE;
@@ -87,6 +88,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaOilCrackingUnit MEGA_OIL_CRACKING_UNIT;
     public static MetaTileEntityStellarFurnace STELLAR_FURNACE;
     public static MetaTileEntityPlasmaCondenser PLASMA_CONDENSER;
+
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
 
