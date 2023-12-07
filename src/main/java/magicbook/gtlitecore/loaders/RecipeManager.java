@@ -109,5 +109,6 @@ public class RecipeManager {
         Collider.init();
         DecayGenerator.init();
         PlasmaCondenser.init();
+        SuprachronalAssemblyLine.init();
     }
 }

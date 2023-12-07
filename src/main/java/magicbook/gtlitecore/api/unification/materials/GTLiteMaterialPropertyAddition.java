@@ -124,6 +124,7 @@ public class GTLiteMaterialPropertyAddition {
         Naquadah.addFlags(GENERATE_FRAME);
         NaquadahEnriched.addFlags(GENERATE_FRAME);
         Osmiridium.addFlags(GENERATE_FRAME);
+        Americium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -152,6 +153,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Wire Fine
         Seaborgium.addFlags(GENERATE_FINE_WIRE);
         Kanthal.addFlags(GENERATE_FINE_WIRE);
+        Nichrome.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

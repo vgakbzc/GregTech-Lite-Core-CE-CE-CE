@@ -195,6 +195,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
 
+        HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
+        HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
+
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
         MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
         MINING_DRONE_HV = this.addItem(322, "mining_drone.hv");

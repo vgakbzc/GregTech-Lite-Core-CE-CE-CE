@@ -1219,6 +1219,19 @@ public class MachineRecipeLoader {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Ultimate High Energy Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Americium)
+                .input(plate, Americium, 6)
+                .input(circuit, MarkerMaterials.Tier.UV)
+                .input(wireFine, Hdcs, 16)
+                .input(wireFine, Nichrome, 16)
+                .input(wireGtSingle, Europium, 2)
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ULTIMATE_HIGH_ENERGY_CASING, 2))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
         //  Molecular Coil
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenSteel)
@@ -1257,6 +1270,20 @@ public class MachineRecipeLoader {
                 .fluidInputs(Rhugnor.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 2))
                 .EUt(VA[UEV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Dimensional Bridge Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ADVANCED_HIGH_ENERGY_CASING))
+                .input(plate, Vibranium, 6)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(wireFine, YttriumBariumCuprate, 16)
+                .fluidInputs(Tritanium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 2))
+                .EUt(VA[UHV])
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();

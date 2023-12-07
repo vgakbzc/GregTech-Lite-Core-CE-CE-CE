@@ -187,6 +187,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
+    public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
+    public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_OSCILLATING_MATTER;
+
     public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_HV;
