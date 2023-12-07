@@ -61,6 +61,7 @@ public class GTLiteMaterialPropertyAddition {
         Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Seaborgium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Seaborgium.setProperty(PropertyKey.WIRE, new WireProperties((int) V[UEV], 32, 32, false));
+        Actinium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Actinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Caesium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Astatine.setProperty(PropertyKey.FLUID, new FluidProperty());

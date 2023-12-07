@@ -448,7 +448,29 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .buildAndRegister();
 
-        //  TODO Compressed Fusion Reactor Mk V
+        //  Compressed Fusion Reactor Mk V
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UEV])
+                .input(ADVANCED_FUSION_REACTOR[1], 16)
+                .input(plate, MetastableFlerovium, 4)
+                .input(circuit, MarkerMaterials.Tier.UIV, 4)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_CRYOSTAT, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_DIVERTOR, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_VACUUM, 4))
+                .input(ELECTRIC_PUMP_UEV, 2)
+                .input(FIELD_GENERATOR_UEV, 2)
+                .input(cableGtQuadruple, PedotTMA, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Mithril.getFluid(L * 10))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[4])
+                .stationResearch(b -> b
+                        .researchStack(ADVANCED_FUSION_REACTOR[1].getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(256))
+                .EUt(VA[UEV])
+                .duration(1200)
+                .buildAndRegister();
 
         //  Tree Growth Factory
         ModHandler.addShapedRecipe(true, "tree_growth_factory", TREE_GROWTH_FACTORY.getStackForm(),

@@ -108,5 +108,6 @@ public class RecipeManager {
         TreeGrowthFactory.init();
         Collider.init();
         DecayGenerator.init();
+        PlasmaCondenser.init();
     }
 }

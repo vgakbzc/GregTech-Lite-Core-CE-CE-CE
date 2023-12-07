@@ -172,6 +172,12 @@ metaitem.wafer.crystal_interface.name=晶体触面晶圆
 metaitem.wafer.crystal_interface.tooltip=待处理晶体接口
 metaitem.wafer.chip.crystal_interface.name=晶体触面晶片
 metaitem.wafer.chip.crystal_interface.tooltip=晶体接口
+metaitem.component.gooware.intravital_soc.name=活体 SoC
+metaitem.component.gooware.intravital_soc.tooltip=蠕动着的电路
+metaitem.wafer.uhasoc.name=极高进阶片上系统（UHASoC）晶圆
+metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
+metaitem.wafer.chip.uhasoc.name=极高进阶片上系统（UHASoC）晶片
+metaitem.wafer.chip.uhasoc.tooltip=极高进阶片上系统
 
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器

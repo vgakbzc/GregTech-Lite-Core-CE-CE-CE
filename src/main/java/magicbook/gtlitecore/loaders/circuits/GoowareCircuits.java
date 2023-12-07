@@ -18,6 +18,7 @@ public class GoowareCircuits {
     public static void init() {
         CircuitBoard();
         CircuitComponent();
+        SoC();
         Circuits();
     }
 
@@ -75,6 +76,21 @@ public class GoowareCircuits {
                 .buildAndRegister();
     }
 
+    private static void SoC() {
+        //  Intravital SoC
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(CRYSTAL_SYSTEM_ON_CHIP)
+                .inputs(HIGHLY_ADVANCED_SOC.getStackForm(2))
+                .input(wireFine, Vibranium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Lubricant.getFluid(2000))
+                .outputs(INTRAVITAL_SOC.getStackForm(2))
+                .EUt(VA[UHV])
+                .duration(480)
+                .CasingTier(3)
+                .buildAndRegister();
+    }
+
     private static void Circuits() {
 
         //  Processor
@@ -92,7 +108,17 @@ public class GoowareCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  TODO SoC
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(GOOWARE_CIRCUIT_BOARD)
+                .input(NONLINEAR_CHEMICAL_OSCILLATOR)
+                .inputs(INTRAVITAL_SOC.getStackForm())
+                .input(wireFine, Europium, 8)
+                .solderMultiplier(1)
+                .output(GOOWARE_PROCESSOR, 4)
+                .duration(100)
+                .EUt(VA[UHV])
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
         //  Assembly
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
