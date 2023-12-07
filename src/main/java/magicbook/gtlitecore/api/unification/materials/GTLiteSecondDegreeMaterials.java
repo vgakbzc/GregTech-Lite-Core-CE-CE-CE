@@ -365,6 +365,97 @@ public class GTLiteSecondDegreeMaterials {
                 .components(TungstenSteel, 12, HSSS, 9, HSSG, 6, Ruridit, 3, MagnetoResonatic, 2, Plutonium241, 1)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
+
+        //  12027 Zirconium Carbide
+        ZirconiumCarbide = new Material.Builder(getId(), gregtechId("zirconium_carbide"))
+                .ingot()
+                .fluid()
+                .color(0xFFDACD)
+                .iconSet(SHINY)
+                .components(Zirconium, 1, Carbon, 1)
+                .blast(b -> b
+                        .temp(1200, BlastProperty.GasTier.MID)
+                        .blastStats(VA[HV], 344))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12028 Maraging Steel 250
+        MaragingSteel250 = new Material.Builder(getId(), gregtechId("maraging_steel_250"))
+                .ingot()
+                .fluid()
+                .color(0xA5ADB2)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(2413, BlastProperty.GasTier.MID)
+                        .blastStats(VA[EV], 680))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .components(Steel, 16, Molybdenum, 1, Titanium, 1, Nickel, 4, Cobalt, 2)
+                .build();
+
+        //  12029 HMS-1J22 Alloy
+        HMS1J22Alloy = new Material.Builder(getId(), gregtechId("hms_1_j_22_alloy"))
+                .ingot()
+                .fluid()
+                .color(0x9E927D)
+                .iconSet(DULL)
+                .components(Nickel, 12, TinAlloy, 8, Chrome, 4, Phosphorus, 2, Silicon, 2)
+                .blast(b -> b
+                        .temp(4330, BlastProperty.GasTier.MID)
+                        .blastStats(VA[EV], 290))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12030 HG-1223
+        HG1223 = new Material.Builder(getId(), gregtechId("hg_1223"))
+                .ingot()
+                .fluid()
+                .color(0x235497)
+                .iconSet(SHINY)
+                .components(Mercury, 1, Barium, 2, Calcium, 2, Copper, 3, Oxygen, 8)
+                .blast(b -> b
+                        .temp(5325, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[EV], 301))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .build();
+
+        //  12031 Staballoy
+        Staballoy = new Material.Builder(getId(), gregtechId("staballoy"))
+                .ingot()
+                .fluid()
+                .color(0x444B42)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(3450, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[EV], 462))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_DOUBLE_PLATE)
+                .components(Uranium238, 9, Titanium, 1)
+                .build();
+
+        //  12032 Incoloy-DS
+        IncoloyDS = new Material.Builder(getId(), gregtechId("incoloy_ds"))
+                .ingot()
+                .fluid()
+                .color(0x6746B7)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(5680, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[IV], 680))
+                .components(Iron, 23, Cobalt, 9, Chrome, 9, Nickel, 9)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .build();
+
+        //  12033 Tantalloy-61
+        Tantalloy61 = new Material.Builder(getId(), gregtechId("tantalloy_61"))
+                .ingot()
+                .fluid()
+                .color(0x717171)
+                .iconSet(METALLIC)
+                .components(Tantalum, 13, Tungsten, 12, Titanium, 6, Yttrium, 4)
+                .blast(b -> b
+                        .temp(6900, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 901))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .build();
     }
 
     private static int getId() {

@@ -85,6 +85,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> DIMENSIONAL_OSCILLATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> STELLAR_FURNACE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_CONDENSER_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -265,6 +267,11 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
                 .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
                 .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+                .setSound(GTSoundEvents.ARC);
+
+        //  Plasma Condenser RecipeMap
+        PLASMA_CONDENSER_RECIPES = new RecipeMap<>("plasma_condenser_recipes", 2, 2, 2, 2, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_REPLICATOR, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
     }
 }

@@ -5,10 +5,7 @@ import magicbook.gtlitecore.loaders.blocks.WireCoils;
 import magicbook.gtlitecore.loaders.chains.*;
 import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
-import magicbook.gtlitecore.loaders.multiblock.ComponentAssembler;
-import magicbook.gtlitecore.loaders.multiblock.ComponentAssemblyLine;
-import magicbook.gtlitecore.loaders.multiblock.DroneAirport;
-import magicbook.gtlitecore.loaders.multiblock.TreeGrowthFactory;
+import magicbook.gtlitecore.loaders.multiblock.*;
 import magicbook.gtlitecore.loaders.oreprocessing.*;
 
 public class RecipeManager {
@@ -109,5 +106,6 @@ public class RecipeManager {
         ComponentAssemblyLine.init();
         DroneAirport.init();
         TreeGrowthFactory.init();
+        Collider.init();
     }
 }

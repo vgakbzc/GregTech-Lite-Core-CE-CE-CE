@@ -12,6 +12,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class GTLiteMetaBlocks {
 
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
+    public static BlockMetalCasing METAL_CASING;
     public static BlockBoilerCasing BOILER_CASING;
     public static BlockUniqueCasing UNIQUE_CASING;
     public static BlockFusionCasing FUSION_CASING;
@@ -30,6 +31,8 @@ public class GTLiteMetaBlocks {
     public static void init() {
         MULTIBLOCK_CASING = new BlockMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        METAL_CASING = new BlockMetalCasing();
+        METAL_CASING.setRegistryName("metal_casing");
         BOILER_CASING = new BlockBoilerCasing();
         BOILER_CASING.setRegistryName("boiler_casing");
         UNIQUE_CASING = new BlockUniqueCasing();
@@ -59,6 +62,7 @@ public class GTLiteMetaBlocks {
     @SideOnly(Side.CLIENT)
     public static void registerItemModels() {
         registerItemModel(MULTIBLOCK_CASING);
+        registerItemModel(METAL_CASING);
         registerItemModel(BOILER_CASING);
         registerItemModel(UNIQUE_CASING);
         registerItemModel(FUSION_CASING);

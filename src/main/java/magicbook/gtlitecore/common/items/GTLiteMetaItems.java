@@ -180,6 +180,7 @@ public class GTLiteMetaItems {
 
     public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
 
+    public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem MAGNETRON;
 
     public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;
