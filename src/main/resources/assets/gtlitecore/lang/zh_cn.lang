@@ -565,6 +565,10 @@ gtlitecore.machine.dimensional_oscillator.name=维度震荡仪
 gtlitecore.machine.dimensional_oscillator.tooltip.1=长时间开机或导致时空乱流现象的发生
 gtlitecore.machine.dimensional_oscillator.tooltip.2=用于破坏维度的时空平衡以制造极端环境
 
+gtlitecore.machine.decay_generator.name=衰变发生器
+gtlitecore.machine.decay_generator.tooltip.1=抹杀一切超长的衰变周期
+gtlitecore.machine.decay_generator.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
+
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
 
@@ -1153,6 +1157,7 @@ recipemap.collider_recipes.name=粒子对撞
 recipemap.dimensional_oscillator_recipes.name=超维度震荡
 recipemap.stellar_furnace_recipes.name=恒星热能熔炼
 recipemap.plasma_condenser_recipes.name=等离子冷凝
+recipemap.decay_generator_recipes.name=衰变发生
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

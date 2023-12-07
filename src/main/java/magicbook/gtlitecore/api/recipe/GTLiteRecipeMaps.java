@@ -87,6 +87,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> STELLAR_FURNACE_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> PLASMA_CONDENSER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FieldCasingTierRecipeBuilder> DECAY_GENERATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -273,5 +275,10 @@ public class GTLiteRecipeMaps {
         PLASMA_CONDENSER_RECIPES = new RecipeMap<>("plasma_condenser_recipes", 2, 2, 2, 2, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_REPLICATOR, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
+
+        //  Decay Generator RecipeMap
+        DECAY_GENERATOR_RECIPES = new RecipeMap<>("decay_generator_recipes", 1, 1, 1, 1, new FieldCasingTierRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, ProgressWidget.MoveType.VERTICAL_DOWNWARDS)
+                .setSound(GTSoundEvents.SCIENCE);
     }
 }
