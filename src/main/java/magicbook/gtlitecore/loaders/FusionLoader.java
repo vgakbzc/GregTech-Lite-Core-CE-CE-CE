@@ -107,6 +107,41 @@ public class FusionLoader {
                 .EUToStart(250000000L)
                 .buildAndRegister();
 
+        //  Metastable Hassium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(ScandiumTitaniumMixture.getFluid(L * 2))
+                .fluidInputs(RadiumRadonMixture.getFluid(1000))
+                .fluidOutputs(MetastableHassium.getFluid(L * 4))
+                .EUt(VA[UEV])
+                .duration(80)
+                .EUToStart(900000000L)
+                .buildAndRegister();
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(1296)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(144)});
+
+        VACUUM_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(MetastableHassium.getFluid(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 500))
+                .output(ingotHot, MetastableHassium)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 500))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
     }
 
     private static void FantasyMaterials() {

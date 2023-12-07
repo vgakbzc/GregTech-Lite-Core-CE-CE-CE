@@ -618,6 +618,22 @@ public class GTLiteUnknownCompositionMaterials {
                 .components(Flerovium, 1, Ytterbium, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24068 Radium-Radon Mixture
+        RadiumRadonMixture = new Material.Builder(getId(), gregtechId("radium_radon_mixture"))
+                .liquid()
+                .color(Radium.getMaterialRGB() + Radon.getMaterialRGB())
+                .components(Radium, 1, Radon, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24069 Scandium-Titanium Mixture
+        ScandiumTitaniumMixture = new Material.Builder(getId(), gregtechId("scandium_titanium_mixture"))
+                .liquid()
+                .color(Scandium.getMaterialRGB() + Titanium.getMaterialRGB())
+                .components(Scandium, 1, Titanium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

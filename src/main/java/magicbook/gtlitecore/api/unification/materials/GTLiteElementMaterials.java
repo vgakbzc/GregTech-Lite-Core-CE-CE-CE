@@ -248,7 +248,7 @@ public class GTLiteElementMaterials {
                 .iconSet(SHINY)
                 .element(Elements.Og)
                 .flags(GENERATE_PLATE)
-                .blast(10380)
+                .blast(10380, BlastProperty.GasTier.HIGHEST)
                 .build();
 
         //  10017 Metastable Flerovium
@@ -258,8 +258,19 @@ public class GTLiteElementMaterials {
                 .color(0x521973)
                 .iconSet(SHINY)
                 .element(Elements.Fl)
-                .blast(11000)
+                .blast(11000, BlastProperty.GasTier.HIGHEST)
                 .flags(GENERATE_ROD)
+                .build();
+
+        //  10018 Metastable Hassium
+        MetastableHassium = new Material.Builder(getId(), gregtechId("metastable_hassium"))
+                .ingot()
+                .fluid()
+                .color(0x2D3A9D)
+                .iconSet(BRIGHT)
+                .element(Elements.Hs)
+                .flags(GENERATE_ROD, GENERATE_PLATE)
+                .blast(14000, BlastProperty.GasTier.HIGHEST)
                 .build();
     }
 

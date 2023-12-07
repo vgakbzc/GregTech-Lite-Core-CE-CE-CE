@@ -231,6 +231,42 @@ public class MiscRecipes {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Radium-Radon Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Radium.getFluid(1000))
+                .fluidInputs(Radon.getFluid(1000))
+                .fluidOutputs(RadiumRadonMixture.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(RadiumRadonMixture.getFluid(1000))
+                .fluidOutputs(Radium.getFluid(1000))
+                .fluidOutputs(Radon.getFluid(1000))
+                .EUt(VA[LV])
+                .duration(360)
+                .buildAndRegister();
+
+        //  Scandium-Titanium Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Scandium.getFluid(L))
+                .fluidInputs(Titanium.getFluid(L))
+                .fluidOutputs(ScandiumTitaniumMixture.getFluid(L * 2))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(ScandiumTitaniumMixture.getFluid(L * 2))
+                .fluidOutputs(Scandium.getFluid(L))
+                .fluidOutputs(Titanium.getFluid(L))
+                .EUt(VA[LV])
+                .duration(360)
+                .buildAndRegister();
+
         //  Fracturing Fluid
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Alumina)

@@ -229,7 +229,7 @@ public class MaterialComponents {
                 {8, new UnificationEntry(OrePrefix.stick, Dubnium)},
                 {9, new UnificationEntry(OrePrefix.stick, Livermorium)},
                 {10, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
-//                {11, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
+                {11, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
 //                {12, new UnificationEntry(OrePrefix.stick, SuperHeavyLAlloy)},
 //                {13, new UnificationEntry(OrePrefix.stick, SuperHeavyHAlloy)},
 //                {14, new UnificationEntry(OrePrefix.stick, Periodicium)},

@@ -21,6 +21,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Rare Earth
         Praseodymium.setProperty(PropertyKey.DUST, new DustProperty());
         Scandium.setProperty(PropertyKey.DUST, new DustProperty());
+        Scandium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         Terbium.setProperty(PropertyKey.DUST, new DustProperty());
         Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -65,6 +66,8 @@ public class GTLiteMaterialPropertyAddition {
         Astatine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Californium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Curium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Radium.setProperty(PropertyKey.DUST, new DustProperty());
+        Radium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
