@@ -228,7 +228,7 @@ public class MaterialComponents {
         STICK_RADIOACTIVE.appendIngredients(Stream.of(new Object[][]{
                 {8, new UnificationEntry(OrePrefix.stick, Dubnium)},
                 {9, new UnificationEntry(OrePrefix.stick, Livermorium)},
-//                {10, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
+                {10, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
 //                {11, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
 //                {12, new UnificationEntry(OrePrefix.stick, SuperHeavyLAlloy)},
 //                {13, new UnificationEntry(OrePrefix.stick, SuperHeavyHAlloy)},

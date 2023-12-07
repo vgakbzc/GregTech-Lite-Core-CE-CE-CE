@@ -76,6 +76,26 @@ public class Collider {
                 .CasingTier(2)
                 .buildAndRegister();
 
+        //  Pu-239 + alpha -> Cm
+        COLLIDER_RECIPES.recipeBuilder()
+                .input(ALPHA_PARTICLE)
+                .fluidInputs(Plutonium239.getFluid(L))
+                .fluidOutputs(Curium.getFluid(L))
+                .EUt(VA[IV])
+                .duration(200)
+                .CasingTier(1)
+                .buildAndRegister();
+
+        //  Cm + alpha -> Cf
+        COLLIDER_RECIPES.recipeBuilder()
+                .input(ALPHA_PARTICLE)
+                .fluidInputs(Curium.getFluid(L * 2))
+                .fluidOutputs(Californium.getFluid(L * 2))
+                .EUt(VA[LuV])
+                .duration(120)
+                .CasingTier(1)
+                .buildAndRegister();
+
         //  Free Electron Gas -> Quantum Anomaly
         COLLIDER_RECIPES.recipeBuilder()
                 .fluidInputs(FreeElectronGas.getFluid(L))

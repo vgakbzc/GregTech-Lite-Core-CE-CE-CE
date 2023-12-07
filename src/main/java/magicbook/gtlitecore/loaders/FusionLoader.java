@@ -1,9 +1,15 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.recipes.GTRecipeHandler;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.ingotHot;
+import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class FusionLoader {
@@ -54,6 +60,53 @@ public class FusionLoader {
                 .duration(220)
                 .EUToStart(650000000L)
                 .buildAndRegister();
+
+        //  Oganesson Breeding Base + Curium -> Hot Oganesson
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(OganessonBreedingBase.getFluid(L))
+                .fluidInputs(Curium.getFluid(36))
+                .fluidOutputs(MetastableOganesson.getFluid(L))
+                .EUt(VA[UHV])
+                .duration(100)
+                .EUToStart(700000000L)
+                .buildAndRegister();
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(1296)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(144)});
+
+        VACUUM_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(MetastableOganesson.getFluid(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 500))
+                .output(ingotHot, MetastableOganesson)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 500))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Fl-Yb Plasma Prechain (back to decay generator recipes)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Uranium238.getFluid(125))
+                .fluidInputs(Uranium238.getFluid(125))
+                .fluidOutputs(QuasifissioningPlasma.getPlasma(125))
+                .EUt(600000)
+                .duration(100)
+                .EUToStart(250000000L)
+                .buildAndRegister();
+
     }
 
     private static void FantasyMaterials() {

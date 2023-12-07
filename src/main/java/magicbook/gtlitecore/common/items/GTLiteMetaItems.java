@@ -198,6 +198,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MINING_DRONE_OpV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MAX;
 
+    //  Particles
+    public static MetaItem<?>.MetaValueItem ALPHA_PARTICLE;
+
     private GTLiteMetaItems() {}
 
     public static void init() {

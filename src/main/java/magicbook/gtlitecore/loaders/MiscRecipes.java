@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.stack.UnificationEntry;
@@ -218,6 +219,16 @@ public class MiscRecipes {
                 .output(dust, TanmolyiumBetaC, 16)
                 .EUt(VA[EV])
                 .duration(400)
+                .buildAndRegister();
+
+        //  Oganesson Breeding Base
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Titanium.getFluid(L * 2))
+                .fluidInputs(Californium.getFluid(L * 2))
+                .fluidOutputs(OganessonBreedingBase.getFluid(L * 4))
+                .EUt(VA[IV])
+                .duration(120)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Fracturing Fluid

@@ -206,5 +206,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MINING_DRONE_UXV = this.addItem(331, "mining_drone.uxv");
         MINING_DRONE_OpV = this.addItem(332, "mining_drone.opv");
         MINING_DRONE_MAX = this.addItem(333, "mining_drone.max");
+
+        //  Particles
+        ALPHA_PARTICLE = this.addItem(400, "particle.alpha");
     }
 }

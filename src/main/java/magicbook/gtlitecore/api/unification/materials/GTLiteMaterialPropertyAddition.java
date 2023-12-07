@@ -28,6 +28,7 @@ public class GTLiteMaterialPropertyAddition {
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Ytterbium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Isa Mill Ore Process
         Thallium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -62,6 +63,8 @@ public class GTLiteMaterialPropertyAddition {
         Actinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Caesium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Astatine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Californium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Curium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
