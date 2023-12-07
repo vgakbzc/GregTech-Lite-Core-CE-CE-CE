@@ -1,0 +1,189 @@
+package magicbook.gtlitecore.loaders.multiblock;
+
+import gregtech.api.fluids.store.FluidStorageKeys;
+
+import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+
+public class PlasmaCondenser {
+
+    public static void init() {
+
+        //  Adamantium
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Adamantium.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 8000))
+                .circuitMeta(1)
+                .fluidOutputs(Adamantium.getFluid(L))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 8000))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Adamantium.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(4000))
+                .circuitMeta(1)
+                .fluidOutputs(Adamantium.getFluid(L))
+                .fluidOutputs(Ice.getFluid(4000))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Adamantium.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 8000))
+                .circuitMeta(10)
+                .output(ingot, Adamantium)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 8000))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Adamantium.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(4000))
+                .circuitMeta(10)
+                .output(ingot, Adamantium)
+                .fluidOutputs(Ice.getFluid(4000))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Vibranium
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Vibranium.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
+                .circuitMeta(1)
+                .fluidOutputs(Vibranium.getFluid(L))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Vibranium.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(6000))
+                .circuitMeta(1)
+                .fluidOutputs(Vibranium.getFluid(L))
+                .fluidOutputs(Ice.getFluid(6000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Vibranium.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
+                .circuitMeta(10)
+                .output(ingot, Vibranium)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Vibranium.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(6000))
+                .circuitMeta(10)
+                .output(ingot, Vibranium)
+                .fluidOutputs(Ice.getFluid(6000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Mithril
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Mithril.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
+                .circuitMeta(1)
+                .fluidOutputs(Mithril.getFluid(L))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Mithril.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(6000))
+                .circuitMeta(1)
+                .fluidOutputs(Mithril.getFluid(L))
+                .fluidOutputs(Ice.getFluid(6000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Mithril.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
+                .circuitMeta(10)
+                .output(ingot, Mithril)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Mithril.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(6000))
+                .circuitMeta(10)
+                .output(ingot, Mithril)
+                .fluidOutputs(Ice.getFluid(6000))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Hypogen
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Hypogen.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
+                .circuitMeta(1)
+                .fluidOutputs(Hypogen.getFluid(L))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(Hypogen.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(8000))
+                .circuitMeta(1)
+                .fluidOutputs(Hypogen.getFluid(L))
+                .fluidOutputs(Ice.getFluid(8000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Hypogen.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
+                .circuitMeta(10)
+                .output(ingot, Hypogen)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(Hypogen.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(8000))
+                .circuitMeta(10)
+                .output(ingot, Hypogen)
+                .fluidOutputs(Ice.getFluid(8000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+    }
+}

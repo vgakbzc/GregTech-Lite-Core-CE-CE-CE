@@ -448,7 +448,29 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .buildAndRegister();
 
-        //  TODO Compressed Fusion Reactor Mk V
+        //  Compressed Fusion Reactor Mk V
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UEV])
+                .input(ADVANCED_FUSION_REACTOR[1], 16)
+                .input(plate, MetastableFlerovium, 4)
+                .input(circuit, MarkerMaterials.Tier.UIV, 4)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_CRYOSTAT, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_DIVERTOR, 4))
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_VACUUM, 4))
+                .input(ELECTRIC_PUMP_UEV, 2)
+                .input(FIELD_GENERATOR_UEV, 2)
+                .input(cableGtQuadruple, PedotTMA, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Mithril.getFluid(L * 10))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .output(COMPRESSED_FUSION_REACTOR[4])
+                .stationResearch(b -> b
+                        .researchStack(ADVANCED_FUSION_REACTOR[1].getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(256))
+                .EUt(VA[UEV])
+                .duration(1200)
+                .buildAndRegister();
 
         //  Tree Growth Factory
         ModHandler.addShapedRecipe(true, "tree_growth_factory", TREE_GROWTH_FACTORY.getStackForm(),
@@ -1197,6 +1219,19 @@ public class MachineRecipeLoader {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Ultimate High Energy Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Americium)
+                .input(plate, Americium, 6)
+                .input(circuit, MarkerMaterials.Tier.UV)
+                .input(wireFine, Hdcs, 16)
+                .input(wireFine, Nichrome, 16)
+                .input(wireGtSingle, Europium, 2)
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ULTIMATE_HIGH_ENERGY_CASING, 2))
+                .EUt(VA[UHV])
+                .duration(100)
+                .buildAndRegister();
+
         //  Molecular Coil
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenSteel)
@@ -1235,6 +1270,20 @@ public class MachineRecipeLoader {
                 .fluidInputs(Rhugnor.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 2))
                 .EUt(VA[UEV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Dimensional Bridge Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ADVANCED_HIGH_ENERGY_CASING))
+                .input(plate, Vibranium, 6)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(wireFine, YttriumBariumCuprate, 16)
+                .fluidInputs(Tritanium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 2))
+                .EUt(VA[UHV])
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();

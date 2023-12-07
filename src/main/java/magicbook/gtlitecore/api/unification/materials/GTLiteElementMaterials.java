@@ -259,7 +259,7 @@ public class GTLiteElementMaterials {
                 .iconSet(SHINY)
                 .element(Elements.Fl)
                 .blast(11000, BlastProperty.GasTier.HIGHEST)
-                .flags(GENERATE_ROD)
+                .flags(GENERATE_ROD, GENERATE_PLATE)
                 .build();
 
         //  10018 Metastable Hassium

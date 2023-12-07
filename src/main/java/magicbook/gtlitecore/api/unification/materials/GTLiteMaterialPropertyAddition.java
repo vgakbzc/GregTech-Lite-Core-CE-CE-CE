@@ -61,6 +61,7 @@ public class GTLiteMaterialPropertyAddition {
         Seaborgium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Seaborgium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Seaborgium.setProperty(PropertyKey.WIRE, new WireProperties((int) V[UEV], 32, 32, false));
+        Actinium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Actinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Caesium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Astatine.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -123,6 +124,7 @@ public class GTLiteMaterialPropertyAddition {
         Naquadah.addFlags(GENERATE_FRAME);
         NaquadahEnriched.addFlags(GENERATE_FRAME);
         Osmiridium.addFlags(GENERATE_FRAME);
+        Americium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -151,6 +153,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Wire Fine
         Seaborgium.addFlags(GENERATE_FINE_WIRE);
         Kanthal.addFlags(GENERATE_FINE_WIRE);
+        Nichrome.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

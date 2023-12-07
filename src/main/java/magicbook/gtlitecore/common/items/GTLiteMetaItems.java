@@ -144,6 +144,10 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
+    public static MetaItem<?>.MetaValueItem INTRAVITAL_SOC;
+
+    public static MetaItem<?>.MetaValueItem UHASOC_WAFER;
+    public static MetaItem<?>.MetaValueItem UHASOC_CHIP;
 
     //  Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
@@ -182,6 +186,9 @@ public class GTLiteMetaItems {
 
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem MAGNETRON;
+
+    public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
+    public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_OSCILLATING_MATTER;
 
     public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MV;

@@ -13,10 +13,11 @@ import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapComponentAssemblyLine;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapPreciseAssembler;
-import stanhebben.zenscript.annotations.ZenClass;
+import magicbook.gtlitecore.api.recipe.machines.RecipeMapSuprachronalAssemblyLine;
+import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
 
-@ZenClass("mods.gtlitecore.recipe.RecipeMaps")
+@ZenExpansion("mods.gregtech.recipe.RecipeMaps")
 @ZenRegister
 public class GTLiteRecipeMaps {
 
@@ -89,6 +90,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> PLASMA_CONDENSER_RECIPES;
     @ZenProperty
     public static final RecipeMap<FieldCasingTierRecipeBuilder> DECAY_GENERATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> SUPRACHRONAL_ASSEMBLY_LINE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -280,5 +283,15 @@ public class GTLiteRecipeMaps {
         DECAY_GENERATOR_RECIPES = new RecipeMap<>("decay_generator_recipes", 1, 1, 1, 1, new FieldCasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, ProgressWidget.MoveType.VERTICAL_DOWNWARDS)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  Suprachronal Assembly Line RecipeMap
+        SUPRACHRONAL_ASSEMBLY_LINE_RECIPES = new RecipeMapSuprachronalAssemblyLine<>("suprachronal_assembly_line_recipes", 16, 1, 4, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSlotOverlay(true, false, GuiTextures.BOX_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.REPLICATOR);
     }
 }

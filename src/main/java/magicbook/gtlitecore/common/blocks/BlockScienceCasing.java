@@ -34,6 +34,7 @@ public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceC
     public enum ScienceCasingType implements IStringSerializable {
         HIGH_ENERGY_CASING("high_energy_casing"),
         ADVANCED_HIGH_ENERGY_CASING("advanced_high_energy_casing"),
+        ULTIMATE_HIGH_ENERGY_CASING("ultimate_high_energy_casing"),
         MOLECULAR_COIL("molecular_coil"),
         HOLLOW_CASING("hollow_casing"),
         SPACETIME_CASING("spacetime_casing"),

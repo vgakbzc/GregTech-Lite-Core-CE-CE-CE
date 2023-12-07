@@ -83,6 +83,8 @@ tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
 tile.science_casing.advanced_high_energy_casing.name=进阶超能机械方块
 tile.science_casing.advanced_high_energy_casing.tooltip=用于极端情况下的超高能物理实验
+tile.science_casing.ultimate_high_energy_casing.name=终极超能机械方块
+tile.science_casing.ultimate_high_energy_casing.tooltip=用于超级极端情况下的超高能物理实验
 tile.science_casing.molecular_coil.name=分子线圈方块
 tile.science_casing.molecular_coil.tooltip=用于偏转离子束
 tile.science_casing.hollow_casing.name=中空结构方块
@@ -172,6 +174,12 @@ metaitem.wafer.crystal_interface.name=晶体触面晶圆
 metaitem.wafer.crystal_interface.tooltip=待处理晶体接口
 metaitem.wafer.chip.crystal_interface.name=晶体触面晶片
 metaitem.wafer.chip.crystal_interface.tooltip=晶体接口
+metaitem.component.gooware.intravital_soc.name=活体 SoC
+metaitem.component.gooware.intravital_soc.tooltip=蠕动着的电路
+metaitem.wafer.uhasoc.name=极高进阶片上系统（UHASoC）晶圆
+metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
+metaitem.wafer.chip.uhasoc.name=极高进阶片上系统（UHASoC）晶片
+metaitem.wafer.chip.uhasoc.tooltip=极高进阶片上系统
 
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
@@ -644,11 +652,15 @@ gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=最大并行数：§e(线圈
 gtlitecore.machine.stellar_furnace.name=恒星炎炀锻炉
 gtlitecore.machine.stellar_furnace.tooltip.1=长时间开机或导致宇宙热寂
 gtlitecore.machine.stellar_furnace.tooltip.2=驾驭恒星之力
-gtlitecore.machine.stellar_furnace.tooltip.3=需要使用不同的§c爆弹§7在机器内部引发超新星爆发
-gtlitecore.machine.stellar_furnace.tooltip.4=产物以极高温的等离子喷流或等离子聚合液体的形态产出
-gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6遏制装置§7约束后方可冷凝
+gtlitecore.machine.stellar_furnace.tooltip.3=需要使用不同的§c爆弹§7在机器内部引发超新星爆发。
+gtlitecore.machine.stellar_furnace.tooltip.4=产物以极高温的等离子喷流或等离子聚合液体的形态产出。
+gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6遏制装置§7约束后方可冷凝。
 
 gtlitecore.machine.plasma_condenser.name=等离子冷凝器
+
+gtlitecore.machine.suprachronal_assembly_line.name=超时空装配线
+gtlitecore.machine.suprachronal_assembly_line.tooltip.1=需要使用§c超维度导航无人机§7进行引导
+gtlitecore.machine.suprachronal_assembly_line.tooltip.2=使用§b超维度时空振荡物质§7生产特殊的超时空电路。
 
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
@@ -1110,6 +1122,11 @@ metaitem.unstable_star.tooltip=极不稳定下界之星
 metaitem.quantum_anomaly.name=量子反常
 metaitem.magnetron.name=磁控管
 
+metaitem.hyperdimensional_drone.name=超维度导航无人机
+metaitem.hyperdimensional_drone.tooltip=用于引导§6超维度时空振荡物质§7形成正确的结构
+metaitem.hyperdimensional_oscillating_matter.name=超维度时空振荡物质
+metaitem.hyperdimensional_oscillating_matter.tooltip=超维度时空乱流凝结物
+
 metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
 metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）
 metaitem.mining_drone.hv.name=采矿无人机（§6HV§r）
@@ -1169,6 +1186,7 @@ recipemap.dimensional_oscillator_recipes.name=超维度震荡
 recipemap.stellar_furnace_recipes.name=恒星热能熔炼
 recipemap.plasma_condenser_recipes.name=等离子冷凝
 recipemap.decay_generator_recipes.name=衰变发生
+recipemap.suprachronal_assembly_line_recipes.name=超时空装配线
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

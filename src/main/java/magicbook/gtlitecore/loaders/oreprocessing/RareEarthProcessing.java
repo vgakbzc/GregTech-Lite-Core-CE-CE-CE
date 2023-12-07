@@ -26,13 +26,11 @@ public class RareEarthProcessing {
 
     private static void DiethylhexylPhosphoricAcid() {
 
-        //  2C4H8O + 4H -> C8H18O + H2O
-        CHEMICAL_RECIPES.recipeBuilder()
+        //  2C4H8O + 4H -> C8H18O + H2O (lost)
+        MIXER_RECIPES.recipeBuilder()
                 .fluidInputs(Butyraldehyde.getFluid(2000))
                 .fluidInputs(Hydrogen.getFluid(4000))
-                .circuitMeta(2)
                 .fluidOutputs(Ethylhexanol.getFluid(1000))
-                .fluidOutputs(Water.getFluid(1000))
                 .duration(80)
                 .EUt(VA[MV])
                 .buildAndRegister();

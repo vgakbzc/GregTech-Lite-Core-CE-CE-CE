@@ -153,6 +153,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(221, "wafer.cubic_zirconia.europium");
         CRYSTAL_INTERFACE_WAFER = this.addItem(222, "wafer.crystal_interface");
         CRYSTAL_INTERFACE_CHIP = this.addItem(223, "wafer.chip.crystal_interface");
+        INTRAVITAL_SOC = this.addItem(224, "component.gooware.intravital_soc");
+        UHASOC_WAFER = this.addItem(230, "wafer.uhasoc");
+        UHASOC_CHIP = this.addItem(231, "wafer.chip.uhasoc");
 
         //  Voltage Coils
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");
@@ -191,6 +194,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
+
+        HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
+        HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
 
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
         MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
