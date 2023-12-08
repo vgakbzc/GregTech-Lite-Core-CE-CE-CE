@@ -21,6 +21,7 @@ public class GTLiteMetaBlocks {
     public static BlockComponentAssemblyLineCasing COMPONENT_ASSEMBLY_LINE_CASING;
     public static BlockSpaceElevatorCasing SPACE_ELEVATOR_CASING;
     public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;
+    public static BlockActiveUniqueCasing ACTIVE_UNIQUE_CASING;
     public static BlockScienceCasing SCIENCE_CASING;
     public static BlockFieldCasing FIELD_CASING;
     public static BlockWireCoil WIRE_COIL;
@@ -50,6 +51,8 @@ public class GTLiteMetaBlocks {
         SPACE_ELEVATOR_CASING.setRegistryName("space_elevator_casing");
         ACTIVE_MULTIBLOCK_CASING = new BlockActiveMultiblockCasing();
         ACTIVE_MULTIBLOCK_CASING.setRegistryName("active_multiblock_casing");
+        ACTIVE_UNIQUE_CASING = new BlockActiveUniqueCasing();
+        ACTIVE_UNIQUE_CASING.setRegistryName("active_unique_casing");
         SCIENCE_CASING = new BlockScienceCasing();
         SCIENCE_CASING.setRegistryName("science_casing");
         FIELD_CASING = new BlockFieldCasing();
@@ -80,6 +83,7 @@ public class GTLiteMetaBlocks {
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();
         ACTIVE_MULTIBLOCK_CASING.onModelRegister();
+        ACTIVE_UNIQUE_CASING.onModelRegister();
     }
 
     @SideOnly(Side.CLIENT)

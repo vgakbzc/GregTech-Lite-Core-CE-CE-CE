@@ -2,6 +2,7 @@ package magicbook.gtlitecore.client;
 
 import codechicken.lib.texture.TextureUtils;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -59,6 +60,9 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer SPACE_ELEVATOR_CASING = new GTLiteOverlayRenderer("casings/spaces/basic_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
+
+    //  SimpleOrientedCubeRenderer
+    public static SimpleOrientedCubeRenderer ADVANCED_FILTER_IRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_filter_iridium_front");
 
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();

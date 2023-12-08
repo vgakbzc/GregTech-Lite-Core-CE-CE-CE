@@ -95,6 +95,9 @@ tile.active_multiblock_casing.motor_casing_mk4.tooltip=五分钟地月往返
 tile.active_multiblock_casing.motor_casing_mk5.name=太空电梯动力模块 Mk V
 tile.active_multiblock_casing.motor_casing_mk5.tooltip=星际旅行
 
+tile.active_unique_casing.advanced_assembly_line_casing.name=进阶装配机械方块
+tile.active_unique_casing.advanced_assembly_control_casing.name=进阶装配控制外壳
+
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
 tile.science_casing.advanced_high_energy_casing.name=进阶超能机械方块
@@ -620,7 +623,7 @@ gtlitecore.machine.precise_assembler.tooltip.1=误差不超过7nm
 gtlitecore.machine.precise_assembler.tooltip.2=可运行一般的§r组装机§7配方，亦可用于组装精密器件
 gtlitecore.machine.precise_assembler.tooltip.3=使用不同的机器外壳判定机器等级
 gtlitecore.machine.precise_assembler.tooltip.4=运行§r组装机§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.precise_assembler.tooltip.5=运行§r组装机§7配方时，获得§r2^(机器外壳等级+4)§7次并行。
+gtlitecore.machine.precise_assembler.tooltip.5=运行§r组装机§7配方时，获得§e2^(机器外壳等级+4)§7次并行。
 gtlitecore.machine.precise_assembler.tier=机器外壳等级：
 gtlitecore.machine.precise_assembler.tier.1=MK1
 gtlitecore.machine.precise_assembler.tier.2=MK2
@@ -647,6 +650,12 @@ gtlitecore.machine.component_assembly_line.tier.11=大尺度结构 (UIV)
 gtlitecore.machine.component_assembly_line.tier.12=超结构 (UXV)
 gtlitecore.machine.component_assembly_line.tier.13=宇宙 (OpV)
 gtlitecore.machine.component_assembly_line.tier.14=时空 (MAX)
+
+gtlitecore.machine.advanced_assembly_line.name=进阶装配线
+gtlitecore.machine.advanced_assembly_line.tooltip.1=超高精度装配线
+gtlitecore.machine.advanced_assembly_line.tooltip.2=效率碾压同等级装配线，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.advanced_assembly_line.tooltip.3=最大并行数：§e(电压等级 - 4) * 16§7
+gtlitecore.machine.advanced_assembly_line.tooltip.4=额，我是说...因为输入总线的限制，它的最大并行数被锁死在64个了。
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
 gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II

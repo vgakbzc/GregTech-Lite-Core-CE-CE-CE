@@ -25,6 +25,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/stellar_containment_casing"
         }
+      },
+      "advanced_assembly_control_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_assembly_control_casing"
+        }
       }
     }
   }

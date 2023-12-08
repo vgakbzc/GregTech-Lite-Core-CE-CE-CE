@@ -365,24 +365,50 @@ public class MachineRecipeLoader {
 
         //  Component Assembly Line
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .inputs(ASSEMBLY_LINE.getStackForm())
+                .input(ASSEMBLY_LINE)
                 .input(frameGt, Cinobite, 4)
-                .inputs(PRECISE_ASSEMBLER.getStackForm(4))
-                .inputs(COMPONENT_ASSEMBLER[IV].getStackForm(16))
+                .input(PRECISE_ASSEMBLER, 4)
+                .input(COMPONENT_ASSEMBLER[IV], 16)
                 .input(ROBOT_ARM_UV, 4)
                 .input(CONVEYOR_MODULE_UV, 4)
                 .input(plateDouble, IncoloyMA813, 8)
-                .input(plateDouble, Pikyonium64B, 4)
+                .input(plateDouble, Pikyonium64B, 8)
                 .input(gear, TitanSteel)
                 .input(gearSmall, TitanSteel, 3)
                 .input(wireGtQuadruple, EnrichedNaquadahTriniumEuropiumDuranide, 4)
                 .fluidInputs(SolderingAlloy.getFluid(L * 32))
                 .fluidInputs(Lubricant.getFluid(16000))
-                .outputs(COMPONENT_ASSEMBLY_LINE.getStackForm())
+                .output(COMPONENT_ASSEMBLY_LINE)
                 .EUt(VA[UV])
                 .duration(1200)
                 .stationResearch(b -> b
                         .researchStack(COMPONENT_ASSEMBLER[IV].getStackForm())
+                        .CWUt(32)
+                        .EUt(VA[UV]))
+                .buildAndRegister();
+
+        //  Advanced Assembly Line
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(frameGt, Pikyonium64B, 4)
+                .inputs(PRECISE_ASSEMBLER.getStackForm(4))
+                .input(ASSEMBLER[IV], 8)
+                .input(CIRCUIT_ASSEMBLER[IV], 8)
+                .input(ROBOT_ARM_UV, 4)
+                .input(EMITTER_UV, 2)
+                .input(CONVEYOR_MODULE_UV, 2)
+                .input(plateDouble, HY1301, 8)
+                .input(plateDouble, HMS1J79Alloy, 8)
+                .input(gear, Cinobite)
+                .input(gearSmall, Cinobite, 3)
+                .input(wireGtQuadruple, UraniumRhodiumDinaquadide, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .output(ADVANCED_ASSEMBLY_LINE)
+                .EUt(VA[UV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(ASSEMBLY_LINE.getStackForm())
                         .CWUt(32)
                         .EUt(VA[UV]))
                 .buildAndRegister();
@@ -1541,5 +1567,23 @@ public class MachineRecipeLoader {
                         .CWUt(1024)
                         .EUt(VA[UIV]))
                 .buildAndRegister();
+
+        //  Advanced Assembly Control Casing
+        ModHandler.addShapedRecipe(true, "casing_assembly_control.advanced", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_ASSEMBLY_CONTROL_CASING, 2),
+                "OPO", "SFE", "OMO",
+                'O', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'P', ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT,
+                'F', new UnificationEntry(frameGt, NaquadahAlloy),
+                'S', SENSOR_ZPM,
+                'E', EMITTER_ZPM,
+                'M', ELECTRIC_MOTOR_ZPM);
+
+        //  Advanced Assembly Casing
+        ModHandler.addShapedRecipe(true, "casing_assembly_line.advanced", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_ASSEMBLY_LINE_CASING, 2),
+                "PGP", "RFR", "PGP",
+                'P', new UnificationEntry(plate, Iridium),
+                'G', new UnificationEntry(gear, Osmiridium),
+                'R', ROBOT_ARM_ZPM,
+                'F', new UnificationEntry(frameGt, NaquadahAlloy));
     }
 }
