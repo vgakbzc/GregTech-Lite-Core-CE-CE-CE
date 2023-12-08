@@ -1362,5 +1362,158 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  TODO OpV and MAX field casing
+
+        //  Space Elevator Casings
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenCarbide)
+                .inputs(MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.TUNGSTENSTEEL_ROBUST))
+                .input(plate, Pikyonium64B, 6)
+                .input(wireFine, Zinc, 16)
+                .fluidInputs(Kanthal.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING, 2))
+                .EUt(VA[UV])
+                .duration(50)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Osmiridium)
+                .input(plate, IncoloyMA813, 6)
+                .input(ELECTRIC_PUMP_IV, 2)
+                .input(CONVEYOR_MODULE_IV, 2)
+                .input(ROBOT_ARM_IV, 2)
+                .input(wireFine, Tantalum, 16)
+                .fluidInputs(RTMAlloy.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.INTERNAL_STRUCTURE, 2))
+                .EUt(VA[UV])
+                .duration(50)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Naquadah)
+                .input(plate, TungstenSteel, 6)
+                .input(NEUTRON_REFLECTOR, 2)
+                .input(stick, Inconel625, 2)
+                .input(stick, MARM200Steel, 2)
+                .input(wireFine, Lead, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.SUPPORT_STRUCTURE, 2))
+                .EUt(VA[UV])
+                .duration(50)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.CLEANROOM_CASING.getItemVariant(gregtech.common.blocks.BlockCleanroomCasing.CasingType.PLASCRETE))
+                .fluidInputs(FluorinatedEthylenePropylene.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.FLOOR))
+                .circuitMeta(6)
+                .EUt(VA[HV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(ELECTRIC_MOTOR_UV, 2)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(plate, HSSS, 4)
+                .input(gear, Duranium, 3)
+                .input(gearSmall, HY1301, 6)
+                .input(wireFine, YttriumBariumCuprate, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .fluidInputs(Tantalloy61.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.CABLE_CASING))
+                .EUt(VA[UV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING))
+                        .CWUt(128)
+                        .EUt(VA[UV]))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[IV])
+                .input(frameGt, HSSG)
+                .input(ELECTRIC_MOTOR_IV, 4)
+                .input(wireFine, Platinum, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Lubricant.getFluid(1600))
+                .fluidInputs(Americium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK1, 4))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.INTERNAL_STRUCTURE))
+                        .CWUt(64)
+                        .EUt(VA[ZPM]))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HSSE)
+                .inputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK1))
+                .input(ELECTRIC_MOTOR_LuV, 4)
+                .input(wireFine, NiobiumTitanium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Lubricant.getFluid(1600))
+                .fluidInputs(Orichalcum.getFluid(L))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK2, 4))
+                .EUt(VA[UV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK1))
+                        .CWUt(128)
+                        .EUt(VA[UV]))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HSSS)
+                .inputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK2))
+                .input(ELECTRIC_MOTOR_ZPM, 4)
+                .input(wireFine, VanadiumGallium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .fluidInputs(Lubricant.getFluid(3200))
+                .fluidInputs(Adamantium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK3, 4))
+                .EUt(VA[UHV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK2))
+                        .CWUt(256)
+                        .EUt(VA[UHV]))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Hdcs)
+                .inputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK3))
+                .input(ELECTRIC_MOTOR_UV, 4)
+                .input(wireFine, YttriumBariumCuprate, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .fluidInputs(Lubricant.getFluid(3200))
+                .fluidInputs(Mithril.getFluid(L))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK4, 4))
+                .EUt(VA[UEV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK3))
+                        .CWUt(512)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Infinity)
+                .inputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK4))
+                .input(ELECTRIC_MOTOR_UHV, 4)
+                .input(wireFine, Europium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(Lubricant.getFluid(6400))
+                .fluidInputs(Rhugnor.getFluid(L))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5, 4))
+                .EUt(VA[UIV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK4))
+                        .CWUt(1024)
+                        .EUt(VA[UIV]))
+                .buildAndRegister();
     }
 }

@@ -39,6 +39,101 @@
         "bot_all": "gtlitecore:blocks/casings/hyper_core_mk3",
         "top_all": "gtlitecore:blocks/casings/hyper_core_bloom"
       }
+    },
+    "active=false,variant=motor_casing_mk1": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gtlitecore:blocks/casings/spaces/motor_top",
+        "side": "gtlitecore:blocks/casings/spaces/motor_mk1_side",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=motor_casing_mk1": {
+      "model": "gregtech:cube_2_layer_bottom_top",
+      "textures": {
+        "bot_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "bot_side": "gtlitecore:blocks/casings/spaces/motor_mk1_side",
+        "top_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "top_side": "gtlitecore:blocks/casings/spaces/motor_bloom",
+        "bot_bottom": "#bot_side",
+        "top_bottom": "#top_side"
+      }
+    },
+    "active=false,variant=motor_casing_mk2": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gtlitecore:blocks/casings/spaces/motor_top",
+        "side": "gtlitecore:blocks/casings/spaces/motor_mk2_side",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=motor_casing_mk2": {
+      "model": "gregtech:cube_2_layer_bottom_top",
+      "textures": {
+        "bot_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "bot_side": "gtlitecore:blocks/casings/spaces/motor_mk2_side",
+        "top_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "top_side": "gtlitecore:blocks/casings/spaces/motor_bloom",
+        "bot_bottom": "#bot_side",
+        "top_bottom": "#top_side"
+      }
+    },
+    "active=false,variant=motor_casing_mk3": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gtlitecore:blocks/casings/spaces/motor_top",
+        "side": "gtlitecore:blocks/casings/spaces/motor_mk3_side",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=motor_casing_mk3": {
+      "model": "gregtech:cube_2_layer_bottom_top",
+      "textures": {
+        "bot_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "bot_side": "gtlitecore:blocks/casings/spaces/motor_mk3_side",
+        "top_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "top_side": "gtlitecore:blocks/casings/spaces/motor_bloom",
+        "bot_bottom": "#bot_side",
+        "top_bottom": "#top_side"
+      }
+    },
+    "active=false,variant=motor_casing_mk4": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gtlitecore:blocks/casings/spaces/motor_top",
+        "side": "gtlitecore:blocks/casings/spaces/motor_mk4_side",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=motor_casing_mk4": {
+      "model": "gregtech:cube_2_layer_bottom_top",
+      "textures": {
+        "bot_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "bot_side": "gtlitecore:blocks/casings/spaces/motor_mk4_side",
+        "top_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "top_side": "gtlitecore:blocks/casings/spaces/motor_bloom",
+        "bot_bottom": "#bot_side",
+        "top_bottom": "#top_side"
+      }
+    },
+    "active=false,variant=motor_casing_mk5": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gtlitecore:blocks/casings/spaces/motor_top",
+        "side": "gtlitecore:blocks/casings/spaces/motor_mk5_side",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=motor_casing_mk5": {
+      "model": "gregtech:cube_2_layer_bottom_top",
+      "textures": {
+        "bot_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "bot_side": "gtlitecore:blocks/casings/spaces/motor_mk5_side",
+        "top_up": "gtlitecore:blocks/casings/spaces/motor_top",
+        "top_side": "gtlitecore:blocks/casings/spaces/motor_bloom",
+        "bot_bottom": "#bot_side",
+        "top_bottom": "#top_side"
+      }
     }
   }
 }

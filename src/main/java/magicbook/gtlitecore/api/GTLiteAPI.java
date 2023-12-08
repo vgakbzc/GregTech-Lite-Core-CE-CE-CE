@@ -22,6 +22,7 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_INTERNAL_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_CA_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FIELD_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_SPACE_ELEVATOR_MOTOR = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -91,5 +92,17 @@ public class GTLiteAPI {
                 new WrappedIntTier(BlockFieldCasing.FieldCasingTier.OpV, 7));
         MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.MAX),
                 new WrappedIntTier(BlockFieldCasing.FieldCasingTier.MAX, 8));
+
+        //  Space Elevator Motor Tier
+        MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK1),
+                new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK1, 1));
+        MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK2),
+                new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK2, 2));
+        MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK3),
+                new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK3, 3));
+        MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK4),
+                new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK4, 4));
+        MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5),
+                new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5, 5));
     }
 }

@@ -154,6 +154,7 @@ public class GTLiteMaterialPropertyAddition {
         Seaborgium.addFlags(GENERATE_FINE_WIRE);
         Kanthal.addFlags(GENERATE_FINE_WIRE);
         Nichrome.addFlags(GENERATE_FINE_WIRE);
+        VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

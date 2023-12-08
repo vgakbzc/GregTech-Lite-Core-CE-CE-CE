@@ -34,7 +34,12 @@ public class BlockActiveMultiblockCasing extends VariantActiveBlock<BlockActiveM
     public enum ActiveCasingType implements IStringSerializable {
         HYPER_CORE_MK1("hyper_core_mk1"),
         HYPER_CORE_MK2("hyper_core_mk2"),
-        HYPER_CORE_MK3("hyper_core_mk3");
+        HYPER_CORE_MK3("hyper_core_mk3"),
+        MOTOR_CASING_MK1("motor_casing_mk1"),
+        MOTOR_CASING_MK2("motor_casing_mk2"),
+        MOTOR_CASING_MK3("motor_casing_mk3"),
+        MOTOR_CASING_MK4("motor_casing_mk4"),
+        MOTOR_CASING_MK5("motor_casing_mk5");
 
         private final String name;
 
