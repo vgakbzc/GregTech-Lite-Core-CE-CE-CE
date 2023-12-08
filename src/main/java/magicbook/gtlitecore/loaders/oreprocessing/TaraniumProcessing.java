@@ -361,6 +361,21 @@ public class TaraniumProcessing {
                 .EUt(VA[ZPM])
                 .duration(200)
                 .buildAndRegister();
+
+        DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(CrudeNaquadahFuel.getFluid(9000))
+                .chancedOutput(dust, Naquadah, 1000, 500)
+                .fluidOutputs(HeavyNaquadahFuel.getFluid(1000))
+                .fluidOutputs(MediumNaquadahFuel.getFluid(2000))
+                .fluidOutputs(LightNaquadahFuel.getFluid(3000))
+                .fluidOutputs(NaquadahGas.getFluid(1000))
+                .fluidOutputs(NitricAcid.getFluid(800))
+                .fluidOutputs(Ammonia.getFluid(400))
+                .fluidOutputs(EnrichedNaquadahWaste.getFluid(400))
+                .fluidOutputs(NaquadriaWaste.getFluid(200))
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
     }
 
     private static void OrichalcumProcess() {
