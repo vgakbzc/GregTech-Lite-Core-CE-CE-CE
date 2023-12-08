@@ -10,6 +10,7 @@ import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.recipe.properties.ComponentCasingTierProperty;
 import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
+import magicbook.gtlitecore.api.recipe.properties.SpaceElevatorCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
@@ -60,6 +61,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.CLEANROOM_CASING);
         registry.register(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING);
         registry.register(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING);
+        registry.register(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING);
         registry.register(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING);
         registry.register(GTLiteMetaBlocks.SCIENCE_CASING);
         registry.register(GTLiteMetaBlocks.FIELD_CASING);
@@ -80,6 +82,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.CLEANROOM_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.SCIENCE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.FIELD_CASING, VariantItemBlock::new));
@@ -135,6 +138,12 @@ public class CommonProxy {
         FieldCasingTierProperty.registerFieldCasingTier(6, "6 (UXV)");
         FieldCasingTierProperty.registerFieldCasingTier(7, "7 (OpV)");
         FieldCasingTierProperty.registerFieldCasingTier(8, "8 (MAX)");
+        //  Space Elevator Tiers
+        SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(1, "(MK1)");
+        SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(2, "(MK2)");
+        SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(3, "(MK3)");
+        SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(4, "(MK4)");
+        SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(5, "(MK5)");
 
         RecipeManager.init();
     }

@@ -48,4 +48,7 @@ public class GTLiteTraceabilityPredicate {
 
     public static Supplier<TierTraceabilityPredicate> FIELD_CASING = () -> new TierTraceabilityPredicate(MAP_FIELD_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_FIELD_CASING.get(s)).getIntTier()), "FieldCasing", null);
+
+    public static Supplier<TierTraceabilityPredicate> SPACE_ELEVATOR_MOTOR = () -> new TierTraceabilityPredicate(MAP_SPACE_ELEVATOR_MOTOR,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_SPACE_ELEVATOR_MOTOR.get(s)).getIntTier()), "SpaceElevatorMotor", null);
 }

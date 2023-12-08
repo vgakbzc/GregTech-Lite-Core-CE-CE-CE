@@ -1,0 +1,41 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "basic_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spaces/basic_casing"
+        }
+      },
+      "internal_structure": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/internal_structure",
+          "side": "gtlitecore:blocks/casings/spaces/internal_structure_side",
+          "bottom": "#side"
+        }
+      },
+      "support_structure": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/support_structure",
+          "side": "gtlitecore:blocks/casings/spaces/support_structure_side",
+          "bottom": "#side"
+        }
+      },
+      "floor": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spaces/floor"
+        }
+      },
+      "cable_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spaces/motor_top"
+        }
+      }
+    }
+  }
+}

@@ -92,6 +92,12 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FieldCasingTierRecipeBuilder> DECAY_GENERATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> SUPRACHRONAL_ASSEMBLY_LINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SpaceElevatorCasingTierRecipeBuilder> SPACE_ELEVATOR_DRILLING_MODULE;
+    @ZenProperty
+    public static final RecipeMap<SpaceElevatorCasingTierRecipeBuilder> SPACE_ELEVATOR_MINING_MODULE;
+    @ZenProperty
+    public static final RecipeMap<SpaceElevatorCasingTierRecipeBuilder> SPACE_ELEVATOR_ASSEMBLING_MODULE;
 
     public GTLiteRecipeMaps() {}
 
@@ -293,5 +299,24 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, false, GuiTextures.BOX_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.REPLICATOR);
+
+        //  Space Elevator Drilling Module RecipeMap
+        SPACE_ELEVATOR_DRILLING_MODULE = new RecipeMap<>("space_elevator_drilling_module", 4, 0, 2, 1, new SpaceElevatorCasingTierRecipeBuilder(), false)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_FLUID_RIG_DEPLETION, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.DRILL_TOOL);
+
+        //  Space Elevator Mining Module
+        SPACE_ELEVATOR_MINING_MODULE = new RecipeMap<>("space_elevator_mining_module", 4, 9, 2, 0, new SpaceElevatorCasingTierRecipeBuilder(), false)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.MINER);
+
+        //  Space Elevator Assembling Module
+        SPACE_ELEVATOR_ASSEMBLING_MODULE = new RecipeMapSuprachronalAssemblyLine<>("space_elevator_assembling_module", 16, 1, 4, 0, new SpaceElevatorCasingTierRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ASSEMBLER);
     }
 }

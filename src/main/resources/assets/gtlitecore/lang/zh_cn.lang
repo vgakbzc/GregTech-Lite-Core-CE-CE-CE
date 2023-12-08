@@ -75,9 +75,25 @@ tile.component_assembly_line_casing.opv.tooltip=宇宙装配单元
 tile.component_assembly_line_casing.max.name=部件装配线外壳（§c§lMAX§r）
 tile.component_assembly_line_casing.max.tooltip=时空装配单元
 
+tile.space_elevator_casing.basic_casing.name=太空电梯机械方块
+tile.space_elevator_casing.internal_structure.name=太空电梯内部结构机械方块
+tile.space_elevator_casing.support_structure.name=太空电梯支撑结构机械方块
+tile.space_elevator_casing.floor.name=超高强度塑料混凝土方块
+tile.space_elevator_casing.cable_casing.name=太空电梯动力系统控制核心
+
 tile.active_multiblock_casing.hyper_core_mk1.name=超能核心 Mk I
 tile.active_multiblock_casing.hyper_core_mk2.name=超能核心 Mk II
 tile.active_multiblock_casing.hyper_core_mk3.name=超能核心 Mk III
+tile.active_multiblock_casing.motor_casing_mk1.name=太空电梯动力模块 Mk I
+tile.active_multiblock_casing.motor_casing_mk1.tooltip=冲破大气层
+tile.active_multiblock_casing.motor_casing_mk2.name=太空电梯动力模块 Mk II
+tile.active_multiblock_casing.motor_casing_mk2.tooltip=加速的新境界
+tile.active_multiblock_casing.motor_casing_mk3.name=太空电梯动力模块 Mk III
+tile.active_multiblock_casing.motor_casing_mk3.tooltip=与瞬间传送一样快
+tile.active_multiblock_casing.motor_casing_mk4.name=太空电梯动力模块 Mk IV
+tile.active_multiblock_casing.motor_casing_mk4.tooltip=五分钟地月往返
+tile.active_multiblock_casing.motor_casing_mk5.name=太空电梯动力模块 Mk V
+tile.active_multiblock_casing.motor_casing_mk5.tooltip=星际旅行
 
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
@@ -563,6 +579,22 @@ gtlitecore.machine.ion_implantator.name=离子注入机
 gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
 gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
 gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
+
+gtlitecore.machine.space_elevator.name=太空电梯
+gtlitecore.machine.space_elevator.tier=加速轨道等级：
+gtlitecore.machine.space_elevator.tooltip.1=你的资源收集技术的顶端，终极的资源提取设备
+gtlitecore.machine.space_elevator.tooltip.2=加速轨道等级限制了配方等级
+gtlitecore.machine.space_elevator.tooltip.3=换用不同的§6太空电梯动力模块§7以提高加速轨道等级
+gtlitecore.machine.space_elevator.tooltip.4=存在三种不同的机器工作模式：
+gtlitecore.machine.space_elevator.tooltip.5=§6钻井模块§7：源源不断地抽取外太空星球中的各种流体；
+gtlitecore.machine.space_elevator.tooltip.6=§a采矿模块§7：发射成群的采矿无人机，开采外太空星球中的各种矿物资源；
+gtlitecore.machine.space_elevator.tooltip.7=§9组装模块§7：利用外太空的低重力环境进行特殊器件组装；
+gtlitecore.machine.space_elevator.tooltip.8=根据加速轨道等级获得并行，最大并行数视具体模式而定。
+gtlitecore.machine.space_elevator.tooltip.9=最大并行数：
+gtlitecore.machine.space_elevator.tooltip.10=钻井模块 -> §e1, 4, 8, 16, 32§7
+gtlitecore.machine.space_elevator.tooltip.11=采矿模块 -> §e1, 2, 4, 8, 16§7
+gtlitecore.machine.space_elevator.tooltip.12=组装模块 -> §e1, 4, 8, 16, 32§7
+gtlitecore.machine.space_elevator.tooltip.13=提高加速轨道等级以获得更高的并行数
 
 gtlitecore.machine.collider.name=粒子对撞机
 gtlitecore.machine.collider.tier=遏制场发生器等级：
@@ -1187,6 +1219,9 @@ recipemap.stellar_furnace_recipes.name=恒星热能熔炼
 recipemap.plasma_condenser_recipes.name=等离子冷凝
 recipemap.decay_generator_recipes.name=衰变发生
 recipemap.suprachronal_assembly_line_recipes.name=超时空装配线
+recipemap.space_elevator_drilling_module.name=钻井模块
+recipemap.space_elevator_mining_module.name=采矿模块
+recipemap.space_elevator_assembling_module.name=组装模块
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

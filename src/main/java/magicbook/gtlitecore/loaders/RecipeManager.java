@@ -110,5 +110,6 @@ public class RecipeManager {
         DecayGenerator.init();
         PlasmaCondenser.init();
         SuprachronalAssemblyLine.init();
+        SpaceElevator.init();
     }
 }

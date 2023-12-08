@@ -19,6 +19,7 @@ public class GTLiteMetaBlocks {
     public static BlockCleanroomCasing CLEANROOM_CASING;
     public static BlockPreciseAssemblerCasing PRECISE_ASSEMBLER_CASING;
     public static BlockComponentAssemblyLineCasing COMPONENT_ASSEMBLY_LINE_CASING;
+    public static BlockSpaceElevatorCasing SPACE_ELEVATOR_CASING;
     public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;
     public static BlockScienceCasing SCIENCE_CASING;
     public static BlockFieldCasing FIELD_CASING;
@@ -45,6 +46,8 @@ public class GTLiteMetaBlocks {
         PRECISE_ASSEMBLER_CASING.setRegistryName("precise_assembler_casing");
         COMPONENT_ASSEMBLY_LINE_CASING = new BlockComponentAssemblyLineCasing();
         COMPONENT_ASSEMBLY_LINE_CASING.setRegistryName("component_assembly_line_casing");
+        SPACE_ELEVATOR_CASING = new BlockSpaceElevatorCasing();
+        SPACE_ELEVATOR_CASING.setRegistryName("space_elevator_casing");
         ACTIVE_MULTIBLOCK_CASING = new BlockActiveMultiblockCasing();
         ACTIVE_MULTIBLOCK_CASING.setRegistryName("active_multiblock_casing");
         SCIENCE_CASING = new BlockScienceCasing();
@@ -69,6 +72,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(CLEANROOM_CASING);
         registerItemModel(PRECISE_ASSEMBLER_CASING);
         registerItemModel(COMPONENT_ASSEMBLY_LINE_CASING);
+        registerItemModel(SPACE_ELEVATOR_CASING);
         registerItemModel(SCIENCE_CASING);
         registerItemModel(FIELD_CASING);
         registerItemModel(CRUCIBLE);

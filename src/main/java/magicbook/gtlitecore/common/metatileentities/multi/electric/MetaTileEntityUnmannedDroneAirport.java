@@ -157,4 +157,9 @@ public class MetaTileEntityUnmannedDroneAirport extends RecipeMapMultiblockContr
         }
         return shapeInfos;
     }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
 }
