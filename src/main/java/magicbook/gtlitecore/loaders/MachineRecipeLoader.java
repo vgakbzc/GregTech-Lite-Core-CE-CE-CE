@@ -270,7 +270,33 @@ public class MachineRecipeLoader {
                 'W', new UnificationEntry(cableGtSingle, Gold),
                 'P', new UnificationEntry(plate, StainlessSteel));
 
-        //   TODO id25-29
+        //  Space Elevator
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(frameGt, Pikyonium64B, 4)
+                .input(MINING_DRONE_UV, 8)
+                .input(plate, Tritanium, 16)
+                .input(UNMANNED_DRONE_AIRPORT, 16)
+                .input(GRAVITATION_ENGINE, 8)
+                .input(CONVEYOR_MODULE_UV, 16)
+                .input(ROBOT_ARM_UV, 16)
+                .input(gear, Cinobite, 3)
+                .input(gearSmall, TitanSteel, 6)
+                .input(POWER_THRUSTER_ADVANCED, 32)
+                .input(WIRELESS, 64)
+                .input(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 16)
+                .fluidInputs(SolderingAlloy.getFluid(128000))
+                .fluidInputs(Lubricant.getFluid(300000))
+                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(16000))
+                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(16000))
+                .output(SPACE_ELEVATOR)
+                .stationResearch(b -> b
+                        .researchStack(UNMANNED_DRONE_AIRPORT.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UV]))
+                .EUt(VA[UV])
+                .duration(1200)
+                .buildAndRegister();
 
         //  Fusion Reactor Mk IV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()

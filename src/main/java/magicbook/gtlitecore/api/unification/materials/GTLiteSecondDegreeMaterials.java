@@ -278,7 +278,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[ZPM], 487)
                         .vacuumStats(VA[IV], 170))
                 .components(Inconel792, 8, EglinSteel, 5, NaquadahAlloy, 4, TungstenSteel, 4, Cerium, 3, Antimony, 2, Platinum, 2, Ytterbium, 1)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME)
                 .build();
 
         //  12020 Cinobite
@@ -292,7 +292,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UV], 800)
                         .vacuumStats(VA[LuV], 140))
                 .components(Zeron100, 8, Stellite100, 6, Titanium, 6, Naquadria, 4, Osmiridium, 3, Aluminium, 2, Tin, 1, Mercury, 1)
-                .flags(GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
                 .build();
 
         //  12021 Titan Steel

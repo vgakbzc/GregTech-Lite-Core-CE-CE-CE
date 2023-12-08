@@ -308,7 +308,7 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.DRILL_TOOL);
 
         //  Space Elevator Mining Module
-        SPACE_ELEVATOR_MINING_MODULE = new RecipeMap<>("space_elevator_mining_module", 4, 16, 2, 0, new SpaceElevatorCasingTierRecipeBuilder(), false)
+        SPACE_ELEVATOR_MINING_MODULE = new RecipeMap<>("space_elevator_mining_module", 4, 9, 2, 0, new SpaceElevatorCasingTierRecipeBuilder(), false)
                 .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)

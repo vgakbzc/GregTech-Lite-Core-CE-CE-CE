@@ -32,7 +32,7 @@ public class DroneAirport {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(MINING_DRONE_LV)
                 .EUt(VA[LV])
-                .duration(600)
+                .duration(200)
                 .buildAndRegister();
 
         //  MV
@@ -44,7 +44,7 @@ public class DroneAirport {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(MINING_DRONE_MV)
                 .EUt(VA[MV])
-                .duration(600)
+                .duration(200)
                 .buildAndRegister();
 
         //  HV
@@ -56,7 +56,7 @@ public class DroneAirport {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(MINING_DRONE_HV)
                 .EUt(VA[HV])
-                .duration(600)
+                .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -69,7 +69,7 @@ public class DroneAirport {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(MINING_DRONE_EV)
                 .EUt(VA[EV])
-                .duration(600)
+                .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -82,7 +82,7 @@ public class DroneAirport {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(MINING_DRONE_IV)
                 .EUt(VA[IV])
-                .duration(600)
+                .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -96,7 +96,7 @@ public class DroneAirport {
                 .fluidInputs(Cupronickel.getFluid(L))
                 .output(MINING_DRONE_LuV)
                 .EUt(VA[LuV])
-                .duration(600)
+                .duration(200)
                 .scannerResearch(b -> b
                         .researchStack(MINING_DRONE_IV.getStackForm())
                         .EUt(VA[IV])
@@ -113,7 +113,7 @@ public class DroneAirport {
                 .fluidInputs(Kanthal.getFluid(L))
                 .output(MINING_DRONE_ZPM)
                 .EUt(VA[ZPM])
-                .duration(600)
+                .duration(200)
                 .scannerResearch(b -> b
                         .researchStack(MINING_DRONE_LuV.getStackForm())
                         .EUt(VA[LuV])
@@ -130,7 +130,7 @@ public class DroneAirport {
                 .fluidInputs(Nichrome.getFluid(L))
                 .output(MINING_DRONE_UV)
                 .EUt(VA[UV])
-                .duration(600)
+                .duration(200)
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_ZPM.getStackForm())
                         .EUt(VA[ZPM])
@@ -147,7 +147,7 @@ public class DroneAirport {
                 .fluidInputs(RTMAlloy.getFluid(L))
                 .output(MINING_DRONE_UHV)
                 .EUt(VA[UHV])
-                .duration(600)
+                .duration(200)
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_UV.getStackForm())
                         .EUt(VA[UV])

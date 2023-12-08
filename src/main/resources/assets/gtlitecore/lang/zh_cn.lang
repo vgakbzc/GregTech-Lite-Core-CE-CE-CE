@@ -581,7 +581,7 @@ gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
 gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
 
 gtlitecore.machine.space_elevator.name=太空电梯
-gtlitecore.machine.space_elevator.tooltip=加速轨道等级：
+gtlitecore.machine.space_elevator.tier=加速轨道等级：
 gtlitecore.machine.space_elevator.tooltip.1=你的资源收集技术的顶端，终极的资源提取设备
 gtlitecore.machine.space_elevator.tooltip.2=加速轨道等级限制了配方等级
 gtlitecore.machine.space_elevator.tooltip.3=换用不同的§6太空电梯动力模块§7以提高加速轨道等级

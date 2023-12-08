@@ -189,6 +189,11 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
         tooltip.add(I18n.format("gtlitecore.machine.space_elevator.tooltip.13"));
     }
 
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
     private class SpaceElevatorRecipeLogic extends MultiblockRecipeLogic {
 
         public SpaceElevatorRecipeLogic(MetaTileEntitySpaceElevator tileEntity) {
