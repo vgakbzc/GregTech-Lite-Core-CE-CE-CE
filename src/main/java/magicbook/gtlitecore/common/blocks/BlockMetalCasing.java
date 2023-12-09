@@ -32,7 +32,8 @@ public class BlockMetalCasing extends VariantBlock<BlockMetalCasing.MetalCasingT
     }
 
     public enum MetalCasingType implements IStringSerializable {
-        ZIRCONIUM_CARBIDE_CASING("zirconium_carbide_casing");
+        ZIRCONIUM_CARBIDE_CASING("zirconium_carbide_casing"),
+        STABALLOY_CASING("staballoy_casing");
 
         private final String name;
 

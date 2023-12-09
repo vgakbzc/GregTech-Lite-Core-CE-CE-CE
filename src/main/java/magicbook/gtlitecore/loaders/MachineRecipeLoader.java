@@ -534,6 +534,16 @@ public class MachineRecipeLoader {
                 'C', new UnificationEntry(toolHeadBuzzSaw, Aluminium),
                 'W', new UnificationEntry(cableGtSingle, Copper));
 
+        //  Large Processing Factory
+        ModHandler.addShapedRecipe(true, "large_processing_factory", LARGE_PROCESSING_FACTORY.getStackForm(),
+                "RDR", "AHA", "WBW",
+                'H', HULL[IV].getStackForm(),
+                'R', ROBOT_ARM_IV,
+                'A', new UnificationEntry(plate, Staballoy),
+                'D', TOOL_DATA_STICK,
+                'W', new UnificationEntry(cableGtSingle, NiobiumTitanium),
+                'B', WORKBENCH.getStackForm());
+
         //  Stellar Furnace
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Hdcs, 4)
@@ -659,6 +669,21 @@ public class MachineRecipeLoader {
                 .EUt(VA[LuV])
                 .duration(1200)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Molecular Transformer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Pikyonium64B)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.HIGH_ENERGY_CASING))
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(plate, Cinobite, 4)
+                .input(FIELD_GENERATOR_ZPM, 4)
+                .input(TOOL_DATA_ORB, 2)
+                .input(wireGtQuadruple, YttriumBariumCuprate, 2)
+                .fluidInputs(HastelloyC59.getFluid(L * 4))
+                .output(MOLECULAR_TRANSFORMER)
+                .EUt(VA[ZPM])
+                .duration(1200)
                 .buildAndRegister();
 
         //  Large Steam Compressor
@@ -1585,5 +1610,20 @@ public class MachineRecipeLoader {
                 'G', new UnificationEntry(gear, Osmiridium),
                 'R', ROBOT_ARM_ZPM,
                 'F', new UnificationEntry(frameGt, NaquadahAlloy));
+
+        //  Staballoy Casing
+        ModHandler.addShapedRecipe(true, "staballoy_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.STABALLOY_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Staballoy),
+                'F', new UnificationEntry(frameGt, MaragingSteel250));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Staballoy, 6)
+                .input(frameGt, MaragingSteel250)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.STABALLOY_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

@@ -5,6 +5,7 @@ import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
@@ -13,6 +14,7 @@ import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapComponentAssemblyLine;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapPreciseAssembler;
+import magicbook.gtlitecore.api.recipe.machines.RecipeMapPseudoGroup;
 import magicbook.gtlitecore.api.recipe.machines.RecipeMapSuprachronalAssemblyLine;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -98,6 +100,14 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SpaceElevatorCasingTierRecipeBuilder> SPACE_ELEVATOR_MINING_MODULE;
     @ZenProperty
     public static final RecipeMap<SpaceElevatorCasingTierRecipeBuilder> SPACE_ELEVATOR_ASSEMBLING_MODULE;
+    @ZenProperty
+    public static final RecipeMapPseudoGroup<SimpleRecipeBuilder> PROCESSING_MODE_A;
+    @ZenProperty
+    public static final RecipeMapPseudoGroup<SimpleRecipeBuilder> PROCESSING_MODE_B;
+    @ZenProperty
+    public static final RecipeMapPseudoGroup<SimpleRecipeBuilder> PROCESSING_MODE_C;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> MOLECULAR_TRANSFORMER_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -318,5 +328,17 @@ public class GTLiteRecipeMaps {
         SPACE_ELEVATOR_ASSEMBLING_MODULE = new RecipeMapSuprachronalAssemblyLine<>("space_elevator_assembling_module", 16, 1, 4, 0, new SpaceElevatorCasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ASSEMBLY_LINE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Large Processing Factory
+        PROCESSING_MODE_A = new RecipeMapPseudoGroup<>("processing_mode_a", 1, 2, 1, 1, new SimpleRecipeBuilder(), RecipeMaps.COMPRESSOR_RECIPES, RecipeMaps.LATHE_RECIPES, RecipeMaps.POLARIZER_RECIPES, true);
+        PROCESSING_MODE_B = new RecipeMapPseudoGroup<>("processing_mode_b", 2, 2, 1, 1, new SimpleRecipeBuilder(), RecipeMaps.FERMENTING_RECIPES, RecipeMaps.EXTRACTOR_RECIPES, RecipeMaps.CANNER_RECIPES, true);
+        PROCESSING_MODE_C = new RecipeMapPseudoGroup<>("processing_mode_c", 2, 2, 1, 1, new SimpleRecipeBuilder(), RecipeMaps.LASER_ENGRAVER_RECIPES, RecipeMaps.AUTOCLAVE_RECIPES, RecipeMaps.FLUID_SOLIDFICATION_RECIPES, true);
+
+        //  Molecular Transformer RecipeMap
+        MOLECULAR_TRANSFORMER_RECIPES = new RecipeMap<>("molecular_transformer_recipes", 1, 1, 0, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_1)
+                .setSlotOverlay(true, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.SCIENCE);
     }
 }

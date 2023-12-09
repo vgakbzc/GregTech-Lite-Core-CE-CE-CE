@@ -17,6 +17,7 @@ tile.multiblock_casing.aseptic_farm_casing.name=富生农场机器外壳
 tile.multiblock_casing.tritanium_casing.name=极限强度三钛合金机器外壳
 
 tile.metal_casing.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
+tile.metal_casing.staballoy_casing.name=高耐久贫铀合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -703,11 +704,24 @@ gtlitecore.machine.suprachronal_assembly_line.name=超时空装配线
 gtlitecore.machine.suprachronal_assembly_line.tooltip.1=需要使用§c超维度导航无人机§7进行引导
 gtlitecore.machine.suprachronal_assembly_line.tooltip.2=使用§b超维度时空振荡物质§7生产特殊的超时空电路。
 
+gtlitecore.machine.molecular_transformer.name=分子重组仪
+gtlitecore.machine.molecular_transformer.tooltip=打破物质间的界限
+
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
 gtlitecore.machine.tree_growth_factory.name=林海树场
 gtlitecore.machine.tree_growth_factory.tooltip.1=生态环保型机器
 gtlitecore.machine.tree_growth_factory.tooltip.2=当输入电压大于§6HV§7时，获得§e(2 * 电压等级^2 - 2 * 电压等级 + 5)§7次并行。
+
+gtlitecore.machine.large_processing_factory.name=大型加工厂
+gtlitecore.machine.large_processing_factory.tooltip.1=超级材料处理厂
+gtlitecore.machine.large_processing_factory.tooltip.2=比相同电压的单方块机器快2.5倍。
+gtlitecore.machine.large_processing_factory.tooltip.3=使用§6编程电路§7控制当前模式下的配方：
+gtlitecore.machine.large_processing_factory.tooltip.4=§c加工模式-A§7 -> 20-压缩机，21-车床，22-两极磁化机
+gtlitecore.machine.large_processing_factory.tooltip.5=§c加工模式-B§7 -> 20-发酵槽，21-提取机，22-装罐机
+gtlitecore.machine.large_processing_factory.tooltip.6=§c加工模式-C§7 -> 20-精密激光蚀刻机，21-高压釜，22-流体固化机
+gtlitecore.machine.large_processing_factory.tooltip.7=§e电压等级§7决定了最大并行数。
+gtlitecore.machine.large_processing_factory.tooltip.8=每提升1个电压等级，最大并行数加2。
 
 #  Materials
 
@@ -1231,6 +1245,10 @@ recipemap.suprachronal_assembly_line_recipes.name=超时空装配线
 recipemap.space_elevator_drilling_module.name=钻井模块
 recipemap.space_elevator_mining_module.name=采矿模块
 recipemap.space_elevator_assembling_module.name=组装模块
+recipemap.processing_mode_a.name=加工模式-A
+recipemap.processing_mode_b.name=加工模式-B
+recipemap.processing_mode_c.name=加工模式-C
+recipemap.molecular_transformer_recipes.name=分子重组
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
