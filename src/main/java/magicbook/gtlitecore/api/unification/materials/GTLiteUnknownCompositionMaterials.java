@@ -634,6 +634,14 @@ public class GTLiteUnknownCompositionMaterials {
                 .components(Scandium, 1, Titanium, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24070 Electrolyte Reflector Mixture
+        ElectrolyteReflectorMixture = new Material.Builder(getId(), gregtechId("electrolyte_reflector_mixture"))
+                .liquid(new FluidBuilder().temperature(209))
+                .color(0xE62A35)
+                .components(ManganeseDifluoride, 1, ZincSulfide, 1, TantalumPentoxide, 1, Rutile, 1, Ethanol, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

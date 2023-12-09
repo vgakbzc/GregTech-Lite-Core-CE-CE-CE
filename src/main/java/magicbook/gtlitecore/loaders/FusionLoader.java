@@ -244,5 +244,15 @@ public class FusionLoader {
                 .duration(32)
                 .EUToStart(1800000000L)
                 .buildAndRegister();
+
+        //  Curium + Sodium -> Bohrium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Curium.getFluid(L * 2))
+                .fluidInputs(Sodium.getFluid(L * 2))
+                .fluidOutputs(Bohrium.getFluid(L * 4))
+                .EUt(VA[UHV])
+                .duration(140)
+                .EUToStart(800000000L)
+                .buildAndRegister();
     }
 }

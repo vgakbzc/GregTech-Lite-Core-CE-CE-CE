@@ -149,13 +149,19 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(210, "wafer.chip.spin_transfer_torque_memory");
         SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(211, "wafer.chip.spintronic_nand_memory_chip");
 
+        UHASOC_WAFER = this.addItem(215, "wafer.uhasoc");
+        UHASOC_CHIP = this.addItem(216, "wafer.chip.uhasoc");
+
         CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(220, "boule.cubic_zirconia.europium");
         CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(221, "wafer.cubic_zirconia.europium");
         CRYSTAL_INTERFACE_WAFER = this.addItem(222, "wafer.crystal_interface");
         CRYSTAL_INTERFACE_CHIP = this.addItem(223, "wafer.chip.crystal_interface");
         INTRAVITAL_SOC = this.addItem(224, "component.gooware.intravital_soc");
-        UHASOC_WAFER = this.addItem(230, "wafer.uhasoc");
-        UHASOC_CHIP = this.addItem(231, "wafer.chip.uhasoc");
+        STRONTIUM_CARBONATE_BOHRIUM_BOULE = this.addItem(225, "boule.strontium_carbonate.bohrium");
+        STRONTIUM_CARBONATE_BOHRIUM_WAFER = this.addItem(226, "wafer.strontium_carbonate.bohrium");
+        STRONTIUM_CARBONATE_OPTICAL_WAFER = this.addItem(227, "component.optical.strontium_carbonate_wafer");
+        OPTICAL_IMC_BOARD = this.addItem(228, "component.optical.optical_imc_board");
+        PHOTOELECTRON_SOC = this.addItem(229, "component.optical.photoelectron_soc");
 
         //  Voltage Coils
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");

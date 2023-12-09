@@ -85,6 +85,7 @@ public class RecipeManager {
         PlatinumGroupProcessing.init();
         RareEarthProcessing.init();
         RubidiumProcessing.init();
+        StrontiumProcessing.init();
         TaraniumProcessing.init();
         ThalliumProcessing.init();
         TungstenProcessing.init();
