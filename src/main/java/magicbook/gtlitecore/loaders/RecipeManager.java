@@ -57,7 +57,7 @@ public class RecipeManager {
         //  TODO IsotopesChain.init();
         KaptonChain.init();
         KevlarChain.init();
-        //  TODO MagneticsChain.init();
+        MagneticsChain.init();
         MagnetoResonaticChain.init();
         MethylamineChain.init();
         NanotubesChain.init();

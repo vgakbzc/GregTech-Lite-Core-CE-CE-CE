@@ -96,13 +96,23 @@ public class Collider {
                 .CasingTier(1)
                 .buildAndRegister();
 
+        //  U-238 + alpha -> Neptunium
+        COLLIDER_RECIPES.recipeBuilder()
+                .input(ALPHA_PARTICLE)
+                .fluidInputs(Uranium238.getFluid(L))
+                .fluidOutputs(Neptunium.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .CasingTier(1)
+                .buildAndRegister();
+
         //  Free Electron Gas -> Quantum Anomaly
         COLLIDER_RECIPES.recipeBuilder()
                 .fluidInputs(FreeElectronGas.getFluid(L))
                 .chancedOutput(QUANTUM_ANOMALY, 1000, 0)
                 .EUt(VA[ZPM])
                 .duration(200)
-                .CasingTier(1)
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Ichorium -> Void Metal
@@ -112,6 +122,7 @@ public class Collider {
                 .fluidOutputs(VoidMetal.getFluid(L))
                 .EUt(VA[UV])
                 .duration(120)
+                .CasingTier(2)
                 .buildAndRegister();
     }
 }

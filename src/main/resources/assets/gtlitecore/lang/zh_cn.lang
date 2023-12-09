@@ -943,6 +943,13 @@ gregtech.material.pr_ho_ylf=镨钬掺杂的氟化锂钇
 gregtech.material.sodium_acetate=乙酸钠
 gregtech.material.sodium_oxide=氧化钠
 gregtech.material.titanium_nitrate=硝酸钛
+gregtech.material.plutonium_trihydride=三氢化钚
+gregtech.material.plutonium_phosphide=亚磷酸钚
+gregtech.material.neptunium_aluminide=三铝化镎
+gregtech.material.bismuth_trioxide=三氧化二铋
+gregtech.material.ferric_oxide=三氧化二铁
+gregtech.material.bismuth_ferrite=铁酸铋
+gregtech.material.thallium_copper_chloride=氯化铜铊
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

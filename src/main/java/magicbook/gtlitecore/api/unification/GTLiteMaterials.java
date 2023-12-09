@@ -204,6 +204,13 @@ public class GTLiteMaterials {
     public static Material SodiumAcetate;
     public static Material SodiumOxide;
     public static Material TitaniumNitrate;
+    public static Material PlutoniumTrihydride;
+    public static Material PlutoniumPhosphide;
+    public static Material NeptuniumAluminide;
+    public static Material BismuthTrioxide;
+    public static Material FerricOxide;
+    public static Material BismuthFerrite;
+    public static Material ThalliumCopperChloride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
