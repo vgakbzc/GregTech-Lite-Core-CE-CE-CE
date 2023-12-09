@@ -764,6 +764,8 @@ gregtech.material.celestial_tungsten=天体钨
 gregtech.material.metastable_oganesson=亚稳态气奥
 gregtech.material.metastable_flerovium=亚稳态钅夫
 gregtech.material.metastable_hassium=亚稳态钅黑
+gregtech.material.galaxium=银河
+gregtech.material.universium=宇宙素
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -992,6 +994,8 @@ gregtech.material.tantalloy_61=钽钨合金-61
 gregtech.material.lithium_titanate=钛酸锂
 gregtech.material.lanthanum_fullerene_nanotube=镧-富勒烯纳米管
 gregtech.material.fullerene_superconductor=富勒烯超导体
+gregtech.material.black_titanium=黑钛
+gregtech.material.black_plutonium=黑钚
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

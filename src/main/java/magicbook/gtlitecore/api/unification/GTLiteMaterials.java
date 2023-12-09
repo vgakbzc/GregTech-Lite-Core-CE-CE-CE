@@ -25,6 +25,8 @@ public class GTLiteMaterials {
     public static Material MetastableOganesson;
     public static Material MetastableFlerovium;
     public static Material MetastableHassium;
+    public static Material Galaxium;
+    public static Material Universium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -253,6 +255,8 @@ public class GTLiteMaterials {
     public static Material FullereneSuperconductor;
     public static Material LanthanumFullereneMixture;
     public static Material LanthanumEmbeddedFullerene;
+    public static Material BlackTitanium;
+    public static Material BlackPlutonium;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

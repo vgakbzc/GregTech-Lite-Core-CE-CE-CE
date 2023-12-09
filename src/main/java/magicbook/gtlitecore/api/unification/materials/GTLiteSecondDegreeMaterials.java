@@ -477,7 +477,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build()
                 .setFormula("(C60H30)C48La2", true);
 
-        //  12036 FullereneSuperconductor
+        //  12036 Fullerene Superconductor
         FullereneSuperconductor = new Material.Builder(getId(), gregtechId("fullerene_superconductor"))
                 .ingot()
                 .fluid()
@@ -488,6 +488,34 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV], 560))
                 .cableProperties(V[UIV], 256, 0, true)
+                .build();
+
+        //  12037 Black Titanium
+        BlackTitanium = new Material.Builder(getId(), gregtechId("black_titanium"))
+                .ingot()
+                .fluid()
+                .color(0x6C003B)
+                .iconSet(SHINY)
+                .blast(b -> b
+                        .temp(11500, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 580))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .components(Titanium, 26, Lanthanum, 6, TungstenSteel, 4, Cobalt, 3, Manganese, 2, Phosphorus, 2, Palladium, 2, Niobium, 1, Argon, 5)
+                .toolStats(new ToolProperty(9.0F, 30.0F, 32000, 20))
+                .build();
+
+        //  12038 Black Plutonium
+        BlackPlutonium = new Material.Builder(getId(), gregtechId("black_plutonium"))
+                .ingot()
+                .fluid()
+                .color(0x060606)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(12960, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UIV], 600))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .components(Plutonium241, 18, Cerium, 9, Gadolinium, 3, Dysprosium, 3, Thulium, 2, TungstenCarbide, 6, RedSteel, 6, Duranium, 2, Radon, 2)
+                .toolStats(new ToolProperty(18.0F, 40.0F, 75000, 30))
                 .build();
     }
 
