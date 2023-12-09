@@ -1649,6 +1649,32 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(BRIGHT)
                 .build()
                 .setFormula("(C60H30)La2", true);
+
+        //  11189 Strontium Dichloride
+        StrontiumDichloride = new Material.Builder(getId(), gregtechId("strontium_dichloride"))
+                .dust()
+                .color(Strontium.getMaterialRGB() + Chlorine.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Strontium, 1, Chlorine, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11190 Celestite
+        Celestite = new Material.Builder(getId(), gregtechId("celestite"))
+                .gem()
+                .color(0x4AE3E6)
+                .iconSet(OPAL)
+                .components(Strontium, 1, Sulfur, 1, Oxygen, 4)
+                .flags(CRYSTALLIZABLE, DISABLE_DECOMPOSITION, GENERATE_LENS)
+                .build();
+
+        //  11191 Strontium Carbonate
+        StrontiumCarbonate = new Material.Builder(getId(), gregtechId("strontium_carbonate"))
+                .dust()
+                .color(0x1DAFD3)
+                .iconSet(SAND)
+                .components(Strontium, 1, Carbon, 1, Oxygen, 3)
+                .build();
     }
 
     private static int getId() {

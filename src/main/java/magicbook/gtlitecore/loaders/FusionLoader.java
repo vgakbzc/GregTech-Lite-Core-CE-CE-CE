@@ -142,6 +142,16 @@ public class FusionLoader {
                 .EUt(VA[UV])
                 .duration(100)
                 .buildAndRegister();
+
+        //  Curium + Sodium -> Bohrium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Curium.getFluid(L * 2))
+                .fluidInputs(Sodium.getFluid(L * 2))
+                .fluidOutputs(Bohrium.getFluid(L * 4))
+                .EUt(VA[UHV])
+                .duration(140)
+                .EUToStart(800000000L)
+                .buildAndRegister();
     }
 
     private static void FantasyMaterials() {
@@ -151,6 +161,16 @@ public class FusionLoader {
                 .fluidInputs(NetherStar.getFluid(L))
                 .fluidInputs(Bedrock.getFluid(1000))
                 .fluidOutputs(IchorLiquid.getPlasma(L * 4))
+                .EUt(VA[UHV])
+                .duration(45)
+                .EUToStart(650000000L)
+                .buildAndRegister();
+
+        //  Nether Star + Glowstone -> Solarium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(NetherStar.getFluid(L))
+                .fluidInputs(Glowstone.getFluid(1000))
+                .fluidOutputs(Solarium.getFluid(L * 4))
                 .EUt(VA[UHV])
                 .duration(45)
                 .EUToStart(650000000L)

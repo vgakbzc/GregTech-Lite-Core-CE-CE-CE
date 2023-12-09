@@ -215,6 +215,9 @@ public class GTLiteMaterials {
     public static Material ThalliumCopperChloride;
     public static Material BismuthChalcogenide;
     public static Material MercuryCadmiumTelluride;
+    public static Material StrontiumDichloride;
+    public static Material Celestite;
+    public static Material StrontiumCarbonate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -460,6 +463,7 @@ public class GTLiteMaterials {
     public static Material FleroviumYtterbiumPlasma;
     public static Material RadiumRadonMixture;
     public static Material ScandiumTitaniumMixture;
+    public static Material ElectrolyteReflectorMixture;
 
     public static void init() {
         GTLiteElementMaterials.register();

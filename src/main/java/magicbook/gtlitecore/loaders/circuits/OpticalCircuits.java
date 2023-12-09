@@ -19,6 +19,7 @@ public class OpticalCircuits {
         CircuitBoard();
         CircuitComponent();
         SMDs();
+        SoC();
         Circuits();
     }
 
@@ -250,6 +251,89 @@ public class OpticalCircuits {
                 .buildAndRegister();
     }
 
+    private static void SoC() {
+
+        //  MnF2 + ZnS + Ta2O5 + TiO2 + C2H6O
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, ManganeseDifluoride, 3)
+                .input(dust, ZincSulfide, 2)
+                .input(dust, TantalumPentoxide, 7)
+                .input(dust, Rutile, 3)
+                .fluidInputs(Ethanol.getFluid(1000))
+                .fluidOutputs(ElectrolyteReflectorMixture.getFluid(1000))
+                .EUt(VA[UHV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(ElectrolyteReflectorMixture.getFluid(1000))
+                .output(dust, ManganeseDifluoride, 3)
+                .output(dust, ZincSulfide, 2)
+                .output(dust, TantalumPentoxide, 7)
+                .output(dust, Rutile, 3)
+                .fluidOutputs(Ethanol.getFluid(1000))
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Bh:SrSO4 Boule
+        CRYSTALLIZATION_RECIPES.recipeBuilder()
+                .input(dust, StrontiumCarbonate, 64)
+                .input(dust, Bohrium, 8)
+                .output(STRONTIUM_CARBONATE_BOHRIUM_BOULE)
+                .EUt(VA[ZPM])
+                .duration(120)
+                .blastFurnaceTemp(6000)
+                .buildAndRegister();
+
+        //  Bh:SrSO4 Wafer
+        CUTTER_RECIPES.recipeBuilder()
+                .input(STRONTIUM_CARBONATE_BOHRIUM_BOULE)
+                .fluidInputs(Lubricant.getFluid(300))
+                .outputs(STRONTIUM_CARBONATE_BOHRIUM_WAFER.getStackForm(6))
+                .EUt(VA[EV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Bh:SrSO4 Wafer -> Optical Wafer
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(STRONTIUM_CARBONATE_BOHRIUM_WAFER)
+                .fluidInputs(ElectrolyteReflectorMixture.getFluid(16))
+                .output(STRONTIUM_CARBONATE_OPTICAL_WAFER)
+                .EUt(VA[UV])
+                .duration(120)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Optical IMC Board
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
+                .input(plate, PedotTMA)
+                .input(lens, Celestite)
+                .input(dust, ZBLANGlass, 2)
+                .fluidInputs(TinAlloy.getFluid(L * 2))
+                .output(OPTICAL_IMC_BOARD, 2)
+                .EUt(VA[UEV])
+                .duration(400)
+                .CasingTier(3)
+                .buildAndRegister();
+
+        //  Optical SoC
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_IMC_BOARD)
+                .input(UHASOC_CHIP, 2)
+                .input(OPTICAL_FIBER, 4)
+                .fluidInputs(Glowstone.getFluid(L * 2))
+                .output(PHOTOELECTRON_SOC, 4)
+                .EUt(VA[UEV])
+                .duration(200)
+                .CasingTier(3)
+                .buildAndRegister();
+    }
+
     private static void Circuits() {
 
         //  Processor
@@ -267,7 +351,17 @@ public class OpticalCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  TODO SoC
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_CIRCUIT_BOARD)
+                .input(PHOTOELECTRON_SOC)
+                .input(wireFine, PedotPSS, 8)
+                .input(bolt, Adamantium, 8)
+                .output(OPTICAL_PROCESSOR, 4)
+                .solderMultiplier(1)
+                .duration(100)
+                .EUt(VA[UEV])
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
         //  Assembly
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()

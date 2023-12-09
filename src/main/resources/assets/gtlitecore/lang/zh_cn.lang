@@ -186,6 +186,10 @@ metaitem.wafer.chip.spin_transfer_torque_memory.name=自旋转移力矩存储器
 metaitem.wafer.chip.spin_transfer_torque_memory.tooltip=自旋转移力矩存储器
 metaitem.wafer.chip.spintronic_nand_memory_chip.name=磁畴壁反相逻辑与非门（MDNAND）晶片
 metaitem.wafer.chip.spintronic_nand_memory_chip.tooltip=磁畴壁反相逻辑与非门
+metaitem.wafer.uhasoc.name=极高进阶片上系统（UHASoC）晶圆
+metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
+metaitem.wafer.chip.uhasoc.name=极高进阶片上系统（UHASoC）晶片
+metaitem.wafer.chip.uhasoc.tooltip=极高进阶片上系统
 metaitem.boule.cubic_zirconia.europium.name=铕掺杂的单晶立方氧化锆
 metaitem.boule.cubic_zirconia.europium.tooltip=待处理晶体
 metaitem.wafer.cubic_zirconia.europium.name=铕掺杂的立方氧化锆晶圆
@@ -196,10 +200,16 @@ metaitem.wafer.chip.crystal_interface.name=晶体触面晶片
 metaitem.wafer.chip.crystal_interface.tooltip=晶体接口
 metaitem.component.gooware.intravital_soc.name=活体 SoC
 metaitem.component.gooware.intravital_soc.tooltip=蠕动着的电路
-metaitem.wafer.uhasoc.name=极高进阶片上系统（UHASoC）晶圆
-metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
-metaitem.wafer.chip.uhasoc.name=极高进阶片上系统（UHASoC）晶片
-metaitem.wafer.chip.uhasoc.tooltip=极高进阶片上系统
+metaitem.boule.strontium_carbonate.bohrium.name=钅波掺杂的单晶碳酸锶
+metaitem.boule.strontium_carbonate.bohrium.tooltip=待处理光学晶体
+metaitem.wafer.strontium_carbonate.bohrium.name=钅波掺杂的碳酸锶晶圆
+metaitem.wafer.strontium_carbonate.bohrium.tooltip=待处理光学晶体
+metaitem.component.optical.strontium_carbonate_wafer.name=光聚合液涂覆的碳酸锶晶圆
+metaitem.component.optical.strontium_carbonate_wafer.tooltip=预处理电介质反射晶圆
+metaitem.component.optical.optical_imc_board.name=精密预装配光电子电路基板
+metaitem.component.optical.optical_imc_board.tooltip=存算一体光学基板
+metaitem.component.optical.photoelectron_soc.name=光电子 SoC
+metaitem.component.optical.photoelectron_soc.tooltip=荧光电路
 
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
@@ -956,6 +966,9 @@ gregtech.material.bismuth_chalcogenide=铋-锑硫系化合物
 gregtech.material.mercury_cadmium_telluride=碲化镉汞
 gregtech.material.lanthanum_fullerene_mixture=镧-富勒烯混合物
 gregtech.material.lanthanum_embedded_fullerene=镧-富勒烯包合物
+gregtech.material.strontium_dichloride=二氯化锶
+gregtech.material.celestite=天青石
+gregtech.material.strontium_carbonate=碳酸锶
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1199,6 +1212,7 @@ gregtech.material.quasi_fissioning_plasma=拟裂变
 gregtech.material.flerovium_ytterbium_plasma=钅夫-镱
 gregtech.material.radium_radon_mixture=镭-氡混合物
 gregtech.material.scandium_titanium_mixture=钪-钛混合物
+gregtech.material.electrolyte_reflector_mixture=介电镜塑液
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

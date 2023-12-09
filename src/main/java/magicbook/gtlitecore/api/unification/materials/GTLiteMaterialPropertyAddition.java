@@ -71,6 +71,9 @@ public class GTLiteMaterialPropertyAddition {
         Radium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Neptunium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Neptunium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Bohrium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Bohrium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Sodium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -78,6 +81,9 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Rubidium Chain
         Rubidium.setProperty(PropertyKey.DUST, new DustProperty());
+
+        //  Strontium Chain
+        SodiumBicarbonate.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());

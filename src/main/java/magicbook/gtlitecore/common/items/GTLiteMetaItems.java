@@ -140,14 +140,20 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_NAND_MEMORY_CHIP;
 
+    public static MetaItem<?>.MetaValueItem UHASOC_WAFER;
+    public static MetaItem<?>.MetaValueItem UHASOC_CHIP;
+
     public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_BOULE;
     public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_CHIP;
     public static MetaItem<?>.MetaValueItem INTRAVITAL_SOC;
+    public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_BOHRIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_BOHRIUM_WAFER;
+    public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_OPTICAL_WAFER;
+    public static MetaItem<?>.MetaValueItem OPTICAL_IMC_BOARD;
+    public static MetaItem<?>.MetaValueItem PHOTOELECTRON_SOC;
 
-    public static MetaItem<?>.MetaValueItem UHASOC_WAFER;
-    public static MetaItem<?>.MetaValueItem UHASOC_CHIP;
 
     //  Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;
