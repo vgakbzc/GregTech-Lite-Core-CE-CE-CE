@@ -272,6 +272,26 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_ROD, GENERATE_PLATE)
                 .blast(14000, BlastProperty.GasTier.HIGHEST)
                 .build();
+
+        //  10019 Galaxium
+        Galaxium = new Material.Builder(getId(), gregtechId("galaxium"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature((int) (V[OpV] - V[IV])))
+                .color(0x29288A)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Galaxium)
+                .cableProperties(V[OpV], 64, 32, false)
+                .build();
+
+        //  10020 Universium
+        Universium = new Material.Builder(getId(), gregtechId("universium"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature((int) V[MAX]))
+                .color(0xD872EB)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Universium)
+                .cableProperties(V[MAX], 128, 64, false)
+                .build();
     }
 
     private static int getId() {

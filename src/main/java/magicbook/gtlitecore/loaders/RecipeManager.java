@@ -57,7 +57,7 @@ public class RecipeManager {
         //  TODO IsotopesChain.init();
         KaptonChain.init();
         KevlarChain.init();
-        //  TODO MagneticsChain.init();
+        MagneticsChain.init();
         MagnetoResonaticChain.init();
         MethylamineChain.init();
         NanotubesChain.init();
@@ -99,6 +99,7 @@ public class RecipeManager {
         WetwareCircuits.init();
         GoowareCircuits.init();
         OpticalCircuits.init();
+        SpintronicCircuits.init();
     }
 
     private static void initMultiRecipes() {

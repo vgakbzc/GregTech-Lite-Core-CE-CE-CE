@@ -1826,23 +1826,22 @@ public class MachineRecipeLoader {
                         .duration(600))
                 .buildAndRegister();
 
-        //  UEV
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(frameGt, Adamantium)
-        //        .input(MULTIPART_REINFORCED_ROTOR_HOLDER[3])
-        //        .input(ELECTRIC_MOTOR_UEV, 2)
-        //        .input(CONVEYOR_MODULE_UEV, 2)
-        //        .input(rotor, Neutronium, 4) // TODO may be find better material
-        //        .input(stickLong, Osmiridium, 2)
-        //        .input(wireFine, ThalliumCopperChloride, 32)
-        //        .fluidInputs(SolderingAlloy.getFluid(L * 10))
-        //        .output(MULTIPART_REINFORCED_ROTOR_HOLDER[4])
-        //        .EUt(VA[UEV])
-        //        .duration(1200)
-        //        .scannerResearch(b -> b
-        //                .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[3].getStackForm())
-        //                .EUt(VA[UHV])
-        //                .duration(1200))
-        //        .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Adamantium)
+                .input(MULTIPART_REINFORCED_ROTOR_HOLDER[3])
+                .input(ELECTRIC_MOTOR_UEV, 2)
+                .input(CONVEYOR_MODULE_UEV, 2)
+                .input(rotor, Neutronium, 4) // TODO may be find better material
+                .input(stickLong, Osmiridium, 2)
+                .input(wireFine, ThalliumCopperChloride, 32)
+                .fluidInputs(SolderingAlloy.getFluid(L * 10))
+                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[4])
+                .EUt(VA[UEV])
+                .duration(1200)
+                .scannerResearch(b -> b
+                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[3].getStackForm())
+                        .EUt(VA[UHV])
+                        .duration(1200))
+                .buildAndRegister();
     }
 }

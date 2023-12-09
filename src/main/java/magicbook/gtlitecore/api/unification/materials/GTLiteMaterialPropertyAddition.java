@@ -69,6 +69,8 @@ public class GTLiteMaterialPropertyAddition {
         Curium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Radium.setProperty(PropertyKey.DUST, new DustProperty());
         Radium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Neptunium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Neptunium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
