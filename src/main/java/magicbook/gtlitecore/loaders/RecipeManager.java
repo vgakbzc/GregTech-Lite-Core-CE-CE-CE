@@ -99,6 +99,7 @@ public class RecipeManager {
         WetwareCircuits.init();
         GoowareCircuits.init();
         OpticalCircuits.init();
+        SpintronicCircuits.init();
     }
 
     private static void initMultiRecipes() {

@@ -15,6 +15,7 @@ public class NanotubesChain {
 
     public static void init() {
         CarbonNanotubeChain();
+        LanthanumFullereneNanotubeChain();
     }
 
     private static void CarbonNanotubeChain() {
@@ -256,6 +257,46 @@ public class NanotubesChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .EUt(1920)
                 .duration(260)
+                .buildAndRegister();
+    }
+
+    private static void LanthanumFullereneNanotubeChain() {
+
+        //  Lanthanum-Fullerene Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Lanthanum, 2)
+                .input(dust, GeodesicPolyarene, 2)
+                .output(dust, LanthanumFullereneMixture, 4)
+                .EUt(VA[LuV])
+                .duration(40)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Lanthanum-Fullerene Mixture + Nitrogen -> Lanthanum Embedded Fullerene
+        LASER_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(plate, MagnetoResonatic)
+                .input(dust, LanthanumFullereneMixture, 4)
+                .fluidInputs(Nitrogen.getFluid(20000))
+                .output(dust, LanthanumEmbeddedFullerene, 4)
+                .fluidOutputs(Ammonia.getFluid(20000))
+                .EUt(VA[UHV])
+                .duration(320)
+                .temperature(4982)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Lanthanum Embedded Fullerene -> Lanthanum Fullerene Nanotube
+        PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(plate, Rhenium)
+                .input(dust, LanthanumEmbeddedFullerene)
+                .fluidInputs(Acetylene.getFluid(3000))
+                .fluidInputs(Cycloparaphenylene.getFluid(7000))
+                .fluidInputs(Nitrogen.getPlasma(10000))
+                .output(ingot, LanthanumFullereneNanotube)
+                .fluidOutputs(Ammonia.getFluid(10000))
+                .temperature(3496)
+                .duration(1200)
+                .EUt(VA[UEV])
                 .buildAndRegister();
     }
 }

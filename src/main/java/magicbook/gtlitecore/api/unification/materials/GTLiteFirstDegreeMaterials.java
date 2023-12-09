@@ -1611,6 +1611,44 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(GENERATE_FINE_WIRE)
                 .components(Thallium, 1, Copper, 1, Chlorine, 3)
                 .build();
+
+        //  11185 Bismuth Chalcogenide
+        BismuthChalcogenide = new Material.Builder(getId(), gregtechId("bismuth_chalcogenide"))
+                .ingot()
+                .color(0x91994D)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, DECOMPOSITION_BY_ELECTROLYZING)
+                .components(Bismuth, 1, Antimony, 1, Tellurium, 2, Sulfur, 1)
+                .build();
+
+        //  11186 Mercury Cadmium Telluride
+        MercuryCadmiumTelluride = new Material.Builder(getId(), gregtechId("mercury_cadmium_telluride"))
+                .ingot()
+                .fluid()
+                .color(0x823C80)
+                .iconSet(BRIGHT)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .components(Mercury, 2, Cadmium, 1, Tellurium, 2)
+                .blast(b -> b
+                        .temp(2170, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[UHV]))
+                .build();
+
+        //  11187 Lanthanum Fullerene Mixture
+        LanthanumFullereneMixture = new Material.Builder(getId(), gregtechId("lanthanum_fullerene_mixture"))
+                .dust()
+                .color(0xD26D8E)
+                .iconSet(BRIGHT)
+                .build()
+                .setFormula("(C60H30)La2", true);
+
+        //  11188 Lanthanum Embedded Fullerene
+        LanthanumEmbeddedFullerene = new Material.Builder(getId(), gregtechId("lanthanum_embedded_fullerene"))
+                .dust()
+                .color(0x84FFAC)
+                .iconSet(BRIGHT)
+                .build()
+                .setFormula("(C60H30)La2", true);
     }
 
     private static int getId() {

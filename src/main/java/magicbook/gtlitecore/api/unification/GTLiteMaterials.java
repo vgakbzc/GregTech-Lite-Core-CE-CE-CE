@@ -211,6 +211,8 @@ public class GTLiteMaterials {
     public static Material FerricOxide;
     public static Material BismuthFerrite;
     public static Material ThalliumCopperChloride;
+    public static Material BismuthChalcogenide;
+    public static Material MercuryCadmiumTelluride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -247,6 +249,10 @@ public class GTLiteMaterials {
     public static Material IncoloyDS;
     public static Material Tantalloy61;
     public static Material LithiumTitanate;
+    public static Material LanthanumFullereneNanotube;
+    public static Material FullereneSuperconductor;
+    public static Material LanthanumFullereneMixture;
+    public static Material LanthanumEmbeddedFullerene;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

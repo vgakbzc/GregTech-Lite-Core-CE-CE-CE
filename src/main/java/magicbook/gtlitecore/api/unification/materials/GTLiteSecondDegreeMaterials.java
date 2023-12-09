@@ -467,6 +467,28 @@ public class GTLiteSecondDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .fluidPipeProperties(2830, 200, true, true, false, false)
                 .build();
+
+        //  12035 Lanthanum Fullerene Nanotube
+        LanthanumFullereneNanotube = new Material.Builder(getId(), gregtechId("lanthanum_fullerene_nanotube"))
+                .ingot()
+                .color(0xD24473)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C60H30)C48La2", true);
+
+        //  12036 FullereneSuperconductor
+        FullereneSuperconductor = new Material.Builder(getId(), gregtechId("fullerene_superconductor"))
+                .ingot()
+                .fluid()
+                .color(0x8BF743)
+                .iconSet(BRIGHT)
+                .components(TitaniumTungstenCarbide, 16, LanthanumFullereneNanotube, 4, MetastableOganesson, 4, Cinobite, 3, Radium, 2, Astatine, 2)
+                .blast(b -> b
+                        .temp(14960, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UIV], 560))
+                .cableProperties(V[UIV], 256, 0, true)
+                .build();
     }
 
     private static int getId() {
