@@ -90,9 +90,11 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityStellarFurnace STELLAR_FURNACE;
     public static MetaTileEntityPlasmaCondenser PLASMA_CONDENSER;
     public static MetaTileEntitySuprachronalAssemblyLine SUPRACHRONAL_ASSEMBLY_LINE;
+    public static MetaTileEntityMolecularTransformer MOLECULAR_TRANSFORMER;
 
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
+    public static MetaTileEntityLargeProcessingFactory LARGE_PROCESSING_FACTORY;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -190,7 +192,7 @@ public class GTLiteMetaTileEntities {
         PLASMA_CONDENSER = registerMultiMetaTileEntity(44, new MetaTileEntityPlasmaCondenser(gtliteId("plasma_condenser")));
         //  45 COSMIC_RAY_DETECTOR
         SUPRACHRONAL_ASSEMBLY_LINE = registerMultiMetaTileEntity(46, new MetaTileEntitySuprachronalAssemblyLine(gtliteId("suprachronal_assembly_line")));
-        //  47
+        MOLECULAR_TRANSFORMER = registerMultiMetaTileEntity(47, new MetaTileEntityMolecularTransformer(gtliteId("molecular_transformer")));
         //  48
         //  49
         LARGE_STEAM_COMPRESSOR = registerMultiMetaTileEntity(50, new MetaTileEntityLargeSteamCompressor(gtliteId("large_steam_compressor")));
@@ -199,8 +201,8 @@ public class GTLiteMetaTileEntities {
         //  53
         //  54
         TREE_GROWTH_FACTORY = registerMultiMetaTileEntity(55, new MetaTileEntityTreeGrowthFactory(gtliteId("tree_growth_factory")));
-        //  56 DANGOTE_DISTILLERY
-        //  57
+        LARGE_PROCESSING_FACTORY = registerMultiMetaTileEntity(56, new MetaTileEntityLargeProcessingFactory(gtliteId("large_processing_factory")));
+        //  57 DANGOTE_DISTILLERY
         //  58
         //  59
         //  60 MEGA_STEAM_TURBINE

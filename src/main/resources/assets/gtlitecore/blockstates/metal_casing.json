@@ -7,6 +7,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/zirconium_carbide_casing"
         }
+      },
+      "staballoy_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/staballoy_casing"
+        }
       }
     }
   }

@@ -36,6 +36,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer DECAY_GENERATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/decay_generator");
     public static OrientedOverlayRenderer SUPRACHRONAL_ASSEMBLY_LINE_OVERLAY = new OrientedOverlayRenderer("multiblocks/suprachronal_assembly_line");
     public static OrientedOverlayRenderer SPACE_ELEVATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/space_elevator");
+    public static OrientedOverlayRenderer LARGE_PROCESSING_FACTORY_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_processing_factory");
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
     public static GTLiteOverlayRenderer HASTELLOY_N_CASING = new GTLiteOverlayRenderer("casings/hastelloy_n_casing");
@@ -58,6 +59,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer TRITANIUM_CASING = new GTLiteOverlayRenderer("casings/tritanium_casing");
     public static GTLiteOverlayRenderer ZIRCONIUM_CARBIDE_CASING = new GTLiteOverlayRenderer("casings/zirconium_carbide_casing");
     public static GTLiteOverlayRenderer SPACE_ELEVATOR_CASING = new GTLiteOverlayRenderer("casings/spaces/basic_casing");
+    public static GTLiteOverlayRenderer STABALLOY_CASIGN = new GTLiteOverlayRenderer("casings/staballoy_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

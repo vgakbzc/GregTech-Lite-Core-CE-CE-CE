@@ -1531,6 +1531,16 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(BRIGHT)
                 .components(Sodium, 2, Oxygen, 1)
                 .build();
+
+        //  11177 Titanium Nitrate
+        TitaniumNitrate = new Material.Builder(getId(), gregtechId("titanium_nitrate"))
+                .dust()
+                .color(Titanium.getMaterialRGB() + NitricAcid.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Titanium, 1, Nitrogen, 4, Oxygen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Ti(NO3)4", true);
     }
 
     private static int getId() {

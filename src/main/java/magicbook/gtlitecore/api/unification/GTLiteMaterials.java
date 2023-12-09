@@ -203,6 +203,7 @@ public class GTLiteMaterials {
     public static Material PrHoYLF;
     public static Material SodiumAcetate;
     public static Material SodiumOxide;
+    public static Material TitaniumNitrate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -238,6 +239,7 @@ public class GTLiteMaterials {
     public static Material Staballoy;
     public static Material IncoloyDS;
     public static Material Tantalloy61;
+    public static Material LithiumTitanate;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

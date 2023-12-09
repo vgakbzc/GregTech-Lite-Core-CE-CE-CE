@@ -111,5 +111,6 @@ public class RecipeManager {
         PlasmaCondenser.init();
         SuprachronalAssemblyLine.init();
         SpaceElevator.init();
+        MolecularTransformer.init();
     }
 }
