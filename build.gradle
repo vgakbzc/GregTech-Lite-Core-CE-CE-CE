@@ -151,6 +151,8 @@ dependencies {
     implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
     //  CraftTweaker2 API
     compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))
+    //  CTM API
+    compileOnly(rfg.deobf("curse.maven:ctm-267602:2915363"))
 
     if (project.use_mixins.toBoolean()) {
         // Change your mixin refmap name here:

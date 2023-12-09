@@ -1,7 +1,10 @@
 package magicbook.gtlitecore.api.utils;
 
+import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.util.TextFormattingUtil;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
@@ -62,5 +65,13 @@ public class GTLiteUtils {
             finalList.add(last);
         }
         return finalList;
+    }
+
+    public static MetaTileEntityHolder getTileEntity(MetaTileEntity tile) {
+        MetaTileEntityHolder holder = new MetaTileEntityHolder();
+        holder.setMetaTileEntity(tile);
+        holder.getMetaTileEntity().onPlacement();
+        holder.getMetaTileEntity().setFrontFacing(EnumFacing.SOUTH);
+        return holder;
     }
 }

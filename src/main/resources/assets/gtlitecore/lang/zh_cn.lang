@@ -723,6 +723,24 @@ gtlitecore.machine.large_processing_factory.tooltip.6=§c加工模式-C§7 -> 20
 gtlitecore.machine.large_processing_factory.tooltip.7=§e电压等级§7决定了最大并行数。
 gtlitecore.machine.large_processing_factory.tooltip.8=每提升1个电压等级，最大并行数加2。
 
+gtlitecore.machine.reinforced_rotor_holder.luv.name=强化转子支架（§dLuV§r）
+gtlitecore.machine.reinforced_rotor_holder.zpm.name=强化转子支架（§cZPM§r）
+gtlitecore.machine.reinforced_rotor_holder.uv.name=强化转子支架（§3UV§r）
+gtlitecore.machine.reinforced_rotor_holder.uhv.name=强化转子支架（§4UHV§r）
+gtlitecore.machine.reinforced_rotor_holder.uev.name=强化转子支架（§aUEV§r）
+gtlitecore.machine.reinforced_rotor_holder.uiv.name=强化转子支架（§2UIV§r）
+gtlitecore.machine.reinforced_rotor_holder.uxv.name=强化转子支架（§eUXV§r）
+gtlitecore.machine.reinforced_rotor_holder.opv.name=强化转子支架（§9OpV§r）
+gtlitecore.machine.reinforced_rotor_holder.tooltip.1=超高强度转子支架
+gtlitecore.machine.reinforced_rotor_holder.tooltip.2=用于各类§6特大涡轮§7的强化版转子支架
+gtlitecore.machine.reinforced_rotor_holder.error=必须使用同一等级的转子固定器
+gtlitecore.machine.mega_turbine.steam.name=特大蒸汽涡轮
+gtlitecore.machine.mega_turbine.gas.name=特大燃气涡轮
+gtlitecore.machine.mega_turbine.plasma.name=特大等离子体涡轮
+gtlitecore.machine.mega_turbine.mode.0=正常模式
+gtlitecore.machine.mega_turbine.mode.1=高速模式
+gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
+
 #  Materials
 
 ##  Element Materials
