@@ -17,7 +17,7 @@ GregTech Lite Core, a.k.a _Gregicality Science unofficial Extended Life_, is the
 
 ### Project Goal
 
-
+Improve difficulty and QoL of GregTech CEu, based on GregTech 6, Gregicality Legacy and many related works.
 
 ### License
 
@@ -37,7 +37,7 @@ GregTech Lite Core, a.k.a _Gregicality Science unofficial Extended Life_, is the
   - Copyright (c) Magic_Sweepy
   - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
-* Textures
+* Textures and Models
   - Copyright (c) Magic_Sweepy and U.M.T
   - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
