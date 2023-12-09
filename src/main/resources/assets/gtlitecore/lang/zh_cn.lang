@@ -924,6 +924,7 @@ gregtech.material.beryllium_difluoride=二氟化铍
 gregtech.material.pr_ho_ylf=镨钬掺杂的氟化锂钇
 gregtech.material.sodium_acetate=乙酸钠
 gregtech.material.sodium_oxide=氧化钠
+gregtech.material.titanium_nitrate=硝酸钛
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -959,6 +960,7 @@ gregtech.material.hg_1223=HG-1223
 gregtech.material.staballoy=贫铀合金
 gregtech.material.incoloy_ds=耐热铬铁合金-DS
 gregtech.material.tantalloy_61=钽钨合金-61
+gregtech.material.lithium_titanate=钛酸锂
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

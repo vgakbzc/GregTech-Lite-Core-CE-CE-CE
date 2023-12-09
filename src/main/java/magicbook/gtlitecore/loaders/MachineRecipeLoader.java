@@ -977,6 +977,99 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Cryostat
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, StainlessSteel)
+                .input(plate, Titanium, 4)
+                .input(ELECTRIC_PUMP_UHV)
+                .input(SENSOR_UHV)
+                .input(pipeTinyFluid, Copper, 2)
+                .input(screw, LithiumTitanate, 8)
+                .fluidInputs(PCBCoolant.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.CRYOSTAT, 4))
+                .EUt(VA[UV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Advanced Cryostat
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Titanium)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.CRYOSTAT))
+                .input(plate, TungstenSteel, 4)
+                .input(ELECTRIC_PUMP_UEV)
+                .input(SENSOR_UEV)
+                .input(pipeTinyFluid, Bronze, 2)
+                .input(screw, LithiumTitanate, 8)
+                .fluidInputs(PCBCoolant.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_CRYOSTAT, 4))
+                .EUt(VA[UHV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Divertor
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, StainlessSteel)
+                .input(plate, Titanium, 4)
+                .input(CONVEYOR_MODULE_UHV)
+                .input(EMITTER_UHV)
+                .input(rotor, Staballoy, 2)
+                .input(screw, LithiumTitanate, 8)
+                .fluidInputs(Lubricant.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.DIVERTOR, 4))
+                .EUt(VA[UV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Advanced Divertor
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Titanium)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.DIVERTOR))
+                .input(plate, TungstenSteel, 4)
+                .input(CONVEYOR_MODULE_UEV)
+                .input(EMITTER_UEV)
+                .input(rotor, Inconel792, 2)
+                .input(screw, LithiumTitanate, 8)
+                .fluidInputs(Lubricant.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_DIVERTOR, 4))
+                .EUt(VA[UHV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Vacuum
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, StainlessSteel)
+                .input(plate, Titanium, 4)
+                .input(ELECTRIC_PISTON_UHV)
+                .input(FIELD_GENERATOR_UHV)
+                .input(pipeTinyFluid, Copper, 2)
+                .input(screw, LithiumTitanate, 8)
+                .fluidInputs(Polycaprolactam.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.VACUUM, 4))
+                .EUt(VA[UV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Advanced Vacuum
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Titanium)
+                .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.VACUUM))
+                .input(plate, TungstenSteel, 4)
+                .input(ELECTRIC_PISTON_UEV)
+                .input(FIELD_GENERATOR_UEV)
+                .input(pipeTinyFluid, Bronze, 2)
+                .input(screw, LithiumTitanate, 8)
+                .fluidInputs(Polycaprolactam.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.FusionCasingType.ADVANCED_VACUUM, 4))
+                .EUt(VA[UHV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Precise Assembler Casing Mk I
         ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LuV))

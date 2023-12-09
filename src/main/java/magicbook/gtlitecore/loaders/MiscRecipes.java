@@ -14,6 +14,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.UNSTABLE_STAR;
 
@@ -265,6 +266,32 @@ public class MiscRecipes {
                 .fluidOutputs(Titanium.getFluid(L))
                 .EUt(VA[LV])
                 .duration(360)
+                .buildAndRegister();
+
+        //  Lithium Titanate
+
+        //  TiCl4 + 2N2O4 + 2O -> Ti(NO3)4 + 4Cl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(TitaniumTetrachloride.getFluid(1000))
+                .fluidInputs(DinitrogenTetroxide.getFluid(2000))
+                .fluidInputs(Oxygen.getFluid(2000))
+                .output(dust, TitaniumNitrate, 17)
+                .fluidOutputs(Chlorine.getFluid(4000))
+                .EUt(VA[EV])
+                .duration(230)
+                .buildAndRegister();
+
+        //  Ti(NO3)4 + 2NaOH -> Li2TiO3 + Na2CO3 + 4HNO3
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust, TitaniumNitrate, 17)
+                .input(dust, SodiumHydroxide, 6)
+                .inputs(LithiumCarbonate.getItemStack(6))
+                .output(ingotHot, LithiumTitanate, 6)
+                .output(dust, SodaAsh, 6)
+                .fluidOutputs(NitricAcid.getFluid(4000))
+                .EUt(VA[EV])
+                .duration(320)
+                .blastFurnaceTemp(3100)
                 .buildAndRegister();
 
         //  Fracturing Fluid

@@ -456,6 +456,17 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 901))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
+
+        //  12034 Lithium Titanate
+        LithiumTitanate = new Material.Builder(getId(), gregtechId("lithium_titanate"))
+                .ingot()
+                .color(0xFE71A9)
+                .iconSet(SHINY)
+                .blast(3100)
+                .components(Lithium, 2, Titanium, 1, Oxygen, 3)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .fluidPipeProperties(2830, 200, true, true, false, false)
+                .build();
     }
 
     private static int getId() {
