@@ -6,10 +6,12 @@ import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
 import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.metatileentity.single.SimpleSteamMetaTileEntity;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicator;
@@ -22,11 +24,9 @@ import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkI;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkII;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkIII;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityLargeNaquadahReactor;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.*;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
+import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityReinforcedRotorHolder;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 
 import static gregtech.api.GTValues.*;
@@ -38,6 +38,7 @@ public class GTLiteMetaTileEntities {
 
     //  Multiblock Part range: 14000-14999
     public static MetaTileEntityGrindBallHatch MULTIPART_GRIND_BALL_HATCH;
+    public static final MetaTileEntityReinforcedRotorHolder[] MULTIPART_REINFORCED_ROTOR_HOLDER = new MetaTileEntityReinforcedRotorHolder[8];
 
     //  Single Machine range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[V.length - 1];
@@ -95,6 +96,9 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
     public static MetaTileEntityLargeProcessingFactory LARGE_PROCESSING_FACTORY;
+    public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
+    public static MetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
+    public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -131,7 +135,14 @@ public class GTLiteMetaTileEntities {
 
         //  Multiblock Part range: 14000-14999
         MULTIPART_GRIND_BALL_HATCH = registerPartMetaTileEntity(1, new MetaTileEntityGrindBallHatch(gtliteId("grind_ball_hatch")));
-
+        MULTIPART_REINFORCED_ROTOR_HOLDER[0] = registerPartMetaTileEntity(2, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.luv"), LuV));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[1] = registerPartMetaTileEntity(3, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.zpm"), ZPM));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[2] = registerPartMetaTileEntity(4, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.uv"), UV));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[3] = registerPartMetaTileEntity(5, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.uhv"), UHV));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[4] = registerPartMetaTileEntity(6, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.uev"), UEV));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[5] = registerPartMetaTileEntity(7, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.uiv"), UIV));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[6] = registerPartMetaTileEntity(8, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.uxv"), UXV));
+        MULTIPART_REINFORCED_ROTOR_HOLDER[7] = registerPartMetaTileEntity(9, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.opv"), OpV));
         //  Single Machine range: 15000-16000
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
         registerSimpleSteamMetaTileEntity(STEAM_VACUUM_CHAMBER, 15013, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, SteamProgressIndicators.COMPRESS, Textures.GAS_COLLECTOR_OVERLAY, false);
@@ -205,8 +216,12 @@ public class GTLiteMetaTileEntities {
         //  57 DANGOTE_DISTILLERY
         //  58
         //  59
-        //  60 MEGA_STEAM_TURBINE
-        //  61 MEGA_GAS_TURBINE
-        //  62 MEGA_PLASMA_TURBINE
+        MEGA_STEAM_TURBINE = registerMultiMetaTileEntity(60, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.steam"), RecipeMaps.STEAM_TURBINE_FUELS, HV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX), Textures.SOLID_STEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
+        MEGA_GAS_TURBINE = registerMultiMetaTileEntity(61, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.gas"), RecipeMaps.GAS_TURBINE_FUELS, EV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_STEEL_GEARBOX), Textures.CLEAN_STAINLESS_STEEL_CASING, true, GTLiteTextures.MEGA_TURBINE_OVERLAY));
+        MEGA_PLASMA_TURBINE = registerMultiMetaTileEntity(62, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.plasma"), RecipeMaps.PLASMA_GENERATOR_FUELS, IV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), Textures.ROBUST_TUNGSTENSTEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
+        //  63
+        //  64
+        //  65
+        //  66
     }
 }
