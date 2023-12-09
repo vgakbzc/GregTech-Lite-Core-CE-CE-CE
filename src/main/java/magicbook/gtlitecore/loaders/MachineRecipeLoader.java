@@ -1826,7 +1826,6 @@ public class MachineRecipeLoader {
                         .duration(600))
                 .buildAndRegister();
 
-        //  UEV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Adamantium)
                 .input(MULTIPART_REINFORCED_ROTOR_HOLDER[3])
