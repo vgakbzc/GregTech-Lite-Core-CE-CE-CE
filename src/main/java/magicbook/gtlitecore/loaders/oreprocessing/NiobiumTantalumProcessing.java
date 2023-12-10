@@ -6,6 +6,19 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Niobium-Tantalum Process
+ *
+ * <p>
+ * Produces Niobium and Tantalum from Tantalite and Pyrochlore
+ * </p>
+ *
+ * <p>Main Products: Niobium, Tantalum</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>11 Pyrochlore -> 2 Niobium + 2/7 Tantalum </p>
+ * <p>9 Tantalite -> 2 Tantalum + 2/7 Niobium </p>
+ */
 public class NiobiumTantalumProcessing {
 
     public static void init() {

@@ -13,6 +13,21 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Molybdenum Process
+ *
+ * <p>
+ * Produces Molybdenum from Molybdenite, Powellite, or Wulfenite.
+ * Produces Rhenium from Molybdenite
+ * </p>
+ *
+ * <p>Main Products: Molybdenum, Rhenium</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>3 Molybdenite -> 1 Molybdenum</p>
+ * <p>6 Powellite/Wulfenite -> 1 Molybdenum</p>
+ * <p>3 Molybdenite -> 1 Rhenium</p>
+ */
 public class MolybdenumProcessing {
 
     public static void init() {

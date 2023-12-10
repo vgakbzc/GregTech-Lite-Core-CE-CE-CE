@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.loaders;
 
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
+import magicbook.gtlitecore.loaders.blocks.Explosives;
 import magicbook.gtlitecore.loaders.blocks.WireCoils;
 import magicbook.gtlitecore.loaders.chains.*;
 import magicbook.gtlitecore.loaders.circuits.*;
@@ -32,6 +33,7 @@ public class RecipeManager {
     private static void initBlocks() {
         WireCoils.init();
         Crucibles.init();
+        Explosives.init();
     }
 
     private static void initChains() {
@@ -53,6 +55,7 @@ public class RecipeManager {
         FullereneChain.init();
         GalliumNitrideChain.init();
         GrapheneChain.init();
+        HexanitrohexaaxaisowurtzitaneChain.init();
         HydrogenPeroxideChain.init();
         //  TODO IsotopesChain.init();
         KaptonChain.init();
@@ -101,6 +104,7 @@ public class RecipeManager {
         GoowareCircuits.init();
         OpticalCircuits.init();
         SpintronicCircuits.init();
+        CosmicCircuits.init();
     }
 
     private static void initMultiRecipes() {
@@ -114,5 +118,6 @@ public class RecipeManager {
         SuprachronalAssemblyLine.init();
         SpaceElevator.init();
         MolecularTransformer.init();
+        StellarFurnace.init();
     }
 }

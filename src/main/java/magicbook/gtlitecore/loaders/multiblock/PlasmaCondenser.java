@@ -8,6 +8,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.PLASMA_CONTAINMENT_CELL;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.RHENIUM_PLASMA_CONTAINMENT_CELL;
 
 public class PlasmaCondenser {
 
@@ -180,6 +182,29 @@ public class PlasmaCondenser {
                 .fluidInputs(GelidCryotheum.getFluid(8000))
                 .circuitMeta(10)
                 .output(ingot, Hypogen)
+                .fluidOutputs(Ice.getFluid(8000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Degenerate Rhenium
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(RHENIUM_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
+                .circuitMeta(1)
+                .output(PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(DegenerateRhenium.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(RHENIUM_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(GelidCryotheum.getFluid(8000))
+                .circuitMeta(1)
+                .output(PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(DegenerateRhenium.getFluid(1000))
                 .fluidOutputs(Ice.getFluid(8000))
                 .EUt(VA[UEV])
                 .duration(100)

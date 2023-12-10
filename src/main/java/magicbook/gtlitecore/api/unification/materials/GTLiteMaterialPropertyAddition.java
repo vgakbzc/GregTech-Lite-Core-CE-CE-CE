@@ -119,6 +119,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
+        Rhenium.addFlags(GENERATE_DENSE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);
@@ -133,9 +134,12 @@ public class GTLiteMaterialPropertyAddition {
         NaquadahEnriched.addFlags(GENERATE_FRAME);
         Osmiridium.addFlags(GENERATE_FRAME);
         Americium.addFlags(GENERATE_FRAME);
+        Uranium238.addFlags(GENERATE_FRAME);
+        Plutonium241.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
+        Livermorium.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -154,6 +158,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
+        Livermorium.addFlags(GENERATE_BOLT_SCREW);
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);

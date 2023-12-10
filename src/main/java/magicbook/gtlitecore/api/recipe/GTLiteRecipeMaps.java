@@ -291,7 +291,7 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.ARC);
 
         //  Plasma Condenser RecipeMap
-        PLASMA_CONDENSER_RECIPES = new RecipeMap<>("plasma_condenser_recipes", 2, 2, 2, 2, new SimpleRecipeBuilder(), false)
+        PLASMA_CONDENSER_RECIPES = new RecipeMap<>("plasma_condenser_recipes", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_REPLICATOR, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
 

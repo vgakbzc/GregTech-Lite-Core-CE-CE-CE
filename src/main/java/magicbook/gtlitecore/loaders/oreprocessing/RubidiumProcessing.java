@@ -7,6 +7,19 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Rubidium Process
+ *
+ * <p>
+ * Produces Rubidium and Caesium from Pollucite
+ * </p>
+ *
+ * <p>Main Products: Rubidium, Caesium</p>
+ * <p>Side Products: Alumina, Silicon Dioxide</p>
+ *
+ * <p>10 Pollucite -> 2 Caesium + 1 Rubidium</p>
+ * <p>Loses 1 Tiny Tin and 111.11 Chlorine</p>
+ */
 public class RubidiumProcessing {
 
     public static void init() {

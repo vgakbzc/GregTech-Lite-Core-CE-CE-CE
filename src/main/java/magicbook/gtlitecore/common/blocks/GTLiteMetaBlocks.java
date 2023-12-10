@@ -26,6 +26,7 @@ public class GTLiteMetaBlocks {
     public static BlockFieldCasing FIELD_CASING;
     public static BlockWireCoil WIRE_COIL;
     public static BlockTransparentCasing TRANSPARENT_CASING;
+    public static BlockExplosive EXPLOSIVE_BLOCK;
     public static BlockCrucible CRUCIBLE;
 
     private GTLiteMetaBlocks() {}
@@ -61,6 +62,8 @@ public class GTLiteMetaBlocks {
         WIRE_COIL.setRegistryName("wire_coil");
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
+        EXPLOSIVE_BLOCK = new BlockExplosive();
+        EXPLOSIVE_BLOCK.setRegistryName("explosive_block");
         CRUCIBLE = new BlockCrucible();
         CRUCIBLE.setRegistryName("crucible");
     }
@@ -78,6 +81,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(SPACE_ELEVATOR_CASING);
         registerItemModel(SCIENCE_CASING);
         registerItemModel(FIELD_CASING);
+        registerItemModel(EXPLOSIVE_BLOCK);
         registerItemModel(CRUCIBLE);
 
         WIRE_COIL.onModelRegister();

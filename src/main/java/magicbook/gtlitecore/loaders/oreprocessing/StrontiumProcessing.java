@@ -7,6 +7,18 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Strontium Process
+ *
+ * @author Magic_Sweepy (2023/12/05)
+ *
+ * <p>Produces Strontium from Pyrochlore</p>
+ *
+ * <p>Main Products: Strontium</p>
+ * <p>Side Products: Niobium, Tantalum</p>
+ *
+ * <p>1 Pyrochlore -> 2 Strontium </p>
+ */
 public class StrontiumProcessing {
 
     public static void init() {

@@ -27,6 +27,7 @@ public class GTLiteMaterials {
     public static Material MetastableHassium;
     public static Material Galaxium;
     public static Material Universium;
+    public static Material DegenerateRhenium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -218,6 +219,14 @@ public class GTLiteMaterials {
     public static Material StrontiumDichloride;
     public static Material Celestite;
     public static Material StrontiumCarbonate;
+    public static Material SilicaGel;
+    public static Material SilicaGelBase;
+    public static Material NitroniumTetrafluoroborate;
+    public static Material NitrosoniumTetrafluoroborate;
+    public static Material TetrafluoroboricAcid;
+    public static Material PotassiumBisulfite;
+    public static Material PotassiumNitrite;
+    public static Material PotassiumCarbonate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -371,6 +380,28 @@ public class GTLiteMaterials {
     public static Material Dinitrodipropanyloxybenzene;
     public static Material Isochloropropane;
     public static Material Dibromomethylbenzene;
+    public static Material Hexanitrohexaaxaisowurtzitane;
+    public static Material CrudeHexanitrohexaaxaisowurtzitane;
+    public static Material Tetraacetyldinitrosohexaazaisowurtzitane;
+    public static Material Benzaldehyde;
+    public static Material Dibenzyltetraacetylhexaazaisowurtzitane;
+    public static Material Hexabenzylhexaazaisowurtzitane;
+    public static Material Succinimide;
+    public static Material SuccinimidylAcetate;
+    public static Material NHydroxysuccinimide;
+    public static Material SuccinicAnhydride;
+    public static Material HydroxylamineHydrochloride;
+    public static Material SuccinicAcid;
+    public static Material MaleicAnhydride;
+    public static Material HydroxylammoniumSulfate;
+    public static Material PotassiumHydroxylaminedisulfonate;
+    public static Material NitrousAcid;
+    public static Material Acetonitrile;
+    public static Material Benzylamine;
+    public static Material Acetamide;
+    public static Material AmmoniumAcetate;
+    public static Material Hexamethylenetetramine;
+    public static Material BenzylChloride;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

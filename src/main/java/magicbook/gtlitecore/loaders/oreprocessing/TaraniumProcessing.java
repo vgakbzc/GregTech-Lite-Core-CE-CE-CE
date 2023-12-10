@@ -15,6 +15,20 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ *
+ * The Taranium Production Process
+ *
+ * <p>Produces Taranium and Bedrock Dust from Bedrock Smoke</p>
+ *
+ * <p>Main Products: Taranium Dust, Taranium Fuels, Bedrock Dust</p>
+ * <p>Side Products: Platinum, Iridium, Osmium</p>
+ *
+ * <p>Credit to the <a href="https://github.com/GT-IMPACT">GT-IMPACT Modpack</a>.
+ *    This processing chain was adapted from their Hyper Fuel production process</p>
+ *
+ * <p>Naquadah Fuel chain from Gregicality Legacy.</p>
+ */
 public class TaraniumProcessing {
 
     public static void init() {

@@ -10,7 +10,6 @@ import net.minecraft.init.Enchantments;
 import net.minecraft.util.text.TextFormatting;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.GTValues.UHV;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
@@ -292,6 +291,18 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.Universium)
                 .cableProperties(V[MAX], 128, 64, false)
                 .build();
+
+        //  10021 Degenerate Rhenium
+        DegenerateRhenium = new Material.Builder(getId(), gregtechId("degenerate_rhenium"))
+                .dust()
+                .liquid()
+                .plasma(new FluidBuilder().temperature((int) V[UV]))
+                .color(0x6666FF)
+                .iconSet(CUSTOM_DEGENERATE_RHENIUM)
+                .element(Elements.Rh)
+                .flags(GENERATE_PLATE)
+                .build()
+                .setFormula("§cR§de", false);
     }
 
     private static int getId() {
