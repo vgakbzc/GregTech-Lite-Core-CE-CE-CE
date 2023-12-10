@@ -169,6 +169,7 @@ public class GTLiteMaterialPropertyAddition {
         Nichrome.addFlags(GENERATE_FINE_WIRE);
         VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
         Titanium.addFlags(GENERATE_FINE_WIRE);
+        RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

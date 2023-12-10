@@ -94,7 +94,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 5901))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .toolStats(ToolProperty.Builder.of(10.0F, 150.0F, 80000, 30)
                         .magnetic()
                         .unbreakable()
@@ -303,6 +303,17 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE)
                 .build()
                 .setFormula("§cR§de", false);
+
+        //  10022 Astralium
+        Astralium = new Material.Builder(getId(), gregtechId("astralium"))
+                .ingot()
+                .liquid()
+                .color(0x3B48A7)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Astralium)
+                .blast(15000, BlastProperty.GasTier.HIGHEST)
+                .cableProperties(V[UIV], 48, 24, false)
+                .build();
     }
 
     private static int getId() {

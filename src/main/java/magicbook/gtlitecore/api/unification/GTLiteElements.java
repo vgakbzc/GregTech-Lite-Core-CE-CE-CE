@@ -24,4 +24,5 @@ public class GTLiteElements {
     public static final Element CelestialTungsten = Elements.add(160, 101, -1, null, "CelestialTungsten", "✦◆✦", false);
     public static final Element Galaxium = Elements.add(388, 252, -1, null, "Galaxium", "Gx⚶", false);
     public static final Element Universium = Elements.add(760, 253, -1, null, "Universium", "Uv⚶", false);
+    public static final Element Astralium = Elements.add(290, 282,-1, null, "Astralium", "Ax⚶", false);
 }

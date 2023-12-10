@@ -28,6 +28,7 @@ public class GTLiteMaterials {
     public static Material Galaxium;
     public static Material Universium;
     public static Material DegenerateRhenium;
+    public static Material Astralium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -227,6 +228,8 @@ public class GTLiteMaterials {
     public static Material PotassiumBisulfite;
     public static Material PotassiumNitrite;
     public static Material PotassiumCarbonate;
+    public static Material PhosphorusDopedEuropiumIronArsenide;
+    public static Material PhosphorusDopedEuropiumIronArsenideMagnetic;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -269,6 +272,8 @@ public class GTLiteMaterials {
     public static Material LanthanumEmbeddedFullerene;
     public static Material BlackTitanium;
     public static Material BlackPlutonium;
+    public static Material Legendarium;
+    public static Material Abyssalloy;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

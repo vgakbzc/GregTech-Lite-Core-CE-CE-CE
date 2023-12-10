@@ -11,6 +11,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_LEGENDARIUM;
 
 public class GTLiteSecondDegreeMaterials {
 
@@ -517,6 +518,33 @@ public class GTLiteSecondDegreeMaterials {
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .components(Plutonium241, 18, Cerium, 9, Gadolinium, 3, Dysprosium, 3, Thulium, 2, TungstenCarbide, 6, RedSteel, 6, Duranium, 2, Radon, 2)
                 .toolStats(new ToolProperty(18.0F, 40.0F, 75000, 30))
+                .build();
+
+        //  12039 Legendarium
+        Legendarium = new Material.Builder(getId(), gregtechId("legendarium"))
+                .ingot()
+                .fluid()
+                .color(0xF58FDA)
+                .iconSet(CUSTOM_LEGENDARIUM)
+                .components(Naquadria, 1, Trinium, 1, Duranium, 1, Tritanium, 1, Orichalcum, 1, Adamantium, 1, Vibranium, 1, Taranium, 1)
+                .blast(b -> b
+                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UIV], 998))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .build();
+
+        //  12040 Abyssalloy
+        Abyssalloy = new Material.Builder(getId(), gregtechId("abyssalloy"))
+                .ingot()
+                .fluid()
+                .color(0x9E706A)
+                .iconSet(METALLIC)
+                .blast(b -> b
+                        .temp(9625, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV]))
+                .components(StainlessSteel, 5, TungstenCarbide, 5, Nichrome, 5, IncoloyMA956, 5, Germanium, 1, Rutherfordium, 1, Radon, 1)
+                .cableProperties(V[UIV], 64, 64, false)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
     }
 
