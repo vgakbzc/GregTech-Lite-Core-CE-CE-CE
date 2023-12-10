@@ -413,6 +413,9 @@ public class GTLiteMaterials {
     public static Material HeavyLepton;
     public static Material TemporalFluid;
     public static Material CosmicComputingMixture;
+    public static Material HeavyQuarkEnrichedMixture;
+    public static Material DeuteriumSuperheavyMixture;
+    public static Material HeavyQuarkDegenerateMatter;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

@@ -3,9 +3,13 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.FluidState;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.properties.BlastProperty;
 import net.minecraft.util.text.TextFormatting;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.Deuterium;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialIconSet.BRIGHT;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -76,6 +80,36 @@ public class GTLiteHighDegreeMaterials {
                 .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int)(V[OpV])).customStill())
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15010 Heavy Quark Enriched Mixture
+        HeavyQuarkEnrichedMixture = new Material.Builder(getId(), gregtechId("heavy_quark_enriched_mixture"))
+                .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int) ((V[ZPM] * 4 + V[UHV])/2)))
+                .color(HeavyQuarks.getMaterialRGB() + LightQuarks.getMaterialRGB())
+                .components(LightQuarks, 1, HeavyQuarks, 3)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "§e(u2)d(c2)s(t2)b" + TextFormatting.OBFUSCATED  + "a" , true);
+
+        //  15011 Deuterium-Superheavy Mixture
+        DeuteriumSuperheavyMixture = new Material.Builder(getId(), gregtechId("deuterium_superheavy_mixture"))
+                .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int) (V[ZPM] * V[MV])/2))
+                .color(0x7B9F8E)
+                .components(Deuterium, 2, MetastableHassium, 1, MetastableFlerovium, 1, MetastableOganesson, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  15012 Heavy Quark Degenerate Matter
+        HeavyQuarkDegenerateMatter = new Material.Builder(getId(), gregtechId("heavy_quark_degenerate_matter"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature((int) (V[UV] + V[HV] * V[HV])))
+                .plasma(new FluidBuilder().temperature((int) (V[UV] * V[HV])))
+                .color(0x5DBD3A)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(14960, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UIV]))
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .build();
     }
 
     private static int getId() {

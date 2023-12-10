@@ -60,7 +60,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer TRITANIUM_CASING = new GTLiteOverlayRenderer("casings/tritanium_casing");
     public static GTLiteOverlayRenderer ZIRCONIUM_CARBIDE_CASING = new GTLiteOverlayRenderer("casings/zirconium_carbide_casing");
     public static GTLiteOverlayRenderer SPACE_ELEVATOR_CASING = new GTLiteOverlayRenderer("casings/spaces/basic_casing");
-    public static GTLiteOverlayRenderer STABALLOY_CASIGN = new GTLiteOverlayRenderer("casings/staballoy_casing");
+    public static GTLiteOverlayRenderer STABALLOY_CASING = new GTLiteOverlayRenderer("casings/staballoy_casing");
+    public static GTLiteOverlayRenderer QUANTUM_CASING = new GTLiteOverlayRenderer("casings/quantum_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

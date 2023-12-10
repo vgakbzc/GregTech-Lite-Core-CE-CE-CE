@@ -737,6 +737,27 @@ public class MachineRecipeLoader {
                 .EUt(VA[ZPM])
                 .duration(1200)
                 .buildAndRegister();
+
+        //  Cosmic Ray Detector
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UIV])
+                .input(plate, Hdcs, 4)
+                .input(EMITTER_UIV, 2)
+                .input(SENSOR_UIV, 2)
+                .input(TOOL_DATA_MODULE, 4)
+                .input(gear, Cinobite, 2)
+                .input(wireGtSingle, QuantumAlloy, 16)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(HY1301.getFluid(2880))
+                .fluidInputs(MetastableHassium.getFluid(L * 2))
+                .output(COSMIC_RAY_DETECTOR)
+                .stationResearch(b -> b
+                        .researchStack(SCANNER[UIV].getStackForm())
+                        .CWUt(128)
+                        .EUt(VA[UEV]))
+                .EUt(VA[UEV])
+                .duration(1200)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -1844,5 +1865,43 @@ public class MachineRecipeLoader {
                         .EUt(VA[UHV])
                         .duration(1200))
                 .buildAndRegister();
+
+        //  TODO UIV-OpV
+
+        //  Quantum Casing
+        ModHandler.addShapedRecipe(true, "quantum_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.QUANTUM_CASING, 2),
+                "PhP", "TFT","PwP",
+                'P', new UnificationEntry(plateDouble, Naquadria),
+                'T', new UnificationEntry(plate, QuantumAlloy),
+                'F', new UnificationEntry(frameGt, Orichalcum));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plateDouble, Naquadria, 4)
+                .input(plate, QuantumAlloy, 2)
+                .input(frameGt, Orichalcum)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.QUANTUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Reflective Casing
+        ModHandler.addShapedRecipe(true, "reflective_casing", GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.REFLECTIVE_CASING, 2),
+                "NNN", "FHF", "WWW",
+                'H', HULL[IV].getStackForm(),
+                'N', NEUTRON_REFLECTOR,
+                'F', FIELD_GENERATOR_IV,
+                'W', new UnificationEntry(cableGtSingle, Platinum));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[IV])
+                .input(NEUTRON_REFLECTOR, 3)
+                .input(FIELD_GENERATOR_IV, 2)
+                .input(cableGtSingle, Platinum, 3)
+                .outputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.REFLECTIVE_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }

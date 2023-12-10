@@ -8,13 +8,12 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import java.math.BigInteger;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CANNER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.DegenerateRhenium;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class StellarFurnace {
@@ -56,8 +55,13 @@ public class StellarFurnace {
     }
 
     private static void Recipes() {
+        DegenerateRhenium();
+        CosmicComputingMixture();
+        HeavyQuarkDegenerateMatter();
+    }
 
-        //  Degenerate Rhenium
+    private static void DegenerateRhenium() {
+
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(ingot, Rhenium)
                 .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.NAQUADRIA_CHARGE))
@@ -82,6 +86,83 @@ public class StellarFurnace {
                 .output(RHENIUM_PLASMA_CONTAINMENT_CELL)
                 .EUt(VA[LuV])
                 .duration(20)
+                .buildAndRegister();
+    }
+
+    private static void CosmicComputingMixture() {
+
+        //  Quark Gluon Plasma
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(plate, DegenerateRhenium)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .fluidOutputs(QuarkGluonPlasma.getFluid(1000))
+                .EUt(VA[UIV])
+                .duration(60)
+                .temperature(BigInteger.valueOf((10 * V[UHV]) - (10 * V[ZPM])))
+                .buildAndRegister();
+
+        //  Quark Gluon Plasma -> Heavy Quarks + Light Quarks + Gluons
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .notConsumable(SEPARATION_ELECTROMAGNET)
+                .fluidInputs(QuarkGluonPlasma.getFluid(1000))
+                .fluidOutputs(HeavyQuarks.getFluid(200))
+                .fluidOutputs(LightQuarks.getFluid(600))
+                .fluidOutputs(Gluons.getFluid(200))
+                .EUt(VA[UEV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Cosmic Computing Mixture
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(HeavyLepton.getFluid(32000))
+                .fluidInputs(HeavyQuarks.getFluid(8000))
+                .fluidInputs(Gluons.getFluid(8000))
+                .fluidInputs(Instantons.getFluid(4000))
+                .fluidInputs(TemporalFluid.getFluid(4000))
+                .fluidInputs(HiggsBosons.getFluid(4000))
+                .fluidOutputs(CosmicComputingMixture.getFluid(60000))
+                .EUt(VA[UIV])
+                .duration(1200)
+                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .buildAndRegister();
+    }
+
+    private static void HeavyQuarkDegenerateMatter() {
+
+        //  Heavy Quark Enriched Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(LightQuarks.getFluid(1000))
+                .fluidInputs(HeavyQuarks.getFluid(3000))
+                .fluidOutputs(HeavyQuarkEnrichedMixture.getFluid(1000))
+                .EUt(VA[UIV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Deuterium-Superheavy Mixture
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .fluidInputs(Deuterium.getFluid(2000))
+                .fluidInputs(MetastableHassium.getFluid(L))
+                .fluidInputs(MetastableFlerovium.getFluid(L))
+                .fluidInputs(MetastableOganesson.getFluid(L))
+                .fluidOutputs(DeuteriumSuperheavyMixture.getFluid(2592))
+                .EUt(VA[UIV])
+                .duration(100)
+                .temperature(BigInteger.valueOf((10 * V[UEV]) - (10 * V[ZPM])))
+                .buildAndRegister();
+
+        //  Heavy Quark Degenerate Matter
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .fluidInputs(DeuteriumSuperheavyMixture.getFluid(1000))
+                .fluidInputs(HeavyQuarkEnrichedMixture.getFluid(1000))
+                .fluidOutputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
+                .EUt(VA[UIV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((10 * V[UIV]) - (10 * V[EV])))
                 .buildAndRegister();
     }
 }
