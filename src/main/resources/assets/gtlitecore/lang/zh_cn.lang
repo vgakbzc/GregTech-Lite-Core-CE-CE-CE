@@ -789,6 +789,7 @@ gregtech.material.metastable_hassium=亚稳态钅黑
 gregtech.material.galaxium=银河
 gregtech.material.universium=宇宙素
 gregtech.material.degenerate_rhenium=简并态铼
+gregtech.material.astralium=星辉
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -990,6 +991,12 @@ gregtech.material.tetrafluoroboric_acid=四氟硼酸
 gregtech.material.potassium_bisulfite=亚硫酸氢钾
 gregtech.material.potassium_nitrite=亚硝酸钾
 gregtech.material.potassium_carbonate=碳酸钾
+gregtech.material.phosphorus_doped_europium_iron_arsenide=磷掺杂的砷化铕铁
+gregtech.material.magnetic_phosphorus_doped_europium_iron_arsenide=磁化磷掺杂的砷化铕铁
+gregtech.material.caesium_iodide=碘化铯
+gregtech.material.tl_tm_doped_caesium_iodide=铊-铥掺杂的碘化铯
+gregtech.material.cadmium_tungstate=钨酸镉
+gregtech.material.bismuth_germanate=锗酸铋
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1030,6 +1037,11 @@ gregtech.material.lanthanum_fullerene_nanotube=镧-富勒烯纳米管
 gregtech.material.fullerene_superconductor=富勒烯超导体
 gregtech.material.black_titanium=黑钛
 gregtech.material.black_plutonium=黑钚
+gregtech.material.legendarium=传奇金属
+gregtech.material.abyssalloy=渊狱合金
+gregtech.material.platinum_group_alloy=贵金属合金
+gregtech.material.superheavy_h_alloy=超重元素-重合金
+gregtech.material.superheavy_l_alloy=超重元素-轻合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1270,6 +1282,8 @@ gregtech.material.flerovium_ytterbium_plasma=钅夫-镱
 gregtech.material.radium_radon_mixture=镭-氡混合物
 gregtech.material.scandium_titanium_mixture=钪-钛混合物
 gregtech.material.electrolyte_reflector_mixture=介电镜成形液
+gregtech.material.starlight_liquid=液态星光
+gregtech.material.celestial_crystal=天体水晶
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球

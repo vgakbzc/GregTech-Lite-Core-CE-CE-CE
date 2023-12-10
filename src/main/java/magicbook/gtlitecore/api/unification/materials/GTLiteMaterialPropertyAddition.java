@@ -74,6 +74,17 @@ public class GTLiteMaterialPropertyAddition {
         Bohrium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Bohrium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Sodium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Meitnerium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Meitnerium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Roentgenium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Roentgenium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Copernicium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Copernicium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Nihonium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Nihonium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Moscovium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Moscovium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Tennessine.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -169,6 +180,7 @@ public class GTLiteMaterialPropertyAddition {
         Nichrome.addFlags(GENERATE_FINE_WIRE);
         VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
         Titanium.addFlags(GENERATE_FINE_WIRE);
+        RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

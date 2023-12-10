@@ -10,6 +10,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
 public class GTLiteUnknownCompositionMaterials {
 
@@ -642,6 +643,23 @@ public class GTLiteUnknownCompositionMaterials {
                 .components(ManganeseDifluoride, 1, ZincSulfide, 1, TantalumPentoxide, 1, Rutile, 1, Ethanol, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24071 Starlight Liquid
+        StarlightLiquid = new Material.Builder(getId(), gregtechId("starlight_liquid"))
+                .liquid()
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Ax⚶?", false);
+
+        //  24072 Celestial Crystal
+        CelestialCrystal = new Material.Builder(getId(), gregtechId("celestial_crystal"))
+                .gem()
+                .color(0x3B48A7)
+                .iconSet(CERTUS)
+                .flags(DISABLE_CRYSTALLIZATION)
+                .build()
+                .setFormula("Ax⚶?", false);
     }
 
     private static int getId() {

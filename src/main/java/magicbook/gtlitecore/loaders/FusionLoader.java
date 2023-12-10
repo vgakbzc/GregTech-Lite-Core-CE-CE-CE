@@ -152,6 +152,66 @@ public class FusionLoader {
                 .duration(140)
                 .EUToStart(800000000L)
                 .buildAndRegister();
+
+        //  Iron + Bismuth-209 -> Meitnerium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Iron.getPlasma(L))
+                .fluidInputs(Bismuth.getFluid(L))
+                .fluidOutputs(Meitnerium.getFluid(L * 2))
+                .EUt(VA[UHV])
+                .duration(140)
+                .EUToStart(400000000L)
+                .buildAndRegister();
+
+        //  Nickel + Bismuth -> Roentgenium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Nickel.getPlasma(L))
+                .fluidInputs(Bismuth.getFluid(L))
+                .fluidOutputs(Roentgenium.getFluid(L * 2))
+                .EUt(VA[UHV])
+                .duration(180)
+                .EUToStart(440000000L)
+                .buildAndRegister();
+
+        //  Nickel + Polonium -> Copernicium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Nickel.getPlasma(576))
+                .fluidInputs(Polonium.getFluid(576))
+                .fluidOutputs(Copernicium.getFluid(576))
+                .EUt(VA[UV])
+                .duration(100)
+                .EUToStart(480000000L)
+                .buildAndRegister();
+
+        //  Nickel + Astatine -> Nihonium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Nickel.getPlasma(288))
+                .fluidInputs(Astatine.getFluid(288))
+                .fluidOutputs(Nihonium.getFluid(576))
+                .EUt(358690)
+                .duration(180)
+                .EUToStart(410000000L)
+                .buildAndRegister();
+
+        //  Neptunium + Titanium -> Moscovium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Neptunium.getFluid(288))
+                .fluidInputs(Titanium.getFluid(288))
+                .fluidOutputs(Moscovium.getFluid(576))
+                .EUt(473960)
+                .duration(220)
+                .EUToStart(380000000L)
+                .buildAndRegister();
+
+        //  Americium + Titanium -> Tennessine
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Americium.getFluid(288))
+                .fluidInputs(Titanium.getFluid(288))
+                .fluidOutputs(Tennessine.getFluid(576))
+                .EUt(509370)
+                .duration(300)
+                .EUToStart(420000000L)
+                .buildAndRegister();
     }
 
     private static void FantasyMaterials() {

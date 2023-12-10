@@ -111,6 +111,28 @@ public class MachineComponents {
                         .EUt(VA[UHV]))
                 .buildAndRegister();
 
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(stickLong, Legendarium, 4)
+                .input(ring, Legendarium, 4)
+                .input(round, Legendarium, 8)
+                .input(wireFine, Abyssalloy, 64)
+                .input(wireFine, Abyssalloy, 64)
+                .input(cableGtSingle, Solarium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(7000))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(ELECTRIC_MOTOR_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_MOTOR_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
+
     }
 
     private static void ConveyorModule() {
@@ -162,6 +184,27 @@ public class MachineComponents {
                         .researchStack(CONVEYOR_MODULE_UHV.getStackForm())
                         .CWUt(128)
                         .EUt(VA[UHV]))
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_UIV, 2)
+                .input(plate, Legendarium, 2)
+                .input(ring, Legendarium, 4)
+                .input(round, Legendarium, 16)
+                .input(screw, Legendarium, 4)
+                .input(cableGtSingle, Solarium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(7000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(L * 48))
+                .fluidInputs(Astralium.getFluid(L * 4))
+                .output(CONVEYOR_MODULE_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(CONVEYOR_MODULE_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
                 .buildAndRegister();
     }
 
@@ -220,6 +263,30 @@ public class MachineComponents {
                         .CWUt(128)
                         .EUt(VA[UHV]))
                 .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_UIV)
+                .input(plate, Legendarium, 4)
+                .input(ring, Legendarium, 4)
+                .input(round, Legendarium, 16)
+                .input(stick, Legendarium, 4)
+                .input(gear, Infinity)
+                .input(gearSmall, Infinity, 2)
+                .input(cableGtSingle, Solarium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(7000))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(ELECTRIC_PISTON_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_PISTON_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
+
     }
 
     private static void RobotArm() {
@@ -279,6 +346,30 @@ public class MachineComponents {
                         .CWUt(128)
                         .EUt(VA[UHV]))
                 .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(stickLong, Legendarium, 4)
+                .input(gear, Legendarium)
+                .input(gearSmall, Legendarium, 3)
+                .input(ELECTRIC_MOTOR_UIV, 2)
+                .input(ELECTRIC_PISTON_UIV)
+                .input(circuit, MarkerMaterials.Tier.UIV)
+                .input(circuit, MarkerMaterials.Tier.UEV, 2)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(cableGtSingle, Solarium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 24))
+                .fluidInputs(Lubricant.getFluid(7000))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(ROBOT_ARM_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(ROBOT_ARM_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
     }
 
     private static void ElectricPump() {
@@ -334,6 +425,28 @@ public class MachineComponents {
                         .CWUt(128)
                         .EUt(VA[UHV]))
                 .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_UIV)
+                .input(pipeLargeFluid, CrystalMatrix)
+                .input(plate, Legendarium, 2)
+                .input(screw, Legendarium, 8)
+                .input(ring, NitrileButadieneRubber, 64)
+                .input(rotor, Infinity)
+                .input(cableGtSingle, Solarium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(7000))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(ELECTRIC_PUMP_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_PUMP_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
     }
 
     private static void Emitter() {
@@ -387,6 +500,28 @@ public class MachineComponents {
                         .researchStack(EMITTER_UHV.getStackForm())
                         .CWUt(128)
                         .EUt(VA[UHV]))
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Legendarium)
+                .input(ELECTRIC_MOTOR_UIV)
+                .input(stickLong, Legendarium, 4)
+                .input(UNSTABLE_STAR)
+                .input(circuit, MarkerMaterials.Tier.UIV, 2)
+                .input(foil, Astralium, 64)
+                .input(foil, Astralium, 64)
+                .input(cableGtSingle, Solarium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(EMITTER_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(EMITTER_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
                 .buildAndRegister();
     }
 
@@ -442,6 +577,29 @@ public class MachineComponents {
                         .CWUt(128)
                         .EUt(VA[UHV]))
                 .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Legendarium)
+                .input(ELECTRIC_MOTOR_UIV)
+                .input(plate, Legendarium, 4)
+                .input(UNSTABLE_STAR)
+                .input(circuit, MarkerMaterials.Tier.UIV, 2)
+                .input(foil, CelestialTungsten, 64)
+                .input(foil, CelestialTungsten, 32)
+                .input(cableGtSingle, Solarium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(SENSOR_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(SENSOR_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
+                .buildAndRegister();
+
     }
 
     private static void FieldGenerator() {
@@ -495,6 +653,28 @@ public class MachineComponents {
                         .researchStack(FIELD_GENERATOR_UHV.getStackForm())
                         .CWUt(128)
                         .EUt(VA[UHV]))
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Legendarium)
+                .input(plate, Legendarium, 6)
+                .input(UNSTABLE_STAR)
+                .input(EMITTER_UIV, 2)
+                .input(circuit, MarkerMaterials.Tier.UIV, 2)
+                .input(wireFine, RutheniumTriniumAmericiumNeutronate, 64)
+                .input(wireFine, RutheniumTriniumAmericiumNeutronate, 64)
+                .input(cableGtSingle, Solarium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 24))
+                .fluidInputs(Zylon.getFluid(L * 4))
+                .fluidInputs(Astralium.getFluid(L * 2))
+                .output(FIELD_GENERATOR_UIV)
+                .duration(2400)
+                .EUt(8000000)
+                .stationResearch(b -> b
+                        .researchStack(FIELD_GENERATOR_UEV.getStackForm())
+                        .CWUt(256)
+                        .EUt(VA[UEV]))
                 .buildAndRegister();
     }
 }

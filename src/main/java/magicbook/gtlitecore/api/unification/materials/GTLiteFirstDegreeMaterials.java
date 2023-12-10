@@ -1744,6 +1744,70 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Potassium, 2, Carbon, 1, Oxygen, 3)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11200 Phosphorus-Doped Europium Iron Arsenide
+        PhosphorusDopedEuropiumIronArsenide = new Material.Builder(getId(), gregtechId("phosphorus_doped_europium_iron_arsenide"))
+                .ingot()
+                .fluid()
+                .color(0x2C85F1)
+                .iconSet(METALLIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD)
+                .components(Phosphorus, 1, Europium, 1, Iron, 2, Arsenic, 2)
+                .blast(b -> b
+                        .temp(5500, BlastProperty.GasTier.HIGHEST))
+                .build()
+                .setFormula("P:EuFe2Ae2", true);
+
+        //  11201 Magnetic Phosphorus-Doped Europium Iron Arsenide
+        PhosphorusDopedEuropiumIronArsenideMagnetic = new Material.Builder(getId(), gregtechId("magnetic_phosphorus_doped_europium_iron_arsenide"))
+                .ingot()
+                .color(0x2C85F1)
+                .iconSet(MAGNETIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, IS_MAGNETIC)
+                .components(PhosphorusDopedEuropiumIronArsenide, 1)
+                .ingotSmeltInto(PhosphorusDopedEuropiumIronArsenide)
+                .arcSmeltInto(PhosphorusDopedEuropiumIronArsenide)
+                .macerateInto(PhosphorusDopedEuropiumIronArsenide)
+                .build()
+                .setFormula("P:EuFe2Ae2", true);
+
+        PhosphorusDopedEuropiumIronArsenide.getProperty(PropertyKey.INGOT).setMagneticMaterial(PhosphorusDopedEuropiumIronArsenideMagnetic);
+
+        //  11202 Caesium Iodide
+        CaesiumIodide = new Material.Builder(getId(), gregtechId("caesium_iodide"))
+                .dust()
+                .color(Caesium.getMaterialRGB() + Iodine.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Caesium, 1, Iodine, 1)
+                .build();
+
+        //  11203 Tl-Tm-Doped Caesium Iodide
+        TlTmDopedCaesiumIodide = new Material.Builder(getId(), gregtechId("tl_tm_doped_caesium_iodide"))
+                .dust()
+                .color(Thallium.getMaterialRGB() + Thulium.getMaterialRGB() + CaesiumIodide.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Thallium, 1, Thulium, 1, CaesiumIodide, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Tl/Tm:CsI");
+
+        //  11204 Cadmium Tungstate
+        CadmiumTungstate = new Material.Builder(getId(), gregtechId("cadmium_tungstate"))
+                .dust()
+                .color(Cadmium.getMaterialRGB() + Tungsten.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Cadmium, 1, Tungsten, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11205 Bismuth Germanate
+        BismuthGermanate = new Material.Builder(getId(), gregtechId("bismuth_germanate"))
+                .dust()
+                .color(Bismuth.getMaterialRGB() + Germanium.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Bismuth, 4, Germanium, 3, Oxygen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

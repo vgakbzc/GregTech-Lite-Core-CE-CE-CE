@@ -21,7 +21,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.wireGtSingle, Tritanium)},
                 {11, new UnificationEntry(OrePrefix.wireGtSingle, Adamantium)},
                 {12, new UnificationEntry(OrePrefix.wireGtSingle, Ichorium)},
-//                {13, new UnificationEntry(OrePrefix.wireGtSingle, Astralium)},
+                {13, new UnificationEntry(OrePrefix.wireGtSingle, Astralium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         WIRE_QUAD.appendIngredients(Stream.of(new Object[][]{
@@ -187,14 +187,14 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.wireGtQuadruple, Tritanium)},
                 {11, new UnificationEntry(OrePrefix.wireGtDouble, Adamantium)},
                 {12, new UnificationEntry(OrePrefix.wireGtDouble, Ichorium)},
-//                {13, new UnificationEntry(OrePrefix.wireGtDouble, Astralium)},
+                {13, new UnificationEntry(OrePrefix.wireGtDouble, Astralium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         COIL_ELECTRIC.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.wireGtOctal, SiliconCarbide)},
                 {10, new UnificationEntry(OrePrefix.wireGtOctal, Seaborgium)},
-//                {11, new UnificationEntry(OrePrefix.wireGtOctal, BlackDwarfMatter)},
-//                  {12, new UnificationEntry(OrePrefix.wireGtOctal, Trinium)},
+                {11, new UnificationEntry(OrePrefix.wireGtOctal, Abyssalloy)},
+//                  {12, new UnificationEntry(OrePrefix.wireGtOctal, BlackDwarfMatter)},
 //                  {13, new UnificationEntry(OrePrefix.wireGtOctal, Trinium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
@@ -211,7 +211,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.spring, Tritanium)},
                 {11, new UnificationEntry(OrePrefix.spring, Adamantium)},
                 {12, new UnificationEntry(OrePrefix.spring, Ichorium)},
-//                {13, new UnificationEntry(OrePrefix.spring, Astralium)},
+                {13, new UnificationEntry(OrePrefix.spring, Astralium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         STICK_ELECTROMAGNETIC.appendIngredients(Stream.of(new Object[][]{

@@ -8,6 +8,15 @@ public class CosmicRayDetector {
 
     public static void init() {
 
+        //  Easy Starlight Liquid recipe
+        COSMIC_RAY_DETECTOR_RECIPES.recipeBuilder()
+                .circuitMeta(0)
+                .fluidOutputs(StarlightLiquid.getFluid(100))
+                .Altitude(100)
+                .EUt(VA[UHV])
+                .duration(1)
+                .buildAndRegister();
+
         //  Heavy Lepton
         COSMIC_RAY_DETECTOR_RECIPES.recipeBuilder()
                 .circuitMeta(1)
