@@ -14,9 +14,10 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
+import static gregtechfoodoption.GTFOMaterialHandler.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.UNSTABLE_STAR;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MiscRecipes {
 
@@ -303,6 +304,90 @@ public class MiscRecipes {
                 .fluidOutputs(FracuringFluid.getFluid(1000))
                 .duration(100)
                 .EUt(VA[IV])
+                .buildAndRegister();
+
+        //  Starlight Liquid
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(EMITTER_UV)
+                .input(dust, Celestite)
+                .fluidInputs(NetherStar.getFluid(16))
+                .fluidInputs(Ice.getFluid(1000))
+                .fluidOutputs(StarlightLiquid.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Celestial Crystal
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(dust, AstralTitanium)
+                .input(dust, Quartzite)
+                .fluidInputs(StarlightLiquid.getFluid(L))
+                .output(gem, CelestialCrystal)
+                .EUt(VA[UHV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(dust, CelestialTungsten)
+                .input(dust, Quartzite)
+                .fluidInputs(StarlightLiquid.getFluid(L))
+                .output(gem, CelestialCrystal)
+                .EUt(VA[UHV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(dust, AstralTitanium)
+                .input(dust, NetherQuartz)
+                .fluidInputs(StarlightLiquid.getFluid(L))
+                .output(gem, CelestialCrystal)
+                .EUt(VA[UHV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(dust, CelestialTungsten)
+                .input(dust, NetherQuartz)
+                .fluidInputs(StarlightLiquid.getFluid(L))
+                .output(gem, CelestialCrystal)
+                .EUt(VA[UHV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(dust, AstralTitanium)
+                .input(dust, CertusQuartz)
+                .fluidInputs(StarlightLiquid.getFluid(L))
+                .output(gem, CelestialCrystal)
+                .EUt(VA[UHV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(dust, CelestialTungsten)
+                .input(dust, CertusQuartz)
+                .fluidInputs(StarlightLiquid.getFluid(L))
+                .output(gem, CelestialCrystal)
+                .EUt(VA[UHV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Astralium
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(dust, CelestialCrystal)
+                .notConsumable(stickLong, CarbonNanotube)
+                .fluidInputs(NaquadahEnriched.getFluid(L))
+                .output(ingotHot, Astralium)
+                .fluidOutputs(Naquadah.getFluid(L / 4))
+                .EUt(VA[UEV])
+                .duration(200)
                 .buildAndRegister();
 
         //  Gravi Star
