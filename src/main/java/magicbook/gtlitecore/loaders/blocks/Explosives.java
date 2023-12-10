@@ -47,28 +47,28 @@ public class Explosives {
 
         //  Leptonic Charge
         //  Require heavy lepton mixture, i.e. cosmic ray detector
-        //ASSEMBLER_RECIPES.recipeBuilder()
-        //        .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.TARANIUM_CHARGE))
-        //        .input(plate, MetastableOganesson)
-        //        .input(plate, Vibranium)
-        //        .input(bolt, Dubnium, 4)
-        //        .fluidInputs(HeavyLeptonMixture.getFluid(1000))
-        //        .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
-        //        .EUt(VA[UIV])
-        //        .duration(100)
-        //        .buildAndRegister();
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.TARANIUM_CHARGE))
+                .input(plate, MetastableOganesson)
+                .input(plate, Vibranium)
+                .input(bolt, Dubnium, 4)
+                .fluidInputs(HeavyLepton.getFluid(1000))
+                .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
 
         //  QCD Charge
         //  Require heavy quark degenerate matter, i.e. leptonic charge
-        //ASSEMBLER_RECIPES.recipeBuilder()
-        //        .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
-        //        .input(plate, HeavyQuarkDegenerateMatter)
-        //        .input(plate, MetastableHassium)
-        //        .input(bolt, Livermorium, 4)
-        //        .fluidInputs(Gluons.getFluid(1000))
-        //        .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
-        //        .EUt(VA[UXV])
-        //        .duration(100)
-        //        .buildAndRegister();
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .input(plate, HeavyQuarkDegenerateMatter)
+                .input(plate, MetastableHassium)
+                .input(bolt, Livermorium, 4)
+                .fluidInputs(Gluons.getFluid(1000))
+                .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .EUt(VA[UXV])
+                .duration(100)
+                .buildAndRegister();
     }
 }

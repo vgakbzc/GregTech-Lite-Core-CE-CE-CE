@@ -210,5 +210,49 @@ public class PlasmaCondenser {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Heavy Quark Degenerate Matter
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 24000))
+                .circuitMeta(1)
+                .output(PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(HeavyQuarkDegenerateMatter.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 24000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
+                .fluidInputs(GelidCryotheum.getFluid(12000))
+                .circuitMeta(1)
+                .output(PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(HeavyQuarkDegenerateMatter.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(12000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 24000))
+                .circuitMeta(10)
+                .output(ingot, HeavyQuarkDegenerateMatter)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 24000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(L))
+                .fluidInputs(GelidCryotheum.getFluid(12000))
+                .circuitMeta(10)
+                .output(ingot, HeavyQuarkDegenerateMatter)
+                .fluidOutputs(Ice.getFluid(12000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
     }
 }

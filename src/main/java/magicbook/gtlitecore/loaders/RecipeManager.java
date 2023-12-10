@@ -119,5 +119,6 @@ public class RecipeManager {
         SpaceElevator.init();
         MolecularTransformer.init();
         StellarFurnace.init();
+        CosmicRayDetector.init();
     }
 }

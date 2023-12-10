@@ -13,6 +13,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/staballoy_casing"
         }
+      },
+      "quantum_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/quantum_casing"
+        }
       }
     }
   }

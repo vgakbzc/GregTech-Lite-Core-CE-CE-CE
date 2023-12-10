@@ -69,7 +69,7 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return GTLiteTextures.STABALLOY_CASIGN;
+        return GTLiteTextures.STABALLOY_CASING;
     }
 
     @SideOnly(Side.CLIENT)

@@ -403,6 +403,20 @@ public class GTLiteMaterials {
     public static Material Hexamethylenetetramine;
     public static Material BenzylChloride;
 
+    //  High Degree Materials (Range: 15001-16000)
+    public static Material QuarkGluonPlasma;
+    public static Material HeavyQuarks;
+    public static Material LightQuarks;
+    public static Material Gluons;
+    public static Material Instantons;
+    public static Material HiggsBosons;
+    public static Material HeavyLepton;
+    public static Material TemporalFluid;
+    public static Material CosmicComputingMixture;
+    public static Material HeavyQuarkEnrichedMixture;
+    public static Material DeuteriumSuperheavyMixture;
+    public static Material HeavyQuarkDegenerateMatter;
+
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
     public static Material RareEarthHydroxidesSolution;
@@ -497,10 +511,11 @@ public class GTLiteMaterials {
     public static Material ElectrolyteReflectorMixture;
 
     public static void init() {
-        GTLiteElementMaterials.register();
-        GTLiteFirstDegreeMaterials.register();
-        GTLiteSecondDegreeMaterials.register();
-        GTLiteOrganicChemistryMaterials.register();
-        GTLiteUnknownCompositionMaterials.register();
+        GTLiteElementMaterials.register();            // 10000-11000
+        GTLiteFirstDegreeMaterials.register();        // 11001-12000
+        GTLiteSecondDegreeMaterials.register();       // 12001-13000
+        GTLiteOrganicChemistryMaterials.register();   // 13001-15000
+        GTLiteHighDegreeMaterials.register();         // 15001-16000
+        GTLiteUnknownCompositionMaterials.register(); // 18000-20000
     }
 }

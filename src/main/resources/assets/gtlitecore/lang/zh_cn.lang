@@ -18,6 +18,7 @@ tile.multiblock_casing.tritanium_casing.name=极限强度三钛合金机器外�
 
 tile.metal_casing.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
 tile.metal_casing.staballoy_casing.name=高耐久贫铀合金机器外壳
+tile.metal_casing.quantum_casing.name=超重量子合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -27,6 +28,7 @@ tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
 tile.unique_casing.advanced_hyper_casing.name=黑矮星物质强化超能硅岩机器外壳
 tile.unique_casing.stellar_containment_casing.name=恒星热力容器
+tile.unique_casing.reflective_casing.name=抗形变反射面机器外壳
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -715,6 +717,11 @@ gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6�
 
 gtlitecore.machine.plasma_condenser.name=等离子冷凝器
 
+gtlitecore.machine.cosmic_ray_detector.name=宇宙射线探测器
+gtlitecore.machine.cosmic_ray_detector.tooltip.1=收集来自宇宙的信息与粒子
+gtlitecore.machine.cosmic_ray_detector.tooltip.2=高度由结构最顶端的§6时空扭曲机械方块§7决定
+gtlitecore.machine.cosmic_ray_detector.altitude=当前高度：%s
+
 gtlitecore.machine.suprachronal_assembly_line.name=超时空装配线
 gtlitecore.machine.suprachronal_assembly_line.tooltip.1=需要使用§c超维度导航无人机§7进行引导
 gtlitecore.machine.suprachronal_assembly_line.tooltip.2=使用§b超维度时空振荡物质§7生产特殊的超时空电路。
@@ -1157,6 +1164,20 @@ gregtech.material.ammonium_acetate=乙酸铵
 gregtech.material.hexamethylenetetramine=六亚甲基四胺
 gregtech.material.benzyl_chloride=氯化苄
 
+##  High Degree Materials
+gregtech.material.quark_gluon_plasma=夸克-胶子等离子体
+gregtech.material.heavy_quarks=重夸克
+gregtech.material.light_quarks=轻夸克
+gregtech.material.gluons=胶子
+gregtech.material.instantons=瞬子
+gregtech.material.higgs_bosons=希格斯玻色子
+gregtech.material.heavy_lepton=重轻子混合物
+gregtech.material.temporal_fluid=流体本源物质
+gregtech.material.cosmic_computing_mixture=宇宙信息混合物
+gregtech.material.heavy_quark_enriched_mixture=富集重夸克混合物
+gregtech.material.deuterium_superheavy_mixture=氘-超重元素混合物
+gregtech.material.heavy_quark_degenerate_matter=重夸克简并物质
+
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
 gregtech.material.rare_earth_hydroxides_solution=稀土氢氧化物溶液
@@ -1345,9 +1366,11 @@ recipemap.processing_mode_a.name=加工模式-A
 recipemap.processing_mode_b.name=加工模式-B
 recipemap.processing_mode_c.name=加工模式-C
 recipemap.molecular_transformer_recipes.name=分子重组
+recipemap.cosmic_ray_detector_recipes.name=宇宙射线探测
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
+gtlitecore.recipe.altitude=最低高度：%s
 
 #  SMDs
 metaitem.component.optical_smd.transistor.name=光学晶体管

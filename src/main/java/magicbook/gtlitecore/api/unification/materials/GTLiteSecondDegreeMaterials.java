@@ -321,6 +321,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[LuV], 240))
                 .components(Stellite, 15, CadmiumSelenide, 8, Emerald, 5, Gallium, 5, Americium, 5, Palladium, 5, Bismuth, 5, Germanium, 5)
                 .cableProperties(V[UEV], 32, 0, true)
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  12023 Prasiolite
