@@ -1157,6 +1157,17 @@ gregtech.material.ammonium_acetate=乙酸铵
 gregtech.material.hexamethylenetetramine=六亚甲基四胺
 gregtech.material.benzyl_chloride=氯化苄
 
+##  High Degree Materials
+gregtech.material.quark_gluon_plasma=夸克-胶子等离子体
+gregtech.material.heavy_quarks=重夸克
+gregtech.material.light_quarks=轻夸克
+gregtech.material.gluons=胶子
+gregtech.material.instantons=瞬子
+gregtech.material.higgs_bosons=希格斯玻色子
+gregtech.material.heavy_lepton=重轻子混合物
+gregtech.material.temporal_fluid=流体本源物质
+gregtech.material.cosmic_computing_mixture=宇宙信息混合物
+
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
 gregtech.material.rare_earth_hydroxides_solution=稀土氢氧化物溶液
