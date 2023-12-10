@@ -119,6 +119,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
+        Rhenium.addFlags(GENERATE_DENSE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);

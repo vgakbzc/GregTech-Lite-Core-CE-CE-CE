@@ -1675,6 +1675,75 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(SAND)
                 .components(Strontium, 1, Carbon, 1, Oxygen, 3)
                 .build();
+
+        //  11192 Silica Gel
+        SilicaGel = new Material.Builder(getId(), gregtechId("silica_gel"))
+                .dust()
+                .color(0x9695FD)
+                .iconSet(SHINY)
+                .components(Silicon, 1, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11193 Silica Gel Base
+        SilicaGelBase = new Material.Builder(getId(), gregtechId("silica_gel_base"))
+                .liquid()
+                .color(0x9695FD)
+                .iconSet(ROUGH)
+                .components(SiliconDioxide, 1, HydrochloricAcid, 1, SodiumHydroxide, 1, Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11194 Nitronium Tetrafluoroborate
+        NitroniumTetrafluoroborate = new Material.Builder(getId(), gregtechId("nitronium_tetrafluoroborate"))
+                .dust()
+                .color(0x787449)
+                .iconSet(DULL)
+                .components(Sodium, 1, Oxygen, 2, Boron, 1, Fluorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11195 Nitrosonium Tetrafluoroborate
+        NitrosoniumTetrafluoroborate = new Material.Builder(getId(), gregtechId("nitrosonium_tetrafluoroborate"))
+                .dust()
+                .color(0xA32A8C)
+                .iconSet(ROUGH)
+                .components(Sodium, 1, Oxygen, 1, Boron, 1, Fluorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11196 Tetrafluoroboric Acid
+        TetrafluoroboricAcid = new Material.Builder(getId(), gregtechId("tetrafluoroboric_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x83A731)
+                .components(Hydrogen, 1, Boron, 1, Fluorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11197 Potassium Bisulfite
+        PotassiumBisulfite = new Material.Builder(getId(), gregtechId("potassium_bisulfite"))
+                .dust()
+                .color(344314)
+                .iconSet(DULL)
+                .components(Potassium, 1, Hydrogen, 1, Sulfur, 1, Oxygen, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11198 Potassium Nitrite
+        PotassiumNitrite = new Material.Builder(getId(), gregtechId("potassium_nitrite"))
+                .dust()
+                .color(0xB9B9B9)
+                .components(Potassium, 1, Nitrogen, 1, Oxygen, 2)
+                .build();
+
+        //  11199 Potassium Carbonate
+        PotassiumCarbonate = new Material.Builder(getId(), gregtechId("potassium_carbonate"))
+                .dust()
+                .color(0x7C89D9)
+                .iconSet(ROUGH)
+                .components(Potassium, 2, Carbon, 1, Oxygen, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

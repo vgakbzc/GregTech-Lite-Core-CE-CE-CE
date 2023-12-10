@@ -53,6 +53,7 @@ public class RecipeManager {
         FullereneChain.init();
         GalliumNitrideChain.init();
         GrapheneChain.init();
+        HexanitrohexaaxaisowurtzitaneChain.init();
         HydrogenPeroxideChain.init();
         //  TODO IsotopesChain.init();
         KaptonChain.init();
@@ -101,6 +102,7 @@ public class RecipeManager {
         GoowareCircuits.init();
         OpticalCircuits.init();
         SpintronicCircuits.init();
+        CosmicCircuits.init();
     }
 
     private static void initMultiRecipes() {
@@ -114,5 +116,6 @@ public class RecipeManager {
         SuprachronalAssemblyLine.init();
         SpaceElevator.init();
         MolecularTransformer.init();
+        StellarFurnace.init();
     }
 }

@@ -200,6 +200,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
+        SEPARATION_ELECTROMAGNET = this.addItem(311, "separation_electromagnet");
 
         HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
         HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
@@ -218,6 +219,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MINING_DRONE_UXV = this.addItem(331, "mining_drone.uxv");
         MINING_DRONE_OpV = this.addItem(332, "mining_drone.opv");
         MINING_DRONE_MAX = this.addItem(333, "mining_drone.max");
+
+        //  High Energy Physics Items
+        PLASMA_CONTAINMENT_CELL = this.addItem(350, "plasma_containment_cell");
+        RHENIUM_PLASMA_CONTAINMENT_CELL = this.addItem(351, "rhenium_plasma_containment_cell");
+        NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(352, "neutron_plasma_containment_cell");
 
         //  Particles
         ALPHA_PARTICLE = this.addItem(400, "particle.alpha");

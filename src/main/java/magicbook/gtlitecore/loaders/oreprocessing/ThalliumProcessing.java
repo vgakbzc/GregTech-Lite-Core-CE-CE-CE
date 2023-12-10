@@ -7,6 +7,19 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Thallium Process
+ *
+ * <p>
+ * Produces Thallium from Pyrite or Galena
+ * </p>
+ *
+ * <p>Main Products: Thallium</p>
+ * <p>Side Products: None</p>
+ *
+ * <p>3 Pyrite -> 2 Thallium</p>
+ * <p>4 Galena -> 2 Thallium</p>
+ */
 public class ThalliumProcessing {
 
     public static void init() {

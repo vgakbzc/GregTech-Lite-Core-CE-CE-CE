@@ -264,5 +264,15 @@ public class FusionLoader {
                 .duration(32)
                 .EUToStart(1800000000L)
                 .buildAndRegister();
+
+        //  Bohrium + Naquadria -> Neutronium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Bohrium.getFluid(128))
+                .fluidInputs(Naquadria.getFluid(128))
+                .fluidOutputs(Neutronium.getFluid(32))
+                .EUt(VA[UEV])
+                .EUToStart(1300000000L)
+                .duration(200)
+                .buildAndRegister();
     }
 }

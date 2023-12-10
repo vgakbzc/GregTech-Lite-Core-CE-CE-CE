@@ -7,6 +7,17 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Waelz Process
+ *
+ * <p>Produces Germanium from Sphalerite</p>
+ *
+ * <p>Main Products: Germanium</p>
+ * <p>Side Products: Zinc, Gallium, Manganese</p>
+ *
+ * <p>2 Sphalerite -> 1 Germanium</p>
+ *
+ */
 public class GermaniumProcessing {
 
     public static void init() {

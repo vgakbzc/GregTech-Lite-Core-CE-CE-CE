@@ -7,6 +7,18 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Vanadium Processing
+ *
+ * @author Magic_Sweepy (2023/11/26)
+ *
+ * <p>Produces Bismuth Vanadate from Vanadium Magnetite</p>
+ *
+ * <p>Main Products: Bismuth Vanadate</p>
+ * <p>Side Products: Some Nitrogenous compounds</p>
+ *
+ * <p> 2 Vanadium Magnetite + 1 Bismuth -> 1 Bismuth Vanadate</p>
+ */
 public class VanadiumProcessing {
 
     public static void init() {

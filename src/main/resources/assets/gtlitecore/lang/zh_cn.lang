@@ -135,6 +135,11 @@ tile.transparent_casing.cbdo_polycarbonate_glass.tooltip=并不是挡风玻璃
 tile.transparent_casing.infinity_glass.name=无尽玻璃
 tile.transparent_casing.infinity_glass.tooltip=彩虹玻璃
 
+tile.explosive_block.naquadria_charge.name=超能硅岩爆弹
+tile.explosive_block.taranium_charge.name=塔兰金属爆弹
+tile.explosive_block.leptonic_charge.name=轻子爆弹
+tile.explosive_block.quantum_chromodynamic_charge.name=量子色动力学爆弹
+
 tile.crucible.bronze.name=青铜坩埚
 tile.crucible.invar.name=殷钢坩埚
 tile.crucible.quartz.name=石英岩坩埚
@@ -776,6 +781,7 @@ gregtech.material.metastable_flerovium=亚稳态钅夫
 gregtech.material.metastable_hassium=亚稳态钅黑
 gregtech.material.galaxium=银河
 gregtech.material.universium=宇宙素
+gregtech.material.degenerate_rhenium=简并态铼
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -969,6 +975,14 @@ gregtech.material.lanthanum_embedded_fullerene=镧-富勒烯包合物
 gregtech.material.strontium_dichloride=二氯化锶
 gregtech.material.celestite=天青石
 gregtech.material.strontium_carbonate=碳酸锶
+gregtech.material.silica_gel=硅胶
+gregtech.material.silica_gel_base=硅胶基质
+gregtech.material.nitronium_tetrafluoroborate=四氟硼酸硝铵
+gregtech.material.nitrosonium_tetrafluoroborate=四氟硼酸亚硝铵
+gregtech.material.tetrafluoroboric_acid=四氟硼酸
+gregtech.material.potassium_bisulfite=亚硫酸氢钾
+gregtech.material.potassium_nitrite=亚硝酸钾
+gregtech.material.potassium_carbonate=碳酸钾
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1120,6 +1134,28 @@ gregtech.material.terephthalaldehyde=对苯二甲醛
 gregtech.material.dinitrodipropanyloxybenzene=二硝基二丙氧基苯
 gregtech.material.isochloropropane=异氯丙烷
 gregtech.material.dibromomethylbenzene=二溴甲苯
+gregtech.material.hexanitrohexaaxaisowurtzitane=六硝基六轴异伍兹烷（HNIW）
+gregtech.material.crude_hexanitrohexaaxaisowurtzitane=粗制六硝基六轴异伍兹烷
+gregtech.material.tetraacetyldinitrosohexaazaisowurtzitane=四乙酰二硝基六氮杂异戊二烯
+gregtech.material.benzaldehyde=苯甲醛
+gregtech.material.dibenzyltetraacetylhexaazaisowurtzitane=二苄基四乙酰六氮杂异纤锌烷
+gregtech.material.hexabenzylhexaazaisowurtzitane=六苄基六氮杂异伍兹烷
+gregtech.material.succinimide=琥珀酰亚胺
+gregtech.material.succinimidyl_acetate=琥珀酰亚胺醋酸酯
+gregtech.material.n_hydroxysuccinimide=N-羟基丁二酰亚胺
+gregtech.material.succinic_anhydride=琥珀酸酐
+gregtech.material.hydroxylamine_hydrochloride=盐酸羟胺
+gregtech.material.succinic_acid=琥珀酸
+gregtech.material.maleic_anhydride=马来酸酐
+gregtech.material.hydroxylammonium_sulfate=硫酸羟铵
+gregtech.material.potassium_hydroxylaminedisulfonate=羟胺二磺酸钾
+gregtech.material.nitrous_acid=亚硝酸
+gregtech.material.acetonitrile=乙腈
+gregtech.material.benzylamine=苄胺
+gregtech.material.acetamide=乙酰胺
+gregtech.material.ammonium_acetate=乙酸铵
+gregtech.material.hexamethylenetetramine=六亚甲基四胺
+gregtech.material.benzyl_chloride=氯化苄
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -1212,7 +1248,7 @@ gregtech.material.quasi_fissioning_plasma=拟裂变
 gregtech.material.flerovium_ytterbium_plasma=钅夫-镱
 gregtech.material.radium_radon_mixture=镭-氡混合物
 gregtech.material.scandium_titanium_mixture=钪-钛混合物
-gregtech.material.electrolyte_reflector_mixture=介电镜塑液
+gregtech.material.electrolyte_reflector_mixture=介电镜成形液
 
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
@@ -1227,6 +1263,7 @@ metaitem.unstable_star.tooltip=极不稳定下界之星
 
 metaitem.quantum_anomaly.name=量子反常
 metaitem.magnetron.name=磁控管
+metaitem.separation_electromagnet.name=分离用电磁铁
 
 metaitem.hyperdimensional_drone.name=超维度导航无人机
 metaitem.hyperdimensional_drone.tooltip=用于引导§6超维度时空振荡物质§7形成正确的结构
@@ -1253,6 +1290,14 @@ item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
 item.material.oreprefix.seedCrystal=%s晶种
 item.material.oreprefix.boule=人造%s
+
+#  High Energy Physics Items
+metaitem.plasma_containment_cell.name=等离子体遏制装置
+metaitem.plasma_containment_cell.tooltip=用于封装等离子体
+metaitem.rhenium_plasma_containment_cell.name=铼等离子遏制装置
+metaitem.rhenium_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
+metaitem.neutron_plasma_containment_cell.name=中子等离子遏制装置
+metaitem.neutron_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
 
 #  Particles
 metaitem.particle.alpha.name=α粒子

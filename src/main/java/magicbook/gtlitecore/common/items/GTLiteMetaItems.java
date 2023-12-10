@@ -192,6 +192,7 @@ public class GTLiteMetaItems {
 
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem MAGNETRON;
+    public static MetaItem<?>.MetaValueItem SEPARATION_ELECTROMAGNET;
 
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_OSCILLATING_MATTER;
@@ -210,6 +211,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MINING_DRONE_UXV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_OpV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MAX;
+
+    //  High Energy Physics Items
+    public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem RHENIUM_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem NEUTRON_PLASMA_CONTAINMENT_CELL;
 
     //  Particles
     public static MetaItem<?>.MetaValueItem ALPHA_PARTICLE;

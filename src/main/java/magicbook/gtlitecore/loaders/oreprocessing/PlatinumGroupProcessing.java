@@ -15,6 +15,23 @@ import static gregtechfoodoption.GTFOMaterialHandler.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
+/**
+ * The Platinum Process
+ *
+ * <p>
+ * Produces Platinum Group Metals from Platinum Group Sludge
+ * </p>
+ *
+ * <p>Main Products: Platinum, Palladium, Rhodium, Ruthenium, Iridium, Osmium</p>
+ * <p>Side Products: Gold, Silicon Dioxide</p>
+ *
+ * <p>4.8 PGS -> 1 Platinum</p>
+ * <p>8 PGS -> 1 Palladium</p>
+ * <p>18 PGS -> 1 Rhodium</p>
+ * <p>18 PGS -> 1 Ruthenium</p>
+ * <p>18 PGS -> 1 Iridium</p>
+ * <p>36 PGS -> 1 Osmium</p>
+ */
 public class PlatinumGroupProcessing {
 
     public static void init() {
