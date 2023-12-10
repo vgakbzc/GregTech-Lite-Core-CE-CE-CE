@@ -47,14 +47,12 @@ public class StrontiumProcessing {
                 .temperature(1145)
                 .buildAndRegister();
 
-        //  SrSO4 + 2NaHCO3 -> SrCO3 + Na + H2SO4 + 3CO
+        //  SrSO4 + NaHCO3 -> SrCO3 + NaHSO4
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Celestite, 6)
-                .fluidInputs(SodiumBicarbonate.getFluid(2000))
+                .fluidInputs(SodiumBicarbonate.getFluid(1000))
                 .output(dust, StrontiumCarbonate, 5)
-                .output(dust, Sodium)
-                .fluidOutputs(SulfuricAcid.getFluid(1000))
-                .fluidOutputs(CarbonMonoxide.getFluid(3000))
+                .fluidOutputs(SodiumBisulfate.getFluid(1000))
                 .EUt(VA[IV])
                 .duration(20)
                 .buildAndRegister();

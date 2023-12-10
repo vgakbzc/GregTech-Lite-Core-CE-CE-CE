@@ -993,6 +993,10 @@ gregtech.material.potassium_nitrite=亚硝酸钾
 gregtech.material.potassium_carbonate=碳酸钾
 gregtech.material.phosphorus_doped_europium_iron_arsenide=磷掺杂的砷化铕铁
 gregtech.material.magnetic_phosphorus_doped_europium_iron_arsenide=磁化磷掺杂的砷化铕铁
+gregtech.material.caesium_iodide=碘化铯
+gregtech.material.tl_tm_doped_caesium_iodide=铊-铥掺杂的碘化铯
+gregtech.material.cadmium_tungstate=钨酸镉
+gregtech.material.bismuth_germanate=锗酸铋
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1035,6 +1039,9 @@ gregtech.material.black_titanium=黑钛
 gregtech.material.black_plutonium=黑钚
 gregtech.material.legendarium=传奇金属
 gregtech.material.abyssalloy=渊狱合金
+gregtech.material.platinum_group_alloy=贵金属合金
+gregtech.material.superheavy_h_alloy=超重元素-重合金
+gregtech.material.superheavy_l_alloy=超重元素-轻合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

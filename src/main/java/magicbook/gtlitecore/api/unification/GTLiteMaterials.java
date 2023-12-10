@@ -230,6 +230,10 @@ public class GTLiteMaterials {
     public static Material PotassiumCarbonate;
     public static Material PhosphorusDopedEuropiumIronArsenide;
     public static Material PhosphorusDopedEuropiumIronArsenideMagnetic;
+    public static Material CaesiumIodide;
+    public static Material TlTmDopedCaesiumIodide;
+    public static Material CadmiumTungstate;
+    public static Material BismuthGermanate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -274,6 +278,9 @@ public class GTLiteMaterials {
     public static Material BlackPlutonium;
     public static Material Legendarium;
     public static Material Abyssalloy;
+    public static Material PlatinumGroupAlloy;
+    public static Material SuperheavyHAlloy;
+    public static Material SuperheavyLAlloy;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

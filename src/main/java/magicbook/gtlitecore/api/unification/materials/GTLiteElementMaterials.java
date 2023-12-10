@@ -94,7 +94,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 5901))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE)
                 .toolStats(ToolProperty.Builder.of(10.0F, 150.0F, 80000, 30)
                         .magnetic()
                         .unbreakable()
@@ -222,7 +222,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.AstralTitanium)
                 .cableProperties(V[UIV], 32, 12, false)
-                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  10015 Celestial Tungsten

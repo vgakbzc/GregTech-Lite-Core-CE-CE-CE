@@ -322,7 +322,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[LuV], 240))
                 .components(Stellite, 15, CadmiumSelenide, 8, Emerald, 5, Gallium, 5, Americium, 5, Palladium, 5, Bismuth, 5, Germanium, 5)
                 .cableProperties(V[UEV], 32, 0, true)
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12023 Prasiolite
@@ -545,6 +545,45 @@ public class GTLiteSecondDegreeMaterials {
                 .components(StainlessSteel, 5, TungstenCarbide, 5, Nichrome, 5, IncoloyMA956, 5, Germanium, 1, Rutherfordium, 1, Radon, 1)
                 .cableProperties(V[UIV], 64, 64, false)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .build();
+
+        //  12041 Platinum Group Alloy
+        PlatinumGroupAlloy = new Material.Builder(getId(), gregtechId("platinum_group_alloy"))
+                .ingot()
+                .fluid()
+                .color(Gold.getMaterialRGB() + Silver.getMaterialRGB() + Platinum.getMaterialRGB() + Palladium.getMaterialRGB() + Ruthenium.getMaterialRGB() + Rhodium.getMaterialRGB() + Iridium.getMaterialRGB() + Osmium.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Gold, 1, Silver, 1, Platinum, 1, Palladium, 1, Ruthenium, 1, Rhodium, 1, Iridium, 1, Osmium, 1)
+                .blast(b -> b
+                        .temp(10000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 1800))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .build();
+
+        //  12042 Superheavy-H Alloy
+        SuperheavyHAlloy = new Material.Builder(getId(), gregtechId("superheavy_h_alloy"))
+                .ingot()
+                .fluid()
+                .color(0xE84B36)
+                .iconSet(SHINY)
+                .components(Copernicium, 1, Nihonium, 1, MetastableFlerovium, 1, Moscovium, 1, Livermorium, 1, Tennessine, 1, MetastableOganesson, 1)
+                .blast(b -> b
+                        .temp(14960, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UIV], 1236))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .build();
+
+        //  12043 Superheavy-L Alloy
+        SuperheavyLAlloy = new Material.Builder(getId(), gregtechId("superheavy_l_alloy"))
+                .ingot()
+                .fluid()
+                .color(0x4D8BE9)
+                .iconSet(SHINY)
+                .components(Rutherfordium, 1, Dubnium, 1, Seaborgium, 1, Bohrium, 1, MetastableHassium, 1, Meitnerium, 1, Darmstadtium, 1, Roentgenium, 1)
+                .blast(b -> b
+                        .temp(13800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 990))
+                .flags(GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FINE_WIRE)
                 .build();
     }
 

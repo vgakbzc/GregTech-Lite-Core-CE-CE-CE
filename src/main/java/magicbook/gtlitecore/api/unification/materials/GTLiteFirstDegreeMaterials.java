@@ -1773,6 +1773,41 @@ public class GTLiteFirstDegreeMaterials {
 
         PhosphorusDopedEuropiumIronArsenide.getProperty(PropertyKey.INGOT).setMagneticMaterial(PhosphorusDopedEuropiumIronArsenideMagnetic);
 
+        //  11202 Caesium Iodide
+        CaesiumIodide = new Material.Builder(getId(), gregtechId("caesium_iodide"))
+                .dust()
+                .color(Caesium.getMaterialRGB() + Iodine.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Caesium, 1, Iodine, 1)
+                .build();
+
+        //  11203 Tl-Tm-Doped Caesium Iodide
+        TlTmDopedCaesiumIodide = new Material.Builder(getId(), gregtechId("tl_tm_doped_caesium_iodide"))
+                .dust()
+                .color(Thallium.getMaterialRGB() + Thulium.getMaterialRGB() + CaesiumIodide.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Thallium, 1, Thulium, 1, CaesiumIodide, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Tl/Tm:CsI");
+
+        //  11204 Cadmium Tungstate
+        CadmiumTungstate = new Material.Builder(getId(), gregtechId("cadmium_tungstate"))
+                .dust()
+                .color(Cadmium.getMaterialRGB() + Tungsten.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Cadmium, 1, Tungsten, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11205 Bismuth Germanate
+        BismuthGermanate = new Material.Builder(getId(), gregtechId("bismuth_germanate"))
+                .dust()
+                .color(Bismuth.getMaterialRGB() + Germanium.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Bismuth, 4, Germanium, 3, Oxygen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {
