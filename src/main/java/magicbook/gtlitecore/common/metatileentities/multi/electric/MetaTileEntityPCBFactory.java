@@ -5,8 +5,10 @@ import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
+import gregtech.api.metatileentity.multiblock.MultiMapMultiblockController;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.*;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
@@ -20,13 +22,17 @@ import magicbook.gtlitecore.common.blocks.BlockUniqueCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +40,17 @@ import java.util.List;
 import static gregtech.api.GTValues.*;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.optionalStates;
 
-// todo use multimap controller?
-public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
+public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
 
     private byte auxiliaryUpgradeNumber = 0;
     private static final TraceabilityPredicate SNOW_LAYER = new TraceabilityPredicate(blockWorldState -> GTUtility.isBlockSnow(blockWorldState.getBlockState()));
 
     public MetaTileEntityPCBFactory(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, GTLiteRecipeMaps.PCB_FACTORY_RECIPES);
+        super(metaTileEntityId, new RecipeMap[]{
+                GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES,
+                GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES,
+                GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES
+        });
         this.recipeMapWorkable = new PCBFactoryRecipeLogic(this);
     }
 
@@ -222,7 +231,6 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                 .where('F', states(getFrameState())) // HSLA frame
                 .where('G', states(getGlassState())) // Laminated glass
                 .where('X', states(getFourthCasingState())) // substrate casing
-                .where('u', states(getUniqueCasingState())) // computing casing
                 //  Basic T2 Structure
                 .where('f', optionalStates("AuxiliaryUpgradeTier2", getSecondFrameState())) // tungsten steel frame
                 .where('d', optionalStates("AuxiliaryUpgradeTier2", getFifthCasingState())) // T2 casing
@@ -242,6 +250,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                 .where('y', optionalStates("AuxiliaryUpgradeTier3", getNinthCasingState())) // T3 casing
                 .where('Z', optionalStates("AuxiliaryUpgradeTier3", getBoilerCasingState())) // PBI pipe casing
                 .where('q', optionalStates("AuxiliaryUpgradeTier3", getSixthCasingState())) // PTFE casing
+                .where('u', optionalStates("AuxiliaryUpgradeTier3", getUniqueCasingState())) // computing casing
                 //  Infinity Cooling Tower structure
                 .where('z', optionalStates("AuxiliaryUpgradeInfinityCoolingTower", getBoilerCasingState())) // PBI pipe casing
                 .where('U', optionalStates("AuxiliaryUpgradeInfinityCoolingTower", getFifthFrameState())) // Europium frame
@@ -249,8 +258,8 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                 .where('v', optionalStates("AuxiliaryUpgradeInfinityCoolingTower", getSecondBoilerCasingState())) // Tungsten Steel pipe casing
                 .where('W', optionalStates("AuxiliaryUpgradeInfinityCoolingTower", getNinthCasingState())) // T3 casing
                 .where('w', optionalStates("AuxiliaryUpgradeInfinityCoolingTower", getCoilState())) // Superconduct coil
-                .where('#', air())
-                .where('o', air()
+                .where('#', any())
+                .where('o', any()
                         .or(SNOW_LAYER))
                 .build();
     }
@@ -356,7 +365,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                     .aisle("          P                   ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
                     .aisle("      fddfP                   ", "      fddf                    ", "      fddf                    ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
                     .aisle("      ddddP                   ", "      d##d                    ", "      d##d                    ", "      fddf                    ", "      fddf                    ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
-                    .aisle("      ddddFCCCCCF             ", "      d##dFTTTTTF             ", "      d##dFCCCCCF             ", "      d##dFCCCCCF             ", "      d##dF     F             ", "      fddf                    ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
+                    .aisle("      ddddFCCCCCF             ", "      d##dFJKLMNF             ", "      d##dFCCCCCF             ", "      d##dFCCCCCF             ", "      d##dF     F             ", "      fddf                    ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
                     .aisle("      ddddCcccccC hYYYh  hYYYh", "      d##dC#####C hIIIh  hIIIh", "      d##dC#####C hIIIh  hIIIh", "      d##dC#####C hIIIh  hIIIh", "      d##dCCCCCCC h   h  h   h", "      ddddF     F             ", "      fddf                    ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
                     .aisle("      ddddCcccccC YYYYY  YYYYY", "      d##dD#XXX#D I###I  I###I", "      d##dD#####D I###I  I###I", "      d##dC#####C I###I  I###I", "      d##dCCCCCCC  YYY    YYY ", "      ddddF     F             ", "      fddf                    ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
                     .aisle("     ZddddCcccccCQYYYYY  YYYYY", "      d##dD#XXX#D I###I  I###I", "      d##dD#####D I###I  I###I", "      d##dC#####C I###I  I###I", "      d##dCCCCCCC  YYY    YYY ", "      ddddFFFFFFF   Y      Y  ", "      fddf           YYYYYY   ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ", "                              ")
@@ -385,7 +394,6 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                     .where('F', getFrameState())
                     .where('G', getGlassState())
                     .where('X', getFourthCasingState())
-                    .where('u', getUniqueCasingState())
                     .where(' ', Blocks.AIR.getDefaultState())
                     .where('#', Blocks.AIR.getDefaultState())
                     .where('o', Blocks.AIR.getDefaultState());
@@ -412,6 +420,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                     .where('y', getNinthCasingState())
                     .where('Z', getBoilerCasingState())
                     .where('q', getSixthCasingState())
+                    .where('u', getUniqueCasingState())
                     .build());
             shapeInfo.add(builder
                     .where('z', getBoilerCasingState())
@@ -425,10 +434,104 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         return shapeInfo;
     }
 
+    @Override
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               List<String> tooltip,
+                               boolean advanced) {
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.1"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.2"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.3"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.6"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.7"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.8"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.9"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.10"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.11"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.12"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.13"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.14"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.15"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.16"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.17"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.18"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.19"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.20"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.21"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.22"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.23"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.24"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.25"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.26"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.27"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.28"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.29"));
+        tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.30"));
+    }
+
     private class PCBFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public PCBFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);
+        }
+
+        private int maxParallel() {
+            return Math.min(4 * (GTUtility.getTierByVoltage(getMaxVoltage()) - EV), 64);
+        }
+
+        private boolean isEtchMode() {
+            return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES;
+        }
+
+        private boolean isBioMode() {
+            return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES;
+        }
+
+        private boolean isNanoMode() {
+            return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES;
+        }
+
+        @Override
+        public int getParallelLimit() {
+
+            if (isEtchMode()) {
+
+                if (auxiliaryUpgradeNumber == 1) { // T2
+                    return maxParallel();
+                } else {
+                    return 1;
+                }
+            } else if (isBioMode()) {
+
+                if (auxiliaryUpgradeNumber == 3) { // Bio Chamber
+                    return maxParallel();
+                } else {
+                    return 1;
+                }
+            } else if (isNanoMode()) {
+
+                if (auxiliaryUpgradeNumber == 4) { // T3
+                    return  maxParallel();
+                } else {
+                    return 1;
+                }
+            } else {
+                return 1;
+            }
+        }
+
+        public void setMaxProgress(int maxProgress) {
+
+            if (auxiliaryUpgradeNumber == 2) { // Water Cooling Tower
+                this.maxProgressTime = maxProgress / 4;
+            }
+
+            if (auxiliaryUpgradeNumber == 5) { // Infinity Cooling Tower
+                this.maxProgressTime = maxProgress / 8;
+            }
         }
     }
 }

@@ -784,6 +784,38 @@ gtlitecore.machine.mega_turbine.mode.0=正常模式
 gtlitecore.machine.mega_turbine.mode.1=高速模式
 gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
 
+gtlitecore.machine.pcb_factory.name=PCB工厂
+gtlitecore.machine.pcb_factory.tooltip.1=家用纳米级光刻机
+gtlitecore.machine.pcb_factory.tooltip.2=集成了你能想象到的一切电路板生产工艺
+gtlitecore.machine.pcb_factory.tooltip.3=带有附属结构，每一个附属结构都会强化相应的生产工艺流程。
+gtlitecore.machine.pcb_factory.tooltip.4=在§r多方块结构提示§7中鼠标右击箭头按钮查看附属结构建造方式。
+gtlitecore.machine.pcb_factory.tooltip.5=必须按照顺序安装附属结构以获得对应的升级效果
+gtlitecore.machine.pcb_factory.tooltip.6=--------------------------------------------------------------------------
+gtlitecore.machine.pcb_factory.tooltip.7=§6印刷室§7
+gtlitecore.machine.pcb_factory.tooltip.8=利用纳米技术预制各样式电路板的模板，极大程度简化了电路板的生产工序。
+gtlitecore.machine.pcb_factory.tooltip.9=使PCB工厂的§r雕版光刻§7模式获得§e(电压等级 - EV) * 4§7次并行
+gtlitecore.machine.pcb_factory.tooltip.10=最大并行数：§e64§7
+gtlitecore.machine.pcb_factory.tooltip.11=--------------------------------------------------------------------------
+gtlitecore.machine.pcb_factory.tooltip.12=§6液冷塔§7
+gtlitecore.machine.pcb_factory.tooltip.13=为PCB工厂外置一个液冷装置，使其散热性能提高。
+gtlitecore.machine.pcb_factory.tooltip.14=当然，你并不需要实际输入什么流体来让其运行，它会自动收集空气中的水分工作。
+gtlitecore.machine.pcb_factory.tooltip.15=使PCB工厂的运行耗时变为§r(配方时间/4)§7。
+gtlitecore.machine.pcb_factory.tooltip.16=--------------------------------------------------------------------------
+gtlitecore.machine.pcb_factory.tooltip.17=§6生物室§7
+gtlitecore.machine.pcb_factory.tooltip.18=一个小型的生物实验室，同时也兼具细菌培养缸的功能。
+gtlitecore.machine.pcb_factory.tooltip.19=使得PCB工厂的§r生物蚀刻§7模式获得§e(电压等级 - EV) * 4§7次并行
+gtlitecore.machine.pcb_factory.tooltip.20=最大并行数：§e64§7
+gtlitecore.machine.pcb_factory.tooltip.21=--------------------------------------------------------------------------
+gtlitecore.machine.pcb_factory.tooltip.22=§6扫描仪§7
+gtlitecore.machine.pcb_factory.tooltip.23=一台特殊的扫描仪，它可以准确地分析扫描物品的结构。
+gtlitecore.machine.pcb_factory.tooltip.24=使得PCB工厂的§r纳米组装§7模式获得§e(电压等级 - EV) * 4§7次并行
+gtlitecore.machine.pcb_factory.tooltip.25=最大并行数：§e64§7
+gtlitecore.machine.pcb_factory.tooltip.26=--------------------------------------------------------------------------
+gtlitecore.machine.pcb_factory.tooltip.27=§6空冻塔§7
+gtlitecore.machine.pcb_factory.tooltip.28=更强力的冷却装置，它可以直接吸取时空中的一切物质来帮助PCB工厂冷却。
+gtlitecore.machine.pcb_factory.tooltip.29=当然，你并不需要实际输入什么流体来让其运行。
+gtlitecore.machine.pcb_factory.tooltip.30=使PCB工厂的运行耗时变为§r(配方时间/8)§7。
+
 #  Materials
 
 ##  Element Materials
@@ -1403,6 +1435,9 @@ recipemap.processing_mode_b.name=加工模式-B
 recipemap.processing_mode_c.name=加工模式-C
 recipemap.molecular_transformer_recipes.name=分子重组
 recipemap.cosmic_ray_detector_recipes.name=宇宙射线探测
+recipemap.pcb_factory_etch_recipes.name=雕版光刻
+recipemap.pcb_factory_bio_recipes.name=生物蚀刻
+recipemap.pcb_factory_nano_recipes.name=纳米组装
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
