@@ -731,6 +731,12 @@ gtlitecore.machine.molecular_transformer.tooltip=打破物质间的界限
 
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
+gtlitecore.machine.large_primitive_blast_furnace.name=大型炼钢窑
+gtlitecore.machine.large_primitive_blast_furnace.tooltip.1=比土高炉更好
+gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，每建造1座§6附属高炉§7，运行时间均会减少一半。
+gtlitecore.machine.large_primitive_blast_furnace.tooltip.3=在§r多方块结构提示§7中鼠标右击箭头按钮查看附属结构建造方式。
+gtlitecore.machine.large_primitive_blast_furnace.auxiliary_furnace_number=附属高炉数：%s
+
 gtlitecore.machine.tree_growth_factory.name=林海树场
 gtlitecore.machine.tree_growth_factory.tooltip.1=生态环保型机器
 gtlitecore.machine.tree_growth_factory.tooltip.2=当输入电压大于§6HV§7时，获得§e(2 * 电压等级^2 - 2 * 电压等级 + 5)§7次并行。

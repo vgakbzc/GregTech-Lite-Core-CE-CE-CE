@@ -1,8 +1,10 @@
 package magicbook.gtlitecore.api.pattern;
 
+import gregtech.api.block.VariantActiveBlock;
 import gregtech.api.metatileentity.ITieredMetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
+import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.pattern.PatternStringError;
@@ -23,7 +25,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import static magicbook.gtlitecore.api.GTLiteAPI.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getTileEntity;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
 
 public class GTLiteTraceabilityPredicate {
 
@@ -70,6 +72,34 @@ public class GTLiteTraceabilityPredicate {
             .map(mte -> new BlockInfo(MetaBlocks.MACHINE.getDefaultState(), getTileEntity(mte)))
             .toArray(BlockInfo[]::new))
             .addTooltips("gtlitecore.machine.reinforced_rotor_holder.error");
+
+    public static TraceabilityPredicate optionalStates(String mark, IBlockState... allowedStates) {
+        return new TraceabilityPredicate(blockWorldState -> {
+            IBlockState state = blockWorldState.getBlockState();
+            if (state.getBlock() instanceof VariantActiveBlock) {
+                blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
+            }
+            if (ArrayUtils.contains(allowedStates, state)) {
+                return (blockWorldState.getMatchContext().getOrPut(mark, true));
+            }
+            return blockWorldState.getMatchContext().get(mark) == null;
+        }, getCandidates(allowedStates));
+    }
+
+    public static TraceabilityPredicate optionalAbilities(String mark, MultiblockAbility<?>... allowedAbilities) {
+        return new TraceabilityPredicate(blockWorldState -> {
+            TileEntity tileEntity = blockWorldState.getTileEntity();
+            if (tileEntity instanceof IGregTechTileEntity) {
+                MetaTileEntity metaTileEntity = ((IGregTechTileEntity) tileEntity).getMetaTileEntity();
+                if (metaTileEntity instanceof IMultiblockAbilityPart<?> && ArrayUtils.contains(allowedAbilities, ((IMultiblockAbilityPart<?>) metaTileEntity).getAbility())) {
+                    Set<IMultiblockPart> partsFound = blockWorldState.getMatchContext().getOrCreate("MultiblockParts", HashSet::new);
+                    partsFound.add((IMultiblockPart) metaTileEntity);
+                    return (blockWorldState.getMatchContext().getOrPut(mark, true));
+                }
+            }
+            return blockWorldState.getMatchContext().get(mark) == null;
+        }, getCandidates(Arrays.stream(allowedAbilities).flatMap(ability -> MultiblockAbility.REGISTRY.get(ability).stream()).toArray(MetaTileEntity[]::new)));
+    }
 
     public static Supplier<TierTraceabilityPredicate> PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
