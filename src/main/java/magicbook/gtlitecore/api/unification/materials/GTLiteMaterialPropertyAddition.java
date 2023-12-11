@@ -93,9 +93,6 @@ public class GTLiteMaterialPropertyAddition {
         //  Rubidium Chain
         Rubidium.setProperty(PropertyKey.DUST, new DustProperty());
 
-        //  Strontium Chain
-        SodiumBicarbonate.setProperty(PropertyKey.FLUID, new FluidProperty());
-
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 

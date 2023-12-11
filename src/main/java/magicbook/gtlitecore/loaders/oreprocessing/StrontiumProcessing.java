@@ -10,7 +10,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 /**
  * The Strontium Process
  *
- * @author Magic_Sweepy (2023/12/05)
+ * @author Magic_Sweepy (2023/12/11)
  *
  * <p>Produces Strontium from Pyrochlore</p>
  *
@@ -47,14 +47,26 @@ public class StrontiumProcessing {
                 .temperature(1145)
                 .buildAndRegister();
 
-        //  SrSO4 + NaHCO3 -> SrCO3 + NaHSO4
-        CHEMICAL_RECIPES.recipeBuilder()
+        //  SrSO4 + 4C -> SrS + 4CO
+        INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
                 .input(dust, Celestite, 6)
-                .fluidInputs(SodiumBicarbonate.getFluid(1000))
+                .input(dust, Carbon, 4)
+                .output(dust, StrontiumSulfide, 2)
+                .fluidOutputs(CarbonMonoxide.getFluid(4000))
+                .EUt(VA[EV])
+                .duration(200)
+                .temperature(1200)
+                .buildAndRegister();
+
+        //  SrS + H2O + CO2 -> SrCO3 + H2S
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, StrontiumSulfide, 2)
+                .fluidInputs(Water.getFluid(1000))
+                .fluidInputs(CarbonDioxide.getFluid(1000))
                 .output(dust, StrontiumCarbonate, 5)
-                .fluidOutputs(SodiumBisulfate.getFluid(1000))
-                .EUt(VA[IV])
-                .duration(20)
+                .fluidOutputs(HydrogenSulfide.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(50)
                 .buildAndRegister();
     }
 }

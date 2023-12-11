@@ -997,6 +997,7 @@ gregtech.material.caesium_iodide=碘化铯
 gregtech.material.tl_tm_doped_caesium_iodide=铊-铥掺杂的碘化铯
 gregtech.material.cadmium_tungstate=钨酸镉
 gregtech.material.bismuth_germanate=锗酸铋
+gregtech.material.strontium_sulfide=硫化锶
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
