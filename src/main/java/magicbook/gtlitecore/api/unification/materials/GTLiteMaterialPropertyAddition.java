@@ -93,9 +93,6 @@ public class GTLiteMaterialPropertyAddition {
         //  Rubidium Chain
         Rubidium.setProperty(PropertyKey.DUST, new DustProperty());
 
-        //  Strontium Chain
-        SodiumBicarbonate.setProperty(PropertyKey.FLUID, new FluidProperty());
-
         //  Ichorium Chain
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());
 
@@ -147,6 +144,7 @@ public class GTLiteMaterialPropertyAddition {
         Americium.addFlags(GENERATE_FRAME);
         Uranium238.addFlags(GENERATE_FRAME);
         Plutonium241.addFlags(GENERATE_FRAME);
+        VanadiumSteel.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

@@ -27,6 +27,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.*;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
 import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityReinforcedRotorHolder;
+import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargePrimitiveBlastFurnace;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 
 import static gregtech.api.GTValues.*;
@@ -95,11 +96,13 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMolecularTransformer MOLECULAR_TRANSFORMER;
 
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
+    public static MetaTileEntityLargePrimitiveBlastFurnace LARGE_PRIMITIVE_BLAST_FURNACE;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
     public static MetaTileEntityLargeProcessingFactory LARGE_PROCESSING_FACTORY;
     public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
+    public static MetaTileEntityPCBFactory PCB_FACTORY;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -208,7 +211,7 @@ public class GTLiteMetaTileEntities {
         //  48
         //  49
         LARGE_STEAM_COMPRESSOR = registerMultiMetaTileEntity(50, new MetaTileEntityLargeSteamCompressor(gtliteId("large_steam_compressor")));
-        //  51 LARGE_PRIMITIVE_BLAST_FURNACE
+        LARGE_PRIMITIVE_BLAST_FURNACE = registerMultiMetaTileEntity(51, new MetaTileEntityLargePrimitiveBlastFurnace(gtliteId("large_primitive_blast_furnace")));
         //  52
         //  53
         //  54
@@ -224,5 +227,9 @@ public class GTLiteMetaTileEntities {
         //  64
         //  65
         //  66
+        //  67
+        //  68
+        //  69
+        PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
     }
 }

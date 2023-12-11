@@ -6,6 +6,7 @@ import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockMetalCasing;
+import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
@@ -42,7 +43,22 @@ public class MachineRecipeLoader {
                 'S', CraftingComponent.SPRING,
                 'H', CraftingComponent.HULL);
 
-        //  TODO Steam Vacuum Chamber
+        //  Steam Vacuum Chamber
+        ModHandler.addShapedRecipe(true, "steam_vacuum_chamber.bronze", STEAM_VACUUM_CHAMBER[0].getStackForm(),
+                "GCG", "PHP", "GWG",
+                'W', new UnificationEntry(pipeTinyFluid, Bronze),
+                'C', new UnificationEntry(gem, Diamond),
+                'P', ELECTRIC_PUMP_ULV,
+                'G', "blockGlass",
+                'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_HULL));
+
+        ModHandler.addShapedRecipe(true, "steam_vacuum_chamber.steel", STEAM_VACUUM_CHAMBER[1].getStackForm(),
+                "GCG", "PHP", "GWG",
+                'W', new UnificationEntry(pipeTinyFluid, TinAlloy),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.ULV),
+                'P', ELECTRIC_PUMP_ULV,
+                'G', "blockGlass",
+                'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_HULL));
 
         //  Vacuum Chamber
         MetaTileEntityLoader.registerMachineRecipe(true, VACUUM_CHAMBER,
@@ -693,6 +709,13 @@ public class MachineRecipeLoader {
                 'F', new UnificationEntry(frameGt, Brass),
                 'G', new UnificationEntry(gear, Potin),
                 'P', ELECTRIC_PISTON_ULV);
+
+        //  Large Primitive Blast Furnace
+        ModHandler.addShapedRecipe(true, "large_primitive_blast_furnace", LARGE_PRIMITIVE_BLAST_FURNACE.getStackForm(),
+                "PMP", "MFM", "PMP",
+                'P', new UnificationEntry(plate, Bronze),
+                'F', new UnificationEntry(frameGt, Steel),
+                'M', PRIMITIVE_BLAST_FURNACE.getStackForm());
 
         //  Mega Steam Turbine
         ASSEMBLER_RECIPES.recipeBuilder()

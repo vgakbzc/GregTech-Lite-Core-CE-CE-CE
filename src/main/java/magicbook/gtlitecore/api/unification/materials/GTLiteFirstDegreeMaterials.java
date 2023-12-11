@@ -1808,6 +1808,15 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Bismuth, 4, Germanium, 3, Oxygen, 12)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11206 Strontium Sulfide
+        StrontiumSulfide = new Material.Builder(getId(), gregtechId("strontium_sulfide"))
+                .dust()
+                .color(Strontium.getMaterialRGB() + Sulfur.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Strontium, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

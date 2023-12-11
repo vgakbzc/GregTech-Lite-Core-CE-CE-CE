@@ -234,6 +234,7 @@ public class GTLiteMaterials {
     public static Material TlTmDopedCaesiumIodide;
     public static Material CadmiumTungstate;
     public static Material BismuthGermanate;
+    public static Material StrontiumSulfide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
