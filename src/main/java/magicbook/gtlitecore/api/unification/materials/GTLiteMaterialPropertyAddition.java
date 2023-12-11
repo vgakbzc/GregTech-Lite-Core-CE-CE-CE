@@ -192,15 +192,22 @@ public class GTLiteMaterialPropertyAddition {
         //NetherStar.addFlags(CRYSTALLIZABLE); // TODO Another Nether Star recipe, may be set components
 
         //  Nano Swarm
-        Carbon.addFlags(GENERATE_SWARM);
-        Graphene.addFlags(GENERATE_SWARM);
-        CarbonNanotube.addFlags(GENERATE_SWARM);
-        Fullerene.addFlags(GENERATE_SWARM);
+        Carbon.addFlags(GENERATE_SWARM); // W.I.P
+        Graphene.addFlags(GENERATE_SWARM); // W.I.P
+        CarbonNanotube.addFlags(GENERATE_SWARM); // W.I.P
+        Fullerene.addFlags(GENERATE_SWARM); // W.I.P
 
-        Orichalcum.addFlags(GENERATE_SWARM);
-        Adamantium.addFlags(GENERATE_SWARM);
-        Vibranium.addFlags(GENERATE_SWARM);
-        Neutronium.addFlags(GENERATE_SWARM);
+        Iron.addFlags(GENERATE_SWARM); // W.I.P
+        IronMagnetic.addFlags(GENERATE_SWARM); // W.I.P
+        Copper.addFlags(GENERATE_SWARM); // W.I.P
+        Tin.addFlags(GENERATE_SWARM); // W.I.P
+        Nickel.addFlags(GENERATE_SWARM); // W.I.P
+        Cobalt.addFlags(GENERATE_SWARM); // W.I.P
+        Lead.addFlags(GENERATE_SWARM); // W.I.P
+        Redstone.addFlags(GENERATE_SWARM); // W.I.P
+
+        Silver.addFlags(GENERATE_SWARM); // For PCB factory Etching
+        Gold.addFlags(GENERATE_SWARM); // For PCB factory Etching
 
         //  Conflict Solutions
         RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis

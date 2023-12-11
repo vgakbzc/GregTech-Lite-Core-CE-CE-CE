@@ -1,0 +1,350 @@
+package magicbook.gtlitecore.loaders.multiblock;
+
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.material.Materials.*;
+import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
+
+public class PCBFactory {
+
+    public static void init() {
+        BasicCircuitBoard();
+        GoodCircuitBoard();
+        PlasticCircuitBoard();
+        AdvancedCircuitBoard();
+        ExtremeCircuitBoard();
+        EliteCircuitBoard();
+        WetwareCircuitBoard();
+        KaptonCircuitBoard();
+        OpticalCircuitBoard();
+        SpintronicCircuitBoard();
+    }
+
+    private static void BasicCircuitBoard() {}
+    private static void GoodCircuitBoard() {}
+
+    private static void PlasticCircuitBoard() {
+
+        //  PE -> PCB
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, Polyethylene)
+                .input(foil, AnnealedCopper, 16)
+                .input(foil, Copper, 16)
+                .fluidInputs(SulfuricAcid.getFluid(500))
+                .fluidInputs(Iron3Chloride.getFluid(250))
+                .output(PLASTIC_CIRCUIT_BOARD, 8)
+                .EUt(22)
+                .duration(665)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, Polyethylene)
+                .input(foil, AnnealedCopper, 16)
+                .input(foil, Copper, 16)
+                .fluidInputs(SulfuricAcid.getFluid(500))
+                .fluidInputs(Iron3Chloride.getFluid(250))
+                .output(PLASTIC_CIRCUIT_BOARD, 10)
+                .EUt(90)
+                .duration(554)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, Polyethylene)
+                .input(foil, AnnealedCopper, 16)
+                .input(foil, Copper, 16)
+                .fluidInputs(SulfuricAcid.getFluid(500))
+                .fluidInputs(Iron3Chloride.getFluid(250))
+                .output(PLASTIC_CIRCUIT_BOARD, 12)
+                .EUt(90)
+                .duration(543)
+                .buildAndRegister();
+
+        //  PVC -> PCB
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, PolyvinylChloride)
+                .input(foil, AnnealedCopper, 22)
+                .input(foil, Copper, 22)
+                .fluidInputs(SulfuricAcid.getFluid(707))
+                .fluidInputs(Iron3Chloride.getFluid(353))
+                .output(PLASTIC_CIRCUIT_BOARD, 12)
+                .EUt(90)
+                .duration(543)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, PolyvinylChloride)
+                .input(foil, AnnealedCopper, 22)
+                .input(foil, Copper, 22)
+                .fluidInputs(SulfuricAcid.getFluid(707))
+                .fluidInputs(Iron3Chloride.getFluid(353))
+                .output(PLASTIC_CIRCUIT_BOARD, 14)
+                .EUt(360)
+                .duration(452)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, PolyvinylChloride)
+                .input(foil, AnnealedCopper, 22)
+                .input(foil, Copper, 22)
+                .fluidInputs(SulfuricAcid.getFluid(707))
+                .fluidInputs(Iron3Chloride.getFluid(353))
+                .output(PLASTIC_CIRCUIT_BOARD, 16)
+                .EUt(360)
+                .duration(362)
+                .buildAndRegister();
+
+        //  PTFE -> PCB
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, Polytetrafluoroethylene)
+                .input(foil, AnnealedCopper, 27)
+                .input(foil, Copper, 27)
+                .fluidInputs(SulfuricAcid.getFluid(866))
+                .fluidInputs(Iron3Chloride.getFluid(433))
+                .output(PLASTIC_CIRCUIT_BOARD, 16)
+                .EUt(360)
+                .duration(443)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, Polytetrafluoroethylene)
+                .input(foil, AnnealedCopper, 27)
+                .input(foil, Copper, 27)
+                .fluidInputs(SulfuricAcid.getFluid(866))
+                .fluidInputs(Iron3Chloride.getFluid(433))
+                .output(PLASTIC_CIRCUIT_BOARD, 20)
+                .EUt(1440)
+                .duration(369)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, Polytetrafluoroethylene)
+                .input(foil, AnnealedCopper, 27)
+                .input(foil, Copper, 27)
+                .fluidInputs(SulfuricAcid.getFluid(866))
+                .fluidInputs(Iron3Chloride.getFluid(433))
+                .output(PLASTIC_CIRCUIT_BOARD, 23)
+                .EUt(1440)
+                .duration(296)
+                .buildAndRegister();
+
+        //  Epoxy -> PCB
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, Epoxy)
+                .input(foil, AnnealedCopper, 32)
+                .input(foil, Copper, 32)
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .fluidInputs(Iron3Chloride.getFluid(500))
+                .output(PLASTIC_CIRCUIT_BOARD, 23)
+                .EUt(1440)
+                .duration(362)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, Epoxy)
+                .input(foil, AnnealedCopper, 32)
+                .input(foil, Copper, 32)
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .fluidInputs(Iron3Chloride.getFluid(500))
+                .output(PLASTIC_CIRCUIT_BOARD, 27)
+                .EUt(5760)
+                .duration(302)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, Epoxy)
+                .input(foil, AnnealedCopper, 32)
+                .input(foil, Copper, 32)
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .fluidInputs(Iron3Chloride.getFluid(500))
+                .output(PLASTIC_CIRCUIT_BOARD, 32)
+                .EUt(5760)
+                .duration(241)
+                .buildAndRegister();
+
+        //  Fibered epoxy -> PCB
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, ReinforcedEpoxyResin)
+                .input(foil, AnnealedCopper, 35)
+                .input(foil, Copper, 35)
+                .fluidInputs(SulfuricAcid.getFluid(1118))
+                .fluidInputs(Iron3Chloride.getFluid(559))
+                .output(PLASTIC_CIRCUIT_BOARD, 32)
+                .EUt(5760)
+                .duration(296)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, ReinforcedEpoxyResin)
+                .input(foil, AnnealedCopper, 35)
+                .input(foil, Copper, 35)
+                .fluidInputs(SulfuricAcid.getFluid(1118))
+                .fluidInputs(Iron3Chloride.getFluid(559))
+                .output(PLASTIC_CIRCUIT_BOARD, 39)
+                .EUt(23040)
+                .duration(246)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, ReinforcedEpoxyResin)
+                .input(foil, AnnealedCopper, 35)
+                .input(foil, Copper, 35)
+                .fluidInputs(SulfuricAcid.getFluid(1118))
+                .fluidInputs(Iron3Chloride.getFluid(559))
+                .output(PLASTIC_CIRCUIT_BOARD, 46)
+                .EUt(23040)
+                .duration(197)
+                .buildAndRegister();
+
+        //  PBI -> PVC
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, Polybenzimidazole)
+                .input(foil, AnnealedCopper, 39)
+                .input(foil, Copper, 39)
+                .fluidInputs(SulfuricAcid.getFluid(1224))
+                .fluidInputs(Iron3Chloride.getFluid(612))
+                .output(PLASTIC_CIRCUIT_BOARD, 46)
+                .EUt(23040)
+                .duration(241)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, Polybenzimidazole)
+                .input(foil, AnnealedCopper, 39)
+                .input(foil, Copper, 39)
+                .fluidInputs(SulfuricAcid.getFluid(1224))
+                .fluidInputs(Iron3Chloride.getFluid(612))
+                .output(PLASTIC_CIRCUIT_BOARD, 54)
+                .EUt(92160)
+                .duration(201)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, Polybenzimidazole)
+                .input(foil, AnnealedCopper, 39)
+                .input(foil, Copper, 39)
+                .fluidInputs(SulfuricAcid.getFluid(1224))
+                .fluidInputs(Iron3Chloride.getFluid(612))
+                .output(PLASTIC_CIRCUIT_BOARD, 64)
+                .EUt(92160)
+                .duration(161)
+                .buildAndRegister();
+
+        //  Kapton-E -> PCB
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, KaptonE)
+                .input(foil, AnnealedCopper, 42)
+                .input(foil, Copper, 42)
+                .fluidInputs(SulfuricAcid.getFluid(1322))
+                .fluidInputs(Iron3Chloride.getFluid(661))
+                .output(PLASTIC_CIRCUIT_BOARD, 64)
+                .EUt(92160)
+                .duration(197)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, KaptonE)
+                .input(foil, AnnealedCopper, 42)
+                .input(foil, Copper, 42)
+                .fluidInputs(SulfuricAcid.getFluid(1322))
+                .fluidInputs(Iron3Chloride.getFluid(661))
+                .output(PLASTIC_CIRCUIT_BOARD, 77)
+                .EUt(368640)
+                .duration(164)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, KaptonE)
+                .input(foil, AnnealedCopper, 42)
+                .input(foil, Copper, 42)
+                .fluidInputs(SulfuricAcid.getFluid(1322))
+                .fluidInputs(Iron3Chloride.getFluid(661))
+                .output(PLASTIC_CIRCUIT_BOARD, 91)
+                .EUt(368640)
+                .duration(132)
+                .buildAndRegister();
+
+        //  Kapton-K
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(plate, KaptonK)
+                .input(foil, AnnealedCopper, 45)
+                .input(foil, Copper, 45)
+                .fluidInputs(SulfuricAcid.getFluid(1414))
+                .fluidInputs(Iron3Chloride.getFluid(707))
+                .output(PLASTIC_CIRCUIT_BOARD, 91)
+                .EUt(368640)
+                .duration(161)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(swarm, Silver)
+                .input(plate, KaptonK)
+                .input(foil, AnnealedCopper, 45)
+                .input(foil, Copper, 45)
+                .fluidInputs(SulfuricAcid.getFluid(1414))
+                .fluidInputs(Iron3Chloride.getFluid(707))
+                .output(PLASTIC_CIRCUIT_BOARD, 108)
+                .EUt(1474560)
+                .duration(134)
+                .buildAndRegister();
+
+        PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .notConsumable(swarm, Gold)
+                .input(plate, KaptonK)
+                .input(foil, AnnealedCopper, 45)
+                .input(foil, Copper, 45)
+                .fluidInputs(SulfuricAcid.getFluid(1414))
+                .fluidInputs(Iron3Chloride.getFluid(707))
+                .output(PLASTIC_CIRCUIT_BOARD, 128)
+                .EUt(1474560)
+                .duration(108)
+                .buildAndRegister();
+    }
+
+    private static void AdvancedCircuitBoard() {}
+    private static void ExtremeCircuitBoard() {}
+    private static void EliteCircuitBoard() {}
+    private static void WetwareCircuitBoard() {}
+    private static void KaptonCircuitBoard() {}
+    private static void OpticalCircuitBoard() {}
+    private static void SpintronicCircuitBoard() {}
+}
