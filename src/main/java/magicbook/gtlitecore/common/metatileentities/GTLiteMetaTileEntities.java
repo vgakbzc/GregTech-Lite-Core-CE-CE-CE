@@ -102,6 +102,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
+    public static MetaTileEntityPCBFactory PCB_FACTORY;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -226,5 +227,9 @@ public class GTLiteMetaTileEntities {
         //  64
         //  65
         //  66
+        //  67
+        //  68
+        //  69
+        PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
     }
 }

@@ -144,6 +144,7 @@ public class GTLiteMaterialPropertyAddition {
         Americium.addFlags(GENERATE_FRAME);
         Uranium238.addFlags(GENERATE_FRAME);
         Plutonium241.addFlags(GENERATE_FRAME);
+        VanadiumSteel.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

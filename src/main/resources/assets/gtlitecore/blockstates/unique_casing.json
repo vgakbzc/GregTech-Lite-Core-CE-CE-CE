@@ -31,6 +31,14 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/reflective_casing"
         }
+      },
+      "computing_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/radiation_proof_scan_framework_casing",
+          "side": "gtlitecore:blocks/casings/computing_casing",
+          "bottom": "#top"
+        }
       }
     }
   }

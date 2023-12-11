@@ -29,6 +29,8 @@ tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
 tile.unique_casing.advanced_hyper_casing.name=黑矮星物质强化超能硅岩机器外壳
 tile.unique_casing.stellar_containment_casing.name=恒星热力容器
 tile.unique_casing.reflective_casing.name=抗形变反射面机器外壳
+tile.unique_casing.computing_casing.name=扫描数据计算单元
+tile.unique_casing.computing_casing.tooltip=用于为§6PCB工厂§7提供对扫描对象的自动分析演算的功能
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -83,6 +85,19 @@ tile.space_elevator_casing.internal_structure.name=太空电梯内部结构机�
 tile.space_elevator_casing.support_structure.name=太空电梯支撑结构机械方块
 tile.space_elevator_casing.floor.name=超高强度塑料混凝土方块
 tile.space_elevator_casing.cable_casing.name=太空电梯动力系统控制核心
+
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.name=精密光刻框架外壳
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.tooltip=超高精度激光蚀刻/n§6PCB工厂§7-外壳等级：§bI§7
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.name=纳米级模板印刷框架外壳
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.tooltip=家用3D打印机/n§6PCB工厂§7-外壳等级：§bII§7
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.name=抗辐射特殊器件扫描框架外壳
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.tooltip=可直接扫描核反应堆/n§6PCB工厂§7-外壳等级：§bIII§7
+tile.pcb_factory_casing.biological_sterile_machine_casing.name=生物级无菌机器外壳
+tile.pcb_factory_casing.biological_sterile_machine_casing.tooltip=比无菌超净间更干净/n§6PCB工厂§7-§a生物仓外壳§7
+tile.pcb_factory_casing.water_cooled_machine_casing.name=水冷机器外壳
+tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=散热器件/n§6PCB工厂§7-§b水冷塔外壳§7
+tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
+tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7
 
 tile.active_multiblock_casing.hyper_core_mk1.name=超能核心 Mk I
 tile.active_multiblock_casing.hyper_core_mk2.name=超能核心 Mk II

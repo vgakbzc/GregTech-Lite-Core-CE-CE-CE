@@ -110,6 +110,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> MOLECULAR_TRANSFORMER_RECIPES;
     @ZenProperty
     public static final RecipeMap<AltitudeRecipeBuilder> COSMIC_RAY_DETECTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -347,5 +349,12 @@ public class GTLiteRecipeMaps {
         COSMIC_RAY_DETECTOR_RECIPES = new RecipeMap<>("cosmic_ray_detector_recipes", 4, 4, 2, 2, new AltitudeRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  PCB Factory Recipes
+        PCB_FACTORY_RECIPES = new RecipeMap<>("pcb_factory_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ASSEMBLER);
     }
 }
