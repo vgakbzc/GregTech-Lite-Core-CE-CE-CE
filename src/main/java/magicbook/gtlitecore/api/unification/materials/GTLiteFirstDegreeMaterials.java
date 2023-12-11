@@ -1817,6 +1817,14 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Strontium, 1, Sulfur, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11207 Sodium Cinnamate
+        SodiumCinnamate = new Material.Builder(getId(), gregtechId("sodium_cinnamate"))
+                .dust()
+                .color(0xB84975)
+                .iconSet(ROUGH)
+                .components(Carbon, 9, Hydrogen, 7, Sodium, 1, Oxygen, 2)
+                .build();
     }
 
     private static int getId() {

@@ -235,6 +235,7 @@ public class GTLiteMaterials {
     public static Material CadmiumTungstate;
     public static Material BismuthGermanate;
     public static Material StrontiumSulfide;
+    public static Material SodiumCinnamate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -415,6 +416,13 @@ public class GTLiteMaterials {
     public static Material AmmoniumAcetate;
     public static Material Hexamethylenetetramine;
     public static Material BenzylChloride;
+    public static Material HSQ;
+    public static Material Methyltrichlorosilane;
+    public static Material Methyltrimethoxysilane;
+    public static Material Polymethylsilesquioxane;
+    public static Material KPR;
+    public static Material CinnamoylChloride;
+    public static Material CinnamicAcid;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

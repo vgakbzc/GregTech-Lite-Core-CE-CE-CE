@@ -1051,6 +1051,7 @@ gregtech.material.tl_tm_doped_caesium_iodide=铊-铥掺杂的碘化铯
 gregtech.material.cadmium_tungstate=钨酸镉
 gregtech.material.bismuth_germanate=锗酸铋
 gregtech.material.strontium_sulfide=硫化锶
+gregtech.material.sodium_cinnamate=肉桂酸钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1229,6 +1230,13 @@ gregtech.material.acetamide=乙酰胺
 gregtech.material.ammonium_acetate=乙酸铵
 gregtech.material.hexamethylenetetramine=六亚甲基四胺
 gregtech.material.benzyl_chloride=氯化苄
+gregtech.material.hsq=聚氢半硅氧烷（HSQ）
+gregtech.material.methyltrichlorosilane=甲基三氯硅烷
+gregtech.material.methyltrimethoxysilane=甲基三甲氧基硅烷
+gregtech.material.polymethylsilesquioxane=聚甲基倍半硅氧烷
+gregtech.material.kpr=聚乙烯醇肉桂酸酯（KPR）
+gregtech.material.cinnamoyl_chloride=肉桂酰氯
+gregtech.material.cinnamic_acid=肉桂酸
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子等离子体
