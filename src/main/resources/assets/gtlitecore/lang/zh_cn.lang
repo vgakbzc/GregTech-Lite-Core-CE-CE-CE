@@ -1387,6 +1387,7 @@ item.material.oreprefix.milled=碾磨%s矿石粉
 metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精选
 item.material.oreprefix.seedCrystal=%s晶种
 item.material.oreprefix.boule=人造%s
+item.material.oreprefix.swarm=%s纳米蜂群
 
 #  High Energy Physics Items
 metaitem.plasma_containment_cell.name=等离子体遏制装置

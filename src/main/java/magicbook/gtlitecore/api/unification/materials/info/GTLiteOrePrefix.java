@@ -20,4 +20,7 @@ public class GTLiteOrePrefix {
             hasGemProperty.and(mat -> mat.hasFlag(GENERATE_BOULE) || (mat.hasFlag(MaterialFlags.CRYSTALLIZABLE) && !mat.hasFlag(GTLiteMaterialFlags.DISABLE_CRYSTALLIZATION))));
     public static final OrePrefix boule = new OrePrefix("boule", M * 4, null, GTLiteMaterialIconType.boule, ENABLE_UNIFICATION,
             hasGemProperty.and(mat -> mat.hasFlag(GENERATE_BOULE) || (mat.hasFlag(MaterialFlags.CRYSTALLIZABLE) && !mat.hasFlag(GTLiteMaterialFlags.DISABLE_CRYSTALLIZATION))));
+
+    public static final OrePrefix swarm = new OrePrefix("swarm", M, null, GTLiteMaterialIconType.swarm, ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_SWARM));
 }

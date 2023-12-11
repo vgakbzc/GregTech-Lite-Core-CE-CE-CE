@@ -8,5 +8,6 @@ public class OrePrefixAddition {
         MetaItems.addOrePrefix(GTLiteOrePrefix.milled);
         MetaItems.addOrePrefix(GTLiteOrePrefix.seedCrystal);
         MetaItems.addOrePrefix(GTLiteOrePrefix.boule);
+        MetaItems.addOrePrefix(GTLiteOrePrefix.swarm);
     }
 }

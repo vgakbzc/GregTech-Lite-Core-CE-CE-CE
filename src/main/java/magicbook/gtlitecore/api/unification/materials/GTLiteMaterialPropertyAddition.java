@@ -7,6 +7,7 @@ import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
 public class GTLiteMaterialPropertyAddition {
@@ -189,6 +190,17 @@ public class GTLiteMaterialPropertyAddition {
         Amethyst.addFlags(CRYSTALLIZABLE);
         Opal.addFlags(CRYSTALLIZABLE);
         //NetherStar.addFlags(CRYSTALLIZABLE); // TODO Another Nether Star recipe, may be set components
+
+        //  Nano Swarm
+        Carbon.addFlags(GENERATE_SWARM);
+        Graphene.addFlags(GENERATE_SWARM);
+        CarbonNanotube.addFlags(GENERATE_SWARM);
+        Fullerene.addFlags(GENERATE_SWARM);
+
+        Orichalcum.addFlags(GENERATE_SWARM);
+        Adamantium.addFlags(GENERATE_SWARM);
+        Vibranium.addFlags(GENERATE_SWARM);
+        Neutronium.addFlags(GENERATE_SWARM);
 
         //  Conflict Solutions
         RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
