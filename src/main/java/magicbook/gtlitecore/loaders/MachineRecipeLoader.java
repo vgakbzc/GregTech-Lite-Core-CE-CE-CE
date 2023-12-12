@@ -231,11 +231,77 @@ public class MachineRecipeLoader {
                 .duration(600)
                 .buildAndRegister();
 
-        //  TODO Isa Mill
+        //  Isa Mill
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[LuV])
+                .inputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.INCONEL625_GEARBOX_CASING, 2))
+                .input(plate, Inconel625, 4)
+                .input(circuit, MarkerMaterials.Tier.LuV, 4)
+                .input(CONVEYOR_MODULE_LuV, 2)
+                .input(gear, Inconel625, 2)
+                .input(gearSmall, Inconel792, 4)
+                .input(screw, Tantalloy61, 16)
+                .input(foil, Titanium, 8)
+                .input(cableGtQuadruple, NiobiumTitanium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Lubricant.getFluid(3000))
+                .fluidInputs(Zeron100.getFluid(L * 4))
+                .output(ISA_MILL)
+                .scannerResearch(b -> b
+                        .researchStack(MACERATOR[IV].getStackForm())
+                        .EUt(VA[IV])
+                        .duration(600))
+                .EUt(VA[LuV])
+                .duration(1200)
+                .buildAndRegister();
 
-        //  TODO Flotation Cell Regulator
+        //  Flotation Cell Regulator
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .inputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.FLOTATION_CELL, 2))
+                .input(plate, HastelloyN, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(gear, Stellite, 2)
+                .input(gearSmall, Talonite, 4)
+                .input(screw, IncoloyMA813, 16)
+                .input(foil, TungstenSteel, 8)
+                .input(cableGtQuadruple, VanadiumGallium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Lubricant.getFluid(3000))
+                .fluidInputs(WatertightSteel.getFluid(L * 4))
+                .output(FLOTATION_CELL_REGULATOR)
+                .scannerResearch(b -> b
+                        .researchStack(ORE_WASHER[IV].getStackForm())
+                        .EUt(VA[LuV])
+                        .duration(600))
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
 
-        //  TODO Vacuum Drying Furnace
+        //  Vacuum Drying Furnace
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[IV])
+                .input(frameGt, RedSteel, 4)
+                .input(plate, TitaniumTungstenCarbide, 4)
+                .input(circuit, MarkerMaterials.Tier.IV, 4)
+                .input(ELECTRIC_PISTON_IV, 2)
+                .input(gear, TanmolyiumBetaC, 2)
+                .input(gearSmall, EglinSteel, 4)
+                .input(screw, AusteniticStainlessSteel904L, 16)
+                .input(foil, StainlessSteel, 8)
+                .input(cableGtQuadruple, Platinum, 4)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Lubricant.getFluid(3000))
+                .fluidInputs(CobaltBrass.getFluid(L * 4))
+                .output(VACUUM_DRYING_FURNACE)
+                .scannerResearch(b -> b
+                        .researchStack(CHEMICAL_DRYER[IV].getStackForm())
+                        .EUt(VA[EV])
+                        .duration(600))
+                .EUt(VA[IV])
+                .duration(1200)
+                .buildAndRegister();
 
         //  Volcanus
         ModHandler.addShapedRecipe(true, "volcanus", VOLCANUS.getStackForm(),
@@ -779,6 +845,27 @@ public class MachineRecipeLoader {
                         .CWUt(128)
                         .EUt(VA[UEV]))
                 .EUt(VA[UEV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  PCB Factory
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, RhodiumPlatedPalladium, 4)
+                .input(CIRCUIT_ASSEMBLER[IV], 4)
+                .input(plate, Osmiridium, 4)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(gear, Ruridit, 2)
+                .input(ROBOT_ARM_LuV, 4)
+                .input(cableGtSingle, NiobiumTitanium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Lubricant.getFluid(12000))
+                .fluidInputs(PCBCoolant.getFluid(1000))
+                .output(PCB_FACTORY)
+                .scannerResearch(b -> b
+                        .researchStack(CIRCUIT_ASSEMBLER[IV].getStackForm())
+                        .EUt(VA[IV])
+                        .duration(600))
+                .EUt(VA[LuV])
                 .duration(1200)
                 .buildAndRegister();
     }
@@ -1926,5 +2013,109 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  PCB T1 casing
+        ModHandler.addShapedRecipe(true, "photolithographic_framework_casing", GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Iridium),
+                'F', new UnificationEntry(frameGt, Naquadah));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Iridium, 6)
+                .input(frameGt, Naquadah)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  PCB T2 casing
+        ModHandler.addShapedRecipe(true, "mold_printing_assembly_framework_casing", GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.MOLD_PRINTING_ASSEMBLY_FRAMEWORK_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Pikyonium64B),
+                'F', new UnificationEntry(frameGt, NaquadahEnriched));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Pikyonium64B, 6)
+                .input(frameGt, NaquadahEnriched)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.MOLD_PRINTING_ASSEMBLY_FRAMEWORK_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Water cooling casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, StainlessSteel)
+                .input(plate, HY1301, 4)
+                .input(pipeNormalFluid, Polybenzimidazole)
+                .input(ELECTRIC_PUMP_EV)
+                .input(wireFine, NiobiumTitanium, 4)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.WATER_COOLED_MACHINE_CASING, 2))
+                .EUt(VA[ZPM])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Bio chamber casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, VanadiumSteel)
+                .input(plate, BlackSteel, 4)
+                .input(FIELD_GENERATOR_EV)
+                .input(STEM_CELLS, 2)
+                .input(wireFine, VanadiumGallium, 4)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BIOLOGICAL_STERILE_MACHINE_CASING, 2))
+                .EUt(VA[ZPM])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  PCB T3 casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Tritanium)
+                .input(plate, Cinobite, 4)
+                .input(TOOL_DATA_STICK)
+                .input(wireFine, Tin, 4)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING, 2))
+                .EUt(VA[UV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Infinity cooling casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(plate, Infinity, 4)
+                .input(pipeNormalFluid, Lafium)
+                .input(ELECTRIC_PUMP_LuV)
+                .input(wireFine, Europium, 4)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.INFINITY_COOLED_MACHINE_CASING, 2))
+                .EUt(VA[UHV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Computing casing
+        ModHandler.addShapedRecipe(true, "computing_casing", GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.COMPMUTING_CASING, 2),
+                "pPp", "wCw", "pSp",
+                'C', GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING),
+                'P', COVER_SCREEN,
+                'p', new UnificationEntry(plate, RhodiumPlatedPalladium),
+                'S', SENSOR_IV,
+                'w', new UnificationEntry(wireGtSingle, Cobalt));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING))
+                .input(COVER_SCREEN)
+                .input(plate, RhodiumPlatedPalladium, 4)
+                .input(SENSOR_IV)
+                .input(wireGtSingle, Cobalt, 2)
+                .outputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.COMPMUTING_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

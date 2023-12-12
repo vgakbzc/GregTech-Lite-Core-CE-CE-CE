@@ -239,7 +239,7 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
                 .where('H', optionalStates("AuxiliaryUpgradeWaterCoolingTower", getThirdFrameState())) // Naquadah Alloy frame
                 .where('e', optionalStates("AuxiliaryUpgradeWaterCoolingTower", getFifthCasingState())) // T2 casing
                 .where('p', optionalStates("AuxiliaryUpgradeWaterCoolingTower", getSecondBoilerCasingState())) // Tungsten Steel pipe casing
-                .where('x', optionalStates("AuxiliaryUpgradeWaterCoolingTower", getSixthCasingState())) // PTFE casing
+                .where('x', optionalStates("AuxiliaryUpgradeWaterCoolingTower", getSixthCasingState())) // Water cooling casing
                 .where('g', optionalStates("AuxiliaryUpgradeWaterCoolingTower", getSeventhCasingState())) //  Tungsten Steel intake casing
                 //  Bio Chamber Structure
                 .where('Q', optionalStates("AuxiliaryUpgradeBioChamber", getBoilerCasingState())) // PBI pipe casing
@@ -249,7 +249,7 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
                 //  Basic T3 Structure
                 .where('y', optionalStates("AuxiliaryUpgradeTier3", getNinthCasingState())) // T3 casing
                 .where('Z', optionalStates("AuxiliaryUpgradeTier3", getBoilerCasingState())) // PBI pipe casing
-                .where('q', optionalStates("AuxiliaryUpgradeTier3", getSixthCasingState())) // PTFE casing
+                .where('q', optionalStates("AuxiliaryUpgradeTier3", getEleventhCasingState())) // PTFE casing
                 .where('u', optionalStates("AuxiliaryUpgradeTier3", getUniqueCasingState())) // computing casing
                 //  Infinity Cooling Tower structure
                 .where('z', optionalStates("AuxiliaryUpgradeInfinityCoolingTower", getBoilerCasingState())) // PBI pipe casing
@@ -285,7 +285,7 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
     }
 
     private static IBlockState getSixthCasingState() {
-        return MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PTFE_INERT_CASING);
+        return GTLiteMetaBlocks.PCB_FACTORY_CASING.getState(BlockPCBFactoryCasing.PCBFactoryCasingType.WATER_COOLED_MACHINE_CASING);
     }
 
     private static IBlockState getSeventhCasingState() {
@@ -302,6 +302,10 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
 
     private static IBlockState getTenthCasingState() {
         return GTLiteMetaBlocks.PCB_FACTORY_CASING.getState(BlockPCBFactoryCasing.PCBFactoryCasingType.INFINITY_COOLED_MACHINE_CASING);
+    }
+
+    private static IBlockState getEleventhCasingState() {
+        return MetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.PTFE_INERT_CASING);
     }
 
     private static IBlockState getUniqueCasingState() {
@@ -419,7 +423,7 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
             shapeInfo.add(builder
                     .where('y', getNinthCasingState())
                     .where('Z', getBoilerCasingState())
-                    .where('q', getSixthCasingState())
+                    .where('q', getEleventhCasingState())
                     .where('u', getUniqueCasingState())
                     .build());
             shapeInfo.add(builder

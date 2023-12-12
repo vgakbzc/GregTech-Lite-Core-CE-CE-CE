@@ -88,7 +88,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[EV], 454)
                         .vacuumStats(VA[MV], 280))
                 .components(Cobalt, 4, Chrome, 3, Phosphorus, 2, Molybdenum, 1)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12006 Hastelloy-X78
@@ -243,7 +243,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(6200, BlastProperty.GasTier.HIGH)
                         .blastStats(VA[IV], 466)
                         .vacuumStats(VA[HV], 130))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_ROTOR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .fluidPipeProperties(4900, 220, true, true, true, false)
                 .build();
 
@@ -265,7 +265,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(1048, BlastProperty.GasTier.LOW)
                         .blastStats(VA[MV], 24))
-                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_FRAME, GENERATE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12019 Pikyonium-64B

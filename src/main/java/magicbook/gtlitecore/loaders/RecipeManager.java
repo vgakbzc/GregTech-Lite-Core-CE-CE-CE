@@ -121,5 +121,6 @@ public class RecipeManager {
         StellarFurnace.init();
         CosmicRayDetector.init();
         DimensionalOscillator.init();
+        PCBFactory.init();
     }
 }

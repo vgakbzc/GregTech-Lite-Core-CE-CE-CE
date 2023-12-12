@@ -9,7 +9,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
-import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
+import static gregtechfoodoption.GTFOMaterialHandler.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class GTLiteOrganicChemistryMaterials {
@@ -1099,6 +1099,60 @@ public class GTLiteOrganicChemistryMaterials {
                 .liquid()
                 .color(0x6699CC)
                 .components(Carbon, 7, Hydrogen, 7, Chlorine, 1)
+                .build();
+
+        //  13132 HSQ (Hydrogen Silsequioxane)
+        HSQ = new Material.Builder(getId(), gregtechId("hsq"))
+                .polymer()
+                .liquid()
+                .color(0xB8F2F8)
+                .components(Hydrogen, 1, Silicon, 1, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("-[-HSiO1.5-]-", true);
+
+        //  13133 Methyltrichlorosilane
+        Methyltrichlorosilane = new Material.Builder(getId(), gregtechId("methyltrichlorosilane"))
+                .liquid()
+                .color(0x4D7CB4)
+                .components(Carbon, 1, Hydrogen, 3, Chlorine, 3, Silicon, 1)
+                .build();
+
+        //  13134 Methyltrimethoxysilane
+        Methyltrimethoxysilane = new Material.Builder(getId(), gregtechId("methyltrimethoxysilane"))
+                .liquid()
+                .color(0x666699)
+                .components(Carbon, 4, Hydrogen, 12, Silicon, 1, Oxygen, 3)
+                .build()
+                .setFormula("CH3Si(CH3O)3", true);
+
+        //  13135 Polymethylsilesquioxane
+        Polymethylsilesquioxane = new Material.Builder(getId(), gregtechId("polymethylsilesquioxane"))
+                .liquid()
+                .color(0x8799B8)
+                .components(Carbon, 4, Hydrogen, 12, Silicon, 1, Oxygen, 3)
+                .build()
+                .setFormula("CH3Si(OCH3)3", true);
+
+        //  13136 KPR
+        KPR = new Material.Builder(getId(), gregtechId("kpr"))
+                .liquid()
+                .color(0x98125C)
+                .components(Carbon, 11, Hydrogen, 12, Oxygen, 3)
+                .build();
+
+        //  13137 CinnamoylChloride
+        CinnamoylChloride = new Material.Builder(getId(), gregtechId("cinnamoyl_chloride"))
+                .liquid()
+                .color(0xE27C94)
+                .components(Carbon, 9, Hydrogen, 7, Chlorine, 1, Oxygen, 1)
+                .build();
+
+        //  13138 Cinnamic Acid
+        CinnamicAcid = new Material.Builder(getId(), gregtechId("cinnamic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xCDFF72)
+                .components(Carbon, 9, Hydrogen, 8, Oxygen, 2)
                 .build();
     }
 

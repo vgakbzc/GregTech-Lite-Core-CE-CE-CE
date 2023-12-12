@@ -7,6 +7,7 @@ import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
 public class GTLiteMaterialPropertyAddition {
@@ -145,6 +146,7 @@ public class GTLiteMaterialPropertyAddition {
         Uranium238.addFlags(GENERATE_FRAME);
         Plutonium241.addFlags(GENERATE_FRAME);
         VanadiumSteel.addFlags(GENERATE_FRAME);
+        RedSteel.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -189,6 +191,24 @@ public class GTLiteMaterialPropertyAddition {
         Amethyst.addFlags(CRYSTALLIZABLE);
         Opal.addFlags(CRYSTALLIZABLE);
         //NetherStar.addFlags(CRYSTALLIZABLE); // TODO Another Nether Star recipe, may be set components
+
+        //  Nano Swarm
+        Carbon.addFlags(GENERATE_SWARM); // W.I.P
+        Graphene.addFlags(GENERATE_SWARM); // W.I.P
+        CarbonNanotube.addFlags(GENERATE_SWARM); // W.I.P
+        Fullerene.addFlags(GENERATE_SWARM); // W.I.P
+
+        Iron.addFlags(GENERATE_SWARM); // W.I.P
+        IronMagnetic.addFlags(GENERATE_SWARM); // W.I.P
+        Copper.addFlags(GENERATE_SWARM); // W.I.P
+        Tin.addFlags(GENERATE_SWARM); // W.I.P
+        Nickel.addFlags(GENERATE_SWARM); // W.I.P
+        Cobalt.addFlags(GENERATE_SWARM); // W.I.P
+        Lead.addFlags(GENERATE_SWARM); // W.I.P
+        Redstone.addFlags(GENERATE_SWARM); // W.I.P
+
+        Silver.addFlags(GENERATE_SWARM); // For PCB factory Etching
+        Gold.addFlags(GENERATE_SWARM); // For PCB factory Etching
 
         //  Conflict Solutions
         RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis

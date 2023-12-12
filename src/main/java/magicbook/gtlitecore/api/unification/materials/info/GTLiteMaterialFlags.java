@@ -16,4 +16,7 @@ public class GTLiteMaterialFlags {
     public static final MaterialFlag GENERATE_BOULE = new MaterialFlag.Builder("generate_boule")
             .requireProps(PropertyKey.GEM)
             .build();
+
+    public static final MaterialFlag GENERATE_SWARM = new MaterialFlag.Builder("generate_swarm")
+            .build();
 }
