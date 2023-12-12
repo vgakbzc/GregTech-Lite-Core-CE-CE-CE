@@ -805,11 +805,27 @@ public class SpaceElevator {
                     .buildAndRegister();
         }
 
-        //  UHV 3
+        //  UHV 3 6000 2000
 
         //  UEV 3
 
-        //  UIV 4
+        //  UIV 4 8000 4000
+        for (FluidStack stack : new FluidStack[]{
+                RocketFuel.getFluid(8000),
+                RP1RocketFuel.getFluid(8000),
+                DenseHydrazineMixtureFuel.getFluid(4000),
+                MethylhydrazineNitrateRocketFuel.getFluid(4000)}) {
+
+            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
+                    .notConsumable(MINING_DRONE_UIV.getStackForm(16))
+                    .circuitMeta(0)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidOutputs(RawStarMatter.getFluid(100000))
+                    .CasingTier(4)
+                    .EUt(VA[UIV])
+                    .duration(20)
+                    .buildAndRegister();
+        }
 
         //  UXV 4
 

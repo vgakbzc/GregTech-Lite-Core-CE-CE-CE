@@ -1101,6 +1101,12 @@ gregtech.material.abyssalloy=渊狱合金
 gregtech.material.platinum_group_alloy=贵金属合金
 gregtech.material.superheavy_h_alloy=超重元素-重合金
 gregtech.material.superheavy_l_alloy=超重元素-轻合金
+gregtech.material.alkalis_group_alloy=碱金属合金
+gregtech.material.alkaline_earth_group_alloy=碱土金属合金
+gregtech.material.transition_l_alloy=过渡金属-轻合金
+gregtech.material.transition_h_alloy=过渡金属-重合金
+gregtech.material.refractory_alloy=难熔金属合金
+gregtech.material.inert_gas_mixture=惰性气体混合物
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1255,6 +1261,8 @@ gregtech.material.cosmic_computing_mixture=宇宙信息混合物
 gregtech.material.heavy_quark_enriched_mixture=富集重夸克混合物
 gregtech.material.deuterium_superheavy_mixture=氘-超重元素混合物
 gregtech.material.heavy_quark_degenerate_matter=重夸克简并物质
+gregtech.material.magneto_hydrodynamically_constrained_star_matter=磁流体动力学约束恒星等离子体物质
+gregtech.material.raw_star_matter=原始恒星等离子体物质
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液

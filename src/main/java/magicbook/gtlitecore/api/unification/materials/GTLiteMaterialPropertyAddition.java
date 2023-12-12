@@ -86,6 +86,10 @@ public class GTLiteMaterialPropertyAddition {
         Moscovium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Moscovium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Tennessine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Francium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Francium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Technetium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Technetium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
