@@ -784,6 +784,10 @@ gtlitecore.machine.mega_turbine.mode.0=正常模式
 gtlitecore.machine.mega_turbine.mode.1=高速模式
 gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
 
+gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
+gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
+gtlitecore.machine.neutral_network_nexus.tooltip.2=用于繁育或杂交各式纳米蜂群
+
 gtlitecore.machine.pcb_factory.name=PCB工厂
 gtlitecore.machine.pcb_factory.tooltip.1=家用纳米级光刻机
 gtlitecore.machine.pcb_factory.tooltip.2=集成了你能想象到的一切电路板生产工艺
@@ -1388,6 +1392,8 @@ metaitem.milled.tooltip.flotation=使用§6工业浮选机§7进行进一步精�
 item.material.oreprefix.seedCrystal=%s晶种
 item.material.oreprefix.boule=人造%s
 item.material.oreprefix.swarm=%s纳米蜂群
+item.material.oreprefix.nanotube=%s纳米管
+item.material.oreprefix.nanosensor=%s纳米传感器
 
 #  High Energy Physics Items
 metaitem.plasma_containment_cell.name=等离子体遏制装置
@@ -1447,6 +1453,8 @@ recipemap.cosmic_ray_detector_recipes.name=宇宙射线探测
 recipemap.pcb_factory_etch_recipes.name=雕版光刻
 recipemap.pcb_factory_bio_recipes.name=生物蚀刻
 recipemap.pcb_factory_nano_recipes.name=纳米组装
+recipemap.neutral_network_nexus_breeding_mode.name=繁育模式
+recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

@@ -1,5 +1,8 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import net.minecraftforge.fluids.FluidStack;
+
+import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.common.items.MetaItems.*;
@@ -20,6 +23,8 @@ public class PCBFactory {
         KaptonCircuitBoard();
         OpticalCircuitBoard();
         SpintronicCircuitBoard();
+
+        NanoAssemblingMode();
     }
 
     private static void BasicCircuitBoard() {}
@@ -261,10 +266,10 @@ public class PCBFactory {
                 .duration(161)
                 .buildAndRegister();
 
-        //  Kapton-E -> PCB
+        //  Kapton-K -> PCB
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(1)
-                .input(plate, KaptonE)
+                .input(plate, KaptonK)
                 .input(foil, AnnealedCopper, 42)
                 .input(foil, Copper, 42)
                 .fluidInputs(SulfuricAcid.getFluid(1322))
@@ -277,7 +282,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(2)
                 .notConsumable(swarm, Silver)
-                .input(plate, KaptonE)
+                .input(plate, KaptonK)
                 .input(foil, AnnealedCopper, 42)
                 .input(foil, Copper, 42)
                 .fluidInputs(SulfuricAcid.getFluid(1322))
@@ -290,7 +295,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(3)
                 .notConsumable(swarm, Gold)
-                .input(plate, KaptonE)
+                .input(plate, KaptonK)
                 .input(foil, AnnealedCopper, 42)
                 .input(foil, Copper, 42)
                 .fluidInputs(SulfuricAcid.getFluid(1322))
@@ -300,10 +305,10 @@ public class PCBFactory {
                 .duration(132)
                 .buildAndRegister();
 
-        //  Kapton-K -> PCB
+        //  Kapton-E -> PCB
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(1)
-                .input(plate, KaptonK)
+                .input(plate, KaptonE)
                 .input(foil, AnnealedCopper, 45)
                 .input(foil, Copper, 45)
                 .fluidInputs(SulfuricAcid.getFluid(1414))
@@ -316,7 +321,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(2)
                 .notConsumable(swarm, Silver)
-                .input(plate, KaptonK)
+                .input(plate, KaptonE)
                 .input(foil, AnnealedCopper, 45)
                 .input(foil, Copper, 45)
                 .fluidInputs(SulfuricAcid.getFluid(1414))
@@ -329,7 +334,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(3)
                 .notConsumable(swarm, Gold)
-                .input(plate, KaptonK)
+                .input(plate, KaptonE)
                 .input(foil, AnnealedCopper, 45)
                 .input(foil, Copper, 45)
                 .fluidInputs(SulfuricAcid.getFluid(1414))
@@ -537,10 +542,10 @@ public class PCBFactory {
                 .duration(197)
                 .buildAndRegister();
 
-        //  Kapton-E -> ACB
+        //  Kapton-K -> ACB
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(1)
-                .input(plate, KaptonE)
+                .input(plate, KaptonK)
                 .input(foil, Gold, 39)
                 .input(foil, Electrum, 39)
                 .fluidInputs(SulfuricAcid.getFluid(1224))
@@ -553,7 +558,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(2)
                 .notConsumable(swarm, Silver)
-                .input(plate, KaptonE)
+                .input(plate, KaptonK)
                 .input(foil, Gold, 39)
                 .input(foil, Electrum, 39)
                 .fluidInputs(SulfuricAcid.getFluid(1224))
@@ -566,7 +571,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(3)
                 .notConsumable(swarm, Gold)
-                .input(plate, KaptonE)
+                .input(plate, KaptonK)
                 .input(foil, Gold, 39)
                 .input(foil, Electrum, 39)
                 .fluidInputs(SulfuricAcid.getFluid(1224))
@@ -576,10 +581,10 @@ public class PCBFactory {
                 .duration(161)
                 .buildAndRegister();
 
-        //  Kapton-K -> ACB
+        //  Kapton-E -> ACB
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(1)
-                .input(plate, KaptonK)
+                .input(plate, KaptonE)
                 .input(foil, Gold, 42)
                 .input(foil, Electrum, 42)
                 .fluidInputs(SulfuricAcid.getFluid(1322))
@@ -592,7 +597,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(2)
                 .notConsumable(swarm, Silver)
-                .input(plate, KaptonK)
+                .input(plate, KaptonE)
                 .input(foil, Gold, 42)
                 .input(foil, Electrum, 42)
                 .fluidInputs(SulfuricAcid.getFluid(1322))
@@ -605,7 +610,7 @@ public class PCBFactory {
         PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
                 .circuitMeta(3)
                 .notConsumable(swarm, Gold)
-                .input(plate, KaptonK)
+                .input(plate, KaptonE)
                 .input(foil, Gold, 42)
                 .input(foil, Electrum, 42)
                 .fluidInputs(SulfuricAcid.getFluid(1322))
@@ -621,4 +626,156 @@ public class PCBFactory {
     private static void KaptonCircuitBoard() {}
     private static void OpticalCircuitBoard() {}
     private static void SpintronicCircuitBoard() {}
+
+    private static void NanoAssemblingMode() {
+
+        NanotubeRecipes();
+        NanosensorRecipes();
+    }
+
+    private static void NanotubeRecipes() {
+
+        //  Silver
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Silver, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Silver)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Gold
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Gold, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Gold)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+    }
+
+    private static void NanosensorRecipes() {
+
+        //  Silver
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Silver)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Silver, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Silver)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Gold
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Gold)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Gold, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Gold)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+    }
 }

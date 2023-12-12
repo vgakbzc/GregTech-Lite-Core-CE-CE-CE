@@ -9,5 +9,7 @@ public class OrePrefixAddition {
         MetaItems.addOrePrefix(GTLiteOrePrefix.seedCrystal);
         MetaItems.addOrePrefix(GTLiteOrePrefix.boule);
         MetaItems.addOrePrefix(GTLiteOrePrefix.swarm);
+        MetaItems.addOrePrefix(GTLiteOrePrefix.nanotube);
+        MetaItems.addOrePrefix(GTLiteOrePrefix.nanosensor);
     }
 }

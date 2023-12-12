@@ -848,6 +848,16 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .buildAndRegister();
 
+        //  Neutral Network Nexus
+        ModHandler.addShapedRecipe(true, "neutral_network_nexus", NEUTRAL_NETWORK_NEXUS.getStackForm(),
+                "RSR", "FHF", "WMW",
+                'H', HULL[ZPM].getStackForm(),
+                'S', new UnificationEntry(spring, Trinium),
+                'W', new UnificationEntry(cableGtSingle, VanadiumGallium),
+                'M', ELECTRIC_MOTOR_ZPM,
+                'F', FIELD_GENERATOR_ZPM,
+                'R', new UnificationEntry(plate, Americium));
+
         //  PCB Factory
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, RhodiumPlatedPalladium, 4)
