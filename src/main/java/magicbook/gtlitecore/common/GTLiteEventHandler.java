@@ -5,6 +5,7 @@ import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.unification.OrePrefixAddition;
 import magicbook.gtlitecore.api.unification.materials.GTLiteMaterialPropertyAddition;
+import magicbook.gtlitecore.common.items.GTLiteTools;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -17,5 +18,6 @@ public class GTLiteEventHandler {
         GTLiteMaterials.init();
         OrePrefixAddition.init();
         GTLiteMaterialPropertyAddition.init();
+        GTLiteTools.init();
     }
 }

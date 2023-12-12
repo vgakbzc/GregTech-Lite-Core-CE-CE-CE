@@ -122,5 +122,6 @@ public class RecipeManager {
         CosmicRayDetector.init();
         DimensionalOscillator.init();
         PCBFactory.init();
+        NeutralNetworkNexus.init();
     }
 }

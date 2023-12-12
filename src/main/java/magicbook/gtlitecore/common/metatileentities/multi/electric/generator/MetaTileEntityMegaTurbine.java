@@ -43,7 +43,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -128,8 +127,6 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
     @Override
     public List<IReinforcedRotorHolder> getRotorHolders() {
         List<IReinforcedRotorHolder> abilities = getAbilities(GTLiteMultiblockAbility.REINFORCED_ROTOR_HOLDER_ABILITY);
-        if (abilities.isEmpty())
-            return Collections.emptyList();
         return abilities;
     }
 

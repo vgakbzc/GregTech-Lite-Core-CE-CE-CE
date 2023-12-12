@@ -116,6 +116,10 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_BIO_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_NANO_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_BREEDING_MODE;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE;
 
     public GTLiteRecipeMaps() {}
 
@@ -372,6 +376,17 @@ public class GTLiteRecipeMaps {
         PCB_FACTORY_NANO_RECIPES = new RecipeMap<>("pcb_factory_nano_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(true, false, true, GuiTextures.SCANNER_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Neutral Network Nexus RecipeMaps
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE = new RecipeMap<>("neutral_network_nexus_breeding_mode", 6, 6, 3, 3, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSound(GTSoundEvents.ASSEMBLER);
+
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE = new RecipeMap<>("neutral_network_nexus_hybridizing_mode", 6, 6, 3, 3, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setSound(GTSoundEvents.ASSEMBLER);
     }
 }

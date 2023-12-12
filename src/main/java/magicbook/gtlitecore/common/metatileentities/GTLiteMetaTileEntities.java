@@ -102,6 +102,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
+    public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
 
     /**
@@ -229,7 +230,7 @@ public class GTLiteMetaTileEntities {
         //  66
         //  67
         //  68
-        //  69
+        NEUTRAL_NETWORK_NEXUS = registerMultiMetaTileEntity(69, new MetaTileEntityNeutralNetworkNexus(gtliteId("neutral_network_nexus")));
         PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
     }
 }

@@ -23,4 +23,11 @@ public class GTLiteOrePrefix {
 
     public static final OrePrefix swarm = new OrePrefix("swarm", M, null, GTLiteMaterialIconType.swarm, ENABLE_UNIFICATION,
             mat -> mat.hasFlag(GENERATE_SWARM));
+
+    public static final OrePrefix nanotube = new OrePrefix("nanotube", M, null, GTLiteMaterialIconType.nanotube, ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_NANOTUBE));
+
+    public static final OrePrefix nanosensor = new OrePrefix("nanosensor", M, null, GTLiteMaterialIconType.nanosensor, ENABLE_UNIFICATION,
+            mat -> mat.hasFlag(GENERATE_NANOSENSOR));
+
 }
