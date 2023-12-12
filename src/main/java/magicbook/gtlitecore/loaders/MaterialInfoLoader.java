@@ -79,7 +79,7 @@ public class MaterialInfoLoader {
 
         //  UHV Hermetic Casing
         ModHandler.removeRecipeByName("gregtech:hermetic_casing_max");
-        ModHandler.addShapedRecipe(true, "hermetic_casing_max", MetaBlocks.HERMETIC_CASING.getItemVariant(HERMETIC_UHV),
+        ModHandler.addShapedRecipe(true, "hermetic_casing_uhv", MetaBlocks.HERMETIC_CASING.getItemVariant(HERMETIC_UHV),
                 "PPP", "PFP", "PPP",
                 'P', new UnificationEntry(plate, Orichalcum),
                 'F', new UnificationEntry(pipeLargeFluid, Duranium));

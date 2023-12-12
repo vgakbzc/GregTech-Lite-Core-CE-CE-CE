@@ -197,7 +197,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
 
         UNSTABLE_STAR = this.addItem(307, "unstable_star");
-
+        ZENITH_STAR = this.addItem(308, "zenith_star");
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
         SEPARATION_ELECTROMAGNET = this.addItem(311, "separation_electromagnet");

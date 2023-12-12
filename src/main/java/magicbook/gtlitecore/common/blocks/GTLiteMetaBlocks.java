@@ -29,6 +29,7 @@ public class GTLiteMetaBlocks {
     public static BlockTransparentCasing TRANSPARENT_CASING;
     public static BlockExplosive EXPLOSIVE_BLOCK;
     public static BlockCrucible CRUCIBLE;
+    public static BlockHermeticCasing HERMETIC_CASING;
 
     private GTLiteMetaBlocks() {}
 
@@ -69,6 +70,8 @@ public class GTLiteMetaBlocks {
         EXPLOSIVE_BLOCK.setRegistryName("explosive_block");
         CRUCIBLE = new BlockCrucible();
         CRUCIBLE.setRegistryName("crucible");
+        HERMETIC_CASING = new BlockHermeticCasing();
+        HERMETIC_CASING.setRegistryName("hermetic_casing");
     }
 
     @SideOnly(Side.CLIENT)
@@ -87,6 +90,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(FIELD_CASING);
         registerItemModel(EXPLOSIVE_BLOCK);
         registerItemModel(CRUCIBLE);
+        registerItemModel(HERMETIC_CASING);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();

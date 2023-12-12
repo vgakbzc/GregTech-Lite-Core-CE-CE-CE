@@ -411,6 +411,15 @@ public class MiscRecipes {
                 .duration(240)
                 .buildAndRegister();
 
+        //  Zenith Star
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(UNSTABLE_STAR)
+                .fluidInputs(CosmicComputingMixture.getFluid(288))
+                .output(ZENITH_STAR)
+                .EUt(VA[ZPM])
+                .duration(120)
+                .buildAndRegister();
+
         //  c-BN sawblade
         LATHE_RECIPES.recipeBuilder()
                 .input(gemExquisite, CubicBoronNitride)
