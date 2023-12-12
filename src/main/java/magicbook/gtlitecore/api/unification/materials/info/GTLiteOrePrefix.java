@@ -29,4 +29,5 @@ public class GTLiteOrePrefix {
 
     public static final OrePrefix nanosensor = new OrePrefix("nanosensor", M, null, GTLiteMaterialIconType.nanosensor, ENABLE_UNIFICATION,
             mat -> mat.hasFlag(GENERATE_NANOSENSOR));
+
 }
