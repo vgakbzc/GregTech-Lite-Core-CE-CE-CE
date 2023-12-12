@@ -154,7 +154,73 @@ public class DroneAirport {
                         .CWUt(64))
                 .buildAndRegister();
 
-        //  TODO UEV-MAX
+        //  UEV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Adamantium)
+                .input(ROBOT_ARM_UEV, 2)
+                .input(SENSOR_UEV, 2)
+                .input(cableGtSingle, PedotTMA, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(HSSG.getFluid(L))
+                .output(MINING_DRONE_UEV)
+                .EUt(VA[UEV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(MINING_DRONE_UHV.getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(96))
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Infinity)
+                .input(ROBOT_ARM_UIV, 2)
+                .input(SENSOR_UIV, 2)
+                .input(cableGtSingle, Solarium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Naquadah.getFluid(L))
+                .output(MINING_DRONE_UIV)
+                .EUt(VA[UIV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(MINING_DRONE_UEV.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(128))
+                .buildAndRegister();
+
+        //  UXV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, CosmicNeutronium)
+                .input(ROBOT_ARM_UXV, 2)
+                .input(SENSOR_UXV, 2)
+                .input(cableGtSingle, Hypogen, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Trinium.getFluid(L))
+                .output(MINING_DRONE_UXV)
+                .EUt(VA[UXV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(MINING_DRONE_UIV.getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(160))
+                .buildAndRegister();
+
+        //  OpV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Spacetime)
+                .input(ROBOT_ARM_OpV, 2)
+                .input(SENSOR_OpV, 2)
+                .input(cableGtSingle, Galaxium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Tritanium.getFluid(L))
+                .output(MINING_DRONE_OpV)
+                .EUt(VA[OpV])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(MINING_DRONE_UXV.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(192))
+                .buildAndRegister();
     }
 
     private static void LVstage() {

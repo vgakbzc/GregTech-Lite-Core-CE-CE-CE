@@ -12,6 +12,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.BRIGHT;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_MHCSM;
 
 public class GTLiteHighDegreeMaterials {
 
@@ -110,6 +111,21 @@ public class GTLiteHighDegreeMaterials {
                         .blastStats(VA[UIV]))
                 .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
                 .build();
+
+        //  15013 Magneto Hydrodynamically Constrained Star Matter
+        MagnetoHydrodynamicallyConstrainedStarMatter = new Material.Builder(getId(), gregtechId("magneto_hydrodynamically_constrained_star_matter"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature(600000000))
+                .iconSet(CUSTOM_MHCSM)
+                .flags(NO_SMELTING, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15014 Raw Star Matter
+        RawStarMatter = new Material.Builder(getId(), gregtechId("raw_star_matter"))
+                .liquid(new FluidBuilder().temperature(600000000).customStill())
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
     }
 
     private static int getId() {

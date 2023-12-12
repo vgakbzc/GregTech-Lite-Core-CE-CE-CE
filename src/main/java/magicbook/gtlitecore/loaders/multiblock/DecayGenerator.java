@@ -94,5 +94,23 @@ public class DecayGenerator {
                 .duration(120)
                 .CasingTier(1)
                 .buildAndRegister();
+
+        //  Actinium -> Francium
+        DECAY_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Actinium.getFluid(L))
+                .fluidOutputs(Francium.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(100)
+                .CasingTier(2)
+                .buildAndRegister();
+
+        //  Molybdenum -> Technetium
+        DECAY_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Molybdenum.getFluid(L))
+                .fluidOutputs(Technetium.getFluid(L))
+                .EUt(VA[IV])
+                .duration(100)
+                .CasingTier(1)
+                .buildAndRegister();
     }
 }

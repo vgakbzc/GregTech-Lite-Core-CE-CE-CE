@@ -585,6 +585,74 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UEV], 990))
                 .flags(GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FINE_WIRE)
                 .build();
+
+        //  12044 Alkalis Group Alloy
+        AlkalisGroupAlloy = new Material.Builder(getId(), gregtechId("alkalis_group_alloy"))
+                .ingot()
+                .fluid()
+                .color(Lithium.getMaterialRGB() + Sodium.getMaterialRGB() + Potassium.getMaterialRGB() + Rubidium.getMaterialRGB() + Caesium.getMaterialRGB() + Francium.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Lithium, 1, Sodium, 1, Potassium, 1, Rubidium, 1, Caesium, 1, Francium, 1)
+                .blast(b -> b
+                        .temp(9900, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 800))
+                .build();
+
+        //  12045 Alkaline Earth Group Alloy
+        AlkalineEarthGroupAlloy = new Material.Builder(getId(), gregtechId("alkaline_earth_group_alloy"))
+                .ingot()
+                .fluid()
+                .color(Beryllium.getMaterialRGB() + Magnesium.getMaterialRGB() + Calcium.getMaterialRGB() + Strontium.getMaterialRGB() + Barium.getMaterialRGB() + Radium.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Beryllium, 1, Magnesium, 1, Calcium, 1, Strontium, 1, Barium, 1, Radium, 1)
+                .blast(b -> b
+                        .temp(10000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 850))
+                .build();
+
+        //  12046 Transition-L Alloy
+        TransitionLAlloy = new Material.Builder(getId(), gregtechId("transition_l_alloy"))
+                .ingot()
+                .fluid()
+                .color(Titanium.getMaterialRGB() + Vanadium.getMaterialRGB() + Chrome.getMaterialRGB() + Manganese.getMaterialRGB() + Iron.getMaterialRGB() + Cobalt.getMaterialRGB() + Nickel.getMaterialRGB() + Copper.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Titanium, 1, Vanadium, 1, Chrome, 1, Manganese, 1, Iron, 1, Cobalt, 1, Nickel, 1, Copper, 1)
+                .blast(b -> b
+                        .temp(10800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1050))
+                .build();
+
+        //  12047 Transition-H Alloy
+        TransitionHAlloy = new Material.Builder(getId(), gregtechId("transition_h_alloy"))
+                .ingot()
+                .fluid()
+                .color(Zirconium.getMaterialRGB() + Niobium.getMaterialRGB() + Molybdenum.getMaterialRGB() + Technetium.getMaterialRGB() + Hafnium.getMaterialRGB() + Tantalum.getMaterialRGB() + Tungsten.getMaterialRGB() + Rhenium.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Zirconium, 1, Niobium, 1, Molybdenum, 1, Technetium, 1, Hafnium, 1, Tantalum, 1, Tungsten, 1, Rhenium, 1)
+                .blast(b -> b
+                        .temp(12000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1200))
+                .build();
+
+        //  12048 Refractory Alloy
+        RefractoryAlloy = new Material.Builder(getId(), gregtechId("refractory_alloy"))
+                .ingot()
+                .fluid()
+                .color(Aluminium.getMaterialRGB() + Zinc.getMaterialRGB() + Gallium.getMaterialRGB() + Germanium.getMaterialRGB() + Cadmium.getMaterialRGB() + Indium.getMaterialRGB() + Tin.getMaterialRGB() + Antimony.getMaterialRGB())
+                .iconSet(METALLIC)
+                .components(Aluminium, 1, Zinc, 1, Gallium, 1, Germanium, 1, Cadmium, 1, Indium, 1, Tin, 1, Antimony, 1)
+                .blast(b -> b
+                        .temp(11800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 860))
+                .build();
+
+        //  12049 Inert Gas Mixture
+        InertGasMixture = new Material.Builder(getId(), gregtechId("inert_gas_mixture"))
+                .gas()
+                .color(Helium.getMaterialRGB() + Neon.getMaterialRGB() + Argon.getMaterialRGB() + Krypton.getMaterialRGB() + Xenon.getMaterialRGB() + Radon.getMaterialRGB())
+                .components(Helium, 1, Neon, 1, Argon, 1, Krypton, 1, Xenon, 1, Radon, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

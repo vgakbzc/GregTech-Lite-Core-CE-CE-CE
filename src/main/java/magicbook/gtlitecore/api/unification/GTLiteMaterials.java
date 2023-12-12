@@ -283,6 +283,12 @@ public class GTLiteMaterials {
     public static Material PlatinumGroupAlloy;
     public static Material SuperheavyHAlloy;
     public static Material SuperheavyLAlloy;
+    public static Material AlkalisGroupAlloy;
+    public static Material AlkalineEarthGroupAlloy;
+    public static Material TransitionLAlloy;
+    public static Material TransitionHAlloy;
+    public static Material RefractoryAlloy;
+    public static Material InertGasMixture;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -437,6 +443,8 @@ public class GTLiteMaterials {
     public static Material HeavyQuarkEnrichedMixture;
     public static Material DeuteriumSuperheavyMixture;
     public static Material HeavyQuarkDegenerateMatter;
+    public static Material MagnetoHydrodynamicallyConstrainedStarMatter;
+    public static Material RawStarMatter;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
