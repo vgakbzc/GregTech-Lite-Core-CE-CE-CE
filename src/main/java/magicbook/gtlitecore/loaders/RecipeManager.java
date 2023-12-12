@@ -105,6 +105,7 @@ public class RecipeManager {
         OpticalCircuits.init();
         SpintronicCircuits.init();
         CosmicCircuits.init();
+        MagnetoResonaticCircuits.init();
     }
 
     private static void initMultiRecipes() {

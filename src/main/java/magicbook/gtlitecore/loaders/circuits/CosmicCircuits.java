@@ -97,6 +97,15 @@ public class CosmicCircuits {
                 .duration(200)
                 .CasingTier(3)
                 .buildAndRegister();
+
+        //  Cladded Optical Fiber Core
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(wireFine, ZBLANGlass)
+                .fluidInputs(Zylon.getFluid(16))
+                .output(CLADDED_OPTICAL_FIBER_CORE)
+                .EUt(VA[LuV])
+                .duration(200)
+                .buildAndRegister();
     }
 
     private static void SoC() {}
