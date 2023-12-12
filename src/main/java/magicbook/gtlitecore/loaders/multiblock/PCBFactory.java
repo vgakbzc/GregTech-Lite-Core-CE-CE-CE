@@ -699,6 +699,550 @@ public class PCBFactory {
             }
         }
 
+        //  Graphene
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Graphene, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Graphene)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Fullerene
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Fullerene, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Fullerene)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Carbon
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(CARBON_FIBER_PLATE, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Carbon)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  CarbonNanotube
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, CarbonNanotube, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, CarbonNanotube)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Platinum
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Platinum, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Platinum)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Europium
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Europium, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Europium)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Titanium
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Titanium, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Titanium)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Tungsten
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Tungsten, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Tungsten)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Neodymium
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Neodymium, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Neodymium)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Americium
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Americium, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Americium)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Dubnium
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Dubnium, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Dubnium)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Naquadah
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Naquadah, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Naquadah)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Naquadah Enriched
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, NaquadahEnriched, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, NaquadahEnriched)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Naquadria
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Naquadria, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Naquadria)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Tin
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Tin, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Tin)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Tritanium
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Tritanium, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Tritanium)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
+        //  Orichalcum
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+
+                PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                        .input(plate, Orichalcum, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Orichalcum)
+                        .EUt(VA[IV])
+                        .duration(200)
+                        .buildAndRegister();
+            }
+        }
+
     }
 
     private static void NanosensorRecipes() {
@@ -770,6 +1314,632 @@ public class PCBFactory {
                             .fluidInputs(new FluidStack[]{substack})
                             .fluidInputs(new FluidStack[]{substack2})
                             .output(nanosensor, Gold)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Graphene
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Graphene)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Graphene, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Graphene)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Fullerene
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Fullerene)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Fullerene, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Fullerene)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Carbon
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 8)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Carbon)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Carbon Nanotube
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, CarbonNanotube)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, CarbonNanotube, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, CarbonNanotube)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Platinum
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Platinum)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Platinum, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Platinum)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Europium)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Europium, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Europium)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Titanium
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Titanium)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Titanium, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Titanium)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Tungsten
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Tungsten)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Tungsten, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Tungsten)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Neodymium
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Neodymium)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Neodymium, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Neodymium)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Americium
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Americium)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Americium, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Americium)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Dubnium
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Dubnium)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Dubnium, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Dubnium)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Naquadah
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Naquadah)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Naquadah, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Naquadah)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Naquadah Enriched
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, NaquadahEnriched)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, NaquadahEnriched, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, NaquadahEnriched)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Naquadria
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Naquadria)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Naquadria, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Naquadria)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Tin
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Tin)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Tin, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Tin)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Tritanium
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Tritanium)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Tritanium, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Tritanium)
+                            .EUt(VA[IV])
+                            .duration(200)
+                            .buildAndRegister();
+                }
+            }
+        }
+
+        //  Orichalcum
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+                            .input(stick, Orichalcum)
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 2)
+                            .input(wireFine, Orichalcum, 4)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Orichalcum)
                             .EUt(VA[IV])
                             .duration(200)
                             .buildAndRegister();

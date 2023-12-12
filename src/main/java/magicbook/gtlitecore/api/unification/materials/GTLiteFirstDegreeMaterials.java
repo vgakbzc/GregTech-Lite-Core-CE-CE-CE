@@ -613,7 +613,7 @@ public class GTLiteFirstDegreeMaterials {
                 .ingot()
                 .color(0x72556A)
                 .iconSet(BRIGHT)
-                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING, GENERATE_FRAME)
+                .flags(DISABLE_DECOMPOSITION, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_RING, GENERATE_FRAME, GENERATE_FINE_WIRE)
                 .components(Carbon, 60)
                 .build();
 

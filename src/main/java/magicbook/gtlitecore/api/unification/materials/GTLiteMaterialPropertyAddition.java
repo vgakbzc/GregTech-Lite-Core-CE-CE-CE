@@ -155,6 +155,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
         Livermorium.addFlags(GENERATE_ROD);
+        Graphene.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -185,6 +186,10 @@ public class GTLiteMaterialPropertyAddition {
         VanadiumGallium.addFlags(GENERATE_FINE_WIRE);
         Titanium.addFlags(GENERATE_FINE_WIRE);
         RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_FINE_WIRE);
+        Graphene.addFlags(GENERATE_FINE_WIRE);
+        Neodymium.addFlags(GENERATE_FINE_WIRE);
+        Dubnium.addFlags(GENERATE_FINE_WIRE);
+        NaquadahEnriched.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
@@ -197,15 +202,9 @@ public class GTLiteMaterialPropertyAddition {
         //NetherStar.addFlags(CRYSTALLIZABLE); // TODO Another Nether Star recipe, may be set components
 
         //  Nano Swarm
-        Carbon.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Graphene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        CarbonNanotube.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Fullerene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-
         Iron.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
         IronMagnetic.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
         Copper.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Tin.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
         Nickel.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
         Cobalt.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
         Lead.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
@@ -213,8 +212,36 @@ public class GTLiteMaterialPropertyAddition {
 
         RedAlloy.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
 
-        Silver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching
-        Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching
+        Carbon.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Plastic recipe
+        CarbonNanotube.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Plastic recipe
+
+        Graphene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rubber recipe
+        Fullerene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rubber recipe
+
+        Platinum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Platinum group recipe
+
+        Europium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Thorium-Uranium group recipe
+
+        Titanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Titanium-Tungsten-Indium recipe
+        Tungsten.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Titanium-Tungsten-Indium recipe
+
+        Neodymium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rare earth recipe
+        Americium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rare earth recipe
+        Dubnium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rare earth recipe
+
+        Naquadah.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Naquadah group recipe
+        NaquadahEnriched.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Naquadah group recipe
+
+        Naquadria.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Biological recipe
+
+        Tin.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Adhesive recipe
+
+        Tritanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Higgs Bosons recipe
+
+        Orichalcum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Instanton recipe
+
+        Silver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching recipes
+        Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching recipes
 
         //  Conflict Solutions
         RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis

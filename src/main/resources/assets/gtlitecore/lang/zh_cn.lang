@@ -31,6 +31,8 @@ tile.unique_casing.stellar_containment_casing.name=恒星热力容器
 tile.unique_casing.reflective_casing.name=抗形变反射面机器外壳
 tile.unique_casing.computing_casing.name=扫描数据计算单元
 tile.unique_casing.computing_casing.tooltip=用于为§6PCB工厂§7提供对扫描对象的自动分析演算的功能
+tile.unique_casing.quantum_coil.name=超维度转换线圈方块
+tile.unique_casing.quantum_coil.tooltip=用于从超维度提取物质与能量
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -151,6 +153,8 @@ tile.transparent_casing.cbdo_polycarbonate_glass.name=CBDO聚碳酸酯玻璃
 tile.transparent_casing.cbdo_polycarbonate_glass.tooltip=并不是挡风玻璃
 tile.transparent_casing.infinity_glass.name=无尽玻璃
 tile.transparent_casing.infinity_glass.tooltip=彩虹玻璃
+tile.transparent_casing.quantum_glass.name=量子玻璃
+tile.transparent_casing.quantum_glass.tooltip=究极力场约束玻璃
 
 tile.explosive_block.naquadria_charge.name=超能硅岩爆弹
 tile.explosive_block.taranium_charge.name=塔兰金属爆弹
@@ -743,6 +747,10 @@ gtlitecore.machine.suprachronal_assembly_line.tooltip.2=使用§b超维度时空
 
 gtlitecore.machine.molecular_transformer.name=分子重组仪
 gtlitecore.machine.molecular_transformer.tooltip=打破物质间的界限
+
+gtlitecore.machine.quantum_force_transformer.name=量子操纵者
+gtlitecore.machine.quantum_force_transformer.tooltip.1=可以让复杂的化工流程一步到位
+gtlitecore.machine.quantum_force_transformer.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
@@ -1463,6 +1471,7 @@ recipemap.pcb_factory_bio_recipes.name=生物蚀刻
 recipemap.pcb_factory_nano_recipes.name=纳米组装
 recipemap.neutral_network_nexus_breeding_mode.name=繁育模式
 recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
+recipemap.quantum_force_transformer_recipes.name=量子操纵者
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
