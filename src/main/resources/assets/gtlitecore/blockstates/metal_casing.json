@@ -19,6 +19,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/quantum_casing"
         }
+      },
+      "hg_1223_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hg_1223_casing"
+        }
       }
     }
   }
