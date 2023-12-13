@@ -279,7 +279,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[ZPM], 487)
                         .vacuumStats(VA[IV], 170))
                 .components(Inconel792, 8, EglinSteel, 5, NaquadahAlloy, 4, TungstenSteel, 4, Cerium, 3, Antimony, 2, Platinum, 2, Ytterbium, 1)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME, GENERATE_FOIL)
                 .build();
 
         //  12020 Cinobite

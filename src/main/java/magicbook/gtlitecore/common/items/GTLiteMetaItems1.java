@@ -197,7 +197,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
 
         UNSTABLE_STAR = this.addItem(307, "unstable_star");
-
+        ZENITH_STAR = this.addItem(308, "zenith_star");
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
         SEPARATION_ELECTROMAGNET = this.addItem(311, "separation_electromagnet");
@@ -227,5 +227,22 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         //  Particles
         ALPHA_PARTICLE = this.addItem(400, "particle.alpha");
+
+        //  Wrap Items
+        WRAP_CIRCUIT_ULV = this.addItem(500, "wrap.circuit.ulv");
+        WRAP_CIRCUIT_LV = this.addItem(501, "wrap.circuit.lv");
+        WRAP_CIRCUIT_MV = this.addItem(502, "wrap.circuit.mv");
+        WRAP_CIRCUIT_HV = this.addItem(503, "wrap.circuit.hv");
+        WRAP_CIRCUIT_EV = this.addItem(504, "wrap.circuit.ev");
+        WRAP_CIRCUIT_IV = this.addItem(505, "wrap.circuit.iv");
+        WRAP_CIRCUIT_LuV = this.addItem(506, "wrap.circuit.luv");
+        WRAP_CIRCUIT_ZPM = this.addItem(507, "wrap.circuit.zpm");
+        WRAP_CIRCUIT_UV = this.addItem(508, "wrap.circuit.uv");
+        WRAP_CIRCUIT_UHV = this.addItem(509, "wrap.circuit.uhv");
+        WRAP_CIRCUIT_UEV = this.addItem(510, "wrap.circuit.uev");
+        WRAP_CIRCUIT_UIV = this.addItem(511, "wrap.circuit.uiv");
+        WRAP_CIRCUIT_UXV = this.addItem(512, "wrap.circuit.uxv");
+        WRAP_CIRCUIT_OpV = this.addItem(513, "wrap.circuit.opv");
+        WRAP_CIRCUIT_MAX = this.addItem(514, "wrap.circuit.max");
     }
 }

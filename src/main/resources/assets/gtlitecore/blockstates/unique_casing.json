@@ -39,6 +39,12 @@
           "side": "gtlitecore:blocks/casings/computing_casing",
           "bottom": "#top"
         }
+      },
+      "quantum_coil": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/quantum_coil"
+        }
       }
     }
   }

@@ -201,8 +201,8 @@ public class MaterialComponents {
         STICK_MAGNETIC.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.stickLong, ChromiumGermaniumTellurideMagnetic)},
                 {10, new UnificationEntry(OrePrefix.stickLong, ChromiumGermaniumTellurideMagnetic)},
-//                {11, new UnificationEntry(OrePrefix.stickLong, WhiteDwarfMatter)},
-//                {12, new UnificationEntry(OrePrefix.stickLong, WhiteDwarfMatter)},
+                {11, new UnificationEntry(OrePrefix.stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic)},
+                {12, new UnificationEntry(OrePrefix.stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic)},
 //                  {13, new UnificationEntry(OrePrefix.stickLong, Trinium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
@@ -231,8 +231,8 @@ public class MaterialComponents {
                 {9, new UnificationEntry(OrePrefix.stick, Livermorium)},
                 {10, new UnificationEntry(OrePrefix.stick, MetastableFlerovium)},
                 {11, new UnificationEntry(OrePrefix.stick, MetastableHassium)},
-//                {12, new UnificationEntry(OrePrefix.stick, SuperHeavyLAlloy)},
-//                {13, new UnificationEntry(OrePrefix.stick, SuperHeavyHAlloy)},
+                {12, new UnificationEntry(OrePrefix.stick, SuperheavyLAlloy)},
+                {13, new UnificationEntry(OrePrefix.stick, SuperheavyHAlloy)},
 //                {14, new UnificationEntry(OrePrefix.stick, Periodicium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 

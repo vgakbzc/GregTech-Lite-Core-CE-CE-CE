@@ -124,5 +124,6 @@ public class RecipeManager {
         DimensionalOscillator.init();
         PCBFactory.init();
         NeutralNetworkNexus.init();
+        QuantumForceTransformer.init();
     }
 }

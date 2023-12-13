@@ -4,11 +4,14 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.common.blocks.BlockHermeticCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -27,6 +30,7 @@ public class OverrideRecipeLoader {
         SiliconWaferOverrides();
         RubberOverrides();
         SteamStageOverrides();
+        HighTierOverrides();
     }
 
     private static void SiliconWaferOverrides() {
@@ -853,5 +857,29 @@ public class OverrideRecipeLoader {
                     'B', new UnificationEntry(block, Brick),
                     'A', new UnificationEntry(pipeSmallFluid, TinAlloy));
         }
+    }
+
+    private static void HighTierOverrides() {
+
+        //  Hermetic Casings
+        ModHandler.addShapedRecipe(true, "hermetic_casing_uev", GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_UEV),
+                "ppp", "pPp", "ppp",
+                'p', new UnificationEntry(plate, Adamantium),
+                'P', new UnificationEntry(pipeLargeFluid, Lafium));
+
+        ModHandler.addShapedRecipe(true, "hermetic_casing_uiv", GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_UIV),
+                "ppp", "pPp", "ppp",
+                'p', new UnificationEntry(plate, Infinity),
+                'P', new UnificationEntry(pipeLargeFluid, CrystalMatrix));
+
+        //  End Game things
+        //  a.k.a. creative things!
+        ModHandler.addShapedRecipe(true, "quantum_tank_creative", MetaTileEntities.CREATIVE_TANK.getStackForm(),
+                "XFX", "PHP", "XpX",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
+                'F', FIELD_GENERATOR_MAX,
+                'P', new UnificationEntry(plate, Spacetime), // todo find better material
+                'p', ELECTRIC_PUMP_MAX,
+                'H', GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_MAX));
     }
 }

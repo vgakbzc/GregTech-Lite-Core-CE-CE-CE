@@ -29,7 +29,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0x72A0C1)
                 .iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_FINE_WIRE)
                 .element(GTLiteElements.Or)
                 .toolStats(ToolProperty.Builder.of(7.0F, 25.0F, 17000, 22)
                                        .magnetic()
@@ -57,7 +57,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0xFF0040)
                 .iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DENSE)
                 .element(GTLiteElements.Ad)
                 .blast(5225, BlastProperty.GasTier.HIGH)
                 .cableProperties(V[UHV], 24, 24, false)
@@ -70,6 +70,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0x4F404F)
                 .iconSet(METALLIC)
+                .flags(GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
                 .element(GTLiteElements.Tn)
                 .build();
 
@@ -94,7 +95,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 5901))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_DENSE)
                 .toolStats(ToolProperty.Builder.of(10.0F, 150.0F, 80000, 30)
                         .magnetic()
                         .unbreakable()
@@ -312,6 +313,7 @@ public class GTLiteElementMaterials {
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Astralium)
                 .blast(15000, BlastProperty.GasTier.HIGHEST)
+                .flags(GENERATE_FINE_WIRE)
                 .cableProperties(V[UIV], 48, 24, false)
                 .build();
     }

@@ -31,6 +31,8 @@ tile.unique_casing.stellar_containment_casing.name=恒星热力容器
 tile.unique_casing.reflective_casing.name=抗形变反射面机器外壳
 tile.unique_casing.computing_casing.name=扫描数据计算单元
 tile.unique_casing.computing_casing.tooltip=用于为§6PCB工厂§7提供对扫描对象的自动分析演算的功能
+tile.unique_casing.quantum_coil.name=超维度转换线圈方块
+tile.unique_casing.quantum_coil.tooltip=用于从超维度提取物质与能量
 
 tile.fusion_casing.fusion_casing_mk4.name=聚变机器外壳 Mk IV
 tile.fusion_casing.fusion_casing_mk5.name=聚变机器外壳 Mk V
@@ -151,6 +153,8 @@ tile.transparent_casing.cbdo_polycarbonate_glass.name=CBDO聚碳酸酯玻璃
 tile.transparent_casing.cbdo_polycarbonate_glass.tooltip=并不是挡风玻璃
 tile.transparent_casing.infinity_glass.name=无尽玻璃
 tile.transparent_casing.infinity_glass.tooltip=彩虹玻璃
+tile.transparent_casing.quantum_glass.name=量子玻璃
+tile.transparent_casing.quantum_glass.tooltip=究极力场约束玻璃
 
 tile.explosive_block.naquadria_charge.name=超能硅岩爆弹
 tile.explosive_block.taranium_charge.name=塔兰金属爆弹
@@ -169,6 +173,12 @@ tile.crucible.tungsten.name=钨坩埚
 tile.crucible.osmium.name=锇坩埚
 tile.crucible.graphite.name=石墨坩埚
 tile.crucible.boron_nitride.name=氮化硼坩埚
+
+tile.hermetic_casing.uev.name=密封机械方块 X
+tile.hermetic_casing.uiv.name=密封机械方块 XI
+tile.hermetic_casing.uxv.name=密封机械方块 XII
+tile.hermetic_casing.opv.name=密封机械方块 XIII
+tile.hermetic_casing.max.name=密封机械方块 XIV
 
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -743,6 +753,10 @@ gtlitecore.machine.suprachronal_assembly_line.tooltip.2=使用§b超维度时空
 
 gtlitecore.machine.molecular_transformer.name=分子重组仪
 gtlitecore.machine.molecular_transformer.tooltip=打破物质间的界限
+
+gtlitecore.machine.quantum_force_transformer.name=量子操纵者
+gtlitecore.machine.quantum_force_transformer.tooltip.1=可以让复杂的化工流程一步到位
+gtlitecore.machine.quantum_force_transformer.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
@@ -1369,6 +1383,8 @@ metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
 
 metaitem.unstable_star.name=易变之星
 metaitem.unstable_star.tooltip=极不稳定下界之星
+metaitem.zenith_star.name=天穹辉星
+metaitem.zenith_star.tooltip=以格雷科技之名，命此星炽若金乌
 
 metaitem.quantum_anomaly.name=量子反常
 metaitem.magnetron.name=磁控管
@@ -1463,6 +1479,7 @@ recipemap.pcb_factory_bio_recipes.name=生物蚀刻
 recipemap.pcb_factory_nano_recipes.name=纳米组装
 recipemap.neutral_network_nexus_breeding_mode.name=繁育模式
 recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
+recipemap.quantum_force_transformer_recipes.name=量子操纵者
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K
@@ -1519,3 +1536,35 @@ item.gt.tool.combination_wrench.name=%s两用扳手
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
+
+#  Wrap Items
+metaitem.wrap.circuit.ulv.name=封装电路板（§8ULV§r）
+metaitem.wrap.circuit.ulv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.lv.name=封装电路板（§7LV§r）
+metaitem.wrap.circuit.lv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.mv.name=封装电路板（§bMV§r）
+metaitem.wrap.circuit.mv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.hv.name=封装电路板（§6HV§r）
+metaitem.wrap.circuit.hv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.ev.name=封装电路板（§5EV§r）
+metaitem.wrap.circuit.ev.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.iv.name=封装电路板（§1IV§r）
+metaitem.wrap.circuit.iv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.luv.name=封装电路板（§dLuV§r）
+metaitem.wrap.circuit.luv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.zpm.name=封装电路板（§cZPM§r）
+metaitem.wrap.circuit.zpm.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uv.name=封装电路板（§3UV§r）
+metaitem.wrap.circuit.uv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uhv.name=封装电路板（§4UHV§r）
+metaitem.wrap.circuit.uhv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uev.name=封装电路板（§aUEV§r）
+metaitem.wrap.circuit.uev.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uiv.name=封装电路板（§2UIV§r）
+metaitem.wrap.circuit.uiv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uxv.name=封装电路板（§eUXV§r）
+metaitem.wrap.circuit.uxv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.opv.name=封装电路板（§9OpV§r）
+metaitem.wrap.circuit.opv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.max.name=封装电路板（§c§lMAX§r）
+metaitem.wrap.circuit.max.tooltip=用于在§6部件装配线§7中进行批量组装

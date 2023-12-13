@@ -94,6 +94,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCosmicRayDetector COSMIC_RAY_DETECTOR;
     public static MetaTileEntitySuprachronalAssemblyLine SUPRACHRONAL_ASSEMBLY_LINE;
     public static MetaTileEntityMolecularTransformer MOLECULAR_TRANSFORMER;
+    public static MetaTileEntityQuantumForceTransformer QUANTUM_FORCE_TRANSFORMER;
 
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityLargePrimitiveBlastFurnace LARGE_PRIMITIVE_BLAST_FURNACE;
@@ -209,7 +210,7 @@ public class GTLiteMetaTileEntities {
         COSMIC_RAY_DETECTOR = registerMultiMetaTileEntity(45, new MetaTileEntityCosmicRayDetector(gtliteId("cosmic_ray_detector")));
         SUPRACHRONAL_ASSEMBLY_LINE = registerMultiMetaTileEntity(46, new MetaTileEntitySuprachronalAssemblyLine(gtliteId("suprachronal_assembly_line")));
         MOLECULAR_TRANSFORMER = registerMultiMetaTileEntity(47, new MetaTileEntityMolecularTransformer(gtliteId("molecular_transformer")));
-        //  48
+        QUANTUM_FORCE_TRANSFORMER = registerMultiMetaTileEntity(48, new MetaTileEntityQuantumForceTransformer(gtliteId("quantum_force_transformer")));
         //  49
         LARGE_STEAM_COMPRESSOR = registerMultiMetaTileEntity(50, new MetaTileEntityLargeSteamCompressor(gtliteId("large_steam_compressor")));
         LARGE_PRIMITIVE_BLAST_FURNACE = registerMultiMetaTileEntity(51, new MetaTileEntityLargePrimitiveBlastFurnace(gtliteId("large_primitive_blast_furnace")));

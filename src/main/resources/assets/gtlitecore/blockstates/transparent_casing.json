@@ -56,6 +56,20 @@
       "textures": {
         "all": "gtlitecore:blocks/casings/infinity_glass"
       }
+    },
+    "active=false,variant=quantum_glass": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/quantum_glass"
+      }
+    },
+    "active=true,variant=quantum_glass": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/quantum_glass"
+      }
     }
   }
 }

@@ -189,7 +189,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
 
     public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
-
+    public static MetaItem<?>.MetaValueItem ZENITH_STAR;
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem MAGNETRON;
     public static MetaItem<?>.MetaValueItem SEPARATION_ELECTROMAGNET;
@@ -219,6 +219,23 @@ public class GTLiteMetaItems {
 
     //  Particles
     public static MetaItem<?>.MetaValueItem ALPHA_PARTICLE;
+
+    //  Wrap Items
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_ULV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_LV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_MV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_HV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_EV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_IV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_LuV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_ZPM;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_UV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_UHV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_UEV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_UIV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_UXV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_OpV;
+    public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_MAX;
 
     private GTLiteMetaItems() {}
 
