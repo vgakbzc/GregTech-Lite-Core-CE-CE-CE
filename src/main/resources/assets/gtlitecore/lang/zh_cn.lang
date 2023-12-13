@@ -453,6 +453,39 @@ metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
 
+#  Energy Hatches
+gtlitecore.machine.energy_hatch.input_4a.uev.name=4 安能源仓（§aUEV§r）
+gtlitecore.machine.energy_hatch.input_4a.uiv.name=4 安能源仓（§2UIV§r）
+gtlitecore.machine.energy_hatch.input_4a.uxv.name=4 安能源仓（§eUXV§r）
+gtlitecore.machine.energy_hatch.input_4a.opv.name=4 安能源仓（§9OpV§r）
+gtlitecore.machine.energy_hatch.input_16a.uev.name=16 安能源仓（§aUEV§r）
+gtlitecore.machine.energy_hatch.input_16a.uiv.name=16 安能源仓（§2UIV§r）
+gtlitecore.machine.energy_hatch.input_16a.uxv.name=16 安能源仓（§eUXV§r）
+gtlitecore.machine.energy_hatch.input_16a.opv.name=16 安能源仓（§9OpV§r）
+gtlitecore.machine.energy_hatch.output_4a.lv.name=4 安动力仓（§7LV§r）
+gtlitecore.machine.energy_hatch.output_4a.mv.name=4 安动力仓（§bMV§r）
+gtlitecore.machine.energy_hatch.output_4a.hv.name=4 安动力仓（§6HV§r）
+gtlitecore.machine.energy_hatch.output_4a.uev.name=4 安动力仓（§aUEV§r）
+gtlitecore.machine.energy_hatch.output_4a.uiv.name=4 安动力仓（§2UIV§r）
+gtlitecore.machine.energy_hatch.output_4a.uxv.name=4 安动力仓（§eUXV§r）
+gtlitecore.machine.energy_hatch.output_4a.opv.name=4 安动力仓（§9OpV§r）
+gtlitecore.machine.energy_hatch.output_16a.lv.name=16 安动力仓（§7LV§r）
+gtlitecore.machine.energy_hatch.output_16a.mv.name=16 安动力仓（§bMV§r）
+gtlitecore.machine.energy_hatch.output_16a.hv.name=16 安动力仓（§6HV§r）
+gtlitecore.machine.energy_hatch.output_16a.ev.name=16 安动力仓（§5EV§r）
+gtlitecore.machine.energy_hatch.output_16a.uev.name=16 安动力仓（§aUEV§r）
+gtlitecore.machine.energy_hatch.output_16a.uiv.name=16 安动力仓（§2UIV§r）
+gtlitecore.machine.energy_hatch.output_16a.uxv.name=16 安动力仓（§eUXV§r）
+gtlitecore.machine.energy_hatch.output_16a.opv.name=16 安动力仓（§9OpV§r）
+gtlitecore.machine.substation_hatch.input_64a.uev.name=64 安变电能源仓（§aUEV§r）
+gtlitecore.machine.substation_hatch.input_64a.uiv.name=64 安变电能源仓（§2UIV§r）
+gtlitecore.machine.substation_hatch.input_64a.uxv.name=64 安变电能源仓（§eUXV§r）
+gtlitecore.machine.substation_hatch.input_64a.opv.name=64 安变电能源仓（§9OpV§r）
+gtlitecore.machine.substation_hatch.output_64a.uev.name=64 安变电动力仓（§aUEV§r）
+gtlitecore.machine.substation_hatch.output_64a.uiv.name=64 安变电动力仓（§2UIV§r）
+gtlitecore.machine.substation_hatch.output_64a.uxv.name=64 安变电动力仓（§eUXV§r）
+gtlitecore.machine.substation_hatch.output_64a.opv.name=64 安变电动力仓（§9OpV§r）
+
 #  Machines
 gtlitecore.machine.chemical_dryer.lv.name=基础化学脱水机
 gtlitecore.machine.chemical_dryer.lv.tooltip=并不能用于烘干头发
