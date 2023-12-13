@@ -114,6 +114,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
     public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
+    public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
+    public static MetaTileEntityTurbineMixer TURBINE_MIXER;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -276,7 +278,7 @@ public class GTLiteMetaTileEntities {
         //  54
         TREE_GROWTH_FACTORY = registerMultiMetaTileEntity(55, new MetaTileEntityTreeGrowthFactory(gtliteId("tree_growth_factory")));
         LARGE_PROCESSING_FACTORY = registerMultiMetaTileEntity(56, new MetaTileEntityLargeProcessingFactory(gtliteId("large_processing_factory")));
-        //  57 DANGOTE_DISTILLERY
+        //  57
         //  58
         //  59
         MEGA_STEAM_TURBINE = registerMultiMetaTileEntity(60, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.steam"), RecipeMaps.STEAM_TURBINE_FUELS, HV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX), Textures.SOLID_STEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
@@ -290,5 +292,15 @@ public class GTLiteMetaTileEntities {
         //  68
         NEUTRAL_NETWORK_NEXUS = registerMultiMetaTileEntity(69, new MetaTileEntityNeutralNetworkNexus(gtliteId("neutral_network_nexus")));
         PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
+        DANGOTE_DISTILLERY = registerMultiMetaTileEntity(71, new MetaTileEntityDangoteDistillery(gtliteId("dangote_distillery")));
+        //  72 AMAZON WAREHOUSING DEPOT
+        //  73 ARC_FURNACE_ARRAY
+        //  74 ELECTROLYTIC_TANK
+        TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));
+        //  76 INDUSTRIAL_CENTRIFUGE
+        //  77 ZHUHAI_FISHING_PORT
+        //  78 COKING_PLANT
+        //  79
+        //  80
     }
 }

@@ -202,4 +202,9 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
         tooltip.add(I18n.format("gtlitecore.machine.quantum_force_transformer.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.quantum_force_transformer.tooltip.2"));
     }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
 }

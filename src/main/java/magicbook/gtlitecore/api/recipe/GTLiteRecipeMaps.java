@@ -122,6 +122,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE;
     @ZenProperty
     public static final RecipeMap<FieldCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> TURBINE_MIXER_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -395,5 +397,12 @@ public class GTLiteRecipeMaps {
         QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer_recipes", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  Turbine Mixer RecipeMap
+        TURBINE_MIXER_RECIPES = new RecipeMap<>("turbine_mixer_recipes", 9, 1, 3, 1, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
+                .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.CIRCULAR)
+                .setSound(GTSoundEvents.MIXER);
     }
 }

@@ -85,6 +85,11 @@ public class MetaTileEntityTreeGrowthFactory extends RecipeMapMultiblockControll
         tooltip.add(I18n.format("gtlitecore.machine.tree_growth_factory.tooltip.2"));
     }
 
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
     private class TreeGrowthFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public TreeGrowthFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {

@@ -125,5 +125,6 @@ public class RecipeManager {
         PCBFactory.init();
         NeutralNetworkNexus.init();
         QuantumForceTransformer.init();
+        TurbineMixer.init();
     }
 }

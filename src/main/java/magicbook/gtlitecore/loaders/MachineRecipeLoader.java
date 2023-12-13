@@ -930,6 +930,16 @@ public class MachineRecipeLoader {
                 .EUt(VA[UIV])
                 .duration(1200)
                 .buildAndRegister();
+
+        //  Dangote Distillery
+        ModHandler.addShapedRecipe(true, "dangote_distillery", DANGOTE_DISTILLERY.getStackForm(),
+                "SWS", "PHP", "pGp",
+                'H', LARGE_DISTILLERY.getStackForm(),
+                'P', ELECTRIC_PUMP_LuV,
+                'p', new UnificationEntry(plate, HG1223),
+                'G', new UnificationEntry(gear, Osmiridium),
+                'S', new UnificationEntry(spring, MolybdenumDisilicide),
+                'W', new UnificationEntry(cableGtSingle, NiobiumTitanium));
     }
 
     private static void MachineCasingRecipes() {
@@ -2318,5 +2328,19 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  HG-1223 casing
+        ModHandler.addShapedRecipe(true, "hg_1223_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.HG1223_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, HG1223),
+                'F', new UnificationEntry(frameGt, WatertightSteel));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, HG1223, 6)
+                .input(frameGt, WatertightSteel)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.HG1223_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

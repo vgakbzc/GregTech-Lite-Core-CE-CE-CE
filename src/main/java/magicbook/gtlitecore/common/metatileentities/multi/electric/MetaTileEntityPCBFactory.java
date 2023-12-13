@@ -476,6 +476,11 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
         tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.30"));
     }
 
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
     private class PCBFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public PCBFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {

@@ -5,6 +5,7 @@ import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
+import magicbook.gtlitecore.client.renderer.texture.TurbineMixerRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 
@@ -40,6 +41,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer MEGA_TURBINE_OVERLAY = new OrientedOverlayRenderer("multiblocks/mega_turbine");
     public static OrientedOverlayRenderer NEUTRAL_NETWORK_NEXUS_OVERLAY = new OrientedOverlayRenderer("multiblocks/neutral_network_nexus");
     public static OrientedOverlayRenderer QUANTUM_FORCE_TRANSFORMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/quantum_force_transformer");
+    public static OrientedOverlayRenderer TURBINE_MIXER_OVERLAY = new OrientedOverlayRenderer("multiblocks/turbine_mixer");
 
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -66,6 +68,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer STABALLOY_CASING = new GTLiteOverlayRenderer("casings/staballoy_casing");
     public static GTLiteOverlayRenderer QUANTUM_CASING = new GTLiteOverlayRenderer("casings/quantum_casing");
     public static GTLiteOverlayRenderer BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING = new GTLiteOverlayRenderer("casings/basic_photolithographic_framework_casing");
+    public static GTLiteOverlayRenderer HG_1223_CASING = new GTLiteOverlayRenderer("casings/hg_1223_casing");
+    public static GTLiteOverlayRenderer EGLIN_STEEL_CASING = new GTLiteOverlayRenderer("casings/eglin_steel_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
@@ -74,6 +78,7 @@ public class GTLiteTextures {
 
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
+    public static TurbineMixerRenderer TURBINE_MIXER = new TurbineMixerRenderer();
 
     //  Multi Renderer
     public static TextureAtlasSprite HALO;
