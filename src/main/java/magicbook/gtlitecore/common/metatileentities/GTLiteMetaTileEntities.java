@@ -25,10 +25,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.*;
-import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityEnergyHatch;
-import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch;
-import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityReinforcedRotorHolder;
-import magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntitySubstationEnergyHatch;
+import magicbook.gtlitecore.common.metatileentities.multi.part.*;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargePrimitiveBlastFurnace;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 
@@ -48,6 +45,10 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityEnergyHatch[] OUTPUT_ENERGY_HATCH_16A = new MetaTileEntityEnergyHatch[8];
     public static MetaTileEntitySubstationEnergyHatch[] SUBSTATION_INPUT_ENERGY_HATCH = new MetaTileEntitySubstationEnergyHatch[4];
     public static MetaTileEntitySubstationEnergyHatch[] SUBSTATION_OUTPUT_ENERGY_HATCH = new MetaTileEntitySubstationEnergyHatch[4];
+    public static MetaTileEntityFluidHatch[] IMPORT_FLUID_HATCH = new MetaTileEntityFluidHatch[4];
+    public static MetaTileEntityFluidHatch[] EXPORT_FLUID_HATCH = new MetaTileEntityFluidHatch[4];
+    public static MetaTileEntityItemBus[] IMPORT_ITEM_HATCH = new MetaTileEntityItemBus[4];
+    public static MetaTileEntityItemBus[] EXPORT_ITEM_HATCH = new MetaTileEntityItemBus[4];
 
     //  Single Machine range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[V.length - 1];
@@ -188,6 +189,22 @@ public class GTLiteMetaTileEntities {
         SUBSTATION_OUTPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(38, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uiv"), 11, 64, false));
         SUBSTATION_OUTPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(39, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uxv"), 12, 64, false));
         SUBSTATION_OUTPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(40, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.opv"), 13, 64, false));
+        IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(41, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.uev"), 10, false));
+        IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(42, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.uiv"), 11, false));
+        IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(43, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.uxv"), 12, false));
+        IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(44, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.opv"), 13, false));
+        EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(45, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.export.uev"), 10, true));
+        EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(46, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.export.uiv"), 11, true));
+        EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(47, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.export.uxv"), 12, true));
+        EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(48, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.export.opv"), 13, true));
+        IMPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(49, new MetaTileEntityItemBus(gtliteId("item_hatch.import.uev"), 10, false));
+        IMPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(50, new MetaTileEntityItemBus(gtliteId("item_hatch.import.uiv"), 11, false));
+        IMPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(51, new MetaTileEntityItemBus(gtliteId("item_hatch.import.uxv"), 12, false));
+        IMPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(52, new MetaTileEntityItemBus(gtliteId("item_hatch.import.opv"), 13, false));
+        EXPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(53, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uev"), 10, false));
+        EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(54, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uiv"), 11, false));
+        EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(55, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uxv"), 12, false));
+        EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(56, new MetaTileEntityItemBus(gtliteId("item_hatch.export.opv"), 13, false));
 
         //  Single Machine range: 15000-16000
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);

@@ -486,6 +486,26 @@ gtlitecore.machine.substation_hatch.output_64a.uiv.name=64 安变电动力仓（
 gtlitecore.machine.substation_hatch.output_64a.uxv.name=64 安变电动力仓（§eUXV§r）
 gtlitecore.machine.substation_hatch.output_64a.opv.name=64 安变电动力仓（§9OpV§r）
 
+#  Fluid Hatches
+gtlitecore.machine.fluid_hatch.import.uev.name=输入仓（§aUEV§r）
+gtlitecore.machine.fluid_hatch.import.uiv.name=输入仓（§2UIV§r）
+gtlitecore.machine.fluid_hatch.import.uxv.name=输入仓（§eUXV§r）
+gtlitecore.machine.fluid_hatch.import.opv.name=输入仓（§9OpV§r）
+gtlitecore.machine.fluid_hatch.export.uev.name=输出仓（§aUEV§r）
+gtlitecore.machine.fluid_hatch.export.uiv.name=输出仓（§2UIV§r）
+gtlitecore.machine.fluid_hatch.export.uxv.name=输出仓（§eUXV§r）
+gtlitecore.machine.fluid_hatch.export.opv.name=输出仓（§9OpV§r）
+
+#  Item Hatches
+gtlitecore.machine.item_hatch.import.uev.name=输入总线（§aUEV§r）
+gtlitecore.machine.item_hatch.import.uiv.name=输入总线（§2UIV§r）
+gtlitecore.machine.item_hatch.import.uxv.name=输入总线（§eUXV§r）
+gtlitecore.machine.item_hatch.import.opv.name=输入总线（§9OpV§r）
+gtlitecore.machine.item_hatch.export.uev.name=输出总线（§aUEV§r）
+gtlitecore.machine.item_hatch.export.uiv.name=输出总线（§2UIV§r）
+gtlitecore.machine.item_hatch.export.uxv.name=输出总线（§eUXV§r）
+gtlitecore.machine.item_hatch.export.opv.name=输出总线（§9OpV§r）
+
 #  Machines
 gtlitecore.machine.chemical_dryer.lv.name=基础化学脱水机
 gtlitecore.machine.chemical_dryer.lv.tooltip=并不能用于烘干头发
