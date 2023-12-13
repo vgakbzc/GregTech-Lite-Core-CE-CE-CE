@@ -112,5 +112,14 @@ public class DecayGenerator {
                 .duration(100)
                 .CasingTier(1)
                 .buildAndRegister();
+
+        //  Thorium -> Protactinium
+        DECAY_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Thorium.getFluid(L))
+                .fluidOutputs(Protactinium.getFluid(L))
+                .EUt(VA[LuV])
+                .duration(80)
+                .CasingTier(1)
+                .buildAndRegister();
     }
 }

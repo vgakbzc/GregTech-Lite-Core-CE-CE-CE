@@ -4,7 +4,6 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.stack.UnificationEntry;
-import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -429,10 +428,17 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Boron Nitride Grinder
-        ModHandler.addShapedRecipe("component_grinder_boron_nitride", GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm(),
+        ModHandler.addShapedRecipe("component_grinder_boron_nitride", COMPONENT_GRINDER_BORON_NITRIDE.getStackForm(),
                 "PDP", "DGD", "PDP",
                 'P', new UnificationEntry(plate, CubicBoronNitride),
                 'D', new UnificationEntry(plateDouble, Vibranium),
                 'G', new UnificationEntry(gem, CubicHeterodiamond));
+
+        //  Celestial Crystal Grinder
+        ModHandler.addShapedRecipe("component_grinder_celestial_crystal", COMPONENT_GRINDER_BLACK_PLUTONIUM.getStackForm(),
+                "PDP", "DGD", "PDP",
+                'P', new UnificationEntry(plate, BlackPlutonium),
+                'D', new UnificationEntry(plateDouble, BlackTitanium),
+                'G', new UnificationEntry(gem, CelestialCrystal));
     }
 }

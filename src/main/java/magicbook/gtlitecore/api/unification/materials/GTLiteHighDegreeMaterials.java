@@ -126,6 +126,13 @@ public class GTLiteHighDegreeMaterials {
                 .liquid(new FluidBuilder().temperature(600000000).customStill())
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15015 Dense Neutron Plasma
+        DenseNeutronPlasma = new Material.Builder(getId(), gregtechId("dense_neutron_plasma"))
+                .liquid()
+                .plasma(new FluidBuilder().temperature(32768000))
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "n" + TextFormatting.OBFUSCATED  + "a" , false);
     }
 
     private static int getId() {

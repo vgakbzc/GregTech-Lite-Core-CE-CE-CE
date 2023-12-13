@@ -184,6 +184,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
     public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
+    public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BLACK_PLUTONIUM;
 
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
@@ -216,6 +217,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem RHENIUM_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
 
     //  Particles
     public static MetaItem<?>.MetaValueItem ALPHA_PARTICLE;

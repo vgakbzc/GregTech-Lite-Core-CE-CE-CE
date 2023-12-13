@@ -940,6 +940,15 @@ public class MachineRecipeLoader {
                 'G', new UnificationEntry(gear, Osmiridium),
                 'S', new UnificationEntry(spring, MolybdenumDisilicide),
                 'W', new UnificationEntry(cableGtSingle, NiobiumTitanium));
+
+        //  Turbine Mixer
+        ModHandler.addShapedRecipe(true, "turbine_mixer", TURBINE_MIXER.getStackForm(),
+                "PGP", "MHM", "WWW",
+                'H', LARGE_MIXER.getStackForm(),
+                'M', ELECTRIC_MOTOR_LuV,
+                'W', new UnificationEntry(cableGtSingle, NiobiumTitanium),
+                'P', new UnificationEntry(plate, EglinSteel),
+                'G', new UnificationEntry(gear, EglinSteel));
     }
 
     private static void MachineCasingRecipes() {
@@ -1058,7 +1067,7 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Red Steel Casing
-        ModHandler.addShapedRecipe(true, "vacuum_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.RED_STEEL_CASING, 2),
+        ModHandler.addShapedRecipe(true, "red_steel_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.RED_STEEL_CASING, 2),
                 "PhP", "TFT","PwP",
                 'P', new UnificationEntry(plateDouble, RedSteel),
                 'T', new UnificationEntry(plate, TitaniumCarbide),
@@ -2342,5 +2351,36 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Eglin Steel casing
+        ModHandler.addShapedRecipe(true, "eglin_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.EGLIN_STEEL_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, EglinSteel),
+                'F', new UnificationEntry(frameGt, EglinSteel));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, EglinSteel, 6)
+                .input(frameGt, EglinSteel)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.EGLIN_STEEL_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Tritanium casing
+        ModHandler.addShapedRecipe(true, "tritanium", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TRITANIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Tritanium),
+                'F', new UnificationEntry(frameGt, HSSS));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Tritanium, 6)
+                .input(frameGt, HSSS)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TRITANIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }

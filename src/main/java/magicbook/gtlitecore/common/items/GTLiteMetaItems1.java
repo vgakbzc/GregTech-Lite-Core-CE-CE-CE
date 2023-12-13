@@ -192,6 +192,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         COMPONENT_GRINDER_BORON_NITRIDE = this.addItem(302, "component.grinder.boron_nitride");
+        COMPONENT_GRINDER_BLACK_PLUTONIUM = this.addItem(303, "component.grinder.black_plutonium");
 
         CARBON_ALLOTROPE_MIXTURE = this.addItem(305, "mixture.carbon_allotrope");
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
@@ -224,6 +225,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         PLASMA_CONTAINMENT_CELL = this.addItem(350, "plasma_containment_cell");
         RHENIUM_PLASMA_CONTAINMENT_CELL = this.addItem(351, "rhenium_plasma_containment_cell");
         NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(352, "neutron_plasma_containment_cell");
+        EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL = this.addItem(353, "extremely_durable_plasma_containment_cell");
+        DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(354, "dense_neutron_plasma_containment_cell");
+        COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(355, "cosmic_neutron_plasma_containment_cell");
 
         //  Particles
         ALPHA_PARTICLE = this.addItem(400, "particle.alpha");
