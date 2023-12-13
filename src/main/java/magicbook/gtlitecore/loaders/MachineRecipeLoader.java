@@ -1550,13 +1550,62 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UHV, 4))
                 .EUt(VA[UHV])
                 .duration(600)
-                .scannerResearch(b -> b
+                .stationResearch(b -> b
                         .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UV))
                         .EUt(VA[UV])
-                        .duration(1200))
+                        .CWUt(64))
                 .buildAndRegister();
 
-        //  TODO UEV-MAX Component Assembly Line Casings
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Adamantium)
+                .input(plateDense, Adamantium, 6)
+                .input(ROBOT_ARM_UEV, 8)
+                .input(ELECTRIC_PISTON_UEV, 10)
+                .input(ELECTRIC_MOTOR_UEV, 16)
+                .input(gear, Adamantium, 4)
+                .input(gearSmall, Adamantium, 16)
+                .input(cableGtQuadruple, PedotTMA, 8)
+                .input(circuit, MarkerMaterials.Tier.UEV, 8)
+                .input(circuit, MarkerMaterials.Tier.UHV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(BlackTitanium.getFluid(1728))
+                .fluidInputs(Abyssalloy.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UEV, 4))
+                .EUt(VA[UEV])
+                .duration(600)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UHV))
+                        .EUt(VA[UHV])
+                        .CWUt(128))
+                .buildAndRegister();
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Infinity)
+                .input(plateDense, Infinity, 6)
+                .input(ROBOT_ARM_UIV, 8)
+                .input(ROBOT_ARM_UIV, 8)
+                .input(ELECTRIC_PISTON_UIV, 10)
+                .input(ELECTRIC_MOTOR_UIV, 16)
+                .input(gear, Infinity, 4)
+                .input(gearSmall, Infinity, 16)
+                .input(cableGtQuadruple, Solarium, 8)
+                .input(circuit, MarkerMaterials.Tier.UIV, 8)
+                .input(circuit, MarkerMaterials.Tier.UEV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(BlackPlutonium.getFluid(1728))
+                .fluidInputs(SuperheavyHAlloy.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UIV, 4))
+                .EUt(VA[UIV])
+                .duration(600)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UEV))
+                        .EUt(VA[UEV])
+                        .CWUt(256))
+                .buildAndRegister();
+
+        //  TODO UXV-MAX Component Assembly Line Casings
 
         //  Farm Casing
         ModHandler.addShapedRecipe(true, "farm_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ASEPTIC_FARM_CASING, 2),
@@ -2025,7 +2074,7 @@ public class MachineRecipeLoader {
                 .input(MULTIPART_REINFORCED_ROTOR_HOLDER[3])
                 .input(ELECTRIC_MOTOR_UEV, 2)
                 .input(CONVEYOR_MODULE_UEV, 2)
-                .input(rotor, Neutronium, 4) // TODO may be find better material
+                .input(rotor, Taranium, 4)
                 .input(stickLong, Osmiridium, 2)
                 .input(wireFine, ThalliumCopperChloride, 32)
                 .fluidInputs(SolderingAlloy.getFluid(L * 10))
@@ -2038,7 +2087,26 @@ public class MachineRecipeLoader {
                         .duration(1200))
                 .buildAndRegister();
 
-        //  TODO UIV-OpV
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Infinity)
+                .input(MULTIPART_REINFORCED_ROTOR_HOLDER[4])
+                .input(ELECTRIC_MOTOR_UIV, 2)
+                .input(CONVEYOR_MODULE_UIV, 2)
+                .input(rotor, Legendarium, 4)
+                .input(stickLong, Tritanium, 2)
+                .input(wireFine, SuperheavyLAlloy, 32)
+                .fluidInputs(SolderingAlloy.getFluid(L * 10))
+                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[5])
+                .EUt(VA[UIV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[4].getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(64))
+                .buildAndRegister();
+
+        //  TODO UXV-OpV
 
         //  Quantum Casing
         ModHandler.addShapedRecipe(true, "quantum_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.QUANTUM_CASING, 2),
@@ -2201,5 +2269,54 @@ public class MachineRecipeLoader {
                 .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Hyper casings
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.NAQUADRIA_CASING))
+                .circuitMeta(6)
+                .fluidInputs(BlackPlutonium.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.HYPER_CASING))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  todo black dwarf matter enriched hyper casing
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(plate, CarbonNanotube, 4)
+                .input(FIELD_GENERATOR_UV, 2)
+                .input(wireFine, Seaborgium, 4)
+                .fluidInputs(Hdcs.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.HYPER_CORE_MK1))
+                .EUt(VA[UEV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Adamantium)
+                .input(plate, CelestialTungsten, 4)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(wireFine, AstralTitanium, 4)
+                .fluidInputs(Legendarium.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.HYPER_CORE_MK2))
+                .EUt(VA[UIV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Taranium)
+                .input(plate, MetastableHassium, 4)
+                .input(FIELD_GENERATOR_UEV, 2)
+                .input(wireFine, SuperheavyHAlloy, 4)
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.HYPER_CORE_MK3))
+                .EUt(VA[UXV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
     }
 }

@@ -26,8 +26,7 @@ import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.HER
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.VOLTAGE_COIL_UEV;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.VOLTAGE_COIL_UHV;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MaterialInfoLoader {
 
@@ -275,5 +274,21 @@ public class MaterialInfoLoader {
                 new MaterialStack(Mithril, M * 2)));
 
         //  UIV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(wireFine, Astralium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UIV)
+                .EUt(VA[UIV])
+                .duration(200)
+                .buildAndRegister();
+
+        OreDictUnifier.registerOre(VOLTAGE_COIL_UIV.getStackForm(), new ItemMaterialInfo (
+                new MaterialStack(PhosphorusDopedEuropiumIronArsenideMagnetic, M / 2),
+                new MaterialStack(Astralium, M * 2)));
+
+        //  UXV Voltage Coil
+
+        //  OpV Voltage Coil
     }
 }

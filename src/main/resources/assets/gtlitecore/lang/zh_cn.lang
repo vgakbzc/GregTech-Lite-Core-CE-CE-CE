@@ -1536,3 +1536,35 @@ item.gt.tool.combination_wrench.name=%s两用扳手
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
+
+#  Wrap Items
+metaitem.wrap.circuit.ulv.name=封装电路板（§8ULV§r）
+metaitem.wrap.circuit.ulv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.lv.name=封装电路板（§7LV§r）
+metaitem.wrap.circuit.lv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.mv.name=封装电路板（§bMV§r）
+metaitem.wrap.circuit.mv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.hv.name=封装电路板（§6HV§r）
+metaitem.wrap.circuit.hv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.ev.name=封装电路板（§5EV§r）
+metaitem.wrap.circuit.ev.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.iv.name=封装电路板（§1IV§r）
+metaitem.wrap.circuit.iv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.luv.name=封装电路板（§dLuV§r）
+metaitem.wrap.circuit.luv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.zpm.name=封装电路板（§cZPM§r）
+metaitem.wrap.circuit.zpm.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uv.name=封装电路板（§3UV§r）
+metaitem.wrap.circuit.uv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uhv.name=封装电路板（§4UHV§r）
+metaitem.wrap.circuit.uhv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uev.name=封装电路板（§aUEV§r）
+metaitem.wrap.circuit.uev.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uiv.name=封装电路板（§2UIV§r）
+metaitem.wrap.circuit.uiv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.uxv.name=封装电路板（§eUXV§r）
+metaitem.wrap.circuit.uxv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.opv.name=封装电路板（§9OpV§r）
+metaitem.wrap.circuit.opv.tooltip=用于在§6部件装配线§7中进行批量组装
+metaitem.wrap.circuit.max.name=封装电路板（§c§lMAX§r）
+metaitem.wrap.circuit.max.tooltip=用于在§6部件装配线§7中进行批量组装

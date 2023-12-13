@@ -129,6 +129,8 @@ public class GTLiteMaterialPropertyAddition {
         Livermorium.addFlags(GENERATE_DOUBLE_PLATE);
         Rhenium.addFlags(GENERATE_DOUBLE_PLATE);
         IncoloyMA956.addFlags(GENERATE_DOUBLE_PLATE);
+        Tritanium.addFlags(GENERATE_DOUBLE_PLATE);
+        HSSS.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -159,6 +161,9 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
+        WroughtIron.addFlags(GENERATE_LONG_ROD);
+        SteelMagnetic.addFlags(GENERATE_LONG_ROD);
+        NeodymiumMagnetic.addFlags(GENERATE_LONG_ROD);
 
         //  Spring
         Trinium.addFlags(GENERATE_SPRING);
