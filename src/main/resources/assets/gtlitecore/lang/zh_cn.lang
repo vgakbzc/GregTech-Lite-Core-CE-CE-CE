@@ -20,6 +20,7 @@ tile.metal_casing.zirconium_carbide_casing.name=超耐热碳化锆机器外壳
 tile.metal_casing.staballoy_casing.name=高耐久贫铀合金机器外壳
 tile.metal_casing.quantum_casing.name=超重量子合金机器外壳
 tile.metal_casing.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
+tile.metal_casing.eglin_steel_casing.name=高强度埃格林钢机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -897,6 +898,11 @@ gtlitecore.machine.dangote_distillery.tooltip.5=§3UV§7级以下 -> §e4 * (电
 gtlitecore.machine.dangote_distillery.tooltip.6=§3UV§7级以上 -> §e12 * (电压等级 * 4)§7
 gtlitecore.machine.dangote_distillery.tooltip.7=§c§lMAX§7级以上 -> §e720§7
 
+gtlitecore.machine.turbine_mixer.name=涡轮搅拌机
+gtlitecore.machine.turbine_mixer.tooltip.1=工业级涡轮搅拌塔
+gtlitecore.machine.turbine_mixer.tooltip.2=运行§r搅拌机§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.turbine_mixer.tooltip.3=最大并行数：§e16 * (电压等级)§7
+
 #  Materials
 
 ##  Element Materials
@@ -1543,6 +1549,7 @@ recipemap.pcb_factory_nano_recipes.name=纳米组装
 recipemap.neutral_network_nexus_breeding_mode.name=繁育模式
 recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
 recipemap.quantum_force_transformer_recipes.name=量子操纵者
+recipemap.turbine_mixer_recipes.name=高速搅拌
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度:%,d K

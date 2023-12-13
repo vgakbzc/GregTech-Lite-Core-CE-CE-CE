@@ -268,4 +268,9 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
         tooltip.add(I18n.format("gtlitecore.machine.component_assembly_line.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.component_assembly_line.tooltip.4"));
     }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
 }

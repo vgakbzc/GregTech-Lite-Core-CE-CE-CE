@@ -219,6 +219,11 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
         return GTSoundEvents.BREAKDOWN_ELECTRICAL;
     }
 
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
     protected int getCoilTier() {
         return this.coilTier;
     }

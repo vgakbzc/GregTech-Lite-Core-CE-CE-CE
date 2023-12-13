@@ -257,6 +257,11 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.5"));
     }
 
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
     protected class PreciseAssemblerRecipeLogic extends MultiblockRecipeLogic {
         public PreciseAssemblerRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);

@@ -115,6 +115,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
     public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
+    public static MetaTileEntityTurbineMixer TURBINE_MIXER;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -295,7 +296,7 @@ public class GTLiteMetaTileEntities {
         //  72 AMAZON WAREHOUSING DEPOT
         //  73 ARC_FURNACE_ARRAY
         //  74 ELECTROLYTIC_TANK
-        //  75 MIXER_TOWER
+        TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));
         //  76 INDUSTRIAL_CENTRIFUGE
         //  77 ZHUHAI_FISHING_PORT
         //  78 COKING_PLANT

@@ -109,4 +109,9 @@ public class MetaTileEntityStellarFurnace extends RecipeMapMultiblockController 
         tooltip.add(I18n.format("gtlitecore.machine.stellar_furnace.tooltip.4"));
         tooltip.add(I18n.format("gtlitecore.machine.stellar_furnace.tooltip.5"));
     }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
 }
