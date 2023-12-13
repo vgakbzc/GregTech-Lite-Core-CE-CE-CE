@@ -8,8 +8,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.PLASMA_CONTAINMENT_CELL;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.RHENIUM_PLASMA_CONTAINMENT_CELL;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class PlasmaCondenser {
 
@@ -254,5 +253,53 @@ public class PlasmaCondenser {
                 .EUt(VA[UIV])
                 .duration(100)
                 .buildAndRegister();
+
+        //  Cosmic Neutronium
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 32000))
+                .circuitMeta(1)
+                .output(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(CosmicNeutronium.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 32000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(GelidCryotheum.getFluid(16000))
+                .circuitMeta(1)
+                .output(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(CosmicNeutronium.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(16000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .input(COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 32000))
+                .circuitMeta(10)
+                .output(ingot, CosmicNeutronium)
+                .output(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 32000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .input(COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(GelidCryotheum.getFluid(16000))
+                .circuitMeta(10)
+                .output(ingot, CosmicNeutronium)
+                .output(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(Ice.getFluid(16000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
     }
 }

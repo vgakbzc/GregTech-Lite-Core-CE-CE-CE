@@ -90,6 +90,21 @@ public class GTLiteMaterialPropertyAddition {
         Francium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Technetium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Technetium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Protactinium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Protactinium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Berkelium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Berkelium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Einsteinium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Einsteinium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Fermium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Fermium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Mendelevium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Mendelevium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Nobelium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Nobelium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Lawrencium.setProperty(PropertyKey.INGOT, new IngotProperty());
+        Lawrencium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Boron.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Zirconium Chain
         Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -131,6 +146,7 @@ public class GTLiteMaterialPropertyAddition {
         IncoloyMA956.addFlags(GENERATE_DOUBLE_PLATE);
         Tritanium.addFlags(GENERATE_DOUBLE_PLATE);
         HSSS.addFlags(GENERATE_DOUBLE_PLATE);
+        RedSteel.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -153,6 +169,7 @@ public class GTLiteMaterialPropertyAddition {
         Plutonium241.addFlags(GENERATE_FRAME);
         VanadiumSteel.addFlags(GENERATE_FRAME);
         RedSteel.addFlags(GENERATE_FRAME);
+        CobaltBrass.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

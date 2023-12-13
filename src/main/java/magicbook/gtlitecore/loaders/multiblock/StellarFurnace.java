@@ -58,6 +58,7 @@ public class StellarFurnace {
         DegenerateRhenium();
         CosmicComputingMixture();
         HeavyQuarkDegenerateMatter();
+        CosmicNeutronium();
     }
 
     private static void DegenerateRhenium() {
@@ -164,5 +165,45 @@ public class StellarFurnace {
                 .duration(20)
                 .temperature(BigInteger.valueOf((10 * V[UIV]) - (10 * V[EV])))
                 .buildAndRegister();
+    }
+
+    private static void CosmicNeutronium() {
+
+        //  Step 1: Dense Neutron Plasma
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(ingot, Neutronium)
+                .input(ingot, HeavyQuarkDegenerateMatter)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(HeavyLepton.getFluid(6000))
+                .fluidInputs(Gluons.getFluid(6000))
+                .fluidInputs(Periodicium.getFluid(2736))
+                .fluidOutputs(DenseNeutronPlasma.getPlasma(6000))
+                .EUt(VA[UIV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Step2: Cosmic Neutron Plasma
+        SCANNER_RECIPES.recipeBuilder()
+                .input(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(DenseNeutronPlasma.getPlasma(1000))
+                .output(DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .EUt(VA[UEV])
+                .duration(90)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL, 2)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(AstralTitanium.getPlasma(6000))
+                .fluidInputs(CelestialTungsten.getPlasma(6000))
+                .output(COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .EUt(VA[UIV])
+                .duration(10)
+                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .buildAndRegister();
+
+        //  back to plasma condenser recipe
     }
 }

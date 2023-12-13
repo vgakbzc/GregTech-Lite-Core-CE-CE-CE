@@ -501,7 +501,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(11500, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 580))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DOUBLE_PLATE)
                 .components(Titanium, 26, Lanthanum, 6, TungstenSteel, 4, Cobalt, 3, Manganese, 2, Phosphorus, 2, Palladium, 2, Niobium, 1, Argon, 5)
                 .toolStats(new ToolProperty(9.0F, 30.0F, 32000, 20))
                 .build();
@@ -653,6 +653,104 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Helium, 1, Neon, 1, Argon, 1, Krypton, 1, Xenon, 1, Radon, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  12050 Lanthanum Group-L Alloy
+        LanthanumGroupLAlloy = new Material.Builder(getId(), gregtechId("lanthanum_group_l_alloy"))
+                .ingot()
+                .fluid()
+                .color(Lanthanum.getMaterialRGB() + Cerium.getMaterialRGB() + Praseodymium.getMaterialRGB() + Neodymium.getMaterialRGB() + Promethium.getMaterialRGB() + Samarium.getMaterialRGB() + Europium.getMaterialRGB() + Scandium.getMaterialRGB())
+                .iconSet(METALLIC)
+                .components(Lanthanum, 1, Cerium, 1, Praseodymium, 1, Neodymium, 1, Promethium, 1, Samarium, 1, Europium, 1, Scandium, 1)
+                .blast(b -> b
+                        .temp(13000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 400))
+                .build();
+
+        //  12051 Lanthanum Group-H Alloy
+        LanthanumGroupHAlloy = new Material.Builder(getId(), gregtechId("lanthanum_group_h_alloy"))
+                .ingot()
+                .fluid()
+                .color(Gadolinium.getMaterialRGB() + Terbium.getMaterialRGB() + Dysprosium.getMaterialRGB() + Holmium.getMaterialRGB() + Erbium.getMaterialRGB() + Thulium.getMaterialRGB() + Ytterbium.getMaterialRGB() + Lutetium.getMaterialRGB())
+                .iconSet(METALLIC)
+                .components(Gadolinium, 1, Terbium, 1, Dysprosium, 1, Holmium, 1, Erbium, 1, Thulium, 1, Ytterbium, 1, Lutetium, 1)
+                .blast(b -> b
+                        .temp(13100, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 420))
+                .build();
+
+        //  12051 Actinium Group-L Alloy
+        ActiniumGroupLAlloy = new Material.Builder(getId(), gregtechId("actinium_group_l_alloy"))
+                .ingot()
+                .fluid()
+                .color(Actinium.getMaterialRGB() + Thorium.getMaterialRGB() + Protactinium.getMaterialRGB() + Uranium238.getMaterialRGB() + Neptunium.getMaterialRGB() + Plutonium241.getMaterialRGB() + Americium.getMaterialRGB() + Yttrium.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Actinium, 1, Thorium, 1, Protactinium, 1, Uranium238, 1, Neptunium, 1, Plutonium241, 1, Americium, 1, Yttrium, 1)
+                .blast(b -> b
+                        .temp(14300, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 290))
+                .build()
+                .setFormula("AcThPaUNpPuAmY", false);
+
+        //  12052 Actinium Group-H Alloy
+        ActiniumGroupHAlloy = new Material.Builder(getId(), gregtechId("actinium_group_h_alloy"))
+                .ingot()
+                .fluid()
+                .color(Curium.getMaterialRGB() + Berkelium.getMaterialRGB() + Californium.getMaterialRGB() + Einsteinium.getMaterialRGB() + Fermium.getMaterialRGB() + Mendelevium.getMaterialRGB() + Nobelium.getMaterialRGB() + Lawrencium.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Curium, 1, Berkelium, 1, Californium, 1, Einsteinium, 1, Fermium, 1, Mendelevium, 1, Nobelium, 1, Lawrencium, 1)
+                .blast(b -> b
+                        .temp(14500, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 300))
+                .build();
+
+        //  12053 Halogen Mixture
+        HalogenMixture = new Material.Builder(getId(), gregtechId("halogen_mixture"))
+                .liquid()
+                .color(Fluorine.getMaterialRGB() + Chlorine.getMaterialRGB() + Bromine.getMaterialRGB() + Iodine.getMaterialRGB() + Astatine.getMaterialRGB())
+                .components(Fluorine, 1, Chlorine, 1, Bromine, 1, Iodine, 1, Astatine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  12054 Non-metallic Mixture
+        NonMetallicMixture = new Material.Builder(getId(), gregtechId("non_metallic_mixture"))
+                .liquid()
+                .color(Hydrogen.getMaterialRGB() + Boron.getMaterialRGB() + Carbon.getMaterialRGB() + Nitrogen.getMaterialRGB() + Oxygen.getMaterialRGB() + Silicon.getMaterialRGB() + Phosphorus.getMaterialRGB() + Sulfur.getMaterialRGB() + Arsenic.getMaterialRGB() + Selenium.getMaterialRGB() + Tellurium.getMaterialRGB())
+                .components(Hydrogen, 1, Boron, 1, Carbon, 1, Nitrogen, 1, Oxygen, 1, Silicon, 1, Phosphorus, 1, Sulfur, 1, Arsenic, 1, Selenium, 1, Tellurium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  12055 Toxic Alloy
+        ToxicAlloy = new Material.Builder(getId(), gregtechId("toxic_alloy"))
+                .ingot()
+                .fluid()
+                .color(Mercury.getMaterialRGB() + Thallium.getMaterialRGB() + Lead.getMaterialRGB() + Bismuth.getMaterialRGB() + Polonium.getMaterialRGB())
+                .iconSet(METALLIC)
+                .components(Mercury, 1, Thallium, 1, Lead, 1, Bismuth, 1, Polonium, 1)
+                .blast(b -> b
+                        .temp(10800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV]))
+                .build();
+
+        //  12056 Rare Earth Alloy
+        RareEarthAlloy = new Material.Builder(getId(), gregtechId("rare_earth_alloy"))
+                .dust()
+                .color(LanthanumGroupLAlloy.getMaterialRGB() + LanthanumGroupHAlloy.getMaterialRGB() + ActiniumGroupLAlloy.getMaterialRGB() + ActiniumGroupHAlloy.getMaterialRGB())
+                .components(LanthanumGroupLAlloy, 1, LanthanumGroupHAlloy, 1, ActiniumGroupLAlloy, 1, ActiniumGroupHAlloy, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("LaCePrNdPmSmEuGdTbDyHoErTmYbLuScYAcThPaUNpPuAmCmBkCfEsFmMdNoLr", false);
+
+        //  12057 Periodicium
+        Periodicium = new Material.Builder(getId(), gregtechId("periodicium"))
+                .ingot()
+                .liquid()
+                .color(0x3D4BF6)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(15500, BlastProperty.GasTier.HIGHEST))
+                .build()
+                .setFormula("HHeLiBeBCNOFNeNaMgAlSiPSClArKCaScTiVCrMnFeCoNiCuZnGaGeAsSeBrKrRbSrYZrNbMoTcRuRhPdAgCdInSnSbTeIXeCsBaLaCePrNdPmSmEuGdTbDyHoErTmYbLuHfTaWReOsIrPtAuHgTlPbBiPoAtRnFrRaAcThPaUNpPuAmCmBkCfEsFmMdNoLrRfDbSgBhHsMtDsRgCnNhFlMcLvTsOg");
+
     }
 
     private static int getId() {

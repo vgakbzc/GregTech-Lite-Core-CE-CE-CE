@@ -161,9 +161,9 @@ public class MaterialComponents {
                 {9, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
                 {10, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
                 {11, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
-                {12, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
-                {13, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()},
-                {14, GTLiteMetaItems.COMPONENT_GRINDER_BORON_NITRIDE.getStackForm()}
+                {12, GTLiteMetaItems.COMPONENT_GRINDER_BLACK_PLUTONIUM.getStackForm()},
+                {13, GTLiteMetaItems.COMPONENT_GRINDER_BLACK_PLUTONIUM.getStackForm()},
+                {14, GTLiteMetaItems.COMPONENT_GRINDER_BLACK_PLUTONIUM.getStackForm()}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         SAWBLADE.appendIngredients(Stream.of(new Object[][]{
