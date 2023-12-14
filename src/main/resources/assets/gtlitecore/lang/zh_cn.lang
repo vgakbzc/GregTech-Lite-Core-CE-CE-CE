@@ -220,6 +220,14 @@ metaitem.wafer.chip.spin_transfer_torque_memory.name=自旋转移力矩存储器
 metaitem.wafer.chip.spin_transfer_torque_memory.tooltip=自旋转移力矩存储器
 metaitem.wafer.chip.spintronic_nand_memory_chip.name=磁畴壁反相逻辑与非门（MDNAND）晶片
 metaitem.wafer.chip.spintronic_nand_memory_chip.tooltip=磁畴壁反相逻辑与非门
+metaitem.wafer.untreated_cosmic_cpu.name=未处理的寰宇计算中央处理器（CCCPU）晶圆
+metaitem.wafer.untreated_cosmic_cpu.tooltip=待处理寰宇电路
+metaitem.wafer.cosmic_cpu.name=寰宇计算中央处理器（CCCPU）晶圆
+metaitem.wafer.cosmic_cpu.tooltip=寰宇计算中央处理器原料
+metaitem.wafer.chip.cosmic_cpu.name=寰宇计算中央处理器（CCCPU）晶片
+metaitem.wafer.chip.cosmic_cpu.tooltip=寰宇计算中央处理器
+metaitem.wafer.chip.cosmic_memory.name=世界线信息存储器（WLRAM）晶片
+metaitem.wafer.chip.cosmic_memory.tooltip=世界线信息存储器
 metaitem.wafer.uhasoc.name=极高进阶片上系统（UHASoC）晶圆
 metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
 metaitem.wafer.chip.uhasoc.name=极高进阶片上系统（UHASoC）晶片
@@ -1356,6 +1364,8 @@ gregtech.material.heavy_quark_degenerate_matter=重夸克简并物质
 gregtech.material.magneto_hydrodynamically_constrained_star_matter=磁流体动力学约束恒星等离子体物质
 gregtech.material.raw_star_matter=原始恒星等离子体物质
 gregtech.material.dense_neutron_plasma=致密中子
+gregtech.material.high_energy_quark_gluon_plasma=高能夸克-胶子等离子体
+gregtech.material.quantumchromodynamically_confined_matter=量子色动力学封闭物质
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -1457,7 +1467,7 @@ metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
 metaitem.component.grinder.boron_nitride.name=氮化硼磨头
 metaitem.component.grinder.black_plutonium.name=黑钚磨头
-
+metaitem.qcd_protective_plating.name=量子色动力学防护层
 metaitem.cnt.graphene_aligned.name=石墨烯排列碳纳米管
 metaitem.mixture.carbon_allotrope.name=碳同素异构体混合物
 

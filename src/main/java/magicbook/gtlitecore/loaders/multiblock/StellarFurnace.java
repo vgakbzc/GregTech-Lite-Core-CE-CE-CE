@@ -38,6 +38,19 @@ public class StellarFurnace {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Extremely Durable Plasma Containment Cell
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(FIELD_GENERATOR_UEV)
+                .input(stickLong, Tritanium)
+                .input(QCD_PROTECTIVE_PLATING, 4)
+                .inputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS, 2))
+                .fluidInputs(TinAlloy.getFluid(L * 2))
+                .output(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
+                .EUt(VA[UV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Separation Electromagnet
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(MAGNETRON)
@@ -59,6 +72,7 @@ public class StellarFurnace {
         CosmicComputingMixture();
         HeavyQuarkDegenerateMatter();
         CosmicNeutronium();
+        QuantumchromodynamicallyConfinedMatter();
     }
 
     private static void DegenerateRhenium() {
@@ -205,5 +219,29 @@ public class StellarFurnace {
                 .buildAndRegister();
 
         //  back to plasma condenser recipe
+    }
+
+    private static void QuantumchromodynamicallyConfinedMatter() {
+
+        //  Heavy Quark Degenerate Matter -> High Energy Quark Gluon Plasma
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(ingot, HeavyQuarkDegenerateMatter)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidOutputs(HighEnergyQuarkGluonPlasma.getFluid(L))
+                .EUt(VA[UIV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .buildAndRegister();
+
+        //  back to plasma condenser recipe
+
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(plate, QuantumchromodynamicallyConfinedMatter)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .output(QCD_PROTECTIVE_PLATING)
+                .EUt(VA[UIV])
+                .duration(10)
+                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .buildAndRegister();
     }
 }

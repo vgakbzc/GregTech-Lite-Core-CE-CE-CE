@@ -24,7 +24,7 @@ public class GTLiteHighDegreeMaterials {
 
         //  15001 Quark Gluon Plasma
         QuarkGluonPlasma = new Material.Builder(getId(), gregtechId("quark_gluon_plasma"))
-                .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int) (V[ZPM] + V[UHV])/2))
+                .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int) (V[ZPM] + V[UHV])/2))// fixme plasma
                 .color(0x8DA7DC)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED  + "a" + TextFormatting.RESET + "§e(u2)d(c2)s(t2)bg" + TextFormatting.OBFUSCATED + "a", false);
@@ -129,10 +129,31 @@ public class GTLiteHighDegreeMaterials {
 
         //  15015 Dense Neutron Plasma
         DenseNeutronPlasma = new Material.Builder(getId(), gregtechId("dense_neutron_plasma"))
-                .liquid()
+                .liquid() // fixme plasma
                 .plasma(new FluidBuilder().temperature(32768000))
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "n" + TextFormatting.OBFUSCATED  + "a" , false);
+
+        //  15016 High Energy Quark-Gluon Plasma
+        HighEnergyQuarkGluonPlasma = new Material.Builder(getId(), gregtechId("high_energy_quark_gluon_plasma"))
+                .liquid(new FluidBuilder().temperature((int) (V[UHV] + V[UIV])/2)) // fixme plasma
+                .color(0x9933CC)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "§e(u2)d(c2)s(t2)bg" + TextFormatting.OBFUSCATED  + "a", true);
+
+        //  15017 Quantumchromodynamically Confined Matter
+        QuantumchromodynamicallyConfinedMatter = new Material.Builder(getId(), gregtechId("quantumchromodynamically_confined_matter"))
+                .ingot()
+                .liquid()
+                .color(0xF0A745)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(16000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UIV]))
+                .flags(GENERATE_PLATE)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
     }
 
     private static int getId() {

@@ -455,6 +455,8 @@ public class GTLiteMaterials {
     public static Material MagnetoHydrodynamicallyConstrainedStarMatter;
     public static Material RawStarMatter;
     public static Material DenseNeutronPlasma;
+    public static Material HighEnergyQuarkGluonPlasma;
+    public static Material QuantumchromodynamicallyConfinedMatter;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
