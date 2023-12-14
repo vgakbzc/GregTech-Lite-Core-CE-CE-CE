@@ -251,7 +251,7 @@ public class PlasmaCondenser {
                 .EUt(VA[UIV])
                 .duration(100)
                 .buildAndRegister();
-
+      
         //  Quantumchromodynamically Confined Matter
         PLASMA_CONDENSER_RECIPES.recipeBuilder()
                 .fluidInputs(HighEnergyQuarkGluonPlasma.getFluid(1000))
