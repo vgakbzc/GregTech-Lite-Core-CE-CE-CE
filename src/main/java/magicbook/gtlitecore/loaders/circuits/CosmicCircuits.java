@@ -106,6 +106,45 @@ public class CosmicCircuits {
                 .EUt(VA[LuV])
                 .duration(200)
                 .buildAndRegister();
+
+        //  Cosmic CPU
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(NEUTRONIUM_WAFER)
+                .fluidInputs(CosmicComputingMixture.getFluid(L))
+                .output(UNTREATED_COSMIC_CPU)
+                .EUt(VA[UV])
+                .duration(300)
+                .buildAndRegister();
+
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(NEUTRONIUM_WAFER)
+                .fluidInputs(CosmicNeutronium.getFluid(16))
+                .output(UNTREATED_COSMIC_CPU)
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(UNTREATED_COSMIC_CPU)
+                .input(plate, CelestialTungsten, 2)
+                .input(plate, QuantumchromodynamicallyConfinedMatter, 2)
+                .input(wireFine, SuperheavyHAlloy, 4)
+                .fluidInputs(TetramethylammoniumHydroxide.getFluid(3000))
+                .fluidInputs(EDP.getFluid(3000))
+                .fluidInputs(PCBCoolant.getFluid(L * 4))
+                .output(COSMIC_CPU)
+                .EUt(VA[UEV])
+                .duration(20)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(COSMIC_CPU)
+                .fluidInputs(Lubricant.getFluid(6000))
+                .output(COSMIC_CPU_CHIP, 64)
+                .EUt(VA[UV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void SoC() {}
@@ -165,6 +204,19 @@ public class CosmicCircuits {
                 .duration(160)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Cosmic RAM
+        FORMING_PRESS_RECIPES.recipeBuilder()
+                .input(RANDOM_ACCESS_MEMORY)
+                .input(plate, MetastableHassium, 2)
+                .input(plate, MetastableFlerovium, 2)
+                .input(foil, AstralTitanium, 8)
+                .input(wireFine, SuperheavyLAlloy, 16)
+                .output(COSMIC_MEMORY_CHIP, 4)
+                .EUt(VA[UIV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void Circuits() {
@@ -190,7 +242,7 @@ public class CosmicCircuits {
                 .input(COSMIC_PROCESSOR, 2)
                 .input(COSMIC_INDUCTOR, 6)
                 .input(COSMIC_CAPACITOR, 12)
-                .input(SPIN_TRANSFER_TORQUE_MEMORY, 24) //TODO new RAM
+                .input(COSMIC_MEMORY_CHIP, 24)
                 .input(wireFine, Infinity, 8)
                 .solderMultiplier(2)
                 .output(COSMIC_ASSEMBLY, 2)
@@ -198,6 +250,31 @@ public class CosmicCircuits {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Cosmic Supercomputer
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(COSMIC_INFORMATION_MODULE)
+                .input(COSMIC_ASSEMBLY, 2)
+                .input(COSMIC_DIODE, 8)
+                .input(COSMIC_CPU_CHIP, 16)
+                .input(COSMIC_MEMORY_CHIP, 32)
+                .input(wireFine, RutheniumTriniumAmericiumNeutronate, 24)
+                .input(foil, CelestialTungsten, 32)
+                .input(plate, MetastableHassium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(17280))
+                .fluidInputs(Kevlar.getFluid(9216))
+                .fluidInputs(Zylon.getFluid(4608))
+                .fluidInputs(Infinity.getFluid(2304))
+                .output(COSMIC_COMPUTER)
+                .stationResearch(b -> b
+                        .researchStack(COSMIC_ASSEMBLY.getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(256))
+                .duration(400)
+                .EUt(VA[UIV])
+                .buildAndRegister();
+
+        //  Cosmic Mainframe
     }
 
     private static void ScintillatorChain() {

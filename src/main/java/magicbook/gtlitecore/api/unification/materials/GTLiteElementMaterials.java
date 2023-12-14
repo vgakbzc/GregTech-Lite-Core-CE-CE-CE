@@ -171,6 +171,7 @@ public class GTLiteElementMaterials {
                 .color(0xFFFF33)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Sol)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV]))
@@ -198,7 +199,7 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.Hypogen)
                 .color(0xDC784B)
                 .iconSet(BRIGHT)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
                 .cableProperties(V[UXV], 32, 16, false)
                 .build();
 
@@ -280,6 +281,7 @@ public class GTLiteElementMaterials {
                 .color(0x29288A)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Galaxium)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
                 .cableProperties(V[OpV], 64, 32, false)
                 .build();
 
@@ -290,6 +292,7 @@ public class GTLiteElementMaterials {
                 .color(0xD872EB)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Universium)
+                .flags(GENERATE_ROD, GENERATE_SPRING)
                 .cableProperties(V[MAX], 128, 64, false)
                 .build();
 

@@ -148,10 +148,13 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         OPTICAL_NOR_MEMORY_CHIP = this.addItem(209, "wafer.chip.optical_nor_memory_chip");
         SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(210, "wafer.chip.spin_transfer_torque_memory");
         SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(211, "wafer.chip.spintronic_nand_memory_chip");
+        UNTREATED_COSMIC_CPU = this.addItem(212, "wafer.untreated_cosmic_cpu");
+        COSMIC_CPU = this.addItem(213, "wafer.cosmic_cpu");
+        COSMIC_CPU_CHIP = this.addItem(214, "wafer.chip.cosmic_cpu");
+        COSMIC_MEMORY_CHIP = this.addItem(215, "wafer.chip.cosmic_memory");
 
-        UHASOC_WAFER = this.addItem(215, "wafer.uhasoc");
-        UHASOC_CHIP = this.addItem(216, "wafer.chip.uhasoc");
-
+        UHASOC_WAFER = this.addItem(218, "wafer.uhasoc");
+        UHASOC_CHIP = this.addItem(219, "wafer.chip.uhasoc");
         CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(220, "boule.cubic_zirconia.europium");
         CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(221, "wafer.cubic_zirconia.europium");
         CRYSTAL_INTERFACE_WAFER = this.addItem(222, "wafer.crystal_interface");
@@ -193,7 +196,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior());
         COMPONENT_GRINDER_BORON_NITRIDE = this.addItem(302, "component.grinder.boron_nitride");
         COMPONENT_GRINDER_BLACK_PLUTONIUM = this.addItem(303, "component.grinder.black_plutonium");
-
+        QCD_PROTECTIVE_PLATING = this.addItem(304, "qcd_protective_plating");
         CARBON_ALLOTROPE_MIXTURE = this.addItem(305, "mixture.carbon_allotrope");
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
 

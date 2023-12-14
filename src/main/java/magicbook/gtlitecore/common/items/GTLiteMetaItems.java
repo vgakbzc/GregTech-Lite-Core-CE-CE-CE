@@ -139,10 +139,13 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem OPTICAL_NOR_MEMORY_CHIP;
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;
     public static MetaItem<?>.MetaValueItem SPINTRONIC_NAND_MEMORY_CHIP;
+    public static MetaItem<?>.MetaValueItem UNTREATED_COSMIC_CPU;
+    public static MetaItem<?>.MetaValueItem COSMIC_CPU;
+    public static MetaItem<?>.MetaValueItem COSMIC_CPU_CHIP;
+    public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CHIP;
 
     public static MetaItem<?>.MetaValueItem UHASOC_WAFER;
     public static MetaItem<?>.MetaValueItem UHASOC_CHIP;
-
     public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_BOULE;
     public static MetaItem<?>.MetaValueItem CUBIC_ZIRCONIA_EUROPIUM_WAFER;
     public static MetaItem<?>.MetaValueItem CRYSTAL_INTERFACE_WAFER;
@@ -185,7 +188,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
     public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
     public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BLACK_PLUTONIUM;
-
+    public static MetaItem<?>.MetaValueItem QCD_PROTECTIVE_PLATING;
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
 
