@@ -319,6 +319,17 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_FINE_WIRE)
                 .cableProperties(V[UIV], 48, 24, false)
                 .build();
+
+        //  10023 Hikarium
+        Hikarium = new Material.Builder(getId(), gregtechId("hikarium"))
+                .ingot()
+                .liquid()
+                .color(0xCCF7FB)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Hikarium)
+                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .cableProperties(V[UXV], 64, 32, false)
+                .build();
     }
 
     private static int getId() {

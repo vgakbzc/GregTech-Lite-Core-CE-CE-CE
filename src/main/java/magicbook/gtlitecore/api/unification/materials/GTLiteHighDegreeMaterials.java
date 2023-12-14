@@ -10,6 +10,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.Deuterium;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.BRIGHT;
+import static gregtech.api.unification.material.info.MaterialIconSet.DULL;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_MHCSM;
@@ -109,7 +110,8 @@ public class GTLiteHighDegreeMaterials {
                 .blast(b -> b
                         .temp(14960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV]))
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[UXV], 576, 1024, false)
                 .build();
 
         //  15013 Magneto Hydrodynamically Constrained Star Matter
@@ -151,6 +153,34 @@ public class GTLiteHighDegreeMaterials {
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV]))
                 .flags(GENERATE_PLATE)
+                .fluidPipeProperties(80000, 20000, true, true, true, true)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15018 Black Dwarf Matter
+        BlackDwarfMatter = new Material.Builder(getId(), gregtechId("black_dwarf_matter"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature(266000000))
+                .color(0x000000)
+                .iconSet(DULL)
+                .blast(b -> b
+                        .temp(15800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV]))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[UXV], 128, 256, false)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15019 White Dwarf Matter
+        WhiteDwarfMatter = new Material.Builder(getId(), gregtechId("white_dwarf_matter"))
+                .ingot()
+                .liquid(new FluidBuilder().temperature(288000000))
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(15800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV]))
+                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .cableProperties(V[UXV], 256, 128, false)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
