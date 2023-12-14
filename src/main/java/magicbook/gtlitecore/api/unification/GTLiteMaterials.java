@@ -29,6 +29,7 @@ public class GTLiteMaterials {
     public static Material Universium;
     public static Material DegenerateRhenium;
     public static Material Astralium;
+    public static Material Hikarium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -457,6 +458,8 @@ public class GTLiteMaterials {
     public static Material DenseNeutronPlasma;
     public static Material HighEnergyQuarkGluonPlasma;
     public static Material QuantumchromodynamicallyConfinedMatter;
+    public static Material BlackDwarfMatter;
+    public static Material WhiteDwarfMatter;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;
