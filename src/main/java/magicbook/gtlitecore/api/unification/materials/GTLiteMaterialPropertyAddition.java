@@ -187,6 +187,9 @@ public class GTLiteMaterialPropertyAddition {
         Tritanium.addFlags(GENERATE_SPRING);
         RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_SPRING);
 
+        //  Small Spring
+        Europium.addFlags(GENERATE_SPRING_SMALL);
+
         //  Gear
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
         Darmstadtium.addFlags(GENERATE_GEAR);

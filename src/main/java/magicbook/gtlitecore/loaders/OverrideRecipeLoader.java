@@ -1196,6 +1196,9 @@ public class OverrideRecipeLoader {
         EnergyHatches4A();
         EnergyHatches16A();
         EnergyHatches64A();
+        Transformers();
+        PowerTransformers();
+        HiAmpTransformers();
     }
 
     private static void EnergyHatches1A() {
@@ -1798,5 +1801,160 @@ public class OverrideRecipeLoader {
                 .EUt(VA[UXV])
                 .duration(400)
                 .buildAndRegister();
+    }
+
+    private static void Transformers() {
+
+        //  UHV
+        ModHandler.addShapedRecipe(true, "machine.transformer.uhv", TRANSFORMER[UHV].getStackForm(),
+                "PWW", "WH ", "PWW",
+                'W', new UnificationEntry(cableGtSingle, Europium),
+                'P', NANO_PIC_CHIP,
+                'H', HULL[UHV].getStackForm());
+
+        //  UEV
+        ModHandler.addShapedRecipe(true, "machine.transformer.uev", TRANSFORMER[UEV].getStackForm(),
+                "PWW", "WH ", "PWW",
+                'W', new UnificationEntry(cableGtSingle, PedotTMA),
+                'P', NANO_PIC_CHIP,
+                'H', HULL[UEV].getStackForm());
+
+        //  UIV
+        ModHandler.addShapedRecipe(true, "machine.transformer.uiv", TRANSFORMER[UIV].getStackForm(),
+                "PWW", "WH ", "PWW",
+                'W', new UnificationEntry(cableGtSingle, Solarium),
+                'P', PICO_PIC_CHIP,
+                'H', HULL[UIV].getStackForm());
+
+        //  UXV
+        ModHandler.addShapedRecipe(true, "machine.transformer.uxv", TRANSFORMER[UXV].getStackForm(),
+                "PWW", "WH ", "PWW",
+                'W', new UnificationEntry(cableGtSingle, Hypogen),
+                'P', PICO_PIC_CHIP,
+                'H', HULL[UXV].getStackForm());
+
+        //  OpV
+        ModHandler.addShapedRecipe(true, "machine.transformer.opv", TRANSFORMER[OpV].getStackForm(),
+                "PWW", "WH ", "PWW",
+                'W', new UnificationEntry(cableGtSingle, Galaxium),
+                'P', FEMTO_PIC_CHIP,
+                'H', HULL[OpV].getStackForm());
+
+    }
+
+    private static void PowerTransformers() {
+
+        //  UHV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HI_AMP_TRANSFORMER[UHV])
+                .input(ELECTRIC_PUMP_IV)
+                .input(cableGtOctal, PedotTMA)
+                .input(cableGtHex, Europium, 2)
+                .input(springSmall, Europium)
+                .input(spring, PedotTMA)
+                .fluidInputs(Lubricant.getFluid(2000))
+                .output(POWER_TRANSFORMER[UHV])
+                .EUt(VA[UHV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UEV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HI_AMP_TRANSFORMER[UEV])
+                .input(ELECTRIC_PUMP_LuV)
+                .input(cableGtOctal, Solarium)
+                .input(cableGtHex, PedotTMA, 2)
+                .input(springSmall, PedotTMA)
+                .input(spring, Solarium)
+                .fluidInputs(Lubricant.getFluid(2000))
+                .output(POWER_TRANSFORMER[UEV])
+                .EUt(VA[UEV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HI_AMP_TRANSFORMER[UIV])
+                .input(ELECTRIC_PUMP_LuV)
+                .input(cableGtOctal, Hypogen)
+                .input(cableGtHex, Solarium, 2)
+                .input(springSmall, Solarium)
+                .input(spring, Hypogen)
+                .fluidInputs(Lubricant.getFluid(2000))
+                .output(POWER_TRANSFORMER[UIV])
+                .EUt(VA[UIV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UXV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HI_AMP_TRANSFORMER[UXV])
+                .input(ELECTRIC_PUMP_ZPM)
+                .input(cableGtOctal, Galaxium)
+                .input(cableGtHex, Hypogen, 2)
+                .input(springSmall, Hypogen)
+                .input(spring, Galaxium)
+                .fluidInputs(Lubricant.getFluid(2000))
+                .output(POWER_TRANSFORMER[UXV])
+                .EUt(VA[UXV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  OpV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HI_AMP_TRANSFORMER[OpV])
+                .input(ELECTRIC_PUMP_ZPM)
+                .input(cableGtOctal, Universium)
+                .input(cableGtHex, Hypogen, 2)
+                .input(springSmall, Hypogen)
+                .input(spring, Universium)
+                .fluidInputs(Lubricant.getFluid(2000))
+                .output(POWER_TRANSFORMER[OpV])
+                .EUt(VA[OpV])
+                .duration(200)
+                .buildAndRegister();
+    }
+
+    private static void HiAmpTransformers() {
+
+        //  UHV
+        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uhv", HI_AMP_TRANSFORMER[UHV].getStackForm(),
+                "VQQ", "PH ", "VQQ",
+                'V', VOLTAGE_COIL_UHV,
+                'H', HULL[UHV].getStackForm(),
+                'P', new UnificationEntry(cableGtQuadruple, PedotTMA),
+                'Q', new UnificationEntry(cableGtQuadruple, Europium));
+
+        //  UEV
+        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uev", HI_AMP_TRANSFORMER[UEV].getStackForm(),
+                "VQQ", "PH ", "VQQ",
+                'V', VOLTAGE_COIL_UEV,
+                'H', HULL[UEV].getStackForm(),
+                'P', new UnificationEntry(cableGtQuadruple, Solarium),
+                'Q', new UnificationEntry(cableGtQuadruple, PedotTMA));
+
+        //  UIV
+        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uiv", HI_AMP_TRANSFORMER[UIV].getStackForm(),
+                "VQQ", "PH ", "VQQ",
+                'V', VOLTAGE_COIL_UIV,
+                'H', HULL[UIV].getStackForm(),
+                'P', new UnificationEntry(cableGtQuadruple, Hypogen),
+                'Q', new UnificationEntry(cableGtQuadruple, Solarium));
+
+        //  UXV
+        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uxv", HI_AMP_TRANSFORMER[UXV].getStackForm(),
+                "VQQ", "PH ", "VQQ",
+                'V', VOLTAGE_COIL_UXV,
+                'H', HULL[UXV].getStackForm(),
+                'P', new UnificationEntry(cableGtQuadruple, Galaxium),
+                'Q', new UnificationEntry(cableGtQuadruple, Hypogen));
+
+        //  OpV
+        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.opv", HI_AMP_TRANSFORMER[OpV].getStackForm(),
+                "VQQ", "PH ", "VQQ",
+                'V', VOLTAGE_COIL_OpV,
+                'H', HULL[OpV].getStackForm(),
+                'P', new UnificationEntry(cableGtQuadruple, Universium),
+                'Q', new UnificationEntry(cableGtQuadruple, Galaxium));
     }
 }
