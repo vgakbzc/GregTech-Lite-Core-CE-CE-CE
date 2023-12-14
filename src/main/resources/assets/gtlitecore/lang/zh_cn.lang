@@ -1511,7 +1511,7 @@ metaitem.extremely_durable_plasma_containment_cell.tooltip=用于封装等离子
 metaitem.dense_neutron_plasma_containment_cell.name=致密中子等离子体遏制装置
 metaitem.dense_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致星球毁灭
 metaitem.cosmic_neutron_plasma_containment_cell.name=寰宇中子等离子体遏制装置
-metaitem.cosmic_neutron_plasma_containment_cell.tooltip意外的泄露事故或可导致宇宙毁灭
+metaitem.cosmic_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致宇宙毁灭
 
 #  Particles
 metaitem.particle.alpha.name=α粒子

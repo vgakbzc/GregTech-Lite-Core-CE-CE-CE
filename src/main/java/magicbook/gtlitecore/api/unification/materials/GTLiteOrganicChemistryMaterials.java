@@ -267,7 +267,7 @@ public class GTLiteOrganicChemistryMaterials {
 
         //  13030 PEDOT-TMA
         PedotTMA = new Material.Builder(getId(), gregtechId("pedot_tma"))
-                .polymer()
+                .ingot()
                 .liquid()
                 .color(0x5E9EE1)
                 .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING)
