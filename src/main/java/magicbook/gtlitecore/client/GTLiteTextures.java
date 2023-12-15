@@ -70,6 +70,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING = new GTLiteOverlayRenderer("casings/basic_photolithographic_framework_casing");
     public static GTLiteOverlayRenderer HG_1223_CASING = new GTLiteOverlayRenderer("casings/hg_1223_casing");
     public static GTLiteOverlayRenderer EGLIN_STEEL_CASING = new GTLiteOverlayRenderer("casings/eglin_steel_casing");
+    public static GTLiteOverlayRenderer INCONEL_792_CASING = new GTLiteOverlayRenderer("casings/inconel_792_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

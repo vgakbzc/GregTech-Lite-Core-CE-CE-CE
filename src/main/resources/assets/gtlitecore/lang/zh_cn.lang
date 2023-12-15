@@ -21,6 +21,7 @@ tile.metal_casing.staballoy_casing.name=高耐久贫铀合金机器外壳
 tile.metal_casing.quantum_casing.name=超重量子合金机器外壳
 tile.metal_casing.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
 tile.metal_casing.eglin_steel_casing.name=高强度埃格林钢机器外壳
+tile.metal_casing.inconel_792_casing.name=防水镍基合金-792机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -911,6 +912,13 @@ gtlitecore.machine.turbine_mixer.tooltip.1=工业级涡轮搅拌塔
 gtlitecore.machine.turbine_mixer.tooltip.2=运行§r搅拌机§7配方时，运行耗时为§r(配方时间/2)§7。
 gtlitecore.machine.turbine_mixer.tooltip.3=最大并行数：§e16 * (电压等级)§7
 
+gtlitecore.machine.zhuhai_fishing_pond.name=珠海渔场
+gtlitecore.machine.zhuhai_fishing_pond.mode=当前模式：%s
+gtlitecore.machine.zhuhai_fishing_pond.mode.0=模式: 捕捞鱼类
+gtlitecore.machine.zhuhai_fishing_pond.mode.1=模式：捕捞垃圾
+gtlitecore.machine.zhuhai_fishing_pond.mode.2=模式：捕捞宝藏
+gtlitecore.machine.zhuhai_fishing_pond.error=输出槽已满
+
 #  Materials
 
 ##  Element Materials
@@ -1582,7 +1590,7 @@ recipemap.quantum_force_transformer_recipes.name=量子操纵者
 recipemap.turbine_mixer_recipes.name=高速搅拌
 
 #  Recipe Properties
-gtlitecore.recipe.temperature=温度:%,d K
+gtlitecore.recipe.temperature=温度：%,d K
 gtlitecore.recipe.altitude=最低高度：%s
 
 #  SMDs

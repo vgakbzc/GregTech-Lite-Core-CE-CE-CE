@@ -36,7 +36,8 @@ public class BlockMetalCasing extends VariantBlock<BlockMetalCasing.MetalCasingT
         STABALLOY_CASING("staballoy_casing"),
         QUANTUM_CASING("quantum_casing"),
         HG1223_CASING("hg_1223_casing"),
-        EGLIN_STEEL_CASING("eglin_steel_casing");
+        EGLIN_STEEL_CASING("eglin_steel_casing"),
+        INCONEL_792_CASING("inconel_792_casing");
 
         private final String name;
 

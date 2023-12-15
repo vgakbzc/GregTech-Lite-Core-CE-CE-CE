@@ -12,6 +12,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import magicbook.gtlitecore.common.blocks.*;
+import net.minecraft.init.Items;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
@@ -949,6 +950,16 @@ public class MachineRecipeLoader {
                 'W', new UnificationEntry(cableGtSingle, NiobiumTitanium),
                 'P', new UnificationEntry(plate, EglinSteel),
                 'G', new UnificationEntry(gear, EglinSteel));
+
+        //  ZhuHai Fishing Pond
+        ModHandler.addShapedRecipe(true, "zhuhai_fishing_pond", ZHUHAI_FISHING_POND.getStackForm(),
+                "FRF", "PHP", "WXW",
+                'H', HULL[EV].getStackForm(),
+                'R', Items.FISHING_ROD,
+                'P', ELECTRIC_PUMP_EV,
+                'F', FLUID_FILTER,
+                'W', new UnificationEntry(cableGtSingle, Aluminium),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV));
     }
 
     private static void MachineCasingRecipes() {
@@ -2368,7 +2379,7 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Tritanium casing
-        ModHandler.addShapedRecipe(true, "tritanium", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TRITANIUM_CASING, 2),
+        ModHandler.addShapedRecipe(true, "tritanium_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TRITANIUM_CASING, 2),
                 "PhP", "PFP","PwP",
                 'P', new UnificationEntry(plate, Tritanium),
                 'F', new UnificationEntry(frameGt, HSSS));
@@ -2378,6 +2389,21 @@ public class MachineRecipeLoader {
                 .input(frameGt, HSSS)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.TRITANIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Inconel-792 casing
+        ModHandler.addShapedRecipe(true, "inconel_792_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCONEL_792_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Inconel792),
+                'F', new UnificationEntry(frameGt, WatertightSteel));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Inconel792, 6)
+                .input(frameGt, WatertightSteel)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCONEL_792_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

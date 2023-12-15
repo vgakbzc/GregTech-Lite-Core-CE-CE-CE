@@ -31,6 +31,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/eglin_steel_casing"
         }
+      },
+      "inconel_792_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/inconel_792_casing"
+        }
       }
     }
   }
