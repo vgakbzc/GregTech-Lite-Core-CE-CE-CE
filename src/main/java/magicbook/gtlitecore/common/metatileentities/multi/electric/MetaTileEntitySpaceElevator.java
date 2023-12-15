@@ -55,7 +55,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     @Override
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
-        Object type = context.get("SETieredCasingTieredStats");
+        Object type = context.get("SpaceElevatorMotorTieredStats");
         this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }
@@ -152,7 +152,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     }
 
     private static IBlockState getFrameState() {
-        return MetaBlocks.FRAMES.get(GTLiteMaterials.Orichalcum).getBlock(GTLiteMaterials.Orichalcum);
+        return MetaBlocks.FRAMES.get(GTLiteMaterials.MARM200Steel).getBlock(GTLiteMaterials.MARM200Steel);
     }
 
     @SideOnly(Side.CLIENT)

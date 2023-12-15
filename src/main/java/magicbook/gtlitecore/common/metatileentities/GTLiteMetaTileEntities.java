@@ -116,6 +116,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityPCBFactory PCB_FACTORY;
     public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
+    public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -298,7 +299,7 @@ public class GTLiteMetaTileEntities {
         //  74 ELECTROLYTIC_TANK
         TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));
         //  76 INDUSTRIAL_CENTRIFUGE
-        //  77 ZHUHAI_FISHING_PORT
+        ZHUHAI_FISHING_POND = registerMultiMetaTileEntity(77, new MetaTileEntityZhuHaiFishingPond(gtliteId("zhuhai_fishing_pond")));
         //  78 COKING_PLANT
         //  79
         //  80

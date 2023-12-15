@@ -240,7 +240,7 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(SHINY)
                 .components(Nickel, 2, Niobium, 1, Aluminium, 2, Nichrome, 1)
                 .blast(b -> b
-                        .temp(6200, BlastProperty.GasTier.HIGH)
+                        .temp(5200, BlastProperty.GasTier.HIGH)
                         .blastStats(VA[IV], 466)
                         .vacuumStats(VA[HV], 130))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR)
