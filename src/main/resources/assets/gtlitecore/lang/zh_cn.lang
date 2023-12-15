@@ -928,6 +928,12 @@ gtlitecore.machine.zhuhai_fishing_pond.mode.1=模式：捕捞垃圾
 gtlitecore.machine.zhuhai_fishing_pond.mode.2=模式：捕捞宝藏
 gtlitecore.machine.zhuhai_fishing_pond.error=输出槽已满
 
+gtlitecore.machine.coking_tower.name=焦化塔
+gtlitecore.machine.coking_tower.tooltip.1=工业焦化厂
+gtlitecore.machine.coking_tower.tooltip.2=根据线圈等级获得并行与配方时间减免
+gtlitecore.machine.coking_tower.tooltip.3=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
+gtlitecore.machine.coking_tower.tooltip.4=最大并行数：§e(线圈等级 * 16)§7
+
 #  Materials
 
 ##  Element Materials

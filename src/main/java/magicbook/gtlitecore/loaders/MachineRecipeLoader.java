@@ -960,6 +960,16 @@ public class MachineRecipeLoader {
                 'F', FLUID_FILTER,
                 'W', new UnificationEntry(cableGtSingle, Aluminium),
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV));
+
+        //  Coking Tower
+        ModHandler.addShapedRecipe(true, "coking_tower", COKING_TOWER.getStackForm(),
+                "ICX", "VHV", "IPX",
+                'H', PYROLYSE_OVEN.getStackForm(),
+                'P', ELECTRIC_PUMP_EV,
+                'I', ELECTRIC_PISTON_EV,
+                'X', new UnificationEntry(wireGtQuadruple, Platinum),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
+                'V', new UnificationEntry(pipeNormalFluid, VanadiumSteel));
     }
 
     private static void MachineCasingRecipes() {
