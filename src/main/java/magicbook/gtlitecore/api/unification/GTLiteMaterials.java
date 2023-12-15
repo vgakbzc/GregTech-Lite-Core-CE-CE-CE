@@ -30,6 +30,7 @@ public class GTLiteMaterials {
     public static Material DegenerateRhenium;
     public static Material Astralium;
     public static Material Hikarium;
+    public static Material Eternity;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;

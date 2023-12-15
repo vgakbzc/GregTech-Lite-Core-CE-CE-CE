@@ -5,6 +5,7 @@ import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
+import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
 
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -199,7 +200,6 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         QCD_PROTECTIVE_PLATING = this.addItem(304, "qcd_protective_plating");
         CARBON_ALLOTROPE_MIXTURE = this.addItem(305, "mixture.carbon_allotrope");
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
-
         UNSTABLE_STAR = this.addItem(307, "unstable_star");
         ZENITH_STAR = this.addItem(308, "zenith_star");
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
@@ -251,5 +251,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_CIRCUIT_UXV = this.addItem(512, "wrap.circuit.uxv");
         WRAP_CIRCUIT_OpV = this.addItem(513, "wrap.circuit.opv");
         WRAP_CIRCUIT_MAX = this.addItem(514, "wrap.circuit.max");
+
+        //  Debug Items
+        STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer").addComponents(StructureWriterBehavior.INSTANCE);
     }
 }

@@ -244,6 +244,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_MAX;
 
+    //  Debug Items
+    public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
+
     private GTLiteMetaItems() {}
 
     public static void init() {

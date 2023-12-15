@@ -26,4 +26,5 @@ public class GTLiteElements {
     public static final Element Universium = Elements.add(760, 253, -1, null, "Universium", "Uv⚶", false);
     public static final Element Astralium = Elements.add(290, 282,-1, null, "Astralium", "Ax⚶", false);
     public static final Element Hikarium = Elements.add(640, 789, -1, null, "Hikarium", "Hr⚶", false);
+    public static final Element Eternity = Elements.add(100000, 100000, -1, null, "Eternity", "", false);
 }

@@ -1,10 +1,12 @@
 package magicbook.gtlitecore.client;
 
 import magicbook.gtlitecore.api.utils.GTLiteLog;
+import magicbook.gtlitecore.client.renderer.StructureSelectRenderer;
 import magicbook.gtlitecore.client.utils.ShaderUtils;
 import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.client.event.RenderWorldLastEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -25,5 +27,10 @@ public class ClientProxy extends CommonProxy {
     public static void registerModels(ModelRegistryEvent event) {
         GTLiteLog.logger.info("Registering block models...");
         GTLiteMetaBlocks.registerItemModels();
+    }
+
+    @SubscribeEvent
+    public static void onRenderWorldLast(RenderWorldLastEvent event) {
+        StructureSelectRenderer.render(event);
     }
 }
