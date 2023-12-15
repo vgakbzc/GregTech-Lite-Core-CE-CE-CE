@@ -65,10 +65,11 @@
       }
     },
     "active=true,variant=quantum_glass": {
-      "model": "minecraft:cube_all",
+      "model": "gregtech:cube_2_layer_all",
       "ambientocclusion": false,
       "textures": {
-        "all": "gtlitecore:blocks/casings/quantum_glass"
+        "bot_all": "gtlitecore:blocks/casings/quantum_glass",
+        "top_all": "gtlitecore:blocks/casings/quantum_glass_bloom"
       }
     }
   }

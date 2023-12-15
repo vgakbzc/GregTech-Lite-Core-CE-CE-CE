@@ -330,6 +330,16 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_ROD, GENERATE_SPRING)
                 .cableProperties(V[UXV], 64, 32, false)
                 .build();
+
+        //  10024 Eternity
+        Eternity = new Material.Builder(getId(), gregtechId("eternity"))
+                .ingot()
+                .liquid()
+                .iconSet(CUSTOM_ETERNITY)
+                .element(GTLiteElements.Eternity)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
     }
 
     private static int getId() {

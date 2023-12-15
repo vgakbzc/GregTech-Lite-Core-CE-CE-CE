@@ -125,7 +125,7 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.plate, Infinity)},
                 {12, new UnificationEntry(OrePrefix.plate, CosmicNeutronium)},
                 {13, new UnificationEntry(OrePrefix.plate, Spacetime)},
-//                {14, new UnificationEntry(OrePrefix.plate, Eternal)},
+                {14, new UnificationEntry(OrePrefix.plate, Eternity)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         HULL_PLATE.appendIngredients(Stream.of(new Object[][]{
@@ -134,7 +134,7 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.plate, Kevlar)},
                 {12, new UnificationEntry(OrePrefix.plate, Kevlar)},
                 {13, new UnificationEntry(OrePrefix.plate, CosmicFabric)},
-                {14, new UnificationEntry(OrePrefix.plate, CosmicFabric)},
+                {14, new UnificationEntry(OrePrefix.plate, CosmicFabric)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         DOUBLE_PLATE.appendIngredients(Stream.of(new Object[][]{
@@ -143,7 +143,7 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.plateDouble, Infinity)},
                 {12, new UnificationEntry(OrePrefix.plateDouble, CosmicNeutronium)},
                 {13, new UnificationEntry(OrePrefix.plateDouble, Spacetime)},
-//                {14, new UnificationEntry(OrePrefix.plateDouble, Eternal)},
+                {14, new UnificationEntry(OrePrefix.plateDouble, Eternity)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         ROTOR.appendIngredients(Stream.of(new Object[][]{
@@ -152,7 +152,7 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.rotor, Infinity)},
                 {12, new UnificationEntry(OrePrefix.rotor, CosmicNeutronium)},
                 {13, new UnificationEntry(OrePrefix.rotor, Spacetime)},
-//                {14, new UnificationEntry(OrePrefix.rotor, Eternal)},
+                {14, new UnificationEntry(OrePrefix.rotor, Eternity)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         GRINDER.appendIngredients(Stream.of(new Object[][]{
