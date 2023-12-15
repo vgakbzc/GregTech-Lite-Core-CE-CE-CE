@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/sweep-tosho/gregtech-lite-core/blob/master/logo.png" width=350 height="250" alt="logo">
+  <img src="logo.png" width=350 height="250" alt="logo">
 </p>
 <h1 align="center">GregTech Lite Core</h1>
 <p align="center">
