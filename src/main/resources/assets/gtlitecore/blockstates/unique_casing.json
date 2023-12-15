@@ -1,0 +1,51 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "flotation_cell": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/flotation_cell"
+        }
+      },
+      "hyper_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hyper_casing"
+        }
+      },
+      "advanced_hyper_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_hyper_casing"
+        }
+      },
+      "stellar_containment_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/stellar_containment_casing"
+        }
+      },
+      "reflective_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/reflective_casing"
+        }
+      },
+      "computing_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/radiation_proof_scan_framework_casing",
+          "side": "gtlitecore:blocks/casings/computing_casing",
+          "bottom": "#top"
+        }
+      },
+      "quantum_coil": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/quantum_coil"
+        }
+      }
+    }
+  }
+}

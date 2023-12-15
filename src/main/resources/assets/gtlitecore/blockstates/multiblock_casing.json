@@ -1,0 +1,111 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "substrate_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/substrate_top",
+          "side": "gtlitecore:blocks/casings/substrate_side",
+          "bottom": "#side"
+        }
+      },
+      "advanced_substrate_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/advanced_substrate_top",
+          "side": "gtlitecore:blocks/casings/substrate_side",
+          "bottom": "#side"
+        }
+      },
+      "drill_head": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gregtech:blocks/casings/gearbox/machine_casing_gearbox_steel",
+          "side": "gregtech:blocks/casings/solid/machine_casing_solid_steel",
+          "bottom": "gtlitecore:blocks/casings/drill_head_bottom"
+        }
+      },
+      "inconel_625_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/inconel_625_casing"
+        }
+      },
+      "inconel_625_gearbox_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/inconel_625_gearbox_casing"
+        }
+      },
+      "hastelloy_n_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_n_casing"
+        }
+      },
+      "hastelloy_n_gearbox_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_n_gearbox_casing"
+        }
+      },
+      "red_steel_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/red_steel_casing_top",
+          "side": "gtlitecore:blocks/casings/red_steel_casing_side",
+          "bottom": "#side"
+        }
+      },
+      "advanced_invar_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_invar_casing"
+        }
+      },
+      "advanced_aluminium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/advanced_aluminium_casing"
+        }
+      },
+      "talonite_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/talonite_casing"
+        }
+      },
+      "naquadria_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadria_casing"
+        }
+      },
+      "hastelloy_x78_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hastelloy_x78_casing"
+        }
+      },
+      "iridium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/iridium_casing"
+        }
+      },
+      "aseptic_farm_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/aseptic_farm_casing"
+        }
+      },
+      "tritanium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/tritanium_casing"
+        }
+      }
+    }
+  }
+}

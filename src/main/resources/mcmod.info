@@ -1,0 +1,16 @@
+[
+{
+  "modid": "gtlitecore",
+  "name": "Gregicality Science",
+  "description": "Gregicality Science unofficial Extended Life",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Magic_Sweepy"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,43 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "zirconium_carbide_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/zirconium_carbide_casing"
+        }
+      },
+      "staballoy_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/staballoy_casing"
+        }
+      },
+      "quantum_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/quantum_casing"
+        }
+      },
+      "hg_1223_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hg_1223_casing"
+        }
+      },
+      "eglin_steel_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/eglin_steel_casing"
+        }
+      },
+      "inconel_792_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/inconel_792_casing"
+        }
+      }
+    }
+  }
+}
