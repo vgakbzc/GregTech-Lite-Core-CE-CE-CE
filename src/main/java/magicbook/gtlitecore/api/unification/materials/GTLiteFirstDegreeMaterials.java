@@ -1825,6 +1825,58 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(ROUGH)
                 .components(Carbon, 9, Hydrogen, 7, Sodium, 1, Oxygen, 2)
                 .build();
+
+        //  11208 Lithiumthiinediselenide
+        Lithiumthiinediselenide = new Material.Builder(getId(), gregtechId("lithiumthiinediselenide"))
+                .dust()
+                .color(0x689E64)
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 4, Sulfur, 2, Lithium, 2, Selenium, 2)
+                .build();
+
+        //  11209 Sodium Thiosulfate
+        SodiumThiosulfate = new Material.Builder(getId(), gregtechId("sodium_thiosulfate"))
+                .dust()
+                .color(0x1436A7)
+                .iconSet(ROUGH)
+                .components(Sodium, 2, Sulfur, 2, Oxygen, 3)
+                .build();
+
+        //  11210 Sodium Formate
+        SodiumFormate = new Material.Builder(getId(), gregtechId("sodium_formate"))
+                .liquid()
+                .color(0x416CC0)
+                .iconSet(ROUGH)
+                .components(Carbon, 1, Hydrogen, 1, Oxygen, 2, Sodium, 1)
+                .build()
+                .setFormula("HCOONa", false);
+
+        //  11211 Francium Carbide
+        FranciumCarbide = new Material.Builder(getId(), gregtechId("francium_carbide"))
+                .dust()
+                .color(0xDBDBDB)
+                .iconSet(SHINY)
+                .components(Francium, 2, Carbon, 2)
+                .build();
+
+        //  11212 Boron Carbide
+        BoronCarbide = new Material.Builder(getId(), gregtechId("boron_carbide"))
+                .dust()
+                .color(0x3A5170)
+                .iconSet(DULL)
+                .components(Boron, 4, Carbon, 3)
+                .build();
+
+        //  11213 Boron Francium Carbide
+        BoronFranciumCarbide = new Material.Builder(getId(), gregtechId("boron_francium_carbide"))
+                .dust()
+                .color(FranciumCarbide.getMaterialRGB() + BoronCarbide.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(BoronCarbide, 1, FranciumCarbide, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Fr4B4C7", true);
     }
 
     private static int getId() {

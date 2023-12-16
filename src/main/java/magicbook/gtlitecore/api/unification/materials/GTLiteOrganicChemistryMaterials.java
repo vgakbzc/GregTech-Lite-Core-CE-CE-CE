@@ -1154,6 +1154,29 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0xCDFF72)
                 .components(Carbon, 9, Hydrogen, 8, Oxygen, 2)
                 .build();
+
+        //  13139 Bisethylenedithiotetraselenafulvalene
+        Bisethylenedithiotetraselenafulvalene = new Material.Builder(getId(), gregtechId("bisethylenedithiotetraselenafulvalene"))
+                .dust()
+                .color(0x98E993)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(ROUGH)
+                .components(Carbon, 10, Hydrogen, 8, Sulfur, 4, Selenium, 4)
+                .build();
+
+        //  13140 Bromodihydrothiine
+        Bromodihydrothiine = new Material.Builder(getId(), gregtechId("bromodihydrothiine"))
+                .liquid()
+                .color(0x66F36E)
+                .components(Carbon, 4, Hydrogen, 4, Sulfur, 2, Bromine, 2)
+                .build();
+
+        //  13141 Dibromoacrolein
+        Dibromoacrolein = new Material.Builder(getId(), gregtechId("dibromoacrolein"))
+                .liquid()
+                .color(0x7C4660)
+                .components(Carbon, 2, Hydrogen, 2, Bromine, 2, Oxygen, 2)
+                .build();
     }
 
     private static int getId() {

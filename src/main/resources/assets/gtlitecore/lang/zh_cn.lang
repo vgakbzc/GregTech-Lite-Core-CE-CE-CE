@@ -422,6 +422,7 @@ metaitem.component.cosmic.scintillator.name=闪烁体
 metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
 metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
 metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
+metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
 metaitem.component.crystal.ruby_chip.name=刻蚀红宝石晶片
@@ -1190,6 +1191,12 @@ gregtech.material.cadmium_tungstate=钨酸镉
 gregtech.material.bismuth_germanate=锗酸铋
 gregtech.material.strontium_sulfide=硫化锶
 gregtech.material.sodium_cinnamate=肉桂酸钠
+gregtech.material.lithiumthiinediselenide=二硒醚合硫锂
+gregtech.material.sodium_thiosulfate=硫代硫酸钠
+gregtech.material.sodium_formate=甲酸钠
+gregtech.material.francium_carbide=碳化钫
+gregtech.material.boron_carbide=碳化钫
+gregtech.material.boron_francium_carbide=碳化硼钫
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1250,6 +1257,9 @@ gregtech.material.non_metallic_mixture=非金属混合物
 gregtech.material.toxic_alloy=剧毒金属合金
 gregtech.material.rare_earth_alloy=稀土金属合金
 gregtech.material.periodicium=錭錤錶
+gregtech.material.charged_caesium_cerium_cobalt_indium_alloy=带电铯铈钴铟合金
+gregtech.material.bets_perrhenate=高铼酸双（乙烯二硫代）四硒富瓦烯
+gregtech.material.boron_francium_carbide_superconductor=碳化硼钫超导体
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1390,6 +1400,9 @@ gregtech.material.polymethylsilesquioxane=聚甲基倍半硅氧烷
 gregtech.material.kpr=聚乙烯醇肉桂酸酯（KPR）
 gregtech.material.cinnamoyl_chloride=肉桂酰氯
 gregtech.material.cinnamic_acid=肉桂酸
+gregtech.material.bisethylenedithiotetraselenafulvalene=双（乙烯二硫代）四硒富瓦烯（BETS）
+gregtech.material.bromodihydrothiine=溴二氢硫醚
+gregtech.material.dibromoacrolein=二溴丙烯醛
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子等离子体

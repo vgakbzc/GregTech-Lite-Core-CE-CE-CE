@@ -275,6 +275,30 @@ public class CosmicCircuits {
                 .buildAndRegister();
 
         //  Cosmic Mainframe
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Infinity, 2)
+                .input(COSMIC_COMPUTER, 2)
+                .input(COSMIC_DIODE, 16)
+                .input(COSMIC_CAPACITOR, 16)
+                .input(COSMIC_TRANSISTOR, 16)
+                .input(COSMIC_RESISTOR, 16)
+                .input(COSMIC_INDUCTOR, 16)
+                .input(foil, Astralium, 16)
+                .input(COSMIC_MEMORY_CHIP, 32)
+                .input(wireGtDouble, BoronFranciumCarbideSuperconductor, 16)
+                .input(plate, Rhugnor, 8)
+                .fluidInputs(SolderingAlloy.getFluid(21888))
+                .fluidInputs(FullerenePolymerMatrix.getFluid(17280))
+                .fluidInputs(Zylon.getFluid(8640))
+                .fluidInputs(Polyetheretherketone.getFluid(4608))
+                .output(COSMIC_MAINFRAME)
+                .stationResearch(b -> b
+                        .researchStack(COSMIC_COMPUTER.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(512))
+                .duration(1200)
+                .EUt(VA[UXV])
+                .buildAndRegister();
     }
 
     private static void ScintillatorChain() {

@@ -238,6 +238,12 @@ public class GTLiteMaterials {
     public static Material BismuthGermanate;
     public static Material StrontiumSulfide;
     public static Material SodiumCinnamate;
+    public static Material Lithiumthiinediselenide;
+    public static Material SodiumThiosulfate;
+    public static Material SodiumFormate;
+    public static Material FranciumCarbide;
+    public static Material BoronCarbide;
+    public static Material BoronFranciumCarbide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -300,6 +306,9 @@ public class GTLiteMaterials {
     public static Material ToxicAlloy;
     public static Material RareEarthAlloy;
     public static Material Periodicium;
+    public static Material ChargedCaesiumCeriumCobaltIndiumAlloy;
+    public static Material BETSPerrhenate;
+    public static Material BoronFranciumCarbideSuperconductor;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -440,6 +449,9 @@ public class GTLiteMaterials {
     public static Material KPR;
     public static Material CinnamoylChloride;
     public static Material CinnamicAcid;
+    public static Material Bisethylenedithiotetraselenafulvalene;
+    public static Material Bromodihydrothiine;
+    public static Material Dibromoacrolein;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

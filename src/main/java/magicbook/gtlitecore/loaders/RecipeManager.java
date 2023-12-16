@@ -75,6 +75,7 @@ public class RecipeManager {
         RocketFuelChain.init();
         RubberChain.init();
         SeleniumTelluriumChain.init();
+        SuperconductorsChain.init();
         TurpentineChain.init();
         ZirconiumChain.init();
         ZylonChain.init();
@@ -96,6 +97,7 @@ public class RecipeManager {
     }
   
     private static void initCircuits() {
+        PrimitiveCircuits.init();
         ProcessorCircuits.init();
         NanoCircuits.init();
         QuantumCircuits.init();
