@@ -1197,6 +1197,11 @@ gregtech.material.sodium_formate=甲酸钠
 gregtech.material.francium_carbide=碳化钫
 gregtech.material.boron_carbide=碳化钫
 gregtech.material.boron_francium_carbide=碳化硼钫
+gregtech.material.hydroiodic_acid=氢碘酸
+gregtech.material.lithium_aluminium_hydride=氢化铝锂
+gregtech.material.aluminium_hydride=氢化铝
+gregtech.material.lithium_iodide=碘化锂
+gregtech.material.sodium_ethoxide=乙醇钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1403,6 +1408,14 @@ gregtech.material.cinnamic_acid=肉桂酸
 gregtech.material.bisethylenedithiotetraselenafulvalene=双（乙烯二硫代）四硒富瓦烯（BETS）
 gregtech.material.bromodihydrothiine=溴二氢硫醚
 gregtech.material.dibromoacrolein=二溴丙烯醛
+gregtech.material.palladium_fullerene_matrix=钯-富勒烯基质
+gregtech.material.pcbs=苯基-C61-丁酸苯乙烯 (PCBS)
+gregtech.material.phenylpentanoic_acid=苯基戊酸
+gregtech.material.dimethyl_sulfide=二甲硫醚
+gregtech.material.ferrocenylfulleropyrddolidine=二茂铁基富勒吡唑烷
+gregtech.material.sarcosine=肌氨酸
+gregtech.material.glycine=甘氨酸
+gregtech.material.ferrocene=二茂铁
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子等离子体
@@ -1636,6 +1649,7 @@ recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
 recipemap.quantum_force_transformer_recipes.name=量子操纵者
 recipemap.turbine_mixer_recipes.name=高速搅拌
 recipemap.heat_exchanger_recipes.name=热交换机
+recipemap.bio_reactor_recipes.name=生物反应
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

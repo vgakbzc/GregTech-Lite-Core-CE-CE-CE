@@ -1177,6 +1177,68 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x7C4660)
                 .components(Carbon, 2, Hydrogen, 2, Bromine, 2, Oxygen, 2)
                 .build();
+
+        //  13142 Palladium-Fullerene Matrix
+        PalladiumFullereneMatrix = new Material.Builder(getId(), gregtechId("palladium_fullerene_matrix"))
+                .dust()
+                .color(0x40AEE0)
+                .iconSet(SHINY)
+                .components(Palladium, 1, Carbon, 73, Hydrogen, 15, Nitrogen, 1, Iron, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13143 PCBS
+        PCBS = new Material.Builder(getId(), gregtechId("pcbs"))
+                .liquid()
+                .color(0x11B557)
+                .components(Carbon, 80, Hydrogen, 21, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13144 Phenylpentanoic Acid
+        PhenylpentanoicAcid = new Material.Builder(getId(), gregtechId("phenylpentanoic_acid"))
+                .liquid()
+                .color(0x6F4303)
+                .components(Carbon, 11, Hydrogen, 14, Oxygen, 2)
+                .build();
+
+        //  13145 Dimethyl Sulfide
+        DimethylSulfide = new Material.Builder(getId(), gregtechId("dimethyl_sulfide"))
+                .liquid()
+                .color(0xFFC66B)
+                .components(Carbon, 2, Hydrogen, 6, Sulfur, 1)
+                .build()
+                .setFormula("(CH3)2S", true);
+
+        //  13146 Ferrocenylfulleropyrddolidine
+        Ferrocenylfulleropyrddolidine = new Material.Builder(getId(), gregtechId("ferrocenylfulleropyrddolidine"))
+                .liquid()
+                .color(0x67AE4C)
+                .components(Carbon, 74, Hydrogen, 19, Iron, 1, Nitrogen, 1)
+                .build();
+
+        //  13147 Sarcosine
+        Sarcosine = new Material.Builder(getId(), gregtechId("sarcosine"))
+                .dust()
+                .color(0x328534)
+                .iconSet(SHINY)
+                .components(Carbon, 3, Hydrogen, 7, Nitrogen, 1, Oxygen, 2)
+                .build();
+
+        //  13148 Glycine
+        Glycine = new Material.Builder(getId(), gregtechId("glycine"))
+                .liquid()
+                .color(0x95BA83)
+                .components(Carbon, 2, Hydrogen, 5, Nitrogen, 1, Oxygen, 2)
+                .build()
+                .setFormula("NH2CH2COOH", true);
+
+        //  13149 Ferrocene
+        Ferrocene = new Material.Builder(getId(), gregtechId("ferrocene"))
+                .liquid()
+                .color(0x4D3B61)
+                .components(Carbon, 10, Hydrogen, 10, Iron, 1)
+                .build();
     }
 
     private static int getId() {

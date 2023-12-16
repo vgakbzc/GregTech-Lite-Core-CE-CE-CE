@@ -53,6 +53,7 @@ public class RecipeManager {
         EthyleneGlycolChain.init();
         FEPChain.init();
         FullereneChain.init();
+        FullerenePolymerMatrixChain.init();
         GalliumNitrideChain.init();
         GrapheneChain.init();
         HexanitrohexaaxaisowurtzitaneChain.init();

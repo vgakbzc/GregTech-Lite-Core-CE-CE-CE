@@ -244,6 +244,11 @@ public class GTLiteMaterials {
     public static Material FranciumCarbide;
     public static Material BoronCarbide;
     public static Material BoronFranciumCarbide;
+    public static Material HydroiodicAcid;
+    public static Material LithiumAluminiumHydride;
+    public static Material AluminiumHydride;
+    public static Material LithiumIodide;
+    public static Material SodiumEthoxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -452,6 +457,14 @@ public class GTLiteMaterials {
     public static Material Bisethylenedithiotetraselenafulvalene;
     public static Material Bromodihydrothiine;
     public static Material Dibromoacrolein;
+    public static Material PalladiumFullereneMatrix;
+    public static Material PCBS;
+    public static Material PhenylpentanoicAcid;
+    public static Material DimethylSulfide;
+    public static Material Ferrocenylfulleropyrddolidine;
+    public static Material Sarcosine;
+    public static Material Glycine;
+    public static Material Ferrocene;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

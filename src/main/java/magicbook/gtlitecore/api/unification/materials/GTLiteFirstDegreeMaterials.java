@@ -1877,6 +1877,46 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("Fr4B4C7", true);
+
+        //  11214 Hydroiodic Acid
+        HydroiodicAcid = new Material.Builder(getId(), gregtechId("hydroiodic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(Hydrogen.getMaterialRGB() + Iodine.getMaterialRGB())
+                .components(Hydrogen, 1, Iodine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11215 Lithium Aluminium Hydride
+        LithiumAluminiumHydride = new Material.Builder(getId(), gregtechId("lithium_aluminium_hydride"))
+                .dust()
+                .color(Lithium.getMaterialRGB() + Aluminium.getMaterialRGB() + Hydrogen.getMaterialRGB())
+                .iconSet(SAND)
+                .components(Lithium, 1, Aluminium, 1, Hydrogen, 4)
+                .build();
+
+        //  11216 Aluminium Hydride
+        AluminiumHydride = new Material.Builder(getId(), gregtechId("aluminium_hydride"))
+                .dust()
+                .color(Aluminium.getMaterialRGB() + Hydrogen.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Aluminium, 1, Hydrogen, 3)
+                .build();
+
+        //  11217 Lithium Iodide
+        LithiumIodide = new Material.Builder(getId(), gregtechId("lithium_iodide"))
+                .dust()
+                .color(Lithium.getMaterialRGB() + Iodine.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Lithium, 1, Iodine, 1)
+                .build();
+
+        //  11218 Sodium Ethoxide
+        SodiumEthoxide = new Material.Builder(getId(), gregtechId("sodium_ethoxide"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Ethanol.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Carbon, 2, Hydrogen, 5, Oxygen, 1, Sodium, 1)
+                .build();
     }
 
     private static int getId() {
