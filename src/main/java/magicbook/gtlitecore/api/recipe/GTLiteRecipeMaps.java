@@ -126,6 +126,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> TURBINE_MIXER_RECIPES;
     @ZenProperty
     public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -411,5 +413,16 @@ public class GTLiteRecipeMaps {
         HEAT_EXCHANGE_RECIPES = new RecipeMap<>("heat_exchanger_recipes", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ARC);
+
+        //  Bio Reactor RecipeMap
+        BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor_recipes", 6, 1, 2, 1, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.DUST_OVERLAY)
+                .setSlotOverlay(false, false, true, GTLiteGuiTextures.DISH_OVERLAY)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.CHEMICAL_REACTOR);
     }
 }

@@ -1825,6 +1825,98 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(ROUGH)
                 .components(Carbon, 9, Hydrogen, 7, Sodium, 1, Oxygen, 2)
                 .build();
+
+        //  11208 Lithiumthiinediselenide
+        Lithiumthiinediselenide = new Material.Builder(getId(), gregtechId("lithiumthiinediselenide"))
+                .dust()
+                .color(0x689E64)
+                .iconSet(DULL)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Carbon, 4, Hydrogen, 4, Sulfur, 2, Lithium, 2, Selenium, 2)
+                .build();
+
+        //  11209 Sodium Thiosulfate
+        SodiumThiosulfate = new Material.Builder(getId(), gregtechId("sodium_thiosulfate"))
+                .dust()
+                .color(0x1436A7)
+                .iconSet(ROUGH)
+                .components(Sodium, 2, Sulfur, 2, Oxygen, 3)
+                .build();
+
+        //  11210 Sodium Formate
+        SodiumFormate = new Material.Builder(getId(), gregtechId("sodium_formate"))
+                .liquid()
+                .color(0x416CC0)
+                .iconSet(ROUGH)
+                .components(Carbon, 1, Hydrogen, 1, Oxygen, 2, Sodium, 1)
+                .build()
+                .setFormula("HCOONa", false);
+
+        //  11211 Francium Carbide
+        FranciumCarbide = new Material.Builder(getId(), gregtechId("francium_carbide"))
+                .dust()
+                .color(0xDBDBDB)
+                .iconSet(SHINY)
+                .components(Francium, 2, Carbon, 2)
+                .build();
+
+        //  11212 Boron Carbide
+        BoronCarbide = new Material.Builder(getId(), gregtechId("boron_carbide"))
+                .dust()
+                .color(0x3A5170)
+                .iconSet(DULL)
+                .components(Boron, 4, Carbon, 3)
+                .build();
+
+        //  11213 Boron Francium Carbide
+        BoronFranciumCarbide = new Material.Builder(getId(), gregtechId("boron_francium_carbide"))
+                .dust()
+                .color(FranciumCarbide.getMaterialRGB() + BoronCarbide.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(BoronCarbide, 1, FranciumCarbide, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Fr4B4C7", true);
+
+        //  11214 Hydroiodic Acid
+        HydroiodicAcid = new Material.Builder(getId(), gregtechId("hydroiodic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(Hydrogen.getMaterialRGB() + Iodine.getMaterialRGB())
+                .components(Hydrogen, 1, Iodine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11215 Lithium Aluminium Hydride
+        LithiumAluminiumHydride = new Material.Builder(getId(), gregtechId("lithium_aluminium_hydride"))
+                .dust()
+                .color(Lithium.getMaterialRGB() + Aluminium.getMaterialRGB() + Hydrogen.getMaterialRGB())
+                .iconSet(SAND)
+                .components(Lithium, 1, Aluminium, 1, Hydrogen, 4)
+                .build();
+
+        //  11216 Aluminium Hydride
+        AluminiumHydride = new Material.Builder(getId(), gregtechId("aluminium_hydride"))
+                .dust()
+                .color(Aluminium.getMaterialRGB() + Hydrogen.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Aluminium, 1, Hydrogen, 3)
+                .build();
+
+        //  11217 Lithium Iodide
+        LithiumIodide = new Material.Builder(getId(), gregtechId("lithium_iodide"))
+                .dust()
+                .color(Lithium.getMaterialRGB() + Iodine.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Lithium, 1, Iodine, 1)
+                .build();
+
+        //  11218 Sodium Ethoxide
+        SodiumEthoxide = new Material.Builder(getId(), gregtechId("sodium_ethoxide"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Ethanol.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Carbon, 2, Hydrogen, 5, Oxygen, 1, Sodium, 1)
+                .build();
     }
 
     private static int getId() {

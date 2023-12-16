@@ -422,6 +422,7 @@ metaitem.component.cosmic.scintillator.name=闪烁体
 metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
 metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
 metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
+metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
 metaitem.component.crystal.ruby_chip.name=刻蚀红宝石晶片
@@ -612,6 +613,33 @@ gtlitecore.machine.component_assembler.ev.name=进阶部件组装机 III
 gtlitecore.machine.component_assembler.ev.tooltip=零部件工厂
 gtlitecore.machine.component_assembler.iv.name=精英部件组装机
 gtlitecore.machine.component_assembler.iv.tooltip=零部件工厂
+
+gtlitecore.machine.bio_reactor.lv.name=基础生物反应室
+gtlitecore.machine.bio_reactor.lv.tooltip=制糖厂
+gtlitecore.machine.bio_reactor.mv.name=进阶生物反应室
+gtlitecore.machine.bio_reactor.mv.tooltip=制糖厂
+gtlitecore.machine.bio_reactor.hv.name=进阶生物反应室 II
+gtlitecore.machine.bio_reactor.hv.tooltip=制糖厂
+gtlitecore.machine.bio_reactor.ev.name=进阶生物反应室 III
+gtlitecore.machine.bio_reactor.ev.tooltip=制糖厂
+gtlitecore.machine.bio_reactor.iv.name=精英生物反应室
+gtlitecore.machine.bio_reactor.iv.tooltip=细菌培养皿
+gtlitecore.machine.bio_reactor.luv.name=精英生物反应室 II
+gtlitecore.machine.bio_reactor.luv.tooltip=细菌培养皿
+gtlitecore.machine.bio_reactor.zpm.name=精英生物反应室 III
+gtlitecore.machine.bio_reactor.zpm.tooltip=细菌培养皿
+gtlitecore.machine.bio_reactor.uv.name=终极生物反应室
+gtlitecore.machine.bio_reactor.uv.tooltip=基因编辑器
+gtlitecore.machine.bio_reactor.uhv.name=史诗生物反应室
+gtlitecore.machine.bio_reactor.uhv.tooltip=基因编辑器
+gtlitecore.machine.bio_reactor.uev.name=史诗生物反应室 II
+gtlitecore.machine.bio_reactor.uev.tooltip=基因编辑器
+gtlitecore.machine.bio_reactor.uiv.name=史诗生物反应室 III
+gtlitecore.machine.bio_reactor.uiv.tooltip=基因编辑器
+gtlitecore.machine.bio_reactor.uxv.name=史诗生物反应室 IV
+gtlitecore.machine.bio_reactor.uxv.tooltip=基因编辑器
+gtlitecore.machine.bio_reactor.opv.name=传奇生物反应室
+gtlitecore.machine.bio_reactor.opv.tooltip=基因编辑器
 
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
@@ -1190,6 +1218,17 @@ gregtech.material.cadmium_tungstate=钨酸镉
 gregtech.material.bismuth_germanate=锗酸铋
 gregtech.material.strontium_sulfide=硫化锶
 gregtech.material.sodium_cinnamate=肉桂酸钠
+gregtech.material.lithiumthiinediselenide=二硒醚合硫锂
+gregtech.material.sodium_thiosulfate=硫代硫酸钠
+gregtech.material.sodium_formate=甲酸钠
+gregtech.material.francium_carbide=碳化钫
+gregtech.material.boron_carbide=碳化钫
+gregtech.material.boron_francium_carbide=碳化硼钫
+gregtech.material.hydroiodic_acid=氢碘酸
+gregtech.material.lithium_aluminium_hydride=氢化铝锂
+gregtech.material.aluminium_hydride=氢化铝
+gregtech.material.lithium_iodide=碘化锂
+gregtech.material.sodium_ethoxide=乙醇钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1250,6 +1289,9 @@ gregtech.material.non_metallic_mixture=非金属混合物
 gregtech.material.toxic_alloy=剧毒金属合金
 gregtech.material.rare_earth_alloy=稀土金属合金
 gregtech.material.periodicium=錭錤錶
+gregtech.material.charged_caesium_cerium_cobalt_indium_alloy=带电铯铈钴铟合金
+gregtech.material.bets_perrhenate=高铼酸双（乙烯二硫代）四硒富瓦烯
+gregtech.material.boron_francium_carbide_superconductor=碳化硼钫超导体
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1390,6 +1432,17 @@ gregtech.material.polymethylsilesquioxane=聚甲基倍半硅氧烷
 gregtech.material.kpr=聚乙烯醇肉桂酸酯（KPR）
 gregtech.material.cinnamoyl_chloride=肉桂酰氯
 gregtech.material.cinnamic_acid=肉桂酸
+gregtech.material.bisethylenedithiotetraselenafulvalene=双（乙烯二硫代）四硒富瓦烯（BETS）
+gregtech.material.bromodihydrothiine=溴二氢硫醚
+gregtech.material.dibromoacrolein=二溴丙烯醛
+gregtech.material.palladium_fullerene_matrix=钯-富勒烯基质
+gregtech.material.pcbs=苯基-C61-丁酸苯乙烯 (PCBS)
+gregtech.material.phenylpentanoic_acid=苯基戊酸
+gregtech.material.dimethyl_sulfide=二甲硫醚
+gregtech.material.ferrocenylfulleropyrddolidine=二茂铁基富勒吡唑烷
+gregtech.material.sarcosine=肌氨酸
+gregtech.material.glycine=甘氨酸
+gregtech.material.ferrocene=二茂铁
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子等离子体
@@ -1623,6 +1676,7 @@ recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
 recipemap.quantum_force_transformer_recipes.name=量子操纵者
 recipemap.turbine_mixer_recipes.name=高速搅拌
 recipemap.heat_exchanger_recipes.name=热交换机
+recipemap.bio_reactor_recipes.name=生物反应
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

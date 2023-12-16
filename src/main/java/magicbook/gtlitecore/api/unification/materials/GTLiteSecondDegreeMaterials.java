@@ -751,6 +751,39 @@ public class GTLiteSecondDegreeMaterials {
                 .build()
                 .setFormula("HHeLiBeBCNOFNeNaMgAlSiPSClArKCaScTiVCrMnFeCoNiCuZnGaGeAsSeBrKrRbSrYZrNbMoTcRuRhPdAgCdInSnSbTeIXeCsBaLaCePrNdPmSmEuGdTbDyHoErTmYbLuHfTaWReOsIrPtAuHgTlPbBiPoAtRnFrRaAcThPaUNpPuAmCmBkCfEsFmMdNoLrRfDbSgBhHsMtDsRgCnNhFlMcLvTsOg");
 
+        //  12058 Charged Caesium-Cerium-Cobalt-Indium Alloy
+        ChargedCaesiumCeriumCobaltIndiumAlloy = new Material.Builder(getId(), gregtechId("charged_caesium_cerium_cobalt_indium_alloy"))
+                .ingot()
+                .fluid()
+                .color(0x01E068)
+                .iconSet(MAGNETIC)
+                .blast(b -> b
+                        .temp(15000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 353))
+                .components(Caesium, 1, Cerium, 1, Cobalt, 2, Indium, 10)
+                .build();
+
+        //  12059 BETSPerrhenate
+        BETSPerrhenate = new Material.Builder(getId(), gregtechId("bets_perrhenate"))
+                .dust()
+                .color(0x98E993)
+                .flags(DISABLE_DECOMPOSITION)
+                .iconSet(SHINY)
+                .components(Rhenium, 1, Carbon, 10, Hydrogen, 8, Sulfur, 4, Selenium, 4, Oxygen, 4)
+                .build();
+
+        //  12060 Boron Francium Carbide Superconductor
+        BoronFranciumCarbideSuperconductor = new Material.Builder(getId(), gregtechId("boron_francium_carbide_superconductor"))
+                .ingot()
+                .fluid()
+                .color(0x359FFC)
+                .iconSet(BRIGHT)
+                .blast(b -> b
+                        .temp(16000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 190))
+                .components(BoronFranciumCarbide, 15, ChargedCaesiumCeriumCobaltIndiumAlloy, 14, CubicBoronNitride, 12, StrontiumCarbonate, 10, MetastableHassium, 5, MetastableOganesson, 2, BETSPerrhenate, 1, MercuryCadmiumTelluride, 1)
+                .cableProperties(V[UXV], 128, 0, true)
+                .build();
     }
 
     private static int getId() {

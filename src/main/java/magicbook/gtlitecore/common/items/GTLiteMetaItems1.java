@@ -128,6 +128,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SCINTILLATOR = this.addItem(99, "component.cosmic.scintillator");
         SCINTILLATOR_CRYSTAL = this.addItem(100, "component.cosmic.scintillator_crystal");
 
+        VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");
         DIAMOND_CHIP = this.addItem(150, "component.crystal.diamond_chip");
         RUBY_CHIP = this.addItem(151, "component.crystal.ruby_chip");
         SAPPHIRE_CHIP = this.addItem(152, "component.crystal.sapphire_chip");
