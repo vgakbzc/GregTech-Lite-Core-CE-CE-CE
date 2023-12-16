@@ -129,5 +129,6 @@ public class RecipeManager {
         NeutralNetworkNexus.init();
         QuantumForceTransformer.init();
         TurbineMixer.init();
+        BioReactor.init();
     }
 }

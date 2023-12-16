@@ -98,6 +98,16 @@ public class MachineRecipeLoader {
                 'R', CraftingComponent.ROBOT_ARM,
                 'W', CraftingComponent.CABLE,
                 'X', CraftingComponent.CIRCUIT);
+
+        //  Bio Reactor
+        MetaTileEntityLoader.registerMachineRecipe(true, BIO_REACTOR,
+                "PXX", "pHp", "PMW",
+                'H', CraftingComponent.HULL,
+                'P', CraftingComponent.PUMP,
+                'p', CraftingComponent.PIPE_NORMAL,
+                'X', CraftingComponent.CIRCUIT,
+                'W', CraftingComponent.CABLE,
+                'M', CraftingComponent.MOTOR);
     }
 
     private static void MultiblockControllerRecipes() {
