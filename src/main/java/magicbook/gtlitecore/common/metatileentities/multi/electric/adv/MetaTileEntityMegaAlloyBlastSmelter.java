@@ -27,7 +27,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.metatileentities.MetaTileEntities;
-import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
@@ -291,7 +290,7 @@ public class MetaTileEntityMegaAlloyBlastSmelter extends RecipeMapMultiblockCont
         @Override
         public void setMaxProgress(int maxProgress) {
             int MaxProgress = (int) Math.floor(maxProgress * Math.pow(0.8, coilTier));
-            GTLiteLog.logger.info("check");
+            // GTLiteLog.logger.info("check");
             super.setMaxProgress(MaxProgress);
         }
     }
