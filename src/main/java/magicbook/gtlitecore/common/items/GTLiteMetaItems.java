@@ -118,6 +118,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SCINTILLATOR;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
 
+    public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;
     public static MetaItem<?>.MetaValueItem RUBY_CHIP;
     public static MetaItem<?>.MetaValueItem SAPPHIRE_CHIP;
