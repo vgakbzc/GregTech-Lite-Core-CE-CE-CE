@@ -22,6 +22,7 @@ tile.metal_casing.quantum_casing.name=超重量子合金机器外壳
 tile.metal_casing.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
 tile.metal_casing.eglin_steel_casing.name=高强度埃格林钢机器外壳
 tile.metal_casing.inconel_792_casing.name=防水镍基合金-792机器外壳
+tile.metal_casing.austenitic_stainless_steel_casing.name=耐热奥氏体不锈钢抗腐蚀机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -839,6 +840,23 @@ gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.3=在§r多方块结构提示§7中鼠标右击箭头按钮查看附属结构建造方式。
 gtlitecore.machine.large_primitive_blast_furnace.auxiliary_furnace_number=附属高炉数：%s
 
+gtlitecore.machine.heat_exchanger.name=热交换机
+gtlitecore.machine.heat_exchanger.rate.true=流量：%s L/s（§4过热§r）
+gtlitecore.machine.heat_exchanger.rate.false=流量：%s L/s
+gtlitecore.machine.heat_exchanger.efficiency=总效率：%s
+gtlitecore.machine.heat_exchanger.threshold=流量阈值：%s
+gtlitecore.machine.heat_exchanger.threshold.tooltip=热交换机能以降低基础热流体输入流量为代价，降低生产过热蒸汽的流量阈值。
+gtlitecore.machine.heat_exchanger.threshold_decrement=§c降低5%%流量阈值 /n§7效率降低3%%
+gtlitecore.machine.heat_exchanger.threshold_increment=§a增加5%%流量阈值 /n§7效率增加3%%
+gtlitecore.machine.heat_exchanger.description=热交换机是你第一台能生产高压蒸汽的多方块。
+gtlitecore.machine.heat_exchanger.heat_time_tooltip=升温耗时：§f%ss
+gtlitecore.machine.heat_exchanger.explosion_tooltip=蒸馏水供应不足会导致爆炸！
+gtlitecore.machine.heat_exchanger.tooltip.parallel=相当于§e%s§7台热交换机。
+
+gtlitecore.machine.extreme_heat_exchanger.name=大型热交换机
+
+gtlitecore.machine.mega_heat_exchanger.name=特大热交换机
+
 gtlitecore.machine.tree_growth_factory.name=林海树场
 gtlitecore.machine.tree_growth_factory.tooltip.1=生态环保型机器
 gtlitecore.machine.tree_growth_factory.tooltip.2=当输入电压大于§6HV§7时，获得§e(2 * 电压等级^2 - 2 * 电压等级 + 5)§7次并行。
@@ -1604,10 +1622,13 @@ recipemap.neutral_network_nexus_breeding_mode.name=繁育模式
 recipemap.neutral_network_nexus_hybridizing_mode.name=杂交模式
 recipemap.quantum_force_transformer_recipes.name=量子操纵者
 recipemap.turbine_mixer_recipes.name=高速搅拌
+recipemap.heat_exchanger_recipes.name=热交换机
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K
 gtlitecore.recipe.altitude=最低高度：%s
+gtlitecore.recipe.max_rate=最大流量：%s L/s
+gtlitecore.recipe.flow_rate=流量阈值：%s L/s
 
 #  SMDs
 metaitem.component.optical_smd.transistor.name=光学晶体管

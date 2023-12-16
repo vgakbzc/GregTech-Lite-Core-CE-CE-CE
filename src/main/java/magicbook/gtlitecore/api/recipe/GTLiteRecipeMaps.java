@@ -124,6 +124,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FieldCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> TURBINE_MIXER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -404,5 +406,10 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.CIRCULAR)
                 .setSound(GTSoundEvents.MIXER);
+
+        //  Heat Exchanger RecipeMap
+        HEAT_EXCHANGE_RECIPES = new RecipeMap<>("heat_exchanger_recipes", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ARC);
     }
 }

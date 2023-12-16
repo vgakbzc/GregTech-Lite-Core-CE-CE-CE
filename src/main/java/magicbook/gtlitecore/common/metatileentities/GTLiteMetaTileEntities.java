@@ -107,6 +107,9 @@ public class GTLiteMetaTileEntities {
 
     public static MetaTileEntityLargeSteamCompressor LARGE_STEAM_COMPRESSOR;
     public static MetaTileEntityLargePrimitiveBlastFurnace LARGE_PRIMITIVE_BLAST_FURNACE;
+    public static MetaTileEntityHeatExchanger HEAT_EXCHANGER;
+    public static MetaTileEntityExtremeHeatExchanger EXTREME_HEAT_EXCHANGER;
+    public static MetaTileEntityMegaHeatExchanger MEGA_HEAT_EXCHANGER;
     public static MetaTileEntityTreeGrowthFactory TREE_GROWTH_FACTORY;
     public static MetaTileEntityLargeProcessingFactory LARGE_PROCESSING_FACTORY;
     public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
@@ -275,9 +278,9 @@ public class GTLiteMetaTileEntities {
         //  49
         LARGE_STEAM_COMPRESSOR = registerMultiMetaTileEntity(50, new MetaTileEntityLargeSteamCompressor(gtliteId("large_steam_compressor")));
         LARGE_PRIMITIVE_BLAST_FURNACE = registerMultiMetaTileEntity(51, new MetaTileEntityLargePrimitiveBlastFurnace(gtliteId("large_primitive_blast_furnace")));
-        //  52
-        //  53
-        //  54
+        HEAT_EXCHANGER = registerMultiMetaTileEntity(52, new MetaTileEntityHeatExchanger(gtliteId("heat_exchanger")));
+        EXTREME_HEAT_EXCHANGER = registerMultiMetaTileEntity(53, new MetaTileEntityExtremeHeatExchanger(gtliteId("extreme_heat_exchanger")));
+        MEGA_HEAT_EXCHANGER = registerMultiMetaTileEntity(54, new MetaTileEntityMegaHeatExchanger(gtliteId("mega_heat_exchanger")));
         TREE_GROWTH_FACTORY = registerMultiMetaTileEntity(55, new MetaTileEntityTreeGrowthFactory(gtliteId("tree_growth_factory")));
         LARGE_PROCESSING_FACTORY = registerMultiMetaTileEntity(56, new MetaTileEntityLargeProcessingFactory(gtliteId("large_processing_factory")));
         //  57
