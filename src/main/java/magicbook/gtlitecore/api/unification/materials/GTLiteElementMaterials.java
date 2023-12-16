@@ -146,7 +146,7 @@ public class GTLiteElementMaterials {
                         .temp(15000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 200)
                         .blastStats(VA[UXV], 200))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FINE_WIRE)
                 .element(GTLiteElements.SpNt)
                 .build();
 
@@ -238,7 +238,7 @@ public class GTLiteElementMaterials {
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.CelestialTungsten)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_RING)
                 .build();
 
         //  10016 Metastable Oganesson

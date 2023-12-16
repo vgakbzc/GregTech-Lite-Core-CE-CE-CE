@@ -128,6 +128,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SCINTILLATOR = this.addItem(99, "component.cosmic.scintillator");
         SCINTILLATOR_CRYSTAL = this.addItem(100, "component.cosmic.scintillator_crystal");
 
+        BIO_CELL = this.addItem(120, "component.gooware.bio_cell");
+        BIO_DISH = this.addItem(121, "component.gooware.bio_dish");
+
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");
         DIAMOND_CHIP = this.addItem(150, "component.crystal.diamond_chip");
         RUBY_CHIP = this.addItem(151, "component.crystal.ruby_chip");
@@ -206,7 +209,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
         MAGNETRON = this.addItem(310, "magnetron");
         SEPARATION_ELECTROMAGNET = this.addItem(311, "separation_electromagnet");
-
+        COSMIC_FABRIC = this.addItem(312, "cosmic_fabric");
+        MEMORY_FOAM_PLATE = this.addItem(313, "memory_foam_plate");
+        FULLERENE_FIBER = this.addItem(314, "highly_insulating_fullerene_foil");
         HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
         HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
 

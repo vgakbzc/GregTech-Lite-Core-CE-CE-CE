@@ -152,7 +152,7 @@ public class GTLiteHighDegreeMaterials {
                 .blast(b -> b
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV]))
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .fluidPipeProperties(80000, 20000, true, true, true, true)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
@@ -179,7 +179,7 @@ public class GTLiteHighDegreeMaterials {
                 .blast(b -> b
                         .temp(15800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV]))
-                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 256, 128, false)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
