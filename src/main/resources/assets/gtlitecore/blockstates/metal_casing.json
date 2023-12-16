@@ -37,6 +37,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/inconel_792_casing"
         }
+      },
+      "austenitic_stainless_steel_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/austenitic_stainless_steel_casing"
+        }
       }
     }
   }
