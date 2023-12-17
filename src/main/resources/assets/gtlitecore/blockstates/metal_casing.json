@@ -43,6 +43,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/austenitic_stainless_steel_casing"
         }
+      },
+      "mar_m200_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/mar_m200_steel_casing"
+        }
       }
     }
   }

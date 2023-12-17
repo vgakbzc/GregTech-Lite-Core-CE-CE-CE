@@ -980,6 +980,73 @@ public class MachineRecipeLoader {
                 'X', new UnificationEntry(wireGtQuadruple, Platinum),
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
                 'V', new UnificationEntry(pipeNormalFluid, VanadiumSteel));
+
+        //  Heat Exchanger
+        ModHandler.addShapedRecipe(true, "heat_exchanger", HEAT_EXCHANGER.getStackForm(),
+                "XRX", "PHP", "pSp",
+                'H', HULL[EV].getStackForm(),
+                'R', new UnificationEntry(rotor, Staballoy),
+                'P', ELECTRIC_PUMP_EV,
+                'X', new UnificationEntry(cableGtQuadruple, Aluminium),
+                'p', new UnificationEntry(plate, TungstenSteel),
+                'S', new UnificationEntry(spring, HSLASteel));
+
+        //  Extreme Heat Exchanger
+        ModHandler.addShapedRecipe(true, "extreme_heat_exchanger", EXTREME_HEAT_EXCHANGER.getStackForm(),
+                "XRX", "PHP", "pSp",
+                'H', HULL[IV].getStackForm(),
+                'R', new UnificationEntry(rotor, Inconel792),
+                'P', ELECTRIC_PUMP_IV,
+                'X', new UnificationEntry(cableGtQuadruple, Platinum),
+                'p', new UnificationEntry(plate, HSSE),
+                'S', new UnificationEntry(spring, HSSG));
+
+        //  Mega Heat Exchanger
+        ModHandler.addShapedRecipe(true, "mega_heat_exchanger", MEGA_HEAT_EXCHANGER.getStackForm(),
+                "XRX", "PHP", "pSp",
+                'H', HULL[LuV].getStackForm(),
+                'R', new UnificationEntry(rotor, Inconel625),
+                'P', ELECTRIC_PUMP_LuV,
+                'X', new UnificationEntry(cableGtQuadruple, NiobiumTitanium),
+                'p', new UnificationEntry(plate, HSSS),
+                'S', new UnificationEntry(spring, VanadiumGallium));
+
+        //  High Pressure Steam Turbine
+        ModHandler.addShapedRecipe(true, "high_pressure_steam_turbine", HIGH_PRESSURE_STEAM_TURBINE.getStackForm(),
+                "XRX", "FHF", "WDW",
+                'H', HULL[EV].getStackForm(),
+                'F', new UnificationEntry(pipeNormalFluid, Inconel792),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
+                'R', new UnificationEntry(rotor, Staballoy),
+                'W', new UnificationEntry(cableGtSingle, Aluminium),
+                'D', ELECTRIC_PUMP_EV);
+
+        //  Supercritical Steam Turbine
+        ModHandler.addShapedRecipe(true, "supercritical_steam_turbine", SUPERCRITICAL_STEAM_TURBINE.getStackForm(),
+                "XPX", "GHG", "FWF",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
+                'P', new UnificationEntry(plate, MARM200CeSteel),
+                'G', new UnificationEntry(gear, TungstenCarbide),
+                'H', HULL[LuV].getStackForm(),
+                'F', new UnificationEntry(pipeLargeFluid, Inconel625),
+                'W', new UnificationEntry(cableGtSingle, NiobiumTitanium));
+
+        //  Electrolytic Tank
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HY1301, 4)
+                .input(LARGE_ELECTROLYZER, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, HastelloyC59, 4)
+                .input(plateDouble, MARM200CeSteel, 4)
+                .input(gear, Tantalloy61, 4)
+                .input(gearSmall, MaragingSteel250, 16)
+                .input(cableGtQuadruple, Platinum, 4)
+                .fluidInputs(MolybdenumDisilicide.getFluid(L * 4))
+                .output(ELECTROLYTIC_TANK)
+                .EUt(VA[IV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -1655,7 +1722,31 @@ public class MachineRecipeLoader {
                         .CWUt(256))
                 .buildAndRegister();
 
-        //  TODO UXV-MAX Component Assembly Line Casings
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Neutronium)
+                .input(plateDense, Neutronium, 6)
+                .input(ROBOT_ARM_UXV, 8)
+                .input(ELECTRIC_PISTON_UXV, 10)
+                .input(ELECTRIC_MOTOR_UXV, 16)
+                .input(gear, CosmicNeutronium, 4)
+                .input(gearSmall, CosmicNeutronium, 16)
+                .input(cableGtQuadruple, Hypogen, 8)
+                .input(circuit, MarkerMaterials.Tier.UXV, 8)
+                .input(circuit, MarkerMaterials.Tier.UIV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(1728))
+                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UXV, 4))
+                .EUt(VA[UXV])
+                .duration(600)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UIV))
+                        .EUt(VA[UIV])
+                        .CWUt(512))
+                .buildAndRegister();
+
+        //  TODO OpV-MAX Component Assembly Line Casings
 
         //  Farm Casing
         ModHandler.addShapedRecipe(true, "farm_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ASEPTIC_FARM_CASING, 2),
@@ -2428,5 +2519,22 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  MAR-M200 Steel casing
+        ModHandler.addShapedRecipe(true, "mar_m200_steel_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MAR_M200_CASING, 2),
+                "TPT", "RFR", "TPT",
+                'T', new UnificationEntry(plate, IncoloyMA956),
+                'P', new UnificationEntry(plate, WatertightSteel),
+                'R', new UnificationEntry(rotor, MARM200Steel),
+                'F', new UnificationEntry(frameGt, MARM200Steel));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, IncoloyMA956, 4)
+                .input(plate, WatertightSteel, 2)
+                .input(rotor, MARM200Steel, 2)
+                .input(frameGt, MARM200Steel)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MAR_M200_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

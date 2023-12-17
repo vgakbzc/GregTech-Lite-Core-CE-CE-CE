@@ -185,8 +185,8 @@ public class CosmicCircuits {
                 .buildAndRegister();
 
         ION_IMPLANTATOR_RECIPES.recipeBuilder()
-                .input(plate, CelestialTungsten)
-                .input(dust, PlatinumGroupAlloy, 4)
+                .input(ring, CelestialTungsten)
+                .input(wireFine, PlatinumGroupAlloy, 4)
                 .fluidInputs(Zylon.getFluid(L * 2))
                 .output(COSMIC_INDUCTOR, 32)
                 .EUt(VA[UEV])

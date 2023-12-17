@@ -16,6 +16,8 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.MEGA_BLAST_FURNACE;
+import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.MEGA_VACUUM_FREEZER;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.*;
@@ -35,6 +37,7 @@ public class OverrideRecipeLoader {
         RubberOverrides();
         SteamStageOverrides();
         HighTierOverrides();
+        GCYMOverrides();
     }
 
     private static void SiliconWaferOverrides() {
@@ -1989,5 +1992,29 @@ public class OverrideRecipeLoader {
                 'H', HULL[OpV].getStackForm(),
                 'P', new UnificationEntry(cableGtQuadruple, Universium),
                 'Q', new UnificationEntry(cableGtQuadruple, Galaxium));
+    }
+
+    private static void GCYMOverrides() {
+
+        //  Mega machines
+        ModHandler.removeRecipeByName("gcym:mega_blast_furnace");
+        ModHandler.addShapedRecipe(true, "mega_blast_furnace", MEGA_BLAST_FURNACE.getStackForm(),
+                "SXS", "FHF", "PWP",
+                'H', VOLCANUS.getStackForm(),
+                'F', FIELD_GENERATOR_UV,
+                'S', new UnificationEntry(spring, YttriumBariumCuprate),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'P', new UnificationEntry(plate, Orichalcum),
+                'W', new UnificationEntry(wireGtQuadruple, Tritanium));
+
+        ModHandler.removeRecipeByName("gcym:mega_vacuum_freezer");
+        ModHandler.addShapedRecipe(true, "mega_vacuum_freezer", MEGA_VACUUM_FREEZER.getStackForm(),
+                "SXS", "FHF", "PWP",
+                'H', CRYOGENIC_FREEZER.getStackForm(),
+                'F', FIELD_GENERATOR_UV,
+                'S', new UnificationEntry(pipeNormalFluid, Duranium),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'P', new UnificationEntry(plate, Orichalcum),
+                'W', new UnificationEntry(wireGtQuadruple, Tritanium));
     }
 }

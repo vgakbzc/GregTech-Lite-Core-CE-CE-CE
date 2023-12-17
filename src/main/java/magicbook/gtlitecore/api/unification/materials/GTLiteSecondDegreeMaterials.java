@@ -201,7 +201,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 766)
                         .vacuumStats(VA[EV], 357))
                 .components(Nickel, 9, NickelZincFerrite, 6, Chrome, 4, Nichrome, 4, Iron, 4, Molybdenum, 4, Rhenium, 2)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME)
                 .build();
 
         //  12014 Incoloy-MA813
@@ -390,7 +390,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(2413, BlastProperty.GasTier.MID)
                         .blastStats(VA[EV], 680))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .components(Steel, 16, Molybdenum, 1, Titanium, 1, Nickel, 4, Cobalt, 2)
                 .build();
 
@@ -557,7 +557,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(10000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 1800))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12042 Superheavy-H Alloy
@@ -746,6 +746,7 @@ public class GTLiteSecondDegreeMaterials {
                 .liquid()
                 .color(0x3D4BF6)
                 .iconSet(BRIGHT)
+                .flags(GENERATE_PLATE, GENERATE_ROD)
                 .blast(b -> b
                         .temp(15500, BlastProperty.GasTier.HIGHEST))
                 .build()
@@ -783,6 +784,19 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UXV], 190))
                 .components(BoronFranciumCarbide, 15, ChargedCaesiumCeriumCobaltIndiumAlloy, 14, CubicBoronNitride, 12, StrontiumCarbonate, 10, MetastableHassium, 5, MetastableOganesson, 2, BETSPerrhenate, 1, MercuryCadmiumTelluride, 1)
                 .cableProperties(V[UXV], 128, 0, true)
+                .build();
+
+        //  12061 Tantalum Hafnium Seaborgium Carbide
+        TantalumHafniumSeaborgiumCarbide = new Material.Builder(getId(), gregtechId("tantalum_hafnium_seaborgium_carbide"))
+                .ingot()
+                .fluid()
+                .color(0x2C2C2C)
+                .iconSet(SHINY)
+                .components(Tantalum, 12, Hafnium, 3, Seaborgium, 1, Carbon, 16)
+                .blast(b -> b
+                        .temp(13000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 53))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING)
                 .build();
     }
 

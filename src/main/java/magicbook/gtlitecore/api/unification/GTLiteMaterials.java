@@ -249,6 +249,7 @@ public class GTLiteMaterials {
     public static Material AluminiumHydride;
     public static Material LithiumIodide;
     public static Material SodiumEthoxide;
+    public static Material NeutroniumNanotube;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -314,6 +315,7 @@ public class GTLiteMaterials {
     public static Material ChargedCaesiumCeriumCobaltIndiumAlloy;
     public static Material BETSPerrhenate;
     public static Material BoronFranciumCarbideSuperconductor;
+    public static Material TantalumHafniumSeaborgiumCarbide;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

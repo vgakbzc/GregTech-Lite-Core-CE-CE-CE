@@ -128,6 +128,10 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -424,5 +428,11 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.CHEMICAL_REACTOR);
+
+        //  High Pressure Steam Turbine RecipeMap
+        HIGH_PRESSURE_STEAM_TURBINE_RECIPES = new RecipeMap<>("high_pressure_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false);
+
+        //  Supercritical Steam Turbine RecipeMap
+        SUPERCRITICAL_STEAM_TURBINE_RECIPES = new RecipeMap<>("supercritical_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false);
     }
 }

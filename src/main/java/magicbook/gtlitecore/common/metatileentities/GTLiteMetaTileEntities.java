@@ -20,6 +20,7 @@ import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
+import magicbook.gtlitecore.common.blocks.BlockMetalCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
@@ -115,9 +116,12 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
+    public static MetaTileEntityLargeTurbine HIGH_PRESSURE_STEAM_TURBINE;
+    public static MetaTileEntityLargeTurbine SUPERCRITICAL_STEAM_TURBINE;
     public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
     public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
+    public static MetaTileEntityElectrolyticTank ELECTROLYTIC_TANK;
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
     public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
     public static MetaTileEntityCokingTower COKING_TOWER;
@@ -290,10 +294,10 @@ public class GTLiteMetaTileEntities {
         MEGA_STEAM_TURBINE = registerMultiMetaTileEntity(60, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.steam"), RecipeMaps.STEAM_TURBINE_FUELS, HV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX), Textures.SOLID_STEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
         MEGA_GAS_TURBINE = registerMultiMetaTileEntity(61, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.gas"), RecipeMaps.GAS_TURBINE_FUELS, EV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_STEEL_GEARBOX), Textures.CLEAN_STAINLESS_STEEL_CASING, true, GTLiteTextures.MEGA_TURBINE_OVERLAY));
         MEGA_PLASMA_TURBINE = registerMultiMetaTileEntity(62, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.plasma"), RecipeMaps.PLASMA_GENERATOR_FUELS, IV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), Textures.ROBUST_TUNGSTENSTEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
-        //  63
-        //  64
-        //  65
-        //  66
+        HIGH_PRESSURE_STEAM_TURBINE = registerMultiMetaTileEntity(63, new MetaTileEntityLargeTurbine(gtliteId("high_pressure_steam_turbine"), GTLiteRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_RECIPES, 4, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_GEARBOX), Textures.STABLE_TITANIUM_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
+        SUPERCRITICAL_STEAM_TURBINE = registerMultiMetaTileEntity(64, new MetaTileEntityLargeTurbine(gtliteId("supercritical_steam_turbine"), GTLiteRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_RECIPES, 6, GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.MAR_M200_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), GTLiteTextures.MAR_M200_STEEL_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
+        //  65 MEGA_HIGH_PRESSURE_STEAM_TURBINE
+        //  66 MEGA_SUPERCRITICAL_STEAM_TURBINE
         //  67
         //  68
         NEUTRAL_NETWORK_NEXUS = registerMultiMetaTileEntity(69, new MetaTileEntityNeutralNetworkNexus(gtliteId("neutral_network_nexus")));
@@ -301,7 +305,7 @@ public class GTLiteMetaTileEntities {
         DANGOTE_DISTILLERY = registerMultiMetaTileEntity(71, new MetaTileEntityDangoteDistillery(gtliteId("dangote_distillery")));
         //  72 AMAZON WAREHOUSING DEPOT
         //  73 ARC_FURNACE_ARRAY
-        //  74 ELECTROLYTIC_TANK
+        ELECTROLYTIC_TANK = registerMultiMetaTileEntity(74, new MetaTileEntityElectrolyticTank(gtliteId("electrolytic_tank")));
         TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));
         //  76 INDUSTRIAL_CENTRIFUGE
         ZHUHAI_FISHING_POND = registerMultiMetaTileEntity(77, new MetaTileEntityZhuHaiFishingPond(gtliteId("zhuhai_fishing_pond")));

@@ -118,6 +118,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SCINTILLATOR;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
 
+    public static MetaItem<?>.MetaValueItem BIO_CELL;
+    public static MetaItem<?>.MetaValueItem BIO_DISH;
+
     public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;
     public static MetaItem<?>.MetaValueItem RUBY_CHIP;
@@ -198,7 +201,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
     public static MetaItem<?>.MetaValueItem MAGNETRON;
     public static MetaItem<?>.MetaValueItem SEPARATION_ELECTROMAGNET;
-
+    public static MetaItem<?>.MetaValueItem COSMIC_FABRIC;
+    public static MetaItem<?>.MetaValueItem MEMORY_FOAM_PLATE;
+    public static MetaItem<?>.MetaValueItem FULLERENE_FIBER;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_OSCILLATING_MATTER;
 

@@ -45,6 +45,7 @@ public class RecipeManager {
         BZMediumChain.init();
         CBDOPolycarbonateChain.init();
         ChlorineChain.init();
+        CosmicFabricChain.init();
         CyanogenChain.init();
         DimethylformamideChain.init();
         DragonChain.init();
@@ -108,6 +109,7 @@ public class RecipeManager {
         OpticalCircuits.init();
         SpintronicCircuits.init();
         CosmicCircuits.init();
+        SupracausalCircuits.init();
         MagnetoResonaticCircuits.init();
     }
 
