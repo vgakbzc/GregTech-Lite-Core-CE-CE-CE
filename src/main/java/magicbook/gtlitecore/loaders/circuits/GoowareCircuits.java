@@ -81,6 +81,7 @@ public class GoowareCircuits {
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(CRYSTAL_SYSTEM_ON_CHIP)
                 .inputs(HIGHLY_ADVANCED_SOC.getStackForm(2))
+                .input(BIO_CELL, 2)
                 .input(wireFine, Vibranium, 4)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4))
                 .fluidInputs(Lubricant.getFluid(2000))

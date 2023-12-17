@@ -1917,6 +1917,16 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(DULL)
                 .components(Carbon, 2, Hydrogen, 5, Oxygen, 1, Sodium, 1)
                 .build();
+
+        //  11219 Neutronium Nanotube
+        NeutroniumNanotube = new Material.Builder(getId(), gregtechId("neutronium_nanotube"))
+                .ingot()
+                .color(0xDDBDCC)
+                .iconSet(BRIGHT)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .components(Carbon, 48, Neutronium, 1)
+                .build()
+                .setFormula("Nt:CNT");
     }
 
     private static int getId() {

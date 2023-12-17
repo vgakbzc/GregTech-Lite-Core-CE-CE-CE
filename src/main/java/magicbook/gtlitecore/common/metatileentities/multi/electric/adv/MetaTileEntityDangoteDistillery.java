@@ -52,6 +52,7 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
         this.recipeMapWorkable = new DangoteDistilleryRecipeLogic(this);
     }
 
+    @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityDangoteDistillery(metaTileEntityId);
     }
