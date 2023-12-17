@@ -1030,6 +1030,23 @@ public class MachineRecipeLoader {
                 'H', HULL[LuV].getStackForm(),
                 'F', new UnificationEntry(pipeLargeFluid, Inconel625),
                 'W', new UnificationEntry(cableGtSingle, NiobiumTitanium));
+
+        //  Electrolytic Tank
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HY1301, 4)
+                .input(LARGE_ELECTROLYZER, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, HastelloyC59, 4)
+                .input(plateDouble, MARM200CeSteel, 4)
+                .input(gear, Tantalloy61, 4)
+                .input(gearSmall, MaragingSteel250, 16)
+                .input(cableGtQuadruple, Platinum, 4)
+                .fluidInputs(MolybdenumDisilicide.getFluid(L * 4))
+                .output(ELECTROLYTIC_TANK)
+                .EUt(VA[IV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {

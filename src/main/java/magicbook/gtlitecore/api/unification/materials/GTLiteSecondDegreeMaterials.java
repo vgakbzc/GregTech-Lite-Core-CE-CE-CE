@@ -201,7 +201,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 766)
                         .vacuumStats(VA[EV], 357))
                 .components(Nickel, 9, NickelZincFerrite, 6, Chrome, 4, Nichrome, 4, Iron, 4, Molybdenum, 4, Rhenium, 2)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME)
                 .build();
 
         //  12014 Incoloy-MA813
@@ -390,7 +390,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(2413, BlastProperty.GasTier.MID)
                         .blastStats(VA[EV], 680))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .components(Steel, 16, Molybdenum, 1, Titanium, 1, Nickel, 4, Cobalt, 2)
                 .build();
 

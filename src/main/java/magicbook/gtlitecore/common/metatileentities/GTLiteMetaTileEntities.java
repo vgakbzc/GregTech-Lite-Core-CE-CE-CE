@@ -121,6 +121,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
     public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
+    public static MetaTileEntityElectrolyticTank ELECTROLYTIC_TANK;
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
     public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
     public static MetaTileEntityCokingTower COKING_TOWER;
@@ -304,7 +305,7 @@ public class GTLiteMetaTileEntities {
         DANGOTE_DISTILLERY = registerMultiMetaTileEntity(71, new MetaTileEntityDangoteDistillery(gtliteId("dangote_distillery")));
         //  72 AMAZON WAREHOUSING DEPOT
         //  73 ARC_FURNACE_ARRAY
-        //  74 ELECTROLYTIC_TANK
+        ELECTROLYTIC_TANK = registerMultiMetaTileEntity(74, new MetaTileEntityElectrolyticTank(gtliteId("electrolytic_tank")));
         TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));
         //  76 INDUSTRIAL_CENTRIFUGE
         ZHUHAI_FISHING_POND = registerMultiMetaTileEntity(77, new MetaTileEntityZhuHaiFishingPond(gtliteId("zhuhai_fishing_pond")));
