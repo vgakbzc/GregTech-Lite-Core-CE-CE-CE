@@ -38,7 +38,8 @@ public class BlockMetalCasing extends VariantBlock<BlockMetalCasing.MetalCasingT
         HG1223_CASING("hg_1223_casing"),
         EGLIN_STEEL_CASING("eglin_steel_casing"),
         INCONEL_792_CASING("inconel_792_casing"),
-        AUSTENITIC_STAINLESS_STEEL_CASING("austenitic_stainless_steel_casing");
+        AUSTENITIC_STAINLESS_STEEL_CASING("austenitic_stainless_steel_casing"),
+        MAR_M200_CASING("mar_m200_casing");
 
         private final String name;
 

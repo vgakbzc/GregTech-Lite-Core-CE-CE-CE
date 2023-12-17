@@ -23,6 +23,7 @@ tile.metal_casing.hg_1223_casing.name=化学惰性HG-1223耐热机器外壳
 tile.metal_casing.eglin_steel_casing.name=高强度埃格林钢机器外壳
 tile.metal_casing.inconel_792_casing.name=防水镍基合金-792机器外壳
 tile.metal_casing.austenitic_stainless_steel_casing.name=耐热奥氏体不锈钢抗腐蚀机器外壳
+tile.metal_casing.mar_m200_casing.name=抗震MAR-M200特种钢涡轮机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -921,6 +922,10 @@ gtlitecore.machine.mega_turbine.mode.0=正常模式
 gtlitecore.machine.mega_turbine.mode.1=高速模式
 gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
 
+gtlitecore.machine.high_pressure_steam_turbine.name=高压蒸汽涡轮
+
+gtlitecore.machine.supercritical_steam_turbine.name=超临界蒸汽涡轮
+
 gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
 gtlitecore.machine.neutral_network_nexus.tooltip.2=用于繁育或杂交各式纳米蜂群
@@ -1686,6 +1691,8 @@ recipemap.quantum_force_transformer_recipes.name=量子操纵者
 recipemap.turbine_mixer_recipes.name=高速搅拌
 recipemap.heat_exchanger_recipes.name=热交换机
 recipemap.bio_reactor_recipes.name=生物反应
+recipemap.high_pressure_steam_turbine_recipes.name=高压蒸汽涡轮
+recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

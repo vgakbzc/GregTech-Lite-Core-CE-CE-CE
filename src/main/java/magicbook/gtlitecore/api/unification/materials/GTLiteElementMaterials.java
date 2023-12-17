@@ -146,7 +146,7 @@ public class GTLiteElementMaterials {
                         .temp(15000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 200)
                         .blastStats(VA[UXV], 200))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FINE_WIRE, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .element(GTLiteElements.SpNt)
                 .build();
 
