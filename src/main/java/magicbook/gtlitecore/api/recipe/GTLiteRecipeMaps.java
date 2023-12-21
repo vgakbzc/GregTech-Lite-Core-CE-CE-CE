@@ -32,6 +32,10 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> CONDENSER_RECIPES;
 
     //  Multiblock Machine RecipeMaps
     @ZenProperty
@@ -126,8 +130,6 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> TURBINE_MIXER_RECIPES;
     @ZenProperty
     public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES;
-    @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_RECIPES;
     @ZenProperty
@@ -440,5 +442,11 @@ public class GTLiteRecipeMaps {
 
         //  Supercritical Steam Turbine RecipeMap
         SUPERCRITICAL_STEAM_TURBINE_RECIPES = new RecipeMap<>("supercritical_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false);
+
+        //  Condenser RecipeMap
+        CONDENSER_RECIPES = new RecipeMap<>("condenser_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
+                .setSound(GTSoundEvents.COMPRESSOR);
     }
 }

@@ -646,6 +646,19 @@ gtlitecore.machine.bio_reactor.uxv.tooltip=基因编辑器
 gtlitecore.machine.bio_reactor.opv.name=传奇生物反应室
 gtlitecore.machine.bio_reactor.opv.tooltip=基因编辑器
 
+gtlitecore.machine.condenser.uv.name=终极态素凝聚器
+gtlitecore.machine.condenser.uv.tooltip=压缩银河
+gtlitecore.machine.condenser.uhv.name=史诗态素凝聚器
+gtlitecore.machine.condenser.uhv.tooltip=压缩银河
+gtlitecore.machine.condenser.uev.name=史诗态素凝聚器 II
+gtlitecore.machine.condenser.uev.tooltip=压缩银河
+gtlitecore.machine.condenser.uiv.name=史诗态素凝聚器 III
+gtlitecore.machine.condenser.uiv.tooltip=压缩银河
+gtlitecore.machine.condenser.uxv.name=史诗态素凝聚器 IV
+gtlitecore.machine.condenser.uxv.tooltip=压缩银河
+gtlitecore.machine.condenser.opv.name=传奇态素凝聚器
+gtlitecore.machine.condenser.opv.tooltip=压缩银河
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -1626,6 +1639,7 @@ item.material.oreprefix.boule=人造%s
 item.material.oreprefix.swarm=%s纳米蜂群
 item.material.oreprefix.nanotube=%s纳米管
 item.material.oreprefix.nanosensor=%s纳米传感器
+item.material.oreprefix.singularity=%s奇点
 
 #  High Energy Physics Items
 metaitem.plasma_containment_cell.name=等离子体遏制装置
@@ -1699,6 +1713,7 @@ recipemap.heat_exchanger_recipes.name=热交换机
 recipemap.bio_reactor_recipes.name=生物反应
 recipemap.high_pressure_steam_turbine_recipes.name=高压蒸汽涡轮
 recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
+recipemap.condenser_recipes=态素凝聚
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

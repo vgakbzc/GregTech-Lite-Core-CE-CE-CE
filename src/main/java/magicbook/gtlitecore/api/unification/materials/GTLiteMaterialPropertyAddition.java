@@ -268,6 +268,13 @@ public class GTLiteMaterialPropertyAddition {
         Silver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching recipes
         Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching recipes
 
+        Eternity.addFlags(GENERATE_SWARM); // For end game
+
+        //  Singularity
+        Iron.addFlags(GENERATE_SINGULARITY); // W.I.P
+        Gold.addFlags(GENERATE_SINGULARITY);
+        Eternity.addFlags(GENERATE_SINGULARITY); // For end game
+
         //  Conflict Solutions
         RockSalt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Potassium Hydroxide and Rock Salt Electrolysis
         Salt.addFlags(DISABLE_DECOMPOSITION); // Conflict between Sodium Chlorate and Salt Electrolysis

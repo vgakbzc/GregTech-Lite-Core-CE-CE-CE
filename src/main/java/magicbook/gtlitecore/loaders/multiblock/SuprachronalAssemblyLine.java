@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
@@ -11,6 +12,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class SuprachronalAssemblyLine {
@@ -53,8 +56,17 @@ public class SuprachronalAssemblyLine {
 
     public static void init() {
 
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(singularity, Eternity)
+                .output(swarm, Eternity, 64)
+                .EUt(VA[OpV])
+                .duration(1200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(MINING_DRONE_OpV)
+                .input(swarm, Eternity, 4)
                 .input(plate, CosmicFabric, 16)
                 .input(circuit, MarkerMaterials.Tier.MAX, 8)
                 .input(ELECTRIC_PUMP_OpV)
