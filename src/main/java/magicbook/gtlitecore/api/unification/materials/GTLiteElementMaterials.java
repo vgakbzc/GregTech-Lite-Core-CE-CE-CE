@@ -139,7 +139,7 @@ public class GTLiteElementMaterials {
         //  10008 Cosmic Neutronium
         CosmicNeutronium = new Material.Builder(getId(), gregtechId("cosmic_neutronium"))
                 .ingot()
-                .liquid(new FluidBuilder().temperature(2000000000))
+                .liquid(new FluidBuilder().temperature(2000000000).customStill())
                 .color(0xF3F3F3)
                 .iconSet(BRIGHT)
                 .blast(b -> b

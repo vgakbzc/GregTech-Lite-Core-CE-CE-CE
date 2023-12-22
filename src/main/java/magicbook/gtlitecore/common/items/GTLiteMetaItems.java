@@ -250,6 +250,15 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_MAX;
 
+    //  Singularities
+    public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem METRIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem EXOTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem ANCIENT_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem VOID_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem EIGEN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem WEIRD_SINGULARITY;
+
     //  Debug Items
     public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
 

@@ -32,6 +32,10 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> CONDENSER_RECIPES;
 
     //  Multiblock Machine RecipeMaps
     @ZenProperty
@@ -127,8 +131,6 @@ public class GTLiteRecipeMaps {
     @ZenProperty
     public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES;
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES;
-    @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_RECIPES;
@@ -151,10 +153,13 @@ public class GTLiteRecipeMaps {
         //  Naquadah Reactor RecipeMap
         NAQUADAH_REACTOR_RECIPES = new RecipeMap<>("naquadah_reactor_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
-                .setSound(GTSoundEvents.COMBUSTION);
+                .setSound(GTSoundEvents.COMBUSTION)
+                .allowEmptyOutput();
+
         //  Rocket Engine RecipeMap
         ROCKET_ENGINE_RECIPES = new RecipeMap<>("rocket_engine_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
-                .setSound(GTSoundEvents.COMBUSTION);
+                .setSound(GTSoundEvents.COMBUSTION)
+                .allowEmptyOutput();
 
         //  Industrial Drilling Reg RecipeMap
         DRILLING_RECIPES = new RecipeMap<>("drill_recipes", 1, 1, 0, 1, new SimpleRecipeBuilder(), false)
@@ -224,15 +229,18 @@ public class GTLiteRecipeMaps {
         //  Hyper Reactor Mk I RecipeMap
         HYPER_REACTOR_MK1_RECIPES = new RecipeMap<>("hyper_reactor_mk1_recipes", 0, 0, 1,0 , new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
-                .setSound(GTSoundEvents.ARC);
+                .setSound(GTSoundEvents.ARC)
+                .allowEmptyOutput();
         //  Hyper Reactor Mk II RecipeMap
         HYPER_REACTOR_MK2_RECIPES = new RecipeMap<>("hyper_reactor_mk2_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
-                .setSound(GTSoundEvents.ARC);
+                .setSound(GTSoundEvents.ARC)
+                .allowEmptyOutput();
         //  Hyper Reactor Mk III RecipeMap
         HYPER_REACTOR_MK3_RECIPES = new RecipeMap<>("hyper_reactor_mk3_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
-                .setSound(GTSoundEvents.ARC);
+                .setSound(GTSoundEvents.ARC)
+                .allowEmptyOutput();
         //  Isa Mill RecipeMap
         ISA_MILL_RECIPES = new RecipeMap<>("isa_mill_recipes", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
@@ -434,5 +442,11 @@ public class GTLiteRecipeMaps {
 
         //  Supercritical Steam Turbine RecipeMap
         SUPERCRITICAL_STEAM_TURBINE_RECIPES = new RecipeMap<>("supercritical_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false);
+
+        //  Condenser RecipeMap
+        CONDENSER_RECIPES = new RecipeMap<>("condenser_recipes", 1, 1, 1, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
+                .setSound(GTSoundEvents.COMPRESSOR);
     }
 }
