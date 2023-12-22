@@ -19,7 +19,7 @@ public class RocketFuelChain {
         //  Rocket Fuel
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(RocketFuel.getFluid(16))
-                .EUt(-512)
+                .EUt(512)
                 .duration(40)
                 .buildAndRegister();
 
@@ -34,7 +34,7 @@ public class RocketFuelChain {
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(RP1RocketFuel.getFluid(12))
-                .EUt(-512)
+                .EUt(512)
                 .duration(20)
                 .buildAndRegister();
 
@@ -49,7 +49,7 @@ public class RocketFuelChain {
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(DenseHydrazineMixtureFuel.getFluid(9))
-                .EUt(-2048)
+                .EUt(2048)
                 .duration(80)
                 .buildAndRegister();
 
@@ -74,7 +74,7 @@ public class RocketFuelChain {
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(6))
-                .EUt(-2048)
+                .EUt(2048)
                 .duration(120)
                 .buildAndRegister();
     }

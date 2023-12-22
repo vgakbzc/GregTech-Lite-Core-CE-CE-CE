@@ -1,0 +1,7 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "gtlitecore:items/material_sets/infinity/singularity",
+    "layer1": "gtlitecore:items/material_sets/infinity/singularity_overlay"
+  }
+}

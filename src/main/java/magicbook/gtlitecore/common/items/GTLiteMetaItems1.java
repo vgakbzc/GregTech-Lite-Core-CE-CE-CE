@@ -258,6 +258,15 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_CIRCUIT_OpV = this.addItem(513, "wrap.circuit.opv");
         WRAP_CIRCUIT_MAX = this.addItem(514, "wrap.circuit.max");
 
+        //  Singularities
+        MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");
+        METRIC_SINGULARITY = this.addItem(801, "singularity.metric");
+        EXOTIC_SINGULARITY = this.addItem(802, "singularity.exotic");
+        ANCIENT_SINGULARITY = this.addItem(803, "singularity.ancient");
+        VOID_SINGULARITY = this.addItem(804, "singularity.void");
+        EIGEN_SINGULARITY = this.addItem(805, "singularity.eigen");
+        WEIRD_SINGULARITY = this.addItem(806, "singularity.weird");
+
         //  Debug Items
         STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer").addComponents(StructureWriterBehavior.INSTANCE);
     }
