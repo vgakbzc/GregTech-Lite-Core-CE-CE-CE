@@ -1322,6 +1322,7 @@ gregtech.material.charged_caesium_cerium_cobalt_indium_alloy=带电铯铈钴铟�
 gregtech.material.bets_perrhenate=高铼酸双（乙烯二硫代）四硒富瓦烯
 gregtech.material.boron_francium_carbide_superconductor=碳化硼钫超导体
 gregtech.material.tantalum_hafnium_seaborgium_carbide=碳化钽铪钅喜
+gregtech.material.hastelloy_k_243=哈斯特洛伊合金-K243
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

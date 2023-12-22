@@ -798,6 +798,20 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UHV], 53))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING)
                 .build();
+
+        //  12062 Hastelloy-K243
+        HastelloyK243 = new Material.Builder(getId(), gregtechId("hastelloy_k_243"))
+                .ingot()
+                .fluid()
+                .color(0x6BA3E3)
+                .iconSet(SHINY)
+                .components(HastelloyX78, 5, NiobiumNitride, 2, Tritanium, 4, Promethium, 4, Mendelevium, 1)
+                .blast(b -> b
+                        .temp(14400, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV], 304)
+                        .vacuumStats(VA[ZPM], 680))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
     }
 
     private static int getId() {

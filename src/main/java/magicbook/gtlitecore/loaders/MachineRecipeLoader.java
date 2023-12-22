@@ -1057,6 +1057,78 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Hyper Reactor Mk I
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HastelloyC276)
+                .input(LARGE_NAQUADAH_REACTOR)
+                .input(plate, Tritanium, 4)
+                .input(plate, Orichalcum, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ELECTRIC_PUMP_UHV, 2)
+                .input(FIELD_GENERATOR_UHV, 2)
+                .input(gear, Naquadria, 4)
+                .input(screw, Dubnium, 16)
+                .input(cableGtDouble, Europium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Trinaquadalloy.getFluid(2880))
+                .output(HYPER_REACTOR_MK1)
+                .stationResearch(b -> b
+                        .researchStack(LARGE_NAQUADAH_REACTOR.getStackForm())
+                        .EUt(VA[UV])
+                        .CWUt(32))
+                .EUt(VA[UV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  Hyper Reactor Mk II
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HastelloyX78)
+                .input(HYPER_REACTOR_MK2)
+                .input(plate, Rhugnor, 4)
+                .input(plate, Vibranium, 4)
+                .input(circuit, MarkerMaterials.Tier.UEV, 4)
+                .input(ELECTRIC_PUMP_UEV, 2)
+                .input(FIELD_GENERATOR_UEV, 2)
+                .input(gear, Adamantium, 4)
+                .input(screw, Livermorium, 16)
+                .input(cableGtDouble, PedotTMA, 4)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Trinaquadalloy.getFluid(2880))
+                .fluidInputs(Polyetheretherketone.getFluid(1440))
+                .output(HYPER_REACTOR_MK2)
+                .stationResearch(b -> b
+                        .researchStack(HYPER_REACTOR_MK1.getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(64))
+                .EUt(VA[UHV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  Hyper Reactor Mk III
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HastelloyK243)
+                .input(HYPER_REACTOR_MK3)
+                .input(plate, Hypogen, 4)
+                .input(plate, Infinity, 4)
+                .input(circuit, MarkerMaterials.Tier.UIV, 4)
+                .input(ELECTRIC_PUMP_UIV, 2)
+                .input(FIELD_GENERATOR_UIV, 2)
+                .input(gear, MetastableOganesson, 4)
+                .input(screw, MetastableFlerovium, 16)
+                .input(cableGtDouble, Solarium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Trinaquadalloy.getFluid(2880))
+                .fluidInputs(Polyetheretherketone.getFluid(2880))
+                .fluidInputs(Zylon.getFluid(1440))
+                .output(HYPER_REACTOR_MK3)
+                .stationResearch(b -> b
+                        .researchStack(HYPER_REACTOR_MK2.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(128))
+                .EUt(VA[UEV])
+                .duration(600)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -2431,7 +2503,14 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
-        //  todo black dwarf matter enriched hyper casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.HYPER_CASING))
+                .circuitMeta(6)
+                .fluidInputs(BlackDwarfMatter.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.ADVANCED_HYPER_CASING))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, Orichalcum)
