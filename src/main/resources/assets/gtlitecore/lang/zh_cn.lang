@@ -1721,6 +1721,15 @@ gtlitecore.recipe.altitude=最低高度：%s
 gtlitecore.recipe.max_rate=最大流量：%s L/s
 gtlitecore.recipe.flow_rate=流量阈值：%s L/s
 
+#  Singularities
+metaitem.singularity.magic.name=魔源奇点
+metaitem.singularity.metric.name=度量奇点
+metaitem.singularity.exotic.name=超凡奇点
+metaitem.singularity.ancient.name=亘古奇点
+metaitem.singularity.void.name=虚空奇点
+metaitem.singularity.eigen.name=本征奇点
+metaitem.singularity.weird.name=诡秘奇点
+
 #  SMDs
 metaitem.component.optical_smd.transistor.name=光学晶体管
 metaitem.component.optical_smd.transistor.tooltip=光电子晶体管

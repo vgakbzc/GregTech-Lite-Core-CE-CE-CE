@@ -273,6 +273,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Singularity
         Iron.addFlags(GENERATE_SINGULARITY); // W.I.P
         Gold.addFlags(GENERATE_SINGULARITY);
+        Infinity.addFlags(GENERATE_SINGULARITY); // For end game
         Eternity.addFlags(GENERATE_SINGULARITY); // For end game
 
         //  Conflict Solutions

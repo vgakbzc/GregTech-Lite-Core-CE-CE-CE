@@ -56,6 +56,53 @@ public class SuprachronalAssemblyLine {
 
     public static void init() {
 
+        //  Magic Singularity
+        //  Components: Naquadah (Nq), Enriched Naquadah (Nq+), Naquadria (*Nq*),
+        //              Orichalcum (Or), Adamantium (Ad), Vibranium (Vb),
+        //              Taranium (Tn), Mithril (Mh), Rhugnor (Fs⚶),
+        //              Hypogen (Hy⚶), Void Metal (Vd⚶), Astral Titanium (✧◇✧),
+        //              Celestial Tungsten (✦◆✦), Galaxium (Gx⚶), Universium (Uv⚶),
+        //              Astralium (Ax⚶)
+
+        //  Metric Singularity
+        //  Components: Iron (Fe), Copper (Cu), Tin (Sn),
+        //              Gold (Au), Silver (Ag), Lead (Pb),
+        //              Zinc (Zn), Titanium (Ti), Tungsten (W),
+        //              Vanadium (V), Platinum (Pt), Palladium (Pd),
+        //              Ruthenium (Ru), Rhodium (Rh), Iridium (Ir),
+        //              Osmium (Os)
+
+        //  Exotic Singularity
+        //  Components: Crystal Matrix (◊◇◊), Infinity (∞), Ichorium (✦☯✧),
+        //              Neutronium (Nt), Cosmic Neutronium (SpNt), Solarium (Sol),
+
+        //  Ancient Singularity
+
+        //  Void Singularity
+
+        //  Eigen Singularity
+
+        //  Weird Singularity
+
+        //  All special singularities -> Eternity Singularity
+        SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(MAGIC_SINGULARITY)
+                .input(METRIC_SINGULARITY)
+                .input(EXOTIC_SINGULARITY)
+                .input(ANCIENT_SINGULARITY)
+                .input(VOID_SINGULARITY)
+                .input(EIGEN_SINGULARITY)
+                .input(WEIRD_SINGULARITY)
+                .fluidInputs(TemporalFluid.getFluid(14400))
+                .fluidInputs(Spacetime.getFluid(5760))
+                .fluidInputs(Eternity.getFluid(5760))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(14400))
+                .output(singularity, Eternity)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Eternity Singularity -> Eternity swarm
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(singularity, Eternity)
                 .output(swarm, Eternity, 64)
@@ -64,6 +111,7 @@ public class SuprachronalAssemblyLine {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Hyperdimensional Drone
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(MINING_DRONE_OpV)
                 .input(swarm, Eternity, 4)
@@ -76,8 +124,8 @@ public class SuprachronalAssemblyLine {
                 .input(ULTIMATE_BATTERY, 2)
                 .fluidInputs(AstralTitanium.getFluid(L * 40))
                 .fluidInputs(CelestialTungsten.getFluid(L * 40))
-                .fluidInputs(Spacetime.getFluid(L * 4))
-                .fluidInputs(Infinity.getFluid(L * 4))
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
+                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(L * 4))
                 .output(HYPERDIMENSIONAL_DRONE)
                 .EUt(VA[OpV])
                 .duration(600)

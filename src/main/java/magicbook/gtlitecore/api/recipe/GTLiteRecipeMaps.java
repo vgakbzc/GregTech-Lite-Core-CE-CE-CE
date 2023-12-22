@@ -444,7 +444,7 @@ public class GTLiteRecipeMaps {
         SUPERCRITICAL_STEAM_TURBINE_RECIPES = new RecipeMap<>("supercritical_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false);
 
         //  Condenser RecipeMap
-        CONDENSER_RECIPES = new RecipeMap<>("condenser_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+        CONDENSER_RECIPES = new RecipeMap<>("condenser_recipes", 1, 1, 1, 0, new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
                 .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
                 .setSound(GTSoundEvents.COMPRESSOR);
