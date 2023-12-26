@@ -75,7 +75,7 @@ public class GTLiteHighDegreeMaterials {
         TemporalFluid = new Material.Builder(getId(), gregtechId("temporal_fluid"))
                 .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int)(V[OpV] - V[IV])).customStill())
                 .build()
-                .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "§et" + TextFormatting.OBFUSCATED  + "a", false);
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
         //  15009 Cosmic Computing Mixture
         CosmicComputingMixture = new Material.Builder(getId(), gregtechId("cosmic_computing_mixture"))
