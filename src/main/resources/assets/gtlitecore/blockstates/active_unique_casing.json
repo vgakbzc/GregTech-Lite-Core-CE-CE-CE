@@ -25,6 +25,25 @@
       "textures": {
         "all": "gtlitecore:blocks/casings/advanced_assembly_control_casing"
       }
+    },
+    "active=false,variant=bioware_computing_casing": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gtlitecore:blocks/casings/bioware_computer_casing",
+        "side": "gtlitecore:blocks/casings/bioware_computing_casing",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=bioware_computing_casing": {
+      "model": "gregtech:cube_2_layer_bottom_top",
+      "textures": {
+        "bot_up": "gtlitecore:blocks/casings/bioware_computer_casing",
+        "bot_side": "gtlitecore:blocks/casings/bioware_computing_casing",
+        "top_up": "gtlitecore:blocks/casings/bioware_computer_casing",
+        "top_side": "gtlitecore:blocks/casings/bioware_computing_casing_bloom",
+        "bot_bottom": "#bot_side",
+        "top_bottom": "#top_side"
+      }
     }
   }
 }

@@ -24,6 +24,7 @@ import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
@@ -1128,6 +1129,21 @@ public class MachineRecipeLoader {
                         .CWUt(128))
                 .EUt(VA[UEV])
                 .duration(600)
+                .buildAndRegister();
+
+        //  Bioware Simulator
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[LuV])
+                .input(plate, Osmiridium, 4)
+                .input(FIELD_GENERATOR_LuV, 2)
+                .input(swarm, Carbon)
+                .input(circuit, MarkerMaterials.Tier.LuV, 2)
+                .input(wireFine, Kanthal, 16)
+                .fluidInputs(KPR.getFluid(L * 4))
+                .output(BIOWARE_SIMULATOR)
+                .EUt(VA[LuV])
+                .duration(300)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 
@@ -2624,6 +2640,63 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MAR_M200_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
+                .buildAndRegister();
+
+        //  Bioware Computer Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Ruridit)
+                .input(plate, Ruridit, 6)
+                .input(ELECTRIC_PUMP_IV, 2)
+                .input(wireFine, BorosilicateGlass, 32)
+                .input(wireFine, Rhodium, 32)
+                .input(cableGtSingle, NiobiumTitanium, 2)
+                .fluidInputs(Biomass.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.BIOWARE_COMPUTER_CASING, 2))
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Advanced Bioware Computer Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.BIOWARE_COMPUTER_CASING))
+                .input(circuit, MarkerMaterials.Tier.LuV)
+                .input(wireFine, Aluminium, 64)
+                .input(wireFine, Cupronickel, 64)
+                .input(cableGtSingle, SamariumIronArsenicOxide, 4)
+                .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.ADVANCED_BIOWARE_COMPUTER_CASING, 2))
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Bioware Heat Vent
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Iridium)
+                .input(ELECTRIC_MOTOR_LuV, 2)
+                .input(rotor, Iridium, 2)
+                .input(pipeTinyFluid, VanadiumSteel, 16)
+                .input(plate, TinAlloy, 16)
+                .input(cableGtSingle, UraniumTriplatinum)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.BIOWARE_COMPUTER_HEAT_VENT, 2))
+                .EUt(VA[IV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Bioware Computing Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Osmiridium)
+                .input(PETRI_DISH)
+                .input(plate, VanadiumGallium, 4)
+                .input(dust, Sarcosine, 3)
+                .input(FIELD_GENERATOR_LuV, 2)
+                .input(cableGtSingle, NiobiumNitride)
+                .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.BIOWARE_COMPUTING_CASING))
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 }
