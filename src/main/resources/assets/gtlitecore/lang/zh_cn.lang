@@ -1631,6 +1631,8 @@ metaitem.hyperdimensional_drone.name=超维度导航无人机
 metaitem.hyperdimensional_drone.tooltip=用于引导§6超维度时空振荡物质§7形成正确的结构
 metaitem.hyperdimensional_oscillating_matter.name=超维度时空振荡物质
 metaitem.hyperdimensional_oscillating_matter.tooltip=超维度时空乱流凝结物
+metaitem.chromatic_lens.name=彩虹透镜
+metaitem.chromatic_lens.tooltip=五彩斑斓
 
 metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
 metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）

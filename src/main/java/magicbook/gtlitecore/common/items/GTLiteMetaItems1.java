@@ -214,6 +214,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FULLERENE_FIBER = this.addItem(314, "highly_insulating_fullerene_foil");
         HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
         HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
+        CHROMATIC_LENS = this.addItem(317, "chromatic_lens").addOreDict("craftingLensChromatic");
 
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
         MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
