@@ -17,6 +17,7 @@ public class DimensionalOscillator {
                 .input(plate, AstralTitanium)
                 .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(L))
                 .output(MANIFOLD_OSCILLATORY_POWER_CELL, 16)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .EUt(VA[UIV])
                 .duration(200)
                 .buildAndRegister();
@@ -27,6 +28,7 @@ public class DimensionalOscillator {
                 .input(QCD_PROTECTIVE_PLATING)
                 .fluidInputs(RawStarMatter.getFluid(8000))
                 .fluidOutputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(8000))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .EUt(VA[UIV])
                 .duration(400)
                 .buildAndRegister();

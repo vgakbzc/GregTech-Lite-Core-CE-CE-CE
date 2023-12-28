@@ -73,6 +73,7 @@ public class StellarFurnace {
         HeavyQuarkDegenerateMatter();
         CosmicNeutronium();
         QuantumchromodynamicallyConfinedMatter();
+        DwarfMatters();
     }
 
     private static void DegenerateRhenium() {
@@ -242,6 +243,21 @@ public class StellarFurnace {
                 .EUt(VA[UIV])
                 .duration(10)
                 .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .buildAndRegister();
+    }
+
+    private static void DwarfMatters() {
+
+        //  From Space Elevator Recipes to Stellar Furnace Recipes
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(StarCoreMatter.getPlasma(32000))
+                .fluidOutputs(BlackDwarfMatter.getFluid(8000))
+                .fluidOutputs(WhiteDwarfMatter.getFluid(8000))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
                 .buildAndRegister();
     }
 }

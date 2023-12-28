@@ -1508,6 +1508,8 @@ gregtech.material.high_energy_quark_gluon_plasma=高能夸克-胶子
 gregtech.material.quantumchromodynamically_confined_matter=量子色动力学封闭物质
 gregtech.material.black_dwarf_matter=黑矮星物质
 gregtech.material.white_dwarf_matter=白矮星物质
+gregtech.material.star_core_matter=星核物质
+gregtech.material.dimensionally_transcendent_residue=超维度残余物
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
