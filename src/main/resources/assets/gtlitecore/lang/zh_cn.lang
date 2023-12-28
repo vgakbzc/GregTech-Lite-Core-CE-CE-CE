@@ -1624,6 +1624,7 @@ gregtech.material.starlight_liquid=液态星光
 gregtech.material.celestial_crystal=天体水晶
 
 #  Memory Cards
+metaitem.memory_card.base.name=意识存储卡
 metaitem.memory_card.zombie.name=僵尸意识存储卡
 metaitem.memory_card.skeleton.name=骷髅意识存储卡
 metaitem.memory_card.creeper.name=爬行者意识存储卡

@@ -1,21 +1,173 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import gregtech.api.unification.material.MarkerMaterials;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.ingot;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SIMULATOR_RECIPES;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class Simulator {
 
     public static void init() {
+        MemoryCards();
         Simulation();
         BiowareSimulation();
+    }
+
+    private static void MemoryCards() {
+
+        //  Base
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Polyethylene)
+                .input(circuit, MarkerMaterials.Tier.LV)
+                .input(wireFine, Silver, 4)
+                .fluidInputs(TinAlloy.getFluid(L / 2))
+                .output(MEMORY_CARD_BASE)
+                .EUt(VA[LV])
+                .duration(200)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, PolyvinylChloride)
+                .input(circuit, MarkerMaterials.Tier.LV)
+                .input(wireFine, Silver, 4)
+                .fluidInputs(TinAlloy.getFluid(L / 2))
+                .output(MEMORY_CARD_BASE)
+                .EUt(VA[LV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Zombie
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.ROTTEN_FLESH)
+                .output(MEMORY_CARD_ZOMBIE)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Skeleton
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.BONE)
+                .output(MEMORY_CARD_SKELETON)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Creeper
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.GUNPOWDER)
+                .output(MEMORY_CARD_CREEPER)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Slime
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.SLIME_BALL)
+                .output(MEMORY_CARD_SLIME)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Spider
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.SPIDER_EYE)
+                .output(MEMORY_CARD_SPIDER)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Blaze
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.BLAZE_POWDER)
+                .output(MEMORY_CARD_BLAZE)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Ghast
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.GHAST_TEAR)
+                .output(MEMORY_CARD_GHAST)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Guardian
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.PRISMARINE_SHARD)
+                .output(MEMORY_CARD_GUARDIAN)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Wither Skeleton
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.SKULL, 1, 1)
+                .output(MEMORY_CARD_WITHER_SKELETON)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Witch
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.GLASS_BOTTLE)
+                .output(MEMORY_CARD_WITCH)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Enderman
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.ENDER_EYE)
+                .output(MEMORY_CARD_ENDERMAN)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Shulker
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.SHULKER_SHELL)
+                .output(MEMORY_CARD_SHULKER)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Wither
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(Items.NETHER_STAR)
+                .output(MEMORY_CARD_WITHER)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Ender Dragon
+        CANNER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .inputs(new ItemStack(Blocks.DRAGON_EGG))
+                .output(MEMORY_CARD_ENDER_DRAGON)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
     }
 
     private static void Simulation() {

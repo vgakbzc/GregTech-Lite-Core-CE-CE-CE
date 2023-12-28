@@ -240,6 +240,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(355, "cosmic_neutron_plasma_containment_cell");
 
         //  Memory Cards
+        MEMORY_CARD_BASE = this.addItem(385, "memory_card.base");
         MEMORY_CARD_ZOMBIE = this.addItem(386, "memory_card.zombie");
         MEMORY_CARD_SKELETON = this.addItem(387, "memory_card.skeleton");
         MEMORY_CARD_CREEPER = this.addItem(388, "memory_card.creeper");

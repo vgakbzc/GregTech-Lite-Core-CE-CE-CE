@@ -232,6 +232,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
 
     //  Memory Cards
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_BASE;
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_ZOMBIE;
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_SKELETON;
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_CREEPER;
