@@ -993,6 +993,12 @@ gtlitecore.machine.dangote_distillery.tooltip.5=§3UV§7级以下 -> §e4 * (电
 gtlitecore.machine.dangote_distillery.tooltip.6=§3UV§7级以上 -> §e12 * (电压等级 * 4)§7
 gtlitecore.machine.dangote_distillery.tooltip.7=§c§lMAX§7级以上 -> §e720§7
 
+gtlitecore.machine.amazon_warehousing_depot.name=亚马逊仓库
+gtlitecore.machine.amazon_warehousing_depot.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.amazon_warehousing_depot.tooltip.4=最大并行数：§e4096§7
+
 gtlitecore.machine.electrolytic_tank.name=大型电解池
 gtlitecore.machine.electrolytic_tank.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.electrolytic_tank.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。

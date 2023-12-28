@@ -122,6 +122,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
     public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
+    public static MetaTileEntityAmazonWarehousingDepot AMAZON_WAREHOUSING_DEPOT;
     public static MetaTileEntityElectrolyticTank ELECTROLYTIC_TANK;
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
     public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
@@ -311,7 +312,7 @@ public class GTLiteMetaTileEntities {
         NEUTRAL_NETWORK_NEXUS = registerMultiMetaTileEntity(69, new MetaTileEntityNeutralNetworkNexus(gtliteId("neutral_network_nexus")));
         PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
         DANGOTE_DISTILLERY = registerMultiMetaTileEntity(71, new MetaTileEntityDangoteDistillery(gtliteId("dangote_distillery")));
-        //  72 AMAZON WAREHOUSING DEPOT
+        AMAZON_WAREHOUSING_DEPOT = registerMultiMetaTileEntity(72, new MetaTileEntityAmazonWarehousingDepot(gtliteId("amazon_warehousing_depot")));
         //  73 ARC_FURNACE_ARRAY
         ELECTROLYTIC_TANK = registerMultiMetaTileEntity(74, new MetaTileEntityElectrolyticTank(gtliteId("electrolytic_tank")));
         TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));

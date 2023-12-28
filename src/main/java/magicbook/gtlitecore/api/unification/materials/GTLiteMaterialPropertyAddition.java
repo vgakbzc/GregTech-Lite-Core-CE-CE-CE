@@ -147,6 +147,7 @@ public class GTLiteMaterialPropertyAddition {
         Tritanium.addFlags(GENERATE_DOUBLE_PLATE);
         HSSS.addFlags(GENERATE_DOUBLE_PLATE);
         RedSteel.addFlags(GENERATE_DOUBLE_PLATE);
+        TitaniumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
