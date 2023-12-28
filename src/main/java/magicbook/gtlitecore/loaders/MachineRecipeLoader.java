@@ -119,6 +119,14 @@ public class MachineRecipeLoader {
                 'W', CraftingComponent.CABLE,
                 'X', CraftingComponent.BETTER_CIRCUIT,
                 'R', CraftingComponent.STICK_RADIOACTIVE);
+
+        //  Simulator
+        MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,
+                "WAW", "OHO", "WAW",
+                'A', CraftingComponent.SENSOR,
+                'W', CraftingComponent.CABLE,
+                'H', CraftingComponent.HULL,
+                'O', CraftingComponent.BETTER_CIRCUIT);
     }
 
     private static void MultiblockControllerRecipes() {
@@ -1134,6 +1142,7 @@ public class MachineRecipeLoader {
         //  Bioware Simulator
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(HULL[LuV])
+                .input(SIMULATOR[IV], 4)
                 .input(plate, Osmiridium, 4)
                 .input(FIELD_GENERATOR_LuV, 2)
                 .input(swarm, Carbon)
@@ -1143,6 +1152,23 @@ public class MachineRecipeLoader {
                 .output(BIOWARE_SIMULATOR)
                 .EUt(VA[LuV])
                 .duration(300)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Amazon Warehousing Depot
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, AusteniticStainlessSteel904L, 4)
+                .input(LARGE_PACKAGER, 16)
+                .input(circuit, MarkerMaterials.Tier.EV, 16)
+                .input(plateDouble, TitaniumCarbide, 4)
+                .input(plateDouble, RedSteel, 4)
+                .input(gear, Rhodium, 4)
+                .input(gearSmall, HSSS, 16)
+                .input(cableGtQuadruple, Electrum, 4)
+                .fluidInputs(HastelloyC276.getFluid(L * 4))
+                .output(AMAZON_WAREHOUSING_DEPOT)
+                .EUt(VA[EV])
+                .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
