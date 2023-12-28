@@ -825,6 +825,16 @@ public class SpaceElevator {
                     .EUt(VA[UIV])
                     .duration(20)
                     .buildAndRegister();
+
+            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
+                    .notConsumable(MINING_DRONE_UIV.getStackForm(16))
+                    .circuitMeta(1)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidOutputs(StarCoreMatter.getPlasma(100000))
+                    .CasingTier(4)
+                    .EUt(VA[UIV])
+                    .duration(20)
+                    .buildAndRegister();
         }
 
         //  UXV 4

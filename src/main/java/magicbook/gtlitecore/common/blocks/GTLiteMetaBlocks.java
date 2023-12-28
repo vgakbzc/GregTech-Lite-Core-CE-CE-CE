@@ -21,6 +21,7 @@ public class GTLiteMetaBlocks {
     public static BlockComponentAssemblyLineCasing COMPONENT_ASSEMBLY_LINE_CASING;
     public static BlockSpaceElevatorCasing SPACE_ELEVATOR_CASING;
     public static BlockPCBFactoryCasing PCB_FACTORY_CASING;
+    public static BlockComputerCasing COMPUTER_CASING;
     public static BlockActiveMultiblockCasing ACTIVE_MULTIBLOCK_CASING;
     public static BlockActiveUniqueCasing ACTIVE_UNIQUE_CASING;
     public static BlockScienceCasing SCIENCE_CASING;
@@ -54,6 +55,8 @@ public class GTLiteMetaBlocks {
         SPACE_ELEVATOR_CASING.setRegistryName("space_elevator_casing");
         PCB_FACTORY_CASING = new BlockPCBFactoryCasing();
         PCB_FACTORY_CASING.setRegistryName("pcb_factory_casing");
+        COMPUTER_CASING = new BlockComputerCasing();
+        COMPUTER_CASING.setRegistryName("computer_casing");
         ACTIVE_MULTIBLOCK_CASING = new BlockActiveMultiblockCasing();
         ACTIVE_MULTIBLOCK_CASING.setRegistryName("active_multiblock_casing");
         ACTIVE_UNIQUE_CASING = new BlockActiveUniqueCasing();
@@ -86,6 +89,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(COMPONENT_ASSEMBLY_LINE_CASING);
         registerItemModel(SPACE_ELEVATOR_CASING);
         registerItemModel(PCB_FACTORY_CASING);
+        registerItemModel(COMPUTER_CASING);
         registerItemModel(SCIENCE_CASING);
         registerItemModel(FIELD_CASING);
         registerItemModel(EXPLOSIVE_BLOCK);

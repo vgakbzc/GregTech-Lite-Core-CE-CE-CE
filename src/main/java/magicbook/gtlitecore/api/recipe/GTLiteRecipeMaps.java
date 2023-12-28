@@ -134,6 +134,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> BIOWARE_SIMULATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -448,5 +450,15 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
                 .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
                 .setSound(GTSoundEvents.COMPRESSOR);
+
+        //  Bioware Simulator RecipeMap
+        BIOWARE_SIMULATOR_RECIPES = new RecipeMap<>("bioware_simulator_recipes", 2, 2, 2, 2, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.DATA_ORB_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.FILTER_SLOT_OVERLAY)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.SCIENCE);
     }
 }

@@ -33,7 +33,8 @@ public class BlockActiveUniqueCasing extends VariantActiveBlock<BlockActiveUniqu
 
     public enum ActiveCasingType implements IStringSerializable {
         ADVANCED_ASSEMBLY_LINE_CASING("advanced_assembly_line_casing"),
-        ADVANCED_ASSEMBLY_CONTROL_CASING("advanced_assembly_control_casing");
+        ADVANCED_ASSEMBLY_CONTROL_CASING("advanced_assembly_control_casing"),
+        BIOWARE_COMPUTING_CASING("bioware_computing_casing");
         private final String name;
 
         ActiveCasingType(String name) {
