@@ -668,6 +668,17 @@ gtlitecore.machine.condenser.uxv.tooltip=压缩银河
 gtlitecore.machine.condenser.opv.name=传奇态素凝聚器
 gtlitecore.machine.condenser.opv.tooltip=压缩银河
 
+gtlitecore.machine.simulator.lv.name=基础模拟室
+gtlitecore.machine.simulator.lv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.mv.name=进阶模拟室
+gtlitecore.machine.simulator.mv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.hv.name=进阶模拟室 II
+gtlitecore.machine.simulator.hv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.ev.name=进阶模拟室 III
+gtlitecore.machine.simulator.ev.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.iv.name=精英模拟室
+gtlitecore.machine.simulator.iv.tooltip=怪物意识模拟器
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -992,6 +1003,12 @@ gtlitecore.machine.dangote_distillery.tooltip.4=最大并行数：
 gtlitecore.machine.dangote_distillery.tooltip.5=§3UV§7级以下 -> §e4 * (电压等级 * 4)§7
 gtlitecore.machine.dangote_distillery.tooltip.6=§3UV§7级以上 -> §e12 * (电压等级 * 4)§7
 gtlitecore.machine.dangote_distillery.tooltip.7=§c§lMAX§7级以上 -> §e720§7
+
+gtlitecore.machine.amazon_warehousing_depot.name=亚马逊仓库
+gtlitecore.machine.amazon_warehousing_depot.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.amazon_warehousing_depot.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.electrolytic_tank.name=大型电解池
 gtlitecore.machine.electrolytic_tank.tooltip.1=根据输入电压获得并行
@@ -1606,6 +1623,23 @@ gregtech.material.electrolyte_reflector_mixture=介电镜成形液
 gregtech.material.starlight_liquid=液态星光
 gregtech.material.celestial_crystal=天体水晶
 
+#  Memory Cards
+metaitem.memory_card.base.name=意识存储卡
+metaitem.memory_card.zombie.name=僵尸意识存储卡
+metaitem.memory_card.skeleton.name=骷髅意识存储卡
+metaitem.memory_card.creeper.name=爬行者意识存储卡
+metaitem.memory_card.spider.name=蜘蛛意识存储卡
+metaitem.memory_card.slime.name=史莱姆意识存储卡
+metaitem.memory_card.witch.name=女巫意识存储卡
+metaitem.memory_card.guardian.name=守卫者意识存储卡
+metaitem.memory_card.enderman.name=末影人意识存储卡
+metaitem.memory_card.wither_skeleton.name=凋零骷髅意识存储卡
+metaitem.memory_card.blaze.name=烈焰人意识存储卡
+metaitem.memory_card.ghast.name=恶魂意识存储卡
+metaitem.memory_card.shulker.name=潜影盒意识存储卡
+metaitem.memory_card.wither.name=凋零意识存储卡
+metaitem.memory_card.ender_dragon.name=末影龙意识存储卡
+
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
@@ -1631,6 +1665,8 @@ metaitem.hyperdimensional_drone.name=超维度导航无人机
 metaitem.hyperdimensional_drone.tooltip=用于引导§6超维度时空振荡物质§7形成正确的结构
 metaitem.hyperdimensional_oscillating_matter.name=超维度时空振荡物质
 metaitem.hyperdimensional_oscillating_matter.tooltip=超维度时空乱流凝结物
+metaitem.chromatic_lens.name=彩虹透镜
+metaitem.chromatic_lens.tooltip=五彩斑斓
 
 metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
 metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）
@@ -1731,6 +1767,7 @@ recipemap.high_pressure_steam_turbine_recipes.name=高压蒸汽涡轮
 recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
 recipemap.condenser_recipes=态素凝聚
 recipemap.bioware_simulator_recipes.name=生物数据模拟
+recipemap.simulator_recipes.name=数据模拟
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

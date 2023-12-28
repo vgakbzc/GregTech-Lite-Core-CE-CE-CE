@@ -136,6 +136,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> BIOWARE_SIMULATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -458,6 +460,11 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.SCIENCE);
+
+        //  Simulator Recipes
+        SIMULATOR_RECIPES = new RecipeMap<>("simulator_recipes", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
     }

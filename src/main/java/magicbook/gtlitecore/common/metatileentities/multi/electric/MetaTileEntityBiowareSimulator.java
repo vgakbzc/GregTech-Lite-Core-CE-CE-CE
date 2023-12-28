@@ -4,9 +4,10 @@ import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
-import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
+import gregtech.api.metatileentity.multiblock.MultiMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.recipes.RecipeMap;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.utils.TooltipHelper;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
@@ -26,10 +27,12 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MetaTileEntityBiowareSimulator extends RecipeMapMultiblockController {
+public class MetaTileEntityBiowareSimulator extends MultiMapMultiblockController {
 
     public MetaTileEntityBiowareSimulator(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, GTLiteRecipeMaps.BIOWARE_SIMULATOR_RECIPES);
+        super(metaTileEntityId, new RecipeMap[]{
+                GTLiteRecipeMaps.SIMULATOR_RECIPES,
+                GTLiteRecipeMaps.BIOWARE_SIMULATOR_RECIPES});
         this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 
