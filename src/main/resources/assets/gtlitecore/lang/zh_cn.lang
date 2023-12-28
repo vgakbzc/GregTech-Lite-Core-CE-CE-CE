@@ -106,6 +106,13 @@ tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=散热器件/n§6PCB
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
 tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7
 
+tile.computer_casing.bioware_computer_casing.name=生物计算机外壳
+tile.computer_casing.bioware_computer_casing.tooltip=绝对无菌环境
+tile.computer_casing.advanced_bioware_computer_casing.name=活性计算机外壳
+tile.computer_casing.advanced_bioware_computer_casing.tooltip=菌群意识培养皿
+tile.computer_casing.bioware_computer_heat_vent.name=生物计算机散热口
+tile.computer_casing.bioware_computer_heat_vent.tooltip=带杀菌过滤器的通风口
+
 tile.active_multiblock_casing.hyper_core_mk1.name=超能核心 Mk I
 tile.active_multiblock_casing.hyper_core_mk2.name=超能核心 Mk II
 tile.active_multiblock_casing.hyper_core_mk3.name=超能核心 Mk III
@@ -122,6 +129,8 @@ tile.active_multiblock_casing.motor_casing_mk5.tooltip=星际旅行
 
 tile.active_unique_casing.advanced_assembly_line_casing.name=进阶装配机械方块
 tile.active_unique_casing.advanced_assembly_control_casing.name=进阶装配控制外壳
+tile.active_unique_casing.bioware_computing_casing.name=菌群网络计算组件
+tile.active_unique_casing.bioware_computing_casing.tooltip=自循环存算一体生物计算机
 
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
@@ -1008,6 +1017,10 @@ gtlitecore.machine.coking_tower.tooltip.2=根据线圈等级获得并行与配�
 gtlitecore.machine.coking_tower.tooltip.3=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
 gtlitecore.machine.coking_tower.tooltip.4=最大并行数：§e(线圈等级 * 16)§7
 
+gtlitecore.machine.bioware_simulator.name=生物活性模拟器
+gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
+gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
+
 #  Materials
 
 ##  Element Materials
@@ -1058,7 +1071,7 @@ gregtech.material.cerium_oxide=氧化铈
 gregtech.material.praseodymium_oxide=氧化镨
 gregtech.material.neodymium_oxide=氧化钕
 gregtech.material.samarium_oxide=氧化钐
-gregtech.mtaerial.europium_oxide=氧化铕
+gregtech.material.europium_oxide=氧化铕
 gregtech.material.gadolinium_oxide=氧化钆
 gregtech.material.terbium_oxide=氧化铽
 gregtech.material.dysprosium_oxide=氧化镝
@@ -1322,6 +1335,7 @@ gregtech.material.charged_caesium_cerium_cobalt_indium_alloy=带电铯铈钴铟�
 gregtech.material.bets_perrhenate=高铼酸双（乙烯二硫代）四硒富瓦烯
 gregtech.material.boron_francium_carbide_superconductor=碳化硼钫超导体
 gregtech.material.tantalum_hafnium_seaborgium_carbide=碳化钽铪钅喜
+gregtech.material.hastelloy_k_243=哈斯特洛伊合金-K243
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1494,6 +1508,8 @@ gregtech.material.high_energy_quark_gluon_plasma=高能夸克-胶子
 gregtech.material.quantumchromodynamically_confined_matter=量子色动力学封闭物质
 gregtech.material.black_dwarf_matter=黑矮星物质
 gregtech.material.white_dwarf_matter=白矮星物质
+gregtech.material.star_core_matter=星核物质
+gregtech.material.dimensionally_transcendent_residue=超维度残余物
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
@@ -1714,6 +1730,7 @@ recipemap.bio_reactor_recipes.name=生物反应
 recipemap.high_pressure_steam_turbine_recipes.name=高压蒸汽涡轮
 recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
 recipemap.condenser_recipes=态素凝聚
+recipemap.bioware_simulator_recipes.name=生物数据模拟
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

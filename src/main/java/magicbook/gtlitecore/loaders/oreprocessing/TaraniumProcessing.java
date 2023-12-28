@@ -459,7 +459,7 @@ public class TaraniumProcessing {
                 .chancedOutput(dust, Monazite, 2, 3000, 0)
                 .chancedOutput(dust, Zirconium, 3, 6000, 0)
                 .duration(120)
-                .EUt(VA[IV])
+                .EUt(VA[UV])
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()

@@ -8,6 +8,7 @@ import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.QUANTUM_ANOMALY;
 
 public class QuantumForceTransformer {
 
@@ -309,5 +310,16 @@ public class QuantumForceTransformer {
         //  Hyperdimensional Cube
 
         //  Temporal Fluid
+
+        //  Quantum Anomaly
+        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+                .circuitMeta(25)
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(1000))
+                .chancedOutput(QUANTUM_ANOMALY, 5000, 0)
+                .EUt(VA[UIV])
+                .duration(200)
+                .CasingTier(5)
+                .buildAndRegister();
+
     }
 }

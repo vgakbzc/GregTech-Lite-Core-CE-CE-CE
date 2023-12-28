@@ -75,7 +75,7 @@ public class GTLiteHighDegreeMaterials {
         TemporalFluid = new Material.Builder(getId(), gregtechId("temporal_fluid"))
                 .liquid(new FluidBuilder().state(FluidState.PLASMA).temperature((int)(V[OpV] - V[IV])).customStill())
                 .build()
-                .setFormula(TextFormatting.OBFUSCATED  + "a"  + TextFormatting.RESET + "§et" + TextFormatting.OBFUSCATED  + "a", false);
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
         //  15009 Cosmic Computing Mixture
         CosmicComputingMixture = new Material.Builder(getId(), gregtechId("cosmic_computing_mixture"))
@@ -183,6 +183,19 @@ public class GTLiteHighDegreeMaterials {
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
+        //  15020 Star Core Matter
+        StarCoreMatter = new Material.Builder(getId(), gregtechId("star_core_matter"))
+                .plasma(new FluidBuilder().temperature(554000000))
+                .color(0x592451)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15021 Dimensionally Transcendent Residue
+        DimensionallyTranscendentResidue = new Material.Builder(getId(), gregtechId("dimensionally_transcendent_residue"))
+                .liquid(new FluidBuilder().temperature(999999999).customStill())
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
     }
 
     private static int getId() {
