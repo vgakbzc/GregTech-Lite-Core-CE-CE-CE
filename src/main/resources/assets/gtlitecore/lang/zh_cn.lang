@@ -668,6 +668,17 @@ gtlitecore.machine.condenser.uxv.tooltip=压缩银河
 gtlitecore.machine.condenser.opv.name=传奇态素凝聚器
 gtlitecore.machine.condenser.opv.tooltip=压缩银河
 
+gtlitecore.machine.simulator.lv.name=基础模拟室
+gtlitecore.machine.simulator.lv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.mv.name=进阶模拟室
+gtlitecore.machine.simulator.mv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.hv.name=进阶模拟室 II
+gtlitecore.machine.simulator.hv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.ev.name=进阶模拟室 III
+gtlitecore.machine.simulator.ev.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.iv.name=精英模拟室
+gtlitecore.machine.simulator.iv.tooltip=怪物意识模拟器
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -1612,6 +1623,22 @@ gregtech.material.electrolyte_reflector_mixture=介电镜成形液
 gregtech.material.starlight_liquid=液态星光
 gregtech.material.celestial_crystal=天体水晶
 
+#  Memory Cards
+metaitem.memory_card.zombie.name=僵尸意识存储卡
+metaitem.memory_card.skeleton.name=骷髅意识存储卡
+metaitem.memory_card.creeper.name=爬行者意识存储卡
+metaitem.memory_card.spider.name=蜘蛛意识存储卡
+metaitem.memory_card.slime.name=史莱姆意识存储卡
+metaitem.memory_card.witch.name=女巫意识存储卡
+metaitem.memory_card.guardian.name=守卫者意识存储卡
+metaitem.memory_card.enderman.name=末影人意识存储卡
+metaitem.memory_card.wither_skeleton.name=凋零骷髅意识存储卡
+metaitem.memory_card.blaze.name=烈焰人意识存储卡
+metaitem.memory_card.ghast.name=恶魂意识存储卡
+metaitem.memory_card.shulker.name=潜影盒意识存储卡
+metaitem.memory_card.wither.name=凋零意识存储卡
+metaitem.memory_card.ender_dragon.name=末影龙意识存储卡
+
 #  Others
 metaitem.grindball.soapstone.name=皂石研磨球
 metaitem.grindball.aluminium.name=铝研磨球
@@ -1739,6 +1766,7 @@ recipemap.high_pressure_steam_turbine_recipes.name=高压蒸汽涡轮
 recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
 recipemap.condenser_recipes=态素凝聚
 recipemap.bioware_simulator_recipes.name=生物数据模拟
+recipemap.simulator_recipes.name=数据模拟
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

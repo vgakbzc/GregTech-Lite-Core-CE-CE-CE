@@ -231,6 +231,22 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
 
+    //  Memory Cards
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_ZOMBIE;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_SKELETON;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_CREEPER;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_SPIDER;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_SLIME;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_WITCH;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_GUARDIAN;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_ENDERMAN;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_WITHER_SKELETON;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_BLAZE;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_GHAST;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_SHULKER;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_WITHER;
+    public static MetaItem<?>.MetaValueItem MEMORY_CARD_ENDER_DRAGON;
+
     //  Particles
     public static MetaItem<?>.MetaValueItem ALPHA_PARTICLE;
 

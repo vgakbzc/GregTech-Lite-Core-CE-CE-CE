@@ -59,6 +59,7 @@ public class GTLiteMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[IV + 1];
     public static SimpleMachineMetaTileEntity[] BIO_REACTOR = new SimpleMachineMetaTileEntity[V.length - 1];
     public static SimpleMachineMetaTileEntity[] CONDENSER = new SimpleMachineMetaTileEntity[6];
+    public static SimpleMachineMetaTileEntity[] SIMULATOR = new SimpleMachineMetaTileEntity[IV + 1];
 
     //  Multiblock Machine range: 16001-20000
     public static MetaTileEntityIndustrialDrillingReg INDUSTRIAL_DRILLING_REG;
@@ -239,6 +240,7 @@ public class GTLiteMetaTileEntities {
         CONDENSER[3] = registerMetaTileEntity(15056, new SimpleMachineMetaTileEntity(gtliteId("condenser.uiv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 11, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[4] = registerMetaTileEntity(15057, new SimpleMachineMetaTileEntity(gtliteId("condenser.uxv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 12, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[5] = registerMetaTileEntity(15058, new SimpleMachineMetaTileEntity(gtliteId("condenser.opv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 13, true, GTUtility.genericGeneratorTankSizeFunction));
+        registerSimpleMetaTileEntity(SIMULATOR, 15059, "simulator", GTLiteRecipeMaps.SIMULATOR_RECIPES, GTLiteTextures.SIMULATOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
 
         //  Multiblock Machine range: 16001-20000
         INDUSTRIAL_DRILLING_REG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingReg(gtliteId("industrial_drilling_reg")));
@@ -319,7 +321,27 @@ public class GTLiteMetaTileEntities {
         //  76 INDUSTRIAL_CENTRIFUGE
         ZHUHAI_FISHING_POND = registerMultiMetaTileEntity(77, new MetaTileEntityZhuHaiFishingPond(gtliteId("zhuhai_fishing_pond")));
         COKING_TOWER = registerMultiMetaTileEntity(78, new MetaTileEntityCokingTower(gtliteId("coking_tower")));
-        //  79-99
+        //  79
+        //  80
+        //  81
+        //  82
+        //  83
+        //  84
+        //  85
+        //  86
+        //  87
+        //  88
+        //  89
+        //  90
+        //  91
+        //  92
+        //  93
+        //  94
+        //  95
+        //  96
+        //  97
+        //  98
+        //  99
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
     }
 }

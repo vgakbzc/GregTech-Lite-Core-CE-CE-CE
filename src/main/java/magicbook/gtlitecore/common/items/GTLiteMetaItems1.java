@@ -239,6 +239,22 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(354, "dense_neutron_plasma_containment_cell");
         COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(355, "cosmic_neutron_plasma_containment_cell");
 
+        //  Memory Cards
+        MEMORY_CARD_ZOMBIE = this.addItem(386, "memory_card.zombie");
+        MEMORY_CARD_SKELETON = this.addItem(387, "memory_card.skeleton");
+        MEMORY_CARD_CREEPER = this.addItem(388, "memory_card.creeper");
+        MEMORY_CARD_SPIDER = this.addItem(389, "memory_card.spider");
+        MEMORY_CARD_SLIME = this.addItem(390, "memory_card.slime");
+        MEMORY_CARD_WITCH = this.addItem(391, "memory_card.witch");
+        MEMORY_CARD_GUARDIAN = this.addItem(392, "memory_card.guardian");
+        MEMORY_CARD_ENDERMAN = this.addItem(393, "memory_card.enderman");
+        MEMORY_CARD_WITHER_SKELETON = this.addItem(394, "memory_card.wither_skeleton");
+        MEMORY_CARD_BLAZE = this.addItem(395, "memory_card.blaze");
+        MEMORY_CARD_GHAST = this.addItem(396, "memory_card.ghast");
+        MEMORY_CARD_SHULKER = this.addItem(397, "memory_card.shulker");
+        MEMORY_CARD_WITHER = this.addItem(398, "memory_card.wither");
+        MEMORY_CARD_ENDER_DRAGON = this.addItem(399, "memory_card.ender_dragon");
+
         //  Particles
         ALPHA_PARTICLE = this.addItem(400, "particle.alpha");
 

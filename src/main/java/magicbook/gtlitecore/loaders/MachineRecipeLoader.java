@@ -119,6 +119,14 @@ public class MachineRecipeLoader {
                 'W', CraftingComponent.CABLE,
                 'X', CraftingComponent.BETTER_CIRCUIT,
                 'R', CraftingComponent.STICK_RADIOACTIVE);
+
+        //  Simulator
+        MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,
+                "WAW", "OHO", "WAW",
+                'A', CraftingComponent.SENSOR,
+                'W', CraftingComponent.CABLE,
+                'H', CraftingComponent.HULL,
+                'O', CraftingComponent.BETTER_CIRCUIT);
     }
 
     private static void MultiblockControllerRecipes() {
@@ -1134,6 +1142,7 @@ public class MachineRecipeLoader {
         //  Bioware Simulator
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(HULL[LuV])
+                .input(SIMULATOR[IV], 4)
                 .input(plate, Osmiridium, 4)
                 .input(FIELD_GENERATOR_LuV, 2)
                 .input(swarm, Carbon)

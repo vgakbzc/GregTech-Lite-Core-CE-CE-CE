@@ -132,5 +132,6 @@ public class RecipeManager {
         QuantumForceTransformer.init();
         TurbineMixer.init();
         BioReactor.init();
+        Simulator.init();
     }
 }
