@@ -1034,6 +1034,17 @@ gtlitecore.machine.coking_tower.tooltip.2=根据线圈等级获得并行与配�
 gtlitecore.machine.coking_tower.tooltip.3=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
 gtlitecore.machine.coking_tower.tooltip.4=最大并行数：§e(线圈等级 * 16)§7
 
+gtlitecore.machine.nanoscale_euv_mask_aligner.name=纳米尺度光刻厂
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.1=大规模纳米尺度极紫外光源（EUV）蚀刻厂
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.2=激光蚀刻技术的绝对顶点。
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.3=可运行一般的§r精密激光蚀刻机§7配方，亦可用于驱使纳米机器人进行深度光刻
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.5=运行§r精密激光蚀刻机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.6=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7=最大并行数：
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8=§r精密激光蚀刻§7模式 -> §e16384§7
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9=§r纳米尺度光刻§7模式 -> §e4096§7
+
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
@@ -1768,6 +1779,7 @@ recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
 recipemap.condenser_recipes=态素凝聚
 recipemap.bioware_simulator_recipes.name=生物数据模拟
 recipemap.simulator_recipes.name=数据模拟
+recipemap.nano_scale_mask_aligner_recipes.name=纳米尺度光刻
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K
