@@ -656,6 +656,28 @@ public class MachineRecipeLoader {
                 'W', new UnificationEntry(cableGtSingle, NiobiumTitanium),
                 'B', WORKBENCH.getStackForm());
 
+        //  Extreme Processing Array
+        ModHandler.addShapedRecipe(true, "extreme_processing_array", EXTREME_PROCESSING_ARRAY.getStackForm(),
+                "RXR", "SHE", "PFP",
+                'R', ROBOT_ARM_ZPM,
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'S', SENSOR_ZPM,
+                'H', ADVANCED_PROCESSING_ARRAY.getStackForm(),
+                'E', EMITTER_ZPM,
+                'P', new UnificationEntry(plate, HSSS),
+                'F', new UnificationEntry(pipeLargeFluid, Europium));
+
+        //  Ultimate Processing Array
+        ModHandler.addShapedRecipe(true, "ultimate_processing_array", ULTIMATE_PROCESSING_ARRAY.getStackForm(),
+                "RXR", "SHE", "PFP",
+                'R', ROBOT_ARM_UV,
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'S', SENSOR_UV,
+                'H', EXTREME_PROCESSING_ARRAY.getStackForm(),
+                'E', EMITTER_UV,
+                'P', new UnificationEntry(plate, Einsteinium),
+                'F', new UnificationEntry(pipeLargeFluid, Duranium));
+
         //  Stellar Furnace
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Hdcs, 4)
@@ -1847,8 +1869,8 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Neutronium)
-                .input(plateDense, Neutronium, 6)
+                .input(frameGt, CosmicNeutronium)
+                .input(plateDense, CosmicNeutronium, 6)
                 .input(ROBOT_ARM_UXV, 8)
                 .input(ELECTRIC_PISTON_UXV, 10)
                 .input(ELECTRIC_MOTOR_UXV, 16)
@@ -1870,7 +1892,31 @@ public class MachineRecipeLoader {
                         .CWUt(512))
                 .buildAndRegister();
 
-        //  TODO OpV-MAX Component Assembly Line Casings
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Spacetime)
+                .input(plateDense, Spacetime, 6)
+                .input(ROBOT_ARM_OpV, 8)
+                .input(ELECTRIC_PISTON_OpV, 10)
+                .input(ELECTRIC_MOTOR_OpV, 16)
+                .input(gear, Spacetime, 4)
+                .input(gearSmall, Spacetime, 16)
+                .input(cableGtQuadruple, Galaxium, 8)
+                .input(circuit, MarkerMaterials.Tier.OpV, 8)
+                .input(circuit, MarkerMaterials.Tier.UXV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(WhiteDwarfMatter.getFluid(1728))
+                .fluidInputs(BlackDwarfMatter.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.OpV, 4))
+                .EUt(VA[OpV])
+                .duration(600)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.UXV))
+                        .EUt(VA[UXV])
+                        .CWUt(1024))
+                .buildAndRegister();
+
+        //  TODO MAX Component Assembly Line Casings
 
         //  Farm Casing
         ModHandler.addShapedRecipe(true, "farm_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ASEPTIC_FARM_CASING, 2),
@@ -2082,7 +2128,19 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  TODO OpV and MAX field casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Spacetime)
+                .input(plate, Tritanium, 4)
+                .input(FIELD_GENERATOR_OpV, 2)
+                .input(wireGtSingle, Galaxium, 2)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.OpV, 2))
+                .EUt(VA[OpV])
+                .duration(150)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  TODO MAX field casing
 
         //  Space Elevator Casings
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -2723,6 +2781,36 @@ public class MachineRecipeLoader {
                 .EUt(VA[LuV])
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  HSS-S Casing
+        ModHandler.addShapedRecipe(true, "hss_s_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.HSS_S_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, HSSS),
+                'F', new UnificationEntry(frameGt, Americium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, HSSS, 6)
+                .input(frameGt, Americium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.HSS_S_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Einsteinium Casing
+        ModHandler.addShapedRecipe(true, "einsteinium_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.EINSTEINIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Einsteinium),
+                'F', new UnificationEntry(frameGt, Einsteinium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Einsteinium, 6)
+                .input(frameGt, Einsteinium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.EINSTEINIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
                 .buildAndRegister();
     }
 }

@@ -24,6 +24,8 @@ tile.metal_casing.eglin_steel_casing.name=高强度埃格林钢机器外壳
 tile.metal_casing.inconel_792_casing.name=防水镍基合金-792机器外壳
 tile.metal_casing.austenitic_stainless_steel_casing.name=耐热奥氏体不锈钢抗腐蚀机器外壳
 tile.metal_casing.mar_m200_casing.name=抗震MAR-M200特种钢涡轮机器外壳
+tile.metal_casing.hss_s_casing.name=超耐久高速钢-S机器外壳
+tile.metal_casing.einsteinium_casing.name=高强度锿机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -936,6 +938,12 @@ gtlitecore.machine.large_processing_factory.tooltip.5=§c加工模式-B§7 -> 20
 gtlitecore.machine.large_processing_factory.tooltip.6=§c加工模式-C§7 -> 20-精密激光蚀刻机，21-高压釜，22-流体固化机
 gtlitecore.machine.large_processing_factory.tooltip.7=§e电压等级§7决定了最大并行数。
 gtlitecore.machine.large_processing_factory.tooltip.8=每提升1个电压等级，最大并行数加2。
+
+gtlitecore.machine.advanced_processing_array.tooltip=因为物品的最大堆叠限制，这台机器实际上§c只能放入64个机器§7。
+gtlitecore.machine.extreme_processing_array.name=极限处理阵列
+gtlitecore.machine.extreme_processing_array.tooltip.1=作为补偿，§r无论运行什么配方§7，配方的运行耗时均为§r(0.8 * 配方时间)§7。
+gtlitecore.machine.ultimate_processing_array.name=终极处理阵列
+gtlitecore.machine.ultimate_processing_array.tooltip.1=作为补偿，§r无论运行什么配方§7，配方的运行耗时均为§r(0.5 * 配方时间)§7。
 
 gtlitecore.machine.reinforced_rotor_holder.luv.name=强化转子支架（§dLuV§r）
 gtlitecore.machine.reinforced_rotor_holder.zpm.name=强化转子支架（§cZPM§r）

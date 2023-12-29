@@ -159,7 +159,7 @@ public class GTLiteElementMaterials {
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[OpV], 100)
                         .vacuumStats(VA[OpV], 100))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .element(GTLiteElements.SpaceTime)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
