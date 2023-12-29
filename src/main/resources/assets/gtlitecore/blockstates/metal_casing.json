@@ -49,6 +49,18 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/mar_m200_steel_casing"
         }
+      },
+      "hss_s_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/hss_s_casing"
+        }
+      },
+      "einsteinium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/einsteinium_casing"
+        }
       }
     }
   }

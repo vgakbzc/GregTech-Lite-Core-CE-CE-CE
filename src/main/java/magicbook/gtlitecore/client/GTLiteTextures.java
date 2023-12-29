@@ -80,6 +80,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer MAR_M200_STEEL_CASING = new GTLiteOverlayRenderer("casings/mar_m200_steel_casing");
     public static GTLiteOverlayRenderer BIOWARE_COMPUTER_CASING = new GTLiteOverlayRenderer("casings/bioware_computer_casing_top");
     public static GTLiteOverlayRenderer ADVANCED_BIOWARE_COMPUTER_CASING = new GTLiteOverlayRenderer("casings/bioware_computer_casing");
+    public static GTLiteOverlayRenderer HSS_S_CASING = new GTLiteOverlayRenderer("casings/hss_s_casing");
+    public static GTLiteOverlayRenderer EINSTEINIUM_CASING = new GTLiteOverlayRenderer("casings/einsteinium_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
