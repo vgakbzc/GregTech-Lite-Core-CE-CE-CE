@@ -128,6 +128,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
     public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
     public static MetaTileEntityCokingTower COKING_TOWER;
+    public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
 
     /**
@@ -332,7 +333,7 @@ public class GTLiteMetaTileEntities {
         //  87
         //  88
         //  89
-        //  90
+        NANOSCALE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityNanoScaleEUVMaskAligner(gtliteId("nanoscale_euv_mask_aligner")));
         //  91
         //  92
         //  93
