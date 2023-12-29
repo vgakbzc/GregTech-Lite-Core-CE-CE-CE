@@ -440,5 +440,14 @@ public class MiscRecipes {
                 'P', new UnificationEntry(plate, BlackPlutonium),
                 'D', new UnificationEntry(plateDouble, BlackTitanium),
                 'G', new UnificationEntry(gem, CelestialCrystal));
+
+        //  Chromatic Lens
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(lens, NetherStar)
+                .fluidInputs(RainbowSap.getFluid(L * 2))
+                .output(CHROMATIC_LENS)
+                .EUt(VA[UV])
+                .duration(200)
+                .buildAndRegister();
     }
 }

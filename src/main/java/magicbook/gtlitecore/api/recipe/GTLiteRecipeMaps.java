@@ -138,6 +138,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> BIOWARE_SIMULATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -463,9 +465,15 @@ public class GTLiteRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
 
-        //  Simulator Recipes
+        //  Simulator RecipeMap
         SIMULATOR_RECIPES = new RecipeMap<>("simulator_recipes", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  Nano-scale Mask Aligner RecipeMap
+        NANO_SCALE_MASK_ALIGNER_RECIPES = new RecipeMap<>("nano_scale_mask_aligner_recipes", 2, 2, 1, 1, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, true, GuiTextures.LENS_OVERLAY)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSound(GTSoundEvents.ARC);
     }
 }
