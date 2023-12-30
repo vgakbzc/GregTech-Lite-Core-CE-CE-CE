@@ -61,6 +61,24 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/einsteinium_casing"
         }
+      },
+      "nitinol_60_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/nitinol_60_casing"
+        }
+      },
+      "mendelevium_casing":{
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/mendelevium_casing"
+        }
+      },
+      "fermium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fermium_casing"
+        }
       }
     }
   }

@@ -138,6 +138,9 @@ public class GTLiteMaterialPropertyAddition {
         Rhenium.addFlags(GENERATE_PLATE);
         RTMAlloy.addFlags(GENERATE_PLATE);
         Einsteinium.addFlags(GENERATE_PLATE);
+        Fermium.addFlags(GENERATE_PLATE);
+        Mendelevium.addFlags(GENERATE_PLATE);
+        Berkelium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -173,12 +176,17 @@ public class GTLiteMaterialPropertyAddition {
         RedSteel.addFlags(GENERATE_FRAME);
         CobaltBrass.addFlags(GENERATE_FRAME);
         Einsteinium.addFlags(GENERATE_FRAME);
+        Fermium.addFlags(GENERATE_FRAME);
+        Mendelevium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
         Livermorium.addFlags(GENERATE_ROD);
         Graphene.addFlags(GENERATE_ROD);
         Einsteinium.addFlags(GENERATE_ROD);
+        Fermium.addFlags(GENERATE_ROD);
+        Mendelevium.addFlags(GENERATE_ROD);
+        Berkelium.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -207,6 +215,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
+        Berkelium.addFlags(GENERATE_ROTOR);
 
         //  Wire Fine
         Seaborgium.addFlags(GENERATE_FINE_WIRE);

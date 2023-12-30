@@ -9,13 +9,16 @@ import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.FuelMultiblockController;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.TextComponentUtil;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.client.renderer.ICubeRenderer;
+import magicbook.gtlitecore.api.capability.IReinforcedRotorHolder;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -142,29 +145,51 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
 
     @Override
     protected void addWarningText(List<ITextComponent> textList) {
-        super.addWarningText(textList);
-        if (isStructureFormed()) {
-            IRotorHolder rotorHolder = getRotorHolder();
-            if (rotorHolder.getRotorEfficiency() > 0) {
-                if (rotorHolder.getRotorDurabilityPercent() <= MIN_DURABILITY_TO_WARN) {
-                    textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.rotor_durability_low"));
-                }
-            } else {
-                textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.no_rotor"));
-            }
-        }
+        //super.addWarningText(textList);
+        //if (isStructureFormed()) {
+        //    IRotorHolder rotorHolder = getRotorHolder();
+        //    if (rotorHolder.getRotorEfficiency() > 0) {
+        //        if (rotorHolder.getRotorDurabilityPercent() <= MIN_DURABILITY_TO_WARN) {
+        //            textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.rotor_durability_low"));
+        //        }
+        //    } else {
+        //        textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.no_rotor"));
+        //    }
+        //}
+
+        MultiblockDisplayText.builder(textList, this.isStructureFormed(), false)
+                .addCustom((tl) -> {
+                    if (this.isStructureFormed()) {
+                        IReinforcedRotorHolder rotorHolder = (IReinforcedRotorHolder) this.getRotorHolder();
+                        if (rotorHolder.getRotorEfficiency() > 0 && rotorHolder.getRotorDurabilityPercent() <= 10) {
+                            tl.add(TextComponentUtil.translationWithColor(TextFormatting.YELLOW, "gregtech.multiblock.turbine.rotor_durability_low"));
+                        }
+                    }})
+                .addLowDynamoTierLine(this.isDynamoTierTooLow())
+                .addMaintenanceProblemLines(this.getMaintenanceProblems());
     }
 
     @Override
     protected void addErrorText(List<ITextComponent> textList) {
         super.addErrorText(textList);
-        if (isStructureFormed() && !isRotorFaceFree()) {
-            textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.obstructed").setStyle(new Style().setColor(TextFormatting.RED)));
+        if (this.isStructureFormed()) {
+            if (!this.isRotorFaceFree()) {
+                textList.add(TextComponentUtil.translationWithColor(TextFormatting.RED, "gregtech.multiblock.turbine.obstructed"));
+                textList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.turbine.obstructed.desc"));
+            }
+
+            IRotorHolder rotorHolder = this.getRotorHolder();
+            if (rotorHolder.getRotorEfficiency() <= 0) {
+                textList.add(TextComponentUtil.translationWithColor(TextFormatting.RED, "gregtech.multiblock.turbine.no_rotor"));
+            }
         }
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[tier] * 2));
         tooltip.add(I18n.format("gregtech.multiblock.turbine.efficiency_tooltip", GTValues.VNF[tier]));

@@ -231,6 +231,20 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
 
+    //  Algae
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_CHLORELLA;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_BRYOPSIS_HYPNOIDES;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_ZOOXANTHELLAE;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_BASE;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SCENEDESMUS_OBLIQUUS;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_PHAEOPHYTA;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SPIRULINA;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_BASE;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_CONCHOSPORE;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_POLYSIPHONIA_SENTICULOSA;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_SPIROGYRA;
+
     //  Memory Cards
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_BASE;
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_ZOMBIE;

@@ -340,6 +340,15 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  10025 Tiberium
+        Tiberium = new Material.Builder(getId(), gregtechId("tiberium"))
+                .dust()
+                .liquid()
+                .color(0x79B349)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Tiberium)
+                .build();
     }
 
     private static int getId() {

@@ -678,6 +678,15 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(plate, Einsteinium),
                 'F', new UnificationEntry(pipeLargeFluid, Duranium));
 
+        //  Large Alloy Smelter
+        ModHandler.addShapedRecipe(true, "large_alloy_smelter", LARGE_ALLOY_SMELTER.getStackForm(),
+                "PGP", "CHC", "PWP",
+                'H', ALLOY_SMELTER[EV].getStackForm(),
+                'P', new UnificationEntry(plate, TungstenCarbide),
+                'G', new UnificationEntry(gear, TungstenCarbide),
+                'W', new UnificationEntry(cableGtSingle, Aluminium),
+                'C', CONVEYOR_MODULE_EV);
+
         //  Stellar Furnace
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Hdcs, 4)
@@ -874,10 +883,51 @@ public class MachineRecipeLoader {
                 .input(FLUID_REGULATOR_ZPM, 2)
                 .input(spring, Pikyonium64B, 4)
                 .input(screw, Trinium, 16)
+                .fluidInputs(NaquadahAlloy.getFluid(L * 4))
                 .output(MEGA_PLASMA_TURBINE)
                 .EUt(VA[ZPM])
                 .duration(1200)
                 .buildAndRegister();
+
+        //  Mega High Pressure Steam Turbine
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HIGH_PRESSURE_STEAM_TURBINE)
+                .input(plate, HY1301, 8)
+                .input(circuit, MarkerMaterials.Tier.LuV, 4)
+                .input(ELECTRIC_PUMP_IV, 2)
+                .input(FLUID_REGULATOR_IV, 2)
+                .input(ring, Inconel625, 8)
+                .input(screw, TungstenSteel, 16)
+                .fluidInputs(RTMAlloy.getFluid(L * 4))
+                .output(MEGA_HIGH_PRESSURE_STEAM_TURBINE)
+                .EUt(VA[IV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Mega Supercritical Steam Turbine
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(SUPERCRITICAL_STEAM_TURBINE)
+                .input(plate, IncoloyMA813, 8)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(FLUID_REGULATOR_ZPM, 2)
+                .input(rotor, HastelloyC59, 4)
+                .input(screw, YttriumBariumCuprate, 16)
+                .fluidInputs(Americium.getFluid(L * 4))
+                .output(MEGA_SUPERCRITICAL_STEAM_TURBINE)
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Large Rocket Engine
+        ModHandler.addShapedRecipe(true, "large_rocket_engine", LARGE_ROCKET_ENGINE.getStackForm(),
+                "PAP", "HFH", "WDW",
+                'H', ROCKET_ENGINE[2].getStackForm(),
+                'F', new UnificationEntry(frameGt, TungstenCarbide),
+                'D', POWER_THRUSTER_ADVANCED,
+                'W', new UnificationEntry(cableGtQuadruple, Platinum),
+                'P', ELECTRIC_PISTON_IV,
+                'A', new UnificationEntry(plate, Tantalloy61));
 
         //  Cosmic Ray Detector
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -1005,7 +1055,7 @@ public class MachineRecipeLoader {
         //  ZhuHai Fishing Pond
         ModHandler.addShapedRecipe(true, "zhuhai_fishing_pond", ZHUHAI_FISHING_POND.getStackForm(),
                 "FRF", "PHP", "WXW",
-                'H', HULL[EV].getStackForm(),
+                'H', FISHER[3].getStackForm(),
                 'R', Items.FISHING_ROD,
                 'P', ELECTRIC_PUMP_EV,
                 'F', FLUID_FILTER,
@@ -1192,6 +1242,24 @@ public class MachineRecipeLoader {
                 .EUt(VA[EV])
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Algae Culture Tank
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(plate, Mendelevium, 4)
+                .input(plate, Naquadria, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 2)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(FIELD_GENERATOR_ZPM, 2)
+                .input(pipeLargeFluid, LithiumTitanate)
+                .input(rotor, Berkelium, 2)
+                .input(wireFine, Cobalt, 16)
+                .fluidInputs(Mutagen.getFluid(L * 4))
+                .output(ALGAE_CULTURE_TANK)
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
     }
 
@@ -2809,6 +2877,51 @@ public class MachineRecipeLoader {
                 .input(frameGt, Einsteinium)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.EINSTEINIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Nitinol-60 Casing
+        ModHandler.addShapedRecipe(true, "nitinol_60_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.NITINOL_60_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Nitinol60),
+                'F', new UnificationEntry(frameGt, Nitinol60));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Nitinol60, 6)
+                .input(frameGt, Nitinol60)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.NITINOL_60_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Fermium Casing
+        ModHandler.addShapedRecipe(true, "fermium_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.FERMIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Fermium),
+                'F', new UnificationEntry(frameGt, Fermium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Fermium, 6)
+                .input(frameGt, Fermium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.FERMIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Mendelevium Casing
+        ModHandler.addShapedRecipe(true, "mendelevium_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MENDELEVIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Mendelevium),
+                'F', new UnificationEntry(frameGt, Mendelevium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Mendelevium, 6)
+                .input(frameGt, Mendelevium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MENDELEVIUM_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

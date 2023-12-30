@@ -239,6 +239,20 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(354, "dense_neutron_plasma_containment_cell");
         COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(355, "cosmic_neutron_plasma_containment_cell");
 
+        //  Algae
+        BARNARDA_C_BASE = this.addItem(360, "alga.barnarda_c.base");
+        BARNARDA_C_CHLORELLA = this.addItem(361, "alga.barnarda_c.chlorella").addOreDict("dyePurple");
+        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(362, "alga.barnarda_c.bryopsis_hypnoides").addOreDict("dyeGreen");
+        BARNARDA_C_ZOOXANTHELLAE = this.addItem(363, "alga.barnarda_c.zooxanthellae").addOreDict("dyeOrange");
+        TAU_CETI_F_BASE = this.addItem(364, "alga.tau_ceti_f.base");
+        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(365, "alga.tau_ceti_f.scenedesmus_obliquus").addOreDict("dyeLime");
+        TAU_CETI_F_PHAEOPHYTA = this.addItem(366, "alga.tau_ceti_f.phaeophyta").addOreDict("dyeBrown");
+        TAU_CETI_F_SPIRULINA = this.addItem(367, "alga.tau_ceti_f.spirulina").addOreDict("dyeBlue");
+        PROXIMA_B_BASE = this.addItem(368, "alga.proxima_b.base");
+        PROXIMA_B_CONCHOSPORE = this.addItem(369, "alga.proxima_b.conchospore").addOreDict("dyeRed");
+        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(370, "alga.proxima_b.polysiphonia_senticulosa").addOreDict("dyeYellow");
+        PROXIMA_B_SPIROGYRA = this.addItem(371, "alga.proxima_b.spirogyra").addOreDict("dyeGray");
+
         //  Memory Cards
         MEMORY_CARD_BASE = this.addItem(385, "memory_card.base");
         MEMORY_CARD_ZOMBIE = this.addItem(386, "memory_card.zombie");

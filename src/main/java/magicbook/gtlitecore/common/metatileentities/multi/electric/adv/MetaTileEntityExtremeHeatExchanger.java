@@ -62,7 +62,7 @@ public class MetaTileEntityExtremeHeatExchanger extends NoEnergyMultiblockContro
         return FactoryBlockPattern.start()
                 .aisle("CCC", "CCC", "CCC", "CCC")
                 .aisle("CIC", "CPC", "CPC", "CEC")
-                .aisle("CSC", "CCC", "CCC", "CCC")
+                .aisle("CSC", "CJC", "CJC", "CCC")
                 .where('S', selfPredicate())
                 .where('C', states(getCasingState())
                         .setMinGlobalLimited(24)
@@ -71,6 +71,9 @@ public class MetaTileEntityExtremeHeatExchanger extends NoEnergyMultiblockContro
                 .where('P', states(getBoilerCasingState()))
                 .where('I', abilities(MultiblockAbility.IMPORT_FLUIDS))
                 .where('E', abilities(MultiblockAbility.EXPORT_FLUIDS))
+                .where('J', states(getCasingState())
+                        .or(abilities(MultiblockAbility.IMPORT_ITEMS)
+                                .setExactLimit(1)))
                 .build();
     }
 
