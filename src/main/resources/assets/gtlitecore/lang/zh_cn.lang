@@ -1346,6 +1346,8 @@ gregtech.material.radon_trioxide=三氧化氡
 gregtech.material.caesium_fluoride=氟化铯
 gregtech.material.xenon_trioxide=三氧化氙
 gregtech.material.radon_difluoride=二氟化氡
+gregtech.material.polonium_nitrate=硝酸钋
+gregtech.material.polonium_dichloride=二氯化钋
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

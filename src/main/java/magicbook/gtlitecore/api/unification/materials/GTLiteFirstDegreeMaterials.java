@@ -1988,6 +1988,23 @@ public class GTLiteFirstDegreeMaterials {
                 .color(0x8B7EFF)
                 .components(Radon, 1, Fluorine, 2)
                 .build();
+
+        //  24109 PoloniumNitrate
+        PoloniumNitrate = new Material.Builder(getId(), gregtechId("polonium_nitrate"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(Polonium.getMaterialRGB() + NitricAcid.getMaterialRGB())
+                .components(Polonium, 1, Nitrogen, 4, Oxygen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Po(NO3)4", true);
+
+        //  24110 PoloniumDichloride
+        PoloniumDichloride = new Material.Builder(getId(), gregtechId("polonium_dichloride"))
+                .dust()
+                .color(Polonium.getMaterialRGB() + Chlorine.getMaterialRGB())
+                .components(Polonium, 1, Chlorine, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {
