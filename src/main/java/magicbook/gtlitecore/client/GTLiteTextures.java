@@ -88,6 +88,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer FERMIUM_CASING = new GTLiteOverlayRenderer("casings/fermium_casing");
     public static GTLiteOverlayRenderer PROTACTINIUM_CASING = new GTLiteOverlayRenderer("casings/protactinium_casing");
     public static GTLiteOverlayRenderer MENDELEVIUM_CASING = new GTLiteOverlayRenderer("casings/mendelevium_casing");
+    public static GTLiteOverlayRenderer HSS_G_CASING = new GTLiteOverlayRenderer("casings/hss_g_casing");
+    public static GTLiteOverlayRenderer INCOLOY_MA_813_CASING = new GTLiteOverlayRenderer("casings/incoloy_ma_813_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

@@ -180,6 +180,7 @@ public class GTLiteMaterialPropertyAddition {
         Fermium.addFlags(GENERATE_FRAME);
         Mendelevium.addFlags(GENERATE_FRAME);
         Protactinium.addFlags(GENERATE_FRAME);
+        Trinium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

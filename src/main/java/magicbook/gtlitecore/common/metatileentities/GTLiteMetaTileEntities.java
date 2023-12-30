@@ -137,6 +137,10 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityAdvancedLargeMiner EXTREME_LARGE_MINER;
     public static MetaTileEntityAdvancedLargeMiner ULTIMATE_LARGE_MINER;
     public static MetaTileEntityAdvancedLargeMiner INFINITY_LARGE_MINER;
+    public static MetaTileEntityAdvancedFluidDrill ADVANCED_FLUID_DRILL_RIG;
+    public static MetaTileEntityAdvancedFluidDrill EXTREME_FLUID_DRILL_RIG;
+    public static MetaTileEntityAdvancedFluidDrill ULTIMATE_FLUID_DRILL_RIG;
+    public static MetaTileEntityAdvancedFluidDrill INFINITY_FLUID_DRILL_RIG;
     public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
@@ -335,10 +339,10 @@ public class GTLiteMetaTileEntities {
         EXTREME_LARGE_MINER = registerMultiMetaTileEntity(79, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.zpm"), 7, 1, 9, 7, Materials.Protactinium, 64));
         ULTIMATE_LARGE_MINER = registerMultiMetaTileEntity(80, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.uv"), 8, 1, 18, 8, Materials.Einsteinium, 128));
         INFINITY_LARGE_MINER = registerMultiMetaTileEntity(81, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.uhv"), 9, 1, 36, 9, Materials.Mendelevium, 256));
-        //  82 IV-LuV   FLUID_DRILL_RIG_IV
-        //  83 LuV-ZPM  FLUID_DRILL_RIG_LuV
-        //  84 ZPM-UV   FLUID_DRILL_RIG_ZPM
-        //  85 UV-UHV   FLUID_DRILL_RIG_UV
+        ADVANCED_FLUID_DRILL_RIG = registerMultiMetaTileEntity(82, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.iv"), 5));
+        EXTREME_FLUID_DRILL_RIG = registerMultiMetaTileEntity(83, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.luv"), 6));
+        ULTIMATE_FLUID_DRILL_RIG = registerMultiMetaTileEntity(84, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.zpm"), 7));
+        INFINITY_FLUID_DRILL_RIG = registerMultiMetaTileEntity(85, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.uv"), 8));
         //  86
         //  87
         //  88

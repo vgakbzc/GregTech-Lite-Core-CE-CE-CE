@@ -118,6 +118,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UV])
                         .vacuumStats(VA[EV], 280))
                 .cableProperties(V[UHV], 6, 8, false)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_GEAR)
                 .build();
 
         //  12008 MAR-M200 Steel
@@ -215,7 +216,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[ZPM], 1277)
                         .vacuumStats(VA[IV], 400))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR)
                 .build();
 
         //  12015 Lafium
@@ -230,6 +231,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 260))
                 .components(HastelloyN, 8, Naquadria, 4, Samarium, 2, Tungsten, 4, Aluminium, 6, Nickel, 8, Titanium, 4, Carbon, 2, Argon, 2)
                 .fluidPipeProperties(23000, 8000, true, true, true, true)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
                 .build();
 
         //  12016 Inconel-792
@@ -279,7 +281,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[ZPM], 487)
                         .vacuumStats(VA[IV], 170))
                 .components(Inconel792, 8, EglinSteel, 5, NaquadahAlloy, 4, TungstenSteel, 4, Cerium, 3, Antimony, 2, Platinum, 2, Ytterbium, 1)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME, GENERATE_FOIL)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME, GENERATE_FOIL, GENERATE_GEAR)
                 .build();
 
         //  12020 Cinobite
