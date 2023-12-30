@@ -586,6 +586,8 @@ public class GTLiteMaterials {
     public static Material ElectrolyteReflectorMixture;
     public static Material StarlightLiquid;
     public static Material CelestialCrystal;
+    public static Material SupercriticalSteam;
+    public static Material SuperheatedSteam;
 
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000

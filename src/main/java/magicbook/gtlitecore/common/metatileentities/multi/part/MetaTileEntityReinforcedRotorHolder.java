@@ -23,7 +23,6 @@ import gregtech.core.advancement.AdvancementTriggers;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
 import magicbook.gtlitecore.api.capability.IReinforcedRotorHolder;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
-import magicbook.gtlitecore.api.metatileentity.multi.ITurbineMode;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -75,7 +74,10 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.machine.rotor_holder.tooltip1"));
         tooltip.add(I18n.format("gregtech.machine.rotor_holder.tooltip2"));
@@ -85,7 +87,10 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     }
 
     @Override
-    public void addToolUsages(ItemStack stack, @Nullable World world, List<String> tooltip, boolean advanced) {
+    public void addToolUsages(ItemStack stack,
+                              @Nullable World world,
+                              @Nonnull List<String> tooltip,
+                              boolean advanced) {
         tooltip.add(I18n.format("gregtech.tool_action.screwdriver.access_covers"));
         tooltip.add(I18n.format("gregtech.tool_action.wrench.set_facing"));
         super.addToolUsages(stack, world, tooltip, advanced);
@@ -99,7 +104,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     @Override
     public void update() {
         super.update();
-        if (getWorld().isRemote) return;
+        /*if (getWorld().isRemote) return;
 
         if (getOffsetTimer() % 20 == 0) {
             boolean isFrontFree = checkTurbineFaceFree();
@@ -122,6 +127,31 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
             setCurrentSpeed(0);
         } else if (currentSpeed > 0) {
             setCurrentSpeed(Math.max(0, currentSpeed - SPEED_DECREMENT));
+        }*/
+
+        if (!this.getWorld().isRemote) {
+            if (this.getOffsetTimer() % 20L == 0L) {
+                boolean isFrontFree = this.checkTurbineFaceFree();
+                if (isFrontFree != this.frontFaceFree) {
+                    this.frontFaceFree = isFrontFree;
+                    this.writeCustomData(GregtechDataCodes.FRONT_FACE_FREE, (buf) -> buf.writeBoolean(this.frontFaceFree));
+                }
+            }
+        }
+
+        FuelMultiblockController controller = (FuelMultiblockController) getController();
+        if (controller != null && controller.isActive()) {
+            if (this.currentSpeed < this.maxSpeed) {
+                this.setCurrentSpeed(this.currentSpeed + 1);
+            }
+
+            if (this.getOffsetTimer() % 20L == 0L) {
+                this.damageRotor(1 + controller.getNumMaintenanceProblems());
+            }
+        } else if (!this.hasRotor()) {
+            this.setCurrentSpeed(0);
+        } else if (this.currentSpeed > 0) {
+            this.setCurrentSpeed(Math.max(0, currentSpeed - SPEED_DECREMENT));
         }
     }
 
@@ -185,15 +215,26 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     }
 
     private boolean onRotorHolderInteract(@Nonnull EntityPlayer player) {
-        if (player.isCreative()) return false;
+        //if (player.isCreative()) return false;
 
-        if (!getWorld().isRemote && isRotorSpinning) {
-            float damageApplied = Math.min(1, currentSpeed / 1000);
+        //if (!getWorld().isRemote && isRotorSpinning) {
+        //    float damageApplied = Math.min(1, currentSpeed / 1000);
+        //    player.attackEntityFrom(DamageSources.getTurbineDamage(), damageApplied);
+        //    AdvancementTriggers.ROTOR_HOLDER_DEATH.trigger((EntityPlayerMP) player);
+        //    return true;
+        //}
+        //return isRotorSpinning;
+
+        if (player.isCreative()) {
+            return false;
+        } else if (!this.getWorld().isRemote && this.isRotorSpinning) {
+            float damageApplied = (float)Math.min(1, this.currentSpeed / 1000);
             player.attackEntityFrom(DamageSources.getTurbineDamage(), damageApplied);
-            AdvancementTriggers.ROTOR_HOLDER_DEATH.trigger((EntityPlayerMP) player);
+            AdvancementTriggers.ROTOR_HOLDER_DEATH.trigger((EntityPlayerMP)player);
             return true;
+        } else {
+            return this.isRotorSpinning;
         }
-        return isRotorSpinning;
     }
 
     /**

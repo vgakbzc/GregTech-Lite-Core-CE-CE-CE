@@ -133,5 +133,6 @@ public class RecipeManager {
         TurbineMixer.init();
         BioReactor.init();
         Simulator.init();
+        HeatExchanger.init();
     }
 }

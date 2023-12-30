@@ -660,6 +660,22 @@ public class GTLiteUnknownCompositionMaterials {
                 .flags(DISABLE_CRYSTALLIZATION)
                 .build()
                 .setFormula("Ax⚶?", false);
+
+        //  24073 Supercritical Steam
+        SupercriticalSteam = new Material.Builder(getId(), gregtechId("supercritical_steam"))
+                .gas(new FluidBuilder().temperature(873).customStill())
+                .color(0xC4C4C4)
+                .components(Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24074 Superheated Steam
+        SuperheatedSteam = new Material.Builder(getId(), gregtechId("superheated_steam"))
+                .gas(new FluidBuilder().temperature(573).customStill())
+                .color(0xC4C4C)
+                .components(Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

@@ -173,7 +173,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 559)
                         .vacuumStats(VA[EV], 300))
                 .components(Nickel, 18, Chrome, 16, TinAlloy, 8, Cobalt, 6, Niobium, 4, Aluminium, 4)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
                 .build();
 
         //  12012 HMS-1J79Alloy

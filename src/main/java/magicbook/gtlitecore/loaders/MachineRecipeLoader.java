@@ -874,7 +874,38 @@ public class MachineRecipeLoader {
                 .input(FLUID_REGULATOR_ZPM, 2)
                 .input(spring, Pikyonium64B, 4)
                 .input(screw, Trinium, 16)
+                .fluidInputs(NaquadahAlloy.getFluid(L * 4))
                 .output(MEGA_PLASMA_TURBINE)
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Mega High Pressure Steam Turbine
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HIGH_PRESSURE_STEAM_TURBINE)
+                .input(plate, HY1301, 8)
+                .input(circuit, MarkerMaterials.Tier.LuV, 4)
+                .input(ELECTRIC_PUMP_IV, 2)
+                .input(FLUID_REGULATOR_IV, 2)
+                .input(ring, Inconel625, 8)
+                .input(screw, TungstenSteel, 16)
+                .fluidInputs(RTMAlloy.getFluid(L * 4))
+                .output(MEGA_HIGH_PRESSURE_STEAM_TURBINE)
+                .EUt(VA[IV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Mega Supercritical Steam Turbine
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(SUPERCRITICAL_STEAM_TURBINE)
+                .input(plate, IncoloyMA813, 8)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(FLUID_REGULATOR_ZPM, 2)
+                .input(rotor, HastelloyC59, 4)
+                .input(screw, YttriumBariumCuprate, 16)
+                .fluidInputs(Americium.getFluid(L * 4))
+                .output(MEGA_SUPERCRITICAL_STEAM_TURBINE)
                 .EUt(VA[ZPM])
                 .duration(1200)
                 .buildAndRegister();

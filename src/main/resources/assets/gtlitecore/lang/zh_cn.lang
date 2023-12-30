@@ -967,6 +967,10 @@ gtlitecore.machine.high_pressure_steam_turbine.name=高压蒸汽涡轮
 
 gtlitecore.machine.supercritical_steam_turbine.name=超临界蒸汽涡轮
 
+gtlitecore.machine.mega_high_pressure_steam_turbine.name=特大高压蒸汽涡轮
+
+gtlitecore.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽涡轮
+
 gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
 gtlitecore.machine.neutral_network_nexus.tooltip.2=用于繁育或杂交各式纳米蜂群
@@ -1641,6 +1645,8 @@ gregtech.material.scandium_titanium_mixture=钪-钛混合物
 gregtech.material.electrolyte_reflector_mixture=介电镜成形液
 gregtech.material.starlight_liquid=液态星光
 gregtech.material.celestial_crystal=天体水晶
+gregtech.material.supercritical_steam=超临界蒸汽
+gregtech.material.superheated_steam=过热蒸汽
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
