@@ -1243,6 +1243,24 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Algae Culture Tank
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(plate, Mendelevium, 4)
+                .input(plate, Naquadria, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 2)
+                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(FIELD_GENERATOR_ZPM, 2)
+                .input(pipeLargeFluid, LithiumTitanate)
+                .input(rotor, Berkelium, 2)
+                .input(wireFine, Cobalt, 16)
+                .fluidInputs(Mutagen.getFluid(L * 4))
+                .output(ALGAE_CULTURE_TANK)
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -2878,5 +2896,34 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Fermium Casing
+        ModHandler.addShapedRecipe(true, "fermium_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.FERMIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Fermium),
+                'F', new UnificationEntry(frameGt, Fermium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Fermium, 6)
+                .input(frameGt, Fermium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.FERMIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Mendelevium Casing
+        ModHandler.addShapedRecipe(true, "mendelevium_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MENDELEVIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Mendelevium),
+                'F', new UnificationEntry(frameGt, Mendelevium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Mendelevium, 6)
+                .input(frameGt, Mendelevium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MENDELEVIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

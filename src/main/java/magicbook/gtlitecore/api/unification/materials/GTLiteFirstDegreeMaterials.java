@@ -1927,6 +1927,67 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Carbon, 48, Neutronium, 1)
                 .build()
                 .setFormula("Nt:CNT");
+
+        //  11220 Naquadria Caesium Xenonnonfluoride
+        NaquadriaCaesiumXenonnonfluoride = new Material.Builder(getId(), gregtechId("naquadria_caesium_xenonnonfluoride"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x54C248)
+                .components(Naquadria, 1, Caesium, 1, Xenon, 1, Fluorine, 9)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11221 Naquadria Caesiumfluoride
+        NaquadriaCaesiumfluoride = new Material.Builder(getId(), gregtechId("naquadria_caesiumfluoride"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xAAEB69)
+                .components(Naquadria, 1, Fluorine, 3, Caesium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("*Nq*F2CsF", true);
+
+        //  11222 Radon Naquadria Octafluoride
+        RadonNaquadriaOctafluoride = new Material.Builder(getId(), gregtechId("radon_naquadria_octafluoride"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x85F378)
+                .components(Radon, 1, Naquadria, 1, Fluorine, 8)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11223 CaesiumXenontrioxideFluoride
+        CaesiumXenontrioxideFluoride = new Material.Builder(getId(), gregtechId("caesium_xenontrioxide_fluoride"))
+                .liquid()
+                .color(0x5067D7)
+                .flags(DISABLE_DECOMPOSITION)
+                .components(Caesium, 1, Xenon, 1, Oxygen, 3, Fluorine, 1)
+                .build();
+
+        //  11224 Radon Trioxide
+        RadonTrioxide = new Material.Builder(getId(), gregtechId("radon_trioxide"))
+                .gas()
+                .color(0x9A6DD7)
+                .components(Radon, 1, Oxygen, 3)
+                .build();
+
+        //  11225 Caesium Fluoride
+        CaesiumFluoride = new Material.Builder(getId(), gregtechId("caesium_fluoride"))
+                .liquid()
+                .color(0xFF7A5F)
+                .components(Caesium, 1, Fluorine, 1)
+                .build();
+
+        //  24107 Xenon Trioxide
+        XenonTrioxide = new Material.Builder(getId(), gregtechId("xenon_trioxide"))
+                .gas()
+                .color(0x359FC3)
+                .components(Xenon, 1, Oxygen, 3)
+                .build();
+
+        //  24108 RadonDifluoride
+        RadonDifluoride = new Material.Builder(getId(), gregtechId("radon_difluoride"))
+                .gas()
+                .color(0x8B7EFF)
+                .components(Radon, 1, Fluorine, 2)
+                .build();
     }
 
     private static int getId() {

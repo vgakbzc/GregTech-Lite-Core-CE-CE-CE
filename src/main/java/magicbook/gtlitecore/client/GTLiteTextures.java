@@ -48,6 +48,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer COKING_TOWER_OVERLAY = new OrientedOverlayRenderer("multiblocks/coking_tower");
     public static OrientedOverlayRenderer BIOWARE_SIMULATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/bioware_simulator");
     public static OrientedOverlayRenderer LARGE_ROCKET_ENGINE_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_rocket_engine");
+    public static OrientedOverlayRenderer ALGAE_CULTURE_TANK_OVERLAY = new OrientedOverlayRenderer("multiblocks/algae_culture_tank");
 
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -84,6 +85,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer HSS_S_CASING = new GTLiteOverlayRenderer("casings/hss_s_casing");
     public static GTLiteOverlayRenderer EINSTEINIUM_CASING = new GTLiteOverlayRenderer("casings/einsteinium_casing");
     public static GTLiteOverlayRenderer NITINOL_60_CASING = new GTLiteOverlayRenderer("casings/nitinol_60_casing");
+    public static GTLiteOverlayRenderer FERMIUM_CASING = new GTLiteOverlayRenderer("casings/fermium_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

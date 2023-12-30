@@ -1,3 +1,17 @@
+#  Algae
+metaitem.alga.barnarda_c.base.name=未知巴纳德C藻类
+metaitem.alga.barnarda_c.chlorella.name=巴纳德C球藻
+metaitem.alga.barnarda_c.bryopsis_hypnoides.name=巴纳德C藓羽藻
+metaitem.alga.barnarda_c.zooxanthellae.name=巴纳德C黄藻
+metaitem.alga.tau_ceti_f.base.name=未知天仓五藻类
+metaitem.alga.tau_ceti_f.scenedesmus_obliquus.name=天仓五斜生栅藻
+metaitem.alga.tau_ceti_f.phaeophyta.name=天苍五褐藻
+metaitem.alga.tau_ceti_f.spirulina.name=天苍五螺旋蓝藻
+metaitem.alga.proxima_b.base.name=未知比邻星B藻类
+metaitem.alga.proxima_b.conchospore.name=比邻星B壳班藻
+metaitem.alga.proxima_b.polysiphonia_senticulosa.name=比邻星B多管藻
+metaitem.alga.proxima_b.spirogyra.name=比邻星B水绵藻
+
 #  Blocks
 tile.multiblock_casing.substrate_casing.name=基板机械方块
 tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
@@ -27,6 +41,8 @@ tile.metal_casing.mar_m200_casing.name=抗震MAR-M200特种钢涡轮机器外壳
 tile.metal_casing.hss_s_casing.name=超耐久高速钢-S机器外壳
 tile.metal_casing.einsteinium_casing.name=高强度锿机器外壳
 tile.metal_casing.nitinol_60_casing.name=高弹性镍钛诺-60机器外壳
+tile.metal_casing.mendelevium_casing.name=超稳定钔机器外壳
+tile.metal_casing.fermium_casing.name=抗腐蚀镄机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1068,6 +1084,9 @@ gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
 
+gtlitecore.machine.algae_culture_tank.name=异星藻类培养缸
+gtlitecore.machine.algae_culture_tank.tooltip.1=用于培养不属于这个星球的奇异藻类
+
 #  Materials
 
 ##  Element Materials
@@ -1097,6 +1116,7 @@ gregtech.material.degenerate_rhenium=简并态铼
 gregtech.material.astralium=星辉
 gregtech.material.hikarium=光素
 gregtech.material.eternity=永恒
+gregtech.material.tiberium=泰伯利亚
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -1318,6 +1338,14 @@ gregtech.material.aluminium_hydride=氢化铝
 gregtech.material.lithium_iodide=碘化锂
 gregtech.material.sodium_ethoxide=乙醇钠
 gregtech.material.neutronium_nanotube=中子素纳米管
+gregtech.material.naquadria_caesium_xenonnonfluoride=九氟氙酸超能硅岩铯
+gregtech.material.naquadria_caesiumfluoride=二氟超能硅岩酸铯
+gregtech.material.radon_naquadria_octafluoride=八氟超能硅岩酸氡
+gregtech.material.caesium_xenontrioxide_fluoride=二氟三氧氙酸铯
+gregtech.material.radon_trioxide=三氧化氡
+gregtech.material.caesium_fluoride=氟化铯
+gregtech.material.xenon_trioxide=三氧化氙
+gregtech.material.radon_difluoride=二氟化氡
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1655,6 +1683,17 @@ gregtech.material.starlight_liquid=液态星光
 gregtech.material.celestial_crystal=天体水晶
 gregtech.material.supercritical_steam=超临界蒸汽
 gregtech.material.superheated_steam=过热蒸汽
+gregtech.material.exotic_mutagen=畸变诱导剂
+gregtech.material.crude_exotic_gas=粗异星天然气
+gregtech.material.cracked_crude_exotic_gas=气奥裂化的粗异星天然气
+gregtech.material.naquadic_exotic_gas=硅岩化异星天然气
+gregtech.material.superheavy_exotic_gas=超重异星天然气
+gregtech.material.heavy_exotic_gas=重异星天然气
+gregtech.material.medium_exotic_gas=异星天然气
+gregtech.material.light_exotic_gas=轻异星天然气
+gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
+gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
+gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
@@ -1802,6 +1841,7 @@ recipemap.condenser_recipes=态素凝聚
 recipemap.bioware_simulator_recipes.name=生物数据模拟
 recipemap.simulator_recipes.name=数据模拟
 recipemap.nano_scale_mask_aligner_recipes.name=纳米尺度光刻
+recipemap.algae_culture_tank_recipes.name=藻类培养缸
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

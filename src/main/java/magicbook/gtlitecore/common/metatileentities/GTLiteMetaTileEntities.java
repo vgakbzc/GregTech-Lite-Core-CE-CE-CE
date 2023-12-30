@@ -136,6 +136,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCokingTower COKING_TOWER;
     public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
+    public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -350,5 +351,6 @@ public class GTLiteMetaTileEntities {
         //  98
         //  99
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
+        ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
     }
 }

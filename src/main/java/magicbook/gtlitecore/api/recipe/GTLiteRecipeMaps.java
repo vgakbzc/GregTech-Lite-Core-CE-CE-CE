@@ -140,6 +140,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -475,5 +477,14 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, false, true, GuiTextures.LENS_OVERLAY)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setSound(GTSoundEvents.ARC);
+
+        //  Algae Culture Tank RecipeMap
+        ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank_recipes", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+                .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+                .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.BATH);
     }
 }

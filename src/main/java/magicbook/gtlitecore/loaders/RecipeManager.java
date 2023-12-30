@@ -134,5 +134,6 @@ public class RecipeManager {
         BioReactor.init();
         Simulator.init();
         HeatExchanger.init();
+        AlgaeCultureTank.init();
     }
 }
