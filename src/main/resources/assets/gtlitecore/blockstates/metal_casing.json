@@ -79,6 +79,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/fermium_casing"
         }
+      },
+      "protactinium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/protactinium_casing"
+        }
       }
     }
   }

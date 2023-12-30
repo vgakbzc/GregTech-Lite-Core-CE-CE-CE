@@ -134,6 +134,9 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
     public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
     public static MetaTileEntityCokingTower COKING_TOWER;
+    public static MetaTileEntityAdvancedLargeMiner EXTREME_LARGE_MINER;
+    public static MetaTileEntityAdvancedLargeMiner ULTIMATE_LARGE_MINER;
+    public static MetaTileEntityAdvancedLargeMiner INFINITY_LARGE_MINER;
     public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
@@ -329,13 +332,13 @@ public class GTLiteMetaTileEntities {
         //  76 INDUSTRIAL_CENTRIFUGE
         ZHUHAI_FISHING_POND = registerMultiMetaTileEntity(77, new MetaTileEntityZhuHaiFishingPond(gtliteId("zhuhai_fishing_pond")));
         COKING_TOWER = registerMultiMetaTileEntity(78, new MetaTileEntityCokingTower(gtliteId("coking_tower")));
-        //  79
-        //  80
-        //  81
-        //  82
-        //  83
-        //  84
-        //  85
+        EXTREME_LARGE_MINER = registerMultiMetaTileEntity(79, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.zpm"), 7, 1, 9, 7, Materials.Protactinium, 64));
+        ULTIMATE_LARGE_MINER = registerMultiMetaTileEntity(80, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.uv"), 8, 1, 18, 8, Materials.Einsteinium, 128));
+        INFINITY_LARGE_MINER = registerMultiMetaTileEntity(81, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.uhv"), 9, 1, 36, 9, Materials.Mendelevium, 256));
+        //  82 IV-LuV   FLUID_DRILL_RIG_IV
+        //  83 LuV-ZPM  FLUID_DRILL_RIG_LuV
+        //  84 ZPM-UV   FLUID_DRILL_RIG_ZPM
+        //  85 UV-UHV   FLUID_DRILL_RIG_UV
         //  86
         //  87
         //  88
