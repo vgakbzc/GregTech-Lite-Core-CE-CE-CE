@@ -678,6 +678,15 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(plate, Einsteinium),
                 'F', new UnificationEntry(pipeLargeFluid, Duranium));
 
+        //  Large Alloy Smelter
+        ModHandler.addShapedRecipe(true, "large_alloy_smelter", LARGE_ALLOY_SMELTER.getStackForm(),
+                "PGP", "CHC", "PWP",
+                'H', ALLOY_SMELTER[EV].getStackForm(),
+                'P', new UnificationEntry(plate, TungstenCarbide),
+                'G', new UnificationEntry(gear, TungstenCarbide),
+                'W', new UnificationEntry(cableGtSingle, Aluminium),
+                'C', CONVEYOR_MODULE_EV);
+
         //  Stellar Furnace
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Hdcs, 4)
@@ -1036,7 +1045,7 @@ public class MachineRecipeLoader {
         //  ZhuHai Fishing Pond
         ModHandler.addShapedRecipe(true, "zhuhai_fishing_pond", ZHUHAI_FISHING_POND.getStackForm(),
                 "FRF", "PHP", "WXW",
-                'H', HULL[EV].getStackForm(),
+                'H', FISHER[3].getStackForm(),
                 'R', Items.FISHING_ROD,
                 'P', ELECTRIC_PUMP_EV,
                 'F', FLUID_FILTER,

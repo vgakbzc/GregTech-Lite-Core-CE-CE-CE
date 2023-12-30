@@ -945,6 +945,8 @@ gtlitecore.machine.extreme_processing_array.tooltip.1=作为补偿，§r无论�
 gtlitecore.machine.ultimate_processing_array.name=终极处理阵列
 gtlitecore.machine.ultimate_processing_array.tooltip.1=作为补偿，§r无论运行什么配方§7，配方的运行耗时均为§r(0.5 * 配方时间)§7。
 
+gtlitecore.machine.large_alloy_smelter.name=大型合金炉
+
 gtlitecore.machine.reinforced_rotor_holder.luv.name=强化转子支架（§dLuV§r）
 gtlitecore.machine.reinforced_rotor_holder.zpm.name=强化转子支架（§cZPM§r）
 gtlitecore.machine.reinforced_rotor_holder.uv.name=强化转子支架（§3UV§r）
