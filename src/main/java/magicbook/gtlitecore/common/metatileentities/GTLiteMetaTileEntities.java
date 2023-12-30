@@ -117,11 +117,15 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeProcessingFactory LARGE_PROCESSING_FACTORY;
     public static MetaTileEntityAdvancedProcessingArray EXTREME_PROCESSING_ARRAY;
     public static MetaTileEntityAdvancedProcessingArray ULTIMATE_PROCESSING_ARRAY;
+    public static MetaTileEntityLargeAlloySmelter LARGE_ALLOY_SMELTER;
     public static MetaTileEntityMegaTurbine MEGA_STEAM_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_GAS_TURBINE;
     public static MetaTileEntityMegaTurbine MEGA_PLASMA_TURBINE;
     public static MetaTileEntityLargeTurbine HIGH_PRESSURE_STEAM_TURBINE;
     public static MetaTileEntityLargeTurbine SUPERCRITICAL_STEAM_TURBINE;
+    public static MetaTileEntityMegaTurbine MEGA_HIGH_PRESSURE_STEAM_TURBINE;
+    public static MetaTileEntityMegaTurbine MEGA_SUPERCRITICAL_STEAM_TURBINE;
+    public static MetaTileEntityLargeRocketEngine LARGE_ROCKET_ENGINE;
     public static MetaTileEntityNeutralNetworkNexus NEUTRAL_NETWORK_NEXUS;
     public static MetaTileEntityPCBFactory PCB_FACTORY;
     public static MetaTileEntityDangoteDistillery DANGOTE_DISTILLERY;
@@ -132,6 +136,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityCokingTower COKING_TOWER;
     public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
+    public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -304,15 +309,15 @@ public class GTLiteMetaTileEntities {
         LARGE_PROCESSING_FACTORY = registerMultiMetaTileEntity(56, new MetaTileEntityLargeProcessingFactory(gtliteId("large_processing_factory")));
         EXTREME_PROCESSING_ARRAY = registerMultiMetaTileEntity(57, new MetaTileEntityAdvancedProcessingArray(gtliteId("extreme_processing_array"), 0));
         ULTIMATE_PROCESSING_ARRAY = registerMultiMetaTileEntity(58, new MetaTileEntityAdvancedProcessingArray(gtliteId("ultimate_processing_array"), 1));
-        //  59
+        LARGE_ALLOY_SMELTER = registerMultiMetaTileEntity(59, new MetaTileEntityLargeAlloySmelter(gtliteId("large_alloy_smelter")));
         MEGA_STEAM_TURBINE = registerMultiMetaTileEntity(60, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.steam"), RecipeMaps.STEAM_TURBINE_FUELS, HV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STEEL_GEARBOX), Textures.SOLID_STEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
         MEGA_GAS_TURBINE = registerMultiMetaTileEntity(61, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.gas"), RecipeMaps.GAS_TURBINE_FUELS, EV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.STAINLESS_STEEL_GEARBOX), Textures.CLEAN_STAINLESS_STEEL_CASING, true, GTLiteTextures.MEGA_TURBINE_OVERLAY));
         MEGA_PLASMA_TURBINE = registerMultiMetaTileEntity(62, new MetaTileEntityMegaTurbine(gtliteId("mega_turbine.plasma"), RecipeMaps.PLASMA_GENERATOR_FUELS, IV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), Textures.ROBUST_TUNGSTENSTEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
-        HIGH_PRESSURE_STEAM_TURBINE = registerMultiMetaTileEntity(63, new MetaTileEntityLargeTurbine(gtliteId("high_pressure_steam_turbine"), GTLiteRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_RECIPES, 4, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_GEARBOX), Textures.STABLE_TITANIUM_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
-        SUPERCRITICAL_STEAM_TURBINE = registerMultiMetaTileEntity(64, new MetaTileEntityLargeTurbine(gtliteId("supercritical_steam_turbine"), GTLiteRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_RECIPES, 6, GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.MAR_M200_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), GTLiteTextures.MAR_M200_STEEL_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
-        //  65 MEGA_HIGH_PRESSURE_STEAM_TURBINE
-        //  66 MEGA_SUPERCRITICAL_STEAM_TURBINE
-        //  67
+        HIGH_PRESSURE_STEAM_TURBINE = registerMultiMetaTileEntity(63, new MetaTileEntityLargeTurbine(gtliteId("high_pressure_steam_turbine"), GTLiteRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_RECIPES, EV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_GEARBOX), Textures.STABLE_TITANIUM_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
+        SUPERCRITICAL_STEAM_TURBINE = registerMultiMetaTileEntity(64, new MetaTileEntityLargeTurbine(gtliteId("supercritical_steam_turbine"), GTLiteRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_RECIPES, LuV, GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.MAR_M200_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), GTLiteTextures.MAR_M200_STEEL_CASING, false, Textures.LARGE_STEAM_TURBINE_OVERLAY));
+        MEGA_HIGH_PRESSURE_STEAM_TURBINE = registerMultiMetaTileEntity(65, new MetaTileEntityMegaTurbine(gtliteId("mega_high_pressure_steam_turbine"), GTLiteRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_RECIPES, EV, MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_TURBINE_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TITANIUM_GEARBOX), Textures.STABLE_TITANIUM_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
+        MEGA_SUPERCRITICAL_STEAM_TURBINE = registerMultiMetaTileEntity(66, new MetaTileEntityMegaTurbine(gtliteId("mega_supercritical_steam_turbine"), GTLiteRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_RECIPES, LuV, GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.MAR_M200_CASING), MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX), GTLiteTextures.MAR_M200_STEEL_CASING, false, GTLiteTextures.MEGA_TURBINE_OVERLAY));
+        LARGE_ROCKET_ENGINE = registerMultiMetaTileEntity(67, new MetaTileEntityLargeRocketEngine(gtliteId("large_rocket_engine")));
         //  68
         NEUTRAL_NETWORK_NEXUS = registerMultiMetaTileEntity(69, new MetaTileEntityNeutralNetworkNexus(gtliteId("neutral_network_nexus")));
         PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
@@ -337,7 +342,7 @@ public class GTLiteMetaTileEntities {
         //  89
         NANOSCALE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityNanoScaleEUVMaskAligner(gtliteId("nanoscale_euv_mask_aligner")));
         //  91 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
-        //  92
+        //  92 SUPERSTRUCTURE_ASSEMBLY_PLANT
         //  93
         //  94
         //  95
@@ -346,5 +351,6 @@ public class GTLiteMetaTileEntities {
         //  98
         //  99
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
+        ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
     }
 }

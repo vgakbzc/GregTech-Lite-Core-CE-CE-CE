@@ -660,6 +660,106 @@ public class GTLiteUnknownCompositionMaterials {
                 .flags(DISABLE_CRYSTALLIZATION)
                 .build()
                 .setFormula("Ax⚶?", false);
+
+        //  24073 Supercritical Steam
+        SupercriticalSteam = new Material.Builder(getId(), gregtechId("supercritical_steam"))
+                .gas(new FluidBuilder().temperature(873).customStill())
+                .color(0xC4C4C4)
+                .components(Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24074 Superheated Steam
+        SuperheatedSteam = new Material.Builder(getId(), gregtechId("superheated_steam"))
+                .gas(new FluidBuilder().temperature(573).customStill())
+                .color(0xC4C4C)
+                .components(Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24075 Exotic Mutagen
+        ExoticMutagen = new Material.Builder(getId(), gregtechId("exotic_mutagen"))
+                .liquid(new FluidBuilder().temperature(18406).attributes(FluidAttributes.ACID))
+                .color(0x9C31F9)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24076 Crude Exotic Gas
+        CrudeExoticGas = new Material.Builder(getId(), gregtechId("crude_exotic_gas"))
+                .gas(new FluidBuilder().temperature(8090))
+                .color(0xBEF32C)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24077 Cracked Crude Exotic Gas
+        CrackedCrudeExoticGas = new Material.Builder(getId(), gregtechId("cracked_crude_exotic_gas"))
+                .gas(new FluidBuilder().temperature(12390))
+                .color(0xEA1798)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24078 Naquadic Exotic Gas
+        NaquadicExoticGas = new Material.Builder(getId(), gregtechId("naquadic_exotic_gas"))
+                .gas(new FluidBuilder().temperature(40223))
+                .color(0xB01172)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24079 Superheavy Exotic Gas
+        SuperheavyExoticGas = new Material.Builder(getId(), gregtechId("superheavy_exotic_gas"))
+                .gas()
+                .color(0x33FF99)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24080 Heavy Exotic Gas
+        HeavyExoticGas = new Material.Builder(getId(), gregtechId("heavy_exotic_gas"))
+                .gas()
+                .color(0x57FFBC)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24081 Medium Exotic Gas
+        MediumExoticGas = new Material.Builder(getId(), gregtechId("medium_exotic_gas"))
+                .gas()
+                .color(0x1FFFA6)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24082 Light Exotic Gas
+        LightExoticGas = new Material.Builder(getId(), gregtechId("light_exotic_gas"))
+                .gas()
+                .color(0x62FFC1)
+                .iconSet(DULL)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaa", false);
+
+        //  24083 Hyper Fuel Mk II
+        HyperFuelMkII = new Material.Builder(getId(), gregtechId("hyper_fuel_mk_ii"))
+                .liquid()
+                .color(0xE00059)
+                .build()
+                .setFormula("NqOrVb*Tb*?", false);
+
+        //  24084 Hyper Fuel Mk III
+        HyperFuelMkIII = new Material.Builder(getId(), gregtechId("hyper_fuel_mk_iii"))
+                .liquid()
+                .color(0xB900FF)
+                .build()
+                .setFormula("(NqOrVb*Tb*?)Fs⚶Ax⚶✧◇✧✦◆✦?", false);
+
+        //  24085 Hyper Fuel Mk IV
+        HyperFuelMkIV = new Material.Builder(getId(), gregtechId("hyper_fuel_mk_iv"))
+                .liquid()
+                .color(0xFFC951)
+                .build()
+                .setFormula("((NqOrVb*Tb*?)Fs⚶Ax⚶✧◇✧✦◆✦?)Hy⚶Ax⚶✦☯✧Gx⚶◊◇◊", false);
     }
 
     private static int getId() {

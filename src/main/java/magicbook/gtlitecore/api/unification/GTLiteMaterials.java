@@ -31,6 +31,7 @@ public class GTLiteMaterials {
     public static Material Astralium;
     public static Material Hikarium;
     public static Material Eternity;
+    public static Material Tiberium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -250,6 +251,14 @@ public class GTLiteMaterials {
     public static Material LithiumIodide;
     public static Material SodiumEthoxide;
     public static Material NeutroniumNanotube;
+    public static Material NaquadriaCaesiumXenonnonfluoride;
+    public static Material NaquadriaCaesiumfluoride;
+    public static Material RadonNaquadriaOctafluoride;
+    public static Material CaesiumXenontrioxideFluoride;
+    public static Material RadonTrioxide;
+    public static Material CaesiumFluoride;
+    public static Material XenonTrioxide;
+    public static Material RadonDifluoride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -317,6 +326,7 @@ public class GTLiteMaterials {
     public static Material BoronFranciumCarbideSuperconductor;
     public static Material TantalumHafniumSeaborgiumCarbide;
     public static Material HastelloyK243;
+    public static Material Nitinol60;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -586,6 +596,19 @@ public class GTLiteMaterials {
     public static Material ElectrolyteReflectorMixture;
     public static Material StarlightLiquid;
     public static Material CelestialCrystal;
+    public static Material SupercriticalSteam;
+    public static Material SuperheatedSteam;
+    public static Material ExoticMutagen;
+    public static Material CrudeExoticGas;
+    public static Material CrackedCrudeExoticGas;
+    public static Material NaquadicExoticGas;
+    public static Material SuperheavyExoticGas;
+    public static Material HeavyExoticGas;
+    public static Material MediumExoticGas;
+    public static Material LightExoticGas;
+    public static Material HyperFuelMkII;
+    public static Material HyperFuelMkIII;
+    public static Material HyperFuelMkIV;
 
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000

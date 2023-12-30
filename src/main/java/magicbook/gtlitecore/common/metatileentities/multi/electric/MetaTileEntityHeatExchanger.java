@@ -61,7 +61,7 @@ public class MetaTileEntityHeatExchanger extends NoEnergyMultiblockController im
         return FactoryBlockPattern.start()
                 .aisle("CCC", "CCC", "CCC", "CCC")
                 .aisle("CIC", "CPC", "CPC", "CEC")
-                .aisle("CSC", "CCC", "CCC", "CCC")
+                .aisle("CSC", "CJC", "CJC", "CCC")
                 .where('S', selfPredicate())
                 .where('C', states(getCasingState())
                         .setMinGlobalLimited(24)
@@ -70,6 +70,9 @@ public class MetaTileEntityHeatExchanger extends NoEnergyMultiblockController im
                 .where('P', states(getBoilerCasingState()))
                 .where('I', abilities(MultiblockAbility.IMPORT_FLUIDS))
                 .where('E', abilities(MultiblockAbility.EXPORT_FLUIDS))
+                .where('J', states(getCasingState())
+                        .or(abilities(MultiblockAbility.IMPORT_ITEMS)
+                                .setExactLimit(1)))
                 .build();
     }
 
@@ -130,7 +133,10 @@ public class MetaTileEntityHeatExchanger extends NoEnergyMultiblockController im
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, @Nonnull List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.heat_exchanger.heat_time_tooltip", heatTime));
         tooltip.add(TooltipHelper.BLINKING_RED + I18n.format("gtlitecore.machine.heat_exchanger.explosion_tooltip"));

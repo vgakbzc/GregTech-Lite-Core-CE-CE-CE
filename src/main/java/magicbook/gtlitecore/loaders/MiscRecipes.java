@@ -388,6 +388,16 @@ public class MiscRecipes {
                 .duration(200)
                 .buildAndRegister();
 
+        //  Nitinol-60
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Nickel, 2)
+                .input(dust, Titanium, 3)
+                .circuitMeta(5)
+                .output(dust, Nitinol60, 5)
+                .EUt(VA[EV])
+                .duration(100)
+                .buildAndRegister();
+
         //  Gravi Star
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES,
                 new ItemStack[]{QUANTUM_STAR.getStackForm()},

@@ -41,7 +41,10 @@ public class BlockMetalCasing extends VariantBlock<BlockMetalCasing.MetalCasingT
         AUSTENITIC_STAINLESS_STEEL_CASING("austenitic_stainless_steel_casing"),
         MAR_M200_CASING("mar_m200_casing"),
         HSS_S_CASING("hss_s_casing"),
-        EINSTEINIUM_CASING("einsteinium_casing");
+        EINSTEINIUM_CASING("einsteinium_casing"),
+        NITINOL_60_CASING("nitinol_60_casing"),
+        MENDELEVIUM_CASING("mendelevium_casing"),
+        FERMIUM_CASING("fermium_casing");
 
         private final String name;
 

@@ -173,7 +173,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 559)
                         .vacuumStats(VA[EV], 300))
                 .components(Nickel, 18, Chrome, 16, TinAlloy, 8, Cobalt, 6, Niobium, 4, Aluminium, 4)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
                 .build();
 
         //  12012 HMS-1J79Alloy
@@ -810,6 +810,20 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 304)
                         .vacuumStats(VA[ZPM], 680))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12063 Nitinol-60
+        Nitinol60 = new Material.Builder(getId(), gregtechId("nitinol_60"))
+                .ingot()
+                .fluid()
+                .color(0xCCB0EC)
+                .iconSet(SHINY)
+                .components(Nickel, 2, Titanium, 3)
+                .blast(b -> b
+                        .temp(1941, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[EV], 650)
+                        .vacuumStats(VA[MV], 144))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
     }
