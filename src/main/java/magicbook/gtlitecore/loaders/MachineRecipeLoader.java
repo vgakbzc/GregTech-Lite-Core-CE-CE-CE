@@ -1261,6 +1261,107 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
+
+        //  Extreme Large Miner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(frameGt, Osmiridium, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(ELECTRIC_MOTOR_ZPM, 4)
+                .input(ELECTRIC_PUMP_ZPM, 4)
+                .input(CONVEYOR_MODULE_ZPM, 4)
+                .input(gear, Pikyonium64B, 4)
+                .circuitMeta(2)
+                .output(EXTREME_LARGE_MINER)
+                .EUt(VA[ZPM])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Ultimate Large Miner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(frameGt, Tritanium, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ELECTRIC_MOTOR_UV, 4)
+                .input(ELECTRIC_PUMP_UV, 4)
+                .input(CONVEYOR_MODULE_UV, 4)
+                .input(gear, Cinobite, 4)
+                .circuitMeta(2)
+                .output(ULTIMATE_LARGE_MINER)
+                .EUt(VA[UV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Infinity Large Miner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UHV])
+                .input(frameGt, Adamantium, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ELECTRIC_MOTOR_UHV, 4)
+                .input(ELECTRIC_PUMP_UHV, 4)
+                .input(CONVEYOR_MODULE_UHV, 4)
+                .input(gear, TitanSteel, 4)
+                .circuitMeta(2)
+                .output(INFINITY_LARGE_MINER)
+                .EUt(VA[UHV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Advanced Fluid Drill Rig
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(frameGt, HSSG, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(ELECTRIC_MOTOR_ZPM, 4)
+                .input(ELECTRIC_PUMP_ZPM, 4)
+                .input(gear, HY1301, 4)
+                .circuitMeta(2)
+                .output(ADVANCED_FLUID_DRILL_RIG)
+                .EUt(VA[ZPM])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Extreme Fluid Drill Rig
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UV])
+                .input(frameGt, Naquadah, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ELECTRIC_MOTOR_UV, 4)
+                .input(ELECTRIC_PUMP_UV, 4)
+                .input(gear, IncoloyMA813, 4)
+                .circuitMeta(2)
+                .output(EXTREME_FLUID_DRILL_RIG)
+                .EUt(VA[UV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Ultimate Fluid Drill Rig
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UHV])
+                .input(frameGt, Trinium, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ELECTRIC_MOTOR_UHV, 4)
+                .input(ELECTRIC_PUMP_UHV, 4)
+                .input(gear, SiliconCarbide, 4)
+                .circuitMeta(2)
+                .output(ULTIMATE_FLUID_DRILL_RIG)
+                .EUt(VA[UHV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Infinity Fluid Drill Rig
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[UEV])
+                .input(frameGt, Tritanium, 4)
+                .input(circuit, MarkerMaterials.Tier.UEV, 4)
+                .input(ELECTRIC_MOTOR_UEV, 4)
+                .input(ELECTRIC_PUMP_UEV, 4)
+                .input(gear, Lafium, 4)
+                .circuitMeta(2)
+                .output(INFINITY_FLUID_DRILL_RIG)
+                .EUt(VA[UEV])
+                .duration(400)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -2922,6 +3023,51 @@ public class MachineRecipeLoader {
                 .input(frameGt, Mendelevium)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.MENDELEVIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Protactinium Casing
+        ModHandler.addShapedRecipe(true, "protactinium_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.PROTACTINIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Protactinium),
+                'F', new UnificationEntry(frameGt, Protactinium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Protactinium, 6)
+                .input(frameGt, Protactinium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.PROTACTINIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  HSS-G Casing
+        ModHandler.addShapedRecipe(true, "hss_g_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.HSS_G_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, HSSG),
+                'F', new UnificationEntry(frameGt, HSSG));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, HSSG, 6)
+                .input(frameGt, HSSG)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.HSS_G_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Incoloy-MA813 Casing
+        ModHandler.addShapedRecipe(true, "hss_g_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCOLOY_MA_813_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, IncoloyMA813),
+                'F', new UnificationEntry(frameGt, IncoloyMA956));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, IncoloyMA813, 6)
+                .input(frameGt, IncoloyMA956)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCOLOY_MA_813_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

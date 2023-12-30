@@ -43,6 +43,9 @@ tile.metal_casing.einsteinium_casing.name=高强度锿机器外壳
 tile.metal_casing.nitinol_60_casing.name=高弹性镍钛诺-60机器外壳
 tile.metal_casing.mendelevium_casing.name=超稳定钔机器外壳
 tile.metal_casing.fermium_casing.name=抗腐蚀镄机器外壳
+tile.metal_casing.protactinium_casing.name=防震镤坚固机器外壳
+tile.metal_casing.hss_g_casing.name=耐冲击高速钢-G机器外壳
+tile.metal_casing.incoloy_ma_813_casing.name=耐热铬铁合金-MA813超坚固机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1069,6 +1072,15 @@ gtlitecore.machine.coking_tower.tooltip.2=根据线圈等级获得并行与配�
 gtlitecore.machine.coking_tower.tooltip.3=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
 gtlitecore.machine.coking_tower.tooltip.4=最大并行数：§e(线圈等级 * 16)§7
 
+gtlitecore.machine.large_miner.zpm.name=极限采矿场
+gtlitecore.machine.large_miner.uv.name=终极采矿场
+gtlitecore.machine.large_miner.uhv.name=究极采矿场
+
+gtlitecore.machine.fluid_drill_rig.iv.name=精英流体钻机
+gtlitecore.machine.fluid_drill_rig.luv.name=极限流体钻机
+gtlitecore.machine.fluid_drill_rig.zpm.name=终极流体钻机
+gtlitecore.machine.fluid_drill_rig.uv.name=究极流体钻机
+
 gtlitecore.machine.nanoscale_euv_mask_aligner.name=纳米尺度光刻厂
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.1=大规模纳米尺度极紫外光源（EUV）蚀刻厂
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.2=激光蚀刻技术的绝对顶点。
@@ -1346,6 +1358,8 @@ gregtech.material.radon_trioxide=三氧化氡
 gregtech.material.caesium_fluoride=氟化铯
 gregtech.material.xenon_trioxide=三氧化氙
 gregtech.material.radon_difluoride=二氟化氡
+gregtech.material.polonium_nitrate=硝酸钋
+gregtech.material.polonium_dichloride=二氯化钋
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

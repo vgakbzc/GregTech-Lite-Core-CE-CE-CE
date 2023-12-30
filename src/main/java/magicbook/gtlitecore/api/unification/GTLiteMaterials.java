@@ -259,6 +259,8 @@ public class GTLiteMaterials {
     public static Material CaesiumFluoride;
     public static Material XenonTrioxide;
     public static Material RadonDifluoride;
+    public static Material PoloniumNitrate;
+    public static Material PoloniumDichloride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

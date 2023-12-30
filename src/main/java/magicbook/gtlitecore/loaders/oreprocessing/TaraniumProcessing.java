@@ -849,8 +849,6 @@ public class TaraniumProcessing {
 
     private static void HyperReactorRecipes() {
 
-        //  TODO new fuel for Hyper Reactor Mk II and Mk III?
-
         //  Hyper Reactor Mk I
         HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
                 .fluidInputs(LightHyperFuel.getFluid(1))
