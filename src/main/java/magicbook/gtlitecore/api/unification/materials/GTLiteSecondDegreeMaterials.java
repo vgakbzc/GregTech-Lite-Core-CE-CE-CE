@@ -812,6 +812,20 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 680))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
+
+        //  12063 Nitinol-60
+        Nitinol60 = new Material.Builder(getId(), gregtechId("nitinol_60"))
+                .ingot()
+                .fluid()
+                .color(0xCCB0EC)
+                .iconSet(SHINY)
+                .components(Nickel, 2, Titanium, 3)
+                .blast(b -> b
+                        .temp(1941, BlastProperty.GasTier.HIGH)
+                        .blastStats(VA[EV], 650)
+                        .vacuumStats(VA[MV], 144))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
     }
 
     private static int getId() {

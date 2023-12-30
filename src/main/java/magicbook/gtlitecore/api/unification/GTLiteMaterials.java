@@ -317,6 +317,7 @@ public class GTLiteMaterials {
     public static Material BoronFranciumCarbideSuperconductor;
     public static Material TantalumHafniumSeaborgiumCarbide;
     public static Material HastelloyK243;
+    public static Material Nitinol60;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

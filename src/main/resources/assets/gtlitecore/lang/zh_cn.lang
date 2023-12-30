@@ -26,6 +26,7 @@ tile.metal_casing.austenitic_stainless_steel_casing.name=耐热奥氏体不锈�
 tile.metal_casing.mar_m200_casing.name=抗震MAR-M200特种钢涡轮机器外壳
 tile.metal_casing.hss_s_casing.name=超耐久高速钢-S机器外壳
 tile.metal_casing.einsteinium_casing.name=高强度锿机器外壳
+tile.metal_casing.nitinol_60_casing.name=高弹性镍钛诺-60机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -973,6 +974,10 @@ gtlitecore.machine.mega_high_pressure_steam_turbine.name=特大高压蒸汽涡�
 
 gtlitecore.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽涡轮
 
+gtlitecore.machine.large_rocket_engine.name=大型火箭引擎
+gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
+gtlitecore.machine.large_rocket_engine.tooltip.2=§e基础产能功率：§r8192 EU/t§7
+
 gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
 gtlitecore.machine.neutral_network_nexus.tooltip.2=用于繁育或杂交各式纳米蜂群
@@ -1378,6 +1383,7 @@ gregtech.material.bets_perrhenate=高铼酸双（乙烯二硫代）四硒富瓦�
 gregtech.material.boron_francium_carbide_superconductor=碳化硼钫超导体
 gregtech.material.tantalum_hafnium_seaborgium_carbide=碳化钽铪钅喜
 gregtech.material.hastelloy_k_243=哈斯特洛伊合金-K243
+gregtech.material.nitinol_60=镍钛诺-60
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

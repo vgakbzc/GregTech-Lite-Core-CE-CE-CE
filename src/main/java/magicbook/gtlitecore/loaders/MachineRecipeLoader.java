@@ -919,6 +919,16 @@ public class MachineRecipeLoader {
                 .duration(1200)
                 .buildAndRegister();
 
+        //  Large Rocket Engine
+        ModHandler.addShapedRecipe(true, "large_rocket_engine", LARGE_ROCKET_ENGINE.getStackForm(),
+                "PAP", "HFH", "WDW",
+                'H', ROCKET_ENGINE[2].getStackForm(),
+                'F', new UnificationEntry(frameGt, TungstenCarbide),
+                'D', POWER_THRUSTER_ADVANCED,
+                'W', new UnificationEntry(cableGtQuadruple, Platinum),
+                'P', ELECTRIC_PISTON_IV,
+                'A', new UnificationEntry(plate, Tantalloy61));
+
         //  Cosmic Ray Detector
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(HULL[UIV])
@@ -2852,5 +2862,21 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Nitinol-60 Casing
+        ModHandler.addShapedRecipe(true, "nitinol_60_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.NITINOL_60_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Nitinol60),
+                'F', new UnificationEntry(frameGt, Nitinol60));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Nitinol60, 6)
+                .input(frameGt, Nitinol60)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.NITINOL_60_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }
