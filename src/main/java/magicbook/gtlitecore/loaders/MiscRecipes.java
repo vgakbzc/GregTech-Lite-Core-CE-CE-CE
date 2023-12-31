@@ -15,6 +15,8 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtechfoodoption.GTFOMaterialHandler.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BURNER_REACTOR_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -578,7 +580,62 @@ public class MiscRecipes {
                 .duration(100)
                 .buildAndRegister();
 
-        //  TODO Batteries recipe
+        //  Small Lithium Sulfide Battery
+        CANNER_RECIPES.recipeBuilder()
+                .input(BATTERY_HULL_SMALL_LITHIUM_SULFIDE)
+                .input(dust, LithiumTrifluoromethansulphonate, 2)
+                .output(BATTERY_UHV_LITHIUM_SULFIDE)
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Medium Lithium Sulfide Battery
+        CANNER_RECIPES.recipeBuilder()
+                .input(BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE)
+                .input(dust, LithiumTrifluoromethansulphonate, 8)
+                .output(BATTERY_UEV_LITHIUM_SULFIDE)
+                .EUt(VA[UHV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Large Lithium Sulfide Battery
+        CANNER_RECIPES.recipeBuilder()
+                .input(BATTERY_HULL_LARGE_LITHIUM_SULFIDE)
+                .input(dust, LithiumTrifluoromethansulphonate, 16)
+                .output(BATTERY_UIV_LITHIUM_SULFIDE)
+                .EUt(VA[UEV])
+                .duration(1600)
+                .buildAndRegister();
+
+        //  Small Lanthanum Nickel Oxide Battery
+        CANNER_RECIPES.recipeBuilder()
+                .input(BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE)
+                .input(dust, BerylliumDifluoride, 2)
+                .fluidInputs(RadonDifluoride.getFluid(1000))
+                .output(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Medium Lanthanum Nickel Oxide Battery
+        CANNER_RECIPES.recipeBuilder()
+                .input(BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE)
+                .input(dust, BerylliumDifluoride, 8)
+                .fluidInputs(RadonDifluoride.getFluid(4000))
+                .output(BATTERY_OpV_LANTHANUM_NICKEL_OXIDE)
+                .EUt(VA[UXV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Large Lanthanum Nickel Oxide Battery
+        CANNER_RECIPES.recipeBuilder()
+                .input(BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE)
+                .input(dust, BerylliumDifluoride, 16)
+                .fluidInputs(RadonDifluoride.getFluid(16000))
+                .output(BATTERY_MAX_LANTHANUM_NICKEL_OXIDE)
+                .EUt(VA[OpV])
+                .duration(1600)
+                .buildAndRegister();
 
         //  2LiH + 2S -> Li2S + H2S
         BLAST_RECIPES.recipeBuilder()
@@ -604,6 +661,58 @@ public class MiscRecipes {
                 .fluidOutputs(Ammonia.getFluid(4000))
                 .EUt(VA[LuV])
                 .duration(420)
+                .buildAndRegister();
+
+        //  SO3 + 3HF + C -> HOSO2CF3 + 2H
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .input(dust, Carbon)
+                .fluidInputs(SulfurTrioxide.getFluid(1000))
+                .fluidInputs(HydrofluoricAcid.getFluid(3000))
+                .fluidOutputs(TrifluoromethanesulfonicAcid.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[ZPM])
+                .duration(20)
+                .temperature(3442)
+                .buildAndRegister();
+
+        //  CaCO3 (ore) -> CaCO3 (pure)
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, Calcite, 5)
+                .output(dust, CalciumCarbonate, 5)
+                .EUt(VA[MV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  HOSO2CF3 + Ca(OH)2 -> Ca(OSO2CF3)2 + 2H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, CalciumHydroxide, 5)
+                .fluidInputs(TrifluoromethanesulfonicAcid.getFluid(1000))
+                .fluidOutputs(CalciumTrifluoromethansulphonate.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
+                .EUt(VA[ZPM])
+                .duration(15)
+                .buildAndRegister();
+
+        //  Ca(OSO2CF3)2 + Li2CO3 = 2LiCSO3F3 + CaCO3
+        CVD_UNIT_RECIPES.recipeBuilder()
+                .inputs(LithiumCarbonate.getItemStack(6))
+                .fluidInputs(CalciumTrifluoromethansulphonate.getFluid(1000))
+                .output(dust, LithiumTrifluoromethansulphonate, 18)
+                .output(dust, CalciumCarbonate, 5)
+                .EUt(VA[EV])
+                .duration(340)
+                .temperature(1600)
+                .buildAndRegister();
+
+        //  Another BeF2 Recipe
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Beryllium)
+                .fluidInputs(Fluorine.getFluid(2000))
+                .circuitMeta(2)
+                .output(dust, BerylliumDifluoride, 3)
+                .EUt(VA[LV])
+                .duration(100)
                 .buildAndRegister();
     }
 }

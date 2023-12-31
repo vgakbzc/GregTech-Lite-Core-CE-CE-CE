@@ -482,6 +482,9 @@ public class GTLiteMaterials {
     public static Material Sarcosine;
     public static Material Glycine;
     public static Material Ferrocene;
+    public static Material TrifluoromethanesulfonicAcid;
+    public static Material CalciumTrifluoromethansulphonate;
+    public static Material LithiumTrifluoromethansulphonate;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

@@ -1239,6 +1239,35 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x4D3B61)
                 .components(Carbon, 10, Hydrogen, 10, Iron, 1)
                 .build();
+
+        //  13150 Trifluoromethanesulfonic acid
+        TrifluoromethanesulfonicAcid = new Material.Builder(getId(), gregtechId("trifluoromethanesulfonic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x852043)
+                .components(Hydrogen, 1, Oxygen, 3, Sulfur, 1, Carbon, 1, Fluorine, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("HOSO2CF3", true);
+
+        //  13151 Calcium Trifluoromethansulphonate
+        CalciumTrifluoromethansulphonate = new Material.Builder(getId(), gregtechId("calcium_trifluoromethansulphonate"))
+                .liquid()
+                .color(TrifluoromethanesulfonicAcid.getMaterialRGB() + Calcium.getMaterialRGB())
+                .components(Calcium, 1, Oxygen, 6, Sulfur, 2, Carbon, 2, Fluorine, 6)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Ca(OSO2CF3)2", true);
+
+        //  13152 Lithium Trifluoromethansulphonate
+        LithiumTrifluoromethansulphonate = new Material.Builder(getId(), gregtechId("lithium_trifluoromethansulphonate"))
+                .dust()
+                .color(TrifluoromethanesulfonicAcid.getMaterialRGB() + Lithium.getMaterialRGB())
+                .iconSet(BRIGHT)
+                .components(Lithium, 1, Oxygen, 3, Sulfur, 1, Carbon, 1, Fluorine, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("LiOSO2CF3", true);
+
     }
 
     private static int getId() {
