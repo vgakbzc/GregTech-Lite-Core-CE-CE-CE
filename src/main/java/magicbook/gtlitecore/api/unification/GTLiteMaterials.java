@@ -261,6 +261,8 @@ public class GTLiteMaterials {
     public static Material RadonDifluoride;
     public static Material PoloniumNitrate;
     public static Material PoloniumDichloride;
+    public static Material LithiumSulfide;
+    public static Material LanthanumNickelOxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

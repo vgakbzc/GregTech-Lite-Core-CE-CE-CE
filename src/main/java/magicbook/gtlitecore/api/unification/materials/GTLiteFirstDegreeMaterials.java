@@ -2005,6 +2005,31 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Polonium, 1, Chlorine, 2)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24112 Lithium Sulfide
+        LithiumSulfide = new Material.Builder(getId(), gregtechId("lithium_sulfide"))
+                .ingot()
+                .color(0xFDFB9A)
+                .iconSet(BRIGHT)
+                .components(Lithium, 2, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .blast(b -> b
+                        .temp(8372, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[UV], 353))
+                .build();
+
+        //  24113 Lanthanum Nickel Oxide
+        LanthanumNickelOxide = new Material.Builder(getId(), gregtechId("lanthanum_nickel_oxide"))
+                .ingot()
+                .color(0x99C0FF)
+                .iconSet(BRIGHT)
+                .components(Lanthanum, 2, Nickel, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .blast(b -> b
+                        .temp(10720, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 446))
+                .build();
+
     }
 
     private static int getId() {

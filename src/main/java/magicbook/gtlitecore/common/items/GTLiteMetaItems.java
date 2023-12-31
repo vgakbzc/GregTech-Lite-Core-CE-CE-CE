@@ -187,6 +187,25 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SENSOR_MAX;
     public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_MAX;
 
+    public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_MAX;
+
+    //  Tools
+    public static MetaItem<?>.MetaValueItem PROSPECTOR_EV;
+    public static MetaItem<?>.MetaValueItem PROSPECTOR_ZPM;
+
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_SMALL_LITHIUM_SULFIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_LARGE_LITHIUM_SULFIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_UHV_LITHIUM_SULFIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_UEV_LITHIUM_SULFIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_UIV_LITHIUM_SULFIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_UXV_LANTHANUM_NICKEL_OXIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_OpV_LANTHANUM_NICKEL_OXIDE;
+    public static MetaItem<?>.MetaValueItem BATTERY_MAX_LANTHANUM_NICKEL_OXIDE;
+
     //  Others
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;

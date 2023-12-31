@@ -7,6 +7,7 @@ import gregtech.api.items.metaitem.MetaItem;
 import gregtech.common.covers.CoverConveyor;
 import gregtech.common.covers.CoverPump;
 import gregtech.common.covers.CoverRoboticArm;
+import gregtech.common.covers.CoverSolarPanel;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.util.ResourceLocation;
@@ -27,6 +28,8 @@ public class GTLiteCoverBehavior {
                 (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.MAX, 1024));
         registerBehavior(new ResourceLocation(GTLiteCore.MODID, "robot_arm.max"), GTLiteMetaItems.ROBOT_ARM_MAX,
                 (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.MAX, 1024));
+        registerBehavior(new ResourceLocation(GTLiteCore.MODID,  "solar_panel.max"), GTLiteMetaItems.COVER_SOLAR_PANEL_MAX,
+                (def, tile, side) -> new CoverSolarPanel(def, tile, side, GTValues.V[GTValues.MAX]));
     }
 
     public static void registerBehavior(ResourceLocation coverId,

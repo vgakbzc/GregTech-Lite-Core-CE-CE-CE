@@ -316,7 +316,7 @@ public class GTLiteElementMaterials {
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Astralium)
                 .blast(15000, BlastProperty.GasTier.HIGHEST)
-                .flags(GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[UIV], 48, 24, false)
                 .build();
 
