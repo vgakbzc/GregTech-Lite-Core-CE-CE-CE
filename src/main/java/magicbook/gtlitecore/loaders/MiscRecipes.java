@@ -576,7 +576,7 @@ public class MiscRecipes {
                 .input(plate, LanthanumNickelOxide, 18)
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L))
                 .output(BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[UEV])
+                .EUt(VA[OpV])
                 .duration(100)
                 .buildAndRegister();
 
