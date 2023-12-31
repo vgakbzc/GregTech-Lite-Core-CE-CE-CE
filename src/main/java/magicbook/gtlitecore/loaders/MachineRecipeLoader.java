@@ -3058,7 +3058,7 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Incoloy-MA813 Casing
-        ModHandler.addShapedRecipe(true, "hss_g_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCOLOY_MA_813_CASING, 2),
+        ModHandler.addShapedRecipe(true, "incoloy_ma_813_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCOLOY_MA_813_CASING, 2),
                 "PhP", "PFP","PwP",
                 'P', new UnificationEntry(plate, IncoloyMA813),
                 'F', new UnificationEntry(frameGt, IncoloyMA956));
@@ -3068,6 +3068,21 @@ public class MachineRecipeLoader {
                 .input(frameGt, IncoloyMA956)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.INCOLOY_MA_813_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Curium Casing
+        ModHandler.addShapedRecipe(true, "curium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.CURIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Curium),
+                'F', new UnificationEntry(frameGt, Curium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Curium, 6)
+                .input(frameGt, Curium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.CURIUM_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

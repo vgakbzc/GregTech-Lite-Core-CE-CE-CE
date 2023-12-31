@@ -1953,7 +1953,7 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        //  11223 CaesiumXenontrioxideFluoride
+        //  11223 Caesium Xenontrioxide Fluoride
         CaesiumXenontrioxideFluoride = new Material.Builder(getId(), gregtechId("caesium_xenontrioxide_fluoride"))
                 .liquid()
                 .color(0x5067D7)
@@ -1982,14 +1982,14 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Xenon, 1, Oxygen, 3)
                 .build();
 
-        //  24108 RadonDifluoride
+        //  24108 Radon Difluoride
         RadonDifluoride = new Material.Builder(getId(), gregtechId("radon_difluoride"))
                 .gas()
                 .color(0x8B7EFF)
                 .components(Radon, 1, Fluorine, 2)
                 .build();
 
-        //  24109 PoloniumNitrate
+        //  24109 Polonium Nitrate
         PoloniumNitrate = new Material.Builder(getId(), gregtechId("polonium_nitrate"))
                 .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
                 .color(Polonium.getMaterialRGB() + NitricAcid.getMaterialRGB())
@@ -1998,13 +1998,38 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("Po(NO3)4", true);
 
-        //  24110 PoloniumDichloride
+        //  24110 Polonium Dichloride
         PoloniumDichloride = new Material.Builder(getId(), gregtechId("polonium_dichloride"))
                 .dust()
                 .color(Polonium.getMaterialRGB() + Chlorine.getMaterialRGB())
                 .components(Polonium, 1, Chlorine, 2)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24112 Lithium Sulfide
+        LithiumSulfide = new Material.Builder(getId(), gregtechId("lithium_sulfide"))
+                .ingot()
+                .color(0xFDFB9A)
+                .iconSet(BRIGHT)
+                .components(Lithium, 2, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .blast(b -> b
+                        .temp(8372, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[UV], 353))
+                .build();
+
+        //  24113 Lanthanum Nickel Oxide
+        LanthanumNickelOxide = new Material.Builder(getId(), gregtechId("lanthanum_nickel_oxide"))
+                .ingot()
+                .color(0x99C0FF)
+                .iconSet(BRIGHT)
+                .components(Lanthanum, 2, Nickel, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .blast(b -> b
+                        .temp(10720, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 446))
+                .build();
+
     }
 
     private static int getId() {

@@ -805,7 +805,7 @@ public class GTLiteSecondDegreeMaterials {
         HastelloyK243 = new Material.Builder(getId(), gregtechId("hastelloy_k_243"))
                 .ingot()
                 .fluid()
-                .color(0x6BA3E3)
+                .color(0x92D959)
                 .iconSet(SHINY)
                 .components(HastelloyX78, 5, NiobiumNitride, 2, Tritanium, 4, Promethium, 4, Mendelevium, 1)
                 .blast(b -> b

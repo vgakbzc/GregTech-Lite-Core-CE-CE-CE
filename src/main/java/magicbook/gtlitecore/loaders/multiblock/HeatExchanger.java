@@ -13,41 +13,43 @@ public class HeatExchanger {
 
         //  Superheated Steam
         for (FluidStack stack : new FluidStack[]{
-                Lava.getFluid(2000),
+                Lava.getFluid(1),
                 // todo other high-temp fluid
         }) {
             HEAT_EXCHANGE_RECIPES.recipeBuilder()
                     .circuitMeta(1)
-                    .fluidInputs(DistilledWater.getFluid(4000))
+                    .fluidInputs(DistilledWater.getFluid(5))
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Steam.getFluid(4000))
-                    .fluidOutputs(SuperheatedSteam.getFluid(2000))
-                    .maxRate(16000)
-                    .flowRate(20000)
+                    .fluidOutputs(Steam.getFluid(160 * 5))
+                    .fluidOutputs(SuperheatedSteam.getFluid(80 * 5))
+                    .maxRate(1600)
+                    .flowRate(500)
                     .duration(20)
                     .buildAndRegister();
+
         }
 
         //  Supercritical Steam
         for (FluidStack stack : new FluidStack[]{
-                Lava.getFluid(8000),
+                Lava.getFluid(1),
                 // todo other high-temp fluid
         }) {
             for (FluidStack substack : new FluidStack[] {
-                    Ice.getFluid(4000),
-                    GelidCryotheum.getFluid(2000)
+                    Ice.getFluid(10),
+                    GelidCryotheum.getFluid(5)
             }) {
                 HEAT_EXCHANGE_RECIPES.recipeBuilder()
                         .circuitMeta(2)
-                        .fluidInputs(DistilledWater.getFluid(16000))
+                        .fluidInputs(DistilledWater.getFluid(5))
                         .fluidInputs(new FluidStack[]{stack})
                         .fluidInputs(new FluidStack[]{substack})
-                        .fluidOutputs(Steam.getFluid(16000))
-                        .fluidOutputs(SupercriticalSteam.getFluid(8000))
-                        .maxRate(160000)
-                        .flowRate(40000)
+                        .fluidOutputs(Steam.getFluid(160 * 5))
+                        .fluidOutputs(SupercriticalSteam.getFluid(80 * 5))
+                        .maxRate(1600)
+                        .flowRate(500)
                         .duration(20)
                         .buildAndRegister();
+
             }
         }
 

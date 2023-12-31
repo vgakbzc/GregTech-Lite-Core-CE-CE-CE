@@ -47,6 +47,8 @@ tile.metal_casing.protactinium_casing.name=防震镤坚固机器外壳
 tile.metal_casing.hss_g_casing.name=耐冲击高速钢-G机器外壳
 tile.metal_casing.incoloy_ma_813_casing.name=耐热铬铁合金-MA813超坚固机器外壳
 
+tile.machine_casing.curium_casing.name=高应力锔机器外壳
+
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
 tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
@@ -498,6 +500,8 @@ metaitem.cover.robot_arm.max.tooltip=作§f覆盖板§7时对§f物品§7的量�
 metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
 metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
 metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
+
+metaitem.cover.solar_panel.max.name=太阳能覆盖板（§c§lMAX§r）
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
@@ -1176,7 +1180,7 @@ gregtech.material.vibranium_unstable=不稳定振金
 gregtech.material.deep_iron=深铁
 gregtech.material.sodium_ethylate=乙醇钠
 gregtech.material.potassium_ethylate=乙醇钾
-gregtech.material.calcium_carbonate=碳酸钙
+gregtech.material.calcium_carbonate=高纯度碳酸钙
 gregtech.material.carbon_disulfide=二硫化碳
 gregtech.material.sodium_ethylxanthate=乙基黄原酸钠
 gregtech.material.potassium_ethylxanthate=乙基黄原酸钾
@@ -1360,6 +1364,8 @@ gregtech.material.xenon_trioxide=三氧化氙
 gregtech.material.radon_difluoride=二氟化氡
 gregtech.material.polonium_nitrate=硝酸钋
 gregtech.material.polonium_dichloride=二氯化钋
+gregtech.material.lithium_sulfide=硫化锂
+gregtech.material.lanthanum_nickel_oxide=镍酸铼
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1577,6 +1583,9 @@ gregtech.material.ferrocenylfulleropyrddolidine=二茂铁基富勒吡唑烷
 gregtech.material.sarcosine=肌氨酸
 gregtech.material.glycine=甘氨酸
 gregtech.material.ferrocene=二茂铁
+gregtech.material.trifluoromethanesulfonic_acid=三氟甲磺酸
+gregtech.material.calcium_trifluoromethansulphonate=三氟甲磺酸钙
+gregtech.material.lithium_trifluoromethansulphonate=三氟甲磺酸锂
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -1920,6 +1929,30 @@ metaitem.component.supracausal_smd.inductor.tooltip=超因果电感
 #  Tools
 item.gt.tool.universal_spade.name=%s万用铲
 item.gt.tool.combination_wrench.name=%s两用扳手
+
+metaitem.prospector.ev.name=电动勘探扫描仪（§5EV§r）
+metaitem.tool.prospector.ev.name=电动勘探扫描仪（§5EV§r）
+metaitem.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
+metaitem.tool.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
+
+metaitem.battery.hull.uhv.name=小型硫化锂电池外壳
+metaitem.battery.hull.uhv.tooltip=一个空的§4UHV§7电池外壳
+metaitem.battery.hull.uev.name=中型硫化锂电池外壳
+metaitem.battery.hull.uev.tooltip=一个空的§aUEV§7电池外壳
+metaitem.battery.hull.uiv.name=大型硫化锂电池外壳
+metaitem.battery.hull.uiv.tooltip=一个空的§2UIV§7电池外壳
+metaitem.battery.hull.uxv.name=小型镍酸镧电池外壳
+metaitem.battery.hull.uxv.tooltip=一个空的§eUXV§7电池外壳
+metaitem.battery.hull.opv.name=中型镍酸镧电池外壳
+metaitem.battery.hull.opv.tooltip=一个空的§9OpV§7电池外壳
+metaitem.battery.hull.max.name=大型镍酸镧电池外壳
+metaitem.battery.hull.max.tooltip=一个空的§c§lMAX§7电池外壳
+metaitem.battery.uhv.lithium_sulfide.name=小型硫化锂电池
+metaitem.battery.uev.lithium_sulfide.name=中型硫化锂电池
+metaitem.battery.uiv.lithium_sulfide.name=大型硫化锂电池
+metaitem.battery.uxv.lanthanum_nickel_oxide.name=小型镍酸镧电池
+metaitem.battery.opv.lanthanum_nickel_oxide.name=中型镍酸镧电池
+metaitem.battery.max.lanthanum_nickel_oxide.name=大型镍酸镧电池
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块

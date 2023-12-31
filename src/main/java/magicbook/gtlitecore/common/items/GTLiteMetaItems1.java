@@ -1,11 +1,18 @@
 package magicbook.gtlitecore.common.items;
 
+import gregtech.api.GTValues;
+import gregtech.api.GregTechAPI;
+import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
+import gregtech.api.items.metaitem.stats.IItemComponent;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.common.items.behaviors.ProspectorScannerBehavior;
+import gregtech.common.items.behaviors.TooltipBehavior;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
+import net.minecraft.client.resources.I18n;
 
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -195,6 +202,28 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EMITTER_MAX = this.addItem(268, "cover.emitter.max");
         SENSOR_MAX = this.addItem(269, "cover.sensor.max");
         FIELD_GENERATOR_MAX = this.addItem(270, "cover.field_generator.max");
+        //  Free Id: 270-275 for UHV-OpV Solar Panels
+        COVER_SOLAR_PANEL_MAX = this.addItem(276, "cover.solar_panel.max").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+            lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+            lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", GTValues.V[GTValues.MAX], GTValues.VNF[GTValues.MAX]));}));
+
+        //  Tools
+        PROSPECTOR_EV = this.addItem(280, "tool.prospector.ev").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, 4), new ProspectorScannerBehavior(5, 4)}).setMaxStackSize(1).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        PROSPECTOR_ZPM = this.addItem(281, "tool.prospector.zpm").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, 7), new ProspectorScannerBehavior(7, 7)}).setMaxStackSize(1).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+
+        BATTERY_HULL_SMALL_LITHIUM_SULFIDE = this.addItem(285, "battery.hull.uhv");
+        BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE = this.addItem(286, "battery.hull.uev");
+        BATTERY_HULL_LARGE_LITHIUM_SULFIDE = this.addItem(287, "battery.hull.uiv");
+        BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE = this.addItem(288, "battery.hull.uxv");
+        BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE = this.addItem(289, "battery.hull.opv");
+        BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE = this.addItem(290, "battery.hull.max");
+        BATTERY_UHV_LITHIUM_SULFIDE = this.addItem(291, "battery.uhv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10485760000L, 9)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BATTERY_UEV_LITHIUM_SULFIDE = this.addItem(292, "battery.uev.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(41943040000L, 10)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BATTERY_UIV_LITHIUM_SULFIDE = this.addItem(293, "battery.uiv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(167772160000L, 11)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BATTERY_UXV_LANTHANUM_NICKEL_OXIDE = this.addItem(294, "battery.uxv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(671088640000L, 12)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BATTERY_OpV_LANTHANUM_NICKEL_OXIDE = this.addItem(295, "battery.opv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(2684354560000L, 13)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BATTERY_MAX_LANTHANUM_NICKEL_OXIDE = this.addItem(296, "battery.max.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10737418240000L, 14)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
 
         //  Others
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior());
