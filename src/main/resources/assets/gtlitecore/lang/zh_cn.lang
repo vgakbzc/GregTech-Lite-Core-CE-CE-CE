@@ -47,6 +47,8 @@ tile.metal_casing.protactinium_casing.name=防震镤坚固机器外壳
 tile.metal_casing.hss_g_casing.name=耐冲击高速钢-G机器外壳
 tile.metal_casing.incoloy_ma_813_casing.name=耐热铬铁合金-MA813超坚固机器外壳
 
+tile.machine_casing.curium_casing.name=高应力锔机器外壳
+
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
 tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
