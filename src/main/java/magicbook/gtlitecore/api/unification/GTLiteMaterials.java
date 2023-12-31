@@ -261,6 +261,8 @@ public class GTLiteMaterials {
     public static Material RadonDifluoride;
     public static Material PoloniumNitrate;
     public static Material PoloniumDichloride;
+    public static Material LithiumSulfide;
+    public static Material LanthanumNickelOxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -480,6 +482,9 @@ public class GTLiteMaterials {
     public static Material Sarcosine;
     public static Material Glycine;
     public static Material Ferrocene;
+    public static Material TrifluoromethanesulfonicAcid;
+    public static Material CalciumTrifluoromethansulphonate;
+    public static Material LithiumTrifluoromethansulphonate;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

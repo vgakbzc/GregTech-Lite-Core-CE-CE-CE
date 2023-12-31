@@ -281,7 +281,7 @@ public class GTLiteElementMaterials {
                 .color(0x29288A)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Galaxium)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[OpV], 64, 32, false)
                 .build();
 
@@ -316,7 +316,7 @@ public class GTLiteElementMaterials {
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Astralium)
                 .blast(15000, BlastProperty.GasTier.HIGHEST)
-                .flags(GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[UIV], 48, 24, false)
                 .build();
 

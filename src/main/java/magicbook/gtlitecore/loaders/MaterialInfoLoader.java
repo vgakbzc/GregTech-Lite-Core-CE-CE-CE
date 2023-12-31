@@ -288,6 +288,14 @@ public class MaterialInfoLoader {
                 new MaterialStack(Astralium, M * 2)));
 
         //  UXV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(wireFine, Galaxium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UXV)
+                .EUt(VA[UXV])
+                .duration(200)
+                .buildAndRegister();
 
         //  OpV Voltage Coil
     }

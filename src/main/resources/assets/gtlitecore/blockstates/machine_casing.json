@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "curium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/curium_casing"
+        }
+      }
+    }
+  }
+}
