@@ -281,7 +281,7 @@ public class GTLiteElementMaterials {
                 .color(0x29288A)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Galaxium)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[OpV], 64, 32, false)
                 .build();
 

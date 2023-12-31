@@ -1953,7 +1953,7 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        //  11223 CaesiumXenontrioxideFluoride
+        //  11223 Caesium Xenontrioxide Fluoride
         CaesiumXenontrioxideFluoride = new Material.Builder(getId(), gregtechId("caesium_xenontrioxide_fluoride"))
                 .liquid()
                 .color(0x5067D7)
@@ -1982,14 +1982,14 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Xenon, 1, Oxygen, 3)
                 .build();
 
-        //  24108 RadonDifluoride
+        //  24108 Radon Difluoride
         RadonDifluoride = new Material.Builder(getId(), gregtechId("radon_difluoride"))
                 .gas()
                 .color(0x8B7EFF)
                 .components(Radon, 1, Fluorine, 2)
                 .build();
 
-        //  24109 PoloniumNitrate
+        //  24109 Polonium Nitrate
         PoloniumNitrate = new Material.Builder(getId(), gregtechId("polonium_nitrate"))
                 .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
                 .color(Polonium.getMaterialRGB() + NitricAcid.getMaterialRGB())
@@ -1998,7 +1998,7 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("Po(NO3)4", true);
 
-        //  24110 PoloniumDichloride
+        //  24110 Polonium Dichloride
         PoloniumDichloride = new Material.Builder(getId(), gregtechId("polonium_dichloride"))
                 .dust()
                 .color(Polonium.getMaterialRGB() + Chlorine.getMaterialRGB())
