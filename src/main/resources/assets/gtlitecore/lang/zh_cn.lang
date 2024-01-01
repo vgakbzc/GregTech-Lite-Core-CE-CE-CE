@@ -48,6 +48,8 @@ tile.metal_casing.hss_g_casing.name=耐冲击高速钢-G机器外壳
 tile.metal_casing.incoloy_ma_813_casing.name=耐热铬铁合金-MA813超坚固机器外壳
 
 tile.machine_casing.curium_casing.name=高应力锔机器外壳
+tile.machine_casing.uranium_casing.name=低反应性铀机器外壳
+tile.machine_casing.potin_casing.name=防尘粗青铜合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1084,6 +1086,10 @@ gtlitecore.machine.fluid_drill_rig.iv.name=精英流体钻机
 gtlitecore.machine.fluid_drill_rig.luv.name=极限流体钻机
 gtlitecore.machine.fluid_drill_rig.zpm.name=终极流体钻机
 gtlitecore.machine.fluid_drill_rig.uv.name=究极流体钻机
+
+gtlitecore.machine.large_vacuum_chamber.name=大型真空室
+
+gtlitecore.machine.large_bio_reactor.name=大型生物反应室
 
 gtlitecore.machine.nanoscale_euv_mask_aligner.name=纳米尺度光刻厂
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.1=大规模纳米尺度极紫外光源（EUV）蚀刻厂

@@ -32,7 +32,9 @@ public class BlockMachineCasing extends VariantBlock<BlockMachineCasing.MachineC
     }
 
     public enum MachineCasingType implements IStringSerializable {
-        CURIUM_CASING("curium_casing");
+        CURIUM_CASING("curium_casing"),
+        URANIUM_CASING("uranium_casing"),
+        POTIN_CASING("potin_casing");
         //  todo Berkelium
         //  todo Californium
         //  todo Uranium

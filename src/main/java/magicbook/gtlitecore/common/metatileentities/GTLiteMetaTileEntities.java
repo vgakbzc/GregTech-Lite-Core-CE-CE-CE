@@ -141,6 +141,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityAdvancedFluidDrill EXTREME_FLUID_DRILL_RIG;
     public static MetaTileEntityAdvancedFluidDrill ULTIMATE_FLUID_DRILL_RIG;
     public static MetaTileEntityAdvancedFluidDrill INFINITY_FLUID_DRILL_RIG;
+    public static MetaTileEntityLargeVacuumChamber LARGE_VACUUM_CHAMBER;
+    public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
     public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
@@ -345,8 +347,8 @@ public class GTLiteMetaTileEntities {
         INFINITY_FLUID_DRILL_RIG = registerMultiMetaTileEntity(85, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.uv"), 8));
         //  86 INDUSTRIAL_BOARD_PROCESSING_FACTORY
         //  87
-        //  88
-        //  89
+        LARGE_VACUUM_CHAMBER = registerMultiMetaTileEntity(88, new MetaTileEntityLargeVacuumChamber(gtliteId("large_vacuum_chamber")));
+        LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));
         NANOSCALE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityNanoScaleEUVMaskAligner(gtliteId("nanoscale_euv_mask_aligner")));
         //  91 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
         //  92 SUPERSTRUCTURE_ASSEMBLY_PLANT

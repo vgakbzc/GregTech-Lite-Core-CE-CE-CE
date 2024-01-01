@@ -4,14 +4,18 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.*;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockMetalCasing;
-import gregtech.common.blocks.BlockSteamCasing;
-import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import magicbook.gtlitecore.common.blocks.*;
+import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
+import magicbook.gtlitecore.common.blocks.BlockCleanroomCasing;
+import magicbook.gtlitecore.common.blocks.BlockComputerCasing;
+import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
+import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import net.minecraft.init.Items;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
@@ -24,7 +28,7 @@ import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
@@ -1362,6 +1366,25 @@ public class MachineRecipeLoader {
                 .EUt(VA[UEV])
                 .duration(400)
                 .buildAndRegister();
+
+        //  Large Vacuum Chamber
+        ModHandler.addShapedRecipe(true, "large_vacuum_chamber", LARGE_VACUUM_CHAMBER.getStackForm(),
+                "GpG", "PIP", "WRW",
+                'I', VACUUM_CHAMBER[IV].getStackForm(),
+                'P', ELECTRIC_PUMP_IV,
+                'p', new UnificationEntry(plate, MaragingSteel300),
+                'W', new UnificationEntry(cableGtSingle, Tungsten),
+                'R', new UnificationEntry(rotor, Staballoy),
+                'G', MetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockGlassCasing.CasingType.LAMINATED_GLASS));
+
+        //  Large Bio Reactor
+        ModHandler.addShapedRecipe(true, "large_bio_reactor", LARGE_BIO_REACTOR.getStackForm(),
+                "PMP", "BFB", "PWP",
+                'F', new UnificationEntry(frameGt, Plutonium241),
+                'B', BIO_REACTOR[IV].getStackForm(),
+                'P', new UnificationEntry(plate, TungstenCarbide),
+                'W', new UnificationEntry(cableGtSingle, Platinum),
+                'M', ELECTRIC_PUMP_IV);
     }
 
     private static void MachineCasingRecipes() {
@@ -3086,5 +3109,36 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Uranium Casing
+        ModHandler.addShapedRecipe(true, "uranium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.URANIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Uranium235),
+                'F', new UnificationEntry(frameGt, Uranium238));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Uranium235, 6)
+                .input(frameGt, Uranium238)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.URANIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Potin Casing
+        ModHandler.addShapedRecipe(true, "potin_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.POTIN_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Potin),
+                'F', new UnificationEntry(frameGt, StainlessSteel));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Potin, 6)
+                .input(frameGt, StainlessSteel)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.POTIN_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }
