@@ -35,6 +35,7 @@ public class GTLiteElementMaterials {
                                        .magnetic()
                                        .enchantment(Enchantments.FORTUNE, 5)
                                        .build())
+                .rotorStats(20.0F, 10.0F, 480000)
                 .blast(9000, BlastProperty.GasTier.HIGH)
                 .build();
 
@@ -48,6 +49,7 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE)
                 .element(GTLiteElements.Vb)
                 .blast(4852, BlastProperty.GasTier.HIGH)
+                .rotorStats(30.0F, 15.0F, 640000)
                 .build();
 
         //  10001 Adamantium
@@ -61,6 +63,7 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.Ad)
                 .blast(5225, BlastProperty.GasTier.HIGH)
                 .cableProperties(V[UHV], 24, 24, false)
+                .rotorStats(35.0F, 17.5F, 500000)
                 .build();
 
         //  10002 Taranium
@@ -102,6 +105,7 @@ public class GTLiteElementMaterials {
                         .enchantment(Enchantments.SHARPNESS, 10)
                         .enchantment(Enchantments.FORTUNE, 10)
                         .build())
+                .rotorStats(60.0F, 20.0F, 2560000)
                 .build();
 
         //  10005 Crystal Matrix
@@ -161,6 +165,7 @@ public class GTLiteElementMaterials {
                         .vacuumStats(VA[OpV], 100))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .element(GTLiteElements.SpaceTime)
+                .rotorStats(360.0F, 1.0F, 524288000)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
