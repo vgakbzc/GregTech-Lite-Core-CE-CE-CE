@@ -142,6 +142,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES;
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> BIOMASS_GENERATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -486,5 +488,11 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.BATH);
+
+        //  Biomass Generator RecipeMap
+        BIOMASS_GENERATOR_RECIPES = new RecipeMap<>("biomass_generator_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.BATH)
+                .allowEmptyOutput();
     }
 }

@@ -144,6 +144,7 @@ public class GTLiteMaterialPropertyAddition {
         Berkelium.addFlags(GENERATE_PLATE);
         Protactinium.addFlags(GENERATE_PLATE);
         Curium.addFlags(GENERATE_PLATE);
+        Plutonium239.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -155,6 +156,7 @@ public class GTLiteMaterialPropertyAddition {
         HSSS.addFlags(GENERATE_DOUBLE_PLATE);
         RedSteel.addFlags(GENERATE_DOUBLE_PLATE);
         TitaniumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
+        Plutonium239.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);

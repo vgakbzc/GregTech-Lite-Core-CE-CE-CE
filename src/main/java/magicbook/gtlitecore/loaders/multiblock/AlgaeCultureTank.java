@@ -16,6 +16,7 @@ public class AlgaeCultureTank {
     public static void init() {
 
         ExoticGasProcessing();
+        BiomassGeneratorRecipes();
 
         for (FluidStack stack : new FluidStack[]{
                 Biomass.getFluid(32000),
@@ -369,5 +370,50 @@ public class AlgaeCultureTank {
                 .EUt((int) V[UHV])
                 .buildAndRegister();
 
+    }
+
+    private static void BiomassGeneratorRecipes() {
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Biomass.getFluid(200))
+                .EUt(VA[MV])
+                .duration(10)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(FermentedBiomass.getFluid(200))
+                .EUt(VA[MV])
+                .duration(20)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(BacterialSludge.getFluid(200))
+                .EUt(VA[HV])
+                .duration(30)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(EnrichedBacterialSludge.getFluid(200))
+                .EUt(VA[HV])
+                .duration(40)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(SterileGrowthMedium.getFluid(200))
+                .EUt(VA[EV])
+                .duration(50)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Mutagen.getFluid(200))
+                .EUt(VA[HV])
+                .duration(60)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(ExoticMutagen.getFluid(400))
+                .EUt(VA[EV])
+                .duration(80)
+                .buildAndRegister();
     }
 }

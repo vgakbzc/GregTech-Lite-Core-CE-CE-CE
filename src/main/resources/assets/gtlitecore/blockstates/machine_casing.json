@@ -7,6 +7,24 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/curium_casing"
         }
+      },
+      "uranium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/uranium_casing"
+        }
+      },
+      "potin_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/potin_casing"
+        }
+      },
+      "plutonium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/plutonium_casing"
+        }
       }
     }
   }
