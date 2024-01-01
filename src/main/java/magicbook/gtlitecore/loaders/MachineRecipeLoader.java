@@ -131,6 +131,17 @@ public class MachineRecipeLoader {
                 'W', CraftingComponent.CABLE,
                 'H', CraftingComponent.HULL,
                 'O', CraftingComponent.BETTER_CIRCUIT);
+
+        //  Biomass Generator
+        MetaTileEntityLoader.registerMachineRecipe(true, BIOMASS_GENERATOR,
+                "SOS", "IHP", "WTW",
+                'H', CraftingComponent.HULL,
+                'I', CraftingComponent.PISTON,
+                'P', CraftingComponent.PUMP,
+                'S', CraftingComponent.SPRING,
+                'T', CraftingComponent.SAWBLADE,
+                'W', CraftingComponent.CABLE,
+                'O', CraftingComponent.DOUBLE_PLATE);
     }
 
     private static void MultiblockControllerRecipes() {
@@ -932,6 +943,16 @@ public class MachineRecipeLoader {
                 'W', new UnificationEntry(cableGtQuadruple, Platinum),
                 'P', ELECTRIC_PISTON_IV,
                 'A', new UnificationEntry(plate, Tantalloy61));
+
+        //  Large Biomass Generator
+        ModHandler.addShapedRecipe(true, "large_biomass_generator", LARGE_BIOMASS_GENERATOR.getStackForm(),
+                "SAS", "PBP", "WFW",
+                'B', BIOMASS_GENERATOR[2].getStackForm(),
+                'P', new UnificationEntry(plateDouble, Plutonium239),
+                'W', new UnificationEntry(cableGtDouble, NiobiumTitanium),
+                'F', FIELD_GENERATOR_LuV,
+                'S', new UnificationEntry(spring, RTMAlloy),
+                'A', FLUID_CELL_LARGE_TUNGSTEN_STEEL);
 
         //  Cosmic Ray Detector
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -3140,5 +3161,19 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Plutonium Casing
+        ModHandler.addShapedRecipe(true, "plutonium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.PLUTONIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Plutonium239),
+                'F', new UnificationEntry(frameGt, Plutonium241));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Plutonium239, 6)
+                .input(frameGt, Plutonium241)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.PLUTONIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }
