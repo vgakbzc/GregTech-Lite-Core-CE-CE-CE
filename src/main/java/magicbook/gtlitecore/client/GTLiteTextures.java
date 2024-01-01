@@ -20,6 +20,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("machines/bio_reactor");
     public static OrientedOverlayRenderer CONDENSER_OVERLAY = new OrientedOverlayRenderer("machines/condenser");
     public static OrientedOverlayRenderer SIMULATOR_OVERLAY = new OrientedOverlayRenderer("machines/simulator");
+    public static OrientedOverlayRenderer BIOMASS_GENERATOR_OVERLAY = new OrientedOverlayRenderer("machines/biomass_generator");
 
     public static OrientedOverlayRenderer INDUSTRIAL_DRILL_OVERLAY = new OrientedOverlayRenderer("multiblocks/industrial_drilling_reg");
     public static OrientedOverlayRenderer CATALYTIC_REFORMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/catalytic_reformer");
@@ -49,6 +50,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer BIOWARE_SIMULATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/bioware_simulator");
     public static OrientedOverlayRenderer LARGE_ROCKET_ENGINE_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_rocket_engine");
     public static OrientedOverlayRenderer ALGAE_CULTURE_TANK_OVERLAY = new OrientedOverlayRenderer("multiblocks/algae_culture_tank");
+    public static OrientedOverlayRenderer LARGE_BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_bio_reactor");
 
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -90,6 +92,9 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer MENDELEVIUM_CASING = new GTLiteOverlayRenderer("casings/mendelevium_casing");
     public static GTLiteOverlayRenderer HSS_G_CASING = new GTLiteOverlayRenderer("casings/hss_g_casing");
     public static GTLiteOverlayRenderer INCOLOY_MA_813_CASING = new GTLiteOverlayRenderer("casings/incoloy_ma_813_casing");
+    public static GTLiteOverlayRenderer URANIUM_CASING = new GTLiteOverlayRenderer("casings/uranium_casing");
+    public static GTLiteOverlayRenderer POTIN_CASING = new GTLiteOverlayRenderer("casings/potin_casing");
+    public static GTLiteOverlayRenderer PLUTONIUM_CASING = new GTLiteOverlayRenderer("casings/plutonium_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

@@ -48,6 +48,9 @@ tile.metal_casing.hss_g_casing.name=耐冲击高速钢-G机器外壳
 tile.metal_casing.incoloy_ma_813_casing.name=耐热铬铁合金-MA813超坚固机器外壳
 
 tile.machine_casing.curium_casing.name=高应力锔机器外壳
+tile.machine_casing.uranium_casing.name=低反应性铀机器外壳
+tile.machine_casing.potin_casing.name=防尘粗青铜合金机器外壳
+tile.machine_casing.plutonium_casing.name=超低活性钚机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -705,6 +708,13 @@ gtlitecore.machine.simulator.ev.tooltip=怪物意识模拟器
 gtlitecore.machine.simulator.iv.name=精英模拟室
 gtlitecore.machine.simulator.iv.tooltip=怪物意识模拟器
 
+gtlitecore.machine.biomass_generator.ev.name=进阶生物质发电机 III
+gtlitecore.machine.biomass_generator.ev.tooltip=电动咀叶机
+gtlitecore.machine.biomass_generator.iv.name=精英生物质发电机
+gtlitecore.machine.biomass_generator.iv.tooltip=电动咀叶机
+gtlitecore.machine.biomass_generator.luv.name=精英生物质发电机 II
+gtlitecore.machine.biomass_generator.luv.tooltip=电动咀叶机
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
@@ -1001,6 +1011,9 @@ gtlitecore.machine.large_rocket_engine.name=大型火箭引擎
 gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
 gtlitecore.machine.large_rocket_engine.tooltip.2=§e基础产能功率：§r8192 EU/t§7
 
+gtlitecore.machine.large_biomass_generator.name=大型生物质反应炉
+gtlitecore.machine.large_biomass_generator.tooltip=最高产生§dLuV§7级的能量
+
 gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
 gtlitecore.machine.neutral_network_nexus.tooltip.2=用于繁育或杂交各式纳米蜂群
@@ -1084,6 +1097,10 @@ gtlitecore.machine.fluid_drill_rig.iv.name=精英流体钻机
 gtlitecore.machine.fluid_drill_rig.luv.name=极限流体钻机
 gtlitecore.machine.fluid_drill_rig.zpm.name=终极流体钻机
 gtlitecore.machine.fluid_drill_rig.uv.name=究极流体钻机
+
+gtlitecore.machine.large_vacuum_chamber.name=大型真空室
+
+gtlitecore.machine.large_bio_reactor.name=大型生物反应室
 
 gtlitecore.machine.nanoscale_euv_mask_aligner.name=纳米尺度光刻厂
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.1=大规模纳米尺度极紫外光源（EUV）蚀刻厂
@@ -1865,6 +1882,7 @@ recipemap.bioware_simulator_recipes.name=生物数据模拟
 recipemap.simulator_recipes.name=数据模拟
 recipemap.nano_scale_mask_aligner_recipes.name=纳米尺度光刻
 recipemap.algae_culture_tank_recipes.name=藻类培养缸
+recipemap.biomass_generator_recipes.name=生物质发电机
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K
