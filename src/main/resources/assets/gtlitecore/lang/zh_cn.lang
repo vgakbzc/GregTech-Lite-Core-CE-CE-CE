@@ -1929,6 +1929,33 @@ metaitem.component.supracausal_smd.inductor.tooltip=超因果电感
 #  Tools
 item.gt.tool.universal_spade.name=%s万用铲
 item.gt.tool.combination_wrench.name=%s两用扳手
+item.gt.tool.electric_jackhammer.lv.name=%s电动气锤（§7LV§r）
+item.gt.tool.electric_jackhammer.hv.name=%s电动气锤（§6HV§r）
+item.gt.tool.electric_jackhammer.iv.name=%s电动气锤（§1IV§r）
+
+metaitem.prospector.ev.name=电动勘探扫描仪（§5EV§r）
+metaitem.tool.prospector.ev.name=电动勘探扫描仪（§5EV§r）
+metaitem.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
+metaitem.tool.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
+
+metaitem.battery.hull.uhv.name=小型硫化锂电池外壳
+metaitem.battery.hull.uhv.tooltip=一个空的§4UHV§7电池外壳
+metaitem.battery.hull.uev.name=中型硫化锂电池外壳
+metaitem.battery.hull.uev.tooltip=一个空的§aUEV§7电池外壳
+metaitem.battery.hull.uiv.name=大型硫化锂电池外壳
+metaitem.battery.hull.uiv.tooltip=一个空的§2UIV§7电池外壳
+metaitem.battery.hull.uxv.name=小型镍酸镧电池外壳
+metaitem.battery.hull.uxv.tooltip=一个空的§eUXV§7电池外壳
+metaitem.battery.hull.opv.name=中型镍酸镧电池外壳
+metaitem.battery.hull.opv.tooltip=一个空的§9OpV§7电池外壳
+metaitem.battery.hull.max.name=大型镍酸镧电池外壳
+metaitem.battery.hull.max.tooltip=一个空的§c§lMAX§7电池外壳
+metaitem.battery.uhv.lithium_sulfide.name=小型硫化锂电池
+metaitem.battery.uev.lithium_sulfide.name=中型硫化锂电池
+metaitem.battery.uiv.lithium_sulfide.name=大型硫化锂电池
+metaitem.battery.uxv.lanthanum_nickel_oxide.name=小型镍酸镧电池
+metaitem.battery.opv.lanthanum_nickel_oxide.name=中型镍酸镧电池
+metaitem.battery.max.lanthanum_nickel_oxide.name=大型镍酸镧电池
 
 metaitem.prospector.ev.name=电动勘探扫描仪（§5EV§r）
 metaitem.tool.prospector.ev.name=电动勘探扫描仪（§5EV§r）
