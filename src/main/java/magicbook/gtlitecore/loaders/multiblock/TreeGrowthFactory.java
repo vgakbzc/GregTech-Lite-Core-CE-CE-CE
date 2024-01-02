@@ -250,7 +250,7 @@ public class TreeGrowthFactory {
 
         //  Rubber
         TREE_GROWTH_RECIPES.recipeBuilder()
-                .inputs(new ItemStack(MetaBlocks.RUBBER_SAPLING))
+                .notConsumable(new ItemStack(MetaBlocks.RUBBER_SAPLING))
                 .circuitMeta(1)
                 .fluidInputs(Water.getFluid(200))
                 .outputs(new ItemStack(MetaBlocks.RUBBER_LOG, 8))
@@ -262,7 +262,7 @@ public class TreeGrowthFactory {
                 .buildAndRegister();
 
         TREE_GROWTH_RECIPES.recipeBuilder()
-                .inputs(new ItemStack(MetaBlocks.RUBBER_SAPLING, 4))
+                .notConsumable(new ItemStack(MetaBlocks.RUBBER_SAPLING, 4))
                 .circuitMeta(2)
                 .fluidInputs(Water.getFluid(200))
                 .fluidInputs(Biomass.getFluid(200))
@@ -275,7 +275,7 @@ public class TreeGrowthFactory {
                 .buildAndRegister();
 
         TREE_GROWTH_RECIPES.recipeBuilder()
-                .inputs(new ItemStack(MetaBlocks.RUBBER_SAPLING, 16))
+                .notConsumable(new ItemStack(MetaBlocks.RUBBER_SAPLING, 16))
                 .circuitMeta(3)
                 .fluidInputs(Water.getFluid(200))
                 .fluidInputs(Biomass.getFluid(200))
