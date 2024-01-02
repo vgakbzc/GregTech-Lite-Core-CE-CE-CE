@@ -934,6 +934,14 @@ gtlitecore.machine.quantum_force_transformer.name=量子操纵者
 gtlitecore.machine.quantum_force_transformer.tooltip.1=可以让复杂的化工流程一步到位
 gtlitecore.machine.quantum_force_transformer.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
+gtlitecore.machine.extreme_industrial_greenhouse.name=极限工业温室
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.1=超级作物培养仓
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.2=结构上方没有日光照射不会降低配方运行速度。
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.3=根据输入电压获得并行与配方时间减免。
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.4=输入小于§1IV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.5=输入大于§1IV§7级的电压时，始终获得§e256§7次并行。
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.6=输入大于§1IV§7级的电压时，配方运行时间减半。
+
 gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
 gtlitecore.machine.large_primitive_blast_furnace.name=大型炼钢窑
