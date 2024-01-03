@@ -1406,6 +1406,16 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(plate, TungstenCarbide),
                 'W', new UnificationEntry(cableGtSingle, Platinum),
                 'M', ELECTRIC_PUMP_IV);
+
+        //  Large Gas Collector
+        ModHandler.addShapedRecipe(true, "large_gas_collector", LARGE_GAS_COLLECTOR.getStackForm(),
+                "ARA", "PHP", "WFW",
+                'H', GAS_COLLECTOR[IV].getStackForm(),
+                'P', new UnificationEntry(pipeNormalFluid, TungstenSteel),
+                'W', new UnificationEntry(cableGtQuadruple, Platinum),
+                'R', new UnificationEntry(rotor, Staballoy),
+                'A', new UnificationEntry(plate, BlackSteel),
+                'F', FIELD_GENERATOR_IV);
     }
 
     private static void MachineCasingRecipes() {
@@ -3175,5 +3185,36 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Black Steel Casing
+        ModHandler.addShapedRecipe(true, "black_steel_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BLACK_STEEL_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, BlackSteel),
+                'F', new UnificationEntry(frameGt, BlackSteel));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, BlackSteel, 6)
+                .input(frameGt, BlackSteel)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BLACK_STEEL_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Tumbaga Casing
+        ModHandler.addShapedRecipe(true, "tumbaga_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.TUMBAGA_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Tumbaga),
+                'F', new UnificationEntry(frameGt, Tumbaga));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Tumbaga, 6)
+                .input(frameGt, Tumbaga)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.TUMBAGA_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }

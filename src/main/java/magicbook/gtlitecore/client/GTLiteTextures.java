@@ -95,6 +95,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer URANIUM_CASING = new GTLiteOverlayRenderer("casings/uranium_casing");
     public static GTLiteOverlayRenderer POTIN_CASING = new GTLiteOverlayRenderer("casings/potin_casing");
     public static GTLiteOverlayRenderer PLUTONIUM_CASING = new GTLiteOverlayRenderer("casings/plutonium_casing");
+    public static GTLiteOverlayRenderer BLACK_STEEL_CASING = new GTLiteOverlayRenderer("casings/black_steel_casing");
+    public static GTLiteOverlayRenderer TUMBAGA_CASING = new GTLiteOverlayRenderer("casings/tumbaga_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
