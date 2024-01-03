@@ -51,6 +51,7 @@ tile.machine_casing.curium_casing.name=高应力锔机器外壳
 tile.machine_casing.uranium_casing.name=低反应性铀机器外壳
 tile.machine_casing.potin_casing.name=防尘粗青铜合金机器外壳
 tile.machine_casing.plutonium_casing.name=超低活性钚机器外壳
+tile.machine_casing.black_steel_casing.name=坚固耐用黑钢机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1128,6 +1129,12 @@ gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物
 gtlitecore.machine.algae_culture_tank.name=异星藻类培养缸
 gtlitecore.machine.algae_culture_tank.tooltip.1=用于培养不属于这个星球的奇异藻类
 
+gtlitecore.machine.large_gas_collector.name=大型集气室
+gtlitecore.machine.large_gas_collector.tooltip.1=超级空气收集器
+gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同维度的气体，不需要位于指定维度。
+gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
+gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
+
 #  Materials
 
 ##  Element Materials
@@ -1891,6 +1898,7 @@ recipemap.simulator_recipes.name=数据模拟
 recipemap.nano_scale_mask_aligner_recipes.name=纳米尺度光刻
 recipemap.algae_culture_tank_recipes.name=藻类培养缸
 recipemap.biomass_generator_recipes.name=生物质发电机
+recipemap.large_gas_collector_recipes.name=大型集气室
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

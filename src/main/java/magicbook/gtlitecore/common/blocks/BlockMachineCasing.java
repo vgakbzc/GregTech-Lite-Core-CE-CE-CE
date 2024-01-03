@@ -35,7 +35,8 @@ public class BlockMachineCasing extends VariantBlock<BlockMachineCasing.MachineC
         CURIUM_CASING("curium_casing"),
         URANIUM_CASING("uranium_casing"),
         POTIN_CASING("potin_casing"),
-        PLUTONIUM_CASING("plutonium_casing");
+        PLUTONIUM_CASING("plutonium_casing"),
+        BLACK_STEEL_CASING("black_steel_casing");
         //  todo Berkelium
         //  todo Californium
         //  todo Uranium
