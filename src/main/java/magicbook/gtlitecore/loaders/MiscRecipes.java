@@ -407,6 +407,16 @@ public class MiscRecipes {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Tumbaga
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Gold, 7)
+                .input(dust, Bronze, 3)
+                .circuitMeta(10)
+                .output(dust, Tumbaga, 10)
+                .EUt(VA[HV])
+                .duration(80)
+                .buildAndRegister();
+
     }
 
     private static void OtherRecipes() {

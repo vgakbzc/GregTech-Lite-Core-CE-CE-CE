@@ -52,6 +52,7 @@ tile.machine_casing.uranium_casing.name=低反应性铀机器外壳
 tile.machine_casing.potin_casing.name=防尘粗青铜合金机器外壳
 tile.machine_casing.plutonium_casing.name=超低活性钚机器外壳
 tile.machine_casing.black_steel_casing.name=坚固耐用黑钢机器外壳
+tile.machine_casing.tumbaga_casing.name=可塑性铜金合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1085,6 +1086,11 @@ gtlitecore.machine.turbine_mixer.tooltip.1=工业级涡轮搅拌塔
 gtlitecore.machine.turbine_mixer.tooltip.2=运行§r搅拌机§7配方时，运行耗时为§r(配方时间/2)§7。
 gtlitecore.machine.turbine_mixer.tooltip.3=最大并行数：§e16 * (电压等级)§7
 
+gtlitecore.machine.industrial_centrifuge.name=工业离心机
+gtlitecore.machine.industrial_centrifuge.tooltip.1=超级卧式离心机
+gtlitecore.machine.industrial_centrifuge.tooltip.2=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
+gtlitecore.machine.industrial_centrifuge.tooltip.3=最大并行数：§e16 * (电压等级)§7
+
 gtlitecore.machine.zhuhai_fishing_pond.name=珠海渔场
 gtlitecore.machine.zhuhai_fishing_pond.mode=当前模式：%s
 gtlitecore.machine.zhuhai_fishing_pond.mode.0=模式: 捕捞鱼类
@@ -1464,6 +1470,7 @@ gregtech.material.boron_francium_carbide_superconductor=碳化硼钫超导体
 gregtech.material.tantalum_hafnium_seaborgium_carbide=碳化钽铪钅喜
 gregtech.material.hastelloy_k_243=哈斯特洛伊合金-K243
 gregtech.material.nitinol_60=镍钛诺-60
+gregtech.material.tumbaga=铜金合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

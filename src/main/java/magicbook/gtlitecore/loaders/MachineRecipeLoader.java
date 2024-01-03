@@ -3201,5 +3201,20 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Tumbaga Casing
+        ModHandler.addShapedRecipe(true, "tumbaga_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.TUMBAGA_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Tumbaga),
+                'F', new UnificationEntry(frameGt, Tumbaga));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Tumbaga, 6)
+                .input(frameGt, Tumbaga)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.TUMBAGA_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }

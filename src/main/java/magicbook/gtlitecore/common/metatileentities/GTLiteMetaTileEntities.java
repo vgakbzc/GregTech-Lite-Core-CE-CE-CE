@@ -134,6 +134,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityAmazonWarehousingDepot AMAZON_WAREHOUSING_DEPOT;
     public static MetaTileEntityElectrolyticTank ELECTROLYTIC_TANK;
     public static MetaTileEntityTurbineMixer TURBINE_MIXER;
+    public static MetaTileEntityIndustrialCentrifuge INDUSTRIAL_CENTRIFUGE;
     public static MetaTileEntityZhuHaiFishingPond ZHUHAI_FISHING_POND;
     public static MetaTileEntityCokingTower COKING_TOWER;
     public static MetaTileEntityAdvancedLargeMiner EXTREME_LARGE_MINER;
@@ -341,7 +342,7 @@ public class GTLiteMetaTileEntities {
         //  73 ARC_FURNACE_ARRAY
         ELECTROLYTIC_TANK = registerMultiMetaTileEntity(74, new MetaTileEntityElectrolyticTank(gtliteId("electrolytic_tank")));
         TURBINE_MIXER = registerMultiMetaTileEntity(75, new MetaTileEntityTurbineMixer(gtliteId("turbine_mixer")));
-        //  76 INDUSTRIAL_CENTRIFUGE
+        INDUSTRIAL_CENTRIFUGE = registerMultiMetaTileEntity(76, new MetaTileEntityIndustrialCentrifuge(gtliteId("industrial_centrifuge")));
         ZHUHAI_FISHING_POND = registerMultiMetaTileEntity(77, new MetaTileEntityZhuHaiFishingPond(gtliteId("zhuhai_fishing_pond")));
         COKING_TOWER = registerMultiMetaTileEntity(78, new MetaTileEntityCokingTower(gtliteId("coking_tower")));
         EXTREME_LARGE_MINER = registerMultiMetaTileEntity(79, new MetaTileEntityAdvancedLargeMiner(gtliteId("large_miner.zpm"), 7, 1, 9, 7, Materials.Protactinium, 64));
