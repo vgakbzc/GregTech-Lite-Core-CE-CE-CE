@@ -1429,14 +1429,14 @@ public class MachineRecipeLoader {
 
         //  Extreme Industrial Greenhouse
         ModHandler.addShapedRecipe(true, "extreme_industrial_greenhouse", EXTREME_INDUSTRIAL_GREENHOUSE.getStackForm(),
-                "GYG", "SHF", "WXW",
-                "H", GREENHOUSE.getStackForm(),
-                "W", new UnificationEntry(cableGtSingle, Gold),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                "GIG", "SHF", "WXW",
+                'H', GREENHOUSE.getStackForm(),
                 'S', SENSOR_HV,
                 'F', FIELD_GENERATOR_HV,
-                'G', new UnificationEntry(plate, Glass),
-                'Y', FLUID_FILTER);
+                'W', new UnificationEntry(cableGtSingle, Gold),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'I', FLUID_FILTER,
+                'G', new UnificationEntry(plate, Glass));
     }
 
     private static void MachineCasingRecipes() {
