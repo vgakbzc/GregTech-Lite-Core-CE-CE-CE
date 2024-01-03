@@ -839,7 +839,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(1200, BlastProperty.GasTier.MID)
                         .blastStats(VA[HV], 980))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
                 .build();
     }
 
