@@ -26,6 +26,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
@@ -1077,6 +1078,15 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(plate, EglinSteel),
                 'G', new UnificationEntry(gear, EglinSteel));
 
+        //  Industrial Centrirfuge
+        ModHandler.addShapedRecipe(true, "industrial_centrifuge", INDUSTRIAL_CENTRIFUGE.getStackForm(),
+                "PGP", "MHM", "WWW",
+                'H', LARGE_CENTRIFUGE.getStackForm(),
+                'M', ELECTRIC_MOTOR_LuV,
+                'W', new UnificationEntry(cableGtSingle, NiobiumNitride),
+                'P', new UnificationEntry(plate, Tumbaga),
+                'G', new UnificationEntry(gear, Tumbaga));
+
         //  ZhuHai Fishing Pond
         ModHandler.addShapedRecipe(true, "zhuhai_fishing_pond", ZHUHAI_FISHING_POND.getStackForm(),
                 "FRF", "PHP", "WXW",
@@ -1416,6 +1426,17 @@ public class MachineRecipeLoader {
                 'R', new UnificationEntry(rotor, Staballoy),
                 'A', new UnificationEntry(plate, BlackSteel),
                 'F', FIELD_GENERATOR_IV);
+
+        //  Extreme Industrial Greenhouse
+        ModHandler.addShapedRecipe(true, "extreme_industrial_greenhouse", EXTREME_INDUSTRIAL_GREENHOUSE.getStackForm(),
+                "GIG", "SHF", "WXW",
+                'H', GREENHOUSE.getStackForm(),
+                'S', SENSOR_HV,
+                'F', FIELD_GENERATOR_HV,
+                'W', new UnificationEntry(cableGtSingle, Gold),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'I', FLUID_FILTER,
+                'G', new UnificationEntry(plate, Glass));
     }
 
     private static void MachineCasingRecipes() {
