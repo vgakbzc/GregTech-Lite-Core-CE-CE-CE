@@ -331,6 +331,7 @@ public class GTLiteMaterials {
     public static Material TantalumHafniumSeaborgiumCarbide;
     public static Material HastelloyK243;
     public static Material Nitinol60;
+    public static Material Tumbaga;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

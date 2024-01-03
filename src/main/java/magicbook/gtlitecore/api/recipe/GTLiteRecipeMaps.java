@@ -144,6 +144,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES;
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> BIOMASS_GENERATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> LARGE_GAS_COLLECTOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -494,5 +496,10 @@ public class GTLiteRecipeMaps {
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.BATH)
                 .allowEmptyOutput();
+
+        //  Large Gas Collector RecipeMap
+        LARGE_GAS_COLLECTOR_RECIPES = new RecipeMap<>("large_gas_collector_recipes", 2, 0, 0, 1, new SimpleRecipeBuilder(), false)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.COMPRESSOR);
     }
 }

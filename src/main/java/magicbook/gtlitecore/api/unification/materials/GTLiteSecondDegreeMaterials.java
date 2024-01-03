@@ -828,6 +828,19 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[MV], 144))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
+
+        //  12064 Tumbaga
+        Tumbaga = new Material.Builder(getId(), gregtechId("tumbaga"))
+                .ingot()
+                .fluid()
+                .color(0xF2A80E)
+                .iconSet(SHINY)
+                .components(Gold, 7, Bronze, 3)
+                .blast(b -> b
+                        .temp(1200, BlastProperty.GasTier.MID)
+                        .blastStats(VA[HV], 980))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
     }
 
     private static int getId() {

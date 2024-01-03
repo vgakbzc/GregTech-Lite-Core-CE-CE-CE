@@ -25,6 +25,18 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/plutonium_casing"
         }
+      },
+      "black_steel_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/black_steel_casing"
+        }
+      },
+      "tumbaga_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/tumbaga_casing"
+        }
       }
     }
   }
