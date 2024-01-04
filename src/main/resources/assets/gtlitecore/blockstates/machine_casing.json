@@ -37,6 +37,48 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/tumbaga_casing"
         }
+      },
+      "rhodium_plated_palladium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/rhodium_plated_palladium_casing"
+        }
+      },
+      "berkelium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/berkelium_casing"
+        }
+      },
+      "californium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/californium_casing"
+        }
+      },
+      "neptunium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/neptunium_casing"
+        }
+      },
+      "nobelium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/nobelium_casing"
+        }
+      },
+      "lawrencium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/lawrencium_casing"
+        }
+      },
+      "niobium_titanium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/niobium_titanium_casing"
+        }
       }
     }
   }

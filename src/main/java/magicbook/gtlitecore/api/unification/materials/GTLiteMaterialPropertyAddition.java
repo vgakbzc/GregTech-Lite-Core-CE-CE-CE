@@ -66,6 +66,7 @@ public class GTLiteMaterialPropertyAddition {
         Actinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Caesium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Astatine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Californium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Californium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Curium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Curium.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -145,6 +146,10 @@ public class GTLiteMaterialPropertyAddition {
         Protactinium.addFlags(GENERATE_PLATE);
         Curium.addFlags(GENERATE_PLATE);
         Plutonium239.addFlags(GENERATE_PLATE);
+        Californium.addFlags(GENERATE_PLATE);
+        Neptunium.addFlags(GENERATE_PLATE);
+        Nobelium.addFlags(GENERATE_PLATE);
+        Lawrencium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -186,6 +191,12 @@ public class GTLiteMaterialPropertyAddition {
         Protactinium.addFlags(GENERATE_FRAME);
         Trinium.addFlags(GENERATE_FRAME);
         Curium.addFlags(GENERATE_FRAME);
+        Berkelium.addFlags(GENERATE_FRAME);
+        Californium.addFlags(GENERATE_FRAME);
+        Neptunium.addFlags(GENERATE_FRAME);
+        Nobelium.addFlags(GENERATE_FRAME);
+        Lawrencium.addFlags(GENERATE_FRAME);
+        NiobiumNitride.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -197,6 +208,10 @@ public class GTLiteMaterialPropertyAddition {
         Berkelium.addFlags(GENERATE_ROD);
         Protactinium.addFlags(GENERATE_ROD);
         Curium.addFlags(GENERATE_ROD);
+        Californium.addFlags(GENERATE_ROD);
+        Neptunium.addFlags(GENERATE_ROD);
+        Nobelium.addFlags(GENERATE_ROD);
+        Lawrencium.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);

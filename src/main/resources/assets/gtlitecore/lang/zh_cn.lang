@@ -53,6 +53,13 @@ tile.machine_casing.potin_casing.name=防尘粗青铜合金机器外壳
 tile.machine_casing.plutonium_casing.name=超低活性钚机器外壳
 tile.machine_casing.black_steel_casing.name=坚固耐用黑钢机器外壳
 tile.machine_casing.tumbaga_casing.name=可塑性铜金合金机器外壳
+tile.machine_casing.rhodium_plated_palladium_casing.name=高耐久镀铑钯机器外壳
+tile.machine_casing.berkelium_casing.name=耐用锫机器外壳
+tile.machine_casing.californium_casing.name=低摩擦锎机器外壳
+tile.machine_casing.neptunium_casing.name=抗腐蚀镎机器外壳
+tile.machine_casing.nobelium_casing.name=超高强度锘机器外壳
+tile.machine_casing.lawrencium_casing.name=超重铹机器外壳
+tile.machine_casing.niobium_titanium_casing.name=安全稳定铌钛合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -160,6 +167,7 @@ tile.active_unique_casing.advanced_assembly_line_casing.name=进阶装配机械�
 tile.active_unique_casing.advanced_assembly_control_casing.name=进阶装配控制外壳
 tile.active_unique_casing.bioware_computing_casing.name=菌群网络计算组件
 tile.active_unique_casing.bioware_computing_casing.tooltip=自循环存算一体生物计算机
+tile.active_unique_casing.ultimate_engine_intake_casing.name=终极引擎进气口外壳
 
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
@@ -1141,6 +1149,8 @@ gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同�
 gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
 
+gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
+
 #  Materials
 
 ##  Element Materials
@@ -1183,7 +1193,7 @@ gregtech.material.hexachloroplatinic_acid=六氯铂酸
 gregtech.material.carbon_tetrachloride=四氯化碳
 gregtech.material.ruthenium_chloride=三氯化钌
 gregtech.material.sodium_peroxide=过氧化钠
-gregtech.material.rhodium_oxide=三氧化二钌
+gregtech.material.rhodium_oxide=三氧化二铑
 gregtech.material.sulfur_dichloride=二氯化硫
 gregtech.material.thionyl_chloride=亚硫酰氯
 gregtech.material.osmium_tetrachloride=四氯化锇
