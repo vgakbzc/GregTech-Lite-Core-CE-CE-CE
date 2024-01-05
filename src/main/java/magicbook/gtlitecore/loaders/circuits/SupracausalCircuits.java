@@ -15,6 +15,7 @@ public class SupracausalCircuits {
 
     public static void init() {
         CircuitBoard();
+        CircuitComponent();
         SMDs();
         Circuits();
     }
@@ -61,6 +62,26 @@ public class SupracausalCircuits {
                 .duration(20)
                 .CasingTier(5)
                 .buildAndRegister();
+
+    }
+
+    private static void CircuitComponent() {
+
+        //  Contained RN Singularity -> Contained KN Singularity
+        //  back to Stellar Furnace recipes
+
+        //  Contained KN Singularity -> Contained Kerr Singularity
+        CANNER_RECIPES.recipeBuilder()
+                .input(CONTAINED_KN_SINGULARITY)
+                .fluidInputs(FreeElectronGas.getFluid(1000))
+                .output(CONTAINED_KERR_SINGULARITY)
+                .EUt(VA[UEV])
+                .duration(40)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Macrowormhole Generator -> Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
+        //  back to Stellar Furnace recipes
 
     }
 

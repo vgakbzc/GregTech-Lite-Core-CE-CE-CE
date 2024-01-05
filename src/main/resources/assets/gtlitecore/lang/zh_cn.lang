@@ -480,6 +480,8 @@ metaitem.component.supracausal.microwormhole_generator.name=微型虫洞生成�
 metaitem.component.supracausal.stabilized_wormhole_generator.name=稳定虫洞生成器
 metaitem.component.supracausal.eigenfolded_space_time_manifold.name=本征折叠时空流形
 metaitem.component.supracausal.eigenfolded_space_time_manifold.tooltip=实体化时空超流形
+metaitem.component.supracausal.recursively_folded_negative_space.name=递归折叠负空间
+metaitem.component.supracausal.recursively_folded_negative_space.tooltip=遏制奇异空间
 metaitem.component.gooware.bio_cell.name=畸变干细胞
 metaitem.component.gooware.bio_cell.tooltip=菌群网络基质
 metaitem.component.gooware.bio_dish.name=菌群培养皿
@@ -1861,6 +1863,14 @@ metaitem.dense_neutron_plasma_containment_cell.name=致密中子等离子体遏�
 metaitem.dense_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致星球毁灭
 metaitem.cosmic_neutron_plasma_containment_cell.name=寰宇中子等离子体遏制装置
 metaitem.cosmic_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致宇宙毁灭
+metaitem.time_dilation_containment_unit.name=时间膨胀遏制装置
+metaitem.time_dilation_containment_unit.tooltip=用于封装各类奇异物质
+metaitem.contained_reissner_nordstrom_singularity.name=莱斯纳-诺斯特朗黑洞奇点遏制装置
+metaitem.contained_reissner_nordstrom_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_kerr_newmann_singularity.name=克尔-纽曼黑洞奇点遏制装置
+metaitem.contained_kerr_newmann_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_kerr_singularity.name=克尔黑洞奇点遏制装置
+metaitem.contained_kerr_singularity.tooltip=意外的泄露事故或可导致时空扭曲
 
 #  Particles
 metaitem.particle.alpha.name=α粒子

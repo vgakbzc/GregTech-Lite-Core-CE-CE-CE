@@ -74,6 +74,7 @@ public class StellarFurnace {
         CosmicNeutronium();
         QuantumchromodynamicallyConfinedMatter();
         DwarfMatters();
+        SupracausalCircuitComponents();
     }
 
     private static void DegenerateRhenium() {
@@ -259,5 +260,42 @@ public class StellarFurnace {
                 .duration(20)
                 .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
                 .buildAndRegister();
+    }
+
+    private static void SupracausalCircuitComponents() {
+
+        //  TODO Triplet Neutronium Ball -> Contained RN Singularity
+
+        //  Contained RN Singularity -> Contained KN Singularity
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(CONTAINED_RN_SINGULARITY, 64)
+                .output(CONTAINED_KN_SINGULARITY)
+                .output(TIME_DILATION_CONTAINMENT_UNIT, 63)
+                .EUt(6000000)
+                .duration(200)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Macrowormhole Generator -> Recursively Folded Negative Space
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .input(MACROWORMHOLE_GENERATOR, 2)
+                .output(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .input(STABILIZED_WORMHOLE_GENERATOR)
+                .input(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .output(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
     }
 }

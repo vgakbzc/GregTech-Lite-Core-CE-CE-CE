@@ -124,6 +124,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MICROWORMHOLE_GENERATOR;
     public static MetaItem<?>.MetaValueItem STABILIZED_WORMHOLE_GENERATOR;
     public static MetaItem<?>.MetaValueItem EIGENFOLDED_SPACETIME_MANIFOLD;
+    public static MetaItem<?>.MetaValueItem RECURSIVELY_FOLDED_NEGATIVE_SPACE;
 
     public static MetaItem<?>.MetaValueItem BIO_CELL;
     public static MetaItem<?>.MetaValueItem BIO_DISH;
@@ -256,6 +257,10 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem TIME_DILATION_CONTAINMENT_UNIT;
+    public static MetaItem<?>.MetaValueItem CONTAINED_RN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_KN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_KERR_SINGULARITY;
 
     //  Algae
     public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;
