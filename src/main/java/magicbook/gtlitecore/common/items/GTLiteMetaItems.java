@@ -117,6 +117,13 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MANIFOLD_OSCILLATORY_POWER_CELL;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem TOPOLOGICAL_MANIPULATOR_UNIT;
+    public static MetaItem<?>.MetaValueItem GRAVITON_TRANSDUCER;
+    public static MetaItem<?>.MetaValueItem RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM;
+    public static MetaItem<?>.MetaValueItem MACROWORMHOLE_GENERATOR;
+    public static MetaItem<?>.MetaValueItem MICROWORMHOLE_GENERATOR;
+    public static MetaItem<?>.MetaValueItem STABILIZED_WORMHOLE_GENERATOR;
+    public static MetaItem<?>.MetaValueItem EIGENFOLDED_SPACETIME_MANIFOLD;
 
     public static MetaItem<?>.MetaValueItem BIO_CELL;
     public static MetaItem<?>.MetaValueItem BIO_DISH;

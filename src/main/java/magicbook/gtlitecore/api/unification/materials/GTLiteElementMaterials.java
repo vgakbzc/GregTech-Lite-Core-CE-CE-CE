@@ -204,7 +204,7 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.Hypogen)
                 .color(0xDC784B)
                 .iconSet(BRIGHT)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 32, 16, false)
                 .build();
 

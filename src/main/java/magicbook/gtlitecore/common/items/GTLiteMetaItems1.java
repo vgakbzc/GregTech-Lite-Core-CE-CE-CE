@@ -134,6 +134,13 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MANIFOLD_OSCILLATORY_POWER_CELL = this.addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
         SCINTILLATOR = this.addItem(99, "component.cosmic.scintillator");
         SCINTILLATOR_CRYSTAL = this.addItem(100, "component.cosmic.scintillator_crystal");
+        TOPOLOGICAL_MANIPULATOR_UNIT = this.addItem(101, "component.supracausal.topological_manipulator_unit");
+        GRAVITON_TRANSDUCER = this.addItem(102, "component.supracausal.graviton_transducer");
+        RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM = this.addItem(103, "component.supracausal.relativistic_spinorial_memory_system");
+        MACROWORMHOLE_GENERATOR = this.addItem(104, "component.supracausal.macrowormhole_generator");
+        MICROWORMHOLE_GENERATOR = this.addItem(105, "component.supracausal.microwormhole_generator");
+        STABILIZED_WORMHOLE_GENERATOR = this.addItem(106, "component.supracausal.stabilized_wormhole_generator");
+        EIGENFOLDED_SPACETIME_MANIFOLD = this.addItem(107, "component.supracausal.eigenfolded_space_time_manifold");
 
         BIO_CELL = this.addItem(120, "component.gooware.bio_cell");
         BIO_DISH = this.addItem(121, "component.gooware.bio_dish");
