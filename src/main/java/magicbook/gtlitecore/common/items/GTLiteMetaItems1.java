@@ -252,7 +252,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
         HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
         CHROMATIC_LENS = this.addItem(317, "chromatic_lens").addOreDict("craftingLensChromatic");
-
+        NEUTRONIUM_SPHERE = this.addItem(318, "neutronium_sphere");
+        TRIPLET_NEUTRONIUM_SPHERE = this.addItem(319, "triplet_neutronium_sphere");
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
         MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
         MINING_DRONE_HV = this.addItem(322, "mining_drone.hv");
@@ -279,6 +280,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         CONTAINED_RN_SINGULARITY = this.addItem(357, "contained_reissner_nordstrom_singularity");
         CONTAINED_KN_SINGULARITY = this.addItem(358, "contained_kerr_newmann_singularity");
         CONTAINED_KERR_SINGULARITY = this.addItem(359, "contained_kerr_singularity");
+        CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(360, "contained_high_density_protonic_matter");
+        CONTAINED_EXOTIC_MATTER = this.addItem(361, "contained_exotic_matter");
+        CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(362, "charged_triplet_neutronium_sphere");
 
         //  Algae
         BARNARDA_C_BASE = this.addItem(370, "alga.barnarda_c.base");

@@ -222,7 +222,6 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem QCD_PROTECTIVE_PLATING;
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
-
     public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
     public static MetaItem<?>.MetaValueItem ZENITH_STAR;
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
@@ -234,7 +233,8 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_OSCILLATING_MATTER;
     public static MetaItem<?>.MetaValueItem CHROMATIC_LENS;
-
+    public static MetaItem<?>.MetaValueItem NEUTRONIUM_SPHERE;
+    public static MetaItem<?>.MetaValueItem TRIPLET_NEUTRONIUM_SPHERE;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_HV;
@@ -261,6 +261,9 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CONTAINED_RN_SINGULARITY;
     public static MetaItem<?>.MetaValueItem CONTAINED_KN_SINGULARITY;
     public static MetaItem<?>.MetaValueItem CONTAINED_KERR_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_HIGH_DENSITY_PROTONIC_MATTER;
+    public static MetaItem<?>.MetaValueItem CONTAINED_EXOTIC_MATTER;
+    public static MetaItem<?>.MetaValueItem CHARGED_TRIPLET_NEUTRONIUM_SPHERE;
 
     //  Algae
     public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;

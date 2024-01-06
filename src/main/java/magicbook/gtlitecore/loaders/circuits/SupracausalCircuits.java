@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
@@ -83,6 +84,91 @@ public class SupracausalCircuits {
         //  Macrowormhole Generator -> Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
         //  back to Stellar Furnace recipes
 
+        //  Graviton Transducer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QCD_PROTECTIVE_PLATING, 2)
+                .input(CONTAINED_RN_SINGULARITY)
+                .input(MICROWORMHOLE_GENERATOR)
+                .input(SENSOR_UXV)
+                .fluidInputs(HiggsBosons.getFluid(L * 4))
+                .output(GRAVITON_TRANSDUCER)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Relativistic Spinorial Memory
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Neutronium)
+                .input(FIELD_GENERATOR_UXV)
+                .input(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
+                .input(wireFine, HeavyQuarkDegenerateMatter, 4)
+                .fluidInputs(Instantons.getFluid(L * 4))
+                .output(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Topological Manipulator Unit
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QCD_PROTECTIVE_PLATING)
+                .input(plate, Spacetime)
+                .input(CONTAINED_KN_SINGULARITY)
+                .input(EMITTER_UXV)
+                .fluidInputs(TemporalFluid.getFluid(L * 4))
+                .output(TOPOLOGICAL_MANIPULATOR_UNIT)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Microwormhole Generator
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Orichalcum)
+                .input(FIELD_GENERATOR_UHV)
+                .input(CONTAINED_KERR_SINGULARITY)
+                .input(wireFine, Vibranium, 4)
+                .fluidInputs(Taranium.getFluid(L * 4))
+                .output(MICROWORMHOLE_GENERATOR)
+                .CasingTier(3)
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Macrowormhole Generator
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(plate, AstralTitanium)
+                .input(FIELD_GENERATOR_UEV)
+                .input(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
+                .input(MICROWORMHOLE_GENERATOR)
+                .input(CONTAINED_KERR_SINGULARITY)
+                .input(BATTERY_UEV_LITHIUM_SULFIDE)
+                .fluidInputs(CelestialTungsten.getFluid(L * 4))
+                .output(MACROWORMHOLE_GENERATOR)
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Stabilized Wormhole Generator
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plate, Periodicium)
+                .input(FIELD_GENERATOR_UXV)
+                .input(CONTAINED_EXOTIC_MATTER)
+                .input(MACROWORMHOLE_GENERATOR)
+                .input(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
+                .output(STABILIZED_WORMHOLE_GENERATOR)
+                .stationResearch(b -> b
+                        .researchStack(MACROWORMHOLE_GENERATOR.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(256))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Contained High Density Protonic Matter -> Contained Exotic Matter
+        //  back to Stellar Furnace recipes
     }
 
     private static void SMDs() {

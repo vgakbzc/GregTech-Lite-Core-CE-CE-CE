@@ -1824,7 +1824,10 @@ metaitem.hyperdimensional_oscillating_matter.name=超维度时空振荡物质
 metaitem.hyperdimensional_oscillating_matter.tooltip=超维度时空乱流凝结物
 metaitem.chromatic_lens.name=彩虹透镜
 metaitem.chromatic_lens.tooltip=五彩斑斓
-
+metaitem.neutronium_sphere.name=中子素球体
+metaitem.neutronium_sphere.tooltip=亿斤沉重
+metaitem.triplet_neutronium_sphere.name=三重态中子素球体
+metaitem.triplet_neutronium_sphere.tooltip=时空消融
 metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
 metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）
 metaitem.mining_drone.hv.name=采矿无人机（§6HV§r）
@@ -1871,6 +1874,12 @@ metaitem.contained_kerr_newmann_singularity.name=克尔-纽曼黑洞奇点遏制
 metaitem.contained_kerr_newmann_singularity.tooltip=意外的泄露事故或可导致时空扭曲
 metaitem.contained_kerr_singularity.name=克尔黑洞奇点遏制装置
 metaitem.contained_kerr_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_high_density_protonic_matter.name=高密度质子物质遏制装置
+metaitem.contained_high_density_protonic_matter.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_exotic_matter.name=奇异物质遏制装置
+metaitem.contained_exotic_matter.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.charged_triplet_neutronium_sphere.name=带电三重态中子素球体
+metaitem.charged_triplet_neutronium_sphere.tooltip=活体中子星
 
 #  Particles
 metaitem.particle.alpha.name=α粒子
