@@ -37,13 +37,17 @@ public class BlockMachineCasing extends VariantBlock<BlockMachineCasing.MachineC
         POTIN_CASING("potin_casing"),
         PLUTONIUM_CASING("plutonium_casing"),
         BLACK_STEEL_CASING("black_steel_casing"),
-        TUMBAGA_CASING("tumbaga_casing");
-        //  todo Berkelium
-        //  todo Californium
-        //  todo Uranium
-        //  todo Neptonium
-        //  todo Plutonium
-        //  and others...
+        TUMBAGA_CASING("tumbaga_casing"),
+        RHODIUM_PLATED_PALLADIUM_CASING("rhodium_plated_palladium_casing"), // todo find some application
+        BERKELIUM_CASING("berkelium_casing"), // todo find some application
+        CALIFORNIUM_CASING("californium_casing"), // todo find some application
+        NEPTUNIUM_CASING("neptunium_casing"), // todo find some application
+        NOBELIUM_CASING("nobelium_casing"), // todo find some application
+        LAWRENCIUM_CASING("lawrencium_casing"), // todo find some application
+        NIOBIUM_TITANIUM_CASING("niobium_titanium_casing");
+        //  14
+        //  15
+        //  16
 
         private final String name;
 

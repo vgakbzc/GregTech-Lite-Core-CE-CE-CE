@@ -44,6 +44,20 @@
         "bot_bottom": "#bot_side",
         "top_bottom": "#top_side"
       }
+    },
+    "active=false,variant=ultimate_engine_intake_casing": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "gtlitecore:blocks/casings/rhodium_plated_palladium_casing",
+        "top_all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing_overlay"
+      }
+    },
+    "active=true,variant=ultimate_engine_intake_casing": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "gtlitecore:blocks/casings/rhodium_plated_palladium_casing",
+        "top_all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing_overlay_active"
+      }
     }
   }
 }

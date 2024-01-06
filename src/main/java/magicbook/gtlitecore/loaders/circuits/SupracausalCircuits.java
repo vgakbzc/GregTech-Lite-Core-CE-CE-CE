@@ -4,15 +4,171 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class SupracausalCircuits {
 
     public static void init() {
+        CircuitBoard();
+        CircuitComponent();
         SMDs();
+        Circuits();
+    }
+
+    private static void CircuitBoard() {
+
+        //  Supracausal Board
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(COSMIC_INFORMATION_MODULE)
+                .input(plate, BlackDwarfMatter, 2)
+                .input(plate, Hypogen, 2)
+                .input(STABILIZED_WORMHOLE_GENERATOR)
+                .input(swarm, CarbonNanotube)
+                .input(wireFine, Hikarium, 8)
+                .fluidInputs(Galaxium.getFluid(L))
+                .output(SPACETIME_CONDENSER)
+                .stationResearch(b -> b
+                        .researchStack(COSMIC_INFORMATION_MODULE.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(256))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Supracausal Processing Unit
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(frameGt, TantalumHafniumSeaborgiumCarbide)
+                .input(SPACETIME_CONDENSER)
+                .input(plate, CosmicFabric, 4)
+                .input(QCD_PROTECTIVE_PLATING, 4)
+                .input(NUCLEAR_CLOCK)
+                .input(TOPOLOGICAL_MANIPULATOR_UNIT)
+                .input(GRAVITON_TRANSDUCER)
+                .input(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .input(BOSE_EINSTEIN_CONDENSATE, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .input(wireGtSingle, HeavyQuarkDegenerateMatter, 2)
+                .fluidInputs(CosmicComputingMixture.getFluid(4000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(2000))
+                .fluidInputs(Spacetime.getFluid(1000))
+                .fluidInputs(CosmicNeutronium.getFluid(1000))
+                .output(LIGHT_CONE_MODULE, 2)
+                .EUt(VA[UXV])
+                .duration(20)
+                .CasingTier(5)
+                .buildAndRegister();
+
+    }
+
+    private static void CircuitComponent() {
+
+        //  Contained RN Singularity -> Contained KN Singularity
+        //  back to Stellar Furnace recipes
+
+        //  Contained KN Singularity -> Contained Kerr Singularity
+        CANNER_RECIPES.recipeBuilder()
+                .input(CONTAINED_KN_SINGULARITY)
+                .fluidInputs(FreeElectronGas.getFluid(1000))
+                .output(CONTAINED_KERR_SINGULARITY)
+                .EUt(VA[UEV])
+                .duration(40)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Macrowormhole Generator -> Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
+        //  back to Stellar Furnace recipes
+
+        //  Graviton Transducer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QCD_PROTECTIVE_PLATING, 2)
+                .input(CONTAINED_RN_SINGULARITY)
+                .input(MICROWORMHOLE_GENERATOR)
+                .input(SENSOR_UXV)
+                .fluidInputs(HiggsBosons.getFluid(L * 4))
+                .output(GRAVITON_TRANSDUCER)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Relativistic Spinorial Memory
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Neutronium)
+                .input(FIELD_GENERATOR_UXV)
+                .input(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
+                .input(wireFine, HeavyQuarkDegenerateMatter, 4)
+                .fluidInputs(Instantons.getFluid(L * 4))
+                .output(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Topological Manipulator Unit
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QCD_PROTECTIVE_PLATING)
+                .input(plate, Spacetime)
+                .input(CONTAINED_KN_SINGULARITY)
+                .input(EMITTER_UXV)
+                .fluidInputs(TemporalFluid.getFluid(L * 4))
+                .output(TOPOLOGICAL_MANIPULATOR_UNIT)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Microwormhole Generator
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Orichalcum)
+                .input(FIELD_GENERATOR_UHV)
+                .input(CONTAINED_KERR_SINGULARITY)
+                .input(wireFine, Vibranium, 4)
+                .fluidInputs(Taranium.getFluid(L * 4))
+                .output(MICROWORMHOLE_GENERATOR)
+                .CasingTier(3)
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Macrowormhole Generator
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(plate, AstralTitanium)
+                .input(FIELD_GENERATOR_UEV)
+                .input(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
+                .input(MICROWORMHOLE_GENERATOR)
+                .input(CONTAINED_KERR_SINGULARITY)
+                .input(BATTERY_UEV_LITHIUM_SULFIDE)
+                .fluidInputs(CelestialTungsten.getFluid(L * 4))
+                .output(MACROWORMHOLE_GENERATOR)
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Stabilized Wormhole Generator
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plate, Periodicium)
+                .input(FIELD_GENERATOR_UXV)
+                .input(CONTAINED_EXOTIC_MATTER)
+                .input(MACROWORMHOLE_GENERATOR)
+                .input(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
+                .output(STABILIZED_WORMHOLE_GENERATOR)
+                .stationResearch(b -> b
+                        .researchStack(MACROWORMHOLE_GENERATOR.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(256))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Contained High Density Protonic Matter -> Contained Exotic Matter
+        //  back to Stellar Furnace recipes
     }
 
     private static void SMDs() {
@@ -70,5 +226,63 @@ public class SupracausalCircuits {
                 .duration(160)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+    }
+
+    private static void Circuits() {
+
+        //  Supracausal Processor
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(LIGHT_CONE_MODULE)
+                .input(INTRAVITAL_SOC)
+                .input(SUPRACAUSAL_RESISTOR, 8)
+                .input(SUPRACAUSAL_CAPACITOR, 8)
+                .input(SUPRACAUSAL_TRANSISTOR, 8)
+                .input(wireFine, Hypogen, 8)
+                .solderMultiplier(1)
+                .output(SUPRACAUSAL_PROCESSOR, 2)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Supracausal Assembly
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(SPACETIME_CONDENSER)
+                .input(SUPRACAUSAL_PROCESSOR, 2)
+                .input(SUPRACAUSAL_INDUCTOR, 6)
+                .input(SUPRACAUSAL_CAPACITOR, 12)
+                .input(COSMIC_MEMORY_CHIP, 24) // TODO new RAM
+                .input(wireFine, Hypogen, 8)
+                .solderMultiplier(2)
+                .output(SUPRACAUSAL_ASSEMBLY, 2)
+                .EUt(VA[UXV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Supracausal Supercomputer
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(SPACETIME_CONDENSER)
+                .input(SUPRACAUSAL_ASSEMBLY, 2)
+                .input(SUPRACAUSAL_DIODE, 8)
+                .input(COSMIC_CPU_CHIP, 16) // TODO new chip
+                .input(COSMIC_MEMORY_CHIP, 32) // TODO new RAM
+                .input(wireFine, HeavyQuarkDegenerateMatter, 24)
+                .input(foil, Hikarium, 32)
+                .input(plate, BlackDwarfMatter, 4)
+                .fluidInputs(SolderingAlloy.getFluid(34560))
+                .fluidInputs(Kevlar.getFluid(18432))
+                .fluidInputs(Zylon.getFluid(9216))
+                .fluidInputs(Hypogen.getFluid(4608))
+                .output(SUPRACAUSAL_COMPUTER)
+                .stationResearch(b -> b
+                        .researchStack(SUPRACAUSAL_ASSEMBLY.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(512))
+                .duration(400)
+                .EUt(VA[UXV])
+                .buildAndRegister();
+
+        //  TODO Mainframe
     }
 }

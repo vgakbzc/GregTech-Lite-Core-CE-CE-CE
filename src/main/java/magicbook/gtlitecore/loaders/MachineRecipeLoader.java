@@ -3237,5 +3237,110 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Rhodium Plated Palladium Casing
+        ModHandler.addShapedRecipe(true, "rhodium_plated_palladium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, RhodiumPlatedPalladium),
+                'F', new UnificationEntry(frameGt, RhodiumPlatedPalladium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, RhodiumPlatedPalladium, 6)
+                .input(frameGt, RhodiumPlatedPalladium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Berkelium Casing
+        ModHandler.addShapedRecipe(true, "berkelium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BERKELIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Berkelium),
+                'F', new UnificationEntry(frameGt, Berkelium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Berkelium, 6)
+                .input(frameGt, Berkelium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BERKELIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Californium Casing
+        ModHandler.addShapedRecipe(true, "californium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.CALIFORNIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Californium),
+                'F', new UnificationEntry(frameGt, Californium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Californium, 6)
+                .input(frameGt, Californium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.CALIFORNIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Neptunium Casing
+        ModHandler.addShapedRecipe(true, "neptunium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NEPTUNIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Neptunium),
+                'F', new UnificationEntry(frameGt, Neptunium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Neptunium, 6)
+                .input(frameGt, Neptunium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NEPTUNIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Nobelium Casing
+        ModHandler.addShapedRecipe(true, "nobelium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NOBELIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Nobelium),
+                'F', new UnificationEntry(frameGt, Nobelium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Nobelium, 6)
+                .input(frameGt, Nobelium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NOBELIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Lawrencium Casing
+        ModHandler.addShapedRecipe(true, "lawrencium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAWRENCIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Lawrencium),
+                'F', new UnificationEntry(frameGt, Lawrencium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Lawrencium, 6)
+                .input(frameGt, Lawrencium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAWRENCIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Niobium Titanium Casing
+        ModHandler.addShapedRecipe(true, "niobium_titanium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, NiobiumTitanium),
+                'F', new UnificationEntry(frameGt, NiobiumNitride));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, NiobiumTitanium, 6)
+                .input(frameGt, NiobiumNitride)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }

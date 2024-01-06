@@ -150,6 +150,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
+    public static MetaTileEntityIndustrialInductionFurnace INDUSTRIAL_INDUCTION_FURNACE;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -369,5 +370,7 @@ public class GTLiteMetaTileEntities {
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
         LARGE_GAS_COLLECTOR = registerMultiMetaTileEntity(102, new MetaTileEntityLargeGasCollector(gtliteId("large_gas_collector")));
+        //  103 ULTIMATE_LARGE_COMBUSTION_ENGINE
+        INDUSTRIAL_INDUCTION_FURNACE = registerMultiMetaTileEntity(104, new MetaTileEntityIndustrialInductionFurnace(gtliteId("industrial_induction_furnace")));
     }
 }

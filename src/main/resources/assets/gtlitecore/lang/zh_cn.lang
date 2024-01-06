@@ -53,6 +53,13 @@ tile.machine_casing.potin_casing.name=防尘粗青铜合金机器外壳
 tile.machine_casing.plutonium_casing.name=超低活性钚机器外壳
 tile.machine_casing.black_steel_casing.name=坚固耐用黑钢机器外壳
 tile.machine_casing.tumbaga_casing.name=可塑性铜金合金机器外壳
+tile.machine_casing.rhodium_plated_palladium_casing.name=高耐久镀铑钯机器外壳
+tile.machine_casing.berkelium_casing.name=耐用锫机器外壳
+tile.machine_casing.californium_casing.name=低摩擦锎机器外壳
+tile.machine_casing.neptunium_casing.name=抗腐蚀镎机器外壳
+tile.machine_casing.nobelium_casing.name=超高强度锘机器外壳
+tile.machine_casing.lawrencium_casing.name=超重铹机器外壳
+tile.machine_casing.niobium_titanium_casing.name=安全稳定铌钛合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -160,6 +167,7 @@ tile.active_unique_casing.advanced_assembly_line_casing.name=进阶装配机械�
 tile.active_unique_casing.advanced_assembly_control_casing.name=进阶装配控制外壳
 tile.active_unique_casing.bioware_computing_casing.name=菌群网络计算组件
 tile.active_unique_casing.bioware_computing_casing.tooltip=自循环存算一体生物计算机
+tile.active_unique_casing.ultimate_engine_intake_casing.name=终极引擎进气口外壳
 
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
@@ -461,6 +469,19 @@ metaitem.component.cosmic.scintillator.name=闪烁体
 metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
 metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
 metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
+metaitem.component.supracausal.topological_manipulator_unit.name=超空间拓扑操纵单元
+metaitem.component.supracausal.topological_manipulator_unit.tooltip=量子位型空间拓扑生成器
+metaitem.component.supracausal.graviton_transducer.name=引力子换能器
+metaitem.component.supracausal.graviton_transducer.tooltip=超高标度能量转换
+metaitem.component.supracausal.relativistic_spinorial_memory_system.name=相对论旋量存储器
+metaitem.component.supracausal.relativistic_spinorial_memory_system.tooltip=非反常随机动力学存储
+metaitem.component.supracausal.macrowormhole_generator.name=巨型虫洞生成器
+metaitem.component.supracausal.microwormhole_generator.name=微型虫洞生成器
+metaitem.component.supracausal.stabilized_wormhole_generator.name=稳定虫洞生成器
+metaitem.component.supracausal.eigenfolded_space_time_manifold.name=本征折叠时空流形
+metaitem.component.supracausal.eigenfolded_space_time_manifold.tooltip=实体化时空超流形
+metaitem.component.supracausal.recursively_folded_negative_space.name=递归折叠负空间
+metaitem.component.supracausal.recursively_folded_negative_space.tooltip=遏制奇异空间
 metaitem.component.gooware.bio_cell.name=畸变干细胞
 metaitem.component.gooware.bio_cell.tooltip=菌群网络基质
 metaitem.component.gooware.bio_dish.name=菌群培养皿
@@ -1141,6 +1162,8 @@ gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同�
 gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
 
+gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
+
 #  Materials
 
 ##  Element Materials
@@ -1183,7 +1206,7 @@ gregtech.material.hexachloroplatinic_acid=六氯铂酸
 gregtech.material.carbon_tetrachloride=四氯化碳
 gregtech.material.ruthenium_chloride=三氯化钌
 gregtech.material.sodium_peroxide=过氧化钠
-gregtech.material.rhodium_oxide=三氧化二钌
+gregtech.material.rhodium_oxide=三氧化二铑
 gregtech.material.sulfur_dichloride=二氯化硫
 gregtech.material.thionyl_chloride=亚硫酰氯
 gregtech.material.osmium_tetrachloride=四氯化锇
@@ -1801,7 +1824,10 @@ metaitem.hyperdimensional_oscillating_matter.name=超维度时空振荡物质
 metaitem.hyperdimensional_oscillating_matter.tooltip=超维度时空乱流凝结物
 metaitem.chromatic_lens.name=彩虹透镜
 metaitem.chromatic_lens.tooltip=五彩斑斓
-
+metaitem.neutronium_sphere.name=中子素球体
+metaitem.neutronium_sphere.tooltip=亿斤沉重
+metaitem.triplet_neutronium_sphere.name=三重态中子素球体
+metaitem.triplet_neutronium_sphere.tooltip=时空消融
 metaitem.mining_drone.lv.name=采矿无人机（§7LV§r）
 metaitem.mining_drone.mv.name=采矿无人机（§bMV§r）
 metaitem.mining_drone.hv.name=采矿无人机（§6HV§r）
@@ -1840,6 +1866,20 @@ metaitem.dense_neutron_plasma_containment_cell.name=致密中子等离子体遏�
 metaitem.dense_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致星球毁灭
 metaitem.cosmic_neutron_plasma_containment_cell.name=寰宇中子等离子体遏制装置
 metaitem.cosmic_neutron_plasma_containment_cell.tooltip=意外的泄露事故或可导致宇宙毁灭
+metaitem.time_dilation_containment_unit.name=时间膨胀遏制装置
+metaitem.time_dilation_containment_unit.tooltip=用于封装各类奇异物质
+metaitem.contained_reissner_nordstrom_singularity.name=莱斯纳-诺斯特朗黑洞奇点遏制装置
+metaitem.contained_reissner_nordstrom_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_kerr_newmann_singularity.name=克尔-纽曼黑洞奇点遏制装置
+metaitem.contained_kerr_newmann_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_kerr_singularity.name=克尔黑洞奇点遏制装置
+metaitem.contained_kerr_singularity.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_high_density_protonic_matter.name=高密度质子物质遏制装置
+metaitem.contained_high_density_protonic_matter.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.contained_exotic_matter.name=奇异物质遏制装置
+metaitem.contained_exotic_matter.tooltip=意外的泄露事故或可导致时空扭曲
+metaitem.charged_triplet_neutronium_sphere.name=带电三重态中子素球体
+metaitem.charged_triplet_neutronium_sphere.tooltip=活体中子星
 
 #  Particles
 metaitem.particle.alpha.name=α粒子

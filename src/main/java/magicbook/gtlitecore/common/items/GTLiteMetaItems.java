@@ -117,6 +117,14 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MANIFOLD_OSCILLATORY_POWER_CELL;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR;
     public static MetaItem<?>.MetaValueItem SCINTILLATOR_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem TOPOLOGICAL_MANIPULATOR_UNIT;
+    public static MetaItem<?>.MetaValueItem GRAVITON_TRANSDUCER;
+    public static MetaItem<?>.MetaValueItem RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM;
+    public static MetaItem<?>.MetaValueItem MACROWORMHOLE_GENERATOR;
+    public static MetaItem<?>.MetaValueItem MICROWORMHOLE_GENERATOR;
+    public static MetaItem<?>.MetaValueItem STABILIZED_WORMHOLE_GENERATOR;
+    public static MetaItem<?>.MetaValueItem EIGENFOLDED_SPACETIME_MANIFOLD;
+    public static MetaItem<?>.MetaValueItem RECURSIVELY_FOLDED_NEGATIVE_SPACE;
 
     public static MetaItem<?>.MetaValueItem BIO_CELL;
     public static MetaItem<?>.MetaValueItem BIO_DISH;
@@ -214,7 +222,6 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem QCD_PROTECTIVE_PLATING;
     public static MetaItem<?>.MetaValueItem CARBON_ALLOTROPE_MIXTURE;
     public static MetaItem<?>.MetaValueItem GRAPHENE_ALIGNED_CNT;
-
     public static MetaItem<?>.MetaValueItem UNSTABLE_STAR;
     public static MetaItem<?>.MetaValueItem ZENITH_STAR;
     public static MetaItem<?>.MetaValueItem QUANTUM_ANOMALY;
@@ -226,7 +233,8 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_DRONE;
     public static MetaItem<?>.MetaValueItem HYPERDIMENSIONAL_OSCILLATING_MATTER;
     public static MetaItem<?>.MetaValueItem CHROMATIC_LENS;
-
+    public static MetaItem<?>.MetaValueItem NEUTRONIUM_SPHERE;
+    public static MetaItem<?>.MetaValueItem TRIPLET_NEUTRONIUM_SPHERE;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_LV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_HV;
@@ -249,6 +257,13 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL;
     public static MetaItem<?>.MetaValueItem COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL;
+    public static MetaItem<?>.MetaValueItem TIME_DILATION_CONTAINMENT_UNIT;
+    public static MetaItem<?>.MetaValueItem CONTAINED_RN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_KN_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_KERR_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CONTAINED_HIGH_DENSITY_PROTONIC_MATTER;
+    public static MetaItem<?>.MetaValueItem CONTAINED_EXOTIC_MATTER;
+    public static MetaItem<?>.MetaValueItem CHARGED_TRIPLET_NEUTRONIUM_SPHERE;
 
     //  Algae
     public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;
