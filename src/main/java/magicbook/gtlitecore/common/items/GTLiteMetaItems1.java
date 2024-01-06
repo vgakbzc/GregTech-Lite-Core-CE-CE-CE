@@ -283,6 +283,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(360, "contained_high_density_protonic_matter");
         CONTAINED_EXOTIC_MATTER = this.addItem(361, "contained_exotic_matter");
         CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(362, "charged_triplet_neutronium_sphere");
+        COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL = this.addItem(363, "cosmic_fabric_plasma_containment_cell").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3"));
+        }));
 
         //  Algae
         BARNARDA_C_BASE = this.addItem(370, "alga.barnarda_c.base");

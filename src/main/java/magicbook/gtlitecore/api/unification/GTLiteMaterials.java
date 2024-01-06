@@ -263,6 +263,8 @@ public class GTLiteMaterials {
     public static Material PoloniumDichloride;
     public static Material LithiumSulfide;
     public static Material LanthanumNickelOxide;
+    public static Material SodiumAzide;
+    public static Material SodiumAzanide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -486,6 +488,14 @@ public class GTLiteMaterials {
     public static Material TrifluoromethanesulfonicAcid;
     public static Material CalciumTrifluoromethansulphonate;
     public static Material LithiumTrifluoromethansulphonate;
+    public static Material ViscoelasticPolyurethane;
+    public static Material Polyurethane;
+    public static Material TolueneDiisocyanate;
+    public static Material Azafullerene;
+    public static Material AminatedFullerene;
+    public static Material Tertbutylcarbonylazide;
+    public static Material Tertbutanol;
+    public static Material DitertbutylDicarbonate;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

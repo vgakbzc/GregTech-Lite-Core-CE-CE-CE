@@ -2030,6 +2030,23 @@ public class GTLiteFirstDegreeMaterials {
                         .blastStats(VA[UHV], 446))
                 .build();
 
+        //  24114 Sodium Azide
+        SodiumAzide = new Material.Builder(getId(), gregtechId("sodium_azide"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Nitrogen.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Sodium, 1, Nitrogen, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24115 Sodium Azanide
+        SodiumAzanide = new Material.Builder(getId(), gregtechId("sodium_azanide"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Ammonia.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Sodium, 1, Nitrogen, 1, Hydrogen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

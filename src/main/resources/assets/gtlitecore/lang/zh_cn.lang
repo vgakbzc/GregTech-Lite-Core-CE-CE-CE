@@ -1427,6 +1427,8 @@ gregtech.material.polonium_nitrate=硝酸钋
 gregtech.material.polonium_dichloride=二氯化钋
 gregtech.material.lithium_sulfide=硫化锂
 gregtech.material.lanthanum_nickel_oxide=镍酸铼
+gregtech.material.sodium_azide=叠氮化钠
+gregtech.material.sodium_azanide=氨基钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1648,6 +1650,14 @@ gregtech.material.ferrocene=二茂铁
 gregtech.material.trifluoromethanesulfonic_acid=三氟甲磺酸
 gregtech.material.calcium_trifluoromethansulphonate=三氟甲磺酸钙
 gregtech.material.lithium_trifluoromethansulphonate=三氟甲磺酸锂
+gregtech.material.viscoelastic_polyurethane=粘弹性聚氨酯泡沫
+gregtech.material.polyurethane=聚氨基甲酸酯（PU）
+gregtech.material.toluene_diisocyanate=甲苯二异氰酸脂
+gregtech.material.azafullerene=氮杂富勒烯
+gregtech.material.aminated_fullerene=胺化富勒烯
+gregtech.material.tertbutylcarbonylazide=叔丁基羰基叠氮
+gregtech.material.tertbutanol=叔丁醇
+gregtech.material.ditertbutyl_dicarbonate=二碳酸二叔丁酯
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -1880,6 +1890,11 @@ metaitem.contained_exotic_matter.name=奇异物质遏制装置
 metaitem.contained_exotic_matter.tooltip=意外的泄露事故或可导致时空扭曲
 metaitem.charged_triplet_neutronium_sphere.name=带电三重态中子素球体
 metaitem.charged_triplet_neutronium_sphere.tooltip=活体中子星
+metaitem.cosmic_fabric_plasma_containment_cell.name=寰宇织网等离子体遏制装置
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1=一些凡夫俗子曾试图制成过此物，然而它们根本无法理解其中真髓。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2=它们将制成的只有此物的1%%效能的劣质造物称为“二向箔”，多么可笑。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3=真正的寰宇织网如今不过唾手可得之物。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6等离子冷凝器§7进行冷却
 
 #  Particles
 metaitem.particle.alpha.name=α粒子

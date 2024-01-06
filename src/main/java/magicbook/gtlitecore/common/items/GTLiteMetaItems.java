@@ -264,6 +264,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CONTAINED_HIGH_DENSITY_PROTONIC_MATTER;
     public static MetaItem<?>.MetaValueItem CONTAINED_EXOTIC_MATTER;
     public static MetaItem<?>.MetaValueItem CHARGED_TRIPLET_NEUTRONIUM_SPHERE;
+    public static MetaItem<?>.MetaValueItem COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL;
 
     //  Algae
     public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;

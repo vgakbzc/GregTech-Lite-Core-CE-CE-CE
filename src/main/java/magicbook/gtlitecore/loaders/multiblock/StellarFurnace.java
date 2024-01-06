@@ -51,6 +51,19 @@ public class StellarFurnace {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Time Dilation Containment Cell
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(FIELD_GENERATOR_UIV)
+                .input(stickLong, Hypogen)
+                .input(plate, CosmicNeutronium, 4)
+                .inputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.QUANTUM_GLASS, 2))
+                .fluidInputs(TinAlloy.getFluid(L * 2))
+                .output(TIME_DILATION_CONTAINMENT_UNIT)
+                .EUt(VA[UHV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Separation Electromagnet
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(MAGNETRON)
@@ -74,6 +87,7 @@ public class StellarFurnace {
         CosmicNeutronium();
         QuantumchromodynamicallyConfinedMatter();
         DwarfMatters();
+        CosmicFabric();
         SupracausalCircuitComponents();
     }
 
@@ -200,7 +214,7 @@ public class StellarFurnace {
                 .buildAndRegister();
 
         //  Step2: Cosmic Neutron Plasma
-        SCANNER_RECIPES.recipeBuilder()
+        CANNER_RECIPES.recipeBuilder()
                 .input(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
                 .fluidInputs(DenseNeutronPlasma.getPlasma(1000))
                 .output(DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL)
@@ -262,6 +276,26 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
+    private static void CosmicFabric() {
+
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(COSMIC_FABRIC)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidOutputs(CosmicFabric.getPlasma(1000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .input(TIME_DILATION_CONTAINMENT_UNIT)
+                .fluidInputs(CosmicFabric.getPlasma(1000))
+                .output(COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL)
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+    }
+
     private static void SupracausalCircuitComponents() {
 
         //  Neutronium -> Neutronium Sphere
@@ -295,9 +329,9 @@ public class StellarFurnace {
 
         //  Charged Triplet Neutronium Sphere -> Contained RN Singularity
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.TARANIUM_CHARGE))
                 .input(TIME_DILATION_CONTAINMENT_UNIT, 64)
                 .input(CHARGED_TRIPLET_NEUTRONIUM_SPHERE, 64)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.TARANIUM_CHARGE))
                 .output(CONTAINED_RN_SINGULARITY, 64)
                 .EUt(VA[UXV])
                 .duration(200)
@@ -305,8 +339,8 @@ public class StellarFurnace {
 
         //  Contained RN Singularity -> Contained KN Singularity
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .input(CONTAINED_RN_SINGULARITY, 64)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .output(CONTAINED_KN_SINGULARITY)
                 .output(TIME_DILATION_CONTAINMENT_UNIT, 63)
                 .EUt(6000000)
@@ -316,8 +350,8 @@ public class StellarFurnace {
 
         //  Macrowormhole Generator -> Recursively Folded Negative Space
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .input(MACROWORMHOLE_GENERATOR, 2)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .output(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
                 .EUt(VA[UXV])
                 .duration(200)
@@ -326,9 +360,9 @@ public class StellarFurnace {
 
         //  Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .input(STABILIZED_WORMHOLE_GENERATOR)
                 .input(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .output(EIGENFOLDED_SPACETIME_MANIFOLD)
                 .EUt(VA[UXV])
                 .duration(20)
@@ -337,9 +371,9 @@ public class StellarFurnace {
 
         //  Neutronium Sphere + Time Dilation Containment Unit -> Contained High Density Protonic Matter
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .input(NEUTRONIUM_SPHERE)
                 .input(TIME_DILATION_CONTAINMENT_UNIT)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .output(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
                 .EUt(VA[UXV])
                 .duration(20)
@@ -348,9 +382,9 @@ public class StellarFurnace {
 
         //  Contained High Density Protonic Matter -> Contained Exotic Matter
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .input(dust, DegenerateRhenium)
                 .input(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .output(CONTAINED_EXOTIC_MATTER)
                 .EUt(VA[UXV])
                 .duration(20)
