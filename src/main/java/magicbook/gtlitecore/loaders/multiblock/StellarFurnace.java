@@ -74,6 +74,7 @@ public class StellarFurnace {
         CosmicNeutronium();
         QuantumchromodynamicallyConfinedMatter();
         DwarfMatters();
+        SupracausalCircuitComponents();
     }
 
     private static void DegenerateRhenium() {
@@ -255,6 +256,102 @@ public class StellarFurnace {
                 .fluidOutputs(BlackDwarfMatter.getFluid(8000))
                 .fluidOutputs(WhiteDwarfMatter.getFluid(8000))
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+    }
+
+    private static void SupracausalCircuitComponents() {
+
+        //  Neutronium -> Neutronium Sphere
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_BALL)
+                .fluidInputs(Neutronium.getFluid(1000))
+                .output(NEUTRONIUM_SPHERE, 4)
+                .EUt(VA[UXV])
+                .duration(5)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Neutronium Sphere -> Triplet Neutronium Sphere
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(NEUTRONIUM_SPHERE)
+                .output(TRIPLET_NEUTRONIUM_SPHERE)
+                .EUt(VA[UXV])
+                .duration(10)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Triplet Neutronium Sphere -> Charged Triplet Neutronium Sphere
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(TRIPLET_NEUTRONIUM_SPHERE)
+                .fluidInputs(FreeElectronGas.getFluid(1000))
+                .output(CHARGED_TRIPLET_NEUTRONIUM_SPHERE)
+                .EUt(VA[UXV])
+                .duration(10)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Charged Triplet Neutronium Sphere -> Contained RN Singularity
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.TARANIUM_CHARGE))
+                .input(TIME_DILATION_CONTAINMENT_UNIT, 64)
+                .input(CHARGED_TRIPLET_NEUTRONIUM_SPHERE, 64)
+                .output(CONTAINED_RN_SINGULARITY, 64)
+                .EUt(VA[UXV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Contained RN Singularity -> Contained KN Singularity
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .input(CONTAINED_RN_SINGULARITY, 64)
+                .output(CONTAINED_KN_SINGULARITY)
+                .output(TIME_DILATION_CONTAINMENT_UNIT, 63)
+                .EUt(6000000)
+                .duration(200)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Macrowormhole Generator -> Recursively Folded Negative Space
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .input(MACROWORMHOLE_GENERATOR, 2)
+                .output(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .input(STABILIZED_WORMHOLE_GENERATOR)
+                .input(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .output(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Neutronium Sphere + Time Dilation Containment Unit -> Contained High Density Protonic Matter
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .input(NEUTRONIUM_SPHERE)
+                .input(TIME_DILATION_CONTAINMENT_UNIT)
+                .output(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Contained High Density Protonic Matter -> Contained Exotic Matter
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
+                .input(dust, DegenerateRhenium)
+                .input(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
+                .output(CONTAINED_EXOTIC_MATTER)
                 .EUt(VA[UXV])
                 .duration(20)
                 .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))

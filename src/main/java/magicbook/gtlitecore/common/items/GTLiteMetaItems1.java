@@ -134,6 +134,14 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MANIFOLD_OSCILLATORY_POWER_CELL = this.addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
         SCINTILLATOR = this.addItem(99, "component.cosmic.scintillator");
         SCINTILLATOR_CRYSTAL = this.addItem(100, "component.cosmic.scintillator_crystal");
+        TOPOLOGICAL_MANIPULATOR_UNIT = this.addItem(101, "component.supracausal.topological_manipulator_unit");
+        GRAVITON_TRANSDUCER = this.addItem(102, "component.supracausal.graviton_transducer");
+        RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM = this.addItem(103, "component.supracausal.relativistic_spinorial_memory_system");
+        MACROWORMHOLE_GENERATOR = this.addItem(104, "component.supracausal.macrowormhole_generator");
+        MICROWORMHOLE_GENERATOR = this.addItem(105, "component.supracausal.microwormhole_generator");
+        STABILIZED_WORMHOLE_GENERATOR = this.addItem(106, "component.supracausal.stabilized_wormhole_generator");
+        EIGENFOLDED_SPACETIME_MANIFOLD = this.addItem(107, "component.supracausal.eigenfolded_space_time_manifold");
+        RECURSIVELY_FOLDED_NEGATIVE_SPACE = this.addItem(108, "component.supracausal.recursively_folded_negative_space");
 
         BIO_CELL = this.addItem(120, "component.gooware.bio_cell");
         BIO_DISH = this.addItem(121, "component.gooware.bio_dish");
@@ -244,7 +252,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
         HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
         CHROMATIC_LENS = this.addItem(317, "chromatic_lens").addOreDict("craftingLensChromatic");
-
+        NEUTRONIUM_SPHERE = this.addItem(318, "neutronium_sphere");
+        TRIPLET_NEUTRONIUM_SPHERE = this.addItem(319, "triplet_neutronium_sphere");
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
         MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
         MINING_DRONE_HV = this.addItem(322, "mining_drone.hv");
@@ -267,20 +276,27 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL = this.addItem(353, "extremely_durable_plasma_containment_cell");
         DENSE_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(354, "dense_neutron_plasma_containment_cell");
         COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(355, "cosmic_neutron_plasma_containment_cell");
+        TIME_DILATION_CONTAINMENT_UNIT = this.addItem(356, "time_dilation_containment_unit");
+        CONTAINED_RN_SINGULARITY = this.addItem(357, "contained_reissner_nordstrom_singularity");
+        CONTAINED_KN_SINGULARITY = this.addItem(358, "contained_kerr_newmann_singularity");
+        CONTAINED_KERR_SINGULARITY = this.addItem(359, "contained_kerr_singularity");
+        CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(360, "contained_high_density_protonic_matter");
+        CONTAINED_EXOTIC_MATTER = this.addItem(361, "contained_exotic_matter");
+        CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(362, "charged_triplet_neutronium_sphere");
 
         //  Algae
-        BARNARDA_C_BASE = this.addItem(360, "alga.barnarda_c.base");
-        BARNARDA_C_CHLORELLA = this.addItem(361, "alga.barnarda_c.chlorella").addOreDict("dyePurple");
-        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(362, "alga.barnarda_c.bryopsis_hypnoides").addOreDict("dyeGreen");
-        BARNARDA_C_ZOOXANTHELLAE = this.addItem(363, "alga.barnarda_c.zooxanthellae").addOreDict("dyeOrange");
-        TAU_CETI_F_BASE = this.addItem(364, "alga.tau_ceti_f.base");
-        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(365, "alga.tau_ceti_f.scenedesmus_obliquus").addOreDict("dyeLime");
-        TAU_CETI_F_PHAEOPHYTA = this.addItem(366, "alga.tau_ceti_f.phaeophyta").addOreDict("dyeBrown");
-        TAU_CETI_F_SPIRULINA = this.addItem(367, "alga.tau_ceti_f.spirulina").addOreDict("dyeBlue");
-        PROXIMA_B_BASE = this.addItem(368, "alga.proxima_b.base");
-        PROXIMA_B_CONCHOSPORE = this.addItem(369, "alga.proxima_b.conchospore").addOreDict("dyeRed");
-        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(370, "alga.proxima_b.polysiphonia_senticulosa").addOreDict("dyeYellow");
-        PROXIMA_B_SPIROGYRA = this.addItem(371, "alga.proxima_b.spirogyra").addOreDict("dyeGray");
+        BARNARDA_C_BASE = this.addItem(370, "alga.barnarda_c.base");
+        BARNARDA_C_CHLORELLA = this.addItem(371, "alga.barnarda_c.chlorella").addOreDict("dyePurple");
+        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(372, "alga.barnarda_c.bryopsis_hypnoides").addOreDict("dyeGreen");
+        BARNARDA_C_ZOOXANTHELLAE = this.addItem(373, "alga.barnarda_c.zooxanthellae").addOreDict("dyeOrange");
+        TAU_CETI_F_BASE = this.addItem(374, "alga.tau_ceti_f.base");
+        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(375, "alga.tau_ceti_f.scenedesmus_obliquus").addOreDict("dyeLime");
+        TAU_CETI_F_PHAEOPHYTA = this.addItem(376, "alga.tau_ceti_f.phaeophyta").addOreDict("dyeBrown");
+        TAU_CETI_F_SPIRULINA = this.addItem(377, "alga.tau_ceti_f.spirulina").addOreDict("dyeBlue");
+        PROXIMA_B_BASE = this.addItem(378, "alga.proxima_b.base");
+        PROXIMA_B_CONCHOSPORE = this.addItem(379, "alga.proxima_b.conchospore").addOreDict("dyeRed");
+        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(380, "alga.proxima_b.polysiphonia_senticulosa").addOreDict("dyeYellow");
+        PROXIMA_B_SPIROGYRA = this.addItem(381, "alga.proxima_b.spirogyra").addOreDict("dyeGray");
 
         //  Memory Cards
         MEMORY_CARD_BASE = this.addItem(385, "memory_card.base");
