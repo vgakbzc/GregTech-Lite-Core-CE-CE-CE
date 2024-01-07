@@ -287,6 +287,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
             lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1"));
             lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2"));
             lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4"));
         }));
 
         //  Algae

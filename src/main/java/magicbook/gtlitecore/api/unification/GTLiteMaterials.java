@@ -265,6 +265,8 @@ public class GTLiteMaterials {
     public static Material LanthanumNickelOxide;
     public static Material SodiumAzide;
     public static Material SodiumAzanide;
+    public static Material BismuthLawrenciumStrontiumCuprate;
+    public static Material BismuthLawrenciumStrontiumCuprateMagnetic;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

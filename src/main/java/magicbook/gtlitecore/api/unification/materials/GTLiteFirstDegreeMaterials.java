@@ -2047,6 +2047,33 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Sodium, 1, Nitrogen, 1, Hydrogen, 2)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  24116 Bismuth Lawrencium Strontium Cuprate
+        BismuthLawrenciumStrontiumCuprate = new Material.Builder(getId(), gregtechId("bismuth_lawrencium_strontium_cuprate"))
+                .ingot()
+                .fluid()
+                .color(0xF2C5D5)
+                .iconSet(METALLIC)
+                .components(Bismuth, 2, Lawrencium, 2, Strontium, 2, Copper, 3, Oxygen, 10)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD)
+                .blast(b -> b
+                        .temp(9800, BlastProperty.GasTier.HIGHEST))
+                .build();
+
+        //  24117 Magnetic Bismuth Lawrencium Strontium Cuprate
+        BismuthLawrenciumStrontiumCuprateMagnetic = new Material.Builder(getId(), gregtechId("magnetic_bismuth_lawrencium_strontium_cuprate"))
+                .ingot()
+                .color(0xF2C5D5)
+                .iconSet(MAGNETIC)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, IS_MAGNETIC)
+                .components(BismuthLawrenciumStrontiumCuprate, 1)
+                .ingotSmeltInto(BismuthLawrenciumStrontiumCuprate)
+                .arcSmeltInto(BismuthLawrenciumStrontiumCuprate)
+                .macerateInto(BismuthLawrenciumStrontiumCuprate)
+                .build();
+
+        BismuthLawrenciumStrontiumCuprate.getProperty(PropertyKey.INGOT).setMagneticMaterial(BismuthLawrenciumStrontiumCuprateMagnetic);
+
     }
 
     private static int getId() {

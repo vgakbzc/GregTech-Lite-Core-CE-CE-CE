@@ -969,7 +969,7 @@ gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
 gtlitecore.machine.large_primitive_blast_furnace.name=大型炼钢窑
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.1=比土高炉更好
-gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，每建造1座§6附属高炉§7，运行时间均会减少一半。
+gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，每建造1座§6附属高炉§7，运行时间均会大幅缩减。
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.3=在§r多方块结构提示§7中鼠标右击箭头按钮查看附属结构建造方式。
 gtlitecore.machine.large_primitive_blast_furnace.auxiliary_furnace_number=附属高炉数：%s
 
@@ -1429,6 +1429,8 @@ gregtech.material.lithium_sulfide=硫化锂
 gregtech.material.lanthanum_nickel_oxide=镍酸铼
 gregtech.material.sodium_azide=叠氮化钠
 gregtech.material.sodium_azanide=氨基钠
+gregtech.material.bismuth_lawrencium_strontium_cuprate=铋铹锶铜氧合金
+gregtech.material.magnetic_bismuth_lawrencium_strontium_cuprate=磁化铋铹锶铜氧合金
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
