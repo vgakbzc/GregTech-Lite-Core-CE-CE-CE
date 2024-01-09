@@ -20,6 +20,7 @@ public class SpintronicCircuits {
         CircuitBoard();
         CircuitComponent();
         SMDs();
+        SoC();
         Circuits();
     }
 
@@ -203,6 +204,163 @@ public class SpintronicCircuits {
                 .buildAndRegister();
     }
 
+    private static void SoC() {
+
+        //  C4H6 + C -> C5H6
+        PYROLYSE_RECIPES.recipeBuilder()
+                .fluidInputs(Butadiene.getFluid(1000))
+                .input(dust, Carbon)
+                .notConsumable(foil, Nickel)
+                .fluidOutputs(Cyclopentadiene.getFluid(1000))
+                .EUt(VA[EV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  C4H9Li + C5H6-> C5H5Li + C4H10
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Butyllithium.getFluid(1000))
+                .fluidInputs(Cyclopentadiene.getFluid(1000))
+                .fluidOutputs(LithiumCyclopentadienide.getFluid(1000))
+                .fluidOutputs(Butane.getFluid(1000))
+                .EUt(VA[EV])
+                .duration(120)
+                .buildAndRegister();
+
+        //  Cf + 3Cl -> CfCl3
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Californium)
+                .circuitMeta(3)
+                .fluidInputs(Chlorine.getFluid(3000))
+                .output(dust, CaliforniumTrichloride, 4)
+                .EUt(VA[LV])
+                .duration(40)
+                .buildAndRegister();
+
+        //  3C5H5Li + CfCl3 -> C15H15Cf + 3LiCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, CaliforniumTrichloride, 4)
+                .fluidInputs(LithiumCyclopentadienide.getFluid(3000))
+                .output(dust, LithiumChloride, 6)
+                .fluidOutputs(CaliforniumCyclopentadienide.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(140)
+                .buildAndRegister();
+
+        //  X-Ray Waveguide
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(CLADDED_OPTICAL_FIBER_CORE)
+                .fluidInputs(FullerenePolymerMatrix.getFluid(16))
+                .output(X_RAY_WAVEGUIDE)
+                .EUt(VA[ZPM])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Microfocus X-Ray Tube
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(stick, Californium)
+                .input(plate, PolyvinylChloride)
+                .input(wireFine, Europium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L / 2))
+                .output(MICROFOCUS_X_RAY_TUBE)
+                .EUt(VA[ZPM])
+                .duration(80)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  X-Ray Mirror
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .notConsumable(ring, Iridium)
+                .input(plate, Graphene)
+                .fluidInputs(ElectrolyteReflectorMixture.getFluid(L / 4))
+                .fluidInputs(Chlorine.getFluid(1000))
+                .output(X_RAY_MIRROR)
+                .EUt(VA[ZPM])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  X-Ray Laser
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(X_RAY_WAVEGUIDE)
+                .input(MICROFOCUS_X_RAY_TUBE)
+                .input(X_RAY_MIRROR)
+                .fluidInputs(CaliforniumCyclopentadienide.getFluid(100))
+                .output(X_RAY_LASER)
+                .EUt(VA[UHV])
+                .duration(160)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Cryogenic Interface
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Graphene, 2)
+                .input(plate, Trinium, 2)
+                .input(CRYSTAL_INTERFACE_CHIP)
+                .input(FULLERENE_FIBER)
+                .fluidInputs(Zylon.getFluid(L / 2))
+                .output(CRYOGENIC_INTERFACE)
+                .EUt(VA[UHV])
+                .duration(160)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Exitation Maintainer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(PLASMA_CONTAINMENT_CELL)
+                .input(plate, MetastableOganesson, 2)
+                .input(ND_YAG_LASER)
+                .input(wireFine, SiliconCarbide, 4)
+                .fluidInputs(FreeElectronGas.getFluid(L))
+                .output(EXCITATION_MAINTAINER)
+                .EUt(VA[UEV])
+                .duration(10)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Electron Source
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, Polyetheretherketone, 2)
+                .input(plate, Technetium, 2)
+                .input(EMITTER_EV)
+                .input(dustSmall, Radium)
+                .fluidInputs(TinAlloy.getFluid(L))
+                .fluidInputs(Krypton.getFluid(L / 2))
+                .output(ELECTRON_SOURCE)
+                .EUt(VA[UV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Rydberg Spinorial Assembly
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, MetastableHassium)
+                .input(CRYOGENIC_INTERFACE)
+                .input(EXCITATION_MAINTAINER)
+                .input(X_RAY_WAVEGUIDE)
+                .input(ELECTRON_SOURCE)
+                .input(dust, CadmiumSelenide)
+                .fluidInputs(Xenon.getFluid(L))
+                .output(RYDBERG_SPINORIAL_ASSEMBLY)
+                .EUt(VA[UIV])
+                .duration(160)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Exotic SoC
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, DegenerateRhenium)
+                .input(RYDBERG_SPINORIAL_ASSEMBLY)
+                .input(X_RAY_LASER)
+                .input(wireFine, HeavyQuarkDegenerateMatter, 4)
+                .fluidInputs(MetastableFlerovium.getFluid(L))
+                .fluidInputs(QuantumAlloy.getFluid(L / 2))
+                .output(EXOTIC_SOC, 4)
+                .EUt(VA[UIV])
+                .duration(200)
+                .CasingTier(3)
+                .buildAndRegister();
+    }
+
     private static void Circuits() {
 
         //  Spintronic Processor
@@ -219,7 +377,16 @@ public class SpintronicCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  TODO SoC
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(SPINTRONIC_CIRCUIT_BOARD)
+                .input(EXOTIC_SOC)
+                .input(wireFine, PedotTMA, 8)
+                .input(bolt, Infinity, 8)
+                .output(SPINTRONIC_PROCESSOR, 4)
+                .duration(100)
+                .EUt(VA[UIV])
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
         //  Spintronic Assembly
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()

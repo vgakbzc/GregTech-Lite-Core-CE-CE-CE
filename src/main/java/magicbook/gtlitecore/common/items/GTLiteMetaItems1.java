@@ -145,6 +145,15 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         BIO_CELL = this.addItem(120, "component.gooware.bio_cell");
         BIO_DISH = this.addItem(121, "component.gooware.bio_dish");
+        RYDBERG_SPINORIAL_ASSEMBLY = this.addItem(122, "component.spintronic.rydberg_spinorial_assembly");
+        CRYOGENIC_INTERFACE = this.addItem(123, "component.spintronic.cryogenic_interface");
+        EXCITATION_MAINTAINER = this.addItem(124, "component.spintronic.excitation_maintainer");
+        X_RAY_WAVEGUIDE = this.addItem(125, "component.spintronic.x_ray_waveguide");
+        ELECTRON_SOURCE = this.addItem(126, "component.spintronic.electron_source");
+        X_RAY_LASER = this.addItem(127, "component.spintronic.x_ray_laser");
+        X_RAY_MIRROR = this.addItem(128, "component.spintronic.x_ray_mirror");
+        MICROFOCUS_X_RAY_TUBE = this.addItem(129, "component.spintronic.microfocus_x_ray_tube");
+        EXOTIC_SOC = this.addItem(130, "component.spintronic.exotic_soc");
 
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");
         DIAMOND_CHIP = this.addItem(150, "component.crystal.diamond_chip");
@@ -283,6 +292,12 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(360, "contained_high_density_protonic_matter");
         CONTAINED_EXOTIC_MATTER = this.addItem(361, "contained_exotic_matter");
         CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(362, "charged_triplet_neutronium_sphere");
+        COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL = this.addItem(363, "cosmic_fabric_plasma_containment_cell").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3"));
+            lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4"));
+        }));
 
         //  Algae
         BARNARDA_C_BASE = this.addItem(370, "alga.barnarda_c.base");

@@ -148,7 +148,7 @@ public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultibloc
     }
 
     public static int getMaxParallel(int heatingCoilLevel) {
-        return 64 * heatingCoilLevel;
+        return 256 * heatingCoilLevel;
     }
 
     public static int getDurationForParallel(int parallel, int parallelLimit) {
