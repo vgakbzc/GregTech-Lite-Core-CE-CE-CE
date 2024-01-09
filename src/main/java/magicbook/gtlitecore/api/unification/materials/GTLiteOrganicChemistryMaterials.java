@@ -270,7 +270,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .ingot()
                 .liquid()
                 .color(0x5E9EE1)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .components(Edot, 1, PMMA, 2)
                 .cableProperties(V[UEV], 8, 6, false)
                 .build();
@@ -1268,6 +1268,91 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("LiOSO2CF3", true);
 
+        //  13153 Viscoelastic Polyurethane
+        ViscoelasticPolyurethane = new Material.Builder(getId(), gregtechId("viscoelastic_polyurethane"))
+                .liquid()
+                .color(0xE8F0E0)
+                .iconSet(DULL)
+                .components(Calcite, 1, Carbon, 19, Hydrogen, 22, Nitrogen, 2, Oxygen, 6)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C20H22N2O9Ca?", true);
+
+        //  13154 Polyurethane
+        Polyurethane = new Material.Builder(getId(), gregtechId("polyurethane"))
+                .liquid()
+                .color(0xEDF5E4)
+                .components(Carbon, 17, Hydrogen, 16, Nitrogen, 2, Oxygen, 4)
+                .build();
+
+        //  13155 Toluene Diisocyanate
+        TolueneDiisocyanate = new Material.Builder(getId(), gregtechId("toluene_diisocyanate"))
+                .liquid()
+                .color(0xC8EBA4)
+                .components(Carbon, 9, Hydrogen, 6, Nitrogen, 2, Oxygen, 2)
+                .build();
+
+        //  13156 Azafullerene
+        Azafullerene = new Material.Builder(getId(), gregtechId("azafullerene"))
+                .liquid()
+                .color(0xAB94AA)
+                .components(Carbon, 60, Hydrogen, 12, Nitrogen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13157 Aminated Fullerene
+        AminatedFullerene = new Material.Builder(getId(), gregtechId("aminated_fullerene"))
+                .liquid()
+                .color(0xAB6FA8)
+                .components(Carbon, 60, Hydrogen, 12, Nitrogen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13158 Tertbutylcarbonylazide
+        Tertbutylcarbonylazide = new Material.Builder(getId(), gregtechId("Tertbutylcarbonylazide"))
+                .liquid()
+                .color(0x6E9A7F)
+                .components(Carbon, 5, Hydrogen, 9, Nitrogen, 3, Oxygen, 2)
+                .build();
+
+        //  13159 Tertbutanol
+        Tertbutanol = new Material.Builder(getId(), gregtechId("tertbutanol"))
+                .liquid()
+                .color(0x80B394)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 1)
+                .build();
+
+        //  13160 Ditertbutyl Dicarbonate
+        DitertbutylDicarbonate = new Material.Builder(getId(), gregtechId("ditertbutyl_dicarbonate"))
+                .dust()
+                .color(0x799A86)
+                .iconSet(ROUGH)
+                .components(Carbon, 10, Hydrogen, 18, Oxygen, 5)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13161 Cyclopentadiene
+        Cyclopentadiene = new Material.Builder(getId(), gregtechId("cyclopentadiene"))
+                .liquid()
+                .color(0x8BEB2A)
+                .components(Carbon, 5, Hydrogen, 6)
+                .build();
+
+        //  13162 Lithium Cyclopentadienide
+        LithiumCyclopentadienide = new Material.Builder(getId(), gregtechId("lithium_cyclopentadienide"))
+                .liquid()
+                .color(0x963D5F)
+                .components(Carbon, 5, Hydrogen, 5, Lithium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13163 Californium Cyclopentadienide
+        CaliforniumCyclopentadienide = new Material.Builder(getId(), gregtechId("californium_cyclopentadienide"))
+                .liquid()
+                .color(0x821554)
+                .components(Carbon, 15, Hydrogen, 15, Californium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

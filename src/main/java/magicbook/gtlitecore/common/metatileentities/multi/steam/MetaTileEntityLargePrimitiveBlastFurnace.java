@@ -142,7 +142,7 @@ public class MetaTileEntityLargePrimitiveBlastFurnace extends NoEnergyMultiblock
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.large_primitive_blast_furnace.tooltip.1"));
@@ -199,9 +199,9 @@ public class MetaTileEntityLargePrimitiveBlastFurnace extends NoEnergyMultiblock
 
             if (isStructureFormed()) {
                 if (auxiliaryFurnaceNumber == 1) {
-                    this.maxProgressTime = maxProgress / 2;
+                    this.maxProgressTime = maxProgress / 8;
                 } else if (auxiliaryFurnaceNumber == 2) {
-                    this.maxProgressTime = maxProgress / 4;
+                    this.maxProgressTime = maxProgress / 16;
                 } else {
                     this.maxProgressTime = maxProgress;
                 }

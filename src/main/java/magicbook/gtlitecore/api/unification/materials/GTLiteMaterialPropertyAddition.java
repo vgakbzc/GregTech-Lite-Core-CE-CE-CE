@@ -150,6 +150,7 @@ public class GTLiteMaterialPropertyAddition {
         Neptunium.addFlags(GENERATE_PLATE);
         Nobelium.addFlags(GENERATE_PLATE);
         Lawrencium.addFlags(GENERATE_PLATE);
+        Technetium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -170,6 +171,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);
         Germanium.addFlags(GENERATE_FOIL);
+        Rhenium.addFlags(GENERATE_FOIL);
 
         //  Frame
         Polybenzimidazole.addFlags(GENERATE_FRAME);
@@ -253,6 +255,7 @@ public class GTLiteMaterialPropertyAddition {
         Neodymium.addFlags(GENERATE_FINE_WIRE);
         Dubnium.addFlags(GENERATE_FINE_WIRE);
         NaquadahEnriched.addFlags(GENERATE_FINE_WIRE);
+        Rhenium.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

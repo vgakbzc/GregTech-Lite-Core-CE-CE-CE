@@ -486,6 +486,24 @@ metaitem.component.gooware.bio_cell.name=畸变干细胞
 metaitem.component.gooware.bio_cell.tooltip=菌群网络基质
 metaitem.component.gooware.bio_dish.name=菌群培养皿
 metaitem.component.gooware.bio_dish.tooltip=菌群网络培养基
+metaitem.component.spintronic.rydberg_spinorial_assembly.name=里德堡旋量集群
+metaitem.component.spintronic.rydberg_spinorial_assembly.tooltip=超级旋量存储器
+metaitem.component.spintronic.cryogenic_interface.name=低温触面
+metaitem.component.spintronic.cryogenic_interface.tooltip=并不能用于冰箱制冷
+metaitem.component.spintronic.excitation_maintainer.name=励磁容器
+metaitem.component.spintronic.excitation_maintainer.tooltip=特殊磁体密闭装置
+metaitem.component.spintronic.x_ray_waveguide.name=X射线导波管
+metaitem.component.spintronic.x_ray_waveguide.tooltip=比激光镭射器更好
+metaitem.component.spintronic.electron_source.name=电子源
+metaitem.component.spintronic.electron_source.tooltip=只需要一点点镭
+metaitem.component.spintronic.x_ray_laser.name=X射线激光器
+metaitem.component.spintronic.x_ray_laser.tooltip=超级激光源
+metaitem.component.spintronic.x_ray_mirror.name=X射线反射镜片
+metaitem.component.spintronic.x_ray_mirror.tooltip=超高精度光学反射镜
+metaitem.component.spintronic.microfocus_x_ray_tube.name=微焦点X射线传导管
+metaitem.component.spintronic.microfocus_x_ray_tube.tooltip=比激光镭射器组件更好
+metaitem.component.spintronic.exotic_soc.name=奇异SoC
+metaitem.component.spintronic.exotic_soc.tooltip=量子反常自旋计算单元
 metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
@@ -969,7 +987,7 @@ gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
 
 gtlitecore.machine.large_primitive_blast_furnace.name=大型炼钢窑
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.1=比土高炉更好
-gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，每建造1座§6附属高炉§7，运行时间均会减少一半。
+gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，每建造1座§6附属高炉§7，运行时间均会大幅缩减。
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.3=在§r多方块结构提示§7中鼠标右击箭头按钮查看附属结构建造方式。
 gtlitecore.machine.large_primitive_blast_furnace.auxiliary_furnace_number=附属高炉数：%s
 
@@ -1427,6 +1445,11 @@ gregtech.material.polonium_nitrate=硝酸钋
 gregtech.material.polonium_dichloride=二氯化钋
 gregtech.material.lithium_sulfide=硫化锂
 gregtech.material.lanthanum_nickel_oxide=镍酸铼
+gregtech.material.sodium_azide=叠氮化钠
+gregtech.material.sodium_azanide=氨基钠
+gregtech.material.bismuth_lawrencium_strontium_cuprate=铋铹锶铜氧合金
+gregtech.material.magnetic_bismuth_lawrencium_strontium_cuprate=磁化铋铹锶铜氧合金
+gregtech.material.californium_trichloride=三氯化锎
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1648,6 +1671,17 @@ gregtech.material.ferrocene=二茂铁
 gregtech.material.trifluoromethanesulfonic_acid=三氟甲磺酸
 gregtech.material.calcium_trifluoromethansulphonate=三氟甲磺酸钙
 gregtech.material.lithium_trifluoromethansulphonate=三氟甲磺酸锂
+gregtech.material.viscoelastic_polyurethane=粘弹性聚氨酯泡沫
+gregtech.material.polyurethane=聚氨基甲酸酯（PU）
+gregtech.material.toluene_diisocyanate=甲苯二异氰酸脂
+gregtech.material.azafullerene=氮杂富勒烯
+gregtech.material.aminated_fullerene=胺化富勒烯
+gregtech.material.tertbutylcarbonylazide=叔丁基羰基叠氮
+gregtech.material.tertbutanol=叔丁醇
+gregtech.material.ditertbutyl_dicarbonate=二碳酸二叔丁酯
+gregtech.material.cyclopentadiene=环戊二烯
+gregtech.material.lithium_cyclopentadienide=环戊二烯化锂
+gregtech.material.californium_cyclopentadienide=环戊二烯化锎
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -1780,6 +1814,14 @@ gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
 gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
 gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 
+##  Other Materials
+gregtech.material.proto_adamantium=原始精金
+gregtech.material.enriched_mithril=富集秘银
+gregtech.material.trinium_titanide=钛化凯金
+gregtech.material.germanium_tungsten_nitride=氮化锗钨
+gregtech.material.bismuth_iridiate=铱酸铋
+gregtech.material.bismuth_ruthenate=钌酸铋
+
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
 metaitem.memory_card.zombie.name=僵尸意识存储卡
@@ -1880,6 +1922,11 @@ metaitem.contained_exotic_matter.name=奇异物质遏制装置
 metaitem.contained_exotic_matter.tooltip=意外的泄露事故或可导致时空扭曲
 metaitem.charged_triplet_neutronium_sphere.name=带电三重态中子素球体
 metaitem.charged_triplet_neutronium_sphere.tooltip=活体中子星
+metaitem.cosmic_fabric_plasma_containment_cell.name=寰宇织网等离子体遏制装置
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1=一些凡夫俗子曾试图制成过此物，然而它们根本无法理解其中真髓。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2=它们将制成的只有此物的1%%效能的劣质造物称为“二向箔”，多么可笑。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3=真正的寰宇织网如今不过唾手可得之物。
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6等离子冷凝器§7进行冷却
 
 #  Particles
 metaitem.particle.alpha.name=α粒子

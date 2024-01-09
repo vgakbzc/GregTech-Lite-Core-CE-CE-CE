@@ -1437,6 +1437,14 @@ public class MachineRecipeLoader {
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
                 'I', FLUID_FILTER,
                 'G', new UnificationEntry(plate, Glass));
+
+        //  Industrial Induction Furnace
+        ModHandler.addShapedRecipe(true, "industrial_induction_furnace", INDUSTRIAL_INDUCTION_FURNACE.getStackForm(),
+                "FFF", "XCX", "WXW",
+                'F', ELECTRIC_FURNACE[IV].getStackForm(),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
+                'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING),
+                'W', new UnificationEntry(cableGtSingle, Platinum));
     }
 
     private static void MachineCasingRecipes() {

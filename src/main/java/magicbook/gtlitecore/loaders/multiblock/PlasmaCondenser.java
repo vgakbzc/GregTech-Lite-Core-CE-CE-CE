@@ -342,5 +342,52 @@ public class PlasmaCondenser {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Cosmic Fabric
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 64000))
+                .circuitMeta(1)
+                .output(TIME_DILATION_CONTAINMENT_UNIT)
+                .fluidOutputs(CosmicFabric.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 64000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(GelidCryotheum.getFluid(32000))
+                .circuitMeta(1)
+                .output(TIME_DILATION_CONTAINMENT_UNIT)
+                .fluidOutputs(CosmicFabric.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(32000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .input(COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 64000))
+                .circuitMeta(10)
+                .output(ingot, CosmicFabric)
+                .output(TIME_DILATION_CONTAINMENT_UNIT)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 64000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .input(COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(GelidCryotheum.getFluid(32000))
+                .circuitMeta(10)
+                .output(ingot, CosmicFabric)
+                .output(TIME_DILATION_CONTAINMENT_UNIT)
+                .fluidOutputs(Ice.getFluid(32000))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
     }
 }

@@ -206,7 +206,8 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.stickLong, ChromiumGermaniumTellurideMagnetic)},
                 {11, new UnificationEntry(OrePrefix.stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic)},
                 {12, new UnificationEntry(OrePrefix.stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic)},
-//                  {13, new UnificationEntry(OrePrefix.stickLong, Trinium)},
+                {13, new UnificationEntry(OrePrefix.stickLong, BismuthLawrenciumStrontiumCuprateMagnetic)},
+                {14, new UnificationEntry(OrePrefix.stickLong, BismuthLawrenciumStrontiumCuprateMagnetic)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         STICK_DISTILLATION.appendIngredients(Stream.of(new Object[][]{
