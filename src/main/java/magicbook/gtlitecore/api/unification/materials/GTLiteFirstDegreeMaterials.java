@@ -1975,21 +1975,21 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Caesium, 1, Fluorine, 1)
                 .build();
 
-        //  24107 Xenon Trioxide
+        //  11226 Xenon Trioxide
         XenonTrioxide = new Material.Builder(getId(), gregtechId("xenon_trioxide"))
                 .gas()
                 .color(0x359FC3)
                 .components(Xenon, 1, Oxygen, 3)
                 .build();
 
-        //  24108 Radon Difluoride
+        //  11227 Radon Difluoride
         RadonDifluoride = new Material.Builder(getId(), gregtechId("radon_difluoride"))
                 .gas()
                 .color(0x8B7EFF)
                 .components(Radon, 1, Fluorine, 2)
                 .build();
 
-        //  24109 Polonium Nitrate
+        //  11228 Polonium Nitrate
         PoloniumNitrate = new Material.Builder(getId(), gregtechId("polonium_nitrate"))
                 .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
                 .color(Polonium.getMaterialRGB() + NitricAcid.getMaterialRGB())
@@ -1998,7 +1998,7 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("Po(NO3)4", true);
 
-        //  24110 Polonium Dichloride
+        //  11229 Polonium Dichloride
         PoloniumDichloride = new Material.Builder(getId(), gregtechId("polonium_dichloride"))
                 .dust()
                 .color(Polonium.getMaterialRGB() + Chlorine.getMaterialRGB())
@@ -2006,7 +2006,7 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        //  24112 Lithium Sulfide
+        //  11230 Lithium Sulfide
         LithiumSulfide = new Material.Builder(getId(), gregtechId("lithium_sulfide"))
                 .ingot()
                 .color(0xFDFB9A)
@@ -2018,7 +2018,7 @@ public class GTLiteFirstDegreeMaterials {
                         .blastStats(VA[UV], 353))
                 .build();
 
-        //  24113 Lanthanum Nickel Oxide
+        //  11231 Lanthanum Nickel Oxide
         LanthanumNickelOxide = new Material.Builder(getId(), gregtechId("lanthanum_nickel_oxide"))
                 .ingot()
                 .color(0x99C0FF)
@@ -2030,7 +2030,7 @@ public class GTLiteFirstDegreeMaterials {
                         .blastStats(VA[UHV], 446))
                 .build();
 
-        //  24114 Sodium Azide
+        //  11232 Sodium Azide
         SodiumAzide = new Material.Builder(getId(), gregtechId("sodium_azide"))
                 .dust()
                 .color(Sodium.getMaterialRGB() + Nitrogen.getMaterialRGB())
@@ -2039,7 +2039,7 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        //  24115 Sodium Azanide
+        //  11233 Sodium Azanide
         SodiumAzanide = new Material.Builder(getId(), gregtechId("sodium_azanide"))
                 .dust()
                 .color(Sodium.getMaterialRGB() + Ammonia.getMaterialRGB())
@@ -2048,7 +2048,7 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
-        //  24116 Bismuth Lawrencium Strontium Cuprate
+        //  11234 Bismuth Lawrencium Strontium Cuprate
         BismuthLawrenciumStrontiumCuprate = new Material.Builder(getId(), gregtechId("bismuth_lawrencium_strontium_cuprate"))
                 .ingot()
                 .fluid()
@@ -2060,7 +2060,7 @@ public class GTLiteFirstDegreeMaterials {
                         .temp(9800, BlastProperty.GasTier.HIGHEST))
                 .build();
 
-        //  24117 Magnetic Bismuth Lawrencium Strontium Cuprate
+        //  11235 Magnetic Bismuth Lawrencium Strontium Cuprate
         BismuthLawrenciumStrontiumCuprateMagnetic = new Material.Builder(getId(), gregtechId("magnetic_bismuth_lawrencium_strontium_cuprate"))
                 .ingot()
                 .color(0xF2C5D5)
@@ -2074,6 +2074,13 @@ public class GTLiteFirstDegreeMaterials {
 
         BismuthLawrenciumStrontiumCuprate.getProperty(PropertyKey.INGOT).setMagneticMaterial(BismuthLawrenciumStrontiumCuprateMagnetic);
 
+        //  11236 Californium Trichloride
+        CaliforniumTrichloride = new Material.Builder(getId(), gregtechId("californium_trichloride"))
+                .dust()
+                .color(0x8B67D1)
+                .iconSet(METALLIC)
+                .components(Californium, 1, Chlorine, 3)
+                .build();
     }
 
     private static int getId() {

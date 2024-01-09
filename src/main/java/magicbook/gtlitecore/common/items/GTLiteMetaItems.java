@@ -128,6 +128,15 @@ public class GTLiteMetaItems {
 
     public static MetaItem<?>.MetaValueItem BIO_CELL;
     public static MetaItem<?>.MetaValueItem BIO_DISH;
+    public static MetaItem<?>.MetaValueItem RYDBERG_SPINORIAL_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem CRYOGENIC_INTERFACE;
+    public static MetaItem<?>.MetaValueItem EXCITATION_MAINTAINER;
+    public static MetaItem<?>.MetaValueItem X_RAY_WAVEGUIDE;
+    public static MetaItem<?>.MetaValueItem ELECTRON_SOURCE;
+    public static MetaItem<?>.MetaValueItem X_RAY_LASER;
+    public static MetaItem<?>.MetaValueItem X_RAY_MIRROR;
+    public static MetaItem<?>.MetaValueItem MICROFOCUS_X_RAY_TUBE;
+    public static MetaItem<?>.MetaValueItem EXOTIC_SOC;
 
     public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;

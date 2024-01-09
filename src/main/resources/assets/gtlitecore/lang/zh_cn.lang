@@ -486,6 +486,24 @@ metaitem.component.gooware.bio_cell.name=畸变干细胞
 metaitem.component.gooware.bio_cell.tooltip=菌群网络基质
 metaitem.component.gooware.bio_dish.name=菌群培养皿
 metaitem.component.gooware.bio_dish.tooltip=菌群网络培养基
+metaitem.component.spintronic.rydberg_spinorial_assembly.name=里德堡旋量集群
+metaitem.component.spintronic.rydberg_spinorial_assembly.tooltip=超级旋量存储器
+metaitem.component.spintronic.cryogenic_interface.name=低温触面
+metaitem.component.spintronic.cryogenic_interface.tooltip=并不能用于冰箱制冷
+metaitem.component.spintronic.excitation_maintainer.name=励磁容器
+metaitem.component.spintronic.excitation_maintainer.tooltip=特殊磁体密闭装置
+metaitem.component.spintronic.x_ray_waveguide.name=X射线导波管
+metaitem.component.spintronic.x_ray_waveguide.tooltip=比激光镭射器更好
+metaitem.component.spintronic.electron_source.name=电子源
+metaitem.component.spintronic.electron_source.tooltip=只需要一点点镭
+metaitem.component.spintronic.x_ray_laser.name=X射线激光器
+metaitem.component.spintronic.x_ray_laser.tooltip=超级激光源
+metaitem.component.spintronic.x_ray_mirror.name=X射线反射镜片
+metaitem.component.spintronic.x_ray_mirror.tooltip=超高精度光学反射镜
+metaitem.component.spintronic.microfocus_x_ray_tube.name=微焦点X射线传导管
+metaitem.component.spintronic.microfocus_x_ray_tube.tooltip=比激光镭射器组件更好
+metaitem.component.spintronic.exotic_soc.name=奇异SoC
+metaitem.component.spintronic.exotic_soc.tooltip=量子反常自旋计算单元
 metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
@@ -1431,6 +1449,7 @@ gregtech.material.sodium_azide=叠氮化钠
 gregtech.material.sodium_azanide=氨基钠
 gregtech.material.bismuth_lawrencium_strontium_cuprate=铋铹锶铜氧合金
 gregtech.material.magnetic_bismuth_lawrencium_strontium_cuprate=磁化铋铹锶铜氧合金
+gregtech.material.californium_trichloride=三氯化锎
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1660,6 +1679,9 @@ gregtech.material.aminated_fullerene=胺化富勒烯
 gregtech.material.tertbutylcarbonylazide=叔丁基羰基叠氮
 gregtech.material.tertbutanol=叔丁醇
 gregtech.material.ditertbutyl_dicarbonate=二碳酸二叔丁酯
+gregtech.material.cyclopentadiene=环戊二烯
+gregtech.material.lithium_cyclopentadienide=环戊二烯化锂
+gregtech.material.californium_cyclopentadienide=环戊二烯化锎
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -1791,6 +1813,14 @@ gregtech.material.light_exotic_gas=轻异星天然气
 gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
 gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
 gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
+
+##  Other Materials
+gregtech.material.proto_adamantium=原始精金
+gregtech.material.enriched_mithril=富集秘银
+gregtech.material.trinium_titanide=钛化凯金
+gregtech.material.germanium_tungsten_nitride=氮化锗钨
+gregtech.material.bismuth_iridiate=铱酸铋
+gregtech.material.bismuth_ruthenate=钌酸铋
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡

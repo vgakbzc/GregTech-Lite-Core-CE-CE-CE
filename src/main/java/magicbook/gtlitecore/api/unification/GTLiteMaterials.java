@@ -267,6 +267,7 @@ public class GTLiteMaterials {
     public static Material SodiumAzanide;
     public static Material BismuthLawrenciumStrontiumCuprate;
     public static Material BismuthLawrenciumStrontiumCuprateMagnetic;
+    public static Material CaliforniumTrichloride;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -498,6 +499,9 @@ public class GTLiteMaterials {
     public static Material Tertbutylcarbonylazide;
     public static Material Tertbutanol;
     public static Material DitertbutylDicarbonate;
+    public static Material Cyclopentadiene;
+    public static Material LithiumCyclopentadienide;
+    public static Material CaliforniumCyclopentadienide;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;
@@ -630,6 +634,14 @@ public class GTLiteMaterials {
     public static Material HyperFuelMkIII;
     public static Material HyperFuelMkIV;
 
+    //  Other Materials
+    public static Material ProtoAdamantium;
+    public static Material EnrichedMithril;
+    public static Material TriniumTitanide;
+    public static Material GermaniumTungstenNitride;
+    public static Material BismuthIridiate;
+    public static Material BismuthRuthenate;
+
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
         GTLiteFirstDegreeMaterials.register();        // 11001-12000
@@ -637,5 +649,6 @@ public class GTLiteMaterials {
         GTLiteOrganicChemistryMaterials.register();   // 13001-15000
         GTLiteHighDegreeMaterials.register();         // 15001-16000
         GTLiteUnknownCompositionMaterials.register(); // 18000-20000
+        GTLiteOtherMaterials.register();              // 20001-21000
     }
 }

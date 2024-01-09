@@ -270,7 +270,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .ingot()
                 .liquid()
                 .color(0x5E9EE1)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .components(Edot, 1, PMMA, 2)
                 .cableProperties(V[UEV], 8, 6, false)
                 .build();
@@ -1328,6 +1328,29 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x799A86)
                 .iconSet(ROUGH)
                 .components(Carbon, 10, Hydrogen, 18, Oxygen, 5)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13161 Cyclopentadiene
+        Cyclopentadiene = new Material.Builder(getId(), gregtechId("cyclopentadiene"))
+                .liquid()
+                .color(0x8BEB2A)
+                .components(Carbon, 5, Hydrogen, 6)
+                .build();
+
+        //  13162 Lithium Cyclopentadienide
+        LithiumCyclopentadienide = new Material.Builder(getId(), gregtechId("lithium_cyclopentadienide"))
+                .liquid()
+                .color(0x963D5F)
+                .components(Carbon, 5, Hydrogen, 5, Lithium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13163 Californium Cyclopentadienide
+        CaliforniumCyclopentadienide = new Material.Builder(getId(), gregtechId("californium_cyclopentadienide"))
+                .liquid()
+                .color(0x821554)
+                .components(Carbon, 15, Hydrogen, 15, Californium, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
     }

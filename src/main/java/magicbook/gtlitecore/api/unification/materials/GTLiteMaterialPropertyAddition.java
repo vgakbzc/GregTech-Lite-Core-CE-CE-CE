@@ -150,6 +150,7 @@ public class GTLiteMaterialPropertyAddition {
         Neptunium.addFlags(GENERATE_PLATE);
         Nobelium.addFlags(GENERATE_PLATE);
         Lawrencium.addFlags(GENERATE_PLATE);
+        Technetium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
