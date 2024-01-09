@@ -326,6 +326,7 @@ public class OpticalCircuits {
                 .input(OPTICAL_IMC_BOARD)
                 .input(UHASOC_CHIP, 2)
                 .input(OPTICAL_FIBER, 4)
+                .input(wireFine, Solarium, 4)
                 .fluidInputs(Glowstone.getFluid(L * 2))
                 .output(PHOTOELECTRON_SOC, 4)
                 .EUt(VA[UEV])

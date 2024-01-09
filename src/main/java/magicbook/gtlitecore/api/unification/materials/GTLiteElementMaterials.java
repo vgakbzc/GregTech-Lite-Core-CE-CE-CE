@@ -176,7 +176,7 @@ public class GTLiteElementMaterials {
                 .color(0xFFFF33)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Sol)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV]))
