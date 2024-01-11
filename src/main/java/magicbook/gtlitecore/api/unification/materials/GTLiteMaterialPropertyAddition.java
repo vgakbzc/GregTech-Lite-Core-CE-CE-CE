@@ -220,6 +220,7 @@ public class GTLiteMaterialPropertyAddition {
         WroughtIron.addFlags(GENERATE_LONG_ROD);
         SteelMagnetic.addFlags(GENERATE_LONG_ROD);
         NeodymiumMagnetic.addFlags(GENERATE_LONG_ROD);
+        Chrome.addFlags(GENERATE_LONG_ROD);
 
         //  Spring
         Trinium.addFlags(GENERATE_SPRING);
