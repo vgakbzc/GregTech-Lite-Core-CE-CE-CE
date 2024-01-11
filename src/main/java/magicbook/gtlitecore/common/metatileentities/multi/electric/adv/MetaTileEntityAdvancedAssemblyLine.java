@@ -60,6 +60,11 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.util.GTUtility.getTierByVoltage;
 import static gregtech.api.util.GTUtility.gregtechId;
 
+/**
+ * TODO needs to redo logic...
+ *
+ * <p>Because the ULV stage item input hatch only has 64 amount capacity, this recipe logic is too weak...</p>
+ */
 public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockController {
 
     private static final ResourceLocation LASER_LOCATION = gregtechId("textures/fx/laser/laser.png");
