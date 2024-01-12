@@ -37,6 +37,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         this.setDefaultState(this.getState(BlockWireCoil.CoilType.ADAMANTIUM));
     }
 
+    @Nonnull
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.SOLID;
     }
@@ -44,7 +45,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
     @SideOnly(Side.CLIENT)
     public void addInformation(@Nonnull ItemStack itemStack,
                                @Nullable World worldIn,
-                               List<String> lines,
+                               @Nonnull List<String> lines,
                                @Nonnull ITooltipFlag tooltipFlag) {
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
 

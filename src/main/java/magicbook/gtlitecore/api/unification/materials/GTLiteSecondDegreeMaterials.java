@@ -841,6 +841,48 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[HV], 980))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
                 .build();
+
+        //  12065 Octiron
+        Octiron = new Material.Builder(getId(), gregtechId("octiron"))
+                .ingot()
+                .fluid()
+                .color(0x3B4129)
+                .iconSet(METALLIC)
+                .components(TitanSteel, 8, BlackSteel, 8, MetastableFlerovium, 8, MetastableHassium, 8, Thorium, 8, Uranium238, 8, Neptunium, 8, Nobelium, 8)
+                .blast(b -> b
+                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[ULV], 88888)
+                        .vacuumStats(VA[ULV], 88888))
+                .flags(GENERATE_ROD)
+                .build();
+
+        //  12066 Botmium
+        Botmium = new Material.Builder(getId(), gregtechId("botmium"))
+                .ingot()
+                .fluid()
+                .color(0x51AD6D)
+                .iconSet(METALLIC)
+                .components(Nitinol60, 1, Osmium, 6, Ruthenium, 6, Thallium, 3)
+                .blast(b -> b
+                        .temp(8495, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 120)
+                        .vacuumStats(VA[UV], 165))
+                .flags(GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .build();
+
+        //  12067 Tairitsium
+        Tairitsium = new Material.Builder(getId(), gregtechId("tairitsium"))
+                .ingot()
+                .fluid()
+                .color(0x003F5F)
+                .iconSet(METALLIC)
+                .components(BlackSteel, 8, Tungsten, 8, Naquadria, 7, Taranium, 4, Carbon, 4, Vanadium, 3)
+                .blast(b -> b
+                        .temp(7400, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 400)
+                        .vacuumStats(VA[EV], 130))
+                .flags(GENERATE_ROD)
+                .build();
     }
 
     private static int getId() {

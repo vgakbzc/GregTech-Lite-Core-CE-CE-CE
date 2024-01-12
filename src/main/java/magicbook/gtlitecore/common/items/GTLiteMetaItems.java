@@ -258,6 +258,8 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MINING_DRONE_UXV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_OpV;
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MAX;
+    public static MetaItem<?>.MetaValueItem CRUDE_HYPERCUBE;
+    public static MetaItem<?>.MetaValueItem CHARGED_HYPERCUBE;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

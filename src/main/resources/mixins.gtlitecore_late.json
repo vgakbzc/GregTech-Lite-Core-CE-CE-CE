@@ -10,5 +10,8 @@
     "gregtech.MixinMetaTileEntityItemBus"
   ],
   "server": [],
-  "client": []
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

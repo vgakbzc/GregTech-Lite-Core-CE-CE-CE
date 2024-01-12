@@ -417,6 +417,18 @@ public class MiscRecipes {
                 .duration(80)
                 .buildAndRegister();
 
+        //  Botmium
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Nitinol60)
+                .input(dust, Osmium, 6)
+                .input(dust, Ruthenium, 6)
+                .input(dust, Thallium, 3)
+                .circuitMeta(4)
+                .output(dust, Botmium, 16)
+                .EUt(VA[ZPM])
+                .duration(140)
+                .buildAndRegister();
+
     }
 
     private static void OtherRecipes() {
