@@ -1212,6 +1212,7 @@ gregtech.material.astralium=星辉
 gregtech.material.hikarium=光素
 gregtech.material.eternity=永恒
 gregtech.material.tiberium=泰伯利亚
+gregtech.material.luna_silver=月光银
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -1520,6 +1521,8 @@ gregtech.material.tumbaga=铜金合金
 gregtech.material.octiron=八角铁
 gregtech.material.botmium=博特姆合金
 gregtech.material.tairitsium=对立合金
+gregtech.material.transcendent_metal=超时空金属
+gregtech.material.arcanium=韵律源金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

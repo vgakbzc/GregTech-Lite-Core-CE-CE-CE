@@ -429,6 +429,19 @@ public class MiscRecipes {
                 .duration(140)
                 .buildAndRegister();
 
+        //  Arcanium
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Hikarium)
+                .input(dust, Tairitsium)
+                .input(dust, Astralium)
+                .input(dust, LunaSilver)
+                .input(dust, Solarium)
+                .input(dust, RedAlloy)
+                .output(dust, Arcanium, 6)
+                .EUt(VA[UXV])
+                .duration(40)
+                .buildAndRegister();
+
     }
 
     private static void OtherRecipes() {

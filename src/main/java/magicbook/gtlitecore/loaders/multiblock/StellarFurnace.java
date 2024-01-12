@@ -417,6 +417,7 @@ public class StellarFurnace {
 
         //  back to Quantum Force Transformer Recipe
 
+        //  Charged Hypercube -> Spacetime
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(CHARGED_HYPERCUBE)
                 .notConsumable(QUANTUM_ANOMALY)
@@ -429,6 +430,14 @@ public class StellarFurnace {
                 .EUt(VA[UXV])
                 .duration(20)
                 .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Crude Hyper cube -> Transcendent Metal
+        MACERATOR_RECIPES.recipeBuilder()
+                .input(CRUDE_HYPERCUBE)
+                .output(dust, TranscendentMetal, 8)
+                .EUt(VA[UXV])
+                .duration(20)
                 .buildAndRegister();
 
     }
