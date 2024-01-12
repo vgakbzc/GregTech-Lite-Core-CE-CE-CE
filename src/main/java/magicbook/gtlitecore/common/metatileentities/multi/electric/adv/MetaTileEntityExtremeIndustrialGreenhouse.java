@@ -155,6 +155,7 @@ public class MetaTileEntityExtremeIndustrialGreenhouse extends RecipeMapMultiblo
         return shapeInfos;
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class ExtremeIndustrialGreenhouseRecipeLogic extends MultiblockRecipeLogic {
 
         public ExtremeIndustrialGreenhouseRecipeLogic(RecipeMapMultiblockController tileEntity) {

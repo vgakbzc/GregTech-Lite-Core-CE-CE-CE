@@ -155,6 +155,7 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
         tooltip.add(I18n.format("gtlitecore.machine.dangote_distillery.tooltip.7"));
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     protected class DangoteDistilleryRecipeLogic extends MultiblockRecipeLogic {
 
         public DangoteDistilleryRecipeLogic(RecipeMapMultiblockController tileEntity) {

@@ -138,7 +138,9 @@ public class MetaTileEntityTurbineMixer extends MultiMapMultiblockController {
     }
 
     @Override
-    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+    public void renderMetaTileEntity(CCRenderState renderState,
+                                     Matrix4 translation,
+                                     IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
         GTLiteTextures.TURBINE_MIXER.renderSided(renderState, translation, pipeline, getFrontFacing(), isStructureFormed(), this.getRecipeLogic().isActive());
     }
@@ -166,6 +168,7 @@ public class MetaTileEntityTurbineMixer extends MultiMapMultiblockController {
         return true;
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class TurbineMixerRecipeLogic extends MultiblockRecipeLogic {
 
         public TurbineMixerRecipeLogic(RecipeMapMultiblockController tileEntity) {

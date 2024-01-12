@@ -158,6 +158,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         }
     }
 
+    @Override
     public void renderMetaTileEntity(CCRenderState renderState,
                                      Matrix4 translation,
                                      IVertexOperation[] pipeline) {
@@ -188,16 +189,19 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         }
     }
 
+    @Override
     public void writeInitialSyncData(PacketBuffer buf) {
         super.writeInitialSyncData(buf);
         this.writeParticles(buf);
     }
 
+    @Override
     public void receiveInitialSyncData(PacketBuffer buf) {
         super.receiveInitialSyncData(buf);
         this.readParticles(buf);
     }
 
+    @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {
         if (dataId == GregtechDataCodes.UPDATE_PARTICLE) {
             this.readParticles(buf);
