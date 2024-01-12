@@ -3397,5 +3397,21 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Austenitic Stainless Steel Casing
+        ModHandler.addShapedRecipe(true, "austenitic_stainless_steel_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, AusteniticStainlessSteel904L),
+                'F', new UnificationEntry(frameGt, AusteniticStainlessSteel904L));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, AusteniticStainlessSteel904L, 6)
+                .input(frameGt, AusteniticStainlessSteel904L)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }
