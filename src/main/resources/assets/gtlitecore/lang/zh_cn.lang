@@ -60,6 +60,7 @@ tile.machine_casing.neptunium_casing.name=抗腐蚀镎机器外壳
 tile.machine_casing.nobelium_casing.name=超高强度锘机器外壳
 tile.machine_casing.lawrencium_casing.name=超重铹机器外壳
 tile.machine_casing.niobium_titanium_casing.name=安全稳定铌钛合金机器外壳
+tile.machine_casing.botmium_casing.name=耐热博特姆合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1114,6 +1115,12 @@ gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7
 gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.amazon_warehousing_depot.tooltip.4=最大并行数：§e4096§7
 
+gtlitecore.machine.arc_furnace_array.name=多极式真空电弧炉
+gtlitecore.machine.arc_furnace_array.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.arc_furnace_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.arc_furnace_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.arc_furnace_array.tooltip.4=最大并行数：§e4096§7
+
 gtlitecore.machine.electrolytic_tank.name=大型电解池
 gtlitecore.machine.electrolytic_tank.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.electrolytic_tank.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
@@ -1426,7 +1433,7 @@ gregtech.material.lithiumthiinediselenide=二硒醚合硫锂
 gregtech.material.sodium_thiosulfate=硫代硫酸钠
 gregtech.material.sodium_formate=甲酸钠
 gregtech.material.francium_carbide=碳化钫
-gregtech.material.boron_carbide=碳化钫
+gregtech.material.boron_carbide=碳化硼
 gregtech.material.boron_francium_carbide=碳化硼钫
 gregtech.material.hydroiodic_acid=氢碘酸
 gregtech.material.lithium_aluminium_hydride=氢化铝锂

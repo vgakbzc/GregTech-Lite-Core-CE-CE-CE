@@ -852,10 +852,9 @@ public class GTLiteSecondDegreeMaterials {
                 .components(TitanSteel, 8, BlackSteel, 8, MetastableFlerovium, 8, MetastableHassium, 8, Tritanium, 8, Thorium, 8, Neptunium, 8, Nobelium, 8)
                 .blast(b -> b
                         .temp(16600, BlastProperty.GasTier.HIGHEST)
-                        .blastStats(VA[UXV], 888)
-                        .vacuumStats(VA[UXV], 888))
+                        .blastStats(VA[ULV], 88888)
+                        .vacuumStats(VA[ULV], 88888))
                 .flags(GENERATE_PLATE, GENERATE_ROD)
-                //.fluidPipeProperties(160000, 40000, true, true, true, true)
                 .build();
 
         //  12066 Botmium
@@ -869,7 +868,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8495, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 120)
                         .vacuumStats(VA[UV], 165))
-                .flags(GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
                 .build();
 
         //  12067 Tairitsium

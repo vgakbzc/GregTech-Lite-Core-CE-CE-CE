@@ -331,6 +331,22 @@ public class QuantumForceTransformer {
                 .buildAndRegister();
 
         //  Temporal Fluid
+        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+                .circuitMeta(23)
+                .notConsumable(QUANTUM_ANOMALY)
+                .notConsumable(EMITTER_UEV)
+                .notConsumable(SENSOR_UEV)
+                .fluidInputs(LiquidAir.getFluid(120000))
+                .fluidInputs(LiquidNetherAir.getFluid(120000))
+                .fluidInputs(LiquidEnderAir.getFluid(120000))
+                .fluidInputs(StarlightLiquid.getFluid(1000))
+                .fluidInputs(Bedrock.getFluid(1000))
+                .fluidInputs(DragonBlood.getFluid(1000))
+                .fluidOutputs(TemporalFluid.getFluid(6000))
+                .EUt(VA[UIV])
+                .duration(120)
+                .CasingTier(5)
+                .buildAndRegister();
 
         //  Quantum Anomaly
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()

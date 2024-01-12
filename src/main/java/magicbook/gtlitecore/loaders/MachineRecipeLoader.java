@@ -1445,6 +1445,23 @@ public class MachineRecipeLoader {
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
                 'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING),
                 'W', new UnificationEntry(cableGtSingle, Platinum));
+
+        //  Arc Furnace Array
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Botmium, 4)
+                .input(LARGE_ARC_FURNACE, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, TitaniumTungstenCarbide, 4)
+                .input(plateDouble, MARM200CeSteel, 4)
+                .input(gear, RhodiumPlatedPalladium, 4)
+                .input(gearSmall, Talonite, 16)
+                .input(cableGtQuadruple, NiobiumNitride, 4)
+                .fluidInputs(Inconel792.getFluid(L * 4))
+                .output(ARC_FURNACE_ARRAY)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -3350,5 +3367,35 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Botmium Casing
+        ModHandler.addShapedRecipe(true, "botmium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BOTMIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Botmium),
+                'F', new UnificationEntry(frameGt, Botmium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Botmium, 6)
+                .input(frameGt, Botmium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BOTMIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Ultimate Engine Intake Casing
+        ModHandler.addShapedRecipe(true, "ultimate_engine_intake_casing", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ULTIMATE_ENGINE_INTAKE_CASING, 2),
+                "PhP", "RCR", "PwP",
+                'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING),
+                'R', new UnificationEntry(rotor, RhodiumPlatedPalladium),
+                'P', new UnificationEntry(pipeNormalFluid, Naquadah));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(rotor, RhodiumPlatedPalladium, 2)
+                .input(pipeNormalFluid, Naquadah, 4)
+                .inputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING))
+                .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ULTIMATE_ENGINE_INTAKE_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }
