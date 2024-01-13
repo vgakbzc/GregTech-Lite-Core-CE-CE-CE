@@ -290,13 +290,29 @@ public class MaterialInfoLoader {
         //  UXV Voltage Coil
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
-                .input(wireFine, Galaxium, 16)
+                .input(wireFine, Hikarium, 16)
                 .circuitMeta(1)
                 .output(VOLTAGE_COIL_UXV)
                 .EUt(VA[UXV])
                 .duration(200)
                 .buildAndRegister();
 
+        OreDictUnifier.registerOre(VOLTAGE_COIL_UXV.getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(PhosphorusDopedEuropiumIronArsenideMagnetic, M / 2),
+                new MaterialStack(Hikarium, M * 2)));
+
         //  OpV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .input(wireFine, Arcanium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_OpV)
+                .EUt(VA[OpV])
+                .duration(200)
+                .buildAndRegister();
+
+        OreDictUnifier.registerOre(VOLTAGE_COIL_OpV.getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(BismuthLawrenciumStrontiumCuprateMagnetic, M / 2),
+                new MaterialStack(Arcanium, M * 2)));
     }
 }

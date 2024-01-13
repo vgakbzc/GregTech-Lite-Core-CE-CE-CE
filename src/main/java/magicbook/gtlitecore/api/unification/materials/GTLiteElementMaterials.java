@@ -332,7 +332,7 @@ public class GTLiteElementMaterials {
                 .color(0xCCF7FB)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Hikarium)
-                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 64, 32, false)
                 .build();
 
