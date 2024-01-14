@@ -4,6 +4,7 @@ import codechicken.lib.texture.TextureUtils;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
+import magicbook.gtlitecore.client.renderer.texture.IndustrialCentrifugeRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
 import magicbook.gtlitecore.client.renderer.texture.TurbineMixerRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -46,6 +47,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer NEUTRAL_NETWORK_NEXUS_OVERLAY = new OrientedOverlayRenderer("multiblocks/neutral_network_nexus");
     public static OrientedOverlayRenderer QUANTUM_FORCE_TRANSFORMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/quantum_force_transformer");
     public static OrientedOverlayRenderer TURBINE_MIXER_OVERLAY = new OrientedOverlayRenderer("multiblocks/turbine_mixer");
+    public static OrientedOverlayRenderer INDUSTRIAL_CENTRIFUGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/industrial_centrifuge");
     public static OrientedOverlayRenderer COKING_TOWER_OVERLAY = new OrientedOverlayRenderer("multiblocks/coking_tower");
     public static OrientedOverlayRenderer BIOWARE_SIMULATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/bioware_simulator");
     public static OrientedOverlayRenderer LARGE_ROCKET_ENGINE_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_rocket_engine");
@@ -108,6 +110,7 @@ public class GTLiteTextures {
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
     public static TurbineMixerRenderer TURBINE_MIXER = new TurbineMixerRenderer();
+    public static IndustrialCentrifugeRenderer INDUSTRIAL_CENTRIFUGE = new IndustrialCentrifugeRenderer();
 
     //  Multi Renderer
     public static TextureAtlasSprite HALO;

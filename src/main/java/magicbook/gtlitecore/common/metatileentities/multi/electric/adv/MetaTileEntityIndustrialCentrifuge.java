@@ -140,14 +140,14 @@ public class MetaTileEntityIndustrialCentrifuge extends MultiMapMultiblockContro
                                      Matrix4 translation,
                                      IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
-        GTLiteTextures.TURBINE_MIXER.renderSided(renderState, translation, pipeline, getFrontFacing(), isStructureFormed(), this.getRecipeLogic().isActive());
+        GTLiteTextures.INDUSTRIAL_CENTRIFUGE.renderSided(renderState, translation, pipeline, getFrontFacing(), isStructureFormed(), this.getRecipeLogic().isActive());
     }
 
     @SideOnly(Side.CLIENT)
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GTLiteTextures.TURBINE_MIXER_OVERLAY;
+        return GTLiteTextures.INDUSTRIAL_CENTRIFUGE_OVERLAY;
     }
 
     @Override
