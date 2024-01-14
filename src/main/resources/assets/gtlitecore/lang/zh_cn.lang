@@ -196,6 +196,7 @@ tile.field_casing.max.name=遏制场发生器（§c§lMAX§r）
 
 tile.wire_coil.adamantium.name=精金线圈方块
 tile.wire_coil.ichorium.name=灵宝线圈方块
+tile.wire_coil.astralium.name=星辉线圈方块
 
 tile.transparent_casing.bpa_polycarbonate_glass.name=BPA聚碳酸酯玻璃
 tile.transparent_casing.bpa_polycarbonate_glass.tooltip=灰色石英

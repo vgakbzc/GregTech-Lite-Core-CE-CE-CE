@@ -48,5 +48,15 @@ public class WireCoils {
                 .EUt(resultEUt(2))
                 .duration(resultDuration(2))
                 .buildAndRegister();
+
+        //  Astralium
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireGtDouble, Astralium, 8)
+                .input(foil, Abyssalloy, 8)
+                .fluidInputs(Ichorium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ASTRALIUM))
+                .EUt(resultEUt(3))
+                .duration(resultDuration(3))
+                .buildAndRegister();
     }
 }

@@ -532,7 +532,7 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(CUSTOM_LEGENDARIUM)
                 .components(Naquadria, 1, Trinium, 1, Duranium, 1, Tritanium, 1, Orichalcum, 1, Adamantium, 1, Vibranium, 1, Taranium, 1)
                 .blast(b -> b
-                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .temp(16500, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV], 998))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
@@ -784,7 +784,7 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x359FFC)
                 .iconSet(BRIGHT)
                 .blast(b -> b
-                        .temp(16000, BlastProperty.GasTier.HIGHEST)
+                        .temp(18400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 190))
                 .components(BoronFranciumCarbide, 15, ChargedCaesiumCeriumCobaltIndiumAlloy, 14, CubicBoronNitride, 12, StrontiumCarbonate, 10, MetastableHassium, 5, MetastableOganesson, 2, BETSPerrhenate, 1, MercuryCadmiumTelluride, 1)
                 .cableProperties(V[UXV], 128, 0, true)
@@ -893,7 +893,7 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x1A1A1A)
                 .iconSet(METALLIC)
                 .blast(b -> b
-                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 3)
                         .vacuumStats(VA[UXV], 3))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
@@ -908,7 +908,7 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(BRIGHT)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .blast(b -> b
-                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .temp(18300, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 100)
                         .vacuumStats(VA[UXV], 100))
                 .components(Hikarium, 1, Tairitsium, 1, Astralium, 1, LunaSilver, 1, Solarium, 1, RedAlloy, 1)
