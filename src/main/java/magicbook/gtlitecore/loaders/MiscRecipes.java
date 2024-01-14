@@ -485,6 +485,16 @@ public class MiscRecipes {
                 .EUt(VA[UV])
                 .duration(200)
                 .buildAndRegister();
+
+        //  Graphene Rod
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(dust, Graphene)
+                .notConsumable(SHAPE_EXTRUDER_ROD)
+                .output(stick, Graphene, 2)
+                .EUt(42)
+                .duration(490)
+                .buildAndRegister();
+
     }
 
     private static void ToolRecipes() {

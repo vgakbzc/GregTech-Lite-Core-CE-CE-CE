@@ -164,6 +164,7 @@ public class GTLiteMaterialPropertyAddition {
         TitaniumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
         Plutonium239.addFlags(GENERATE_DOUBLE_PLATE);
         TitaniumTungstenCarbide.addFlags(GENERATE_DOUBLE_PLATE);
+        Ruridit.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
