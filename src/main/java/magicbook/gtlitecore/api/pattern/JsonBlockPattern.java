@@ -122,10 +122,6 @@ public class JsonBlockPattern {
         symbolMap.forEach((symbol, predicates) -> usedPredicate.addAll(predicates));
     }
 
-//    public String toJson() {
-//        return Multiblocked.GSON.toJson(this);
-//    }
-
     public int[] getCenterOffset() {
         int[] centerOffset = new int[3];
         for (int i = 0; i < pattern.length; i++) {

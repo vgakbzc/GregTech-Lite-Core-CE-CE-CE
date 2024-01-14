@@ -71,10 +71,7 @@ public class MetaTileEntityFuelRefineFactory extends RecipeMapMultiblockControll
                 .where('P', states(getBoilerCasingState()))
                 .where('U', states(getUniqueCasingState()))
                 .where('F', states(getFrameState()))
-                .where('M', states(getCasingState())
-                        .or(abilities(MultiblockAbility.MUFFLER_HATCH)
-                                .setExactLimit(1)
-                                .setPreviewCount(1)))
+                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .where(' ', any())
                 .build();
     }

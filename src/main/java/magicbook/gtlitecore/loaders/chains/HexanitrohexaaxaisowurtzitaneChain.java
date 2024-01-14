@@ -246,7 +246,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, HydroxylammoniumSulfate, 17)
                 .input(dust, CopperChloride, 3)
-                .output(dust, CupricOxide)
+                .output(dust, CupricOxide, 2)
                 .fluidOutputs(HydroxylamineHydrochloride.getFluid(2000))
                 .fluidOutputs(SulfurTrioxide.getFluid(1000))
                 .EUt(VA[HV])

@@ -8,7 +8,7 @@ import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.QUANTUM_ANOMALY;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class QuantumForceTransformer {
 
@@ -307,9 +307,46 @@ public class QuantumForceTransformer {
                 .CasingTier(4)
                 .buildAndRegister();
 
-        //  Hyperdimensional Cube
+        //  Hypercube
+        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+                .circuitMeta(22)
+                .notConsumable(QUANTUM_ANOMALY)
+                .input(CRUDE_HYPERCUBE)
+                .fluidInputs(StarCoreMatter.getPlasma(1000))
+                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(1000))
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(1000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(1000))
+                .fluidInputs(CosmicComputingMixture.getFluid(1000))
+                .fluidInputs(CosmicNeutronium.getFluid(1000))
+                .output(CHARGED_HYPERCUBE)
+                .fluidOutputs(AstralTitanium.getPlasma(250))
+                .fluidOutputs(CelestialTungsten.getPlasma(250))
+                .fluidOutputs(Tin.getPlasma(250))
+                .fluidOutputs(Iron.getPlasma(250))
+                .fluidOutputs(Nickel.getPlasma(250))
+                .fluidOutputs(Americium.getPlasma(250))
+                .EUt(VA[UXV])
+                .duration(20)
+                .CasingTier(6)
+                .buildAndRegister();
 
         //  Temporal Fluid
+        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+                .circuitMeta(23)
+                .notConsumable(QUANTUM_ANOMALY)
+                .notConsumable(EMITTER_UEV)
+                .notConsumable(SENSOR_UEV)
+                .fluidInputs(LiquidAir.getFluid(120000))
+                .fluidInputs(LiquidNetherAir.getFluid(120000))
+                .fluidInputs(LiquidEnderAir.getFluid(120000))
+                .fluidInputs(StarlightLiquid.getFluid(1000))
+                .fluidInputs(Bedrock.getFluid(1000))
+                .fluidInputs(DragonBlood.getFluid(1000))
+                .fluidOutputs(TemporalFluid.getFluid(6000))
+                .EUt(VA[UIV])
+                .duration(120)
+                .CasingTier(5)
+                .buildAndRegister();
 
         //  Quantum Anomaly
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()

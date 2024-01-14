@@ -253,14 +253,14 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
         if (this.isStructureFormed() && casingTier > 0) {
-            textList.add(0, new TextComponentTranslation("epimorphism.machine.component_assembly_line.casing_tier", I18n.format("gtlitecore.machine.component_assembly_line.tier." + casingTier)));
+            textList.add(0, new TextComponentTranslation("gtlitecore.machine.component_assembly_line.casing_tier", I18n.format("gtlitecore.machine.component_assembly_line.tier." + casingTier)));
         }
     }
 
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.component_assembly_line.tooltip.1"));

@@ -236,6 +236,16 @@ public class FusionLoader {
                 .EUToStart(650000000L)
                 .buildAndRegister();
 
+        //  Silver + Starlight Liquid -> Luna Silver
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Silver.getFluid(L / 2))
+                .fluidInputs(StarlightLiquid.getFluid(L / 2))
+                .fluidOutputs(LunaSilver.getFluid(L))
+                .EUt(VA[UHV])
+                .duration(45)
+                .EUToStart(650000000L)
+                .buildAndRegister();
+
         //  Ichor Liquid + Radon -> Ichorium
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(IchorLiquid.getPlasma(L))

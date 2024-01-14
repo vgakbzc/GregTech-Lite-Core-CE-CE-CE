@@ -60,6 +60,11 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.util.GTUtility.getTierByVoltage;
 import static gregtech.api.util.GTUtility.gregtechId;
 
+/**
+ * TODO needs to redo logic...
+ *
+ * <p>Because the ULV stage item input hatch only has 64 amount capacity, this recipe logic is too weak...</p>
+ */
 public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockController {
 
     private static final ResourceLocation LASER_LOCATION = gregtechId("textures/fx/laser/laser.png");
@@ -153,6 +158,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         }
     }
 
+    @Override
     public void renderMetaTileEntity(CCRenderState renderState,
                                      Matrix4 translation,
                                      IVertexOperation[] pipeline) {
@@ -183,16 +189,19 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         }
     }
 
+    @Override
     public void writeInitialSyncData(PacketBuffer buf) {
         super.writeInitialSyncData(buf);
         this.writeParticles(buf);
     }
 
+    @Override
     public void receiveInitialSyncData(PacketBuffer buf) {
         super.receiveInitialSyncData(buf);
         this.readParticles(buf);
     }
 
+    @Override
     public void receiveCustomData(int dataId, PacketBuffer buf) {
         if (dataId == GregtechDataCodes.UPDATE_PARTICLE) {
             this.readParticles(buf);

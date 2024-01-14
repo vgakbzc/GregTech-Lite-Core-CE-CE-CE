@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders.circuits;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.unification.OreDictUnifier;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -24,11 +25,14 @@ public class CrystalCircuits {
     }
 
     private static void CrystalSoCNerf() {
-        //  Delete original recipe
-        GTRecipeHandler.removeRecipesByInputs(LASER_ENGRAVER_RECIPES,
-                CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(),
-                OreDictUnifier.get(craftingLens, Blue)
-        );
+
+        if (GTLiteConfigHolder.gtlitecoreOverrides.enableHarderCrystalSoCRecipe) {
+            //  Delete original recipe
+            GTRecipeHandler.removeRecipesByInputs(LASER_ENGRAVER_RECIPES,
+                    CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(),
+                    OreDictUnifier.get(craftingLens, Blue)
+            );
+        }
 
         //  c-ZrO2 + Eu -> Eu-doped c-ZrO2 Boule
         CRYSTALLIZATION_RECIPES.recipeBuilder()
@@ -162,37 +166,39 @@ public class CrystalCircuits {
     }
 
     private static void AssemblyBuffer() {
-        //  Delete original recipe
-        GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
-                new ItemStack[]{ELITE_CIRCUIT_BOARD.getStackForm(),
-                                CRYSTAL_PROCESSOR_IV.getStackForm(2),
-                                ADVANCED_SMD_INDUCTOR.getStackForm(4),
-                                ADVANCED_SMD_CAPACITOR.getStackForm(8),
-                                RANDOM_ACCESS_MEMORY.getStackForm(24),
-                                OreDictUnifier.get(wireFine, NiobiumTitanium, 16)},
-                new FluidStack[]{Tin.getFluid(288)});
+        if (GTLiteConfigHolder.gtlitecoreOverrides.buffProcessorAssemblyRecipe) {
+            //  Delete original recipe
+            GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
+                    new ItemStack[]{ELITE_CIRCUIT_BOARD.getStackForm(),
+                            CRYSTAL_PROCESSOR_IV.getStackForm(2),
+                            ADVANCED_SMD_INDUCTOR.getStackForm(4),
+                            ADVANCED_SMD_CAPACITOR.getStackForm(8),
+                            RANDOM_ACCESS_MEMORY.getStackForm(24),
+                            OreDictUnifier.get(wireFine, NiobiumTitanium, 16)},
+                    new FluidStack[]{Tin.getFluid(288)});
 
-        GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
-                new ItemStack[]{ELITE_CIRCUIT_BOARD.getStackForm(),
-                        CRYSTAL_PROCESSOR_IV.getStackForm(2),
-                        ADVANCED_SMD_INDUCTOR.getStackForm(4),
-                        ADVANCED_SMD_CAPACITOR.getStackForm(8),
-                        RANDOM_ACCESS_MEMORY.getStackForm(24),
-                        OreDictUnifier.get(wireFine, NiobiumTitanium, 16)},
-                new FluidStack[]{SolderingAlloy.getFluid(144)});
+            GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
+                    new ItemStack[]{ELITE_CIRCUIT_BOARD.getStackForm(),
+                            CRYSTAL_PROCESSOR_IV.getStackForm(2),
+                            ADVANCED_SMD_INDUCTOR.getStackForm(4),
+                            ADVANCED_SMD_CAPACITOR.getStackForm(8),
+                            RANDOM_ACCESS_MEMORY.getStackForm(24),
+                            OreDictUnifier.get(wireFine, NiobiumTitanium, 16)},
+                    new FluidStack[]{SolderingAlloy.getFluid(144)});
 
-        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ELITE_CIRCUIT_BOARD)
-                .input(CRYSTAL_PROCESSOR_IV, 2)
-                .input(ADVANCED_SMD_INDUCTOR, 4)
-                .input(ADVANCED_SMD_CAPACITOR, 8)
-                .input(RANDOM_ACCESS_MEMORY, 24)
-                .input(wireFine, NiobiumTitanium, 16)
-                .output(CRYSTAL_ASSEMBLY_LUV, 2)
-                .solderMultiplier(2)
-                .EUt(9600)
-                .duration(400)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
+            CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ELITE_CIRCUIT_BOARD)
+                    .input(CRYSTAL_PROCESSOR_IV, 2)
+                    .input(ADVANCED_SMD_INDUCTOR, 4)
+                    .input(ADVANCED_SMD_CAPACITOR, 8)
+                    .input(RANDOM_ACCESS_MEMORY, 24)
+                    .input(wireFine, NiobiumTitanium, 16)
+                    .output(CRYSTAL_ASSEMBLY_LUV, 2)
+                    .solderMultiplier(2)
+                    .EUt(9600)
+                    .duration(400)
+                    .cleanroom(CleanroomType.CLEANROOM)
+                    .buildAndRegister();
+        }
     }
 }

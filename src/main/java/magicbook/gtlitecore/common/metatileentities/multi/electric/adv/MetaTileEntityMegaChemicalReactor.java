@@ -107,6 +107,7 @@ public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockContro
         return GTSoundEvents.BREAKDOWN_ELECTRICAL;
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class MegaChemicalReactorWorkableHandler extends MultiblockRecipeLogic {
         public MegaChemicalReactorWorkableHandler(RecipeMapMultiblockController tileEntity) {
             super(tileEntity, true);

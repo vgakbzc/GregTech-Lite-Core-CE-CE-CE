@@ -163,6 +163,8 @@ public class GTLiteMaterialPropertyAddition {
         RedSteel.addFlags(GENERATE_DOUBLE_PLATE);
         TitaniumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
         Plutonium239.addFlags(GENERATE_DOUBLE_PLATE);
+        TitaniumTungstenCarbide.addFlags(GENERATE_DOUBLE_PLATE);
+        Ruridit.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -220,6 +222,7 @@ public class GTLiteMaterialPropertyAddition {
         WroughtIron.addFlags(GENERATE_LONG_ROD);
         SteelMagnetic.addFlags(GENERATE_LONG_ROD);
         NeodymiumMagnetic.addFlags(GENERATE_LONG_ROD);
+        Chrome.addFlags(GENERATE_LONG_ROD);
 
         //  Spring
         Trinium.addFlags(GENERATE_SPRING);
@@ -312,9 +315,40 @@ public class GTLiteMaterialPropertyAddition {
         Eternity.addFlags(GENERATE_SWARM); // For end game
 
         //  Singularity
-        Iron.addFlags(GENERATE_SINGULARITY); // W.I.P
+        Iron.addFlags(GENERATE_SINGULARITY);
+        Copper.addFlags(GENERATE_SINGULARITY);
+        Tin.addFlags(GENERATE_SINGULARITY);
         Gold.addFlags(GENERATE_SINGULARITY);
-        Infinity.addFlags(GENERATE_SINGULARITY); // For end game
+        Silver.addFlags(GENERATE_SINGULARITY);
+        Lead.addFlags(GENERATE_SINGULARITY);
+        Zinc.addFlags(GENERATE_SINGULARITY);
+        Titanium.addFlags(GENERATE_SINGULARITY);
+        Tungsten.addFlags(GENERATE_SINGULARITY);
+        Vanadium.addFlags(GENERATE_SINGULARITY);
+        Platinum.addFlags(GENERATE_SINGULARITY);
+        Palladium.addFlags(GENERATE_SINGULARITY);
+        Ruthenium.addFlags(GENERATE_SINGULARITY);
+        Rhodium.addFlags(GENERATE_SINGULARITY);
+        Iridium.addFlags(GENERATE_SINGULARITY);
+        Osmium.addFlags(GENERATE_SINGULARITY);
+
+        Naquadah.addFlags(GENERATE_SINGULARITY);
+        NaquadahEnriched.addFlags(GENERATE_SINGULARITY);
+        Naquadria.addFlags(GENERATE_SINGULARITY);
+        Orichalcum.addFlags(GENERATE_SINGULARITY);
+        Adamantium.addFlags(GENERATE_SINGULARITY);
+        Vibranium.addFlags(GENERATE_SINGULARITY);
+        Taranium.addFlags(GENERATE_SINGULARITY);
+        Mithril.addFlags(GENERATE_SINGULARITY);
+        Solarium.addFlags(GENERATE_SINGULARITY);
+        LunaSilver.addFlags(GENERATE_SINGULARITY);
+        Neutronium.addFlags(GENERATE_SINGULARITY);
+        NetherStar.addFlags(GENERATE_SINGULARITY);
+        Glowstone.addFlags(GENERATE_SINGULARITY);
+        Ichorium.addFlags(GENERATE_SINGULARITY);
+        CrystalMatrix.addFlags(GENERATE_SINGULARITY);
+
+        Infinity.addFlags(GENERATE_SINGULARITY);
         Eternity.addFlags(GENERATE_SINGULARITY); // For end game
 
         //  Conflict Solutions

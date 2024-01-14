@@ -137,5 +137,6 @@ public class RecipeManager {
         HeatExchanger.init();
         AlgaeCultureTank.init();
         LargeGasCollector.init();
+        Condenser.init();
     }
 }

@@ -89,6 +89,7 @@ public class StellarFurnace {
         DwarfMatters();
         CosmicFabric();
         SupracausalCircuitComponents();
+        Hypercube();
     }
 
     private static void DegenerateRhenium() {
@@ -390,5 +391,54 @@ public class StellarFurnace {
                 .duration(20)
                 .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
                 .buildAndRegister();
+    }
+
+    private static void Hypercube() {
+
+        //  Crude Hypercube
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(stick, CosmicNeutronium, 8)
+                .input(stick, Octiron, 8)
+                .input(stick, Tairitsium, 8)
+                .input(stick, Solarium, 8)
+                .input(plate, Abyssalloy, 24)
+                .input(screw, Botmium, 16)
+                .fluidInputs(AstralTitanium.getPlasma(1000))
+                .fluidInputs(CelestialTungsten.getPlasma(1000))
+                .fluidInputs(Tin.getPlasma(1000))
+                .fluidInputs(Iron.getPlasma(1000))
+                .fluidInputs(Nickel.getPlasma(1000))
+                .fluidInputs(Americium.getPlasma(1000))
+                .output(CRUDE_HYPERCUBE, 4)
+                .EUt(VA[UXV])
+                .duration(120)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  back to Quantum Force Transformer Recipe
+
+        //  Charged Hypercube -> Spacetime
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(CHARGED_HYPERCUBE)
+                .notConsumable(QUANTUM_ANOMALY)
+                .notConsumable(FIELD_GENERATOR_UXV)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(Hypogen.getFluid(1152))
+                .fluidInputs(Infinity.getFluid(2304))
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(16000))
+                .fluidOutputs(Spacetime.getFluid(L))
+                .EUt(VA[UXV])
+                .duration(20)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Crude Hyper cube -> Transcendent Metal
+        MACERATOR_RECIPES.recipeBuilder()
+                .input(CRUDE_HYPERCUBE)
+                .output(dust, TranscendentMetal, 8)
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
     }
 }

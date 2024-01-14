@@ -195,6 +195,7 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
         tooltip.add(I18n.format("gregtech.multiblock.turbine.efficiency_tooltip", GTValues.VNF[tier]));
     }
 
+    @Nonnull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()

@@ -277,6 +277,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MINING_DRONE_UXV = this.addItem(331, "mining_drone.uxv");
         MINING_DRONE_OpV = this.addItem(332, "mining_drone.opv");
         MINING_DRONE_MAX = this.addItem(333, "mining_drone.max");
+        CRUDE_HYPERCUBE = this.addItem(334, "crude_hypercube");
+        CHARGED_HYPERCUBE = this.addItem(335, "charged_hypercube");
 
         //  High Energy Physics Items
         PLASMA_CONTAINMENT_CELL = this.addItem(350, "plasma_containment_cell");

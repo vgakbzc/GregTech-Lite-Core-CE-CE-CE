@@ -175,8 +175,8 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .color(0xFFFF33)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Sol)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .element(GTLiteElements.Solarium)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV]))
@@ -332,7 +332,7 @@ public class GTLiteElementMaterials {
                 .color(0xCCF7FB)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Hikarium)
-                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 64, 32, false)
                 .build();
 
@@ -353,6 +353,18 @@ public class GTLiteElementMaterials {
                 .color(0x79B349)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Tiberium)
+                .build();
+
+        //  10026 Luna Silver
+        LunaSilver = new Material.Builder(getId(), gregtechId("luna_silver"))
+                .ingot()
+                .fluid()
+                .color(0x0B8596)
+                .iconSet(SHINY)
+                .element(GTLiteElements.LunaSilver)
+                .blast(b -> b
+                        .temp(14800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UEV]))
                 .build();
     }
 

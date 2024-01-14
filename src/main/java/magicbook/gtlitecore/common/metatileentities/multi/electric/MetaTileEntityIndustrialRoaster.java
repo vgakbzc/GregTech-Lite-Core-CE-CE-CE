@@ -160,7 +160,10 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
             tooltip.add(I18n.format("gtlitecore.machine.industrial_raoster.tooltip.1"));

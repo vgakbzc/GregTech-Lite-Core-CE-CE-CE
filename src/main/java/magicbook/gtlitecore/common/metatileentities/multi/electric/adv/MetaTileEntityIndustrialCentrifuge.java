@@ -136,7 +136,9 @@ public class MetaTileEntityIndustrialCentrifuge extends MultiMapMultiblockContro
     }
 
     @Override
-    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+    public void renderMetaTileEntity(CCRenderState renderState,
+                                     Matrix4 translation,
+                                     IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
         GTLiteTextures.TURBINE_MIXER.renderSided(renderState, translation, pipeline, getFrontFacing(), isStructureFormed(), this.getRecipeLogic().isActive());
     }
@@ -164,6 +166,7 @@ public class MetaTileEntityIndustrialCentrifuge extends MultiMapMultiblockContro
         tooltip.add(I18n.format("gtlitecore.machine.industrial_centrifuge.tooltip.3"));
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class IndustrialCentrifugeRecipeLogic extends MultiblockRecipeLogic {
 
         public IndustrialCentrifugeRecipeLogic(RecipeMapMultiblockController tileEntity) {

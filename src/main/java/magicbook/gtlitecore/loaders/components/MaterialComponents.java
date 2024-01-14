@@ -97,7 +97,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.pipeNormalFluid, Lafium)},
                 {11, new UnificationEntry(OrePrefix.pipeNormalFluid, CrystalMatrix)},
                 {12, new UnificationEntry(OrePrefix.pipeNormalFluid, QuantumchromodynamicallyConfinedMatter)},
-//                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Trinium)},
+//                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Octiron)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         PIPE_LARGE.appendIngredients(Stream.of(new Object[][]{
@@ -105,7 +105,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.pipeNormalFluid, Lafium)},
                 {11, new UnificationEntry(OrePrefix.pipeNormalFluid, CrystalMatrix)},
                 {12, new UnificationEntry(OrePrefix.pipeNormalFluid, QuantumchromodynamicallyConfinedMatter)},
-//                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Trinium)},
+//                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Octiron)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         GLASS.appendIngredients(Stream.of(new Object[][]{
@@ -198,7 +198,8 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.wireGtOctal, Seaborgium)},
                 {11, new UnificationEntry(OrePrefix.wireGtOctal, Abyssalloy)},
                 {12, new UnificationEntry(OrePrefix.wireGtOctal, BlackDwarfMatter)},
-//                  {13, new UnificationEntry(OrePrefix.wireGtOctal, Trinium)},
+//                {13, new UnificationEntry(OrePrefix.wireGtOctal, Tritanium)},
+//                {14, new UnificationEntry(OrePrefix.wireGtOctal, Tritanium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         STICK_MAGNETIC.appendIngredients(Stream.of(new Object[][]{

@@ -79,14 +79,12 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
         return GTLiteTextures.LARGE_PROCESSING_FACTORY_OVERLAY;
     }
 
-    @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-
         tooltip.add(I18n.format("gtlitecore.machine.large_processing_factory.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.large_processing_factory.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.large_processing_factory.tooltip.3"));
@@ -102,6 +100,7 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
         return true;
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     protected class ProcessingFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public ProcessingFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {

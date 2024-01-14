@@ -1,14 +1,14 @@
 {
     "animation": {
+        "interpolate": true,
         "frametime": 6
     },
     "ctm": {
         "ctm_version": 1,
-        "type": "CTM",
-        "layer": "SOLID",
-        "gregtech": true,
+        "type": "sctm",
+        "layer": "CUTOUT",
         "textures": [
-            "gtlitecore:blocks/machine_coil_ichorium_ctm"
+            "gtlitecore:blocks/coils/machine_coil_ichorium_ctm"
         ],
         "extra": {
             "connect_inside": true

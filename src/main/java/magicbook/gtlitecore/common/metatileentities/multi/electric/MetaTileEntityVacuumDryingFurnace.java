@@ -137,7 +137,7 @@ public class MetaTileEntityVacuumDryingFurnace extends MultiMapMultiblockControl
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.machine.electric_blast_furnace.tooltip.1"));

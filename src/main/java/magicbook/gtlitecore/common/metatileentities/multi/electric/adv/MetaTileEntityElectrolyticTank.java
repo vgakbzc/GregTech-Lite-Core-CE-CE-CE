@@ -127,6 +127,7 @@ public class MetaTileEntityElectrolyticTank extends RecipeMapMultiblockControlle
         tooltip.add(I18n.format("gtlitecore.machine.electrolytic_tank.tooltip.4"));
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class ElectrolyticTankRecipeLogic extends MultiblockRecipeLogic {
         public ElectrolyticTankRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);

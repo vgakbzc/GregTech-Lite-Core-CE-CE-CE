@@ -100,6 +100,7 @@ public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockControll
         tooltip.add(I18n.format("gtlitecore.machine.large_gas_collector.tooltip.4"));
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class LargeGasCollectorRecipeLogic extends MultiblockRecipeLogic {
 
         public LargeGasCollectorRecipeLogic(RecipeMapMultiblockController tileEntity) {

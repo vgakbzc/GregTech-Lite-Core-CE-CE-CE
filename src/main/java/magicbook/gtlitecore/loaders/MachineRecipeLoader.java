@@ -1445,6 +1445,54 @@ public class MachineRecipeLoader {
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV),
                 'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING),
                 'W', new UnificationEntry(cableGtSingle, Platinum));
+
+        //  Arc Furnace Array
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Botmium, 4)
+                .input(LARGE_ARC_FURNACE, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, TitaniumTungstenCarbide, 4)
+                .input(plateDouble, MARM200CeSteel, 4)
+                .input(gear, RhodiumPlatedPalladium, 4)
+                .input(gearSmall, Talonite, 16)
+                .input(cableGtQuadruple, NiobiumNitride, 4)
+                .fluidInputs(Inconel792.getFluid(L * 4))
+                .output(ARC_FURNACE_ARRAY)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Suprachronal Assembly Line
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, CosmicNeutronium, 4)
+                .input(ADVANCED_ASSEMBLY_LINE, 16)
+                .input(COMPONENT_ASSEMBLY_LINE, 16)
+                .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                .input(ROBOT_ARM_OpV, 4)
+                .input(EMITTER_OpV, 4)
+                .input(FIELD_GENERATOR_OpV, 4)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 4))
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 4))
+                .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.OpV, 4))
+                .input(plateDouble, Legendarium, 16)
+                .input(plateDouble, Spacetime, 16)
+                .input(plateDouble, TranscendentMetal, 16)
+                .input(plateDouble, Infinity, 16)
+                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 32)
+                .input(cableGtQuadruple, Galaxium, 4)
+                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(128000))
+                .fluidInputs(Arcanium.getFluid(57600))
+                .fluidInputs(Universium.getFluid(28800))
+                .fluidInputs(DegenerateRhenium.getFluid(14400))
+                .output(SUPRACHRONAL_ASSEMBLY_LINE)
+                .EUt(VA[OpV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(DIMENSIONAL_OSCILLATOR.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(576))
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -3346,6 +3394,52 @@ public class MachineRecipeLoader {
                 .input(frameGt, NiobiumNitride)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Botmium Casing
+        ModHandler.addShapedRecipe(true, "botmium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BOTMIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Botmium),
+                'F', new UnificationEntry(frameGt, Botmium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Botmium, 6)
+                .input(frameGt, Botmium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.BOTMIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Ultimate Engine Intake Casing
+        ModHandler.addShapedRecipe(true, "ultimate_engine_intake_casing", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ULTIMATE_ENGINE_INTAKE_CASING, 2),
+                "PhP", "RCR", "PwP",
+                'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING),
+                'R', new UnificationEntry(rotor, RhodiumPlatedPalladium),
+                'P', new UnificationEntry(pipeNormalFluid, Naquadah));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(rotor, RhodiumPlatedPalladium, 2)
+                .input(pipeNormalFluid, Naquadah, 4)
+                .inputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING))
+                .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ULTIMATE_ENGINE_INTAKE_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Austenitic Stainless Steel Casing
+        ModHandler.addShapedRecipe(true, "austenitic_stainless_steel_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, AusteniticStainlessSteel904L),
+                'F', new UnificationEntry(frameGt, AusteniticStainlessSteel904L));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, AusteniticStainlessSteel904L, 6)
+                .input(frameGt, AusteniticStainlessSteel904L)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

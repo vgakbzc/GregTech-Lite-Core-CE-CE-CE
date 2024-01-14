@@ -77,7 +77,7 @@ public class MetaTileEntityTreeGrowthFactory extends RecipeMapMultiblockControll
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
@@ -90,6 +90,7 @@ public class MetaTileEntityTreeGrowthFactory extends RecipeMapMultiblockControll
         return true;
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class TreeGrowthFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public TreeGrowthFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {

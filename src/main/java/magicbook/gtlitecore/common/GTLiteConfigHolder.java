@@ -19,6 +19,16 @@ public class GTLiteConfigHolder {
     public static SteamOverrides steamOverrides = new SteamOverrides();
 
     public static class GTLiteCoreOverrides {
+
+        @Config.Comment({"Buff Processor Assembly recipes.", "Default: true"})
+        public boolean buffProcessorAssemblyRecipe = true;
+
+        @Config.Comment({"Enable harder Crystal SoC recipes.", "Default: true"})
+        public boolean enableHarderCrystalSoCRecipe = true;
+
+        @Config.Comment({"Enable harder Wetware Circuit recipes, requires Kapton-K.", "Default: true"})
+        public boolean enableHarderWetwareCircuitRecipe = true;
+
         @Config.Comment({"Enable harder Crucible recipes, requires Vacuum Chamber.", "Default: true"})
         public boolean enableHarderCrucibleRecipe = true;
     }

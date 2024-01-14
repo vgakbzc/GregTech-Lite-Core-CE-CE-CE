@@ -27,7 +27,8 @@ public class MetaTileEntityLaserCVDUnit extends MultiMapMultiblockController {
     public MetaTileEntityLaserCVDUnit(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
                 GTLiteRecipeMaps.CVD_UNIT_RECIPES,
-                GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES});
+                GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES
+        });
     }
 
     @Override
