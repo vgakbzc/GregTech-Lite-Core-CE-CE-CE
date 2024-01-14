@@ -495,6 +495,15 @@ public class MiscRecipes {
                 .duration(490)
                 .buildAndRegister();
 
+        //  Graphene Fine Wire
+        WIREMILL_RECIPES.recipeBuilder()
+                .input(wireGtSingle, Graphene)
+                .circuitMeta(1)
+                .output(wireFine, Graphene, 4)
+                .EUt(7)
+                .duration(110)
+                .buildAndRegister();
+
     }
 
     private static void ToolRecipes() {
