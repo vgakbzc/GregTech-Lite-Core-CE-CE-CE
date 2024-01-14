@@ -82,7 +82,8 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
     public enum CoilType implements IStringSerializable, IHeatingCoilBlockStats {
 
         ADAMANTIUM("adamantium", 13501, 32, 16, GTLiteMaterials.Adamantium),
-        ICHORIUM("ichorium", 16600, 64, 32, GTLiteMaterials.Ichorium);
+        ICHORIUM("ichorium", 16600, 64, 32, GTLiteMaterials.Ichorium),
+        ASTRALIUM("astralium", 18400, 128, 64, GTLiteMaterials.Astralium);
 
         private final String name;
         private final int coilTemperature;
