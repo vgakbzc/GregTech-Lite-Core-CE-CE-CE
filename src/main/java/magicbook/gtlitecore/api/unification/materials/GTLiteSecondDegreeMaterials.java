@@ -493,6 +493,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV], 560))
                 .cableProperties(V[UIV], 256, 0, true)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12037 Black Titanium
@@ -787,6 +788,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UXV], 190))
                 .components(BoronFranciumCarbide, 15, ChargedCaesiumCeriumCobaltIndiumAlloy, 14, CubicBoronNitride, 12, StrontiumCarbonate, 10, MetastableHassium, 5, MetastableOganesson, 2, BETSPerrhenate, 1, MercuryCadmiumTelluride, 1)
                 .cableProperties(V[UXV], 128, 0, true)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12061 Tantalum Hafnium Seaborgium Carbide
