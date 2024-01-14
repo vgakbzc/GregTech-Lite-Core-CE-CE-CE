@@ -60,6 +60,7 @@ tile.machine_casing.neptunium_casing.name=抗腐蚀镎机器外壳
 tile.machine_casing.nobelium_casing.name=超高强度锘机器外壳
 tile.machine_casing.lawrencium_casing.name=超重铹机器外壳
 tile.machine_casing.niobium_titanium_casing.name=安全稳定铌钛合金机器外壳
+tile.machine_casing.botmium_casing.name=耐热博特姆合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -872,9 +873,9 @@ gtlitecore.machine.decay_generator.name=衰变发生器
 gtlitecore.machine.decay_generator.tooltip.1=抹杀一切超长的衰变周期
 gtlitecore.machine.decay_generator.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
+gtlitecore.machine.advanced_fusion_reactor.energy=储存能量：%s EU
 gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
-
 gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
 gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
 
@@ -1114,6 +1115,12 @@ gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7
 gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.amazon_warehousing_depot.tooltip.4=最大并行数：§e4096§7
 
+gtlitecore.machine.arc_furnace_array.name=多极式真空电弧炉
+gtlitecore.machine.arc_furnace_array.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.arc_furnace_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.arc_furnace_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.arc_furnace_array.tooltip.4=最大并行数：§e4096§7
+
 gtlitecore.machine.electrolytic_tank.name=大型电解池
 gtlitecore.machine.electrolytic_tank.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.electrolytic_tank.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
@@ -1212,6 +1219,7 @@ gregtech.material.astralium=星辉
 gregtech.material.hikarium=光素
 gregtech.material.eternity=永恒
 gregtech.material.tiberium=泰伯利亚
+gregtech.material.luna_silver=月光银
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -1425,7 +1433,7 @@ gregtech.material.lithiumthiinediselenide=二硒醚合硫锂
 gregtech.material.sodium_thiosulfate=硫代硫酸钠
 gregtech.material.sodium_formate=甲酸钠
 gregtech.material.francium_carbide=碳化钫
-gregtech.material.boron_carbide=碳化钫
+gregtech.material.boron_carbide=碳化硼
 gregtech.material.boron_francium_carbide=碳化硼钫
 gregtech.material.hydroiodic_acid=氢碘酸
 gregtech.material.lithium_aluminium_hydride=氢化铝锂
@@ -1517,6 +1525,11 @@ gregtech.material.tantalum_hafnium_seaborgium_carbide=碳化钽铪钅喜
 gregtech.material.hastelloy_k_243=哈斯特洛伊合金-K243
 gregtech.material.nitinol_60=镍钛诺-60
 gregtech.material.tumbaga=铜金合金
+gregtech.material.octiron=八角铁
+gregtech.material.botmium=博特姆合金
+gregtech.material.tairitsium=对立合金
+gregtech.material.transcendent_metal=超时空金属
+gregtech.material.arcanium=韵律源金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1884,6 +1897,10 @@ metaitem.mining_drone.uiv.name=采矿无人机（§2UIV§r）
 metaitem.mining_drone.uxv.name=采矿无人机（§eUXV§r）
 metaitem.mining_drone.opv.name=采矿无人机（§9OpV§r）
 metaitem.mining_drone.max.name=采矿无人机（§c§lMAX§r）
+metaitem.crude_hypercube.name=粗制超立方体
+metaitem.crude_hypercube.tooltip=四维工程学的初次实践
+metaitem.charged_hypercube.name=充能超立方体
+metaitem.charged_hypercube.tooltip=真正的超立方体
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
@@ -1986,7 +2003,7 @@ recipemap.heat_exchanger_recipes.name=热交换机
 recipemap.bio_reactor_recipes.name=生物反应
 recipemap.high_pressure_steam_turbine_recipes.name=高压蒸汽涡轮
 recipemap.supercritical_steam_turbine_recipes.name=超临界蒸汽涡轮
-recipemap.condenser_recipes=态素凝聚
+recipemap.condenser_recipes.name=态素凝聚
 recipemap.bioware_simulator_recipes.name=生物数据模拟
 recipemap.simulator_recipes.name=数据模拟
 recipemap.nano_scale_mask_aligner_recipes.name=纳米尺度光刻

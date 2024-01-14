@@ -43,7 +43,7 @@ public class MetaTileEntityCatalyticReformer extends RecipeMapMultiblockControll
                 .where('S', this.selfPredicate())
                 .where('X', states(getCasingState())
                         .setMinGlobalLimited(24)
-                        .or(autoAbilities(true, true, true, false, true, false, false)))
+                        .or(autoAbilities(true, true, true, false, true, true, false)))
                 .where('P', states(getBoilerCasingState()))
                 .where('F', states(getFrameState()))
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))

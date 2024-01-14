@@ -37,6 +37,7 @@ public class MetaTileEntityLargeSteamCompressor extends RecipeMapSteamMultiblock
         this.recipeMapWorkable.setParallelLimit(PARALLEL_LIMIT);
     }
 
+    @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityLargeSteamCompressor(metaTileEntityId);
     }
@@ -78,17 +79,20 @@ public class MetaTileEntityLargeSteamCompressor extends RecipeMapSteamMultiblock
         return Textures.COMPRESSOR_OVERLAY;
     }
 
+    @Override
     public boolean hasMaintenanceMechanics() {
         return false;
     }
 
+    @Override
     public int getItemOutputLimit() {
         return 1;
     }
 
+    @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.parallel", 8));

@@ -33,7 +33,7 @@ public class NdYAGChain {
         BURNER_REACTOR_RECIPES.recipeBuilder()
                 .input(dust, PotassiumManganate, 21)
                 .fluidInputs(Water.getFluid(2000))
-                .output(dust, PotassiumManganate, 21)
+                .output(dust, PotassiumPermanganate, 12)
                 .output(dust, Pyrolusite, 3)
                 .fluidOutputs(PotassiumHydroxide.getFluid(4000))
                 .temperature(720)

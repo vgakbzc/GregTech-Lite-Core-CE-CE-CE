@@ -417,6 +417,31 @@ public class MiscRecipes {
                 .duration(80)
                 .buildAndRegister();
 
+        //  Botmium
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Nitinol60)
+                .input(dust, Osmium, 6)
+                .input(dust, Ruthenium, 6)
+                .input(dust, Thallium, 3)
+                .circuitMeta(4)
+                .output(dust, Botmium, 16)
+                .EUt(VA[ZPM])
+                .duration(140)
+                .buildAndRegister();
+
+        //  Arcanium
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Hikarium)
+                .input(dust, Tairitsium)
+                .input(dust, Astralium)
+                .input(dust, LunaSilver)
+                .input(dust, Solarium)
+                .input(dust, RedAlloy)
+                .output(dust, Arcanium, 6)
+                .EUt(VA[UXV])
+                .duration(40)
+                .buildAndRegister();
+
     }
 
     private static void OtherRecipes() {
@@ -460,6 +485,25 @@ public class MiscRecipes {
                 .EUt(VA[UV])
                 .duration(200)
                 .buildAndRegister();
+
+        //  Graphene Rod
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(dust, Graphene)
+                .notConsumable(SHAPE_EXTRUDER_ROD)
+                .output(stick, Graphene, 2)
+                .EUt(42)
+                .duration(490)
+                .buildAndRegister();
+
+        //  Graphene Fine Wire
+        WIREMILL_RECIPES.recipeBuilder()
+                .input(wireGtSingle, Graphene)
+                .circuitMeta(1)
+                .output(wireFine, Graphene, 4)
+                .EUt(7)
+                .duration(110)
+                .buildAndRegister();
+
     }
 
     private static void ToolRecipes() {

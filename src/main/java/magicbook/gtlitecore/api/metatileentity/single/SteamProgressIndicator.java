@@ -10,7 +10,7 @@ public class SteamProgressIndicator {
     public int width, height;
 
     /**
-     * @param progressBarTexture Progress Bar textures of machine, you can use renderer in EPGuiTextures or GuiTextures
+     * @param progressBarTexture Progress Bar textures of machine, you can use renderer in GTLiteGuiTextures or GuiTextures
      * @param progressMoveType Move type of progress bar
      * @param width Width of progress bar
      * @param height Height of progress bar

@@ -101,7 +101,7 @@ public class MetaTileEntityDimensionalOscillator extends RecipeMapMultiblockCont
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.BLINKING_RED + I18n.format("gtlitecore.machine.dimensional_oscillator.tooltip.1"));

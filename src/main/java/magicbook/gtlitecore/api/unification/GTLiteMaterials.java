@@ -32,6 +32,7 @@ public class GTLiteMaterials {
     public static Material Hikarium;
     public static Material Eternity;
     public static Material Tiberium;
+    public static Material LunaSilver;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -337,6 +338,11 @@ public class GTLiteMaterials {
     public static Material HastelloyK243;
     public static Material Nitinol60;
     public static Material Tumbaga;
+    public static Material Octiron;
+    public static Material Botmium;
+    public static Material Tairitsium;
+    public static Material TranscendentMetal;
+    public static Material Arcanium;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

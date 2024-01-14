@@ -96,6 +96,7 @@ public class MetaTileEntityAmazonWarehousingDepot extends RecipeMapMultiblockCon
         tooltip.add(I18n.format("gtlitecore.machine.amazon_warehousing_depot.tooltip.4"));
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     private class WarehousingDepotRecipeLogic extends MultiblockRecipeLogic {
 
         public WarehousingDepotRecipeLogic(MetaTileEntityAmazonWarehousingDepot tileEntity) {

@@ -246,7 +246,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
         if (isStructureFormed()) {
-            textList.add(new TextComponentTranslation("gregtech.multiblock.fusion_reactor.energy", this.energyContainer.getEnergyStored(), this.energyContainer.getEnergyCapacity()));
+            textList.add(new TextComponentTranslation("gtlitecore.machine.advanced_fusion_reactor.energy", this.energyContainer.getEnergyStored(), this.energyContainer.getEnergyCapacity()));
             textList.add(new TextComponentTranslation("gregtech.multiblock.fusion_reactor.heat", heat));
         }
     }
@@ -265,10 +265,6 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     @Override
     public boolean hasMaintenanceMechanics() {
         return false;
-    }
-
-    public long getHeat() {
-        return heat;
     }
 
     private class AdvancedFusionRecipeLogic extends MultiblockRecipeLogic {

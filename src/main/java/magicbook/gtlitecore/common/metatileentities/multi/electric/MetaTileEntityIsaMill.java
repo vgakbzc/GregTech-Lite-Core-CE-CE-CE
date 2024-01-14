@@ -126,22 +126,33 @@ public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
     }
 
     @Override
-    public boolean onRightClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public boolean onRightClick(EntityPlayer playerIn,
+                                EnumHand hand,
+                                EnumFacing facing,
+                                CuboidRayTraceResult hitResult) {
         return onRotorHolderInteract(playerIn) || super.onRightClick(playerIn, hand, facing, hitResult);
     }
 
     @Override
-    public boolean onWrenchClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public boolean onWrenchClick(EntityPlayer playerIn,
+                                 EnumHand hand,
+                                 EnumFacing facing,
+                                 CuboidRayTraceResult hitResult) {
         return onRotorHolderInteract(playerIn) || super.onWrenchClick(playerIn, hand, facing, hitResult);
     }
 
     @Override
-    public boolean onScrewdriverClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public boolean onScrewdriverClick(EntityPlayer playerIn,
+                                      EnumHand hand,
+                                      EnumFacing facing,
+                                      CuboidRayTraceResult hitResult) {
         return onRotorHolderInteract(playerIn);
     }
 
     @Override
-    public void onLeftClick(EntityPlayer player, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public void onLeftClick(EntityPlayer player,
+                            EnumFacing facing,
+                            CuboidRayTraceResult hitResult) {
         onRotorHolderInteract(player);
     }
 
@@ -151,7 +162,9 @@ public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
     }
 
     @Override
-    public void renderMetaTileEntity(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline) {
+    public void renderMetaTileEntity(CCRenderState renderState,
+                                     Matrix4 translation,
+                                     IVertexOperation[] pipeline) {
         super.renderMetaTileEntity(renderState, translation, pipeline);
         GTLiteTextures.ISA_MILL.renderSided(renderState, translation, pipeline, getFrontFacing(), isStructureFormed(), this.getRecipeLogic().isActive());
     }
@@ -163,6 +176,7 @@ public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
         return GTLiteTextures.ISA_MILL_OVERLAY;
     }
 
+    @SuppressWarnings("InnerClassMayBeStatic")
     public class IsaMillRecipeLogic extends MultiblockRecipeLogic {
 
         private final MetaTileEntityIsaMill metaTileEntity;

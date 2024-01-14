@@ -96,13 +96,13 @@ public class NanotubesChain {
 
     private static void CPPChain() {
 
-        //  C8H12Cl2Pt + C12H8I2 + AgBF4 + (CH3)3SnCl -> CPP + BF3 + C8H16 + 4HF + 3PtCl2 + 4AgCl + 4Sn (lost)
+        //  C8H12Cl2Pt + C12H8I2 + AgBF4 + (CH3)3SnCl -> CPP + BF3 + C8H16 + 4HF + PtCl2 + 4AgCl + 4Sn (lost)
         LARGE_CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Dichlorocyclooctadieneplatinium, 23)
                 .input(dust, Diiodobiphenyl, 4)
                 .fluidInputs(SilverTetrafluoroborate.getFluid(40000))
                 .fluidInputs(TrimethyltinChloride.getFluid(40000))
-                .output(dust, PlatinumRaw, 6)
+                .output(dust, PlatinumRaw, 3)
                 .output(dust, Iodine, 8)
                 .output(dust, SilverChloride, 8)
                 .fluidOutputs(Cycloparaphenylene.getFluid(10000))
@@ -148,6 +148,16 @@ public class NanotubesChain {
                 .output(dust, RockSalt, 4)
                 .EUt(VA[HV])
                 .duration(360)
+                .buildAndRegister();
+
+        //  PtCl2 + 4HCl -> H2PtCl6 + 2H
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PlatinumRaw, 3)
+                .fluidInputs(HydrochloricAcid.getFluid(4000))
+                .fluidOutputs(HexachloroplatinicAcid.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(40)
                 .buildAndRegister();
     }
 

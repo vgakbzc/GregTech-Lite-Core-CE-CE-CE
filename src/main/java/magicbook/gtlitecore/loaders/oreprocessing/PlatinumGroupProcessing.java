@@ -218,6 +218,18 @@ public class PlatinumGroupProcessing {
                 .duration(250)
                 .EUt(VA[LV])
                 .buildAndRegister();
+
+        //  PtCl2 + HCOOH -> Pt + 2HCl + CO2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PlatinumRaw, 3)
+                .fluidInputs(FormicAcid.getFluid(1000))
+                .output(dust, Platinum)
+                .fluidOutputs(HydrochloricAcid.getFluid(2000))
+                .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .duration(250)
+                .EUt(VA[LV])
+                .buildAndRegister();
+
     }
 
     private static void RutheniumProcess() {

@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
+import net.minecraft.util.text.TextFormatting;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -840,6 +841,76 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(1200, BlastProperty.GasTier.MID)
                         .blastStats(VA[HV], 980))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .build();
+
+        //  12065 Octiron
+        Octiron = new Material.Builder(getId(), gregtechId("octiron"))
+                .ingot()
+                .fluid()
+                .color(0x3B4129)
+                .iconSet(METALLIC)
+                .components(TitanSteel, 8, BlackSteel, 8, MetastableFlerovium, 8, MetastableHassium, 8, Tritanium, 8, Thorium, 8, Neptunium, 8, Nobelium, 8)
+                .blast(b -> b
+                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[ULV], 88888)
+                        .vacuumStats(VA[ULV], 88888))
+                .flags(GENERATE_PLATE, GENERATE_ROD)
+                .build();
+
+        //  12066 Botmium
+        Botmium = new Material.Builder(getId(), gregtechId("botmium"))
+                .ingot()
+                .fluid()
+                .color(0x51AD6D)
+                .iconSet(METALLIC)
+                .components(Nitinol60, 1, Osmium, 6, Ruthenium, 6, Thallium, 3)
+                .blast(b -> b
+                        .temp(8495, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 120)
+                        .vacuumStats(VA[UV], 165))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .build();
+
+        //  12067 Tairitsium
+        Tairitsium = new Material.Builder(getId(), gregtechId("tairitsium"))
+                .ingot()
+                .fluid()
+                .color(0x003F5F)
+                .iconSet(METALLIC)
+                .components(BlackSteel, 8, Tungsten, 8, Naquadria, 7, Taranium, 4, Carbon, 4, Vanadium, 3)
+                .blast(b -> b
+                        .temp(7400, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 400)
+                        .vacuumStats(VA[EV], 130))
+                .flags(GENERATE_ROD)
+                .build();
+
+        //  12068 Transcendent Metal
+        TranscendentMetal = new Material.Builder(getId(), gregtechId("transcendent_metal"))
+                .ingot()
+                .color(0x1A1A1A)
+                .iconSet(METALLIC)
+                .blast(b -> b
+                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 3)
+                        .vacuumStats(VA[UXV], 3))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  12070 Arcanium
+        Arcanium = new Material.Builder(getId(), gregtechId("arcanium"))
+                .ingot()
+                .fluid()
+                .color(0xD54338)
+                .iconSet(BRIGHT)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .blast(b -> b
+                        .temp(16600, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 100)
+                        .vacuumStats(VA[UXV], 100))
+                .components(Hikarium, 1, Tairitsium, 1, Astralium, 1, LunaSilver, 1, Solarium, 1, RedAlloy, 1)
+                .cableProperties(V[OpV], 128, 256, false)
                 .build();
     }
 
