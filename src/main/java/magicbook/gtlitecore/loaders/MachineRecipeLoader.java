@@ -1462,6 +1462,37 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Suprachronal Assembly Line
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, CosmicNeutronium, 4)
+                .input(ADVANCED_ASSEMBLY_LINE, 16)
+                .input(COMPONENT_ASSEMBLY_LINE, 16)
+                .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                .input(ROBOT_ARM_OpV, 4)
+                .input(EMITTER_OpV, 4)
+                .input(FIELD_GENERATOR_OpV, 4)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 4))
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 4))
+                .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.OpV, 4))
+                .input(plateDouble, Legendarium, 16)
+                .input(plateDouble, Spacetime, 16)
+                .input(plateDouble, TranscendentMetal, 16)
+                .input(plateDouble, Infinity, 16)
+                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 32)
+                .input(cableGtQuadruple, Galaxium, 4)
+                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(128000))
+                .fluidInputs(Arcanium.getFluid(57600))
+                .fluidInputs(Universium.getFluid(28800))
+                .fluidInputs(DegenerateRhenium.getFluid(14400))
+                .output(SUPRACHRONAL_ASSEMBLY_LINE)
+                .EUt(VA[OpV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(DIMENSIONAL_OSCILLATOR.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(576))
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {

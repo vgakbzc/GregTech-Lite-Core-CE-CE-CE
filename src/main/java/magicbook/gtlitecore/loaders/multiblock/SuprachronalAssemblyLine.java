@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -57,24 +58,52 @@ public class SuprachronalAssemblyLine {
     public static void init() {
 
         //  Magic Singularity
-        //  Components: Naquadah (Nq), Enriched Naquadah (Nq+), Naquadria (*Nq*),
-        //              Orichalcum (Or), Adamantium (Ad), Vibranium (Vb),
-        //              Taranium (Tn), Mithril (Mh), Rhugnor (Fs⚶),
-        //              Hypogen (Hy⚶), Void Metal (Vd⚶), Astral Titanium (✧◇✧),
-        //              Celestial Tungsten (✦◆✦), Galaxium (Gx⚶), Universium (Uv⚶),
-        //              Astralium (Ax⚶)
+        SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(singularity, Naquadah)         // 1  Naquadah
+                .input(singularity, NaquadahEnriched) // 2  Enriched Naquadah
+                .input(singularity, Naquadria)        // 3  Naquadria
+                .input(singularity, Orichalcum)       // 4  Orichalcum
+                .input(singularity, Adamantium)       // 5  Adamantium
+                .input(singularity, Vibranium)        // 6  Vibranium
+                .input(singularity, Taranium)         // 7  Taranium
+                .input(singularity, Mithril)          // 8  Mithril
+                .input(singularity, Solarium)         // 9  Solarium
+                .input(singularity, LunaSilver)       // 10 Luna Silver
+                .input(singularity, Neutronium)       // 11 Neutronium
+                .input(singularity, NetherStar)       // 12 Nether Star
+                .input(singularity, Glowstone)        // 13 Glowstone
+                .input(singularity, Ichorium)         // 14 Ichorium
+                .input(singularity, CrystalMatrix)    // 15 Crystal Matrix
+                .input(singularity, Infinity)         // 16 Infinity
+                .output(MAGIC_SINGULARITY)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
 
         //  Metric Singularity
-        //  Components: Iron (Fe), Copper (Cu), Tin (Sn),
-        //              Gold (Au), Silver (Ag), Lead (Pb),
-        //              Zinc (Zn), Titanium (Ti), Tungsten (W),
-        //              Vanadium (V), Platinum (Pt), Palladium (Pd),
-        //              Ruthenium (Ru), Rhodium (Rh), Iridium (Ir),
-        //              Osmium (Os)
+        SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(singularity, Iron)      // 1  Iron
+                .input(singularity, Copper)    // 2  Copper
+                .input(singularity, Tin)       // 3  Tin
+                .input(singularity, Gold)      // 4  Gold
+                .input(singularity, Silver)    // 5  Silver
+                .input(singularity, Lead)      // 6  Lead
+                .input(singularity, Zinc)      // 7  Zinc
+                .input(singularity, Titanium)  // 8  Titanium
+                .input(singularity, Tungsten)  // 9  Tungsten
+                .input(singularity, Vanadium)  // 10 Vanadium
+                .input(singularity, Platinum)  // 11 Platinum
+                .input(singularity, Palladium) // 12 Palladium
+                .input(singularity, Ruthenium) // 13 Ruthenium
+                .input(singularity, Rhodium)   // 14 Rhodium
+                .input(singularity, Iridium)   // 15 Iridium
+                .input(singularity, Osmium)    // 16 Osmium
+                .output(METRIC_SINGULARITY)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
 
         //  Exotic Singularity
-        //  Components: Crystal Matrix (◊◇◊), Infinity (∞), Ichorium (✦☯✧),
-        //              Neutronium (Nt), Cosmic Neutronium (SpNt), Solarium (Sol),
 
         //  Ancient Singularity
 
