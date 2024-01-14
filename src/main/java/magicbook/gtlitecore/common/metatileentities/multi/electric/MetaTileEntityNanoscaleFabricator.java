@@ -194,9 +194,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
                     .where('F', MetaTileEntities.FLUID_IMPORT_HATCH[HV], EnumFacing.SOUTH)
                     .where('O', MetaTileEntities.ITEM_EXPORT_BUS[HV], EnumFacing.SOUTH)
                     .where(' ', Blocks.AIR.getDefaultState())
-                    .where('M', () -> {
-                        return ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : getCasingState();
-                    }, EnumFacing.SOUTH);
+                    .where('M', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.SOUTH);
         }
 
         for (BlockCrucible.CrucibleType crucibleType : BlockCrucible.CrucibleType.values()) {

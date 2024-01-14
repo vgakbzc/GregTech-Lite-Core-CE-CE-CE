@@ -56,7 +56,7 @@ public class IsaMillRenderer implements TextureUtils.IIconRegister {
                 cornerOffset.scale(3.0, 1.0, 3.0);
                 break;
         }
-        if(hasBase && !isActive) {
+        if (hasBase && !isActive) {
             Textures.renderFace(renderState, cornerOffset, /*ArrayUtils.addAll(pipeline, new LightMapOperation(240, 240))*/pipeline, side, Cuboid6.full, baseBackgroundSprite, BlockRenderLayer.CUTOUT_MIPPED);
         }
         if (isActive) {
