@@ -2012,6 +2012,7 @@ recipemap.nano_scale_mask_aligner_recipes.name=纳米尺度光刻
 recipemap.algae_culture_tank_recipes.name=藻类培养缸
 recipemap.biomass_generator_recipes.name=生物质发电机
 recipemap.large_gas_collector_recipes.name=大型集气室
+recipemap.virtual_cosmos_simulator_recipes.name=虚拟宇宙物质解压
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

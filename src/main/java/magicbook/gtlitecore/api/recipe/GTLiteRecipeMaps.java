@@ -12,10 +12,7 @@ import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
-import magicbook.gtlitecore.api.recipe.machines.RecipeMapComponentAssemblyLine;
-import magicbook.gtlitecore.api.recipe.machines.RecipeMapPreciseAssembler;
-import magicbook.gtlitecore.api.recipe.machines.RecipeMapPseudoGroup;
-import magicbook.gtlitecore.api.recipe.machines.RecipeMapSuprachronalAssemblyLine;
+import magicbook.gtlitecore.api.recipe.machines.*;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
 
@@ -146,6 +143,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<FuelRecipeBuilder> BIOMASS_GENERATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> LARGE_GAS_COLLECTOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -501,5 +500,9 @@ public class GTLiteRecipeMaps {
         LARGE_GAS_COLLECTOR_RECIPES = new RecipeMap<>("large_gas_collector_recipes", 2, 0, 0, 1, new SimpleRecipeBuilder(), false)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.COMPRESSOR);
+
+        //  Virtual Cosmos Simulator RecipeMap
+        VIRTUAL_COSMOS_SIMULATOR_RECIPES = new RecipeMapVirtualCosmosSimulator<>("virtual_cosmos_simulator_recipes", 1, 12, 0, 12, new SimpleRecipeBuilder(), false)
+                .setSound(GTSoundEvents.SCIENCE);
     }
 }

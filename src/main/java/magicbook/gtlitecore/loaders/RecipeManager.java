@@ -138,5 +138,6 @@ public class RecipeManager {
         AlgaeCultureTank.init();
         LargeGasCollector.init();
         Condenser.init();
+        VirtualCosmosSimulator.init();
     }
 }
