@@ -1524,6 +1524,23 @@ public class MachineRecipeLoader {
                         .EUt(VA[UXV])
                         .CWUt(576))
                 .buildAndRegister();
+
+        //  Horizontal Shaft Impact Macerator
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Laurenium, 4)
+                .input(LARGE_MACERATOR, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, Zeron100, 4)
+                .input(plateDouble, HMS1J79Alloy, 4)
+                .input(gear, Ruridit, 4)
+                .input(gearSmall, Stellite, 16)
+                .input(cableGtQuadruple, Graphene, 4)
+                .fluidInputs(TitaniumTungstenCarbide.getFluid(L * 4))
+                .output(HORIZONTAL_SHAFT_IMPACT_MACERATOR)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -3489,5 +3506,37 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Laurenium Casing
+        ModHandler.addShapedRecipe(true, "laurenium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Laurenium),
+                'F', new UnificationEntry(frameGt, Laurenium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Laurenium, 6)
+                .input(frameGt, Laurenium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Advanced Crushing Wheel
+        ModHandler.addShapedRecipe(true, "advanced_crushing_wheels", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_CRUSHING_WHEEL, 2),
+                "GGG", "ECE", "EXE",
+                'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING),
+                'G', new UnificationEntry(gearSmall, HSSE),
+                'E', new UnificationEntry(gear, TungstenCarbide),
+                'X', ELECTRIC_MOTOR_LuV);
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(gearSmall, HSSE, 3)
+                .input(gear, TungstenCarbide, 4)
+                .input(ELECTRIC_MOTOR_LuV)
+                .inputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING))
+                .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_CRUSHING_WHEEL, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

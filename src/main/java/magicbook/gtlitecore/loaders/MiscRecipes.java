@@ -442,6 +442,19 @@ public class MiscRecipes {
                 .duration(40)
                 .buildAndRegister();
 
+        //  Laurenium
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, EglinSteel, 8)
+                .input(dust, Indium, 2)
+                .input(dust, Chrome, 4)
+                .input(dust, Lanthanum)
+                .input(dust, Rhenium)
+                .circuitMeta(5)
+                .output(dust, Laurenium, 16)
+                .EUt(VA[LuV])
+                .duration(80)
+                .buildAndRegister();
+
     }
 
     private static void OtherRecipes() {

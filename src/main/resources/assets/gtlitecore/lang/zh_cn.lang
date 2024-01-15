@@ -61,6 +61,7 @@ tile.machine_casing.nobelium_casing.name=超高强度锘机器外壳
 tile.machine_casing.lawrencium_casing.name=超重铹机器外壳
 tile.machine_casing.niobium_titanium_casing.name=安全稳定铌钛合金机器外壳
 tile.machine_casing.botmium_casing.name=耐热博特姆合金机器外壳
+tile.machine_casing.laurenium_casing.name=安全防震劳伦姆合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -169,6 +170,8 @@ tile.active_unique_casing.advanced_assembly_control_casing.name=进阶装配控�
 tile.active_unique_casing.bioware_computing_casing.name=菌群网络计算组件
 tile.active_unique_casing.bioware_computing_casing.tooltip=自循环存算一体生物计算机
 tile.active_unique_casing.ultimate_engine_intake_casing.name=终极引擎进气口外壳
+tile.active_unique_casing.advanced_crushing_wheel.name=高级粉碎轮
+tile.active_unique_casing.advanced_crushing_wheel.tooltip=比粉碎轮更好
 
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
@@ -1246,6 +1249,14 @@ gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电�
 
 gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
 
+gtlitecore.machine.horizontal_shaft_impact_macerator.name=大型冲击式研磨厂
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.1=横轴冲击式破碎机
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.2=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3=根据输入电压获得并行
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.4=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.5=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.6=最大并行数：§e4096§7
+
 #  Materials
 
 ##  Element Materials
@@ -1587,6 +1598,7 @@ gregtech.material.botmium=博特姆合金
 gregtech.material.tairitsium=对立合金
 gregtech.material.transcendent_metal=超时空金属
 gregtech.material.arcanium=韵律源金
+gregtech.material.laurenium=劳伦姆合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

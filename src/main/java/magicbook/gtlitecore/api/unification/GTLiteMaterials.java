@@ -343,6 +343,7 @@ public class GTLiteMaterials {
     public static Material Tairitsium;
     public static Material TranscendentMetal;
     public static Material Arcanium;
+    public static Material Laurenium;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;

@@ -915,6 +915,20 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Hikarium, 1, Tairitsium, 1, Astralium, 1, LunaSilver, 1, Solarium, 1, RedAlloy, 1)
                 .cableProperties(V[OpV], 128, 256, false)
                 .build();
+
+        //  12071 Laurenium
+        Laurenium = new Material.Builder(getId(), gregtechId("laurenium"))
+                .ingot()
+                .fluid()
+                .color(0xE564E4)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .components(EglinSteel, 8, Indium, 2, Chrome, 4, Lanthanum, 1, Rhenium, 1)
+                .blast(b -> b
+                        .temp(7100, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 400)
+                        .vacuumStats(VA[IV]))
+                .build();
     }
 
     private static int getId() {

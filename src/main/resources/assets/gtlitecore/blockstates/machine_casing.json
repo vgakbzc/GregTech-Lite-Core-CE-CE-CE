@@ -85,6 +85,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/botmium_casing"
         }
+      },
+      "laurenium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/laurenium_casing"
+        }
       }
     }
   }

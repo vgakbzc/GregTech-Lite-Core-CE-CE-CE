@@ -45,8 +45,8 @@ public class BlockMachineCasing extends VariantBlock<BlockMachineCasing.MachineC
         NOBELIUM_CASING("nobelium_casing"), // todo find some application
         LAWRENCIUM_CASING("lawrencium_casing"), // todo find some application
         NIOBIUM_TITANIUM_CASING("niobium_titanium_casing"),
-        BOTMIUM_CASING("botmium_casing");
-        //  15
+        BOTMIUM_CASING("botmium_casing"),
+        LAURENIUM_CASING("laurenium_casing");
         //  16
 
         private final String name;
