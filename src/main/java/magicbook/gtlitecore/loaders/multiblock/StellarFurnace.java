@@ -90,6 +90,7 @@ public class StellarFurnace {
         CosmicFabric();
         SupracausalCircuitComponents();
         Hypercube();
+        Hikarium();
     }
 
     private static void DegenerateRhenium() {
@@ -440,5 +441,30 @@ public class StellarFurnace {
                 .duration(20)
                 .buildAndRegister();
 
+    }
+
+    private static void Hikarium() {
+
+        //  Instanton -> Superluminal Tachyon Jet
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .fluidInputs(Instantons.getFluid(1000))
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .notConsumable(TOPOLOGICAL_INSULATOR_TUBE)
+                .fluidOutputs(SuperluminalTachyonJet.getFluid(1000))
+                .EUt(VA[UIV])
+                .duration(10)
+                .temperature(BigInteger.valueOf(133940))
+                .buildAndRegister();
+
+        //  Superluminal Tachyon Jet -> Hikarium
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .notConsumable(SEPARATION_ELECTROMAGNET)
+                .fluidInputs(SuperluminalTachyonJet.getFluid(1000))
+                .fluidOutputs(Hikarium.getFluid(800))
+                .fluidOutputs(LightQuarks.getFluid(200))
+                .EUt(VA[UIV])
+                .duration(25)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 }

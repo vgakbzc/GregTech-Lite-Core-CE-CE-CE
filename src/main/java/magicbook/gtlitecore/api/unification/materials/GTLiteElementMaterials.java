@@ -203,7 +203,7 @@ public class GTLiteElementMaterials {
                 .plasma(new FluidBuilder().temperature((int) (V[UXV] - V[LuV])))
                 .element(GTLiteElements.Hypogen)
                 .color(0xDC784B)
-                .iconSet(BRIGHT)
+                .iconSet(CUSTOM_HYPOGEN)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 32, 16, false)
                 .build();

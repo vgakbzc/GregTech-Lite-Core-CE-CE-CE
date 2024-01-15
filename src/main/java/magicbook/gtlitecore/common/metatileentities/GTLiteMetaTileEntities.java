@@ -88,7 +88,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityIonImplantator ION_IMPLANTATOR;
     public static MetaTileEntityUnmannedDroneAirport UNMANNED_DRONE_AIRPORT;
     public static MetaTileEntitySpaceElevator SPACE_ELEVATOR;
-
+    public static MetaTileEntityVirtualCosmosSimulator VIRTUAL_COSMOS_SIMULATOR;
     public static MetaTileEntityCollider COLLIDER;
     public static MetaTileEntityDimensionalOscillator DIMENSIONAL_OSCILLATOR;
     public static MetaTileEntityDecayGenerator DECAY_GENERATOR;
@@ -294,7 +294,7 @@ public class GTLiteMetaTileEntities {
         ION_IMPLANTATOR = registerMultiMetaTileEntity(23, new MetaTileEntityIonImplantator(gtliteId("ion_implantator")));
         UNMANNED_DRONE_AIRPORT = registerMultiMetaTileEntity(24, new MetaTileEntityUnmannedDroneAirport(gtliteId("unmanned_drone_airport")));
         SPACE_ELEVATOR = registerMultiMetaTileEntity(25, new MetaTileEntitySpaceElevator(gtliteId("space_elevator")));
-        //  26 VIRTUAL_COSMOS_SIMULATOR
+        VIRTUAL_COSMOS_SIMULATOR = registerMultiMetaTileEntity(26, new MetaTileEntityVirtualCosmosSimulator(gtliteId("virtual_cosmos_simulator")));
         COLLIDER = registerMultiMetaTileEntity(27, new MetaTileEntityCollider(gtliteId("collider")));
         DIMENSIONAL_OSCILLATOR = registerMultiMetaTileEntity(28, new MetaTileEntityDimensionalOscillator(gtliteId("dimensional_oscillator")));
         DECAY_GENERATOR = registerMultiMetaTileEntity(29, new MetaTileEntityDecayGenerator(gtliteId("decay_generator")));
