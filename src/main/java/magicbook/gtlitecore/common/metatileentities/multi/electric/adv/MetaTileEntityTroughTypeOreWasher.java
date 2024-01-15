@@ -1,6 +1,8 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
 
 import gregicality.multiblocks.api.render.GCYMTextures;
+import gregicality.multiblocks.common.block.GCYMMetaBlocks;
+import gregicality.multiblocks.common.block.blocks.BlockUniqueCasing;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -10,16 +12,15 @@ import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
-import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.client.GTLiteTextures;
-import magicbook.gtlitecore.common.blocks.BlockActiveUniqueCasing;
+import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockMachineCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
@@ -32,52 +33,54 @@ import java.util.List;
 
 import static gregtech.api.GTValues.EV;
 
-public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultiblockController {
+public class MetaTileEntityTroughTypeOreWasher extends MultiMapMultiblockController {
 
-    public MetaTileEntityHorizontalShaftImpactMacerator(ResourceLocation metaTileEntityId) {
+    public MetaTileEntityTroughTypeOreWasher(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
-                RecipeMaps.MACERATOR_RECIPES,
-                RecipeMaps.FORGE_HAMMER_RECIPES
+                RecipeMaps.ORE_WASHER_RECIPES,
+                RecipeMaps.CHEMICAL_BATH_RECIPES
         });
-        this.recipeMapWorkable = new HorizontalShaftImpactMaceratorRecipeLogic(this);
+        this.recipeMapWorkable = new TroughTypeOreWasherRecipeLogic(this);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new MetaTileEntityHorizontalShaftImpactMacerator(metaTileEntityId);
+        return new MetaTileEntityTroughTypeOreWasher(metaTileEntityId);
     }
 
     @Nonnull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle(" CCCCCCC ", " CCCCCCC ", "FCCCCCCCF", "         ", "         ", "F       F")
-                .aisle("FCCCCCCCF", "FCUUUUUCF", "FC     CF", "F       F", "F       F", "FFFFFFFFF")
-                .aisle(" CCCCCCC ", " CUUUUUC ", "FC     CF", "         ", "         ", "F       F")
-                .aisle(" CCCCCCC ", " CUUUUUC ", "FC     CF", "         ", "         ", "F       F")
-                .aisle(" CCCCCCC ", " CUUUUUC ", "FC     CF", "         ", "         ", "F       F")
-                .aisle("FCCCCCCCF", "FCUUUUUCF", "FC     CF", "F       F", "F       F", "FFFFFFFFF")
-                .aisle(" CCCCCCC ", " CCCSCCC ", "FCCCCCCCF", "         ", "         ", "F       F")
+                .aisle("CCCCCCCCC", "CCCCCCCCC", "CCCCCCCCC")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "UB#####BU", "C#######C")
+                .aisle("CCCCCCCCC", "CCCCSCCCC", "CCCCCCCCC")
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState())
-                        .setMinGlobalLimited(49)
+                        .setMinGlobalLimited(81)
                         .or(autoAbilities()))
                 .where('U', states(getUniqueCasingState()))
-                .where('F', states(getFrameState()))
-                .where(' ', any())
+                .where('B', states(getBoilerCasingState()))
+                .where('#', states(Blocks.WATER.getDefaultState()))
                 .build();
     }
 
     private static IBlockState getCasingState() {
-        return GTLiteMetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LAURENIUM_CASING);
+        return GTLiteMetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.INCOLOY_DS_CASING);
     }
 
     private static IBlockState getUniqueCasingState() {
-        return GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getState(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_CRUSHING_WHEEL);
+        return GCYMMetaBlocks.UNIQUE_CASING.getState(BlockUniqueCasing.UniqueCasingType.HEAT_VENT);
     }
 
-    private static IBlockState getFrameState() {
-        return MetaBlocks.FRAMES.get(Materials.Titanium).getBlock(Materials.Titanium);
+    private static IBlockState getBoilerCasingState() {
+        return GTLiteMetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.POLYBENZIMIDAZOLE);
     }
 
     @Override
@@ -88,14 +91,14 @@ public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultib
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return GTLiteTextures.LAURENIUM_CASING;
+        return GTLiteTextures.INCOLOY_DS_CASING;
     }
 
     @SideOnly(Side.CLIENT)
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GCYMTextures.LARGE_MACERATOR_OVERLAY;
+        return GCYMTextures.LARGE_CHEMICAL_BATH_OVERLAY;
     }
 
     @Override
@@ -104,18 +107,17 @@ public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultib
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.1"));
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.2"));
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.4"));
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.5"));
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.6"));
+        tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.1"));
+        tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.2"));
+        tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.3"));
+        tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.5"));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
-    private class HorizontalShaftImpactMaceratorRecipeLogic extends MultiblockRecipeLogic {
+    private class TroughTypeOreWasherRecipeLogic extends MultiblockRecipeLogic {
 
-        public HorizontalShaftImpactMaceratorRecipeLogic(MetaTileEntityHorizontalShaftImpactMacerator tileEntity) {
+        public TroughTypeOreWasherRecipeLogic(MetaTileEntityTroughTypeOreWasher tileEntity) {
             super(tileEntity);
         }
 

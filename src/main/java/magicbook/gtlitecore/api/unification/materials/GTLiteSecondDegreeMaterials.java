@@ -407,7 +407,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(4330, BlastProperty.GasTier.MID)
                         .blastStats(VA[EV], 290))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12030 HG-1223

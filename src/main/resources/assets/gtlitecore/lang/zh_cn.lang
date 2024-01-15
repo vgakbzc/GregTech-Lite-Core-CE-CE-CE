@@ -62,6 +62,7 @@ tile.machine_casing.lawrencium_casing.name=超重铹机器外壳
 tile.machine_casing.niobium_titanium_casing.name=安全稳定铌钛合金机器外壳
 tile.machine_casing.botmium_casing.name=耐热博特姆合金机器外壳
 tile.machine_casing.laurenium_casing.name=安全防震劳伦姆合金机器外壳
+tile.machine_casing.incoloy_ds_casing.name=抗腐蚀耐热铬铁合金-DS机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1256,6 +1257,13 @@ gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3=根据输入电�
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.4=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.5=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.6=最大并行数：§e4096§7
+
+gtlitecore.machine.trough_type_ore_washer.name=大型槽式洗矿厂
+gtlitecore.machine.trough_type_ore_washer.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
+gtlitecore.machine.trough_type_ore_washer.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.trough_type_ore_washer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.trough_type_ore_washer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.trough_type_ore_washer.tooltip.5=最大并行数：§e4096§7
 
 #  Materials
 

@@ -91,6 +91,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/laurenium_casing"
         }
+      },
+      "incoloy_ds_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/incoloy_ds_casing"
+        }
       }
     }
   }

@@ -166,6 +166,7 @@ public class GTLiteMaterialPropertyAddition {
         TitaniumTungstenCarbide.addFlags(GENERATE_DOUBLE_PLATE);
         Ruridit.addFlags(GENERATE_DOUBLE_PLATE);
         Zeron100.addFlags(GENERATE_DOUBLE_PLATE);
+        WatertightSteel.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
