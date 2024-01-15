@@ -1719,6 +1719,7 @@ gregtech.material.black_dwarf_matter=黑矮星物质
 gregtech.material.white_dwarf_matter=白矮星物质
 gregtech.material.star_core_matter=星核物质
 gregtech.material.dimensionally_transcendent_residue=超维度残余物
+gregtech.material.superluminal_tachyon_jet=超光速快子喷流
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=压裂液
