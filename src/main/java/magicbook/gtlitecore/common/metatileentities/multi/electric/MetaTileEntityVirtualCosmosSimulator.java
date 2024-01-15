@@ -94,7 +94,9 @@ public class MetaTileEntityVirtualCosmosSimulator extends RecipeMapMultiblockCon
                 .where('D', states(getCoilState()))
                 .where('E', states(getFourthCasingState()))
                 .where('F', states(getFifthCasingState())
-                        .or(autoAbilities(true, true, true, true, true, true, false)))
+                        .or(abilities(MultiblockAbility.IMPORT_FLUIDS) // for Helium Plasma input
+                                .setExactLimit(1))
+                        .or(autoAbilities(true, true, true, true, false, true, false)))
                 .where('G', states(getSixthCasingState()))
                 .where('H', states(getFifthCasingState()))
                 .where(' ', any())
