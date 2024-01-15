@@ -1558,6 +1558,23 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Fixed Sifting Plant
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, MaragingSteel250, 4)
+                .input(LARGE_SIFTER, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, MaragingSteel300, 4)
+                .input(plateDouble, BlueSteel, 4)
+                .input(gear, VanadiumSteel, 4)
+                .input(gearSmall, TungstenSteel, 16)
+                .input(cableGtQuadruple, Aluminium, 4)
+                .fluidInputs(Stellite.getFluid(L * 4))
+                .output(FIXED_SIFTING_PLANT)
+                .EUt(VA[IV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -3570,5 +3587,21 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Maraging Steel 250 Casing
+        ModHandler.addShapedRecipe(true, "maraging_steel_250_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.MARAGING_STEEL_250_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, MaragingSteel250),
+                'F', new UnificationEntry(frameGt, MaragingSteel250));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, MaragingSteel250, 6)
+                .input(frameGt, MaragingSteel250)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.MARAGING_STEEL_250_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }

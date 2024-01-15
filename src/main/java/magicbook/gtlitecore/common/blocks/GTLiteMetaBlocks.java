@@ -14,6 +14,7 @@ public class GTLiteMetaBlocks {
     public static BlockMultiblockCasing MULTIBLOCK_CASING;
     public static BlockMetalCasing METAL_CASING;
     public static BlockMachineCasing MACHINE_CASING;
+    public static BlockStructureCasing STRUCTURE_CASING;
     public static BlockBoilerCasing BOILER_CASING;
     public static BlockUniqueCasing UNIQUE_CASING;
     public static BlockFusionCasing FUSION_CASING;
@@ -42,6 +43,8 @@ public class GTLiteMetaBlocks {
         METAL_CASING.setRegistryName("metal_casing");
         MACHINE_CASING = new BlockMachineCasing();
         MACHINE_CASING.setRegistryName("machine_casing");
+        STRUCTURE_CASING = new BlockStructureCasing();
+        STRUCTURE_CASING.setRegistryName("structure_casing");
         BOILER_CASING = new BlockBoilerCasing();
         BOILER_CASING.setRegistryName("boiler_casing");
         UNIQUE_CASING = new BlockUniqueCasing();
@@ -85,6 +88,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(MULTIBLOCK_CASING);
         registerItemModel(METAL_CASING);
         registerItemModel(MACHINE_CASING);
+        registerItemModel(STRUCTURE_CASING);
         registerItemModel(BOILER_CASING);
         registerItemModel(UNIQUE_CASING);
         registerItemModel(FUSION_CASING);
