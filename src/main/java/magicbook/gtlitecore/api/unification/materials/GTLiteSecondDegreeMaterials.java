@@ -636,6 +636,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1200))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12048 Refractory Alloy
