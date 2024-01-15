@@ -1493,6 +1493,37 @@ public class MachineRecipeLoader {
                         .EUt(VA[OpV])
                         .CWUt(576))
                 .buildAndRegister();
+
+        //  Virtual Cosmos Simulator
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal, 4)
+                .input(DIMENSIONAL_OSCILLATOR, 2)
+                .input(SPACE_ELEVATOR, 4)
+                .input(BIOWARE_SIMULATOR, 16)
+                .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                .input(FIELD_GENERATOR_UXV, 4)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 16))
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_PRESERVE_CASING, 16))
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 16))
+                .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.UXV, 16))
+                .input(plateDense, Spacetime, 4)
+                .input(plateDense, CosmicNeutronium, 4)
+                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
+                .input(gear, Infinity, 64)
+                .input(stickLong, Hypogen, 32)
+                .input(wireGtOctal, BoronFranciumCarbideSuperconductor, 4)
+                .fluidInputs(CosmicComputingMixture.getFluid(65536))
+                .fluidInputs(Arcanium.getFluid(57600))
+                .fluidInputs(BlackDwarfMatter.getFluid(28800))
+                .fluidInputs(WhiteDwarfMatter.getFluid(28800))
+                .output(VIRTUAL_COSMOS_SIMULATOR)
+                .EUt(VA[UXV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(SPACE_ELEVATOR.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(576))
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -2351,6 +2382,20 @@ public class MachineRecipeLoader {
                 .fluidInputs(Tritanium.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 2))
                 .EUt(VA[UHV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Dimensional Preserve Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Neutronium)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ULTIMATE_HIGH_ENERGY_CASING))
+                .input(plate, Infinity, 6)
+                .input(FIELD_GENERATOR_UEV, 2)
+                .input(wireFine, Europium, 16)
+                .fluidInputs(Adamantium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_PRESERVE_CASING, 2))
+                .EUt(VA[UEV])
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();

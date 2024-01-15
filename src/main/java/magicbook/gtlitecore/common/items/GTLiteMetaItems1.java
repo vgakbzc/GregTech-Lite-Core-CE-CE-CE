@@ -279,6 +279,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MINING_DRONE_MAX = this.addItem(333, "mining_drone.max");
         CRUDE_HYPERCUBE = this.addItem(334, "crude_hypercube");
         CHARGED_HYPERCUBE = this.addItem(335, "charged_hypercube");
+        COSMIC_MEMORY_CARD = this.addItem(336, "cosmic_memory_card");
+        COSMIC_MEMORY_CARD_OVERWORLD = this.addItem(337, "cosmic_memory_card.overworld");
+        COSMIC_MEMORY_CARD_NETHER = this.addItem(338, "cosmic_memory_card.nether");
+        COSMIC_MEMORY_CARD_END = this.addItem(339, "cosmic_memory_card.end");
 
         //  High Energy Physics Items
         PLASMA_CONTAINMENT_CELL = this.addItem(350, "plasma_containment_cell");
