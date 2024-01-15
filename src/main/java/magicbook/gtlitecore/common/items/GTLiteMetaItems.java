@@ -260,6 +260,10 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem MINING_DRONE_MAX;
     public static MetaItem<?>.MetaValueItem CRUDE_HYPERCUBE;
     public static MetaItem<?>.MetaValueItem CHARGED_HYPERCUBE;
+    public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD;
+    public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_OVERWORLD;
+    public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_NETHER;
+    public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_END;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

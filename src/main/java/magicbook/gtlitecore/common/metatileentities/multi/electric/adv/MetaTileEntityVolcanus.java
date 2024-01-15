@@ -132,9 +132,7 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
                     .where('D', MetaTileEntities.FLUID_EXPORT_HATCH[IV], EnumFacing.EAST)
                     .where('H', MetaTileEntities.MUFFLER_HATCH[LV], EnumFacing.UP)
                     .where('#', Blocks.AIR.getDefaultState())
-                    .where('M', () -> {
-                        return ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : GTLiteMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.ADVANCED_INVAR_CASING);
-                    }, EnumFacing.NORTH);
+                    .where('M', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : GTLiteMetaBlocks.MULTIBLOCK_CASING.getState(BlockMultiblockCasing.MultiblockCasingType.ADVANCED_INVAR_CASING), EnumFacing.NORTH);
         }
         MultiblockShapeInfo.Builder finalBuilder = builder;
         GregTechAPI.HEATING_COILS.entrySet().stream()
@@ -253,10 +251,12 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
             return getMaxParallel(heatingCoilLevel);
         }
 
+        @Override
         public void setMaxProgress(int maxProgress) {
             this.maxProgressTime = maxProgress / 2;
         }
 
+        @Override
         protected void updateRecipeProgress() {
             if (canRecipeProgress && drawEnergy(recipeEUt, true)) {
                 IMultipleTankHandler inputTank = blastFurnace.getInputFluidInventory();

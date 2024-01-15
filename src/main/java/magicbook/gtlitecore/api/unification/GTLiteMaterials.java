@@ -531,6 +531,7 @@ public class GTLiteMaterials {
     public static Material WhiteDwarfMatter;
     public static Material StarCoreMatter;
     public static Material DimensionallyTranscendentResidue;
+    public static Material SuperluminalTachyonJet;
 
     //  Unknown Composition Materials (Range: 18000-20000)
     public static Material FracuringFluid;

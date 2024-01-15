@@ -45,6 +45,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/dimensional_bridge_casing"
         }
+      },
+      "dimensional_preserve_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/dimensional_preserve_casing"
+        }
       }
     }
   }

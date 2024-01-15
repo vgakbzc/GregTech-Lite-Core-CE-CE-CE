@@ -196,6 +196,13 @@ public class GTLiteHighDegreeMaterials {
                 .liquid(new FluidBuilder().temperature(999999999).customStill())
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15022 Superluminal Tachyon Jet
+        SuperluminalTachyonJet = new Material.Builder(getId(), gregtechId("superluminal_tachyon_jet"))
+                .liquid(new FluidBuilder().temperature(89340))
+                .color(0x11F7C9)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
     }
 
     private static int getId() {
