@@ -4,6 +4,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -147,6 +148,134 @@ public class SuperconductorsChain {
 
     private static void OpVSuperconductors() {
 
+        //  Re + 5Cl -> ReCl5
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Rhenium)
+                .circuitMeta(5)
+                .fluidInputs(Chlorine.getFluid(5000))
+                .output(dust, RheniumPentachloride, 6)
+                .EUt(VA[HV])
+                .duration(140)
+                .buildAndRegister();
+
+        //  Hs + 4Cl -> HsCl4
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, MetastableHassium)
+                .circuitMeta(4)
+                .fluidInputs(Chlorine.getFluid(4000))
+                .output(dust, HassiumTetrachloride, 5)
+                .EUt(VA[MV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Tl + Cl -> TlCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Thallium)
+                .circuitMeta(1)
+                .fluidInputs(Chlorine.getFluid(1000))
+                .output(dust, ThalliumChloride, 2)
+                .EUt(VA[MV])
+                .duration(120)
+                .buildAndRegister();
+
+        //  TlCuCl3 -> TlCl + CuCl2
+        INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
+                .input(dust, ThalliumCopperChloride, 5)
+                .output(dust, ThalliumChloride, 2)
+                .output(dust, CopperChloride, 3)
+                .EUt(VA[EV])
+                .duration(240)
+                .temperature(1800)
+                .buildAndRegister();
+
+        //  H2SiF6 + PH3 + 4O -> HPF6 + SiO2 + 2H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(HexafluorosilicicAcid.getFluid(1000))
+                .fluidInputs(Phosphine.getFluid(1000))
+                .fluidInputs(Oxygen.getFluid(4000))
+                .output(dust, SiliconDioxide, 3)
+                .fluidOutputs(HexafluorophosphoricAcid.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .buildAndRegister();
+
+        IsophthaloylbisdiethylthioureaChain();
+
+        //  TlCl + HsCl4 + ReCl5 + 3C18H26N4O2S2 + HPF6 -> C60H84O12N12S6F6PReHsTl + 7HCl + 3Cl
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, ThalliumChloride, 2)
+                .input(dust, HassiumTetrachloride, 5)
+                .input(dust, RheniumPentachloride, 6)
+                .fluidInputs(Isophthaloylbisdiethylthiourea.getFluid(3000))
+                .fluidInputs(HexafluorophosphoricAcid.getFluid(1000))
+                .output(dust, RheniumHassiumThalliumIsophtaloylbisdiethylthioureaHexafluorophosphate, 125)
+                .fluidOutputs(HydrochloricAcid.getFluid(7000))
+                .fluidOutputs(Chlorine.getFluid(3000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+    }
+
+    private static void IsophthaloylbisdiethylthioureaChain() {
+
+        //  NaCN + S -> NaSCN
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .inputs(SodiumCyanide.getItemStack(3))
+                .input(dust, Sulfur)
+                .fluidOutputs(SodiumThiocyanate.getFluid(1000))
+                .EUt(VA[IV])
+                .duration(120)
+                .temperature(980)
+                .buildAndRegister();
+
+        //  C2H4 + NH3 -> C2H5NH2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Ethylene.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .circuitMeta(0)
+                .fluidOutputs(Ethylamine.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(80)
+                .buildAndRegister();
+
+        //  NaSCN + HCl + 2C2H5NH2 -> NaCl + (C2H5NH)2CS + NH3 (cycle)
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(SodiumThiocyanate.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidInputs(Ethylamine.getFluid(2000))
+                .output(dust, Salt, 2)
+                .fluidOutputs(Diethylthiourea.getFluid(1000))
+                .fluidOutputs(Ammonia.getFluid(1000))
+                .EUt(VA[LuV])
+                .duration(140)
+                .buildAndRegister();
+
+        //  C6H6O + H2O2 + 2C2H2O + 2O -> C10H10O6 + H2O
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(6)
+                .fluidInputs(Phenol.getFluid(1000))
+                .fluidInputs(HydrogenPeroxide.getFluid(1000))
+                .fluidInputs(Ethenone.getFluid(2000))
+                .fluidInputs(Oxygen.getFluid(2000))
+                .fluidOutputs(PhenylenedioxydiaceticAcid.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(350)
+                .buildAndRegister();
+
+        //  2(C2H5NH)2CS + 2SOCl2 + C10H10O6 -> C18H26N4O2S2 + 4HCl + 2SO2
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Diethylthiourea.getFluid(2000))
+                .fluidInputs(ThionylChloride.getFluid(2000))
+                .fluidInputs(PhenylenedioxydiaceticAcid.getFluid(1000))
+                .fluidOutputs(Isophthaloylbisdiethylthiourea.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(4000))
+                .fluidOutputs(SulfurDioxide.getFluid(2000))
+                .EUt(VA[UEV])
+                .duration(80)
+                .buildAndRegister();
     }
 
     private static void MAXSuperconductors() {

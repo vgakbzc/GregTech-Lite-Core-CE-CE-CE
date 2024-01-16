@@ -407,7 +407,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(4330, BlastProperty.GasTier.MID)
                         .blastStats(VA[EV], 290))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12030 HG-1223
@@ -636,6 +636,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1200))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12048 Refractory Alloy
@@ -914,6 +915,35 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Hikarium, 1, Tairitsium, 1, Astralium, 1, LunaSilver, 1, Solarium, 1, RedAlloy, 1)
                 .cableProperties(V[OpV], 128, 256, false)
                 .build();
+
+        //  12071 Laurenium
+        Laurenium = new Material.Builder(getId(), gregtechId("laurenium"))
+                .ingot()
+                .fluid()
+                .color(0xE564E4)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .components(EglinSteel, 8, Indium, 2, Chrome, 4, Lanthanum, 1, Rhenium, 1)
+                .blast(b -> b
+                        .temp(7100, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 400)
+                        .vacuumStats(VA[IV]))
+                .build();
+
+        //  12072 NeutroniumSuperconductor
+        NeutroniumSuperconductor = new Material.Builder(getId(), gregtechId("neutronium_superconductor"))
+                .ingot()
+                .fluid()
+                .color(0xF8BCD5)
+                .iconSet(BRIGHT)
+                .components(CosmicNeutronium, 4, Legendarium, 5, Laurenium, 5, Botmium, 5, NeutroniumNanotube, 4, TantalumHafniumSeaborgiumCarbide, 3, IndiumGalliumPhosphide, 3, RheniumHassiumThalliumIsophtaloylbisdiethylthioureaHexafluorophosphate, 12)
+                .blast(b -> b
+                        .temp(18300, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[OpV], 180)
+                        .vacuumStats(VA[UIV], 90))
+                .cableProperties(V[OpV], 512, 0, true)
+                .build();
+
     }
 
     private static int getId() {

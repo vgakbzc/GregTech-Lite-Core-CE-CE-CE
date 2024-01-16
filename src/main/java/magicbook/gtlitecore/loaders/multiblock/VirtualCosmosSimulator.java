@@ -1,9 +1,11 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import magicbook.gtlitecore.common.blocks.BlockExplosive;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.recipes.RecipeMaps.CANNER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -13,6 +15,42 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class VirtualCosmosSimulator {
 
     public static void init() {
+
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(MEMORY_CARD_BASE)
+                .input(plate, Neutronium)
+                .input(spring, Hypogen)
+                .input(wireFine, TransitionHAlloy, 4)
+                .fluidInputs(CosmicComputingMixture.getFluid(L))
+                .output(COSMIC_MEMORY_CARD)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .input(COSMIC_MEMORY_CARD)
+                .fluidInputs(Air.getFluid(1000))
+                .output(COSMIC_MEMORY_CARD_OVERWORLD)
+                .EUt(VA[LV])
+                .duration(20)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .input(COSMIC_MEMORY_CARD)
+                .fluidInputs(NetherAir.getFluid(1000))
+                .output(COSMIC_MEMORY_CARD_NETHER)
+                .EUt(VA[LV])
+                .duration(20)
+                .buildAndRegister();
+
+        CANNER_RECIPES.recipeBuilder()
+                .input(COSMIC_MEMORY_CARD)
+                .fluidInputs(EnderAir.getFluid(1000))
+                .output(COSMIC_MEMORY_CARD_END)
+                .EUt(VA[LV])
+                .duration(20)
+                .buildAndRegister();
 
         VIRTUAL_COSMOS_SIMULATOR_RECIPES.recipeBuilder()
                 .notConsumable(COSMIC_MEMORY_CARD_OVERWORLD)

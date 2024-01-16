@@ -1353,6 +1353,37 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Carbon, 15, Hydrogen, 15, Californium, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  13164 Isophthaloylbisdiethylthiourea
+        Isophthaloylbisdiethylthiourea = new Material.Builder(getId(), gregtechId("isophthaloylbisdiethylthiourea"))
+                .liquid()
+                .color(0xA2D4E1)
+                .components(Carbon, 18, Hydrogen, 26, Nitrogen, 4, Oxygen, 2, Sulfur, 2)
+                .build();
+
+        //  13165 Diethylthiourea
+        Diethylthiourea = new Material.Builder(getId(), gregtechId("diethylthiourea"))
+                .liquid()
+                .color(0x8D8EC2)
+                .components(Carbon, 5, Hydrogen, 12, Nitrogen, 2, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C2H5NH)2CS", true);
+
+        //  13166 Phenylenedioxydiacetic Acid
+        PhenylenedioxydiaceticAcid = new Material.Builder(getId(), gregtechId("phenylenedioxydiacetic_acid"))
+                .liquid()
+                .color(0xFFBBBA)
+                .components(Carbon, 10, Hydrogen, 10, Oxygen, 6)
+                .build();
+
+        //  13167 Ethylamine
+        Ethylamine = new Material.Builder(getId(), gregtechId("ethylamine"))
+                .liquid()
+                .color(0x9E9E9E)
+                .components(Carbon, 2, Hydrogen, 7, Nitrogen, 1)
+                .build()
+                .setFormula("C2H5NH2", true);
     }
 
     private static int getId() {
