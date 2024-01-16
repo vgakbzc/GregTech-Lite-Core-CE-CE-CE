@@ -283,6 +283,30 @@ public class SupracausalCircuits {
                 .EUt(VA[UXV])
                 .buildAndRegister();
 
-        //  TODO Mainframe
+        //  Supracausal Mainframe
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, CosmicNeutronium, 2)
+                .input(SUPRACAUSAL_COMPUTER, 2)
+                .input(SUPRACAUSAL_DIODE, 16)
+                .input(SUPRACAUSAL_CAPACITOR, 16)
+                .input(SUPRACAUSAL_TRANSISTOR, 16)
+                .input(SUPRACAUSAL_RESISTOR, 16)
+                .input(SUPRACAUSAL_INDUCTOR, 16)
+                .input(foil, Hikarium, 16)
+                .input(COSMIC_MEMORY_CHIP, 32) // TODO new RAM
+                .input(wireGtDouble, NeutroniumSuperconductor, 16)
+                .input(plate, Hypogen, 8)
+                .fluidInputs(SolderingAlloy.getFluid(43776))
+                .fluidInputs(CosmicFabric.getFluid(34560))
+                .fluidInputs(FullerenePolymerMatrix.getFluid(17280))
+                .fluidInputs(Zylon.getFluid(8640))
+                .output(SUPRACAUSAL_MAINFRAME)
+                .EUt(VA[OpV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(SUPRACAUSAL_COMPUTER.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(1024))
+                .buildAndRegister();
     }
 }

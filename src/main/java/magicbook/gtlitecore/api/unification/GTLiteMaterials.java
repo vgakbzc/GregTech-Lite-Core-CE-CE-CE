@@ -269,6 +269,12 @@ public class GTLiteMaterials {
     public static Material BismuthLawrenciumStrontiumCuprate;
     public static Material BismuthLawrenciumStrontiumCuprateMagnetic;
     public static Material CaliforniumTrichloride;
+    public static Material RheniumPentachloride;
+    public static Material HassiumTetrachloride;
+    public static Material ThalliumChloride;
+    public static Material HexafluorophosphoricAcid;
+    public static Material RheniumHassiumThalliumIsophtaloylbisdiethylthioureaHexafluorophosphate;
+    public static Material SodiumThiocyanate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -344,6 +350,7 @@ public class GTLiteMaterials {
     public static Material TranscendentMetal;
     public static Material Arcanium;
     public static Material Laurenium;
+    public static Material NeutroniumSuperconductor;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
@@ -509,6 +516,10 @@ public class GTLiteMaterials {
     public static Material Cyclopentadiene;
     public static Material LithiumCyclopentadienide;
     public static Material CaliforniumCyclopentadienide;
+    public static Material Isophthaloylbisdiethylthiourea;
+    public static Material Diethylthiourea;
+    public static Material PhenylenedioxydiaceticAcid;
+    public static Material Ethylamine;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

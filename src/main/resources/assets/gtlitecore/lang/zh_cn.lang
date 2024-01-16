@@ -1543,6 +1543,12 @@ gregtech.material.sodium_azanide=氨基钠
 gregtech.material.bismuth_lawrencium_strontium_cuprate=铋铹锶铜氧合金
 gregtech.material.magnetic_bismuth_lawrencium_strontium_cuprate=磁化铋铹锶铜氧合金
 gregtech.material.californium_trichloride=三氯化锎
+gregtech.material.thallium_chloride=氯化铊
+gregtech.material.hassium_tetrachloride=四氯化钅黑
+gregtech.material.rhenium_pentachloride=五氯化铼
+gregtech.material.hexafluorophosphoric_acid=六氟磷酸
+gregtech.material.rhenium_hassium_thallium_isophtaloylbisdiethylthiourea_hexafluorophosphate=间苯二甲酰双（二乙硫脲）六氟磷酸铼钅黑铊
+gregtech.material.sodium_thiocyanate=硫氰酸钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1616,6 +1622,7 @@ gregtech.material.tairitsium=对立合金
 gregtech.material.transcendent_metal=超时空金属
 gregtech.material.arcanium=韵律源金
 gregtech.material.laurenium=劳伦姆合金
+gregtech.material.neutronium_superconductor=中子素超导体
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1781,6 +1788,10 @@ gregtech.material.ditertbutyl_dicarbonate=二碳酸二叔丁酯
 gregtech.material.cyclopentadiene=环戊二烯
 gregtech.material.lithium_cyclopentadienide=环戊二烯化锂
 gregtech.material.californium_cyclopentadienide=环戊二烯化锎
+gregtech.material.isophthaloylbisdiethylthiourea=间苯二甲酰二乙硫脲
+gregtech.material.diethylthiourea=二乙硫脲
+gregtech.material.phenylenedioxydiacetic_acid=亚苯二氧二乙酸
+gregtech.material.ethylamine=乙胺
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子

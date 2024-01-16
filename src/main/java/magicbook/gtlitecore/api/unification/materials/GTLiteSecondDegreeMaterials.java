@@ -929,6 +929,21 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 400)
                         .vacuumStats(VA[IV]))
                 .build();
+
+        //  12072 NeutroniumSuperconductor
+        NeutroniumSuperconductor = new Material.Builder(getId(), gregtechId("neutronium_superconductor"))
+                .ingot()
+                .fluid()
+                .color(0xF8BCD5)
+                .iconSet(BRIGHT)
+                .components(CosmicNeutronium, 4, Legendarium, 5, Laurenium, 5, Botmium, 5, NeutroniumNanotube, 4, TantalumHafniumSeaborgiumCarbide, 3, IndiumGalliumPhosphide, 3, RheniumHassiumThalliumIsophtaloylbisdiethylthioureaHexafluorophosphate, 12)
+                .blast(b -> b
+                        .temp(18300, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[OpV], 180)
+                        .vacuumStats(VA[UIV], 90))
+                .cableProperties(V[OpV], 512, 0, true)
+                .build();
+
     }
 
     private static int getId() {
