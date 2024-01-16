@@ -818,7 +818,7 @@ public class MachineRecipeLoader {
                 .input(frameGt, AusteniticStainlessSteel904L, 4)
                 .inputs(ALLOY_BLAST_SMELTER.getStackForm(16))
                 .input(circuit, MarkerMaterials.Tier.LuV, 16)
-                .input(plateDouble, Pikyonium64B, 4)
+                .input(plateDouble, HSLASteel, 4)
                 .input(plateDouble, HastelloyC59, 4)
                 .input(gear, HY1301, 4)
                 .input(gearSmall, TanmolyiumBetaC, 16)
@@ -1523,6 +1523,57 @@ public class MachineRecipeLoader {
                         .researchStack(SPACE_ELEVATOR.getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(576))
+                .buildAndRegister();
+
+        //  Horizontal Shaft Impact Macerator
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Laurenium, 4)
+                .input(LARGE_MACERATOR, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, Zeron100, 4)
+                .input(plateDouble, HMS1J22Alloy, 4)
+                .input(gear, Ruridit, 4)
+                .input(gearSmall, Stellite, 16)
+                .input(cableGtQuadruple, Graphene, 4)
+                .fluidInputs(TitaniumTungstenCarbide.getFluid(L * 4))
+                .output(HORIZONTAL_SHAFT_IMPACT_MACERATOR)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Trough Type Ore Washer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, IncoloyMA956, 4)
+                .input(LARGE_CHEMICAL_BATH, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, WatertightSteel, 4)
+                .input(plateDouble, HG1223, 4)
+                .input(gear, HastelloyN, 4)
+                .input(gearSmall, HSSE, 16)
+                .input(cableGtQuadruple, Osmium, 4)
+                .fluidInputs(TanmolyiumBetaC.getFluid(L * 4))
+                .output(TROUGH_TYPE_ORE_WASHER)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Fixed Sifting Plant
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, MaragingSteel250, 4)
+                .input(LARGE_SIFTER, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, MaragingSteel300, 4)
+                .input(plateDouble, BlueSteel, 4)
+                .input(gear, VanadiumSteel, 4)
+                .input(gearSmall, TungstenSteel, 16)
+                .input(cableGtQuadruple, Aluminium, 4)
+                .fluidInputs(Stellite.getFluid(L * 4))
+                .output(FIXED_SIFTING_PLANT)
+                .EUt(VA[IV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 
@@ -3485,6 +3536,69 @@ public class MachineRecipeLoader {
                 .input(frameGt, AusteniticStainlessSteel904L)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Laurenium Casing
+        ModHandler.addShapedRecipe(true, "laurenium_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Laurenium),
+                'F', new UnificationEntry(frameGt, Laurenium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Laurenium, 6)
+                .input(frameGt, Laurenium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Advanced Crushing Wheel
+        ModHandler.addShapedRecipe(true, "advanced_crushing_wheels", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_CRUSHING_WHEEL, 2),
+                "GGG", "ECE", "EXE",
+                'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING),
+                'G', new UnificationEntry(gearSmall, HSSE),
+                'E', new UnificationEntry(gear, TungstenCarbide),
+                'X', ELECTRIC_MOTOR_LuV);
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(gearSmall, HSSE, 3)
+                .input(gear, TungstenCarbide, 4)
+                .input(ELECTRIC_MOTOR_LuV)
+                .inputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING))
+                .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_CRUSHING_WHEEL, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Incoloy-DS Casing
+        ModHandler.addShapedRecipe(true, "incoloy_ds_casing", GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.INCOLOY_DS_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, IncoloyDS),
+                'F', new UnificationEntry(frameGt, RhodiumPlatedPalladium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, IncoloyDS, 6)
+                .input(frameGt, RhodiumPlatedPalladium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.INCOLOY_DS_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Maraging Steel 250 Casing
+        ModHandler.addShapedRecipe(true, "maraging_steel_250_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.MARAGING_STEEL_250_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, MaragingSteel250),
+                'F', new UnificationEntry(frameGt, MaragingSteel250));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, MaragingSteel250, 6)
+                .input(frameGt, MaragingSteel250)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.MARAGING_STEEL_250_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

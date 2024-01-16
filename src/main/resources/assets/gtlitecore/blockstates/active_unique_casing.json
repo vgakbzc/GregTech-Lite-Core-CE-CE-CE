@@ -58,6 +58,22 @@
         "bot_all": "gtlitecore:blocks/casings/rhodium_plated_palladium_casing",
         "top_all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing_overlay_active"
       }
+    },
+    "active=false,variant=advanced_crushing_wheel": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/unique/crushing_wheels",
+        "side": "gtlitecore:blocks/casings/laurenium_casing",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=advanced_crushing_wheel": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/unique/crushing_wheels_on",
+        "side": "gtlitecore:blocks/casings/laurenium_casing",
+        "bottom": "#side"
+      }
     }
   }
 }

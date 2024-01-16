@@ -2081,6 +2081,55 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(METALLIC)
                 .components(Californium, 1, Chlorine, 3)
                 .build();
+
+        //  11237 Rhenium Pentachloride
+        RheniumPentachloride = new Material.Builder(getId(), gregtechId("rhenium_pentachloride"))
+                .dust()
+                .color(0x5B1780)
+                .iconSet(SHINY)
+                .components(Rhenium, 1, Chlorine, 5)
+                .build();
+
+        //  11238 Hassium Tetrachloride
+        HassiumTetrachloride = new Material.Builder(getId(), gregtechId("hassium_tetrachloride"))
+                .dust()
+                .color(0x032551)
+                .iconSet(SHINY)
+                .components(MetastableHassium, 1, Chlorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11239 Thallium Chloride
+        ThalliumChloride = new Material.Builder(getId(), gregtechId("thallium_chloride"))
+                .dust()
+                .color(0xFF7409)
+                .iconSet(METALLIC)
+                .components(Thallium, 1, Chlorine, 1)
+                .build();
+
+        //  11240 Hexafluorophosphoric Acid
+        HexafluorophosphoricAcid = new Material.Builder(getId(), gregtechId("hexafluorophosphoric_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xFCC782)
+                .components(Hydrogen, 1, Phosphorus, 1, Fluorine, 6)
+                .build();
+
+        //  11241 Rhenium Hassium Thallium Isophtaloylbisdiethylthiourea Hexafluorophosphate
+        RheniumHassiumThalliumIsophtaloylbisdiethylthioureaHexafluorophosphate = new Material.Builder(getId(), gregtechId("rhenium_hassium_thallium_isophtaloylbisdiethylthiourea_hexafluorophosphate"))
+                .dust()
+                .color(0x5F5F82)
+                .iconSet(BRIGHT)
+                .components(Carbon, 60, Hydrogen, 84, Oxygen, 12, Nitrogen, 12, Sulfur, 6, Fluorine, 6, Phosphorus, 1, Rhenium, 1, Hassium, 1, Thallium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11242 Sodium Thiocyanate
+        SodiumThiocyanate = new Material.Builder(getId(), gregtechId("sodium_thiocyanate"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0x818052)
+                .components(Sodium, 1, Sulfur, 1, Carbon, 1, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

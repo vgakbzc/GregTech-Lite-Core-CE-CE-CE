@@ -165,6 +165,10 @@ public class GTLiteMaterialPropertyAddition {
         Plutonium239.addFlags(GENERATE_DOUBLE_PLATE);
         TitaniumTungstenCarbide.addFlags(GENERATE_DOUBLE_PLATE);
         Ruridit.addFlags(GENERATE_DOUBLE_PLATE);
+        Zeron100.addFlags(GENERATE_DOUBLE_PLATE);
+        WatertightSteel.addFlags(GENERATE_DOUBLE_PLATE);
+        MaragingSteel300.addFlags(GENERATE_DOUBLE_PLATE);
+        BlueSteel.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -238,6 +242,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Small Gear
         WroughtIron.addFlags(GENERATE_SMALL_GEAR);
+        HSSE.addFlags(GENERATE_SMALL_GEAR);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
