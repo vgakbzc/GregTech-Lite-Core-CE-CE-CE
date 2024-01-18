@@ -268,7 +268,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
         public void invalidate() {
             super.invalidate();
             if (this.mte != null && this.mte instanceof ICleanroomReceiver) {
-                ((ICleanroomReceiver)this.mte).setCleanroom((ICleanroomProvider)null);
+                ((ICleanroomReceiver)this.mte).setCleanroom(null);
             }
 
             this.currentMachineStack = ItemStack.EMPTY;
@@ -320,8 +320,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
                 this.mte = holder.setMetaTileEntity(this.mte);
                 holder.setWorld(this.metaTileEntity.getWorld());
                 MetaTileEntity var5 = this.mte;
-                if (var5 instanceof ICleanroomReceiver) {
-                    ICleanroomReceiver receiver = (ICleanroomReceiver)var5;
+                if (var5 instanceof ICleanroomReceiver receiver) {
                     if (ConfigHolder.machines.cleanMultiblocks) {
                         receiver.setCleanroom(DUMMY_CLEANROOM);
                     } else {

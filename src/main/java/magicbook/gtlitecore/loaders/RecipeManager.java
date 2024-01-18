@@ -1,8 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
-import magicbook.gtlitecore.loaders.blocks.Crucibles;
-import magicbook.gtlitecore.loaders.blocks.Explosives;
-import magicbook.gtlitecore.loaders.blocks.WireCoils;
+import magicbook.gtlitecore.loaders.blocks.*;
 import magicbook.gtlitecore.loaders.chains.*;
 import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;

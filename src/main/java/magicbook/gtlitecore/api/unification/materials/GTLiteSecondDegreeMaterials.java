@@ -143,7 +143,7 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x383030)
                 .iconSet(BRIGHT)
                 .blast(b -> b
-                        .temp(7500, BlastProperty.GasTier.HIGHER)
+                        .temp(7200, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[LuV], 432)
                         .vacuumStats(VA[EV], 180))
                 .components(MARM200Steel, 18, Cerium, 1)
