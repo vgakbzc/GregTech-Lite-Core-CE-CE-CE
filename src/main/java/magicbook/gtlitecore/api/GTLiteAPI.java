@@ -15,7 +15,7 @@ import static gregtech.api.GregTechAPI.HEATING_COILS;
 public class GTLiteAPI {
 
     //  Creative Tabs
-    public static final BaseCreativeTab TAB_GTLITE = new BaseCreativeTab("gtlite", () -> { return MetaItems.BASIC_TAPE.getStackForm();}, true);
+    public static final BaseCreativeTab TAB_GTLITE = new BaseCreativeTab("gtlite", () -> MetaItems.BASIC_TAPE.getStackForm(), true);
 
     //  Hash Maps
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();
