@@ -33,18 +33,23 @@ public class ToolRecipeHandler {
         UnificationEntry ingot = new UnificationEntry(material.hasProperty(GEM) ? OrePrefix.gem : OrePrefix.ingot, material);
 
         if (material.hasFlag(MaterialFlags.GENERATE_PLATE) && !material.hasFlag(MaterialFlags.NO_SMASHING)) {
+
+            //  Combination Wrench
             addToolRecipe(material, GTLiteTools.COMBINATION_WRENCH, true,
                     "PhP", "IPI", "fP ",
                     'I', ingot,
                     'P', plate);
+
             if (material.hasFlag(MaterialFlags.GENERATE_ROD)) {
 
+                //  Universal Spade
                 addToolRecipe(material, GTLiteTools.UNIVERSAL_SPADE, true,
                         "hPP", "DRP", "RDf",
                         'P', plate,
                         'D', new UnificationEntry(OrePrefix.dye, MarkerMaterials.Color.Blue),
                         'R', rod);
 
+                //  Electric Jackhammer (LV)
                 if (property.getToolDurability() > 0) {
                     ItemStack[] powerUnits = {
                             POWER_UNIT_LV.getMaxChargeOverrideStack(100000L)
@@ -68,6 +73,7 @@ public class ToolRecipeHandler {
                     }
                 }
 
+                //  Electric Jackhammer (HV)
                 if (property.getToolDurability() > 0) {
                     ItemStack[] powerUnits = {
                             POWER_UNIT_HV.getMaxChargeOverrideStack(1600000L)
@@ -92,6 +98,7 @@ public class ToolRecipeHandler {
                     }
                 }
 
+                //  Electric Jackhammer (IV)
                 if (property.getToolDurability() > 0) {
                     ItemStack[] powerUnits = {
                             POWER_UNIT_IV.getMaxChargeOverrideStack(25600000L)

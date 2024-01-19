@@ -9,7 +9,7 @@ import java.math.BigInteger;
 
 public class NoCoilHigherTemperatureProperty extends RecipeProperty<BigInteger> {
 
-    public static final String KEY = "temperature_higher";
+    public static final String KEY = "temperature";
     private static NoCoilHigherTemperatureProperty INSTANCE;
 
     private NoCoilHigherTemperatureProperty() {

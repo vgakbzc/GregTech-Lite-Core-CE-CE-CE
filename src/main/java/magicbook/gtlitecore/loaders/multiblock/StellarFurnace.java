@@ -337,6 +337,7 @@ public class StellarFurnace {
                 .output(CONTAINED_RN_SINGULARITY, 64)
                 .EUt(VA[UXV])
                 .duration(200)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
                 .buildAndRegister();
 
         //  Contained RN Singularity -> Contained KN Singularity

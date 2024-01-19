@@ -87,6 +87,7 @@ public class FusionLoader {
                 new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
                 new FluidStack[]{MetastableOganesson.getFluid(144)});
 
+        //  Metastable Oganesson liquid -> Metastable Oganesson hot ingot
         VACUUM_RECIPES.recipeBuilder()
                 .notConsumable(SHAPE_MOLD_INGOT)
                 .fluidInputs(MetastableOganesson.getFluid(L))
@@ -97,7 +98,9 @@ public class FusionLoader {
                 .duration(100)
                 .buildAndRegister();
 
-        //  Fl-Yb Plasma Prechain (back to decay generator recipes)
+        //  Quasi-fissioning Plasma
+        //  This fusion recipe is the first step of Metastable Flerovium chain.
+        //  back to Decay Generator Recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Uranium238.getFluid(125))
                 .fluidInputs(Uranium238.getFluid(125))
@@ -133,6 +136,7 @@ public class FusionLoader {
                 new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
                 new FluidStack[]{MetastableHassium.getFluid(144)});
 
+        //  Metastable Hassium liquid -> Metastable Hassium hot ingot
         VACUUM_RECIPES.recipeBuilder()
                 .notConsumable(SHAPE_MOLD_INGOT)
                 .fluidInputs(MetastableHassium.getFluid(L))
@@ -153,7 +157,7 @@ public class FusionLoader {
                 .EUToStart(800000000L)
                 .buildAndRegister();
 
-        //  Iron + Bismuth-209 -> Meitnerium
+        //  Iron + Bismuth -> Meitnerium
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Iron.getPlasma(L))
                 .fluidInputs(Bismuth.getFluid(L))
@@ -175,9 +179,9 @@ public class FusionLoader {
 
         //  Nickel + Polonium -> Copernicium
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Nickel.getPlasma(576))
-                .fluidInputs(Polonium.getFluid(576))
-                .fluidOutputs(Copernicium.getFluid(576))
+                .fluidInputs(Nickel.getPlasma(L * 4))
+                .fluidInputs(Polonium.getFluid(L * 4))
+                .fluidOutputs(Copernicium.getFluid(L * 4))
                 .EUt(VA[UV])
                 .duration(100)
                 .EUToStart(480000000L)
@@ -185,9 +189,9 @@ public class FusionLoader {
 
         //  Nickel + Astatine -> Nihonium
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Nickel.getPlasma(288))
-                .fluidInputs(Astatine.getFluid(288))
-                .fluidOutputs(Nihonium.getFluid(576))
+                .fluidInputs(Nickel.getPlasma(L * 2))
+                .fluidInputs(Astatine.getFluid(L * 2))
+                .fluidOutputs(Nihonium.getFluid(L * 4))
                 .EUt(358690)
                 .duration(180)
                 .EUToStart(410000000L)
@@ -195,9 +199,9 @@ public class FusionLoader {
 
         //  Neptunium + Titanium -> Moscovium
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Neptunium.getFluid(288))
-                .fluidInputs(Titanium.getFluid(288))
-                .fluidOutputs(Moscovium.getFluid(576))
+                .fluidInputs(Neptunium.getFluid(L * 2))
+                .fluidInputs(Titanium.getFluid(L * 2))
+                .fluidOutputs(Moscovium.getFluid(L * 4))
                 .EUt(473960)
                 .duration(220)
                 .EUToStart(380000000L)
@@ -205,9 +209,9 @@ public class FusionLoader {
 
         //  Americium + Titanium -> Tennessine
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Americium.getFluid(288))
-                .fluidInputs(Titanium.getFluid(288))
-                .fluidOutputs(Tennessine.getFluid(576))
+                .fluidInputs(Americium.getFluid(L * 2))
+                .fluidInputs(Titanium.getFluid(L * 2))
+                .fluidOutputs(Tennessine.getFluid(L * 4))
                 .EUt(509370)
                 .duration(300)
                 .EUToStart(420000000L)
@@ -326,6 +330,7 @@ public class FusionLoader {
                 .EUToStart(1800000000L)
                 .buildAndRegister();
 
+        //  Tungsten + Taranium plasma -> Celestial Tungsten
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Tungsten.getFluid(L * 2))
                 .fluidInputs(Taranium.getPlasma(L * 2))

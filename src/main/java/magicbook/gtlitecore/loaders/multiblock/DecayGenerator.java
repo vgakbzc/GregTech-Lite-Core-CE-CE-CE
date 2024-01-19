@@ -52,6 +52,7 @@ public class DecayGenerator {
                 .CasingTier(1)
                 .buildAndRegister();
 
+        //  Flerovium-Ytterbium Plasma -> Metastable Flerovium
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(FleroviumYtterbiumPlasma.getPlasma(1000))
                 .fluidOutputs(MetastableFlerovium.getFluid(L * 2))
@@ -76,6 +77,7 @@ public class DecayGenerator {
                 new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
                 new FluidStack[]{MetastableFlerovium.getFluid(144)});
 
+        //  Metastable Flerovium liquid -> Metastable Flerovium hot ingot
         VACUUM_RECIPES.recipeBuilder()
                 .notConsumable(SHAPE_MOLD_INGOT)
                 .fluidInputs(MetastableFlerovium.getFluid(L))
