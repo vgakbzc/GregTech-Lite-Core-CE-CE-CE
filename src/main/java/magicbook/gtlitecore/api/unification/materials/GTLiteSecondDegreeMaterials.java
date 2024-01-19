@@ -86,6 +86,7 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x9991A5)
                 .iconSet(SHINY)
                 .blast(b -> b
+                        .temp(3600, BlastProperty.GasTier.HIGH)
                         .blastStats(VA[EV], 454)
                         .vacuumStats(VA[MV], 280))
                 .components(Cobalt, 4, Chrome, 3, Phosphorus, 2, Molybdenum, 1)
