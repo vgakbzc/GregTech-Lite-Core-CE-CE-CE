@@ -1,0 +1,8 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtlitecore:items/material_sets/cosmic_neutronium/ingot",
+    "layer1": "gtlitecore:items/material_sets/cosmic_neutronium/ingot_overlay",
+    "layer2": "gtlitecore:items/material_sets/cosmic_neutronium/ingot_hot_overlay"
+  }
+}

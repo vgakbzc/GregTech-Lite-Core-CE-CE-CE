@@ -14,9 +14,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class AmmoniaChain {
 
-    public static void init() {
+    //  Minimized Haber-Bosch Process
 
-        //  Minimized Haber-Bosch Process
+    public static void init() {
 
         //  CH4 + N -> CH4N
         MIXER_RECIPES.recipeBuilder()
