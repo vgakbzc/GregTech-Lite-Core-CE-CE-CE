@@ -312,7 +312,7 @@ public class OpticalCircuits {
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
                 .input(plate, PedotTMA)
-                .input(lens, Celestite)
+                .input(lens, LithiumNiobate)
                 .input(dust, ZBLANGlass, 2)
                 .fluidInputs(TinAlloy.getFluid(L * 2))
                 .output(OPTICAL_IMC_BOARD, 2)
