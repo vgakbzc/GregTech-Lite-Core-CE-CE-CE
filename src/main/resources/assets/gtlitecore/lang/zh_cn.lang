@@ -65,6 +65,8 @@ tile.machine_casing.laurenium_casing.name=安全防震劳伦姆合金机器外�
 tile.machine_casing.incoloy_ds_casing.name=抗腐蚀耐热铬铁合金-DS机器外壳
 
 tile.structure_casing.maraging_steel_250_casing.name=高耐久马氏体时效钢250机器外壳
+tile.structure_casing.ruridit_casing.name=抗弯曲钌铱合金机器外壳
+tile.structure_casing.osmiridium_casing.name=高强度铱锇合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1272,6 +1274,12 @@ gtlitecore.machine.fixed_sifting_plant.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.fixed_sifting_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.fixed_sifting_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.fixed_sifting_plant.tooltip.5=最大并行数：§e4096§7
+
+gtlitecore.machine.large_wiremill_array.name=高速线材加工阵列
+gtlitecore.machine.large_wiremill_array.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.large_wiremill_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.large_wiremill_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.large_wiremill_array.tooltip.4=最大并行数：§e4096§7
 
 #  Materials
 
