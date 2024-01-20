@@ -12,7 +12,16 @@ public class BZMediumChain {
     public static void init() {
         PotassiumBromateChain();
         MalonicAcidChain();
-        BZChain();
+
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, PotassiumBromate, 4)
+                .input(dust, MalonicAcid, 3)
+                .input(dust, Cerium)
+                .fluidInputs(DistilledWater.getFluid(1000))
+                .fluidOutputs(BZMedium.getFluid(1000))
+                .duration(100)
+                .EUt(VA[ZPM])
+                .buildAndRegister();
     }
 
     private static void PotassiumBromateChain() {
@@ -86,18 +95,6 @@ public class BZMediumChain {
                 .fluidOutputs(HypochlorousAcid.getFluid(1000))
                 .duration(400)
                 .EUt(VA[IV])
-                .buildAndRegister();
-    }
-
-    private static void BZChain() {
-        MIXER_RECIPES.recipeBuilder()
-                .input(dust, PotassiumBromate, 4)
-                .input(dust, MalonicAcid, 3)
-                .input(dust, Cerium)
-                .fluidInputs(DistilledWater.getFluid(1000))
-                .fluidOutputs(BZMedium.getFluid(1000))
-                .duration(100)
-                .EUt(VA[ZPM])
                 .buildAndRegister();
     }
 }

@@ -15,11 +15,8 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class DragonChain {
 
     public static void init() {
-        VanillaCompatibility();
-    }
 
-    private static void VanillaCompatibility() {
-
+        //  Compatibility of Vanilla Dragon Breath (bottle?)
         EXTRACTOR_RECIPES.recipeBuilder()
                 .input(Items.DRAGON_BREATH)
                 .output(Items.GLASS_BOTTLE)
@@ -36,6 +33,7 @@ public class DragonChain {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Dragon breath -> Concentrate Dragon Breath
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .notConsumable(new ItemStack(Blocks.DRAGON_EGG))
                 .fluidInputs(DragonBreath.getFluid(1000))
@@ -45,6 +43,8 @@ public class DragonChain {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Concentrate Dragon Breath + Rn -> Dragon Blood
+        //  This is a material for Hypogen's fusion recipe, another material is Rhugnor.
         SONICATION_RECIPES.recipeBuilder()
                 .fluidInputs(ConcentrateDragonBreath.getFluid(200))
                 .fluidInputs(Radon.getFluid(1000))

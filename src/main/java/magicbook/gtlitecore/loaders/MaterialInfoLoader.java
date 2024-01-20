@@ -183,6 +183,20 @@ public class MaterialInfoLoader {
                 .duration(50)
                 .EUt(16)
                 .buildAndRegister();
+
+        //  MAX Casing
+        ModHandler.addShapedRecipe(true, "casing_max", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX),
+                "PPP", "PwP", "PPP",
+                'P', new UnificationEntry(plate, Eternity));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Eternity, 8)
+                .circuitMeta(8)
+                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX))
+                .duration(50)
+                .EUt(16)
+                .buildAndRegister();
+
     }
 
     private static void Glasses() {
@@ -245,6 +259,7 @@ public class MaterialInfoLoader {
     }
 
     private static void VoltageCoils() {
+
         //  UHV Voltage Coil
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(stick, ChromiumGermaniumTellurideMagnetic)
