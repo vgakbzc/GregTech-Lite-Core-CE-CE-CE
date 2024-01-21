@@ -308,10 +308,20 @@ public class OpticalCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Optical Wafer -> Optical Chip
+        CUTTER_RECIPES.recipeBuilder()
+                .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
+                .fluidInputs(Lubricant.getFluid(200))
+                .output(STRONTIUM_CARBONATE_OPTICAL_CHIP, 8)
+                .duration(100)
+                .EUt(VA[EV])
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Optical IMC Board
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
-                .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
                 .input(plate, PedotTMA)
+                .input(STRONTIUM_CARBONATE_OPTICAL_CHIP, 2)
                 .input(lens, LithiumNiobate)
                 .input(dust, ZBLANGlass, 2)
                 .fluidInputs(TinAlloy.getFluid(L * 2))
@@ -327,7 +337,8 @@ public class OpticalCircuits {
                 .input(UHASOC_CHIP, 2)
                 .input(OPTICAL_FIBER, 4)
                 .input(wireFine, Solarium, 4)
-                .fluidInputs(Glowstone.getFluid(L * 2))
+                .fluidInputs(SiliconCarbide.getFluid(L * 2))
+                .fluidInputs(Glowstone.getFluid(4000))
                 .output(PHOTOELECTRON_SOC, 4)
                 .EUt(VA[UEV])
                 .duration(200)

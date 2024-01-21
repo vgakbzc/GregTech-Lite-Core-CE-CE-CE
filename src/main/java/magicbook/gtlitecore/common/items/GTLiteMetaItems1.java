@@ -192,8 +192,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         STRONTIUM_CARBONATE_BOHRIUM_BOULE = this.addItem(225, "boule.strontium_carbonate.bohrium");
         STRONTIUM_CARBONATE_BOHRIUM_WAFER = this.addItem(226, "wafer.strontium_carbonate.bohrium");
         STRONTIUM_CARBONATE_OPTICAL_WAFER = this.addItem(227, "component.optical.strontium_carbonate_wafer");
-        OPTICAL_IMC_BOARD = this.addItem(228, "component.optical.optical_imc_board");
-        PHOTOELECTRON_SOC = this.addItem(229, "component.optical.photoelectron_soc");
+        STRONTIUM_CARBONATE_OPTICAL_CHIP = this.addItem(228, "component.optical.strontium_carbonate_chip");
+        OPTICAL_IMC_BOARD = this.addItem(229, "component.optical.optical_imc_board");
+        PHOTOELECTRON_SOC = this.addItem(230, "component.optical.photoelectron_soc");
 
         //  Voltage Coils
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");
