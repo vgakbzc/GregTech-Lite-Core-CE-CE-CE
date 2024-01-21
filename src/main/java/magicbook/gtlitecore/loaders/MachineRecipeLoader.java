@@ -1632,7 +1632,7 @@ public class MachineRecipeLoader {
         //  Grindball Hatch
         VACUUM_CHAMBER_RECIPES.recipeBuilder()
                 .input(dust, Soapstone, 4)
-                .input(SHAPE_MOLD_BALL)
+                .notConsumable(SHAPE_MOLD_BALL)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(GRINDBALL_SOAPSTONE)
                 .EUt(VA[MV])
@@ -1641,7 +1641,7 @@ public class MachineRecipeLoader {
 
         VACUUM_CHAMBER_RECIPES.recipeBuilder()
                 .input(dust, Aluminium, 4)
-                .input(SHAPE_MOLD_BALL)
+                .notConsumable(SHAPE_MOLD_BALL)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(GRINDBALL_ALUMINIUM)
                 .EUt(VA[HV])
