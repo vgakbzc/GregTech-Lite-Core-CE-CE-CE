@@ -23,6 +23,7 @@ public class CosmicCircuits {
 
     private static void CircuitBoard() {
 
+        //  Cosmic Board
         SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                 .input(plate, DegenerateRhenium, 2)
                 .input(plate, HeavyQuarkDegenerateMatter, 2)
@@ -107,7 +108,9 @@ public class CosmicCircuits {
                 .duration(200)
                 .buildAndRegister();
 
-        //  Cosmic CPU
+        //  Cosmic CPU process
+
+        //  Neutronium Wafer -> Untreated Cosmic CPU Wafer
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .fluidInputs(CosmicComputingMixture.getFluid(L))
@@ -124,23 +127,33 @@ public class CosmicCircuits {
                 .duration(100)
                 .buildAndRegister();
 
-        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+        //  Untreated Cosmic CPU Wafer -> Cosmic CPU Wafer
+        //  Need to use HSQ or KPR and Fullerene.
+        AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(UNTREATED_COSMIC_CPU)
-                .input(plate, CelestialTungsten, 2)
-                .input(plate, QuantumchromodynamicallyConfinedMatter, 2)
-                .input(wireFine, SuperheavyHAlloy, 4)
-                .fluidInputs(TetramethylammoniumHydroxide.getFluid(3000))
-                .fluidInputs(EDP.getFluid(3000))
-                .fluidInputs(PCBCoolant.getFluid(L * 4))
+                .input(dust, Fullerene, 2)
+                .fluidInputs(HSQ.getFluid(L * 4))
                 .output(COSMIC_CPU)
                 .EUt(VA[UEV])
                 .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(UNTREATED_COSMIC_CPU)
+                .input(dust, Fullerene, 2)
+                .fluidInputs(KPR.getFluid(L * 4))
+                .output(COSMIC_CPU)
+                .EUt(VA[UEV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Cosmic CPU Wafer -> Cosmic CPU Chip
         CUTTER_RECIPES.recipeBuilder()
                 .input(COSMIC_CPU)
                 .fluidInputs(Lubricant.getFluid(6000))
-                .output(COSMIC_CPU_CHIP, 64)
+                .output(COSMIC_CPU_CHIP, 16)
                 .EUt(VA[UV])
                 .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)

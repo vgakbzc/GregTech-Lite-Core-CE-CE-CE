@@ -175,6 +175,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_BOHRIUM_BOULE;
     public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_BOHRIUM_WAFER;
     public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_OPTICAL_WAFER;
+    public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_OPTICAL_CHIP;
     public static MetaItem<?>.MetaValueItem OPTICAL_IMC_BOARD;
     public static MetaItem<?>.MetaValueItem PHOTOELECTRON_SOC;
 

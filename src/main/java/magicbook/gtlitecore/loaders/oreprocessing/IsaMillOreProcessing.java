@@ -438,6 +438,18 @@ public class IsaMillOreProcessing {
 
     private static void flotationOreProcess() {
 
+        //  Another K2O recipe
+        //  You do not need to centrifuge ash now!
+        //  2KOH -> K2O + H2O
+        INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
+                .input(dust, PotassiumHydroxide, 6)
+                .output(dust, Potash, 3)
+                .fluidOutputs(Steam.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(20)
+                .temperature(455)
+                .buildAndRegister();
+
         //  Na + C2H6O -> C2H5ONa + H
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Sodium)

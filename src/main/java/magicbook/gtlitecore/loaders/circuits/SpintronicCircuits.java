@@ -26,6 +26,7 @@ public class SpintronicCircuits {
 
     private static void CircuitBoard() {
 
+        //  Spintronic Board
         CVD_UNIT_RECIPES.recipeBuilder()
                 .input(plate, CarbonNanotube)
                 .input(foil, Phosphorene, 4)
@@ -94,7 +95,9 @@ public class SpintronicCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  Topological Insulator Tube
+        //  Topological Insulator Tube process
+
+        //  Bi + Sb + 2Te + S -> Bismuth Chalcogenide
         MOLECULAR_BEAM_RECIPES.recipeBuilder()
                 .input(dust, Bismuth)
                 .input(dust, Antimony)
@@ -107,6 +110,7 @@ public class SpintronicCircuits {
                 .temperature(4876)
                 .buildAndRegister();
 
+        //  Cd + 2Te + 2Hg -> Hg2CdTe2
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Cadmium)
                 .input(dust, Tellurium, 2)
@@ -118,6 +122,7 @@ public class SpintronicCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Topological Insulator Tube
         CANNER_RECIPES.recipeBuilder()
                 .input(wireFine, MercuryCadmiumTelluride, 16)
                 .input(spring, CarbonNanotube)
@@ -127,7 +132,9 @@ public class SpintronicCircuits {
                 .EUt(VA[HV])
                 .buildAndRegister();
 
-        //  Bose-Einstein Condensate
+        //  Bose-Einstein Condensate process
+
+        //  Bose-Einstein Condensate Containment Unit
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(FIELD_GENERATOR_IV)
                 .input(HELIUM_NEON_LASER)
@@ -139,6 +146,7 @@ public class SpintronicCircuits {
                 .EUt(VA[UV])
                 .buildAndRegister();
 
+        //  Bose-Einstein Condensate
         CANNER_RECIPES.recipeBuilder()
                 .input(BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT)
                 .input(dust, Rubidium, 8)

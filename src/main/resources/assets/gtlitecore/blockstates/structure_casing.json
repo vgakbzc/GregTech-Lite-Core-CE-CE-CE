@@ -7,6 +7,18 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/maraging_steel_250_casing"
         }
+      },
+      "ruridit_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/ruridit_casing"
+        }
+      },
+      "osmiridium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/osmiridium_casing"
+        }
       }
     }
   }
