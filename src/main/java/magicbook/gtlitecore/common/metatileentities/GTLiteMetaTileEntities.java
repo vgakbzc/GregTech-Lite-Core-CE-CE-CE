@@ -227,10 +227,10 @@ public class GTLiteMetaTileEntities {
         SUBSTATION_INPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(34, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uiv"), 11, 64, false));
         SUBSTATION_INPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(35, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uxv"), 12, 64, false));
         SUBSTATION_INPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(36, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.input_64a.opv"), 13, 64, false));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(37, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uev"), 10, 64, false));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(38, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uiv"), 11, 64, false));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(39, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uxv"), 12, 64, false));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(40, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.opv"), 13, 64, false));
+        SUBSTATION_OUTPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(37, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uev"), 10, 64, true));
+        SUBSTATION_OUTPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(38, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uiv"), 11, 64, true));
+        SUBSTATION_OUTPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(39, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uxv"), 12, 64, true));
+        SUBSTATION_OUTPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(40, new MetaTileEntitySubstationEnergyHatch(gtliteId("substation_hatch.output_64a.opv"), 13, 64, true));
         IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(41, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.uev"), 10, false));
         IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(42, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.uiv"), 11, false));
         IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(43, new MetaTileEntityFluidHatch(gtliteId("fluid_hatch.import.uxv"), 12, false));
