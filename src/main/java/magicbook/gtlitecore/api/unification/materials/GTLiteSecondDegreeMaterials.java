@@ -394,7 +394,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(2413, BlastProperty.GasTier.MID)
                         .blastStats(VA[EV], 680))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .components(Steel, 16, Molybdenum, 1, Titanium, 1, Nickel, 4, Cobalt, 2)
                 .build();
 

@@ -25,6 +25,7 @@ public class OpticalCircuits {
 
     private static void CircuitBoard() {
 
+        //  Optical Board
         CVD_UNIT_RECIPES.recipeBuilder()
                 .input(plate, GalliumNitride)
                 .input(foil, Americium, 4)
@@ -54,7 +55,7 @@ public class OpticalCircuits {
 
     private static void CircuitComponent() {
 
-        //  ZBLAN Glasses
+        //  ZBLAN Glass
         ALLOY_BLAST_RECIPES.recipeBuilder()
                 .input(dust, Zirconium, 5)
                 .input(dust, Barium, 2)
@@ -69,6 +70,7 @@ public class OpticalCircuits {
                 .EUt(VA[HV])
                 .buildAndRegister();
 
+        //  Er-doped ZBLAN Glass
         ALLOY_SMELTER_RECIPES.recipeBuilder()
                 .input(ingot, ZBLANGlass)
                 .input(dust, Erbium)
@@ -77,6 +79,7 @@ public class OpticalCircuits {
                 .EUt(VA[HV])
                 .buildAndRegister();
 
+        //  Pr-doped ZBLAN Glass
         ALLOY_SMELTER_RECIPES.recipeBuilder()
                 .input(ingot, ZBLANGlass)
                 .input(dust, Praseodymium)
@@ -202,8 +205,8 @@ public class OpticalCircuits {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(wireFine, Naquadah, 4)
                 .input(dust, CadmiumSulfide)
-                .output(OPTICAL_RESISTOR, 16)
                 .fluidInputs(KaptonE.getFluid(L * 2))
+                .output(OPTICAL_RESISTOR, 16)
                 .duration(160)
                 .EUt(VA[UV])
                 .cleanroom(CleanroomType.CLEANROOM)
@@ -253,7 +256,7 @@ public class OpticalCircuits {
 
     private static void SoC() {
 
-        //  MnF2 + ZnS + Ta2O5 + TiO2 + C2H6O
+        //  MnF2 + ZnS + Ta2O5 + TiO2 + C2H6O -> Electrolyte Reflector Mixture
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, ManganeseDifluoride, 3)
                 .input(dust, ZincSulfide, 2)
@@ -266,6 +269,8 @@ public class OpticalCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Centrifuge recipe of Electrolyte Reflector Mixture
+        //  This recipe should in Cleanroom environment.
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(ElectrolyteReflectorMixture.getFluid(1000))
                 .output(dust, ManganeseDifluoride, 3)
@@ -278,7 +283,7 @@ public class OpticalCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  Bh:SrSO4 Boule
+        //  SrSO4 + Bh -> Bh-doped SrSO4 Boule
         CRYSTALLIZATION_RECIPES.recipeBuilder()
                 .input(dust, StrontiumCarbonate, 64)
                 .input(dust, Bohrium, 8)
@@ -288,7 +293,7 @@ public class OpticalCircuits {
                 .blastFurnaceTemp(6000)
                 .buildAndRegister();
 
-        //  Bh:SrSO4 Wafer
+        //  Bh-doped SrSO4 Boule -> Bh-doped SrSO4 Wafer
         CUTTER_RECIPES.recipeBuilder()
                 .input(STRONTIUM_CARBONATE_BOHRIUM_BOULE)
                 .fluidInputs(Lubricant.getFluid(300))
@@ -298,7 +303,8 @@ public class OpticalCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  Bh:SrSO4 Wafer -> Optical Wafer
+        //  Bh-doped SrSO4 Wafer -> Optical Wafer
+        //  This is a special wafer for Optical SoC process.
         CHEMICAL_BATH_RECIPES.recipeBuilder()
                 .input(STRONTIUM_CARBONATE_BOHRIUM_WAFER)
                 .fluidInputs(ElectrolyteReflectorMixture.getFluid(16))
@@ -308,11 +314,21 @@ public class OpticalCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Optical Wafer -> Optical Chip
+        CUTTER_RECIPES.recipeBuilder()
+                .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
+                .fluidInputs(Lubricant.getFluid(200))
+                .output(STRONTIUM_CARBONATE_OPTICAL_CHIP, 8)
+                .duration(100)
+                .EUt(VA[EV])
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Optical IMC Board
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
-                .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
                 .input(plate, PedotTMA)
-                .input(lens, Celestite)
+                .input(STRONTIUM_CARBONATE_OPTICAL_CHIP, 2)
+                .input(lens, LithiumNiobate)
                 .input(dust, ZBLANGlass, 2)
                 .fluidInputs(TinAlloy.getFluid(L * 2))
                 .output(OPTICAL_IMC_BOARD, 2)
@@ -327,7 +343,8 @@ public class OpticalCircuits {
                 .input(UHASOC_CHIP, 2)
                 .input(OPTICAL_FIBER, 4)
                 .input(wireFine, Solarium, 4)
-                .fluidInputs(Glowstone.getFluid(L * 2))
+                .fluidInputs(SiliconCarbide.getFluid(L * 2))
+                .fluidInputs(Glowstone.getFluid(4000))
                 .output(PHOTOELECTRON_SOC, 4)
                 .EUt(VA[UEV])
                 .duration(200)

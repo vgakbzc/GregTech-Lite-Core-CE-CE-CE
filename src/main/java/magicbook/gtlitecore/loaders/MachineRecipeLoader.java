@@ -1575,6 +1575,23 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Large Wiremill Array
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenSteel, 4)
+                .input(LARGE_WIREMILL_ARRAY, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, MaragingSteel250, 4)
+                .input(plateDouble, Ruridit, 4)
+                .input(gear, Stellite, 4)
+                .input(gearSmall, HSSG, 16)
+                .input(cableGtQuadruple, Osmium, 4)
+                .fluidInputs(EglinSteel.getFluid(L * 4))
+                .output(LARGE_WIREMILL_ARRAY)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -1615,7 +1632,7 @@ public class MachineRecipeLoader {
         //  Grindball Hatch
         VACUUM_CHAMBER_RECIPES.recipeBuilder()
                 .input(dust, Soapstone, 4)
-                .input(SHAPE_MOLD_BALL)
+                .notConsumable(SHAPE_MOLD_BALL)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(GRINDBALL_SOAPSTONE)
                 .EUt(VA[MV])
@@ -1624,7 +1641,7 @@ public class MachineRecipeLoader {
 
         VACUUM_CHAMBER_RECIPES.recipeBuilder()
                 .input(dust, Aluminium, 4)
-                .input(SHAPE_MOLD_BALL)
+                .notConsumable(SHAPE_MOLD_BALL)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(GRINDBALL_ALUMINIUM)
                 .EUt(VA[HV])
@@ -3599,6 +3616,36 @@ public class MachineRecipeLoader {
                 .input(frameGt, MaragingSteel250)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.MARAGING_STEEL_250_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Ruridit Casing
+        ModHandler.addShapedRecipe(true, "ruridit_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RURIDIT_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Ruridit),
+                'F', new UnificationEntry(frameGt, Ruridit));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Ruridit, 6)
+                .input(frameGt, Ruridit)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RURIDIT_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Osmiridium Casing
+        ModHandler.addShapedRecipe(true, "osmiridium_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.OSMIRIDIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Osmiridium),
+                'F', new UnificationEntry(frameGt, Osmiridium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Osmiridium, 6)
+                .input(frameGt, Osmiridium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.OSMIRIDIUM_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

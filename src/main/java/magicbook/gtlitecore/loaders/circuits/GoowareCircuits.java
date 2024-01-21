@@ -24,6 +24,7 @@ public class GoowareCircuits {
 
     private static void CircuitBoard() {
 
+        //  Gooware Board
         CVD_UNIT_RECIPES.recipeBuilder()
                 .input(plate, KaptonE)
                 .input(foil, Europium, 4)

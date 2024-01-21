@@ -264,6 +264,7 @@ public class GTLiteMaterialPropertyAddition {
         Dubnium.addFlags(GENERATE_FINE_WIRE);
         NaquadahEnriched.addFlags(GENERATE_FINE_WIRE);
         Rhenium.addFlags(GENERATE_FINE_WIRE);
+        Tungsten.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
