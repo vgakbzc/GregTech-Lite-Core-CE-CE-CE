@@ -64,15 +64,16 @@ public class EtchingMaterialsChain {
     private static void HSQChain() {
 
         //  Si + CH3Cl + 2HCl -> CH3Cl3Si + 2H
+        //  This recipe has some conflict, it's other part resolved in RecipeConflicts.
         CHEMICAL_RECIPES.recipeBuilder()
-                .notConsumable(dust, Copper)
                 .input(dust, Silicon)
+                .circuitMeta(2)
                 .fluidInputs(Chloromethane.getFluid(1000))
                 .fluidInputs(HydrochloricAcid.getFluid(2000))
                 .fluidOutputs(Methyltrichlorosilane.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[MV])
-                .duration(20)
+                .duration(280)
                 .buildAndRegister();
 
         //  CH3Cl3Si + 3CH4O -> CH3Si(CH3O)3 + 3HCl

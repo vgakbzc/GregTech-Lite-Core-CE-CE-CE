@@ -382,6 +382,8 @@ public class GTLiteMetaTileEntities {
         FIXED_SIFTING_PLANT = registerMultiMetaTileEntity(107, new MetaTileEntityFixedSiftingPlant(gtliteId("fixed_sifting_plant")));
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
         //  109 LARGE_HIGH_PRESSURE_MOLDING_PLANT
-        //  110
+        //  110 MATERIAL_TRANSMUTATION_ARRAY
+        //  111
+        //  112
     }
 }

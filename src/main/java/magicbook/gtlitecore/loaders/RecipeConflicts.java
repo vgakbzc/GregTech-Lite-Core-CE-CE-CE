@@ -60,7 +60,9 @@ public class RecipeConflicts {
                 .circuitMeta(1)
                 .output(dust, Sodium)
                 .fluidOutputs(Chlorine.getFluid(1000))
-                .duration(56).EUt(VA[LV]).buildAndRegister();
+                .duration(56)
+                .EUt(VA[LV])
+                .buildAndRegister();
 
         //  Conflict between Polydimethylsiloxane and Carbon Tetrachloride
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES,
@@ -83,6 +85,24 @@ public class RecipeConflicts {
                 .fluidOutputs(DilutedHydrochloricAcid.getFluid(6000))
                 .duration(2880)
                 .EUt(96)
+                .buildAndRegister();
+
+        //  Conflict between Methyltrichlorosilane and Dimethyldichlorosilane
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Silicon)},
+                new FluidStack[]{Chloromethane.getFluid(2000)});
+
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Silicon)},
+                new FluidStack[]{Chloromethane.getFluid(2000)});
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Silicon)
+                .circuitMeta(1)
+                .fluidInputs(Chloromethane.getFluid(2000))
+                .fluidOutputs(Dimethyldichlorosilane.getFluid(1000))
+                .EUt(96)
+                .duration(240)
                 .buildAndRegister();
     }
 }
