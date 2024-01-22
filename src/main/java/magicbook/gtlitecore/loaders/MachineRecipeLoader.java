@@ -1579,7 +1579,7 @@ public class MachineRecipeLoader {
         //  Large Wiremill Array
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenSteel, 4)
-                .input(LARGE_WIREMILL_ARRAY, 16)
+                .input(LARGE_WIREMILL, 16)
                 .input(circuit, MarkerMaterials.Tier.LuV, 16)
                 .input(plateDouble, MaragingSteel250, 4)
                 .input(plateDouble, Ruridit, 4)
