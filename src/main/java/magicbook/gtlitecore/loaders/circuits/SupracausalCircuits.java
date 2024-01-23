@@ -196,8 +196,8 @@ public class SupracausalCircuits {
                 .buildAndRegister();
 
         LASER_CVD_UNIT_RECIPES.recipeBuilder()
-                .input(plate, Hypogen)
                 .input(wireFine, BlackDwarfMatter, 8)
+                .input(plate, Hypogen)
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_CAPACITOR, 32)
                 .EUt(VA[UIV])
@@ -218,7 +218,7 @@ public class SupracausalCircuits {
                 .buildAndRegister();
 
         ION_IMPLANTATOR_RECIPES.recipeBuilder()
-                .input(ring, TantalumHafniumSeaborgiumCarbide)
+                .input(ring, TantalumHafniumSeaborgiumCarbide, 2)
                 .input(wireFine, CosmicNeutronium, 4)
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_INDUCTOR, 32)
