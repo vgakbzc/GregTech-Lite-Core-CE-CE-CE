@@ -193,7 +193,7 @@ public class MachineRecipeLoader {
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
                 'F', FIELD_GENERATOR_UHV.getStackForm());
 
-        //  Roaster
+        //  Industrial Roaster
         ModHandler.addShapedRecipe(true, "roaster", INDUSTRIAL_ROASTER.getStackForm(),
                 "KSK", "CHC", "PPP",
                 'K', new UnificationEntry(cableGtQuadruple, Platinum),

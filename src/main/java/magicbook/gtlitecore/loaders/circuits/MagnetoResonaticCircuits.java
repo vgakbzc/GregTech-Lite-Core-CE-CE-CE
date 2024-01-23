@@ -20,6 +20,7 @@ public class MagnetoResonaticCircuits {
 
     private static void CircuitBoard() {
 
+        //  Magneto Resonatic Board
         FORMING_PRESS_RECIPES.recipeBuilder()
                 .input(dust, IndiumGalliumPhosphide)
                 .input(dust, BismuthTellurite, 2)
@@ -31,6 +32,7 @@ public class MagnetoResonaticCircuits {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Magneto Resonatic Circuit Board
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(MAGNETO_RESONATIC_BOARD)
                 .fluidInputs(SolderingAlloy.getFluid(L * 2))

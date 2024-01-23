@@ -287,7 +287,7 @@ public class FusionLoader {
                 .fluidOutputs(Infinity.getFluid(L * 4))
                 .EUt(VA[UEV])
                 .duration(240)
-                .EUToStart(2560000000L)
+                .EUToStart(2550000000L)
                 .buildAndRegister();
 
         //  Void Metal + Bedrock -> Rhugnor
