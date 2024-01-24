@@ -223,6 +223,10 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem BATTERY_UXV_LANTHANUM_NICKEL_OXIDE;
     public static MetaItem<?>.MetaValueItem BATTERY_OpV_LANTHANUM_NICKEL_OXIDE;
     public static MetaItem<?>.MetaValueItem BATTERY_MAX_LANTHANUM_NICKEL_OXIDE;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MK2;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MK3;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MK4;
+    public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MK5;
 
     //  Others
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
