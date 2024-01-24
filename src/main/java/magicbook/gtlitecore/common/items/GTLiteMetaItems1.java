@@ -154,6 +154,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         X_RAY_MIRROR = this.addItem(128, "component.spintronic.x_ray_mirror");
         MICROFOCUS_X_RAY_TUBE = this.addItem(129, "component.spintronic.microfocus_x_ray_tube");
         EXOTIC_SOC = this.addItem(130, "component.spintronic.exotic_soc");
+        LEPTON_TRAP_CRYSTAL = this.addItem(131, "component.cosmic.lepton_trap_crystal");
+        CHARGED_LEPTON_TRAP_CRYSTAL = this.addItem(132, "component.cosmic.charged_lepton_trap_crystal");
+        COLORED_LEDS = this.addItem(133, "component.cosmic.colored_leds");
+        ROTATING_TRANSPARENT_SURFACE = this.addItem(134, "component.cosmic.rotating_transparent_surface");
+        UNIVERSAL_SOC = this.addItem(135, "component.cosmic.universal_soc");
 
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");
         DIAMOND_CHIP = this.addItem(150, "component.crystal.diamond_chip");

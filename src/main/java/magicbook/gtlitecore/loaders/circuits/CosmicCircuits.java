@@ -160,7 +160,75 @@ public class CosmicCircuits {
                 .buildAndRegister();
     }
 
-    private static void SoC() {}
+    private static void SoC() {
+
+        //  Lepton Trap Crystal
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust, MetastableHassium)
+                .input(dust, Molybdenum)
+                .input(dust, Rhenium)
+                .fluidInputs(NaquadahAlloy.getFluid(L))
+                .output(LEPTON_TRAP_CRYSTAL)
+                .EUt(3450000)
+                .duration(340)
+                .blastFurnaceTemp(10900)
+                .buildAndRegister();
+
+        //  Lepton Trap Crystal -> Charged Lepton Trap Crystal
+        CRYOGENIC_REACTOR_RECIPES.recipeBuilder()
+                .input(LEPTON_TRAP_CRYSTAL)
+                .input(dustSmall, Vibranium, 2)
+                .fluidInputs(HeavyLepton.getFluid(500))
+                .fluidInputs(FreeElectronGas.getFluid(500))
+                .output(CHARGED_LEPTON_TRAP_CRYSTAL)
+                .EUt(VA[UV])
+                .duration(240)
+                .temperature(133)
+                .buildAndRegister();
+
+        //  Colored LEDs
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(dust, CBDOPolycarbonate, 3)
+                .input(ADVANCED_SMD_DIODE, 2)
+                .input(springSmall, StainlessSteel)
+                .input(wireFine, Aluminium, 4)
+                .fluidInputs(HSQ.getFluid(L / 2))
+                .fluidInputs(Tin.getPlasma(L / 4))
+                .output(COLORED_LEDS)
+                .EUt(VA[LuV])
+                .duration(350)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Colored LEDs -> Rotating Transparent Surface
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_UXV)
+                .input(COLORED_LEDS)
+                .input(gear, CobaltBrass)
+                .input(bolt, Tritanium, 2)
+                .fluidInputs(Hdcs.getFluid(L))
+                .fluidInputs(Lutetium.getFluid(L / 2))
+                .output(ROTATING_TRANSPARENT_SURFACE)
+                .EUt(VA[UHV])
+                .duration(120)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Universal SoC
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, BlackPlutonium)
+                .input(CHARGED_LEPTON_TRAP_CRYSTAL)
+                .input(ROTATING_TRANSPARENT_SURFACE)
+                .input(wireFine, LunaSilver, 4)
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L))
+                .fluidInputs(Gluons.getFluid(600))
+                .fluidInputs(FullereneSuperconductor.getFluid(L / 2))
+                .output(UNIVERSAL_SOC, 4)
+                .EUt(VA[UXV])
+                .duration(200)
+                .CasingTier(3)
+                .buildAndRegister();
+    }
 
     private static void SMDs() {
 
@@ -246,6 +314,18 @@ public class CosmicCircuits {
                 .output(COSMIC_PROCESSOR, 2)
                 .EUt(VA[UIV])
                 .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(COSMIC_INFORMATION_MODULE)
+                .input(UNIVERSAL_SOC)
+                .input(wireFine, HeavyQuarkDegenerateMatter, 8)
+                .input(bolt, Spacetime, 8)
+                .solderMultiplier(1)
+                .output(COSMIC_PROCESSOR, 4)
+                .EUt(VA[UXV])
+                .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 

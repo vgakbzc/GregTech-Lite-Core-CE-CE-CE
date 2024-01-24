@@ -365,6 +365,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV]))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
     }
 
