@@ -2217,6 +2217,14 @@ metaitem.battery.uiv.lithium_sulfide.name=大型硫化锂电池
 metaitem.battery.uxv.lanthanum_nickel_oxide.name=小型镍酸镧电池
 metaitem.battery.opv.lanthanum_nickel_oxide.name=中型镍酸镧电池
 metaitem.battery.max.lanthanum_nickel_oxide.name=大型镍酸镧电池
+metaitem.battery.uev.ultimate.name=终极电池 Mk II
+metaitem.battery.uev.ultimate.tooltip=超级电力存储器
+metaitem.battery.uiv.ultimate.name=终极电池 Mk III
+metaitem.battery.uiv.ultimate.tooltip=可用于全球供电
+metaitem.battery.uxv.ultimate.name=终极电池 Mk IV
+metaitem.battery.uxv.ultimate.tooltip=神之蓄电池
+metaitem.battery.opv.ultimate.name=终极电池 Mk V
+metaitem.battery.opv.ultimate.tooltip=填满就能通关GregTech Lite
 
 metaitem.prospector.ev.name=电动勘探扫描仪（§5EV§r）
 metaitem.tool.prospector.ev.name=电动勘探扫描仪（§5EV§r）
