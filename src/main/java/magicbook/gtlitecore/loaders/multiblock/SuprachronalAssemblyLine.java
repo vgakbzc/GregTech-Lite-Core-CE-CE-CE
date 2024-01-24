@@ -150,7 +150,7 @@ public class SuprachronalAssemblyLine {
                 .input(SENSOR_OpV)
                 .input(ROBOT_ARM_OpV)
                 .input(FIELD_GENERATOR_OpV)
-                .input(ULTIMATE_BATTERY, 2)
+                .input(ULTIMATE_BATTERY_MK5, 2)
                 .fluidInputs(AstralTitanium.getFluid(L * 40))
                 .fluidInputs(CelestialTungsten.getFluid(L * 40))
                 .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))

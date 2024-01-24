@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import net.minecraft.init.Items;
@@ -783,6 +784,163 @@ public class MiscRecipes {
                 .output(dust, BerylliumDifluoride, 3)
                 .EUt(VA[LV])
                 .duration(100)
+                .buildAndRegister();
+
+        //  Ultimate Battery
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLY_LINE_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(plateDouble, Darmstadtium, 16),
+                                OreDictUnifier.get(circuit, MarkerMaterials.Tier.UHV, 4),
+                                ENERGY_CLUSTER.getStackForm(16),
+                                FIELD_GENERATOR_UV.getStackForm(4),
+                                ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER.getStackForm(64),
+                                ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER.getStackForm(64),
+                                ADVANCED_SMD_DIODE.getStackForm(64),
+                                ADVANCED_SMD_CAPACITOR.getStackForm(64),
+                                ADVANCED_SMD_RESISTOR.getStackForm(64),
+                                ADVANCED_SMD_TRANSISTOR.getStackForm(64),
+                                ADVANCED_SMD_INDUCTOR.getStackForm(64),
+                                OreDictUnifier.get(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 64),
+                                OreDictUnifier.get(bolt, Neutronium, 64)},
+                new FluidStack[]{SolderingAlloy.getFluid(5760),
+                                 Polybenzimidazole.getFluid(2304),
+                                 Naquadria.getFluid(2592)});
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plateDouble, Darmstadtium, 16)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(ENERGY_CLUSTER, 16)
+                .input(FIELD_GENERATOR_UV, 4)
+                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .input(ADVANCED_SMD_DIODE, 64)
+                .input(ADVANCED_SMD_CAPACITOR, 64)
+                .input(ADVANCED_SMD_RESISTOR, 64)
+                .input(ADVANCED_SMD_TRANSISTOR, 64)
+                .input(ADVANCED_SMD_INDUCTOR, 64)
+                .input(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 64)
+                .input(bolt, Orichalcum, 64)
+                .fluidInputs(SolderingAlloy.getFluid(5760))
+                .fluidInputs(Polybenzimidazole.getFluid(2304))
+                .fluidInputs(Naquadria.getFluid(2592))
+                .output(ULTIMATE_BATTERY)
+                .EUt(300000)
+                .duration(1600)
+                .stationResearch(b -> b
+                        .researchStack(ENERGY_CLUSTER.getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(144))
+                .buildAndRegister();
+
+        //  Ultimate Battery Mk II
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plateDouble, Orichalcum, 16)
+                .input(circuit, MarkerMaterials.Tier.UEV, 4)
+                .input(ULTIMATE_BATTERY, 16)
+                .input(FIELD_GENERATOR_UHV, 4)
+                .input(NANO_PIC_WAFER, 64)
+                .input(NANO_PIC_WAFER, 64)
+                .input(OPTICAL_DIODE, 64)
+                .input(OPTICAL_CAPACITOR, 64)
+                .input(OPTICAL_RESISTOR, 64)
+                .input(OPTICAL_TRANSISTOR, 64)
+                .input(OPTICAL_INDUCTOR, 64)
+                .input(wireGtSingle, PedotPSS, 64)
+                .input(bolt, Neutronium, 64)
+                .fluidInputs(SolderingAlloy.getFluid(11520))
+                .fluidInputs(Polyetheretherketone.getFluid(4608))
+                .fluidInputs(Vibranium.getFluid(5184))
+                .fluidInputs(Adamantium.getFluid(1440))
+                .output(ULTIMATE_BATTERY_MK2)
+                .EUt(1000000)
+                .duration(1800)
+                .stationResearch(b -> b
+                        .researchStack(ULTIMATE_BATTERY.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(288))
+                .buildAndRegister();
+
+        //  Ultimate Battery Mk III
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plateDouble, Adamantium, 16)
+                .input(circuit, MarkerMaterials.Tier.UIV, 4)
+                .input(ULTIMATE_BATTERY_MK2, 16)
+                .input(FIELD_GENERATOR_UEV, 4)
+                .input(PICO_PIC_WAFER, 64)
+                .input(PICO_PIC_WAFER, 64)
+                .input(SPINTRONIC_DIODE, 64)
+                .input(SPINTRONIC_CAPACITOR, 64)
+                .input(SPINTRONIC_RESISTOR, 64)
+                .input(SPINTRONIC_TRANSISTOR, 64)
+                .input(SPINTRONIC_INDUCTOR, 64)
+                .input(wireGtSingle, QuantumAlloy, 64)
+                .input(bolt, Taranium, 64)
+                .fluidInputs(SolderingAlloy.getFluid(23040))
+                .fluidInputs(Kevlar.getFluid(9216))
+                .fluidInputs(Ichorium.getFluid(10368))
+                .fluidInputs(Seaborgium.getFluid(2880))
+                .output(ULTIMATE_BATTERY_MK3)
+                .EUt(4000000)
+                .duration(2000)
+                .stationResearch(b -> b
+                        .researchStack(ULTIMATE_BATTERY_MK2.getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(432))
+                .buildAndRegister();
+
+        //  Ultimate Battery Mk IV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plateDouble, Infinity, 16)
+                .input(circuit, MarkerMaterials.Tier.UXV, 4)
+                .input(ULTIMATE_BATTERY_MK3, 16)
+                .input(FIELD_GENERATOR_UIV, 4)
+                .input(FEMTO_PIC_WAFER, 64)
+                .input(FEMTO_PIC_WAFER, 64)
+                .input(COSMIC_DIODE, 64)
+                .input(COSMIC_CAPACITOR, 64)
+                .input(COSMIC_RESISTOR, 64)
+                .input(COSMIC_TRANSISTOR, 64)
+                .input(COSMIC_INDUCTOR, 64)
+                .input(wireGtSingle, FullereneSuperconductor, 64)
+                .input(bolt, CelestialTungsten, 64)
+                .fluidInputs(SolderingAlloy.getFluid(46080))
+                .fluidInputs(Zylon.getFluid(18432))
+                .fluidInputs(Astralium.getFluid(20736))
+                .fluidInputs(AstralTitanium.getFluid(5760))
+                .output(ULTIMATE_BATTERY_MK4)
+                .EUt(30000000)
+                .duration(2200)
+                .stationResearch(b -> b
+                        .researchStack(ULTIMATE_BATTERY_MK3.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(576))
+                .buildAndRegister();
+
+        //  Ultimate Battery Mk V
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(plateDouble, Spacetime, 16)
+                .input(circuit, MarkerMaterials.Tier.OpV, 4)
+                .input(ULTIMATE_BATTERY_MK4, 16)
+                .input(FIELD_GENERATOR_UXV, 4)
+                .input(FEMTO_PIC_WAFER, 64)
+                .input(FEMTO_PIC_WAFER, 64)
+                .input(SUPRACAUSAL_DIODE, 64)
+                .input(SUPRACAUSAL_CAPACITOR, 64)
+                .input(SUPRACAUSAL_RESISTOR, 64)
+                .input(SUPRACAUSAL_TRANSISTOR, 64)
+                .input(SUPRACAUSAL_INDUCTOR, 64)
+                .input(wireGtSingle, NeutroniumSuperconductor, 64)
+                .input(bolt, CosmicNeutronium, 64) // TODO find better material
+                .fluidInputs(SolderingAlloy.getFluid(92160))
+                .fluidInputs(FullerenePolymerMatrix.getFluid(36864))
+                .fluidInputs(Hikarium.getFluid(41472))
+                .fluidInputs(Galaxium.getFluid(11520)) // TODO find better material
+                .output(ULTIMATE_BATTERY_MK5)
+                .EUt(80000000)
+                .duration(2400)
+                .stationResearch(b -> b
+                        .researchStack(ULTIMATE_BATTERY_MK4.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(720))
                 .buildAndRegister();
     }
 }
