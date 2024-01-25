@@ -1947,10 +1947,12 @@ gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 ##  Other Materials
 gregtech.material.proto_adamantium=原始精金
 gregtech.material.enriched_mithril=富集秘银
-gregtech.material.trinium_titanide=钛化凯金
-gregtech.material.germanium_tungsten_nitride=氮化锗钨
-gregtech.material.bismuth_iridiate=铱酸铋
-gregtech.material.bismuth_ruthenate=钌酸铋
+gregtech.material.trinium_titanide=凯金石
+gregtech.material.germanium_tungsten_nitride=锗钨矿
+gregtech.material.bismuth_iridiate=硫铱铋矿
+gregtech.material.bismuth_ruthenate=硫钌铋矿
+gregtech.material.sylvanite=针碲金矿
+gregtech.material.rheniite=辉铼矿
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡

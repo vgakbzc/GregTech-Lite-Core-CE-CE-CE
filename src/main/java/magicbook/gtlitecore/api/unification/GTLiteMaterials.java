@@ -660,6 +660,8 @@ public class GTLiteMaterials {
     public static Material GermaniumTungstenNitride;
     public static Material BismuthIridiate;
     public static Material BismuthRuthenate;
+    public static Material Sylvanite;
+    public static Material Rheniite;
 
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
