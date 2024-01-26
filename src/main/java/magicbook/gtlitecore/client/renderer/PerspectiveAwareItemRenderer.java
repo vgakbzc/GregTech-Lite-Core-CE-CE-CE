@@ -14,6 +14,7 @@ import net.minecraftforge.common.model.IModelState;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+@Deprecated
 public abstract class PerspectiveAwareItemRenderer implements IItemRenderer, IEntityItemTickCallback {
 
     @Nullable

@@ -16,6 +16,7 @@ import net.minecraftforge.common.model.IModelState;
 
 import java.util.Random;
 
+@Deprecated
 public class HaloItemRenderer extends WrappedItemRenderer {
     private Random randy = new Random();
 
