@@ -27,7 +27,7 @@ public class SeleniumTelluriumChain {
                 .EUt(60)
                 .buildAndRegister();
 
-        //  optional recovery of metals to provide some nice bonus
+        //  Optional recovery of metals to provide some nice bonus
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .input(dust, ChalcogenAnodeMud)
                 .output(dust, Silver)
