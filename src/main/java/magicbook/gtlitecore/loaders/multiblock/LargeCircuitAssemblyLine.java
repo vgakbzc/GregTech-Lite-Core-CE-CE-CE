@@ -15,7 +15,25 @@ public class LargeCircuitAssemblyLine {
     }
 
     private static void Circuits() {
+
+        //  In recipes, please put not consumable item on the first slot in item input slots.
+        //  Because Large Circuit Assembly Line use special ui, you should make it on special slot on left hand.
+
+        //  You do not need to use Data stick or other items to storage circuit's info.
+        //  You just needs to put circuit in bus, it is not consumable.
+
         PrimitiveCircuits();
+        IntegratedCircuits();
+        ProcessorCircuits();
+        NanoCircuits();
+        QuantumCircuits();
+        CrystalCircuits();
+        WetwareCircuits();
+        GoowareCircuits();
+        OpticalCircuits();
+        SpintronicCircuits();
+        CosmicCircuits();
+        SupracausalCircuits();
     }
 
     private static void WrapComponents() {
@@ -31,6 +49,50 @@ public class LargeCircuitAssemblyLine {
                 .EUt(VA[IV])
                 .duration(1)
                 .buildAndRegister();
+    }
+
+    private static void IntegratedCircuits() {
+
+    }
+
+    private static void ProcessorCircuits() {
+
+    }
+
+    private static void NanoCircuits() {
+
+    }
+
+    private static void QuantumCircuits() {
+
+    }
+
+    private static void CrystalCircuits() {
+
+    }
+
+    private static void WetwareCircuits() {
+
+    }
+
+    private static void GoowareCircuits() {
+
+    }
+
+    private static void OpticalCircuits() {
+
+    }
+
+    private static void SpintronicCircuits() {
+
+    }
+
+    private static void CosmicCircuits() {
+
+    }
+
+    private static void SupracausalCircuits() {
+
     }
 
     private static void WrapCircuitBoard() {
