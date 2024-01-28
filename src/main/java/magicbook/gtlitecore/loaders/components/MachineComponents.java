@@ -3,25 +3,17 @@ package magicbook.gtlitecore.loaders.components;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
-import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MachineComponents {
     public static void init() {
-        ComponentRecipes();
-        MultiblockRecipes();
-    }
-
-    private static void ComponentRecipes() {
         ElectricMotor();
         ConveyorModule();
         ElectricPiston();
@@ -30,32 +22,6 @@ public class MachineComponents {
         Emitter();
         Sensor();
         FieldGenerator();
-    }
-
-    private static void MultiblockRecipes() {
-
-        //  Substrate Casing
-        ModHandler.addShapedRecipe(true, "substrate_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.SUBSTRATE_CASING),
-                "PPP", "RFR", "R R",
-                'P', new UnificationEntry(plate, Palladium),
-                'R', new UnificationEntry(stick, RedSteel),
-                'F', new UnificationEntry(frameGt, BlueSteel));
-
-        //  Advanced Substrate Casing
-        ModHandler.addShapedRecipe(true, "advanced_substrate_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ADVANCED_SUBSTRATE_CASING),
-                "PPP", "RFR", "R R",
-                'P', new UnificationEntry(plate, Ruridit),
-                'R', new UnificationEntry(stick, Duranium),
-                'F', new UnificationEntry(frameGt, NaquadahAlloy));
-
-        //  Drill Head
-        ModHandler.addShapedRecipe(true, "drill_head", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.DRILL_HEAD),
-                "PGP", "MHM", "SSS",
-                'P', ELECTRIC_PISTON_UV.getStackForm(),
-                'G', new UnificationEntry(gear, Orichalcum),
-                'M', ELECTRIC_MOTOR_UV.getStackForm(),
-                'H', HULL[UV].getStackForm(),
-                'S', COMPONENT_GRINDER_TUNGSTEN.getStackForm());
     }
 
     private static void ElectricMotor() {
@@ -156,26 +122,26 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  OpV
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //       .input(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic)
-        //       .input(stickLong, TranscendentMetal, 4)
-        //       .input(ring, TranscendentMetal, 4)
-        //       .input(round, TranscendentMetal, 8)
-        //       .input(wireFine, todo, 64)
-        //       .input(wireFine, todo, 64)
-        //       .input(cableGtSingle, Galaxium, 2)
-        //       .fluidInputs(SolderingAlloy.getFluid(L * 128))
-        //       .fluidInputs(Lubricant.getFluid(11000))
-        //       .fluidInputs(CosmicFabric.getFluid(L * 16))
-        //       .fluidInputs(Arcanium.getFluid(L * 8))
-        //       .output(ELECTRIC_MOTOR_OpV)
-        //       .duration(3600)
-        //       .EUt(100000000)
-        //       .stationResearch(b -> b
-        //               .researchStack(ELECTRIC_MOTOR_UXV.getStackForm())
-        //               .CWUt(1024)
-        //               .EUt(VA[UXV]))
-        //       .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+               .input(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic)
+               .input(stickLong, TranscendentMetal, 4)
+               .input(ring, TranscendentMetal, 4)
+               .input(round, TranscendentMetal, 8)
+               .input(wireFine, Shirabon, 64)
+               .input(wireFine, Shirabon, 64)
+               .input(cableGtSingle, Galaxium, 2)
+               .fluidInputs(SolderingAlloy.getFluid(L * 128))
+               .fluidInputs(Lubricant.getFluid(11000))
+               .fluidInputs(CosmicFabric.getFluid(L * 16))
+               .fluidInputs(Arcanium.getFluid(L * 8))
+               .output(ELECTRIC_MOTOR_OpV)
+               .duration(3600)
+               .EUt(100000000)
+               .stationResearch(b -> b
+                       .researchStack(ELECTRIC_MOTOR_UXV.getStackForm())
+                       .CWUt(1024)
+                       .EUt(VA[UXV]))
+               .buildAndRegister();
 
     }
 
@@ -273,25 +239,25 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  OpV
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(ELECTRIC_MOTOR_OpV, 2)
-        //        .input(plate, TranscendentMetal, 2)
-        //        .input(ring, TranscendentMetal, 4)
-        //        .input(round, TranscendentMetal, 16)
-        //        .input(screw, TranscendentMetal, 4)
-        //        .input(cableGtSingle, Galaxium, 2)
-        //        .fluidInputs(SolderingAlloy.getFluid(L * 128))
-        //        .fluidInputs(Lubricant.getFluid(11000))
-        //        .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(L * 64))
-        //        .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 16)) // todo may be find better material
-        //        .output(CONVEYOR_MODULE_OpV)
-        //        .duration(3600)
-        //        .EUt(100000000)
-        //        .stationResearch(b -> b
-        //                .researchStack(CONVEYOR_MODULE_UXV.getStackForm())
-        //                .CWUt(1024)
-        //                .EUt(VA[UXV]))
-        //        .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_OpV, 2)
+                .input(plate, TranscendentMetal, 2)
+                .input(ring, TranscendentMetal, 4)
+                .input(round, TranscendentMetal, 16)
+                .input(screw, TranscendentMetal, 4)
+                .input(cableGtSingle, Galaxium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 128))
+                .fluidInputs(Lubricant.getFluid(11000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(L * 64))
+                .fluidInputs(Arcanium.getFluid(L * 16))
+                .output(CONVEYOR_MODULE_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(CONVEYOR_MODULE_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
+                .buildAndRegister();
     }
 
     private static void ElectricPiston() {
@@ -397,27 +363,27 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  OpV
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(ELECTRIC_MOTOR_OpV)
-        //        .input(plate, TranscendentMetal, 4)
-        //        .input(ring, TranscendentMetal, 4)
-        //        .input(round, TranscendentMetal, 16)
-        //        .input(stick, TranscendentMetal, 4)
-        //        .input(gear, Spacetime)
-        //        .input(gearSmall, Spacetime, 2)
-        //        .input(cableGtSingle, Galaxium, 2)
-        //        .fluidInputs(SolderingAlloy.getFluid(L * 128))
-        //        .fluidInputs(Lubricant.getFluid(11000))
-        //        .fluidInputs(CosmicFabric.getFluid(L * 16))
-        //        .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 8)) // tood may be find better material
-        //        .output(ELECTRIC_PISTON_OpV)
-        //        .duration(3600)
-        //        .EUt(100000000)
-        //        .stationResearch(b -> b
-        //                .researchStack(ELECTRIC_PISTON_UXV.getStackForm())
-        //                .CWUt(1024)
-        //                .EUt(VA[UXV]))
-        //        .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_OpV)
+                .input(plate, TranscendentMetal, 4)
+                .input(ring, TranscendentMetal, 4)
+                .input(round, TranscendentMetal, 16)
+                .input(stick, TranscendentMetal, 4)
+                .input(gear, Spacetime)
+                .input(gearSmall, Spacetime, 2)
+                .input(cableGtSingle, Galaxium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 128))
+                .fluidInputs(Lubricant.getFluid(11000))
+                .fluidInputs(CosmicFabric.getFluid(L * 16))
+                .fluidInputs(Arcanium.getFluid(L * 8))
+                .output(ELECTRIC_PISTON_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_PISTON_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
+                .buildAndRegister();
     }
 
     private static void RobotArm() {
@@ -527,28 +493,28 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  OpV
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(stickLong, TranscendentMetal, 4)
-        //        .input(gear, TranscendentMetal)
-        //        .input(gearSmall, TranscendentMetal, 3)
-        //        .input(ELECTRIC_MOTOR_OpV, 2)
-        //        .input(ELECTRIC_PISTON_OpV)
-        //        .input(circuit, MarkerMaterials.Tier.OpV)
-        //        .input(circuit, MarkerMaterials.Tier.UXV, 2)
-        //        .input(circuit, MarkerMaterials.Tier.UIV, 4)
-        //        .input(cableGtSingle, Galaxium, 4)
-        //        .fluidInputs(SolderingAlloy.getFluid(L * 32))
-        //        .fluidInputs(Lubricant.getFluid(11000))
-        //        .fluidInputs(CosmicFabric.getFluid(L * 16))
-        //        .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 8)) // todo may be find better material
-        //        .output(ROBOT_ARM_OpV)
-        //        .duration(3600)
-        //        .EUt(100000000)
-        //        .stationResearch(b -> b
-        //                .researchStack(ROBOT_ARM_UXV.getStackForm())
-        //                .CWUt(1024)
-        //                .EUt(VA[UXV]))
-        //        .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(stickLong, TranscendentMetal, 4)
+                .input(gear, TranscendentMetal)
+                .input(gearSmall, TranscendentMetal, 3)
+                .input(ELECTRIC_MOTOR_OpV, 2)
+                .input(ELECTRIC_PISTON_OpV)
+                .input(circuit, MarkerMaterials.Tier.OpV)
+                .input(circuit, MarkerMaterials.Tier.UXV, 2)
+                .input(circuit, MarkerMaterials.Tier.UIV, 4)
+                .input(cableGtSingle, Galaxium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(11000))
+                .fluidInputs(CosmicFabric.getFluid(L * 16))
+                .fluidInputs(Arcanium.getFluid(L * 8))
+                .output(ROBOT_ARM_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(ROBOT_ARM_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
+                .buildAndRegister();
     }
 
     private static void ElectricPump() {
@@ -650,26 +616,26 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  OpV
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(ELECTRIC_MOTOR_OpV)
-        //        .input(pipeLargeFluid, Octiron)
-        //        .input(plate, TranscendentMetal, 2)
-        //        .input(screw, TranscendentMetal, 8)
-        //        .input(ring, NitrileButadieneRubber, 64)
-        //        .input(rotor, Spacetime)
-        //        .input(cableGtSingle, Galaxium, 2)
-        //        .fluidInputs(SolderingAlloy.getFluid(L * 128))
-        //        .fluidInputs(Lubricant.getFluid(11000))
-        //        .fluidInputs(CosmicFabric.getFluid(L * 16))
-        //        .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 8)) // todo may be find better material
-        //        .output(ELECTRIC_PUMP_OpV)
-        //        .duration(3600)
-        //        .EUt(100000000)
-        //        .stationResearch(b -> b
-        //                .researchStack(ELECTRIC_PUMP_UXV.getStackForm())
-        //                .CWUt(1024)
-        //                .EUt(VA[UXV]))
-        //        .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_OpV)
+                .input(pipeLargeFluid, Fatalium)
+                .input(plate, TranscendentMetal, 2)
+                .input(screw, TranscendentMetal, 8)
+                .input(ring, NitrileButadieneRubber, 64)
+                .input(rotor, Spacetime)
+                .input(cableGtSingle, Galaxium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 128))
+                .fluidInputs(Lubricant.getFluid(11000))
+                .fluidInputs(CosmicFabric.getFluid(L * 16))
+                .fluidInputs(Arcanium.getFluid(L * 8))
+                .output(ELECTRIC_PUMP_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_PUMP_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
+                .buildAndRegister();
     }
 
     private static void Emitter() {
@@ -769,14 +735,27 @@ public class MachineComponents {
                         .EUt(VA[UIV]))
                 .buildAndRegister();
 
-        //  OpV todo
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(frameGt, TranscendentMetal)
-        //        .input(ELECTRIC_MOTOR_OpV)
-        //        .input(stickLong, TranscendentMetal, 4)
-        //        .input(UNSTABLE_STAR, 4)
-        //        .input(circuit, MarkerMaterials.Tier.OpV, 2)
-        //        .input(foil, )
+        //  OpV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal)
+                .input(ELECTRIC_MOTOR_OpV)
+                .input(stickLong, TranscendentMetal, 4)
+                .input(UNSTABLE_STAR, 4)
+                .input(circuit, MarkerMaterials.Tier.OpV, 2)
+                .input(foil, Arcanium, 64)
+                .input(foil, Arcanium, 64)
+                .input(cableGtSingle, Galaxium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(CosmicFabric.getFluid(L * 16))
+                .fluidInputs(Arcanium.getFluid(L * 8))
+                .output(EMITTER_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(EMITTER_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
+                .buildAndRegister();
     }
 
     private static void Sensor() {
@@ -873,6 +852,27 @@ public class MachineComponents {
                         .researchStack(SENSOR_UIV.getStackForm())
                         .CWUt(512)
                         .EUt(VA[UIV]))
+                .buildAndRegister();
+
+        //  OpV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal)
+                .input(plate, TranscendentMetal, 4)
+                .input(UNSTABLE_STAR, 4)
+                .input(circuit, MarkerMaterials.Tier.OpV, 2)
+                .input(foil, Edenium, 64)
+                .input(foil, Edenium, 32)
+                .input(cableGtSingle, Galaxium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(CosmicFabric.getFluid(L * 16))
+                .fluidInputs(Arcanium.getFluid(L * 8))
+                .output(SENSOR_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(SENSOR_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
                 .buildAndRegister();
     }
 
@@ -973,6 +973,26 @@ public class MachineComponents {
                         .EUt(VA[UIV]))
                 .buildAndRegister();
 
-        //  opv todo
+        //  OpV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal)
+                .input(plate, TranscendentMetal, 6)
+                .input(UNSTABLE_STAR, 4)
+                .input(EMITTER_OpV, 2)
+                .input(circuit, MarkerMaterials.Tier.OpV, 2)
+                .input(wireFine, NeutroniumSuperconductor, 64)
+                .input(wireFine, NeutroniumSuperconductor, 64)
+                .input(cableGtSingle, Galaxium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(CosmicFabric.getFluid(L * 16))
+                .fluidInputs(Arcanium.getFluid(L * 8))
+                .output(FIELD_GENERATOR_OpV)
+                .duration(3600)
+                .EUt(100000000)
+                .stationResearch(b -> b
+                        .researchStack(FIELD_GENERATOR_UXV.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[UXV]))
+                .buildAndRegister();
     }
 }

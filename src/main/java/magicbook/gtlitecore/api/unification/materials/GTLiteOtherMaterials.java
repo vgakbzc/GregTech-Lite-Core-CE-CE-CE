@@ -76,6 +76,26 @@ public class GTLiteOtherMaterials {
                 .iconSet(DULL)
                 .components(Bismuth, 2, Ruthenium, 2, Oxygen, 7)
                 .build();
+
+        //  20007 Sylvanite
+        Sylvanite = new Material.Builder(getId(), gregtechId("sylvanite"))
+                .dust()
+                .ore(2, 2, false)
+                .addOreByproducts(Electrum)
+                .color(0xE4EBDC)
+                .iconSet(METALLIC)
+                .components(Gold, 1, Silver, 1, Tellurium, 4)
+                .build();
+
+        //  20008 Rheniite
+        Rheniite = new Material.Builder(getId(), gregtechId("rheniite"))
+                .dust()
+                .ore(1, 2, false)
+                .addOreByproducts(Rhenium)
+                .color(0xDFDFDF)
+                .iconSet(SHINY)
+                .components(Rhenium, 1, Sulfur, 2)
+                .build();
     }
 
     private static int getId() {

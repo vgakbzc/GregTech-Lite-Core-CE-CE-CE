@@ -137,6 +137,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem X_RAY_MIRROR;
     public static MetaItem<?>.MetaValueItem MICROFOCUS_X_RAY_TUBE;
     public static MetaItem<?>.MetaValueItem EXOTIC_SOC;
+    public static MetaItem<?>.MetaValueItem LEPTON_TRAP_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem CHARGED_LEPTON_TRAP_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem COLORED_LEDS;
+    public static MetaItem<?>.MetaValueItem ROTATING_TRANSPARENT_SURFACE;
+    public static MetaItem<?>.MetaValueItem UNIVERSAL_SOC;
 
     public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;
@@ -269,6 +274,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_OVERWORLD;
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_NETHER;
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_END;
+    public static MetaItem<?>.MetaValueItem DIMENSION_GAP;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

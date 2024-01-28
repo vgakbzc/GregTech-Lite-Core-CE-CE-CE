@@ -62,7 +62,7 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
     @Override
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
-        Object type = context.get("CATieredCasingTieredStats");
+        Object type = context.get("CACasingTieredStats");
         this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }

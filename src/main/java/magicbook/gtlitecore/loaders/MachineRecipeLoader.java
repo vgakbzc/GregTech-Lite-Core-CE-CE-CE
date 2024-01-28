@@ -1596,6 +1596,29 @@ public class MachineRecipeLoader {
 
     private static void MachineCasingRecipes() {
 
+        //  Substrate Casing
+        ModHandler.addShapedRecipe(true, "substrate_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.SUBSTRATE_CASING),
+                "PPP", "RFR", "R R",
+                'P', new UnificationEntry(plate, Palladium),
+                'R', new UnificationEntry(stick, RedSteel),
+                'F', new UnificationEntry(frameGt, BlueSteel));
+
+        //  Advanced Substrate Casing
+        ModHandler.addShapedRecipe(true, "advanced_substrate_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ADVANCED_SUBSTRATE_CASING),
+                "PPP", "RFR", "R R",
+                'P', new UnificationEntry(plate, Ruridit),
+                'R', new UnificationEntry(stick, Duranium),
+                'F', new UnificationEntry(frameGt, NaquadahAlloy));
+
+        //  Drill Head
+        ModHandler.addShapedRecipe(true, "drill_head", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.DRILL_HEAD),
+                "PGP", "MHM", "SSS",
+                'P', ELECTRIC_PISTON_UV.getStackForm(),
+                'G', new UnificationEntry(gear, Orichalcum),
+                'M', ELECTRIC_MOTOR_UV.getStackForm(),
+                'H', HULL[UV].getStackForm(),
+                'S', COMPONENT_GRINDER_TUNGSTEN.getStackForm());
+
         //  Inconel-625 Casing
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(HULL[EV], 2)

@@ -14,6 +14,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class StellarFurnace {
@@ -81,19 +82,20 @@ public class StellarFurnace {
     }
 
     private static void Recipes() {
-        DegenerateRhenium();
-        CosmicComputingMixture();
-        HeavyQuarkDegenerateMatter();
-        CosmicNeutronium();
-        QuantumchromodynamicallyConfinedMatter();
-        DwarfMatters();
-        CosmicFabric();
+        DegenerateRheniumChain();
+        CosmicComputingMixtureChain();
+        HeavyQuarkDegenerateMatterChain();
+        CosmicNeutroniumChain();
+        QuantumchromodynamicallyConfinedMatterChain();
+        DwarfMattersChain();
+        CosmicFabricChain();
         SupracausalCircuitComponents();
-        Hypercube();
-        Hikarium();
+        HypercubeChain();
+        HikariumChain();
+        ShirabonEternityChain();
     }
 
-    private static void DegenerateRhenium() {
+    private static void DegenerateRheniumChain() {
 
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(ingot, Rhenium)
@@ -122,7 +124,7 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
-    private static void CosmicComputingMixture() {
+    private static void CosmicComputingMixtureChain() {
 
         //  Quark Gluon Plasma
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -162,7 +164,7 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
-    private static void HeavyQuarkDegenerateMatter() {
+    private static void HeavyQuarkDegenerateMatterChain() {
 
         //  Heavy Quark Enriched Mixture
         MIXER_RECIPES.recipeBuilder()
@@ -199,7 +201,7 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
-    private static void CosmicNeutronium() {
+    private static void CosmicNeutroniumChain() {
 
         //  Step 1: Dense Neutron Plasma
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -239,7 +241,7 @@ public class StellarFurnace {
         //  back to plasma condenser recipe
     }
 
-    private static void QuantumchromodynamicallyConfinedMatter() {
+    private static void QuantumchromodynamicallyConfinedMatterChain() {
 
         //  Heavy Quark Degenerate Matter -> High Energy Quark Gluon Plasma
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -263,7 +265,7 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
-    private static void DwarfMatters() {
+    private static void DwarfMattersChain() {
 
         //  From Space Elevator Recipes to Stellar Furnace Recipes
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -278,7 +280,7 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
-    private static void CosmicFabric() {
+    private static void CosmicFabricChain() {
 
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(COSMIC_FABRIC)
@@ -395,7 +397,7 @@ public class StellarFurnace {
                 .buildAndRegister();
     }
 
-    private static void Hypercube() {
+    private static void HypercubeChain() {
 
         //  Crude Hypercube
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -444,7 +446,7 @@ public class StellarFurnace {
 
     }
 
-    private static void Hikarium() {
+    private static void HikariumChain() {
 
         //  Instanton -> Superluminal Tachyon Jet
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -465,6 +467,36 @@ public class StellarFurnace {
                 .fluidOutputs(LightQuarks.getFluid(200))
                 .EUt(VA[UIV])
                 .duration(25)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
+
+    private static void ShirabonEternityChain() {
+
+        //  In this recipe, Infinity is cycle, but should use Cosmic Computing Mixture and Charged Hypercube
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(singularity, Infinity)
+                .input(CHARGED_HYPERCUBE)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(CosmicComputingMixture.getFluid(1152))
+                .fluidInputs(Spacetime.getFluid(L * 4))
+                .chancedOutput(dust, Shirabon, 64, 2500, 0)
+                .chancedOutput(DIMENSION_GAP, 2500, 0)
+                .fluidOutputs(Eternity.getFluid(9216))
+                .fluidOutputs(Infinity.getFluid(82944)) // L * 64 * 9 i.e. 64 blocks
+                .EUt(VA[OpV])
+                .duration(200)
+                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .buildAndRegister();
+
+        //  Dimension Gap Pre-cycle (means is not perfect cycle)
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .input(DIMENSION_GAP)
+                .fluidInputs(Neutronium.getFluid(L))
+                .output(dust, Ash)
+                .fluidOutputs(Spacetime.getFluid(L * 4))
+                .EUt(VA[OpV])
+                .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
