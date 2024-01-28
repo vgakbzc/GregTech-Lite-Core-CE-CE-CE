@@ -2749,6 +2749,32 @@ public class MachineRecipeLoader {
                 'R', ROBOT_ARM_ZPM,
                 'F', new UnificationEntry(frameGt, NaquadahAlloy));
 
+        //  Circuit Assembly Control Casing
+        ModHandler.addShapedRecipe(true, "circuit_assembly_control_casing", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.CIRCUIT_ASSEMBLY_CONTROL_CASING, 2),
+                "OPO", "SFE", "OMO",
+                'O', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
+                'P', HIGH_POWER_INTEGRATED_CIRCUIT,
+                'F', new UnificationEntry(frameGt, HSSE),
+                'S', SENSOR_LuV,
+                'E', EMITTER_LuV,
+                'M', ELECTRIC_MOTOR_LuV);
+
+        //  Circuit Assembly Casing
+        ModHandler.addShapedRecipe(true, "circuit_assembly_casing", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.CIRCUIT_ASSEMBLY_LINE_CASING, 2),
+                "PGP", "RFR", "PGP",
+                'P', new UnificationEntry(plate, Osmium),
+                'G', new UnificationEntry(gear, Rhodium),
+                'R', ROBOT_ARM_LuV,
+                'F', new UnificationEntry(frameGt, HSSE));
+
+        //  Advanced Grate Casing
+        ModHandler.addShapedRecipe(true, "advanced_grate_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.ADVANCED_GRATE_CASING, 2),
+                "PRP", "PXP", "PMP",
+                'X', MetaBlocks.MULTIBLOCK_CASING.getItemVariant(gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING),
+                'R', new UnificationEntry(rotor, StainlessSteel),
+                'M', ELECTRIC_MOTOR_LuV,
+                'P', new UnificationEntry(plate, Osmiridium));
+
         //  Staballoy Casing
         ModHandler.addShapedRecipe(true, "staballoy_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.STABALLOY_CASING, 2),
                 "PhP", "PFP","PwP",

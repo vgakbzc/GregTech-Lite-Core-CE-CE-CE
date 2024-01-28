@@ -366,6 +366,16 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_CIRCUIT_UXV = this.addItem(512, "wrap.circuit.uxv");
         WRAP_CIRCUIT_OpV = this.addItem(513, "wrap.circuit.opv");
         WRAP_CIRCUIT_MAX = this.addItem(514, "wrap.circuit.max");
+        WRAP_BASIC_CIRCUIT_BOARD = this.addItem(515, "wrap.circuit_board.basic");
+        WRAP_GOOD_CIRCUIT_BOARD = this.addItem(516, "wrap.circuit_board.good");
+        WRAP_PLASTIC_CIRCUIT_BOARD = this.addItem(517, "wrap.circuit_board.plastic");
+        WRAP_ADVANCED_CIRCUIT_BOARD = this.addItem(518, "wrap.circuit_board.advanced");
+        WRAP_EXTREME_CIRCUIT_BOARD = this.addItem(519, "wrap.circuit_board.extreme");
+        WRAP_ELITE_CIRCUIT_BOARD = this.addItem(520, "wrap.circuit_board.elite");
+        WRAP_WETWARE_CIRCUIT_BOARD = this.addItem(521, "wrap.circuit_board.wetware");
+        WRAP_GOOWARE_CIRCUIT_BOARD = this.addItem(522, "wrap.circuit_board.gooware");
+        WRAP_OPTICAL_CIRCUIT_BOARD = this.addItem(523, "wrap.circuit_board.optical");
+        WRAP_SPINTRONIC_CIRCUIT_BOARD = this.addItem(524, "wrap.circuit_board.spintronic");
 
         //  Singularities
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");

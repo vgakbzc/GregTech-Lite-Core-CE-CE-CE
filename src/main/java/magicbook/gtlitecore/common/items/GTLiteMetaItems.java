@@ -342,6 +342,16 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_UXV;
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_MAX;
+    public static MetaItem<?>.MetaValueItem WRAP_BASIC_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_GOOD_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_PLASTIC_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_ADVANCED_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_EXTREME_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_ELITE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_WETWARE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_GOOWARE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CIRCUIT_BOARD;
 
     //  Singularities
     public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;
