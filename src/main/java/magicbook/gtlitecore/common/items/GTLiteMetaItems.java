@@ -352,6 +352,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_GOOWARE_CIRCUIT_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_CIRCUIT_BOARD;
     public static MetaItem<?>.MetaValueItem WRAP_SPINTRONIC_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem WRAP_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem WRAP_SMD_INDUCTOR;
 
     //  Singularities
     public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;

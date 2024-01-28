@@ -252,5 +252,7 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
         tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.3"));
+        tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.5"));
     }
 }

@@ -1241,7 +1241,9 @@ gtlitecore.machine.fluid_drill_rig.uv.name=究极流体钻机
 gtlitecore.machine.large_circuit_assembly_line.name=大型电路装配线
 gtlitecore.machine.large_circuit_assembly_line.tooltip.1=批量装配各式各样的电路！
 gtlitecore.machine.large_circuit_assembly_line.tooltip.2=效率碾压同等级电路组装机！
-gtlitecore.machine.large_circuit_assembly_line.tooltip.3=需要一个§r对应种类§7的电路来识别具体的电路配方。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.3=需要§r对应种类§7的电路来识别具体的电路配方。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.4=允许使用§r任意等级§7的输入总线与输出总线。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.5=物品与流体§c均不需要§7有序输入。
 
 gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
@@ -2330,3 +2332,13 @@ metaitem.wrap.circuit_board.optical.name=封装究极电路板
 metaitem.wrap.circuit_board.optical.tooltip=用于进行批量组装
 metaitem.wrap.circuit_board.spintronic.name=封装无尽电路板
 metaitem.wrap.circuit_board.spintronic.tooltip=用于进行批量组装
+metaitem.wrap.smd.transistor.name=封装贴片晶体管
+metaitem.wrap.smd.transistor.tooltip=用于进行批量组装
+metaitem.wrap.smd.resistor.name=封装贴片电阻
+metaitem.wrap.smd.resistor.tooltip=用于进行批量组装
+metaitem.wrap.smd.capacitor.name=封装贴片电容
+metaitem.wrap.smd.capacitor.tooltip=用于进行批量组装
+metaitem.wrap.smd.diode.name=封装贴片二极管
+metaitem.wrap.smd.diode.tooltip=用于进行批量组装
+metaitem.wrap.smd.inductor.name=封装贴片电感
+metaitem.wrap.smd.inductor.tooltip=用于进行批量组装

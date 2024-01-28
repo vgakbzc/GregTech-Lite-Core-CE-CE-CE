@@ -376,6 +376,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_GOOWARE_CIRCUIT_BOARD = this.addItem(522, "wrap.circuit_board.gooware");
         WRAP_OPTICAL_CIRCUIT_BOARD = this.addItem(523, "wrap.circuit_board.optical");
         WRAP_SPINTRONIC_CIRCUIT_BOARD = this.addItem(524, "wrap.circuit_board.spintronic");
+        WRAP_SMD_TRANSISTOR = this.addItem(525, "wrap.smd.transistor");
+        WRAP_SMD_RESISTOR = this.addItem(526, "wrap.smd.resistor");
+        WRAP_SMD_CAPACITOR = this.addItem(527, "wrap.smd.capacitor");
+        WRAP_SMD_DIODE = this.addItem(528, "wrap.smd.diode");
+        WRAP_SMD_INDUCTOR = this.addItem(529, "wrap.smd.inductor");
 
         //  Singularities
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");

@@ -45,14 +45,14 @@ public class RecipeMapLargeCircuitAssemblyLine<R extends RecipeBuilder<R>> exten
 
         if (!isOutputs) {
             // item input slots
-            addSlot(builder, startInputsX - 9, yOffset + 10, 0, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX - 9, yOffset + 10, 6, itemHandler, fluidHandler, false, false);
 
-            addSlot(builder, startInputsX + 18, startInputsY + 18, 1, itemHandler, fluidHandler, false, false);
-            addSlot(builder, startInputsX + 18 * 2, startInputsY + 18, 2, itemHandler, fluidHandler, false, false);
-            addSlot(builder, startInputsX + 18 * 3, startInputsY + 18, 3, itemHandler, fluidHandler, false, false);
-            addSlot(builder, startInputsX + 18, startInputsY + 18 * 2, 4, itemHandler, fluidHandler, false, false);
-            addSlot(builder, startInputsX + 18 * 2, startInputsY + 18 * 2, 5, itemHandler, fluidHandler, false, false);
-            addSlot(builder, startInputsX + 18 * 3, startInputsY + 18 * 2, 6, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX + 18, startInputsY + 18, 0, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX + 18 * 2, startInputsY + 18, 1, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX + 18 * 3, startInputsY + 18, 2, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX + 18, startInputsY + 18 * 2, 3, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX + 18 * 2, startInputsY + 18 * 2, 4, itemHandler, fluidHandler, false, false);
+            addSlot(builder, startInputsX + 18 * 3, startInputsY + 18 * 2, 5, itemHandler, fluidHandler, false, false);
 
             //  fluid input slots
             addSlot(builder, startInputsX + 18 * 3, startInputsY + 18 * 3, 0, itemHandler, fluidHandler, true, false);
