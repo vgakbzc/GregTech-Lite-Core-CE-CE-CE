@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid        = GTLiteCore.MODID,
      name         = GTLiteCore.NAME,
      version      = GTLiteCore.VERSION,
-     dependencies = "required-after:gregtech@[2.8.5-beta,);after:gcym@[1.2.7,);after:gregtechfoodoption")
+     dependencies = "required-after:gregtech@[2.8.6-beta,);after:gcym@[1.2.7,);after:gregtechfoodoption")
 public class GTLiteCore {
 
     public static final String MODID = "gtlitecore";

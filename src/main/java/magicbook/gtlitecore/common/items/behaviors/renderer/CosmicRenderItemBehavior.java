@@ -13,6 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
+@Deprecated
 public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
 
     private final Supplier<TextureAtlasSprite> supplier;

@@ -518,6 +518,16 @@ metaitem.component.spintronic.microfocus_x_ray_tube.name=微焦点X射线传导�
 metaitem.component.spintronic.microfocus_x_ray_tube.tooltip=比激光镭射器组件更好
 metaitem.component.spintronic.exotic_soc.name=奇异SoC
 metaitem.component.spintronic.exotic_soc.tooltip=量子反常自旋计算单元
+metaitem.component.cosmic.lepton_trap_crystal.name=轻子阱晶体
+metaitem.component.cosmic.lepton_trap_crystal.tooltip=量子闪烁体
+metaitem.component.cosmic.charged_lepton_trap_crystal.name=带电轻子阱晶体
+metaitem.component.cosmic.charged_lepton_trap_crystal.tooltip=三重态量子闪烁体
+metaitem.component.cosmic.colored_leds.name=彩色LED灯
+metaitem.component.cosmic.colored_leds.tooltip=圣诞快乐！
+metaitem.component.cosmic.rotating_transparent_surface.name=周期性旋转全息屏
+metaitem.component.cosmic.rotating_transparent_surface.tooltip=透明旋转液晶屏幕
+metaitem.component.cosmic.universal_soc.name=寰宇SoC
+metaitem.component.cosmic.universal_soc.tooltip=宇宙信息辅助计算电路
 metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
@@ -1314,6 +1324,9 @@ gregtech.material.hikarium=光素
 gregtech.material.eternity=永恒
 gregtech.material.tiberium=泰伯利亚
 gregtech.material.luna_silver=月光银
+gregtech.material.shirabon=调谐幻金
+gregtech.material.edenium=伊甸神钢
+gregtech.material.fatalium=命识魂金
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -1937,10 +1950,12 @@ gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 ##  Other Materials
 gregtech.material.proto_adamantium=原始精金
 gregtech.material.enriched_mithril=富集秘银
-gregtech.material.trinium_titanide=钛化凯金
-gregtech.material.germanium_tungsten_nitride=氮化锗钨
-gregtech.material.bismuth_iridiate=铱酸铋
-gregtech.material.bismuth_ruthenate=钌酸铋
+gregtech.material.trinium_titanide=凯金石
+gregtech.material.germanium_tungsten_nitride=锗钨矿
+gregtech.material.bismuth_iridiate=硫铱铋矿
+gregtech.material.bismuth_ruthenate=硫钌铋矿
+gregtech.material.sylvanite=针碲金矿
+gregtech.material.rheniite=辉铼矿
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
@@ -2016,6 +2031,8 @@ metaitem.cosmic_memory_card.nether.name=下界信息存储卡
 metaitem.cosmic_memory_card.nether.tooltip=用于为§6虚拟宇宙模拟器§7指定倾向
 metaitem.cosmic_memory_card.end.name=末地信息存储卡
 metaitem.cosmic_memory_card.end.tooltip=用于为§6虚拟宇宙模拟器§7指定倾向
+metaitem.dimension_gap.name=维度隙间
+metaitem.dimension_gap.tooltip=超维度时空连续体碎片
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

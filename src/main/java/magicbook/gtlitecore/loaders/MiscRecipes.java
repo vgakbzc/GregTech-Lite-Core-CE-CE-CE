@@ -923,6 +923,8 @@ public class MiscRecipes {
                 .input(FIELD_GENERATOR_UXV, 4)
                 .input(FEMTO_PIC_WAFER, 64)
                 .input(FEMTO_PIC_WAFER, 64)
+                .input(FEMTO_PIC_WAFER, 64)
+                .input(FEMTO_PIC_WAFER, 64)
                 .input(SUPRACAUSAL_DIODE, 64)
                 .input(SUPRACAUSAL_CAPACITOR, 64)
                 .input(SUPRACAUSAL_RESISTOR, 64)

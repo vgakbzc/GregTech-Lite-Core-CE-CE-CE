@@ -143,8 +143,8 @@ dependencies {
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:4910674")
     //  GregTech Food Option 1.10.2
     implementation rfg.deobf("curse.maven:gregtech-food-option-477021:4904513")
-    //  AE2 Extended Life
-    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:4773115")
+    //  AE2 unofficial Extended Life 0.56.2
+    implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5047265")
     //  The One Probe
     runtimeOnly 'curse.maven:top-245211:2667280'
     //  Groovy Script 0.7.0

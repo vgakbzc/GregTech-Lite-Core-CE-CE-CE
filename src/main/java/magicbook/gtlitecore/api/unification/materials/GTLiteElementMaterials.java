@@ -365,6 +365,51 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV]))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .build();
+
+        //  10027 Shirabon
+        Shirabon = new Material.Builder(getId(), gregtechId("shirabon"))
+                .ingot()
+                .fluid()
+                .color(0xe0156d)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Shirabon)
+                .blast(b -> b
+                        .temp(18000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 144)
+                        .vacuumStats(VA[UXV], 288))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[OpV], 288, 144, false)
+                .build();
+
+        //  10028 Edenium
+        Edenium = new Material.Builder(getId(), gregtechId("edenium"))
+                .ingot()
+                .fluid()
+                .color(0xFFE140)
+                .iconSet(CUSTOM_LEGENDARIUM)
+                .element(GTLiteElements.Edenium)
+                .blast(b -> b
+                        .temp(17800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[OpV], 365)
+                        .vacuumStats(VA[OpV], 365))
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING)
+                .cableProperties(V[OpV], 360, 640, false)
+                .build();
+
+        //  10029 Fatalium
+        Fatalium = new Material.Builder(getId(), gregtechId("fatalium"))
+                .ingot()
+                .fluid()
+                .color(0xFFECEF)
+                .iconSet(BRIGHT)
+                .element(GTLiteElements.Fatalium)
+                .blast(b -> b
+                        .temp(16000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[OpV], 27)
+                        .vacuumStats(VA[OpV], 50))
+                .fluidPipeProperties(160000, 40000, true, true, true, true)
                 .build();
     }
 

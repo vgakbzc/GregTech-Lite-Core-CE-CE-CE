@@ -33,6 +33,9 @@ public class GTLiteMaterials {
     public static Material Eternity;
     public static Material Tiberium;
     public static Material LunaSilver;
+    public static Material Shirabon;
+    public static Material Edenium;
+    public static Material Fatalium;
 
     //  First Degree Materials (Range: 11001-12000)
     public static Material PlatinumGroupResidue;
@@ -660,6 +663,8 @@ public class GTLiteMaterials {
     public static Material GermaniumTungstenNitride;
     public static Material BismuthIridiate;
     public static Material BismuthRuthenate;
+    public static Material Sylvanite;
+    public static Material Rheniite;
 
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
