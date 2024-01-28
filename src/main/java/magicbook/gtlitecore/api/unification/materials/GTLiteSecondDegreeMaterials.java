@@ -943,6 +943,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[OpV], 180)
                         .vacuumStats(VA[UIV], 90))
                 .cableProperties(V[OpV], 512, 0, true)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
     }

@@ -274,6 +274,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_OVERWORLD;
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_NETHER;
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_END;
+    public static MetaItem<?>.MetaValueItem DIMENSION_GAP;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

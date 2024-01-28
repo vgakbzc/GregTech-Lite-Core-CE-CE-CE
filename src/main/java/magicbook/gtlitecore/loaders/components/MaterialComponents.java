@@ -97,7 +97,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.pipeNormalFluid, Lafium)},
                 {11, new UnificationEntry(OrePrefix.pipeNormalFluid, CrystalMatrix)},
                 {12, new UnificationEntry(OrePrefix.pipeNormalFluid, QuantumchromodynamicallyConfinedMatter)},
-//                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Octiron)},
+                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Fatalium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         PIPE_LARGE.appendIngredients(Stream.of(new Object[][]{
@@ -105,7 +105,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.pipeNormalFluid, Lafium)},
                 {11, new UnificationEntry(OrePrefix.pipeNormalFluid, CrystalMatrix)},
                 {12, new UnificationEntry(OrePrefix.pipeNormalFluid, QuantumchromodynamicallyConfinedMatter)},
-//                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Octiron)},
+                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Fatalium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         GLASS.appendIngredients(Stream.of(new Object[][]{
@@ -198,7 +198,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.wireGtOctal, Seaborgium)},
                 {11, new UnificationEntry(OrePrefix.wireGtOctal, Abyssalloy)},
                 {12, new UnificationEntry(OrePrefix.wireGtOctal, BlackDwarfMatter)},
-//                {13, new UnificationEntry(OrePrefix.wireGtOctal, Tritanium)},
+                {13, new UnificationEntry(OrePrefix.wireGtOctal, Shirabon)},
 //                {14, new UnificationEntry(OrePrefix.wireGtOctal, Tritanium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
@@ -272,7 +272,7 @@ public class MaterialComponents {
                 {10, new UnificationEntry(OrePrefix.spring, CarbonNanotube)},
                 {11, new UnificationEntry(OrePrefix.spring, RutheniumTriniumAmericiumNeutronate)},
                 {12, new UnificationEntry(OrePrefix.spring, WhiteDwarfMatter)},
-//                {13, new UnificationEntry(OrePrefix.spring, Trinium)},
+                {13, new UnificationEntry(OrePrefix.spring, Edenium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
     }
 }

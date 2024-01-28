@@ -1324,6 +1324,9 @@ gregtech.material.hikarium=光素
 gregtech.material.eternity=永恒
 gregtech.material.tiberium=泰伯利亚
 gregtech.material.luna_silver=月光银
+gregtech.material.shirabon=调谐幻金
+gregtech.material.edenium=伊甸神钢
+gregtech.material.fatalium=命识魂金
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -2028,6 +2031,8 @@ metaitem.cosmic_memory_card.nether.name=下界信息存储卡
 metaitem.cosmic_memory_card.nether.tooltip=用于为§6虚拟宇宙模拟器§7指定倾向
 metaitem.cosmic_memory_card.end.name=末地信息存储卡
 metaitem.cosmic_memory_card.end.tooltip=用于为§6虚拟宇宙模拟器§7指定倾向
+metaitem.dimension_gap.name=维度隙间
+metaitem.dimension_gap.tooltip=超维度时空连续体碎片
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
