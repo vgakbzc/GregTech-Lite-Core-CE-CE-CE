@@ -145,6 +145,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityAdvancedFluidDrill EXTREME_FLUID_DRILL_RIG;
     public static MetaTileEntityAdvancedFluidDrill ULTIMATE_FLUID_DRILL_RIG;
     public static MetaTileEntityAdvancedFluidDrill INFINITY_FLUID_DRILL_RIG;
+    public static MetaTileEntityLargeCircuitAssemblyLine LARGE_CIRCUIT_ASSEMBLY_LINE;
     public static MetaTileEntityLargeVacuumChamber LARGE_VACUUM_CHAMBER;
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
     public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
@@ -358,7 +359,7 @@ public class GTLiteMetaTileEntities {
         EXTREME_FLUID_DRILL_RIG = registerMultiMetaTileEntity(83, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.luv"), 6));
         ULTIMATE_FLUID_DRILL_RIG = registerMultiMetaTileEntity(84, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.zpm"), 7));
         INFINITY_FLUID_DRILL_RIG = registerMultiMetaTileEntity(85, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.uv"), 8));
-        //  86
+        LARGE_CIRCUIT_ASSEMBLY_LINE = registerMultiMetaTileEntity(86, new MetaTileEntityLargeCircuitAssemblyLine(gtliteId("large_circuit_assembly_line")));
         //  87 INTEGRATED_ORE_PROCESSOR
         LARGE_VACUUM_CHAMBER = registerMultiMetaTileEntity(88, new MetaTileEntityLargeVacuumChamber(gtliteId("large_vacuum_chamber")));
         LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));

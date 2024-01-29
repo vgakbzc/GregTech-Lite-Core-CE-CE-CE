@@ -105,11 +105,13 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer INCOLOY_DS_CASING = new GTLiteOverlayRenderer("casings/incoloy_ds_casing");
     public static GTLiteOverlayRenderer MARAGING_STEEL_250_CASING = new GTLiteOverlayRenderer("casings/maraging_steel_250_casing");
     public static GTLiteOverlayRenderer RURIDIT_CASING = new GTLiteOverlayRenderer("casings/ruridit_casing");
+    public static GTLiteOverlayRenderer OSMIRIDIUM_CASING = new GTLiteOverlayRenderer("casings/osmiridium_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  SimpleOrientedCubeRenderer
     public static SimpleOrientedCubeRenderer ADVANCED_FILTER_IRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_filter_iridium_front");
+    public static SimpleOrientedCubeRenderer ADVANCED_GRATE_OSMIRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_grate_osmiridium_front");
 
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();

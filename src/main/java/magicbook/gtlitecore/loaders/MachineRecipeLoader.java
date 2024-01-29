@@ -1592,6 +1592,31 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Large Circuit Assembly Line
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ASSEMBLY_LINE)
+                .input(frameGt, HastelloyC59, 4)
+                .input(LARGE_CIRCUIT_ASSEMBLER, 4)
+                .input(CIRCUIT_ASSEMBLER[IV], 16)
+                .input(ROBOT_ARM_LuV, 4)
+                .input(CONVEYOR_MODULE_LuV, 4)
+                .input(plateDouble, Tantalloy61, 8)
+                .input(plateDouble, MARM200CeSteel, 8)
+                .input(gear, HSSE)
+                .input(gearSmall, Osmiridium, 3)
+                .input(wireGtQuadruple, IndiumTinBariumTitaniumCuprate, 4)
+                .fluidInputs(SolderingAlloy.getFluid(4608))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .output(LARGE_CIRCUIT_ASSEMBLY_LINE)
+                .EUt(VA[LuV])
+                .duration(1200)
+                .scannerResearch(b -> b
+                        .researchStack(LARGE_CIRCUIT_ASSEMBLER.getStackForm())
+                        .EUt(VA[IV])
+                        .duration(600))
+                .buildAndRegister();
+
     }
 
     private static void MachineCasingRecipes() {
@@ -2748,6 +2773,22 @@ public class MachineRecipeLoader {
                 'G', new UnificationEntry(gear, Osmiridium),
                 'R', ROBOT_ARM_ZPM,
                 'F', new UnificationEntry(frameGt, NaquadahAlloy));
+
+        //  Circuit Assembly Casing
+        ModHandler.addShapedRecipe(true, "circuit_assembly_casing", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.CIRCUIT_ASSEMBLY_LINE_CASING, 2),
+                "PGP", "RFR", "PGP",
+                'P', new UnificationEntry(plate, Osmium),
+                'G', new UnificationEntry(gear, Rhodium),
+                'R', ROBOT_ARM_LuV,
+                'F', new UnificationEntry(frameGt, HSSE));
+
+        //  Advanced Grate Casing
+        ModHandler.addShapedRecipe(true, "advanced_grate_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.ADVANCED_GRATE_CASING, 2),
+                "PRP", "PXP", "PMP",
+                'X', MetaBlocks.MULTIBLOCK_CASING.getItemVariant(gregtech.common.blocks.BlockMultiblockCasing.MultiblockCasingType.GRATE_CASING),
+                'R', new UnificationEntry(rotor, StainlessSteel),
+                'M', ELECTRIC_MOTOR_LuV,
+                'P', new UnificationEntry(plate, Osmiridium));
 
         //  Staballoy Casing
         ModHandler.addShapedRecipe(true, "staballoy_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.STABALLOY_CASING, 2),

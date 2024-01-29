@@ -145,6 +145,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> LARGE_GAS_COLLECTOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -357,7 +359,7 @@ public class GTLiteRecipeMaps {
         SPACE_ELEVATOR_DRILLING_MODULE = new RecipeMap<>("space_elevator_drilling_module", 4, 0, 2, 1, new SpaceElevatorCasingTierRecipeBuilder(), false)
                 .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_FLUID_RIG_DEPLETION, ProgressWidget.MoveType.HORIZONTAL)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.DRILL_TOOL);
 
         //  Space Elevator Mining Module
@@ -504,5 +506,12 @@ public class GTLiteRecipeMaps {
         //  Virtual Cosmos Simulator RecipeMap
         VIRTUAL_COSMOS_SIMULATOR_RECIPES = new RecipeMapVirtualCosmosSimulator<>("virtual_cosmos_simulator_recipes", 1, 12, 0, 12, new SimpleRecipeBuilder(), false)
                 .setSound(GTSoundEvents.SCIENCE);
+
+        //  Large Circuit Assembly Line RecipeMap
+        LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES = new RecipeMapLargeCircuitAssemblyLine<>("large_circuit_assembly_line_recipes", 7, 1, 1, 0, new SimpleRecipeBuilder(), false)
+                .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.DATA_ORB_OVERLAY)
+                .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+                .setSound(GTSoundEvents.ASSEMBLER);
     }
 }

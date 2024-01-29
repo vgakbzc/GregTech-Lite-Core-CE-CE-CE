@@ -137,5 +137,6 @@ public class RecipeManager {
         LargeGasCollector.init();
         Condenser.init();
         VirtualCosmosSimulator.init();
+        LargeCircuitAssemblyLine.init();
     }
 }

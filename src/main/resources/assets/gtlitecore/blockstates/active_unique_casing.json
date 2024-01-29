@@ -74,6 +74,19 @@
         "side": "gtlitecore:blocks/casings/laurenium_casing",
         "bottom": "#side"
       }
+    },
+    "active=false,variant=circuit_assembly_line_casing": {
+      "model": "minecraft:cube_all",
+      "textures": {
+        "all": "gtlitecore:blocks/casings/circuit_assembly_line_casing"
+      }
+    },
+    "active=true,variant=circuit_assembly_line_casing": {
+      "model": "gregtech:cube_2_layer_all",
+      "textures": {
+        "bot_all": "gtlitecore:blocks/casings/circuit_assembly_line_casing",
+        "top_all": "gregtech:blocks/casings/mechanic/machine_casing_assembly_line_bloom"
+      }
     }
   }
 }
