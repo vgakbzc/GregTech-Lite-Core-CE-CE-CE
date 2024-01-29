@@ -510,7 +510,7 @@ public class GTLiteRecipeMaps {
         //  Large Circuit Assembly Line RecipeMap
         LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES = new RecipeMapLargeCircuitAssemblyLine<>("large_circuit_assembly_line_recipes", 7, 1, 1, 0, new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
-                .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
+                .setSlotOverlay(false, false, true, GuiTextures.DATA_ORB_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ASSEMBLER);
     }

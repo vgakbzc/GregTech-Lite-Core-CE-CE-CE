@@ -118,7 +118,7 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return iMultiblockPart == null ? GTLiteTextures.ADVANCED_GRATE_OSMIRIDIUM_FRONT : GTLiteTextures.OSMIRIDIUM_CASING;
+        return iMultiblockPart == null && isStructureFormed() ? GTLiteTextures.ADVANCED_GRATE_OSMIRIDIUM_FRONT : GTLiteTextures.OSMIRIDIUM_CASING;
     }
 
     @Override

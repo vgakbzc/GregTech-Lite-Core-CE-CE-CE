@@ -381,6 +381,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_SMD_CAPACITOR = this.addItem(527, "wrap.smd.capacitor");
         WRAP_SMD_DIODE = this.addItem(528, "wrap.smd.diode");
         WRAP_SMD_INDUCTOR = this.addItem(529, "wrap.smd.inductor");
+        WRAP_ADVANCED_SMD_TRANSISTOR = this.addItem(530, "wrap.advanced_smd.transistor");
+        WRAP_ADVANCED_SMD_RESISTOR = this.addItem(531, "wrap.advanced_smd.resistor");
+        WRAP_ADVANCED_SMD_CAPACITOR = this.addItem(532, "wrap.advanced_smd.capacitor");
+        WRAP_ADVANCED_SMD_DIODE = this.addItem(533, "wrap.advanced_smd.diode");
+        WRAP_ADVANCED_SMD_INDUCTOR = this.addItem(534, "wrap.advanced_smd.inductor");
 
         //  Singularities
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");
