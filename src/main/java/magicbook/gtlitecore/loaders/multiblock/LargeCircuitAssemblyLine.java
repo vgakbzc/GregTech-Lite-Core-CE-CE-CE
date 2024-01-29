@@ -912,9 +912,9 @@ public class LargeCircuitAssemblyLine {
 
         //  Elite Circuit Board
         PACKER_RECIPES.recipeBuilder()
-                .input(EXTREME_CIRCUIT_BOARD, 16)
+                .input(ELITE_CIRCUIT_BOARD, 16)
                 .circuitMeta(16)
-                .output(WRAP_EXTREME_CIRCUIT_BOARD)
+                .output(WRAP_ELITE_CIRCUIT_BOARD)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
