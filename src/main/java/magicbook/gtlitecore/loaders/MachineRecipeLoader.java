@@ -238,7 +238,7 @@ public class MachineRecipeLoader {
                 'H', HULL[UHV].getStackForm(),
                 'P', new UnificationEntry(plate, Orichalcum),
                 'E', EMITTER_UHV.getStackForm(),
-                'O', OPTICAL_FIBER.getStackForm()
+                'O', new UnificationEntry(plate, GSTGlass)
         );
 
         //  Burner Reactor

@@ -474,7 +474,7 @@ public class StellarFurnace {
     private static void ShirabonEternityChain() {
 
         //  You can both get Shirabon and Eternity, but needs to use more materials.
-        //  Cosmic Computing Mixture is cycle in this recipe (if you choose the second version of below recipe).
+        //  Dimensionally Transcendent Residue is cycle in this recipe.
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(CHARGED_HYPERCUBE)
                 .input(CONTAINED_KERR_SINGULARITY, 64)
