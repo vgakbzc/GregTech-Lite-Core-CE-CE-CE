@@ -758,7 +758,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_ULV, 64)
                 .input(ELECTRIC_MOTOR_ULV, 64)
                 .input(ELECTRIC_PISTON_ULV, 64)
-                .input(WRAP_CIRCUIT_ULV)
+                .input(WRAP_CIRCUIT_ULV, 4) // 4 * 16
                 .output(ROBOT_ARM_ULV, 64)
                 .EUt(VA[ULV])
                 .duration(300)
@@ -785,7 +785,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_LV, 64)
                 .input(ELECTRIC_MOTOR_LV, 64)
                 .input(ELECTRIC_PISTON_LV, 64)
-                .input(WRAP_CIRCUIT_LV)
+                .input(WRAP_CIRCUIT_LV, 4) // 4 * 16
                 .output(ROBOT_ARM_LV, 64)
                 .EUt(VA[LV])
                 .duration(300)
@@ -812,7 +812,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_MV, 64)
                 .input(ELECTRIC_MOTOR_MV, 64)
                 .input(ELECTRIC_PISTON_MV, 64)
-                .input(WRAP_CIRCUIT_MV)
+                .input(WRAP_CIRCUIT_MV, 4) // 4 * 16
                 .output(ROBOT_ARM_MV, 64)
                 .EUt(VA[MV])
                 .duration(600)
@@ -839,7 +839,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_HV, 64)
                 .input(ELECTRIC_MOTOR_HV, 64)
                 .input(ELECTRIC_PISTON_HV, 64)
-                .input(WRAP_CIRCUIT_HV)
+                .input(WRAP_CIRCUIT_HV, 4) // 4 * 16
                 .output(ROBOT_ARM_HV, 64)
                 .EUt(VA[HV])
                 .duration(600)
@@ -866,7 +866,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_EV, 64)
                 .input(ELECTRIC_MOTOR_EV, 64)
                 .input(ELECTRIC_PISTON_EV, 64)
-                .input(WRAP_CIRCUIT_EV)
+                .input(WRAP_CIRCUIT_EV, 4) // 4 * 16
                 .output(ROBOT_ARM_EV, 64)
                 .EUt(VA[EV])
                 .duration(900)
@@ -893,7 +893,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_IV, 64)
                 .input(ELECTRIC_MOTOR_IV, 64)
                 .input(ELECTRIC_PISTON_IV, 64)
-                .input(WRAP_CIRCUIT_IV)
+                .input(WRAP_CIRCUIT_IV, 4) // 4 * 16
                 .output(ROBOT_ARM_IV, 64)
                 .EUt(VA[IV])
                 .duration(900)
@@ -909,9 +909,9 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_LuV, 64)
                 .input(ELECTRIC_MOTOR_LuV, 64)
                 .input(ELECTRIC_PISTON_LUV, 64)
-                .input(WRAP_CIRCUIT_LuV)
-                .input(WRAP_CIRCUIT_IV, 2)
-                .input(WRAP_CIRCUIT_EV, 4)
+                .input(WRAP_CIRCUIT_LuV, 4) // 4 * 16
+                .input(WRAP_CIRCUIT_IV, 8) // 8 * 16 = 2 * 64
+                .input(WRAP_CIRCUIT_EV, 16) // 16 * 16
                 .input(cableGtHex, NiobiumTitanium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                 .fluidInputs(Lubricant.getFluid(16000))
@@ -931,9 +931,9 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_ZPM, 64)
                 .input(ELECTRIC_MOTOR_ZPM, 64)
                 .input(ELECTRIC_PISTON_ZPM, 64)
-                .input(WRAP_CIRCUIT_ZPM)
-                .input(WRAP_CIRCUIT_LuV, 2)
-                .input(WRAP_CIRCUIT_IV, 4)
+                .input(WRAP_CIRCUIT_ZPM, 4) // 4 * 16
+                .input(WRAP_CIRCUIT_LuV, 8) // 8 * 16 = 2 * 64
+                .input(WRAP_CIRCUIT_IV, 16) // 16 * 16 = 4 * 64
                 .input(cableGtHex, VanadiumGallium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                 .fluidInputs(Lubricant.getFluid(32000))
@@ -953,9 +953,9 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_UV, 64)
                 .input(ELECTRIC_MOTOR_UV, 64)
                 .input(ELECTRIC_PISTON_UV, 64)
-                .input(WRAP_CIRCUIT_UV)
-                .input(WRAP_CIRCUIT_ZPM, 2)
-                .input(WRAP_CIRCUIT_LuV, 4)
+                .input(WRAP_CIRCUIT_UV, 4) // 4 * 16
+                .input(WRAP_CIRCUIT_ZPM, 8) // 8 * 16 = 2 * 64
+                .input(WRAP_CIRCUIT_LuV, 16) // 16 * 16 = 4 * 64
                 .input(cableGtHex, YttriumBariumCuprate, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 12 * 64))
                 .fluidInputs(Lubricant.getFluid(64000))
@@ -991,7 +991,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Iron, 64)
                 .input(pipeTinyFluid, Bronze, 64)
                 .input(pipeTinyFluid, Bronze, 64)
-                .input(WRAP_CIRCUIT_ULV, 2)
+                .input(WRAP_CIRCUIT_ULV, 8) // 8 * 16 = 2 * 64
                 .input(gem, Sapphire, 64)
                 .circuitMeta(1)
                 .output(EMITTER_ULV, 64)
@@ -1019,7 +1019,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Brass, 64)
                 .input(stickLong, Brass, 64)
                 .input(cableGtHex, Tin, 8)
-                .input(WRAP_CIRCUIT_LV, 2)
+                .input(WRAP_CIRCUIT_LV, 8) // 8 * 16 = 2 * 64
                 .input(gem, Quartzite, 64)
                 .circuitMeta(1)
                 .output(EMITTER_LV, 64)
@@ -1047,7 +1047,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Electrum, 64)
                 .input(stickLong, Electrum, 64)
                 .input(cableGtHex, Copper, 8)
-                .input(WRAP_CIRCUIT_MV, 2)
+                .input(WRAP_CIRCUIT_MV, 8) // 8 * 16 = 2 * 64
                 .input(gemFlawless, Emerald, 64)
                 .circuitMeta(1)
                 .output(EMITTER_MV, 64)
@@ -1075,7 +1075,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Chrome, 64)
                 .input(stickLong, Chrome, 64)
                 .input(cableGtHex, Gold, 8)
-                .input(WRAP_CIRCUIT_HV, 2)
+                .input(WRAP_CIRCUIT_HV, 8) // 8 * 16 = 2 * 64
                 .input(ENDER_EYE, 64)
                 .circuitMeta(1)
                 .output(EMITTER_HV, 64)
@@ -1103,7 +1103,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Platinum, 64)
                 .input(stickLong, Platinum, 64)
                 .input(cableGtHex, Aluminium, 8)
-                .input(WRAP_CIRCUIT_EV, 2)
+                .input(WRAP_CIRCUIT_EV, 8) // 8 * 16 = 2 * 64
                 .input(QUANTUM_EYE, 64)
                 .circuitMeta(1)
                 .output(EMITTER_EV, 64)
@@ -1131,7 +1131,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Iridium, 64)
                 .input(stickLong, Iridium, 64)
                 .input(cableGtHex, Tungsten, 8)
-                .input(WRAP_CIRCUIT_IV, 2)
+                .input(WRAP_CIRCUIT_IV, 8) // 8 * 16 = 2 * 64
                 .input(QUANTUM_STAR, 64)
                 .circuitMeta(1)
                 .output(EMITTER_IV, 64)
@@ -1145,7 +1145,7 @@ public class ComponentAssemblyLine {
                 .input(frameGt, HSSS, 64)
                 .input(ELECTRIC_MOTOR_LuV, 64)
                 .input(QUANTUM_STAR, 64)
-                .input(WRAP_CIRCUIT_LuV, 2)
+                .input(WRAP_CIRCUIT_LuV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, NiobiumTitanium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
                 .fluidInputs(Ruridit.getFluid(L * 4 * 64)) //  4 * Long Stick
@@ -1162,7 +1162,7 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_ZPM, 64)
                 .input(QUANTUM_STAR, 64)
                 .input(QUANTUM_STAR, 64)
-                .input(WRAP_CIRCUIT_ZPM, 2)
+                .input(WRAP_CIRCUIT_ZPM, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, VanadiumGallium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                 .fluidInputs(Osmiridium.getFluid(L * 4 * 64)) //  4 * Long Stick
@@ -1178,7 +1178,7 @@ public class ComponentAssemblyLine {
                 .input(frameGt, Tritanium, 64)
                 .input(ELECTRIC_MOTOR_UV, 64)
                 .input(GRAVI_STAR, 64)
-                .input(WRAP_CIRCUIT_UV, 2)
+                .input(WRAP_CIRCUIT_UV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, YttriumBariumCuprate, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                 .fluidInputs(Naquadria.getFluid(L * 24 * 64 + L * 4 * 64)) // Foil + Recipe fluids
@@ -1209,7 +1209,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Iron, 32)
                 .input(plateDouble, WroughtIron, 64)
                 .input(plateDouble, WroughtIron, 64)
-                .input(WRAP_CIRCUIT_ULV)
+                .input(WRAP_CIRCUIT_ULV, 4) // 4 * 16
                 .input(gem, Sapphire, 64)
                 .output(SENSOR_ULV, 64)
                 .EUt(VA[ULV])
@@ -1234,7 +1234,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Brass, 32)
                 .input(plateDouble, Steel, 64)
                 .input(plateDouble, Steel, 64)
-                .input(WRAP_CIRCUIT_LV)
+                .input(WRAP_CIRCUIT_LV, 4) // 4 * 16
                 .input(gem, Quartzite, 64)
                 .output(SENSOR_LV, 64)
                 .EUt(VA[LV])
@@ -1259,7 +1259,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Electrum, 32)
                 .input(plateDouble, Aluminium, 64)
                 .input(plateDouble, Aluminium, 64)
-                .input(WRAP_CIRCUIT_MV)
+                .input(WRAP_CIRCUIT_MV, 4) // 4 * 16
                 .input(gemFlawless, Emerald, 64)
                 .output(SENSOR_MV, 64)
                 .EUt(VA[MV])
@@ -1284,7 +1284,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Chrome, 32)
                 .input(plateDouble, StainlessSteel, 64)
                 .input(plateDouble, StainlessSteel, 64)
-                .input(WRAP_CIRCUIT_HV)
+                .input(WRAP_CIRCUIT_HV, 4) // 4 * 16
                 .input(ENDER_EYE, 64)
                 .output(SENSOR_HV, 64)
                 .EUt(VA[HV])
@@ -1309,7 +1309,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Platinum, 32)
                 .input(plateDouble, Titanium, 64)
                 .input(plateDouble, Titanium, 64)
-                .input(WRAP_CIRCUIT_EV)
+                .input(WRAP_CIRCUIT_EV, 4) // 4 * 16
                 .input(QUANTUM_EYE, 64)
                 .output(SENSOR_EV, 64)
                 .EUt(VA[EV])
@@ -1334,7 +1334,7 @@ public class ComponentAssemblyLine {
                 .input(stickLong, Iridium, 32)
                 .input(plateDouble, TungstenSteel, 64)
                 .input(plateDouble, TungstenSteel, 64)
-                .input(WRAP_CIRCUIT_IV)
+                .input(WRAP_CIRCUIT_IV, 4) // 4 * 16
                 .input(QUANTUM_STAR, 64)
                 .output(SENSOR_IV, 64)
                 .EUt(VA[IV])
@@ -1349,7 +1349,7 @@ public class ComponentAssemblyLine {
                 .input(plateDouble, Ruridit, 64)
                 .input(plateDouble, Ruridit, 64)
                 .input(QUANTUM_STAR, 64)
-                .input(WRAP_CIRCUIT_LuV, 2)
+                .input(WRAP_CIRCUIT_LuV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, NiobiumTitanium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
                 .fluidInputs(Palladium.getFluid(L * 24 * 64)) //  Foil (64 + 32 -> 16 * 4 + 8 * 4)
@@ -1367,7 +1367,7 @@ public class ComponentAssemblyLine {
                 .input(plateDouble, Osmiridium, 64)
                 .input(QUANTUM_STAR, 64)
                 .input(QUANTUM_STAR, 64)
-                .input(WRAP_CIRCUIT_ZPM, 2)
+                .input(WRAP_CIRCUIT_ZPM, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, VanadiumGallium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                 .fluidInputs(Trinium.getFluid(L * 24 * 64)) //  Foil (64 + 32 -> 16 * 4 + 8 * 4)
@@ -1384,7 +1384,7 @@ public class ComponentAssemblyLine {
                 .input(plateDouble, Tritanium, 64)
                 .input(plateDouble, Tritanium, 64)
                 .input(GRAVI_STAR, 64)
-                .input(WRAP_CIRCUIT_UV, 2)
+                .input(WRAP_CIRCUIT_UV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, YttriumBariumCuprate, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                 .fluidInputs(Naquadria.getFluid(L * 24 * 64 + L * 4 * 64))// Foil + Recipe fluids
@@ -1416,7 +1416,7 @@ public class ComponentAssemblyLine {
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(gem, Ruby, 64)
                 .input(plateDouble, WroughtIron, 64)
-                .input(WRAP_CIRCUIT_ULV, 2)
+                .input(WRAP_CIRCUIT_ULV, 8) // 8 * 16 = 2 * 64
                 .input(pipeLargeFluid, Lead, 64)
                 .input(pipeLargeFluid, Lead, 64)
                 .input(pipeLargeFluid, Lead, 64)
@@ -1443,7 +1443,7 @@ public class ComponentAssemblyLine {
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ENDER_PEARL, 64)
                 .input(plateDouble, Steel, 64)
-                .input(WRAP_CIRCUIT_LV, 2)
+                .input(WRAP_CIRCUIT_LV, 8) // 8 * 16 = 2 * 64
                 .input(wireGtHex, ManganesePhosphide, 64)
                 .output(FIELD_GENERATOR_LV, 64)
                 .EUt(VA[LV])
@@ -1467,7 +1467,7 @@ public class ComponentAssemblyLine {
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ENDER_EYE, 64)
                 .input(plateDouble, Aluminium, 64)
-                .input(WRAP_CIRCUIT_MV, 2)
+                .input(WRAP_CIRCUIT_MV, 8) // 8 * 16 = 2 * 64
                 .input(wireGtHex, MagnesiumDiboride, 64)
                 .output(FIELD_GENERATOR_MV, 64)
                 .EUt(VA[MV])
@@ -1491,7 +1491,7 @@ public class ComponentAssemblyLine {
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(QUANTUM_EYE, 64)
                 .input(plateDouble, StainlessSteel, 64)
-                .input(WRAP_CIRCUIT_HV, 2)
+                .input(WRAP_CIRCUIT_HV, 8) // 8 * 16 = 2 * 64
                 .input(wireGtHex, MercuryBariumCalciumCuprate, 64)
                 .output(FIELD_GENERATOR_HV, 64)
                 .EUt(VA[HV])
@@ -1517,7 +1517,7 @@ public class ComponentAssemblyLine {
                 .input(NETHER_STAR, 64)
                 .input(plateDouble, Titanium, 64)
                 .input(plateDouble, Titanium, 64)
-                .input(WRAP_CIRCUIT_EV, 2)
+                .input(WRAP_CIRCUIT_EV, 8) // 8 * 16 = 2 * 64
                 .input(wireGtHex, UraniumTriplatinum, 64)
                 .output(FIELD_GENERATOR_EV, 64)
                 .EUt(VA[EV])
@@ -1543,7 +1543,7 @@ public class ComponentAssemblyLine {
                 .input(QUANTUM_STAR, 64)
                 .input(plateDouble, TungstenSteel, 64)
                 .input(plateDouble, TungstenSteel, 64)
-                .input(WRAP_CIRCUIT_IV, 2)
+                .input(WRAP_CIRCUIT_IV, 8) // 8 * 16 = 2 * 64
                 .input(wireGtHex, SamariumIronArsenicOxide, 64)
                 .output(FIELD_GENERATOR_IV, 64)
                 .EUt(VA[IV])
@@ -1560,7 +1560,7 @@ public class ComponentAssemblyLine {
                 .input(QUANTUM_STAR, 64)
                 .input(EMITTER_LuV, 64)
                 .input(EMITTER_LuV, 64)
-                .input(WRAP_CIRCUIT_LuV, 2)
+                .input(WRAP_CIRCUIT_LuV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, NiobiumTitanium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                 .fluidInputs(IndiumTinBariumTitaniumCuprate.getFluid(L * 16 * 64)) // Fine Wire (1 Ingot -> 8, 16 * 8 -> 64 * 2)
@@ -1579,7 +1579,7 @@ public class ComponentAssemblyLine {
                 .input(QUANTUM_STAR, 64)
                 .input(EMITTER_ZPM, 64)
                 .input(EMITTER_ZPM, 64)
-                .input(WRAP_CIRCUIT_ZPM, 2)
+                .input(WRAP_CIRCUIT_ZPM, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, VanadiumGallium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                 .fluidInputs(UraniumRhodiumDinaquadide.getFluid(L * 16 * 64)) // Fine Wire (1 Ingot -> 8, 16 * 8 -> 64 * 2)
@@ -1598,7 +1598,7 @@ public class ComponentAssemblyLine {
                 .input(GRAVI_STAR, 64)
                 .input(EMITTER_UV, 64)
                 .input(EMITTER_UV, 64)
-                .input(WRAP_CIRCUIT_UV, 2)
+                .input(WRAP_CIRCUIT_UV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, YttriumBariumCuprate, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 12 * 64))
                 .fluidInputs(Naquadria.getFluid(L * 4 * 64))
@@ -1612,122 +1612,124 @@ public class ComponentAssemblyLine {
 
     private static void WrapItems() {
 
-        //  wrap circuits for Robot arm, Emitter, Sensor and Field Generator recipes
+        //  Wrap circuits for Robot arm, Emitter, Sensor and Field Generator recipes in Component Assembly Line.
+        //  In old version, 1 wrap item = 64 item, but we need more soft than 1 stack...
+        //  In some machine (e.g. Large Circuit Assembly Line), maybe this setting is useful.
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.ULV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.ULV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_ULV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.LV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.LV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_LV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.MV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.MV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_MV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.HV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.HV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_HV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.EV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.EV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_EV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.IV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_IV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.LuV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_LuV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.ZPM, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_ZPM)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.UV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_UV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UHV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.UHV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_UHV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UEV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.UEV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_UEV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UIV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.UIV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_UIV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.UXV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.UXV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_UXV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.OpV, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.OpV, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_OpV)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
 
         PACKER_RECIPES.recipeBuilder()
-                .input(circuit, MarkerMaterials.Tier.MAX, 64)
-                .circuitMeta(32)
+                .input(circuit, MarkerMaterials.Tier.MAX, 16)
+                .circuitMeta(16)
                 .output(WRAP_CIRCUIT_MAX)
                 .EUt(VA[ULV])
                 .duration(100)

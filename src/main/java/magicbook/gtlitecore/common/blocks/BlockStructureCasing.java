@@ -34,7 +34,8 @@ public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.Stru
     public enum StructureCasingType implements IStringSerializable {
         MARAGING_STEEL_250_CASING("maraging_steel_250_casing"),
         RURIDIT_CASING("ruridit_casing"),
-        OSMIRIDIUM_CASING("osmiridium_casing"); // todo find some application
+        OSMIRIDIUM_CASING("osmiridium_casing"),
+        ADVANCED_GRATE_CASING("advanced_grate_casing");
 
         private final String name;
 

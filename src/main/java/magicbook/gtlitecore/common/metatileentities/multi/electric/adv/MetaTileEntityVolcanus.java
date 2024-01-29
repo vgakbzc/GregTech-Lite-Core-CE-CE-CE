@@ -224,7 +224,7 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
      *     @return the max parallel for the heating coil level
      */
     public static int getMaxParallel(int heatingCoilLevel) {
-        return heatingCoilLevel;
+        return heatingCoilLevel * 2;
     }
 
     private final FluidStack BLAZING_STACK = BlazingPyrotheum.getFluid(2);

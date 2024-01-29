@@ -16,8 +16,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.MEGA_BLAST_FURNACE;
-import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.MEGA_VACUUM_FREEZER;
+import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.MarkerMaterials.Color.*;
@@ -2021,5 +2020,15 @@ public class OverrideRecipeLoader {
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
                 'P', new UnificationEntry(plate, Orichalcum),
                 'W', new UnificationEntry(wireGtQuadruple, Tritanium));
+
+        ModHandler.removeRecipeByName("gcym:large_circuit_assembler");
+        ModHandler.addShapedRecipe(true, "large_circuit_assembler", LARGE_CIRCUIT_ASSEMBLER.getStackForm(),
+                "RER", "CXC", "WMW",
+                'X', CIRCUIT_ASSEMBLER[IV].getStackForm(),
+                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
+                'R', ROBOT_ARM_IV,
+                'E', EMITTER_IV,
+                'M', CONVEYOR_MODULE_IV,
+                'W', new UnificationEntry(cableGtSingle, Platinum));
     }
 }

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtlitecore:items/metaitems/component.spintronic_smd.resistor",
+    "layer1": "gtlitecore:items/metaitems/wrap_overlay"
+  }
+}

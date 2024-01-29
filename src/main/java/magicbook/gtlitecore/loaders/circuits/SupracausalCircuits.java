@@ -252,7 +252,7 @@ public class SupracausalCircuits {
                 .input(SUPRACAUSAL_INDUCTOR, 6)
                 .input(SUPRACAUSAL_CAPACITOR, 12)
                 .input(COSMIC_MEMORY_CHIP, 24) // TODO new RAM
-                .input(wireFine, Hypogen, 8)
+                .input(wireFine, Hypogen, 16)
                 .solderMultiplier(2)
                 .output(SUPRACAUSAL_ASSEMBLY, 2)
                 .EUt(VA[UXV])
