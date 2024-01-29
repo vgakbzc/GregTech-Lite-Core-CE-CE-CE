@@ -64,10 +64,10 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.FRONT, RelativeDirection.UP, RelativeDirection.RIGHT)
-                .aisle("FIF", "RTR", "SAG", " Y ")
-                .aisle("FIF", "RTR", "GAG", " Y ")
+                .aisle("FIF", "RTR", "SYG")
+                .aisle("FIF", "RTR", "GYG")
                 .setRepeatable(3, 15)
-                .aisle("FOF", "RTR", "GAG", " Y ")
+                .aisle("FOF", "RTR", "GYG")
                 .where('S', this.selfPredicate())
                 .where('F', states(getCasingState())
                         .or(autoAbilities(false, true, false, false, true, false, false)))
@@ -80,7 +80,6 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
                                 .setMaxGlobalLimited(3)))
                 .where('I', abilities(MultiblockAbility.IMPORT_ITEMS))
                 .where('G', states(getSecondCasingState()))
-                .where('A', states(getFourthCasingState()))
                 .where('R', states(getGlassState()))
                 .where('T', states(getThirdCasingState()))
                 .where(' ', any())
@@ -97,10 +96,6 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
 
     private static IBlockState getThirdCasingState() {
         return GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getState(BlockActiveUniqueCasing.ActiveCasingType.CIRCUIT_ASSEMBLY_LINE_CASING);
-    }
-
-    private static IBlockState getFourthCasingState() {
-        return GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getState(BlockActiveUniqueCasing.ActiveCasingType.CIRCUIT_ASSEMBLY_CONTROL_CASING);
     }
 
     private static IBlockState getGlassState() {

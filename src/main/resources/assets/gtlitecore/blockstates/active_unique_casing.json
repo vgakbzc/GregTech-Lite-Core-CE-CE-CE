@@ -87,18 +87,6 @@
         "bot_all": "gtlitecore:blocks/casings/circuit_assembly_line_casing",
         "top_all": "gregtech:blocks/casings/mechanic/machine_casing_assembly_line_bloom"
       }
-    },
-    "active=false,variant=circuit_assembly_control_casing": {
-      "model": "minecraft:cube_all",
-      "textures": {
-        "all": "gtlitecore:blocks/casings/circuit_assembly_control_casing"
-      }
-    },
-    "active=true,variant=circuit_assembly_control_casing": {
-      "model": "minecraft:cube_all",
-      "textures": {
-        "all": "gtlitecore:blocks/casings/circuit_assembly_control_casing"
-      }
     }
   }
 }
