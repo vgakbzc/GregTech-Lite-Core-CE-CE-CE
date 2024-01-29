@@ -401,6 +401,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_COSMIC_SMD_CAPACITOR = this.addItem(547, "wrap.cosmic_smd.capacitor");
         WRAP_COSMIC_SMD_DIODE = this.addItem(548, "wrap.cosmic_smd.diode");
         WRAP_COSMIC_SMD_INDUCTOR = this.addItem(549, "wrap.cosmic_smd.inductor");
+        WRAP_SUPRACAUSAL_SMD_TRANSISTOR = this.addItem(550, "wrap.supracausal_smd.transistor");
+        WRAP_SUPRACAUSAL_SMD_RESISTOR = this.addItem(551, "wrap.supracausal_smd.resistor");
+        WRAP_SUPRACAUSAL_SMD_CAPACITOR = this.addItem(552, "wrap.supracausal_smd.capacitor");
+        WRAP_SUPRACAUSAL_SMD_DIODE = this.addItem(553, "wrap.supracausal_smd.diode");
+        WRAP_SUPRACAUSAL_SMD_INDUCTOR = this.addItem(554, "wrap.supracausal_smd.inductor");
 
         //  Singularities
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");

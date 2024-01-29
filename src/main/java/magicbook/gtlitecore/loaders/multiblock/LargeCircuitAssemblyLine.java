@@ -8,8 +8,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CarbonNanotube;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Infinity;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class LargeCircuitAssemblyLine {
@@ -812,10 +811,56 @@ public class LargeCircuitAssemblyLine {
                     .duration(2400)
                     .buildAndRegister();
         }
+
+        //  UXV Cosmic Supercomputer and OpV Cosmic Mainframe
+        //  back to Assembly Line recipes
     }
 
     private static void SupracausalCircuits() {
+        for (FluidStack stack : new FluidStack[] {
+                SolderingAlloy.getFluid(72 * 64),
+                Tin.getFluid(144 * 64)
+        }) {
+            //  UIV Supracausal Processor
+            LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .notConsumable(SUPRACAUSAL_PROCESSOR)
+                    .input(LIGHT_CONE_MODULE, 32)
+                    .input(INTRAVITAL_SOC, 32)
+                    .input(WRAP_SUPRACAUSAL_SMD_RESISTOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(WRAP_SUPRACAUSAL_SMD_CAPACITOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(WRAP_SUPRACAUSAL_SMD_TRANSISTOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(wireGtHex, Hypogen, 8) // 8 * 16 = 2 * 64 wire = 4 * 64 fine wire
+                    .fluidInputs(new FluidStack[]{stack})
+                    .output(SUPRACAUSAL_PROCESSOR, 64)
+                    .EUt(VA[UIV])
+                    .duration(2400)
+                    .buildAndRegister();
 
+            //  UIV Supracausal Processor SoC recipe (todo)
+        }
+
+        for (FluidStack stack : new FluidStack[] {
+                SolderingAlloy.getFluid(144 * 64),
+                Tin.getFluid(288 * 64)
+        }) {
+            //  UXV Supracausal Assembly
+            LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .notConsumable(SUPRACAUSAL_ASSEMBLY)
+                    .input(SPACETIME_CONDENSER, 32)
+                    .input(WRAP_CIRCUIT_UIV, 4) // (8 * 16 = 2 * 64) / 2
+                    .input(WRAP_SUPRACAUSAL_SMD_INDUCTOR, 12) // (24 * 16 = 6 * 64) / 2
+                    .input(WRAP_SUPRACAUSAL_SMD_CAPACITOR, 24) // (48 * 16  = 12 * 64) / 2
+                    .input(COSMIC_MEMORY_CHIP, 768)
+                    .input(wireGtHex, Hypogen, 16)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .output(SUPRACAUSAL_ASSEMBLY, 64)
+                    .EUt(VA[UXV])
+                    .duration(2400)
+                    .buildAndRegister();
+        }
+
+        //  OpV Supracausal Supercomputer and MAX Supracausal Mainframe
+        //  back to Assembly Line recipes
     }
 
     private static void WrapCircuitBoard() {
@@ -958,6 +1003,15 @@ public class LargeCircuitAssemblyLine {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Supracausal Transistor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SUPRACAUSAL_TRANSISTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SUPRACAUSAL_SMD_TRANSISTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
         //  SMD Resistor
         PACKER_RECIPES.recipeBuilder()
                 .input(SMD_RESISTOR, 16)
@@ -999,6 +1053,15 @@ public class LargeCircuitAssemblyLine {
                 .input(COSMIC_RESISTOR, 16)
                 .circuitMeta(16)
                 .output(WRAP_COSMIC_SMD_RESISTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Supracausal Resistor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SUPRACAUSAL_RESISTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SUPRACAUSAL_SMD_RESISTOR)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
@@ -1048,6 +1111,15 @@ public class LargeCircuitAssemblyLine {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Supracausal Capacitor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SUPRACAUSAL_CAPACITOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SUPRACAUSAL_SMD_CAPACITOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
         //  SMD Diode
         PACKER_RECIPES.recipeBuilder()
                 .input(SMD_DIODE, 16)
@@ -1093,6 +1165,15 @@ public class LargeCircuitAssemblyLine {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Supracausal Diode
+        PACKER_RECIPES.recipeBuilder()
+                .input(SUPRACAUSAL_DIODE, 16)
+                .circuitMeta(16)
+                .output(WRAP_SUPRACAUSAL_SMD_DIODE)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
         //  SMD Inductor
         PACKER_RECIPES.recipeBuilder()
                 .input(SMD_INDUCTOR, 16)
@@ -1134,6 +1215,15 @@ public class LargeCircuitAssemblyLine {
                 .input(COSMIC_INDUCTOR, 16)
                 .circuitMeta(16)
                 .output(WRAP_COSMIC_SMD_INDUCTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Supracausal Inductor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SUPRACAUSAL_INDUCTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SUPRACAUSAL_SMD_INDUCTOR)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();

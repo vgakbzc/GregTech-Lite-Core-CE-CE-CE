@@ -377,6 +377,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_COSMIC_SMD_CAPACITOR;
     public static MetaItem<?>.MetaValueItem WRAP_COSMIC_SMD_DIODE;
     public static MetaItem<?>.MetaValueItem WRAP_COSMIC_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_INDUCTOR;
 
     //  Singularities
     public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;
