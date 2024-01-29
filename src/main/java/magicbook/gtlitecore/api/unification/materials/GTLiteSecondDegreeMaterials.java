@@ -460,7 +460,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(6900, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[LuV], 901))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12034 Lithium Titanate

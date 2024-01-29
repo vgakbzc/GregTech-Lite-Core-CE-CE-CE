@@ -1592,6 +1592,31 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Large Circuit Assembly Line
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ASSEMBLY_LINE)
+                .input(frameGt, HastelloyC59, 4)
+                .input(LARGE_CIRCUIT_ASSEMBLER, 4)
+                .input(CIRCUIT_ASSEMBLER[IV], 16)
+                .input(ROBOT_ARM_LuV, 4)
+                .input(CONVEYOR_MODULE_LuV, 4)
+                .input(plateDouble, Tantalloy61, 8)
+                .input(plateDouble, MARM200CeSteel, 8)
+                .input(gear, HSSE)
+                .input(gearSmall, Osmiridium, 3)
+                .input(wireGtQuadruple, IndiumTinBariumTitaniumCuprate, 4)
+                .fluidInputs(SolderingAlloy.getFluid(4608))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .output(LARGE_CIRCUIT_ASSEMBLY_LINE)
+                .EUt(VA[LuV])
+                .duration(1200)
+                .scannerResearch(b -> b
+                        .researchStack(LARGE_CIRCUIT_ASSEMBLER.getStackForm())
+                        .EUt(VA[IV])
+                        .duration(600))
+                .buildAndRegister();
+
     }
 
     private static void MachineCasingRecipes() {
