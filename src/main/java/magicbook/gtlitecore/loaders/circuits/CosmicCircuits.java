@@ -336,7 +336,7 @@ public class CosmicCircuits {
                 .input(COSMIC_INDUCTOR, 6)
                 .input(COSMIC_CAPACITOR, 12)
                 .input(COSMIC_MEMORY_CHIP, 24)
-                .input(wireFine, Infinity, 8)
+                .input(wireFine, Infinity, 16)
                 .solderMultiplier(2)
                 .output(COSMIC_ASSEMBLY, 2)
                 .EUt(VA[UIV])

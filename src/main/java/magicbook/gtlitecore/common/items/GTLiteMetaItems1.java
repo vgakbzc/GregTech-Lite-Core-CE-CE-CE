@@ -391,6 +391,16 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_OPTICAL_SMD_CAPACITOR = this.addItem(537, "wrap.optical_smd.capacitor");
         WRAP_OPTICAL_SMD_DIODE = this.addItem(538, "wrap.optical_smd.diode");
         WRAP_OPTICAL_SMD_INDUCTOR = this.addItem(539, "wrap.optical_smd.inductor");
+        WRAP_SPINTRONIC_SMD_TRANSISTOR = this.addItem(540, "wrap.spintronic_smd.transistor");
+        WRAP_SPINTRONIC_SMD_RESISTOR = this.addItem(541, "wrap.spintronic_smd.resistor");
+        WRAP_SPINTRONIC_SMD_CAPACITOR = this.addItem(542, "wrap.spintronic_smd.capacitor");
+        WRAP_SPINTRONIC_SMD_DIODE = this.addItem(543, "wrap.spintronic_smd.diode");
+        WRAP_SPINTRONIC_SMD_INDUCTOR = this.addItem(544, "wrap.spintronic_smd.inductor");
+        WRAP_COSMIC_SMD_TRANSISTOR = this.addItem(545, "wrap.cosmic_smd.transistor");
+        WRAP_COSMIC_SMD_RESISTOR = this.addItem(546, "wrap.cosmic_smd.resistor");
+        WRAP_COSMIC_SMD_CAPACITOR = this.addItem(547, "wrap.cosmic_smd.capacitor");
+        WRAP_COSMIC_SMD_DIODE = this.addItem(548, "wrap.cosmic_smd.diode");
+        WRAP_COSMIC_SMD_INDUCTOR = this.addItem(549, "wrap.cosmic_smd.inductor");
 
         //  Singularities
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");

@@ -8,6 +8,8 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CarbonNanotube;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Infinity;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class LargeCircuitAssemblyLine {
@@ -724,11 +726,92 @@ public class LargeCircuitAssemblyLine {
     }
 
     private static void SpintronicCircuits() {
+        for (FluidStack stack : new FluidStack[] {
+                SolderingAlloy.getFluid(72 * 64),
+                Tin.getFluid(144 * 64)
+        }) {
+            //  UHV Spintronic Processor
+            LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .notConsumable(SPINTRONIC_PROCESSOR)
+                    .input(ESR_COMPUTATION_UNIT, 32)
+                    .input(CRYSTAL_SYSTEM_ON_CHIP, 32)
+                    .input(WRAP_SPINTRONIC_SMD_RESISTOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(WRAP_SPINTRONIC_SMD_CAPACITOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(WRAP_SPINTRONIC_SMD_TRANSISTOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(wireGtHex, CarbonNanotube, 8)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .output(SPINTRONIC_PROCESSOR, 64)
+                    .EUt(VA[UHV])
+                    .duration(2000)
+                    .buildAndRegister();
+        }
 
+        for (FluidStack stack : new FluidStack[] {
+                SolderingAlloy.getFluid(144 * 64),
+                Tin.getFluid(288 * 64)
+        }) {
+            //  UEV Spintronic Assembly
+            LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .notConsumable(SPINTRONIC_ASSEMBLY)
+                    .input(WRAP_SPINTRONIC_CIRCUIT_BOARD, 2) // (4 * 16) / 2
+                    .input(WRAP_CIRCUIT_UHV, 4) // (8 * 16) / 2
+                    .input(WRAP_SPINTRONIC_SMD_INDUCTOR, 12) // (24 * 16 = 6 * 64) / 2
+                    .input(WRAP_SPINTRONIC_SMD_CAPACITOR, 24) // (48 * 16  = 12 * 64) / 2
+                    .input(SPIN_TRANSFER_TORQUE_MEMORY, 768)
+                    .input(wireGtHex, CarbonNanotube, 16)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .output(SPINTRONIC_ASSEMBLY, 64)
+                    .EUt(VA[UEV])
+                    .duration(2000)
+                    .buildAndRegister();
+        }
+
+        //  UIV Spintronic Supercomputer and UXV Spintronic Mainframe
+        //  back to Assembly Line recipes
     }
 
     private static void CosmicCircuits() {
+        for (FluidStack stack : new FluidStack[] {
+                SolderingAlloy.getFluid(72 * 64),
+                Tin.getFluid(144 * 64)
+        }) {
+            //  UEV Cosmic Processor
+            LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .notConsumable(COSMIC_PROCESSOR)
+                    .input(HOLOGRAPHIC_INFORMATION_IMC, 32)
+                    .input(INTRAVITAL_SOC, 32)
+                    .input(WRAP_COSMIC_SMD_RESISTOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(WRAP_COSMIC_SMD_CAPACITOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(WRAP_COSMIC_SMD_TRANSISTOR, 16) // (32 * 16 = 8 * 64) / 2
+                    .input(wireFine, Infinity, 256)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .output(COSMIC_PROCESSOR, 64)
+                    .EUt(VA[UEV])
+                    .duration(2000)
+                    .buildAndRegister();
 
+            //  UEV Cosmic Processor SoC recipe (todo)
+        }
+
+        for (FluidStack stack : new FluidStack[] {
+                SolderingAlloy.getFluid(144 * 64),
+                Tin.getFluid(288 * 64)
+        }) {
+            //  UIV Cosmic Assembly
+            LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .notConsumable(COSMIC_ASSEMBLY)
+                    .input(COSMIC_INFORMATION_MODULE, 32)
+                    .input(WRAP_CIRCUIT_UEV, 4) // (8 * 16 = 2 * 64) / 2
+                    .input(WRAP_COSMIC_SMD_INDUCTOR, 12) // (24 * 16 = 6 * 64) / 2
+                    .input(WRAP_COSMIC_SMD_CAPACITOR, 24) // (48 * 16  = 12 * 64) / 2
+                    .input(COSMIC_MEMORY_CHIP, 768)
+                    .input(wireFine, Infinity, 512)
+                    .fluidInputs(new FluidStack[]{stack})
+                    .output(COSMIC_ASSEMBLY, 64)
+                    .EUt(VA[UIV])
+                    .duration(2400)
+                    .buildAndRegister();
+        }
     }
 
     private static void SupracausalCircuits() {
@@ -848,11 +931,29 @@ public class LargeCircuitAssemblyLine {
                 .duration(100)
                 .buildAndRegister();
 
-        //  Optical SMD Transistor
+        //  Optical Transistor
         PACKER_RECIPES.recipeBuilder()
                 .input(OPTICAL_TRANSISTOR, 16)
                 .circuitMeta(16)
                 .output(WRAP_OPTICAL_SMD_TRANSISTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Spintronic Transistor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SPINTRONIC_TRANSISTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SPINTRONIC_SMD_TRANSISTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Cosmic Transistor
+        PACKER_RECIPES.recipeBuilder()
+                .input(COSMIC_TRANSISTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_COSMIC_SMD_TRANSISTOR)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
@@ -884,6 +985,24 @@ public class LargeCircuitAssemblyLine {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Spintronic Resistor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SPINTRONIC_RESISTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SPINTRONIC_SMD_RESISTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Cosmic Resistor
+        PACKER_RECIPES.recipeBuilder()
+                .input(COSMIC_RESISTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_COSMIC_SMD_RESISTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
         //  SMD Capacitor
         PACKER_RECIPES.recipeBuilder()
                 .input(SMD_CAPACITOR, 16)
@@ -907,6 +1026,24 @@ public class LargeCircuitAssemblyLine {
                 .input(OPTICAL_CAPACITOR, 16)
                 .circuitMeta(16)
                 .output(WRAP_OPTICAL_SMD_CAPACITOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Spintronic Capacitor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SPINTRONIC_CAPACITOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SPINTRONIC_SMD_CAPACITOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Cosmic Capacitor
+        PACKER_RECIPES.recipeBuilder()
+                .input(COSMIC_CAPACITOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_COSMIC_SMD_CAPACITOR)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
@@ -938,6 +1075,24 @@ public class LargeCircuitAssemblyLine {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Spintronic Diode
+        PACKER_RECIPES.recipeBuilder()
+                .input(SPINTRONIC_DIODE, 16)
+                .circuitMeta(16)
+                .output(WRAP_SPINTRONIC_SMD_DIODE)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Cosmic Diode
+        PACKER_RECIPES.recipeBuilder()
+                .input(COSMIC_DIODE, 16)
+                .circuitMeta(16)
+                .output(WRAP_COSMIC_SMD_DIODE)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
         //  SMD Inductor
         PACKER_RECIPES.recipeBuilder()
                 .input(SMD_INDUCTOR, 16)
@@ -961,6 +1116,24 @@ public class LargeCircuitAssemblyLine {
                 .input(OPTICAL_INDUCTOR, 16)
                 .circuitMeta(16)
                 .output(WRAP_OPTICAL_SMD_INDUCTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Spintronic Inductor
+        PACKER_RECIPES.recipeBuilder()
+                .input(SPINTRONIC_INDUCTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_SPINTRONIC_SMD_INDUCTOR)
+                .EUt(VA[ULV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Cosmic Inductor
+        PACKER_RECIPES.recipeBuilder()
+                .input(COSMIC_INDUCTOR, 16)
+                .circuitMeta(16)
+                .output(WRAP_COSMIC_SMD_INDUCTOR)
                 .EUt(VA[ULV])
                 .duration(100)
                 .buildAndRegister();
