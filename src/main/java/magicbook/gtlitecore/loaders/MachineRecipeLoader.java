@@ -1598,7 +1598,7 @@ public class MachineRecipeLoader {
                 .input(ASSEMBLY_LINE)
                 .input(frameGt, HastelloyC59, 4)
                 .input(LARGE_CIRCUIT_ASSEMBLER, 4)
-                .input(CIRCUIT_ASSEMBLER[IV], 16)
+                .input(CIRCUIT_ASSEMBLER[LuV], 16)
                 .input(ROBOT_ARM_LuV, 4)
                 .input(CONVEYOR_MODULE_LuV, 4)
                 .input(plateDouble, Tantalloy61, 8)
