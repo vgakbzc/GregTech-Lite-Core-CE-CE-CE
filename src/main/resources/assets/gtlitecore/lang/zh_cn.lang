@@ -1242,8 +1242,13 @@ gtlitecore.machine.large_circuit_assembly_line.name=大型电路装配线
 gtlitecore.machine.large_circuit_assembly_line.tooltip.1=批量装配各式各样的电路！
 gtlitecore.machine.large_circuit_assembly_line.tooltip.2=效率碾压同等级电路组装机！
 gtlitecore.machine.large_circuit_assembly_line.tooltip.3=需要§r对应种类§7的电路来识别具体的电路配方。
-gtlitecore.machine.large_circuit_assembly_line.tooltip.4=允许使用§r任意等级§7的输入总线与输出总线。
-gtlitecore.machine.large_circuit_assembly_line.tooltip.5=物品与流体§c均不需要§7有序输入。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.4=根据建造的片数获得并行。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.5=允许使用§r任意等级§7的输入总线与输出总线。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.6=物品与流体§c均不需要§7有序输入。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.7=最大并行数：§e(片数 - 4) * 4§7
+gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.1=片数的具体计算由§r输入总线§7的数量确定
+gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.2=这意味着如果不做任何扩展，则片数为4，此时机器不会并行。
+gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.3=而扩展到最大长度时，片数为16，此时机器会获得48次并行。
 
 gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 

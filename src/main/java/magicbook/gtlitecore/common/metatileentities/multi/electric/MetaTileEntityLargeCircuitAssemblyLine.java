@@ -5,6 +5,7 @@ import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
 import codechicken.lib.vec.Vector3;
 import gregtech.api.capability.GregtechDataCodes;
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -37,6 +38,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import org.lwjgl.input.Keyboard;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -53,6 +56,7 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
 
     public MetaTileEntityLargeCircuitAssemblyLine(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES);
+        this.recipeMapWorkable = new LargeCircuitAssemblyLineRecipeLogic(this);
     }
 
     @Override
@@ -70,7 +74,11 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
                 .aisle("FOF", "RTR", "GYG")
                 .where('S', this.selfPredicate())
                 .where('F', states(getCasingState())
-                        .or(autoAbilities(false, true, false, false, true, false, false)))
+                        .or(abilities(MultiblockAbility.MAINTENANCE_HATCH)
+                                .setExactLimit(1))
+                        .or(abilities(MultiblockAbility.IMPORT_FLUIDS)
+                                .setMaxGlobalLimited(4)
+                                .setPreviewCount(1)))
                 .where('O', abilities(MultiblockAbility.EXPORT_ITEMS)
                         .setExactLimit(1)
                         .addTooltips("gregtech.multiblock.pattern.location_end"))
@@ -110,7 +118,7 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return GTLiteTextures.OSMIRIDIUM_CASING;
+        return iMultiblockPart == null ? GTLiteTextures.ADVANCED_GRATE_OSMIRIDIUM_FRONT : GTLiteTextures.OSMIRIDIUM_CASING;
     }
 
     @Override
@@ -249,5 +257,43 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockC
         tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.4"));
         tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.6"));
+        tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.7"));
+        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+            tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.1"));
+            tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.2"));
+            tooltip.add(I18n.format("gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.3"));
+        } else {
+            tooltip.add(I18n.format("gregtech.tooltip.hold_shift"));
+        }
+    }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
+    /**
+     * This is an easy method to get layer of this machine, you do not need to catch current layer, just catch number of item import hatch.
+     * @return Number (current) of item import bus in multiblock structure.
+     */
+    private int getInputInventorySize() {
+        List<IItemHandlerModifiable> itemInputInventory = this.getAbilities(MultiblockAbility.IMPORT_ITEMS);
+        return itemInputInventory.size();
+    }
+
+    private class LargeCircuitAssemblyLineRecipeLogic extends MultiblockRecipeLogic {
+
+        public LargeCircuitAssemblyLineRecipeLogic(RecipeMapMultiblockController tileEntity) {
+            super(tileEntity);
+        }
+
+        /**
+         * @return This parallel dependencies to Input inventory size, and if you do not build more layer, then return zero.
+         */
+        @Override
+        public int getParallelLimit() {
+            return (getInputInventorySize() - 4) * 4;
+        }
     }
 }

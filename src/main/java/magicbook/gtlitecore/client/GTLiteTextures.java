@@ -111,6 +111,7 @@ public class GTLiteTextures {
 
     //  SimpleOrientedCubeRenderer
     public static SimpleOrientedCubeRenderer ADVANCED_FILTER_IRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_filter_iridium_front");
+    public static SimpleOrientedCubeRenderer ADVANCED_GRATE_OSMIRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_grate_osmiridium_front");
 
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
