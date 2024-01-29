@@ -362,6 +362,11 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_ADVANCED_SMD_CAPACITOR;
     public static MetaItem<?>.MetaValueItem WRAP_ADVANCED_SMD_DIODE;
     public static MetaItem<?>.MetaValueItem WRAP_ADVANCED_SMD_INDUCTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_SMD_TRANSISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_SMD_RESISTOR;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_SMD_CAPACITOR;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_SMD_DIODE;
+    public static MetaItem<?>.MetaValueItem WRAP_OPTICAL_SMD_INDUCTOR;
 
     //  Singularities
     public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;
