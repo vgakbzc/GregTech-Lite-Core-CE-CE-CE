@@ -187,6 +187,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         COSMIC_CPU_CHIP = this.addItem(214, "wafer.chip.cosmic_cpu");
         COSMIC_MEMORY_CHIP = this.addItem(215, "wafer.chip.cosmic_memory");
 
+        SUPRACAUSAL_MEMORY_CHIP = this.addItem(217, "wafer.chip.supracausal_memory");
         UHASOC_WAFER = this.addItem(218, "wafer.uhasoc");
         UHASOC_CHIP = this.addItem(219, "wafer.chip.uhasoc");
         CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(220, "boule.cubic_zirconia.europium");

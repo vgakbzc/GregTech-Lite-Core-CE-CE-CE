@@ -850,7 +850,7 @@ public class LargeCircuitAssemblyLine {
                     .input(WRAP_CIRCUIT_UIV, 4) // (8 * 16 = 2 * 64) / 2
                     .input(WRAP_SUPRACAUSAL_SMD_INDUCTOR, 12) // (24 * 16 = 6 * 64) / 2
                     .input(WRAP_SUPRACAUSAL_SMD_CAPACITOR, 24) // (48 * 16  = 12 * 64) / 2
-                    .input(COSMIC_MEMORY_CHIP, 768)
+                    .input(SUPRACAUSAL_MEMORY_CHIP, 768)
                     .input(wireGtHex, Hypogen, 16)
                     .fluidInputs(new FluidStack[]{stack})
                     .output(SUPRACAUSAL_ASSEMBLY, 64)

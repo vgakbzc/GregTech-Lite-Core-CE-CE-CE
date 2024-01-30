@@ -169,6 +169,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COSMIC_CPU;
     public static MetaItem<?>.MetaValueItem COSMIC_CPU_CHIP;
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CHIP;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_MEMORY_CHIP;
 
     public static MetaItem<?>.MetaValueItem UHASOC_WAFER;
     public static MetaItem<?>.MetaValueItem UHASOC_CHIP;
