@@ -2363,7 +2363,29 @@ public class MachineRecipeLoader {
                         .CWUt(1024))
                 .buildAndRegister();
 
-        //  TODO MAX Component Assembly Line Casings
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Eternity)
+                .input(plateDense, Eternity, 6)
+                .input(ROBOT_ARM_MAX, 8)
+                .input(ELECTRIC_PISTON_MAX, 10)
+                .input(ELECTRIC_MOTOR_MAX, 16)
+                .input(gear, Eternity, 4)
+                .input(gearSmall, Eternity, 16)
+                .input(cableGtQuadruple, Universium, 8)
+                .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                .input(circuit, MarkerMaterials.Tier.OpV, 16)
+                .fluidInputs(SolderingAlloy.getFluid(3456))
+                .fluidInputs(Arcanium.getFluid(1728))
+                .fluidInputs(Shirabon.getFluid(864))
+                .fluidInputs(Lubricant.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.MAX, 4))
+                .EUt(VA[MAX])
+                .duration(600)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getItemVariant(BlockComponentAssemblyLineCasing.CasingTier.OpV))
+                        .EUt(VA[OpV])
+                        .CWUt(2048))
+                .buildAndRegister();
 
         //  Farm Casing
         ModHandler.addShapedRecipe(true, "farm_casing", GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.ASEPTIC_FARM_CASING, 2),
@@ -2601,7 +2623,17 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  TODO MAX field casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Eternity)
+                .input(plate, Adamantium, 4)
+                .input(FIELD_GENERATOR_MAX, 2)
+                .input(wireGtSingle, Universium, 2)
+                .fluidInputs(PCBCoolant.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.MAX, 2))
+                .EUt(VA[MAX])
+                .duration(150)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
         //  Space Elevator Casings
         ASSEMBLER_RECIPES.recipeBuilder()
