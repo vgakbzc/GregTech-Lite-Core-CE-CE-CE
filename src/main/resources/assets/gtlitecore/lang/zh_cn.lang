@@ -1263,9 +1263,10 @@ gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.3=可运行一般的§r精
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.5=运行§r精密激光蚀刻机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.6=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7=最大并行数：
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8=§r精密激光蚀刻§7模式 -> §e16384§7
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9=§r纳米尺度光刻§7模式 -> §e4096§7
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7=允许使用§b激光仓§7。
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8=最大并行数：
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9=§r精密激光蚀刻§7模式 -> §e16384§7
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.10=§r纳米尺度光刻§7模式 -> §e4096§7
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
