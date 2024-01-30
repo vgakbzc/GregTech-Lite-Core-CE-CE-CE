@@ -372,8 +372,8 @@ public class MachineRecipeLoader {
         //  Fuel Refine Factory
         ModHandler.addShapedRecipe(true, "fuel_refine_factory", FUEL_REFINE_FACTORY.getStackForm(),
                 "RFR", "CHC", "PWP",
-                'H', MetaTileEntities.HULL[UHV].getStackForm(),
-                'P', ELECTRIC_PUMP_UHV,
+                'H', MetaTileEntities.HULL[UV].getStackForm(),
+                'P', ELECTRIC_PUMP_UV,
                 'F', new UnificationEntry(pipeHugeFluid, Duranium),
                 'R', new UnificationEntry(rotor, Orichalcum),
                 'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
