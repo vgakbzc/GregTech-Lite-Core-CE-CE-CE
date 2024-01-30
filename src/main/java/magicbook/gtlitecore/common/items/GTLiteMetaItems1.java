@@ -1,7 +1,6 @@
 package magicbook.gtlitecore.common.items;
 
 import gregtech.api.GTValues;
-import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.items.metaitem.stats.IItemComponent;
@@ -25,68 +24,68 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
     public void registerSubItems() {
 
         //  Boards
-        GOOWARE_BOARD = this.addItem(0, "board.gooware");
-        OPTICAL_BOARD = this.addItem(1, "board.optical");
-        SPINTRONIC_BOARD = this.addItem(2, "board.spintronic");
-        MAGNETO_RESONATIC_BOARD = this.addItem(3, "board.magneto_resonatic");
+        GOOWARE_BOARD = this.addItem(0, "board.gooware").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        OPTICAL_BOARD = this.addItem(1, "board.optical").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SPINTRONIC_BOARD = this.addItem(2, "board.spintronic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_BOARD = this.addItem(3, "board.magneto_resonatic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
         //  Circuit Boards
-        GOOWARE_CIRCUIT_BOARD = this.addItem(4, "circuit_board.gooware");
-        OPTICAL_CIRCUIT_BOARD = this.addItem(5, "circuit_board.optical");
-        SPINTRONIC_CIRCUIT_BOARD = this.addItem(6, "circuit_board.spintronic");
-        MAGNETO_RESONATIC_CIRCUIT_BOARD = this.addItem(7, "circuit_board.magneto_resonatic");
+        GOOWARE_CIRCUIT_BOARD = this.addItem(4, "circuit_board.gooware").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        OPTICAL_CIRCUIT_BOARD = this.addItem(5, "circuit_board.optical").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SPINTRONIC_CIRCUIT_BOARD = this.addItem(6, "circuit_board.spintronic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_BOARD = this.addItem(7, "circuit_board.magneto_resonatic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
         //  Circuits
-        GOOWARE_PROCESSOR = this.addItem(8, "circuit.gooware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
-        GOOWARE_ASSEMBLY = this.addItem(9, "circuit.gooware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        GOOWARE_COMPUTER = this.addItem(10, "circuit.gooware_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        GOOWARE_MAINFRAME = this.addItem(11, "circuit.gooware_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        OPTICAL_PROCESSOR = this.addItem(12, "circuit.optical_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        OPTICAL_ASSEMBLY = this.addItem(13, "circuit.optical_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        OPTICAL_COMPUTER = this.addItem(14, "circuit.optical_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        OPTICAL_MAINFRAME = this.addItem(15, "circuit.optical_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        SPINTRONIC_PROCESSOR = this.addItem(16, "circuit.spintronic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        SPINTRONIC_ASSEMBLY = this.addItem(17, "circuit.spintronic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        SPINTRONIC_COMPUTER = this.addItem(18, "circuit.spintronic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        SPINTRONIC_MAINFRAME = this.addItem(19, "circuit.spintronic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        COSMIC_PROCESSOR = this.addItem(20, "circuit.cosmic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        COSMIC_ASSEMBLY = this.addItem(21, "circuit.cosmic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        COSMIC_COMPUTER = this.addItem(22, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        COSMIC_MAINFRAME = this.addItem(23, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
-        SUPRACAUSAL_PROCESSOR = this.addItem(24, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        SUPRACAUSAL_ASSEMBLY = this.addItem(25, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        SUPRACAUSAL_COMPUTER = this.addItem(26, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
-        SUPRACAUSAL_MAINFRAME = this.addItem(27, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
-        SUPRACHRONAL_CIRCUIT_ULV = this.addItem(28, "circuit.suprachronal.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV);
-        SUPRACHRONAL_CIRCUIT_LV = this.addItem(29, "circuit.suprachronal.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV);
-        SUPRACHRONAL_CIRCUIT_MV = this.addItem(30, "circuit.suprachronal.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV);
-        SUPRACHRONAL_CIRCUIT_HV = this.addItem(31, "circuit.suprachronal.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV);
-        SUPRACHRONAL_CIRCUIT_EV = this.addItem(32, "circuit.suprachronal.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV);
-        SUPRACHRONAL_CIRCUIT_IV = this.addItem(33, "circuit.suprachronal.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV);
-        SUPRACHRONAL_CIRCUIT_LuV = this.addItem(34, "circuit.suprachronal.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV);
-        SUPRACHRONAL_CIRCUIT_ZPM = this.addItem(35, "circuit.suprachronal.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
-        SUPRACHRONAL_CIRCUIT_UV = this.addItem(36, "circuit.suprachronal.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        SUPRACHRONAL_CIRCUIT_UHV = this.addItem(37, "circuit.suprachronal.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        SUPRACHRONAL_CIRCUIT_UEV = this.addItem(38, "circuit.suprachronal.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        SUPRACHRONAL_CIRCUIT_UIV = this.addItem(39, "circuit.suprachronal.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        SUPRACHRONAL_CIRCUIT_UXV = this.addItem(40, "circuit.suprachronal.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        SUPRACHRONAL_CIRCUIT_OpV = this.addItem(41, "circuit.suprachronal.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
-        SUPRACHRONAL_CIRCUIT_MAX = this.addItem(42, "circuit.suprachronal.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
-        MAGNETO_RESONATIC_CIRCUIT_ULV = this.addItem(43, "circuit.magneto_resonatic.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV);
-        MAGNETO_RESONATIC_CIRCUIT_LV = this.addItem(44, "circuit.magneto_resonatic.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV);
-        MAGNETO_RESONATIC_CIRCUIT_MV = this.addItem(45, "circuit.magneto_resonatic.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV);
-        MAGNETO_RESONATIC_CIRCUIT_HV = this.addItem(46, "circuit.magneto_resonatic.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV);
-        MAGNETO_RESONATIC_CIRCUIT_EV = this.addItem(47, "circuit.magneto_resonatic.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV);
-        MAGNETO_RESONATIC_CIRCUIT_IV = this.addItem(48, "circuit.magneto_resonatic.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV);
-        MAGNETO_RESONATIC_CIRCUIT_LuV = this.addItem(49, "circuit.magneto_resonatic.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV);
-        MAGNETO_RESONATIC_CIRCUIT_ZPM = this.addItem(50, "circuit.magneto_resonatic.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM);
-        MAGNETO_RESONATIC_CIRCUIT_UV = this.addItem(51, "circuit.magneto_resonatic.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV);
-        MAGNETO_RESONATIC_CIRCUIT_UHV = this.addItem(52, "circuit.magneto_resonatic.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV);
-        MAGNETO_RESONATIC_CIRCUIT_UEV = this.addItem(53, "circuit.magneto_resonatic.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV);
-        MAGNETO_RESONATIC_CIRCUIT_UIV = this.addItem(54, "circuit.magneto_resonatic.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV);
-        MAGNETO_RESONATIC_CIRCUIT_UXV = this.addItem(55, "circuit.magneto_resonatic.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV);
-        MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV);
-        MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX);
+        GOOWARE_PROCESSOR = this.addItem(8, "circuit.gooware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        GOOWARE_ASSEMBLY = this.addItem(9, "circuit.gooware_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        GOOWARE_COMPUTER = this.addItem(10, "circuit.gooware_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        GOOWARE_MAINFRAME = this.addItem(11, "circuit.gooware_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        OPTICAL_PROCESSOR = this.addItem(12, "circuit.optical_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        OPTICAL_ASSEMBLY = this.addItem(13, "circuit.optical_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        OPTICAL_COMPUTER = this.addItem(14, "circuit.optical_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        OPTICAL_MAINFRAME = this.addItem(15, "circuit.optical_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SPINTRONIC_PROCESSOR = this.addItem(16, "circuit.spintronic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SPINTRONIC_ASSEMBLY = this.addItem(17, "circuit.spintronic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SPINTRONIC_COMPUTER = this.addItem(18, "circuit.spintronic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SPINTRONIC_MAINFRAME = this.addItem(19, "circuit.spintronic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        COSMIC_PROCESSOR = this.addItem(20, "circuit.cosmic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        COSMIC_ASSEMBLY = this.addItem(21, "circuit.cosmic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        COSMIC_COMPUTER = this.addItem(22, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        COSMIC_MAINFRAME = this.addItem(23, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACAUSAL_PROCESSOR = this.addItem(24, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACAUSAL_ASSEMBLY = this.addItem(25, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACAUSAL_COMPUTER = this.addItem(26, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACAUSAL_MAINFRAME = this.addItem(27, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_ULV = this.addItem(28, "circuit.suprachronal.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_LV = this.addItem(29, "circuit.suprachronal.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_MV = this.addItem(30, "circuit.suprachronal.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_HV = this.addItem(31, "circuit.suprachronal.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_EV = this.addItem(32, "circuit.suprachronal.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_IV = this.addItem(33, "circuit.suprachronal.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_LuV = this.addItem(34, "circuit.suprachronal.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_ZPM = this.addItem(35, "circuit.suprachronal.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_UV = this.addItem(36, "circuit.suprachronal.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_UHV = this.addItem(37, "circuit.suprachronal.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_UEV = this.addItem(38, "circuit.suprachronal.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_UIV = this.addItem(39, "circuit.suprachronal.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_UXV = this.addItem(40, "circuit.suprachronal.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_OpV = this.addItem(41, "circuit.suprachronal.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        SUPRACHRONAL_CIRCUIT_MAX = this.addItem(42, "circuit.suprachronal.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_ULV = this.addItem(43, "circuit.magneto_resonatic.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_LV = this.addItem(44, "circuit.magneto_resonatic.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_MV = this.addItem(45, "circuit.magneto_resonatic.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_HV = this.addItem(46, "circuit.magneto_resonatic.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_EV = this.addItem(47, "circuit.magneto_resonatic.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_IV = this.addItem(48, "circuit.magneto_resonatic.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_LuV = this.addItem(49, "circuit.magneto_resonatic.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_ZPM = this.addItem(50, "circuit.magneto_resonatic.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_UV = this.addItem(51, "circuit.magneto_resonatic.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_UHV = this.addItem(52, "circuit.magneto_resonatic.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_UEV = this.addItem(53, "circuit.magneto_resonatic.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_UIV = this.addItem(54, "circuit.magneto_resonatic.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_UXV = this.addItem(55, "circuit.magneto_resonatic.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
         //  SMDs
         OPTICAL_TRANSISTOR = this.addItem(58, "component.optical_smd.transistor");
@@ -233,8 +232,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
             lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", GTValues.V[GTValues.MAX], GTValues.VNF[GTValues.MAX]));}));
 
         //  Tools
-        PROSPECTOR_EV = this.addItem(280, "tool.prospector.ev").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, 4), new ProspectorScannerBehavior(5, 4)}).setMaxStackSize(1).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        PROSPECTOR_ZPM = this.addItem(281, "tool.prospector.zpm").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, 7), new ProspectorScannerBehavior(7, 7)}).setMaxStackSize(1).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        PROSPECTOR_EV = this.addItem(280, "tool.prospector.ev").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, 4), new ProspectorScannerBehavior(5, 4)}).setMaxStackSize(1).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        PROSPECTOR_ZPM = this.addItem(281, "tool.prospector.zpm").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, 7), new ProspectorScannerBehavior(7, 7)}).setMaxStackSize(1).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
 
         BATTERY_HULL_SMALL_LITHIUM_SULFIDE = this.addItem(284, "battery.hull.uhv");
         BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE = this.addItem(285, "battery.hull.uev");
@@ -242,20 +241,20 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE = this.addItem(287, "battery.hull.uxv");
         BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE = this.addItem(288, "battery.hull.opv");
         BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE = this.addItem(289, "battery.hull.max");
-        BATTERY_UHV_LITHIUM_SULFIDE = this.addItem(290, "battery.uhv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10485760000L, GTValues.UHV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BATTERY_UEV_LITHIUM_SULFIDE = this.addItem(291, "battery.uev.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(41943040000L, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BATTERY_UIV_LITHIUM_SULFIDE = this.addItem(292, "battery.uiv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(167772160000L, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BATTERY_UXV_LANTHANUM_NICKEL_OXIDE = this.addItem(293, "battery.uxv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(671088640000L, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BATTERY_OpV_LANTHANUM_NICKEL_OXIDE = this.addItem(294, "battery.opv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(2684354560000L, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        BATTERY_MAX_LANTHANUM_NICKEL_OXIDE = this.addItem(295, "battery.max.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10737418240000L, GTValues.MAX)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        ULTIMATE_BATTERY_MK2 = this.addItem(296, "battery.uev.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        ULTIMATE_BATTERY_MK3 = this.addItem(297, "battery.uiv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        ULTIMATE_BATTERY_MK4 = this.addItem(298, "battery.uxv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        ULTIMATE_BATTERY_MK5 = this.addItem(299, "battery.opv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        BATTERY_UHV_LITHIUM_SULFIDE = this.addItem(290, "battery.uhv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10485760000L, GTValues.UHV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        BATTERY_UEV_LITHIUM_SULFIDE = this.addItem(291, "battery.uev.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(41943040000L, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        BATTERY_UIV_LITHIUM_SULFIDE = this.addItem(292, "battery.uiv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(167772160000L, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        BATTERY_UXV_LANTHANUM_NICKEL_OXIDE = this.addItem(293, "battery.uxv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(671088640000L, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        BATTERY_OpV_LANTHANUM_NICKEL_OXIDE = this.addItem(294, "battery.opv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(2684354560000L, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        BATTERY_MAX_LANTHANUM_NICKEL_OXIDE = this.addItem(295, "battery.max.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10737418240000L, GTValues.MAX)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        ULTIMATE_BATTERY_MK2 = this.addItem(296, "battery.uev.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        ULTIMATE_BATTERY_MK3 = this.addItem(297, "battery.uiv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        ULTIMATE_BATTERY_MK4 = this.addItem(298, "battery.uxv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        ULTIMATE_BATTERY_MK5 = this.addItem(299, "battery.opv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
 
         //  Others
-        GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior());
-        GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior());
+        GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior()).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior()).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
         COMPONENT_GRINDER_BORON_NITRIDE = this.addItem(302, "component.grinder.boron_nitride");
         COMPONENT_GRINDER_BLACK_PLUTONIUM = this.addItem(303, "component.grinder.black_plutonium");
         QCD_PROTECTIVE_PLATING = this.addItem(304, "qcd_protective_plating");
@@ -349,64 +348,64 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MEMORY_CARD_ENDER_DRAGON = this.addItem(399, "memory_card.ender_dragon");
 
         //  Particles
-        ALPHA_PARTICLE = this.addItem(400, "particle.alpha");
+        ALPHA_PARTICLE = this.addItem(400, "particle.alpha").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
 
         //  Wrap Items
-        WRAP_CIRCUIT_ULV = this.addItem(500, "wrap.circuit.ulv");
-        WRAP_CIRCUIT_LV = this.addItem(501, "wrap.circuit.lv");
-        WRAP_CIRCUIT_MV = this.addItem(502, "wrap.circuit.mv");
-        WRAP_CIRCUIT_HV = this.addItem(503, "wrap.circuit.hv");
-        WRAP_CIRCUIT_EV = this.addItem(504, "wrap.circuit.ev");
-        WRAP_CIRCUIT_IV = this.addItem(505, "wrap.circuit.iv");
-        WRAP_CIRCUIT_LuV = this.addItem(506, "wrap.circuit.luv");
-        WRAP_CIRCUIT_ZPM = this.addItem(507, "wrap.circuit.zpm");
-        WRAP_CIRCUIT_UV = this.addItem(508, "wrap.circuit.uv");
-        WRAP_CIRCUIT_UHV = this.addItem(509, "wrap.circuit.uhv");
-        WRAP_CIRCUIT_UEV = this.addItem(510, "wrap.circuit.uev");
-        WRAP_CIRCUIT_UIV = this.addItem(511, "wrap.circuit.uiv");
-        WRAP_CIRCUIT_UXV = this.addItem(512, "wrap.circuit.uxv");
-        WRAP_CIRCUIT_OpV = this.addItem(513, "wrap.circuit.opv");
-        WRAP_CIRCUIT_MAX = this.addItem(514, "wrap.circuit.max");
-        WRAP_BASIC_CIRCUIT_BOARD = this.addItem(515, "wrap.circuit_board.basic");
-        WRAP_GOOD_CIRCUIT_BOARD = this.addItem(516, "wrap.circuit_board.good");
-        WRAP_PLASTIC_CIRCUIT_BOARD = this.addItem(517, "wrap.circuit_board.plastic");
-        WRAP_ADVANCED_CIRCUIT_BOARD = this.addItem(518, "wrap.circuit_board.advanced");
-        WRAP_EXTREME_CIRCUIT_BOARD = this.addItem(519, "wrap.circuit_board.extreme");
-        WRAP_ELITE_CIRCUIT_BOARD = this.addItem(520, "wrap.circuit_board.elite");
-        WRAP_WETWARE_CIRCUIT_BOARD = this.addItem(521, "wrap.circuit_board.wetware");
-        WRAP_GOOWARE_CIRCUIT_BOARD = this.addItem(522, "wrap.circuit_board.gooware");
-        WRAP_OPTICAL_CIRCUIT_BOARD = this.addItem(523, "wrap.circuit_board.optical");
-        WRAP_SPINTRONIC_CIRCUIT_BOARD = this.addItem(524, "wrap.circuit_board.spintronic");
-        WRAP_SMD_TRANSISTOR = this.addItem(525, "wrap.smd.transistor");
-        WRAP_SMD_RESISTOR = this.addItem(526, "wrap.smd.resistor");
-        WRAP_SMD_CAPACITOR = this.addItem(527, "wrap.smd.capacitor");
-        WRAP_SMD_DIODE = this.addItem(528, "wrap.smd.diode");
-        WRAP_SMD_INDUCTOR = this.addItem(529, "wrap.smd.inductor");
-        WRAP_ADVANCED_SMD_TRANSISTOR = this.addItem(530, "wrap.advanced_smd.transistor");
-        WRAP_ADVANCED_SMD_RESISTOR = this.addItem(531, "wrap.advanced_smd.resistor");
-        WRAP_ADVANCED_SMD_CAPACITOR = this.addItem(532, "wrap.advanced_smd.capacitor");
-        WRAP_ADVANCED_SMD_DIODE = this.addItem(533, "wrap.advanced_smd.diode");
-        WRAP_ADVANCED_SMD_INDUCTOR = this.addItem(534, "wrap.advanced_smd.inductor");
-        WRAP_OPTICAL_SMD_TRANSISTOR = this.addItem(535, "wrap.optical_smd.transistor");
-        WRAP_OPTICAL_SMD_RESISTOR = this.addItem(536, "wrap.optical_smd.resistor");
-        WRAP_OPTICAL_SMD_CAPACITOR = this.addItem(537, "wrap.optical_smd.capacitor");
-        WRAP_OPTICAL_SMD_DIODE = this.addItem(538, "wrap.optical_smd.diode");
-        WRAP_OPTICAL_SMD_INDUCTOR = this.addItem(539, "wrap.optical_smd.inductor");
-        WRAP_SPINTRONIC_SMD_TRANSISTOR = this.addItem(540, "wrap.spintronic_smd.transistor");
-        WRAP_SPINTRONIC_SMD_RESISTOR = this.addItem(541, "wrap.spintronic_smd.resistor");
-        WRAP_SPINTRONIC_SMD_CAPACITOR = this.addItem(542, "wrap.spintronic_smd.capacitor");
-        WRAP_SPINTRONIC_SMD_DIODE = this.addItem(543, "wrap.spintronic_smd.diode");
-        WRAP_SPINTRONIC_SMD_INDUCTOR = this.addItem(544, "wrap.spintronic_smd.inductor");
-        WRAP_COSMIC_SMD_TRANSISTOR = this.addItem(545, "wrap.cosmic_smd.transistor");
-        WRAP_COSMIC_SMD_RESISTOR = this.addItem(546, "wrap.cosmic_smd.resistor");
-        WRAP_COSMIC_SMD_CAPACITOR = this.addItem(547, "wrap.cosmic_smd.capacitor");
-        WRAP_COSMIC_SMD_DIODE = this.addItem(548, "wrap.cosmic_smd.diode");
-        WRAP_COSMIC_SMD_INDUCTOR = this.addItem(549, "wrap.cosmic_smd.inductor");
-        WRAP_SUPRACAUSAL_SMD_TRANSISTOR = this.addItem(550, "wrap.supracausal_smd.transistor");
-        WRAP_SUPRACAUSAL_SMD_RESISTOR = this.addItem(551, "wrap.supracausal_smd.resistor");
-        WRAP_SUPRACAUSAL_SMD_CAPACITOR = this.addItem(552, "wrap.supracausal_smd.capacitor");
-        WRAP_SUPRACAUSAL_SMD_DIODE = this.addItem(553, "wrap.supracausal_smd.diode");
-        WRAP_SUPRACAUSAL_SMD_INDUCTOR = this.addItem(554, "wrap.supracausal_smd.inductor");
+        WRAP_CIRCUIT_ULV = this.addItem(500, "wrap.circuit.ulv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_LV = this.addItem(501, "wrap.circuit.lv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_MV = this.addItem(502, "wrap.circuit.mv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_HV = this.addItem(503, "wrap.circuit.hv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_EV = this.addItem(504, "wrap.circuit.ev").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_IV = this.addItem(505, "wrap.circuit.iv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_LuV = this.addItem(506, "wrap.circuit.luv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_ZPM = this.addItem(507, "wrap.circuit.zpm").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_UV = this.addItem(508, "wrap.circuit.uv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_UHV = this.addItem(509, "wrap.circuit.uhv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_UEV = this.addItem(510, "wrap.circuit.uev").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_UIV = this.addItem(511, "wrap.circuit.uiv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_UXV = this.addItem(512, "wrap.circuit.uxv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_OpV = this.addItem(513, "wrap.circuit.opv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_CIRCUIT_MAX = this.addItem(514, "wrap.circuit.max").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_BASIC_CIRCUIT_BOARD = this.addItem(515, "wrap.circuit_board.basic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_GOOD_CIRCUIT_BOARD = this.addItem(516, "wrap.circuit_board.good").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_PLASTIC_CIRCUIT_BOARD = this.addItem(517, "wrap.circuit_board.plastic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ADVANCED_CIRCUIT_BOARD = this.addItem(518, "wrap.circuit_board.advanced").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_EXTREME_CIRCUIT_BOARD = this.addItem(519, "wrap.circuit_board.extreme").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ELITE_CIRCUIT_BOARD = this.addItem(520, "wrap.circuit_board.elite").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_WETWARE_CIRCUIT_BOARD = this.addItem(521, "wrap.circuit_board.wetware").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_GOOWARE_CIRCUIT_BOARD = this.addItem(522, "wrap.circuit_board.gooware").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_OPTICAL_CIRCUIT_BOARD = this.addItem(523, "wrap.circuit_board.optical").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SPINTRONIC_CIRCUIT_BOARD = this.addItem(524, "wrap.circuit_board.spintronic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SMD_TRANSISTOR = this.addItem(525, "wrap.smd.transistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SMD_RESISTOR = this.addItem(526, "wrap.smd.resistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SMD_CAPACITOR = this.addItem(527, "wrap.smd.capacitor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SMD_DIODE = this.addItem(528, "wrap.smd.diode").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SMD_INDUCTOR = this.addItem(529, "wrap.smd.inductor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ADVANCED_SMD_TRANSISTOR = this.addItem(530, "wrap.advanced_smd.transistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ADVANCED_SMD_RESISTOR = this.addItem(531, "wrap.advanced_smd.resistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ADVANCED_SMD_CAPACITOR = this.addItem(532, "wrap.advanced_smd.capacitor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ADVANCED_SMD_DIODE = this.addItem(533, "wrap.advanced_smd.diode").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_ADVANCED_SMD_INDUCTOR = this.addItem(534, "wrap.advanced_smd.inductor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_OPTICAL_SMD_TRANSISTOR = this.addItem(535, "wrap.optical_smd.transistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_OPTICAL_SMD_RESISTOR = this.addItem(536, "wrap.optical_smd.resistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_OPTICAL_SMD_CAPACITOR = this.addItem(537, "wrap.optical_smd.capacitor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_OPTICAL_SMD_DIODE = this.addItem(538, "wrap.optical_smd.diode").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_OPTICAL_SMD_INDUCTOR = this.addItem(539, "wrap.optical_smd.inductor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SPINTRONIC_SMD_TRANSISTOR = this.addItem(540, "wrap.spintronic_smd.transistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SPINTRONIC_SMD_RESISTOR = this.addItem(541, "wrap.spintronic_smd.resistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SPINTRONIC_SMD_CAPACITOR = this.addItem(542, "wrap.spintronic_smd.capacitor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SPINTRONIC_SMD_DIODE = this.addItem(543, "wrap.spintronic_smd.diode").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SPINTRONIC_SMD_INDUCTOR = this.addItem(544, "wrap.spintronic_smd.inductor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_COSMIC_SMD_TRANSISTOR = this.addItem(545, "wrap.cosmic_smd.transistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_COSMIC_SMD_RESISTOR = this.addItem(546, "wrap.cosmic_smd.resistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_COSMIC_SMD_CAPACITOR = this.addItem(547, "wrap.cosmic_smd.capacitor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_COSMIC_SMD_DIODE = this.addItem(548, "wrap.cosmic_smd.diode").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_COSMIC_SMD_INDUCTOR = this.addItem(549, "wrap.cosmic_smd.inductor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SUPRACAUSAL_SMD_TRANSISTOR = this.addItem(550, "wrap.supracausal_smd.transistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SUPRACAUSAL_SMD_RESISTOR = this.addItem(551, "wrap.supracausal_smd.resistor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SUPRACAUSAL_SMD_CAPACITOR = this.addItem(552, "wrap.supracausal_smd.capacitor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SUPRACAUSAL_SMD_DIODE = this.addItem(553, "wrap.supracausal_smd.diode").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+        WRAP_SUPRACAUSAL_SMD_INDUCTOR = this.addItem(554, "wrap.supracausal_smd.inductor").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
         //  Singularities
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic");
@@ -418,6 +417,6 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WEIRD_SINGULARITY = this.addItem(806, "singularity.weird");
 
         //  Debug Items
-        STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer").addComponents(StructureWriterBehavior.INSTANCE);
+        STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer").addComponents(StructureWriterBehavior.INSTANCE).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
     }
 }

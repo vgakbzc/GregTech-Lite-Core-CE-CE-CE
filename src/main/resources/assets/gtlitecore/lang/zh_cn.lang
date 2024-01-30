@@ -578,6 +578,10 @@ metaitem.cover.solar_panel.max.name=太阳能覆盖板（§c§lMAX§r）
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
+itemGroup.gtlite.circuit=格雷科技精简版 | 电路
+itemGroup.gtlite.tool=格雷科技精简版 | 工具
+itemGroup.gtlite.particle=格雷科技精简版 | 粒子
+itemGroup.gtlite.wrap=格雷科技精简版 | 封装物品
 
 #  Debug Items
 metaitem.debug.structure_writer.name=多方块导出工具
