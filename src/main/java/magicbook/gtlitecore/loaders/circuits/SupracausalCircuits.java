@@ -169,6 +169,21 @@ public class SupracausalCircuits {
 
         //  Contained High Density Protonic Matter -> Contained Exotic Matter
         //  back to Stellar Furnace recipes
+
+        //  Supracausal RAM
+        FORMING_PRESS_RECIPES.recipeBuilder()
+                .input(RANDOM_ACCESS_MEMORY)
+                .input(plate, TransitionLAlloy, 2)
+                .input(plate, BlackDwarfMatter, 2)
+                .input(springSmall, WhiteDwarfMatter)
+                .input(wireFine, HeavyQuarkDegenerateMatter, 4)
+                .input(bolt, Taranium, 2)
+                .output(SUPRACAUSAL_MEMORY_CHIP, 4)
+                .EUt(VA[UXV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
     }
 
     private static void SMDs() {
@@ -251,7 +266,7 @@ public class SupracausalCircuits {
                 .input(SUPRACAUSAL_PROCESSOR, 2)
                 .input(SUPRACAUSAL_INDUCTOR, 6)
                 .input(SUPRACAUSAL_CAPACITOR, 12)
-                .input(COSMIC_MEMORY_CHIP, 24) // TODO new RAM
+                .input(SUPRACAUSAL_MEMORY_CHIP, 24)
                 .input(wireFine, Hypogen, 16)
                 .solderMultiplier(2)
                 .output(SUPRACAUSAL_ASSEMBLY, 2)
@@ -266,7 +281,7 @@ public class SupracausalCircuits {
                 .input(SUPRACAUSAL_ASSEMBLY, 2)
                 .input(SUPRACAUSAL_DIODE, 8)
                 .input(COSMIC_CPU_CHIP, 16) // TODO new chip
-                .input(COSMIC_MEMORY_CHIP, 32) // TODO new RAM
+                .input(SUPRACAUSAL_MEMORY_CHIP, 32)
                 .input(wireFine, HeavyQuarkDegenerateMatter, 24)
                 .input(foil, Hikarium, 32)
                 .input(plate, BlackDwarfMatter, 4)
@@ -293,7 +308,7 @@ public class SupracausalCircuits {
                 .input(SUPRACAUSAL_RESISTOR, 16)
                 .input(SUPRACAUSAL_INDUCTOR, 16)
                 .input(foil, Hikarium, 16)
-                .input(COSMIC_MEMORY_CHIP, 32) // TODO new RAM
+                .input(SUPRACAUSAL_MEMORY_CHIP, 32)
                 .input(wireGtDouble, NeutroniumSuperconductor, 16)
                 .input(plate, Hypogen, 8)
                 .fluidInputs(SolderingAlloy.getFluid(43776))

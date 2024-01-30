@@ -178,7 +178,7 @@ public class GTLiteHighDegreeMaterials {
                 .blast(b -> b
                         .temp(15800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV]))
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
+                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 256, 128, false)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);

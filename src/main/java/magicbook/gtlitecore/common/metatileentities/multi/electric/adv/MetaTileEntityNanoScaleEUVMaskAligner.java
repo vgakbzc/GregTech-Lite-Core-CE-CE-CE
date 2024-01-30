@@ -1,5 +1,9 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
 
+import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
+import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.capability.impl.ItemHandlerList;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -47,6 +51,7 @@ import java.util.List;
 
 import static gregtech.api.GTValues.UV;
 
+@Deprecated
 public class MetaTileEntityNanoScaleEUVMaskAligner extends MultiMapMultiblockController {
 
     public int casingTier;
@@ -77,6 +82,17 @@ public class MetaTileEntityNanoScaleEUVMaskAligner extends MultiMapMultiblockCon
         this.casingTier = 0;
     }
 
+    @Override
+    protected void initializeAbilities() {
+        this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));
+        this.inputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
+        this.outputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.EXPORT_ITEMS));
+        this.outputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.INPUT_ENERGY));
+        energyContainer.addAll(this.getAbilities(MultiblockAbility.INPUT_LASER));
+        this.energyContainer=new EnergyContainerList(energyContainer);
+    }
+
     @Nonnull
     @Override
     protected BlockPattern createStructurePattern() {
@@ -93,6 +109,8 @@ public class MetaTileEntityNanoScaleEUVMaskAligner extends MultiMapMultiblockCon
                 .where('E', states(getCasingState())
                         .or(abilities(MultiblockAbility.INPUT_ENERGY)
                                 .setMaxGlobalLimited(3))
+                        .or(abilities(MultiblockAbility.INPUT_LASER)
+                                .setMaxGlobalLimited(1))
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS)
                                 .setMaxGlobalLimited(3))
                         .or(abilities(MultiblockAbility.EXPORT_ITEMS)
@@ -159,7 +177,7 @@ public class MetaTileEntityNanoScaleEUVMaskAligner extends MultiMapMultiblockCon
         ArrayList<MultiblockShapeInfo> shapeInfo = new ArrayList<>();
         MultiblockShapeInfo.Builder builder = MultiblockShapeInfo.builder()
                 .aisle("F      F", "F      F", "        ", "        ", "        ", "        ", "        ")
-                .aisle("        ", "        ", "FXXXXXXF", "NGGGGGGN", "EGGGGGGE", "EGGGGGGE", " XXXXXX ")
+                .aisle("        ", "        ", "FXXXXXXF", "NGGGGGGP", "EGGGGGGE", "EGGGGGGE", " XXXXXX ")
                 .aisle("        ", "        ", "ICCCCCCJ", "DOOOOOOD", "DOOOOOOD", "DOOOOOOD", "KCCCCCCL")
                 .aisle("        ", "        ", "ICccccCJ", "DOOOOOOD", "DooooooD", "DOOOOOOD", "KCccccCL")
                 .aisle("        ", "        ", "ICCCCCCJ", "DOOOOOOD", "DOOOOOOD", "DOOOOOOD", "KCCCCCCL")
@@ -174,6 +192,7 @@ public class MetaTileEntityNanoScaleEUVMaskAligner extends MultiMapMultiblockCon
                 .where('K', MetaTileEntities.FLUID_IMPORT_HATCH[UV], EnumFacing.WEST)
                 .where('L', MetaTileEntities.FLUID_EXPORT_HATCH[UV], EnumFacing.EAST)
                 .where('N', MetaTileEntities.ENERGY_INPUT_HATCH[UV], EnumFacing.NORTH)
+                .where('P', MetaTileEntities.LASER_INPUT_HATCH_256[3], EnumFacing.NORTH)
                 .where('X', getSecondCasingState())
                 .where('D', getThirdCasingState())
                 .where('O', getCoilState())
@@ -211,6 +230,7 @@ public class MetaTileEntityNanoScaleEUVMaskAligner extends MultiMapMultiblockCon
         tooltip.add(I18n.format("gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7"));
         tooltip.add(I18n.format("gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8"));
         tooltip.add(I18n.format("gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9"));
+        tooltip.add(I18n.format("gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.10"));
     }
 
     public class NanoScaleEUVMaskAlignerRecipeLogic extends MultiblockRecipeLogic {

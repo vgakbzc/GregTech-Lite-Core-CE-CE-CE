@@ -1,13 +1,16 @@
 package magicbook.gtlitecore.api;
 
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.BaseCreativeTab;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.items.MetaItems;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import magicbook.gtlitecore.api.block.IBlockTier;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
+import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.common.blocks.*;
+import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.block.state.IBlockState;
 
 import static gregtech.api.GregTechAPI.HEATING_COILS;
@@ -15,7 +18,13 @@ import static gregtech.api.GregTechAPI.HEATING_COILS;
 public class GTLiteAPI {
 
     //  Creative Tabs
-    public static final BaseCreativeTab TAB_GTLITE = new BaseCreativeTab("gtlite", () -> MetaItems.BASIC_TAPE.getStackForm(), true);
+    public static final BaseCreativeTab TAB_GTLITE = new BaseCreativeTab("gtlite", () -> OreDictUnifier.get(OrePrefix.gear, GTLiteMaterials.Legendarium), true);
+    public static final BaseCreativeTab TAB_GTLITE_BLOCK = new BaseCreativeTab("gtlite.block", () -> GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING), false);
+    public static final BaseCreativeTab TAB_GTLITE_BLOCK_DECORATIVE = new BaseCreativeTab("gtlite.decorative_block", () -> GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_UXV), false);
+    public static final BaseCreativeTab TAB_GTLITE_CIRCUIT = new BaseCreativeTab("gtlite.circuit", () -> GTLiteMetaItems.OPTICAL_PROCESSOR.getStackForm(), false);
+    public static final BaseCreativeTab TAB_GTLITE_TOOL = new BaseCreativeTab("gtlite.tool", () -> GTLiteMetaItems.STRUCTURE_WRITER.getStackForm(), false);
+    public static final BaseCreativeTab TAB_GTLITE_PARTICLE = new BaseCreativeTab("gtlite.particle", () -> GTLiteMetaItems.ALPHA_PARTICLE.getStackForm(), false);
+    public static final BaseCreativeTab TAB_GTLITE_WRAP = new BaseCreativeTab("gtlite.wrap", () -> GTLiteMetaItems.WRAP_PLASTIC_CIRCUIT_BOARD.getStackForm(), false);
 
     //  Hash Maps
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();

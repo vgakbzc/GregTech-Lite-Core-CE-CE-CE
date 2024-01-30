@@ -625,6 +625,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(10800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1050))
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  12047 Transition-H Alloy

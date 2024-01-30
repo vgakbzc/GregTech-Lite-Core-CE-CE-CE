@@ -1,7 +1,6 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.Naquadah;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -31,6 +30,16 @@ public class DimensionalOscillator {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .EUt(VA[UIV])
                 .duration(400)
+                .buildAndRegister();
+
+        //  Hyperdimensional Oscillating Matter
+        DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
+                .input(DIMENSION_GAP)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .output(HYPERDIMENSIONAL_OSCILLATING_MATTER)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
+                .EUt(VA[UXV])
+                .duration(100)
                 .buildAndRegister();
     }
 }

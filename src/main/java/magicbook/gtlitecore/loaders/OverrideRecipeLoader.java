@@ -883,6 +883,11 @@ public class OverrideRecipeLoader {
                 'p', new UnificationEntry(plate, CosmicNeutronium),
                 'P', new UnificationEntry(pipeLargeFluid, QuantumchromodynamicallyConfinedMatter));
 
+        ModHandler.addShapedRecipe(true, "hermetic_casing_opv", GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_OpV),
+                "ppp", "pPp", "ppp",
+                'p', new UnificationEntry(plate, Spacetime),
+                'P', new UnificationEntry(pipeLargeFluid, Fatalium));
+
         //  End Game things
         //  a.k.a. creative things!
         ModHandler.addShapedRecipe(true, "quantum_tank_creative", CREATIVE_TANK.getStackForm(),

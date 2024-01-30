@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.common.blocks;
 
 import gregtech.common.blocks.MetaBlocks;
+import magicbook.gtlitecore.api.GTLiteAPI;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -39,48 +40,91 @@ public class GTLiteMetaBlocks {
     public static void init() {
         MULTIBLOCK_CASING = new BlockMultiblockCasing();
         MULTIBLOCK_CASING.setRegistryName("multiblock_casing");
+        MULTIBLOCK_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         METAL_CASING = new BlockMetalCasing();
         METAL_CASING.setRegistryName("metal_casing");
+        METAL_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         MACHINE_CASING = new BlockMachineCasing();
         MACHINE_CASING.setRegistryName("machine_casing");
+        MACHINE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         STRUCTURE_CASING = new BlockStructureCasing();
         STRUCTURE_CASING.setRegistryName("structure_casing");
+        STRUCTURE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         BOILER_CASING = new BlockBoilerCasing();
         BOILER_CASING.setRegistryName("boiler_casing");
+        BOILER_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         UNIQUE_CASING = new BlockUniqueCasing();
         UNIQUE_CASING.setRegistryName("unique_casing");
+        UNIQUE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         FUSION_CASING = new BlockFusionCasing();
         FUSION_CASING.setRegistryName("fusion_casing");
+        FUSION_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         CLEANROOM_CASING = new BlockCleanroomCasing();
         CLEANROOM_CASING.setRegistryName("cleanroom_casing");
+        CLEANROOM_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         PRECISE_ASSEMBLER_CASING = new BlockPreciseAssemblerCasing();
         PRECISE_ASSEMBLER_CASING.setRegistryName("precise_assembler_casing");
+        PRECISE_ASSEMBLER_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         COMPONENT_ASSEMBLY_LINE_CASING = new BlockComponentAssemblyLineCasing();
         COMPONENT_ASSEMBLY_LINE_CASING.setRegistryName("component_assembly_line_casing");
+        COMPONENT_ASSEMBLY_LINE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         SPACE_ELEVATOR_CASING = new BlockSpaceElevatorCasing();
         SPACE_ELEVATOR_CASING.setRegistryName("space_elevator_casing");
+        SPACE_ELEVATOR_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         PCB_FACTORY_CASING = new BlockPCBFactoryCasing();
         PCB_FACTORY_CASING.setRegistryName("pcb_factory_casing");
+        PCB_FACTORY_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         COMPUTER_CASING = new BlockComputerCasing();
         COMPUTER_CASING.setRegistryName("computer_casing");
+        COMPUTER_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         ACTIVE_MULTIBLOCK_CASING = new BlockActiveMultiblockCasing();
         ACTIVE_MULTIBLOCK_CASING.setRegistryName("active_multiblock_casing");
+        ACTIVE_MULTIBLOCK_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         ACTIVE_UNIQUE_CASING = new BlockActiveUniqueCasing();
         ACTIVE_UNIQUE_CASING.setRegistryName("active_unique_casing");
+        ACTIVE_UNIQUE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         SCIENCE_CASING = new BlockScienceCasing();
         SCIENCE_CASING.setRegistryName("science_casing");
+        SCIENCE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         FIELD_CASING = new BlockFieldCasing();
         FIELD_CASING.setRegistryName("field_casing");
+        FIELD_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         WIRE_COIL = new BlockWireCoil();
         WIRE_COIL.setRegistryName("wire_coil");
+        WIRE_COIL.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         TRANSPARENT_CASING = new BlockTransparentCasing();
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
+        TRANSPARENT_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         EXPLOSIVE_BLOCK = new BlockExplosive();
         EXPLOSIVE_BLOCK.setRegistryName("explosive_block");
+        EXPLOSIVE_BLOCK.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         CRUCIBLE = new BlockCrucible();
         CRUCIBLE.setRegistryName("crucible");
+        CRUCIBLE.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         HERMETIC_CASING = new BlockHermeticCasing();
         HERMETIC_CASING.setRegistryName("hermetic_casing");
+        HERMETIC_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK_DECORATIVE);
     }
 
     @SideOnly(Side.CLIENT)

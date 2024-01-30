@@ -342,7 +342,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .iconSet(CUSTOM_ETERNITY)
                 .element(GTLiteElements.Eternity)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 

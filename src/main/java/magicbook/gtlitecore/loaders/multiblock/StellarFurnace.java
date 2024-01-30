@@ -14,7 +14,6 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class StellarFurnace {
@@ -97,13 +96,14 @@ public class StellarFurnace {
 
     private static void DegenerateRheniumChain() {
 
+        //  Rhenium -> Degenerate Rhenium
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(ingot, Rhenium)
                 .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.NAQUADRIA_CHARGE))
                 .fluidOutputs(DegenerateRhenium.getPlasma(1000))
                 .EUt(VA[UIV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((10 * V[UV]) - (10 * V[ZPM])))
+                .temperature(BigInteger.valueOf(3932160))
                 .buildAndRegister();
 
         STELLAR_FURNACE_RECIPES.recipeBuilder()
@@ -112,7 +112,7 @@ public class StellarFurnace {
                 .fluidOutputs(DegenerateRhenium.getPlasma(10000))
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((10 * V[UV]) - (10 * V[ZPM])))
+                .temperature(BigInteger.valueOf(3932160 * 9)) // for 9x material input
                 .buildAndRegister();
 
         CANNER_RECIPES.recipeBuilder()
@@ -133,7 +133,7 @@ public class StellarFurnace {
                 .fluidOutputs(QuarkGluonPlasma.getPlasma(1000))
                 .EUt(VA[UIV])
                 .duration(60)
-                .temperature(BigInteger.valueOf((10 * V[UHV]) - (10 * V[ZPM])))
+                .temperature(BigInteger.valueOf(19668800))
                 .buildAndRegister();
 
         //  Quark Gluon Plasma -> Heavy Quarks + Light Quarks + Gluons
@@ -160,7 +160,7 @@ public class StellarFurnace {
                 .fluidOutputs(CosmicComputingMixture.getFluid(60000))
                 .EUt(VA[UIV])
                 .duration(1200)
-                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .temperature(BigInteger.valueOf(988436750))
                 .buildAndRegister();
     }
 
@@ -186,7 +186,7 @@ public class StellarFurnace {
                 .fluidOutputs(DeuteriumSuperheavyMixture.getFluid(2592))
                 .EUt(VA[UIV])
                 .duration(100)
-                .temperature(BigInteger.valueOf((10 * V[UEV]) - (10 * V[ZPM])))
+                .temperature(BigInteger.valueOf(8257530))
                 .buildAndRegister();
 
         //  Heavy Quark Degenerate Matter
@@ -197,7 +197,7 @@ public class StellarFurnace {
                 .fluidOutputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
                 .EUt(VA[UIV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((10 * V[UIV]) - (10 * V[EV])))
+                .temperature(BigInteger.valueOf((13887430)))
                 .buildAndRegister();
     }
 
@@ -214,7 +214,7 @@ public class StellarFurnace {
                 .fluidOutputs(DenseNeutronPlasma.getPlasma(6000))
                 .EUt(VA[UIV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(603486550))
                 .buildAndRegister();
 
         //  Step2: Cosmic Neutron Plasma
@@ -235,10 +235,10 @@ public class StellarFurnace {
                 .output(COSMIC_NEUTRON_PLASMA_CONTAINMENT_CELL)
                 .EUt(VA[UIV])
                 .duration(10)
-                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .temperature(BigInteger.valueOf(886544780))
                 .buildAndRegister();
 
-        //  back to plasma condenser recipe
+        //  back to Plasma condenser recipe
     }
 
     private static void QuantumchromodynamicallyConfinedMatterChain() {
@@ -250,7 +250,7 @@ public class StellarFurnace {
                 .fluidOutputs(HighEnergyQuarkGluonPlasma.getPlasma(L))
                 .EUt(VA[UIV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .temperature(BigInteger.valueOf(24479620))
                 .buildAndRegister();
 
         //  back to plasma condenser recipe
@@ -261,7 +261,7 @@ public class StellarFurnace {
                 .output(QCD_PROTECTIVE_PLATING)
                 .EUt(VA[UIV])
                 .duration(10)
-                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .temperature(BigInteger.valueOf(67054330))
                 .buildAndRegister();
     }
 
@@ -276,7 +276,7 @@ public class StellarFurnace {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(104857020))
                 .buildAndRegister();
     }
 
@@ -288,7 +288,7 @@ public class StellarFurnace {
                 .fluidOutputs(CosmicFabric.getPlasma(1000))
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Long.MAX_VALUE))
+                .temperature(BigInteger.valueOf(993378960))
                 .buildAndRegister();
 
         CANNER_RECIPES.recipeBuilder()
@@ -339,7 +339,7 @@ public class StellarFurnace {
                 .output(CONTAINED_RN_SINGULARITY, 64)
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(834267850))
                 .buildAndRegister();
 
         //  Contained RN Singularity -> Contained KN Singularity
@@ -350,7 +350,7 @@ public class StellarFurnace {
                 .output(TIME_DILATION_CONTAINMENT_UNIT, 63)
                 .EUt(6000000)
                 .duration(200)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(857455690))
                 .buildAndRegister();
 
         //  Macrowormhole Generator -> Recursively Folded Negative Space
@@ -360,7 +360,7 @@ public class StellarFurnace {
                 .output(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(939256740))
                 .buildAndRegister();
 
         //  Recursively Folded Negative Space -> Eigenfolded Spacetime Manifold
@@ -371,7 +371,7 @@ public class StellarFurnace {
                 .output(EIGENFOLDED_SPACETIME_MANIFOLD)
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(991744530))
                 .buildAndRegister();
 
         //  Neutronium Sphere + Time Dilation Containment Unit -> Contained High Density Protonic Matter
@@ -382,7 +382,7 @@ public class StellarFurnace {
                 .output(CONTAINED_HIGH_DENSITY_PROTONIC_MATTER)
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(764459680))
                 .buildAndRegister();
 
         //  Contained High Density Protonic Matter -> Contained Exotic Matter
@@ -393,7 +393,7 @@ public class StellarFurnace {
                 .output(CONTAINED_EXOTIC_MATTER)
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(809943570))
                 .buildAndRegister();
     }
 
@@ -416,7 +416,7 @@ public class StellarFurnace {
                 .output(CRUDE_HYPERCUBE, 4)
                 .EUt(VA[UXV])
                 .duration(120)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(999876890))
                 .buildAndRegister();
 
         //  back to Quantum Force Transformer Recipe
@@ -433,7 +433,7 @@ public class StellarFurnace {
                 .fluidOutputs(Spacetime.getFluid(L))
                 .EUt(VA[UXV])
                 .duration(20)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(1000000000))
                 .buildAndRegister();
 
         //  Crude Hyper cube -> Transcendent Metal
@@ -456,7 +456,7 @@ public class StellarFurnace {
                 .fluidOutputs(SuperluminalTachyonJet.getFluid(1000))
                 .EUt(VA[UIV])
                 .duration(10)
-                .temperature(BigInteger.valueOf(133940))
+                .temperature(BigInteger.valueOf(639400000))
                 .buildAndRegister();
 
         //  Superluminal Tachyon Jet -> Hikarium
@@ -473,30 +473,33 @@ public class StellarFurnace {
 
     private static void ShirabonEternityChain() {
 
-        //  In this recipe, Infinity is cycle, but should use Cosmic Computing Mixture and Charged Hypercube
+        //  You can both get Shirabon and Eternity, but needs to use more materials.
+        //  Dimensionally Transcendent Residue is cycle in this recipe.
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .input(singularity, Infinity)
                 .input(CHARGED_HYPERCUBE)
+                .input(CONTAINED_KERR_SINGULARITY, 64)
                 .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .fluidInputs(CosmicComputingMixture.getFluid(1152))
-                .fluidInputs(Spacetime.getFluid(L * 4))
+                .output(CONTAINED_KN_SINGULARITY, 64)
+                .output(DIMENSION_GAP)
                 .chancedOutput(dust, Shirabon, 64, 2500, 0)
-                .chancedOutput(DIMENSION_GAP, 2500, 0)
                 .fluidOutputs(Eternity.getFluid(9216))
-                .fluidOutputs(Infinity.getFluid(82944)) // L * 64 * 9 i.e. 64 blocks
-                .EUt(VA[OpV])
+                .EUt(VH[MAX])
                 .duration(200)
-                .temperature(BigInteger.valueOf((long) Double.MAX_VALUE))
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
                 .buildAndRegister();
 
-        //  Dimension Gap Pre-cycle (means is not perfect cycle)
+        //  About Dimension Gap, there are two choice for players:
+        //  1) Back to Dimension Oscillator recipe to make Hyperdimensional Oscillating Matter，
+        //  2) Cycle, you can get Crude Hypercube and some Dimensionally Transcendent Residue.
         ELECTROLYZER_RECIPES.recipeBuilder()
                 .input(DIMENSION_GAP)
-                .fluidInputs(Neutronium.getFluid(L))
-                .output(dust, Ash)
-                .fluidOutputs(Spacetime.getFluid(L * 4))
+                .notConsumable(EXCITATION_MAINTAINER)
+                .output(CRUDE_HYPERCUBE)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .EUt(VA[OpV])
-                .duration(200)
+                .duration(20)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
