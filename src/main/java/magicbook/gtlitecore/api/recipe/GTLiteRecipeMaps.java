@@ -428,6 +428,7 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.SCIENCE);
 
         //  Turbine Mixer RecipeMap
+        //  todo redo gui by Modular UI
         TURBINE_MIXER_RECIPES = new RecipeMap<>("turbine_mixer_recipes", 9, 1, 6, 1, new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
                 .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)

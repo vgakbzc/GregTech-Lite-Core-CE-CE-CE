@@ -153,7 +153,7 @@ public class CosmicCircuits {
         CUTTER_RECIPES.recipeBuilder()
                 .input(COSMIC_CPU)
                 .fluidInputs(Lubricant.getFluid(6000))
-                .output(COSMIC_CPU_CHIP, 16)
+                .output(COSMIC_CPU_CHIP, 32)
                 .EUt(VA[UV])
                 .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
