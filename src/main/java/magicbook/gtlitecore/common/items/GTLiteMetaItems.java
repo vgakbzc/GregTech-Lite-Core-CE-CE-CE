@@ -326,6 +326,30 @@ public class GTLiteMetaItems {
 
     //  Particles
     public static MetaItem<?>.MetaValueItem ALPHA_PARTICLE;
+    public static MetaItem<?>.MetaValueItem GRAVITON;
+    public static MetaItem<?>.MetaValueItem UP_QUARK;
+    public static MetaItem<?>.MetaValueItem DOWN_QUARK;
+    public static MetaItem<?>.MetaValueItem CHARM_QUARK;
+    public static MetaItem<?>.MetaValueItem STRANGE_QUARK;
+    public static MetaItem<?>.MetaValueItem TOP_QUARK;
+    public static MetaItem<?>.MetaValueItem BOTTOM_QUARK;
+    public static MetaItem<?>.MetaValueItem ELECTRON;
+    public static MetaItem<?>.MetaValueItem ELECTRON_NEUTRINO;
+    public static MetaItem<?>.MetaValueItem MUON;
+    public static MetaItem<?>.MetaValueItem MUON_NEUTRINO;
+    public static MetaItem<?>.MetaValueItem TAU;
+    public static MetaItem<?>.MetaValueItem TAU_NEUTRINO;
+    public static MetaItem<?>.MetaValueItem GLUON;
+    public static MetaItem<?>.MetaValueItem PHOTON;
+    public static MetaItem<?>.MetaValueItem Z_BOSON;
+    public static MetaItem<?>.MetaValueItem W_BOSON;
+    public static MetaItem<?>.MetaValueItem HIGGS_BOSON;
+    public static MetaItem<?>.MetaValueItem PROTON;
+    public static MetaItem<?>.MetaValueItem NEUTRON;
+    public static MetaItem<?>.MetaValueItem LAMBDA_BARYON;
+    public static MetaItem<?>.MetaValueItem OMEGA_BARYON;
+    public static MetaItem<?>.MetaValueItem MESON;
+    public static MetaItem<?>.MetaValueItem ETA_MESON;
 
     //  Wrap Items
     public static MetaItem<?>.MetaValueItem WRAP_CIRCUIT_ULV;

@@ -349,6 +349,30 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         //  Particles
         ALPHA_PARTICLE = this.addItem(400, "particle.alpha").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        GRAVITON = this.addItem(401, "particle.graviton").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        UP_QUARK = this.addItem(402, "particle.up_quark").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        DOWN_QUARK = this.addItem(403, "particle.down_quark").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        CHARM_QUARK = this.addItem(404, "particle.charm_quark").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        STRANGE_QUARK = this.addItem(405, "particle.strange_quark").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        TOP_QUARK = this.addItem(406, "particle.top_quark").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        BOTTOM_QUARK = this.addItem(407, "particle.bottom_quark").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        ELECTRON = this.addItem(408, "particle.electron").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        ELECTRON_NEUTRINO = this.addItem(409, "particle.electron_neutrino").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        MUON = this.addItem(410, "particle.muon").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        MUON_NEUTRINO = this.addItem(411, "particle.muon_neutrino").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        TAU = this.addItem(412, "particle.tau").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        TAU_NEUTRINO = this.addItem(413, "particle.tau_neutrino").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        GLUON = this.addItem(414, "particle.gluon").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        PHOTON = this.addItem(415, "particle.photon").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        Z_BOSON = this.addItem(416, "particle.z_boson").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        W_BOSON = this.addItem(417, "particle.w_boson").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        HIGGS_BOSON = this.addItem(418, "particle.higgs_boson").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        PROTON = this.addItem(419, "particle.proton").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        NEUTRON = this.addItem(420, "particle.neutron").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        LAMBDA_BARYON = this.addItem(421, "particle.lambda_baryon").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        OMEGA_BARYON = this.addItem(422, "particle.omega_baryon").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        MESON = this.addItem(423, "particle.meson").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+        ETA_MESON = this.addItem(424, "particle.eta_meson").setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
 
         //  Wrap Items
         WRAP_CIRCUIT_ULV = this.addItem(500, "wrap.circuit.ulv").setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);

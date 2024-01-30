@@ -578,6 +578,8 @@ metaitem.cover.solar_panel.max.name=太阳能覆盖板（§c§lMAX§r）
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
+itemGroup.gtlite.block=格雷科技精简版 | 方块
+itemGroup.gtlite.decorative_block=格雷科技精简版 | 装饰方块
 itemGroup.gtlite.circuit=格雷科技精简版 | 电路
 itemGroup.gtlite.tool=格雷科技精简版 | 工具
 itemGroup.gtlite.particle=格雷科技精简版 | 粒子
@@ -2101,6 +2103,30 @@ metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6等离子冷�
 
 #  Particles
 metaitem.particle.alpha.name=α粒子
+metaitem.particle.graviton.name=引力子
+metaitem.particle.up_quark.name=上夸克
+metaitem.particle.down_quark.name=下夸克
+metaitem.particle.charm_quark.name=粲夸克
+metaitem.particle.strange_quark.name=奇夸克
+metaitem.particle.top_quark.name=顶夸克
+metaitem.particle.bottom_quark.name=底夸克
+metaitem.particle.electron.name=电子
+metaitem.particle.electron_neutrino.name=电子中微子
+metaitem.particle.muon.name=μ子
+metaitem.particle.muon_neutrino.name=μ子中微子
+metaitem.particle.tau.name=τ子
+metaitem.particle.tau_neutrino.name=τ子中微子
+metaitem.particle.gluon.name=胶子
+metaitem.particle.photon.name=光子
+metaitem.particle.z_boson.name=Z玻色子
+metaitem.particle.w_boson.name=W玻色子
+metaitem.particle.higgs_boson.name=希格斯玻色子
+metaitem.particle.proton.name=质子
+metaitem.particle.neutron.name=中子
+metaitem.particle.lambda_baryon.name=Λ重子
+metaitem.particle.omega_baryon.name=Ω重子
+metaitem.particle.meson.name=介子
+metaitem.particle.eta_meson.name=η介子
 
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
