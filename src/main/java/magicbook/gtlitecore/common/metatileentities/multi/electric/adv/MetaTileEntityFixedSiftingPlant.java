@@ -154,8 +154,9 @@ public class MetaTileEntityFixedSiftingPlant extends RecipeMapMultiblockControll
         }
 
         /**
-         * @return Parallel = 64 * (tier - EV), i.e. IV 64, LuV 128, ZPM, 256, UV, 512, UHV, 1024,...
-         * Max Parallel: 4096
+         * @return If machine's voltage less than or equal EV, then return 64 parallel.
+         *         If machine's voltage greater than EV, then return (64 * (tier - 4)) parallel.
+         *         Max Parallel: 640 (Max voltage).
          */
         @Override
         public int getParallelLimit() {
@@ -163,6 +164,9 @@ public class MetaTileEntityFixedSiftingPlant extends RecipeMapMultiblockControll
             return Math.min(ParallelTier(tier), 4096);
         }
 
+        /**
+         * @param maxProgress Get 1/2 progress time.
+         */
         @Override
         public void setMaxProgress(int maxProgress) {
             this.maxProgressTime = maxProgress / 2;

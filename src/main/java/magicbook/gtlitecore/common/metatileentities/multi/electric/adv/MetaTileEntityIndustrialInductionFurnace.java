@@ -171,6 +171,10 @@ public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultibloc
             builder.EUt(getEUtForParallel(builder.getParallel(), heatingCoilDiscount)).duration(getDurationForParallel(builder.getParallel(), this.getParallelLimit()));
         }
 
+        /**
+         * @return Get (256 * heatingCoilLevel) parallel.
+         *         Max Parallel: 32768 (Astralium coil block).
+         */
         @Override
         public int getParallelLimit() {
             return getMaxParallel(heatingCoilLevel);

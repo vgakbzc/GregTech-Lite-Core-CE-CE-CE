@@ -246,11 +246,18 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
             this.blastFurnace = (MetaTileEntityVolcanus) tileEntity;
         }
 
+        /**
+         * @return Get (2 * heatingCoilLevel) parallel.
+         *         Max Parallel: 256 (Astralium wire coil block).
+         */
         @Override
         public int getParallelLimit() {
             return getMaxParallel(heatingCoilLevel);
         }
 
+        /**
+         * @param maxProgress Get 1/2 progress time.
+         */
         @Override
         public void setMaxProgress(int maxProgress) {
             this.maxProgressTime = maxProgress / 2;

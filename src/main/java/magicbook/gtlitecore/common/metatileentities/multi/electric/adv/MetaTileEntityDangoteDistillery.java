@@ -162,14 +162,25 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
             super(tileEntity);
         }
 
+        /**
+         * @return Check if machine in Distillery mode.
+         */
         private boolean isDistilleryMode() {
             return this.getRecipeMap() == RecipeMaps.DISTILLERY_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Distillation mode.
+         */
         private boolean isDistillationMode() {
             return this.getRecipeMap() == RecipeMaps.DISTILLATION_RECIPES;
         }
 
+        /**
+         * @param maxProgress If machine in distillery mode, then get 1/4 progress time,
+         *                    If machine in distillation mode, then get 1/2 progress time.
+         */
+        @Override
         public void setMaxProgress(int maxProgress) {
             if (isDistilleryMode()) {
                 this.maxProgressTime = maxProgress / 4;
@@ -188,6 +199,11 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
             return 12 * (tier * 4);
         }
 
+        /**
+         * @return If machine's voltage less than or equal UV, then use ParallelTier() to get parallel.
+         *         If machine's voltage greater than UV, then use HigherParallelTier() to get parallel.
+         *         Max Parallel: 720 (MAX voltage).
+         */
         @Override
         public int getParallelLimit() {
             if (this.getMaxVoltage() > V[MAX]) {    //  For MAX+, get 12 * 15 * 4

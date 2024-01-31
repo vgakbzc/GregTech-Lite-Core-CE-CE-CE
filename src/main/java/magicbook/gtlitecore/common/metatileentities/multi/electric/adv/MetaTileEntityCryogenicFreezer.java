@@ -131,7 +131,6 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
 
     protected class CryogenicFreezerRecipeLogic extends MultiblockRecipeLogic {
 
-
         private final MetaTileEntityCryogenicFreezer freezer;
 
         public CryogenicFreezerRecipeLogic(RecipeMapMultiblockController tileEntity) {
@@ -140,17 +139,21 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
         }
 
         /**
-         * @param maxProgress Reduce duration to 0.8 original duration.
+         * @param maxProgress Get 0.8 progress time.
          */
         public void setMaxProgress(int maxProgress) {
             this.maxProgressTime = (int) (0.8 * maxProgress);
         }
 
+        /**
+         * @return Get 16 parallel.
+         */
         @Override
         public int getParallelLimit() {
             return 16;
         }
 
+        @Override
         protected void updateRecipeProgress() {
             if (canRecipeProgress && drawEnergy(recipeEUt, true)) {
                 IMultipleTankHandler inputTank = freezer.getInputFluidInventory();

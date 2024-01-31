@@ -97,6 +97,9 @@ public class MetaTileEntityTreeGrowthFactory extends RecipeMapMultiblockControll
             super(tileEntity, true);
         }
 
+        /**
+         * @return If machine's voltage greater than HV, then return (2 * voltage^{2} - 2 * voltage + 5) parallel.
+         */
         @Override
         public int getParallelLimit() {
 
