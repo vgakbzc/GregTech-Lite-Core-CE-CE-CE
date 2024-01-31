@@ -12,7 +12,7 @@ public class FEPChain {
 
         //  3C2F4 -> 2C3F6
         PYROLYSE_RECIPES.recipeBuilder()
-                .input(stick, Steel)
+                .notConsumable(stick, Steel)
                 .fluidInputs(Tetrafluoroethylene.getFluid(3000))
                 .fluidOutputs(Hexafluoropropylene.getFluid(2000))
                 .EUt(VA[HV])
