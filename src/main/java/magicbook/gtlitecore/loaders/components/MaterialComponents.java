@@ -171,7 +171,7 @@ public class MaterialComponents {
                 {9, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, CubicBoronNitride)},
                 {10, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, BlackTitanium)},
                 {11, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, BlackPlutonium)},
-//                {12, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Trinium)},
+                {12, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Octiron)},
 //                {13, new UnificationEntry(OrePrefix.toolHeadBuzzSaw, Trinium)},
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 

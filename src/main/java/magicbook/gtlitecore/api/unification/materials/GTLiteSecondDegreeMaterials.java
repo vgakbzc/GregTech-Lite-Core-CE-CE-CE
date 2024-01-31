@@ -479,7 +479,7 @@ public class GTLiteSecondDegreeMaterials {
                 .ingot()
                 .color(0xD24473)
                 .iconSet(BRIGHT)
-                .flags(DISABLE_DECOMPOSITION)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .build()
                 .setFormula("(C60H30)C48La2", true);
 
@@ -671,6 +671,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 400))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12051 Lanthanum Group-H Alloy
@@ -695,6 +696,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(14300, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 290))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build()
                 .setFormula("AcThPaUNpPuAmY", false);
 
@@ -769,6 +771,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(15000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 353))
                 .components(Caesium, 1, Cerium, 1, Cobalt, 2, Indium, 10)
+                .flags(GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12059 BETSPerrhenate
@@ -804,7 +807,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 53))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12062 Hastelloy-K243
@@ -854,12 +857,13 @@ public class GTLiteSecondDegreeMaterials {
                 .fluid()
                 .color(0x3B4129)
                 .iconSet(METALLIC)
-                .components(TitanSteel, 8, BlackSteel, 8, MetastableFlerovium, 8, MetastableHassium, 8, Tritanium, 8, Thorium, 8, Neptunium, 8, Nobelium, 8)
+                .components(TitanSteel, 8, BlackPlutonium, 8, MetastableFlerovium, 8, MetastableHassium, 8, Tritanium, 8, Thorium, 8, Neptunium, 8, Nobelium, 8)
                 .blast(b -> b
                         .temp(16600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[ULV], 88888)
                         .vacuumStats(VA[ULV], 88888))
-                .flags(GENERATE_PLATE, GENERATE_ROD)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD)
+                .toolStats(new ToolProperty(36.0F, 80.0F, 100000, 30))
                 .build();
 
         //  12066 Botmium
@@ -909,7 +913,7 @@ public class GTLiteSecondDegreeMaterials {
                 .fluid()
                 .color(0xD54338)
                 .iconSet(BRIGHT)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .blast(b -> b
                         .temp(18300, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 100)

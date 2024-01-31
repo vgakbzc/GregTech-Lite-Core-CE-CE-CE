@@ -66,6 +66,11 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK1 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk1");
     public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK2 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk2");
     public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK3 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk3");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK4 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk4");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK5 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk5");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK6 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk6");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK7 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk7");
+    public static GTLiteOverlayRenderer PRECISE_ASSEMBLER_CASING_MK8 = new GTLiteOverlayRenderer("casings/precise_assembler_casing_mk8");
     public static GTLiteOverlayRenderer IRIDIUM_CASING = new GTLiteOverlayRenderer("casings/iridium_casing");
     public static GTLiteOverlayRenderer FARM_CASING = new GTLiteOverlayRenderer("casings/aseptic_farm_casing");
     public static GTLiteOverlayRenderer HYPER_CASING = new GTLiteOverlayRenderer("casings/hyper_casing");

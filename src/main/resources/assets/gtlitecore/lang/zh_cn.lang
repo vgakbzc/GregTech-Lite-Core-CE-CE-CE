@@ -101,6 +101,11 @@ tile.cleanroom_casing.advanced_filter_casing.tooltip=为多方块结构提供§a
 tile.precise_assembler_casing.mk1.name=精密电子单元机械方块 Mk I
 tile.precise_assembler_casing.mk2.name=精密电子单元机械方块 Mk II
 tile.precise_assembler_casing.mk3.name=精密电子单元机械方块 Mk III
+tile.precise_assembler_casing.mk4.name=精密电子单元机械方块 Mk IV
+tile.precise_assembler_casing.mk5.name=精密电子单元机械方块 Mk V
+tile.precise_assembler_casing.mk6.name=精密电子单元机械方块 Mk VI
+tile.precise_assembler_casing.mk7.name=精密电子单元机械方块 Mk VII
+tile.precise_assembler_casing.mk8.name=精密电子单元机械方块 Mk VIII
 
 tile.component_assembly_line_casing.lv.name=部件装配线外壳（§7LV§r）
 tile.component_assembly_line_casing.lv.tooltip=简易装配单元
@@ -976,6 +981,11 @@ gtlitecore.machine.precise_assembler.tier=机器外壳等级：
 gtlitecore.machine.precise_assembler.tier.1=MK1
 gtlitecore.machine.precise_assembler.tier.2=MK2
 gtlitecore.machine.precise_assembler.tier.3=MK3
+gtlitecore.machine.precise_assembler.tier.4=MK4
+gtlitecore.machine.precise_assembler.tier.5=MK5
+gtlitecore.machine.precise_assembler.tier.6=MK6
+gtlitecore.machine.precise_assembler.tier.7=MK7
+gtlitecore.machine.precise_assembler.tier.8=MK8
 
 gtlitecore.machine.component_assembly_line.name=部件装配线
 gtlitecore.machine.component_assembly_line.tooltip.1=批量装配各式各样的零部件

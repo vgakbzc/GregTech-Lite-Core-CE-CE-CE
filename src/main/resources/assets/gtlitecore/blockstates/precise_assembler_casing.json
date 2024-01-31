@@ -19,6 +19,36 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/precise_assembler_casing_mk3"
         }
+      },
+      "mk4": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/precise_assembler_casing_mk4"
+        }
+      },
+      "mk5": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/precise_assembler_casing_mk5"
+        }
+      },
+      "mk6": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/precise_assembler_casing_mk6"
+        }
+      },
+      "mk7": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/precise_assembler_casing_mk7"
+        }
+      },
+      "mk8": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/precise_assembler_casing_mk8"
+        }
       }
     }
   }

@@ -2092,7 +2092,82 @@ public class MachineRecipeLoader {
                 .fluidInputs(IncoloyMA813.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3, 4))
                 .EUt(VA[ZPM])
-                .duration(800)
+                .duration(400)
+                .buildAndRegister();
+
+        //  Precise Assembler Casing Mk IV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3))
+                .input(ROBOT_ARM_ZPM, 2)
+                .input(plateDouble, PlatinumGroupAlloy, 2)
+                .input(circuit, MarkerMaterials.Tier.UHV)
+                .input(gearSmall, Cinobite, 8)
+                .input(screw, Orichalcum, 32)
+                .fluidInputs(TransitionLAlloy.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK4, 4))
+                .EUt(VA[UV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Precise Assembler Casing Mk V
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK4))
+                .input(ROBOT_ARM_UV, 2)
+                .input(plateDouble, BlackTitanium, 2)
+                .input(circuit, MarkerMaterials.Tier.UEV)
+                .input(gearSmall, TitanSteel, 8)
+                .input(screw, SuperheavyLAlloy, 32)
+                .fluidInputs(RefractoryAlloy.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK5, 4))
+                .EUt(VA[UHV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Precise Assembler Casing Mk VI
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK5))
+                .input(ROBOT_ARM_UHV, 2)
+                .input(plateDouble, BlackPlutonium, 2)
+                .input(circuit, MarkerMaterials.Tier.UIV)
+                .input(gearSmall, LanthanumGroupLAlloy, 8)
+                .input(screw, LanthanumFullereneNanotube, 32)
+                .fluidInputs(Neutronium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK6, 4))
+                .EUt(VA[UEV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Precise Assembler Casing Mk VII
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK6))
+                .input(ROBOT_ARM_UEV, 2)
+                .input(plateDouble, Octiron, 2)
+                .input(circuit, MarkerMaterials.Tier.UXV)
+                .input(gearSmall, ActiniumGroupLAlloy, 8)
+                .input(screw, ChargedCaesiumCeriumCobaltIndiumAlloy, 32)
+                .fluidInputs(SuperheavyHAlloy.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK7, 4))
+                .EUt(VA[UIV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Precise Assembler Casing Mk VIII
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV))
+                .inputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK7))
+                .input(ROBOT_ARM_UIV, 2)
+                .input(plateDouble, Arcanium, 2)
+                .input(circuit, MarkerMaterials.Tier.OpV)
+                .input(gearSmall, CosmicNeutronium, 8)
+                .input(screw, TantalumHafniumSeaborgiumCarbide, 32)
+                .fluidInputs(Fatalium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getItemVariant(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK8, 4))
+                .EUt(VA[UXV])
+                .duration(400)
                 .buildAndRegister();
 
         //  Iridium Casing

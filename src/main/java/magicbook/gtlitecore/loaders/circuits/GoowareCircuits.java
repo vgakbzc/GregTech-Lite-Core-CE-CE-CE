@@ -78,6 +78,7 @@ public class GoowareCircuits {
     }
 
     private static void SoC() {
+
         //  Intravital SoC
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(CRYSTAL_SYSTEM_ON_CHIP)
@@ -89,7 +90,7 @@ public class GoowareCircuits {
                 .outputs(INTRAVITAL_SOC.getStackForm(2))
                 .EUt(VA[UHV])
                 .duration(480)
-                .CasingTier(3)
+                .CasingTier(4) // UHV
                 .buildAndRegister();
     }
 

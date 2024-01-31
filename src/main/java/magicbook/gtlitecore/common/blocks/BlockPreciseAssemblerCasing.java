@@ -34,7 +34,12 @@ public class BlockPreciseAssemblerCasing extends VariantBlock<BlockPreciseAssemb
     public enum AssemblyCasingTier implements IStringSerializable {
         MK1("mk1"),
         MK2("mk2"),
-        MK3("mk3");
+        MK3("mk3"),
+        MK4("mk4"),
+        MK5("mk5"),
+        MK6("mk6"),
+        MK7("mk7"),
+        MK8("mk8");
 
         private final String name;
 

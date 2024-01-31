@@ -131,9 +131,9 @@ public class SupracausalCircuits {
                 .input(wireFine, Vibranium, 4)
                 .fluidInputs(Taranium.getFluid(L * 4))
                 .output(MICROWORMHOLE_GENERATOR)
-                .CasingTier(3)
                 .EUt(VA[UXV])
                 .duration(20)
+                .CasingTier(7) // UXV
                 .buildAndRegister();
 
         //  Macrowormhole Generator

@@ -381,7 +381,7 @@ public class OpticalCircuits {
                 .output(OPTICAL_IMC_BOARD, 2)
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(3)
+                .CasingTier(3) // UV
                 .buildAndRegister();
 
         //  Optical SoC
@@ -395,7 +395,7 @@ public class OpticalCircuits {
                 .output(PHOTOELECTRON_SOC, 4)
                 .EUt(VA[UEV])
                 .duration(200)
-                .CasingTier(3)
+                .CasingTier(5) // UEV
                 .buildAndRegister();
     }
 

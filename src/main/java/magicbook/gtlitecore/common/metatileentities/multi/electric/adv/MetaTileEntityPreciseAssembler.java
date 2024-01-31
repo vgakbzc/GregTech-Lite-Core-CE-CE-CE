@@ -172,6 +172,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         return Textures.FUSION_REACTOR_OVERLAY;
     }
 
+    @SuppressWarnings("all")
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
@@ -179,6 +180,11 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
             case (1) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK1;
             case (2) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK2;
             case (3) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK3;
+            case (4) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK4;
+            case (5) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK5;
+            case (6) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK6;
+            case (7) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK7;
+            case (8) -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK8;
             default -> GTLiteTextures.PRECISE_ASSEMBLER_CASING_MK1;
         };
     }
@@ -286,7 +292,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         }
 
         /**
-         * @return If machine in PA, then no parallel, if machine in common assembler, then get 2^{CasingTier + 4} (Mk1:32, Mk2:64, Mk3:128) parallel.
+         * @return If machine in PA, then no parallel, if machine in common assembler, then get 2^{CasingTier + 4} (Mk1:32, Mk2:64, Mk3:128, MK4:256, MK5:512, MK6:1024, MK7:2048, MK8:4096) parallel.
          */
         @Override
         public int getParallelLimit() {

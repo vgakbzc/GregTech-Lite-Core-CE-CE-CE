@@ -47,12 +47,32 @@ public class GTLiteAPI {
                 new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK2, 2));
         MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3),
                 new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3, 3));
+        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK4),
+                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK4, 4));
+        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK5),
+                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK5, 5));
+        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK6),
+                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK6, 6));
+        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK7),
+                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK7, 7));
+        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK8),
+                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK8, 8));
         MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LuV),
                 new WrappedIntTier(BlockMachineCasing.MachineCasingType.LuV, 1));
         MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ZPM),
                 new WrappedIntTier(BlockMachineCasing.MachineCasingType.ZPM, 2));
         MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UV),
                 new WrappedIntTier(BlockMachineCasing.MachineCasingType.UV, 3));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UHV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UHV, 4));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UEV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UEV, 5));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UIV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UIV, 6));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UXV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UXV, 7));
+        MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.OpV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.OpV, 8));
 
         //  Component Assembly Line Casing Tier
         MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.LV),

@@ -128,6 +128,11 @@ public class CommonProxy {
         AssemblyCasingTierProperty.registerAssemblyCasingTier(1, I18n.format("gtlitecore.machine.precise_assembler.tier.1"));
         AssemblyCasingTierProperty.registerAssemblyCasingTier(2, I18n.format("gtlitecore.machine.precise_assembler.tier.2"));
         AssemblyCasingTierProperty.registerAssemblyCasingTier(3, I18n.format("gtlitecore.machine.precise_assembler.tier.3"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(4, I18n.format("gtlitecore.machine.precise_assembler.tier.4"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(5, I18n.format("gtlitecore.machine.precise_assembler.tier.5"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(6, I18n.format("gtlitecore.machine.precise_assembler.tier.6"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(7, I18n.format("gtlitecore.machine.precise_assembler.tier.7"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(8, I18n.format("gtlitecore.machine.precise_assembler.tier.8"));
         //  Component Assembly Line Tiers
         ComponentCasingTierProperty.registerComponentCasingTier(1, I18n.format("gtlitecore.machine.component_assembly_line.tier.1"));
         ComponentCasingTierProperty.registerComponentCasingTier(2, I18n.format("gtlitecore.machine.component_assembly_line.tier.2"));

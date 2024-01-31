@@ -96,7 +96,7 @@ public class CosmicCircuits {
                 .output(CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT, 2)
                 .EUt(VA[UIV])
                 .duration(200)
-                .CasingTier(3)
+                .CasingTier(4) // UHV
                 .buildAndRegister();
 
         //  Cladded Optical Fiber Core
@@ -226,7 +226,7 @@ public class CosmicCircuits {
                 .output(UNIVERSAL_SOC, 4)
                 .EUt(VA[UXV])
                 .duration(200)
-                .CasingTier(3)
+                .CasingTier(7) // UXV
                 .buildAndRegister();
     }
 
