@@ -297,6 +297,8 @@ metaitem.wafer.chip.cosmic_cpu.name=寰宇计算中央处理器（CCCPU）晶片
 metaitem.wafer.chip.cosmic_cpu.tooltip=寰宇计算中央处理器
 metaitem.wafer.chip.cosmic_memory.name=世界线信息存储器（WLRAM）晶片
 metaitem.wafer.chip.cosmic_memory.tooltip=世界线信息存储器
+metaitem.wafer.chip.supracausal_memory.name=维度因果循环存储器（DCRAM）晶片
+metaitem.wafer.chip.supracausal_memory.tooltip=维度因果循环存储器
 metaitem.wafer.uhasoc.name=极高进阶片上系统（UHASoC）晶圆
 metaitem.wafer.uhasoc.tooltip=待处理极高进阶片上系统
 metaitem.wafer.chip.uhasoc.name=极高进阶片上系统（UHASoC）晶片
@@ -581,6 +583,12 @@ metaitem.cover.solar_panel.max.name=太阳能覆盖板（§c§lMAX§r）
 
 #  Creative Tabs
 itemGroup.gtlite=格雷科技精简版
+itemGroup.gtlite.block=格雷科技精简版 | 方块
+itemGroup.gtlite.decorative_block=格雷科技精简版 | 装饰方块
+itemGroup.gtlite.circuit=格雷科技精简版 | 电路
+itemGroup.gtlite.tool=格雷科技精简版 | 工具
+itemGroup.gtlite.particle=格雷科技精简版 | 粒子
+itemGroup.gtlite.wrap=格雷科技精简版 | 封装物品
 
 #  Debug Items
 metaitem.debug.structure_writer.name=多方块导出工具
@@ -1266,9 +1274,10 @@ gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.3=可运行一般的§r精
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.5=运行§r精密激光蚀刻机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
 gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.6=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7=最大并行数：
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8=§r精密激光蚀刻§7模式 -> §e16384§7
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9=§r纳米尺度光刻§7模式 -> §e4096§7
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7=允许使用§b激光仓§7。
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8=最大并行数：
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9=§r精密激光蚀刻§7模式 -> §e16384§7
+gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.10=§r纳米尺度光刻§7模式 -> §e4096§7
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
@@ -2099,6 +2108,30 @@ metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6等离子冷�
 
 #  Particles
 metaitem.particle.alpha.name=α粒子
+metaitem.particle.graviton.name=引力子
+metaitem.particle.up_quark.name=上夸克
+metaitem.particle.down_quark.name=下夸克
+metaitem.particle.charm_quark.name=粲夸克
+metaitem.particle.strange_quark.name=奇夸克
+metaitem.particle.top_quark.name=顶夸克
+metaitem.particle.bottom_quark.name=底夸克
+metaitem.particle.electron.name=电子
+metaitem.particle.electron_neutrino.name=电子中微子
+metaitem.particle.muon.name=μ子
+metaitem.particle.muon_neutrino.name=μ子中微子
+metaitem.particle.tau.name=τ子
+metaitem.particle.tau_neutrino.name=τ子中微子
+metaitem.particle.gluon.name=胶子
+metaitem.particle.photon.name=光子
+metaitem.particle.z_boson.name=Z玻色子
+metaitem.particle.w_boson.name=W玻色子
+metaitem.particle.higgs_boson.name=希格斯玻色子
+metaitem.particle.proton.name=质子
+metaitem.particle.neutron.name=中子
+metaitem.particle.lambda_baryon.name=Λ重子
+metaitem.particle.omega_baryon.name=Ω重子
+metaitem.particle.meson.name=介子
+metaitem.particle.eta_meson.name=η介子
 
 #  Recipe Maps
 recipemap.chemical_dryer_recipes.name=脱水
