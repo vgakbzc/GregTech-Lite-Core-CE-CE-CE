@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -9,6 +10,7 @@ import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockBoilerCasing;
 import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
@@ -17,16 +19,22 @@ import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockMetalCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.List;
 
 public class MetaTileEntityPlasmaCondenser extends RecipeMapMultiblockController {
 
     public MetaTileEntityPlasmaCondenser(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.PLASMA_CONDENSER_RECIPES);
+        this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 
     @Override
@@ -76,5 +84,14 @@ public class MetaTileEntityPlasmaCondenser extends RecipeMapMultiblockController
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.ARC_FURNACE_OVERLAY;
+    }
+
+    @Override
+    public void addInformation(@Nonnull ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
     }
 }

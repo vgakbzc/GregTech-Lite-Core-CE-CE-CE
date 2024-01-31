@@ -1200,7 +1200,7 @@ public class MachineRecipeLoader {
         //  Hyper Reactor Mk II
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, HastelloyX78)
-                .input(HYPER_REACTOR_MK2)
+                .input(HYPER_REACTOR_MK1)
                 .input(plate, Rhugnor, 4)
                 .input(plate, Vibranium, 4)
                 .input(circuit, MarkerMaterials.Tier.UEV, 4)
@@ -1224,7 +1224,7 @@ public class MachineRecipeLoader {
         //  Hyper Reactor Mk III
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, HastelloyK243)
-                .input(HYPER_REACTOR_MK3)
+                .input(HYPER_REACTOR_MK2)
                 .input(plate, Hypogen, 4)
                 .input(plate, Infinity, 4)
                 .input(circuit, MarkerMaterials.Tier.UIV, 4)

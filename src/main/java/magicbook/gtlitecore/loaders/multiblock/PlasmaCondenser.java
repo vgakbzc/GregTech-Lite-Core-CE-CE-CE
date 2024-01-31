@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.unification.material.Material;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -13,245 +14,18 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class PlasmaCondenser {
 
     public static void init() {
+        Materials();
+        PlasmaContainmentCells();
+    }
 
-        //  Adamantium
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Adamantium.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 8000))
-                .circuitMeta(1)
-                .fluidOutputs(Adamantium.getFluid(L))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 8000))
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
+    private static void Materials() {
+        createPCRecipe(Adamantium, L, 8000, VA[UV], 100, true);
+        createPCRecipe(Vibranium, L, 12000, VA[UHV], 150, true);
+        createPCRecipe(Mithril, L, 12000, VA[UHV], 150, true);
+        createPCRecipe(AstralTitanium, L, 14000, VA[UEV], 200, true);
+        createPCRecipe(CelestialTungsten, L, 14000, VA[UEV], 200, true);
+        createPCRecipe(HeavyQuarkDegenerateMatter, L, 16000, VA[UIV], 250, true);
 
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Adamantium.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(4000))
-                .circuitMeta(1)
-                .fluidOutputs(Adamantium.getFluid(L))
-                .fluidOutputs(Ice.getFluid(4000))
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Adamantium.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 8000))
-                .circuitMeta(10)
-                .output(ingot, Adamantium)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 8000))
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Adamantium.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(4000))
-                .circuitMeta(10)
-                .output(ingot, Adamantium)
-                .fluidOutputs(Ice.getFluid(4000))
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
-
-        //  Vibranium
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Vibranium.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
-                .circuitMeta(1)
-                .fluidOutputs(Vibranium.getFluid(L))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Vibranium.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(6000))
-                .circuitMeta(1)
-                .fluidOutputs(Vibranium.getFluid(L))
-                .fluidOutputs(Ice.getFluid(6000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Vibranium.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
-                .circuitMeta(10)
-                .output(ingot, Vibranium)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Vibranium.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(6000))
-                .circuitMeta(10)
-                .output(ingot, Vibranium)
-                .fluidOutputs(Ice.getFluid(6000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        //  Mithril
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Mithril.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
-                .circuitMeta(1)
-                .fluidOutputs(Mithril.getFluid(L))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Mithril.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(6000))
-                .circuitMeta(1)
-                .fluidOutputs(Mithril.getFluid(L))
-                .fluidOutputs(Ice.getFluid(6000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Mithril.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 12000))
-                .circuitMeta(10)
-                .output(ingot, Mithril)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 12000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Mithril.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(6000))
-                .circuitMeta(10)
-                .output(ingot, Mithril)
-                .fluidOutputs(Ice.getFluid(6000))
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
-
-        //  Hypogen
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Hypogen.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
-                .circuitMeta(1)
-                .fluidOutputs(Hypogen.getFluid(L))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(Hypogen.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(8000))
-                .circuitMeta(1)
-                .fluidOutputs(Hypogen.getFluid(L))
-                .fluidOutputs(Ice.getFluid(8000))
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Hypogen.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
-                .circuitMeta(10)
-                .output(ingot, Hypogen)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(Hypogen.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(8000))
-                .circuitMeta(10)
-                .output(ingot, Hypogen)
-                .fluidOutputs(Ice.getFluid(8000))
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
-
-        //  Degenerate Rhenium
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .input(RHENIUM_PLASMA_CONTAINMENT_CELL)
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
-                .circuitMeta(1)
-                .output(PLASMA_CONTAINMENT_CELL)
-                .fluidOutputs(DegenerateRhenium.getFluid(1000))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .input(RHENIUM_PLASMA_CONTAINMENT_CELL)
-                .fluidInputs(GelidCryotheum.getFluid(8000))
-                .circuitMeta(1)
-                .output(PLASMA_CONTAINMENT_CELL)
-                .fluidOutputs(DegenerateRhenium.getFluid(1000))
-                .fluidOutputs(Ice.getFluid(8000))
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
-
-        //  Heavy Quark Degenerate Matter
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 24000))
-                .circuitMeta(1)
-                .fluidOutputs(HeavyQuarkDegenerateMatter.getFluid(1000))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 24000))
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
-                .fluidInputs(GelidCryotheum.getFluid(12000))
-                .circuitMeta(1)
-                .fluidOutputs(HeavyQuarkDegenerateMatter.getFluid(1000))
-                .fluidOutputs(Ice.getFluid(12000))
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 24000))
-                .circuitMeta(10)
-                .output(ingot, HeavyQuarkDegenerateMatter)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 24000))
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(L))
-                .fluidInputs(GelidCryotheum.getFluid(12000))
-                .circuitMeta(10)
-                .output(ingot, HeavyQuarkDegenerateMatter)
-                .fluidOutputs(Ice.getFluid(12000))
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
-      
         //  Quantumchromodynamically Confined Matter
         PLASMA_CONDENSER_RECIPES.recipeBuilder()
                 .fluidInputs(HighEnergyQuarkGluonPlasma.getPlasma(1000))
@@ -292,6 +66,34 @@ public class PlasmaCondenser {
                 .output(ingot, QuantumchromodynamicallyConfinedMatter)
                 .fluidOutputs(Ice.getFluid(12000))
                 .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        createPCRecipe(Hypogen, L, 18000, VA[UXV], 300, true);
+    }
+
+    private static void PlasmaContainmentCells() {
+
+        //  Degenerate Rhenium
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(RHENIUM_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
+                .circuitMeta(1)
+                .output(PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(DegenerateRhenium.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 16000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .input(RHENIUM_PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(GelidCryotheum.getFluid(8000))
+                .circuitMeta(1)
+                .output(PLASMA_CONTAINMENT_CELL)
+                .fluidOutputs(DegenerateRhenium.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(8000))
+                .EUt(VA[UEV])
                 .duration(100)
                 .buildAndRegister();
 
@@ -389,5 +191,66 @@ public class PlasmaCondenser {
                 .duration(20)
                 .buildAndRegister();
 
+    }
+
+    /**
+     * @param input Input material
+     * @param inputAmount Input material amount
+     * @param coolantAmount Coolant Amoun (Helium and Gelid Cryotheum)
+     * @param voltage Recipe voltage
+     * @param duration Recipe duration
+     * @param hasIngot If input material has ingot property, then generate recipes about ingot.
+     */
+    public static void createPCRecipe(Material input,
+                                      int inputAmount,
+                                      int coolantAmount,
+                                      int voltage,
+                                      int duration,
+                                      boolean hasIngot) {
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(input.getPlasma(inputAmount))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, coolantAmount))
+                .circuitMeta(1)
+                .fluidOutputs(input.getFluid(inputAmount))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, coolantAmount))
+                .EUt(voltage)
+                .duration(duration)
+                .buildAndRegister();
+
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(input.getPlasma(inputAmount))
+                .fluidInputs(GelidCryotheum.getFluid(coolantAmount / 2))
+                .circuitMeta(1)
+                .fluidOutputs(input.getFluid(inputAmount))
+                .fluidOutputs(Ice.getFluid(coolantAmount / 2))
+                .EUt(voltage)
+                .duration(duration)
+                .buildAndRegister();
+
+        if (hasIngot) {
+            PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                    .notConsumable(SHAPE_MOLD_INGOT)
+                    .fluidInputs(input.getPlasma(inputAmount))
+                    .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, coolantAmount))
+                    .circuitMeta(1)
+                    .output(ingot, input)
+                    .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, coolantAmount))
+                    .EUt(voltage)
+                    .duration(duration)
+                    .buildAndRegister();
+
+            PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                    .notConsumable(SHAPE_MOLD_INGOT)
+                    .fluidInputs(input.getPlasma(inputAmount))
+                    .fluidInputs(GelidCryotheum.getFluid(coolantAmount / 2))
+                    .circuitMeta(1)
+                    .output(ingot, input)
+                    .fluidOutputs(Ice.getFluid(coolantAmount / 2))
+                    .EUt(voltage)
+                    .duration(duration)
+                    .buildAndRegister();
+        }
     }
 }
