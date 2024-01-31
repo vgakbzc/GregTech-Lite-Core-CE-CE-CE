@@ -1,16 +1,21 @@
-[
-{
+[{
   "modid": "gtlitecore",
   "name": "Gregicality Science",
-  "description": "Gregicality Science unofficial Extended Life",
+  "description": "Core mod for the Modpack GregTech Lite.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://gitlab.com/sweep_tosho/gregtech-lite-core",
   "updateUrl": "",
-  "authorList": ["Magic_Sweepy"],
-  "credits": "",
-  "logoFile": "",
+  "authorList": [
+    "Magic_Sweepy",
+    "U.M.T"
+  ],
+  "credits": "My friends Gate Guardian and Oganesson897 for their generous technical support.",
+  "logoFile": "assets/gtlitecore/textures/gtlite_logo_long.png",
   "screenshots": [],
-  "dependencies": []
-}
-]
+  "dependencies": [
+    "gregtech",
+    "gcym",
+    "gregtechfoodoption"
+  ]
+}]
