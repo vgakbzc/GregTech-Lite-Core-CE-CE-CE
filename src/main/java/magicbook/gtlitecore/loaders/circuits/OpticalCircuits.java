@@ -56,6 +56,19 @@ public class OpticalCircuits {
     private static void CircuitComponent() {
 
         //  ZBLAN Glass
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Zirconium, 5)
+                .input(dust, Barium, 2)
+                .input(dust, Lanthanum)
+                .input(dust, Aluminium)
+                .input(dust, Sodium, 2)
+                .circuitMeta(5)
+                .fluidInputs(Fluorine.getFluid(6200))
+                .output(dust, ZBLANGlass, 11)
+                .EUt(VA[HV])
+                .duration(500)
+                .buildAndRegister();
+
         ALLOY_BLAST_RECIPES.recipeBuilder()
                 .input(dust, Zirconium, 5)
                 .input(dust, Barium, 2)
@@ -67,6 +80,28 @@ public class OpticalCircuits {
                 .fluidOutputs(ZBLANGlass.getFluid(L * 11))
                 .blastFurnaceTemp(1073)
                 .duration(1800)
+                .EUt(VA[HV])
+                .buildAndRegister();
+
+        //  GST Glass
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Germanium, 2)
+                .input(dust, Antimony, 2)
+                .input(dust, Tellurium, 5)
+                .circuitMeta(3)
+                .output(dust, GSTGlass, 9)
+                .EUt(VA[HV])
+                .duration(250)
+                .buildAndRegister();
+
+        ALLOY_BLAST_RECIPES.recipeBuilder()
+                .input(dust, Germanium, 2)
+                .input(dust, Antimony, 2)
+                .input(dust, Tellurium, 5)
+                .circuitMeta(3)
+                .fluidOutputs(GSTGlass.getFluid(L * 9))
+                .blastFurnaceTemp(873)
+                .duration(1600)
                 .EUt(VA[HV])
                 .buildAndRegister();
 
