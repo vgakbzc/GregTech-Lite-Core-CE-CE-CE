@@ -174,7 +174,7 @@ public class FullereneChain {
         //  C60H30 -> C60 + 30H
         PYROLYSE_RECIPES.recipeBuilder()
                 .input(dust, GeodesicPolyarene)
-                .input(foil, Platinum)
+                .notConsumable(foil, Platinum)
                 .output(dust, Fullerene)
                 .fluidOutputs(Hydrogen.getFluid(500))
                 .duration(10)

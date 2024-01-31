@@ -17,31 +17,63 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class DecayGenerator {
 
     public static void init() {
+        Elements();
+        HighEnergyPhysics();
+    }
 
-        //  Alpha particle
+    private static void Elements() {
+        MetastableFleroviumChain();
+
+        //  Yb -> Hf
         DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Helium.getFluid(32000))
-                .chancedOutput(ALPHA_PARTICLE, 1000, 0)
-                .EUt(VA[IV])
-                .duration(200)
+                .fluidInputs(Ytterbium.getFluid(L))
+                .fluidOutputs(Hafnium.getFluid(L))
+                .EUt(VA[LuV])
+                .duration(120)
                 .CasingTier(1)
                 .buildAndRegister();
 
+        //  Ac -> Fr
         DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Helium3.getFluid(16000))
-                .chancedOutput(ALPHA_PARTICLE, 4000, 0)
+                .fluidInputs(Actinium.getFluid(L))
+                .fluidOutputs(Francium.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(100)
+                .CasingTier(2)
+                .buildAndRegister();
+
+        //  Mo -> Tc
+        DECAY_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Molybdenum.getFluid(L))
+                .fluidOutputs(Technetium.getFluid(L))
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(100)
                 .CasingTier(1)
                 .buildAndRegister();
 
+        //  Th -> Pa
+        //  Needs Neutron Irradiation, so you need use Nitrogen plasma in Collider to get Neutron.
         DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Helium.getPlasma(4000))
-                .chancedOutput(ALPHA_PARTICLE, 8000, 0)
-                .EUt(VA[IV])
-                .duration(200)
+                .notConsumable(NEUTRON)
+                .fluidInputs(Thorium.getFluid(L))
+                .fluidOutputs(Protactinium.getFluid(L))
+                .EUt(VA[LuV])
+                .duration(80)
                 .CasingTier(1)
                 .buildAndRegister();
+
+        //  Ra -> Rn + alpha
+        DECAY_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Radium.getFluid(1000))
+                .output(ALPHA_PARTICLE)
+                .fluidOutputs(Radon.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(120)
+                .CasingTier(1) // ZPM
+                .buildAndRegister();
+    }
+
+    private static void MetastableFleroviumChain() {
 
         //  Flerovium-Ytterbium Plasma
         DECAY_GENERATOR_RECIPES.recipeBuilder()
@@ -87,41 +119,37 @@ public class DecayGenerator {
                 .EUt(VA[UV])
                 .duration(100)
                 .buildAndRegister();
+    }
 
-        //  Ytterbium -> Hafnium
+    private static void HighEnergyPhysics() {
+
+        //  Helium liquid -> Alpha Particle
         DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Ytterbium.getFluid(L))
-                .fluidOutputs(Hafnium.getFluid(L))
-                .EUt(VA[LuV])
-                .duration(120)
-                .CasingTier(1)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 3200))
+                .chancedOutput(ALPHA_PARTICLE, 1000, 500)
+                .EUt(VH[IV])
+                .duration(200)
+                .CasingTier(1) // ZPM
                 .buildAndRegister();
 
-        //  Actinium -> Francium
+        //  Helium-3 -> Alpha Particle
+        //  In centrifuge, 80 Helium -> 5 Helium-3 (16:1).
         DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Actinium.getFluid(L))
-                .fluidOutputs(Francium.getFluid(L))
-                .EUt(VA[ZPM])
+                .fluidInputs(Helium3.getFluid(200))
+                .chancedOutput(ALPHA_PARTICLE, 1000, 500)
+                .EUt(VH[LuV])
                 .duration(100)
-                .CasingTier(2)
+                .CasingTier(1) // ZPM
                 .buildAndRegister();
 
-        //  Molybdenum -> Technetium
+        //  Helium Plasma -> Alpha Particle
+        //  In Fusion Reactor (Mk I), 125 D + 125 T -> 125 He.
         DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Molybdenum.getFluid(L))
-                .fluidOutputs(Technetium.getFluid(L))
-                .EUt(VA[IV])
-                .duration(100)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Thorium -> Protactinium
-        DECAY_GENERATOR_RECIPES.recipeBuilder()
-                .fluidInputs(Thorium.getFluid(L))
-                .fluidOutputs(Protactinium.getFluid(L))
-                .EUt(VA[LuV])
-                .duration(80)
-                .CasingTier(1)
+                .fluidInputs(Helium.getPlasma(125))
+                .chancedOutput(ALPHA_PARTICLE, 1000, 500)
+                .EUt(VH[ZPM])
+                .duration(50)
+                .CasingTier(1) // ZPM
                 .buildAndRegister();
     }
 }

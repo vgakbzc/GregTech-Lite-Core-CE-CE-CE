@@ -1,7 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtlitecore:items/metaitems/particles/base",
-    "layer1": "gtlitecore:items/metaitems/particles/alpha"
+    "layer0": "gtlitecore:items/metaitems/particles/alpha"
   }
 }
