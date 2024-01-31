@@ -332,6 +332,7 @@ public class AlgaeCultureTank {
                 .EUt((int) V[ZPM])
                 .buildAndRegister();
 
+        //  Hyper Reactor Mk III
         FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
                 .input(dust, Rhugnor)
                 .input(dust, Adamantium)
@@ -351,6 +352,7 @@ public class AlgaeCultureTank {
                 .EUt((int) V[UV])
                 .buildAndRegister();
 
+        //  Hyper Reactor Mk IV
         FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
                 .input(dust, Hypogen)
                 .input(dust, Astralium)
@@ -370,6 +372,30 @@ public class AlgaeCultureTank {
                 .EUt((int) V[UHV])
                 .buildAndRegister();
 
+        //  Exotic Gas
+        GAS_TURBINE_FUELS.recipeBuilder()
+                .fluidInputs(SuperheavyExoticGas.getFluid(1))
+                .EUt(1024)
+                .duration(480)
+                .buildAndRegister();
+
+        GAS_TURBINE_FUELS.recipeBuilder()
+                .fluidInputs(HeavyExoticGas.getFluid(2))
+                .EUt(1024)
+                .duration(360)
+                .buildAndRegister();
+
+        GAS_TURBINE_FUELS.recipeBuilder()
+                .fluidInputs(MediumExoticGas.getFluid(4))
+                .EUt(1024)
+                .duration(180)
+                .buildAndRegister();
+
+        GAS_TURBINE_FUELS.recipeBuilder()
+                .fluidInputs(LightExoticGas.getFluid(8))
+                .EUt(1024)
+                .duration(90)
+                .buildAndRegister();
     }
 
     private static void BiomassGeneratorRecipes() {
