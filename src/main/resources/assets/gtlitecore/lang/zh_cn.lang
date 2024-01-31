@@ -68,8 +68,6 @@ tile.structure_casing.maraging_steel_250_casing.name=高耐久马氏体时效钢
 tile.structure_casing.ruridit_casing.name=抗弯曲钌铱合金机器外壳
 tile.structure_casing.osmiridium_casing.name=高强度铱锇合金机器外壳
 tile.structure_casing.advanced_grate_casing.name=进阶栅格机械方块
-tile.structure_casing.fluxed_electrum_casing.name=抗激光通流琥珀金机器外壳
-tile.structure_casing.rhodium_casing.name=高应力铑机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -252,18 +250,6 @@ tile.hermetic_casing.uiv.name=密封机械方块 XI
 tile.hermetic_casing.uxv.name=密封机械方块 XII
 tile.hermetic_casing.opv.name=密封机械方块 XIII
 tile.hermetic_casing.max.name=密封机械方块 XIV
-
-tile.decorative_transparent_casing.borosilicate_glass.name=硼硅玻璃
-tile.decorative_transparent_casing.titanium_reinforced_borosilicate_glass.name=钛强化硼硅玻璃
-tile.decorative_transparent_casing.tungsten_reinforced_borosilicate_glass.name=钨强化硼硅玻璃
-tile.decorative_transparent_casing.osmium_reinforced_borosilicate_glass.name=锇强化硼硅玻璃
-tile.decorative_transparent_casing.naquadah_reinforced_borosilicate_glass.name=硅岩强化硼硅玻璃
-tile.decorative_transparent_casing.trinium_reinforced_borosilicate_glass.name=凯金强化硼硅玻璃
-tile.decorative_transparent_casing.mithril_reinforced_borosilicate_glass.name=秘银强化硼硅玻璃
-tile.decorative_transparent_casing.neutronium_reinforced_borosilicate_glass.name=中子素强化硼硅玻璃
-tile.decorative_transparent_casing.abyssalloy_reinforced_borosilicate_glass.name=渊狱合金强化硼硅玻璃
-tile.decorative_transparent_casing.heavy_quark_degenerate_matter_reinforced_borosilicate_glass.name=重夸克简并物质强化硼硅玻璃
-tile.decorative_transparent_casing.transcendent_metal_reinforced_borosilicate_glass.name=超时空金属强化硼硅玻璃
 
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -572,8 +558,11 @@ metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 metaitem.cover.electric_motor.ulv.name=电动马达（§8ULV§r）
 metaitem.cover.electric_piston.ulv.name=电力活塞（§8ULV§r）
 metaitem.cover.electric_pump.ulv.name=电动泵（§8ULV§r）
+metaitem.cover.electric_pump.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f32 L/t§7
 metaitem.cover.conveyor_module.ulv.name=传送带（§8ULV§r）
+metaitem.cover.conveyor_module.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f4 件物品/s§7
 metaitem.cover.robot_arm.ulv.name=机械臂（§8ULV§r）
+metaitem.cover.robot_arm.ulv.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f4 件物品/s§7
 metaitem.cover.emitter.ulv.name=发射器（§8ULV§r）
 metaitem.cover.sensor.ulv.name=传感器（§8ULV§r）
 metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
@@ -581,8 +570,11 @@ metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
 metaitem.cover.electric_motor.max.name=电动马达（§c§lMAX§r）
 metaitem.cover.electric_piston.max.name=电力活塞（§c§lMAX§r）
 metaitem.cover.electric_pump.max.name=电动泵（§c§lMAX§r）
+metaitem.cover.electric_pump.max.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
 metaitem.cover.conveyor_module.max.name=传送带（§c§lMAX§r）
+metaitem.cover.conveyor_module.max.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
 metaitem.cover.robot_arm.max.name=机械臂（§c§lMAX§r）
+metaitem.cover.robot_arm.max.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
 metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
 metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
 metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
@@ -1276,23 +1268,9 @@ gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.1=片数的具体�
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.2=这意味着如果不做任何扩展，则片数为4，此时机器不会并行。
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.3=而扩展到最大长度时，片数为16，此时机器会获得48次并行。
 
-gtlitecore.machine.electromagnetic_separation_plant.name=大型电磁离析厂
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.2=根据输入电压获得并行
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.5=最大并行数：§e4096§7
-
 gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
 gtlitecore.machine.large_bio_reactor.name=大型生物反应室
-
-gtlitecore.machine.large_euv_mask_aligner.name=大型紫外光刻塔
-gtlitecore.machine.large_euv_mask_aligner.tooltip.1=运行§r精密激光蚀刻机§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.2=根据输入电压获得并行
-gtlitecore.machine.large_euv_mask_aligner.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.ion_lithography_factory.name=大型离子光刻厂
 gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
@@ -1303,7 +1281,7 @@ gtlitecore.machine.ion_lithography_factory.tooltip.5=运行§r精密激光蚀刻
 gtlitecore.machine.ion_lithography_factory.tooltip.6=运行§r电解机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
 gtlitecore.machine.ion_lithography_factory.tooltip.7=运行§r两极磁化机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
 gtlitecore.machine.ion_lithography_factory.tooltip.8=运行§r电磁选矿机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
-gtlitecore.machine.ion_lithography_factory.tooltip.9=始终获得§e[电压等级 * (遏制场发生器等级 * 64)]§7次并行。
+gtlitecore.machine.ion_lithography_factory.tooltip.9=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
 gtlitecore.machine.ion_lithography_factory.tooltip.10=最大并行数：
 gtlitecore.machine.ion_lithography_factory.tooltip.11=§r精密激光蚀刻机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.12=§r纳米尺度光刻§7模式 -> §e1024§7
@@ -1312,31 +1290,6 @@ gtlitecore.machine.ion_lithography_factory.tooltip.14=§r电解机§7模式 -> �
 gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
-
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.2=超越维度的边界
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.3=支持你能想象得到的一切熔炼相关配方
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.4=根据线圈等级获得并行与配方时间减免
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.5=运行§r电炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的50%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.6=运行§r电弧炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的50%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.7=运行§r电力高炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.8=运行§r工业焙烧炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的60%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.9=运行§r燃烧反应室§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的60%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.10=运行§r合金炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的50%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.11=运行§r合金冶炼炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.12=始终获得§e[电压等级 * (线圈等级 * 256)]§7次并行。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.13=运行§r工业焙烧炉§7配方时，不受配方温度限制影响。
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.14=最大并行数：
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.15=§r电炉§7模式 -> §e32768§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.16=§r电弧炉§7模式 -> §e16384§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.17=§r电力高炉§7模式 -> §e4096§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.18=§r工业焙烧炉§7模式 -> §e8192§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.19=§r燃烧反应室§7模式 -> §e8192§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.20=§r合金炉§7模式 -> §e16384§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.21=§r合金冶炼炉§7模式 -> §e8192§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.22=§r恒星锻炉§7模式 -> §e256§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.23=允许使用§b激光仓§7替代能源仓，且二者可以并存。
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
@@ -1380,14 +1333,6 @@ gtlitecore.machine.large_wiremill_array.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.large_wiremill_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.4=最大并行数：§e4096§7
-
-gtlitecore.machine.large_rock_breaker.name=大型碎岩塔
-
-gtlitecore.machine.industrial_rock_breaker.name=工业岩石制造厂
-gtlitecore.machine.industrial_rock_breaker.tooltip.1=根据输入电压获得并行
-gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
 
 #  Materials
 
@@ -1667,10 +1612,6 @@ gregtech.material.rhenium_pentachloride=五氯化铼
 gregtech.material.hexafluorophosphoric_acid=六氟磷酸
 gregtech.material.rhenium_hassium_thallium_isophtaloylbisdiethylthiourea_hexafluorophosphate=间苯二甲酰双（二乙硫脲）六氟磷酸铼钅黑铊
 gregtech.material.sodium_thiocyanate=硫氰酸钠
-gregtech.material.radium_sulfate=硫酸镭
-gregtech.material.radium_dichloride=二氯化镭
-gregtech.material.radium_hydroxide=氢氧化镭
-gregtech.material.radium_oxide=氧化镭
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -1745,7 +1686,6 @@ gregtech.material.transcendent_metal=超时空金属
 gregtech.material.arcanium=韵律源金
 gregtech.material.laurenium=劳伦姆合金
 gregtech.material.neutronium_superconductor=中子素超导体
-gregtech.material.fluxed_electrum=通流琥珀金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -1890,7 +1830,7 @@ gregtech.material.bisethylenedithiotetraselenafulvalene=双（乙烯二硫代）
 gregtech.material.bromodihydrothiine=溴二氢硫醚
 gregtech.material.dibromoacrolein=二溴丙烯醛
 gregtech.material.palladium_fullerene_matrix=钯-富勒烯基质
-gregtech.material.pcbs=苯基-C61-丁酸苯乙烯（PCBS）
+gregtech.material.pcbs=苯基-C61-丁酸苯乙烯 (PCBS)
 gregtech.material.phenylpentanoic_acid=苯基戊酸
 gregtech.material.dimethyl_sulfide=二甲硫醚
 gregtech.material.ferrocenylfulleropyrddolidine=二茂铁基富勒吡唑烷
@@ -2048,7 +1988,7 @@ gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
 gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
 gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 
-##  Third Degree Materials
+##  Other Materials
 gregtech.material.proto_adamantium=原始精金
 gregtech.material.enriched_mithril=富集秘银
 gregtech.material.trinium_titanide=凯金石
@@ -2057,8 +1997,6 @@ gregtech.material.bismuth_iridiate=硫铱铋矿
 gregtech.material.bismuth_ruthenate=硫钌铋矿
 gregtech.material.sylvanite=针碲金矿
 gregtech.material.rheniite=辉铼矿
-gregtech.material.gadolinite=硅铍钇矿
-gregtech.material.euxenite=黑稀金矿
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
@@ -2152,7 +2090,7 @@ metaitem.plasma_containment_cell.name=等离子体遏制装置
 metaitem.plasma_containment_cell.tooltip=用于封装等离子体
 metaitem.rhenium_plasma_containment_cell.name=铼等离子遏制装置
 metaitem.rhenium_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
-metaitem.neutron_plasma_containment_cell.name=中子等离子体遏制装置
+metaitem.neutron_plasma_containment_cell.name=中子等离子遏制装置
 metaitem.neutron_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
 metaitem.extremely_durable_plasma_containment_cell.name=超高耐久等离子体遏制装置
 metaitem.extremely_durable_plasma_containment_cell.tooltip=用于封装等离子体
