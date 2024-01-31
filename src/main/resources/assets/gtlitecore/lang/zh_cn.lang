@@ -1262,17 +1262,24 @@ gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
 gtlitecore.machine.large_bio_reactor.name=大型生物反应室
 
-gtlitecore.machine.nanoscale_euv_mask_aligner.name=纳米尺度光刻厂
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.1=大规模纳米尺度极紫外光源（EUV）蚀刻厂
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.2=激光蚀刻技术的绝对顶点。
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.3=可运行一般的§r精密激光蚀刻机§7配方，亦可用于驱使纳米机器人进行深度光刻
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.5=运行§r精密激光蚀刻机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.6=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.7=允许使用§b激光仓§7。
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.8=最大并行数：
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.9=§r精密激光蚀刻§7模式 -> §e16384§7
-gtlitecore.machine.nanoscale_euv_mask_aligner.tooltip.10=§r纳米尺度光刻§7模式 -> §e4096§7
+gtlitecore.machine.ion_lithography_factory.name=大型离子光刻厂
+gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
+gtlitecore.machine.ion_lithography_factory.tooltip.2=激光蚀刻技术的绝对顶点
+gtlitecore.machine.ion_lithography_factory.tooltip.3=支持你能想象得到的一切光电相关配方
+gtlitecore.machine.ion_lithography_factory.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行与配方时间减免
+gtlitecore.machine.ion_lithography_factory.tooltip.5=运行§r精密激光蚀刻机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.ion_lithography_factory.tooltip.6=运行§r电解机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.ion_lithography_factory.tooltip.7=运行§r两极磁化机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.ion_lithography_factory.tooltip.8=运行§r电磁选矿机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.ion_lithography_factory.tooltip.9=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
+gtlitecore.machine.ion_lithography_factory.tooltip.10=最大并行数：
+gtlitecore.machine.ion_lithography_factory.tooltip.11=§r精密激光蚀刻机§7模式 -> §e4096§7
+gtlitecore.machine.ion_lithography_factory.tooltip.12=§r纳米尺度光刻§7模式 -> §e1024§7
+gtlitecore.machine.ion_lithography_factory.tooltip.13=§r离子注入§7模式 -> §e2048§7
+gtlitecore.machine.ion_lithography_factory.tooltip.14=§r电解机§7模式 -> §e4096§7
+gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模式 -> §e4096§7
+gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
+gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算

@@ -1617,6 +1617,37 @@ public class MachineRecipeLoader {
                         .duration(600))
                 .buildAndRegister();
 
+        //  Ion Lithography Factory
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Cinobite, 16)
+                .input(LARGE_ENGRAVER, 64) // todo Mega Laser Engraver
+                .input(ION_IMPLANTATOR, 64)
+                .input(LARGE_ELECTROLYZER, 64) // todo Mega Electrolyzer
+                .input(LARGE_POLARIZER, 64) // todo Mega Polarizer
+                .input(PHOTON, 64)
+                .input(plateDense, Orichalcum, 16)
+                .input(plateDense, Adamantium, 16)
+                .input(circuit, MarkerMaterials.Tier.UEV, 64)
+                .input(circuit, MarkerMaterials.Tier.UEV, 64)
+                .input(ELECTRIC_PUMP_UHV, 32)
+                .input(CONVEYOR_MODULE_UHV, 32)
+                .input(ROBOT_ARM_UHV, 32)
+                .input(FIELD_GENERATOR_UHV, 32)
+                .input(gear, MetastableOganesson, 32)
+                .input(wireGtHex, PedotPSS, 64)
+                .fluidInputs(Trinaquadalloy.getFluid(65536))
+                .fluidInputs(TitanSteel.getFluid(65536))
+                .fluidInputs(EnrichedNaquadahTriniumEuropiumDuranide.getFluid(57600))
+                .fluidInputs(MetastableFlerovium.getFluid(28800))
+                .output(ION_LITHOGRAPHY_FACTORY)
+                .EUt(VA[UHV])
+                .duration(6400)
+                .stationResearch(b -> b
+                        .researchStack(ION_IMPLANTATOR.getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(576))
+                .buildAndRegister();
+
     }
 
     private static void MachineCasingRecipes() {

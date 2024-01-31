@@ -148,7 +148,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeCircuitAssemblyLine LARGE_CIRCUIT_ASSEMBLY_LINE;
     public static MetaTileEntityLargeVacuumChamber LARGE_VACUUM_CHAMBER;
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
-    public static MetaTileEntityNanoScaleEUVMaskAligner NANOSCALE_EUV_MASK_ALIGNER;
+    public static MetaTileEntityIonLithographyFactory ION_LITHOGRAPHY_FACTORY;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
@@ -363,7 +363,7 @@ public class GTLiteMetaTileEntities {
         //  87 INTEGRATED_ORE_PROCESSOR
         LARGE_VACUUM_CHAMBER = registerMultiMetaTileEntity(88, new MetaTileEntityLargeVacuumChamber(gtliteId("large_vacuum_chamber")));
         LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));
-        NANOSCALE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityNanoScaleEUVMaskAligner(gtliteId("nanoscale_euv_mask_aligner")));
+        ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(90, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
         //  91 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
         //  92 SUPERSTRUCTURE_ASSEMBLY_PLANT
         //  93

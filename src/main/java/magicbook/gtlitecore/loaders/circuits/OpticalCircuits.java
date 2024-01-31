@@ -120,6 +120,18 @@ public class OpticalCircuits {
                 .EUt(VA[LV])
                 .buildAndRegister();
 
+        //  Another GeCl4 recipe
+        //  You can get GeCl4 by Germanium process, but when you make optical circuit,
+        //  through Isa mill chain, you can directly get Germanium, so maybe this recipe is useful.
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Germanium)
+                .circuitMeta(4)
+                .fluidInputs(Chlorine.getFluid(4000))
+                .fluidOutputs(GermaniumTetrachloride.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(350)
+                .buildAndRegister();
+
         //  Optical Fiber
         LASER_CVD_UNIT_RECIPES.recipeBuilder()
                 .fluidInputs(GermaniumTetrachloride.getFluid(250))
