@@ -135,6 +135,7 @@ public class EtchingMaterialsChain {
         //  Just another C9H8O2 application
         FLUID_HEATER_RECIPES.recipeBuilder()
                 .fluidInputs(CinnamicAcid.getFluid(100))
+                .circuitMeta(1)
                 .fluidOutputs(Styrene.getFluid(100))
                 .EUt(VA[EV])
                 .duration(40)
