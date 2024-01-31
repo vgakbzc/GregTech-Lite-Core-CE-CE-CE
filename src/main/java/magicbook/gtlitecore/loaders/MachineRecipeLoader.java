@@ -1622,7 +1622,7 @@ public class MachineRecipeLoader {
                 .input(frameGt, Cinobite, 16)
                 .input(LARGE_ENGRAVER, 64) // todo Mega Laser Engraver
                 .input(ION_IMPLANTATOR, 64)
-                .input(LARGE_ELECTROLYZER, 64) // todo Mega Electrolyzer
+                .input(ELECTROLYTIC_TANK, 64)
                 .input(LARGE_POLARIZER, 64) // todo Mega Polarizer
                 .input(PHOTON, 64)
                 .input(plateDense, Orichalcum, 16)
