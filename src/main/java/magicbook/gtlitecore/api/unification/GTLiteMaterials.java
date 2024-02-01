@@ -278,6 +278,10 @@ public class GTLiteMaterials {
     public static Material HexafluorophosphoricAcid;
     public static Material RheniumHassiumThalliumIsophtaloylbisdiethylthioureaHexafluorophosphate;
     public static Material SodiumThiocyanate;
+    public static Material RadiumSulfate;
+    public static Material RadiumDichloride;
+    public static Material RadiumHydroxide;
+    public static Material RadiumOxide;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
