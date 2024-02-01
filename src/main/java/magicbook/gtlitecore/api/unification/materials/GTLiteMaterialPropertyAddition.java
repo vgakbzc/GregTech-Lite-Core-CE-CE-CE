@@ -169,6 +169,7 @@ public class GTLiteMaterialPropertyAddition {
         WatertightSteel.addFlags(GENERATE_DOUBLE_PLATE);
         MaragingSteel300.addFlags(GENERATE_DOUBLE_PLATE);
         BlueSteel.addFlags(GENERATE_DOUBLE_PLATE);
+        TantalumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);

@@ -1268,6 +1268,13 @@ gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.1=片数的具体�
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.2=这意味着如果不做任何扩展，则片数为4，此时机器不会并行。
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.3=而扩展到最大长度时，片数为16，此时机器会获得48次并行。
 
+gtlitecore.machine.electromagnetic_separation_plant.name=大型电磁离析厂
+gtlitecore.machine.electromagnetic_separation_plant.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
+gtlitecore.machine.electromagnetic_separation_plant.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.electromagnetic_separation_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.electromagnetic_separation_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.electromagnetic_separation_plant.tooltip.5=最大并行数：§e4096§7
+
 gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
 gtlitecore.machine.large_bio_reactor.name=大型生物反应室
@@ -1612,6 +1619,10 @@ gregtech.material.rhenium_pentachloride=五氯化铼
 gregtech.material.hexafluorophosphoric_acid=六氟磷酸
 gregtech.material.rhenium_hassium_thallium_isophtaloylbisdiethylthiourea_hexafluorophosphate=间苯二甲酰双（二乙硫脲）六氟磷酸铼钅黑铊
 gregtech.material.sodium_thiocyanate=硫氰酸钠
+gregtech.material.radium_sulfate=硫酸镭
+gregtech.material.radium_dichloride=二氯化镭
+gregtech.material.radium_hydroxide=氢氧化镭
+gregtech.material.radium_oxide=氧化镭
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
