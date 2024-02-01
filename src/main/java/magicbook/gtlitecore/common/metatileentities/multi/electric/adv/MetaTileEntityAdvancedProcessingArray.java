@@ -394,7 +394,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
         }
 
         /**
-         * @deprecated This is just a compensation of advanced processing array, may be removed in future.
+         * @deprecated This is just a compensation of advanced processing array, may be removed in the future.
          * @param maxProgress get max progress from tier.
          */
         @Deprecated
