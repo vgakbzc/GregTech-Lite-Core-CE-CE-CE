@@ -494,37 +494,45 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
             return Math.min(4 * (GTUtility.getTierByVoltage(getMaxVoltage()) - EV), 64);
         }
 
+        /**
+         * @return Check if machine in Etching mode.
+         */
         private boolean isEtchMode() {
             return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Bio mode.
+         */
         private boolean isBioMode() {
             return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Nano mode.
+         */
         private boolean isNanoMode() {
             return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES;
         }
 
+        /**
+         * @return Get parallel by auxiliaryUpgradeNumber, when auxiliary = 1, 3, 4, then return correspond parallel to recipe.
+         */
         @Override
         public int getParallelLimit() {
-
             if (isEtchMode()) {
-
                 if (auxiliaryUpgradeNumber == 1) { // T2
                     return maxParallel();
                 } else {
                     return 1;
                 }
             } else if (isBioMode()) {
-
                 if (auxiliaryUpgradeNumber == 3) { // Bio Chamber
                     return maxParallel();
                 } else {
                     return 1;
                 }
             } else if (isNanoMode()) {
-
                 if (auxiliaryUpgradeNumber == 4) { // T3
                     return  maxParallel();
                 } else {
@@ -535,12 +543,14 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
             }
         }
 
+        /**
+         * @param maxProgress Get redution by auxiliaryUpgradeNumber, when auxiliary = 2, 5, then get 1/4, 1/8 progress time.
+         */
+        @Override
         public void setMaxProgress(int maxProgress) {
-
             if (auxiliaryUpgradeNumber == 2) { // Water Cooling Tower
                 this.maxProgressTime = maxProgress / 4;
             }
-
             if (auxiliaryUpgradeNumber == 5) { // Infinity Cooling Tower
                 this.maxProgressTime = maxProgress / 8;
             }

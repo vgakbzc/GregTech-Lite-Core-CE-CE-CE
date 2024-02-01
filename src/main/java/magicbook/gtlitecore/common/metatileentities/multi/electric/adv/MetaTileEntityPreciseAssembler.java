@@ -114,6 +114,9 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         this.writeCustomData(GTLiteDataCode.ChannelPreciseAssembler1, buf -> buf.writeInt(this.CasingTier));
     }
 
+    /**
+     * @return This machine has a special property, if casing tier in multiblock structure is greater than or equal to recipe needs casing tier, then run recipe.
+     */
     @Override
     public boolean checkRecipe(@Nonnull Recipe recipe,
                                boolean consumeIfSuccess) {
@@ -123,14 +126,11 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
     @Override
     public void update() {
         super.update();
-
         if (this.getWorld().isRemote && this.CasingTier == 0) {
-            this.writeCustomData(GTLiteDataCode.ChannelPreciseAssembler2, buf -> {
-            });
+            this.writeCustomData(GTLiteDataCode.ChannelPreciseAssembler2, buf -> {});
         }
     }
 
-    @SuppressWarnings("SpellCheckingInspection")
     @Nonnull
     @Override
     protected BlockPattern createStructurePattern() {
@@ -274,14 +274,14 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         }
 
         /**
-         * @return Check if machine in PA
+         * @return Check if machine in Precise Assembler mode.
          */
         private boolean isPrecise() {
             return this.getRecipeMap() == GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES;
         }
 
         /**
-         * @param maxProgress If machine in common assembler, then get half progress time.
+         * @param maxProgress If machine in common assembler, then get 1/2 progress time.
          */
         public void setMaxProgress(int maxProgress) {
             if (isPrecise()) {
@@ -292,7 +292,9 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         }
 
         /**
-         * @return If machine in PA, then no parallel, if machine in common assembler, then get 2^{CasingTier + 4} (Mk1:32, Mk2:64, Mk3:128, MK4:256, MK5:512, MK6:1024, MK7:2048, MK8:4096) parallel.
+         * @return If machine in Precise Assembler mode, then no parallel.
+         *         If machine in common assembler, then get 2^{CasingTier + 4}.
+         *         Max Parallel: 4096 (Mk8 casing).
          */
         @Override
         public int getParallelLimit() {

@@ -228,11 +228,19 @@ public class MetaTileEntityCokingTower extends RecipeMapMultiblockController {
             super(tileEntity);
         }
 
+        /**
+         * @return Get (16 * heatingCoilLevel) parallel.
+         *         Max Parallel: 2048 (Astralium wire coil block).
+         */
         @Override
         public int getParallelLimit() {
             return getMaxParallel(heatingCoilLevel);
         }
 
+        /**
+         * @param maxProgress Get reduction for recipe duration from coil tier.
+         *                    When coil tier increases, duration becomes 0.8 origin.
+         */
         @Override
         public void setMaxProgress(int maxProgress) {
             int MaxProgress = (int) Math.floor(maxProgress * Math.pow(0.8, coilTier));

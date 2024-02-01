@@ -173,11 +173,19 @@ public class MetaTileEntityIndustrialCentrifuge extends MultiMapMultiblockContro
             super(tileEntity);
         }
 
+        /**
+         * @return Get (voltage * 16) parallel.
+         *         Max Parallel: 224 (Max voltage).
+         */
         @Override
         public int getParallelLimit() {
             return (16 * GTUtility.getTierByVoltage(getMaxVoltage()));
         }
 
+        /**
+         * @param maxProgress Get 1/2 progress time.
+         */
+        @Override
         public void setMaxProgress(int maxProgress) {
             this.maxProgressTime = maxProgress / 2;
         }

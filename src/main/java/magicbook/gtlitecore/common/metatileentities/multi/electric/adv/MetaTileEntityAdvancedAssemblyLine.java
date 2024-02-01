@@ -370,13 +370,18 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
             super(tileEntity);
         }
 
+        /**
+         * @param maxProgress Get 1/2 progress time.
+         */
         @Override
         public void setMaxProgress(int maxProgress) {
             this.maxProgressTime = maxProgress / 2;
         }
 
         /**
-         * @return Parallel limit, e.g. UV voltage-> 4 * 16 = 64
+         * @return If machine's voltage less than or equal EV, then return 16 parallel.
+         *         If machine's voltage greater than EV, then return (16 * (tier - 4)) parallel.
+         *         Max Parallel: 160 (Max voltage).
          */
         @Override
         public int getParallelLimit() {

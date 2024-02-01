@@ -277,6 +277,10 @@ public class MetaTileEntityMegaAlloyBlastSmelter extends RecipeMapMultiblockCont
             super(metaTileEntity);
         }
 
+        /**
+         * @return Get (4 * heatingCoilLevel) parallel.
+         *         Max Parallel: 512 (Astralium wire coil block).
+         */
         @Override
         public int getParallelLimit() {
             return getMaxParallel(heatingCoilLevel);
@@ -287,6 +291,10 @@ public class MetaTileEntityMegaAlloyBlastSmelter extends RecipeMapMultiblockCont
             return super.getMaxVoltage();
         }
 
+        /**
+         * @param maxProgress Get reduction for recipe duration from coil tier.
+         *                    When coil tier increases, duration becomes 0.8 origin.
+         */
         @Override
         public void setMaxProgress(int maxProgress) {
             int MaxProgress = (int) Math.floor(maxProgress * Math.pow(0.8, coilTier));

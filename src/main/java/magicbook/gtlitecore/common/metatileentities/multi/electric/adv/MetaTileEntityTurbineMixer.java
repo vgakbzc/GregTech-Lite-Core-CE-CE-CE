@@ -175,15 +175,26 @@ public class MetaTileEntityTurbineMixer extends MultiMapMultiblockController {
             super(tileEntity);
         }
 
+        /**
+         * @return Check if machine in Mixer mode.
+         */
         private boolean isMixerMode() {
             return getRecipeMap() == RecipeMaps.MIXER_RECIPES;
         }
 
+        /**
+         * @return Get (voltage * 16) parallel.
+         *         Max Parallel: 224 (Max voltage).
+         */
         @Override
         public int getParallelLimit() {
             return (16 * GTUtility.getTierByVoltage(getMaxVoltage()));
         }
 
+        /**
+         * @param maxProgress If machine in Mixer mode, then get 1/2 progress time.
+         */
+        @Override
         public void setMaxProgress(int maxProgress) {
             if (isMixerMode()) {
                 this.maxProgressTime = maxProgress / 2;
