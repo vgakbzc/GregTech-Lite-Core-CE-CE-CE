@@ -14,6 +14,7 @@ import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.renderer.texture.Textures;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockMachineCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -81,7 +82,7 @@ public class MetaTileEntityElectromagneticSeparationPlant extends MultiMapMultib
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GTLiteTextures.ELECTROMAGNETIC_SEPARATION_PLANT_OVERLAY;
+        return Textures.ELECTROMAGNETIC_SEPARATOR_OVERLAY;
     }
 
     @Override
