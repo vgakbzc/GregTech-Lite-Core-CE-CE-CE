@@ -107,6 +107,10 @@ public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockControll
             super(tileEntity);
         }
 
+        /**
+         * @return Get (4 * (tier - 4)) parallel.
+         *         Max Parallel: 40 (Max voltage).
+         */
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());

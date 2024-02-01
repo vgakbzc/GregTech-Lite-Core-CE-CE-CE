@@ -257,32 +257,50 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
             super(tileEntity);
         }
 
+        /**
+         * @return Check if machine in Laser Engraver mode.
+         */
         private boolean isLaserEngraverMode() {
             return this.getRecipeMap() == RecipeMaps.LASER_ENGRAVER_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Nano-scale Mask Aligner mode.
+         */
         private boolean isNanoScaleMaskAlignerMode() {
             return this.getRecipeMap() == GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Ion Implantator mode.
+         */
         private boolean isIonImplantatorMode() {
             return this.getRecipeMap() == GTLiteRecipeMaps.ION_IMPLANTATOR_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Electrolyzer mode.
+         */
         private boolean isElectrolyzerMode() {
             return this.getRecipeMap() == RecipeMaps.ELECTROLYZER_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Polarizer mode.
+         */
         private boolean isPolarizerMode() {
             return this.getRecipeMap() == RecipeMaps.POLARIZER_RECIPES;
         }
 
+        /**
+         * @return Check if machine in Electromagnetic Separator mode.
+         */
         private boolean isElectromagneticSeparatorMode() {
             return this.getRecipeMap() == RecipeMaps.ELECTROMAGNETIC_SEPARATOR_RECIPES;
         }
 
         /**
-         * @param casingTier Field Casing Tier
+         * @param casingTier Field Casing Tier.
          * @return Max Parallel of this machine: tier * (casingTier * 64), where tier means voltage tier.
          */
         public int getMaxParallel(int casingTier) {
@@ -290,6 +308,9 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
             return tier * (casingTier * 64);
         }
 
+        /**
+         * @return Get (tier * (casing * 64)) parallel, and specially, different modes has different parallel limits.
+         */
         @Override
         public int getParallelLimit() {
             if (isLaserEngraverMode()) {
@@ -307,10 +328,12 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
             }
         }
 
+        /**
+         * @param maxProgress In some special mode, get 1/2^{casingTier} progress time.
+         */
         @Override
         public void setMaxProgress(int maxProgress) {
             int MaxProgress = (int) Math.floor(maxProgress * Math.pow(0.5, casingTier));
-
             if (isLaserEngraverMode()) {
                 super.setMaxProgress(MaxProgress);
             } else if (isElectrolyzerMode()) {

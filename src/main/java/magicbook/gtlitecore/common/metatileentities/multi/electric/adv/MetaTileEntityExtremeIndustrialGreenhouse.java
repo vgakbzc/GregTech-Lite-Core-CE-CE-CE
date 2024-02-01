@@ -162,9 +162,12 @@ public class MetaTileEntityExtremeIndustrialGreenhouse extends RecipeMapMultiblo
             super(tileEntity, true);
         }
 
+        /**
+         * @return If machine's voltage less than or equal IV, then return 64 parallel.
+         *         If machine's voltage greater than IV, then return 256 parallel.
+         */
         @Override
         public int getParallelLimit() {
-
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
             if (tier < IV) {
                 return 64;
@@ -174,8 +177,11 @@ public class MetaTileEntityExtremeIndustrialGreenhouse extends RecipeMapMultiblo
 
         }
 
+        /**
+         * @param maxProgress If machine's voltage greater than IV, then get 1/2 progress time.
+         */
+        @Override
         public void setMaxProgress(int maxProgress) {
-
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
             if (tier > IV) {
                 this.maxProgressTime = maxProgress / 2;

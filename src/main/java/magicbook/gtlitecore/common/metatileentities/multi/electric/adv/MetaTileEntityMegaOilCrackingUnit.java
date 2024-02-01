@@ -242,6 +242,10 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
             super(tileEntity);
         }
 
+        /**
+         * @return Get (4 * heatingCoilLevel) parallel.
+         *         Max Parallel: 512 (Astralium wire coil block).
+         */
         @Override
         public int getParallelLimit() {
             return getMaxParallel(heatingCoilLevel);
@@ -252,6 +256,9 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
             return super.getMaxVoltage();
         }
 
+        /**
+         * @param resultOverclock Each coil above cupronickel (coilTier = 0) uses 10% less energy.
+         */
         @Override
         protected void modifyOverclockPost(int[] resultOverclock, @Nonnull IRecipePropertyStorage storage) {
             super.modifyOverclockPost(resultOverclock, storage);
@@ -260,7 +267,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
             if (coilTier <= 0)
                 return;
 
-            resultOverclock[0] *= (int) (1.0f - coilTier * 0.1); // each coil above cupronickel (coilTier = 0) uses 10% less energy
+            resultOverclock[0] *= (int) (1.0f - coilTier * 0.1);
             resultOverclock[0] = Math.max(1, resultOverclock[0]);
         }
     }

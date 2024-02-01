@@ -133,7 +133,6 @@ public class MetaTileEntityLargePrimitiveBlastFurnace extends NoEnergyMultiblock
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
-
         if (isStructureFormed()) {
             textList.add(new TextComponentTranslation("gtlitecore.machine.large_primitive_blast_furnace.auxiliary_furnace_number", auxiliaryFurnaceNumber));
         }
@@ -195,8 +194,11 @@ public class MetaTileEntityLargePrimitiveBlastFurnace extends NoEnergyMultiblock
             super(tileEntity, RecipeMaps.PRIMITIVE_BLAST_FURNACE_RECIPES);
         }
 
+        /**
+         * @param maxProgress Get reduction by auxiliaryFurnaceNumber, if auxiliary = 1, 2, then get 1/8, 1/16 progress time.
+         */
+        @Override
         public void setMaxProgress(int maxProgress) {
-
             if (isStructureFormed()) {
                 if (auxiliaryFurnaceNumber == 1) {
                     this.maxProgressTime = maxProgress / 8;

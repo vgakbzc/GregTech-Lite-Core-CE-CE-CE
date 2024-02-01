@@ -40,7 +40,12 @@ public class OverrideRecipeLoader {
     }
 
     private static void SiliconWaferOverrides() {
-        //  Neutronium Boule
+
+        //  This is a necessary tweak about Neutronium, because in gtlitecore,
+        //  you needs to build Fusion Reactor Mk V to get Neutronium,
+        //  so in the same tier, you can not get Neutronium Wafer same as vanilla CEu environment.
+
+        //  Delete Neutronium Boule recipe
         GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
                 new ItemStack[]{OreDictUnifier.get(block, Silicon, 32),
                         OreDictUnifier.get(ingot, Neutronium, 4),
@@ -59,6 +64,7 @@ public class OverrideRecipeLoader {
                 new ItemStack[]{NEUTRONIUM_BOULE.getStackForm()},
                 new FluidStack[]{Lubricant.getFluid(250)});
 
+        //  Dubnium Boule
         BLAST_RECIPES.recipeBuilder()
                 .input(block, Silicon, 32)
                 .input(ingot, Dubnium, 4)
@@ -70,6 +76,7 @@ public class OverrideRecipeLoader {
                 .duration(18000)
                 .buildAndRegister();
 
+        //  Neutronium Boule
         BLAST_RECIPES.recipeBuilder()
                 .input(block, Silicon, 64)
                 .input(ingot, Neutronium, 8)
@@ -81,6 +88,7 @@ public class OverrideRecipeLoader {
                 .duration(21000)
                 .buildAndRegister();
 
+        //  Dubnium Boule -> Dubnium Wafer
         CUTTER_RECIPES.recipeBuilder()
                 .input(DUBNIUM_BOULE)
                 .fluidInputs(Water.getFluid(1000))
@@ -111,6 +119,7 @@ public class OverrideRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Neutronium Boule -> Neutronium Wafer
         CUTTER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_BOULE)
                 .fluidInputs(Water.getFluid(1000))
@@ -140,6 +149,8 @@ public class OverrideRecipeLoader {
                 .duration(3200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Add Laser Engraver recipe to Dubnium Wafer and Neutronium Wafer.
 
         //  Red: Integrated Logic Circuit Wafer
         GTRecipeHandler.removeRecipesByInputs(LASER_ENGRAVER_RECIPES,
@@ -2408,7 +2419,10 @@ public class OverrideRecipeLoader {
 
     private static void GCYMOverrides() {
 
-        //  Mega machines
+        //  A little tweaks about Mega Blast Furnace and Mega Vacuum Freezer.
+        //  Because in gtlitecore, we add Volcanus and Cryogenic Freezer, and gcym's mega machine is too unuseful.
+        //  So we buff it to UV stage, and add new, more powerful mega machine for UHV stage.
+
         ModHandler.removeRecipeByName("gcym:mega_blast_furnace");
         ModHandler.addShapedRecipe(true, "mega_blast_furnace", MEGA_BLAST_FURNACE.getStackForm(),
                 "SXS", "FHF", "PWP",
@@ -2428,6 +2442,9 @@ public class OverrideRecipeLoader {
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
                 'P', new UnificationEntry(plate, Orichalcum),
                 'W', new UnificationEntry(wireGtQuadruple, Tritanium));
+
+        //  This machine is too unuseful in gtlitecore environment, because we have Large Circuit Assembly Line.
+        //  In vanilla CEu environment, this machine needs UV-tier circuit, is ridiculous in 15 voltages pack.
 
         ModHandler.removeRecipeByName("gcym:large_circuit_assembler");
         ModHandler.addShapedRecipe(true, "large_circuit_assembler", LARGE_CIRCUIT_ASSEMBLER.getStackForm(),
