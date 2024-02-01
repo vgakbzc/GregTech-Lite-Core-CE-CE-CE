@@ -22,6 +22,7 @@ public class FusionLoader {
     private static void Elements() {
 
         //  Americium + Neon -> Dubnium
+        //  Mk III recipe, for you next wafer and next radioactive rod.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Americium.getFluid(16))
                 .fluidInputs(Neon.getFluid(125))
@@ -32,6 +33,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Plutonium-241 + Neon -> Rutherfordium
+        //  Mk II recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Plutonium241.getFluid(16))
                 .fluidInputs(Neon.getFluid(16))
@@ -42,6 +44,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Plutonium-241 + Titanium -> Livermorium
+        //  Mk IV recipe, next radioactive rod material.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Plutonium241.getFluid(32))
                 .fluidInputs(Titanium.getFluid(32))
@@ -52,6 +55,8 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Plutonium-241 + Calcium -> Seaborgium
+        //  Mk IV recipe, basic material for UEV stage.
+        //  If you want to make Fusion Reactor Mk V, then you need to get this material first.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Plutonium241.getFluid(16))
                 .fluidInputs(Calcium.getFluid(32))
@@ -61,7 +66,10 @@ public class FusionLoader {
                 .EUToStart(650000000L)
                 .buildAndRegister();
 
+        //  Metastable Oganesson Chain
+
         //  Oganesson Breeding Base + Curium -> Hot Oganesson
+        //  Mk IV recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(OganessonBreedingBase.getFluid(L))
                 .fluidInputs(Curium.getFluid(36))
@@ -99,8 +107,8 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Quasi-fissioning Plasma
-        //  This fusion recipe is the first step of Metastable Flerovium chain.
-        //  back to Decay Generator Recipe
+        //  Mk IV recipe, this fusion recipe is the first step of Metastable Flerovium chain.
+        //  back to Decay Generator recipe.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Uranium238.getFluid(125))
                 .fluidInputs(Uranium238.getFluid(125))
@@ -111,6 +119,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Metastable Hassium
+        //  Mk V recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(ScandiumTitaniumMixture.getFluid(L * 2))
                 .fluidInputs(RadiumRadonMixture.getFluid(1000))
@@ -148,6 +157,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Curium + Sodium -> Bohrium
+        //  Mk IV recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Curium.getFluid(L * 2))
                 .fluidInputs(Sodium.getFluid(L * 2))
@@ -158,6 +168,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Iron + Bismuth -> Meitnerium
+        //  Mk IV recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Iron.getPlasma(L))
                 .fluidInputs(Bismuth.getFluid(L))
@@ -168,6 +179,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Nickel + Bismuth -> Roentgenium
+        //  Mk IV recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Nickel.getPlasma(L))
                 .fluidInputs(Bismuth.getFluid(L))
@@ -178,6 +190,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Nickel + Polonium -> Copernicium
+        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Nickel.getPlasma(L * 4))
                 .fluidInputs(Polonium.getFluid(L * 4))
@@ -188,6 +201,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Nickel + Astatine -> Nihonium
+        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Nickel.getPlasma(L * 2))
                 .fluidInputs(Astatine.getFluid(L * 2))
@@ -198,6 +212,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Neptunium + Titanium -> Moscovium
+        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Neptunium.getFluid(L * 2))
                 .fluidInputs(Titanium.getFluid(L * 2))
@@ -208,6 +223,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Americium + Titanium -> Tennessine
+        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Americium.getFluid(L * 2))
                 .fluidInputs(Titanium.getFluid(L * 2))
@@ -221,6 +237,7 @@ public class FusionLoader {
     private static void FantasyMaterials() {
 
         //  Nether Star + Bedrock -> Ichor Liquid
+        //  Mk IV recipe, you need this to make Ichorium.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(NetherStar.getFluid(L))
                 .fluidInputs(Bedrock.getFluid(1000))
@@ -231,6 +248,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Nether Star + Glowstone -> Solarium
+        //  Mk IV recipe, this material is UIV stage wire.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(NetherStar.getFluid(L))
                 .fluidInputs(Glowstone.getFluid(1000))
@@ -241,6 +259,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Silver + Starlight Liquid -> Luna Silver
+        //  Mk IV recipe, this material is used to make Cosmic SoC and some UIV+ things.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Silver.getFluid(L / 2))
                 .fluidInputs(StarlightLiquid.getFluid(L / 2))
@@ -251,16 +270,20 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Ichor Liquid + Radon -> Ichorium
+        //  Mk IV recipe, you need this to make Ichorium wire coil block.
+        //  When you get ichorium, you can make UEV stage components, and then get Fusion Reactor Mk V.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(IchorLiquid.getPlasma(L))
                 .fluidInputs(Radon.getFluid(1000))
                 .fluidOutputs(Ichorium.getFluid(500))
-                .EUt(VA[UEV])
+                .EUt(VA[UHV])
                 .duration(100)
                 .EUToStart(1200000000L)
                 .buildAndRegister();
 
         //  Orichalcum + Zirconium -> Mithril
+        //  Mk III recipe, you need this to make Infinity.
+        //  Of cource, you also need mithril to get Fusion Reactor Mk V.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Orichalcum.getFluid(16))
                 .fluidInputs(Zirconium.getFluid(L * 4))
@@ -271,6 +294,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Vibranium + Duranium -> Crystal Matrix
+        //  Mk IV recipe, you need this to make Infinity.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Vibranium.getPlasma(16))
                 .fluidInputs(Duranium.getFluid(L * 2))
@@ -281,6 +305,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Crystal Matrix + Mithril -> Infinity
+        //  Mk V recipe, this material is UIV stage main material.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(CrystalMatrix.getFluid(L * 2))
                 .fluidInputs(Mithril.getFluid(L * 2))
@@ -291,6 +316,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Void Metal + Bedrock -> Rhugnor
+        //  Mk IV recipe, you need this to make hypogen.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(VoidMetal.getFluid(L * 2))
                 .fluidInputs(Bedrock.getFluid(1000))
@@ -301,6 +327,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Dragon Blood + Rhugnor -> Hypogen
+        //  Mk V recipe, this material is UXV stage wire.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(DragonBlood.getFluid(L * 4))
                 .fluidInputs(Rhugnor.getFluid(L * 4))
@@ -311,6 +338,8 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Neon + Bedrock -> Taranium plasma
+        //  Mk III recipe, a basic material to make higher plasma.
+        //  Pay attention, this plasma can not condense to taranium.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Neon.getFluid(L))
                 .fluidInputs(Bedrock.getFluid(L))
@@ -321,6 +350,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Titanium + Taranium plasma -> Astral Titanium
+        //  Mk V recipe, this material is UIV stage components.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Titanium.getFluid(L * 2))
                 .fluidInputs(Taranium.getPlasma(L * 2))
@@ -331,6 +361,7 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Tungsten + Taranium plasma -> Celestial Tungsten
+        //  Mk V recipe, this material is UIV stage components.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Tungsten.getFluid(L * 2))
                 .fluidInputs(Taranium.getPlasma(L * 2))
@@ -341,6 +372,8 @@ public class FusionLoader {
                 .buildAndRegister();
 
         //  Bohrium + Naquadria -> Neutronium
+        //  Mk V recipe, a basic material in UIV+ stage.
+        //  The original recipe of Neutronium in vanilla CEu environment is Orichalcum recipe now.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Bohrium.getFluid(128))
                 .fluidInputs(Naquadria.getFluid(128))
