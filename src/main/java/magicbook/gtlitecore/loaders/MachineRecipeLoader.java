@@ -1617,13 +1617,30 @@ public class MachineRecipeLoader {
                         .duration(600))
                 .buildAndRegister();
 
+        //  Electromagnetic Separation Factory
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HMS1J79Alloy, 4)
+                .input(LARGE_POLARIZER, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, Laurenium, 4)
+                .input(plateDouble, TantalumCarbide, 4)
+                .input(gear, SterlingSilver, 4)
+                .input(gearSmall, RhodiumPlatedPalladium, 16)
+                .input(cableGtQuadruple, TungstenSteel, 4)
+                .fluidInputs(MaragingSteel300.getFluid(L * 4))
+                .output(ELECTROMAGNETIC_SEPARATION_PLANT)
+                .EUt(VA[IV])
+                .duration(1200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Ion Lithography Factory
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Cinobite, 16)
                 .input(LARGE_ENGRAVER, 64) // todo Mega Laser Engraver
                 .input(ION_IMPLANTATOR, 64)
                 .input(ELECTROLYTIC_TANK, 64)
-                .input(LARGE_POLARIZER, 64) // todo Mega Polarizer
+                .input(ELECTROMAGNETIC_SEPARATION_PLANT, 64)
                 .input(PHOTON, 64)
                 .input(plateDense, Orichalcum, 16)
                 .input(plateDense, Adamantium, 16)

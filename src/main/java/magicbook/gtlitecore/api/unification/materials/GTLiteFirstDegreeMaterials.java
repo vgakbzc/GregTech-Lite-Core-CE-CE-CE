@@ -2130,6 +2130,44 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Sodium, 1, Sulfur, 1, Carbon, 1, Nitrogen, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11243 Radium Sulfate
+        RadiumSulfate = new Material.Builder(getId(), gregtechId("radium_sulfate"))
+                .dust()
+                .color(0xEAFFA1)
+                .iconSet(SHINY)
+                .components(Radium, 1, Sulfur, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11244 Radium Dichloride
+        RadiumDichloride = new Material.Builder(getId(), gregtechId("radium_dichloride"))
+                .dust()
+                .color(0xCCFF33)
+                .iconSet(SHINY)
+                .components(Radium, 1, Chlorine, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11245 Radium Hydroxide
+        RadiumHydroxide = new Material.Builder(getId(), gregtechId("radium_hydroxide"))
+                .dust()
+                .color(0xD8E6A7)
+                .iconSet(SHINY)
+                .components(Radium, 1, Oxygen, 2, Hydrogen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Ra(OH)2", true);
+
+        //  11246 Radium Oxide
+        RadiumOxide = new Material.Builder(getId(), gregtechId("radium_oxide"))
+                .dust()
+                .color(0xE0ECB7)
+                .iconSet(SHINY)
+                .components(Radium, 1, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
     }
 
     private static int getId() {

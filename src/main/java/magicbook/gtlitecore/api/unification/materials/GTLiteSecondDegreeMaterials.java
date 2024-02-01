@@ -190,7 +190,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 886)
                         .vacuumStats(VA[EV], 400))
                 .components(Nickel, 14, Iron, 12, Molybdenum, 11, CobaltBrass, 8, Chrome, 6, Silicon, 4)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
 
         //  12013 High Strength Structural Steel-HY130-1
@@ -928,7 +928,7 @@ public class GTLiteSecondDegreeMaterials {
                 .fluid()
                 .color(0xE564E4)
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .components(EglinSteel, 8, Indium, 2, Chrome, 4, Lanthanum, 1, Rhenium, 1)
                 .blast(b -> b
                         .temp(7100, BlastProperty.GasTier.HIGHER)

@@ -146,6 +146,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityAdvancedFluidDrill ULTIMATE_FLUID_DRILL_RIG;
     public static MetaTileEntityAdvancedFluidDrill INFINITY_FLUID_DRILL_RIG;
     public static MetaTileEntityLargeCircuitAssemblyLine LARGE_CIRCUIT_ASSEMBLY_LINE;
+    public static MetaTileEntityElectromagneticSeparationPlant ELECTROMAGNETIC_SEPARATION_PLANT;
     public static MetaTileEntityLargeVacuumChamber LARGE_VACUUM_CHAMBER;
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
     public static MetaTileEntityIonLithographyFactory ION_LITHOGRAPHY_FACTORY;
@@ -360,19 +361,19 @@ public class GTLiteMetaTileEntities {
         ULTIMATE_FLUID_DRILL_RIG = registerMultiMetaTileEntity(84, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.zpm"), 7));
         INFINITY_FLUID_DRILL_RIG = registerMultiMetaTileEntity(85, new MetaTileEntityAdvancedFluidDrill(gtliteId("fluid_drill_rig.uv"), 8));
         LARGE_CIRCUIT_ASSEMBLY_LINE = registerMultiMetaTileEntity(86, new MetaTileEntityLargeCircuitAssemblyLine(gtliteId("large_circuit_assembly_line")));
-        //  87 INTEGRATED_ORE_PROCESSOR
+        ELECTROMAGNETIC_SEPARATION_PLANT = registerMultiMetaTileEntity(87, new MetaTileEntityElectromagneticSeparationPlant(gtliteId("electromagnetic_separation_plant")));
         LARGE_VACUUM_CHAMBER = registerMultiMetaTileEntity(88, new MetaTileEntityLargeVacuumChamber(gtliteId("large_vacuum_chamber")));
         LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));
-        ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(90, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
-        //  91 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
-        //  92 SUPERSTRUCTURE_ASSEMBLY_PLANT
-        //  93
+        //  90 Mega Laser Engraver
+        ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(91, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
+        //  92 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
+        //  93 SUPERSTRUCTURE_ASSEMBLY_PLANT
         //  94
         //  95
         //  96
         //  97
         //  98
-        //  99
+        //  99 INTEGRATED_ORE_PROCESSOR
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
         LARGE_GAS_COLLECTOR = registerMultiMetaTileEntity(102, new MetaTileEntityLargeGasCollector(gtliteId("large_gas_collector")));
