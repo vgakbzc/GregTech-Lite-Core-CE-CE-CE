@@ -1619,6 +1619,10 @@ gregtech.material.rhenium_pentachloride=五氯化铼
 gregtech.material.hexafluorophosphoric_acid=六氟磷酸
 gregtech.material.rhenium_hassium_thallium_isophtaloylbisdiethylthiourea_hexafluorophosphate=间苯二甲酰双（二乙硫脲）六氟磷酸铼钅黑铊
 gregtech.material.sodium_thiocyanate=硫氰酸钠
+gregtech.material.radium_sulfate=硫酸镭
+gregtech.material.radium_dichloride=二氯化镭
+gregtech.material.radium_hydroxide=氢氧化镭
+gregtech.material.radium_oxide=氧化镭
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
