@@ -104,6 +104,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer PLUTONIUM_CASING = new GTLiteOverlayRenderer("casings/plutonium_casing");
     public static GTLiteOverlayRenderer BLACK_STEEL_CASING = new GTLiteOverlayRenderer("casings/black_steel_casing");
     public static GTLiteOverlayRenderer TUMBAGA_CASING = new GTLiteOverlayRenderer("casings/tumbaga_casing");
+    public static GTLiteOverlayRenderer RHODIUM_PLATED_PALLADIUM_CASING = new GTLiteOverlayRenderer("casings/rhodium_plated_palladium_casing");
     public static GTLiteOverlayRenderer NIOBIUM_TITANIUM_CASING = new GTLiteOverlayRenderer("casings/niobium_titanium_casing");
     public static GTLiteOverlayRenderer BOTMIUM_CASING = new GTLiteOverlayRenderer("casings/botmium_casing");
     public static GTLiteOverlayRenderer LAURENIUM_CASING = new GTLiteOverlayRenderer("casings/laurenium_casing");
