@@ -485,7 +485,7 @@ public class ComponentAssemblyLine {
                 .fluidInputs(Astralium.getFluid(L * 2 * 64))
                 .fluidInputs(Legendarium.getFluid(L * 4 * 64)) // round
                 .fluidInputs(Infinity.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
-                .output(ELECTRIC_PISTON_UIV, 64)
+                .output(ELECTRIC_MOTOR_UIV, 64)
                 .EUt(VA[UIV])
                 .duration(1800)
                 .CasingTier(UIV)
@@ -719,7 +719,6 @@ public class ComponentAssemblyLine {
                     .CasingTier(ZPM)
                     .buildAndRegister();
         }
-
         //  UV (75s)
         for (FluidStack stack : new FluidStack[]{
                 StyreneButadieneRubber.getFluid(L * 24 * 64),
@@ -731,135 +730,17 @@ public class ComponentAssemblyLine {
                     .input(stickLong, Tritanium, 64)
                     .input(stickLong, Tritanium, 64)
                     .input(cableGtHex, YttriumBariumCuprate, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
+                    .fluidInputs(Lubricant.getFluid(L * 4 * 64))
                     .fluidInputs(Lubricant.getFluid(64000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Naquadria.getFluid(L * 4 * 64))
-                    .fluidInputs(Tritanium.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(Tritanium.getFluid(L * 4 * 64 + L * 32))
                     .output(CONVEYOR_MODULE_UV, 64)
                     .EUt(VA[UV])
                     .duration(1500)
                     .CasingTier(UV)
                     .buildAndRegister();
         }
-
-        //  UHV (75s)
-        for (FluidStack stack : new FluidStack[]{
-                StyreneButadieneRubber.getFluid(L * 32 * 64),
-                PolyPhosphonitrileFluoroRubber.getFluid(L * 32 * 64)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UHV, 64)
-                    .input(ELECTRIC_MOTOR_UHV, 64)
-                    .input(plateDouble, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
-                    .input(cableGtHex, Europium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
-                    .fluidInputs(Lubricant.getFluid(192000))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Vibranium.getFluid(L * 64))
-                    .fluidInputs(Adamantium.getFluid(L * 4 * 64 + L * 32)) // round + screw
-                    .output(CONVEYOR_MODULE_UHV, 64)
-                    .EUt(VA[UHV])
-                    .duration(1500)
-                    .CasingTier(UHV)
-                    .buildAndRegister();
-        }
-
-        //  UEV (90s)
-        for (FluidStack stack : new FluidStack[]{
-                StyreneButadieneRubber.getFluid(L * 40 * 64),
-                PolyPhosphonitrileFluoroRubber.getFluid(L * 40 * 64)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UEV, 64)
-                    .input(ELECTRIC_MOTOR_UEV, 64)
-                    .input(plateDouble, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
-                    .input(cableGtHex, PedotTMA, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
-                    .fluidInputs(Lubricant.getFluid(320000))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Ichorium.getFluid(L * 2 * 64))
-                    .fluidInputs(Hdcs.getFluid(L * 4 * 64 + L * 32)) // round + screw
-                    .output(CONVEYOR_MODULE_UEV, 64)
-                    .EUt(VA[UEV])
-                    .duration(1800)
-                    .CasingTier(UEV)
-                    .buildAndRegister();
-        }
-
-        //  UIV (90s)
-        for (FluidStack stack : new FluidStack[]{
-                StyreneButadieneRubber.getFluid(L * 48 * 64),
-                PolyPhosphonitrileFluoroRubber.getFluid(L * 48 * 64)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UIV, 64)
-                    .input(ELECTRIC_MOTOR_UIV, 64)
-                    .input(plateDouble, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
-                    .input(cableGtHex, Solarium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
-                    .fluidInputs(Lubricant.getFluid(448000))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Astralium.getFluid(L * 4 * 64))
-                    .fluidInputs(Legendarium.getFluid(L * 4 * 64 + L * 32)) // round + screw
-                    .output(CONVEYOR_MODULE_UIV, 64)
-                    .EUt(VA[UIV])
-                    .duration(1800)
-                    .CasingTier(UIV)
-                    .buildAndRegister();
-        }
-
-        //  UXV (105s)
-        for (FluidStack stack : new FluidStack[]{
-                StyreneButadieneRubber.getFluid(L * 56 * 64),
-                PolyPhosphonitrileFluoroRubber.getFluid(L * 56 * 64)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UXV, 64)
-                    .input(ELECTRIC_MOTOR_UXV, 64)
-                    .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(cableGtHex, Hypogen, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
-                    .fluidInputs(Lubricant.getFluid(576000))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Hikarium.getFluid(L * 8 * 64))
-                    .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64 + L * 32)) // round + screw
-                    .output(CONVEYOR_MODULE_UXV, 64)
-                    .EUt(VA[UXV])
-                    .duration(2100)
-                    .CasingTier(UXV)
-                    .buildAndRegister();
-
-        }
-
-        //  OpV (105s)
-        for (FluidStack stack : new FluidStack[]{
-                StyreneButadieneRubber.getFluid(L * 64 * 64),
-                PolyPhosphonitrileFluoroRubber.getFluid(L * 64 * 64)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_OpV, 64)
-                    .input(ELECTRIC_MOTOR_OpV, 64)
-                    .input(plateDouble, TranscendentMetal, 64)
-                    .input(stickLong, TranscendentMetal, 64)
-                    .input(stickLong, TranscendentMetal, 64)
-                    .input(cableGtHex, Galaxium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
-                    .fluidInputs(Lubricant.getFluid(704000))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Arcanium.getFluid(L * 16 * 64))
-                    .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64 + L * 32)) // round + screw
-                    .output(CONVEYOR_MODULE_OpV)
-                    .EUt(VA[OpV])
-                    .duration(2100)
-                    .CasingTier(OpV)
-                    .buildAndRegister();
-        }
-
-        //  MAX (120s)
     }
 
     private static void Pump() {
@@ -1015,7 +896,7 @@ public class ComponentAssemblyLine {
                     .fluidInputs(SolderingAlloy.getFluid(L * 64))
                     .fluidInputs(Lubricant.getFluid(16000))
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(NiobiumTitanium.getFluid(L * 64)) // PipeSmallFluid
+                    .fluidInputs(NiobiumTitanium.getFluid(L * 64)) //  PipeSmallFluid
                     .fluidInputs(HSSS.getFluid(L * 4 * 64)) //  Rotor
                     .output(ELECTRIC_PUMP_LuV, 64)
                     .EUt(VA[LuV])
@@ -1037,7 +918,7 @@ public class ComponentAssemblyLine {
                     .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
                     .fluidInputs(Lubricant.getFluid(32000))
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Polybenzimidazole.getFluid(L * 3 * 64)) // pipeNormalFluid
+                    .fluidInputs(Polybenzimidazole.getFluid(L * 3 * 64)) //  pipeNormalFluid
                     .fluidInputs(Osmiridium.getFluid(L * 4 * 64)) // Rotor
                     .output(ELECTRIC_PUMP_ZPM, 64)
                     .EUt(VA[ZPM])
@@ -1060,7 +941,7 @@ public class ComponentAssemblyLine {
                     .fluidInputs(Lubricant.getFluid(64000))
                     .fluidInputs(Naquadria.getFluid(L * 4 * 64))
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Naquadah.getFluid(L * 6 * 64)) // PipeLargeFluid
+                    .fluidInputs(Naquadah.getFluid(L * 6 * 64)) //  PipeLargeFluid
                     .fluidInputs(NaquadahAlloy.getFluid(L * 4 * 64)) //  Rotor
                     .output(ELECTRIC_PUMP_UV, 64)
                     .EUt(VA[UV])
@@ -1068,127 +949,6 @@ public class ComponentAssemblyLine {
                     .CasingTier(UV)
                     .buildAndRegister();
         }
-
-        //  UHV (75s)
-        for (FluidStack stack : new FluidStack[]{
-                SiliconeRubber.getFluid(L * 512),
-                NitrileButadieneRubber.getFluid(L * 512)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UHV, 64)
-                    .input(plateDouble, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
-                    .input(cableGtHex, Europium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
-                    .fluidInputs(Lubricant.getFluid(192000))
-                    .fluidInputs(Vibranium.getFluid(L * 64))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Duranium.getFluid(L * 6 * 64)) // PipeLargeFluid
-                    .fluidInputs(Orichalcum.getFluid(L * 4 * 64)) // Rotor
-                    .output(ELECTRIC_PUMP_UHV, 64)
-                    .EUt(VA[UHV])
-                    .duration(1500)
-                    .CasingTier(UHV)
-                    .buildAndRegister();
-        }
-
-        //  UEV (90s)
-        for (FluidStack stack : new FluidStack[]{
-                SiliconeRubber.getFluid(L * 1024),
-                NitrileButadieneRubber.getFluid(L * 1024)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UEV, 64)
-                    .input(plateDouble, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
-                    .input(cableGtHex, PedotTMA, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
-                    .fluidInputs(Lubricant.getFluid(320000))
-                    .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
-                    .fluidInputs(Ichorium.getFluid(L * 64))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Lafium.getFluid(L * 6 * 64)) // PipeLargeFluid
-                    .fluidInputs(Adamantium.getFluid(L * 4 * 64)) // Rotor
-                    .output(ELECTRIC_PUMP_UEV, 64)
-                    .EUt(VA[UEV])
-                    .duration(1800)
-                    .CasingTier(UEV)
-                    .buildAndRegister();
-        }
-
-        //  UIV (90s)
-        for (FluidStack stack : new FluidStack[]{
-                SiliconeRubber.getFluid(L * 1024),
-                NitrileButadieneRubber.getFluid(L * 1024)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UIV, 64)
-                    .input(plateDouble, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
-                    .input(cableGtHex, Solarium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
-                    .fluidInputs(Lubricant.getFluid(448000))
-                    .fluidInputs(Zylon.getFluid(L * 4 * 64))
-                    .fluidInputs(Astralium.getFluid(L * 2 * 64))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(CrystalMatrix.getFluid(L * 6 * 64)) // PipeLargeFluid
-                    .fluidInputs(Infinity.getFluid(L * 4 * 64)) // Rotor
-                    .output(ELECTRIC_PUMP_UIV, 64)
-                    .EUt(VA[UIV])
-                    .duration(1800)
-                    .CasingTier(UIV)
-                    .buildAndRegister();
-        }
-
-        //  UXV (105s)
-        for (FluidStack stack : new FluidStack[]{
-                SiliconeRubber.getFluid(L * 1024),
-                NitrileButadieneRubber.getFluid(L * 1024)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_UXV, 64)
-                    .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(cableGtHex, Solarium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
-                    .fluidInputs(Lubricant.getFluid(576000))
-                    .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
-                    .fluidInputs(Hikarium.getFluid(L * 4 * 64))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 6 * 64)) // PipeLargeFluid
-                    .fluidInputs(CosmicNeutronium.getFluid(L * 4 * 64)) // Rotor
-                    .output(ELECTRIC_PUMP_UXV, 64)
-                    .EUt(VA[UXV])
-                    .duration(2100)
-                    .CasingTier(UXV)
-                    .buildAndRegister();
-        }
-        //  OpV (105s)
-        for (FluidStack stack : new FluidStack[]{
-                SiliconeRubber.getFluid(L * 1024),
-                NitrileButadieneRubber.getFluid(L * 1024)}) {
-            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ELECTRIC_MOTOR_OpV, 64)
-                    .input(plateDouble, TranscendentMetal, 64)
-                    .input(stickLong, TranscendentMetal, 64)
-                    .input(stickLong, TranscendentMetal, 64)
-                    .input(cableGtHex, Galaxium, 8)
-                    .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
-                    .fluidInputs(Lubricant.getFluid(704000))
-                    .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
-                    .fluidInputs(Arcanium.getFluid(L * 8 * 64))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Fatalium.getFluid(L * 6 * 64)) // PipeLargeFluid
-                    .fluidInputs(Spacetime.getFluid(L * 4 * 64)) // Rotor
-                    .output(ELECTRIC_PUMP_OpV, 64)
-                    .EUt(VA[OpV])
-                    .duration(2100)
-                    .CasingTier(OpV)
-                    .buildAndRegister();
-        }
-
-        //  MAX (120s)
-
     }
 
     private static void RobotArm() {
@@ -1425,127 +1185,6 @@ public class ComponentAssemblyLine {
                 .duration(1500)
                 .CasingTier(UV)
                 .buildAndRegister();
-
-        //  UHV (75s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, Adamantium, 64)
-                .input(stickLong, Adamantium, 64)
-                .input(stickLong, Adamantium, 64)
-                .input(stickLong, Adamantium, 64)
-                .input(ELECTRIC_MOTOR_UHV, 64)
-                .input(ELECTRIC_MOTOR_UHV, 64)
-                .input(ELECTRIC_PISTON_UHV, 64)
-                .input(WRAP_CIRCUIT_UHV, 4) // 4 * 16
-                .input(WRAP_CIRCUIT_UV, 8) // 8 * 16 = 2 * 64
-                .input(WRAP_CIRCUIT_ZPM, 16) // 16 * 16 = 4 * 64
-                .input(cableGtHex, Europium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
-                .fluidInputs(Lubricant.getFluid(192000))
-                .fluidInputs(Vibranium.getFluid(L * 64))
-                .fluidInputs(Adamantium.getFluid(L * 4 * 64 + L * 3 * 64)) // Gear + 3 Small Gear
-                .output(ROBOT_ARM_UHV, 64)
-                .EUt(VA[UHV])
-                .duration(1500)
-                .CasingTier(UHV)
-                .buildAndRegister();
-
-        //  UEV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, Hdcs, 64)
-                .input(stickLong, Hdcs, 64)
-                .input(stickLong, Hdcs, 64)
-                .input(stickLong, Hdcs, 64)
-                .input(ELECTRIC_MOTOR_UEV, 64)
-                .input(ELECTRIC_MOTOR_UEV, 64)
-                .input(ELECTRIC_PISTON_UEV, 64)
-                .input(WRAP_CIRCUIT_UEV, 4) // 4 * 16
-                .input(WRAP_CIRCUIT_UHV, 8) // 8 * 16 = 2 * 64
-                .input(WRAP_CIRCUIT_UV, 16) // 16 * 16 = 4 * 64
-                .input(cableGtHex, PedotTMA, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 20 * 64))
-                .fluidInputs(Lubricant.getFluid(320000))
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
-                .fluidInputs(Ichorium.getFluid(L * 64))
-                .fluidInputs(Hdcs.getFluid(L * 4 * 64 + L * 3 * 64)) // Gear + 3 Small Gear
-                .output(ROBOT_ARM_UEV, 64)
-                .EUt(VA[UEV])
-                .duration(1800)
-                .CasingTier(UEV)
-                .buildAndRegister();
-
-        //  UIV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, Legendarium, 64)
-                .input(stickLong, Legendarium, 64)
-                .input(stickLong, Legendarium, 64)
-                .input(stickLong, Legendarium, 64)
-                .input(ELECTRIC_MOTOR_UIV, 64)
-                .input(ELECTRIC_MOTOR_UIV, 64)
-                .input(ELECTRIC_PISTON_UIV, 64)
-                .input(WRAP_CIRCUIT_UIV, 4) // 4 * 16
-                .input(WRAP_CIRCUIT_UEV, 8) // 8 * 16 = 2 * 64
-                .input(WRAP_CIRCUIT_UHV, 16) // 16 * 16 = 4 * 64
-                .input(cableGtHex, Solarium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 24 * 64))
-                .fluidInputs(Lubricant.getFluid(448000))
-                .fluidInputs(Zylon.getFluid(L * 4 * 64))
-                .fluidInputs(Astralium.getFluid(L * 2 * 64))
-                .fluidInputs(Legendarium.getFluid(L * 4 * 64 + L * 3 * 64)) // Gear + 3 Small Gear
-                .output(ROBOT_ARM_UIV, 64)
-                .EUt(VA[UIV])
-                .duration(1800)
-                .CasingTier(UIV)
-                .buildAndRegister();
-
-        //  UXV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(ELECTRIC_MOTOR_UXV, 64)
-                .input(ELECTRIC_MOTOR_UXV, 64)
-                .input(ELECTRIC_PISTON_UXV, 64)
-                .input(WRAP_CIRCUIT_UXV, 4) // 4 * 16
-                .input(WRAP_CIRCUIT_UIV, 8) // 8 * 16 = 2 * 64
-                .input(WRAP_CIRCUIT_UEV, 16) // 16 * 16 = 4 * 64
-                .input(cableGtHex, Hypogen, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 28 * 64))
-                .fluidInputs(Lubricant.getFluid(576000))
-                .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
-                .fluidInputs(Hikarium.getFluid(L * 4 * 64))
-                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64 + L * 3 * 64)) // Gear + 3 Small Gear
-                .output(ROBOT_ARM_UXV, 64)
-                .EUt(VA[UXV])
-                .duration(2100)
-                .CasingTier(UXV)
-                .buildAndRegister();
-
-        //  OpV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, TranscendentMetal, 64)
-                .input(stickLong, TranscendentMetal, 64)
-                .input(stickLong, TranscendentMetal, 64)
-                .input(stickLong, TranscendentMetal, 64)
-                .input(ELECTRIC_MOTOR_OpV, 64)
-                .input(ELECTRIC_MOTOR_OpV, 64)
-                .input(ELECTRIC_PISTON_OpV, 64)
-                .input(WRAP_CIRCUIT_OpV, 4) // 4 * 16
-                .input(WRAP_CIRCUIT_UXV, 8) // 8 * 16 = 2 * 64
-                .input(WRAP_CIRCUIT_UIV, 16) // 16 * 16 = 4 * 64
-                .input(cableGtHex, Galaxium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
-                .fluidInputs(Lubricant.getFluid(704000))
-                .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
-                .fluidInputs(Arcanium.getFluid(L * 8 * 64))
-                .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64 + L * 3 * 64)) // Gear + 3 Small Gear
-                .output(ROBOT_ARM_OpV, 64)
-                .EUt(VA[OpV])
-                .duration(2100)
-                .CasingTier(OpV)
-                .buildAndRegister();
-
-        //  MAX (120s)
     }
 
     private static void Emitter() {
@@ -1761,107 +1400,13 @@ public class ComponentAssemblyLine {
                 .input(WRAP_CIRCUIT_UV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, YttriumBariumCuprate, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
-                .fluidInputs(Naquadria.getFluid(L * 24 * 64 + L * 4 * 64)) // foil + recipe fluids
-                .fluidInputs(Tritanium.getFluid(L * 4 * 64)) //  4 * long stick
+                .fluidInputs(Naquadria.getFluid(L * 24 * 64 + L * 4 * 64)) // Foil + Recipe fluids
+                .fluidInputs(Tritanium.getFluid(L * 4 * 64)) //  4 * Long Stick
                 .output(EMITTER_UV, 64)
                 .EUt(VA[UV])
                 .duration(1500)
                 .CasingTier(UV)
                 .buildAndRegister();
-
-        //  UHV (75s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Adamantium, 64)
-                .input(ELECTRIC_MOTOR_UHV, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(WRAP_CIRCUIT_UHV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Europium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
-                .fluidInputs(Vibranium.getFluid(L * 24 * 64 + L * 64)) // foil + recipe fluids
-                .fluidInputs(Adamantium.getFluid(L * 4 * 64)) // long stick
-                .output(EMITTER_UHV, 64)
-                .EUt(VA[UHV])
-                .duration(1500)
-                .CasingTier(UHV)
-                .buildAndRegister();
-
-        //  UEV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Hdcs, 64)
-                .input(ELECTRIC_MOTOR_UEV, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(WRAP_CIRCUIT_UEV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, PedotTMA, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
-                .fluidInputs(Ichorium.getFluid(L * 24 * 64 + L * 64)) // foil + recipe fluids
-                .fluidInputs(Hdcs.getFluid(L * 4 * 64)) // long stick
-                .output(EMITTER_UEV, 64)
-                .EUt(VA[UEV])
-                .duration(1800)
-                .CasingTier(UEV)
-                .buildAndRegister();
-
-        //  UIV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Legendarium, 64)
-                .input(ELECTRIC_MOTOR_UIV, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(WRAP_CIRCUIT_UIV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Solarium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
-                .fluidInputs(Zylon.getFluid(L * 4 * 64))
-                .fluidInputs(Astralium.getFluid(L * 24 * 64 + L * 2 * 64)) // foil + recipe fluids
-                .fluidInputs(Legendarium.getFluid(L * 4 * 64)) // long stick
-                .output(EMITTER_UIV, 64)
-                .EUt(VA[UIV])
-                .duration(1800)
-                .CasingTier(UIV)
-                .buildAndRegister();
-
-        //  UXV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(ELECTRIC_MOTOR_UXV, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(WRAP_CIRCUIT_UXV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Hypogen, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
-                .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
-                .fluidInputs(Hikarium.getFluid(L * 24 * 64 + L * 4 * 64)) // foil + recipe fluids
-                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64)) // long stick
-                .output(EMITTER_UXV, 64)
-                .EUt(VA[UXV])
-                .duration(2100)
-                .CasingTier(UXV)
-                .buildAndRegister();
-
-        //  OpV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, TranscendentMetal, 64)
-                .input(ELECTRIC_MOTOR_OpV, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(WRAP_CIRCUIT_OpV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Galaxium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
-                .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
-                .fluidInputs(Arcanium.getFluid(L * 24 * 64 + L * 8 * 64)) // foil + recipe fluids
-                .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64)) // long stick
-                .output(EMITTER_OpV, 64)
-                .EUt(VA[OpV])
-                .duration(2100)
-                .CasingTier(OpV)
-                .buildAndRegister();
-
-        //  MAX (120s)
     }
 
     private static void Sensor() {
@@ -2061,116 +1606,12 @@ public class ComponentAssemblyLine {
                 .input(WRAP_CIRCUIT_UV, 8) // 8 * 16 = 2 * 64
                 .input(cableGtHex, YttriumBariumCuprate, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
-                .fluidInputs(Naquadria.getFluid(L * 24 * 64 + L * 4 * 64)) // foil + recipe fluids
+                .fluidInputs(Naquadria.getFluid(L * 24 * 64 + L * 4 * 64))// Foil + Recipe fluids
                 .output(SENSOR_UV, 64)
                 .EUt(VA[UV])
                 .duration(1500)
                 .CasingTier(UV)
                 .buildAndRegister();
-
-        //  UHV (75s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Adamantium, 64)
-                .input(ELECTRIC_MOTOR_UHV, 64)
-                .input(plateDouble, Adamantium, 64)
-                .input(plateDouble, Adamantium, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(WRAP_CIRCUIT_UHV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Europium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
-                .fluidInputs(Vibranium.getFluid(L * 64)) // recipe fluids
-                .fluidInputs(Orichalcum.getFluid(L * 24 * 64)) // foil
-                .output(SENSOR_UHV, 64)
-                .EUt(VA[UHV])
-                .duration(1500)
-                .CasingTier(UHV)
-                .buildAndRegister();
-
-        //  UEV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Hdcs, 64)
-                .input(ELECTRIC_MOTOR_UEV, 64)
-                .input(plateDouble, Hdcs, 64)
-                .input(plateDouble, Hdcs, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(WRAP_CIRCUIT_UEV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, PedotTMA, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
-                .fluidInputs(Ichorium.getFluid(L * 64)) // recipe fluids
-                .fluidInputs(Seaborgium.getFluid(L * 24 * 64)) // foil
-                .output(SENSOR_UEV, 64)
-                .EUt(VA[UEV])
-                .duration(1800)
-                .CasingTier(UEV)
-                .buildAndRegister();
-
-        //  UIV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Legendarium, 64)
-                .input(ELECTRIC_MOTOR_UIV, 64)
-                .input(plateDouble, Legendarium, 64)
-                .input(plateDouble, Legendarium, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(WRAP_CIRCUIT_UIV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Solarium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
-                .fluidInputs(Zylon.getFluid(L * 4 * 64))
-                .fluidInputs(Astralium.getFluid(L * 2 * 64)) // recipe fluids
-                .fluidInputs(CelestialTungsten.getFluid(L * 24 * 64)) // foil
-                .output(SENSOR_UIV, 64)
-                .EUt(VA[UIV])
-                .duration(1800)
-                .CasingTier(UIV)
-                .buildAndRegister();
-
-        //  UXV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(ELECTRIC_MOTOR_UXV, 64)
-                .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(WRAP_CIRCUIT_UXV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Hypogen, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
-                .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
-                .fluidInputs(Hikarium.getFluid(L * 4 * 64)) // recipe fluids
-                .fluidInputs(WhiteDwarfMatter.getFluid(L * 24 * 64)) // foil
-                .output(SENSOR_UXV, 64)
-                .EUt(VA[UXV])
-                .duration(2100)
-                .CasingTier(UXV)
-                .buildAndRegister();
-
-        //  OpV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, TranscendentMetal, 64)
-                .input(ELECTRIC_MOTOR_OpV, 64)
-                .input(plateDouble, TranscendentMetal, 64)
-                .input(plateDouble, TranscendentMetal, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(WRAP_CIRCUIT_OpV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Galaxium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
-                .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
-                .fluidInputs(Arcanium.getFluid(L * 8 * 64)) // recipe fluids
-                .fluidInputs(Edenium.getFluid(L * 24 * 64)) // foil
-                .output(SENSOR_OpV, 64)
-                .EUt(VA[OpV])
-                .duration(2100)
-                .CasingTier(OpV)
-                .buildAndRegister();
-
-        //  MAX (120s)
     }
 
     private static void FieldGen() {
@@ -2386,120 +1827,6 @@ public class ComponentAssemblyLine {
                 .duration(1500)
                 .CasingTier(UV)
                 .buildAndRegister();
-
-        //  UHV (75s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Adamantium, 64)
-                .input(plateDouble, Adamantium, 64)
-                .input(plateDouble, Adamantium, 64)
-                .input(plateDouble, Adamantium, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(EMITTER_UHV, 64)
-                .input(EMITTER_UHV, 64)
-                .input(WRAP_CIRCUIT_UHV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Europium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
-                .fluidInputs(Vibranium.getFluid(L * 64))
-                .fluidInputs(PedotPSS.getFluid(L * 16 * 64)) // wire fine
-                .output(FIELD_GENERATOR_UHV, 64)
-                .EUt(VA[UHV])
-                .duration(1500)
-                .CasingTier(UHV)
-                .buildAndRegister();
-
-        //  UEV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Hdcs, 64)
-                .input(plateDouble, Hdcs, 64)
-                .input(plateDouble, Hdcs, 64)
-                .input(plateDouble, Hdcs, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(GRAVI_STAR, 64)
-                .input(EMITTER_UEV, 64)
-                .input(EMITTER_UEV, 64)
-                .input(WRAP_CIRCUIT_UEV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, PedotTMA, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 20 * 64))
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
-                .fluidInputs(Ichorium.getFluid(L * 64))
-                .fluidInputs(QuantumAlloy.getFluid(L * 16 * 64)) // wire fine
-                .output(FIELD_GENERATOR_UEV, 64)
-                .EUt(VA[UEV])
-                .duration(1800)
-                .CasingTier(UEV)
-                .buildAndRegister();
-
-        //  UIV (90s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, Legendarium, 64)
-                .input(plateDouble, Legendarium, 64)
-                .input(plateDouble, Legendarium, 64)
-                .input(plateDouble, Legendarium, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(EMITTER_UIV, 64)
-                .input(EMITTER_UIV, 64)
-                .input(WRAP_CIRCUIT_UIV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Solarium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 24 * 64))
-                .fluidInputs(Zylon.getFluid(L * 4 * 64))
-                .fluidInputs(Astralium.getFluid(L * 2 * 64))
-                .fluidInputs(FullereneSuperconductor.getFluid(L * 16 * 64)) // wire fine
-                .output(FIELD_GENERATOR_UIV, 64)
-                .EUt(VA[UIV])
-                .duration(1800)
-                .CasingTier(UIV)
-                .buildAndRegister();
-
-        //  UXV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(EMITTER_UXV, 64)
-                .input(EMITTER_UXV, 64)
-                .input(WRAP_CIRCUIT_UXV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Hypogen, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 28 * 64))
-                .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
-                .fluidInputs(Hikarium.getFluid(L * 4 * 64))
-                .fluidInputs(BoronFranciumCarbideSuperconductor.getFluid(L * 16 * 64)) // wire fine
-                .output(FIELD_GENERATOR_UXV, 64)
-                .EUt(VA[UXV])
-                .duration(2100)
-                .CasingTier(UXV)
-                .buildAndRegister();
-
-        //  OpV (105s)
-        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, TranscendentMetal, 64)
-                .input(plateDouble, TranscendentMetal, 64)
-                .input(plateDouble, TranscendentMetal, 64)
-                .input(plateDouble, TranscendentMetal, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(UNSTABLE_STAR, 64)
-                .input(EMITTER_OpV, 64)
-                .input(EMITTER_OpV, 64)
-                .input(WRAP_CIRCUIT_OpV, 8) // 8 * 16 = 2 * 64
-                .input(cableGtHex, Galaxium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
-                .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
-                .fluidInputs(Arcanium.getFluid(L * 8 * 64))
-                .fluidInputs(NeutroniumSuperconductor.getFluid(L * 16 * 64)) // wire fine
-                .output(FIELD_GENERATOR_OpV, 64)
-                .EUt(VA[OpV])
-                .duration(2100)
-                .CasingTier(OpV)
-                .buildAndRegister();
-
-        //  MAX (120s)
     }
 
     private static void WrapItems() {
