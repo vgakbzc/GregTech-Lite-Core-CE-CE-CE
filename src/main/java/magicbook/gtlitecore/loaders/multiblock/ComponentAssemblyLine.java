@@ -678,6 +678,8 @@ public class ComponentAssemblyLine {
 
         //  LuV (60s)
         for (FluidStack stack : new FluidStack[]{
+                SiliconeRubber.getFluid(L * 8 * 64),
+                StyreneButadieneRubber.getFluid(L * 8 * 64),
                 StyreneButadieneRubber.getFluid(L * 8 * 64),
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 8 * 64)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -700,6 +702,8 @@ public class ComponentAssemblyLine {
 
         //  ZPM (60s)
         for (FluidStack stack : new FluidStack[]{
+                SiliconeRubber.getFluid(L * 16 * 64),
+                StyreneButadieneRubber.getFluid(L * 16 * 64),
                 StyreneButadieneRubber.getFluid(L * 16 * 64),
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 16 * 64)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -721,6 +725,8 @@ public class ComponentAssemblyLine {
         }
         //  UV (75s)
         for (FluidStack stack : new FluidStack[]{
+                SiliconeRubber.getFluid(L * 24* 64),
+                StyreneButadieneRubber.getFluid(L * 24 * 64),
                 StyreneButadieneRubber.getFluid(L * 24 * 64),
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 24 * 64)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -730,17 +736,135 @@ public class ComponentAssemblyLine {
                     .input(stickLong, Tritanium, 64)
                     .input(stickLong, Tritanium, 64)
                     .input(cableGtHex, YttriumBariumCuprate, 8)
-                    .fluidInputs(Lubricant.getFluid(L * 4 * 64))
+                    .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                     .fluidInputs(Lubricant.getFluid(64000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Naquadria.getFluid(L * 4 * 64))
-                    .fluidInputs(Tritanium.getFluid(L * 4 * 64 + L * 32))
+                    .fluidInputs(Tritanium.getFluid(L * 4 * 64 + L * 32)) // round + screw
                     .output(CONVEYOR_MODULE_UV, 64)
                     .EUt(VA[UV])
                     .duration(1500)
                     .CasingTier(UV)
                     .buildAndRegister();
         }
+
+        //  UHV (75s)
+        for (FluidStack stack : new FluidStack[]{
+                StyreneButadieneRubber.getFluid(L * 32 * 64),
+                PolyPhosphonitrileFluoroRubber.getFluid(L * 32 * 64)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_UHV, 64)
+                    .input(ELECTRIC_MOTOR_UHV, 64)
+                    .input(plateDouble, Adamantium, 64)
+                    .input(stickLong, Adamantium, 64)
+                    .input(stickLong, Adamantium, 64)
+                    .input(cableGtHex, Europium, 8)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
+                    .fluidInputs(Lubricant.getFluid(192000))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(Vibranium.getFluid(L * 64))
+                    .fluidInputs(Adamantium.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .output(CONVEYOR_MODULE_UHV, 64)
+                    .EUt(VA[UHV])
+                    .duration(1500)
+                    .CasingTier(UHV)
+                    .buildAndRegister();
+        }
+
+        //  UEV (90s)
+        for (FluidStack stack : new FluidStack[]{
+                StyreneButadieneRubber.getFluid(L * 40 * 64),
+                PolyPhosphonitrileFluoroRubber.getFluid(L * 40 * 64)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_UEV, 64)
+                    .input(ELECTRIC_MOTOR_UEV, 64)
+                    .input(plateDouble, Hdcs, 64)
+                    .input(stickLong, Hdcs, 64)
+                    .input(stickLong, Hdcs, 64)
+                    .input(cableGtHex, PedotTMA, 8)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
+                    .fluidInputs(Lubricant.getFluid(320000))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(Ichorium.getFluid(L * 2 * 64))
+                    .fluidInputs(Hdcs.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .output(CONVEYOR_MODULE_UEV, 64)
+                    .EUt(VA[UEV])
+                    .duration(1800)
+                    .CasingTier(UEV)
+                    .buildAndRegister();
+        }
+
+        //  UIV (90s)
+        for (FluidStack stack : new FluidStack[]{
+                StyreneButadieneRubber.getFluid(L * 48 * 64),
+                PolyPhosphonitrileFluoroRubber.getFluid(L * 48 * 64)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_UIV, 64)
+                    .input(ELECTRIC_MOTOR_UIV, 64)
+                    .input(plateDouble, Legendarium, 64)
+                    .input(stickLong, Legendarium, 64)
+                    .input(stickLong, Legendarium, 64)
+                    .input(cableGtHex, Solarium, 8)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
+                    .fluidInputs(Lubricant.getFluid(448000))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(Astralium.getFluid(L * 4 * 64))
+                    .fluidInputs(Legendarium.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .output(CONVEYOR_MODULE_UIV, 64)
+                    .EUt(VA[UIV])
+                    .duration(1800)
+                    .CasingTier(UIV)
+                    .buildAndRegister();
+        }
+
+        //  UXV (105s)
+        for (FluidStack stack : new FluidStack[]{
+                StyreneButadieneRubber.getFluid(L * 56 * 64),
+                PolyPhosphonitrileFluoroRubber.getFluid(L * 56 * 64)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_UXV, 64)
+                    .input(ELECTRIC_MOTOR_UXV, 64)
+                    .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
+                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
+                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
+                    .input(cableGtHex, Hypogen, 8)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
+                    .fluidInputs(Lubricant.getFluid(576000))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(Hikarium.getFluid(L * 8 * 64))
+                    .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .output(CONVEYOR_MODULE_UXV, 64)
+                    .EUt(VA[UXV])
+                    .duration(2100)
+                    .CasingTier(UXV)
+                    .buildAndRegister();
+
+        }
+
+        //  OpV (105s)
+        for (FluidStack stack : new FluidStack[]{
+                StyreneButadieneRubber.getFluid(L * 64 * 64),
+                PolyPhosphonitrileFluoroRubber.getFluid(L * 64 * 64)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_OpV, 64)
+                    .input(ELECTRIC_MOTOR_OpV, 64)
+                    .input(plateDouble, TranscendentMetal, 64)
+                    .input(stickLong, TranscendentMetal, 64)
+                    .input(stickLong, TranscendentMetal, 64)
+                    .input(cableGtHex, Galaxium, 8)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
+                    .fluidInputs(Lubricant.getFluid(704000))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(Arcanium.getFluid(L * 16 * 64))
+                    .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .output(CONVEYOR_MODULE_OpV)
+                    .EUt(VA[OpV])
+                    .duration(2100)
+                    .CasingTier(OpV)
+                    .buildAndRegister();
+        }
+
+        //  MAX (120s)
     }
 
     private static void Pump() {
