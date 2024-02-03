@@ -1,6 +1,6 @@
 package magicbook.gtlitecore.common.blocks;
 
-import gregtech.api.block.VariantActiveBlock;
+import gregtech.api.block.VariantBlock;
 import gregtech.api.items.toolitem.ToolClasses;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -18,23 +18,23 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
- * Transparent Casing
+ * Decorative Transparent Casings
  *
- * @author Gate Guardian, Technus, TechLoad22
+ * @author Gate Guardian, Magic_Sweepy
  *
- * <p>Transparent casings from my friends Gate Guardian's works, TecTech and Gregicality Science.</p>
+ * <p>This transparent casings are some decorative glasses redo by bartworks.</p>
  */
 @ParametersAreNonnullByDefault
-public class BlockTransparentCasing extends VariantActiveBlock<BlockTransparentCasing.TransparentCasingType> {
+public class BlockDecorativeTransparentCasing extends VariantBlock<BlockDecorativeTransparentCasing.DecorativeTransparentCasingType> {
 
-    public BlockTransparentCasing() {
+    public BlockDecorativeTransparentCasing() {
         super(Material.GLASS);
-        setTranslationKey("transparent_casing");
+        setTranslationKey("decorative_transparent_casing");
         setHardness(5.0F);
         setResistance(10.0F);
         setSoundType(SoundType.GLASS);
         setHarvestLevel(ToolClasses.PICKAXE, 3);
-        setDefaultState(this.getState(TransparentCasingType.BPA_POLYCARBONATE_GLASS));
+        setDefaultState(this.getState(DecorativeTransparentCasingType.BOROSILICATE_GLASS));
         this.useNeighborBrightness = true;
     }
 
@@ -84,18 +84,25 @@ public class BlockTransparentCasing extends VariantActiveBlock<BlockTransparentC
                 super.shouldSideBeRendered(state, world, pos, side);
     }
 
-    public enum TransparentCasingType implements IStringSerializable {
-        BPA_POLYCARBONATE_GLASS("bpa_polycarbonate_glass"),
-        PMMA_GLASS("pmma_glass"),
-        CBDO_POLYCARBONATE_GLASS("cbdo_polycarbonate_glass"),
-        INFINITY_GLASS("infinity_glass"),
-        QUANTUM_GLASS("quantum_glass");
+    public enum DecorativeTransparentCasingType implements IStringSerializable {
+        BOROSILICATE_GLASS("borosilicate_glass"),
+        TITANIUM_REINFORCED_BOROSILICATE_GLASS("titanium_reinforced_borosilicate_glass"),
+        TUNGSTEN_REINFORCED_BOROSILICATE_GLASS("tungsten_reinforced_borosilicate_glass"),
+        OSMIUM_REINFORCED_BOROSILICATE_GLASS("osmium_reinforced_borosilicate_glass"),
+        NAQUADAH_REINFORCED_BOROSILICATE_GLASS("naquadah_reinforced_borosilicate_glass"),
+        TRINIUM_REINFORCED_BOROSILICATE_GLASS("trinium_reinforced_borosilicate_glass"),
+        MITHRIL_REINFORCED_BOROSILICATE_GLASS("mithril_reinforced_borosilicate_glass"),
+        NEUTRONIUM_REINFORCED_BOROSILICATE_GLASS("neutronium_reinforced_borosilicate_glass"),
+        ABYSSALLOY_REINFORCED_BOROSILICATE_GLASS("abyssalloy_reinforced_borosilicate_glass"),
+        HEAVY_QUARK_DEGENERATE_MATTER_REINFORCED_BOROSILICATE_GLASS("heavy_quark_degenerate_matter_reinforced_borosilicate_glass"),
+        TRANSCENDENT_METAL_REINFORCED_BOROSILICATE_GLASS("transcendent_metal_reinforced_borosilicate_glass");
 
         private final String name;
 
-        TransparentCasingType(String name) {
+        DecorativeTransparentCasingType(String name) {
             this.name = name;
         }
+
         @Nonnull
         @Override
         public String getName() {return this.name;}

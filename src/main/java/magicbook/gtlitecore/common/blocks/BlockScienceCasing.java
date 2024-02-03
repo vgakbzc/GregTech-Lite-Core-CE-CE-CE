@@ -12,6 +12,14 @@ import net.minecraft.world.IBlockAccess;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * Science Casings
+ *
+ * @author Technus
+ *
+ * <p>Some high-tech style blocks from TecTech (on MIT License).</p>
+ * <p>Please see <a href="https://github.com/Technus/TecTech">TecTech</a>, these textures are beautiful!</p>
+ */
 @ParametersAreNonnullByDefault
 public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceCasingType> {
     public BlockScienceCasing() {
