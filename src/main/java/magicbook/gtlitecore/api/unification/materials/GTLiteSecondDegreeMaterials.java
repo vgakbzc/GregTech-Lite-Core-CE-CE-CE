@@ -897,6 +897,7 @@ public class GTLiteSecondDegreeMaterials {
         //  12068 Transcendent Metal
         TranscendentMetal = new Material.Builder(getId(), gregtechId("transcendent_metal"))
                 .ingot()
+                .liquid()
                 .color(0x1A1A1A)
                 .iconSet(METALLIC)
                 .blast(b -> b
