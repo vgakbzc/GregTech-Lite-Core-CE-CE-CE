@@ -952,6 +952,20 @@ public class GTLiteSecondDegreeMaterials {
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
+        //  12073 Fluxed Electrum
+        FluxedElectrum = new Material.Builder(getId(), gregtechId("fluxed_electrum"))
+                .ingot()
+                .fluid()
+                .color(0xFFE049)
+                .iconSet(BRIGHT)
+                .components(Electrum, 8, RoseGold, 4, SterlingSilver, 4, NaquadahEnriched, 2)
+                .blast(b -> b
+                        .temp(8400, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[ZPM], 877)
+                        .vacuumStats(VA[IV], 405))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
     }
 
     private static int getId() {

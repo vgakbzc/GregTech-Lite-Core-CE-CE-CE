@@ -116,6 +116,11 @@ public class MetaTileEntityElectrolyticTank extends RecipeMapMultiblockControlle
     }
 
     @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
+    @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
                                @Nonnull List<String> tooltip,
