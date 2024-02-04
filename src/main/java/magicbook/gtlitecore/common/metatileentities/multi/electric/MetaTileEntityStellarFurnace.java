@@ -60,7 +60,7 @@ public class MetaTileEntityStellarFurnace extends RecipeMapMultiblockController 
                 .aisle("               ", "      CSC      ", "      C C      ", "      C C      ", "      C C      ", "      C C      ", "      C C      ", "      CCC      ", "               ")
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState())
-                        .setMinGlobalLimited(145)
+                        .setMinGlobalLimited(140)
                         .or(autoAbilities()))
                 .where('X', states(getSecondCasingState()))
                 .where('F', states(getCoilState()))
