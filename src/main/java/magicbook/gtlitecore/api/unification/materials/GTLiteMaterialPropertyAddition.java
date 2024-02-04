@@ -26,7 +26,7 @@ public class GTLiteMaterialPropertyAddition {
         Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         Terbium.setProperty(PropertyKey.DUST, new DustProperty());
         Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
-        // Holmium.setProperty(PropertyKey.DUST, new DustProperty());
+        Holmium.setProperty(PropertyKey.DUST, new DustProperty());
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -207,7 +207,6 @@ public class GTLiteMaterialPropertyAddition {
         Lawrencium.addFlags(GENERATE_FRAME);
         NiobiumNitride.addFlags(GENERATE_FRAME);
         TitaniumTungstenCarbide.addFlags(GENERATE_FRAME);
-        Ruthenium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -371,7 +370,7 @@ public class GTLiteMaterialPropertyAddition {
         wireProp.setLossPerBlock(32);
         wireProp.setVoltage((int) V[UIV]);
 
-        if (GTLiteConfigHolder.recipes.enableHarderMolybdenumRheniumProcess) {
+        if (GTLiteConfigHolder.chainOverrides.enableMolybdenumProcessing) {
             Molybdenite.addFlags(DISABLE_DECOMPOSITION);
             OreProperty oreProp = Molybdenite.getProperty(PropertyKey.ORE);
             oreProp.setDirectSmeltResult(null);
@@ -379,7 +378,7 @@ public class GTLiteMaterialPropertyAddition {
             Wulfenite.addFlags(DISABLE_DECOMPOSITION);
         }
 
-        if (GTLiteConfigHolder.recipes.enableHarderNiobiumTantalumProcess) {
+        if (GTLiteConfigHolder.chainOverrides.enableNiobiumTantalumProcessing) {
             Pyrochlore.addFlags(DISABLE_DECOMPOSITION);
             Tantalite.addFlags(DISABLE_DECOMPOSITION);
         }

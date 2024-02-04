@@ -68,6 +68,7 @@ tile.structure_casing.maraging_steel_250_casing.name=高耐久马氏体时效钢
 tile.structure_casing.ruridit_casing.name=抗弯曲钌铱合金机器外壳
 tile.structure_casing.osmiridium_casing.name=高强度铱锇合金机器外壳
 tile.structure_casing.advanced_grate_casing.name=进阶栅格机械方块
+tile.structure_casing.fluxed_electrum_casing.name=抗激光通流琥珀金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1285,6 +1286,13 @@ gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
 gtlitecore.machine.large_bio_reactor.name=大型生物反应室
 
+gtlitecore.machine.large_euv_mask_aligner.name=大型紫外光刻塔
+gtlitecore.machine.large_euv_mask_aligner.tooltip.1=运行§r精密激光蚀刻机§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.large_euv_mask_aligner.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_euv_mask_aligner.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.large_euv_mask_aligner.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.large_euv_mask_aligner.tooltip.5=最大并行数：§e4096§7
+
 gtlitecore.machine.ion_lithography_factory.name=大型离子光刻厂
 gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
 gtlitecore.machine.ion_lithography_factory.tooltip.2=激光蚀刻技术的绝对顶点
@@ -1703,6 +1711,7 @@ gregtech.material.transcendent_metal=超时空金属
 gregtech.material.arcanium=韵律源金
 gregtech.material.laurenium=劳伦姆合金
 gregtech.material.neutronium_superconductor=中子素超导体
+gregtech.material.fluxed_electrum=通流琥珀金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

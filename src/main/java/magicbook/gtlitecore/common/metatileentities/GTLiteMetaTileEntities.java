@@ -149,6 +149,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityElectromagneticSeparationPlant ELECTROMAGNETIC_SEPARATION_PLANT;
     public static MetaTileEntityLargeVacuumChamber LARGE_VACUUM_CHAMBER;
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
+    public static MetaTileEntityLargeEUVMaskAligner LARGE_EUV_MASK_ALIGNER;
     public static MetaTileEntityIonLithographyFactory ION_LITHOGRAPHY_FACTORY;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
@@ -364,7 +365,7 @@ public class GTLiteMetaTileEntities {
         ELECTROMAGNETIC_SEPARATION_PLANT = registerMultiMetaTileEntity(87, new MetaTileEntityElectromagneticSeparationPlant(gtliteId("electromagnetic_separation_plant")));
         LARGE_VACUUM_CHAMBER = registerMultiMetaTileEntity(88, new MetaTileEntityLargeVacuumChamber(gtliteId("large_vacuum_chamber")));
         LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));
-        //  90 Mega Laser Engraver
+        LARGE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityLargeEUVMaskAligner(gtliteId("large_euv_mask_aligner")));
         ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(91, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
         //  92 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
         //  93 SUPERSTRUCTURE_ASSEMBLY_PLANT

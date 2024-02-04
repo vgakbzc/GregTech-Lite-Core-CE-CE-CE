@@ -1634,10 +1634,27 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Large EUV Mask Aligner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, FluxedElectrum, 4)
+                .input(LARGE_ENGRAVER, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, HY1301, 4)
+                .input(plateDouble, Tantalloy61, 4)
+                .input(gear, Inconel792, 4)
+                .input(gearSmall, EglinSteel, 16)
+                .input(cableGtQuadruple, HSSG, 4)
+                .fluidInputs(TantalumCarbide.getFluid(L * 4))
+                .output(LARGE_EUV_MASK_ALIGNER)
+                .EUt(VA[LuV])
+                .duration(1200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Ion Lithography Factory
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Cinobite, 16)
-                .input(LARGE_ENGRAVER, 64) // todo Mega Laser Engraver
+                .input(LARGE_EUV_MASK_ALIGNER, 64)
                 .input(ION_IMPLANTATOR, 64)
                 .input(ELECTROLYTIC_TANK, 64)
                 .input(ELECTROMAGNETIC_SEPARATION_PLANT, 64)
@@ -3865,6 +3882,21 @@ public class MachineRecipeLoader {
                 .input(frameGt, Osmiridium)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.OSMIRIDIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Fluxed Electrum Casing
+        ModHandler.addShapedRecipe(true, "fluxed_electrum_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FLUXED_ELECTRUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, FluxedElectrum),
+                'F', new UnificationEntry(frameGt, TitaniumTungstenCarbide));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, FluxedElectrum, 6)
+                .input(frameGt, TitaniumTungstenCarbide)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FLUXED_ELECTRUM_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
