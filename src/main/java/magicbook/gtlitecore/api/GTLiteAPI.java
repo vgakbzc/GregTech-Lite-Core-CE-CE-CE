@@ -20,7 +20,7 @@ public class GTLiteAPI {
     //  Creative Tabs
     public static final BaseCreativeTab TAB_GTLITE = new BaseCreativeTab("gtlite", () -> OreDictUnifier.get(OrePrefix.gear, GTLiteMaterials.Legendarium), true);
     public static final BaseCreativeTab TAB_GTLITE_BLOCK = new BaseCreativeTab("gtlite.block", () -> GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.LAURENIUM_CASING), false);
-    public static final BaseCreativeTab TAB_GTLITE_BLOCK_DECORATIVE = new BaseCreativeTab("gtlite.decorative_block", () -> GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_UXV), false);
+    public static final BaseCreativeTab TAB_GTLITE_BLOCK_DECORATIVE = new BaseCreativeTab("gtlite.decorative_block", () -> GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TITANIUM_REINFORCED_BOROSILICATE_GLASS), false);
     public static final BaseCreativeTab TAB_GTLITE_CIRCUIT = new BaseCreativeTab("gtlite.circuit", () -> GTLiteMetaItems.OPTICAL_PROCESSOR.getStackForm(), false);
     public static final BaseCreativeTab TAB_GTLITE_TOOL = new BaseCreativeTab("gtlite.tool", () -> GTLiteMetaItems.STRUCTURE_WRITER.getStackForm(), false);
     public static final BaseCreativeTab TAB_GTLITE_PARTICLE = new BaseCreativeTab("gtlite.particle", () -> GTLiteMetaItems.ALPHA_PARTICLE.getStackForm(), false);

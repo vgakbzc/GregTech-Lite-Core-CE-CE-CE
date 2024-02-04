@@ -68,6 +68,7 @@ tile.structure_casing.maraging_steel_250_casing.name=高耐久马氏体时效钢
 tile.structure_casing.ruridit_casing.name=抗弯曲钌铱合金机器外壳
 tile.structure_casing.osmiridium_casing.name=高强度铱锇合金机器外壳
 tile.structure_casing.advanced_grate_casing.name=进阶栅格机械方块
+tile.structure_casing.fluxed_electrum_casing.name=抗激光通流琥珀金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -250,6 +251,18 @@ tile.hermetic_casing.uiv.name=密封机械方块 XI
 tile.hermetic_casing.uxv.name=密封机械方块 XII
 tile.hermetic_casing.opv.name=密封机械方块 XIII
 tile.hermetic_casing.max.name=密封机械方块 XIV
+
+tile.decorative_transparent_casing.borosilicate_glass.name=硼硅玻璃
+tile.decorative_transparent_casing.titanium_reinforced_borosilicate_glass.name=钛强化硼硅玻璃
+tile.decorative_transparent_casing.tungsten_reinforced_borosilicate_glass.name=钨强化硼硅玻璃
+tile.decorative_transparent_casing.osmium_reinforced_borosilicate_glass.name=锇强化硼硅玻璃
+tile.decorative_transparent_casing.naquadah_reinforced_borosilicate_glass.name=硅岩强化硼硅玻璃
+tile.decorative_transparent_casing.trinium_reinforced_borosilicate_glass.name=凯金强化硼硅玻璃
+tile.decorative_transparent_casing.mithril_reinforced_borosilicate_glass.name=秘银强化硼硅玻璃
+tile.decorative_transparent_casing.neutronium_reinforced_borosilicate_glass.name=中子素强化硼硅玻璃
+tile.decorative_transparent_casing.abyssalloy_reinforced_borosilicate_glass.name=渊狱合金强化硼硅玻璃
+tile.decorative_transparent_casing.heavy_quark_degenerate_matter_reinforced_borosilicate_glass.name=重夸克简并物质强化硼硅玻璃
+tile.decorative_transparent_casing.transcendent_metal_reinforced_borosilicate_glass.name=超时空金属强化硼硅玻璃
 
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -558,11 +571,8 @@ metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 metaitem.cover.electric_motor.ulv.name=电动马达（§8ULV§r）
 metaitem.cover.electric_piston.ulv.name=电力活塞（§8ULV§r）
 metaitem.cover.electric_pump.ulv.name=电动泵（§8ULV§r）
-metaitem.cover.electric_pump.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f32 L/t§7
 metaitem.cover.conveyor_module.ulv.name=传送带（§8ULV§r）
-metaitem.cover.conveyor_module.ulv.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f4 件物品/s§7
 metaitem.cover.robot_arm.ulv.name=机械臂（§8ULV§r）
-metaitem.cover.robot_arm.ulv.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f4 件物品/s§7
 metaitem.cover.emitter.ulv.name=发射器（§8ULV§r）
 metaitem.cover.sensor.ulv.name=传感器（§8ULV§r）
 metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
@@ -570,11 +580,8 @@ metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
 metaitem.cover.electric_motor.max.name=电动马达（§c§lMAX§r）
 metaitem.cover.electric_piston.max.name=电力活塞（§c§lMAX§r）
 metaitem.cover.electric_pump.max.name=电动泵（§c§lMAX§r）
-metaitem.cover.electric_pump.max.tooltip=作§f覆盖板§7时以特定速率传输§f流体§7。/n§b传输速率:§f1048576 L/t§7
 metaitem.cover.conveyor_module.max.name=传送带（§c§lMAX§r）
-metaitem.cover.conveyor_module.max.tooltip=作§f覆盖板§7时以特定速率传输§f物品§7。/n§b传输速率:§f16 组物品/s§7
 metaitem.cover.robot_arm.max.name=机械臂（§c§lMAX§r）
-metaitem.cover.robot_arm.max.tooltip=作§f覆盖板§7时对§f物品§7的量加以限制。/n§b传输速率:§f16 组物品/s§7
 metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
 metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
 metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
@@ -1279,6 +1286,13 @@ gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
 gtlitecore.machine.large_bio_reactor.name=大型生物反应室
 
+gtlitecore.machine.large_euv_mask_aligner.name=大型紫外光刻塔
+gtlitecore.machine.large_euv_mask_aligner.tooltip.1=运行§r精密激光蚀刻机§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.large_euv_mask_aligner.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_euv_mask_aligner.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.large_euv_mask_aligner.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.large_euv_mask_aligner.tooltip.5=最大并行数：§e4096§7
+
 gtlitecore.machine.ion_lithography_factory.name=大型离子光刻厂
 gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
 gtlitecore.machine.ion_lithography_factory.tooltip.2=激光蚀刻技术的绝对顶点
@@ -1697,6 +1711,7 @@ gregtech.material.transcendent_metal=超时空金属
 gregtech.material.arcanium=韵律源金
 gregtech.material.laurenium=劳伦姆合金
 gregtech.material.neutronium_superconductor=中子素超导体
+gregtech.material.fluxed_electrum=通流琥珀金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

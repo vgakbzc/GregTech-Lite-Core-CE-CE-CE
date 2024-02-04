@@ -211,17 +211,29 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         //  Covers
         ELECTRIC_MOTOR_ULV = this.addItem(255, "cover.electric_motor.ulv");
         ELECTRIC_PISTON_ULV = this.addItem(256, "cover.electric_piston.ulv");
-        ELECTRIC_PUMP_ULV = this.addItem(257, "cover.electric_pump.ulv");
-        CONVEYOR_MODULE_ULV = this.addItem(258, "cover.conveyor_module.ulv");
-        ROBOT_ARM_ULV = this.addItem(259, "cover.robot_arm.ulv");
+        ELECTRIC_PUMP_ULV = this.addItem(257, "cover.electric_pump.ulv").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.electric.pump.tooltip"));
+            lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 32));}));
+        CONVEYOR_MODULE_ULV = this.addItem(258, "cover.conveyor_module.ulv").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.conveyor.module.tooltip"));
+            lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate", 4));}));
+        ROBOT_ARM_ULV = this.addItem(259, "cover.robot_arm.ulv").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.robot.arm.tooltip"));
+            lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate", 4));}));
         EMITTER_ULV = this.addItem(260, "cover.emitter.ulv");
         SENSOR_ULV = this.addItem(261, "cover.sensor.ulv");
         FIELD_GENERATOR_ULV = this.addItem(262, "cover.field_generator.ulv");
         ELECTRIC_MOTOR_MAX = this.addItem(263, "cover.electric_motor.max");
         ELECTRIC_PISTON_MAX = this.addItem(264, "cover.electric_piston.max");
-        ELECTRIC_PUMP_MAX = this.addItem(265, "cover.electric_pump.max");
-        CONVEYOR_MODULE_MAX = this.addItem(266, "cover.conveyor_module.max");
-        ROBOT_ARM_MAX = this.addItem(267, "cover.robot_arm.max");
+        ELECTRIC_PUMP_MAX = this.addItem(265, "cover.electric_pump.max").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.electric.pump.tooltip"));
+            lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 1048576));}));
+        CONVEYOR_MODULE_MAX = this.addItem(266, "cover.conveyor_module.max").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.conveyor.module.tooltip"));
+            lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate_stacks", 16));}));
+        ROBOT_ARM_MAX = this.addItem(267, "cover.robot_arm.max").addComponents(new TooltipBehavior((lines) -> {
+            lines.add(I18n.format("metaitem.robot.arm.tooltip"));
+            lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate_stacks", 16));}));
         EMITTER_MAX = this.addItem(268, "cover.emitter.max");
         SENSOR_MAX = this.addItem(269, "cover.sensor.max");
         FIELD_GENERATOR_MAX = this.addItem(270, "cover.field_generator.max");

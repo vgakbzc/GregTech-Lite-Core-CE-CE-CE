@@ -206,6 +206,7 @@ public class GTLiteMaterialPropertyAddition {
         Nobelium.addFlags(GENERATE_FRAME);
         Lawrencium.addFlags(GENERATE_FRAME);
         NiobiumNitride.addFlags(GENERATE_FRAME);
+        TitaniumTungstenCarbide.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

@@ -188,7 +188,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) (V[UIV] - V[UV])))
                 .color(0xBE00FF)
-                .iconSet(BRIGHT)
+                .iconSet(CUSTOM_RHUGNOR)
                 .element(GTLiteElements.Rhugnor)
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)

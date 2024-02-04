@@ -17,8 +17,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+/**
+ * Transparent Casing
+ *
+ * @author Gate Guardian, Technus, TechLoad22
+ *
+ * <p>Transparent casings from my friends Gate Guardian's works, TecTech and Gregicality Science.</p>
+ */
 @ParametersAreNonnullByDefault
 public class BlockTransparentCasing extends VariantActiveBlock<BlockTransparentCasing.TransparentCasingType> {
+
     public BlockTransparentCasing() {
         super(Material.GLASS);
         setTranslationKey("transparent_casing");
@@ -30,6 +38,7 @@ public class BlockTransparentCasing extends VariantActiveBlock<BlockTransparentC
         this.useNeighborBrightness = true;
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

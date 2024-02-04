@@ -456,6 +456,18 @@ public class MiscRecipes {
                 .duration(80)
                 .buildAndRegister();
 
+        //  Flux Electrum
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Electrum, 8)
+                .input(dust, RoseGold, 4)
+                .input(dust, SterlingSilver, 4)
+                .input(dust, NaquadahEnriched, 2)
+                .circuitMeta(4)
+                .output(dust, FluxedElectrum, 18)
+                .EUt(VA[ZPM])
+                .duration(240)
+                .buildAndRegister();
+
     }
 
     private static void OtherRecipes() {

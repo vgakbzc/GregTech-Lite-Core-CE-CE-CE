@@ -1475,11 +1475,11 @@ public class MachineRecipeLoader {
                 .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 4))
                 .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 4))
                 .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.OpV, 4))
-                .input(plateDouble, Legendarium, 16)
-                .input(plateDouble, Spacetime, 16)
-                .input(plateDouble, TranscendentMetal, 16)
-                .input(plateDouble, Infinity, 16)
-                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 32)
+                .input(plateDouble, Legendarium, 32)
+                .input(plateDouble, Spacetime, 32)
+                .input(plateDouble, TranscendentMetal, 32)
+                .input(plateDouble, Infinity, 32)
+                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 16)
                 .input(cableGtQuadruple, Galaxium, 4)
                 .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(128000))
                 .fluidInputs(Arcanium.getFluid(57600))
@@ -1508,8 +1508,8 @@ public class MachineRecipeLoader {
                 .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.UXV, 16))
                 .input(plateDense, Spacetime, 4)
                 .input(plateDense, CosmicNeutronium, 4)
-                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(gear, Infinity, 64)
+                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 16)
+                .input(gear, Infinity, 16)
                 .input(stickLong, Hypogen, 32)
                 .input(wireGtOctal, BoronFranciumCarbideSuperconductor, 4)
                 .fluidInputs(CosmicComputingMixture.getFluid(65536))
@@ -1634,23 +1634,40 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Large EUV Mask Aligner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, FluxedElectrum, 4)
+                .input(LARGE_ENGRAVER, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, HY1301, 4)
+                .input(plateDouble, Tantalloy61, 4)
+                .input(gear, Inconel792, 4)
+                .input(gearSmall, EglinSteel, 16)
+                .input(cableGtQuadruple, HSSG, 4)
+                .fluidInputs(TantalumCarbide.getFluid(L * 4))
+                .output(LARGE_EUV_MASK_ALIGNER)
+                .EUt(VA[LuV])
+                .duration(1200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Ion Lithography Factory
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Cinobite, 16)
-                .input(LARGE_ENGRAVER, 64) // todo Mega Laser Engraver
+                .input(LARGE_EUV_MASK_ALIGNER, 64)
                 .input(ION_IMPLANTATOR, 64)
                 .input(ELECTROLYTIC_TANK, 64)
                 .input(ELECTROMAGNETIC_SEPARATION_PLANT, 64)
                 .input(PHOTON, 64)
-                .input(plateDense, Orichalcum, 16)
-                .input(plateDense, Adamantium, 16)
+                .input(plateDense, Orichalcum, 6)
+                .input(plateDense, Adamantium, 6)
                 .input(circuit, MarkerMaterials.Tier.UEV, 64)
                 .input(circuit, MarkerMaterials.Tier.UEV, 64)
                 .input(ELECTRIC_PUMP_UHV, 32)
                 .input(CONVEYOR_MODULE_UHV, 32)
                 .input(ROBOT_ARM_UHV, 32)
                 .input(FIELD_GENERATOR_UHV, 32)
-                .input(gear, MetastableOganesson, 32)
+                .input(gear, MetastableOganesson, 16)
                 .input(wireGtHex, PedotPSS, 64)
                 .fluidInputs(Trinaquadalloy.getFluid(65536))
                 .fluidInputs(TitanSteel.getFluid(65536))
@@ -3865,6 +3882,21 @@ public class MachineRecipeLoader {
                 .input(frameGt, Osmiridium)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.OSMIRIDIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Fluxed Electrum Casing
+        ModHandler.addShapedRecipe(true, "fluxed_electrum_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FLUXED_ELECTRUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, FluxedElectrum),
+                'F', new UnificationEntry(frameGt, TitaniumTungstenCarbide));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, FluxedElectrum, 6)
+                .input(frameGt, TitaniumTungstenCarbide)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FLUXED_ELECTRUM_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
