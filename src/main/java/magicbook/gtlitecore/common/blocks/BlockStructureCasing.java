@@ -35,7 +35,8 @@ public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.Stru
         MARAGING_STEEL_250_CASING("maraging_steel_250_casing"),
         RURIDIT_CASING("ruridit_casing"),
         OSMIRIDIUM_CASING("osmiridium_casing"),
-        ADVANCED_GRATE_CASING("advanced_grate_casing");
+        ADVANCED_GRATE_CASING("advanced_grate_casing"),
+        FLUXED_ELECTRUM_CASING("fluxed_electrum_casing");
 
         private final String name;
 

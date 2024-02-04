@@ -25,6 +25,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/advanced_grate_casing"
         }
+      },
+      "fluxed_electrum_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/fluxed_electrum_casing"
+        }
       }
     }
   }

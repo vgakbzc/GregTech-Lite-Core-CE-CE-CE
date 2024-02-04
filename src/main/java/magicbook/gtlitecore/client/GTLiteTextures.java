@@ -112,6 +112,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer MARAGING_STEEL_250_CASING = new GTLiteOverlayRenderer("casings/maraging_steel_250_casing");
     public static GTLiteOverlayRenderer RURIDIT_CASING = new GTLiteOverlayRenderer("casings/ruridit_casing");
     public static GTLiteOverlayRenderer OSMIRIDIUM_CASING = new GTLiteOverlayRenderer("casings/osmiridium_casing");
+    public static GTLiteOverlayRenderer FLUXED_ELECTRUM_CASING = new GTLiteOverlayRenderer("casings/fluxed_electrum_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

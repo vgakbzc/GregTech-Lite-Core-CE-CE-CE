@@ -32,6 +32,7 @@ public class RecipeManager {
         WireCoils.init();
         Crucibles.init();
         Explosives.init();
+        DecorativeBlocks.init();
     }
 
     private static void initChains() {

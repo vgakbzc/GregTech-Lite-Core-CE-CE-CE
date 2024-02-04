@@ -1,0 +1,84 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/borosilicate_glass"
+        }
+      },
+      "titanium_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/titanium_reinforced_borosilicate_glass"
+        }
+      },
+      "tungsten_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/tungsten_reinforced_borosilicate_glass"
+        }
+      },
+      "osmium_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/osmium_reinforced_borosilicate_glass"
+        }
+      },
+      "naquadah_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadah_reinforced_borosilicate_glass"
+        }
+      },
+      "trinium_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/trinium_reinforced_borosilicate_glass"
+        }
+      },
+      "mithril_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/mithril_reinforced_borosilicate_glass"
+        }
+      },
+      "neutronium_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/neutronium_reinforced_borosilicate_glass"
+        }
+      },
+      "abyssalloy_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/abyssalloy_reinforced_borosilicate_glass"
+        }
+      },
+      "heavy_quark_degenerate_matter_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/heavy_quark_degenerate_matter_reinforced_borosilicate_glass"
+        }
+      },
+      "transcendent_metal_reinforced_borosilicate_glass": {
+        "model": "minecraft:cube_all",
+        "ambientocclusion": false,
+        "textures": {
+          "all": "gtlitecore:blocks/casings/transcendent_metal_reinforced_borosilicate_glass"
+        }
+      }
+    }
+  }
+}
