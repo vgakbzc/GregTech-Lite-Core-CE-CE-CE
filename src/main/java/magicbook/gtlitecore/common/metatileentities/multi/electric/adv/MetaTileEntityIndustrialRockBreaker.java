@@ -1,9 +1,6 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
 
-import gregicality.multiblocks.api.render.GCYMTextures;
 import gregicality.multiblocks.api.unification.GCYMMaterials;
-import gregicality.multiblocks.common.block.GCYMMetaBlocks;
-import gregicality.multiblocks.common.block.blocks.BlockUniqueCasing;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -15,8 +12,8 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
-import gregtech.common.blocks.BlockGlassCasing;
-import gregtech.common.blocks.BlockTurbineCasing;
+import gregtech.client.renderer.texture.Textures;
+import gregtech.common.blocks.BlockBoilerCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
@@ -35,41 +32,35 @@ import java.util.List;
 
 import static gregtech.api.GTValues.EV;
 
-public class MetaTileEntityLargeWiremillArray extends RecipeMapMultiblockController {
+public class MetaTileEntityIndustrialRockBreaker extends RecipeMapMultiblockController {
 
-    public MetaTileEntityLargeWiremillArray(ResourceLocation metaTileEntityId) {
-        super(metaTileEntityId, RecipeMaps.WIREMILL_RECIPES);
-        this.recipeMapWorkable = new WiremillArrayRecipeLogic(this);
+    public MetaTileEntityIndustrialRockBreaker(ResourceLocation metaTileEntityId) {
+        super(metaTileEntityId, RecipeMaps.ROCK_BREAKER_RECIPES);
+        this.recipeMapWorkable = new IndustrialRockBreakerRecipeLogic(this);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new MetaTileEntityLargeWiremillArray(metaTileEntityId);
+        return new MetaTileEntityIndustrialRockBreaker(metaTileEntityId);
     }
 
     @Nonnull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
-                .aisle("CCCCC", " CMC ", " CCC ", "     ", "     ")
-                .aisle("CCCCC", "CGGGC", "CGGGC", "CCCCC", "CCCCC")
-                .aisle("CCCCC", "XF#FX", "XO#OX", "XF#FX", "CCCCC")
-                .aisle("CCCCC", "X###X", "X###X", "X###X", "CCCCC")
-                .aisle("CCCCC", "XF#FX", "XO#OX", "XF#FX", "CCCCC")
-                .aisle("CCCCC", "X###X", "X###X", "X###X", "CCCCC")
-                .aisle("CCCCC", "XF#FX", "XO#OX", "XF#FX", "CCCCC")
-                .aisle("CCCCC", "X###X", "X###X", "X###X", "CCCCC")
-                .aisle("CCCCC", "XF#FX", "XO#OX", "XF#FX", "CCCCC")
-                .aisle("CCCCC", "CGGGC", "CGGGC", "CCCCC", "CCCCC")
-                .aisle("CCCCC", " CSC ", " CCC ", "     ", "     ")
+                .aisle(" F   F ", "FFCCCFF", " FCMCF ", "FFCCCFF", " F   F ")
+                .aisle(" CCCCC ", "FC###CF", " C#P#C ", "FC###CF", " CCCCC ")
+                .aisle(" CDDDC ", "FC###CF", " C#P#C ", "FC###CF", " CDDDC ")
+                .aisle(" CDDDC ", "FC###CF", " C#P#C ", "FC###CF", " CDDDC ")
+                .aisle(" CDDDC ", "FC###CF", " C#P#C ", "FC###CF", " CDDDC ")
+                .aisle(" CCCCC ", "FC###CF", " C#P#C ", "FC###CF", " CCCCC ")
+                .aisle(" F   F ", "FFCCCFF", " FCSCF ", "FFCCCFF", " F   F ")
                 .where('S', this.selfPredicate())
-                .where('C', states(getCasingState())
-                        .setMinGlobalLimited(100)
+                .where('C', states(getCasingState()))
+                .where('D', states(getCasingState())
                         .or(autoAbilities()))
-                .where('G', states(getSecondCasingState()))
-                .where('X', states(getGlassState()))
+                .where('P', states(getBoilerCasingState()))
                 .where('F', states(getFrameState()))
-                .where('O', states(getCoilState()))
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .where('#', air())
                 .where(' ', any())
@@ -77,41 +68,28 @@ public class MetaTileEntityLargeWiremillArray extends RecipeMapMultiblockControl
     }
 
     private static IBlockState getCasingState() {
-        return GTLiteMetaBlocks.STRUCTURE_CASING.getState(BlockStructureCasing.StructureCasingType.RURIDIT_CASING);
+        return GTLiteMetaBlocks.STRUCTURE_CASING.getState(BlockStructureCasing.StructureCasingType.RHODIUM_CASING);
     }
 
-    private static IBlockState getSecondCasingState() {
-        return MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX);
-    }
-
-    private static IBlockState getGlassState() {
-        return MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.LAMINATED_GLASS);
+    private static IBlockState getBoilerCasingState() {
+        return MetaBlocks.BOILER_CASING.getState(BlockBoilerCasing.BoilerCasingType.TITANIUM_PIPE);
     }
 
     private static IBlockState getFrameState() {
         return MetaBlocks.FRAMES.get(GCYMMaterials.HSLASteel).getBlock(GCYMMaterials.HSLASteel);
     }
 
-    private static IBlockState getCoilState() {
-        return GCYMMetaBlocks.UNIQUE_CASING.getState(BlockUniqueCasing.UniqueCasingType.MOLYBDENUM_DISILICIDE_COIL);
-    }
-
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return GTLiteTextures.RURIDIT_CASING;
+        return GTLiteTextures.RHODIUM_CASING;
     }
 
     @SideOnly(Side.CLIENT)
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GCYMTextures.LARGE_WIREMILL_OVERLAY;
-    }
-
-    @Override
-    public boolean canBeDistinct() {
-        return true;
+        return Textures.ROCK_BREAKER_OVERLAY;
     }
 
     @Override
@@ -120,16 +98,21 @@ public class MetaTileEntityLargeWiremillArray extends RecipeMapMultiblockControl
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.large_wiremill_array.tooltip.1"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_wiremill_array.tooltip.2"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_wiremill_array.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_wiremill_array.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.1"));
+        tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.2"));
+        tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.3"));
+        tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.4"));
+    }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
-    private class WiremillArrayRecipeLogic extends MultiblockRecipeLogic {
+    private class IndustrialRockBreakerRecipeLogic extends MultiblockRecipeLogic {
 
-        public WiremillArrayRecipeLogic(RecipeMapMultiblockController tileEntity) {
+        public IndustrialRockBreakerRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);
         }
 

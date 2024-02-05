@@ -1630,7 +1630,7 @@ public class MachineRecipeLoader {
                 .fluidInputs(MaragingSteel300.getFluid(L * 4))
                 .output(ELECTROMAGNETIC_SEPARATION_PLANT)
                 .EUt(VA[IV])
-                .duration(1200)
+                .duration(600)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -1690,6 +1690,23 @@ public class MachineRecipeLoader {
                 'W', new UnificationEntry(cableGtSingle, Platinum),
                 'P', ELECTRIC_PISTON_IV,
                 'I', new UnificationEntry(pipeLargeItem, SterlingSilver));
+
+        //  Industrial Rock Breaker
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Tungsten, 4)
+                .input(LARGE_ROCK_BREAKER, 16)
+                .input(circuit, MarkerMaterials.Tier.EV, 16)
+                .input(plateDouble, Ultimet, 4)
+                .input(plateDouble, Cobalt, 4)
+                .input(gear, BlackSteel, 4)
+                .input(gearSmall, WroughtIron, 16)
+                .input(cableGtQuadruple, Electrum, 4)
+                .fluidInputs(Stellite100.getFluid(L * 4))
+                .output(INDUSTRIAL_ROCK_BREAKER)
+                .EUt(VA[EV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
     }
 
