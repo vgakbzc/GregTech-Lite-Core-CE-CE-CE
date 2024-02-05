@@ -1682,6 +1682,15 @@ public class MachineRecipeLoader {
                         .CWUt(576))
                 .buildAndRegister();
 
+        //  Large Rock Breaker
+        ModHandler.addShapedRecipe(true, "large_rock_breaker", LARGE_ROCK_BREAKER.getStackForm(),
+                "ICI", "PXP", "WCW",
+                'X', ROCK_BREAKER[IV].getStackForm(),
+                'C', COMPONENT_GRINDER_TUNGSTEN,
+                'W', new UnificationEntry(cableGtSingle, Platinum),
+                'P', ELECTRIC_PISTON_IV,
+                'I', new UnificationEntry(pipeLargeItem, SterlingSilver));
+
     }
 
     private static void MachineCasingRecipes() {
@@ -3901,5 +3910,19 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Rhodium Casing
+        ModHandler.addShapedRecipe(true, "rhodium_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RHODIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Rhodium),
+                'F', new UnificationEntry(frameGt, Ruthenium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Rhodium, 6)
+                .input(frameGt, Ruthenium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RHODIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }
