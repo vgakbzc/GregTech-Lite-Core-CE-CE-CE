@@ -2023,7 +2023,7 @@ gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
 gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
 gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 
-##  Other Materials
+##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金
 gregtech.material.enriched_mithril=富集秘银
 gregtech.material.trinium_titanide=凯金石
@@ -2032,6 +2032,8 @@ gregtech.material.bismuth_iridiate=硫铱铋矿
 gregtech.material.bismuth_ruthenate=硫钌铋矿
 gregtech.material.sylvanite=针碲金矿
 gregtech.material.rheniite=辉铼矿
+gregtech.material.gadolinite=硅铍钇矿
+gregtech.material.euxenite=黑稀金矿
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡

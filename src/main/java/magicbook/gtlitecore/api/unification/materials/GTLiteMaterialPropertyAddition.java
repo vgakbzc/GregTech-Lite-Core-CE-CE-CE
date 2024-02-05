@@ -26,7 +26,7 @@ public class GTLiteMaterialPropertyAddition {
         Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         Terbium.setProperty(PropertyKey.DUST, new DustProperty());
         Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
-        Holmium.setProperty(PropertyKey.DUST, new DustProperty());
+        // Holmium.setProperty(PropertyKey.DUST, new DustProperty());
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
