@@ -159,6 +159,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityTroughTypeOreWasher TROUGH_TYPE_ORE_WASHER;
     public static MetaTileEntityFixedSiftingPlant FIXED_SIFTING_PLANT;
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
+    public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
+    public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -388,5 +390,9 @@ public class GTLiteMetaTileEntities {
         //  110 MATERIAL_TRANSMUTATION_ARRAY
         //  111
         //  112
+        //  113
+        //  114
+        LARGE_ROCK_BREAKER = registerMultiMetaTileEntity(115, new MetaTileEntityLargeRockBreaker(gtliteId("large_rock_breaker")));
+        INDUSTRIAL_ROCK_BREAKER = registerMultiMetaTileEntity(116, new MetaTileEntityIndustrialRockBreaker(gtliteId("industrial_rock_breaker")));
     }
 }

@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.common.metatileentities.multi.electric;
+package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
 
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;

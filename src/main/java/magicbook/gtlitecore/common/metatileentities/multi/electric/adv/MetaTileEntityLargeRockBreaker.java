@@ -1,0 +1,72 @@
+package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
+
+import gregicality.multiblocks.api.metatileentity.GCYMRecipeMapMultiblockController;
+import gregicality.multiblocks.api.render.GCYMTextures;
+import gregicality.multiblocks.common.block.GCYMMetaBlocks;
+import gregicality.multiblocks.common.block.blocks.BlockLargeMultiblockCasing;
+import gregtech.api.metatileentity.MetaTileEntity;
+import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
+import gregtech.api.metatileentity.multiblock.IMultiblockPart;
+import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.pattern.BlockPattern;
+import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.renderer.texture.Textures;
+import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import javax.annotation.Nonnull;
+
+public class MetaTileEntityLargeRockBreaker extends GCYMRecipeMapMultiblockController {
+
+    public MetaTileEntityLargeRockBreaker(ResourceLocation metaTileEntityId) {
+        super(metaTileEntityId, RecipeMaps.ROCK_BREAKER_RECIPES);
+    }
+
+    @Override
+    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
+        return new MetaTileEntityLargeRockBreaker(metaTileEntityId);
+    }
+
+    @Nonnull
+    @Override
+    protected BlockPattern createStructurePattern() {
+        return FactoryBlockPattern.start()
+                .aisle("CCC", "CCC", "CCC", "CCC")
+                .aisle("CCC", "C#C", "C#C", "CMC")
+                .aisle("CSC", "CCC", "CCC", "CCC")
+                .where('S', this.selfPredicate())
+                .where('C', states(getCasingState())
+                        .setMinGlobalLimited(16)
+                        .or(autoAbilities()))
+                .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
+                .where('#', air())
+                .build();
+    }
+
+    private static IBlockState getCasingState() {
+        return GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.STRESS_PROOF_CASING);
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
+        return GCYMTextures.STRESS_PROOF_CASING;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Nonnull
+    @Override
+    protected OrientedOverlayRenderer getFrontOverlay() {
+        return Textures.ROCK_BREAKER_OVERLAY;
+    }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+}
