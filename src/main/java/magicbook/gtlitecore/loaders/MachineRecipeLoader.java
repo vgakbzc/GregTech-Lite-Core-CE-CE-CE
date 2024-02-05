@@ -1651,6 +1651,23 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Large EUV Mask Aligner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, FluxedElectrum, 4)
+                .input(LARGE_ENGRAVER, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, HY1301, 4)
+                .input(plateDouble, Tantalloy61, 4)
+                .input(gear, Inconel792, 4)
+                .input(gearSmall, EglinSteel, 16)
+                .input(cableGtQuadruple, HSSG, 4)
+                .fluidInputs(TantalumCarbide.getFluid(L * 4))
+                .output(LARGE_EUV_MASK_ALIGNER)
+                .EUt(VA[LuV])
+                .duration(1200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Ion Lithography Factory
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Cinobite, 16)
