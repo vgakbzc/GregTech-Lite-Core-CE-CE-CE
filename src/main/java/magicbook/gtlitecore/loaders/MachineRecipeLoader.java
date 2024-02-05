@@ -1630,6 +1630,23 @@ public class MachineRecipeLoader {
                 .fluidInputs(MaragingSteel300.getFluid(L * 4))
                 .output(ELECTROMAGNETIC_SEPARATION_PLANT)
                 .EUt(VA[IV])
+                .duration(600)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Large EUV Mask Aligner
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, FluxedElectrum, 4)
+                .input(LARGE_ENGRAVER, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, HY1301, 4)
+                .input(plateDouble, Tantalloy61, 4)
+                .input(gear, Inconel792, 4)
+                .input(gearSmall, EglinSteel, 16)
+                .input(cableGtQuadruple, HSSG, 4)
+                .fluidInputs(TantalumCarbide.getFluid(L * 4))
+                .output(LARGE_EUV_MASK_ALIGNER)
+                .EUt(VA[LuV])
                 .duration(1200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -1680,6 +1697,32 @@ public class MachineRecipeLoader {
                         .researchStack(ION_IMPLANTATOR.getStackForm())
                         .EUt(VA[UHV])
                         .CWUt(576))
+                .buildAndRegister();
+
+        //  Large Rock Breaker
+        ModHandler.addShapedRecipe(true, "large_rock_breaker", LARGE_ROCK_BREAKER.getStackForm(),
+                "ICI", "PXP", "WCW",
+                'X', ROCK_BREAKER[IV].getStackForm(),
+                'C', COMPONENT_GRINDER_TUNGSTEN,
+                'W', new UnificationEntry(cableGtSingle, Platinum),
+                'P', ELECTRIC_PISTON_IV,
+                'I', new UnificationEntry(pipeLargeItem, SterlingSilver));
+
+        //  Industrial Rock Breaker
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Tungsten, 4)
+                .input(LARGE_ROCK_BREAKER, 16)
+                .input(circuit, MarkerMaterials.Tier.EV, 16)
+                .input(plateDouble, Ultimet, 4)
+                .input(plateDouble, Cobalt, 4)
+                .input(gear, BlackSteel, 4)
+                .input(gearSmall, WroughtIron, 16)
+                .input(cableGtQuadruple, Electrum, 4)
+                .fluidInputs(Stellite100.getFluid(L * 4))
+                .output(INDUSTRIAL_ROCK_BREAKER)
+                .EUt(VA[EV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
     }
@@ -3901,5 +3944,19 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
+        //  Rhodium Casing
+        ModHandler.addShapedRecipe(true, "rhodium_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RHODIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Rhodium),
+                'F', new UnificationEntry(frameGt, Ruthenium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Rhodium, 6)
+                .input(frameGt, Ruthenium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RHODIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }
