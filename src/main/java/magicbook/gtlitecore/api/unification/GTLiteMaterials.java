@@ -670,6 +670,8 @@ public class GTLiteMaterials {
     public static Material BismuthRuthenate;
     public static Material Sylvanite;
     public static Material Rheniite;
+    public static Material Gadolinite;
+    public static Material Euxenite;
 
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
@@ -678,6 +680,6 @@ public class GTLiteMaterials {
         GTLiteOrganicChemistryMaterials.register();   // 13001-15000
         GTLiteHighDegreeMaterials.register();         // 15001-16000
         GTLiteUnknownCompositionMaterials.register(); // 18000-20000
-        GTLiteOtherMaterials.register();              // 20001-21000
+        GTLiteThirdDegreeMaterials.register();        // 20001-21000
     }
 }

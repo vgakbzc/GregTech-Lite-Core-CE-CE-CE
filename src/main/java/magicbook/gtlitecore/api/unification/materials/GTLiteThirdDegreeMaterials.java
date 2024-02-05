@@ -8,7 +8,7 @@ import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
-public class GTLiteOtherMaterials {
+public class GTLiteThirdDegreeMaterials {
 
     //  Range: 20001-21000
     private static int startId = 20001;
@@ -96,6 +96,30 @@ public class GTLiteOtherMaterials {
                 .iconSet(SHINY)
                 .components(Rhenium, 1, Sulfur, 2)
                 .build();
+
+        //  20009 Gadolinite
+        Gadolinite = new Material.Builder(getId(), gregtechId("gadolinite"))
+                .dust()
+                .ore(1, 1, false)
+                .addOreByproducts(Yttrium)
+                .addOreByproducts(Holmium)
+                .color(0xB52F2A)
+                .iconSet(ROUGH)
+                .components(Yttrium, 2, Iron, 1, Beryllium, 2, Silicon, 2, Oxygen, 10)
+                .build()
+                .setFormula("Y2FeBe2(SiO4)2O2", true);
+
+        //  20010 Euxenite
+        Euxenite = new Material.Builder(getId(), gregtechId("euxenite"))
+                .dust()
+                .ore(2, 1, false)
+                .addOreByproducts(Thorium)
+                .addOreByproducts(Lutetium)
+                .color(0x0D6330)
+                .iconSet(DULL)
+                .components(Cerium, 1, Tantalum, 2, Oxygen, 6)
+                .build();
+
     }
 
     private static int getId() {
