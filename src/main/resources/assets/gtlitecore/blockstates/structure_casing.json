@@ -31,6 +31,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/fluxed_electrum_casing"
         }
+      },
+      "rhodium_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/rhodium_casing"
+        }
       }
     }
   }
