@@ -485,7 +485,7 @@ public class ComponentAssemblyLine {
                 .fluidInputs(Astralium.getFluid(L * 2 * 64))
                 .fluidInputs(Legendarium.getFluid(L * 4 * 64)) // round
                 .fluidInputs(Infinity.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
-                .output(ELECTRIC_MOTOR_UIV, 64)
+                .output(ELECTRIC_PISTON_UIV, 64)
                 .EUt(VA[UIV])
                 .duration(1800)
                 .CasingTier(UIV)
