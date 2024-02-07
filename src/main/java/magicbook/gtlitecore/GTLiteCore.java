@@ -15,9 +15,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 @Mod(modid        = GTLiteCore.MODID,
      name         = GTLiteCore.NAME,
      version      = GTLiteCore.VERSION,
+     acceptedMinecraftVersions = "[1.12.2,1.13)",
      dependencies = "required-after:gregtech@[2.8.6-beta,);" +
                              "after:gcym@[1.2.7,);" +
-                             "after:gregtechfoodoption")
+                             "after:gregtechfoodoption@[1.11.0,);")
 public class GTLiteCore {
 
     public static final String MODID = "gtlitecore";
@@ -38,7 +39,6 @@ public class GTLiteCore {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
-        GTLiteLog.init(event.getModLog());
         GTLiteLog.logger.info("Enabled highTierContent in GregTech...");
         ConfigHolder.machines.highTierContent = true;
 
