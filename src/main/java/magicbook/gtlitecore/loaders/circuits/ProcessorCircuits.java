@@ -19,7 +19,7 @@ public class ProcessorCircuits {
     }
 
     private static void AssemblyBuffer() {
-        if (GTLiteConfigHolder.gtlitecoreOverrides.buffProcessorAssemblyRecipe) {
+        if (GTLiteConfigHolder.recipes.enableEasierProcessorAssembly) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
                     new ItemStack[]{PLASTIC_CIRCUIT_BOARD.getStackForm(),

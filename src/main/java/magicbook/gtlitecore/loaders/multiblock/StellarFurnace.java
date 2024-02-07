@@ -311,6 +311,8 @@ public class StellarFurnace {
                 .EUt(VA[UXV])
                 .duration(20)
                 .buildAndRegister();
+
+        //  back to Plasma Condenser recipe
     }
 
     private static void SupracausalCircuitComponents() {

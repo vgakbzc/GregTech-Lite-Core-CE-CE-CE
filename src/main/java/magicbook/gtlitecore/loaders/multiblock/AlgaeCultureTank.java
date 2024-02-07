@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
@@ -329,7 +330,7 @@ public class AlgaeCultureTank {
         HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
                 .fluidInputs(HyperFuelMkII.getFluid(1))
                 .duration(300)
-                .EUt((int) V[ZPM])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark2)
                 .buildAndRegister();
 
         //  Hyper Reactor Mk III
@@ -349,7 +350,7 @@ public class AlgaeCultureTank {
         HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
                 .fluidInputs(HyperFuelMkIII.getFluid(1))
                 .duration(600)
-                .EUt((int) V[UV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark3)
                 .buildAndRegister();
 
         //  Hyper Reactor Mk IV
@@ -369,76 +370,78 @@ public class AlgaeCultureTank {
         HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
                 .fluidInputs(HyperFuelMkIV.getFluid(1))
                 .duration(1200)
-                .EUt((int) V[UHV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark4)
                 .buildAndRegister();
 
         //  Exotic Gas
-        GAS_TURBINE_FUELS.recipeBuilder()
-                .fluidInputs(SuperheavyExoticGas.getFluid(1))
-                .EUt(1024)
-                .duration(480)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.misc.enableExoticGasTurbineRecipe) {
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(SuperheavyExoticGas.getFluid(1))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(480)
+                    .buildAndRegister();
 
-        GAS_TURBINE_FUELS.recipeBuilder()
-                .fluidInputs(HeavyExoticGas.getFluid(2))
-                .EUt(1024)
-                .duration(360)
-                .buildAndRegister();
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(HeavyExoticGas.getFluid(2))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(360)
+                    .buildAndRegister();
 
-        GAS_TURBINE_FUELS.recipeBuilder()
-                .fluidInputs(MediumExoticGas.getFluid(4))
-                .EUt(1024)
-                .duration(180)
-                .buildAndRegister();
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(MediumExoticGas.getFluid(4))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(180)
+                    .buildAndRegister();
 
-        GAS_TURBINE_FUELS.recipeBuilder()
-                .fluidInputs(LightExoticGas.getFluid(8))
-                .EUt(1024)
-                .duration(90)
-                .buildAndRegister();
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(LightExoticGas.getFluid(8))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(90)
+                    .buildAndRegister();
+        }
     }
 
     private static void BiomassGeneratorRecipes() {
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(Biomass.getFluid(200))
-                .EUt(VA[MV])
+                .EUt(GTLiteConfigHolder.misc.heatValueBiomass)
                 .duration(10)
                 .buildAndRegister();
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(FermentedBiomass.getFluid(200))
-                .EUt(VA[MV])
+                .EUt(GTLiteConfigHolder.misc.heatValueFermentedBiomass)
                 .duration(20)
                 .buildAndRegister();
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(BacterialSludge.getFluid(200))
-                .EUt(VA[HV])
+                .EUt(GTLiteConfigHolder.misc.heatValueBacterialSludge)
                 .duration(30)
                 .buildAndRegister();
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(EnrichedBacterialSludge.getFluid(200))
-                .EUt(VA[HV])
+                .EUt(GTLiteConfigHolder.misc.heatValueBacterialSludge)
                 .duration(40)
                 .buildAndRegister();
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(SterileGrowthMedium.getFluid(200))
-                .EUt(VA[EV])
+                .EUt(GTLiteConfigHolder.misc.heatValueSterileGrowthMedium)
                 .duration(50)
                 .buildAndRegister();
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(Mutagen.getFluid(200))
-                .EUt(VA[HV])
+                .EUt(GTLiteConfigHolder.misc.heatValueMutagen)
                 .duration(60)
                 .buildAndRegister();
 
         BIOMASS_GENERATOR_RECIPES.recipeBuilder()
                 .fluidInputs(ExoticMutagen.getFluid(400))
-                .EUt(VA[EV])
+                .EUt(GTLiteConfigHolder.misc.heatValueExoticMutagen)
                 .duration(80)
                 .buildAndRegister();
     }
