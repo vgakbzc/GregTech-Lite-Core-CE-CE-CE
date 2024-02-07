@@ -1725,6 +1725,37 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  DTPF
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Neutronium, 16)
+                .input(INDUSTRIAL_INDUCTION_FURNACE, 64)
+                .input(ARC_FURNACE_ARRAY, 64)
+                .input(MEGA_BLAST_FURNACE, 64)
+                .input(INDUSTRIAL_ROASTER, 64)
+                .input(BURNER_REACTOR, 64)
+                .input(MEGA_ALLOY_BLAST_SMELTER, 64)
+                .input(STELLAR_FURNACE, 64)
+                .input(HIGGS_BOSON, 64)
+                .input(plateDense, Vibranium, 6)
+                .input(plateDense, Infinity, 6)
+                .input(circuit, MarkerMaterials.Tier.UEV, 64)
+                .input(ELECTRIC_PUMP_UEV, 32)
+                .input(FIELD_GENERATOR_UEV, 32)
+                .input(gear, MetastableHassium, 16)
+                .input(wireGtHex, QuantumAlloy, 64)
+                .fluidInputs(BlackTitanium.getFluid(65536))
+                .fluidInputs(HastelloyK243.getFluid(57600))
+                .fluidInputs(SuperheavyLAlloy.getFluid(57600))
+                .fluidInputs(DegenerateRhenium.getFluid(28800))
+                .output(DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE)
+                .EUt(VA[UEV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(STELLAR_FURNACE.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(576))
+                .buildAndRegister();
+
     }
 
     private static void MachineCasingRecipes() {

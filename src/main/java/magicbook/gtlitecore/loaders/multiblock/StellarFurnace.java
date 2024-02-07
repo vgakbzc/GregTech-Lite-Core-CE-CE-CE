@@ -203,21 +203,34 @@ public class StellarFurnace {
 
     private static void CosmicNeutroniumChain() {
 
-        //  Step 1: Dense Neutron Plasma
+        //  Step 1: Neutron Plasma Containment Cell
+        //  Pay attention, Neutron Plasma Containment Cell is not used to product Neutronium.
+        //  This item is just a material for Cosmic Neutronium processing.
+        CANNER_RECIPES.recipeBuilder()
+                .input(PLASMA_CONTAINMENT_CELL)
+                .fluidInputs(Neutronium.getFluid(1000))
+                .output(NEUTRON_PLASMA_CONTAINMENT_CELL)
+                .EUt(VA[ZPM])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Step 2: Dense Neutron Plasma
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .input(ingot, Neutronium)
+                .input(NEUTRON_PLASMA_CONTAINMENT_CELL)
                 .input(ingot, HeavyQuarkDegenerateMatter)
                 .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .fluidInputs(HeavyLepton.getFluid(6000))
                 .fluidInputs(Gluons.getFluid(6000))
                 .fluidInputs(Periodicium.getFluid(2736))
+                .output(PLASMA_CONTAINMENT_CELL)
                 .fluidOutputs(DenseNeutronPlasma.getPlasma(6000))
                 .EUt(VA[UIV])
                 .duration(20)
                 .temperature(BigInteger.valueOf(603486550))
                 .buildAndRegister();
 
-        //  Step2: Cosmic Neutron Plasma
+        //  Step3: Cosmic Neutron Plasma
         CANNER_RECIPES.recipeBuilder()
                 .input(EXTREMELY_DURABLE_PLASMA_CONTAINMENT_CELL)
                 .fluidInputs(DenseNeutronPlasma.getPlasma(1000))
@@ -298,6 +311,8 @@ public class StellarFurnace {
                 .EUt(VA[UXV])
                 .duration(20)
                 .buildAndRegister();
+
+        //  back to Plasma Condenser recipe
     }
 
     private static void SupracausalCircuitComponents() {

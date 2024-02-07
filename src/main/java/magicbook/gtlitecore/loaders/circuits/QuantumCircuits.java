@@ -20,7 +20,7 @@ public class QuantumCircuits {
 
     private static void AssemblyBuffer() {
 
-        if (GTLiteConfigHolder.gtlitecoreOverrides.buffProcessorAssemblyRecipe) {
+        if (GTLiteConfigHolder.recipes.enableEasierProcessorAssembly) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
                     new ItemStack[]{EXTREME_CIRCUIT_BOARD.getStackForm(),

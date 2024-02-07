@@ -1303,7 +1303,7 @@ gtlitecore.machine.ion_lithography_factory.tooltip.5=运行§r精密激光蚀刻
 gtlitecore.machine.ion_lithography_factory.tooltip.6=运行§r电解机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
 gtlitecore.machine.ion_lithography_factory.tooltip.7=运行§r两极磁化机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
 gtlitecore.machine.ion_lithography_factory.tooltip.8=运行§r电磁选矿机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
-gtlitecore.machine.ion_lithography_factory.tooltip.9=始终获得§e电压等级 * (遏制场发生器等级 * 64)§7次并行。
+gtlitecore.machine.ion_lithography_factory.tooltip.9=始终获得§e[电压等级 * (遏制场发生器等级 * 64)]§7次并行。
 gtlitecore.machine.ion_lithography_factory.tooltip.10=最大并行数：
 gtlitecore.machine.ion_lithography_factory.tooltip.11=§r精密激光蚀刻机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.12=§r纳米尺度光刻§7模式 -> §e1024§7
@@ -1312,6 +1312,31 @@ gtlitecore.machine.ion_lithography_factory.tooltip.14=§r电解机§7模式 -> �
 gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
+
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.2=超越维度的边界
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.3=支持你能想象得到的一切熔炼相关配方
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.4=根据线圈等级获得并行与配方时间减免
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.5=运行§r电炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.6=运行§r电弧炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.7=运行§r电力高炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.8=运行§r工业焙烧炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的60%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.9=运行§r燃烧反应室§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的60%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.10=运行§r合金炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.11=运行§r合金冶炼炉§7配方时，线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.12=始终获得§e[电压等级 * (线圈等级 * 256)]§7次并行。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.13=运行§r工业焙烧炉§7配方时，不受配方温度限制影响。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.14=最大并行数：
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.15=§r电炉§7模式 -> §e32768§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.16=§r电弧炉§7模式 -> §e16384§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.17=§r电力高炉§7模式 -> §e4096§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.18=§r工业焙烧炉§7模式 -> §e8192§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.19=§r燃烧反应室§7模式 -> §e8192§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.20=§r合金炉§7模式 -> §e16384§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.21=§r合金冶炼炉§7模式 -> §e8192§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.22=§r恒星锻炉§7模式 -> §e256§7
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.23=允许使用§b激光仓§7替代能源仓，且二者可以并存。
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
@@ -1865,7 +1890,7 @@ gregtech.material.bisethylenedithiotetraselenafulvalene=双（乙烯二硫代）
 gregtech.material.bromodihydrothiine=溴二氢硫醚
 gregtech.material.dibromoacrolein=二溴丙烯醛
 gregtech.material.palladium_fullerene_matrix=钯-富勒烯基质
-gregtech.material.pcbs=苯基-C61-丁酸苯乙烯 (PCBS)
+gregtech.material.pcbs=苯基-C61-丁酸苯乙烯（PCBS）
 gregtech.material.phenylpentanoic_acid=苯基戊酸
 gregtech.material.dimethyl_sulfide=二甲硫醚
 gregtech.material.ferrocenylfulleropyrddolidine=二茂铁基富勒吡唑烷
@@ -2023,7 +2048,7 @@ gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
 gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
 gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
 
-##  Other Materials
+##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金
 gregtech.material.enriched_mithril=富集秘银
 gregtech.material.trinium_titanide=凯金石
@@ -2032,6 +2057,8 @@ gregtech.material.bismuth_iridiate=硫铱铋矿
 gregtech.material.bismuth_ruthenate=硫钌铋矿
 gregtech.material.sylvanite=针碲金矿
 gregtech.material.rheniite=辉铼矿
+gregtech.material.gadolinite=硅铍钇矿
+gregtech.material.euxenite=黑稀金矿
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
@@ -2125,7 +2152,7 @@ metaitem.plasma_containment_cell.name=等离子体遏制装置
 metaitem.plasma_containment_cell.tooltip=用于封装等离子体
 metaitem.rhenium_plasma_containment_cell.name=铼等离子遏制装置
 metaitem.rhenium_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
-metaitem.neutron_plasma_containment_cell.name=中子等离子遏制装置
+metaitem.neutron_plasma_containment_cell.name=中子等离子体遏制装置
 metaitem.neutron_plasma_containment_cell.tooltip=使用§6等离子冷凝器§7进行冷却
 metaitem.extremely_durable_plasma_containment_cell.name=超高耐久等离子体遏制装置
 metaitem.extremely_durable_plasma_containment_cell.tooltip=用于封装等离子体

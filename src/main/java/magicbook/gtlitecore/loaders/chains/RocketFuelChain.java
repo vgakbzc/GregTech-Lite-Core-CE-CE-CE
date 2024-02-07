@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.loaders.chains;
 
 import gregtech.api.recipes.GTRecipeHandler;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -14,12 +15,14 @@ public class RocketFuelChain {
     public static void init() {
 
         //  Remove rocket fuel Combustion generator recipe
-        GTRecipeHandler.removeRecipesByInputs(COMBUSTION_GENERATOR_FUELS, RocketFuel.getFluid(16));
+        if (!GTLiteConfigHolder.misc.enableRocketFuelEngineRecipe) {
+            GTRecipeHandler.removeRecipesByInputs(COMBUSTION_GENERATOR_FUELS, RocketFuel.getFluid(16));
+        }
 
         //  Rocket Fuel
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(RocketFuel.getFluid(16))
-                .EUt(512)
+                .EUt(GTLiteConfigHolder.misc.heatValueRocketFuel)
                 .duration(40)
                 .buildAndRegister();
 
@@ -34,7 +37,7 @@ public class RocketFuelChain {
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(RP1RocketFuel.getFluid(12))
-                .EUt(512)
+                .EUt(GTLiteConfigHolder.misc.heatValueRP1RocketFuel)
                 .duration(20)
                 .buildAndRegister();
 
@@ -49,7 +52,7 @@ public class RocketFuelChain {
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(DenseHydrazineMixtureFuel.getFluid(9))
-                .EUt(2048)
+                .EUt(GTLiteConfigHolder.misc.heatValueDenseHydrazineMixtureRocketFuel)
                 .duration(80)
                 .buildAndRegister();
 
@@ -74,7 +77,7 @@ public class RocketFuelChain {
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(6))
-                .EUt(2048)
+                .EUt(GTLiteConfigHolder.misc.heatValueMethylhydrazineNitrateRocketFuel)
                 .duration(120)
                 .buildAndRegister();
     }

@@ -16,7 +16,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class Crucibles {
     public static void init() {
 
-        if (GTLiteConfigHolder.gtlitecoreOverrides.enableHarderCrucibleRecipe) {
+        if (GTLiteConfigHolder.recipes.enableHarderCrucible) {
             //  Bronze Crucible (1696 K, Steam stage)
             VACUUM_CHAMBER_RECIPES.recipeBuilder()
                     .input(plate, Bronze, 5)

@@ -6,6 +6,7 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -557,168 +558,174 @@ public class MiscRecipes {
                 'G', new UnificationEntry(gem, CelestialCrystal));
 
         //  Prospector EV
-        ModHandler.addShapedRecipe(true, "prospector_ev.battery", PROSPECTOR_EV.getStackForm(),
-                "EPS", "XCX", "PBP",
-                'E', EMITTER_EV,
-                'S', SENSOR_EV,
-                'P', new UnificationEntry(plate, Titanium),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
-                'C', COVER_SCREEN,
-                'B', BATTERY_EV_VANADIUM);
+        if (GTLiteConfigHolder.tools.enableEVProspector) {
+            ModHandler.addShapedRecipe(true, "prospector_ev.battery", PROSPECTOR_EV.getStackForm(),
+                    "EPS", "XCX", "PBP",
+                    'E', EMITTER_EV,
+                    'S', SENSOR_EV,
+                    'P', new UnificationEntry(plate, Titanium),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
+                    'C', COVER_SCREEN,
+                    'B', BATTERY_EV_VANADIUM);
 
-        ModHandler.addShapedRecipe(true, "prospector_ev.lapotron", PROSPECTOR_EV.getStackForm(),
-                "EPS", "XCX", "PBP",
-                'E', EMITTER_EV,
-                'S', SENSOR_EV,
-                'P', new UnificationEntry(plate, Titanium),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
-                'C', COVER_SCREEN,
-                'B', LAPOTRON_CRYSTAL);
+            ModHandler.addShapedRecipe(true, "prospector_ev.lapotron", PROSPECTOR_EV.getStackForm(),
+                    "EPS", "XCX", "PBP",
+                    'E', EMITTER_EV,
+                    'S', SENSOR_EV,
+                    'P', new UnificationEntry(plate, Titanium),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
+                    'C', COVER_SCREEN,
+                    'B', LAPOTRON_CRYSTAL);
+        }
 
         //  Prospector ZPM
-        ModHandler.addShapedRecipe(true, "prospector_zpm.battery", PROSPECTOR_ZPM.getStackForm(),
-                "EPS", "XCX", "PBP",
-                'E', EMITTER_ZPM,
-                'S', SENSOR_ZPM,
-                'P', new UnificationEntry(plate, NaquadahAlloy),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
-                'C', COVER_SCREEN,
-                'B', BATTERY_ZPM_NAQUADRIA);
+        if (GTLiteConfigHolder.tools.enableZPMProspector) {
+            ModHandler.addShapedRecipe(true, "prospector_zpm.battery", PROSPECTOR_ZPM.getStackForm(),
+                    "EPS", "XCX", "PBP",
+                    'E', EMITTER_ZPM,
+                    'S', SENSOR_ZPM,
+                    'P', new UnificationEntry(plate, NaquadahAlloy),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
+                    'C', COVER_SCREEN,
+                    'B', BATTERY_ZPM_NAQUADRIA);
 
-        ModHandler.addShapedRecipe(true, "prospector_zpm.lapotron", PROSPECTOR_ZPM.getStackForm(),
-                "EPS", "XCX", "PBP",
-                'E', EMITTER_ZPM,
-                'S', SENSOR_ZPM,
-                'P', new UnificationEntry(plate, NaquadahAlloy),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
-                'C', COVER_SCREEN,
-                'B', ENERGY_MODULE);
+            ModHandler.addShapedRecipe(true, "prospector_zpm.lapotron", PROSPECTOR_ZPM.getStackForm(),
+                    "EPS", "XCX", "PBP",
+                    'E', EMITTER_ZPM,
+                    'S', SENSOR_ZPM,
+                    'P', new UnificationEntry(plate, NaquadahAlloy),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
+                    'C', COVER_SCREEN,
+                    'B', ENERGY_MODULE);
+        }
 
-        //  UHV Battery Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(cableGtSingle, Europium, 4)
-                .input(plate, Tritanium, 2)
-                .input(plate, LithiumSulfide, 2)
-                .fluidInputs(KaptonK.getFluid(L))
-                .output(BATTERY_HULL_SMALL_LITHIUM_SULFIDE)
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.tools.enableHighTierBattery) {
+            //  UHV Battery Hull
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(cableGtSingle, Europium, 4)
+                    .input(plate, Tritanium, 2)
+                    .input(plate, LithiumSulfide, 2)
+                    .fluidInputs(KaptonK.getFluid(L))
+                    .output(BATTERY_HULL_SMALL_LITHIUM_SULFIDE)
+                    .EUt(VA[UV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  UEV Battery Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(cableGtSingle, PedotTMA, 4)
-                .input(plate, Adamantium, 6)
-                .input(plate, LithiumSulfide, 6)
-                .fluidInputs(KaptonE.getFluid(L))
-                .output(BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE)
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
+            //  UEV Battery Hull
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(cableGtSingle, PedotTMA, 4)
+                    .input(plate, Adamantium, 6)
+                    .input(plate, LithiumSulfide, 6)
+                    .fluidInputs(KaptonE.getFluid(L))
+                    .output(BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE)
+                    .EUt(VA[UHV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  UIV Battery Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(cableGtSingle, Solarium, 4)
-                .input(plate, Infinity, 18)
-                .input(plate, LithiumSulfide, 18)
-                .fluidInputs(Polyetheretherketone.getFluid(L))
-                .output(BATTERY_HULL_LARGE_LITHIUM_SULFIDE)
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
+            //  UIV Battery Hull
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(cableGtSingle, Solarium, 4)
+                    .input(plate, Infinity, 18)
+                    .input(plate, LithiumSulfide, 18)
+                    .fluidInputs(Polyetheretherketone.getFluid(L))
+                    .output(BATTERY_HULL_LARGE_LITHIUM_SULFIDE)
+                    .EUt(VA[UEV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  UXV Battery Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(cableGtSingle, Hypogen, 4)
-                .input(plate, Orichalcum, 2)
-                .input(plate, LanthanumNickelOxide, 2)
-                .fluidInputs(Zylon.getFluid(L))
-                .output(BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
+            //  UXV Battery Hull
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(cableGtSingle, Hypogen, 4)
+                    .input(plate, Orichalcum, 2)
+                    .input(plate, LanthanumNickelOxide, 2)
+                    .fluidInputs(Zylon.getFluid(L))
+                    .output(BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE)
+                    .EUt(VA[UIV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  OpV Battery Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(cableGtSingle, Galaxium, 4)
-                .input(plate, Mithril, 6)
-                .input(plate, LanthanumNickelOxide, 6)
-                .fluidInputs(Kevlar.getFluid(L))
-                .output(BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[UXV])
-                .duration(100)
-                .buildAndRegister();
+            //  OpV Battery Hull
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(cableGtSingle, Galaxium, 4)
+                    .input(plate, Mithril, 6)
+                    .input(plate, LanthanumNickelOxide, 6)
+                    .fluidInputs(Kevlar.getFluid(L))
+                    .output(BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE)
+                    .EUt(VA[UXV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  MAX Battery Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(cableGtSingle, Universium, 4)
-                .input(plate, Astralium, 18)
-                .input(plate, LanthanumNickelOxide, 18)
-                .fluidInputs(FullerenePolymerMatrix.getFluid(L))
-                .output(BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[OpV])
-                .duration(100)
-                .buildAndRegister();
+            //  MAX Battery Hull
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(cableGtSingle, Universium, 4)
+                    .input(plate, Astralium, 18)
+                    .input(plate, LanthanumNickelOxide, 18)
+                    .fluidInputs(FullerenePolymerMatrix.getFluid(L))
+                    .output(BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE)
+                    .EUt(VA[OpV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  Small Lithium Sulfide Battery
-        CANNER_RECIPES.recipeBuilder()
-                .input(BATTERY_HULL_SMALL_LITHIUM_SULFIDE)
-                .input(dust, LithiumTrifluoromethansulphonate, 2)
-                .fluidInputs(Trichloroborazine.getFluid(1000))
-                .output(BATTERY_UHV_LITHIUM_SULFIDE)
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
+            //  Small Lithium Sulfide Battery
+            CANNER_RECIPES.recipeBuilder()
+                    .input(BATTERY_HULL_SMALL_LITHIUM_SULFIDE)
+                    .input(dust, LithiumTrifluoromethansulphonate, 2)
+                    .fluidInputs(Trichloroborazine.getFluid(1000))
+                    .output(BATTERY_UHV_LITHIUM_SULFIDE)
+                    .EUt(VA[UV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  Medium Lithium Sulfide Battery
-        CANNER_RECIPES.recipeBuilder()
-                .input(BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE)
-                .input(dust, LithiumTrifluoromethansulphonate, 8)
-                .fluidInputs(HydrogenSelenide.getFluid(4000))
-                .output(BATTERY_UEV_LITHIUM_SULFIDE)
-                .EUt(VA[UHV])
-                .duration(400)
-                .buildAndRegister();
+            //  Medium Lithium Sulfide Battery
+            CANNER_RECIPES.recipeBuilder()
+                    .input(BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE)
+                    .input(dust, LithiumTrifluoromethansulphonate, 8)
+                    .fluidInputs(HydrogenSelenide.getFluid(4000))
+                    .output(BATTERY_UEV_LITHIUM_SULFIDE)
+                    .EUt(VA[UHV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        //  Large Lithium Sulfide Battery
-        CANNER_RECIPES.recipeBuilder()
-                .input(BATTERY_HULL_LARGE_LITHIUM_SULFIDE)
-                .input(dust, LithiumTrifluoromethansulphonate, 16)
-                .fluidInputs(Tiberium.getFluid(16000))
-                .output(BATTERY_UIV_LITHIUM_SULFIDE)
-                .EUt(VA[UEV])
-                .duration(1600)
-                .buildAndRegister();
+            //  Large Lithium Sulfide Battery
+            CANNER_RECIPES.recipeBuilder()
+                    .input(BATTERY_HULL_LARGE_LITHIUM_SULFIDE)
+                    .input(dust, LithiumTrifluoromethansulphonate, 16)
+                    .fluidInputs(Tiberium.getFluid(16000))
+                    .output(BATTERY_UIV_LITHIUM_SULFIDE)
+                    .EUt(VA[UEV])
+                    .duration(1600)
+                    .buildAndRegister();
 
-        //  Small Lanthanum Nickel Oxide Battery
-        CANNER_RECIPES.recipeBuilder()
-                .input(BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE)
-                .input(dust, BerylliumDifluoride, 2)
-                .fluidInputs(XenonTrioxide.getFluid(1000))
-                .output(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
+            //  Small Lanthanum Nickel Oxide Battery
+            CANNER_RECIPES.recipeBuilder()
+                    .input(BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE)
+                    .input(dust, BerylliumDifluoride, 2)
+                    .fluidInputs(XenonTrioxide.getFluid(1000))
+                    .output(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
+                    .EUt(VA[UIV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  Medium Lanthanum Nickel Oxide Battery
-        CANNER_RECIPES.recipeBuilder()
-                .input(BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE)
-                .input(dust, BerylliumDifluoride, 8)
-                .fluidInputs(RadonDifluoride.getFluid(4000))
-                .output(BATTERY_OpV_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[UXV])
-                .duration(400)
-                .buildAndRegister();
+            //  Medium Lanthanum Nickel Oxide Battery
+            CANNER_RECIPES.recipeBuilder()
+                    .input(BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE)
+                    .input(dust, BerylliumDifluoride, 8)
+                    .fluidInputs(RadonDifluoride.getFluid(4000))
+                    .output(BATTERY_OpV_LANTHANUM_NICKEL_OXIDE)
+                    .EUt(VA[UXV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        //  Large Lanthanum Nickel Oxide Battery
-        CANNER_RECIPES.recipeBuilder()
-                .input(BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE)
-                .input(dust, BerylliumDifluoride, 16)
-                .fluidInputs(NaquadriaCaesiumXenonnonfluoride.getFluid(16000))
-                .output(BATTERY_MAX_LANTHANUM_NICKEL_OXIDE)
-                .EUt(VA[OpV])
-                .duration(1600)
-                .buildAndRegister();
+            //  Large Lanthanum Nickel Oxide Battery
+            CANNER_RECIPES.recipeBuilder()
+                    .input(BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE)
+                    .input(dust, BerylliumDifluoride, 16)
+                    .fluidInputs(NaquadriaCaesiumXenonnonfluoride.getFluid(16000))
+                    .output(BATTERY_MAX_LANTHANUM_NICKEL_OXIDE)
+                    .EUt(VA[OpV])
+                    .duration(1600)
+                    .buildAndRegister();
+        }
 
         //  2LiH + 2S -> Li2S + H2S
         BLAST_RECIPES.recipeBuilder()

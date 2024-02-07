@@ -9,6 +9,7 @@ import gregtech.api.unification.ore.OrePrefix;
 import gregtech.common.items.behaviors.ProspectorScannerBehavior;
 import gregtech.common.items.behaviors.TooltipBehavior;
 import magicbook.gtlitecore.api.GTLiteAPI;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
 import net.minecraft.client.resources.I18n;
@@ -27,13 +28,18 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         GOOWARE_BOARD = this.addItem(0, "board.gooware").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         OPTICAL_BOARD = this.addItem(1, "board.optical").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         SPINTRONIC_BOARD = this.addItem(2, "board.spintronic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_BOARD = this.addItem(3, "board.magneto_resonatic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
+            MAGNETO_RESONATIC_BOARD = this.addItem(3, "board.magneto_resonatic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        }
 
         //  Circuit Boards
         GOOWARE_CIRCUIT_BOARD = this.addItem(4, "circuit_board.gooware").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         OPTICAL_CIRCUIT_BOARD = this.addItem(5, "circuit_board.optical").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         SPINTRONIC_CIRCUIT_BOARD = this.addItem(6, "circuit_board.spintronic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_BOARD = this.addItem(7, "circuit_board.magneto_resonatic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
+            MAGNETO_RESONATIC_CIRCUIT_BOARD = this.addItem(7, "circuit_board.magneto_resonatic").setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        }
 
         //  Circuits
         GOOWARE_PROCESSOR = this.addItem(8, "circuit.gooware_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
@@ -71,21 +77,24 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SUPRACHRONAL_CIRCUIT_UXV = this.addItem(40, "circuit.suprachronal.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         SUPRACHRONAL_CIRCUIT_OpV = this.addItem(41, "circuit.suprachronal.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         SUPRACHRONAL_CIRCUIT_MAX = this.addItem(42, "circuit.suprachronal.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_ULV = this.addItem(43, "circuit.magneto_resonatic.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_LV = this.addItem(44, "circuit.magneto_resonatic.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_MV = this.addItem(45, "circuit.magneto_resonatic.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_HV = this.addItem(46, "circuit.magneto_resonatic.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_EV = this.addItem(47, "circuit.magneto_resonatic.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_IV = this.addItem(48, "circuit.magneto_resonatic.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_LuV = this.addItem(49, "circuit.magneto_resonatic.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_ZPM = this.addItem(50, "circuit.magneto_resonatic.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_UV = this.addItem(51, "circuit.magneto_resonatic.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_UHV = this.addItem(52, "circuit.magneto_resonatic.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_UEV = this.addItem(53, "circuit.magneto_resonatic.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_UIV = this.addItem(54, "circuit.magneto_resonatic.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_UXV = this.addItem(55, "circuit.magneto_resonatic.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
+            MAGNETO_RESONATIC_CIRCUIT_ULV = this.addItem(43, "circuit.magneto_resonatic.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_LV = this.addItem(44, "circuit.magneto_resonatic.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_MV = this.addItem(45, "circuit.magneto_resonatic.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_HV = this.addItem(46, "circuit.magneto_resonatic.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_EV = this.addItem(47, "circuit.magneto_resonatic.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_IV = this.addItem(48, "circuit.magneto_resonatic.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_LuV = this.addItem(49, "circuit.magneto_resonatic.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_ZPM = this.addItem(50, "circuit.magneto_resonatic.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_UV = this.addItem(51, "circuit.magneto_resonatic.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_UHV = this.addItem(52, "circuit.magneto_resonatic.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_UEV = this.addItem(53, "circuit.magneto_resonatic.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_UIV = this.addItem(54, "circuit.magneto_resonatic.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_UXV = this.addItem(55, "circuit.magneto_resonatic.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        }
 
         //  SMDs
         OPTICAL_TRANSISTOR = this.addItem(58, "component.optical_smd.transistor");
@@ -237,33 +246,46 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EMITTER_MAX = this.addItem(268, "cover.emitter.max");
         SENSOR_MAX = this.addItem(269, "cover.sensor.max");
         FIELD_GENERATOR_MAX = this.addItem(270, "cover.field_generator.max");
-        //  Free Id: 270-275 for UHV-OpV Solar Panels
-        COVER_SOLAR_PANEL_MAX = this.addItem(276, "cover.solar_panel.max").addComponents(new TooltipBehavior((lines) -> {
-            lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
-            lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
-            lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", GTValues.V[GTValues.MAX], GTValues.VNF[GTValues.MAX]));}));
+
+        if (GTLiteConfigHolder.tools.enableHighTierSolarPanel) {
+            //  Free Id: 270-275 for UHV-OpV Solar Panels
+            COVER_SOLAR_PANEL_MAX = this.addItem(276, "cover.solar_panel.max").addComponents(new TooltipBehavior((lines) -> {
+                lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+                lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+                lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", GTValues.V[GTValues.MAX], GTValues.VNF[GTValues.MAX]));
+            }));
+        }
 
         //  Tools
-        PROSPECTOR_EV = this.addItem(280, "tool.prospector.ev").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, 4), new ProspectorScannerBehavior(5, 4)}).setMaxStackSize(1).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        PROSPECTOR_ZPM = this.addItem(281, "tool.prospector.zpm").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, 7), new ProspectorScannerBehavior(7, 7)}).setMaxStackSize(1).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        if (GTLiteConfigHolder.tools.enableEVProspector) {
+            PROSPECTOR_EV = this.addItem(280, "tool.prospector.ev").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, 4), new ProspectorScannerBehavior(5, 4)}).setMaxStackSize(1).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        }
 
-        BATTERY_HULL_SMALL_LITHIUM_SULFIDE = this.addItem(284, "battery.hull.uhv");
-        BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE = this.addItem(285, "battery.hull.uev");
-        BATTERY_HULL_LARGE_LITHIUM_SULFIDE = this.addItem(286, "battery.hull.uiv");
-        BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE = this.addItem(287, "battery.hull.uxv");
-        BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE = this.addItem(288, "battery.hull.opv");
-        BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE = this.addItem(289, "battery.hull.max");
-        BATTERY_UHV_LITHIUM_SULFIDE = this.addItem(290, "battery.uhv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10485760000L, GTValues.UHV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        BATTERY_UEV_LITHIUM_SULFIDE = this.addItem(291, "battery.uev.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(41943040000L, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        BATTERY_UIV_LITHIUM_SULFIDE = this.addItem(292, "battery.uiv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(167772160000L, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        BATTERY_UXV_LANTHANUM_NICKEL_OXIDE = this.addItem(293, "battery.uxv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(671088640000L, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        BATTERY_OpV_LANTHANUM_NICKEL_OXIDE = this.addItem(294, "battery.opv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(2684354560000L, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        BATTERY_MAX_LANTHANUM_NICKEL_OXIDE = this.addItem(295, "battery.max.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10737418240000L, GTValues.MAX)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        ULTIMATE_BATTERY_MK2 = this.addItem(296, "battery.uev.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        ULTIMATE_BATTERY_MK3 = this.addItem(297, "battery.uiv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        ULTIMATE_BATTERY_MK4 = this.addItem(298, "battery.uxv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
-        ULTIMATE_BATTERY_MK5 = this.addItem(299, "battery.opv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        if (GTLiteConfigHolder.tools.enableZPMProspector) {
+            PROSPECTOR_ZPM = this.addItem(281, "tool.prospector.zpm").addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, 7), new ProspectorScannerBehavior(7, 7)}).setMaxStackSize(1).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+        }
 
+        if (GTLiteConfigHolder.tools.enableHighTierBattery) {
+            BATTERY_HULL_SMALL_LITHIUM_SULFIDE = this.addItem(284, "battery.hull.uhv");
+            BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE = this.addItem(285, "battery.hull.uev");
+            BATTERY_HULL_LARGE_LITHIUM_SULFIDE = this.addItem(286, "battery.hull.uiv");
+            BATTERY_HULL_SMALL_LANTHANUM_NICKEL_OXIDE = this.addItem(287, "battery.hull.uxv");
+            BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE = this.addItem(288, "battery.hull.opv");
+            BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE = this.addItem(289, "battery.hull.max");
+            BATTERY_UHV_LITHIUM_SULFIDE = this.addItem(290, "battery.uhv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10485760000L, GTValues.UHV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+            BATTERY_UEV_LITHIUM_SULFIDE = this.addItem(291, "battery.uev.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(41943040000L, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+            BATTERY_UIV_LITHIUM_SULFIDE = this.addItem(292, "battery.uiv.lithium_sulfide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(167772160000L, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+            BATTERY_UXV_LANTHANUM_NICKEL_OXIDE = this.addItem(293, "battery.uxv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(671088640000L, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+            BATTERY_OpV_LANTHANUM_NICKEL_OXIDE = this.addItem(294, "battery.opv.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(2684354560000L, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+            BATTERY_MAX_LANTHANUM_NICKEL_OXIDE = this.addItem(295, "battery.max.lanthanum_nickel_oxide").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(10737418240000L, GTValues.MAX)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MAX).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+            if (GTLiteConfigHolder.tools.enableHighTierUltimateBattery) {
+                ULTIMATE_BATTERY_MK2 = this.addItem(296, "battery.uev.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UEV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UEV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+                ULTIMATE_BATTERY_MK3 = this.addItem(297, "battery.uiv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UIV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UIV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+                ULTIMATE_BATTERY_MK4 = this.addItem(298, "battery.uxv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UXV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UXV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+                ULTIMATE_BATTERY_MK5 = this.addItem(299, "battery.opv.ultimate").addComponents(new IItemComponent[]{ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.OpV)}).setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.OpV).setModelAmount(8).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+            }
+        }
         //  Others
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone").setMaxStackSize(1).addComponents(new GrindBallBehavior()).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
         GRINDBALL_ALUMINIUM = this.addItem(301, "grindball.aluminium").setMaxStackSize(1).addComponents(new GrindBallBehavior()).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);

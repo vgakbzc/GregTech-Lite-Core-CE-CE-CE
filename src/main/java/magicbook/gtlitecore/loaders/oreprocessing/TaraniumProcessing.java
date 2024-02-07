@@ -4,6 +4,7 @@ import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.common.items.MetaItems;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -545,72 +546,74 @@ public class TaraniumProcessing {
         //  Heavy Naquadah Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyNaquadahFuel.getFluid(1))
-                .EUt(2048)
+                .EUt(GTLiteConfigHolder.misc.heatValueNaquadahFuel)
                 .duration(180)
                 .buildAndRegister();
 
         //  Medium Naquadah Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(MediumNaquadahFuel.getFluid(1))
-                .EUt(2048)
+                .EUt(GTLiteConfigHolder.misc.heatValueNaquadahFuel)
                 .duration(120)
                 .buildAndRegister();
 
         //  Light Naquadah Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(LightNaquadahFuel.getFluid(1))
-                .EUt(2048)
+                .EUt(GTLiteConfigHolder.misc.heatValueNaquadahFuel)
                 .duration(60)
                 .buildAndRegister();
 
         //  Heavy Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyTaraniumFuel.getFluid(1))
-                .EUt(4096)
+                .EUt(GTLiteConfigHolder.misc.heatValueTaraniumFuel)
                 .duration(360)
                 .buildAndRegister();
 
         //  Medium Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(MediumTaraniumFuel.getFluid(1))
-                .EUt(4096)
+                .EUt(GTLiteConfigHolder.misc.heatValueTaraniumFuel)
                 .duration(240)
                 .buildAndRegister();
 
         //  Light Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(LightTaraniumFuel.getFluid(1))
-                .EUt(4096)
+                .EUt(GTLiteConfigHolder.misc.heatValueTaraniumFuel)
                 .duration(120)
                 .buildAndRegister();
 
         //  Heavy Enriched Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyEnrichedTaraniumFuel.getFluid(1))
-                .EUt(8192)
+                .EUt(GTLiteConfigHolder.misc.heatValueEnrichedTaraniumFuel)
                 .duration(720)
                 .buildAndRegister();
 
         //  Medium Enriched Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(MediumEnrichedTaraniumFuel.getFluid(1))
-                .EUt(8192)
+                .EUt(GTLiteConfigHolder.misc.heatValueEnrichedTaraniumFuel)
                 .duration(480)
                 .buildAndRegister();
 
         //  Light Enriched Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(LightEnrichedTaraniumFuel.getFluid(1))
-                .EUt(8192)
+                .EUt(GTLiteConfigHolder.misc.heatValueEnrichedTaraniumFuel)
                 .duration(240)
                 .buildAndRegister();
 
         //  Naquadah Gas
-        GAS_TURBINE_FUELS.recipeBuilder()
-                .fluidInputs(NaquadahGas.getFluid(1))
-                .EUt(32)
-                .duration(240)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.misc.enableNaquadahGasTurbineRecipe) {
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(NaquadahGas.getFluid(1))
+                    .EUt(GTLiteConfigHolder.misc.heatValueNaquadahGas)
+                    .duration(240)
+                    .buildAndRegister();
+        }
     }
 
     private static void FuelRefineFactoryRecipes() {
@@ -853,57 +856,57 @@ public class TaraniumProcessing {
         HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
                 .fluidInputs(LightHyperFuel.getFluid(1))
                 .duration(200)
-                .EUt((int) V[LuV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark1)
                 .buildAndRegister();
 
         HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
                 .fluidInputs(MediumHyperFuel.getFluid(1))
                 .duration(400)
-                .EUt((int) V[LuV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark1)
                 .buildAndRegister();
 
         HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyHyperFuel.getFluid(1))
                 .duration(600)
-                .EUt((int) V[LuV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark1)
                 .buildAndRegister();
 
         //  Hyper Reactor Mk II
         HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
                 .fluidInputs(LightHyperFuel.getFluid(1))
                 .duration(200)
-                .EUt((int) V[ZPM])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark2)
                 .buildAndRegister();
 
         HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
                 .fluidInputs(MediumHyperFuel.getFluid(1))
                 .duration(400)
-                .EUt((int) V[ZPM])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark2)
                 .buildAndRegister();
 
         HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyHyperFuel.getFluid(1))
                 .duration(600)
-                .EUt((int) V[ZPM])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark2)
                 .buildAndRegister();
 
         //  Hyper Reactor Mk III
         HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
                 .fluidInputs(LightHyperFuel.getFluid(1))
                 .duration(200)
-                .EUt((int) V[UV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark3)
                 .buildAndRegister();
 
         HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
                 .fluidInputs(MediumHyperFuel.getFluid(1))
                 .duration(400)
-                .EUt((int) V[UV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark3)
                 .buildAndRegister();
 
         HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyHyperFuel.getFluid(1))
                 .duration(600)
-                .EUt((int) V[UV])
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark3)
                 .buildAndRegister();
     }
 }

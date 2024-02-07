@@ -54,6 +54,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer ALGAE_CULTURE_TANK_OVERLAY = new OrientedOverlayRenderer("multiblocks/algae_culture_tank");
     public static OrientedOverlayRenderer LARGE_BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_bio_reactor");
     public static OrientedOverlayRenderer ELECTROMAGNETIC_SEPARATION_PLANT_OVERLAY = new OrientedOverlayRenderer("multiblocks/electromagnetic_separation_plant");
+    public static OrientedOverlayRenderer DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/dimensionally_transcendent_plasma_forge");
 
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -115,6 +116,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer OSMIRIDIUM_CASING = new GTLiteOverlayRenderer("casings/osmiridium_casing");
     public static GTLiteOverlayRenderer FLUXED_ELECTRUM_CASING = new GTLiteOverlayRenderer("casings/fluxed_electrum_casing");
     public static GTLiteOverlayRenderer RHODIUM_CASING = new GTLiteOverlayRenderer("casings/rhodium_casing");
+    public static GTLiteOverlayRenderer DIMENSIONAL_BRIDGE_CASING = new GTLiteOverlayRenderer("casings/dimensional_bridge_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

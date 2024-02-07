@@ -25,7 +25,7 @@ public class PrimitiveCircuits {
     }
 
     private static void removeVanillaRecipes() {
-        if (GTLiteConfigHolder.steamOverrides.enableHarderVacuumTubeRecipe) {
+        if (GTLiteConfigHolder.recipes.enableHarderVacuumTube) {
             ModHandler.removeRecipeByName("gregtech:vacuum_tube");
             GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, new ItemStack[]{GLASS_TUBE.getStackForm(), OreDictUnifier.get(bolt, Steel), OreDictUnifier.get(wireGtSingle, Copper, 2), IntCircuitIngredient.getIntegratedCircuit(1)});
             GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,

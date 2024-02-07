@@ -31,7 +31,7 @@ public class TungstenProcessing {
     }
 
     private static void removeVanillaRecipes() {
-        if (GTLiteConfigHolder.chainOverrides.enableTungstenProcessing) {
+        if (GTLiteConfigHolder.recipes.enableHarderTungstenProcess) {
             GTRecipeHandler.removeRecipesByInputs(ELECTROLYZER_RECIPES, OreDictUnifier.get(dust, TungsticAcid, 7));
         }
     }

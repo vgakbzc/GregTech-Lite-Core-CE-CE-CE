@@ -43,9 +43,11 @@ Improve difficulty and QoL of GregTech CEu, based on GregTech 6, Gregicality Leg
 
 ### Credit Works
 
-
 * Basic Items, blocks and multiblocks from [Gregicality Science](https://github.com/GregTechCEu/gregicality-science).
 * Some textures, multiblocks and processing chains from [Gregicality Legacy](https://github.com/GregTechCEu/gregicality-legacy).
 * Some textures, multiblocks and processing chains from [GregTech++](https://github.com/GTNewHorizons/GTplusplus).
+* Some textures, multiblocks and processing chains from [GregTech 5 Unofficial](https://github.com/GTNewHorizons/GT5-Unofficial).
 * Some textures from [GregTech 6](https://github.com/GregTech6/gregtech6).
 * Some texrures and multiblocks from [TecTech](https://github.com/Technus/TecTech).
+* Some textures and multiblocks from [GoodGenerator](https://github.com/GTNewHorizons/GoodGenerator).
+* Some textures from [Epimorphism](https://gitlab.com/gtcnc/epimorphism-core).

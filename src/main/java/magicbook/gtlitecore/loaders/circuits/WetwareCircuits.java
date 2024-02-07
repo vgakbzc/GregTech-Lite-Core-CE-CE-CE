@@ -24,7 +24,7 @@ public class WetwareCircuits {
 
     private static void CircuitBoard() {
 
-        if (GTLiteConfigHolder.gtlitecoreOverrides.enableHarderWetwareCircuitRecipe) {
+        if (GTLiteConfigHolder.recipes.enableHarderWetwareBoard) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
                     new ItemStack[]{MULTILAYER_FIBER_BOARD.getStackForm(16),
@@ -53,7 +53,7 @@ public class WetwareCircuits {
 
     private static void AssemblyBuffer() {
 
-        if (GTLiteConfigHolder.gtlitecoreOverrides.buffProcessorAssemblyRecipe) {
+        if (GTLiteConfigHolder.recipes.enableEasierProcessorAssembly) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
                     new ItemStack[]{WETWARE_CIRCUIT_BOARD.getStackForm(),
