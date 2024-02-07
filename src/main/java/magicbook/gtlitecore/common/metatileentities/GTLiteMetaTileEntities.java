@@ -372,7 +372,7 @@ public class GTLiteMetaTileEntities {
         ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(91, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
         //  92 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
         //  93 SUPERSTRUCTURE_ASSEMBLY_PLANT
-        //  94
+        //  94 DIMENSIONALLY_MATTER_MIXER
         //  95
         //  96
         //  97
