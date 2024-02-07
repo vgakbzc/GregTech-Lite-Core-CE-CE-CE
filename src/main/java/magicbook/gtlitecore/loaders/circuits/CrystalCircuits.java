@@ -26,12 +26,11 @@ public class CrystalCircuits {
 
     private static void CrystalSoCNerf() {
 
-        if (GTLiteConfigHolder.gtlitecoreOverrides.enableHarderCrystalSoCRecipe) {
+        if (GTLiteConfigHolder.recipes.enableHarderCrystalSoC) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(LASER_ENGRAVER_RECIPES,
                     CRYSTAL_CENTRAL_PROCESSING_UNIT.getStackForm(),
-                    OreDictUnifier.get(craftingLens, Blue)
-            );
+                    OreDictUnifier.get(craftingLens, Blue));
         }
 
         //  c-ZrO2 + Eu -> Eu-doped c-ZrO2 Boule
@@ -166,7 +165,8 @@ public class CrystalCircuits {
     }
 
     private static void AssemblyBuffer() {
-        if (GTLiteConfigHolder.gtlitecoreOverrides.buffProcessorAssemblyRecipe) {
+
+        if (GTLiteConfigHolder.recipes.enableEasierProcessorAssembly) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
                     new ItemStack[]{ELITE_CIRCUIT_BOARD.getStackForm(),

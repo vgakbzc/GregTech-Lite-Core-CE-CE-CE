@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
+import com.cleanroommc.groovyscript.compat.vanilla.OreDict;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
@@ -103,6 +104,24 @@ public class RecipeConflicts {
                 .fluidOutputs(Dimethyldichlorosilane.getFluid(1000))
                 .EUt(96)
                 .duration(240)
+                .buildAndRegister();
+
+        //  Conflict between Calcite and Sodium Ethoxide
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Quicklime, 2)},
+                new FluidStack[]{CarbonDioxide.getFluid(1000)});
+
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Quicklime, 2)},
+                new FluidStack[]{CarbonDioxide.getFluid(1000)});
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Quicklime, 2)
+                .circuitMeta(2)
+                .fluidInputs(CarbonDioxide.getFluid(1000))
+                .output(dust, Calcite, 5)
+                .EUt(30)
+                .duration(80)
                 .buildAndRegister();
     }
 }

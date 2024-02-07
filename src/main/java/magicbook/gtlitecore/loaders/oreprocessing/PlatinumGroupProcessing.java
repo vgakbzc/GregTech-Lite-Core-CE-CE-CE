@@ -46,7 +46,7 @@ public class PlatinumGroupProcessing {
     }
 
     private static void removeVanillaRecipes() {
-        if (GTLiteConfigHolder.ChainOverrides.enablePlatinumGroupProcessing) {
+        if (GTLiteConfigHolder.recipes.enableHarderPlatinumGroupProcess) {
             //  Remove Platinum Group Sludge Centrifuge recipe
             GTRecipeHandler.removeRecipesByInputs(CENTRIFUGE_RECIPES,
                     new ItemStack[]{OreDictUnifier.get(dust, PlatinumGroupSludge, 6)},

@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders.multiblock;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.item.ItemStack;
 
@@ -13,8 +14,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class SuprachronalAssemblyLine {
@@ -141,28 +141,53 @@ public class SuprachronalAssemblyLine {
                 .buildAndRegister();
 
         //  Hyperdimensional Drone
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(MINING_DRONE_OpV)
-                .input(swarm, Eternity, 4)
-                .input(plate, CosmicFabric, 16)
-                .input(circuit, MarkerMaterials.Tier.MAX, 8)
-                .input(ELECTRIC_PUMP_OpV)
-                .input(SENSOR_OpV)
-                .input(ROBOT_ARM_OpV)
-                .input(FIELD_GENERATOR_OpV)
-                .input(ULTIMATE_BATTERY_MK5, 2)
-                .fluidInputs(AstralTitanium.getFluid(L * 40))
-                .fluidInputs(CelestialTungsten.getFluid(L * 40))
-                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
-                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(L * 4))
-                .output(HYPERDIMENSIONAL_DRONE)
-                .EUt(VA[OpV])
-                .duration(600)
-                .stationResearch(b -> b
-                        .researchStack(MINING_DRONE_OpV.getStackForm())
-                        .EUt(VA[OpV])
-                        .CWUt(576))
-                .buildAndRegister();
+        if (GTLiteConfigHolder.tools.enableHighTierUltimateBattery) {
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(MINING_DRONE_OpV)
+                    .input(swarm, Eternity, 4)
+                    .input(plate, CosmicFabric, 16)
+                    .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                    .input(ELECTRIC_PUMP_OpV)
+                    .input(SENSOR_OpV)
+                    .input(ROBOT_ARM_OpV)
+                    .input(FIELD_GENERATOR_OpV)
+                    .input(ULTIMATE_BATTERY_MK5, 2)
+                    .fluidInputs(AstralTitanium.getFluid(L * 40))
+                    .fluidInputs(CelestialTungsten.getFluid(L * 40))
+                    .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
+                    .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(L * 4))
+                    .output(HYPERDIMENSIONAL_DRONE)
+                    .EUt(VA[OpV])
+                    .duration(600)
+                    .stationResearch(b -> b
+                            .researchStack(MINING_DRONE_OpV.getStackForm())
+                            .EUt(VA[OpV])
+                            .CWUt(576))
+                    .buildAndRegister();
+        } else {
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(MINING_DRONE_OpV)
+                    .input(swarm, Eternity, 4)
+                    .input(plate, CosmicFabric, 16)
+                    .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                    .input(ELECTRIC_PUMP_OpV)
+                    .input(SENSOR_OpV)
+                    .input(ROBOT_ARM_OpV)
+                    .input(FIELD_GENERATOR_OpV)
+                    .input(ULTIMATE_BATTERY, 2)
+                    .fluidInputs(AstralTitanium.getFluid(L * 40))
+                    .fluidInputs(CelestialTungsten.getFluid(L * 40))
+                    .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
+                    .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(L * 4))
+                    .output(HYPERDIMENSIONAL_DRONE)
+                    .EUt(VA[OpV])
+                    .duration(600)
+                    .stationResearch(b -> b
+                            .researchStack(MINING_DRONE_OpV.getStackForm())
+                            .EUt(VA[OpV])
+                            .CWUt(576))
+                    .buildAndRegister();
+        }
 
         for (int tier = 0; tier < 15; tier ++) {
             SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()

@@ -31,7 +31,7 @@ public class RareEarthProcessing {
     }
 
     private static void removeVanillaRecipes() {
-        if (GTLiteConfigHolder.chainOverrides.enableRareEarthProcessing) {
+        if (GTLiteConfigHolder.recipes.enableHarderRareEarthProcess) {
             GTRecipeHandler.removeRecipesByInputs(CENTRIFUGE_RECIPES, OreDictUnifier.get(dust, RareEarth));
         }
     }

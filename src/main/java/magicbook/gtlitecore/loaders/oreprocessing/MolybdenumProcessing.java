@@ -37,7 +37,7 @@ public class MolybdenumProcessing {
     }
 
     private static void removeVanillaRecipes() {
-        if (GTLiteConfigHolder.chainOverrides.enableMolybdenumProcessing) {
+        if (GTLiteConfigHolder.recipes.enableHarderMolybdenumRheniumProcess) {
             GTRecipeHandler.removeRecipesByInputs(ARC_FURNACE_RECIPES,
                     new ItemStack[]{OreDictUnifier.get(dust, Molybdenite, 3)},
                     new FluidStack[]{Oxygen.getFluid(4000)});

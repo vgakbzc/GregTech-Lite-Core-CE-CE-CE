@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.loaders.circuits;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -13,13 +14,13 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class MagnetoResonaticCircuits {
 
     public static void init() {
-
-        CircuitBoard();
-        Circuits();
+        if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
+            CircuitBoard();
+            Circuits();
+        }
     }
 
     private static void CircuitBoard() {
-
         //  Magneto Resonatic Board
         FORMING_PRESS_RECIPES.recipeBuilder()
                 .input(dust, IndiumGalliumPhosphide)

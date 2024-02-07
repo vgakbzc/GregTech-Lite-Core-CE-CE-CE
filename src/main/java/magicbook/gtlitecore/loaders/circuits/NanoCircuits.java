@@ -19,7 +19,7 @@ public class NanoCircuits {
     }
 
     private static void AssemblyBuffer() {
-        if (GTLiteConfigHolder.gtlitecoreOverrides.buffProcessorAssemblyRecipe) {
+        if (GTLiteConfigHolder.recipes.enableEasierProcessorAssembly) {
             //  Delete original recipe
             GTRecipeHandler.removeRecipesByInputs(CIRCUIT_ASSEMBLER_RECIPES,
                     new ItemStack[]{ADVANCED_CIRCUIT_BOARD.getStackForm(),

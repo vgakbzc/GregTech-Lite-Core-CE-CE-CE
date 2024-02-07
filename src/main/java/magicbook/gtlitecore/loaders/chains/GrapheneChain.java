@@ -23,7 +23,7 @@ public class GrapheneChain {
     }
 
     private static void removeVanillaRecipes() {
-        if (GTLiteConfigHolder.chainOverrides.enableGrapheneProcessing) {
+        if (GTLiteConfigHolder.recipes.enableHarderGrapheneProcess) {
             GTRecipeHandler.removeRecipesByInputs(MIXER_RECIPES,
                     OreDictUnifier.get(dust, Graphite),
                     OreDictUnifier.get(dust, Carbon, 4),
