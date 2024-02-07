@@ -813,7 +813,7 @@ public class OverrideRecipeLoader {
 
     private static void SteamStageOverrides() {
 
-        if (GTLiteConfigHolder.steamOverrides.enableHarderSteamMachineRecipe) {
+        if (GTLiteConfigHolder.machines.enableHarderSteamStageMachine) {
 
             ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_bronze");
             ModHandler.addShapedRecipe(true, "steam_boiler_coal_bronze", MetaTileEntities.STEAM_BOILER_COAL_BRONZE.getStackForm(),
@@ -979,121 +979,123 @@ public class OverrideRecipeLoader {
                 .duration(300)
                 .buildAndRegister();
 
-        //  UEV item bus
-        ModHandler.addShapedRecipe(true, "item_bus_input_to_output_10", IMPORT_ITEM_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_ITEM_HATCH[0].getStackForm());
+        if (GTLiteConfigHolder.machines.enableHighTierItemHatch) {
+            //  UEV item bus
+            ModHandler.addShapedRecipe(true, "item_bus_input_to_output_10", IMPORT_ITEM_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_ITEM_HATCH[0].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "item_bus_output_to_input_10", EXPORT_ITEM_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_ITEM_HATCH[0].getStackForm());
+            ModHandler.addShapedRecipe(true, "item_bus_output_to_input_10", EXPORT_ITEM_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_ITEM_HATCH[0].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(QUANTUM_CHEST[2])
-                .circuitMeta(1)
-                .fluidInputs(Polyetheretherketone.getFluid(864))
-                .output(IMPORT_ITEM_HATCH[0])
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(QUANTUM_CHEST[2])
+                    .circuitMeta(1)
+                    .fluidInputs(Polyetheretherketone.getFluid(864))
+                    .output(IMPORT_ITEM_HATCH[0])
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(QUANTUM_CHEST[2])
-                .circuitMeta(2)
-                .fluidInputs(Polyetheretherketone.getFluid(864))
-                .output(EXPORT_ITEM_HATCH[0])
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(QUANTUM_CHEST[2])
+                    .circuitMeta(2)
+                    .fluidInputs(Polyetheretherketone.getFluid(864))
+                    .output(EXPORT_ITEM_HATCH[0])
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UIV item bus
-        ModHandler.addShapedRecipe(true, "item_bus_input_to_output_11", IMPORT_ITEM_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_ITEM_HATCH[1].getStackForm());
+            //  UIV item bus
+            ModHandler.addShapedRecipe(true, "item_bus_input_to_output_11", IMPORT_ITEM_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_ITEM_HATCH[1].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "item_bus_output_to_input_11", EXPORT_ITEM_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_ITEM_HATCH[1].getStackForm());
+            ModHandler.addShapedRecipe(true, "item_bus_output_to_input_11", EXPORT_ITEM_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_ITEM_HATCH[1].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(QUANTUM_CHEST[3])
-                .circuitMeta(1)
-                .fluidInputs(Kevlar.getFluid(1008))
-                .output(IMPORT_ITEM_HATCH[1])
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(QUANTUM_CHEST[3])
+                    .circuitMeta(1)
+                    .fluidInputs(Kevlar.getFluid(1008))
+                    .output(IMPORT_ITEM_HATCH[1])
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(QUANTUM_CHEST[3])
-                .circuitMeta(2)
-                .fluidInputs(Kevlar.getFluid(1008))
-                .output(EXPORT_ITEM_HATCH[1])
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(QUANTUM_CHEST[3])
+                    .circuitMeta(2)
+                    .fluidInputs(Kevlar.getFluid(1008))
+                    .output(EXPORT_ITEM_HATCH[1])
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UXV item bus
-        ModHandler.addShapedRecipe(true, "item_bus_input_to_output_12", IMPORT_ITEM_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_ITEM_HATCH[2].getStackForm());
+            //  UXV item bus
+            ModHandler.addShapedRecipe(true, "item_bus_input_to_output_12", IMPORT_ITEM_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_ITEM_HATCH[2].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "item_bus_output_to_input_12", EXPORT_ITEM_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_ITEM_HATCH[2].getStackForm());
+            ModHandler.addShapedRecipe(true, "item_bus_output_to_input_12", EXPORT_ITEM_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_ITEM_HATCH[2].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(QUANTUM_CHEST[4])
-                .circuitMeta(1)
-                .fluidInputs(Kevlar.getFluid(1152))
-                .output(IMPORT_ITEM_HATCH[2])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(QUANTUM_CHEST[4])
+                    .circuitMeta(1)
+                    .fluidInputs(Kevlar.getFluid(1152))
+                    .output(IMPORT_ITEM_HATCH[2])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(QUANTUM_CHEST[4])
-                .circuitMeta(2)
-                .fluidInputs(Kevlar.getFluid(1152))
-                .output(EXPORT_ITEM_HATCH[2])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(QUANTUM_CHEST[4])
+                    .circuitMeta(2)
+                    .fluidInputs(Kevlar.getFluid(1152))
+                    .output(EXPORT_ITEM_HATCH[2])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  OpV item bus
-        ModHandler.addShapedRecipe(true, "item_bus_input_to_output_13", IMPORT_ITEM_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_ITEM_HATCH[3].getStackForm());
+            //  OpV item bus
+            ModHandler.addShapedRecipe(true, "item_bus_input_to_output_13", IMPORT_ITEM_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_ITEM_HATCH[3].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "item_bus_output_to_input_13", EXPORT_ITEM_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_ITEM_HATCH[3].getStackForm());
+            ModHandler.addShapedRecipe(true, "item_bus_output_to_input_13", EXPORT_ITEM_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_ITEM_HATCH[3].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(QUANTUM_CHEST[5])
-                .circuitMeta(1)
-                .fluidInputs(CosmicFabric.getFluid(1296))
-                .output(IMPORT_ITEM_HATCH[3])
-                .EUt(VA[OpV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(QUANTUM_CHEST[5])
+                    .circuitMeta(1)
+                    .fluidInputs(CosmicFabric.getFluid(1296))
+                    .output(IMPORT_ITEM_HATCH[3])
+                    .EUt(VA[OpV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(QUANTUM_CHEST[5])
-                .circuitMeta(2)
-                .fluidInputs(CosmicFabric.getFluid(1296))
-                .output(EXPORT_ITEM_HATCH[3])
-                .EUt(VA[OpV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(QUANTUM_CHEST[5])
+                    .circuitMeta(2)
+                    .fluidInputs(CosmicFabric.getFluid(1296))
+                    .output(EXPORT_ITEM_HATCH[3])
+                    .EUt(VA[OpV])
+                    .duration(300)
+                    .buildAndRegister();
+        }
 
     }
 
@@ -1128,121 +1130,123 @@ public class OverrideRecipeLoader {
                 .duration(300)
                 .buildAndRegister();
 
-        //  UEV fluid hatch
-        ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_10", IMPORT_FLUID_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_FLUID_HATCH[0].getStackForm());
+        if (GTLiteConfigHolder.machines.enableHighTierFluidHatch) {
+            //  UEV fluid hatch
+            ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_10", IMPORT_FLUID_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_FLUID_HATCH[0].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_10", EXPORT_FLUID_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_FLUID_HATCH[0].getStackForm());
+            ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_10", EXPORT_FLUID_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_FLUID_HATCH[0].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(QUANTUM_TANK[2])
-                .circuitMeta(1)
-                .fluidInputs(Polyetheretherketone.getFluid(864))
-                .output(IMPORT_FLUID_HATCH[0])
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(QUANTUM_TANK[2])
+                    .circuitMeta(1)
+                    .fluidInputs(Polyetheretherketone.getFluid(864))
+                    .output(IMPORT_FLUID_HATCH[0])
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(QUANTUM_CHEST[2])
-                .circuitMeta(2)
-                .fluidInputs(Polyetheretherketone.getFluid(864))
-                .output(EXPORT_FLUID_HATCH[0])
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(QUANTUM_CHEST[2])
+                    .circuitMeta(2)
+                    .fluidInputs(Polyetheretherketone.getFluid(864))
+                    .output(EXPORT_FLUID_HATCH[0])
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UIV
-        ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_11", IMPORT_FLUID_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_FLUID_HATCH[1].getStackForm());
+            //  UIV
+            ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_11", IMPORT_FLUID_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_FLUID_HATCH[1].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_11", EXPORT_FLUID_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_FLUID_HATCH[1].getStackForm());
+            ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_11", EXPORT_FLUID_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_FLUID_HATCH[1].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(QUANTUM_TANK[3])
-                .circuitMeta(1)
-                .fluidInputs(Kevlar.getFluid(1008))
-                .output(IMPORT_FLUID_HATCH[1])
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(QUANTUM_TANK[3])
+                    .circuitMeta(1)
+                    .fluidInputs(Kevlar.getFluid(1008))
+                    .output(IMPORT_FLUID_HATCH[1])
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(QUANTUM_TANK[3])
-                .circuitMeta(2)
-                .fluidInputs(Kevlar.getFluid(1008))
-                .output(EXPORT_FLUID_HATCH[1])
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(QUANTUM_TANK[3])
+                    .circuitMeta(2)
+                    .fluidInputs(Kevlar.getFluid(1008))
+                    .output(EXPORT_FLUID_HATCH[1])
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UXV
-        ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_12", IMPORT_FLUID_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_FLUID_HATCH[2].getStackForm());
+            //  UXV
+            ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_12", IMPORT_FLUID_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_FLUID_HATCH[2].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_12", EXPORT_FLUID_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_FLUID_HATCH[2].getStackForm());
+            ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_12", EXPORT_FLUID_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_FLUID_HATCH[2].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(QUANTUM_TANK[4])
-                .circuitMeta(1)
-                .fluidInputs(Kevlar.getFluid(1152))
-                .output(IMPORT_FLUID_HATCH[2])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(QUANTUM_TANK[4])
+                    .circuitMeta(1)
+                    .fluidInputs(Kevlar.getFluid(1152))
+                    .output(IMPORT_FLUID_HATCH[2])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(QUANTUM_TANK[4])
-                .circuitMeta(2)
-                .fluidInputs(Kevlar.getFluid(1152))
-                .output(EXPORT_FLUID_HATCH[2])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(QUANTUM_TANK[4])
+                    .circuitMeta(2)
+                    .fluidInputs(Kevlar.getFluid(1152))
+                    .output(EXPORT_FLUID_HATCH[2])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  OpV
-        ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_13", IMPORT_FLUID_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', EXPORT_FLUID_HATCH[3].getStackForm());
+            //  OpV
+            ModHandler.addShapedRecipe(true, "fluid_hatch_input_to_output_13", IMPORT_FLUID_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', EXPORT_FLUID_HATCH[3].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_13", EXPORT_FLUID_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', IMPORT_FLUID_HATCH[3].getStackForm());
+            ModHandler.addShapedRecipe(true, "fluid_hatch_output_to_input_13", EXPORT_FLUID_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', IMPORT_FLUID_HATCH[3].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(QUANTUM_TANK[5])
-                .circuitMeta(1)
-                .fluidInputs(CosmicFabric.getFluid(1296))
-                .output(IMPORT_FLUID_HATCH[3])
-                .EUt(VA[OpV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(QUANTUM_TANK[5])
+                    .circuitMeta(1)
+                    .fluidInputs(CosmicFabric.getFluid(1296))
+                    .output(IMPORT_FLUID_HATCH[3])
+                    .EUt(VA[OpV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(QUANTUM_TANK[5])
-                .circuitMeta(2)
-                .fluidInputs(CosmicFabric.getFluid(1296))
-                .output(EXPORT_FLUID_HATCH[3])
-                .EUt(VA[OpV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(QUANTUM_TANK[5])
+                    .circuitMeta(2)
+                    .fluidInputs(CosmicFabric.getFluid(1296))
+                    .output(EXPORT_FLUID_HATCH[3])
+                    .EUt(VA[OpV])
+                    .duration(300)
+                    .buildAndRegister();
+        }
 
     }
 
@@ -1315,145 +1319,147 @@ public class OverrideRecipeLoader {
                         .EUt(VA[UV]))
                 .buildAndRegister();
 
-        //  UEV
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(cableGtSingle, PedotTMA, 4)
-                .input(NANO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.UEV)
-                .input(VOLTAGE_COIL_UEV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(14000))
-                .fluidInputs(SolderingAlloy.getFluid(11520))
-                .output(ENERGY_INPUT_HATCH[UEV])
-                .EUt(VA[UEV])
-                .duration(1200)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_INPUT_HATCH[UHV].getStackForm())
-                        .CWUt(256)
-                        .EUt(VA[UHV]))
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier1AEnergyHatch) {
+            //  UEV
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(cableGtSingle, PedotTMA, 4)
+                    .input(NANO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.UEV)
+                    .input(VOLTAGE_COIL_UEV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(14000))
+                    .fluidInputs(SolderingAlloy.getFluid(11520))
+                    .output(ENERGY_INPUT_HATCH[UEV])
+                    .EUt(VA[UEV])
+                    .duration(1200)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_INPUT_HATCH[UHV].getStackForm())
+                            .CWUt(256)
+                            .EUt(VA[UHV]))
+                    .buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(spring, PedotTMA, 4)
-                .input(NANO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.UEV)
-                .input(VOLTAGE_COIL_UEV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(14000))
-                .fluidInputs(SolderingAlloy.getFluid(11520))
-                .output(ENERGY_OUTPUT_HATCH[UEV])
-                .EUt(VA[UEV])
-                .duration(1200)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_OUTPUT_HATCH[UHV].getStackForm())
-                        .CWUt(256)
-                        .EUt(VA[UHV]))
-                .buildAndRegister();
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(spring, PedotTMA, 4)
+                    .input(NANO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.UEV)
+                    .input(VOLTAGE_COIL_UEV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(14000))
+                    .fluidInputs(SolderingAlloy.getFluid(11520))
+                    .output(ENERGY_OUTPUT_HATCH[UEV])
+                    .EUt(VA[UEV])
+                    .duration(1200)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_OUTPUT_HATCH[UHV].getStackForm())
+                            .CWUt(256)
+                            .EUt(VA[UHV]))
+                    .buildAndRegister();
 
-        //  UIV
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(cableGtSingle, Solarium, 4)
-                .input(PICO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.UIV)
-                .input(VOLTAGE_COIL_UIV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(16000))
-                .fluidInputs(SolderingAlloy.getFluid(23040))
-                .output(ENERGY_INPUT_HATCH[UIV])
-                .EUt(VA[UIV])
-                .duration(1400)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_INPUT_HATCH[UEV].getStackForm())
-                        .CWUt(512)
-                        .EUt(VA[UEV]))
-                .buildAndRegister();
+            //  UIV
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(cableGtSingle, Solarium, 4)
+                    .input(PICO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.UIV)
+                    .input(VOLTAGE_COIL_UIV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(16000))
+                    .fluidInputs(SolderingAlloy.getFluid(23040))
+                    .output(ENERGY_INPUT_HATCH[UIV])
+                    .EUt(VA[UIV])
+                    .duration(1400)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_INPUT_HATCH[UEV].getStackForm())
+                            .CWUt(512)
+                            .EUt(VA[UEV]))
+                    .buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(spring, Solarium, 4)
-                .input(PICO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.UIV)
-                .input(VOLTAGE_COIL_UIV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(16000))
-                .fluidInputs(SolderingAlloy.getFluid(23040))
-                .output(ENERGY_OUTPUT_HATCH[UIV])
-                .EUt(VA[UIV])
-                .duration(1400)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_OUTPUT_HATCH[UEV].getStackForm())
-                        .CWUt(512)
-                        .EUt(VA[UEV]))
-                .buildAndRegister();
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(spring, Solarium, 4)
+                    .input(PICO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.UIV)
+                    .input(VOLTAGE_COIL_UIV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(16000))
+                    .fluidInputs(SolderingAlloy.getFluid(23040))
+                    .output(ENERGY_OUTPUT_HATCH[UIV])
+                    .EUt(VA[UIV])
+                    .duration(1400)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_OUTPUT_HATCH[UEV].getStackForm())
+                            .CWUt(512)
+                            .EUt(VA[UEV]))
+                    .buildAndRegister();
 
-        //  UXV
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(cableGtSingle, Hypogen, 4)
-                .input(PICO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.UXV)
-                .input(VOLTAGE_COIL_UXV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(18000))
-                .fluidInputs(SolderingAlloy.getFluid(46080))
-                .output(ENERGY_INPUT_HATCH[UXV])
-                .EUt(VA[UXV])
-                .duration(1600)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_INPUT_HATCH[UIV].getStackForm())
-                        .CWUt(1024)
-                        .EUt(VA[UIV]))
-                .buildAndRegister();
+            //  UXV
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(cableGtSingle, Hypogen, 4)
+                    .input(PICO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.UXV)
+                    .input(VOLTAGE_COIL_UXV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(18000))
+                    .fluidInputs(SolderingAlloy.getFluid(46080))
+                    .output(ENERGY_INPUT_HATCH[UXV])
+                    .EUt(VA[UXV])
+                    .duration(1600)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_INPUT_HATCH[UIV].getStackForm())
+                            .CWUt(1024)
+                            .EUt(VA[UIV]))
+                    .buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(spring, Hypogen, 4)
-                .input(PICO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.UXV)
-                .input(VOLTAGE_COIL_UXV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(18000))
-                .fluidInputs(SolderingAlloy.getFluid(46080))
-                .output(ENERGY_OUTPUT_HATCH[UXV])
-                .EUt(VA[UXV])
-                .duration(1600)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_OUTPUT_HATCH[UIV].getStackForm())
-                        .CWUt(1024)
-                        .EUt(VA[UIV]))
-                .buildAndRegister();
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(spring, Hypogen, 4)
+                    .input(PICO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.UXV)
+                    .input(VOLTAGE_COIL_UXV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(18000))
+                    .fluidInputs(SolderingAlloy.getFluid(46080))
+                    .output(ENERGY_OUTPUT_HATCH[UXV])
+                    .EUt(VA[UXV])
+                    .duration(1600)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_OUTPUT_HATCH[UIV].getStackForm())
+                            .CWUt(1024)
+                            .EUt(VA[UIV]))
+                    .buildAndRegister();
 
-        //  OpV
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(cableGtSingle, Galaxium, 4)
-                .input(FEMTO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.OpV)
-                .input(VOLTAGE_COIL_OpV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(20000))
-                .fluidInputs(SolderingAlloy.getFluid(92160))
-                .output(ENERGY_INPUT_HATCH[OpV])
-                .EUt(VA[OpV])
-                .duration(1800)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_INPUT_HATCH[UXV].getStackForm())
-                        .CWUt(2048)
-                        .EUt(VA[UXV]))
-                .buildAndRegister();
+            //  OpV
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(cableGtSingle, Galaxium, 4)
+                    .input(FEMTO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.OpV)
+                    .input(VOLTAGE_COIL_OpV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(20000))
+                    .fluidInputs(SolderingAlloy.getFluid(92160))
+                    .output(ENERGY_INPUT_HATCH[OpV])
+                    .EUt(VA[OpV])
+                    .duration(1800)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_INPUT_HATCH[UXV].getStackForm())
+                            .CWUt(2048)
+                            .EUt(VA[UXV]))
+                    .buildAndRegister();
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(spring, Galaxium, 4)
-                .input(FEMTO_PIC_CHIP, 2)
-                .input(circuit, MarkerMaterials.Tier.OpV)
-                .input(VOLTAGE_COIL_OpV, 2)
-                .fluidInputs(SodiumPotassium.getFluid(20000))
-                .fluidInputs(SolderingAlloy.getFluid(92160))
-                .output(ENERGY_OUTPUT_HATCH[OpV])
-                .EUt(VA[OpV])
-                .duration(1800)
-                .stationResearch(b -> b
-                        .researchStack(ENERGY_OUTPUT_HATCH[UXV].getStackForm())
-                        .CWUt(2048)
-                        .EUt(VA[UXV]))
-                .buildAndRegister();
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(spring, Galaxium, 4)
+                    .input(FEMTO_PIC_CHIP, 2)
+                    .input(circuit, MarkerMaterials.Tier.OpV)
+                    .input(VOLTAGE_COIL_OpV, 2)
+                    .fluidInputs(SodiumPotassium.getFluid(20000))
+                    .fluidInputs(SolderingAlloy.getFluid(92160))
+                    .output(ENERGY_OUTPUT_HATCH[OpV])
+                    .EUt(VA[OpV])
+                    .duration(1800)
+                    .stationResearch(b -> b
+                            .researchStack(ENERGY_OUTPUT_HATCH[UXV].getStackForm())
+                            .CWUt(2048)
+                            .EUt(VA[UXV]))
+                    .buildAndRegister();
+        }
     }
 
     private static void EnergyHatches4A() {
@@ -1474,33 +1480,35 @@ public class OverrideRecipeLoader {
                 .duration(100)
                 .buildAndRegister();
 
-        //  4A output addons for LV, MV, HV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[LV])
-                .input(wireGtQuadruple, Tin, 2)
-                .input(plate, Steel, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[0])
-                .EUt(VA[ULV])
-                .duration(100)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableLVtoHV4AEnergyHatch) {
+            //  4A output addons for LV, MV, HV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[LV])
+                    .input(wireGtQuadruple, Tin, 2)
+                    .input(plate, Steel, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[0])
+                    .EUt(VA[ULV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[MV])
-                .input(wireGtQuadruple, Copper, 2)
-                .input(plate, Aluminium, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[1])
-                .EUt(VA[LV])
-                .duration(100)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[MV])
+                    .input(wireGtQuadruple, Copper, 2)
+                    .input(plate, Aluminium, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[1])
+                    .EUt(VA[LV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[HV])
-                .input(wireGtQuadruple, Gold, 2)
-                .input(plate, StainlessSteel, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[2])
-                .EUt(VA[MV])
-                .duration(100)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[HV])
+                    .input(wireGtQuadruple, Gold, 2)
+                    .input(plate, StainlessSteel, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[2])
+                    .EUt(VA[MV])
+                    .duration(100)
+                    .buildAndRegister();
+        }
 
         //  UHV
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -1521,81 +1529,83 @@ public class OverrideRecipeLoader {
                 .duration(100)
                 .buildAndRegister();
 
-        //  UEV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_INPUT_HATCH[UEV])
-                .input(wireGtQuadruple, PedotTMA, 2)
-                .input(plate, Adamantium, 2)
-                .output(INPUT_ENERGY_HATCH_4A[0]) // from gtlitecore
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier4AEnergyHatch) {
+            //  UEV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_INPUT_HATCH[UEV])
+                    .input(wireGtQuadruple, PedotTMA, 2)
+                    .input(plate, Adamantium, 2)
+                    .output(INPUT_ENERGY_HATCH_4A[0]) // from gtlitecore
+                    .EUt(VA[UHV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[UEV])
-                .input(wireGtQuadruple, PedotTMA, 2)
-                .input(plate, Adamantium, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[3]) // from gtlitecore
-                .EUt(VA[UHV])
-                .duration(100)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[UEV])
+                    .input(wireGtQuadruple, PedotTMA, 2)
+                    .input(plate, Adamantium, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[3]) // from gtlitecore
+                    .EUt(VA[UHV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  UIV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_INPUT_HATCH[UIV])
-                .input(wireGtQuadruple, Solarium, 2)
-                .input(plate, Infinity, 2)
-                .output(INPUT_ENERGY_HATCH_4A[1]) // from gtlitecore
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
+            //  UIV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_INPUT_HATCH[UIV])
+                    .input(wireGtQuadruple, Solarium, 2)
+                    .input(plate, Infinity, 2)
+                    .output(INPUT_ENERGY_HATCH_4A[1]) // from gtlitecore
+                    .EUt(VA[UEV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[UIV])
-                .input(wireGtQuadruple, Solarium, 2)
-                .input(plate, Infinity, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[4]) // from gtlitecore
-                .EUt(VA[UEV])
-                .duration(100)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[UIV])
+                    .input(wireGtQuadruple, Solarium, 2)
+                    .input(plate, Infinity, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[4]) // from gtlitecore
+                    .EUt(VA[UEV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  UXV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_INPUT_HATCH[UXV])
-                .input(wireGtQuadruple, Hypogen, 2)
-                .input(plate, CosmicNeutronium, 2)
-                .output(INPUT_ENERGY_HATCH_4A[2]) // from gtlitecore
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
+            //  UXV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_INPUT_HATCH[UXV])
+                    .input(wireGtQuadruple, Hypogen, 2)
+                    .input(plate, CosmicNeutronium, 2)
+                    .output(INPUT_ENERGY_HATCH_4A[2]) // from gtlitecore
+                    .EUt(VA[UIV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[UXV])
-                .input(wireGtQuadruple, Hypogen, 2)
-                .input(plate, CosmicNeutronium, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[5]) // from gtlitecore
-                .EUt(VA[UIV])
-                .duration(100)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[UXV])
+                    .input(wireGtQuadruple, Hypogen, 2)
+                    .input(plate, CosmicNeutronium, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[5]) // from gtlitecore
+                    .EUt(VA[UIV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        //  OpV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_INPUT_HATCH[OpV])
-                .input(wireGtQuadruple, Galaxium, 2)
-                .input(plate, Spacetime, 2)
-                .output(INPUT_ENERGY_HATCH_4A[3]) // from gtlitecore
-                .EUt(VA[UXV])
-                .duration(100)
-                .buildAndRegister();
+            //  OpV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_INPUT_HATCH[OpV])
+                    .input(wireGtQuadruple, Galaxium, 2)
+                    .input(plate, Spacetime, 2)
+                    .output(INPUT_ENERGY_HATCH_4A[3]) // from gtlitecore
+                    .EUt(VA[UXV])
+                    .duration(100)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ENERGY_OUTPUT_HATCH[OpV])
-                .input(wireGtQuadruple, Galaxium, 2)
-                .input(plate, Spacetime, 2)
-                .output(OUTPUT_ENERGY_HATCH_4A[6]) // from gtlitecore
-                .EUt(VA[UXV])
-                .duration(100)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(ENERGY_OUTPUT_HATCH[OpV])
+                    .input(wireGtQuadruple, Galaxium, 2)
+                    .input(plate, Spacetime, 2)
+                    .output(OUTPUT_ENERGY_HATCH_4A[6]) // from gtlitecore
+                    .EUt(VA[UXV])
+                    .duration(100)
+                    .buildAndRegister();
+        }
     }
 
     private static void EnergyHatches16A() {
@@ -1604,46 +1614,48 @@ public class OverrideRecipeLoader {
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, HI_AMP_TRANSFORMER[UV].getStackForm(), ENERGY_INPUT_HATCH_4A[5].getStackForm(2), OreDictUnifier.get(wireGtOctal, Europium, 2), OreDictUnifier.get(plate, Neutronium, 4));
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, HI_AMP_TRANSFORMER[UV].getStackForm(), ENERGY_OUTPUT_HATCH_4A[5].getStackForm(), OreDictUnifier.get(wireGtOctal, Europium, 2), OreDictUnifier.get(plate, Neutronium, 4));
 
-        //  16A output addons for LV, MV, HV, EV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[LV])
-                .input(OUTPUT_ENERGY_HATCH_4A[0])
-                .input(wireGtOctal, Tin, 2)
-                .input(plate, Steel, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[0])
-                .EUt(VA[ULV])
-                .duration(200)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableLVtoEV16AEnergyHatch) {
+            //  16A output addons for LV, MV, HV, EV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[LV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[0])
+                    .input(wireGtOctal, Tin, 2)
+                    .input(plate, Steel, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[0])
+                    .EUt(VA[ULV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[MV])
-                .input(OUTPUT_ENERGY_HATCH_4A[1])
-                .input(wireGtOctal, Copper, 2)
-                .input(plate, Aluminium, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[1])
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[MV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[1])
+                    .input(wireGtOctal, Copper, 2)
+                    .input(plate, Aluminium, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[1])
+                    .EUt(VA[LV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[HV])
-                .input(OUTPUT_ENERGY_HATCH_4A[2])
-                .input(wireGtOctal, Gold, 2)
-                .input(plate, StainlessSteel, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[2])
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[HV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[2])
+                    .input(wireGtOctal, Gold, 2)
+                    .input(plate, StainlessSteel, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[2])
+                    .EUt(VA[MV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[EV])
-                .input(ENERGY_OUTPUT_HATCH_4A[0])
-                .input(wireGtOctal, Aluminium, 2)
-                .input(plate, Titanium, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[3])
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[EV])
+                    .input(ENERGY_OUTPUT_HATCH_4A[0])
+                    .input(wireGtOctal, Aluminium, 2)
+                    .input(plate, Titanium, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[3])
+                    .EUt(VA[HV])
+                    .duration(200)
+                    .buildAndRegister();
+        }
 
         //  UHV
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -1666,89 +1678,91 @@ public class OverrideRecipeLoader {
                 .duration(200)
                 .buildAndRegister();
 
-        //  UEV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UEV])
-                .input(INPUT_ENERGY_HATCH_4A[0], 2) // from gtlitecore
-                .input(wireGtOctal, PedotTMA, 2)
-                .input(plate, Adamantium, 4)
-                .output(INPUT_ENERGY_HATCH_16A[0]) // from gtlitecore
-                .EUt(VA[UHV])
-                .duration(200)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier16AEnergyHatch) {
+            //  UEV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UEV])
+                    .input(INPUT_ENERGY_HATCH_4A[0], 2) // from gtlitecore
+                    .input(wireGtOctal, PedotTMA, 2)
+                    .input(plate, Adamantium, 4)
+                    .output(INPUT_ENERGY_HATCH_16A[0]) // from gtlitecore
+                    .EUt(VA[UHV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UEV])
-                .input(OUTPUT_ENERGY_HATCH_4A[3]) // from gtlitecore
-                .input(wireGtOctal, PedotTMA, 2)
-                .input(plate, Adamantium, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[4]) // from gtlitecore
-                .EUt(VA[UHV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UEV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[3]) // from gtlitecore
+                    .input(wireGtOctal, PedotTMA, 2)
+                    .input(plate, Adamantium, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[4]) // from gtlitecore
+                    .EUt(VA[UHV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        //  UIV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UIV])
-                .input(INPUT_ENERGY_HATCH_4A[1], 2) // from gtlitecore
-                .input(wireGtOctal, Solarium, 2)
-                .input(plate, Infinity, 4)
-                .output(INPUT_ENERGY_HATCH_16A[1]) // from gtlitecore
-                .EUt(VA[UEV])
-                .duration(200)
-                .buildAndRegister();
+            //  UIV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UIV])
+                    .input(INPUT_ENERGY_HATCH_4A[1], 2) // from gtlitecore
+                    .input(wireGtOctal, Solarium, 2)
+                    .input(plate, Infinity, 4)
+                    .output(INPUT_ENERGY_HATCH_16A[1]) // from gtlitecore
+                    .EUt(VA[UEV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UIV])
-                .input(OUTPUT_ENERGY_HATCH_4A[4]) // from gtlitecore
-                .input(wireGtOctal, Solarium, 2)
-                .input(plate, Infinity, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[5]) // from gtlitecore
-                .EUt(VA[UEV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UIV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[4]) // from gtlitecore
+                    .input(wireGtOctal, Solarium, 2)
+                    .input(plate, Infinity, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[5]) // from gtlitecore
+                    .EUt(VA[UEV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        //  UXV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UXV])
-                .input(INPUT_ENERGY_HATCH_4A[2], 2) // from gtlitecore
-                .input(wireGtOctal, Hypogen, 2)
-                .input(plate, CosmicNeutronium, 4)
-                .output(INPUT_ENERGY_HATCH_16A[2]) // from gtlitecore
-                .EUt(VA[UIV])
-                .duration(200)
-                .buildAndRegister();
+            //  UXV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UXV])
+                    .input(INPUT_ENERGY_HATCH_4A[2], 2) // from gtlitecore
+                    .input(wireGtOctal, Hypogen, 2)
+                    .input(plate, CosmicNeutronium, 4)
+                    .output(INPUT_ENERGY_HATCH_16A[2]) // from gtlitecore
+                    .EUt(VA[UIV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UXV])
-                .input(OUTPUT_ENERGY_HATCH_4A[5]) // from gtlitecore
-                .input(wireGtOctal, Hypogen, 2)
-                .input(plate, CosmicNeutronium, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[6]) // from gtlitecore
-                .EUt(VA[UIV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UXV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[5]) // from gtlitecore
+                    .input(wireGtOctal, Hypogen, 2)
+                    .input(plate, CosmicNeutronium, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[6]) // from gtlitecore
+                    .EUt(VA[UIV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        //  OpV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[OpV])
-                .input(INPUT_ENERGY_HATCH_4A[3], 2) // from gtlitecore
-                .input(wireGtOctal, Galaxium, 2)
-                .input(plate, Spacetime, 4)
-                .output(INPUT_ENERGY_HATCH_16A[3]) // from gtlitecore
-                .EUt(VA[UXV])
-                .duration(200)
-                .buildAndRegister();
+            //  OpV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[OpV])
+                    .input(INPUT_ENERGY_HATCH_4A[3], 2) // from gtlitecore
+                    .input(wireGtOctal, Galaxium, 2)
+                    .input(plate, Spacetime, 4)
+                    .output(INPUT_ENERGY_HATCH_16A[3]) // from gtlitecore
+                    .EUt(VA[UXV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[OpV])
-                .input(OUTPUT_ENERGY_HATCH_4A[6]) // from gtlitecore
-                .input(wireGtOctal, Galaxium, 2)
-                .input(plate, Spacetime, 4)
-                .output(OUTPUT_ENERGY_HATCH_16A[7]) // from gtlitecore
-                .EUt(VA[UXV])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[OpV])
+                    .input(OUTPUT_ENERGY_HATCH_4A[6]) // from gtlitecore
+                    .input(wireGtOctal, Galaxium, 2)
+                    .input(plate, Spacetime, 4)
+                    .output(OUTPUT_ENERGY_HATCH_16A[7]) // from gtlitecore
+                    .EUt(VA[UXV])
+                    .duration(200)
+                    .buildAndRegister();
+        }
     }
 
     private static void EnergyHatches64A() {
@@ -1777,89 +1791,91 @@ public class OverrideRecipeLoader {
                 .duration(400)
                 .buildAndRegister();
 
-        //  UEV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[UEV])
-                .input(INPUT_ENERGY_HATCH_16A[0])
-                .input(wireGtHex, PedotTMA, 2)
-                .input(plate, Adamantium, 6)
-                .output(SUBSTATION_INPUT_ENERGY_HATCH[0])
-                .EUt(VA[UHV])
-                .duration(400)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier64ASubstationEnergyHatch) {
+            //  UEV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[UEV])
+                    .input(INPUT_ENERGY_HATCH_16A[0])
+                    .input(wireGtHex, PedotTMA, 2)
+                    .input(plate, Adamantium, 6)
+                    .output(SUBSTATION_INPUT_ENERGY_HATCH[0])
+                    .EUt(VA[UHV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[UEV])
-                .input(OUTPUT_ENERGY_HATCH_16A[4])
-                .input(wireGtHex, PedotTMA, 2)
-                .input(plate, Adamantium, 6)
-                .output(SUBSTATION_OUTPUT_ENERGY_HATCH[0])
-                .EUt(VA[UHV])
-                .duration(400)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[UEV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[4])
+                    .input(wireGtHex, PedotTMA, 2)
+                    .input(plate, Adamantium, 6)
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[0])
+                    .EUt(VA[UHV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        //  UIV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[UIV])
-                .input(INPUT_ENERGY_HATCH_16A[1])
-                .input(wireGtHex, Solarium, 2)
-                .input(plate, Infinity, 6)
-                .output(SUBSTATION_INPUT_ENERGY_HATCH[1])
-                .EUt(VA[UEV])
-                .duration(400)
-                .buildAndRegister();
+            //  UIV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[UIV])
+                    .input(INPUT_ENERGY_HATCH_16A[1])
+                    .input(wireGtHex, Solarium, 2)
+                    .input(plate, Infinity, 6)
+                    .output(SUBSTATION_INPUT_ENERGY_HATCH[1])
+                    .EUt(VA[UEV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[UIV])
-                .input(OUTPUT_ENERGY_HATCH_16A[5])
-                .input(wireGtHex, Solarium, 2)
-                .input(plate, Infinity, 6)
-                .output(SUBSTATION_OUTPUT_ENERGY_HATCH[1])
-                .EUt(VA[UEV])
-                .duration(400)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[UIV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[5])
+                    .input(wireGtHex, Solarium, 2)
+                    .input(plate, Infinity, 6)
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[1])
+                    .EUt(VA[UEV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        //  UXV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[UXV])
-                .input(INPUT_ENERGY_HATCH_16A[2])
-                .input(wireGtHex, Hypogen, 2)
-                .input(plate, CosmicNeutronium, 6)
-                .output(SUBSTATION_INPUT_ENERGY_HATCH[2])
-                .EUt(VA[UIV])
-                .duration(400)
-                .buildAndRegister();
+            //  UXV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[UXV])
+                    .input(INPUT_ENERGY_HATCH_16A[2])
+                    .input(wireGtHex, Hypogen, 2)
+                    .input(plate, CosmicNeutronium, 6)
+                    .output(SUBSTATION_INPUT_ENERGY_HATCH[2])
+                    .EUt(VA[UIV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[UXV])
-                .input(OUTPUT_ENERGY_HATCH_16A[6])
-                .input(wireGtHex, Hypogen, 2)
-                .input(plate, CosmicNeutronium, 6)
-                .output(SUBSTATION_OUTPUT_ENERGY_HATCH[2])
-                .EUt(VA[UIV])
-                .duration(400)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[UXV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[6])
+                    .input(wireGtHex, Hypogen, 2)
+                    .input(plate, CosmicNeutronium, 6)
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[2])
+                    .EUt(VA[UIV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        //  OpV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[OpV])
-                .input(INPUT_ENERGY_HATCH_16A[3])
-                .input(wireGtHex, Galaxium, 2)
-                .input(plate, Spacetime, 6)
-                .output(SUBSTATION_INPUT_ENERGY_HATCH[3])
-                .EUt(VA[UXV])
-                .duration(400)
-                .buildAndRegister();
+            //  OpV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[OpV])
+                    .input(INPUT_ENERGY_HATCH_16A[3])
+                    .input(wireGtHex, Galaxium, 2)
+                    .input(plate, Spacetime, 6)
+                    .output(SUBSTATION_INPUT_ENERGY_HATCH[3])
+                    .EUt(VA[UXV])
+                    .duration(400)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(POWER_TRANSFORMER[OpV])
-                .input(OUTPUT_ENERGY_HATCH_16A[7])
-                .input(wireGtHex, Galaxium, 2)
-                .input(plate, Spacetime, 6)
-                .output(SUBSTATION_OUTPUT_ENERGY_HATCH[3])
-                .EUt(VA[UXV])
-                .duration(400)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[OpV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[7])
+                    .input(wireGtHex, Galaxium, 2)
+                    .input(plate, Spacetime, 6)
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[3])
+                    .EUt(VA[UXV])
+                    .duration(400)
+                    .buildAndRegister();
+        }
     }
 
     private static void Transformers() {
@@ -1871,33 +1887,35 @@ public class OverrideRecipeLoader {
                 'P', NANO_PIC_CHIP,
                 'H', HULL[UHV].getStackForm());
 
-        //  UEV
-        ModHandler.addShapedRecipe(true, "machine.transformer.uev", TRANSFORMER[UEV].getStackForm(),
-                "PWW", "WH ", "PWW",
-                'W', new UnificationEntry(cableGtSingle, PedotTMA),
-                'P', NANO_PIC_CHIP,
-                'H', HULL[UEV].getStackForm());
+        if (GTLiteConfigHolder.machines.enableHighTierTransformer) {
+            //  UEV
+            ModHandler.addShapedRecipe(true, "machine.transformer.uev", TRANSFORMER[UEV].getStackForm(),
+                    "PWW", "WH ", "PWW",
+                    'W', new UnificationEntry(cableGtSingle, PedotTMA),
+                    'P', NANO_PIC_CHIP,
+                    'H', HULL[UEV].getStackForm());
 
-        //  UIV
-        ModHandler.addShapedRecipe(true, "machine.transformer.uiv", TRANSFORMER[UIV].getStackForm(),
-                "PWW", "WH ", "PWW",
-                'W', new UnificationEntry(cableGtSingle, Solarium),
-                'P', PICO_PIC_CHIP,
-                'H', HULL[UIV].getStackForm());
+            //  UIV
+            ModHandler.addShapedRecipe(true, "machine.transformer.uiv", TRANSFORMER[UIV].getStackForm(),
+                    "PWW", "WH ", "PWW",
+                    'W', new UnificationEntry(cableGtSingle, Solarium),
+                    'P', PICO_PIC_CHIP,
+                    'H', HULL[UIV].getStackForm());
 
-        //  UXV
-        ModHandler.addShapedRecipe(true, "machine.transformer.uxv", TRANSFORMER[UXV].getStackForm(),
-                "PWW", "WH ", "PWW",
-                'W', new UnificationEntry(cableGtSingle, Hypogen),
-                'P', PICO_PIC_CHIP,
-                'H', HULL[UXV].getStackForm());
+            //  UXV
+            ModHandler.addShapedRecipe(true, "machine.transformer.uxv", TRANSFORMER[UXV].getStackForm(),
+                    "PWW", "WH ", "PWW",
+                    'W', new UnificationEntry(cableGtSingle, Hypogen),
+                    'P', PICO_PIC_CHIP,
+                    'H', HULL[UXV].getStackForm());
 
-        //  OpV
-        ModHandler.addShapedRecipe(true, "machine.transformer.opv", TRANSFORMER[OpV].getStackForm(),
-                "PWW", "WH ", "PWW",
-                'W', new UnificationEntry(cableGtSingle, Galaxium),
-                'P', FEMTO_PIC_CHIP,
-                'H', HULL[OpV].getStackForm());
+            //  OpV
+            ModHandler.addShapedRecipe(true, "machine.transformer.opv", TRANSFORMER[OpV].getStackForm(),
+                    "PWW", "WH ", "PWW",
+                    'W', new UnificationEntry(cableGtSingle, Galaxium),
+                    'P', FEMTO_PIC_CHIP,
+                    'H', HULL[OpV].getStackForm());
+        }
 
     }
 
@@ -1917,61 +1935,63 @@ public class OverrideRecipeLoader {
                 .duration(200)
                 .buildAndRegister();
 
-        //  UEV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UEV])
-                .input(ELECTRIC_PUMP_LuV)
-                .input(cableGtOctal, Solarium)
-                .input(cableGtHex, PedotTMA, 2)
-                .input(springSmall, PedotTMA)
-                .input(spring, Solarium)
-                .fluidInputs(Lubricant.getFluid(2000))
-                .output(POWER_TRANSFORMER[UEV])
-                .EUt(VA[UEV])
-                .duration(200)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTierPowerTransformer) {
+            //  UEV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UEV])
+                    .input(ELECTRIC_PUMP_LuV)
+                    .input(cableGtOctal, Solarium)
+                    .input(cableGtHex, PedotTMA, 2)
+                    .input(springSmall, PedotTMA)
+                    .input(spring, Solarium)
+                    .fluidInputs(Lubricant.getFluid(2000))
+                    .output(POWER_TRANSFORMER[UEV])
+                    .EUt(VA[UEV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        //  UIV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UIV])
-                .input(ELECTRIC_PUMP_LuV)
-                .input(cableGtOctal, Hypogen)
-                .input(cableGtHex, Solarium, 2)
-                .input(springSmall, Solarium)
-                .input(spring, Hypogen)
-                .fluidInputs(Lubricant.getFluid(2000))
-                .output(POWER_TRANSFORMER[UIV])
-                .EUt(VA[UIV])
-                .duration(200)
-                .buildAndRegister();
+            //  UIV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UIV])
+                    .input(ELECTRIC_PUMP_LuV)
+                    .input(cableGtOctal, Hypogen)
+                    .input(cableGtHex, Solarium, 2)
+                    .input(springSmall, Solarium)
+                    .input(spring, Hypogen)
+                    .fluidInputs(Lubricant.getFluid(2000))
+                    .output(POWER_TRANSFORMER[UIV])
+                    .EUt(VA[UIV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        //  UXV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[UXV])
-                .input(ELECTRIC_PUMP_ZPM)
-                .input(cableGtOctal, Galaxium)
-                .input(cableGtHex, Hypogen, 2)
-                .input(springSmall, Hypogen)
-                .input(spring, Galaxium)
-                .fluidInputs(Lubricant.getFluid(2000))
-                .output(POWER_TRANSFORMER[UXV])
-                .EUt(VA[UXV])
-                .duration(200)
-                .buildAndRegister();
+            //  UXV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[UXV])
+                    .input(ELECTRIC_PUMP_ZPM)
+                    .input(cableGtOctal, Galaxium)
+                    .input(cableGtHex, Hypogen, 2)
+                    .input(springSmall, Hypogen)
+                    .input(spring, Galaxium)
+                    .fluidInputs(Lubricant.getFluid(2000))
+                    .output(POWER_TRANSFORMER[UXV])
+                    .EUt(VA[UXV])
+                    .duration(200)
+                    .buildAndRegister();
 
-        //  OpV
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HI_AMP_TRANSFORMER[OpV])
-                .input(ELECTRIC_PUMP_ZPM)
-                .input(cableGtOctal, Universium)
-                .input(cableGtHex, Hypogen, 2)
-                .input(springSmall, Hypogen)
-                .input(spring, Universium)
-                .fluidInputs(Lubricant.getFluid(2000))
-                .output(POWER_TRANSFORMER[OpV])
-                .EUt(VA[OpV])
-                .duration(200)
-                .buildAndRegister();
+            //  OpV
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HI_AMP_TRANSFORMER[OpV])
+                    .input(ELECTRIC_PUMP_ZPM)
+                    .input(cableGtOctal, Universium)
+                    .input(cableGtHex, Hypogen, 2)
+                    .input(springSmall, Hypogen)
+                    .input(spring, Universium)
+                    .fluidInputs(Lubricant.getFluid(2000))
+                    .output(POWER_TRANSFORMER[OpV])
+                    .EUt(VA[OpV])
+                    .duration(200)
+                    .buildAndRegister();
+        }
     }
 
     private static void HiAmpTransformers() {
@@ -1984,437 +2004,445 @@ public class OverrideRecipeLoader {
                 'P', new UnificationEntry(cableGtQuadruple, PedotTMA),
                 'Q', new UnificationEntry(cableGtQuadruple, Europium));
 
-        //  UEV
-        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uev", HI_AMP_TRANSFORMER[UEV].getStackForm(),
-                "VQQ", "PH ", "VQQ",
-                'V', VOLTAGE_COIL_UEV,
-                'H', HULL[UEV].getStackForm(),
-                'P', new UnificationEntry(cableGtQuadruple, Solarium),
-                'Q', new UnificationEntry(cableGtQuadruple, PedotTMA));
+        if (GTLiteConfigHolder.machines.enableHighTierHiAmpTransformer) {
+            //  UEV
+            ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uev", HI_AMP_TRANSFORMER[UEV].getStackForm(),
+                    "VQQ", "PH ", "VQQ",
+                    'V', VOLTAGE_COIL_UEV,
+                    'H', HULL[UEV].getStackForm(),
+                    'P', new UnificationEntry(cableGtQuadruple, Solarium),
+                    'Q', new UnificationEntry(cableGtQuadruple, PedotTMA));
 
-        //  UIV
-        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uiv", HI_AMP_TRANSFORMER[UIV].getStackForm(),
-                "VQQ", "PH ", "VQQ",
-                'V', VOLTAGE_COIL_UIV,
-                'H', HULL[UIV].getStackForm(),
-                'P', new UnificationEntry(cableGtQuadruple, Hypogen),
-                'Q', new UnificationEntry(cableGtQuadruple, Solarium));
+            //  UIV
+            ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uiv", HI_AMP_TRANSFORMER[UIV].getStackForm(),
+                    "VQQ", "PH ", "VQQ",
+                    'V', VOLTAGE_COIL_UIV,
+                    'H', HULL[UIV].getStackForm(),
+                    'P', new UnificationEntry(cableGtQuadruple, Hypogen),
+                    'Q', new UnificationEntry(cableGtQuadruple, Solarium));
 
-        //  UXV
-        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uxv", HI_AMP_TRANSFORMER[UXV].getStackForm(),
-                "VQQ", "PH ", "VQQ",
-                'V', VOLTAGE_COIL_UXV,
-                'H', HULL[UXV].getStackForm(),
-                'P', new UnificationEntry(cableGtQuadruple, Galaxium),
-                'Q', new UnificationEntry(cableGtQuadruple, Hypogen));
+            //  UXV
+            ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.uxv", HI_AMP_TRANSFORMER[UXV].getStackForm(),
+                    "VQQ", "PH ", "VQQ",
+                    'V', VOLTAGE_COIL_UXV,
+                    'H', HULL[UXV].getStackForm(),
+                    'P', new UnificationEntry(cableGtQuadruple, Galaxium),
+                    'Q', new UnificationEntry(cableGtQuadruple, Hypogen));
 
-        //  OpV
-        ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.opv", HI_AMP_TRANSFORMER[OpV].getStackForm(),
-                "VQQ", "PH ", "VQQ",
-                'V', VOLTAGE_COIL_OpV,
-                'H', HULL[OpV].getStackForm(),
-                'P', new UnificationEntry(cableGtQuadruple, Universium),
-                'Q', new UnificationEntry(cableGtQuadruple, Galaxium));
+            //  OpV
+            ModHandler.addShapedRecipe(true, "machine.transformer.hi_amp.opv", HI_AMP_TRANSFORMER[OpV].getStackForm(),
+                    "VQQ", "PH ", "VQQ",
+                    'V', VOLTAGE_COIL_OpV,
+                    'H', HULL[OpV].getStackForm(),
+                    'P', new UnificationEntry(cableGtQuadruple, Universium),
+                    'Q', new UnificationEntry(cableGtQuadruple, Galaxium));
+        }
     }
 
     private static void LaserHatches256A() {
 
-        //  UHV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UHV])
-                .input(lens, Diamond)
-                .input(EMITTER_UHV)
-                .input(ELECTRIC_PUMP_UHV)
-                .input(cableGtSingle, Europium, 4)
-                .circuitMeta(1)
-                .output(LASER_INPUT_HATCH_256[4])
-                .EUt(VA[UHV])
-                .duration(300)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier256ALaserHatch) {
+            //  UHV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(lens, Diamond)
+                    .input(EMITTER_UHV)
+                    .input(ELECTRIC_PUMP_UHV)
+                    .input(cableGtSingle, Europium, 4)
+                    .circuitMeta(1)
+                    .output(LASER_INPUT_HATCH_256[4])
+                    .EUt(VA[UHV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UHV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UHV])
-                .input(lens, Diamond)
-                .input(SENSOR_UHV)
-                .input(ELECTRIC_PUMP_UHV)
-                .input(cableGtSingle, Europium, 4)
-                .circuitMeta(1)
-                .output(LASER_OUTPUT_HATCH_256[4])
-                .EUt(VA[UHV])
-                .duration(300)
-                .buildAndRegister();
+            //  UHV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(lens, Diamond)
+                    .input(SENSOR_UHV)
+                    .input(ELECTRIC_PUMP_UHV)
+                    .input(cableGtSingle, Europium, 4)
+                    .circuitMeta(1)
+                    .output(LASER_OUTPUT_HATCH_256[4])
+                    .EUt(VA[UHV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UEV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(lens, Diamond)
-                .input(EMITTER_UEV)
-                .input(ELECTRIC_PUMP_UEV)
-                .input(cableGtSingle, PedotTMA, 4)
-                .circuitMeta(1)
-                .output(LASER_INPUT_HATCH_256[5])
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            //  UEV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(lens, Diamond)
+                    .input(EMITTER_UEV)
+                    .input(ELECTRIC_PUMP_UEV)
+                    .input(cableGtSingle, PedotTMA, 4)
+                    .circuitMeta(1)
+                    .output(LASER_INPUT_HATCH_256[5])
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UEV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(lens, Diamond)
-                .input(SENSOR_UEV)
-                .input(ELECTRIC_PUMP_UEV)
-                .input(cableGtSingle, PedotTMA, 4)
-                .circuitMeta(1)
-                .output(LASER_OUTPUT_HATCH_256[5])
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            //  UEV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(lens, Diamond)
+                    .input(SENSOR_UEV)
+                    .input(ELECTRIC_PUMP_UEV)
+                    .input(cableGtSingle, PedotTMA, 4)
+                    .circuitMeta(1)
+                    .output(LASER_OUTPUT_HATCH_256[5])
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UIV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(lens, Diamond)
-                .input(EMITTER_UIV)
-                .input(ELECTRIC_PUMP_UIV)
-                .input(cableGtSingle, Solarium, 4)
-                .circuitMeta(1)
-                .output(LASER_INPUT_HATCH_256[6])
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            //  UIV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(lens, Diamond)
+                    .input(EMITTER_UIV)
+                    .input(ELECTRIC_PUMP_UIV)
+                    .input(cableGtSingle, Solarium, 4)
+                    .circuitMeta(1)
+                    .output(LASER_INPUT_HATCH_256[6])
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UIV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(lens, Diamond)
-                .input(SENSOR_UIV)
-                .input(ELECTRIC_PUMP_UIV)
-                .input(cableGtSingle, Solarium, 4)
-                .circuitMeta(1)
-                .output(LASER_OUTPUT_HATCH_256[6])
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            //  UIV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(lens, Diamond)
+                    .input(SENSOR_UIV)
+                    .input(ELECTRIC_PUMP_UIV)
+                    .input(cableGtSingle, Solarium, 4)
+                    .circuitMeta(1)
+                    .output(LASER_OUTPUT_HATCH_256[6])
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UXV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(lens, Diamond)
-                .input(EMITTER_UXV)
-                .input(ELECTRIC_PUMP_UXV)
-                .input(cableGtSingle, Hypogen, 4)
-                .circuitMeta(1)
-                .output(LASER_INPUT_HATCH_256[7])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            //  UXV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(lens, Diamond)
+                    .input(EMITTER_UXV)
+                    .input(ELECTRIC_PUMP_UXV)
+                    .input(cableGtSingle, Hypogen, 4)
+                    .circuitMeta(1)
+                    .output(LASER_INPUT_HATCH_256[7])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UXV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(lens, Diamond)
-                .input(SENSOR_UXV)
-                .input(ELECTRIC_PUMP_UXV)
-                .input(cableGtSingle, Hypogen, 4)
-                .circuitMeta(1)
-                .output(LASER_OUTPUT_HATCH_256[7])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            //  UXV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(lens, Diamond)
+                    .input(SENSOR_UXV)
+                    .input(ELECTRIC_PUMP_UXV)
+                    .input(cableGtSingle, Hypogen, 4)
+                    .circuitMeta(1)
+                    .output(LASER_OUTPUT_HATCH_256[7])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  OpV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(lens, Diamond)
-                .input(EMITTER_OpV)
-                .input(ELECTRIC_PUMP_OpV)
-                .input(cableGtSingle, Galaxium, 4)
-                .circuitMeta(1)
-                .output(LASER_INPUT_HATCH_256[8])
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            //  OpV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(lens, Diamond)
+                    .input(EMITTER_OpV)
+                    .input(ELECTRIC_PUMP_OpV)
+                    .input(cableGtSingle, Galaxium, 4)
+                    .circuitMeta(1)
+                    .output(LASER_INPUT_HATCH_256[8])
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  OpV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(lens, Diamond)
-                .input(SENSOR_OpV)
-                .input(ELECTRIC_PUMP_OpV)
-                .input(cableGtSingle, Galaxium, 4)
-                .circuitMeta(1)
-                .output(LASER_OUTPUT_HATCH_256[8])
-                .EUt(VA[OpV])
-                .duration(300)
-                .buildAndRegister();
+            //  OpV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(lens, Diamond)
+                    .input(SENSOR_OpV)
+                    .input(ELECTRIC_PUMP_OpV)
+                    .input(cableGtSingle, Galaxium, 4)
+                    .circuitMeta(1)
+                    .output(LASER_OUTPUT_HATCH_256[8])
+                    .EUt(VA[OpV])
+                    .duration(300)
+                    .buildAndRegister();
+        }
 
     }
 
     private static void LaserHatches1024A() {
 
-        //  UHV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UHV])
-                .input(lens, Diamond, 2)
-                .input(EMITTER_UHV, 2)
-                .input(ELECTRIC_PUMP_UHV, 2)
-                .input(cableGtDouble, Europium, 4)
-                .circuitMeta(2)
-                .output(LASER_INPUT_HATCH_1024[4])
-                .EUt(VA[UHV])
-                .duration(600)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier1024ALaserHatch) {
+            //  UHV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(lens, Diamond, 2)
+                    .input(EMITTER_UHV, 2)
+                    .input(ELECTRIC_PUMP_UHV, 2)
+                    .input(cableGtDouble, Europium, 4)
+                    .circuitMeta(2)
+                    .output(LASER_INPUT_HATCH_1024[4])
+                    .EUt(VA[UHV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UHV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UHV])
-                .input(lens, Diamond, 2)
-                .input(SENSOR_UHV, 2)
-                .input(ELECTRIC_PUMP_UHV, 2)
-                .input(cableGtDouble, Europium, 4)
-                .circuitMeta(2)
-                .output(LASER_OUTPUT_HATCH_1024[4])
-                .EUt(VA[UHV])
-                .duration(600)
-                .buildAndRegister();
+            //  UHV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(lens, Diamond, 2)
+                    .input(SENSOR_UHV, 2)
+                    .input(ELECTRIC_PUMP_UHV, 2)
+                    .input(cableGtDouble, Europium, 4)
+                    .circuitMeta(2)
+                    .output(LASER_OUTPUT_HATCH_1024[4])
+                    .EUt(VA[UHV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UEV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(lens, Diamond, 2)
-                .input(EMITTER_UEV, 2)
-                .input(ELECTRIC_PUMP_UEV, 2)
-                .input(cableGtDouble, PedotTMA, 4)
-                .circuitMeta(2)
-                .output(LASER_INPUT_HATCH_1024[5])
-                .EUt(VA[UEV])
-                .duration(600)
-                .buildAndRegister();
+            //  UEV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(lens, Diamond, 2)
+                    .input(EMITTER_UEV, 2)
+                    .input(ELECTRIC_PUMP_UEV, 2)
+                    .input(cableGtDouble, PedotTMA, 4)
+                    .circuitMeta(2)
+                    .output(LASER_INPUT_HATCH_1024[5])
+                    .EUt(VA[UEV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UEV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(lens, Diamond, 2)
-                .input(SENSOR_UEV, 2)
-                .input(ELECTRIC_PUMP_UEV, 2)
-                .input(cableGtDouble, PedotTMA, 4)
-                .circuitMeta(2)
-                .output(LASER_OUTPUT_HATCH_1024[5])
-                .EUt(VA[UEV])
-                .duration(600)
-                .buildAndRegister();
+            //  UEV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(lens, Diamond, 2)
+                    .input(SENSOR_UEV, 2)
+                    .input(ELECTRIC_PUMP_UEV, 2)
+                    .input(cableGtDouble, PedotTMA, 4)
+                    .circuitMeta(2)
+                    .output(LASER_OUTPUT_HATCH_1024[5])
+                    .EUt(VA[UEV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UIV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(lens, Diamond, 2)
-                .input(EMITTER_UIV, 2)
-                .input(ELECTRIC_PUMP_UIV, 2)
-                .input(cableGtDouble, Solarium, 4)
-                .circuitMeta(2)
-                .output(LASER_INPUT_HATCH_1024[6])
-                .EUt(VA[UIV])
-                .duration(600)
-                .buildAndRegister();
+            //  UIV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(lens, Diamond, 2)
+                    .input(EMITTER_UIV, 2)
+                    .input(ELECTRIC_PUMP_UIV, 2)
+                    .input(cableGtDouble, Solarium, 4)
+                    .circuitMeta(2)
+                    .output(LASER_INPUT_HATCH_1024[6])
+                    .EUt(VA[UIV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UIV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(lens, Diamond, 2)
-                .input(SENSOR_UIV, 2)
-                .input(ELECTRIC_PUMP_UIV, 2)
-                .input(cableGtDouble, Solarium, 4)
-                .circuitMeta(2)
-                .output(LASER_OUTPUT_HATCH_1024[6])
-                .EUt(VA[UIV])
-                .duration(600)
-                .buildAndRegister();
+            //  UIV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(lens, Diamond, 2)
+                    .input(SENSOR_UIV, 2)
+                    .input(ELECTRIC_PUMP_UIV, 2)
+                    .input(cableGtDouble, Solarium, 4)
+                    .circuitMeta(2)
+                    .output(LASER_OUTPUT_HATCH_1024[6])
+                    .EUt(VA[UIV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UXV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(lens, Diamond, 2)
-                .input(EMITTER_UXV, 2)
-                .input(ELECTRIC_PUMP_UXV, 2)
-                .input(cableGtDouble, Hypogen, 4)
-                .circuitMeta(2)
-                .output(LASER_INPUT_HATCH_1024[7])
-                .EUt(VA[UXV])
-                .duration(600)
-                .buildAndRegister();
+            //  UXV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(lens, Diamond, 2)
+                    .input(EMITTER_UXV, 2)
+                    .input(ELECTRIC_PUMP_UXV, 2)
+                    .input(cableGtDouble, Hypogen, 4)
+                    .circuitMeta(2)
+                    .output(LASER_INPUT_HATCH_1024[7])
+                    .EUt(VA[UXV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UXV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(lens, Diamond, 2)
-                .input(SENSOR_UXV, 2)
-                .input(ELECTRIC_PUMP_UXV, 2)
-                .input(cableGtDouble, Hypogen, 4)
-                .circuitMeta(2)
-                .output(LASER_OUTPUT_HATCH_1024[7])
-                .EUt(VA[UXV])
-                .duration(600)
-                .buildAndRegister();
+            //  UXV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(lens, Diamond, 2)
+                    .input(SENSOR_UXV, 2)
+                    .input(ELECTRIC_PUMP_UXV, 2)
+                    .input(cableGtDouble, Hypogen, 4)
+                    .circuitMeta(2)
+                    .output(LASER_OUTPUT_HATCH_1024[7])
+                    .EUt(VA[UXV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  OpV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(lens, Diamond, 2)
-                .input(EMITTER_OpV, 2)
-                .input(ELECTRIC_PUMP_OpV, 2)
-                .input(cableGtDouble, Galaxium, 4)
-                .circuitMeta(2)
-                .output(LASER_INPUT_HATCH_1024[8])
-                .EUt(VA[OpV])
-                .duration(600)
-                .buildAndRegister();
+            //  OpV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(lens, Diamond, 2)
+                    .input(EMITTER_OpV, 2)
+                    .input(ELECTRIC_PUMP_OpV, 2)
+                    .input(cableGtDouble, Galaxium, 4)
+                    .circuitMeta(2)
+                    .output(LASER_INPUT_HATCH_1024[8])
+                    .EUt(VA[OpV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  OpV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(lens, Diamond, 2)
-                .input(SENSOR_OpV, 2)
-                .input(ELECTRIC_PUMP_OpV, 2)
-                .input(cableGtDouble, Galaxium, 4)
-                .circuitMeta(2)
-                .output(LASER_OUTPUT_HATCH_1024[8])
-                .EUt(VA[OpV])
-                .duration(600)
-                .buildAndRegister();
+            //  OpV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(lens, Diamond, 2)
+                    .input(SENSOR_OpV, 2)
+                    .input(ELECTRIC_PUMP_OpV, 2)
+                    .input(cableGtDouble, Galaxium, 4)
+                    .circuitMeta(2)
+                    .output(LASER_OUTPUT_HATCH_1024[8])
+                    .EUt(VA[OpV])
+                    .duration(600)
+                    .buildAndRegister();
+        }
     }
 
     private static void LaserHatches4096A() {
 
-        //  UHV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UHV])
-                .input(lens, Diamond, 4)
-                .input(EMITTER_UHV, 4)
-                .input(ELECTRIC_PUMP_UHV, 4)
-                .input(cableGtQuadruple, Europium, 4)
-                .circuitMeta(3)
-                .output(LASER_INPUT_HATCH_4096[4])
-                .EUt(VA[UHV])
-                .duration(1200)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableHighTier4096ALaserHatch) {
+            //  UHV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(lens, Diamond, 4)
+                    .input(EMITTER_UHV, 4)
+                    .input(ELECTRIC_PUMP_UHV, 4)
+                    .input(cableGtQuadruple, Europium, 4)
+                    .circuitMeta(3)
+                    .output(LASER_INPUT_HATCH_4096[4])
+                    .EUt(VA[UHV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UHV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UHV])
-                .input(lens, Diamond, 4)
-                .input(SENSOR_UHV, 4)
-                .input(ELECTRIC_PUMP_UHV, 4)
-                .input(cableGtQuadruple, Europium, 4)
-                .circuitMeta(3)
-                .output(LASER_OUTPUT_HATCH_4096[4])
-                .EUt(VA[UHV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UHV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(lens, Diamond, 4)
+                    .input(SENSOR_UHV, 4)
+                    .input(ELECTRIC_PUMP_UHV, 4)
+                    .input(cableGtQuadruple, Europium, 4)
+                    .circuitMeta(3)
+                    .output(LASER_OUTPUT_HATCH_4096[4])
+                    .EUt(VA[UHV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UEV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(lens, Diamond, 4)
-                .input(EMITTER_UEV, 4)
-                .input(ELECTRIC_PUMP_UEV, 4)
-                .input(cableGtQuadruple, PedotTMA, 4)
-                .circuitMeta(3)
-                .output(LASER_INPUT_HATCH_4096[5])
-                .EUt(VA[UEV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UEV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(lens, Diamond, 4)
+                    .input(EMITTER_UEV, 4)
+                    .input(ELECTRIC_PUMP_UEV, 4)
+                    .input(cableGtQuadruple, PedotTMA, 4)
+                    .circuitMeta(3)
+                    .output(LASER_INPUT_HATCH_4096[5])
+                    .EUt(VA[UEV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UEV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UEV])
-                .input(lens, Diamond, 4)
-                .input(SENSOR_UEV, 4)
-                .input(ELECTRIC_PUMP_UEV, 4)
-                .input(cableGtQuadruple, PedotTMA, 4)
-                .circuitMeta(3)
-                .output(LASER_OUTPUT_HATCH_4096[5])
-                .EUt(VA[UEV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UEV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UEV])
+                    .input(lens, Diamond, 4)
+                    .input(SENSOR_UEV, 4)
+                    .input(ELECTRIC_PUMP_UEV, 4)
+                    .input(cableGtQuadruple, PedotTMA, 4)
+                    .circuitMeta(3)
+                    .output(LASER_OUTPUT_HATCH_4096[5])
+                    .EUt(VA[UEV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UIV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(lens, Diamond, 4)
-                .input(EMITTER_UIV, 4)
-                .input(ELECTRIC_PUMP_UIV, 4)
-                .input(cableGtQuadruple, Solarium, 4)
-                .circuitMeta(3)
-                .output(LASER_INPUT_HATCH_4096[6])
-                .EUt(VA[UIV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UIV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(lens, Diamond, 4)
+                    .input(EMITTER_UIV, 4)
+                    .input(ELECTRIC_PUMP_UIV, 4)
+                    .input(cableGtQuadruple, Solarium, 4)
+                    .circuitMeta(3)
+                    .output(LASER_INPUT_HATCH_4096[6])
+                    .EUt(VA[UIV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UIV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UIV])
-                .input(lens, Diamond, 4)
-                .input(SENSOR_UIV, 4)
-                .input(ELECTRIC_PUMP_UIV, 4)
-                .input(cableGtQuadruple, Solarium, 4)
-                .circuitMeta(3)
-                .output(LASER_OUTPUT_HATCH_4096[6])
-                .EUt(VA[UIV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UIV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UIV])
+                    .input(lens, Diamond, 4)
+                    .input(SENSOR_UIV, 4)
+                    .input(ELECTRIC_PUMP_UIV, 4)
+                    .input(cableGtQuadruple, Solarium, 4)
+                    .circuitMeta(3)
+                    .output(LASER_OUTPUT_HATCH_4096[6])
+                    .EUt(VA[UIV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UXV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(lens, Diamond, 4)
-                .input(EMITTER_UXV, 4)
-                .input(ELECTRIC_PUMP_UXV, 4)
-                .input(cableGtQuadruple, Hypogen, 4)
-                .circuitMeta(3)
-                .output(LASER_INPUT_HATCH_4096[7])
-                .EUt(VA[UXV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UXV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(lens, Diamond, 4)
+                    .input(EMITTER_UXV, 4)
+                    .input(ELECTRIC_PUMP_UXV, 4)
+                    .input(cableGtQuadruple, Hypogen, 4)
+                    .circuitMeta(3)
+                    .output(LASER_INPUT_HATCH_4096[7])
+                    .EUt(VA[UXV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  UXV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[UXV])
-                .input(lens, Diamond, 4)
-                .input(SENSOR_UXV, 4)
-                .input(ELECTRIC_PUMP_UXV, 4)
-                .input(cableGtQuadruple, Hypogen, 4)
-                .circuitMeta(3)
-                .output(LASER_OUTPUT_HATCH_4096[7])
-                .EUt(VA[UXV])
-                .duration(1200)
-                .buildAndRegister();
+            //  UXV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[UXV])
+                    .input(lens, Diamond, 4)
+                    .input(SENSOR_UXV, 4)
+                    .input(ELECTRIC_PUMP_UXV, 4)
+                    .input(cableGtQuadruple, Hypogen, 4)
+                    .circuitMeta(3)
+                    .output(LASER_OUTPUT_HATCH_4096[7])
+                    .EUt(VA[UXV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  OpV Input
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(lens, Diamond, 4)
-                .input(EMITTER_OpV, 4)
-                .input(ELECTRIC_PUMP_OpV, 4)
-                .input(cableGtQuadruple, Galaxium, 4)
-                .circuitMeta(3)
-                .output(LASER_INPUT_HATCH_4096[8])
-                .EUt(VA[OpV])
-                .duration(1200)
-                .buildAndRegister();
+            //  OpV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(lens, Diamond, 4)
+                    .input(EMITTER_OpV, 4)
+                    .input(ELECTRIC_PUMP_OpV, 4)
+                    .input(cableGtQuadruple, Galaxium, 4)
+                    .circuitMeta(3)
+                    .output(LASER_INPUT_HATCH_4096[8])
+                    .EUt(VA[OpV])
+                    .duration(1200)
+                    .buildAndRegister();
 
-        //  OpV Output
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[OpV])
-                .input(lens, Diamond, 4)
-                .input(SENSOR_OpV, 4)
-                .input(ELECTRIC_PUMP_OpV, 4)
-                .input(cableGtQuadruple, Galaxium, 4)
-                .circuitMeta(3)
-                .output(LASER_OUTPUT_HATCH_4096[8])
-                .EUt(VA[OpV])
-                .duration(1200)
-                .buildAndRegister();
+            //  OpV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[OpV])
+                    .input(lens, Diamond, 4)
+                    .input(SENSOR_OpV, 4)
+                    .input(ELECTRIC_PUMP_OpV, 4)
+                    .input(cableGtQuadruple, Galaxium, 4)
+                    .circuitMeta(3)
+                    .output(LASER_OUTPUT_HATCH_4096[8])
+                    .EUt(VA[OpV])
+                    .duration(1200)
+                    .buildAndRegister();
+        }
     }
 
     private static void GCYMOverrides() {
@@ -2422,38 +2450,41 @@ public class OverrideRecipeLoader {
         //  A little tweaks about Mega Blast Furnace and Mega Vacuum Freezer.
         //  Because in gtlitecore, we add Volcanus and Cryogenic Freezer, and gcym's mega machine is too unuseful.
         //  So we buff it to UV stage, and add new, more powerful mega machine for UHV stage.
+        if (GTLiteConfigHolder.compats.enableEasierMegaMachines) {
+            ModHandler.removeRecipeByName("gcym:mega_blast_furnace");
+            ModHandler.addShapedRecipe(true, "mega_blast_furnace", MEGA_BLAST_FURNACE.getStackForm(),
+                    "SXS", "FHF", "PWP",
+                    'H', VOLCANUS.getStackForm(),
+                    'F', FIELD_GENERATOR_UV,
+                    'S', new UnificationEntry(spring, YttriumBariumCuprate),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                    'P', new UnificationEntry(plate, Orichalcum),
+                    'W', new UnificationEntry(wireGtQuadruple, Tritanium));
 
-        ModHandler.removeRecipeByName("gcym:mega_blast_furnace");
-        ModHandler.addShapedRecipe(true, "mega_blast_furnace", MEGA_BLAST_FURNACE.getStackForm(),
-                "SXS", "FHF", "PWP",
-                'H', VOLCANUS.getStackForm(),
-                'F', FIELD_GENERATOR_UV,
-                'S', new UnificationEntry(spring, YttriumBariumCuprate),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
-                'P', new UnificationEntry(plate, Orichalcum),
-                'W', new UnificationEntry(wireGtQuadruple, Tritanium));
-
-        ModHandler.removeRecipeByName("gcym:mega_vacuum_freezer");
-        ModHandler.addShapedRecipe(true, "mega_vacuum_freezer", MEGA_VACUUM_FREEZER.getStackForm(),
-                "SXS", "FHF", "PWP",
-                'H', CRYOGENIC_FREEZER.getStackForm(),
-                'F', FIELD_GENERATOR_UV,
-                'S', new UnificationEntry(pipeNormalFluid, Duranium),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
-                'P', new UnificationEntry(plate, Orichalcum),
-                'W', new UnificationEntry(wireGtQuadruple, Tritanium));
+            ModHandler.removeRecipeByName("gcym:mega_vacuum_freezer");
+            ModHandler.addShapedRecipe(true, "mega_vacuum_freezer", MEGA_VACUUM_FREEZER.getStackForm(),
+                    "SXS", "FHF", "PWP",
+                    'H', CRYOGENIC_FREEZER.getStackForm(),
+                    'F', FIELD_GENERATOR_UV,
+                    'S', new UnificationEntry(pipeNormalFluid, Duranium),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                    'P', new UnificationEntry(plate, Orichalcum),
+                    'W', new UnificationEntry(wireGtQuadruple, Tritanium));
+        }
 
         //  This machine is too unuseful in gtlitecore environment, because we have Large Circuit Assembly Line.
         //  In vanilla CEu environment, this machine needs UV-tier circuit, is ridiculous in 15 voltages pack.
+        if (GTLiteConfigHolder.compats.enableEasierLargeCircuitAssembler) {
+            ModHandler.removeRecipeByName("gcym:large_circuit_assembler");
+            ModHandler.addShapedRecipe(true, "large_circuit_assembler", LARGE_CIRCUIT_ASSEMBLER.getStackForm(),
+                    "RER", "CXC", "WMW",
+                    'X', CIRCUIT_ASSEMBLER[IV].getStackForm(),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
+                    'R', ROBOT_ARM_IV,
+                    'E', EMITTER_IV,
+                    'M', CONVEYOR_MODULE_IV,
+                    'W', new UnificationEntry(cableGtSingle, Platinum));
+        }
 
-        ModHandler.removeRecipeByName("gcym:large_circuit_assembler");
-        ModHandler.addShapedRecipe(true, "large_circuit_assembler", LARGE_CIRCUIT_ASSEMBLER.getStackForm(),
-                "RER", "CXC", "WMW",
-                'X', CIRCUIT_ASSEMBLER[IV].getStackForm(),
-                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV),
-                'R', ROBOT_ARM_IV,
-                'E', EMITTER_IV,
-                'M', CONVEYOR_MODULE_IV,
-                'W', new UnificationEntry(cableGtSingle, Platinum));
     }
 }

@@ -111,6 +111,10 @@ public class RecipeConflicts {
                 new ItemStack[]{OreDictUnifier.get(dust, Quicklime, 2)},
                 new FluidStack[]{CarbonDioxide.getFluid(1000)});
 
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Quicklime, 2)},
+                new FluidStack[]{CarbonDioxide.getFluid(1000)});
+
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Quicklime, 2)
                 .circuitMeta(2)
