@@ -1775,7 +1775,7 @@ public class MachineRecipeLoader {
                 .input(ROBOT_ARM_UHV, 32)
                 .input(SENSOR_UHV, 32)
                 .input(FIELD_GENERATOR_UHV, 32)
-                .input(gear, Adamantium, 16)
+                .input(gear, ArceusAlloy2B, 16)
                 .input(wireGtHex, PedotPSS, 64)
                 .fluidInputs(Tairitsium.getFluid(65536))
                 .fluidInputs(Lafium.getFluid(57600))

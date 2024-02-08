@@ -20,6 +20,7 @@ import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.BlockComputerCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
@@ -196,7 +197,7 @@ public class MetaTileEntityDimensionalMixer extends MultiMapMultiblockController
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.dimensional_mixer.tooltip.1"));
+        tooltip.add(TooltipHelper.BLINKING_RED + I18n.format("gtlitecore.machine.dimensional_mixer.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.dimensional_mixer.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.dimensional_mixer.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.dimensional_mixer.tooltip.4"));
