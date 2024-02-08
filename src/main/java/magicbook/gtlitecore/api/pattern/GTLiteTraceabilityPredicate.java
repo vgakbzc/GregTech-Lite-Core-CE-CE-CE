@@ -29,6 +29,8 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
 
 public class GTLiteTraceabilityPredicate {
 
+    //  Firebox Casing Predicate
+    //  Used to Industrial Roaster.
     public static Supplier<TraceabilityPredicate> FIRE_BOX = () -> new TraceabilityPredicate(blockWorldState -> {
         IBlockState blockState = blockWorldState.getBlockState();
         if ((blockState.getBlock() instanceof BlockFireboxCasing BlockFireboxCasing)) {
@@ -47,6 +49,7 @@ public class GTLiteTraceabilityPredicate {
             .toArray(BlockInfo[]::new)))
             .addTooltips("gtlitecore.machine.pattern.firebox");
 
+    //  Rotor Holder Predicate
     public static Supplier<TraceabilityPredicate> ROTOR_HOLDER = () -> new TraceabilityPredicate(blockWorldState -> {
         TileEntity tileEntity = blockWorldState.getTileEntity();
         if (tileEntity instanceof IGregTechTileEntity) {
@@ -73,6 +76,11 @@ public class GTLiteTraceabilityPredicate {
             .toArray(BlockInfo[]::new))
             .addTooltips("gtlitecore.machine.reinforced_rotor_holder.error");
 
+    /**
+     * @param mark Symbols, you need to get these in formStructure().
+     * @param allowedStates Allowed states.
+     * @return A special states(). you can use correspond text (mark) to check if the .aisle() is your upgrade structure part.
+     */
     public static TraceabilityPredicate optionalStates(String mark, IBlockState... allowedStates) {
         return new TraceabilityPredicate(blockWorldState -> {
             IBlockState state = blockWorldState.getBlockState();
@@ -86,6 +94,11 @@ public class GTLiteTraceabilityPredicate {
         }, getCandidates(allowedStates));
     }
 
+    /**
+     * @param mark Symbols, you need to get these in formStructure().
+     * @param allowedAbilities Allowed states.
+     * @return A special abilities(). you can use correspond text (mark) to check if the .aisle() is your upgrade structure part.
+     */
     public static TraceabilityPredicate optionalAbilities(String mark, MultiblockAbility<?>... allowedAbilities) {
         return new TraceabilityPredicate(blockWorldState -> {
             TileEntity tileEntity = blockWorldState.getTileEntity();
@@ -101,18 +114,22 @@ public class GTLiteTraceabilityPredicate {
         }, getCandidates(Arrays.stream(allowedAbilities).flatMap(ability -> MultiblockAbility.REGISTRY.get(ability).stream()).toArray(MetaTileEntity[]::new)));
     }
 
+    //  Precise Assembler Predicate
     public static Supplier<TierTraceabilityPredicate> PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
 
     public static Supplier<TierTraceabilityPredicate> PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_INTERNAL_CASING.get(s)).getIntTier()), "PAInternalCasing", null);
 
+    //  Component Assembly Line Predicate
     public static Supplier<TierTraceabilityPredicate> CA_CASING = () -> new TierTraceabilityPredicate(MAP_CA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_CA_CASING.get(s)).getIntTier()), "CACasing", null);
 
+    //  Field Casing Predicate
     public static Supplier<TierTraceabilityPredicate> FIELD_CASING = () -> new TierTraceabilityPredicate(MAP_FIELD_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_FIELD_CASING.get(s)).getIntTier()), "FieldCasing", null);
 
+    //  Space Elevator Motor Casing Predicate
     public static Supplier<TierTraceabilityPredicate> SPACE_ELEVATOR_MOTOR = () -> new TierTraceabilityPredicate(MAP_SPACE_ELEVATOR_MOTOR,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_SPACE_ELEVATOR_MOTOR.get(s)).getIntTier()), "SpaceElevatorMotor", null);
 }
