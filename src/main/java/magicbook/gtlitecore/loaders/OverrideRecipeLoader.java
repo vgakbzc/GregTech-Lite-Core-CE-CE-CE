@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
+import gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
@@ -2484,6 +2485,38 @@ public class OverrideRecipeLoader {
                     'E', EMITTER_IV,
                     'M', CONVEYOR_MODULE_IV,
                     'W', new UnificationEntry(cableGtSingle, Platinum));
+        }
+
+        if (GTLiteConfigHolder.compats.enableHighTierTieredHatch) {
+            ModHandler.addShapedRecipe("tiered_hatch.uhv", TIERED_HATCH[UHV].getStackForm(),
+                    "PPP", "PCP", "PPP",
+                    'P', new UnificationEntry(plate, Orichalcum),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV));
+
+            ModHandler.addShapedRecipe("tiered_hatch.uev", TIERED_HATCH[UEV].getStackForm(),
+                    "PPP", "PCP", "PPP",
+                    'P', new UnificationEntry(plate, Adamantium),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UIV));
+
+            ModHandler.addShapedRecipe("tiered_hatch.uiv", TIERED_HATCH[UIV].getStackForm(),
+                    "PPP", "PCP", "PPP",
+                    'P', new UnificationEntry(plate, Infinity),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UXV));
+
+            ModHandler.addShapedRecipe("tiered_hatch.uxv", TIERED_HATCH[UXV].getStackForm(),
+                    "PPP", "PCP", "PPP",
+                    'P', new UnificationEntry(plate, CosmicNeutronium),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.OpV));
+
+            ModHandler.addShapedRecipe("tiered_hatch.opv", TIERED_HATCH[OpV].getStackForm(),
+                    "PPP", "PCP", "PPP",
+                    'P', new UnificationEntry(plate, Spacetime),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX));
+
+            ModHandler.addShapedRecipe("tiered_hatch.max", TIERED_HATCH[MAX].getStackForm(),
+                    "PPP", "PCP", "PPP",
+                    'P', new UnificationEntry(plate, Eternity),
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX));
         }
 
     }

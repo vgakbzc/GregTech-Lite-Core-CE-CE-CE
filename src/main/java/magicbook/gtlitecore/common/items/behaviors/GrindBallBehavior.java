@@ -24,6 +24,7 @@ public class GrindBallBehavior extends AbstractMaterialPartBehavior implements I
             return 100;
     }
 
+    @SuppressWarnings("unused")
     public int getBallDurabilityPercent(ItemStack itemStack) {
         return 100 - 100 * getPartDamage(itemStack) / getPartMaxDurability(itemStack);
     }
@@ -38,6 +39,7 @@ public class GrindBallBehavior extends AbstractMaterialPartBehavior implements I
         }
     }
 
+    @Override
     public void addInformation(ItemStack stack, List<String> lines) {
         Material material;
         if (GTLiteMetaItems.GRINDBALL_SOAPSTONE.isItemEqual(stack))
