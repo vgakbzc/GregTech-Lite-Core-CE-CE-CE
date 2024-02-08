@@ -10,6 +10,7 @@ import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockCleanroomCasing;
@@ -125,13 +126,15 @@ public class MachineRecipeLoader {
                 'X', CraftingComponent.BETTER_CIRCUIT,
                 'R', CraftingComponent.STICK_RADIOACTIVE);
 
-        //  Simulator
-        MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,
-                "WAW", "OHO", "WAW",
-                'A', CraftingComponent.SENSOR,
-                'W', CraftingComponent.CABLE,
-                'H', CraftingComponent.HULL,
-                'O', CraftingComponent.BETTER_CIRCUIT);
+        if (GTLiteConfigHolder.misc.enableSimulator) {
+            //  Simulator
+            MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,
+                    "WAW", "OHO", "WAW",
+                    'A', CraftingComponent.SENSOR,
+                    'W', CraftingComponent.CABLE,
+                    'H', CraftingComponent.HULL,
+                    'O', CraftingComponent.BETTER_CIRCUIT);
+        }
 
         //  Biomass Generator
         MetaTileEntityLoader.registerMachineRecipe(true, BIOMASS_GENERATOR,
