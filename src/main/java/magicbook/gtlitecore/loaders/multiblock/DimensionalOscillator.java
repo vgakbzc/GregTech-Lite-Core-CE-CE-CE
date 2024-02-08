@@ -32,6 +32,17 @@ public class DimensionalOscillator {
                 .duration(400)
                 .buildAndRegister();
 
+        //  Galaxium
+        DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
+                .notConsumable(ring, Spacetime)
+                .fluidInputs(Solarium.getFluid(L * 8))
+                .fluidInputs(LunaSilver.getFluid(L * 8))
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(4000))
+                .fluidOutputs(Galaxium.getFluid(L * 4))
+                .EUt(VA[UXV])
+                .duration(20)
+                .buildAndRegister();
+
         //  Hyperdimensional Oscillating Matter
         DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
                 .input(DIMENSION_GAP)

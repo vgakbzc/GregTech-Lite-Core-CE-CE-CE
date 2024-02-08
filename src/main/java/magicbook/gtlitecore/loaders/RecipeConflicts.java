@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.loaders;
 
-import com.cleanroommc.groovyscript.compat.vanilla.OreDict;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
