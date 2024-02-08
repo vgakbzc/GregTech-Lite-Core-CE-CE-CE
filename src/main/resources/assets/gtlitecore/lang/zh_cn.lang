@@ -1313,6 +1313,25 @@ gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模�
 gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
 
+gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
+gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
+gtlitecore.machine.dimensional_mixer.tooltip.2=混合时间与空间
+gtlitecore.machine.dimensional_mixer.tooltip.3=支持你能想象得到的一切搅拌相关配方
+gtlitecore.machine.dimensional_mixer.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行与配方时间减免
+gtlitecore.machine.dimensional_mixer.tooltip.5=运行§r搅拌机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.6=运行§r离心机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.7=运行§r热力离心§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.8=运行§r筛选器§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.9=始终获得§e[电压等级 * (遏制场发生器等级 * 64)]§7次并行。
+gtlitecore.machine.dimensional_mixer.tooltip.10=最大并行数：
+gtlitecore.machine.dimensional_mixer.tooltip.11=§r搅拌机§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.12=§r高速搅拌§7模式 -> §e1024§7
+gtlitecore.machine.dimensional_mixer.tooltip.13=§r离心机§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.14=§r热力离心§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
+gtlitecore.machine.dimensional_mixer.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
+
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.2=超越维度的边界

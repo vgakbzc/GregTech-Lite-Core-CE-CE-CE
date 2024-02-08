@@ -1752,10 +1752,41 @@ public class MachineRecipeLoader {
                 .fluidInputs(DegenerateRhenium.getFluid(28800))
                 .output(DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE)
                 .EUt(VA[UEV])
-                .duration(1200)
+                .duration(12800)
                 .stationResearch(b -> b
                         .researchStack(STELLAR_FURNACE.getStackForm())
                         .EUt(VA[UEV])
+                        .CWUt(576))
+                .buildAndRegister();
+
+        //  Dimensional Mixer
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HastelloyX78, 16)
+                .input(TURBINE_MIXER, 64)
+                .input(INDUSTRIAL_CENTRIFUGE, 64)
+                .input(FIXED_SIFTING_PLANT, 64)
+                .input(SONICATOR, 64)
+                .input(PROTON, 64)
+                .input(plateDense, Tritanium, 6)
+                .input(plateDense, Darmstadtium, 6)
+                .input(circuit, MarkerMaterials.Tier.UEV, 64)
+                .input(circuit, MarkerMaterials.Tier.UEV, 64)
+                .input(ELECTRIC_MOTOR_UHV, 32)
+                .input(ROBOT_ARM_UHV, 32)
+                .input(SENSOR_UHV, 32)
+                .input(FIELD_GENERATOR_UHV, 32)
+                .input(gear, Adamantium, 16)
+                .input(wireGtHex, PedotPSS, 64)
+                .fluidInputs(Tairitsium.getFluid(65536))
+                .fluidInputs(Lafium.getFluid(57600))
+                .fluidInputs(TransitionHAlloy.getFluid(57600))
+                .fluidInputs(Mithril.getFluid(28800))
+                .output(DIMENSIONAL_MIXER)
+                .EUt(VA[UHV])
+                .duration(3200)
+                .stationResearch(b -> b
+                        .researchStack(SONICATOR.getStackForm())
+                        .EUt(VA[UHV])
                         .CWUt(576))
                 .buildAndRegister();
 

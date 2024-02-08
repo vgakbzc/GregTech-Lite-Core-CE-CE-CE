@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.loaders;
 
-import gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
