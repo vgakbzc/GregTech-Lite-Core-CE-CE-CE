@@ -26,6 +26,16 @@ public class Collider {
                 .CasingTier(1)
                 .buildAndRegister();
 
+        //  Bi + alpha -> At
+        COLLIDER_RECIPES.recipeBuilder()
+                .input(ALPHA_PARTICLE)
+                .fluidInputs(Bismuth.getFluid(L))
+                .fluidOutputs(Astatine.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(180)
+                .CasingTier(1)
+                .buildAndRegister();
+
         //  C + At -> Ac
         COLLIDER_RECIPES.recipeBuilder()
                 .fluidInputs(Astatine.getFluid(L))
