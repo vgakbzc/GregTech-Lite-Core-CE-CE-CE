@@ -117,6 +117,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer FLUXED_ELECTRUM_CASING = new GTLiteOverlayRenderer("casings/fluxed_electrum_casing");
     public static GTLiteOverlayRenderer RHODIUM_CASING = new GTLiteOverlayRenderer("casings/rhodium_casing");
     public static GTLiteOverlayRenderer DIMENSIONAL_BRIDGE_CASING = new GTLiteOverlayRenderer("casings/dimensional_bridge_casing");
+    public static GTLiteOverlayRenderer NAQUADAH_ALLOY_CASING = new GTLiteOverlayRenderer("casings/naquadah_alloy_casing");
 
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 

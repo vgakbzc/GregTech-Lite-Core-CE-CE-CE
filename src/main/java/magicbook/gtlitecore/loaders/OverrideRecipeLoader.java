@@ -901,46 +901,48 @@ public class OverrideRecipeLoader {
 
         //  End Game things
         //  a.k.a. creative things!
-        ModHandler.addShapedRecipe(true, "quantum_tank_creative", CREATIVE_TANK.getStackForm(),
-                "XFX", "PHP", "XpX",
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
-                'F', FIELD_GENERATOR_MAX,
-                'P', new UnificationEntry(plate, Eternity),
-                'p', ELECTRIC_PUMP_MAX,
-                'H', GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_MAX));
+        if (GTLiteConfigHolder.misc.enableCreativeRecipe) {
+            ModHandler.addShapedRecipe(true, "quantum_tank_creative", CREATIVE_TANK.getStackForm(),
+                    "XFX", "PHP", "XpX",
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
+                    'F', FIELD_GENERATOR_MAX,
+                    'P', new UnificationEntry(plate, Eternity),
+                    'p', ELECTRIC_PUMP_MAX,
+                    'H', GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_MAX));
 
-        ModHandler.addShapedRecipe(true, "quantum_chest_creative", CREATIVE_CHEST.getStackForm(),
-                "XPX", "PHP", "XFX",
-                'H', HULL[MAX].getStackForm(),
-                'P', new UnificationEntry(plate, Eternity),
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
-                'F', FIELD_GENERATOR_MAX);
+            ModHandler.addShapedRecipe(true, "quantum_chest_creative", CREATIVE_CHEST.getStackForm(),
+                    "XPX", "PHP", "XFX",
+                    'H', HULL[MAX].getStackForm(),
+                    'P', new UnificationEntry(plate, Eternity),
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
+                    'F', FIELD_GENERATOR_MAX);
 
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(ITEM_IMPORT_BUS[UHV])
-                .input(TOOL_DATA_MODULE, 4)
-                .input(circuit, MarkerMaterials.Tier.MAX, 4)
-                .fluidInputs(SolderingAlloy.getFluid(5760))
-                .fluidInputs(Eternity.getFluid(2880))
-                .fluidInputs(Spacetime.getFluid(1440))
-                .fluidInputs(Infinity.getFluid(576))
-                .output(CREATIVE_DATA_HATCH)
-                .stationResearch(b -> b
-                        .researchStack(TOOL_DATA_MODULE.getStackForm())
-                        .CWUt(1024)
-                        .EUt(VA[MAX]))
-                .EUt(VA[MAX])
-                .duration(200)
-                .buildAndRegister();
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ITEM_IMPORT_BUS[UHV])
+                    .input(TOOL_DATA_MODULE, 4)
+                    .input(circuit, MarkerMaterials.Tier.MAX, 4)
+                    .fluidInputs(SolderingAlloy.getFluid(5760))
+                    .fluidInputs(Eternity.getFluid(2880))
+                    .fluidInputs(Spacetime.getFluid(1440))
+                    .fluidInputs(Infinity.getFluid(576))
+                    .output(CREATIVE_DATA_HATCH)
+                    .stationResearch(b -> b
+                            .researchStack(ADVANCED_DATA_ACCESS_HATCH.getStackForm())
+                            .CWUt(1024)
+                            .EUt(VA[MAX]))
+                    .EUt(VA[MAX])
+                    .duration(200)
+                    .buildAndRegister();
 
-        ModHandler.addShapedRecipe(true, "creative_energy_unit", CREATIVE_ENERGY.getStackForm(),
-                "IXI", "EHS", "IPI",
-                'H', HULL[MAX].getStackForm(),
-                'I', FEMTO_PIC_CHIP,
-                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
-                'E', EMITTER_MAX,
-                'S', SENSOR_MAX,
-                'P', new UnificationEntry(plate, Eternity));
+            ModHandler.addShapedRecipe(true, "creative_energy_unit", CREATIVE_ENERGY.getStackForm(),
+                    "IXI", "EHS", "IPI",
+                    'H', HULL[MAX].getStackForm(),
+                    'I', FEMTO_PIC_CHIP,
+                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
+                    'E', EMITTER_MAX,
+                    'S', SENSOR_MAX,
+                    'P', new UnificationEntry(plate, Eternity));
+        }
 
         //  todo some recipe should be delete, e.g. UHV multi fluid hatch?
         ItemBuses();

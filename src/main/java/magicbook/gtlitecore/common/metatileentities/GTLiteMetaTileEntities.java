@@ -151,8 +151,6 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
     public static MetaTileEntityLargeEUVMaskAligner LARGE_EUV_MASK_ALIGNER;
     public static MetaTileEntityIonLithographyFactory ION_LITHOGRAPHY_FACTORY;
-    public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
-    public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
@@ -163,6 +161,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
+    public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
+    public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
