@@ -37,7 +37,8 @@ public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.Stru
         OSMIRIDIUM_CASING("osmiridium_casing"),
         ADVANCED_GRATE_CASING("advanced_grate_casing"),
         FLUXED_ELECTRUM_CASING("fluxed_electrum_casing"),
-        RHODIUM_CASING("rhodium_casing");
+        RHODIUM_CASING("rhodium_casing"),
+        NAQUADAH_ALLOY_CASING("naquadah_alloy_casing"); // todo for mega x2 chemical reactor
 
         private final String name;
 

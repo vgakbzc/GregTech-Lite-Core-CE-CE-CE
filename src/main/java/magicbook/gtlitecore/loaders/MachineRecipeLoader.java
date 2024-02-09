@@ -126,7 +126,7 @@ public class MachineRecipeLoader {
                 'X', CraftingComponent.BETTER_CIRCUIT,
                 'R', CraftingComponent.STICK_RADIOACTIVE);
 
-        if (GTLiteConfigHolder.misc.enableSimulator) {
+        if (GTLiteConfigHolder.machines.enableSimulator) {
             //  Simulator
             MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,
                     "WAW", "OHO", "WAW",
@@ -4003,6 +4003,21 @@ public class MachineRecipeLoader {
                 .input(frameGt, Ruthenium)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.RHODIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Naquadah Alloy Casing
+        ModHandler.addShapedRecipe(true, "naquadah_alloy_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_ALLOY_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, NaquadahAlloy),
+                'F', new UnificationEntry(frameGt, Trinium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, NaquadahAlloy, 6)
+                .input(frameGt, Trinium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_ALLOY_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

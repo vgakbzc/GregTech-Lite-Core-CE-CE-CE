@@ -37,6 +37,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/rhodium_casing"
         }
+      },
+      "naquadah_alloy_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadah_alloy_casing"
+        }
       }
     }
   }
