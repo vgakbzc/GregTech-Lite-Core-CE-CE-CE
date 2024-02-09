@@ -70,7 +70,7 @@ tile.structure_casing.osmiridium_casing.name=高强度铱锇合金机器外壳
 tile.structure_casing.advanced_grate_casing.name=进阶栅格机械方块
 tile.structure_casing.fluxed_electrum_casing.name=抗激光通流琥珀金机器外壳
 tile.structure_casing.rhodium_casing.name=高应力铑机器外壳
-tile.structure_casing.naquadah_alloy_casing.name=优质通用硅岩合金机器外壳
+tile.structure_casing.naquadah_alloy_casing.name=超稳定硅岩合金机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1313,12 +1313,6 @@ gtlitecore.machine.ion_lithography_factory.tooltip.14=§r电解机§7模式 -> �
 gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
-
-gtlitecore.machine.nano_forge.name=纳米锻炉
-gtlitecore.machine.nano_forge.tooltip.1=根据输入电压获得并行
-gtlitecore.machine.nano_forge.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.nano_forge.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.nano_forge.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
 gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
