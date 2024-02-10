@@ -333,7 +333,11 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.QUANTUM_CHEST_OVERLAY;
+        if (this.isActive()) {
+            return Textures.QUANTUM_TANK_OVERLAY;
+        } else {
+            return Textures.QUANTUM_CHEST_OVERLAY;
+        }
     }
 
     @Override
