@@ -37,6 +37,20 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/rhodium_casing"
         }
+      },
+      "naquadah_alloy_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadah_alloy_casing"
+        }
+      },
+      "force_field_constrained_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/cells/top",
+          "side": "gtlitecore:blocks/casings/cells/side",
+          "bottom": "#top"
+        }
       }
     }
   }

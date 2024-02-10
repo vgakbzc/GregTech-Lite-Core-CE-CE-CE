@@ -29,7 +29,7 @@ public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
     @Override
     public void addInformation(@Nonnull ItemStack stack,
                                @Nullable World world,
-                               List<String> tooltip,
+                               @Nonnull List<String> tooltip,
                                @Nonnull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.multiblock.blast_furnace.max_temperature", TextFormatting.RED + GTLiteUtils.formatNumbers(getState(stack).getTemperature()) + "K"));

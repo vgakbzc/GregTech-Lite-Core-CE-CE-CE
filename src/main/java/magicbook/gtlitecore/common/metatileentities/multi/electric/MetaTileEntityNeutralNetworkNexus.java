@@ -16,6 +16,8 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.client.GTLiteTextures;
+import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
@@ -61,7 +63,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     }
 
     private static IBlockState getCasingState() {
-        return GCYMMetaBlocks.LARGE_MULTIBLOCK_CASING.getState(BlockLargeMultiblockCasing.CasingType.ATOMIC_CASING);
+        return GTLiteMetaBlocks.STRUCTURE_CASING.getState(BlockStructureCasing.StructureCasingType.NAQUADAH_ALLOY_CASING);
     }
 
     private static IBlockState getFrameState() {
@@ -71,7 +73,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return GCYMTextures.ATOMIC_CASING;
+        return GTLiteTextures.NAQUADAH_ALLOY_CASING;
     }
 
     @SideOnly(Side.CLIENT)

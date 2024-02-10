@@ -113,14 +113,14 @@ public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
 
     private boolean onRotorHolderInteract(@Nonnull EntityPlayer player) {
 
-        if (player.isCreative()) return false;
+        if (player.isCreative())
+            return false;
 
         if (!getWorld().isRemote && this.isActive()) {
             player.attackEntityFrom(DamageSources.getTurbineDamage(), 7);
             AdvancementTriggers.ROTOR_HOLDER_DEATH.trigger((EntityPlayerMP) player);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }

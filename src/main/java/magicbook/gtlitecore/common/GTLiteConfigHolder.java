@@ -43,6 +43,9 @@ public class GTLiteConfigHolder {
         @Comment({"Enable easier Mega Blast Furnace/Vacuum Freezer (GCYM) recipes, requires UV-tier materials.", "Default: true"})
         public boolean enableEasierMegaMachines = true;
 
+        @Comment({"Enable high tier Tiered Hatch (UHV-MAX) recipes.", "Default: true"})
+        public boolean enableHighTierTieredHatch = true;
+
         public CompatibilityOptions() {}
     }
 
@@ -92,6 +95,17 @@ public class GTLiteConfigHolder {
 
         @Comment({"Enable high tier 4096A laser hatch (UHV-OpV) recipes.", "Default: true"})
         public boolean enableHighTier4096ALaserHatch = true;
+
+        @Comment({"Enable Simulator (LV-IV), and its recipes.", "Default: true"})
+        public boolean enableSimulator = true;
+
+        @Comment({"Set chance of Simulator recipes.", "Default: 1000"})
+        @RangeInt(min = 1, max = 10000)
+        public int chanceSimulator = 1000;
+
+        @Comment({"Set tier chance boost of Simulator recipes.", "Default: 100"})
+        @RangeInt(min = 1, max = 10000)
+        public int tierChanceBoostSimulator = 100;
 
         public MachineOptions() {}
     }
@@ -190,6 +204,12 @@ public class GTLiteConfigHolder {
         @Comment({"Exotic Mutagen EU/t product in Biomass Generator.", "Default: 1920"})
         @RangeInt(min = 1, max = 32768)
         public int heatValueExoticMutagen = 1920;
+
+        @Comment({"Allow Bio Reactor use some GregTech vanilla recipes in Chemical Reactor.", "Default: true"})
+        public boolean enableBioReactorVanillaRecipe = true;
+
+        @Comment({"Allow Creative items (e.g. Creative Quantum Tank) be makable in Survival mode.", "Default: true"})
+        public boolean enableCreativeRecipe = true;
 
         public MiscOptions() {}
     }

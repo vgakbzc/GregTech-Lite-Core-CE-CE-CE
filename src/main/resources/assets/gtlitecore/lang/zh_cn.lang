@@ -70,6 +70,8 @@ tile.structure_casing.osmiridium_casing.name=高强度铱锇合金机器外壳
 tile.structure_casing.advanced_grate_casing.name=进阶栅格机械方块
 tile.structure_casing.fluxed_electrum_casing.name=抗激光通流琥珀金机器外壳
 tile.structure_casing.rhodium_casing.name=高应力铑机器外壳
+tile.structure_casing.naquadah_alloy_casing.name=超稳定硅岩合金机器外壳
+tile.structure_casing.force_field_constrained_casing.name=力场约束机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -246,6 +248,17 @@ tile.crucible.tungsten.name=钨坩埚
 tile.crucible.osmium.name=锇坩埚
 tile.crucible.graphite.name=石墨坩埚
 tile.crucible.boron_nitride.name=氮化硼坩埚
+
+tile.yotta_tank_cell.t1.name=流体单元方块 T1
+tile.yotta_tank_cell.t2.name=流体单元方块 T2
+tile.yotta_tank_cell.t3.name=流体单元方块 T3
+tile.yotta_tank_cell.t4.name=流体单元方块 T4
+tile.yotta_tank_cell.t5.name=流体单元方块 T5
+tile.yotta_tank_cell.t6.name=流体单元方块 T6
+tile.yotta_tank_cell.t7.name=流体单元方块 T7
+tile.yotta_tank_cell.t8.name=流体单元方块 T8
+tile.yotta_tank_cell.t9.name=流体单元方块 T9
+tile.yotta_tank_cell.t10.name=流体单元方块 T10
 
 tile.hermetic_casing.uev.name=密封机械方块 X
 tile.hermetic_casing.uiv.name=密封机械方块 XI
@@ -639,6 +652,18 @@ gtlitecore.machine.substation_hatch.output_64a.uev.name=64 安变电动力仓（
 gtlitecore.machine.substation_hatch.output_64a.uiv.name=64 安变电动力仓（§2UIV§r）
 gtlitecore.machine.substation_hatch.output_64a.uxv.name=64 安变电动力仓（§eUXV§r）
 gtlitecore.machine.substation_hatch.output_64a.opv.name=64 安变电动力仓（§9OpV§r）
+
+#  Fluid Cores
+metaitem.fluid_core.t1.name=流体存储核心 T1
+metaitem.fluid_core.t2.name=流体存储核心 T2
+metaitem.fluid_core.t3.name=流体存储核心 T3
+metaitem.fluid_core.t4.name=流体存储核心 T4
+metaitem.fluid_core.t5.name=流体存储核心 T5
+metaitem.fluid_core.t6.name=流体存储核心 T6
+metaitem.fluid_core.t7.name=流体存储核心 T7
+metaitem.fluid_core.t8.name=流体存储核心 T8
+metaitem.fluid_core.t9.name=流体存储核心 T9
+metaitem.fluid_core.t10.name=流体存储核心 T10
 
 #  Fluid Hatches
 gtlitecore.machine.fluid_hatch.import.uev.name=输入仓（§aUEV§r）
@@ -1313,6 +1338,25 @@ gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模�
 gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
 
+gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
+gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
+gtlitecore.machine.dimensional_mixer.tooltip.2=混合时间与空间
+gtlitecore.machine.dimensional_mixer.tooltip.3=支持你能想象得到的一切搅拌相关配方
+gtlitecore.machine.dimensional_mixer.tooltip.4=根据输入电压与§6遏制场发生器§7的等级获得并行与配方时间减免
+gtlitecore.machine.dimensional_mixer.tooltip.5=运行§r搅拌机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.6=运行§r离心机§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.7=运行§r热力离心§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.8=运行§r筛选器§7配方时，§6遏制场发生器§7每比§cZPM§7高一个等级，配方所需时间变为原本的50%%。
+gtlitecore.machine.dimensional_mixer.tooltip.9=始终获得§e[电压等级 * (遏制场发生器等级 * 64)]§7次并行。
+gtlitecore.machine.dimensional_mixer.tooltip.10=最大并行数：
+gtlitecore.machine.dimensional_mixer.tooltip.11=§r搅拌机§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.12=§r高速搅拌§7模式 -> §e1024§7
+gtlitecore.machine.dimensional_mixer.tooltip.13=§r离心机§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.14=§r热力离心§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096§7
+gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
+gtlitecore.machine.dimensional_mixer.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
+
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.2=超越维度的边界
@@ -1388,6 +1432,20 @@ gtlitecore.machine.industrial_rock_breaker.tooltip.1=根据输入电压获得并
 gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
+
+gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
+gtlitecore.machine.yotta_fluid_tank.tooltip.1=超级流体存储器
+gtlitecore.machine.yotta_fluid_tank.tooltip.2=使用输入/输出仓与储罐交互。
+gtlitecore.machine.yotta_fluid_tank.tooltip.3=单个储罐只能存储同一种流体。
+gtlitecore.machine.yotta_fluid_tank.tooltip.4=所有§r流体单元方块§7不需要保持同一等级。
+gtlitecore.machine.yotta_fluid_tank.tooltip.5=最多容许§e§l14§r§7层流体单元方块。
+gtlitecore.machine.yotta_fluid_tank.error.cells=§c必须正确放置流体单元方块§r
+gtlitecore.machine.yotta_fluid_tank.running=力场约束生效中。
+gtlitecore.machine.yotta_fluid_tank.stored=已存储：%s
+gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
+gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
+gtlitecore.machine.yotta_fluid_tank.type.empty=空
+gtlitecore.machine.yotta_fluid_tank.cell_capacitor=容量：%s
 
 #  Materials
 
@@ -1746,6 +1804,7 @@ gregtech.material.arcanium=韵律源金
 gregtech.material.laurenium=劳伦姆合金
 gregtech.material.neutronium_superconductor=中子素超导体
 gregtech.material.fluxed_electrum=通流琥珀金
+gregtech.material.arceus_alloy_2_b=阿尔宙斯合金2B
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
