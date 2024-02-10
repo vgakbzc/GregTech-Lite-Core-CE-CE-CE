@@ -747,7 +747,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .polymer()
                 .liquid()
                 .color(0x372B28)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_RING)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_RING, GENERATE_FOIL)
                 .components(Carbon, 24, Hydrogen, 16, Oxygen, 8, Nitrogen, 4, Phosphorus, 4, Fluorine, 40)
                 .build();
 

@@ -653,6 +653,18 @@ gtlitecore.machine.substation_hatch.output_64a.uiv.name=64 安变电动力仓（
 gtlitecore.machine.substation_hatch.output_64a.uxv.name=64 安变电动力仓（§eUXV§r）
 gtlitecore.machine.substation_hatch.output_64a.opv.name=64 安变电动力仓（§9OpV§r）
 
+#  Fluid Cores
+metaitem.fluid_core.t1.name=流体存储核心 T1
+metaitem.fluid_core.t2.name=流体存储核心 T2
+metaitem.fluid_core.t3.name=流体存储核心 T3
+metaitem.fluid_core.t4.name=流体存储核心 T4
+metaitem.fluid_core.t5.name=流体存储核心 T5
+metaitem.fluid_core.t6.name=流体存储核心 T6
+metaitem.fluid_core.t7.name=流体存储核心 T7
+metaitem.fluid_core.t8.name=流体存储核心 T8
+metaitem.fluid_core.t9.name=流体存储核心 T9
+metaitem.fluid_core.t10.name=流体存储核心 T10
+
 #  Fluid Hatches
 gtlitecore.machine.fluid_hatch.import.uev.name=输入仓（§aUEV§r）
 gtlitecore.machine.fluid_hatch.import.uiv.name=输入仓（§2UIV§r）
@@ -1422,17 +1434,18 @@ gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7�
 gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
-gtlitecore.machine.yotta_fluid_tank.tooltip.1=
-gtlitecore.machine.yotta_fluid_tank.tooltip.2=
-gtlitecore.machine.yotta_fluid_tank.tooltip.3=
-gtlitecore.machine.yotta_fluid_tank.tooltip.4=
+gtlitecore.machine.yotta_fluid_tank.tooltip.1=超级流体存储器
+gtlitecore.machine.yotta_fluid_tank.tooltip.2=使用输入/输出仓与储罐交互。
+gtlitecore.machine.yotta_fluid_tank.tooltip.3=单个储罐只能存储同一种流体。
+gtlitecore.machine.yotta_fluid_tank.tooltip.4=所有§r流体单元方块§7不需要保持同一等级。
+gtlitecore.machine.yotta_fluid_tank.tooltip.5=最多容许§e§l15§r§7层流体单元方块。
 gtlitecore.machine.yotta_fluid_tank.error.cells=§c必须正确放置流体单元方块§r
 gtlitecore.machine.yotta_fluid_tank.running=力场约束生效中。
 gtlitecore.machine.yotta_fluid_tank.stored=已存储：%s
 gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
 gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
 gtlitecore.machine.yotta_fluid_tank.type.empty=空
-gtlitecore.machine.yotta_fluid_tank.cell_capacitor=容量：
+gtlitecore.machine.yotta_fluid_tank.cell_capacitor=容量：%s
 
 #  Materials
 
