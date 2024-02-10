@@ -254,6 +254,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
         Livermorium.addFlags(GENERATE_BOLT_SCREW);
+        BlueSteel.addFlags(GENERATE_BOLT_SCREW);
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
