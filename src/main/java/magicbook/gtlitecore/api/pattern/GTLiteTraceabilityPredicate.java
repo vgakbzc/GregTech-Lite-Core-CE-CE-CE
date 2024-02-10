@@ -14,7 +14,9 @@ import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
+import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
 import magicbook.gtlitecore.api.pattern.predicates.TierTraceabilityPredicate;
+import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -29,6 +31,8 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
 
 public class GTLiteTraceabilityPredicate {
 
+    //  Firebox Casing Predicate
+    //  Used to Industrial Roaster.
     public static Supplier<TraceabilityPredicate> FIRE_BOX = () -> new TraceabilityPredicate(blockWorldState -> {
         IBlockState blockState = blockWorldState.getBlockState();
         if ((blockState.getBlock() instanceof BlockFireboxCasing BlockFireboxCasing)) {
@@ -47,6 +51,28 @@ public class GTLiteTraceabilityPredicate {
             .toArray(BlockInfo[]::new)))
             .addTooltips("gtlitecore.machine.pattern.firebox");
 
+    //  Yotta Fluid Tank Cell Predicate
+    public static final Supplier<TraceabilityPredicate> CELL_PREDICATE = () -> new TraceabilityPredicate(blockWorldState -> {
+        IBlockState state = blockWorldState.getBlockState();
+        if (MAP_YOT_TANK_CELL.containsKey(state)) {
+            IYottaTankData cells = MAP_YOT_TANK_CELL.get(state);
+            if (cells.getTier() != -1 && cells.getCapacity() > 0) {
+                String key = MetaTileEntityYottaFluidTank.YOT_CELL_HEADER + cells.getFluidCellName();
+                MetaTileEntityYottaFluidTank.YOTTankMatchWrapper wrapper = blockWorldState.getMatchContext().get(key);
+                if (wrapper == null)
+                    wrapper = new MetaTileEntityYottaFluidTank.YOTTankMatchWrapper(cells);
+                blockWorldState.getMatchContext().set(key, wrapper.increment());
+            }
+            return true;
+        }
+        return false;
+    }, () -> MAP_YOT_TANK_CELL.entrySet().stream()
+            .sorted(Comparator.comparingInt(entry -> entry.getValue().getTier()))
+            .map(entry -> new BlockInfo(entry.getKey(), null))
+            .toArray(BlockInfo[]::new))
+            .addTooltips("gtlitecore.machine.yotta_fluid_tank.error.cells");
+
+    //  Rotor Holder Predicate
     public static Supplier<TraceabilityPredicate> ROTOR_HOLDER = () -> new TraceabilityPredicate(blockWorldState -> {
         TileEntity tileEntity = blockWorldState.getTileEntity();
         if (tileEntity instanceof IGregTechTileEntity) {
@@ -73,6 +99,11 @@ public class GTLiteTraceabilityPredicate {
             .toArray(BlockInfo[]::new))
             .addTooltips("gtlitecore.machine.reinforced_rotor_holder.error");
 
+    /**
+     * @param mark Symbols, you need to get these in formStructure().
+     * @param allowedStates Allowed states.
+     * @return A special states(). you can use correspond text (mark) to check if the .aisle() is your upgrade structure part.
+     */
     public static TraceabilityPredicate optionalStates(String mark, IBlockState... allowedStates) {
         return new TraceabilityPredicate(blockWorldState -> {
             IBlockState state = blockWorldState.getBlockState();
@@ -86,6 +117,11 @@ public class GTLiteTraceabilityPredicate {
         }, getCandidates(allowedStates));
     }
 
+    /**
+     * @param mark Symbols, you need to get these in formStructure().
+     * @param allowedAbilities Allowed states.
+     * @return A special abilities(). you can use correspond text (mark) to check if the .aisle() is your upgrade structure part.
+     */
     public static TraceabilityPredicate optionalAbilities(String mark, MultiblockAbility<?>... allowedAbilities) {
         return new TraceabilityPredicate(blockWorldState -> {
             TileEntity tileEntity = blockWorldState.getTileEntity();
@@ -101,18 +137,22 @@ public class GTLiteTraceabilityPredicate {
         }, getCandidates(Arrays.stream(allowedAbilities).flatMap(ability -> MultiblockAbility.REGISTRY.get(ability).stream()).toArray(MetaTileEntity[]::new)));
     }
 
+    //  Precise Assembler Predicate
     public static Supplier<TierTraceabilityPredicate> PA_CASING = () -> new TierTraceabilityPredicate(MAP_PA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_CASING.get(s)).getIntTier()), "PACasing", null);
 
     public static Supplier<TierTraceabilityPredicate> PA_INTERNAL_CASING = () -> new TierTraceabilityPredicate(MAP_PA_INTERNAL_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_PA_INTERNAL_CASING.get(s)).getIntTier()), "PAInternalCasing", null);
 
+    //  Component Assembly Line Predicate
     public static Supplier<TierTraceabilityPredicate> CA_CASING = () -> new TierTraceabilityPredicate(MAP_CA_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_CA_CASING.get(s)).getIntTier()), "CACasing", null);
 
+    //  Field Casing Predicate
     public static Supplier<TierTraceabilityPredicate> FIELD_CASING = () -> new TierTraceabilityPredicate(MAP_FIELD_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_FIELD_CASING.get(s)).getIntTier()), "FieldCasing", null);
 
+    //  Space Elevator Motor Casing Predicate
     public static Supplier<TierTraceabilityPredicate> SPACE_ELEVATOR_MOTOR = () -> new TierTraceabilityPredicate(MAP_SPACE_ELEVATOR_MOTOR,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_SPACE_ELEVATOR_MOTOR.get(s)).getIntTier()), "SpaceElevatorMotor", null);
 }

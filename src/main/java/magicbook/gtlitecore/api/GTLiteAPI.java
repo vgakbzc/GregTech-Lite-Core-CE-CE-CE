@@ -8,6 +8,7 @@ import gregtech.common.blocks.MetaBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import magicbook.gtlitecore.api.block.IBlockTier;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
+import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
@@ -32,12 +33,18 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_CA_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FIELD_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_SPACE_ELEVATOR_MOTOR = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IYottaTankData> MAP_YOT_TANK_CELL = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
         //  Wire Coil Init
         for (BlockWireCoil.CoilType type : BlockWireCoil.CoilType.values()) {
             HEATING_COILS.put(GTLiteMetaBlocks.WIRE_COIL.getState(type), type);
+        }
+
+        //  Yotta Tank Cell Init
+        for (BlockYottaTankCell.YottaTankCellTier tier : BlockYottaTankCell.YottaTankCellTier.values()) {
+            MAP_YOT_TANK_CELL.put(GTLiteMetaBlocks.YOTTA_TANK_CELL.getState(tier), tier);
         }
 
         //  Precise Assembler Casing Tier

@@ -28,6 +28,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.*;
 import magicbook.gtlitecore.common.metatileentities.multi.part.*;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargePrimitiveBlastFurnace;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
+import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
@@ -151,7 +152,6 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
     public static MetaTileEntityLargeEUVMaskAligner LARGE_EUV_MASK_ALIGNER;
     public static MetaTileEntityIonLithographyFactory ION_LITHOGRAPHY_FACTORY;
-    public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
@@ -162,6 +162,9 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
+    public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
+    public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
+    public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
 
     /**
      * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -370,9 +373,9 @@ public class GTLiteMetaTileEntities {
         LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));
         LARGE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityLargeEUVMaskAligner(gtliteId("large_euv_mask_aligner")));
         ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(91, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
-        //  92 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
-        //  93 SUPERSTRUCTURE_ASSEMBLY_PLANT
-        //  94 DIMENSIONALLY_MATTER_MIXER
+        //  92
+        //  93 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
+        //  94 SUPERSTRUCTURE_ASSEMBLY_PLANT
         //  95
         //  96
         //  97
@@ -395,7 +398,14 @@ public class GTLiteMetaTileEntities {
         //  114
         LARGE_ROCK_BREAKER = registerMultiMetaTileEntity(115, new MetaTileEntityLargeRockBreaker(gtliteId("large_rock_breaker")));
         INDUSTRIAL_ROCK_BREAKER = registerMultiMetaTileEntity(116, new MetaTileEntityIndustrialRockBreaker(gtliteId("industrial_rock_breaker")));
-        //  Free ID: 117-199
+        //  117
+        //  118
+        //  119
+        DIMENSIONAL_MIXER = registerMultiMetaTileEntity(120, new MetaTileEntityDimensionalMixer(gtliteId("dimensional_mixer")));
+        //  Free ID: 121-149
+        YOTTA_FLUID_TANK = registerMultiMetaTileEntity(150, new MetaTileEntityYottaFluidTank(gtliteId("yotta_fluid_tank")));
+        //  151 TWENTY_FIVE_FLUID_TANK
+        //  Free ID: 152-199
         DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE = registerMultiMetaTileEntity(200, new MetaTileEntityDimensionallyTranscendentPlasmaForge(gtliteId("dimensionally_transcendent_plasma_forge")));
     }
 }

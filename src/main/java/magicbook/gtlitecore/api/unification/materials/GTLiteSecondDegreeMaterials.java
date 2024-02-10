@@ -966,6 +966,19 @@ public class GTLiteSecondDegreeMaterials {
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
 
+        //  12074 Arceus Alloy 2B
+        ArceusAlloy2B = new Material.Builder(getId(), gregtechId("arceus_alloy_2_b"))
+                .ingot()
+                .fluid()
+                .color(0xC4A415)
+                .iconSet(SHINY)
+                .components(Pikyonium64B, 12, Tritanium, 8, Tumbaga, 6, NaquadahEnriched, 4, RhodiumPlatedPalladium, 4, HSSE, 2, MolybdenumDisilicide, 2, Technetium, 2)
+                .blast(b -> b
+                        .temp(10650, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 1024)
+                        .vacuumStats(VA[ZPM], 338))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
+                .build();
     }
 
     private static int getId() {

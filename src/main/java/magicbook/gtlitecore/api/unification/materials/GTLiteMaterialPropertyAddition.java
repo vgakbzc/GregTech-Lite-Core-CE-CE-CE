@@ -170,10 +170,12 @@ public class GTLiteMaterialPropertyAddition {
         MaragingSteel300.addFlags(GENERATE_DOUBLE_PLATE);
         BlueSteel.addFlags(GENERATE_DOUBLE_PLATE);
         TantalumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
+        BlackSteel.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
         Rhenium.addFlags(GENERATE_DENSE);
+        Tritanium.addFlags(GENERATE_DENSE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);
@@ -208,6 +210,7 @@ public class GTLiteMaterialPropertyAddition {
         NiobiumNitride.addFlags(GENERATE_FRAME);
         TitaniumTungstenCarbide.addFlags(GENERATE_FRAME);
         Ruthenium.addFlags(GENERATE_FRAME);
+        Rhodium.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -251,6 +254,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
         Livermorium.addFlags(GENERATE_BOLT_SCREW);
+        BlueSteel.addFlags(GENERATE_BOLT_SCREW);
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);

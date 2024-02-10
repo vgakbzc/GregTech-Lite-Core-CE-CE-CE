@@ -417,6 +417,18 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem EIGEN_SINGULARITY;
     public static MetaItem<?>.MetaValueItem WEIRD_SINGULARITY;
 
+    //  Fluid Cores
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T1;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T2;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T3;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T4;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T5;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T6;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T7;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T8;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T9;
+    public static MetaItem<?>.MetaValueItem FLUID_CORE_T10;
+
     //  Debug Items
     public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
 

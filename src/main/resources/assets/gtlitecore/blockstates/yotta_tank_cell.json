@@ -1,0 +1,67 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "t1": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t1"
+        }
+      },
+      "t2": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t2"
+        }
+      },
+      "t3": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t3"
+        }
+      },
+      "t4": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t4"
+        }
+      },
+      "t5": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t5"
+        }
+      },
+      "t6": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t6"
+        }
+      },
+      "t7": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t7"
+        }
+      },
+      "t8": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t8"
+        }
+      },
+      "t9": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t9"
+        }
+      },
+      "t10": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/cells/t10"
+        }
+      }
+    }
+  }
+}
