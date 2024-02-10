@@ -71,6 +71,7 @@ tile.structure_casing.advanced_grate_casing.name=进阶栅格机械方块
 tile.structure_casing.fluxed_electrum_casing.name=抗激光通流琥珀金机器外壳
 tile.structure_casing.rhodium_casing.name=高应力铑机器外壳
 tile.structure_casing.naquadah_alloy_casing.name=超稳定硅岩合金机器外壳
+tile.structure_casing.force_field_constrained_casing.name=力场约束机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -247,6 +248,17 @@ tile.crucible.tungsten.name=钨坩埚
 tile.crucible.osmium.name=锇坩埚
 tile.crucible.graphite.name=石墨坩埚
 tile.crucible.boron_nitride.name=氮化硼坩埚
+
+tile.yotta_tank_cell.t1.name=流体单元方块 T1
+tile.yotta_tank_cell.t2.name=流体单元方块 T2
+tile.yotta_tank_cell.t3.name=流体单元方块 T3
+tile.yotta_tank_cell.t4.name=流体单元方块 T4
+tile.yotta_tank_cell.t5.name=流体单元方块 T5
+tile.yotta_tank_cell.t6.name=流体单元方块 T6
+tile.yotta_tank_cell.t7.name=流体单元方块 T7
+tile.yotta_tank_cell.t8.name=流体单元方块 T8
+tile.yotta_tank_cell.t9.name=流体单元方块 T9
+tile.yotta_tank_cell.t10.name=流体单元方块 T10
 
 tile.hermetic_casing.uev.name=密封机械方块 X
 tile.hermetic_casing.uiv.name=密封机械方块 XI
@@ -1408,6 +1420,19 @@ gtlitecore.machine.industrial_rock_breaker.tooltip.1=根据输入电压获得并
 gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
+
+gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
+gtlitecore.machine.yotta_fluid_tank.tooltip.1=
+gtlitecore.machine.yotta_fluid_tank.tooltip.2=
+gtlitecore.machine.yotta_fluid_tank.tooltip.3=
+gtlitecore.machine.yotta_fluid_tank.tooltip.4=
+gtlitecore.machine.yotta_fluid_tank.error.cells=§c必须正确放置流体单元方块§r
+gtlitecore.machine.yotta_fluid_tank.running=力场约束生效中。
+gtlitecore.machine.yotta_fluid_tank.stored=已存储：%s
+gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
+gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
+gtlitecore.machine.yotta_fluid_tank.type.empty=空
+gtlitecore.machine.yotta_fluid_tank.cell_capacitor=容量：
 
 #  Materials
 

@@ -14,7 +14,9 @@ import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
+import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
 import magicbook.gtlitecore.api.pattern.predicates.TierTraceabilityPredicate;
+import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -48,6 +50,27 @@ public class GTLiteTraceabilityPredicate {
             .map(type -> new BlockInfo(MetaBlocks.BOILER_FIREBOX_CASING.getState(type), null))
             .toArray(BlockInfo[]::new)))
             .addTooltips("gtlitecore.machine.pattern.firebox");
+
+    //  Yotta Fluid Tank Cell Predicate
+    public static final Supplier<TraceabilityPredicate> CELL_PREDICATE = () -> new TraceabilityPredicate(blockWorldState -> {
+        IBlockState state = blockWorldState.getBlockState();
+        if (MAP_YOT_TANK_CELL.containsKey(state)) {
+            IYottaTankData cells = MAP_YOT_TANK_CELL.get(state);
+            if (cells.getTier() != -1 && cells.getCapacity() > 0) {
+                String key = MetaTileEntityYottaFluidTank.YOT_CELL_HEADER + cells.getFluidCellName();
+                MetaTileEntityYottaFluidTank.YOTTankMatchWrapper wrapper = blockWorldState.getMatchContext().get(key);
+                if (wrapper == null)
+                    wrapper = new MetaTileEntityYottaFluidTank.YOTTankMatchWrapper(cells);
+                blockWorldState.getMatchContext().set(key, wrapper.increment());
+            }
+            return true;
+        }
+        return false;
+    }, () -> MAP_YOT_TANK_CELL.entrySet().stream()
+            .sorted(Comparator.comparingInt(entry -> entry.getValue().getTier()))
+            .map(entry -> new BlockInfo(entry.getKey(), null))
+            .toArray(BlockInfo[]::new))
+            .addTooltips("gtlitecore.machine.yotta_fluid_tank.error.cells");
 
     //  Rotor Holder Predicate
     public static Supplier<TraceabilityPredicate> ROTOR_HOLDER = () -> new TraceabilityPredicate(blockWorldState -> {
