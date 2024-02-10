@@ -404,7 +404,8 @@ public class GTLiteMetaTileEntities {
         DIMENSIONAL_MIXER = registerMultiMetaTileEntity(120, new MetaTileEntityDimensionalMixer(gtliteId("dimensional_mixer")));
         //  Free ID: 121-149
         YOTTA_FLUID_TANK = registerMultiMetaTileEntity(150, new MetaTileEntityYottaFluidTank(gtliteId("yotta_fluid_tank")));
-        //  Free ID: 151-199
+        //  151 TWENTY_FIVE_FLUID_TANK
+        //  Free ID: 152-199
         DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE = registerMultiMetaTileEntity(200, new MetaTileEntityDimensionallyTranscendentPlasmaForge(gtliteId("dimensionally_transcendent_plasma_forge")));
     }
 }
