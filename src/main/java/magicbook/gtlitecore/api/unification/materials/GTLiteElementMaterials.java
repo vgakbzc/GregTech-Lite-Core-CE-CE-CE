@@ -243,7 +243,7 @@ public class GTLiteElementMaterials {
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.CelestialTungsten)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_RING)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME)
                 .build();
 
         //  10016 Metastable Oganesson

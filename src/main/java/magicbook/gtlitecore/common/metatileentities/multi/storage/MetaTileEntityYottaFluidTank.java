@@ -14,6 +14,7 @@ import gregtech.api.metatileentity.multiblock.*;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTTransferUtils;
 import gregtech.api.util.RelativeDirection;
 import gregtech.api.util.TextComponentUtil;
@@ -23,7 +24,6 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
-import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -163,7 +163,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     }
 
     private static IBlockState getFrameState() {
-        return MetaBlocks.FRAMES.get(GTLiteMaterials.MARM200Steel).getBlock(GTLiteMaterials.MARM200Steel);
+        return MetaBlocks.FRAMES.get(Materials.Steel).getBlock(Materials.Steel);
     }
 
     @Override
@@ -176,6 +176,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
         tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.tooltip.5"));
     }
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
@@ -332,7 +333,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.FUSION_REACTOR_OVERLAY;
+        return Textures.QUANTUM_CHEST_OVERLAY;
     }
 
     @Override

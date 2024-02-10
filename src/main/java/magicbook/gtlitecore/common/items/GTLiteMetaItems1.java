@@ -474,6 +474,19 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EIGEN_SINGULARITY = this.addItem(805, "singularity.eigen");
         WEIRD_SINGULARITY = this.addItem(806, "singularity.weird");
 
+        //  Fluid Cores
+        FLUID_CORE_T1 = this.addItem(900, "fluid_core.t1");
+        FLUID_CORE_T2 = this.addItem(901, "fluid_core.t2");
+        FLUID_CORE_T3 = this.addItem(902, "fluid_core.t3");
+        FLUID_CORE_T4 = this.addItem(903, "fluid_core.t4");
+        FLUID_CORE_T5 = this.addItem(904, "fluid_core.t5");
+        FLUID_CORE_T6 = this.addItem(905, "fluid_core.t6");
+        FLUID_CORE_T7 = this.addItem(906, "fluid_core.t7");
+        FLUID_CORE_T8 = this.addItem(907, "fluid_core.t8");
+        FLUID_CORE_T9 = this.addItem(908, "fluid_core.t9");
+        FLUID_CORE_T10 = this.addItem(909, "fluid_core.t10");
+
+
         //  Debug Items
         STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer").addComponents(StructureWriterBehavior.INSTANCE).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
     }

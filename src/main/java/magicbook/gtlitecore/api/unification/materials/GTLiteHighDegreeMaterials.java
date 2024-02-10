@@ -110,7 +110,7 @@ public class GTLiteHighDegreeMaterials {
                 .blast(b -> b
                         .temp(14960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV]))
-                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_FRAME)
                 .cableProperties(V[UXV], 576, 1024, false)
                 .build();
 

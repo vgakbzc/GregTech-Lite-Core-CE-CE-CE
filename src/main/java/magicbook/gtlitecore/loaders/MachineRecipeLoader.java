@@ -1773,6 +1773,15 @@ public class MachineRecipeLoader {
                         .CWUt(576))
                 .buildAndRegister();
 
+        //  Yotta Fluid Tank
+        ModHandler.addShapedRecipe(true, "yotta_fluid_tank", YOTTA_FLUID_TANK.getStackForm(),
+                "SXS", "OCO", "SPS",
+                'S', new UnificationEntry(screw, BlueSteel),
+                'X', COVER_SCREEN,
+                'O', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
+                'C', GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FORCE_FIELD_CONSTRAINED_CASING),
+                'P', new UnificationEntry(pipeNormalFluid, StainlessSteel));
+
     }
 
     private static void MachineCasingRecipes() {
@@ -4021,5 +4030,161 @@ public class MachineRecipeLoader {
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
+
+        //  Yotta Fluid Tank Casings
+        ModHandler.addShapedRecipe(true, "force_field_constrained_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FORCE_FIELD_CONSTRAINED_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, MARM200Steel),
+                'F', new UnificationEntry(frameGt, Rhodium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, MARM200Steel, 6)
+                .input(frameGt, Rhodium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FORCE_FIELD_CONSTRAINED_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlackSteel)
+                .input(FLUID_CORE_T1)
+                .input(plate, Steel,4)
+                .input(ELECTRIC_PUMP_HV, 8)
+                .input(pipeNormalFluid, StainlessSteel, 4)
+                .circuitMeta(5)
+                .fluidInputs(Cupronickel.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T1))
+                .EUt(VA[HV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenSteel)
+                .input(FLUID_CORE_T2)
+                .input(plate, RhodiumPlatedPalladium, 4)
+                .input(ELECTRIC_PUMP_EV, 8)
+                .input(pipeNormalFluid, Titanium, 4)
+                .circuitMeta(5)
+                .fluidInputs(Kanthal.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T2))
+                .EUt(VA[IV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Naquadah)
+                .input(FLUID_CORE_T3)
+                .input(plate, NaquadahEnriched, 4)
+                .input(ELECTRIC_PUMP_IV, 8)
+                .input(pipeNormalFluid, NiobiumTitanium, 4)
+                .circuitMeta(5)
+                .fluidInputs(Nichrome.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T3))
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Trinium)
+                .input(FLUID_CORE_T4)
+                .input(plate, Naquadria, 4)
+                .input(ELECTRIC_PUMP_LuV, 8)
+                .input(pipeNormalFluid, Iridium, 4)
+                .circuitMeta(5)
+                .fluidInputs(RTMAlloy.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T4))
+                .EUt(VA[ZPM])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Americium)
+                .input(FLUID_CORE_T5)
+                .input(plate, Tritanium, 4)
+                .input(ELECTRIC_PUMP_ZPM, 8)
+                .input(pipeNormalFluid, Europium, 4)
+                .circuitMeta(5)
+                .fluidInputs(HSSG.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T5))
+                .EUt(VA[UV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(FLUID_CORE_T6)
+                .input(plate, Adamantium, 4)
+                .input(ELECTRIC_PUMP_UV, 8)
+                .input(pipeNormalFluid, Duranium, 4)
+                .circuitMeta(5)
+                .fluidInputs(Naquadah.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T6))
+                .EUt(VA[UHV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, CelestialTungsten)
+                .input(FLUID_CORE_T7)
+                .input(plate, AstralTitanium, 4)
+                .input(ELECTRIC_PUMP_UHV, 8)
+                .input(pipeNormalFluid, Lafium, 4)
+                .circuitMeta(5)
+                .fluidInputs(Trinium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T7))
+                .EUt(VA[UEV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Infinity)
+                .input(FLUID_CORE_T8)
+                .input(plate, DegenerateRhenium, 4)
+                .input(ELECTRIC_PUMP_UEV, 8)
+                .input(pipeNormalFluid, CrystalMatrix, 4)
+                .circuitMeta(5)
+                .fluidInputs(Tritanium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T8))
+                .EUt(VA[UIV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HeavyQuarkDegenerateMatter)
+                .input(FLUID_CORE_T9)
+                .input(plate, BlackDwarfMatter, 4)
+                .input(ELECTRIC_PUMP_UIV, 8)
+                .input(pipeNormalFluid, QuantumchromodynamicallyConfinedMatter, 4)
+                .circuitMeta(5)
+                .fluidInputs(Ichorium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T9))
+                .EUt(VA[UXV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal)
+                .input(FLUID_CORE_T10)
+                .input(plate, Shirabon, 4)
+                .input(ELECTRIC_PUMP_UXV, 8)
+                .input(pipeNormalFluid, Fatalium, 4)
+                .circuitMeta(5)
+                .fluidInputs(Astralium.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T10))
+                .EUt(VA[OpV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
     }
 }
