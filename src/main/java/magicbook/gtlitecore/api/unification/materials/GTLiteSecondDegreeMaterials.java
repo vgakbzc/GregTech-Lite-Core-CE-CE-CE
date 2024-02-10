@@ -13,6 +13,7 @@ import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_LEGENDARIUM;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_MAGNETO_RESONATIC;
 
 public class GTLiteSecondDegreeMaterials {
 
@@ -350,7 +351,7 @@ public class GTLiteSecondDegreeMaterials {
         MagnetoResonatic = new Material.Builder(getId(), gregtechId("magneto_resonatic"))
                 .gem()
                 .color(0xFF97FF)
-                .iconSet(MAGNETIC)
+                .iconSet(CUSTOM_MAGNETO_RESONATIC)
                 .components(Prasiolite, 3, BismuthTellurite, 6, CubicZirconia, 1, SteelMagnetic, 1)
                 .flags(NO_SMELTING, GENERATE_LENS)
                 .build();
