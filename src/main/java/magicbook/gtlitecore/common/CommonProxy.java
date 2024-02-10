@@ -74,6 +74,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.TRANSPARENT_CASING);
         registry.register(GTLiteMetaBlocks.EXPLOSIVE_BLOCK);
         registry.register(GTLiteMetaBlocks.CRUCIBLE);
+        registry.register(GTLiteMetaBlocks.YOTTA_TANK_CELL);
         registry.register(GTLiteMetaBlocks.HERMETIC_CASING);
         registry.register(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING);
     }
@@ -103,6 +104,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.TRANSPARENT_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.EXPLOSIVE_BLOCK, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.CRUCIBLE, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.YOTTA_TANK_CELL, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.HERMETIC_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING, VariantItemBlock::new));
     }

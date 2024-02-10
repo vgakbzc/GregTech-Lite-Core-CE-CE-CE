@@ -11,6 +11,7 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nonnull;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -159,4 +160,28 @@ public class GTLiteUtils {
             return Math.min(value, max);
         }
     }
+
+    /**
+     * @param values long value.
+     * @return summarized values.
+     */
+    public static BigInteger summarizedValue(long[] values) {
+        BigInteger retValue = BigInteger.ZERO;
+        long currentSum = 0;
+
+        for (long value : values) {
+            if (currentSum != 0 && value > Long.MAX_VALUE - currentSum) {
+                retValue = retValue.add(BigInteger.valueOf(currentSum));
+                currentSum = 0;
+            }
+            currentSum += value;
+        }
+
+        if (currentSum != 0) {
+            retValue = retValue.add(BigInteger.valueOf(currentSum));
+        }
+
+        return retValue;
+    }
+
 }

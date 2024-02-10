@@ -25,6 +25,7 @@ public class BlockPCBFactoryCasing extends VariantBlock<BlockPCBFactoryCasing.PC
         this.setDefaultState(this.getState(PCBFactoryCasingType.BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

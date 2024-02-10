@@ -33,6 +33,7 @@ public class GTLiteMetaBlocks {
     public static BlockTransparentCasing TRANSPARENT_CASING;
     public static BlockExplosive EXPLOSIVE_BLOCK;
     public static BlockCrucible CRUCIBLE;
+    public static BlockYottaTankCell YOTTA_TANK_CELL;
     public static BlockHermeticCasing HERMETIC_CASING;
     public static BlockDecorativeTransparentCasing DECORATIVE_TRANSPARENT_CASING;
 
@@ -123,6 +124,10 @@ public class GTLiteMetaBlocks {
         CRUCIBLE.setRegistryName("crucible");
         CRUCIBLE.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
 
+        YOTTA_TANK_CELL = new BlockYottaTankCell();
+        YOTTA_TANK_CELL.setRegistryName("yotta_tank_cell");
+        YOTTA_TANK_CELL.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         HERMETIC_CASING = new BlockHermeticCasing();
         HERMETIC_CASING.setRegistryName("hermetic_casing");
         HERMETIC_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK_DECORATIVE);
@@ -151,6 +156,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(FIELD_CASING);
         registerItemModel(EXPLOSIVE_BLOCK);
         registerItemModel(CRUCIBLE);
+        registerItemModel(YOTTA_TANK_CELL);
         registerItemModel(HERMETIC_CASING);
         registerItemModel(DECORATIVE_TRANSPARENT_CASING);
 
