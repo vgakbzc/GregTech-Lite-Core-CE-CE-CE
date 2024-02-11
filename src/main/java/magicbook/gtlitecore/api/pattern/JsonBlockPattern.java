@@ -12,6 +12,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * @author Gate Guardian
+ */
 public class JsonBlockPattern {
 
     public RelativeDirection[] structureDirection;

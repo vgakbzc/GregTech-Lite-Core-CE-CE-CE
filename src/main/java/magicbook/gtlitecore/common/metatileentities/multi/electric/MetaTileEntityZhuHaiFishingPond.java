@@ -54,6 +54,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * ZhuHai Fishing Pond for GregTech CEu
+ *
+ * @author Gate Guardian
+ *
+ * <p>
+ *     Based on my friend Gate Guardian's work about this machine.
+ * </p>
+ */
 public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase implements IDataInfoProvider {
 
     private final FishingPondRecipeLogic logic;
