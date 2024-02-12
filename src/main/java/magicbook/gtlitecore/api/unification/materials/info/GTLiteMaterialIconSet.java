@@ -13,4 +13,6 @@ public class GTLiteMaterialIconSet {
     public static final MaterialIconSet CUSTOM_RHUGNOR = new MaterialIconSet("rhugnor", null, true);
     public static final MaterialIconSet CUSTOM_HYPOGEN = new MaterialIconSet("hypogen", null, true);
     public static final MaterialIconSet CUSTOM_COSMIC_NEUTRONIUM = new MaterialIconSet("cosmic_neutronium", null, true);
+    public static final MaterialIconSet CUSTOM_MAGNETO_RESONATIC = new MaterialIconSet("magneto_resonatic", null, true);
+    public static final MaterialIconSet REAGENT = new MaterialIconSet("reagent", null, true);
 }

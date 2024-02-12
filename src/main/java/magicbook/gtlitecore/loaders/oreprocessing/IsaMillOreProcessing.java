@@ -1,5 +1,7 @@
 package magicbook.gtlitecore.loaders.oreprocessing;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
+
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -437,6 +439,16 @@ public class IsaMillOreProcessing {
     }
 
     private static void flotationOreProcess() {
+
+        //  C2H5ONa -> C2H5ONa (High Purity)
+        //  The first C2H5ONa use Chemical Reactor recipe (for chemical chain), the second for Ore Processing.
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, SodiumEthoxide, 9)
+                .output(dust, SodiumEthylate, 9)
+                .EUt(VA[MV])
+                .duration(280)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
 
         //  Another K2O recipe
         //  You do not need to centrifuge ash now!

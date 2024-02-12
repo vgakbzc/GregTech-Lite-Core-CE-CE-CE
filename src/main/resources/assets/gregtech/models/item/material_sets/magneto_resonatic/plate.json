@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtlitecore:items/material_sets/magneto_resonatic/plate",
+    "layer1": "gtlitecore:items/material_sets/magneto_resonatic/magnetic_overlay"
+  }
+}

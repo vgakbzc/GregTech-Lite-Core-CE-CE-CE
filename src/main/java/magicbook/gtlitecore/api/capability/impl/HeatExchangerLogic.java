@@ -19,6 +19,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Gate Guardian
+ *
+ * <p>
+ *     This class is basic logic for Heat Exchangers.
+ *     Thanks for my friend Gate Guardian create it, I just redo something.
+ * </p>
+ */
 public class HeatExchangerLogic extends NoEnergyMultiblockRecipeLogic {
 
     private int currentHeat;

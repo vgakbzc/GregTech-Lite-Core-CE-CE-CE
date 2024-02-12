@@ -67,7 +67,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
     protected ModularUI createUI(EntityPlayer entityPlayer) {
         ModularUI.Builder builder = ModularUI.builder(GuiTextures.BACKGROUND, 176, 209)
                 .bindPlayerInventory(entityPlayer.inventory, 126)
-                .widget(new SlotWidget(this.itemHolder,0, 88-9,50,true,true,true)
+                .widget(new SlotWidget(this.itemHolder,0, 88 - 9,50,true,true,true)
                         .setBackgroundTexture(GuiTextures.SLOT)
                         .setChangeListener(this::markDirty))
                 .widget(new LabelWidget(88,20,"gtlitecore.machine.isa_mill.grindball_hatch.only")
@@ -89,7 +89,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
     @Override
     @SideOnly(Side.CLIENT)
     public void addToolUsages(ItemStack stack,
-                              @javax.annotation.Nullable World world,
+                              @Nullable World world,
                               List<String> tooltip,
                               boolean advanced) {
         tooltip.add(I18n.format("gregtech.tool_action.screwdriver.access_covers"));

@@ -25,6 +25,15 @@ import java.util.List;
 
 import static gregtech.api.recipes.logic.OverclockingLogic.standardOverclockingLogic;
 
+/**
+ * @author Gate Guardian
+ *
+ * <p>
+ *     Just another No energy consume Multiblock recipe logic.
+ *     This class maybe usable for some no energy consume multiblock, but unfortunately, you needs to consider GUI.
+ *     Thanks for my friend Gate Guardian create it, I just redo something.
+ * </p>
+ */
 public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
 
     // Used for distinct mode
