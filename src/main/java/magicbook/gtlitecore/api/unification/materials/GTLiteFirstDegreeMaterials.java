@@ -14,6 +14,7 @@ import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.REAGENT;
 
 public class GTLiteFirstDegreeMaterials {
 
@@ -404,7 +405,7 @@ public class GTLiteFirstDegreeMaterials {
         SodiumEthylxanthate = new Material.Builder(getId(), gregtechId("sodium_ethylxanthate"))
                 .dust()
                 .color(0xF3F311)
-                .iconSet(SHINY)
+                .iconSet(REAGENT)
                 .components(Carbon, 3, Hydrogen, 5, Sodium, 1, Oxygen, 1, Sulfur, 2)
                 .build();
 
@@ -412,7 +413,7 @@ public class GTLiteFirstDegreeMaterials {
         PotassiumEthylxanthate = new Material.Builder(getId(), gregtechId("potassium_ethylxanthate"))
                 .dust()
                 .color(0xB9AD83)
-                .iconSet(SHINY)
+                .iconSet(REAGENT)
                 .components(Carbon, 3, Hydrogen, 5, Potassium, 1, Oxygen, 1, Sulfur, 2)
                 .build();
 
