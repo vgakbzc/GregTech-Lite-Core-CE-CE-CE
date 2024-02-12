@@ -5,6 +5,8 @@ import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 
 /**
+ * Server side Support I18n
+ *
  * @author vfyjxf
  *
  * <p>
