@@ -34,6 +34,16 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+/**
+ * Space Elevator for GregTech CEu
+ *
+ * @author minecraft7771, Sampsa (original author)
+ *
+ * <p>
+ *     Based on the same name work for GregTech 5 unofficial.
+ *     Maybe redo this machine's logic in future (todo?).
+ * </p>
+ */
 public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
 
     private int casingTier;

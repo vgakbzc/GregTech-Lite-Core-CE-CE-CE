@@ -24,6 +24,14 @@ import net.minecraftforge.fluids.FluidStack;
 import javax.annotation.Nonnull;
 import java.util.List;
 
+/**
+ * @author Gate Guardian
+ *
+ * <p>
+ *     This class is basic logic for ZhuHai Fishing Pond.
+ *     Thanks for my friend Gate Guardian create it, I just redo something.
+ * </p>
+ */
 public class FishingPondRecipeLogic implements IWorkable {
 
     public static final int maxProgress = 20;
