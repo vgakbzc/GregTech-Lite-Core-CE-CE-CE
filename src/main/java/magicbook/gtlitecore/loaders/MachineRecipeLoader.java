@@ -852,7 +852,7 @@ public class MachineRecipeLoader {
         ModHandler.addShapedRecipe(true, "large_steam_compressor", LARGE_STEAM_COMPRESSOR.getStackForm(),
                 "CPC", "GFG", "CPC",
                 'C', MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS),
-                'F', new UnificationEntry(frameGt, Brass),
+                'F', STEAM_COMPRESSOR_BRONZE.getStackForm(),
                 'G', new UnificationEntry(gear, Potin),
                 'P', ELECTRIC_PISTON_ULV);
 
