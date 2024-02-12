@@ -66,9 +66,10 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
                                 .filter(mte -> {
                                     IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
                                     return container != null && container.getOutputVoltage() == GTValues.V[UHV]
-                                            && container.getOutputAmperage() == 2;
-                                })
-                                .toArray(MetaTileEntity[]::new)).setExactLimit(1).setPreviewCount(1)))
+                                                             && container.getOutputAmperage() == 2;})
+                                .toArray(MetaTileEntity[]::new))
+                                .setExactLimit(1)
+                                .setPreviewCount(1)))
                 .where('U', states(getUniqueCasingState()))
                 .where('G', states(getSecondCasingState()))
                 .where('F', states(getFrameState()))
@@ -122,6 +123,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
         tooltip.add(I18n.format("gtlitecore.machine.large_naquadah_reactor.tooltip.2"));
     }
 
+    @Override
     public void runMufflerEffect(float xPos, float yPos, float zPos, float xSpd, float ySpd, float zSpd) {
         this.getWorld().spawnParticle(EnumParticleTypes.SPELL_WITCH, xPos, yPos, zPos, xSpd, ySpd, zSpd);
     }
