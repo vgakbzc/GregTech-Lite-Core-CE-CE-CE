@@ -406,7 +406,7 @@ public class MachineRecipeLoader {
                 .input(HULL[UV])
                 .input(frameGt, Pikyonium64B, 4)
                 .input(MINING_DRONE_UV, 8)
-                .input(plate, Tritanium, 16)
+                .input(plateDouble, Vibranium, 32)
                 .input(UNMANNED_DRONE_AIRPORT, 16)
                 .input(GRAVITATION_ENGINE, 8)
                 .input(CONVEYOR_MODULE_UV, 16)
