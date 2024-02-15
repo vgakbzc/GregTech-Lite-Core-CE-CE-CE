@@ -1445,7 +1445,7 @@ gtlitecore.machine.yotta_fluid_tank.stored=已存储：%s
 gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
 gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
 gtlitecore.machine.yotta_fluid_tank.type.empty=空
-gtlitecore.machine.yotta_fluid_tank.cell_capacitor=容量：%s
+gtlitecore.machine.yotta_fluid_tank.cell_capacitor=§b容量：§r%s L
 
 #  Materials
 

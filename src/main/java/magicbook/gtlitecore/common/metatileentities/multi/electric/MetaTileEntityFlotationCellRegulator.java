@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
+import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -30,6 +31,7 @@ public class MetaTileEntityFlotationCellRegulator extends RecipeMapMultiblockCon
 
     public MetaTileEntityFlotationCellRegulator(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.FLOTATION_RECIPES);
+        this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
     }
 
     @Override

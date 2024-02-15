@@ -49,7 +49,7 @@ public class BlockYottaTankCell extends VariantBlock<BlockYottaTankCell.YottaTan
                                @Nonnull List<String> tooltip,
                                @Nonnull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.cell_capacitor", GTLiteUtils.formatNumbers(getState(stack).getCapacity()) + "L"));
+        tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.cell_capacitor", GTLiteUtils.formatNumbers(getState(stack).getCapacity())));
     }
 
     public enum YottaTankCellTier implements IStringSerializable, IYottaTankData {

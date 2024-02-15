@@ -73,9 +73,10 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController {
                                 .filter(mte -> {
                                     IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
                                     return container != null && container.getOutputVoltage() == GTValues.V[UIV]
-                                            && container.getOutputAmperage() == 2;
-                                })
-                                .toArray(MetaTileEntity[]::new)).setExactLimit(1).setPreviewCount(1)))
+                                                             && container.getOutputAmperage() == 2;})
+                                .toArray(MetaTileEntity[]::new))
+                                .setExactLimit(1)
+                                .setPreviewCount(1)))
                 .where('F', states(getFrameState()))
                 .where('H', states(getUniqueCasingState()))
                 .where('#', air())
