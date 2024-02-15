@@ -1216,7 +1216,7 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING, GENERATE_LENS)
                 .components(YttriumOxide, 2, NeodymiumOxide, 1, Alumina, 5)
                 .build()
-                .setFormula("NdY2Al5O12", true);
+                .setFormula("Nd:YAG", true);
 
         //  11140 HRA Magnesium
         HRAMagnesium = new Material.Builder(getId(), gregtechId("hra_magnesium"))
@@ -2168,6 +2168,16 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Radium, 1, Oxygen, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11247 Ce:LAG
+        CeLAG = new Material.Builder(getId(), gregtechId("ce_lag"))
+                .gem()
+                .color(0x00A816)
+                .iconSet(GEM_HORIZONTAL)
+                .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING, GENERATE_LENS)
+                .components(CeriumOxide, 1, LutetiumOxide, 1, Alumina, 5)
+                .build()
+                .setFormula("Ce:LAG", true);
 
     }
 

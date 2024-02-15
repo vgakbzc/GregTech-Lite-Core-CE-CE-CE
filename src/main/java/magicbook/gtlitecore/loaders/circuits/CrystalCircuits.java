@@ -21,6 +21,7 @@ public class CrystalCircuits {
 
     public static void init() {
         CrystalSoCNerf();
+        AdvancedCrystalSoC();
         AssemblyBuffer();
     }
 
@@ -162,6 +163,55 @@ public class CrystalCircuits {
                 .EUt(VA[ZPM])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+    }
+
+    private static void AdvancedCrystalSoC() {
+
+        //  Ce:LAG
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, CeriumOxide)
+                .input(dust, LutetiumOxide)
+                .input(dust, Alumina, 5)
+                .circuitMeta(3)
+                .output(dust, CeLAG, 7)
+                .EUt(VA[ZPM])
+                .duration(180)
+                .buildAndRegister();
+
+        //  Crystal CPU
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(plate, Emerald)
+                .notConsumable(lens, CeLAG)
+                .fluidInputs(Europium.getFluid(4))
+                .output(CRYSTAL_CENTRAL_PROCESSING_UNIT)
+                .EUt(VA[HV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(plate, Olivine)
+                .notConsumable(lens, CeLAG)
+                .fluidInputs(Europium.getFluid(4))
+                .output(CRYSTAL_CENTRAL_PROCESSING_UNIT)
+                .EUt(VA[HV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Crystal SoC Socket
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Naquadah)
+                .input(CRYSTAL_INTERFACE_CHIP)
+                .input(ring, Palladium, 2)
+                .input(wireFine, Europium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .output(CRYSTAL_SOC_SOCKET, 2)
+                .EUt(VA[UV])
+                .duration(20)
+                .CasingTier(3)
+                .buildAndRegister();
+
     }
 
     private static void AssemblyBuffer() {

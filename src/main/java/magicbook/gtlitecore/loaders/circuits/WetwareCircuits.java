@@ -13,12 +13,14 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class WetwareCircuits {
 
     public static void init() {
         CircuitBoard();
+        AdvancedWetwareCPU();
         AssemblyBuffer();
     }
 
@@ -49,6 +51,24 @@ public class WetwareCircuits {
                     .EUt(VA[LuV])
                     .buildAndRegister();
         }
+    }
+
+    private static void AdvancedWetwareCPU() {
+
+        //  Wetware CPU
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Polybenzimidazole)
+                .input(STEM_CELLS, 4)
+                .input(pipeTinyFluid, Gold)
+                .input(bolt, HSSS, 4)
+                .fluidInputs(KaptonE.getFluid(L * 4))
+                .fluidInputs(SterileGrowthMedium.getFluid(125))
+                .output(NEURO_PROCESSOR, 2)
+                .EUt(VA[UHV])
+                .duration(200)
+                .CasingTier(4)
+                .buildAndRegister();
+
     }
 
     private static void AssemblyBuffer() {
