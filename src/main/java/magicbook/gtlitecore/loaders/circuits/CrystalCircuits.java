@@ -79,7 +79,7 @@ public class CrystalCircuits {
                 .notConsumable(lens, Sapphire)
                 .output(SAPPHIRE_CHIP)
                 .duration(1200)
-                .EUt(VA[HV])
+                .EUt(VA[MV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -89,7 +89,7 @@ public class CrystalCircuits {
                 .notConsumable(lens, Ruby)
                 .output(RUBY_CHIP)
                 .duration(1200)
-                .EUt(VA[HV])
+                .EUt(VA[MV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -99,7 +99,7 @@ public class CrystalCircuits {
                 .notConsumable(lens, Diamond)
                 .output(DIAMOND_CHIP)
                 .duration(1200)
-                .EUt(VA[HV])
+                .EUt(VA[MV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
