@@ -92,7 +92,7 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
      */
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean isRotorFaceFree() {
-        IReinforcedRotorHolder rotorHolder = (IReinforcedRotorHolder) getRotorHolder();
+        IReinforcedRotorHolder rotorHolder = getRotorHolder();
         if (rotorHolder != null)
             return isStructureFormed() && getRotorHolder().isFrontFaceFree();
         return false;
