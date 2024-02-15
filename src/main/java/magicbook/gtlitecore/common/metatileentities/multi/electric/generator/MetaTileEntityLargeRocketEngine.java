@@ -64,9 +64,10 @@ public class MetaTileEntityLargeRocketEngine extends FuelMultiblockController {
                 .where('X', metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.OUTPUT_ENERGY).stream()
                         .filter(mte -> {
                             IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
-                            return container != null && container.getOutputVoltage() == GTValues.V[IV];
-                        })
-                        .toArray(MetaTileEntity[]::new)).setExactLimit(1).setPreviewCount(1))
+                            return container != null && container.getOutputVoltage() == GTValues.V[IV];})
+                        .toArray(MetaTileEntity[]::new))
+                        .setExactLimit(1)
+                        .setPreviewCount(1))
                 .where('o', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .build();
     }

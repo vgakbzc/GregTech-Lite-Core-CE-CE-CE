@@ -60,12 +60,13 @@ public class MetaTileEntityHyperReactorMkI extends FuelMultiblockController {
                         .setMinGlobalLimited(55)
                         .or(autoAbilities(false, true, false, false, true, false, false))
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.OUTPUT_ENERGY).stream()
-                            .filter(mte -> {
-                                IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
-                                return container != null && container.getOutputVoltage() == GTValues.V[UEV]
-                                                         && container.getOutputAmperage() == 2;
-                                })
-                        .toArray(MetaTileEntity[]::new)).setExactLimit(1).setPreviewCount(1)))
+                                .filter(mte -> {
+                                    IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
+                                    return container != null && container.getOutputVoltage() == GTValues.V[UEV]
+                                                             && container.getOutputAmperage() == 2;})
+                                .toArray(MetaTileEntity[]::new))
+                                .setExactLimit(1)
+                                .setPreviewCount(1)))
                 .where('G', states(getGlassState()))
                 .where('H', states(getUniqueCasingState()))
                 .where('#', air())

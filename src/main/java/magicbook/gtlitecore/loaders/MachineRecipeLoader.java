@@ -406,7 +406,7 @@ public class MachineRecipeLoader {
                 .input(HULL[UV])
                 .input(frameGt, Pikyonium64B, 4)
                 .input(MINING_DRONE_UV, 8)
-                .input(plate, Tritanium, 16)
+                .input(plateDouble, Vibranium, 32)
                 .input(UNMANNED_DRONE_AIRPORT, 16)
                 .input(GRAVITATION_ENGINE, 8)
                 .input(CONVEYOR_MODULE_UV, 16)
@@ -852,7 +852,7 @@ public class MachineRecipeLoader {
         ModHandler.addShapedRecipe(true, "large_steam_compressor", LARGE_STEAM_COMPRESSOR.getStackForm(),
                 "CPC", "GFG", "CPC",
                 'C', MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.BRONZE_BRICKS),
-                'F', new UnificationEntry(frameGt, Brass),
+                'F', STEAM_COMPRESSOR_BRONZE.getStackForm(),
                 'G', new UnificationEntry(gear, Potin),
                 'P', ELECTRIC_PISTON_ULV);
 

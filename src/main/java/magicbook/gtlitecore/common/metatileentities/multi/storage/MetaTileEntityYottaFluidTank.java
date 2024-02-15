@@ -353,6 +353,11 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
         return 0;
     }
 
+    @Override
+    public boolean showProgressBar() {
+        return false;
+    }
+
     public static class YOTTankMatchWrapper {
 
         private final IYottaTankData cellTier;
