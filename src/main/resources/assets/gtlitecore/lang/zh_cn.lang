@@ -1729,6 +1729,7 @@ gregtech.material.radium_sulfate=硫酸镭
 gregtech.material.radium_dichloride=二氯化镭
 gregtech.material.radium_hydroxide=氢氧化镭
 gregtech.material.radium_oxide=氧化镭
+gregtech.material.ce_lag=铈掺杂的镥铝榴石
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

@@ -36,7 +36,7 @@ public class HeatExchangerLogic extends NoEnergyMultiblockRecipeLogic {
 
     public HeatExchangerLogic(NoEnergyMultiblockController tileEntity) {
         super(tileEntity, tileEntity.recipeMap);
-        this.maxHeat = ((IHeatExchanger)tileEntity).getHeatTime() * 20;
+        this.maxHeat = ((IHeatExchanger) tileEntity).getHeatTime() * 20;
     }
 
     @Override

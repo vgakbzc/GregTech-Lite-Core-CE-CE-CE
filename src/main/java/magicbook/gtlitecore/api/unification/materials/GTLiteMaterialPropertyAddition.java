@@ -243,6 +243,9 @@ public class GTLiteMaterialPropertyAddition {
         //  Small Spring
         Europium.addFlags(GENERATE_SPRING_SMALL);
 
+        //  Ring
+        Palladium.addFlags(GENERATE_RING);
+
         //  Gear
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
         Darmstadtium.addFlags(GENERATE_GEAR);

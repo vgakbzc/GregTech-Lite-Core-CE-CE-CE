@@ -1,20 +1,27 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric.generator;
 
 import gregtech.api.GTValues;
+import gregtech.api.capability.IMultipleTankHandler;
 import gregtech.api.capability.impl.MultiblockFuelRecipeLogic;
 import gregtech.api.metatileentity.multiblock.FuelMultiblockController;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;
+import gregtech.api.recipes.RecipeMap;
+import gregtech.api.util.GTUtility;
 import magicbook.gtlitecore.api.capability.IReinforcedRotorHolder;
 import magicbook.gtlitecore.api.metatileentity.multi.ITurbineMode;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 
+import javax.annotation.Nullable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
 
@@ -74,6 +81,56 @@ public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
             }
         }
         return 0;
+    }
+
+    private int getParallel(Recipe recipe,
+                            double totalHolderEfficiencyCoefficient,
+                            int turbineMaxVoltage) {
+        return MathHelper.ceil((double) (turbineMaxVoltage - this.excessVoltage) / ((double) Math.abs(recipe.getEUt()) * totalHolderEfficiencyCoefficient));
+    }
+
+    private boolean canDoRecipeWithParallel(Recipe recipe) {
+        List<IReinforcedRotorHolder> rotorHolders = ((ITurbineMode) metaTileEntity).getRotorHolders();
+
+        if (rotorHolders != null && rotorHolders.get(0).hasRotor()) {
+            double totalHolderEfficiencyCoefficient = (double) rotorHolders.get(0).getTotalEfficiency() / 100.0;
+            int turbineMaxVoltage = (int) this.getMaxVoltage();
+            int parallel = this.getParallel(recipe, totalHolderEfficiencyCoefficient, turbineMaxVoltage);
+            FluidStack recipeFluidStack = recipe.getFluidInputs().get(0).getInputFluidStack();
+            FluidStack inputFluid = this.getInputTank().drain(new FluidStack(recipeFluidStack.getFluid(), Integer.MAX_VALUE), false);
+            return inputFluid != null && inputFluid.amount >= recipeFluidStack.amount * parallel;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    protected boolean checkPreviousRecipe() {
+        return super.checkPreviousRecipe() && this.canDoRecipeWithParallel(this.previousRecipe);
+    }
+
+    @Nullable
+    @Override
+    protected Recipe findRecipe(long maxVoltage,
+                                IItemHandlerModifiable inputs, IMultipleTankHandler fluidInputs) {
+        RecipeMap<?> map = this.getRecipeMap();
+        if (map != null && this.isRecipeMapValid(map)) {
+            List<ItemStack> items = GTUtility.itemHandlerToList(inputs).stream()
+                    .filter((s) -> !s.isEmpty())
+                    .collect(Collectors.toList());
+            List<FluidStack> fluids = GTUtility.fluidHandlerToList(fluidInputs).stream()
+                    .filter((f) -> f != null && f.amount != 0)
+                    .collect(Collectors.toList());
+            return map.find(items, fluids, (recipe) -> {
+                if ((long) recipe.getEUt() > maxVoltage) {
+                    return false;
+                } else {
+                    return recipe.matches(false, inputs, fluidInputs) && this.canDoRecipeWithParallel(recipe);
+                }
+            });
+        } else {
+            return null;
+        }
     }
 
     @Override

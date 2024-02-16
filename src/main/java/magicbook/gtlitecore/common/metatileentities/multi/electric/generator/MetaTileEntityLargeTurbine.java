@@ -72,11 +72,12 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
         return new MetaTileEntityLargeTurbine(metaTileEntityId, recipeMap, tier, casingState, gearboxState, casingRenderer, hasMufflerHatch, frontOverlay);
     }
 
-    public IRotorHolder getRotorHolder() {
-        List<IRotorHolder> abilities = getAbilities(MultiblockAbility.ROTOR_HOLDER);
-        if (abilities.isEmpty())
-            return null;
-        return abilities.get(0);
+    public IReinforcedRotorHolder getRotorHolder() {
+        List<IReinforcedRotorHolder> abilities = getAbilities(GTLiteMultiblockAbility.REINFORCED_ROTOR_HOLDER_ABILITY);
+        //if (abilities.isEmpty())
+        //    return null;
+        //return abilities.get(0);
+        return abilities.isEmpty() ? null : abilities.get(0);
     }
 
     @Override
@@ -91,7 +92,7 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
      */
     @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public boolean isRotorFaceFree() {
-        IRotorHolder rotorHolder = getRotorHolder();
+        IReinforcedRotorHolder rotorHolder = getRotorHolder();
         if (rotorHolder != null)
             return isStructureFormed() && getRotorHolder().isFrontFaceFree();
         return false;
@@ -106,10 +107,10 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
 
     @Override
     protected long getMaxVoltage() {
-        long maxProduction = ((LargeTurbineWorkableHandler) recipeMapWorkable).getMaxVoltage();
+        long maxProduction = recipeMapWorkable.getMaxVoltage();
         long currentProduction = ((LargeTurbineWorkableHandler) recipeMapWorkable).boostProduction((int) maxProduction);
         if (isActive() && currentProduction < maxProduction) {
-            return ((LargeTurbineWorkableHandler) recipeMapWorkable).getMaxVoltage();
+            return recipeMapWorkable.getMaxVoltage();
         } else {
             return 0L;
         }
@@ -125,7 +126,7 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
                 textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.rotor_speed", TextFormattingUtil.formatNumbers(rotorHolder.getRotorSpeed()), TextFormattingUtil.formatNumbers(rotorHolder.getMaxRotorHolderSpeed())));
                 textList.add(new TextComponentTranslation("gregtech.multiblock.turbine.efficiency", rotorHolder.getTotalEfficiency()));
 
-                long maxProduction = ((LargeTurbineWorkableHandler) recipeMapWorkable).getMaxVoltage();
+                long maxProduction = recipeMapWorkable.getMaxVoltage();
                 long currentProduction = isActive() ? ((LargeTurbineWorkableHandler) recipeMapWorkable).boostProduction((int) maxProduction) : 0;
                 String voltageName = GTValues.VNF[GTUtility.getTierByVoltage(currentProduction)];
 
@@ -160,7 +161,7 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
         MultiblockDisplayText.builder(textList, this.isStructureFormed(), false)
                 .addCustom((tl) -> {
                     if (this.isStructureFormed()) {
-                        IReinforcedRotorHolder rotorHolder = (IReinforcedRotorHolder) this.getRotorHolder();
+                        IRotorHolder rotorHolder = this.getRotorHolder();
                         if (rotorHolder.getRotorEfficiency() > 0 && rotorHolder.getRotorDurabilityPercent() <= 10) {
                             tl.add(TextComponentUtil.translationWithColor(TextFormatting.YELLOW, "gregtech.multiblock.turbine.rotor_durability_low"));
                         }

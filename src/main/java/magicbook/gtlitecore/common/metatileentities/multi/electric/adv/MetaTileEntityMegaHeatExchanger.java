@@ -66,7 +66,7 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
                 .aisle("F   F", "F   F", "CCCCC", "CPPPC", "CPPPC", "CPPPC", "CPPPC", "CPPPC", "CCCCC")
                 .aisle("     ", "     ", "CCICC", "CPPPC", "CPPPC", "CPPPC", "CPPPC", "CPPPC", "CCECC")
                 .aisle("F   F", "F   F", "CCCCC", "CPPPC", "CPPPC", "CPPPC", "CPPPC", "CPPPC", "CCCCC")
-                .aisle(" F F ", " F F ", " CCC ", " CSC ", " CJC ", " CJC ", " CJC ", " CJC ", " CCC ")
+                .aisle(" F F ", " F F ", " CCC ", " CSC ", " CCC ", " CCC ", " CCC ", " CCC ", " CCC ")
                 .where('S', selfPredicate())
                 .where('C', states(getCasingState())
                         .setMinGlobalLimited(88)
@@ -75,9 +75,6 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
                 .where('P', states(getBoilerCasingState()))
                 .where('I', abilities(MultiblockAbility.IMPORT_FLUIDS))
                 .where('E', abilities(MultiblockAbility.EXPORT_FLUIDS))
-                .where('J', states(getCasingState())
-                        .or(abilities(MultiblockAbility.IMPORT_ITEMS)
-                                .setExactLimit(1)))
                 .where('F', states(getFrameState()))
                 .where(' ', any())
                 .build();
