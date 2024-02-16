@@ -3165,7 +3165,7 @@ public class MachineRecipeLoader {
                 .input(MULTIPART_REINFORCED_ROTOR_HOLDER[4])
                 .input(ELECTRIC_MOTOR_UIV, 2)
                 .input(CONVEYOR_MODULE_UIV, 2)
-                .input(rotor, Legendarium, 4)
+                .input(rotor, BlackPlutonium, 4)
                 .input(stickLong, Tritanium, 2)
                 .input(wireFine, SuperheavyLAlloy, 32)
                 .fluidInputs(SolderingAlloy.getFluid(L * 10))
@@ -3178,7 +3178,43 @@ public class MachineRecipeLoader {
                         .CWUt(64))
                 .buildAndRegister();
 
-        //  TODO UXV-OpV
+        //  UXV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, CosmicNeutronium)
+                .input(MULTIPART_REINFORCED_ROTOR_HOLDER[5])
+                .input(ELECTRIC_MOTOR_UXV, 2)
+                .input(CONVEYOR_MODULE_UXV, 2)
+                .input(rotor, Octiron, 4)
+                .input(stickLong, Adamantium, 2)
+                .input(wireFine, SuperheavyHAlloy, 32)
+                .fluidInputs(SolderingAlloy.getFluid(L * 10))
+                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[6])
+                .EUt(VA[UXV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[5].getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(128))
+                .buildAndRegister();
+
+        //  OpV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Spacetime)
+                .input(MULTIPART_REINFORCED_ROTOR_HOLDER[6])
+                .input(ELECTRIC_MOTOR_OpV, 2)
+                .input(CONVEYOR_MODULE_OpV, 2)
+                .input(rotor, TranscendentMetal, 4)
+                .input(stickLong, Hdcs, 2)
+                .input(wireFine, Arcanium, 32)
+                .fluidInputs(SolderingAlloy.getFluid(L * 10))
+                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[7])
+                .EUt(VA[OpV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[6].getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(256))
+                .buildAndRegister();
 
         //  Quantum Casing
         ModHandler.addShapedRecipe(true, "quantum_casing", GTLiteMetaBlocks.METAL_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMetalCasing.MetalCasingType.QUANTUM_CASING, 2),

@@ -2173,7 +2173,7 @@ public class GTLiteFirstDegreeMaterials {
         CeLAG = new Material.Builder(getId(), gregtechId("ce_lag"))
                 .gem()
                 .color(0x00A816)
-                .iconSet(GEM_HORIZONTAL)
+                .iconSet(GEM_VERTICAL)
                 .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING, GENERATE_LENS)
                 .components(CeriumOxide, 1, LutetiumOxide, 1, Alumina, 5)
                 .build()
