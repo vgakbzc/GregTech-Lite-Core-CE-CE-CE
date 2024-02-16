@@ -946,7 +946,7 @@ public class MachineRecipeLoader {
                 'D', POWER_THRUSTER_ADVANCED,
                 'W', new UnificationEntry(cableGtQuadruple, Platinum),
                 'P', ELECTRIC_PISTON_IV,
-                'A', new UnificationEntry(plate, Tantalloy61));
+                'A', new UnificationEntry(plate, Inconel792));
 
         //  Large Biomass Generator
         ModHandler.addShapedRecipe(true, "large_biomass_generator", LARGE_BIOMASS_GENERATOR.getStackForm(),
