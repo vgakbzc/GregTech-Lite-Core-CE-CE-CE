@@ -1782,6 +1782,22 @@ public class MachineRecipeLoader {
                 'C', GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FORCE_FIELD_CONSTRAINED_CASING),
                 'P', new UnificationEntry(pipeNormalFluid, StainlessSteel));
 
+        //  Large High Pressure Forming Unit
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, ZirconiumCarbide, 4)
+                .input(LARGE_BENDER, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, Incoloy020, 4)
+                .input(plateDouble, Stellite100, 4)
+                .input(gear, HSSS, 4)
+                .input(gearSmall, TungstenCarbide, 16)
+                .input(wireGtQuadruple, Tungsten, 4)
+                .fluidInputs(IncoloyMA956.getFluid(L * 4))
+                .output(LARGE_HIGH_PRESSURE_FORMING_UNIT)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -4222,5 +4238,19 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Incoloy-020 Casing
+        ModHandler.addShapedRecipe(true, "incoloy_020_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.INCOLOY_020_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Incoloy020),
+                'F', new UnificationEntry(frameGt, Incoloy020));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Incoloy020, 6)
+                .input(frameGt, Incoloy020)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.INCOLOY_020_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 }

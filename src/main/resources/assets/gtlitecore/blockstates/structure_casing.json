@@ -51,6 +51,12 @@
           "side": "gtlitecore:blocks/casings/cells/side",
           "bottom": "#top"
         }
+      },
+      "incoloy_020_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/incoloy_020_casing"
+        }
       }
     }
   }

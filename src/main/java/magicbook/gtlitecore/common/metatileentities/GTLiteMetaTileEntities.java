@@ -152,6 +152,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeBioReactor LARGE_BIO_REACTOR;
     public static MetaTileEntityLargeEUVMaskAligner LARGE_EUV_MASK_ALIGNER;
     public static MetaTileEntityIonLithographyFactory ION_LITHOGRAPHY_FACTORY;
+    public static MetaTileEntityLargeHighPressureFormingUnit LARGE_HIGH_PRESSURE_FORMING_UNIT;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
@@ -373,7 +374,7 @@ public class GTLiteMetaTileEntities {
         LARGE_BIO_REACTOR = registerMultiMetaTileEntity(89, new MetaTileEntityLargeBioReactor(gtliteId("large_bio_reactor")));
         LARGE_EUV_MASK_ALIGNER = registerMultiMetaTileEntity(90, new MetaTileEntityLargeEUVMaskAligner(gtliteId("large_euv_mask_aligner")));
         ION_LITHOGRAPHY_FACTORY = registerMultiMetaTileEntity(91, new MetaTileEntityIonLithographyFactory(gtliteId("ion_lithography_factory")));
-        //  92
+        LARGE_HIGH_PRESSURE_FORMING_UNIT = registerMultiMetaTileEntity(92, new MetaTileEntityLargeHighPressureFormingUnit(gtliteId("large_high_pressure_forming_unit")));
         //  93 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
         //  94 SUPERSTRUCTURE_ASSEMBLY_PLANT
         //  95
@@ -390,7 +391,7 @@ public class GTLiteMetaTileEntities {
         TROUGH_TYPE_ORE_WASHER = registerMultiMetaTileEntity(106, new MetaTileEntityTroughTypeOreWasher(gtliteId("trough_type_ore_washer")));
         FIXED_SIFTING_PLANT = registerMultiMetaTileEntity(107, new MetaTileEntityFixedSiftingPlant(gtliteId("fixed_sifting_plant")));
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
-        //  109 LARGE_HIGH_PRESSURE_MOLDING_PLANT
+        //  109
         //  110 MATERIAL_TRANSMUTATION_ARRAY
         //  111
         //  112

@@ -361,6 +361,7 @@ public class GTLiteMaterials {
     public static Material NeutroniumSuperconductor;
     public static Material FluxedElectrum;
     public static Material ArceusAlloy2B;
+    public static Material Incoloy020;
 
     //  Organic Chemistry Materials (Range: 13001-15000)
     public static Material KaptonK;
