@@ -6,7 +6,6 @@ import net.minecraftforge.fluids.FluidStack;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -2017,53 +2016,5 @@ public class SpaceElevator {
 
     }
 
-    private static void AssemblingModule() {
-
-        //  Engraved Crystal Chip
-        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
-                .input(plate, Emerald)
-                .fluidInputs(SolderingAlloy.getFluid(16))
-                .fluidInputs(Biomass.getFluid(16))
-                .output(ENGRAVED_CRYSTAL_CHIP, 4)
-                .EUt(900)
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
-                .input(plate, Olivine)
-                .fluidInputs(SolderingAlloy.getFluid(16))
-                .fluidInputs(Biomass.getFluid(16))
-                .output(ENGRAVED_CRYSTAL_CHIP, 4)
-                .EUt(900)
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Crystal SoC
-        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
-                .input(plate, Europium)
-                .input(CRYSTAL_INTERFACE_CHIP, 2)
-                .input(wireFine, Titanium, 4)
-                .output(CRYSTAL_SOC_SOCKET, 4)
-                .EUt(VA[LuV])
-                .duration(20)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Wetware CPU
-        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
-                .input(plate, KaptonE)
-                .input(STEM_CELLS, 4)
-                .input(pipeTinyFluid, Polybenzimidazole, 4)
-                .input(plate, Cupronickel, 4)
-                .input(foil, PolyvinylChloride, 4)
-                .input(bolt, HSSG, 4)
-                .fluidInputs(SterileGrowthMedium.getFluid(16))
-                .output(NEURO_PROCESSOR, 4)
-                .EUt(100000)
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-    }
+    private static void AssemblingModule() {}
 }

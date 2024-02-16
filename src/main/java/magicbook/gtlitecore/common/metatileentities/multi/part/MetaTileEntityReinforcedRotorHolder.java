@@ -5,6 +5,8 @@ import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
 import codechicken.lib.vec.Matrix4;
 import gregtech.api.capability.GregtechDataCodes;
+import gregtech.api.capability.impl.MultiblockFuelRecipeLogic;
+import gregtech.api.capability.impl.NotifiableItemStackHandler;
 import gregtech.api.damagesources.DamageSources;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.ModularUI;
@@ -15,6 +17,7 @@ import gregtech.api.metatileentity.multiblock.FuelMultiblockController;
 import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.unification.material.Material;
+import gregtech.api.util.RelativeDirection;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.items.behaviors.AbstractMaterialPartBehavior;
 import gregtech.common.items.behaviors.TurbineRotorBehavior;
@@ -36,7 +39,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -46,7 +49,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
 
     static final int SPEED_INCREMENT = 1;
     static final int SPEED_DECREMENT = 3;
-    private final MetaTileEntityReinforcedRotorHolder.InventoryRotorHolder inventory;
+    private final MetaTileEntityReinforcedRotorHolder.InventoryRotorHolder inventory = new InventoryRotorHolder();
     private final int maxSpeed;
     private int currentSpeed;
     private int rotorColor = -1;
@@ -55,13 +58,17 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
 
     public MetaTileEntityReinforcedRotorHolder(ResourceLocation metaTileEntityId, int tier) {
         super(metaTileEntityId, tier);
-        this.inventory = new MetaTileEntityReinforcedRotorHolder.InventoryRotorHolder();
         this.maxSpeed = 2000 + 1000 * tier;
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityReinforcedRotorHolder(metaTileEntityId, getTier());
+    }
+
+    @Override
+    public IItemHandlerModifiable getImportItems() {
+        return this.inventory;
     }
 
     @Override
@@ -199,7 +206,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     }
 
     private boolean checkTurbineFaceFree() {
-        EnumFacing facing = getFrontFacing();
+        /*EnumFacing facing = getFrontFacing();
         boolean permuteXZ = facing.getAxis() == EnumFacing.Axis.Z;
         BlockPos centerPos = getPos().offset(facing);
         for (int x = -1; x < 2; x++) {
@@ -207,6 +214,19 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
                 BlockPos blockPos = centerPos.add(permuteXZ ? x : 0, y, permuteXZ ? 0 : x);
                 IBlockState blockState = getWorld().getBlockState(blockPos);
                 if (!blockState.getBlock().isAir(blockState, getWorld(), blockPos)) {
+                    return false;
+                }
+            }
+        }
+        return true;*/
+        EnumFacing front = this.getFrontFacing();
+        EnumFacing upwards = front.getAxis() == EnumFacing.Axis.Y ? EnumFacing.NORTH : EnumFacing.UP;
+
+        for (int left = -1; left <= 1; ++left) {
+            for (int up = -1; up <= 1; ++up) {
+                BlockPos checkPos = RelativeDirection.offsetPos(this.getPos(), front, upwards, false, up, left, 1);
+                IBlockState state = this.getWorld().getBlockState(checkPos);
+                if (!state.getBlock().isAir(state, this.getWorld(), checkPos)) {
                     return false;
                 }
             }
@@ -295,45 +315,50 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
      *
      * @return the power multiplier provided by the rotor holder
      */
+    @Override
     public int getHolderPowerMultiplier() {
         int tierDifference = getTierDifference();
-        if (tierDifference == -1) return -1;
-
-        return (int) Math.pow(2, getTierDifference());
-    }
-
-    public int getHolderEfficiency() {
-        int tierDifference = getTierDifference();
-        if (tierDifference == -1)
-            return -1;
-
-        return 100 + 10 * tierDifference;
-    }
-
-    private int getTierDifference() {
-        if (getController() instanceof ITieredMetaTileEntity) {
-            return getTier() - ((ITieredMetaTileEntity) getController()).getTier();
-        }
-        return -1;
+        return tierDifference == -1 ? -1 : (int) Math.pow(2.0, this.getTierDifference());
     }
 
     @Override
-    public boolean onRightClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public int getHolderEfficiency() {
+        int tierDifference = this.getTierDifference();
+        return tierDifference == -1 ? -1 : 100 + 10 * tierDifference;
+    }
+
+    private int getTierDifference() {
+        return this.getController() instanceof ITieredMetaTileEntity ? this.getTier() - ((ITieredMetaTileEntity) this.getController()).getTier() : -1;
+    }
+
+    @Override
+    public boolean onRightClick(EntityPlayer playerIn,
+                                EnumHand hand,
+                                EnumFacing facing,
+                                CuboidRayTraceResult hitResult) {
         return onRotorHolderInteract(playerIn) || super.onRightClick(playerIn, hand, facing, hitResult);
     }
 
     @Override
-    public boolean onWrenchClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public boolean onWrenchClick(EntityPlayer playerIn,
+                                 EnumHand hand,
+                                 EnumFacing facing,
+                                 CuboidRayTraceResult hitResult) {
         return onRotorHolderInteract(playerIn) || super.onWrenchClick(playerIn, hand, facing, hitResult);
     }
 
     @Override
-    public boolean onScrewdriverClick(EntityPlayer playerIn, EnumHand hand, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public boolean onScrewdriverClick(EntityPlayer playerIn,
+                                      EnumHand hand,
+                                      EnumFacing facing,
+                                      CuboidRayTraceResult hitResult) {
         return onRotorHolderInteract(playerIn);
     }
 
     @Override
-    public void onLeftClick(EntityPlayer player, EnumFacing facing, CuboidRayTraceResult hitResult) {
+    public void onLeftClick(EntityPlayer player,
+                            EnumFacing facing,
+                            CuboidRayTraceResult hitResult) {
         onRotorHolderInteract(player);
     }
 
@@ -401,10 +426,10 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
                 getController() != null, hasRotor(), isRotorSpinning, getRotorColor());
     }
 
-    private class InventoryRotorHolder extends ItemStackHandler {
+    private class InventoryRotorHolder extends NotifiableItemStackHandler {
 
         public InventoryRotorHolder() {
-            super(1);
+            super(MetaTileEntityReinforcedRotorHolder.this, 1, null, false);
         }
 
         @Override
@@ -418,24 +443,21 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
         }
 
         @Override
-        protected void onContentsChanged(int slot) {
+        public void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
             setRotorColor(getRotorColor());
             scheduleRenderUpdate();
         }
 
         @Nullable
         private ItemStack getTurbineStack() {
-            if (!hasRotor())
-                return null;
-            return getStackInSlot(0);
+            return !this.hasRotor() ? null : this.getStackInSlot(0);
         }
 
         @Nullable
         private TurbineRotorBehavior getTurbineBehavior() {
             ItemStack stack = getStackInSlot(0);
-            if (stack.isEmpty()) return null;
-
-            return TurbineRotorBehavior.getInstanceFor(stack);
+            return stack.isEmpty() ? null : TurbineRotorBehavior.getInstanceFor(stack);
         }
 
         @SuppressWarnings("BooleanMethodIsAlwaysInverted")
@@ -444,42 +466,70 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
         }
 
         private int getRotorColor() {
-            if (!hasRotor()) return -1;
+            //if (!hasRotor()) return -1;
             //noinspection ConstantConditions
-            return getTurbineBehavior().getPartMaterial(getStackInSlot(0)).getMaterialRGB();
-
+            //return getTurbineBehavior().getPartMaterial(getStackInSlot(0)).getMaterialRGB();
+            if (!this.hasRotor()) {
+                return -1;
+            } else {
+                this.getTurbineBehavior();
+                return TurbineRotorBehavior.getPartMaterial(this.getStackInSlot(0)).getMaterialRGB();
+            }
         }
 
         private Material getRotorMaterial() {
-            if (!hasRotor()) return null;
+            if (!hasRotor())
+                return null;
             return AbstractMaterialPartBehavior.getPartMaterial(getStackInSlot(0));
         }
 
         private int getRotorDurabilityPercent() {
-            if (!hasRotor()) return 0;
+            //if (!hasRotor()) return 0;
 
             //noinspection ConstantConditions
-            return getTurbineBehavior().getRotorDurabilityPercent(getStackInSlot(0));
+            //return getTurbineBehavior().getRotorDurabilityPercent(getStackInSlot(0));
+            return !this.hasRotor() ? 0 : this.getTurbineBehavior().getRotorDurabilityPercent(this.getStackInSlot(0));
         }
 
         private int getRotorEfficiency() {
-            if (!hasRotor()) return -1;
+            //if (!hasRotor()) return -1;
 
             //noinspection ConstantConditions
-            return getTurbineBehavior().getRotorEfficiency(getTurbineStack());
+            //return getTurbineBehavior().getRotorEfficiency(getTurbineStack());
+            if (!this.hasRotor()) {
+                return -1;
+            } else {
+                this.getTurbineBehavior();
+                return TurbineRotorBehavior.getRotorEfficiency(this.getTurbineStack());
+            }
         }
 
         private int getRotorPower() {
-            if (!hasRotor()) return -1;
+            //if (!hasRotor()) return -1;
 
             //noinspection ConstantConditions
-            return getTurbineBehavior().getRotorPower(getTurbineStack());
+            //return getTurbineBehavior().getRotorPower(getTurbineStack());
+            if (!this.hasRotor()) {
+                return -1;
+            } else {
+                this.getTurbineBehavior();
+                return TurbineRotorBehavior.getRotorPower(this.getTurbineStack());
+            }
         }
 
         private void damageRotor(int damageAmount) {
-            if (!hasRotor()) return;
+            //if (!hasRotor()) return;
             //noinspection ConstantConditions
-            getTurbineBehavior().applyRotorDamage(getStackInSlot(0), damageAmount);
+            //getTurbineBehavior().applyRotorDamage(getStackInSlot(0), damageAmount);
+            if (this.hasRotor()) {
+                if (this.getTurbineBehavior().getPartMaxDurability(this.getTurbineStack()) <= AbstractMaterialPartBehavior.getPartDamage(this.getTurbineStack()) + damageAmount) {
+                    MultiblockFuelRecipeLogic holder = (MultiblockFuelRecipeLogic) getController().getRecipeLogic();
+                    if (holder != null && holder.isWorking()) {
+                        holder.invalidate();
+                    }
+                }
+                this.getTurbineBehavior().applyRotorDamage(this.getStackInSlot(0), damageAmount);
+            }
         }
 
         @Override
@@ -491,7 +541,8 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
         @Override
         public ItemStack extractItem(int slot, int amount, boolean simulate) {
             ItemStack itemStack = super.extractItem(slot, amount, simulate);
-            if (!simulate && itemStack != ItemStack.EMPTY) setRotorColor(-1);
+            if (!simulate && itemStack != ItemStack.EMPTY)
+                setRotorColor(-1);
             return itemStack;
         }
     }

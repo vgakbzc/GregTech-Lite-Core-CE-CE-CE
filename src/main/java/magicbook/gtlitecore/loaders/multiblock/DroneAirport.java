@@ -221,6 +221,23 @@ public class DroneAirport {
                         .EUt(VA[UXV])
                         .CWUt(192))
                 .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Eternity)
+                .input(ROBOT_ARM_MAX, 2)
+                .input(SENSOR_MAX, 2)
+                .input(cableGtSingle, Universium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(Adamantium.getFluid(L))
+                .output(MINING_DRONE_MAX)
+                .EUt(VA[MAX])
+                .duration(200)
+                .stationResearch(b -> b
+                        .researchStack(MINING_DRONE_OpV.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(224))
+                .buildAndRegister();
     }
 
     private static void LVstage() {
