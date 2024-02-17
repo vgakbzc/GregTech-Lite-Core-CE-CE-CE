@@ -22,6 +22,7 @@ import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.BlockMetalCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.metatileentities.electric.MetaTileEntityLightningRod;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.*;
@@ -62,6 +63,7 @@ public class GTLiteMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] CONDENSER = new SimpleMachineMetaTileEntity[6];
     public static SimpleMachineMetaTileEntity[] SIMULATOR = new SimpleMachineMetaTileEntity[IV + 1];
     public static final SimpleGeneratorMetaTileEntity[] BIOMASS_GENERATOR = new SimpleGeneratorMetaTileEntity[3];
+    public static final MetaTileEntityLightningRod[] LIGHTNING_ROD = new MetaTileEntityLightningRod[3];
 
     //  Multiblock Machine range: 16001-20000
     public static MetaTileEntityIndustrialDrillingReg INDUSTRIAL_DRILLING_REG;
@@ -281,6 +283,9 @@ public class GTLiteMetaTileEntities {
         BIOMASS_GENERATOR[0] = registerMetaTileEntity(15064, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.ev"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, 4, GTUtility.genericGeneratorTankSizeFunction));
         BIOMASS_GENERATOR[1] = registerMetaTileEntity(15065, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.iv"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, 5, GTUtility.genericGeneratorTankSizeFunction));
         BIOMASS_GENERATOR[2] = registerMetaTileEntity(15066, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.luv"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, 6, GTUtility.genericGeneratorTankSizeFunction));
+        LIGHTNING_ROD[0] = registerMetaTileEntity(15067, new MetaTileEntityLightningRod(gtliteId("lightning_rod.hv"), HV));
+        LIGHTNING_ROD[1] = registerMetaTileEntity(15068, new MetaTileEntityLightningRod(gtliteId("lightning_rod.ev"), EV));
+        LIGHTNING_ROD[2] = registerMetaTileEntity(15069, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
 
         //  Multiblock Machine range: 16001-20000
         INDUSTRIAL_DRILLING_REG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingReg(gtliteId("industrial_drilling_reg")));

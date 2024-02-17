@@ -55,6 +55,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer LARGE_BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_bio_reactor");
     public static OrientedOverlayRenderer ELECTROMAGNETIC_SEPARATION_PLANT_OVERLAY = new OrientedOverlayRenderer("multiblocks/electromagnetic_separation_plant");
     public static OrientedOverlayRenderer DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/dimensionally_transcendent_plasma_forge");
+    public static OrientedOverlayRenderer LIGHTNING_ROD_OVERLAY = new OrientedOverlayRenderer("generators/lightning_rod");
 
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");

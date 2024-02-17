@@ -830,6 +830,14 @@ gtlitecore.machine.biomass_generator.iv.tooltip=电动咀叶机
 gtlitecore.machine.biomass_generator.luv.name=精英生物质发电机 II
 gtlitecore.machine.biomass_generator.luv.tooltip=电动咀叶机
 
+gtlitecore.machine.lightning_rod.hv.name=进阶避雷针 II
+gtlitecore.machine.lightning_rod.hv.tooltip=利用闪电的力量产生电能
+gtlitecore.machine.lightning_rod.ev.name=进阶避雷针 III
+gtlitecore.machine.lightning_rod.ev.tooltip=利用闪电的力量产生电能
+gtlitecore.machine.lightning_rod.iv.name=精英避雷针
+gtlitecore.machine.lightning_rod.iv.tooltip=利用闪电的力量产生电能
+gtlitecore.machine.lightning_rod.usage=§b用法§7：将原版的§r铁栏杆§7放置其上，其会在雨/雷雨天产生能量。
+
 gtlitecore.machine.industrial_drilling_reg.name=工业钻机
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
