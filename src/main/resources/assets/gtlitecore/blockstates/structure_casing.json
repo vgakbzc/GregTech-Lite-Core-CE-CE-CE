@@ -57,6 +57,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/incoloy_020_casing"
         }
+      },
+      "tantalum_carbide_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/tantalum_carbide_casing"
+        }
       }
     }
   }

@@ -73,6 +73,7 @@ tile.structure_casing.rhodium_casing.name=高应力铑机器外壳
 tile.structure_casing.naquadah_alloy_casing.name=超稳定硅岩合金机器外壳
 tile.structure_casing.force_field_constrained_casing.name=力场约束机器外壳
 tile.structure_casing.incoloy_020_casing.name=抗弯曲耐热铬铁-020机器外壳
+tile.structure_casing.tantalum_carbide_casing.name=防震碳化钽机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -190,6 +191,8 @@ tile.active_unique_casing.advanced_crushing_wheel.name=高级粉碎轮
 tile.active_unique_casing.advanced_crushing_wheel.tooltip=比粉碎轮更好
 tile.active_unique_casing.circuit_assembly_line_casing.name=电路装配机械方块
 tile.active_unique_casing.circuit_assembly_control_casing.name=电路装配控制外壳
+tile.active_unique_casing.advanced_slicing_blade.name=高级切片刀
+tile.active_unique_casing.advanced_slicing_blade.tooltip=比切片刀更好
 
 tile.science_casing.high_energy_casing.name=超能机械方块
 tile.science_casing.high_energy_casing.tooltip=用于超高能物理实验器件
@@ -1353,6 +1356,13 @@ gtlitecore.machine.large_high_pressure_forming_unit.tooltip.2=根据输入电压
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.5=最大并行数：§e4096§7
+
+gtlitecore.machine.large_turrent_lathing_factory.name=大型回转车削厂
+gtlitecore.machine.large_turrent_lathing_factory.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.large_turrent_lathing_factory.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_turrent_lathing_factory.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.large_turrent_lathing_factory.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.large_turrent_lathing_factory.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算

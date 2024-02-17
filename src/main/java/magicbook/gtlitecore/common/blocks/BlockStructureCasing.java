@@ -40,7 +40,8 @@ public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.Stru
         RHODIUM_CASING("rhodium_casing"),
         NAQUADAH_ALLOY_CASING("naquadah_alloy_casing"),
         FORCE_FIELD_CONSTRAINED_CASING("force_field_constrained_casing"),
-        INCOLOY_020_CASING("incoloy_020_casing");
+        INCOLOY_020_CASING("incoloy_020_casing"),
+        TANTALUM_CARBIDE_CASING("tantalum_carbide_casing");
 
         private final String name;
 

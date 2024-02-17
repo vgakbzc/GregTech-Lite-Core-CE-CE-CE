@@ -212,6 +212,7 @@ public class GTLiteMaterialPropertyAddition {
         TitaniumTungstenCarbide.addFlags(GENERATE_FRAME);
         Ruthenium.addFlags(GENERATE_FRAME);
         Rhodium.addFlags(GENERATE_FRAME);
+        TantalumCarbide.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);

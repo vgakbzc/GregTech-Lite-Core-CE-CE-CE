@@ -17,6 +17,7 @@ import magicbook.gtlitecore.common.blocks.BlockCleanroomCasing;
 import magicbook.gtlitecore.common.blocks.BlockComputerCasing;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
+import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.init.Items;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
@@ -146,6 +147,25 @@ public class MachineRecipeLoader {
                 'T', CraftingComponent.SAWBLADE,
                 'W', CraftingComponent.CABLE,
                 'O', CraftingComponent.DOUBLE_PLATE);
+
+        //  Lightning Rod
+        ModHandler.addShapedRecipe(true, "lightning_rod.iv", GTLiteMetaTileEntities.LIGHTNING_ROD[0].getStackForm(),
+                "LML", "MCM", "LML",
+                'L', ENERGY_LAPOTRONIC_ORB,
+                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.IV),
+                'M', MetaTileEntities.TRANSFORMER[5].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "lightning_rod.luv", GTLiteMetaTileEntities.LIGHTNING_ROD[1].getStackForm(),
+                "LML", "MCM", "LML",
+                'L', ENERGY_LAPOTRONIC_ORB_CLUSTER,
+                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LuV),
+                'M', MetaTileEntities.TRANSFORMER[6].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "lightning_rod.zpm", GTLiteMetaTileEntities.LIGHTNING_ROD[2].getStackForm(),
+                "LML", "MCM", "LML",
+                'L', ENERGY_MODULE,
+                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.ZPM),
+                'M', MetaTileEntities.TRANSFORMER[7].getStackForm());
     }
 
     private static void MultiblockControllerRecipes() {
@@ -1794,6 +1814,23 @@ public class MachineRecipeLoader {
                 .input(wireGtQuadruple, Tungsten, 4)
                 .fluidInputs(IncoloyMA956.getFluid(L * 4))
                 .output(LARGE_HIGH_PRESSURE_FORMING_UNIT)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Large Turrent Lathing Factory
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Incoloy020, 4)
+                .input(LARGE_CUTTER, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, HSSS, 4)
+                .input(plateDouble, HSLASteel, 4)
+                .input(gear, CobaltBrass, 4)
+                .input(gearSmall, Osmiridium, 16)
+                .input(wireGtQuadruple, RTMAlloy, 4)
+                .fluidInputs(TitaniumCarbide.getFluid(L * 4))
+                .output(LARGE_TURRENT_LATHING_FACTORY)
                 .EUt(VA[LuV])
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
@@ -4249,6 +4286,39 @@ public class MachineRecipeLoader {
                 .input(frameGt, Incoloy020)
                 .circuitMeta(6)
                 .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.INCOLOY_020_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Tantalum Carbide Casing
+        ModHandler.addShapedRecipe(true, "tantalum_carbide_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.TANTALUM_CARBIDE_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, TantalumCarbide),
+                'F', new UnificationEntry(frameGt, TantalumCarbide));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, TantalumCarbide, 6)
+                .input(frameGt, TantalumCarbide)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.TANTALUM_CARBIDE_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Advanced Slicing Blade
+        ModHandler.addShapedRecipe(true, "advanced_slicing_blades", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_SLICING_BLADE, 2),
+                "PPP", "GCG", "GMG",
+                'C', GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.TANTALUM_CARBIDE_CASING),
+                'M', ELECTRIC_MOTOR_LuV,
+                'G', new UnificationEntry(gear, TungstenCarbide),
+                'P', new UnificationEntry(plate, HSSE));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, HSSE, 3)
+                .input(gear, TungstenCarbide, 4)
+                .input(ELECTRIC_MOTOR_LuV)
+                .inputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.TANTALUM_CARBIDE_CASING))
+                .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_SLICING_BLADE, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();
