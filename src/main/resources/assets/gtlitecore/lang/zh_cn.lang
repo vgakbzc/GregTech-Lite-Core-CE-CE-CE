@@ -74,6 +74,8 @@ tile.structure_casing.naquadah_alloy_casing.name=超稳定硅岩合金机器外�
 tile.structure_casing.force_field_constrained_casing.name=力场约束机器外壳
 tile.structure_casing.incoloy_020_casing.name=抗弯曲耐热铬铁-020机器外壳
 tile.structure_casing.tantalum_carbide_casing.name=防震碳化钽机器外壳
+tile.structure_casing.naquadah_casing.name=坚固耐用硅岩机器外壳
+tile.structure_casing.naquadah_gearbox_casing.name=硅岩齿轮箱外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
