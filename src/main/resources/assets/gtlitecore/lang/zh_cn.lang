@@ -1380,6 +1380,7 @@ gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
 
 gtlitecore.machine.ultimate_combustion_engine.name=终极内燃引擎
+gtlitecore.machine.ultimate_combustion_engine.tooltip=化学能吞噬者
 
 gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
 
@@ -1451,6 +1452,10 @@ gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
 gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
 gtlitecore.machine.yotta_fluid_tank.type.empty=空
 gtlitecore.machine.yotta_fluid_tank.cell_capacitor=§b容量：§r%s L
+gtlitecore.machine.yotta_fluid_tank.button_usage=切换流体输出模式
+gtlitecore.machine.yotta_fluid_tank.mode=流体输出：%s
+gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
+gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
 
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁

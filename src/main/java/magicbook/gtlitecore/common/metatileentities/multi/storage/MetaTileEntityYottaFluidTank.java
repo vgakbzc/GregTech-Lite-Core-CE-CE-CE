@@ -8,6 +8,9 @@ import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IControllable;
 import gregtech.api.capability.IMultipleTankHandler;
 import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.gui.Widget;
+import gregtech.api.gui.widgets.ImageCycleButtonWidget;
+import gregtech.api.gui.widgets.WidgetGroup;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.*;
@@ -23,6 +26,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
+import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
@@ -78,6 +82,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     private IMultipleTankHandler inputFluidInventory;
     private IMultipleTankHandler outputFluidInventory;
     private YOTFluidTank fluidTank;
+    private int mode = 0;
 
     public MetaTileEntityYottaFluidTank(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId);
@@ -154,6 +159,27 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                 .build();
     }
 
+    @Nonnull
+    @Override
+    protected Widget getFlexButton(int x, int y, int width, int height) {
+        WidgetGroup group = new WidgetGroup(x, y, width, height);
+        group.addWidget(new ImageCycleButtonWidget(0, 0, width, height, GTLiteGuiTextures.BUTTON_YOTTA_MODE, 2, this::getMode, this::setMode)
+                .setTooltipHoverString("gtlitecore.machine.yotta_fluid_tank.button_usage")); //  TODO maybe we can use LocalizationUtils class and clean it.
+        return group;
+    }
+
+    private int getMode() {
+        return this.mode;
+    }
+
+    private void setMode(int mode) {
+        if( this.mode == 0)
+            this.mode = 1;
+        else if (this.mode == 1) {
+            this.mode = 0;
+        }
+    }
+
     private static IBlockState getCasingState() {
         return GTLiteMetaBlocks.STRUCTURE_CASING.getState(BlockStructureCasing.StructureCasingType.FORCE_FIELD_CONSTRAINED_CASING);
     }
@@ -196,6 +222,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                         tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.yotta_fluid_tank.stored", storedFormatted));
                         tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.yotta_fluid_tank.capacity", capacityFormatted));
                         tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.yotta_fluid_tank.type", this.fluid == null ? I18n.format("gtlitecore.machine.yotta_fluid_tank.type.empty") : TextComponentUtil.stringWithColor(TextFormatting.AQUA, this.fluid.getLocalizedName())));
+                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.yotta_fluid_tank.mode", this.mode == 1 ? TextComponentUtil.translationWithColor(TextFormatting.GREEN, "gtlitecore.machine.yotta_fluid_tank.mode.enable") : TextComponentUtil.translationWithColor(TextFormatting.RED,"gtlitecore.machine.yotta_fluid_tank.mode.disable")));
                     }
                 })
                 .addWorkingStatusLine();
@@ -261,6 +288,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
         super.writeToNBT(data);
         data.setBoolean("isActive", isActive);
         data.setBoolean("isWorkingEnabled", isWorkingEnabled);
+        data.setInteger("mode", mode);
         if (fluid != null) {
             NBTTagCompound fluidNBT = new NBTTagCompound();
             fluid.writeToNBT(fluidNBT);
@@ -277,6 +305,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
         super.readFromNBT(data);
         this.isActive = data.getBoolean("isActive");
         this.isWorkingEnabled = data.getBoolean("isWorkingEnabled");
+        this.mode = data.getInteger("mode");
         NBTTagCompound fluidNBT = (NBTTagCompound) data.getTag(NBT_FLUID);
         fluid = FluidStack.loadFluidStackFromNBT(fluidNBT);
         if (data.hasKey(NBT_YOT_TANK)) {
@@ -300,7 +329,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
             }
 
             if (isWorkingEnabled()) {
-                if (inputFluidInventory.getTanks()>0) {
+                if (inputFluidInventory.getTanks() > 0) {
                     for (int i = 0; i < inputFluidInventory.getTanks(); i++) {
                         if (this.fluid == null || this.fluid.isFluidEqual(inputFluidInventory.getTankAt(i).getFluid())) {
                             if (this.fluid == null)
@@ -310,7 +339,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                         }
                     }
                 }
-                if (outputFluidInventory.getTanks() > 0 && fluid != null) {
+                if (outputFluidInventory.getTanks() > 0 && fluid != null && this.mode == 1) {
                     List<FluidStack> Outputs = new ArrayList<>();
                     for (int i = 0; i < outputFluidInventory.getTanks(); i++) {
                         long energyDebanked = fluidTank.drain(outputFluidInventory.getTankAt(i).getCapacity() - outputFluidInventory.getTankAt(i).getFluidAmount());
