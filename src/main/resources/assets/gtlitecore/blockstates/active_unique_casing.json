@@ -87,6 +87,22 @@
         "bot_all": "gtlitecore:blocks/casings/circuit_assembly_line_casing",
         "top_all": "gregtech:blocks/casings/mechanic/machine_casing_assembly_line_bloom"
       }
+    },
+    "active=false,variant=advanced_slicing_blade": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/unique/slicing_blades",
+        "side": "gtlitecore:blocks/casings/tantalum_carbide_casing",
+        "bottom": "#side"
+      }
+    },
+    "active=true,variant=advanced_slicing_blade": {
+      "model": "minecraft:cube_bottom_top",
+      "textures": {
+        "top": "gregtech:blocks/casings/unique/slicing_blades_on",
+        "side": "gtlitecore:blocks/casings/tantalum_carbide_casing",
+        "bottom": "#side"
+      }
     }
   }
 }

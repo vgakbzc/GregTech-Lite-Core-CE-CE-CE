@@ -7,6 +7,7 @@ import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockBatteryPart;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
@@ -898,6 +899,21 @@ public class OverrideRecipeLoader {
                 "ppp", "pPp", "ppp",
                 'p', new UnificationEntry(plate, Spacetime),
                 'P', new UnificationEntry(pipeLargeFluid, Fatalium));
+
+        //  Empty Capacitor (for Power Substation)
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                OreDictUnifier.get(frameGt, Neutronium),
+                OreDictUnifier.get(plate, Neutronium, 6),
+                OreDictUnifier.get(screw, Neutronium, 24));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(plate, Orichalcum, 6)
+                .input(screw, Orichalcum, 24)
+                .outputs(MetaBlocks.BATTERY_BLOCK.getItemVariant(BlockBatteryPart.BatteryPartType.EMPTY_TIER_III))
+                .EUt(VA[ZPM])
+                .duration(400)
+                .buildAndRegister();
 
         //  End Game things
         //  a.k.a. creative things!

@@ -980,6 +980,20 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 338))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
                 .build();
+
+        //  12075 Incoloy-020
+        Incoloy020 = new Material.Builder(getId(), gregtechId("incoloy_020"))
+                .ingot()
+                .fluid()
+                .color(0x634F46)
+                .iconSet(METALLIC)
+                .components(Iron, 12, Cupronickel, 4, Bronze, 4, Nichrome, 8, Molybdenum, 6, Silicon, 3, Manganese, 2)
+                .blast(b -> b
+                        .temp(5475, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 1884)
+                        .vacuumStats(VA[EV], 965))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DOUBLE_PLATE)
+                .build();
     }
 
     private static int getId() {
