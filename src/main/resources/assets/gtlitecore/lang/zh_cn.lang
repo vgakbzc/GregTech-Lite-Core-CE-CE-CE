@@ -1379,6 +1379,8 @@ gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同�
 gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
 
+gtlitecore.machine.ultimate_combustion_engine.name=终极内燃引擎
+
 gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
 
 gtlitecore.machine.horizontal_shaft_impact_macerator.name=大型冲击式研磨厂

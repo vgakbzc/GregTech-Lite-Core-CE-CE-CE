@@ -152,19 +152,19 @@ public class MachineRecipeLoader {
         ModHandler.addShapedRecipe(true, "lightning_rod.iv", GTLiteMetaTileEntities.LIGHTNING_ROD[0].getStackForm(),
                 "LML", "MCM", "LML",
                 'L', ENERGY_LAPOTRONIC_ORB,
-                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.IV),
+                'C', HULL[IV].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[5].getStackForm());
 
         ModHandler.addShapedRecipe(true, "lightning_rod.luv", GTLiteMetaTileEntities.LIGHTNING_ROD[1].getStackForm(),
                 "LML", "MCM", "LML",
                 'L', ENERGY_LAPOTRONIC_ORB_CLUSTER,
-                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LuV),
+                'C', HULL[LuV].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[6].getStackForm());
 
         ModHandler.addShapedRecipe(true, "lightning_rod.zpm", GTLiteMetaTileEntities.LIGHTNING_ROD[2].getStackForm(),
                 "LML", "MCM", "LML",
                 'L', ENERGY_MODULE,
-                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.ZPM),
+                'C', HULL[ZPM].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[7].getStackForm());
     }
 
@@ -1835,6 +1835,16 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Ultimate Combustion Engine
+        ModHandler.addShapedRecipe(true, "ultimate_combustion_engine", ULTIMATE_COMBUSTION_ENGINE.getStackForm(),
+                "PXP", "MCM", "GWG",
+                'P', ELECTRIC_PISTON_LUV,
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
+                'M', ELECTRIC_MOTOR_LuV,
+                'C', HULL[LuV].getStackForm(),
+                'G', new UnificationEntry(gear, Naquadah),
+                'W', new UnificationEntry(cableGtSingle, VanadiumGallium));
     }
 
     private static void MachineCasingRecipes() {

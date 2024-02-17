@@ -159,6 +159,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
+    public static MetaTileEntityUltimateCombustionEngine ULTIMATE_COMBUSTION_ENGINE;
     public static MetaTileEntityIndustrialInductionFurnace INDUSTRIAL_INDUCTION_FURNACE;
     public static MetaTileEntityHorizontalShaftImpactMacerator HORIZONTAL_SHAFT_IMPACT_MACERATOR;
     public static MetaTileEntityTroughTypeOreWasher TROUGH_TYPE_ORE_WASHER;
@@ -391,7 +392,7 @@ public class GTLiteMetaTileEntities {
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
         LARGE_GAS_COLLECTOR = registerMultiMetaTileEntity(102, new MetaTileEntityLargeGasCollector(gtliteId("large_gas_collector")));
-        //  103 ULTIMATE_LARGE_COMBUSTION_ENGINE
+        ULTIMATE_COMBUSTION_ENGINE = registerMultiMetaTileEntity(103, new MetaTileEntityUltimateCombustionEngine(gtliteId("ultimate_combustion_engine"), LuV));
         INDUSTRIAL_INDUCTION_FURNACE = registerMultiMetaTileEntity(104, new MetaTileEntityIndustrialInductionFurnace(gtliteId("industrial_induction_furnace")));
         HORIZONTAL_SHAFT_IMPACT_MACERATOR = registerMultiMetaTileEntity(105, new MetaTileEntityHorizontalShaftImpactMacerator(gtliteId("horizontal_shaft_impact_macerator")));
         TROUGH_TYPE_ORE_WASHER = registerMultiMetaTileEntity(106, new MetaTileEntityTroughTypeOreWasher(gtliteId("trough_type_ore_washer")));
