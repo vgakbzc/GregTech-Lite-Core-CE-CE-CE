@@ -55,6 +55,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer LARGE_BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_bio_reactor");
     public static OrientedOverlayRenderer ELECTROMAGNETIC_SEPARATION_PLANT_OVERLAY = new OrientedOverlayRenderer("multiblocks/electromagnetic_separation_plant");
     public static OrientedOverlayRenderer DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/dimensionally_transcendent_plasma_forge");
+    public static OrientedOverlayRenderer LIGHTNING_ROD_OVERLAY = new OrientedOverlayRenderer("generators/lightning_rod");
 
     //  GTLiteOverlayRenderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -118,6 +119,8 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer RHODIUM_CASING = new GTLiteOverlayRenderer("casings/rhodium_casing");
     public static GTLiteOverlayRenderer DIMENSIONAL_BRIDGE_CASING = new GTLiteOverlayRenderer("casings/dimensional_bridge_casing");
     public static GTLiteOverlayRenderer NAQUADAH_ALLOY_CASING = new GTLiteOverlayRenderer("casings/naquadah_alloy_casing");
+    public static GTLiteOverlayRenderer INCOLOY_020_CASING = new GTLiteOverlayRenderer("casings/incoloy_020_casing");
+    public static GTLiteOverlayRenderer TANTALUM_CARBIDE_CASING = new GTLiteOverlayRenderer("casings/tantalum_carbide_casing");
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  SimpleOrientedCubeRenderer

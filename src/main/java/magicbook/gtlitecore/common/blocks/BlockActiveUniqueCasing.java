@@ -37,7 +37,8 @@ public class BlockActiveUniqueCasing extends VariantActiveBlock<BlockActiveUniqu
         BIOWARE_COMPUTING_CASING("bioware_computing_casing"),
         ULTIMATE_ENGINE_INTAKE_CASING("ultimate_engine_intake_casing"),
         ADVANCED_CRUSHING_WHEEL("advanced_crushing_wheel"),
-        CIRCUIT_ASSEMBLY_LINE_CASING("circuit_assembly_line_casing");
+        CIRCUIT_ASSEMBLY_LINE_CASING("circuit_assembly_line_casing"),
+        ADVANCED_SLICING_BLADE("advanced_slicing_blade");
         private final String name;
 
         ActiveCasingType(String name) {
