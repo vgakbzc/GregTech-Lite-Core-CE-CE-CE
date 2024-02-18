@@ -18,10 +18,7 @@ import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.unification.material.Materials;
-import gregtech.api.util.GTTransferUtils;
-import gregtech.api.util.RelativeDirection;
-import gregtech.api.util.TextComponentUtil;
-import gregtech.api.util.TextFormattingUtil;
+import gregtech.api.util.*;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
@@ -164,7 +161,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     protected Widget getFlexButton(int x, int y, int width, int height) {
         WidgetGroup group = new WidgetGroup(x, y, width, height);
         group.addWidget(new ImageCycleButtonWidget(0, 0, width, height, GTLiteGuiTextures.BUTTON_YOTTA_MODE, 2, this::getMode, this::setMode)
-                .setTooltipHoverString("gtlitecore.machine.yotta_fluid_tank.button_usage")); //  TODO maybe we can use LocalizationUtils class and clean it.
+                .setTooltipHoverString(i -> LocalizationUtils.format("gtlitecore.machine.yotta_fluid_tank.mode." + getMode())));
         return group;
     }
 
@@ -401,7 +398,6 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
             return this;
         }
     }
-
 
     @SuppressWarnings("all")
     private static class YOTFluidTank {
