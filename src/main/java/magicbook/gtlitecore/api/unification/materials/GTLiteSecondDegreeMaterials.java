@@ -990,8 +990,8 @@ public class GTLiteSecondDegreeMaterials {
                 .components(Iron, 12, Cupronickel, 4, Bronze, 4, Nichrome, 8, Molybdenum, 6, Silicon, 3, Manganese, 2)
                 .blast(b -> b
                         .temp(5475, BlastProperty.GasTier.HIGHER)
-                        .blastStats(VA[LuV], 1884)
-                        .vacuumStats(VA[EV], 965))
+                        .blastStats(VA[LuV], 884)
+                        .vacuumStats(VA[EV], 365))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DOUBLE_PLATE)
                 .build();
     }
