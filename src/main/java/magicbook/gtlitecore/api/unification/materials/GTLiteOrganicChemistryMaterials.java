@@ -1059,7 +1059,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .iconSet(ROUGH)
                 .components(Carbon, 2, Hydrogen, 3, Nitrogen, 1)
                 .build()
-                .setFormula("CH3CN");
+                .setFormula("CH3CN", true);
 
         //  13127 Benzylamine
         Benzylamine = new Material.Builder(getId(), gregtechId("benzylamine"))
