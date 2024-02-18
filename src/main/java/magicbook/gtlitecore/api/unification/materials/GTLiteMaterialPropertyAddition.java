@@ -255,6 +255,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Small Gear
         WroughtIron.addFlags(GENERATE_SMALL_GEAR);
         HSSE.addFlags(GENERATE_SMALL_GEAR);
+        Naquadah.addFlags(GENERATE_GEAR);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
@@ -264,6 +265,7 @@ public class GTLiteMaterialPropertyAddition {
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
         Berkelium.addFlags(GENERATE_ROTOR);
+        Naquadah.addFlags(GENERATE_ROTOR);
 
         //  Wire Fine
         Seaborgium.addFlags(GENERATE_FINE_WIRE);

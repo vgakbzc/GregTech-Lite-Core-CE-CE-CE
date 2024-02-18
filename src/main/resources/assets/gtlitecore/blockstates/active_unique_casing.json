@@ -46,17 +46,15 @@
       }
     },
     "active=false,variant=ultimate_engine_intake_casing": {
-      "model": "gregtech:cube_2_layer_all",
+      "model": "minecraft:cube_all",
       "textures": {
-        "bot_all": "gtlitecore:blocks/casings/rhodium_plated_palladium_casing",
-        "top_all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing_overlay"
+        "all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing"
       }
     },
     "active=true,variant=ultimate_engine_intake_casing": {
-      "model": "gregtech:cube_2_layer_all",
+      "model": "minecraft:cube_all",
       "textures": {
-        "bot_all": "gtlitecore:blocks/casings/rhodium_plated_palladium_casing",
-        "top_all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing_overlay_active"
+        "all": "gtlitecore:blocks/casings/ultimate_engine_intake_casing_active"
       }
     },
     "active=false,variant=advanced_crushing_wheel": {

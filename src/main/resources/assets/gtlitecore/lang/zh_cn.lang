@@ -74,6 +74,8 @@ tile.structure_casing.naquadah_alloy_casing.name=超稳定硅岩合金机器外�
 tile.structure_casing.force_field_constrained_casing.name=力场约束机器外壳
 tile.structure_casing.incoloy_020_casing.name=抗弯曲耐热铬铁-020机器外壳
 tile.structure_casing.tantalum_carbide_casing.name=防震碳化钽机器外壳
+tile.structure_casing.naquadah_casing.name=坚固耐用硅岩机器外壳
+tile.structure_casing.naquadah_gearbox_casing.name=硅岩齿轮箱外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1377,6 +1379,10 @@ gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同�
 gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
 
+gtlitecore.machine.ultimate_combustion_engine.name=终极内燃引擎
+gtlitecore.machine.ultimate_combustion_engine.tooltip=化学能吞噬者
+gtlitecore.machine.ultimate_combustion_engine.tooltip.boost_ultimate=提供§f140L/s§7的液态氧，并消耗§f双倍§7燃料以产生高达§f%s§7EU/t的功率。
+
 gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
 
 gtlitecore.machine.horizontal_shaft_impact_macerator.name=大型冲击式研磨厂
@@ -1447,6 +1453,12 @@ gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
 gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
 gtlitecore.machine.yotta_fluid_tank.type.empty=空
 gtlitecore.machine.yotta_fluid_tank.cell_capacitor=§b容量：§r%s L
+gtlitecore.machine.yotta_fluid_tank.button_usage=切换流体输出模式
+gtlitecore.machine.yotta_fluid_tank.mode=流体输出：%s
+gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
+gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
+gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§c禁用
+gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§a启用
 
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
