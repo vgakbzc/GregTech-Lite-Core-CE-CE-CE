@@ -152,19 +152,19 @@ public class MachineRecipeLoader {
         ModHandler.addShapedRecipe(true, "lightning_rod.iv", GTLiteMetaTileEntities.LIGHTNING_ROD[0].getStackForm(),
                 "LML", "MCM", "LML",
                 'L', ENERGY_LAPOTRONIC_ORB,
-                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.IV),
+                'C', HULL[IV].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[5].getStackForm());
 
         ModHandler.addShapedRecipe(true, "lightning_rod.luv", GTLiteMetaTileEntities.LIGHTNING_ROD[1].getStackForm(),
                 "LML", "MCM", "LML",
                 'L', ENERGY_LAPOTRONIC_ORB_CLUSTER,
-                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.LuV),
+                'C', HULL[LuV].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[6].getStackForm());
 
         ModHandler.addShapedRecipe(true, "lightning_rod.zpm", GTLiteMetaTileEntities.LIGHTNING_ROD[2].getStackForm(),
                 "LML", "MCM", "LML",
                 'L', ENERGY_MODULE,
-                'C', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.ZPM),
+                'C', HULL[ZPM].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[7].getStackForm());
     }
 
@@ -1811,7 +1811,7 @@ public class MachineRecipeLoader {
                 .input(plateDouble, Stellite100, 4)
                 .input(gear, HSSS, 4)
                 .input(gearSmall, TungstenCarbide, 16)
-                .input(wireGtQuadruple, Tungsten, 4)
+                .input(cableGtQuadruple, Tungsten, 4)
                 .fluidInputs(IncoloyMA956.getFluid(L * 4))
                 .output(LARGE_HIGH_PRESSURE_FORMING_UNIT)
                 .EUt(VA[LuV])
@@ -1828,13 +1828,23 @@ public class MachineRecipeLoader {
                 .input(plateDouble, HSLASteel, 4)
                 .input(gear, CobaltBrass, 4)
                 .input(gearSmall, Osmiridium, 16)
-                .input(wireGtQuadruple, RTMAlloy, 4)
+                .input(cableGtQuadruple, RTMAlloy, 4)
                 .fluidInputs(TitaniumCarbide.getFluid(L * 4))
                 .output(LARGE_TURRENT_LATHING_FACTORY)
                 .EUt(VA[LuV])
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Ultimate Combustion Engine
+        ModHandler.addShapedRecipe(true, "ultimate_combustion_engine", ULTIMATE_COMBUSTION_ENGINE.getStackForm(),
+                "PXP", "MCM", "GWG",
+                'P', ELECTRIC_PISTON_LUV,
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
+                'M', ELECTRIC_MOTOR_LuV,
+                'C', HULL[LuV].getStackForm(),
+                'G', new UnificationEntry(gear, Naquadah),
+                'W', new UnificationEntry(cableGtSingle, VanadiumGallium));
     }
 
     private static void MachineCasingRecipes() {
@@ -3954,14 +3964,14 @@ public class MachineRecipeLoader {
         //  Ultimate Engine Intake Casing
         ModHandler.addShapedRecipe(true, "ultimate_engine_intake_casing", GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ULTIMATE_ENGINE_INTAKE_CASING, 2),
                 "PhP", "RCR", "PwP",
-                'C', GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING),
-                'R', new UnificationEntry(rotor, RhodiumPlatedPalladium),
+                'C', GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_CASING),
+                'R', new UnificationEntry(rotor, Naquadah),
                 'P', new UnificationEntry(pipeNormalFluid, Naquadah));
 
         ASSEMBLER_RECIPES.recipeBuilder()
-                .input(rotor, RhodiumPlatedPalladium, 2)
+                .input(rotor, Naquadah, 2)
                 .input(pipeNormalFluid, Naquadah, 4)
-                .inputs(GTLiteMetaBlocks.MACHINE_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.RHODIUM_PLATED_PALLADIUM_CASING))
+                .inputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_CASING))
                 .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ULTIMATE_ENGINE_INTAKE_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
@@ -4319,6 +4329,38 @@ public class MachineRecipeLoader {
                 .input(ELECTRIC_MOTOR_LuV)
                 .inputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.TANTALUM_CARBIDE_CASING))
                 .outputs(GTLiteMetaBlocks.ACTIVE_UNIQUE_CASING.getItemVariant(BlockActiveUniqueCasing.ActiveCasingType.ADVANCED_SLICING_BLADE, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Naquadah Casing
+        ModHandler.addShapedRecipe(true, "naquadah_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Naquadah),
+                'F', new UnificationEntry(frameGt, Naquadah));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Naquadah, 6)
+                .input(frameGt, Naquadah)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Naquadah Gearbox Casing
+        ModHandler.addShapedRecipe(true, "naquadah_gearbox_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_GEARBOX_CASING, 2),
+                "PhP", "GFG", "PwP",
+                'P', new UnificationEntry(plate, Naquadah),
+                'G', new UnificationEntry(gear, Naquadah),
+                'F', new UnificationEntry(frameGt, Naquadah));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Naquadah, 4)
+                .input(gear, Naquadah, 2)
+                .input(frameGt, Naquadah)
+                .circuitMeta(4)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_GEARBOX_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
                 .buildAndRegister();

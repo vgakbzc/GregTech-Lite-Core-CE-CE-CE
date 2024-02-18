@@ -63,6 +63,18 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/tantalum_carbide_casing"
         }
+      },
+      "naquadah_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadah_casing"
+        }
+      },
+      "naquadah_gearbox_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/naquadah_gearbox_casing"
+        }
       }
     }
   }
