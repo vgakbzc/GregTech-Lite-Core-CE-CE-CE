@@ -1381,6 +1381,7 @@ gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电�
 
 gtlitecore.machine.ultimate_combustion_engine.name=终极内燃引擎
 gtlitecore.machine.ultimate_combustion_engine.tooltip=化学能吞噬者
+gtlitecore.machine.ultimate_combustion_engine.tooltip.boost_ultimate=提供§f140L/s§7的液态氧，并消耗§f双倍§7燃料以产生高达§f%s§7EU/t的功率。
 
 gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
 

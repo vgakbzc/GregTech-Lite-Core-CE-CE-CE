@@ -99,7 +99,7 @@ public class MetaTileEntityUltimateCombustionEngine extends FuelMultiblockContro
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[this.tier]));
         tooltip.add(I18n.format("gregtech.universal.tooltip.uses_per_hour_lubricant", 1000));
-        tooltip.add(I18n.format("gregtech.machine.large_combustion_engine.tooltip.boost_extreme", GTValues.V[this.tier] * 4L));
+        tooltip.add(I18n.format("gtlitecore.machine.ultimate_combustion_engine.tooltip.boost_ultimate", GTValues.V[this.tier] * 4L));
     }
 
     @Nonnull
@@ -285,7 +285,7 @@ public class MetaTileEntityUltimateCombustionEngine extends FuelMultiblockContro
         private boolean isOxygenBoosted = false;
         private final MetaTileEntityUltimateCombustionEngine combustionEngine;
         private final int tier;
-        private static final FluidStack LIQUID_OXYGEN_STACK = Materials.Oxygen.getFluid(FluidStorageKeys.LIQUID, 80);
+        private static final FluidStack LIQUID_OXYGEN_STACK = Materials.Oxygen.getFluid(FluidStorageKeys.LIQUID, 140);
         private static final FluidStack LUBRICANT_STACK = Materials.Lubricant.getFluid(1);
 
         public LargeCombustionEngineWorkableHandler(RecipeMapMultiblockController tileEntity) {
