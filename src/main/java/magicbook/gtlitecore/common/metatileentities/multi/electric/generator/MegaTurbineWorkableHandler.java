@@ -147,7 +147,7 @@ public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
             excessVoltage -= turbineMaxVoltage;
         } else {
             double holderEfficiency = rotorHolders.get(0).getTotalEfficiency() / 100.0;
-            //get the amount of parallel required to match the desired output voltage
+            //  Get the amount of parallel required to match the desired output voltage
             parallel = MathHelper.ceil((turbineMaxVoltage - excessVoltage) /
                     (Math.abs(recipe.getEUt()) * holderEfficiency));
 
@@ -157,14 +157,15 @@ public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
                 return false;
             }
 
-            //this is necessary to prevent over-consumption of fuel
+            //  This is necessary to prevent over-consumption of fuel
             excessVoltage += (int) (parallel * Math.abs(recipe.getEUt()) * holderEfficiency - turbineMaxVoltage);
         }
 
-        //rebuild the recipe and adjust voltage to match the turbine
+        //  Rebuild the recipe and adjust voltage to match the turbine
+        //  Thanks my friend to help me fix a little problem.
         RecipeBuilder<?> recipeBuilder = getRecipeMap().recipeBuilder();
         recipeBuilder.append(recipe, parallel, false)
-                .EUt(-turbineMaxVoltage);
+                .EUt(turbineMaxVoltage);
         applyParallelBonus(recipeBuilder);
         recipe = recipeBuilder.build().getResult();
 
