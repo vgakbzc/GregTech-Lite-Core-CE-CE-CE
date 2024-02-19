@@ -877,22 +877,23 @@ gtlitecore.machine.burner_reactor.name=燃烧反应室
 gtlitecore.machine.cryogenic_reactor.name=低温反应室
 
 gtlitecore.machine.large_naquadah_reactor.name=大型硅岩反应堆
+gtlitecore.machine.large_naquadah_reactor.tooltip=取之不尽，用之不竭
 gtlitecore.machine.large_naquadah_reactor.plasma_oxygen_boosted=等离子体催化中。
-gtlitecore.machine.large_naquadah_reactor.tooltip.boost=提供§f50L/s§7的氧等离子体，并消耗§f双倍§7燃料以产生高达§f%s§7EU/t的功率。
+gtlitecore.machine.large_naquadah_reactor.tooltip.boost=提供§f50 L/s§7的氧等离子体，并消耗§f双倍§7燃料以产生高达§f%s§7 EU/t的功率。
 gtlitecore.machine.large_naquadah_reactor.plasma_amount=等离子体存量：%s
 gtlitecore.machine.large_naquadah_reactor.boost_disallowed=升级你的动力仓以激活等离子体催化
 
 gtlitecore.machine.hyper_reactor_mk1.name=超能反应堆 Mk I
-gtlitecore.machine.hyper_reactor_mk1.tooltip.1=磁约束超能聚变
-gtlitecore.machine.hyper_reactor_mk1.tooltip.2=最高产生§aUEV§7级的能量
+gtlitecore.machine.hyper_reactor_mk1.tooltip=磁约束超能聚变
+gtlitecore.machine.hyper_reactor_mk1.tooltip.boost=提供§f100 L/s§7的铁等离子体，并消耗§f双倍§7燃料以产生高达§f%s§7 EU/t的功率。
 
 gtlitecore.machine.hyper_reactor_mk2.name=超能反应堆 Mk II
-gtlitecore.machine.hyper_reactor_mk2.tooltip.1=力场约束超能聚变
-gtlitecore.machine.hyper_reactor_mk2.tooltip.2=最高产生§2UIV§7级的能量
+gtlitecore.machine.hyper_reactor_mk2.tooltip=力场约束超能聚变
+gtlitecore.machine.hyper_reactor_mk2.tooltip.boost=提供§f80 L/s§7的镅等离子体，并消耗§f双倍§7燃料以产生高达§f%s§7 EU/t的功率。
 
 gtlitecore.machine.hyper_reactor_mk3.name=超能反应堆 Mk III
-gtlitecore.machine.hyper_reactor_mk3.tooltip.1=自控制超能聚变
-gtlitecore.machine.hyper_reactor_mk3.tooltip.2=最高产生§eUXV§7级的能量
+gtlitecore.machine.hyper_reactor_mk3.tooltip=自控制超能聚变
+gtlitecore.machine.hyper_reactor_mk3.tooltip.boost=提供§f50 L/s§7的简并态铼等离子体，并消耗§f双倍§7燃料以产生高达§f%s§7 EU/t的功率。
 
 gtlitecore.machine.isa_mill.name=艾萨研磨机
 gtlitecore.machine.isa_mill.tooltip=工业级卧式湿法碾磨机
