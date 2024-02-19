@@ -3,19 +3,25 @@ package magicbook.gtlitecore.common.metatileentities.multi.electric.generator;
 import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechCapabilities;
 import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.IMultipleTankHandler;
+import gregtech.api.capability.impl.MultiblockFuelRecipeLogic;
+import gregtech.api.gui.GuiTextures;
+import gregtech.api.gui.resources.TextureArea;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
-import gregtech.api.metatileentity.multiblock.FuelMultiblockController;
-import gregtech.api.metatileentity.multiblock.IMultiblockPart;
-import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.*;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.unification.material.Materials;
+import gregtech.api.util.TextComponentUtil;
+import gregtech.api.util.TextFormattingUtil;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
+import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.BlockUniqueCasing;
@@ -24,7 +30,11 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -35,16 +45,44 @@ import java.util.List;
 
 import static gregtech.api.GTValues.*;
 
-public class MetaTileEntityHyperReactorMkIII extends FuelMultiblockController {
+public class MetaTileEntityHyperReactorMkIII extends FuelMultiblockController implements IProgressBarMultiblock {
+
+    private boolean boostAllowed;
 
     public MetaTileEntityHyperReactorMkIII(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.HYPER_REACTOR_MK3_RECIPES, UXV);
+        this.recipeMapWorkable = new HyperReactorMark3WorkableHandler(this);
         this.recipeMapWorkable.setMaximumOverclockVoltage(V[UXV]);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityHyperReactorMkIII(metaTileEntityId);
+    }
+
+    @Override
+    protected void addDisplayText(List<ITextComponent> textList) {
+        HyperReactorMark3WorkableHandler recipeLogic = (HyperReactorMark3WorkableHandler) this.recipeMapWorkable;
+        MultiblockDisplayText.Builder builder = MultiblockDisplayText.builder(textList, this.isStructureFormed())
+                .setWorkingStatus(recipeLogic.isWorkingEnabled(), recipeLogic.isActive())
+                .addEnergyProductionLine(V[OpV], recipeLogic.getRecipeEUt())
+                .addFuelNeededLine(recipeLogic.getRecipeFluidInputInfo(), recipeLogic.getPreviousRecipeDuration())
+                .addCustom((tl) -> {
+                    if (this.isStructureFormed() && recipeLogic.isBoosted) {
+                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.AQUA, "gtlitecore.machine.large_naquadah_reactor.plasma_oxygen_boosted"));
+                    }
+                })
+                .addWorkingStatusLine();
+    }
+
+    @Override
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[UXV]));
+        tooltip.add(I18n.format("gtlitecore.machine.hyper_reactor_mk3.tooltip.boost", GTValues.V[UXV] * 4L));
     }
 
     @Nonnull
@@ -111,12 +149,155 @@ public class MetaTileEntityHyperReactorMkIII extends FuelMultiblockController {
     }
 
     @Override
-    public void addInformation(ItemStack stack,
-                               @Nullable World player,
-                               @Nonnull List<String> tooltip,
-                               boolean advanced) {
-        super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.hyper_reactor_mk3.tooltip.1"));
-        tooltip.add(I18n.format("gtlitecore.machine.hyper_reactor_mk3.tooltip.2"));
+    protected void formStructure(PatternMatchContext context) {
+        super.formStructure(context);
+        IEnergyContainer energyContainer = this.getEnergyContainer();
+        this.boostAllowed = energyContainer != null && energyContainer.getOutputVoltage() >= GTValues.V[OpV];
     }
+
+    @Override
+    protected boolean shouldShowVoidingModeButton() {
+        return false;
+    }
+
+    public boolean isBoostAllowed() {
+        return this.boostAllowed;
+    }
+
+    @Override
+    public int getNumProgressBars() {
+        return 2;
+    }
+
+    @Override
+    public double getFillPercentage(int index) {
+        int[] plasmaAmount;
+        if (index == 0) {
+            plasmaAmount = new int[2];
+            if (this.getInputFluidInventory() != null) {
+                MultiblockFuelRecipeLogic recipeLogic = (MultiblockFuelRecipeLogic) this.recipeMapWorkable;
+                if (recipeLogic.getInputFluidStack() != null) {
+                    FluidStack testStack = recipeLogic.getInputFluidStack().copy();
+                    testStack.amount = Integer.MAX_VALUE;
+                    plasmaAmount = this.getTotalFluidAmount(testStack, this.getInputFluidInventory());
+                }
+            }
+
+            return plasmaAmount[1] != 0 ? 1.0 * (double) plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
+        } else {
+            plasmaAmount = new int[2];
+            if (this.getInputFluidInventory() != null && this.isBoostAllowed()) {
+                FluidStack plasmaStack = GTLiteMaterials.DegenerateRhenium.getPlasma(Integer.MAX_VALUE);
+                plasmaAmount = this.getTotalFluidAmount(plasmaStack, this.getInputFluidInventory());
+            }
+
+            return plasmaAmount[1] != 0 ? 1.0 * (double) plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
+        }
+    }
+
+    @Override
+    public TextureArea getProgressBarTexture(int index) {
+        if (index == 0) {
+            return GuiTextures.PROGRESS_BAR_LCE_FUEL;
+        } else {
+            return GuiTextures.PROGRESS_BAR_HPCA_COMPUTATION;
+        }
+    }
+
+    @Override
+    public void addBarHoverText(List<ITextComponent> hoverList, int index) {
+        if (index == 0) {
+            this.addFuelText(hoverList);
+        } else {
+            int plasmaStored;
+            int plasmaCapacity;
+            TextComponentString plasmaInfo;
+
+            if (this.isBoostAllowed()) {
+                plasmaStored = 0;
+                plasmaCapacity = 0;
+                if (this.isStructureFormed() && this.getInputFluidInventory() != null) {
+                    FluidStack plasmaStack = GTLiteMaterials.DegenerateRhenium.getPlasma(Integer.MAX_VALUE);
+                    int[] plasmaAmount = this.getTotalFluidAmount(plasmaStack, this.getInputFluidInventory());
+                    plasmaStored = plasmaAmount[0];
+                    plasmaCapacity = plasmaAmount[1];
+                }
+
+                plasmaInfo = TextComponentUtil.stringWithColor(TextFormatting.AQUA, TextFormattingUtil.formatNumbers(plasmaStored) + " / " + TextFormattingUtil.formatNumbers(plasmaCapacity) + " L");
+                hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.large_naquadah_reactor.plasma_amount", plasmaInfo));
+            } else {
+                hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.YELLOW, "gtlitecore.machine.large_naquadah_reactor.boost_disallowed"));
+            }
+        }
+    }
+
+    private static class HyperReactorMark3WorkableHandler extends MultiblockFuelRecipeLogic {
+
+        private boolean isBoosted = false;
+        private final MetaTileEntityHyperReactorMkIII hyperReactor;
+        private static final FluidStack PLASMA_RHENIUM_STACK = GTLiteMaterials.DegenerateRhenium.getPlasma(50);
+
+        public HyperReactorMark3WorkableHandler(RecipeMapMultiblockController tileEntity) {
+            super(tileEntity);
+            this.hyperReactor = (MetaTileEntityHyperReactorMkIII) tileEntity;
+        }
+
+        @Override
+        protected void updateRecipeProgress() {
+            if (this.canRecipeProgress && this.drawEnergy(this.recipeEUt, true)) {
+                this.drainPlasma();
+                this.drawEnergy(this.recipeEUt, false);
+                if (++this.progressTime > this.maxProgressTime) {
+                    this.completeRecipe();
+                }
+            }
+        }
+
+        protected void checkPlasma() {
+            if (this.hyperReactor.isBoostAllowed()) {
+                IMultipleTankHandler inputTank = this.hyperReactor.getInputFluidInventory();
+                FluidStack boosterStack = PLASMA_RHENIUM_STACK;
+                this.isBoosted = boosterStack.isFluidStackIdentical(inputTank.drain(boosterStack, false));
+            }
+        }
+
+        protected void drainPlasma() {
+            if (this.isBoosted && this.totalContinuousRunningTime % 20L == 0L) {
+                FluidStack boosterStack = PLASMA_RHENIUM_STACK;
+                this.hyperReactor.getInputFluidInventory().drain(boosterStack, true);
+            }
+        }
+
+        @Override
+        protected boolean shouldSearchForRecipes() {
+            this.checkPlasma();
+            return super.shouldSearchForRecipes();
+        }
+
+        @Override
+        protected boolean canProgressRecipe() {
+            return super.canProgressRecipe();
+        }
+
+        @Override
+        public long getMaxVoltage() {
+            return this.isBoosted ? V[UXV] * 2L : V[UXV];
+        }
+
+        @Override
+        protected long boostProduction(long production) {
+            if (this.isBoosted) {
+                return production * 2L;
+            } else {
+                return production;
+            }
+        }
+
+        @Override
+        public void invalidate() {
+            this.isBoosted = false;
+            super.invalidate();
+        }
+    }
+
 }

@@ -14,7 +14,7 @@ public class BPAPolycarbonateChain {
                 .fluidInputs(CarbonMonoxide.getFluid(1000))
                 .fluidInputs(Oxygen.getFluid(1000))
                 .fluidInputs(Methanol.getFluid(2000))
-                .circuitMeta(1)
+                .circuitMeta(2)
                 .fluidOutputs(DimethylCarbonate.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[HV])

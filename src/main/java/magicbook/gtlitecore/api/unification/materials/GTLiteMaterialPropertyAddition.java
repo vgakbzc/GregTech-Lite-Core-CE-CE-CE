@@ -151,6 +151,9 @@ public class GTLiteMaterialPropertyAddition {
         Nobelium.addFlags(GENERATE_PLATE);
         Lawrencium.addFlags(GENERATE_PLATE);
         Technetium.addFlags(GENERATE_PLATE);
+        Moscovium.addFlags(GENERATE_PLATE);
+        Meitnerium.addFlags(GENERATE_PLATE);
+        Roentgenium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -228,6 +231,7 @@ public class GTLiteMaterialPropertyAddition {
         Neptunium.addFlags(GENERATE_ROD);
         Nobelium.addFlags(GENERATE_ROD);
         Lawrencium.addFlags(GENERATE_ROD);
+        Roentgenium.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -251,6 +255,8 @@ public class GTLiteMaterialPropertyAddition {
         //  Gear
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
         Darmstadtium.addFlags(GENERATE_GEAR);
+        Roentgenium.addFlags(GENERATE_GEAR);
+        Lawrencium.addFlags(GENERATE_GEAR);
 
         //  Small Gear
         WroughtIron.addFlags(GENERATE_SMALL_GEAR);
