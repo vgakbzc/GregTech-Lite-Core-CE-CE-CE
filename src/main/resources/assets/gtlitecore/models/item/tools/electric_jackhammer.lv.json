@@ -1,7 +1,7 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "gtlitecore:items/void",
-    "layer1": "gtlitecore:items/tools/electric_jackhammer"
+    "layer0": "gtlitecore:items/tools/jackhammer.lv",
+    "layer1": "gtlitecore:items/tools/jackhammer_overlay"
   }
 }

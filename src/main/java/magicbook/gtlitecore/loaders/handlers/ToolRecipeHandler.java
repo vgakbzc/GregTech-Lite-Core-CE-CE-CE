@@ -31,6 +31,8 @@ public class ToolRecipeHandler {
         UnificationEntry rod = new UnificationEntry(OrePrefix.stick, material);
         UnificationEntry plate = new UnificationEntry(OrePrefix.plate, material);
         UnificationEntry ingot = new UnificationEntry(material.hasProperty(GEM) ? OrePrefix.gem : OrePrefix.ingot, material);
+        UnificationEntry spring = new UnificationEntry(OrePrefix.spring, material);
+        UnificationEntry screw = new UnificationEntry(OrePrefix.screw, material);
 
         if (material.hasFlag(MaterialFlags.GENERATE_PLATE) && !material.hasFlag(MaterialFlags.NO_SMASHING)) {
 
@@ -65,10 +67,13 @@ public class ToolRecipeHandler {
                             ModHandler.addShapedEnergyTransferRecipe(String.format("%s_%s", "electric_jackhammer.lv", material, i),
                                     toolItem,
                                     Ingredient.fromStacks(powerUnits[i]), true, true,
-                                    "hRf", "PHP", "PPP",
+                                    "YRf", "PSP", "XPH",
                                     'R', rod,
                                     'P', plate,
-                                    'H', powerUnits[i]);
+                                    'S', spring,
+                                    'Y', screw,
+                                    'H', powerUnits[i],
+                                    'X', ELECTRIC_PISTON_LV);
                         }
                     }
                 }
@@ -90,10 +95,13 @@ public class ToolRecipeHandler {
                             ModHandler.addShapedEnergyTransferRecipe(String.format("%s_%s", "electric_jackhammer.hv", material, i),
                                     toolItem,
                                     Ingredient.fromStacks(powerUnits[i]), true, true,
-                                    "hRf", "PHP", "PPP",
+                                    "YRf", "PSP", "XPH",
                                     'R', rod,
                                     'P', plate,
-                                    'H', powerUnits[i]);
+                                    'S', spring,
+                                    'Y', screw,
+                                    'H', powerUnits[i],
+                                    'X', ELECTRIC_PISTON_HV);
                         }
                     }
                 }
@@ -115,10 +123,13 @@ public class ToolRecipeHandler {
                             ModHandler.addShapedEnergyTransferRecipe(String.format("%s_%s", "electric_jackhammer.iv", material, i),
                                     toolItem,
                                     Ingredient.fromStacks(powerUnits[i]), true, true,
-                                    "hRf", "PHP", "PPP",
+                                    "YRf", "PSP", "XPH",
                                     'R', rod,
                                     'P', plate,
-                                    'H', powerUnits[i]);
+                                    'S', spring,
+                                    'Y', screw,
+                                    'H', powerUnits[i],
+                                    'X', ELECTRIC_PISTON_IV);
                         }
                     }
                 }

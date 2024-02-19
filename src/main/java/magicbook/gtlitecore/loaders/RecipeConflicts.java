@@ -122,5 +122,18 @@ public class RecipeConflicts {
                 .EUt(30)
                 .duration(80)
                 .buildAndRegister();
+
+        //  Conflict between Acetic acid and Dimethyl carbonate
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, CarbonMonoxide.getFluid(1000), Methanol.getFluid(1000));
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES, CarbonMonoxide.getFluid(1000), Methanol.getFluid(1000));
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(CarbonMonoxide.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(1000))
+                .circuitMeta(1)
+                .fluidOutputs(AceticAcid.getFluid(1000))
+                .EUt(VH[LV])
+                .duration(300)
+                .buildAndRegister();
     }
 }
