@@ -295,7 +295,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
                     return false;
                 }
 
-                for(int i = 0; i < inputs.size(); ++i) {
+                for (int i = 0; i < inputs.size(); ++i) {
                     if (!(inputs.get(i)).acceptsStack((itemInputInventory.get(i)).getStackInSlot(0))) {
                         return false;
                     }

@@ -1066,21 +1066,26 @@ gtlitecore.machine.advanced_assembly_line.tooltip.3=最大并行数：§e(电压
 gtlitecore.machine.advanced_assembly_line.tooltip.4=额，我是说...因为输入总线的限制，它的最大并行数被锁死在64个了。
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
-gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
-gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
-gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
-gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
 gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹
-gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=用于抹杀物质与能量的界限
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
-gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv=最大并行数：§e64§7
+
+gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
+gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm=最大并行数：§e128§7
+
+gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=用于抹杀物质与能量的界限
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=最大并行数：§e256§7
+
+gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv=最大并行数：§e512§7
+
+gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev=最大并行数：§e1024§7
+
+gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
 
 gtlitecore.machine.mega_alloy_blast_smelter.name=大型合金冶炼厂
 gtlitecore.machine.mega_alloy_blast_smelter.tooltip.1=根据线圈等级获得并行与配方时间减免
