@@ -919,7 +919,7 @@ gtlitecore.machine.volcanus.warning=烈焰之炽焱不足
 gtlitecore.machine.cryogenic_freezer.name=凛冰冷冻机
 gtlitecore.machine.cryogenic_freezer.tooltip.1=需要提供§b极寒之凛冰§7以工作
 gtlitecore.machine.cryogenic_freezer.tooltip.2=未提供§b极寒之凛冰§7时，凛冰冷冻机将会停机
-gtlitecore.machine.cryogenic_freezer.tooltip.3=配方时间减少至原本的0.8倍
+gtlitecore.machine.cryogenic_freezer.tooltip.3=运行配方时，运行时间减少至原本配方时间的0.8倍
 gtlitecore.machine.cryogenic_freezer.tooltip.4=最大并行数：§e16§7
 gtlitecore.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
 gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极速下降！
@@ -1061,9 +1061,13 @@ gtlitecore.machine.component_assembly_line.tier.14=时空 (MAX)
 
 gtlitecore.machine.advanced_assembly_line.name=进阶装配线
 gtlitecore.machine.advanced_assembly_line.tooltip.1=超高精度装配线
-gtlitecore.machine.advanced_assembly_line.tooltip.2=效率碾压同等级装配线，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.advanced_assembly_line.tooltip.3=最大并行数：§e(电压等级 - 4) * 16§7
-gtlitecore.machine.advanced_assembly_line.tooltip.4=额，我是说...因为输入总线的限制，它的最大并行数被锁死在64个了。
+gtlitecore.machine.advanced_assembly_line.tooltip.2=效率碾压同等级装配线！
+gtlitecore.machine.advanced_assembly_line.tooltip.3=允许使用§r任意等级§7的输入总线
+gtlitecore.machine.advanced_assembly_line.tooltip.4=每一片中的输入总线§c只能§7输入同一种物品，否则会导致停机
+gtlitecore.machine.advanced_assembly_line.tooltip.5=运行配方时，运行时间减少至原本配方时间的0.8倍
+gtlitecore.machine.advanced_assembly_line.tooltip.6=根据输入电压获得并行。
+gtlitecore.machine.advanced_assembly_line.tooltip.7=输入小于等于§3UV§7级的电压时，始终获得§e4§7次并行。
+gtlitecore.machine.advanced_assembly_line.tooltip.8=输入大于等于§4UHV§7级的电压时，始终获得§e(2^(电压等级 - 8) + 4)§7次并行。
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
 gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹

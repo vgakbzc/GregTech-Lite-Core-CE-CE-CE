@@ -739,6 +739,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(10800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV]))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12056 Rare Earth Alloy
@@ -878,7 +879,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8495, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 120)
                         .vacuumStats(VA[UV], 165))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12067 Tairitsium
