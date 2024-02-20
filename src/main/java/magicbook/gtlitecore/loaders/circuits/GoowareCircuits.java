@@ -9,6 +9,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtechfoodoption.GTFOMaterialHandler.Blood;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -78,6 +79,255 @@ public class GoowareCircuits {
     }
 
     private static void SoC() {
+
+        //  Some idea from Stem cell processing in Gregicality and Bartworks.
+
+        //  Pb + Ti + c-ZrO2 + O -> PbZrTiO3
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Lead)
+                .input(dust, Titanium)
+                .input(dust, CubicZirconia)
+                .circuitMeta(4)
+                .fluidInputs(Oxygen.getFluid(1000))
+                .output(dust, LeadZirconateTitanate, 4)
+                .EUt(VA[LuV])
+                .duration(280)
+                .buildAndRegister();
+
+        //  Piezoelectric Crystal
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(gemExquisite, LeadZirconateTitanate)
+                .input(wireFine, Gold, 4)
+                .fluidInputs(TinAlloy.getFluid(L))
+                .output(PIEZOELECTRIC_CRYSTAL)
+                .EUt(VA[HV])
+                .duration(215)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Ultrasonic Homogenizer
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(stickLong, RhodiumPlatedPalladium)
+                .input(plate, Polybenzimidazole, 2)
+                .input(PIEZOELECTRIC_CRYSTAL)
+                .input(VACUUM_TUBE)
+                .fluidInputs(SolderingAlloy.getFluid(L * 2))
+                .output(ULTRASONIC_HOMOGENIZER)
+                .EUt(VA[LuV])
+                .duration(430)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Blood -> Blood Cells + Blood Plasma
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(ULTRASONIC_HOMOGENIZER)
+                .fluidInputs(Blood.getFluid(1000))
+                .fluidOutputs(BloodCells.getFluid(500))
+                .fluidOutputs(BloodPlasma.getFluid(500))
+                .EUt(VA[HV])
+                .duration(800)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Another Blood Sonication recipe
+        SONICATION_RECIPES.recipeBuilder()
+                .fluidInputs(Blood.getFluid(16000))
+                .fluidOutputs(BloodCells.getFluid(8000))
+                .fluidOutputs(BloodPlasma.getFluid(8000))
+                .EUt(VA[IV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Blood Plasma -> bFGF, EGF, CAT
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(BloodPlasma.getFluid(1000))
+                .fluidOutputs(BFGF.getFluid(200))
+                .fluidOutputs(EGF.getFluid(200))
+                .fluidOutputs(CAT.getFluid(200))
+                .EUt(VA[HV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Biotin
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(dustTiny, Copper)
+                .input(dust, Ash)
+                .input(dust, Sugar)
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .fluidInputs(Nitrogen.getFluid(1000))
+                .fluidOutputs(Biotin.getFluid(1000))
+                .EUt(VH[IV])
+                .duration(40)
+                .buildAndRegister();
+
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(dustTiny, Copper)
+                .input(dust, DarkAsh)
+                .input(dust, Sugar)
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .fluidInputs(Nitrogen.getFluid(1000))
+                .fluidOutputs(Biotin.getFluid(1000))
+                .EUt(VH[IV])
+                .duration(40)
+                .buildAndRegister();
+
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(dustTiny, Copper)
+                .input(dust, Potash)
+                .input(dust, Sugar)
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .fluidInputs(Nitrogen.getFluid(1000))
+                .fluidOutputs(Biotin.getFluid(1000))
+                .EUt(VH[IV])
+                .duration(40)
+                .buildAndRegister();
+
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(dustTiny, Copper)
+                .input(dust, SodaAsh)
+                .input(dust, Sugar)
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .fluidInputs(Nitrogen.getFluid(1000))
+                .fluidOutputs(Biotin.getFluid(1000))
+                .EUt(VH[IV])
+                .duration(40)
+                .buildAndRegister();
+
+        //  Linoleic Acid
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(ULTRASONIC_HOMOGENIZER)
+                .fluidInputs(FermentedBiomass.getFluid(2000))
+                .fluidOutputs(LinoleicAcid.getFluid(1000))
+                .fluidOutputs(Biomass.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(2800)
+                .buildAndRegister();
+
+        SONICATION_RECIPES.recipeBuilder()
+                .fluidInputs(FermentedBiomass.getFluid(32000))
+                .fluidOutputs(LinoleicAcid.getFluid(16000))
+                .fluidOutputs(Biomass.getFluid(16000))
+                .EUt(VA[HV])
+                .duration(400)
+                .buildAndRegister();
+
+        //  Turpentine -> β-Pinene
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(Turpentine.getFluid(1000))
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .output(dust, BetaPinene, 26)
+                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .EUt(VA[LV])
+                .duration(110)
+                .buildAndRegister();
+
+        //  C10H16 + 2H2O + 2C5H6 -> 2C10H16O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, BetaPinene, 26)
+                .fluidInputs(Cyclopentadiene.getFluid(2000))
+                .fluidInputs(Water.getFluid(2000))
+                .fluidOutputs(Citral.getFluid(2000))
+                .EUt(VA[EV])
+                .duration(500)
+                .buildAndRegister();
+
+        //  C10H16O + C3H6O -> C13H20O + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Citral.getFluid(1000))
+                .fluidInputs(Acetone.getFluid(1000))
+                .fluidOutputs(BetaIonone.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(250)
+                .buildAndRegister();
+
+        //  CH2O + C2H2 -> CHCCH2OH
+        MIXER_RECIPES.recipeBuilder()
+                .notConsumable(dust, Copper)
+                .fluidInputs(Formaldehyde.getFluid(1000))
+                .fluidInputs(Acetylene.getFluid(1000))
+                .fluidOutputs(PropargylAlcohol.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(280)
+                .buildAndRegister();
+
+        //  CHCCH2OH + HCl -> yuHC2CH2Cl + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(PropargylAlcohol.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidOutputs(PropargylChloride.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  25C13H20O + 5HC2CH2Cl -> 17C20H30O + 8O + 5HCl
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(BetaIonone.getFluid(25000))
+                .fluidInputs(PropargylChloride.getFluid(5000))
+                .fluidOutputs(VitaminA.getFluid(17000))
+                .fluidOutputs(Oxygen.getFluid(8000))
+                .fluidOutputs(HydrochloricAcid.getFluid(5000))
+                .EUt(VA[IV])
+                .duration(140)
+                .buildAndRegister();
+
+        //  C2H4O + NH3 -> HOCH2CH2NH2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(EthyleneOxide.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidOutputs(Ethanolamine.getFluid(1000))
+                .EUt(VH[EV])
+                .duration(60)
+                .buildAndRegister();
+
+        //  B27
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Biotin.getFluid(1000))
+                .fluidInputs(LinoleicAcid.getFluid(1000))
+                .fluidInputs(CAT.getFluid(1000))
+                .fluidInputs(VitaminA.getFluid(1000))
+                .fluidInputs(Ethanolamine.getFluid(1000))
+                .fluidOutputs(B27.getFluid(5000))
+                .EUt(VA[ZPM])
+                .duration(150)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Bio Dish
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(PETRI_DISH)
+                .fluidInputs(B27.getFluid(100))
+                .output(BIO_DISH)
+                .EUt(VA[ZPM])
+                .duration(120)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Exotic Mutagen
+        BIO_REACTOR_RECIPES.recipeBuilder()
+                .input(BIO_DISH)
+                .fluidInputs(BFGF.getFluid(1000))
+                .fluidInputs(EGF.getFluid(1000))
+                .fluidInputs(BloodCells.getFluid(1000))
+                .output(PETRI_DISH)
+                .fluidOutputs(ExoticMutagen.getFluid(4000))
+                .EUt(VA[UV])
+                .duration(80)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Bio Cell
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, NaquadahEnriched)
+                .fluidInputs(SterileGrowthMedium.getFluid(1000))
+                .fluidInputs(Bacteria.getFluid(1000))
+                .fluidInputs(ExoticMutagen.getFluid(500))
+                .output(BIO_CELL, 64)
+                .EUt(VA[ZPM])
+                .duration(600)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
 
         //  Intravital SoC
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()

@@ -7,18 +7,16 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtechfoodoption.GTFOMaterialHandler.Blood;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.BZMedium;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ExoticMutagen;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.BIO_CELL;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.BIO_DISH;
 
 public class BioReactor {
 
     public static void init() {
 
         if (GTLiteConfigHolder.misc.enableBioReactorVanillaRecipe) {
+
             //  Some vanilla biological recipes
             BIO_REACTOR_RECIPES.recipeBuilder()
                     .fluidInputs(Bacteria.getFluid(1000))
@@ -41,54 +39,31 @@ public class BioReactor {
                     .cleanroom(CleanroomType.STERILE_CLEANROOM)
                     .buildAndRegister();
 
+            //  Bio Cell for Gooware SoC processing
             BIO_REACTOR_RECIPES.recipeBuilder()
-                    .notConsumable(PETRI_DISH)
-                    .circuitMeta(2)
-                    .fluidInputs(Bacteria.getFluid(1000))
+                    .input(dust, NaquadahEnriched)
+                    .circuitMeta(1)
                     .fluidInputs(SterileGrowthMedium.getFluid(1000))
-                    .output(STEM_CELLS, 64)
-                    .fluidOutputs(BacterialSludge.getFluid(1000))
-                    .EUt(VA[UV])
-                    .duration(100)
+                    .fluidInputs(Bacteria.getFluid(1000))
+                    .fluidInputs(ExoticMutagen.getFluid(500))
+                    .output(BIO_CELL, 64)
+                    .EUt(VA[ZPM])
+                    .duration(600)
                     .cleanroom(CleanroomType.STERILE_CLEANROOM)
                     .buildAndRegister();
         }
 
-        //  Bio Dish
+        //  Another stem cell recipe
         BIO_REACTOR_RECIPES.recipeBuilder()
-                .input(PETRI_DISH)
-                .input(dust, Agar, 16)
-                .input(dust, Tritanium)
-                .fluidInputs(Biomass.getFluid(6000))
-                .fluidInputs(SterileGrowthMedium.getFluid(6000))
-                .output(BIO_DISH)
-                .EUt(VA[ZPM])
-                .duration(200)
-                .cleanroom(CleanroomType.STERILE_CLEANROOM)
-                .buildAndRegister();
-
-        //  Bio Cell
-        BIO_REACTOR_RECIPES.recipeBuilder()
-                .notConsumable(BIO_DISH)
-                .input(STEM_CELLS, 32)
-                .fluidInputs(BZMedium.getFluid(3000))
-                .fluidInputs(Argon.getPlasma(3000))
-                .output(BIO_CELL, 32)
+                .input(dust, Osmiridium)
+                .circuitMeta(11)
+                .fluidInputs(Bacteria.getFluid(500))
+                .fluidInputs(SterileGrowthMedium.getFluid(500))
+                .fluidInputs(ExoticMutagen.getFluid(250))
+                .output(STEM_CELLS, 64)
+                .fluidOutputs(BacterialSludge.getFluid(500))
                 .EUt(VA[UV])
-                .duration(100)
-                .cleanroom(CleanroomType.STERILE_CLEANROOM)
-                .buildAndRegister();
-
-        //  Exotic Mutagen
-        BIO_REACTOR_RECIPES.recipeBuilder()
-                .input(BIO_DISH)
-                .input(BIO_CELL)
-                .fluidInputs(SterileGrowthMedium.getFluid(2000))
-                .fluidInputs(Blood.getFluid(4000))
-                .output(STEM_CELLS)
-                .fluidOutputs(ExoticMutagen.getFluid(2000))
-                .EUt(VA[UHV])
-                .duration(100)
+                .duration(150)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
     }

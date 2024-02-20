@@ -27,7 +27,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiFluidHatch;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.client.GTLiteTextures;
@@ -61,9 +60,14 @@ import static gregtech.api.util.GTUtility.getTierByVoltage;
 import static gregtech.api.util.GTUtility.gregtechId;
 
 /**
- * TODO needs to redo logic...
+ * Advanced Assembly Line
  *
- * <p>Because the ULV stage item input hatch only has 64 amount capacity, this recipe logic is too weak...</p>
+ * @author Magic_Sweepy, tong-ge
+ *
+ * <p>
+ *     Thanks my friend tong-ge's wonderful create, this job should be attributed to him.
+ *     This machine is different with GigaGramFab's same name machine.
+ * </p>
  */
 public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockController {
 
@@ -91,7 +95,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
                 .aisle("FOF", "RTR", "DAG", " Y ")
                 .where('S', this.selfPredicate())
                 .where('F', states(getCasingState())
-                        .or(this.autoAbilities(false, true, false, false, false, false, false))
+                        .or(autoAbilities(false, true, false, false, false, false, false))
                         .or(fluidInputPredicate()))
                 .where('O', abilities(MultiblockAbility.EXPORT_ITEMS)
                         .addTooltips("gregtech.multiblock.pattern.location_end"))
@@ -99,7 +103,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
                         .or(abilities(MultiblockAbility.INPUT_ENERGY)
                                 .setMinGlobalLimited(1)
                                 .setMaxGlobalLimited(3)))
-                .where('I', metaTileEntities(MetaTileEntities.ITEM_IMPORT_BUS[0]))
+                .where('I', abilities(MultiblockAbility.IMPORT_ITEMS))
                 .where('G', states(getGrateState()))
                 .where('A', states(getUniqueCasingState()))
                 .where('R', states(getGlassState()))
@@ -129,13 +133,13 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         return MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.FUSION_GLASS);
     }
 
+    @SuppressWarnings("unchecked")
     @Nonnull
     protected static TraceabilityPredicate fluidInputPredicate() {
-        return ConfigHolder.machines.orderedFluidAssembly ? metaTileEntities((MetaTileEntity[])((List)MultiblockAbility.REGISTRY.get(MultiblockAbility.IMPORT_FLUIDS)).stream().filter((mte) -> {
-            return !(mte instanceof MetaTileEntityMultiFluidHatch);
-        }).toArray((x$0) -> {
-            return new MetaTileEntity[x$0];
-        })).setMaxGlobalLimited(4) : abilities(MultiblockAbility.IMPORT_FLUIDS);
+        return ConfigHolder.machines.orderedFluidAssembly ? metaTileEntities((MetaTileEntity[])((List) MultiblockAbility.REGISTRY.get(MultiblockAbility.IMPORT_FLUIDS)).stream()
+                .filter((mte) -> !(mte instanceof MetaTileEntityMultiFluidHatch))
+                .toArray((x$0) -> new MetaTileEntity[x$0]))
+                .setMaxGlobalLimited(4) : abilities(MultiblockAbility.IMPORT_FLUIDS);
     }
 
     @Nonnull
@@ -295,8 +299,20 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
                     return false;
                 }
 
-                for(int i = 0; i < inputs.size(); ++i) {
-                    if (!(inputs.get(i)).acceptsStack((itemInputInventory.get(i)).getStackInSlot(0))) {
+                for (int i = 0; i < inputs.size(); i++) {
+                    IItemHandlerModifiable inputHatch = itemInputInventory.get(i);
+                    boolean isEmpty = true;
+                    for (int j = 0; j < inputHatch.getSlots(); j++) {
+                        ItemStack item = inputHatch.getStackInSlot(j);
+                        if (item.isEmpty())
+                            continue;
+                        isEmpty = false;
+                        if (!(inputs.get(i)).acceptsStack(item)) {
+                            return false;
+                        }
+                    }
+
+                    if (isEmpty) {
                         return false;
                     }
                 }
@@ -348,49 +364,51 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-
         tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.6"));
+        tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.7"));
+        tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.8"));
 
         if (ConfigHolder.machines.orderedAssembly && ConfigHolder.machines.orderedFluidAssembly) {
-            tooltip.add(I18n.format("gregtech.machine.assembly_line.tooltip_ordered_both", new Object[0]));
+            tooltip.add(I18n.format("gregtech.machine.assembly_line.tooltip_ordered_both"));
         } else if (ConfigHolder.machines.orderedAssembly) {
-            tooltip.add(I18n.format("gregtech.machine.assembly_line.tooltip_ordered_items", new Object[0]));
+            tooltip.add(I18n.format("gregtech.machine.assembly_line.tooltip_ordered_items"));
         } else if (ConfigHolder.machines.orderedFluidAssembly) {
-            tooltip.add(I18n.format("gregtech.machine.assembly_line.tooltip_ordered_fluids", new Object[0]));
+            tooltip.add(I18n.format("gregtech.machine.assembly_line.tooltip_ordered_fluids"));
         }
-
     }
 
-    private static class AdvancedAssemblyLineRecipeLogic extends MultiblockRecipeLogic {
+    @SuppressWarnings("InnerClassMayBeStatic")
+    private class AdvancedAssemblyLineRecipeLogic extends MultiblockRecipeLogic {
 
         public AdvancedAssemblyLineRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);
         }
 
         /**
-         * @param maxProgress Get 1/2 progress time.
+         * @param maxProgress Get 0.8 progress time.
          */
         @Override
         public void setMaxProgress(int maxProgress) {
-            this.maxProgressTime = maxProgress / 2;
+            this.maxProgressTime = (int) (0.8 * maxProgress);
         }
 
         /**
-         * @return If machine's voltage less than or equal EV, then return 16 parallel.
-         *         If machine's voltage greater than EV, then return (16 * (tier - 4)) parallel.
-         *         Max Parallel: 160 (Max voltage).
+         * @return If machine's voltage less than or equal UV, then return 4 parallel.
+         *         If machine's voltage greater than UHV, then return 2^(tier - 8) + 4 parallel.
+         *         Max Parallel: 68 (Max voltage).
          */
         @Override
         public int getParallelLimit() {
             int tier = getTierByVoltage(getMaxVoltage());
-
-            if (tier <= EV) {
-                return 16;
+            if (tier <= UV) {
+                return 4;
             } else {
-                return (16 * (tier - EV));
+                return (int) (Math.pow(2, tier - 8) + 4);
             }
         }
     }

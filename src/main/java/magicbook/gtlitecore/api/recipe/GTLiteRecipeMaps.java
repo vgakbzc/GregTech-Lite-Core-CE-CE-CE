@@ -186,7 +186,7 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.FURNACE);
 
         //  Sonicator RecipeMap
-        SONICATION_RECIPES = new RecipeMap<>("sonication_recipes", 0, 1, 2, 1, new SimpleRecipeBuilder(), false)
+        SONICATION_RECIPES = new RecipeMap<>("sonication_recipes", 0, 1, 2, 2, new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(false, true, false, GuiTextures.BREWER_OVERLAY)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
@@ -462,12 +462,13 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.BATH);
 
         //  Bio Reactor RecipeMap
-        BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor_recipes", 6, 1, 2, 1, new SimpleRecipeBuilder(), false)
+        BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor_recipes", 6, 1, 3, 2, new SimpleRecipeBuilder(), false)
                 .setSlotOverlay(false, false, false, GuiTextures.DUST_OVERLAY)
                 .setSlotOverlay(false, false, true, GTLiteGuiTextures.DISH_OVERLAY)
                 .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+                .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.CHEMICAL_REACTOR);
@@ -506,11 +507,9 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.ARC);
 
         //  Algae Culture Tank RecipeMap
-        ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank_recipes", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+        ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank_recipes", 2, 1, 2, 0, new NoCoilTemperatureRecipeBuilder(), false)
                 .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
-                .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
-                .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.BATH);
 

@@ -1384,6 +1384,90 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Carbon, 2, Hydrogen, 7, Nitrogen, 1)
                 .build()
                 .setFormula("C2H5NH2", true);
+
+        //  13168 B27
+        B27 = new Material.Builder(getId(), gregtechId("b_27"))
+                .liquid()
+                .color(0xC2B7E3)
+                .components(Carbon, 142, Hydrogen, 230, Nitrogen, 36, Oxygen, 44, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13169 Biotin
+        Biotin = new Material.Builder(getId(), gregtechId("biotin"))
+                .liquid()
+                .color(0x08C74A)
+                .components(Carbon, 10, Hydrogen, 16, Nitrogen, 2, Oxygen, 3, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13170 Linoleic Acid
+        LinoleicAcid = new Material.Builder(getId(), gregtechId("linoleic_acid"))
+                .liquid()
+                .color(0x919C2B)
+                .components(Carbon, 18, Hydrogen, 32, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13171 Vitamin A
+        VitaminA = new Material.Builder(getId(), gregtechId("vitamin_a"))
+                .liquid()
+                .color(0xAB5EC3)
+                .components(Carbon, 20, Hydrogen, 30, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13172 β-Ionone
+        BetaIonone = new Material.Builder(getId(), gregtechId("beta_ionone"))
+                .liquid()
+                .color(0xC3A0B2)
+                .components(Carbon, 13, Hydrogen, 20, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13173 Citral
+        Citral = new Material.Builder(getId(), gregtechId("citral"))
+                .liquid()
+                .color(0xE4E77E)
+                .components(Carbon, 10, Hydrogen, 16, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13174 β-Pinene
+        BetaPinene = new Material.Builder(getId(), gregtechId("beta_pinene"))
+                .dust()
+                .color(0xFD8CFF)
+                .iconSet(DULL)
+                .components(Carbon, 10, Hydrogen, 16)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13175 Propargyl Chloride
+        PropargylChloride = new Material.Builder(getId(), gregtechId("propargyl_chloride"))
+                .liquid()
+                .color(0x156101)
+                .components(Carbon, 3, Hydrogen, 3, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("HC2CH2Cl", true);
+
+        //  13176 Propargyl Alcohol
+        PropargylAlcohol = new Material.Builder(getId(), gregtechId("propargyl_alcohol"))
+                .liquid()
+                .color(0xB7AB44)
+                .components(Carbon, 3, Hydrogen, 4, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("CHCCH2OH", true);
+
+        //  13177 Ethanolamine
+        Ethanolamine = new Material.Builder(getId(), gregtechId("ethanolamine"))
+                .liquid()
+                .color(0xD3DEA2)
+                .components(Carbon, 2, Hydrogen, 7, Nitrogen, 1, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("HOCH2CH2NH2", true);
     }
 
     private static int getId() {
