@@ -18,10 +18,11 @@ public class AlgaeCultureTank {
         ExoticGasProcessing();
         HyperFuelProcessing();
         BiomassGeneratorRecipes();
-
     }
 
     private static void AlgaeProcessing() {
+
+        //  TODO Exotic Mutagen catalyst algae recipes
 
         //  Barnarda C Algae
         SIFTER_RECIPES.recipeBuilder()

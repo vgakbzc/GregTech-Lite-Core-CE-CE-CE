@@ -94,12 +94,23 @@ public class GoowareCircuits {
                 .duration(280)
                 .buildAndRegister();
 
+        //  Piezoelectric Crystal
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(gemExquisite, LeadZirconateTitanate)
+                .input(wireFine, Gold, 4)
+                .fluidInputs(TinAlloy.getFluid(L))
+                .output(PIEZOELECTRIC_CRYSTAL)
+                .EUt(VA[HV])
+                .duration(215)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Ultrasonic Homogenizer
         VACUUM_CHAMBER_RECIPES.recipeBuilder()
                 .input(stickLong, RhodiumPlatedPalladium)
                 .input(plate, Polybenzimidazole, 2)
-                .input(gemExquisite, LeadZirconateTitanate)
-                .input(wireFine, Gold, 4)
+                .input(PIEZOELECTRIC_CRYSTAL)
+                .input(VACUUM_TUBE)
                 .fluidInputs(SolderingAlloy.getFluid(L * 2))
                 .output(ULTRASONIC_HOMOGENIZER)
                 .EUt(VA[LuV])
