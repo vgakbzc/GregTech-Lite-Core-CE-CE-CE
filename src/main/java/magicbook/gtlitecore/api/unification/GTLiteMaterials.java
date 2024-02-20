@@ -531,6 +531,16 @@ public class GTLiteMaterials {
     public static Material Diethylthiourea;
     public static Material PhenylenedioxydiaceticAcid;
     public static Material Ethylamine;
+    public static Material B27;
+    public static Material Biotin;
+    public static Material LinoleicAcid;
+    public static Material VitaminA;
+    public static Material BetaIonone;
+    public static Material Citral;
+    public static Material BetaPinene;
+    public static Material PropargylChloride;
+    public static Material PropargylAlcohol;
+    public static Material Ethanolamine;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;
@@ -663,6 +673,11 @@ public class GTLiteMaterials {
     public static Material HyperFuelMkII;
     public static Material HyperFuelMkIII;
     public static Material HyperFuelMkIV;
+    public static Material BloodCells;
+    public static Material BloodPlasma;
+    public static Material BFGF;
+    public static Material EGF;
+    public static Material CAT;
 
     //  Other Materials
     public static Material ProtoAdamantium;

@@ -760,6 +760,40 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0xFFC951)
                 .build()
                 .setFormula("((NqOrVb*Tb*?)Fs⚶Ax⚶✧◇✧✦◆✦?)Hy⚶Ax⚶✦☯✧Gx⚶◊◇◊", false);
+
+        //  24086 Blood Cells
+        BloodCells = new Material.Builder(getId(), gregtechId("blood_cells"))
+                .liquid()
+                .color(0xC43A31)
+                .iconSet(DULL)
+                .build();
+
+        //  24087 Blood Plasma
+        BloodPlasma = new Material.Builder(getId(), gregtechId("blood_plasma"))
+                .liquid()
+                .color(0x882822)
+                .build();
+
+        //  24088 bFGF
+        BFGF = new Material.Builder(getId(), gregtechId("bfgf"))
+                .liquid()
+                .color(0xA15C72)
+                .build()
+                .setFormula("bFGF", false);
+
+        //  24089 EGF
+        EGF = new Material.Builder(getId(), gregtechId("egf"))
+                .liquid()
+                .color(0x993300)
+                .build()
+                .setFormula("EGF", false);
+
+        //  24090 CAT
+        CAT = new Material.Builder(getId(), gregtechId("cat"))
+                .liquid()
+                .color(0x72B5EA)
+                .build()
+                .setFormula("CAT", false);
     }
 
     private static int getId() {

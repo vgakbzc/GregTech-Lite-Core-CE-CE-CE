@@ -2,7 +2,6 @@ package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
-import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -15,147 +14,243 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class AlgaeCultureTank {
 
     public static void init() {
-
+        AlgaeProcessing();
         ExoticGasProcessing();
+        HyperFuelProcessing();
         BiomassGeneratorRecipes();
 
-        for (FluidStack stack : new FluidStack[]{
-                Biomass.getFluid(32000),
-                SterileGrowthMedium.getFluid(24000)
-        }) {
-            for (FluidStack substack : new FluidStack[] {
-                    Mutagen.getFluid(16000),
-                    ExoticMutagen.getFluid(8000)
-            }) {
-                for (FluidStack subsubstack : new FluidStack[] {
-                        Helium.getPlasma(4000),
-                        Argon.getPlasma(4000),
-                        Nitrogen.getPlasma(4000),
-                        Oxygen.getPlasma(4000),
-                        Tin.getPlasma(4000),
-                        Iron.getPlasma(4000),
-                        Nickel.getPlasma(4000),
-                        Americium.getPlasma(4000)
-                }) {
-                    ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
-                            .input(BARNARDA_C_BASE, 64 * 6)
-                            .fluidInputs(new FluidStack[]{stack})
-                            .fluidInputs(new FluidStack[]{substack})
-                            .fluidInputs(new FluidStack[]{subsubstack})
-                            .chancedOutput(BARNARDA_C_BRYOPSIS_HYPNOIDES, 64, 2000, 500)
-                            .chancedOutput(BARNARDA_C_CHLORELLA, 64, 2000, 500)
-                            .chancedOutput(BARNARDA_C_ZOOXANTHELLAE, 64, 2000, 500)
-                            .fluidOutputs(EnrichedBacterialSludge.getFluid(2000))
-                            .fluidOutputs(BacterialSludge.getFluid(4000))
-                            .fluidOutputs(Bacteria.getFluid(8000))
-                            .EUt(VA[UHV])
-                            .duration(200)
-                            .temperature(49930)
-                            .cleanroom(CleanroomType.STERILE_CLEANROOM)
-                            .buildAndRegister();
+    }
 
-                    ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
-                            .input(PROXIMA_B_BASE, 64 * 6)
-                            .fluidInputs(new FluidStack[]{stack})
-                            .fluidInputs(new FluidStack[]{substack})
-                            .fluidInputs(new FluidStack[]{subsubstack})
-                            .chancedOutput(PROXIMA_B_CONCHOSPORE, 64, 2000, 500)
-                            .chancedOutput(PROXIMA_B_POLYSIPHONIA_SENTICULOSA, 64, 2000, 500)
-                            .chancedOutput(PROXIMA_B_SPIROGYRA, 64, 2000, 500)
-                            .fluidOutputs(EnrichedBacterialSludge.getFluid(2000))
-                            .fluidOutputs(BacterialSludge.getFluid(4000))
-                            .fluidOutputs(Bacteria.getFluid(8000))
-                            .EUt(VA[UHV])
-                            .duration(200)
-                            .temperature(51029)
-                            .cleanroom(CleanroomType.STERILE_CLEANROOM)
-                            .buildAndRegister();
+    private static void AlgaeProcessing() {
 
-                    ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
-                            .input(TAU_CETI_F_BASE, 64 * 6)
-                            .fluidInputs(new FluidStack[]{stack})
-                            .fluidInputs(new FluidStack[]{substack})
-                            .fluidInputs(new FluidStack[]{subsubstack})
-                            .chancedOutput(TAU_CETI_F_PHAEOPHYTA, 64, 2000, 500)
-                            .chancedOutput(TAU_CETI_F_SCENEDESMUS_OBLIQUUS, 64, 2000, 500)
-                            .chancedOutput(TAU_CETI_F_SPIRULINA, 64, 2000, 500)
-                            .fluidOutputs(EnrichedBacterialSludge.getFluid(2000))
-                            .fluidOutputs(BacterialSludge.getFluid(4000))
-                            .fluidOutputs(Bacteria.getFluid(8000))
-                            .EUt(VA[UHV])
-                            .duration(200)
-                            .temperature(55376)
-                            .cleanroom(CleanroomType.STERILE_CLEANROOM)
-                            .buildAndRegister();
+        //  Barnarda C Algae
+        SIFTER_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_BASE, 64)
+                .output(BARNARDA_C_BRYOPSIS_HYPNOIDES, 10)
+                .output(BARNARDA_C_CHLORELLA, 10)
+                .output(BARNARDA_C_ZOOXANTHELLAE, 10)
+                .chancedOutput(BARNARDA_C_BRYOPSIS_HYPNOIDES, 10, 1000, 500)
+                .chancedOutput(BARNARDA_C_CHLORELLA, 10, 1000, 500)
+                .chancedOutput(BARNARDA_C_ZOOXANTHELLAE, 10, 1000, 500)
+                .EUt(VA[EV])
+                .duration(200)
+                .buildAndRegister();
 
-                }
-            }
-        }
+        //  Proxima B Algae
+        SIFTER_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_BASE, 64)
+                .output(PROXIMA_B_CONCHOSPORE, 10)
+                .output(PROXIMA_B_POLYSIPHONIA_SENTICULOSA, 10)
+                .output(PROXIMA_B_SPIROGYRA, 10)
+                .chancedOutput(PROXIMA_B_CONCHOSPORE, 10, 1000, 500)
+                .chancedOutput(PROXIMA_B_POLYSIPHONIA_SENTICULOSA, 10, 1000, 500)
+                .chancedOutput(PROXIMA_B_SPIROGYRA, 10, 1000, 500)
+                .EUt(VA[EV])
+                .duration(200)
+                .buildAndRegister();
 
+        //  Tau Ceti F Algae
+        SIFTER_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_BASE, 64)
+                .output(TAU_CETI_F_PHAEOPHYTA, 10)
+                .output(TAU_CETI_F_SCENEDESMUS_OBLIQUUS, 10)
+                .output(TAU_CETI_F_SPIRULINA, 10)
+                .chancedOutput(TAU_CETI_F_PHAEOPHYTA, 10, 1000, 500)
+                .chancedOutput(TAU_CETI_F_SCENEDESMUS_OBLIQUUS, 10, 1000, 500)
+                .chancedOutput(TAU_CETI_F_SPIRULINA, 10, 1000, 500)
+                .EUt(VA[EV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Barnarda C Bryopsis Hypnoides
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_BRYOPSIS_HYPNOIDES, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(BARNARDA_C_BRYOPSIS_HYPNOIDES, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(104)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Barnarda C Chlorella
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_CHLORELLA, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(BARNARDA_C_CHLORELLA, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(121)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Barnarda C Zooxanthellae
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_ZOOXANTHELLAE, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(BARNARDA_C_ZOOXANTHELLAE, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(109)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Proxima B Conchospore
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_CONCHOSPORE, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(PROXIMA_B_CONCHOSPORE, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(99)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Proxima B Polysiphonia Senticulosa
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_POLYSIPHONIA_SENTICULOSA, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(PROXIMA_B_POLYSIPHONIA_SENTICULOSA, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(103)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Proxima B Spirogyra
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_SPIROGYRA, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(PROXIMA_B_SPIROGYRA, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(105)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Tau Ceti F Phaeophyta
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_PHAEOPHYTA, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(TAU_CETI_F_PHAEOPHYTA, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(120)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Tau Ceti F Scenedesmus Obliquus
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_SCENEDESMUS_OBLIQUUS, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(TAU_CETI_F_SCENEDESMUS_OBLIQUUS, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(117)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Tau Ceti F Spirulina
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_SPIRULINA, 2)
+                .circuitMeta(1)
+                .fluidInputs(Mutagen.getFluid(2))
+                .output(TAU_CETI_F_SPIRULINA, 16)
+                .EUt(VA[UV])
+                .duration(200)
+                .temperature(115)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void ExoticGasProcessing() {
 
         //  Algae -> Crude Exotic Gas
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(BARNARDA_C_BRYOPSIS_HYPNOIDES)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_BRYOPSIS_HYPNOIDES, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(BARNARDA_C_CHLORELLA)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_CHLORELLA, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(BARNARDA_C_ZOOXANTHELLAE)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(BARNARDA_C_ZOOXANTHELLAE, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(PROXIMA_B_CONCHOSPORE)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_CONCHOSPORE, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(PROXIMA_B_POLYSIPHONIA_SENTICULOSA)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_POLYSIPHONIA_SENTICULOSA, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(PROXIMA_B_SPIROGYRA)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(PROXIMA_B_SPIROGYRA, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(TAU_CETI_F_PHAEOPHYTA)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_PHAEOPHYTA, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(TAU_CETI_F_SCENEDESMUS_OBLIQUUS)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_SCENEDESMUS_OBLIQUUS, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
 
-        DISTILLERY_RECIPES.recipeBuilder()
-                .input(TAU_CETI_F_SPIRULINA)
-                .fluidOutputs(CrudeExoticGas.getFluid(10))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .input(TAU_CETI_F_SPIRULINA, 4)
+                .fluidInputs(Biomass.getFluid(200))
+                .circuitMeta(1)
+                .fluidOutputs(CrudeExoticGas.getFluid(200))
                 .EUt(VA[IV])
                 .duration(10)
                 .buildAndRegister();
@@ -164,7 +259,7 @@ public class AlgaeCultureTank {
         CRACKING_RECIPES.recipeBuilder()
                 .circuitMeta(1)
                 .fluidInputs(CrudeExoticGas.getFluid(1000))
-                .fluidInputs(MetastableOganesson.getFluid(8000))
+                .fluidInputs(MetastableOganesson.getFluid(1000))
                 .fluidOutputs(CrackedCrudeExoticGas.getFluid(2000))
                 .EUt(VA[UV])
                 .duration(100)
@@ -190,6 +285,7 @@ public class AlgaeCultureTank {
                 .duration(100)
                 .buildAndRegister();
 
+        //  Rn + 3O -> RnO3
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Radon.getFluid(1000))
                 .fluidInputs(Oxygen.getFluid(3000))
@@ -274,6 +370,35 @@ public class AlgaeCultureTank {
                 .duration(40)
                 .buildAndRegister();
 
+        //  Exotic Gas
+        if (GTLiteConfigHolder.misc.enableExoticGasTurbineRecipe) {
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(SuperheavyExoticGas.getFluid(1))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(480)
+                    .buildAndRegister();
+
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(HeavyExoticGas.getFluid(2))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(360)
+                    .buildAndRegister();
+
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(MediumExoticGas.getFluid(4))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(180)
+                    .buildAndRegister();
+
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(LightExoticGas.getFluid(8))
+                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
+                    .duration(90)
+                    .buildAndRegister();
+        }
+    }
+
+    private static void HyperFuelProcessing() {
         //  Hyper Fuel Mk II
         FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
                 .input(dust, Tiberium)
@@ -372,33 +497,6 @@ public class AlgaeCultureTank {
                 .duration(1200)
                 .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark4)
                 .buildAndRegister();
-
-        //  Exotic Gas
-        if (GTLiteConfigHolder.misc.enableExoticGasTurbineRecipe) {
-            GAS_TURBINE_FUELS.recipeBuilder()
-                    .fluidInputs(SuperheavyExoticGas.getFluid(1))
-                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
-                    .duration(480)
-                    .buildAndRegister();
-
-            GAS_TURBINE_FUELS.recipeBuilder()
-                    .fluidInputs(HeavyExoticGas.getFluid(2))
-                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
-                    .duration(360)
-                    .buildAndRegister();
-
-            GAS_TURBINE_FUELS.recipeBuilder()
-                    .fluidInputs(MediumExoticGas.getFluid(4))
-                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
-                    .duration(180)
-                    .buildAndRegister();
-
-            GAS_TURBINE_FUELS.recipeBuilder()
-                    .fluidInputs(LightExoticGas.getFluid(8))
-                    .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
-                    .duration(90)
-                    .buildAndRegister();
-        }
     }
 
     private static void BiomassGeneratorRecipes() {

@@ -2026,6 +2026,16 @@ gregtech.material.isophthaloylbisdiethylthiourea=间苯二甲酰二乙硫脲
 gregtech.material.diethylthiourea=二乙硫脲
 gregtech.material.phenylenedioxydiacetic_acid=亚苯二氧二乙酸
 gregtech.material.ethylamine=乙胺
+gregtech.material.b_27=细胞培养添加剂-B27
+gregtech.material.biotin=生物素
+gregtech.material.linoleic_acid=亚油酸
+gregtech.material.vitamin_a=维生素A
+gregtech.material.beta_ionone=β-香堇酮
+gregtech.material.citral=柠檬醛
+gregtech.material.beta_pinene=β-蒎烯
+gregtech.material.propargyl_chloride=炔丙基氯
+gregtech.material.propargyl_alcohol=丙炔醇
+gregtech.material.ethanolamine=乙醇胺
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -2158,6 +2168,11 @@ gregtech.material.light_exotic_gas=轻异星天然气
 gregtech.material.hyper_fuel_mk_ii=超能燃料 Mk II
 gregtech.material.hyper_fuel_mk_iii=超能燃料 Mk III
 gregtech.material.hyper_fuel_mk_iv=超能燃料 Mk IV
+gregtech.material.blood_cells=血细胞
+gregtech.material.blood_plasma=血浆
+gregtech.material.bfgf=碱性成纤维细胞生长因子（bFGF）
+gregtech.material.egf=表皮细胞生长因子（EGF）
+gregtech.material.cat=过氧化氢酶（CAT）
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金
@@ -2247,6 +2262,8 @@ metaitem.cosmic_memory_card.end.name=末地信息存储卡
 metaitem.cosmic_memory_card.end.tooltip=用于为§6虚拟宇宙模拟器§7指定倾向
 metaitem.dimension_gap.name=维度隙间
 metaitem.dimension_gap.tooltip=超维度时空连续体碎片
+metaitem.ultrasonic_homogenizer.name=超声波均质器
+metaitem.ultrasonic_homogenizer.tooltip=并不能用于揉搓面团
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
