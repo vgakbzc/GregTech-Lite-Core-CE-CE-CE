@@ -31,21 +31,21 @@ public class NanotubesChain {
                 .fluidInputs(Nitrogen.getPlasma(10000))
                 .output(ingot, CarbonNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
-                .temperature(993)
-                .duration(100)
                 .EUt(VA[UV])
+                .duration(100)
+                .temperature(993)
                 .buildAndRegister();
 
-        //  24C2H2 + 16N -> C48 + 16NH3
         PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
-                .input(plateDouble, Rhenium)
-                .fluidInputs(Acetylene.getFluid(24000))
-                .fluidInputs(Nitrogen.getPlasma(16000))
-                .output(stickLong, CarbonNanotube)
-                .fluidOutputs(Ammonia.getFluid(16000))
-                .temperature(993)
-                .duration(1200)
+                .notConsumable(plateDouble, Rhenium)
+                .fluidInputs(Acetylene.getFluid(12000))
+                .fluidInputs(Cycloparaphenylene.getFluid(28000))
+                .fluidInputs(Nitrogen.getPlasma(40000))
+                .output(ingot, CarbonNanotube, 4)
+                .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[UEV])
+                .duration(400)
+                .temperature(3972)
                 .buildAndRegister();
 
         //  Decomposition
@@ -307,9 +307,22 @@ public class NanotubesChain {
                 .fluidInputs(Nitrogen.getPlasma(10000))
                 .output(ingot, LanthanumFullereneNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
-                .temperature(3496)
-                .duration(1200)
                 .EUt(VA[UEV])
+                .duration(300)
+                .temperature(3496)
+                .buildAndRegister();
+
+        PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(plateDouble, Rhenium)
+                .input(dust, LanthanumEmbeddedFullerene, 4)
+                .fluidInputs(Acetylene.getFluid(12000))
+                .fluidInputs(Cycloparaphenylene.getFluid(28000))
+                .fluidInputs(Nitrogen.getPlasma(40000))
+                .output(ingot, LanthanumFullereneNanotube, 4)
+                .fluidOutputs(Ammonia.getFluid(40000))
+                .EUt(VA[UXV])
+                .duration(600)
+                .temperature(13984)
                 .buildAndRegister();
     }
 
@@ -324,9 +337,22 @@ public class NanotubesChain {
                 .fluidInputs(Nitrogen.getPlasma(10000))
                 .output(ingot, NeutroniumNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
-                .temperature(8993)
-                .duration(100)
                 .EUt(VA[UIV])
+                .duration(600)
+                .temperature(8993)
+                .buildAndRegister();
+
+        PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(plateDouble, Rhenium)
+                .input(ingot, Neutronium, 4)
+                .fluidInputs(Acetylene.getFluid(12000))
+                .fluidInputs(Cycloparaphenylene.getFluid(28000))
+                .fluidInputs(Nitrogen.getPlasma(40000))
+                .output(ingot, NeutroniumNanotube, 4)
+                .fluidOutputs(Ammonia.getFluid(40000))
+                .EUt(VA[OpV])
+                .duration(1200)
+                .temperature(35972)
                 .buildAndRegister();
     }
 }
