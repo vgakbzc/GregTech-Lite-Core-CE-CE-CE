@@ -283,6 +283,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         /**
          * @param maxProgress If machine in common assembler, then get 1/2 progress time.
          */
+        @Override
         public void setMaxProgress(int maxProgress) {
             if (isPrecise()) {
                 this.maxProgressTime = maxProgress ;

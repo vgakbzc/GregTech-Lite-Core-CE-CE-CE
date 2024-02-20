@@ -52,6 +52,16 @@ import java.util.function.DoubleSupplier;
 
 import static gregtech.api.GTValues.*;
 
+/**
+ * Compressed Fusion Reactors
+ *
+ * @author Magic_Sweepy, tong-ge
+ *
+ * <p>
+ *     Fusion reactor, but can parallel recipes! The original idea of this machine is from GoodGenerator.
+ *     Thanks my friend tong-ge fix some bug of my work, this job should be attributed to him.
+ * </p>
+ */
 public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockController {
 
     private final int tier;
@@ -212,7 +222,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         this.outputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
         List<IEnergyContainer> energyInputs = getAbilities(MultiblockAbility.INPUT_ENERGY);
         this.inputEnergyContainers = new EnergyContainerList(energyInputs);
-        long euCapacity = calculateEnergyStorageFactor(energyInputs.size());
+        long euCapacity = calculateEnergyStorageFactor(Math.min(16, energyInputs.size()));
         this.energyContainer = new EnergyContainerHandler(this, euCapacity, GTValues.V[tier], 0, 0, 0) {
             @Nonnull
             @Override
@@ -494,7 +504,8 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
 
         @Override
         public long getMaxVoltage() {
-            return Math.min(GTValues.V[tier], super.getMaxVoltage());
+            IEnergyContainer container = ((MetaTileEntityCompressedFusionReactor) this.metaTileEntity).inputEnergyContainers;
+            return Math.min(GTValues.V[tier] * getParallelLimit(), container.getInputVoltage());
         }
 
         @Override
