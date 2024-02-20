@@ -154,6 +154,7 @@ public class GTLiteMaterialPropertyAddition {
         Moscovium.addFlags(GENERATE_PLATE);
         Meitnerium.addFlags(GENERATE_PLATE);
         Roentgenium.addFlags(GENERATE_PLATE);
+        Bohrium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -175,6 +176,7 @@ public class GTLiteMaterialPropertyAddition {
         TantalumCarbide.addFlags(GENERATE_DOUBLE_PLATE);
         BlackSteel.addFlags(GENERATE_DOUBLE_PLATE);
         Stellite100.addFlags(GENERATE_DOUBLE_PLATE);
+        Bohrium.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
