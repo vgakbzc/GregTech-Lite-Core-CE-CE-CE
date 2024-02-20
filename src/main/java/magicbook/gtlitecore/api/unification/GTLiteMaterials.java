@@ -283,6 +283,7 @@ public class GTLiteMaterials {
     public static Material RadiumHydroxide;
     public static Material RadiumOxide;
     public static Material CeLAG;
+    public static Material LeadZirconateTitanate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;

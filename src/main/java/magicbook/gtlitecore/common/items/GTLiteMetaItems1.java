@@ -329,6 +329,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         COSMIC_MEMORY_CARD_END = this.addItem(339, "cosmic_memory_card.end");
         DIMENSION_GAP = this.addItem(340, "dimension_gap");
         ULTRASONIC_HOMOGENIZER = this.addItem(341, "ultrasonic_homogenizer");
+        PIEZOELECTRIC_CRYSTAL = this.addItem(342, "piezoelectric_crystal");
 
         //  High Energy Physics Items
         PLASMA_CONTAINMENT_CELL = this.addItem(350, "plasma_containment_cell");

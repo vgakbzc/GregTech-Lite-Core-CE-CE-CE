@@ -1780,6 +1780,7 @@ gregtech.material.radium_dichloride=二氯化镭
 gregtech.material.radium_hydroxide=氢氧化镭
 gregtech.material.radium_oxide=氧化镭
 gregtech.material.ce_lag=铈掺杂的镥铝榴石
+gregtech.material.lead_zirconate_titanate=锆钛酸铅
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -2264,6 +2265,8 @@ metaitem.dimension_gap.name=维度隙间
 metaitem.dimension_gap.tooltip=超维度时空连续体碎片
 metaitem.ultrasonic_homogenizer.name=超声波均质器
 metaitem.ultrasonic_homogenizer.tooltip=并不能用于揉搓面团
+metaitem.piezoelectric_crystal.name=压电晶体
+metaitem.piezoelectric_crystal.tooltip=用于组装精密实验器件
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

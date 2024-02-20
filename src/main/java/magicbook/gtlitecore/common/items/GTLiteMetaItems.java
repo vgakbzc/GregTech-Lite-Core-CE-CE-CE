@@ -277,6 +277,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COSMIC_MEMORY_CARD_END;
     public static MetaItem<?>.MetaValueItem DIMENSION_GAP;
     public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENIZER;
+    public static MetaItem<?>.MetaValueItem PIEZOELECTRIC_CRYSTAL;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

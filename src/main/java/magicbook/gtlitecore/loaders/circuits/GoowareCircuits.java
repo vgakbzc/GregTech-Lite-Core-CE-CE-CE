@@ -82,6 +82,31 @@ public class GoowareCircuits {
 
         //  Some idea from Stem cell processing in Gregicality and Bartworks.
 
+        //  Pb + Ti + c-ZrO2 + O -> PbZrTiO3
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Lead)
+                .input(dust, Titanium)
+                .input(dust, CubicZirconia)
+                .circuitMeta(4)
+                .fluidInputs(Oxygen.getFluid(1000))
+                .output(dust, LeadZirconateTitanate, 4)
+                .EUt(VA[LuV])
+                .duration(280)
+                .buildAndRegister();
+
+        //  Ultrasonic Homogenizer
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(stickLong, RhodiumPlatedPalladium)
+                .input(plate, Polybenzimidazole, 2)
+                .input(gemExquisite, LeadZirconateTitanate)
+                .input(wireFine, Gold, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 2))
+                .output(ULTRASONIC_HOMOGENIZER)
+                .EUt(VA[LuV])
+                .duration(430)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Blood -> Blood Cells + Blood Plasma
         BIO_REACTOR_RECIPES.recipeBuilder()
                 .notConsumable(ULTRASONIC_HOMOGENIZER)

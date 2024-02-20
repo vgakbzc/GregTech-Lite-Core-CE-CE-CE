@@ -2179,6 +2179,15 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("Ce:LAG", true);
 
+        //  11248 Lead Zirconate Titanate
+        LeadZirconateTitanate = new Material.Builder(getId(), gregtechId("lead_zirconate_titanate"))
+                .gem(3)
+                .color(0x359ADE)
+                .iconSet(OPAL)
+                .flags(CRYSTALLIZABLE, DECOMPOSITION_BY_CENTRIFUGING, GENERATE_LENS)
+                .components(Lead, 1, Titanium, 1, CubicZirconia, 1, Oxygen, 1)
+                .build()
+                .setFormula("PbZrTiO3", true);
     }
 
     private static int getId() {
