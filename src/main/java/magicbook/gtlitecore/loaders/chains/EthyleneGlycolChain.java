@@ -13,7 +13,7 @@ public class EthyleneGlycolChain {
 
         //  7C2H4 + 12O -> 6C2H4O + 2CO2 + 2H2O
         BURNER_REACTOR_RECIPES.recipeBuilder()
-                .input(dust, Silver)
+                .notConsumable(dust, Silver)
                 .fluidInputs(Ethylene.getFluid(7000))
                 .fluidOutputs(EthyleneOxide.getFluid(6000))
                 .fluidOutputs(CarbonDioxide.getFluid(2000))
