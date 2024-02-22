@@ -43,7 +43,9 @@ public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.Stru
         INCOLOY_020_CASING("incoloy_020_casing"),
         TANTALUM_CARBIDE_CASING("tantalum_carbide_casing"),
         NAQUADAH_CASING("naquadah_casing"),
-        NAQUADAH_GEARBOX_CASING("naquadah_gearbox_casing");
+        NAQUADAH_GEARBOX_CASING("naquadah_gearbox_casing"),
+        HATTRIUM_CASING("hattrium_casing"),
+        CIRCULATIVE_COOLING_CASING("circulative_cooling_casing");
 
         private final String name;
 

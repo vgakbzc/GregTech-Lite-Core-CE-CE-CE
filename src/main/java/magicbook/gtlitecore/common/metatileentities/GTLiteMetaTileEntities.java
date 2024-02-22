@@ -165,6 +165,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityTroughTypeOreWasher TROUGH_TYPE_ORE_WASHER;
     public static MetaTileEntityFixedSiftingPlant FIXED_SIFTING_PLANT;
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
+    public static MetaTileEntityCirculativeCoolingTower CIRCULATIVE_COOLING_TOWER;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
@@ -398,7 +399,7 @@ public class GTLiteMetaTileEntities {
         TROUGH_TYPE_ORE_WASHER = registerMultiMetaTileEntity(106, new MetaTileEntityTroughTypeOreWasher(gtliteId("trough_type_ore_washer")));
         FIXED_SIFTING_PLANT = registerMultiMetaTileEntity(107, new MetaTileEntityFixedSiftingPlant(gtliteId("fixed_sifting_plant")));
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
-        //  109
+        CIRCULATIVE_COOLING_TOWER = registerMultiMetaTileEntity(109, new MetaTileEntityCirculativeCoolingTower(gtliteId("circulative_cooling_tower")));
         //  110 MATERIAL_TRANSMUTATION_ARRAY
         //  111
         //  112

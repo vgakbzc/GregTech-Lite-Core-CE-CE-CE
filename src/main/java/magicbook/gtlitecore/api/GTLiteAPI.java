@@ -34,6 +34,7 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FIELD_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_SPACE_ELEVATOR_MOTOR = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IYottaTankData> MAP_YOT_TANK_CELL = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_COOLING_CORE = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -140,5 +141,18 @@ public class GTLiteAPI {
                 new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK4, 4));
         MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5),
                 new WrappedIntTier(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5, 5));
+
+        //  Cooling Core
+        MAP_COOLING_CORE.put(GTLiteMetaBlocks.COOLING_CORE.getState(BlockCoolingCore.CoolingCoreTier.MK1),
+                new WrappedIntTier(BlockCoolingCore.CoolingCoreTier.MK1, 1));
+
+        MAP_COOLING_CORE.put(GTLiteMetaBlocks.COOLING_CORE.getState(BlockCoolingCore.CoolingCoreTier.MK2),
+                new WrappedIntTier(BlockCoolingCore.CoolingCoreTier.MK2, 2));
+
+        MAP_COOLING_CORE.put(GTLiteMetaBlocks.COOLING_CORE.getState(BlockCoolingCore.CoolingCoreTier.MK3),
+                new WrappedIntTier(BlockCoolingCore.CoolingCoreTier.MK3, 3));
+
+        MAP_COOLING_CORE.put(GTLiteMetaBlocks.COOLING_CORE.getState(BlockCoolingCore.CoolingCoreTier.MK4),
+                new WrappedIntTier(BlockCoolingCore.CoolingCoreTier.MK4, 4));
     }
 }
