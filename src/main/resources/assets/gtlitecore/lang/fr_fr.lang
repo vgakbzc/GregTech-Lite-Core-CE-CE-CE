@@ -15,7 +15,7 @@ metaitem.alga.proxima_b.spirogyra.name=比邻星B水绵藻
 #  Blocks
 tile.multiblock_casing.substrate_casing.name=基板机械方块
 tile.multiblock_casing.advanced_substrate_casing.name=高级基板机械方块
-tile.multiblock_casing.drill_head.name=钻头
+tile.multiblock_casing.drill_head.name=Forets
 tile.multiblock_casing.inconel_625_casing.name=防震镍基合金-625机器外壳
 tile.multiblock_casing.inconel_625_gearbox_casing.name=镍基合金-625球磨齿轮箱外壳
 tile.multiblock_casing.hastelloy_n_casing.name=哈斯特洛伊合金-N防水机器外壳
@@ -777,56 +777,56 @@ gtlitecore.machine.component_assembler.ev.tooltip=零部件工厂
 gtlitecore.machine.component_assembler.iv.name=精英部件组装机
 gtlitecore.machine.component_assembler.iv.tooltip=零部件工厂
 
-gtlitecore.machine.bio_reactor.lv.name=基础生物反应室
-gtlitecore.machine.bio_reactor.lv.tooltip=制糖厂
-gtlitecore.machine.bio_reactor.mv.name=进阶生物反应室
-gtlitecore.machine.bio_reactor.mv.tooltip=制糖厂
-gtlitecore.machine.bio_reactor.hv.name=进阶生物反应室 II
-gtlitecore.machine.bio_reactor.hv.tooltip=制糖厂
-gtlitecore.machine.bio_reactor.ev.name=进阶生物反应室 III
-gtlitecore.machine.bio_reactor.ev.tooltip=制糖厂
-gtlitecore.machine.bio_reactor.iv.name=精英生物反应室
-gtlitecore.machine.bio_reactor.iv.tooltip=细菌培养皿
-gtlitecore.machine.bio_reactor.luv.name=精英生物反应室 II
-gtlitecore.machine.bio_reactor.luv.tooltip=细菌培养皿
-gtlitecore.machine.bio_reactor.zpm.name=精英生物反应室 III
-gtlitecore.machine.bio_reactor.zpm.tooltip=细菌培养皿
-gtlitecore.machine.bio_reactor.uv.name=终极生物反应室
-gtlitecore.machine.bio_reactor.uv.tooltip=基因编辑器
-gtlitecore.machine.bio_reactor.uhv.name=史诗生物反应室
-gtlitecore.machine.bio_reactor.uhv.tooltip=基因编辑器
-gtlitecore.machine.bio_reactor.uev.name=史诗生物反应室 II
-gtlitecore.machine.bio_reactor.uev.tooltip=基因编辑器
-gtlitecore.machine.bio_reactor.uiv.name=史诗生物反应室 III
-gtlitecore.machine.bio_reactor.uiv.tooltip=基因编辑器
-gtlitecore.machine.bio_reactor.uxv.name=史诗生物反应室 IV
-gtlitecore.machine.bio_reactor.uxv.tooltip=基因编辑器
-gtlitecore.machine.bio_reactor.opv.name=传奇生物反应室
-gtlitecore.machine.bio_reactor.opv.tooltip=基因编辑器
+gtlitecore.machine.bio_reactor.lv.name=Bioréacteur de Base
+gtlitecore.machine.bio_reactor.lv.tooltip=Usine de sucre
+gtlitecore.machine.bio_reactor.mv.name=Bioréacteur de Avancé
+gtlitecore.machine.bio_reactor.mv.tooltip=Usine de sucre
+gtlitecore.machine.bio_reactor.hv.name=Bioréacteur de Avancé II
+gtlitecore.machine.bio_reactor.hv.tooltip=Usine de sucre
+gtlitecore.machine.bio_reactor.ev.name=Bioréacteur de Avancé III
+gtlitecore.machine.bio_reactor.ev.tooltip=Usine de sucre
+gtlitecore.machine.bio_reactor.iv.name=Bioréacteur de Élite
+gtlitecore.machine.bio_reactor.iv.tooltip=Boîte de pétri bactérienne
+gtlitecore.machine.bio_reactor.luv.name=Bioréacteur de Élite II
+gtlitecore.machine.bio_reactor.luv.tooltip=Boîte de pétri bactérienne
+gtlitecore.machine.bio_reactor.zpm.name=Bioréacteur de Élite III
+gtlitecore.machine.bio_reactor.zpm.tooltip=Boîte de pétri bactérienne
+gtlitecore.machine.bio_reactor.uv.name=Bioréacteur de Ultime
+gtlitecore.machine.bio_reactor.uv.tooltip=Editeur de gènes
+gtlitecore.machine.bio_reactor.uhv.name=Bioréacteur de Épique
+gtlitecore.machine.bio_reactor.uhv.tooltip=Editeur de gènes
+gtlitecore.machine.bio_reactor.uev.name=Bioréacteur de Épique II
+gtlitecore.machine.bio_reactor.uev.tooltip=Editeur de gènes
+gtlitecore.machine.bio_reactor.uiv.name=Bioréacteur de Épique III
+gtlitecore.machine.bio_reactor.uiv.tooltip=Editeur de gènes
+gtlitecore.machine.bio_reactor.uxv.name=Bioréacteur de Épique IV
+gtlitecore.machine.bio_reactor.uxv.tooltip=Editeur de gènes
+gtlitecore.machine.bio_reactor.opv.name=Bioréacteur de Légendaire
+gtlitecore.machine.bio_reactor.opv.tooltip=Editeur de gènes
 
-gtlitecore.machine.condenser.uv.name=终极态素凝聚器
-gtlitecore.machine.condenser.uv.tooltip=压缩银河
-gtlitecore.machine.condenser.uhv.name=史诗态素凝聚器
-gtlitecore.machine.condenser.uhv.tooltip=压缩银河
-gtlitecore.machine.condenser.uev.name=史诗态素凝聚器 II
-gtlitecore.machine.condenser.uev.tooltip=压缩银河
-gtlitecore.machine.condenser.uiv.name=史诗态素凝聚器 III
-gtlitecore.machine.condenser.uiv.tooltip=压缩银河
-gtlitecore.machine.condenser.uxv.name=史诗态素凝聚器 IV
-gtlitecore.machine.condenser.uxv.tooltip=压缩银河
-gtlitecore.machine.condenser.opv.name=传奇态素凝聚器
-gtlitecore.machine.condenser.opv.tooltip=压缩银河
+gtlitecore.machine.condenser.uv.name=Condenseur de Ultime
+gtlitecore.machine.condenser.uv.tooltip=Compression de la galaxie
+gtlitecore.machine.condenser.uhv.name=Condenseur de Épique
+gtlitecore.machine.condenser.uhv.tooltip=Compression de la galaxie
+gtlitecore.machine.condenser.uev.name=Condenseur de Épique II
+gtlitecore.machine.condenser.uev.tooltip=Compression de la galaxie
+gtlitecore.machine.condenser.uiv.name=Condenseur de Épique III
+gtlitecore.machine.condenser.uiv.tooltip=Compression de la galaxie
+gtlitecore.machine.condenser.uxv.name=Condenseur de Épique IV
+gtlitecore.machine.condenser.uxv.tooltip=Compression de la galaxie
+gtlitecore.machine.condenser.opv.name=Condenseur de Légendaire
+gtlitecore.machine.condenser.opv.tooltip=Compression de la galaxie
 
-gtlitecore.machine.simulator.lv.name=基础模拟室
-gtlitecore.machine.simulator.lv.tooltip=怪物意识模拟器
-gtlitecore.machine.simulator.mv.name=进阶模拟室
-gtlitecore.machine.simulator.mv.tooltip=怪物意识模拟器
-gtlitecore.machine.simulator.hv.name=进阶模拟室 II
-gtlitecore.machine.simulator.hv.tooltip=怪物意识模拟器
-gtlitecore.machine.simulator.ev.name=进阶模拟室 III
-gtlitecore.machine.simulator.ev.tooltip=怪物意识模拟器
-gtlitecore.machine.simulator.iv.name=精英模拟室
-gtlitecore.machine.simulator.iv.tooltip=怪物意识模拟器
+gtlitecore.machine.simulator.lv.name=Simulateur de Base
+gtlitecore.machine.simulator.lv.tooltip=Simulateur de Monstre Conscience
+gtlitecore.machine.simulator.mv.name=Simulateur de Avancé
+gtlitecore.machine.simulator.mv.tooltip=Simulateur de Monstre Conscience
+gtlitecore.machine.simulator.hv.name=Simulateur de Avancé II
+gtlitecore.machine.simulator.hv.tooltip=Simulateur de Monstre Conscience
+gtlitecore.machine.simulator.ev.name=Simulateur de Avancé III
+gtlitecore.machine.simulator.ev.tooltip=Simulateur de Monstre Conscience
+gtlitecore.machine.simulator.iv.name=Simulateur de Élite
+gtlitecore.machine.simulator.iv.tooltip=Simulateur de Monstre Conscience
 
 gtlitecore.machine.biomass_generator.ev.name=进阶生物质发电机 III
 gtlitecore.machine.biomass_generator.ev.tooltip=电动咀叶机
@@ -843,38 +843,38 @@ gtlitecore.machine.lightning_rod.iv.name=精英避雷针
 gtlitecore.machine.lightning_rod.iv.tooltip=利用闪电的力量产生电能
 gtlitecore.machine.lightning_rod.usage=§b用法§7：将原版的§r铁栏杆§7放置其上，其会在雨/雷雨天产生能量。
 
-gtlitecore.machine.industrial_drilling_reg.name=工业钻机
+gtlitecore.machine.industrial_drilling_reg.name=Foreuses Industrielles
 gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
 gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
 
-gtlitecore.machine.catalytic_reformer.name=催化重整炉
+gtlitecore.machine.catalytic_reformer.name=Reformeur Catalytique
 
-gtlitecore.machine.sonicator.name=超声震荡器
+gtlitecore.machine.sonicator.name=Sonificateur
 
-gtlitecore.machine.hydraulic_fracker.name=压裂机
+gtlitecore.machine.hydraulic_fracker.name=Fracturateur Hydraulique
 gtlitecore.machine.hydraulic_fracker.tooltip.1=使用§6压裂液§7补充基岩下的区块流体，每次消耗1000L。
 gtlitecore.machine.hydraulic_fracker.tooltip.2=每次工作消耗§a%sEU/t§7。
 
-gtlitecore.machine.nanoscale_fabricator.name=纳米级制造室
+gtlitecore.machine.nanoscale_fabricator.name=Fabricanteur Nanométrique
 gtlitecore.machine.nanoscale_fabricator.tooltip=坩埚的平均温度最多可超过目标温度§c250K§7。
 
-gtlitecore.machine.industrial_roaster.name=工业焙烧炉
+gtlitecore.machine.industrial_roaster.name=Fours Industrielles
 gtlitecore.machine.industrial_raoster.tooltip.1=青铜燃烧室: §c1000K
 gtlitecore.machine.industrial_raoster.tooltip.2=钢燃烧室: §c1500K
 gtlitecore.machine.industrial_raoster.tooltip.3=钛燃烧室: §c2000K
 gtlitecore.machine.industrial_raoster.tooltip.4=钨钢燃烧室: §c2500K
 
-gtlitecore.machine.crystallization_crucible.name=结晶坩埚
+gtlitecore.machine.crystallization_crucible.name=Creuset de Cristallisation
 
-gtlitecore.machine.cvd_unit.name=化学气相沉积单元
+gtlitecore.machine.cvd_unit.name=Unité CVD
 
 gtlitecore.machine.plasma_cvd_unit.name=等离子体增强化学气相沉积单元
 
 gtlitecore.machine.laser_cvd_unit.name=激光诱导化学气相沉积单元
 
-gtlitecore.machine.burner_reactor.name=燃烧反应室
+gtlitecore.machine.burner_reactor.name=Brûleur Réacteur
 
-gtlitecore.machine.cryogenic_reactor.name=低温反应室
+gtlitecore.machine.cryogenic_reactor.name=Réacteur Cryogénique
 
 gtlitecore.machine.large_naquadah_reactor.name=大型硅岩反应堆
 gtlitecore.machine.large_naquadah_reactor.tooltip=取之不尽，用之不竭
@@ -2501,6 +2501,30 @@ metaitem.battery.uxv.ultimate.name=终极电池 Mk IV
 metaitem.battery.uxv.ultimate.tooltip=神之蓄电池
 metaitem.battery.opv.ultimate.name=终极电池 Mk V
 metaitem.battery.opv.ultimate.tooltip=填满就能通关GregTech Lite
+
+metaitem.prospector.ev.name=电动勘探扫描仪（§5EV§r）
+metaitem.tool.prospector.ev.name=电动勘探扫描仪（§5EV§r）
+metaitem.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
+metaitem.tool.prospector.zpm.name=电动勘探扫描仪（§cZPM§r）
+
+metaitem.battery.hull.uhv.name=小型硫化锂电池外壳
+metaitem.battery.hull.uhv.tooltip=一个空的§4UHV§7电池外壳
+metaitem.battery.hull.uev.name=中型硫化锂电池外壳
+metaitem.battery.hull.uev.tooltip=一个空的§aUEV§7电池外壳
+metaitem.battery.hull.uiv.name=大型硫化锂电池外壳
+metaitem.battery.hull.uiv.tooltip=一个空的§2UIV§7电池外壳
+metaitem.battery.hull.uxv.name=小型镍酸镧电池外壳
+metaitem.battery.hull.uxv.tooltip=一个空的§eUXV§7电池外壳
+metaitem.battery.hull.opv.name=中型镍酸镧电池外壳
+metaitem.battery.hull.opv.tooltip=一个空的§9OpV§7电池外壳
+metaitem.battery.hull.max.name=大型镍酸镧电池外壳
+metaitem.battery.hull.max.tooltip=一个空的§c§lMAX§7电池外壳
+metaitem.battery.uhv.lithium_sulfide.name=小型硫化锂电池
+metaitem.battery.uev.lithium_sulfide.name=中型硫化锂电池
+metaitem.battery.uiv.lithium_sulfide.name=大型硫化锂电池
+metaitem.battery.uxv.lanthanum_nickel_oxide.name=小型镍酸镧电池
+metaitem.battery.opv.lanthanum_nickel_oxide.name=中型镍酸镧电池
+metaitem.battery.max.lanthanum_nickel_oxide.name=大型镍酸镧电池
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
