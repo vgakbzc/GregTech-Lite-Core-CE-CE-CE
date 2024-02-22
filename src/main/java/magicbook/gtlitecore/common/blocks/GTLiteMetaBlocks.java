@@ -36,6 +36,7 @@ public class GTLiteMetaBlocks {
     public static BlockYottaTankCell YOTTA_TANK_CELL;
     public static BlockHermeticCasing HERMETIC_CASING;
     public static BlockDecorativeTransparentCasing DECORATIVE_TRANSPARENT_CASING;
+    public static BlockCoolingCore COOLING_CORE;
 
     private GTLiteMetaBlocks() {}
 
@@ -135,6 +136,10 @@ public class GTLiteMetaBlocks {
         DECORATIVE_TRANSPARENT_CASING = new BlockDecorativeTransparentCasing();
         DECORATIVE_TRANSPARENT_CASING.setRegistryName("decorative_transparent_casing");
         DECORATIVE_TRANSPARENT_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK_DECORATIVE);
+
+        COOLING_CORE = new BlockCoolingCore();
+        COOLING_CORE.setRegistryName("cooling_core");
+        COOLING_CORE.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -159,6 +164,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(YOTTA_TANK_CELL);
         registerItemModel(HERMETIC_CASING);
         registerItemModel(DECORATIVE_TRANSPARENT_CASING);
+        registerItemModel(COOLING_CORE);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();

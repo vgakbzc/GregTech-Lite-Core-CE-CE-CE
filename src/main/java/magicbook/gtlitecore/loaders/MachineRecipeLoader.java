@@ -1849,6 +1849,37 @@ public class MachineRecipeLoader {
                 'C', HULL[LuV].getStackForm(),
                 'G', new UnificationEntry(gear, Naquadah),
                 'W', new UnificationEntry(cableGtSingle, VanadiumGallium));
+
+        //  Circulative Cooling Tower
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, ToxicAlloy, 16)
+                .input(VACUUM_DRYING_FURNACE, 64)
+                .input(MEGA_VACUUM_FREEZER, 64)
+                .input(CRYOGENIC_REACTOR, 64)
+                .input(LARGE_GAS_COLLECTOR, 64)
+                .input(PLASMA_CONDENSER, 64)
+                .input(MESON, 64)
+                .input(plateDense, Pikyonium64B, 6)
+                .input(plateDense, Osmiridium, 6)
+                .input(circuit, MarkerMaterials.Tier.UHV, 64)
+                .input(CONVEYOR_MODULE_UHV, 64)
+                .input(ELECTRIC_PISTON_UHV, 64)
+                .input(ELECTRIC_PUMP_UHV, 64)
+                .input(FIELD_GENERATOR_UHV, 64)
+                .input(gear, Botmium, 16)
+                .input(wireGtHex, PedotPSS, 64)
+                .fluidInputs(ArceusAlloy2B.getFluid(65536))
+                .fluidInputs(HastelloyX78.getFluid(57600))
+                .fluidInputs(Lafium.getFluid(57600))
+                .fluidInputs(Vibranium.getFluid(28800))
+                .output(CIRCULATIVE_COOLING_TOWER)
+                .stationResearch(b -> b
+                        .researchStack(MEGA_VACUUM_FREEZER.getStackForm())
+                        .CWUt(576)
+                        .EUt(VA[UHV]))
+                .EUt(VA[UHV])
+                .duration(2800)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -4367,6 +4398,93 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.NAQUADAH_GEARBOX_CASING, 2))
                 .EUt(VA[LV])
                 .duration(50)
+                .buildAndRegister();
+
+        //  Hattrium Casing
+        ModHandler.addShapedRecipe(true, "hattrium_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.HATTRIUM_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, Hattrium),
+                'F', new UnificationEntry(frameGt, Hattrium));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Hattrium, 6)
+                .input(frameGt, Hattrium)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.HATTRIUM_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Circulative Cooling Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.HATTRIUM_CASING))
+                .input(ELECTRIC_PUMP_IV, 2)
+                .input(gear, SiliconeRubber)
+                .input(pipeNormalFluid, Aluminium, 4)
+                .input(ring, Zinc, 16)
+                .input(wireFine, NaquadahEnriched, 4)
+                .fluidInputs(GelidCryotheum.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.CIRCULATIVE_COOLING_CASING, 2))
+                .EUt(VA[IV])
+                .duration(50)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Circulative Cooling Core
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(plate, AlkalisGroupAlloy, 2)
+                .input(SENSOR_IV, 2)
+                .input(rotor, Meitnerium)
+                .input(FLUID_CELL_LARGE_STEEL)
+                .input(wireFine, PlatinumGroupAlloy, 4)
+                .fluidInputs(EnrichedNaquadahTriniumEuropiumDuranide.getFluid(L / 4))
+                .outputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK1, 4))
+                .EUt(VA[UHV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK1))
+                .input(plate, RefractoryAlloy, 2)
+                .input(SENSOR_LuV, 2)
+                .input(rotor, Nobelium)
+                .input(FLUID_CELL_LARGE_ALUMINIUM)
+                .input(wireFine, Tairitsium, 4)
+                .fluidInputs(PedotPSS.getFluid(L / 4))
+                .outputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK2, 4))
+                .EUt(VA[UEV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK2))
+                .input(plate, BlackTitanium, 2)
+                .input(SENSOR_ZPM, 2)
+                .input(rotor, MetastableOganesson)
+                .input(FLUID_CELL_LARGE_STAINLESS_STEEL)
+                .input(wireFine, SuperheavyLAlloy, 4)
+                .fluidInputs(QuantumAlloy.getFluid(L / 4))
+                .outputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK3, 4))
+                .EUt(VA[UIV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK3))
+                .input(plate, BlackPlutonium, 2)
+                .input(SENSOR_UV, 2)
+                .input(rotor, MetastableHassium)
+                .input(FLUID_CELL_LARGE_TITANIUM)
+                .input(wireFine, SuperheavyHAlloy, 4)
+                .fluidInputs(FullereneSuperconductor.getFluid(L / 4))
+                .outputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK4, 4))
+                .EUt(VA[UXV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 }

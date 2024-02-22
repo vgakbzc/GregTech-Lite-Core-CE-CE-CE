@@ -123,6 +123,7 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer INCOLOY_020_CASING = new GTLiteOverlayRenderer("casings/incoloy_020_casing");
     public static GTLiteOverlayRenderer TANTALUM_CARBIDE_CASING = new GTLiteOverlayRenderer("casings/tantalum_carbide_casing");
     public static GTLiteOverlayRenderer NAQUADAH_CASING = new GTLiteOverlayRenderer("casings/naquadah_casing");
+    public static GTLiteOverlayRenderer HATTRIUM_CASING = new GTLiteOverlayRenderer("casings/hattrium_casing");
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
     //  Simple Oriented Cube Renderer

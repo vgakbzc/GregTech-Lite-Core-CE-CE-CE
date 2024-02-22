@@ -1049,7 +1049,7 @@ public class SpaceElevator {
         SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
                 .notConsumable(MINING_DRONE_LV.getStackForm(16))
                 .circuitMeta(13)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(100))
+                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
                 .chancedOutput(ore, Salt, 1024, 9000, 2000)
                 .chancedOutput(ore, RockSalt, 1024, 9000, 500)
                 .chancedOutput(ore, Realgar, 1024, 7000, 500)

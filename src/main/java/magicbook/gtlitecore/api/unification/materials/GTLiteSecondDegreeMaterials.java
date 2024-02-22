@@ -284,7 +284,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[ZPM], 487)
                         .vacuumStats(VA[IV], 170))
                 .components(Inconel792, 8, EglinSteel, 5, NaquadahAlloy, 4, TungstenSteel, 4, Cerium, 3, Antimony, 2, Platinum, 2, Ytterbium, 1)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME, GENERATE_FOIL, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FRAME, GENERATE_FOIL, GENERATE_GEAR)
                 .build();
 
         //  12020 Cinobite
@@ -589,7 +589,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 990))
-                .flags(GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FINE_WIRE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12044 Alkalis Group Alloy
@@ -602,6 +602,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(9900, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 800))
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  12045 Alkaline Earth Group Alloy
@@ -652,6 +653,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(11800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 860))
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  12049 Inert Gas Mixture
@@ -739,7 +741,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(10800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV]))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
 
         //  12056 Rare Earth Alloy
@@ -893,7 +895,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(7400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 400)
                         .vacuumStats(VA[EV], 130))
-                .flags(GENERATE_ROD)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12068 Transcendent Metal
@@ -994,6 +996,20 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 884)
                         .vacuumStats(VA[EV], 365))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DOUBLE_PLATE)
+                .build();
+
+        //  12076 Hattrium
+        Hattrium = new Material.Builder(getId(), gregtechId("hattrium"))
+                .ingot()
+                .fluid()
+                .color(0xE0F3F3)
+                .iconSet(SHINY)
+                .components(BlueAlloy, 15, Sapphire, 12, BlueSteel, 8, Magnalium, 6, Beryllium, 4, Diamond, 2, Quartzite, 2, Xenon, 1)
+                .blast(b -> b
+                        .temp(10800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 318)
+                        .vacuumStats(VA[LuV], 109))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
     }
 
