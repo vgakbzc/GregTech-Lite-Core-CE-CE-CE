@@ -76,7 +76,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
     @Override
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
-        Object type = context.get("CoolingCore");
+        Object type = context.get("CoolingCoreTieredStats");
         this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }
