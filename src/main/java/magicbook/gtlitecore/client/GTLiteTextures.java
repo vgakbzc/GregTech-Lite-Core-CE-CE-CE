@@ -130,9 +130,6 @@ public class GTLiteTextures {
     public static SimpleOrientedCubeRenderer ADVANCED_GRATE_OSMIRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_grate_osmiridium_front");
     public static SimpleOrientedCubeRenderer FORCE_FIELD_CONSTRAINED_CASING = new SimpleOrientedCubeRenderer("casings/force_field_constrained_casing");
 
-    //  Simple Overlay Renderer
-    public static SimpleOverlayRenderer YOTTA_HATCH = new SimpleOverlayRenderer("overlay/yotta_hatch");
-
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();
     public static TurbineMixerRenderer TURBINE_MIXER = new TurbineMixerRenderer();

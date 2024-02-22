@@ -24,7 +24,6 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
-import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
 import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
@@ -150,9 +149,6 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                                 .setPreviewCount(1))
                         .or(abilities(MultiblockAbility.EXPORT_FLUIDS)
                                 .setMaxGlobalLimited(2)
-                                .setPreviewCount(1))
-                        .or(abilities(GTLiteMultiblockAbility.YOTTA_HATCH_MULTIBLOCK_ABILITY)
-                                .setMaxGlobalLimited(1)
                                 .setPreviewCount(1)))
                 .where('G', states(getGlassState()))
                 .where('F', states(getFrameState()))
@@ -256,18 +252,6 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                 writeCustomData(GregtechDataCodes.WORKABLE_ACTIVE, buf -> buf.writeBoolean(active));
             }
         }
-    }
-
-    public FluidStack getFluid() {
-        return this.fluid;
-    }
-
-    public void setFluid(FluidStack fluid) {
-        this.fluid = fluid;
-    }
-
-    public YOTFluidTank getFluidTank() {
-        return this.fluidTank;
     }
 
     @Override
