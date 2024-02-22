@@ -155,4 +155,8 @@ public class GTLiteTraceabilityPredicate {
     //  Space Elevator Motor Casing Predicate
     public static Supplier<TierTraceabilityPredicate> SPACE_ELEVATOR_MOTOR = () -> new TierTraceabilityPredicate(MAP_SPACE_ELEVATOR_MOTOR,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_SPACE_ELEVATOR_MOTOR.get(s)).getIntTier()), "SpaceElevatorMotor", null);
+
+    //  Cooling Core Predicate
+    public static Supplier<TierTraceabilityPredicate> COOLING_CORE = () -> new TierTraceabilityPredicate(MAP_COOLING_CORE,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_COOLING_CORE.get(s)).getIntTier()), "CoolingCore", null);
 }

@@ -253,7 +253,7 @@ public class GTLiteElementMaterials {
                 .color(0xE61C24)
                 .iconSet(SHINY)
                 .element(Elements.Og)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_ROTOR)
                 .blast(10380, BlastProperty.GasTier.HIGHEST)
                 .build();
 
@@ -275,7 +275,7 @@ public class GTLiteElementMaterials {
                 .color(0x2D3A9D)
                 .iconSet(BRIGHT)
                 .element(Elements.Hs)
-                .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_GEAR)
+                .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_GEAR, GENERATE_ROTOR)
                 .blast(14000, BlastProperty.GasTier.HIGHEST)
                 .build();
 
