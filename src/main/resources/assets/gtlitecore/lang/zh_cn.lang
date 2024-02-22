@@ -1471,12 +1471,6 @@ gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
 gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
 gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§c禁用
 gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§a启用
-gtlitecore.machine.yotta_hatch.name=YOT仓
-gtlitecore.machine.yotta_hatch.tooltip.1=YOT储罐专属的特殊流体交互仓室
-gtlitecore.machine.yotta_hatch.tooltip.2=用于建立YOT储罐与ME网络的连接
-gtlitecore.machine.yotta_hatch.tooltip.3=鼠标右键单击打开GUI以配置其在网络中的§r优先级§7
-gtlitecore.machine.yotta_hatch.tooltip.4=手持螺丝刀鼠标右键单击以切换§r读写模式§7
-gtlitecore.machine.yotta_fluid_tank.display=调整YOT仓在ME网络中的优先级
 
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁

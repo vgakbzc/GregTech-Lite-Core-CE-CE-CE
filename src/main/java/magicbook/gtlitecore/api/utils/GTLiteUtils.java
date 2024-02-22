@@ -17,8 +17,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
-import java.util.function.Function;
-import java.util.function.IntSupplier;
 import java.util.function.Supplier;
 
 @SuppressWarnings("unused")
@@ -184,30 +182,6 @@ public class GTLiteUtils {
         }
 
         return retValue;
-    }
-
-    @Nonnull
-    public static Function<String, String> getTextFieldValidator(IntSupplier maxSupplier) {
-        return (val) -> {
-            if (val.isEmpty()) {
-                return String.valueOf(1);
-            } else {
-                int max = maxSupplier.getAsInt();
-                int num;
-
-                try {
-                    num = Integer.parseInt(val);
-                } catch (NumberFormatException var5) {
-                    return String.valueOf(max);
-                }
-
-                if (num < 1) {
-                    return String.valueOf(1);
-                } else {
-                    return num > max ? String.valueOf(max) : val;
-                }
-            }
-        };
     }
 
 }
