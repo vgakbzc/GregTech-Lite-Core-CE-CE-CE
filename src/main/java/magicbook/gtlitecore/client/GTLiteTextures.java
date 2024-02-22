@@ -3,6 +3,7 @@ package magicbook.gtlitecore.client;
 import codechicken.lib.texture.TextureUtils;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IndustrialCentrifugeRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
@@ -57,7 +58,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/dimensionally_transcendent_plasma_forge");
     public static OrientedOverlayRenderer LIGHTNING_ROD_OVERLAY = new OrientedOverlayRenderer("generators/lightning_rod");
 
-    //  GTLiteOverlayRenderer
+    //  GTLite Overlay Renderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
     public static GTLiteOverlayRenderer HASTELLOY_N_CASING = new GTLiteOverlayRenderer("casings/hastelloy_n_casing");
     public static GTLiteOverlayRenderer RED_STEEL_CASING = new GTLiteOverlayRenderer("casings/red_steel_casing_top");
@@ -124,10 +125,13 @@ public class GTLiteTextures {
     public static GTLiteOverlayRenderer NAQUADAH_CASING = new GTLiteOverlayRenderer("casings/naquadah_casing");
     public static GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
-    //  SimpleOrientedCubeRenderer
+    //  Simple Oriented Cube Renderer
     public static SimpleOrientedCubeRenderer ADVANCED_FILTER_IRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_filter_iridium_front");
     public static SimpleOrientedCubeRenderer ADVANCED_GRATE_OSMIRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_grate_osmiridium_front");
     public static SimpleOrientedCubeRenderer FORCE_FIELD_CONSTRAINED_CASING = new SimpleOrientedCubeRenderer("casings/force_field_constrained_casing");
+
+    //  Simple Overlay Renderer
+    public static SimpleOverlayRenderer YOTTA_HATCH = new SimpleOverlayRenderer("overlay/yotta_hatch");
 
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();

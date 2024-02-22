@@ -27,6 +27,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.*;
 import magicbook.gtlitecore.common.metatileentities.multi.part.*;
+import magicbook.gtlitecore.common.metatileentities.multi.part.appeng.MetaTileEntityYottaHatch;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargePrimitiveBlastFurnace;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
@@ -51,6 +52,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityFluidHatch[] EXPORT_FLUID_HATCH = new MetaTileEntityFluidHatch[4];
     public static MetaTileEntityItemBus[] IMPORT_ITEM_HATCH = new MetaTileEntityItemBus[4];
     public static MetaTileEntityItemBus[] EXPORT_ITEM_HATCH = new MetaTileEntityItemBus[4];
+    public static MetaTileEntityYottaHatch YOTTA_HATCH;
 
     //  Single Machine range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[V.length - 1];
@@ -261,6 +263,8 @@ public class GTLiteMetaTileEntities {
         EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(54, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uiv"), 11, false));
         EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(55, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uxv"), 12, false));
         EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(56, new MetaTileEntityItemBus(gtliteId("item_hatch.export.opv"), 13, false));
+        //  Free ID for multi-input/output hatches.
+        YOTTA_HATCH = registerPartMetaTileEntity(100, new MetaTileEntityYottaHatch(gtliteId("yotta_hatch")));
 
         //  Single Machine range: 15000-16000
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
