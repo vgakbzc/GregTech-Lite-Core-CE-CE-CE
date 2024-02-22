@@ -1806,6 +1806,18 @@ public class MachineRecipeLoader {
                 'C', GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.FORCE_FIELD_CONSTRAINED_CASING),
                 'P', new UnificationEntry(pipeNormalFluid, StainlessSteel));
 
+        //  Yotta Hatch
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, VanadiumSteel)
+                .input(FLUID_IMPORT_HATCH_ME)
+                .input(FLUID_EXPORT_HATCH_ME)
+                .input(FIELD_GENERATOR_IV)
+                .fluidInputs(TinAlloy.getFluid(L * 4))
+                .output(YOTTA_HATCH)
+                .EUt(VA[IV])
+                .duration(50)
+                .buildAndRegister();
+
         //  Large High Pressure Forming Unit
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, ZirconiumCarbide, 4)

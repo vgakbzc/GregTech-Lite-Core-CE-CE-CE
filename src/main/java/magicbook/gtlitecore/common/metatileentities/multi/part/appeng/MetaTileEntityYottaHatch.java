@@ -3,6 +3,7 @@ package magicbook.gtlitecore.common.metatileentities.multi.part.appeng;
 import appeng.api.AEApi;
 import appeng.api.config.AccessRestriction;
 import appeng.api.config.Actionable;
+import appeng.api.networking.GridFlags;
 import appeng.api.networking.IGrid;
 import appeng.api.networking.IGridNode;
 import appeng.api.networking.events.MENetworkCellArrayUpdate;
@@ -36,6 +37,7 @@ import magicbook.gtlitecore.api.capability.IYottaHatch;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.GTLiteTextures;
+import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -78,6 +80,7 @@ public class MetaTileEntityYottaHatch extends MetaTileEntityAEHostablePart imple
             AccessRestriction.READ_WRITE
     };
     private int priority;
+    private AENetworkProxy gridProxy = null;
 
     public MetaTileEntityYottaHatch(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, 5, false);
@@ -235,6 +238,16 @@ public class MetaTileEntityYottaHatch extends MetaTileEntityAEHostablePart imple
     }
 
     @Override
+    public AENetworkProxy getProxy() {
+        if (gridProxy == null) {
+            gridProxy = new AENetworkProxy(this, "proxy", GTLiteMetaTileEntities.YOTTA_HATCH.getStackForm(), true);
+            gridProxy.onReady();
+            gridProxy.setFlags(GridFlags.REQUIRE_CHANNEL);
+        }
+        return this.gridProxy;
+    }
+
+    @Override
     public void securityBreak() {}
 
     @Override
@@ -258,7 +271,7 @@ public class MetaTileEntityYottaHatch extends MetaTileEntityAEHostablePart imple
 
     @Override
     public AccessRestriction getAccess() {
-        return AccessRestriction.READ_WRITE;
+        return readMode;
     }
 
     @Override
@@ -349,7 +362,8 @@ public class MetaTileEntityYottaHatch extends MetaTileEntityAEHostablePart imple
                                       IActionSource iActionSource) {
         IAEFluidStack ready = drain(fluidStack, false);
         if (ready != null) {
-            if (actionable.equals(Actionable.MODULATE)) drain(ready, true);
+            if (actionable.equals(Actionable.MODULATE))
+                drain(ready, true);
             return ready;
         } else return null;
     }

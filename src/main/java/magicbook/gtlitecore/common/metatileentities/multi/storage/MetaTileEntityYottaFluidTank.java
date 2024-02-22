@@ -76,10 +76,10 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     private static final String NBT_FLUID = "Fluid";
     private boolean isActive = true;
     private boolean isWorkingEnabled = true;
-    private FluidStack fluid;
+    public FluidStack fluid;
     private IMultipleTankHandler inputFluidInventory;
     private IMultipleTankHandler outputFluidInventory;
-    private YOTFluidTank fluidTank;
+    public YOTFluidTank fluidTank;
     private int mode = 0;
 
     public MetaTileEntityYottaFluidTank(ResourceLocation metaTileEntityId) {
