@@ -27,4 +27,7 @@ public class GTLiteGuiTextures {
     public static final TextureArea FUSION_REACTOR_MK4_TITLE = TextureArea.fullImage("textures/gui/widget/fusion_reactor_mk4_title.png");
     public static final TextureArea FUSION_REACTOR_MK5_TITLE = TextureArea.fullImage("textures/gui/widget/fusion_reactor_mk5_title.png");
 
+    //  Logo
+    public static final TextureArea SPACE_ELEVATOR_LOGO = TextureArea.fullImage("textures/gui/icon/space_elevator_logo.png");
+    public static final TextureArea SPACE_ELEVATOR_LOGO_DARK = TextureArea.fullImage("textures/gui/icon/space_elevator_logo_dark.png");
 }
