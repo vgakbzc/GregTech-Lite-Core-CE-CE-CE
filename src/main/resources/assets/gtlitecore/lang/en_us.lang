@@ -76,6 +76,8 @@ tile.structure_casing.incoloy_020_casing.name=Rigid Incoloy-020 Machine Casing
 tile.structure_casing.tantalum_carbide_casing.name=Vibrant Tolerant Tantalum Carbide Machine Casing
 tile.structure_casing.naquadah_casing.name=Rugged Naquadah Machine Casing
 tile.structure_casing.naquadah_gearbox_casing.name=Naquadah Gearbox Casing
+tile.structure_casing.hattrium_casing.name=Frostproof Hattrium Machine Casing
+tile.structure_casing.circulative_cooling_casing.name=环流冷却机械方块
 
 tile.boiler_casing.inconel_625_pipe.name=Inconel-625 Mild Dispersion Pipe Casing
 tile.boiler_casing.hastelloy_n_pipe.name=Hastelloy-N Oil Film Pipe Casing
@@ -283,6 +285,15 @@ tile.decorative_transparent_casing.neutronium_reinforced_borosilicate_glass.name
 tile.decorative_transparent_casing.abyssalloy_reinforced_borosilicate_glass.name=Abyssalloy reinforced Borosilicate Glass
 tile.decorative_transparent_casing.heavy_quark_degenerate_matter_reinforced_borosilicate_glass.name=Heavy Quark Degenerate Matter reinforced Borosilicate Glass
 tile.decorative_transparent_casing.transcendent_metal_reinforced_borosilicate_glass.name=Transcendent Metal reinforced Borosilicate Glass
+
+tile.cooling_core.mk1.name=中子脉冲冷却核心
+tile.cooling_core.mk1.tooltip=环流冷却核心 Mk I
+tile.cooling_core.mk2.name=寰宇震爆冷却核心
+tile.cooling_core.mk2.tooltip=环流冷却核心 Mk II
+tile.cooling_core.mk3.name=时空涌流冷却核心
+tile.cooling_core.mk3.tooltip=环流冷却核心 Mk III
+tile.cooling_core.mk4.name=因果撕裂冷却核心
+tile.cooling_core.mk4.tooltip=环流冷却核心 Mk IV
 
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -496,17 +507,17 @@ metaitem.component.supracausal.spacetime_condenser.name=超因果时空凝聚器
 metaitem.component.supracausal.spacetime_condenser.tooltip=超空间稳定器
 metaitem.component.supracausal.light_cone_module.name=时空光锥稳定模块
 metaitem.component.supracausal.light_cone_module.tooltip=自旋泡沫路径积分计算！
-metaitem.component.optical.optical_fiber.name=光纤
+metaitem.component.optical.optical_fiber.name=Optical Fiber
 metaitem.component.optical.optical_fiber.tooltip=透光玻璃
-metaitem.component.optical.dielectric_mirror.name=介电镜
+metaitem.component.optical.dielectric_mirror.name=Dielectric Mirror
 metaitem.component.optical.dielectric_mirror.tooltip=布氏镜
-metaitem.component.optical.emitter.empty.name=空激光组件
+metaitem.component.optical.emitter.empty.name=Empty Laser Emitter
 metaitem.component.optical.emitter.empty.tooltip=需要导光介质填充
-metaitem.component.optical.emitter.helium_neon.name=氦-氖混合气激光镭射器
+metaitem.component.optical.emitter.helium_neon.name=Helium-Neon Laser Emitter
 metaitem.component.optical.emitter.helium_neon.tooltip=用于弱光学设备
-metaitem.component.optical.emitter.nd_yag.name=钕掺杂的钇铝榴石激光镭射器
+metaitem.component.optical.emitter.nd_yag.name=Nd:YAG Laser Emitter
 metaitem.component.optical.emitter.nd_yag.tooltip=用于强光学设备
-metaitem.component.spintronic.topological_insulator.name=拓扑绝缘管
+metaitem.component.spintronic.topological_insulator.name=Topological Insulator
 metaitem.component.spintronic.topological_insulator.tooltip=导电表面态
 metaitem.component.spintronic.bose_einstein_condensate_containment_unit.name=凝聚态物质遏制装置
 metaitem.component.spintronic.bose_einstein_condensate_containment_unit.tooltip=电磁蒸发冷却
@@ -518,60 +529,60 @@ metaitem.component.cosmic.closed_timelike_curve_computational_unit.name=封闭�
 metaitem.component.cosmic.closed_timelike_curve_computational_unit.tooltip=宇宙计算器
 metaitem.component.cosmic.closed_timelike_curve_guidance_unit.name=封闭类时曲线引导单元
 metaitem.component.cosmic.closed_timelike_curve_guidance_unit.tooltip=时空向导
-metaitem.component.cosmic.nuclear_clock.name=核时钟
+metaitem.component.cosmic.nuclear_clock.name=Nuclear Clock
 metaitem.component.cosmic.nuclear_clock.tooltip=时针接近零时
 metaitem.component.cosmic.manifold_oscillatory_power_cell.name=流形振荡能量单元
 metaitem.component.cosmic.manifold_oscillatory_power_cell.tooltip=爆炸将产生时空灾害
-metaitem.component.cosmic.scintillator.name=闪烁体
+metaitem.component.cosmic.scintillator.name=Scintillator
 metaitem.component.cosmic.scintillator.tooltip=一闪一闪亮晶晶
-metaitem.component.cosmic.scintillator_crystal.name=闪烁晶体
+metaitem.component.cosmic.scintillator_crystal.name=Scintillator Crystal
 metaitem.component.cosmic.scintillator_crystal.tooltip=辉光晶
-metaitem.component.supracausal.topological_manipulator_unit.name=超空间拓扑操纵单元
+metaitem.component.supracausal.topological_manipulator_unit.name=Superspace Topological Manipulator Unit
 metaitem.component.supracausal.topological_manipulator_unit.tooltip=量子位型空间拓扑生成器
-metaitem.component.supracausal.graviton_transducer.name=引力子换能器
+metaitem.component.supracausal.graviton_transducer.name=Graviton Transducer
 metaitem.component.supracausal.graviton_transducer.tooltip=超高标度能量转换
-metaitem.component.supracausal.relativistic_spinorial_memory_system.name=相对论旋量存储器
+metaitem.component.supracausal.relativistic_spinorial_memory_system.name=Relativistic Spinorial Memory System
 metaitem.component.supracausal.relativistic_spinorial_memory_system.tooltip=非反常随机动力学存储
-metaitem.component.supracausal.macrowormhole_generator.name=巨型虫洞生成器
-metaitem.component.supracausal.microwormhole_generator.name=微型虫洞生成器
-metaitem.component.supracausal.stabilized_wormhole_generator.name=稳定虫洞生成器
-metaitem.component.supracausal.eigenfolded_space_time_manifold.name=本征折叠时空流形
+metaitem.component.supracausal.macrowormhole_generator.name=Macrowormhole Generator
+metaitem.component.supracausal.microwormhole_generator.name=Microwormhole Generator
+metaitem.component.supracausal.stabilized_wormhole_generator.name=Stabilized Wormhole Generator
+metaitem.component.supracausal.eigenfolded_space_time_manifold.name=Eigenfolded Spacetime Manifold
 metaitem.component.supracausal.eigenfolded_space_time_manifold.tooltip=实体化时空超流形
-metaitem.component.supracausal.recursively_folded_negative_space.name=递归折叠负空间
+metaitem.component.supracausal.recursively_folded_negative_space.name=Recursively Folded Negative Space
 metaitem.component.supracausal.recursively_folded_negative_space.tooltip=遏制奇异空间
 metaitem.component.gooware.bio_cell.name=畸变干细胞
 metaitem.component.gooware.bio_cell.tooltip=菌群网络基质
 metaitem.component.gooware.bio_dish.name=菌群培养皿
 metaitem.component.gooware.bio_dish.tooltip=菌群网络培养基
-metaitem.component.spintronic.rydberg_spinorial_assembly.name=里德堡旋量集群
+metaitem.component.spintronic.rydberg_spinorial_assembly.name=Rydberg Spinorial Assembly
 metaitem.component.spintronic.rydberg_spinorial_assembly.tooltip=超级旋量存储器
-metaitem.component.spintronic.cryogenic_interface.name=低温触面
+metaitem.component.spintronic.cryogenic_interface.name=Cryogenic Interface
 metaitem.component.spintronic.cryogenic_interface.tooltip=并不能用于冰箱制冷
-metaitem.component.spintronic.excitation_maintainer.name=励磁容器
+metaitem.component.spintronic.excitation_maintainer.name=Excitation Maintainer
 metaitem.component.spintronic.excitation_maintainer.tooltip=特殊磁体密闭装置
-metaitem.component.spintronic.x_ray_waveguide.name=X射线导波管
+metaitem.component.spintronic.x_ray_waveguide.name=X-Ray Waveguide
 metaitem.component.spintronic.x_ray_waveguide.tooltip=比激光镭射器更好
-metaitem.component.spintronic.electron_source.name=电子源
+metaitem.component.spintronic.electron_source.name=Electron Source
 metaitem.component.spintronic.electron_source.tooltip=只需要一点点镭
-metaitem.component.spintronic.x_ray_laser.name=X射线激光器
+metaitem.component.spintronic.x_ray_laser.name=X-Ray Laser
 metaitem.component.spintronic.x_ray_laser.tooltip=超级激光源
-metaitem.component.spintronic.x_ray_mirror.name=X射线反射镜片
+metaitem.component.spintronic.x_ray_mirror.name=X-Ray Mirror
 metaitem.component.spintronic.x_ray_mirror.tooltip=超高精度光学反射镜
-metaitem.component.spintronic.microfocus_x_ray_tube.name=微焦点X射线传导管
+metaitem.component.spintronic.microfocus_x_ray_tube.name=Microfocus X-Ray Tube
 metaitem.component.spintronic.microfocus_x_ray_tube.tooltip=比激光镭射器组件更好
-metaitem.component.spintronic.exotic_soc.name=奇异SoC
+metaitem.component.spintronic.exotic_soc.name=Exotic SoC
 metaitem.component.spintronic.exotic_soc.tooltip=量子反常自旋计算单元
-metaitem.component.cosmic.lepton_trap_crystal.name=轻子阱晶体
+metaitem.component.cosmic.lepton_trap_crystal.name=Lepton Trap Crystal
 metaitem.component.cosmic.lepton_trap_crystal.tooltip=量子闪烁体
 metaitem.component.cosmic.charged_lepton_trap_crystal.name=带电轻子阱晶体
 metaitem.component.cosmic.charged_lepton_trap_crystal.tooltip=三重态量子闪烁体
-metaitem.component.cosmic.colored_leds.name=彩色LED灯
+metaitem.component.cosmic.colored_leds.name=Colored LEDs
 metaitem.component.cosmic.colored_leds.tooltip=圣诞快乐！
-metaitem.component.cosmic.rotating_transparent_surface.name=周期性旋转全息屏
+metaitem.component.cosmic.rotating_transparent_surface.name=Rotating Transparent Surface
 metaitem.component.cosmic.rotating_transparent_surface.tooltip=透明旋转液晶屏幕
-metaitem.component.cosmic.universal_soc.name=寰宇SoC
+metaitem.component.cosmic.universal_soc.name=Universal SoC
 metaitem.component.cosmic.universal_soc.tooltip=宇宙信息辅助计算电路
-metaitem.component.primitive.vacuum_tube_component.name=真空管组件
+metaitem.component.primitive.vacuum_tube_component.name=Vacuum Tube Component
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
 metaitem.component.crystal.ruby_chip.name=刻蚀红宝石晶片
@@ -584,27 +595,27 @@ metaitem.component.crystal.ruby_modulator.name=红宝石晶体调节器
 metaitem.component.crystal.ruby_modulator.tooltip=控制处理电路
 metaitem.component.crystal.sapphire_modulator.name=蓝宝石晶体调节器
 metaitem.component.crystal.sapphire_modulator.tooltip=转换处理电路
-metaitem.component.crystal.system_on_chip_socket.name=晶体SoC插槽
+metaitem.component.crystal.system_on_chip_socket.name=Crystal SoC Socket
 metaitem.component.crystal.system_on_chip_socket.tooltip=桥接晶体和电路
 
 #  Covers
-metaitem.cover.electric_motor.ulv.name=电动马达（§8ULV§r）
-metaitem.cover.electric_piston.ulv.name=电力活塞（§8ULV§r）
-metaitem.cover.electric_pump.ulv.name=电动泵（§8ULV§r）
-metaitem.cover.conveyor_module.ulv.name=传送带（§8ULV§r）
-metaitem.cover.robot_arm.ulv.name=机械臂（§8ULV§r）
-metaitem.cover.emitter.ulv.name=发射器（§8ULV§r）
-metaitem.cover.sensor.ulv.name=传感器（§8ULV§r）
-metaitem.cover.field_generator.ulv.name=力场发生器（§8ULV§r）
+metaitem.cover.electric_motor.ulv.name=§8ULV§r Electric Motor
+metaitem.cover.electric_piston.ulv.name=§8ULV§r Electric Piston
+metaitem.cover.electric_pump.ulv.name=§8ULV§r Electric Pump
+metaitem.cover.conveyor_module.ulv.name=§8ULV§r Conveyor Module
+metaitem.cover.robot_arm.ulv.name=§8ULV§r Robot Arm
+metaitem.cover.emitter.ulv.name=§8ULV§r Emitter
+metaitem.cover.sensor.ulv.name=§8ULV§r Sensor
+metaitem.cover.field_generator.ulv.name=§8ULV§r Field Generator
 
-metaitem.cover.electric_motor.max.name=电动马达（§c§lMAX§r）
-metaitem.cover.electric_piston.max.name=电力活塞（§c§lMAX§r）
-metaitem.cover.electric_pump.max.name=电动泵（§c§lMAX§r）
-metaitem.cover.conveyor_module.max.name=传送带（§c§lMAX§r）
-metaitem.cover.robot_arm.max.name=机械臂（§c§lMAX§r）
-metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
-metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
-metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
+metaitem.cover.electric_motor.max.name=§c§lMAX§r Electric Motor
+metaitem.cover.electric_piston.max.name=§c§lMAX§r Electric Piston
+metaitem.cover.electric_pump.max.name=§c§lMAX§r Electric Pump
+metaitem.cover.conveyor_module.max.name=§c§lMAX§r Conveyor Module
+metaitem.cover.robot_arm.max.name=§c§lMAX§r Robot Arm
+metaitem.cover.emitter.max.name=§c§lMAX§r Emitter
+metaitem.cover.sensor.max.name=§c§lMAX§r Sensor
+metaitem.cover.field_generator.max.name=§c§lMAX§r Field Generator
 
 metaitem.cover.solar_panel.max.name=太阳能覆盖板（§c§lMAX§r）
 
@@ -618,13 +629,13 @@ itemGroup.gtlite.particle=GregTech Lite | Particles
 itemGroup.gtlite.wrap=GregTech Lite | Wrap Items
 
 #  Debug Items
-metaitem.debug.structure_writer.name=多方块导出工具
+metaitem.debug.structure_writer.name=Multiblock Structure Writer
 metaitem.debug.structure_writer.tooltip=用于导出代码格式的多方块结构
-metaitem.debug.structure_writer.export_to_log=导出为日志
-metaitem.debug.structure_writer.export_to_json=导出为Json
-metaitem.debug.structure_writer.rotate_along_y_axis=沿Y轴旋转
-metaitem.debug.structure_writer.ex=无
-metaitem.debug.structure_writer.structural_scale=结构规模：X-%s  Y-%s  Z-%s
+metaitem.debug.structure_writer.export_to_log=Export to Log
+metaitem.debug.structure_writer.export_to_json=Export to Json
+metaitem.debug.structure_writer.rotate_along_y_axis=Rotate along Y axis
+metaitem.debug.structure_writer.ex=Null
+metaitem.debug.structure_writer.structural_scale=Scale: X-%s  Y-%s  Z-%s
 
 #  Energy Hatches
 gtlitecore.machine.energy_hatch.input_4a.uev.name=4 安能源仓（§aUEV§r）
@@ -828,18 +839,18 @@ gtlitecore.machine.simulator.ev.tooltip=Monster Consciousness Simulator
 gtlitecore.machine.simulator.iv.name=Elite Simulator
 gtlitecore.machine.simulator.iv.tooltip=Monster Consciousness Simulator
 
-gtlitecore.machine.biomass_generator.ev.name=进阶生物质发电机 III
+gtlitecore.machine.biomass_generator.ev.name=Advanced Biomass Generator III
 gtlitecore.machine.biomass_generator.ev.tooltip=电动咀叶机
-gtlitecore.machine.biomass_generator.iv.name=精英生物质发电机
+gtlitecore.machine.biomass_generator.iv.name=Elite Biomass Generator
 gtlitecore.machine.biomass_generator.iv.tooltip=电动咀叶机
-gtlitecore.machine.biomass_generator.luv.name=精英生物质发电机 II
+gtlitecore.machine.biomass_generator.luv.name=Elite Biomass Generator II
 gtlitecore.machine.biomass_generator.luv.tooltip=电动咀叶机
 
-gtlitecore.machine.lightning_rod.hv.name=进阶避雷针 II
+gtlitecore.machine.lightning_rod.hv.name=Advanced Lightning Rod II
 gtlitecore.machine.lightning_rod.hv.tooltip=利用闪电的力量产生电能
-gtlitecore.machine.lightning_rod.ev.name=进阶避雷针 III
+gtlitecore.machine.lightning_rod.ev.name=Advanced Lightning Rod III
 gtlitecore.machine.lightning_rod.ev.tooltip=利用闪电的力量产生电能
-gtlitecore.machine.lightning_rod.iv.name=精英避雷针
+gtlitecore.machine.lightning_rod.iv.name=Elite Lightning Rod
 gtlitecore.machine.lightning_rod.iv.tooltip=利用闪电的力量产生电能
 gtlitecore.machine.lightning_rod.usage=§b用法§7：将原版的§r铁栏杆§7放置其上，其会在雨/雷雨天产生能量。
 
@@ -859,10 +870,10 @@ gtlitecore.machine.nanoscale_fabricator.name=Nanoscale Fabricator
 gtlitecore.machine.nanoscale_fabricator.tooltip=坩埚的平均温度最多可超过目标温度§c250K§7。
 
 gtlitecore.machine.industrial_roaster.name=Industrial Roaster
-gtlitecore.machine.industrial_raoster.tooltip.1=青铜燃烧室: §c1000K
-gtlitecore.machine.industrial_raoster.tooltip.2=钢燃烧室: §c1500K
-gtlitecore.machine.industrial_raoster.tooltip.3=钛燃烧室: §c2000K
-gtlitecore.machine.industrial_raoster.tooltip.4=钨钢燃烧室: §c2500K
+gtlitecore.machine.industrial_raoster.tooltip.1=Bronze Firebox: §c1000K
+gtlitecore.machine.industrial_raoster.tooltip.2=Steel Firebox: §c1500K
+gtlitecore.machine.industrial_raoster.tooltip.3=Titanium Firebox: §c2000K
+gtlitecore.machine.industrial_raoster.tooltip.4=Tungstensteel Firebox: §c2500K
 
 gtlitecore.machine.crystallization_crucible.name=Crystallization Crucible
 
@@ -897,17 +908,17 @@ gtlitecore.machine.hyper_reactor_mk3.tooltip.boost=Supply §f50 L/s§7 of Degene
 
 gtlitecore.machine.isa_mill.name=Isa Mill
 gtlitecore.machine.isa_mill.tooltip=工业级卧式湿法碾磨机
-gtlitecore.machine.grind_ball_hatch.name=研磨球仓
+gtlitecore.machine.grind_ball_hatch.name=Grindball Hatch
 gtlitecore.machine.isa_mill.grindball_hatch.only=仅能放入研磨球
-gtlitecore.machine.isa_mill.grind_ball.soapstone=研磨球材质：皂石
-gtlitecore.machine.isa_mill.grind_ball.aluminium=研磨球材质：铝
+gtlitecore.machine.isa_mill.grind_ball.soapstone=Grindball Material: Soapstone
+gtlitecore.machine.isa_mill.grind_ball.aluminium=Grindball Material: Aluminium
 
-gtlitecore.machine.flotation_cell_regulator.name=工业浮选机
+gtlitecore.machine.flotation_cell_regulator.name=Flotation Cell Regulator
 gtlitecore.machine.flotation_cell_regulator.tooltip=工业级浮游选矿池
 
-gtlitecore.machine.vacuum_drying_furnace.name=真空干燥炉
+gtlitecore.machine.vacuum_drying_furnace.name=Vacuum Drying Furnace
 
-gtlitecore.machine.volcanus.name=炽焱高炉
+gtlitecore.machine.volcanus.name=Volcanus
 gtlitecore.machine.volcanus.tooltip.1=需要提供§c烈焰之炽焱§7以工作。
 gtlitecore.machine.volcanus.tooltip.2=未提供§c烈焰之炽焱§7时，炽焱高炉将会停机。
 gtlitecore.machine.volcanus.tooltip.3=比相同电压等级的§r电力高炉§7快一倍
@@ -916,7 +927,7 @@ gtlitecore.machine.volcanus.amount=烈焰之炽焱储量：%sL
 gtlitecore.machine.volcanus.heat=烈焰之炽焱正在转换为热量！
 gtlitecore.machine.volcanus.warning=烈焰之炽焱不足
 
-gtlitecore.machine.cryogenic_freezer.name=凛冰冷冻机
+gtlitecore.machine.cryogenic_freezer.name=Cryogenic Freezer
 gtlitecore.machine.cryogenic_freezer.tooltip.1=需要提供§b极寒之凛冰§7以工作
 gtlitecore.machine.cryogenic_freezer.tooltip.2=未提供§b极寒之凛冰§7时，凛冰冷冻机将会停机
 gtlitecore.machine.cryogenic_freezer.tooltip.3=运行配方时，运行时间减少至原本配方时间的0.8倍
@@ -925,15 +936,15 @@ gtlitecore.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
 gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极速下降！
 gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
 
-gtlitecore.machine.fuel_refine_factory.name=燃料精炼厂
+gtlitecore.machine.fuel_refine_factory.name=Fuel Refine Factory
 
-gtlitecore.machine.ion_implantator.name=离子注入机
+gtlitecore.machine.ion_implantator.name=Ion Implantator
 
-gtlitecore.machine.unmanned_drone_airport.name=采矿无人机坪
+gtlitecore.machine.unmanned_drone_airport.name=Unmanned Drone Airport
 gtlitecore.machine.unmanned_drone_airport.tooltip.1=采矿无人机的停靠点
 gtlitecore.machine.unmanned_drone_airport.tooltip.2=需要放入§6采矿无人机§7并输入一定量的燃料。
 
-gtlitecore.machine.space_elevator.name=太空电梯
+gtlitecore.machine.space_elevator.name=Space Elevator
 gtlitecore.machine.space_elevator.tier=加速轨道等级：
 gtlitecore.machine.space_elevator.tooltip.1=你的资源收集技术的顶端，终极的资源提取设备
 gtlitecore.machine.space_elevator.tooltip.2=加速轨道等级限制了配方等级
@@ -949,7 +960,7 @@ gtlitecore.machine.space_elevator.tooltip.11=采矿模块 -> §e1, 2, 4, 8, 16§
 gtlitecore.machine.space_elevator.tooltip.12=组装模块 -> §e1, 4, 8, 16, 32§7
 gtlitecore.machine.space_elevator.tooltip.13=提高加速轨道等级以获得更高的并行数
 
-gtlitecore.machine.virtual_cosmos_simulator.name=虚拟宇宙模拟器
+gtlitecore.machine.virtual_cosmos_simulator.name=Virtual Cosmos Simulator
 gtlitecore.machine.virtual_cosmos_simulator.amount=氦等离子体储量：%sL
 gtlitecore.machine.virtual_cosmos_simulator.warning=氦等离子体不足
 gtlitecore.machine.virtual_cosmos_simulator.tooltip.1=你的格雷科技之旅的至高顶点，彻底撕碎无尽时空桎梏的究极机器
@@ -1003,25 +1014,25 @@ gtlitecore.machine.virtual_cosmos_simulator.tooltip.shift.31=中子素 5.7 ML，
 gtlitecore.machine.virtual_cosmos_simulator.tooltip.shift.32=星核物质等离子体 576 kL，时空 2.8 kL
 gtlitecore.machine.virtual_cosmos_simulator.tooltip.shift.33=§r--------------------------------------------------------------------------------------------
 
-gtlitecore.machine.collider.name=粒子对撞机
+gtlitecore.machine.collider.name=Collider
 gtlitecore.machine.collider.tier=遏制场发生器等级：
-gtlitecore.machine.collider.tooltip.1=高能物理学，从入门到入土
+gtlitecore.machine.collider.tooltip.1=Introduction to High Energy Physics
 gtlitecore.machine.collider.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
-gtlitecore.machine.dimensional_oscillator.name=维度震荡仪
+gtlitecore.machine.dimensional_oscillator.name=Dimensional Oscillator
 gtlitecore.machine.dimensional_oscillator.tooltip.1=长时间开机或导致时空乱流现象的发生
 gtlitecore.machine.dimensional_oscillator.tooltip.2=用于破坏维度的时空平衡以制造极端环境
 
-gtlitecore.machine.decay_generator.name=衰变发生器
+gtlitecore.machine.decay_generator.name=Decay Generator
 gtlitecore.machine.decay_generator.tooltip.1=抹杀一切超长的衰变周期
 gtlitecore.machine.decay_generator.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
-gtlitecore.machine.fusion_reactor_mk4.name=核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.fusion_reactor_mk4.name=Fusion Reactor Computer Mark IV
 gtlitecore.machine.fusion_reactor_mk4.tooltip=银河泻落九天
-gtlitecore.machine.fusion_reactor_mk5.name=核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.fusion_reactor_mk5.name=Fusion Reactor Computer Mark V
 gtlitecore.machine.fusion_reactor_mk5.tooltip=家用中子星
 
-gtlitecore.machine.precise_assembler.name=精密自动组装机MT-3662
+gtlitecore.machine.precise_assembler.name=Precise Assembler MT-3662
 gtlitecore.machine.precise_assembler.tooltip.1=误差不超过7nm
 gtlitecore.machine.precise_assembler.tooltip.2=可运行一般的§r组装机§7配方，亦可用于组装精密器件
 gtlitecore.machine.precise_assembler.tooltip.3=使用不同的机器外壳判定机器等级
@@ -1037,7 +1048,7 @@ gtlitecore.machine.precise_assembler.tier.6=MK6
 gtlitecore.machine.precise_assembler.tier.7=MK7
 gtlitecore.machine.precise_assembler.tier.8=MK8
 
-gtlitecore.machine.component_assembly_line.name=部件装配线
+gtlitecore.machine.component_assembly_line.name=Component Assembly Line
 gtlitecore.machine.component_assembly_line.tooltip.1=批量装配各式各样的零部件
 gtlitecore.machine.component_assembly_line.tooltip.2=效率碾压同等级组装机/装配线！
 gtlitecore.machine.component_assembly_line.tooltip.3=需要不同等级的§6部件装配线外壳§7
@@ -1059,7 +1070,7 @@ gtlitecore.machine.component_assembly_line.tier.12=超结构 (UXV)
 gtlitecore.machine.component_assembly_line.tier.13=宇宙 (OpV)
 gtlitecore.machine.component_assembly_line.tier.14=时空 (MAX)
 
-gtlitecore.machine.advanced_assembly_line.name=进阶装配线
+gtlitecore.machine.advanced_assembly_line.name=Advanced Assembly Line
 gtlitecore.machine.advanced_assembly_line.tooltip.1=超高精度装配线
 gtlitecore.machine.advanced_assembly_line.tooltip.2=效率碾压同等级装配线！
 gtlitecore.machine.advanced_assembly_line.tooltip.3=允许使用§r任意等级§7的输入总线
@@ -1069,70 +1080,70 @@ gtlitecore.machine.advanced_assembly_line.tooltip.6=根据输入电压获得并�
 gtlitecore.machine.advanced_assembly_line.tooltip.7=输入小于等于§3UV§7级的电压时，始终获得§e4§7次并行。
 gtlitecore.machine.advanced_assembly_line.tooltip.8=输入大于等于§4UHV§7级的电压时，始终获得§e(2^(电压等级 - 8) + 4)§7次并行。
 
-gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
+gtlitecore.machine.compressed_fusion_reactor.luv.name=Compressed Fusion Reactor Computer Mark I
 gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv=最大并行数：§e64§7
 
-gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
+gtlitecore.machine.compressed_fusion_reactor.zpm.name=Compressed Fusion Reactor Computer Mark II
 gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm=最大并行数：§e128§7
 
-gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
+gtlitecore.machine.compressed_fusion_reactor.uv.name=Compressed Fusion Reactor Computer Mark III
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=用于抹杀物质与能量的界限
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=最大并行数：§e256§7
 
-gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
+gtlitecore.machine.compressed_fusion_reactor.uhv.name=Compressed Fusion Reactor Computer Mark IV
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv=最大并行数：§e512§7
 
-gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
+gtlitecore.machine.compressed_fusion_reactor.uev.name=Compressed Fusion Reactor Computer Mark V
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev=最大并行数：§e1024§7
 
 gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
 
-gtlitecore.machine.mega_alloy_blast_smelter.name=大型合金冶炼厂
+gtlitecore.machine.mega_alloy_blast_smelter.name=Mega Alloy Blast Smelter
 gtlitecore.machine.mega_alloy_blast_smelter.tooltip.1=根据线圈等级获得并行与配方时间减免
 gtlitecore.machine.mega_alloy_blast_smelter.tooltip.2=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
 gtlitecore.machine.mega_alloy_blast_smelter.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
 
-gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
+gtlitecore.machine.mega_chemical_reactor.name=Mega Chemical Reactor
 gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
 
-gtlitecore.machine.mega_oil_cracking_unit.name=大型石油裂化厂
+gtlitecore.machine.mega_oil_cracking_unit.name=Mega Cracking Unit
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.1=根据线圈等级获得并行与配方能耗减免
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.2=线圈每比白铜高一个层级，配方能耗减少10%%。
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
 
-gtlitecore.machine.stellar_furnace.name=恒星炎炀锻炉
+gtlitecore.machine.stellar_furnace.name=Stellar Forge
 gtlitecore.machine.stellar_furnace.tooltip.1=长时间开机或导致宇宙热寂
 gtlitecore.machine.stellar_furnace.tooltip.2=驾驭恒星之力
 gtlitecore.machine.stellar_furnace.tooltip.3=需要使用不同的§c爆弹§7在机器内部引发超新星爆发。
 gtlitecore.machine.stellar_furnace.tooltip.4=产物以极高温的等离子喷流或等离子聚合液体的形态产出。
 gtlitecore.machine.stellar_furnace.tooltip.5=部分产物在使用相应的§6遏制装置§7约束后方可冷凝。
 
-gtlitecore.machine.plasma_condenser.name=等离子冷凝器
+gtlitecore.machine.plasma_condenser.name=Plasma Condenser
 
-gtlitecore.machine.cosmic_ray_detector.name=宇宙射线探测器
+gtlitecore.machine.cosmic_ray_detector.name=Cosmic Ray Detector
 gtlitecore.machine.cosmic_ray_detector.tooltip.1=收集来自宇宙的信息与粒子
 gtlitecore.machine.cosmic_ray_detector.tooltip.2=高度由结构最顶端的§6时空扭曲机械方块§7决定
 gtlitecore.machine.cosmic_ray_detector.altitude=当前高度：%s
 
-gtlitecore.machine.suprachronal_assembly_line.name=超时空装配线
+gtlitecore.machine.suprachronal_assembly_line.name=Suprachronal Assembly Line
 gtlitecore.machine.suprachronal_assembly_line.tooltip.1=需要使用§c超维度导航无人机§7进行引导
 gtlitecore.machine.suprachronal_assembly_line.tooltip.2=使用§b超维度时空振荡物质§7生产特殊的超时空电路。
 
-gtlitecore.machine.molecular_transformer.name=分子重组仪
+gtlitecore.machine.molecular_transformer.name=Molecular Transformer
 gtlitecore.machine.molecular_transformer.tooltip=打破物质间的界限
 
-gtlitecore.machine.quantum_force_transformer.name=量子操纵者
+gtlitecore.machine.quantum_force_transformer.name=Quantum Force Transformer
 gtlitecore.machine.quantum_force_transformer.tooltip.1=可以让复杂的化工流程一步到位
 gtlitecore.machine.quantum_force_transformer.tooltip.2=§6遏制场发生器§7的等级限制了配方等级
 
-gtlitecore.machine.extreme_industrial_greenhouse.name=极限工业温室
+gtlitecore.machine.extreme_industrial_greenhouse.name=Extreme Industrial Greenhouse
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.1=超级作物培养仓
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.2=结构上方没有日光照射不会降低配方运行速度。
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.3=根据输入电压获得并行与配方时间减免。
@@ -1140,7 +1151,7 @@ gtlitecore.machine.extreme_industrial_greenhouse.tooltip.4=输入小于§1IV§7�
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.5=输入大于§1IV§7级的电压时，始终获得§e256§7次并行。
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.6=输入大于§1IV§7级的电压时，配方运行时间减半。
 
-gtlitecore.machine.large_steam_compressor.name=大型蒸汽压缩机
+gtlitecore.machine.large_steam_compressor.name=Large Steam Compressor
 
 gtlitecore.machine.large_primitive_blast_furnace.name=大型炼钢窑
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.1=比土高炉更好
@@ -1148,11 +1159,11 @@ gtlitecore.machine.large_primitive_blast_furnace.tooltip.2=带有附属结构，
 gtlitecore.machine.large_primitive_blast_furnace.tooltip.3=在§r多方块结构提示§7中鼠标右击箭头按钮查看附属结构建造方式。
 gtlitecore.machine.large_primitive_blast_furnace.auxiliary_furnace_number=附属高炉数：%s
 
-gtlitecore.machine.heat_exchanger.name=热交换机
-gtlitecore.machine.heat_exchanger.rate.true=流量：%s L/s（§4过热§r）
-gtlitecore.machine.heat_exchanger.rate.false=流量：%s L/s
-gtlitecore.machine.heat_exchanger.efficiency=总效率：%s
-gtlitecore.machine.heat_exchanger.threshold=流量阈值：%s
+gtlitecore.machine.heat_exchanger.name=Heat Exchanger
+gtlitecore.machine.heat_exchanger.rate.true=Rate: %s L/s (§4Overheated§r)
+gtlitecore.machine.heat_exchanger.rate.false=Rate: %s L/s
+gtlitecore.machine.heat_exchanger.efficiency=Total Efficiency: %s
+gtlitecore.machine.heat_exchanger.threshold=Rate Threshold: %s
 gtlitecore.machine.heat_exchanger.threshold.tooltip=热交换机能以降低基础热流体输入流量为代价，降低生产过热蒸汽的流量阈值。
 gtlitecore.machine.heat_exchanger.threshold_decrement=§c降低5%%流量阈值 /n§7效率降低3%%
 gtlitecore.machine.heat_exchanger.threshold_increment=§a增加5%%流量阈值 /n§7效率增加3%%
@@ -1161,15 +1172,15 @@ gtlitecore.machine.heat_exchanger.heat_time_tooltip=升温耗时：§f%ss
 gtlitecore.machine.heat_exchanger.explosion_tooltip=蒸馏水供应不足会导致爆炸！
 gtlitecore.machine.heat_exchanger.tooltip.parallel=相当于§e%s§7台热交换机。
 
-gtlitecore.machine.extreme_heat_exchanger.name=大型热交换机
+gtlitecore.machine.extreme_heat_exchanger.name=Extreme Heat Exchanger
 
-gtlitecore.machine.mega_heat_exchanger.name=特大热交换机
+gtlitecore.machine.mega_heat_exchanger.name=Mega Heat Exchanger
 
-gtlitecore.machine.tree_growth_factory.name=林海树场
+gtlitecore.machine.tree_growth_factory.name=Tree Growth Factory
 gtlitecore.machine.tree_growth_factory.tooltip.1=生态环保型机器
 gtlitecore.machine.tree_growth_factory.tooltip.2=当输入电压大于§6HV§7时，获得§e(2 * 电压等级^2 - 2 * 电压等级 + 5)§7次并行。
 
-gtlitecore.machine.large_processing_factory.name=大型加工厂
+gtlitecore.machine.large_processing_factory.name=Large Processing Factory
 gtlitecore.machine.large_processing_factory.tooltip.1=超级材料处理厂
 gtlitecore.machine.large_processing_factory.tooltip.2=比相同电压的单方块机器快2.5倍。
 gtlitecore.machine.large_processing_factory.tooltip.3=使用§6编程电路§7控制当前模式下的配方：
@@ -1180,12 +1191,12 @@ gtlitecore.machine.large_processing_factory.tooltip.7=§e电压等级§7决定�
 gtlitecore.machine.large_processing_factory.tooltip.8=每提升1个电压等级，最大并行数加2。
 
 gtlitecore.machine.advanced_processing_array.tooltip=因为物品的最大堆叠限制，这台机器实际上§c只能放入64个机器§7。
-gtlitecore.machine.extreme_processing_array.name=极限处理阵列
+gtlitecore.machine.extreme_processing_array.name=Extreme Processing Array
 gtlitecore.machine.extreme_processing_array.tooltip.1=作为补偿，§r无论运行什么配方§7，配方的运行耗时均为§r(0.8 * 配方时间)§7。
-gtlitecore.machine.ultimate_processing_array.name=终极处理阵列
+gtlitecore.machine.ultimate_processing_array.name=Ultimate Processing Array
 gtlitecore.machine.ultimate_processing_array.tooltip.1=作为补偿，§r无论运行什么配方§7，配方的运行耗时均为§r(0.5 * 配方时间)§7。
 
-gtlitecore.machine.large_alloy_smelter.name=大型合金炉
+gtlitecore.machine.large_alloy_smelter.name=Large Alloy Smelter
 
 gtlitecore.machine.reinforced_rotor_holder.luv.name=强化转子支架（§dLuV§r）
 gtlitecore.machine.reinforced_rotor_holder.zpm.name=强化转子支架（§cZPM§r）
@@ -1198,33 +1209,33 @@ gtlitecore.machine.reinforced_rotor_holder.opv.name=强化转子支架（§9OpV�
 gtlitecore.machine.reinforced_rotor_holder.tooltip.1=超高强度转子支架
 gtlitecore.machine.reinforced_rotor_holder.tooltip.2=用于各类§6特大涡轮§7的强化版转子支架
 gtlitecore.machine.reinforced_rotor_holder.error=必须使用同一等级的转子固定器
-gtlitecore.machine.mega_turbine.steam.name=特大蒸汽涡轮
-gtlitecore.machine.mega_turbine.gas.name=特大燃气涡轮
-gtlitecore.machine.mega_turbine.plasma.name=特大等离子体涡轮
-gtlitecore.machine.mega_turbine.mode.0=正常模式
-gtlitecore.machine.mega_turbine.mode.1=高速模式
+gtlitecore.machine.mega_turbine.steam.name=Mega Steam Turbine
+gtlitecore.machine.mega_turbine.gas.name=Mega Gas Turbine
+gtlitecore.machine.mega_turbine.plasma.name=Mega Plasma Turbine
+gtlitecore.machine.mega_turbine.mode.0=Normal Mode
+gtlitecore.machine.mega_turbine.mode.1=High Speed Mode
 gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
 
-gtlitecore.machine.high_pressure_steam_turbine.name=高压蒸汽涡轮
+gtlitecore.machine.high_pressure_steam_turbine.name=High Pressure Steam Turbine
 
-gtlitecore.machine.supercritical_steam_turbine.name=超临界蒸汽涡轮
+gtlitecore.machine.supercritical_steam_turbine.name=Supercritical Steam Turbine
 
-gtlitecore.machine.mega_high_pressure_steam_turbine.name=特大高压蒸汽涡轮
+gtlitecore.machine.mega_high_pressure_steam_turbine.name=Mega High Pressure Steam Turbine
 
-gtlitecore.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽涡轮
+gtlitecore.machine.mega_supercritical_steam_turbine.name=Mega Supercritical Steam Turbine
 
-gtlitecore.machine.large_rocket_engine.name=大型火箭引擎
+gtlitecore.machine.large_rocket_engine.name=Large Rocket Engine
 gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
 gtlitecore.machine.large_rocket_engine.tooltip.2=§e基础产能功率：§r8192 EU/t§7
 
-gtlitecore.machine.large_biomass_generator.name=大型生物质反应炉
+gtlitecore.machine.large_biomass_generator.name=Large Biomass Generator
 gtlitecore.machine.large_biomass_generator.tooltip=最高产生§dLuV§7级的能量
 
-gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
+gtlitecore.machine.neutral_network_nexus.name=Neutral Network Nexus
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
 gtlitecore.machine.neutral_network_nexus.tooltip.2=用于繁育或杂交各式纳米蜂群
 
-gtlitecore.machine.pcb_factory.name=PCB工厂
+gtlitecore.machine.pcb_factory.name=PCB Factory
 gtlitecore.machine.pcb_factory.tooltip.1=家用纳米级光刻机
 gtlitecore.machine.pcb_factory.tooltip.2=集成了你能想象到的一切电路板生产工艺
 gtlitecore.machine.pcb_factory.tooltip.3=带有附属结构，每一个附属结构都会强化相应的生产工艺流程。
@@ -1256,7 +1267,7 @@ gtlitecore.machine.pcb_factory.tooltip.28=更强力的冷却装置，它可以�
 gtlitecore.machine.pcb_factory.tooltip.29=当然，你并不需要实际输入什么流体来让其运行。
 gtlitecore.machine.pcb_factory.tooltip.30=使PCB工厂的运行耗时变为§r(配方时间/8)§7。
 
-gtlitecore.machine.dangote_distillery.name=丹格特蒸馏厂
+gtlitecore.machine.dangote_distillery.name=Dangote Distillery
 gtlitecore.machine.dangote_distillery.tooltip.1=现代化工业蒸馏，从现在开始
 gtlitecore.machine.dangote_distillery.tooltip.2=运行§r蒸馏室§7配方时，运行耗时为§r(配方时间/4)§7。
 gtlitecore.machine.dangote_distillery.tooltip.3=运行§r蒸馏塔§7配方时，运行耗时为§r(配方时间/2)§7。
@@ -1265,7 +1276,7 @@ gtlitecore.machine.dangote_distillery.tooltip.5=§3UV§7级以下 -> §e4 * (电
 gtlitecore.machine.dangote_distillery.tooltip.6=§3UV§7级以上 -> §e12 * (电压等级 * 4)§7
 gtlitecore.machine.dangote_distillery.tooltip.7=§c§lMAX§7级以上 -> §e720§7
 
-gtlitecore.machine.amazon_warehousing_depot.name=亚马逊仓库
+gtlitecore.machine.amazon_warehousing_depot.name=Amazon Warehousing Depot
 gtlitecore.machine.amazon_warehousing_depot.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
@@ -1283,24 +1294,24 @@ gtlitecore.machine.electrolytic_tank.tooltip.2=输入小于等于§5EV§7级的�
 gtlitecore.machine.electrolytic_tank.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.electrolytic_tank.tooltip.4=最大并行数：§e4096§7
 
-gtlitecore.machine.turbine_mixer.name=涡轮搅拌机
+gtlitecore.machine.turbine_mixer.name=Turbine Mixer
 gtlitecore.machine.turbine_mixer.tooltip.1=工业级涡轮搅拌塔
 gtlitecore.machine.turbine_mixer.tooltip.2=运行§r搅拌机§7配方时，运行耗时为§r(配方时间/2)§7。
 gtlitecore.machine.turbine_mixer.tooltip.3=最大并行数：§e16 * (电压等级)§7
 
-gtlitecore.machine.industrial_centrifuge.name=工业离心机
+gtlitecore.machine.industrial_centrifuge.name=Industrial Centrifuge
 gtlitecore.machine.industrial_centrifuge.tooltip.1=超级卧式离心机
 gtlitecore.machine.industrial_centrifuge.tooltip.2=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
 gtlitecore.machine.industrial_centrifuge.tooltip.3=最大并行数：§e16 * (电压等级)§7
 
-gtlitecore.machine.zhuhai_fishing_pond.name=珠海渔场
-gtlitecore.machine.zhuhai_fishing_pond.mode=当前模式：%s
+gtlitecore.machine.zhuhai_fishing_pond.name=ZhuHai Fishing Pond
+gtlitecore.machine.zhuhai_fishing_pond.mode=Mode: %s
 gtlitecore.machine.zhuhai_fishing_pond.mode.0=模式: 捕捞鱼类
 gtlitecore.machine.zhuhai_fishing_pond.mode.1=模式：捕捞垃圾
 gtlitecore.machine.zhuhai_fishing_pond.mode.2=模式：捕捞宝藏
 gtlitecore.machine.zhuhai_fishing_pond.error=输出槽已满
 
-gtlitecore.machine.coking_tower.name=焦化塔
+gtlitecore.machine.coking_tower.name=Coking Tower
 gtlitecore.machine.coking_tower.tooltip.1=工业焦化厂
 gtlitecore.machine.coking_tower.tooltip.2=根据线圈等级获得并行与配方时间减免
 gtlitecore.machine.coking_tower.tooltip.3=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
@@ -1315,7 +1326,7 @@ gtlitecore.machine.fluid_drill_rig.luv.name=极限流体钻机
 gtlitecore.machine.fluid_drill_rig.zpm.name=终极流体钻机
 gtlitecore.machine.fluid_drill_rig.uv.name=究极流体钻机
 
-gtlitecore.machine.large_circuit_assembly_line.name=大型电路装配线
+gtlitecore.machine.large_circuit_assembly_line.name=Large Circuit Assembly Line
 gtlitecore.machine.large_circuit_assembly_line.tooltip.1=批量装配各式各样的电路！
 gtlitecore.machine.large_circuit_assembly_line.tooltip.2=效率碾压同等级电路组装机！
 gtlitecore.machine.large_circuit_assembly_line.tooltip.3=需要§r对应种类§7的电路来识别具体的电路配方。
@@ -1334,18 +1345,18 @@ gtlitecore.machine.electromagnetic_separation_plant.tooltip.3=输入小于等于
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.5=最大并行数：§e4096§7
 
-gtlitecore.machine.large_vacuum_chamber.name=大型真空室
+gtlitecore.machine.large_vacuum_chamber.name=Large Vacuum Chamber
 
-gtlitecore.machine.large_bio_reactor.name=大型生物反应室
+gtlitecore.machine.large_bio_reactor.name=Large Bio Reactor
 
-gtlitecore.machine.large_euv_mask_aligner.name=大型紫外光刻塔
+gtlitecore.machine.large_euv_mask_aligner.name=Large EUV Mask Aligner
 gtlitecore.machine.large_euv_mask_aligner.tooltip.1=运行§r精密激光蚀刻机§7配方时，运行耗时为§r(配方时间/2)§7。
 gtlitecore.machine.large_euv_mask_aligner.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.large_euv_mask_aligner.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_euv_mask_aligner.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_euv_mask_aligner.tooltip.5=最大并行数：§e4096§7
 
-gtlitecore.machine.ion_lithography_factory.name=大型离子光刻厂
+gtlitecore.machine.ion_lithography_factory.name=Ion Lithography Factory
 gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
 gtlitecore.machine.ion_lithography_factory.tooltip.2=激光蚀刻技术的绝对顶点
 gtlitecore.machine.ion_lithography_factory.tooltip.3=支持你能想象得到的一切光电相关配方
@@ -1378,24 +1389,24 @@ gtlitecore.machine.large_turrent_lathing_factory.tooltip.3=输入小于等于§5
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.5=最大并行数：§e4096§7
 
-gtlitecore.machine.bioware_simulator.name=生物活性模拟器
+gtlitecore.machine.bioware_simulator.name=Bioware Simulator
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
 
-gtlitecore.machine.algae_culture_tank.name=异星藻类培养缸
+gtlitecore.machine.algae_culture_tank.name=Algae Culture Tank
 gtlitecore.machine.algae_culture_tank.tooltip.1=用于培养不属于这个星球的奇异藻类
 
-gtlitecore.machine.large_gas_collector.name=大型集气室
+gtlitecore.machine.large_gas_collector.name=Large Gas Collector
 gtlitecore.machine.large_gas_collector.tooltip.1=超级空气收集器
 gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同维度的气体，不需要位于指定维度。
 gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
 
-gtlitecore.machine.ultimate_combustion_engine.name=终极内燃引擎
+gtlitecore.machine.ultimate_combustion_engine.name=Ultimate Combustion Engine
 gtlitecore.machine.ultimate_combustion_engine.tooltip=化学能吞噬者
 gtlitecore.machine.ultimate_combustion_engine.tooltip.boost_ultimate=提供§f140L/s§7的液态氧，并消耗§f双倍§7燃料以产生高达§f%s§7EU/t的功率。
 
-gtlitecore.machine.industrial_induction_furnace.name=工业感应炉
+gtlitecore.machine.industrial_induction_furnace.name=Industrial Induction Furnace
 
 gtlitecore.machine.horizontal_shaft_impact_macerator.name=大型冲击式研磨厂
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.1=横轴冲击式破碎机
@@ -1425,7 +1436,30 @@ gtlitecore.machine.large_wiremill_array.tooltip.2=输入小于等于§5EV§7级�
 gtlitecore.machine.large_wiremill_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.4=最大并行数：§e4096§7
 
-gtlitecore.machine.large_rock_breaker.name=大型碎岩塔
+gtlitecore.machine.circulative_cooling_tower.name=Circulative Cooling Tower
+gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
+gtlitecore.machine.circulative_cooling_tower.tooltip.2=支持你能想象得到的一切冷却相关配方
+gtlitecore.machine.circulative_cooling_tower.tooltip.3=根据§r环流冷却核心§7等级获得并行与配方时间减免
+gtlitecore.machine.circulative_cooling_tower.tooltip.4=运行§r压缩机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 6)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.5=运行§r真空室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.6=运行§r化学脱水机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.7=运行§r真空干燥炉§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.8=运行§r真空冷冻机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.9=运行§r低温反应室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.10=运行§r大型气体收集器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.11=运行§r等离子冷凝器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.12=运行§r真空干燥炉§7配方时，不受配方温度限制影响。
+gtlitecore.machine.circulative_cooling_tower.tooltip.13=最大并行数：
+gtlitecore.machine.circulative_cooling_tower.tooltip.14=§r压缩机§7模式 -> §e[6 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.15=§r真空室§7模式 -> §e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.16=§r化学脱水机§7模式 ->§e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.17=§r真空干燥炉§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.18=§r真空冷冻机§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r低温反应室§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+
+gtlitecore.machine.large_rock_breaker.name=Large Rock Breaker
 
 gtlitecore.machine.industrial_rock_breaker.name=工业岩石制造厂
 gtlitecore.machine.industrial_rock_breaker.tooltip.1=根据输入电压获得并行
@@ -1433,7 +1467,7 @@ gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入小于等于§5EV§7�
 gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
 
-gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
+gtlitecore.machine.dimensional_mixer.name=Suprachronal Dimensional Mixing Tower
 gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
 gtlitecore.machine.dimensional_mixer.tooltip.2=混合时间与空间
 gtlitecore.machine.dimensional_mixer.tooltip.3=支持你能想象得到的一切搅拌相关配方
@@ -1460,19 +1494,19 @@ gtlitecore.machine.yotta_fluid_tank.tooltip.4=所有§r流体单元方块§7不�
 gtlitecore.machine.yotta_fluid_tank.tooltip.5=最多容许§e§l14§r§7层流体单元方块。
 gtlitecore.machine.yotta_fluid_tank.error.cells=§c必须正确放置流体单元方块§r
 gtlitecore.machine.yotta_fluid_tank.running=力场约束生效中。
-gtlitecore.machine.yotta_fluid_tank.stored=已存储：%s
-gtlitecore.machine.yotta_fluid_tank.capacity=容量：%s
-gtlitecore.machine.yotta_fluid_tank.type=流体类型：%s
-gtlitecore.machine.yotta_fluid_tank.type.empty=空
-gtlitecore.machine.yotta_fluid_tank.cell_capacitor=§b容量：§r%s L
+gtlitecore.machine.yotta_fluid_tank.stored=Stored: %s
+gtlitecore.machine.yotta_fluid_tank.capacity=Capacity: %s
+gtlitecore.machine.yotta_fluid_tank.type=Fluid Type: %s
+gtlitecore.machine.yotta_fluid_tank.type.empty=Empty
+gtlitecore.machine.yotta_fluid_tank.cell_capacitor=§bCapacity: §r%s L
 gtlitecore.machine.yotta_fluid_tank.button_usage=切换流体输出模式
-gtlitecore.machine.yotta_fluid_tank.mode=流体输出：%s
-gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
-gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
-gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§c禁用
-gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§a启用
+gtlitecore.machine.yotta_fluid_tank.mode=Fluid Output: %s
+gtlitecore.machine.yotta_fluid_tank.mode.enable=Enable
+gtlitecore.machine.yotta_fluid_tank.mode.disable=Disable
+gtlitecore.machine.yotta_fluid_tank.mode.0=Fluid Output Mode: §cDisable
+gtlitecore.machine.yotta_fluid_tank.mode.1=Fluid Output Mode: §aEnable
 
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=Dimensionally Transcendent Plasma Forge
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.2=超越维度的边界
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.3=支持你能想象得到的一切熔炼相关配方
@@ -1858,6 +1892,7 @@ gregtech.material.neutronium_superconductor=Neutronium Superconductor
 gregtech.material.fluxed_electrum=Fluxed Electrum
 gregtech.material.arceus_alloy_2_b=Arceus Alloy 2B
 gregtech.material.incoloy_020=Incoloy-020
+gregtech.material.hattrium=Hattrium
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=Kapton-K
