@@ -3,6 +3,7 @@ package magicbook.gtlitecore.client;
 import codechicken.lib.texture.TextureUtils;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IndustrialCentrifugeRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
