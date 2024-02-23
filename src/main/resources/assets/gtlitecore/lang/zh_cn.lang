@@ -295,6 +295,16 @@ tile.cooling_core.mk3.tooltip=环流冷却核心 Mk III
 tile.cooling_core.mk4.name=因果撕裂冷却核心
 tile.cooling_core.mk4.tooltip=环流冷却核心 Mk IV
 
+tile.dyson_swarm_casing.control_casing.name=戴森球控制中心基座机器外壳
+tile.dyson_swarm_casing.control_primary.name=戴森球控制中心初级绕组
+tile.dyson_swarm_casing.control_secondary.name=戴森球控制中心次级绕组
+tile.dyson_swarm_casing.control_toroid.name=戴森球控制中心环形机械方块
+tile.dyson_swarm_casing.deployment_casing.name=戴森球模块部署单元基座机器外壳
+tile.dyson_swarm_casing.deployment_magnet.name=戴森球模块部署单元超导磁体
+tile.dyson_swarm_casing.receiver_casing.name=戴森球能量接收基座机械方块
+tile.dyson_swarm_casing.hypogen_coil_block.name=海珀珍线圈方块
+tile.dyson_swarm_casing.deployment_core.name=戴森球模块部署单元核心
+
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
 metaitem.board.gooware.tooltip=杜邦™ Pyralux® TK层压薄膜
@@ -1389,6 +1399,27 @@ gtlitecore.machine.large_turrent_lathing_factory.tooltip.3=输入小于等于§5
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.5=最大并行数：§e4096§7
 
+gtlitecore.machine.dyson_swarm.name=戴森球地面单元
+gtlitecore.machine.dyson_swarm.tooltip.1=指挥戴森球模块附着于相邻恒星以攫取近乎于无穷无限的电力。
+gtlitecore.machine.dyson_swarm.tooltip.2=在低等文明为建造戴森球而殚精竭虑时，我们已能将其载入无人机升空，
+gtlitecore.machine.dyson_swarm.tooltip.3=并自动安装到恒星上，数以亿计的戴森球将被安装，范围包括数个星系，
+gtlitecore.machine.dyson_swarm.tooltip.4=为了满足我们的恢弘伟业的电力消耗，利用这种绿色能源显然是好选择，
+gtlitecore.machine.dyson_swarm.tooltip.5=遮天蔽日的黑暗将会覆盖这些星系，那些住民没办法使用太阳能发电了。
+gtlitecore.machine.dyson_swarm.tooltip.6=允许使用所有§2UIV§7级及以上电压的动力仓
+gtlitecore.machine.dyson_swarm.tooltip.7=将§r戴森球模块§7放入输入总线以将其发射
+gtlitecore.machine.dyson_swarm.tooltip.8=每个戴森球模块的发电量为10000000 EU
+gtlitecore.machine.dyson_swarm.tooltip.9=单次工作只能发射§c固定数量§7的戴森球模块
+gtlitecore.machine.dyson_swarm.tooltip.10=使用1到5号的§a编程电路§7来控制发射模式
+gtlitecore.machine.dyson_swarm.tooltip.11=可以选择×1，×4，×16，×32与×64五种发射模式
+gtlitecore.machine.dyson_swarm.tooltip.12=发射的戴森球模块中的一部分将被损耗
+gtlitecore.machine.dyson_swarm.tooltip.13=返还的戴森球模块将从输出总线中弹出
+gtlitecore.machine.dyson_swarm.tooltip.14=需要输入§b极寒之凛冰§7作为冷却机组消耗的冷却剂
+gtlitecore.machine.dyson_swarm.tooltip.15=不同发射模式§l不需要§r§7输入不同数量的冷却剂
+gtlitecore.machine.dyson_swarm.tooltip.16=未提供足够极寒之凛冰时，计算机组将停机，进而无法运行机器
+gtlitecore.machine.dyson_swarm.coolant=冷却机组工作中。
+gtlitecore.machine.dyson_swarm.no_coolant=冷却剂不足！
+gtlitecore.machine.dyson_swarm.uses_per_hour_coolant=工作时消耗§f%,d L/hr§7极寒之凛冰
+
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
@@ -2304,6 +2335,8 @@ metaitem.ultrasonic_homogenizer.name=超声波均质器
 metaitem.ultrasonic_homogenizer.tooltip=并不能用于揉搓面团
 metaitem.piezoelectric_crystal.name=压电晶体
 metaitem.piezoelectric_crystal.tooltip=用于组装精密实验器件
+metaitem.dyson_swarm_module.name=戴森球模块
+metaitem.dyson_swarm_module.tooltip=一个存储着戴森球材料与建造数据的无人机
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉

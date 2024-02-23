@@ -147,6 +147,8 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES;
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES;
+    @ZenProperty
+    public static final RecipeMap<FuelRecipeBuilder> DYSON_SWARM_RECIPES;
 
     public GTLiteRecipeMaps() {}
 
@@ -534,5 +536,10 @@ public class GTLiteRecipeMaps {
                 .setSlotOverlay(false, false, true, GuiTextures.DATA_ORB_OVERLAY)
                 .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.ASSEMBLER);
+
+        //  Dyson Swarm RecipeMap
+        DYSON_SWARM_RECIPES = new RecipeMap<>("dyson_swarm_recipes", 2, 8, 0, 0, new FuelRecipeBuilder(), true)
+                .allowEmptyOutput()
+                .setSound(GTSoundEvents.COOLING);
     }
 }

@@ -215,6 +215,7 @@ public class GTLiteElementMaterials {
                 .color(0x20142C)
                 .iconSet(DULL)
                 .element(GTLiteElements.VoidMetal)
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  10014 Astral Titanium
@@ -253,7 +254,7 @@ public class GTLiteElementMaterials {
                 .color(0xE61C24)
                 .iconSet(SHINY)
                 .element(Elements.Og)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_ROTOR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_ROTOR, GENERATE_FRAME)
                 .blast(10380, BlastProperty.GasTier.HIGHEST)
                 .build();
 

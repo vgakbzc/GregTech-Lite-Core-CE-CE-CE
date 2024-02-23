@@ -255,6 +255,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Ring
         Palladium.addFlags(GENERATE_RING);
+        RTMAlloy.addFlags(GENERATE_RING);
 
         //  Gear
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);

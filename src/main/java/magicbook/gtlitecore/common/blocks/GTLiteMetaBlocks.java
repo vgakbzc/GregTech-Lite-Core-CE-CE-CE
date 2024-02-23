@@ -37,6 +37,7 @@ public class GTLiteMetaBlocks {
     public static BlockHermeticCasing HERMETIC_CASING;
     public static BlockDecorativeTransparentCasing DECORATIVE_TRANSPARENT_CASING;
     public static BlockCoolingCore COOLING_CORE;
+    public static BlockDysonSwarmCasing DYSON_SWARM_CASING;
 
     private GTLiteMetaBlocks() {}
 
@@ -140,6 +141,10 @@ public class GTLiteMetaBlocks {
         COOLING_CORE = new BlockCoolingCore();
         COOLING_CORE.setRegistryName("cooling_core");
         COOLING_CORE.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        DYSON_SWARM_CASING = new BlockDysonSwarmCasing();
+        DYSON_SWARM_CASING.setRegistryName("dyson_swarm_casing");
+        DYSON_SWARM_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -165,6 +170,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(HERMETIC_CASING);
         registerItemModel(DECORATIVE_TRANSPARENT_CASING);
         registerItemModel(COOLING_CORE);
+        registerItemModel(DYSON_SWARM_CASING);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();
