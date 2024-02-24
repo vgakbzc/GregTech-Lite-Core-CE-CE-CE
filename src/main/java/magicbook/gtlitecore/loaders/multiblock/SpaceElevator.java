@@ -365,7 +365,7 @@ public class SpaceElevator {
                     .notConsumable(MINING_DRONE_EV.getStackForm(16))
                     .circuitMeta(4)
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Iodine.getFluid(896000))
+                    .fluidOutputs(IodineSlurry.getFluid(896000))
                     .CasingTier(1)
                     .EUt(VA[UV])
                     .duration(20)
