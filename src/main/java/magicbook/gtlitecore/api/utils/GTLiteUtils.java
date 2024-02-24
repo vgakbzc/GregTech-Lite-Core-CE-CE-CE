@@ -6,6 +6,8 @@ import gregtech.api.util.BlockInfo;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.common.blocks.MetaBlocks;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
@@ -182,6 +184,72 @@ public class GTLiteUtils {
         }
 
         return retValue;
+    }
+
+    /**
+     * @param stack Item stack.
+     * @return Item stack id.
+     */
+    public static int stackToInt(ItemStack stack) {
+        if (isStackInvalid(stack))
+            return 0;
+        return itemToInt(stack.getItem(), stack.getMetadata());
+    }
+
+    /**
+     * @param item Item stack.
+     * @param meta Meta data of item stack.
+     * @return Item stack id.
+     */
+    public static int itemToInt(Item item, int meta) {
+        return Item.getIdFromItem(item) | (meta << 16);
+    }
+
+    /**
+     * @param stack ItemStack.
+     * @return Check if itemstack invalid.
+     */
+    public static boolean isStackInvalid(Object stack) {
+        return !(stack instanceof ItemStack) || ((ItemStack) stack).getCount() < 0;
+    }
+
+    /**
+     * @param aStack Itemstack.
+     * @return Check if itemstack valid.
+     */
+    public static boolean isStackValid(Object aStack) {
+        return (aStack instanceof ItemStack) && ((ItemStack) aStack).getCount() >= 0;
+    }
+
+    /**
+     * @param aStack Meta data
+     * @return Get itemstack from meta data.
+     */
+    public static ItemStack intToStack(int aStack) {
+        int tID = aStack & (~0 >>> 16), tMeta = aStack >>> 16;
+        Item tItem = Item.getItemById(tID);
+        if (tItem != null)
+            return new ItemStack(tItem, 1, tMeta);
+        return null;
+    }
+
+    public static ItemStack copyAmountUnsafe(long aAmount, Object... aStacks) {
+        ItemStack rStack = copy(aStacks);
+        if (isStackInvalid(rStack))
+            return null;
+        if (aAmount > Integer.MAX_VALUE)
+            aAmount = Integer.MAX_VALUE;
+        else if (aAmount < 0)
+            aAmount = 0;
+        rStack.setCount((int) aAmount);
+        return rStack;
+    }
+
+    public static ItemStack copy(Object... aStacks) {
+        for (Object tStack : aStacks)
+            if (isStackValid(tStack))
+                return ((ItemStack) tStack).copy();
+        return null;
     }
 
 }

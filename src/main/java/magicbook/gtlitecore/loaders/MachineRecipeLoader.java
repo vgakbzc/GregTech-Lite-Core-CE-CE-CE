@@ -1901,6 +1901,31 @@ public class MachineRecipeLoader {
                         .EUt(VA[UIV])
                         .CWUt(576))
                 .buildAndRegister();
+
+        //  Integrated Ore Processor
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(ELECTRIC_MOTOR_ZPM, 32)
+                .input(ELECTRIC_PISTON_ZPM, 8)
+                .input(ELECTRIC_PUMP_ZPM, 16)
+                .input(CONVEYOR_MODULE_ZPM, 8)
+                .input(ROBOT_ARM_ZPM, 8)
+                .input(plateDouble, StainlessSteel, 32)
+                .input(rotor, Chrome, 16)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(pipeNormalFluid, Polybenzimidazole, 32)
+                .input(COMPONENT_GRINDER_TUNGSTEN, 64)
+                .input(wireGtDouble, UraniumRhodiumDinaquadide, 16)
+                .fluidInputs(SolderingAlloy.getFluid(2880))
+                .fluidInputs(Naquadria.getFluid(1440))
+                .output(INTEGRATED_ORE_PROCESSOR)
+                .EUt(VA[ZPM])
+                .duration(1600)
+                .scannerResearch(b -> b
+                        .researchStack(COMPONENT_GRINDER_TUNGSTEN.getStackForm())
+                        .EUt(VA[ZPM])
+                        .duration(800))
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {

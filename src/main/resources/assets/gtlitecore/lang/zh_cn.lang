@@ -1420,6 +1420,21 @@ gtlitecore.machine.dyson_swarm.coolant=冷却机组工作中。
 gtlitecore.machine.dyson_swarm.no_coolant=冷却剂不足！
 gtlitecore.machine.dyson_swarm.uses_per_hour_coolant=工作时消耗§f%,d L/hr§7极寒之凛冰
 
+gtlitecore.machine.integrated_ore_processor.name=集成矿石处理厂
+gtlitecore.machine.integrated_ore_processor.tooltip.1=一步完成所有矿石处理。
+gtlitecore.machine.integrated_ore_processor.tooltip.2=每个矿石消耗一定电量，还需要输入2L润滑油与200L蒸馏水。
+gtlitecore.machine.integrated_ore_processor.tooltip.3=矿石的处理时间取决于机器的处理模式。
+gtlitecore.machine.integrated_ore_processor.tooltip.4=最大并行数：§e1024§7
+gtlitecore.machine.integrated_ore_processor.tooltip_shift.1=使用螺丝刀右键点击控制器以切换处理模式。
+gtlitecore.machine.integrated_ore_processor.tooltip_shift.2=使用螺丝刀潜行右键点击控制器以切换石粉销毁模式。
+gtlitecore.machine.integrated_ore_processor.mode.0=处理模式：研磨-洗矿-热力离心-研磨
+gtlitecore.machine.integrated_ore_processor.mode.1=处理模式：研磨-洗矿-研磨-离心
+gtlitecore.machine.integrated_ore_processor.mode.2=处理模式：研磨-研磨-离心
+gtlitecore.machine.integrated_ore_processor.mode.3=处理模式：研磨-洗矿-筛选
+gtlitecore.machine.integrated_ore_processor.mode.4=处理模式：研磨-化学浸洗-研磨-离心
+gtlitecore.machine.integrated_ore_processor.void.true=石粉销毁已开启
+gtlitecore.machine.integrated_ore_processor.void.false=石粉销毁已关闭
+
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
