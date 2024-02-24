@@ -2554,6 +2554,7 @@ item.gt.tool.combination_wrench.name=%s两用扳手
 item.gt.tool.electric_jackhammer.lv.name=%s电动气锤（§7LV§r）
 item.gt.tool.electric_jackhammer.hv.name=%s电动气锤（§6HV§r）
 item.gt.tool.electric_jackhammer.iv.name=%s电动气锤（§1IV§r）
+item.gt.tool.vajra.name=%s金刚杵
 
 metaitem.prospector.ev.name=电动勘探扫描仪（§5EV§r）
 metaitem.tool.prospector.ev.name=电动勘探扫描仪（§5EV§r）
