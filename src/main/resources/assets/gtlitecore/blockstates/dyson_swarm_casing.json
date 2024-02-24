@@ -1,0 +1,73 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "control_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spaces/control_casing"
+        }
+      },
+      "control_primary": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/control_primary",
+          "side": "gtlitecore:blocks/casings/spaces/control_primary_side",
+          "bottom": "#top"
+        }
+      },
+      "control_secondary": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/control_secondary",
+          "side": "gtlitecore:blocks/casings/spaces/control_secondary_side",
+          "bottom": "#top"
+        }
+      },
+      "control_toroid": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spaces/control_toroid"
+        }
+      },
+      "deployment_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/deployment_casing",
+          "side": "gtlitecore:blocks/casings/spaces/deployment_casing_side",
+          "bottom": "#top"
+        }
+      },
+      "deployment_magnet": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/deployment_magnet",
+          "side": "gtlitecore:blocks/casings/spaces/deployment_magnet_side",
+          "bottom": "#top"
+        }
+      },
+      "receiver_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/receiver_casing",
+          "side": "gtlitecore:blocks/casings/spaces/receiver_casing_side",
+          "bottom": "#top"
+        }
+      },
+      "hypogen_coil_block": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/spaces/machine_coil_hypogen"
+        }
+      },
+      "deployment_core": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "top": "gtlitecore:blocks/casings/spaces/deployment_core",
+          "side": "gtlitecore:blocks/casings/spaces/deployment_casing",
+          "bottom": "#side"
+        }
+      }
+    }
+  }
+}

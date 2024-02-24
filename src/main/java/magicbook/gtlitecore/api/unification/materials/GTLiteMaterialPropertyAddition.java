@@ -36,7 +36,7 @@ public class GTLiteMaterialPropertyAddition {
         Thallium.setProperty(PropertyKey.DUST, new DustProperty());
         Rhenium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Selenium.setProperty(PropertyKey.DUST, new DustProperty());
-        Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
+        // Tellurium.setProperty(PropertyKey.DUST, new DustProperty());
         Strontium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Strontium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Germanium.setProperty(PropertyKey.INGOT, new IngotProperty());
@@ -255,6 +255,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Ring
         Palladium.addFlags(GENERATE_RING);
+        RTMAlloy.addFlags(GENERATE_RING);
 
         //  Gear
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);

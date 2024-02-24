@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
+import gregtech.api.gui.resources.TextureArea;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -14,6 +15,7 @@ import gregtech.api.util.RelativeDirection;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
+import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.SpaceElevatorCasingTierProperty;
@@ -197,6 +199,24 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
         tooltip.add(I18n.format("gtlitecore.machine.space_elevator.tooltip.11"));
         tooltip.add(I18n.format("gtlitecore.machine.space_elevator.tooltip.12"));
         tooltip.add(I18n.format("gtlitecore.machine.space_elevator.tooltip.13"));
+    }
+
+    @Nonnull
+    @Override
+    protected TextureArea getLogo() {
+        return GTLiteGuiTextures.SPACE_ELEVATOR_LOGO;
+    }
+
+    @Nonnull
+    @Override
+    protected TextureArea getWarningLogo() {
+        return GTLiteGuiTextures.SPACE_ELEVATOR_LOGO_DARK;
+    }
+
+    @Nonnull
+    @Override
+    protected TextureArea getErrorLogo() {
+        return GTLiteGuiTextures.SPACE_ELEVATOR_LOGO_DARK;
     }
 
     @Override

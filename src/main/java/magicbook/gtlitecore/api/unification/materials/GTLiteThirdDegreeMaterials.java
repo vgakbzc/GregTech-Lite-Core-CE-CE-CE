@@ -120,6 +120,27 @@ public class GTLiteThirdDegreeMaterials {
                 .components(Cerium, 1, Tantalum, 2, Oxygen, 6)
                 .build();
 
+        //  20011 Platarsite
+        Platarsite = new Material.Builder(getId(), gregtechId("platarsite"))
+                .dust()
+                .ore(3, 2, false)
+                .addOreByproducts(Rhodium)
+                .addOreByproducts(Tellurium)
+                .color(0x77055B)
+                .iconSet(METALLIC)
+                .components(Platinum, 1, Arsenic, 1, Sulfur, 1)
+                .build();
+
+        //  20012 Picotite
+        Picotite = new Material.Builder(getId(), gregtechId("picotite"))
+                .gem(3)
+                .ore(2, 3, false)
+                .addOreByproducts(Magnesium)
+                .addOreByproducts(Aluminium)
+                .color(0x931C24)
+                .iconSet(DIAMOND)
+                .components(Iron, 1, Chrome, 2, Oxygen, 4)
+                .build();
     }
 
     private static int getId() {

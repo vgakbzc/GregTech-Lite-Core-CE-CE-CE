@@ -687,6 +687,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13100, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 420))
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  12051 Actinium Group-L Alloy
@@ -981,7 +982,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(10650, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1024)
                         .vacuumStats(VA[ZPM], 338))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FOIL)
                 .build();
 
         //  12075 Incoloy-020

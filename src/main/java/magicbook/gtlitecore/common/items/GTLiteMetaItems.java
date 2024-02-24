@@ -278,6 +278,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem DIMENSION_GAP;
     public static MetaItem<?>.MetaValueItem ULTRASONIC_HOMOGENIZER;
     public static MetaItem<?>.MetaValueItem PIEZOELECTRIC_CRYSTAL;
+    public static MetaItem<?>.MetaValueItem DYSON_SWARM_MODULE;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;
