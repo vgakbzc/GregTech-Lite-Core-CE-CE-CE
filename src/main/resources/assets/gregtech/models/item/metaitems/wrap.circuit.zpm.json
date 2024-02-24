@@ -1,8 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtlitecore:items/metaitems/circuit.gooware_processor",
-    "layer1": "gtlitecore:items/metaitems/wrap_overlay",
-    "layer2": "gtlitecore:items/metaitems/voltages/zpm"
+    "layer0": "gtlitecore:items/metaitems/wraps/zpm"
   }
 }

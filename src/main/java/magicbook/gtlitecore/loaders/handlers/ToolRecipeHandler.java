@@ -135,6 +135,36 @@ public class ToolRecipeHandler {
                 }
             }
 
+            //  Vajra
+            if (property.getToolDurability() > 0) {
+                ItemStack[] powerUnits = {
+                        POWER_UNIT_EV.getMaxChargeOverrideStack(6400000L)
+                };
+
+                for (int i = 0; i < powerUnits.length; i++) {
+                    IElectricItem powerUnit = powerUnits[i].getCapability(GregtechCapabilities.CAPABILITY_ELECTRIC_ITEM, null);
+                    ItemStack toolItem = null;
+                    if (powerUnit != null) {
+                        toolItem = GTLiteTools.VAJRA.get(material, 0, powerUnit.getMaxCharge());
+                    }
+
+                    if (toolItem != null) {
+                        ModHandler.addShapedEnergyTransferRecipe(String.format("%s_%s", "vajra", material, i),
+                                toolItem,
+                                Ingredient.fromStacks(powerUnits[i]), true, true,
+                                "GEh",
+                                           "EFP",
+                                           "wPH",
+                                'H', powerUnits[i],
+                                'F', FIELD_GENERATOR_EV,
+                                'G', COMPONENT_GRINDER_TUNGSTEN,
+                                'E', ENERGIUM_CRYSTAL,
+                                'P', plate
+                        );
+                    }
+                }
+            }
+
         }
     }
 

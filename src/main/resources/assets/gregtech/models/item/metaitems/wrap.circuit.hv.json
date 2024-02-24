@@ -1,8 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gregtech:items/metaitems/circuit.nano_processor",
-    "layer1": "gtlitecore:items/metaitems/wrap_overlay",
-    "layer2": "gtlitecore:items/metaitems/voltages/hv"
+    "layer0": "gtlitecore:items/metaitems/wraps/hv"
   }
 }

@@ -1,8 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gtlitecore:items/metaitems/circuit.supracausal_mainframe",
-    "layer1": "gtlitecore:items/metaitems/wrap_overlay",
-    "layer2": "gtlitecore:items/metaitems/voltages/max"
+    "layer0": "gtlitecore:items/metaitems/wraps/max"
   }
 }

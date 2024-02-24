@@ -13,8 +13,7 @@ import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
-import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.blocks.*;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
@@ -34,6 +33,7 @@ public class MaterialInfoLoader {
         MachineCasings();
         Glasses();
         VoltageCoils();
+        CoilBlocks();
     }
 
     private static void MachineCasings() {
@@ -329,5 +329,34 @@ public class MaterialInfoLoader {
         OreDictUnifier.registerOre(VOLTAGE_COIL_OpV.getStackForm(), new ItemMaterialInfo(
                 new MaterialStack(BismuthLawrenciumStrontiumCuprateMagnetic, M / 2),
                 new MaterialStack(Arcanium, M * 2)));
+    }
+
+    private static void CoilBlocks() {
+        //  Basic Coil Blocks
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ADAMANTIUM), new ItemMaterialInfo(
+                new MaterialStack(Adamantium, M * 8),
+                new MaterialStack(SiliconCarbide, M * 2),
+                new MaterialStack(Tritanium, M)));
+
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ICHORIUM), new ItemMaterialInfo(
+                new MaterialStack(Ichorium, M * 8),
+                new MaterialStack(Seaborgium, M * 2),
+                new MaterialStack(Adamantium, M)));
+
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ASTRALIUM), new ItemMaterialInfo(
+                new MaterialStack(Astralium, M * 8),
+                new MaterialStack(Abyssalloy, M * 2),
+                new MaterialStack(Ichorium, M)));
+
+        //  Unique Coil Blocks
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.QUANTUM_COIL), new ItemMaterialInfo(
+                new MaterialStack(Europium, M * 8),
+                new MaterialStack(Pikyonium64B, M * 2),
+                new MaterialStack(QuantumAlloy, M)));
+
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.HYPOGEN_COIL_BLOCK), new ItemMaterialInfo(
+                new MaterialStack(Hypogen, M * 8),
+                new MaterialStack(ArceusAlloy2B, M * 2),
+                new MaterialStack(FullereneSuperconductor, M)));
     }
 }

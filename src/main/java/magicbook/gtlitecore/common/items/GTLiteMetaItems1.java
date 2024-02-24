@@ -489,7 +489,6 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FLUID_CORE_T9 = this.addItem(908, "fluid_core.t9");
         FLUID_CORE_T10 = this.addItem(909, "fluid_core.t10");
 
-
         //  Debug Items
         STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer").addComponents(StructureWriterBehavior.INSTANCE).setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
     }
