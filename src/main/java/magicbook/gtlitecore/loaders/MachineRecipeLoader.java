@@ -1880,6 +1880,52 @@ public class MachineRecipeLoader {
                 .EUt(VA[UHV])
                 .duration(2800)
                 .buildAndRegister();
+
+        //  Dyson Swarm
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[UIV])
+                .input(SENSOR_UIV, 2)
+                .input(circuit, MarkerMaterials.Tier.UIV, 8)
+                .input(plate, VoidMetal, 16)
+                .input(VOLTAGE_COIL_UIV, 2)
+                .input(wireGtOctal, FullereneSuperconductor, 4)
+                .fluidInputs(SolderingAlloy.getFluid(16000))
+                .fluidInputs(SuperheavyHAlloy.getFluid(8000))
+                .fluidInputs(SuperheavyLAlloy.getFluid(8000))
+                .fluidInputs(Zylon.getFluid(5760))
+                .output(DYSON_SWARM)
+                .EUt(VA[UIV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(DYSON_SWARM_MODULE.getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(576))
+                .buildAndRegister();
+
+        //  Integrated Ore Processor
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(ELECTRIC_MOTOR_ZPM, 32)
+                .input(ELECTRIC_PISTON_ZPM, 8)
+                .input(ELECTRIC_PUMP_ZPM, 16)
+                .input(CONVEYOR_MODULE_ZPM, 8)
+                .input(ROBOT_ARM_ZPM, 8)
+                .input(plateDouble, StainlessSteel, 32)
+                .input(rotor, Chrome, 16)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(pipeNormalFluid, Polybenzimidazole, 32)
+                .input(COMPONENT_GRINDER_TUNGSTEN, 64)
+                .input(wireGtDouble, UraniumRhodiumDinaquadide, 16)
+                .fluidInputs(SolderingAlloy.getFluid(2880))
+                .fluidInputs(Naquadria.getFluid(1440))
+                .output(INTEGRATED_ORE_PROCESSOR)
+                .EUt(VA[ZPM])
+                .duration(1600)
+                .scannerResearch(b -> b
+                        .researchStack(COMPONENT_GRINDER_TUNGSTEN.getStackForm())
+                        .EUt(VA[ZPM])
+                        .duration(800))
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -4485,6 +4531,127 @@ public class MachineRecipeLoader {
                 .EUt(VA[UXV])
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Hypogen Coil Block
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireGtDouble, Hypogen, 8)
+                .input(foil, ArceusAlloy2B, 8)
+                .fluidInputs(FullereneSuperconductor.getFluid(L))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.HYPOGEN_COIL_BLOCK, 2))
+                .EUt(VA[UIV])
+                .duration(1200)
+                .buildAndRegister();
+
+        //  Dyson Swarm Control Casing
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, CelestialTungsten)
+                .input(plate, Pikyonium64B, 6)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(cableGtSingle, AstralTitanium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(PCBCoolant.getFluid(L * 4))
+                .fluidInputs(Hattrium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_CASING, 8))
+                .EUt(8000000)
+                .duration(400)
+                .CasingTier(6) // UIV
+                .buildAndRegister();
+
+        //  Control Primary
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireGtDouble, UraniumTriplatinum, 8)
+                .input(ring, Naquadah, 32)
+                .input(FEMTO_PIC_CHIP, 4)
+                .input(foil, RutheniumTriniumAmericiumNeutronate, 2)
+                .fluidInputs(Osmiridium.getFluid(L * 4))
+                .fluidInputs(CrystalMatrix.getFluid(L / 4))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_PRIMARY, 4))
+                .EUt(8000000)
+                .duration(200)
+                .CasingTier(5) // UEV
+                .buildAndRegister();
+
+        //  Control Secondary
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.MOLECULAR_COIL))
+                .input(ring, RTMAlloy, 32)
+                .input(FEMTO_PIC_CHIP, 4)
+                .input(wireGtSingle, Hikarium, 2)
+                .fluidInputs(Trinium.getFluid(L * 4))
+                .fluidInputs(WhiteDwarfMatter.getFluid(L / 4))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_SECONDARY, 4))
+                .EUt(8000000)
+                .duration(200)
+                .CasingTier(5) // UEV
+                .buildAndRegister();
+
+        //  Control Toroid
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, MetastableOganesson)
+                .input(foil, WhiteDwarfMatter, 8)
+                .input(screw, Neutronium, 4)
+                .fluidInputs(BlackTitanium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_TOROID))
+                .EUt(8000000)
+                .duration(20)
+                .CasingTier(6) // UIV
+                .buildAndRegister();
+
+        //  Depolyment Casing
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TantalumHafniumSeaborgiumCarbide)
+                .input(QUANTUM_CHEST[8])
+                .input(CONVEYOR_MODULE_UIV, 2)
+                .input(screw, MetastableHassium, 4)
+                .fluidInputs(MetastableFlerovium.getFluid(L))
+                .fluidInputs(PedotTMA.getFluid(L / 2))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_CASING, 8))
+                .EUt(8000000)
+                .duration(400)
+                .CasingTier(5) // UEV
+                .buildAndRegister();
+
+        //  Depolyment Magnet
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HY1301)
+                .input(plate, PedotPSS, 2)
+                .input(ELECTRON)
+                .input(foil, EnrichedNaquadahTriniumEuropiumDuranide, 4)
+                .fluidInputs(UraniumRhodiumDinaquadide.getFluid(L * 2))
+                .fluidInputs(IndiumTinBariumTitaniumCuprate.getFluid(L))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_MAGNET, 4))
+                .EUt(8000000)
+                .duration(400)
+                .CasingTier(6) // UIV
+                .buildAndRegister();
+
+        //  Receiver Casing
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, LanthanumGroupHAlloy)
+                .input(EMITTER_UIV, 2)
+                .input(lens, NetherStar)
+                .input(wireFine, LunaSilver, 4)
+                .fluidInputs(IncoloyMA813.getFluid(L))
+                .fluidInputs(TitanSteel.getFluid(L / 2))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.RECEIVER_CASING, 8))
+                .EUt(8000000)
+                .duration(400)
+                .CasingTier(6) // UIV
+                .buildAndRegister();
+
+        //  Receiver Core
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Darmstadtium)
+                .input(FIELD_GENERATOR_UIV, 2)
+                .input(plate, HastelloyK243, 4)
+                .input(wireGtSingle, Solarium, 2)
+                .fluidInputs(Mendelevium.getFluid(L))
+                .fluidInputs(Duranium.getFluid(L / 2))
+                .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_CORE))
+                .EUt(8000000)
+                .duration(200)
+                .CasingTier(6) // UIV
                 .buildAndRegister();
     }
 }

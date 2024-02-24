@@ -504,6 +504,11 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
 
         @Override
         public long getMaxVoltage() {
+            return Math.min(GTValues.V[tier], super.getMaxVoltage());
+        }
+
+        @Override
+        public long getMaxParallelVoltage() {
             IEnergyContainer container = ((MetaTileEntityCompressedFusionReactor) this.metaTileEntity).inputEnergyContainers;
             return Math.min(GTValues.V[tier] * getParallelLimit(), container.getInputVoltage());
         }

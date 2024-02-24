@@ -76,6 +76,8 @@ tile.structure_casing.incoloy_020_casing.name=抗弯曲耐热铬铁合金-020机
 tile.structure_casing.tantalum_carbide_casing.name=防震碳化钽机器外壳
 tile.structure_casing.naquadah_casing.name=坚固耐用硅岩机器外壳
 tile.structure_casing.naquadah_gearbox_casing.name=硅岩齿轮箱外壳
+tile.structure_casing.hattrium_casing.name=防冻提布莉姆合金机器外壳
+tile.structure_casing.circulative_cooling_casing.name=环流冷却机械方块
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -283,6 +285,15 @@ tile.decorative_transparent_casing.neutronium_reinforced_borosilicate_glass.name
 tile.decorative_transparent_casing.abyssalloy_reinforced_borosilicate_glass.name=渊狱合金强化硼硅玻璃
 tile.decorative_transparent_casing.heavy_quark_degenerate_matter_reinforced_borosilicate_glass.name=重夸克简并物质强化硼硅玻璃
 tile.decorative_transparent_casing.transcendent_metal_reinforced_borosilicate_glass.name=超时空金属强化硼硅玻璃
+
+tile.cooling_core.mk1.name=中子脉冲冷却核心
+tile.cooling_core.mk1.tooltip=环流冷却核心 Mk I
+tile.cooling_core.mk2.name=寰宇震爆冷却核心
+tile.cooling_core.mk2.tooltip=环流冷却核心 Mk II
+tile.cooling_core.mk3.name=时空涌流冷却核心
+tile.cooling_core.mk3.tooltip=环流冷却核心 Mk III
+tile.cooling_core.mk4.name=因果撕裂冷却核心
+tile.cooling_core.mk4.tooltip=环流冷却核心 Mk IV
 
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -1425,6 +1436,29 @@ gtlitecore.machine.large_wiremill_array.tooltip.2=输入小于等于§5EV§7级�
 gtlitecore.machine.large_wiremill_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.4=最大并行数：§e4096§7
 
+gtlitecore.machine.circulative_cooling_tower.name=环流冷却塔
+gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
+gtlitecore.machine.circulative_cooling_tower.tooltip.2=支持你能想象得到的一切冷却相关配方
+gtlitecore.machine.circulative_cooling_tower.tooltip.3=根据§r环流冷却核心§7等级获得并行与配方时间减免
+gtlitecore.machine.circulative_cooling_tower.tooltip.4=运行§r压缩机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 6)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.5=运行§r真空室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.6=运行§r化学脱水机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.7=运行§r真空干燥炉§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.8=运行§r真空冷冻机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.9=运行§r低温反应室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.10=运行§r大型气体收集器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.11=运行§r等离子冷凝器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.12=运行§r真空干燥炉§7配方时，不受配方温度限制影响。
+gtlitecore.machine.circulative_cooling_tower.tooltip.13=最大并行数：
+gtlitecore.machine.circulative_cooling_tower.tooltip.14=§r压缩机§7模式 -> §e[6 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.15=§r真空室§7模式 -> §e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.16=§r化学脱水机§7模式 ->§e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.17=§r真空干燥炉§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.18=§r真空冷冻机§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r低温反应室§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+
 gtlitecore.machine.large_rock_breaker.name=大型碎岩塔
 
 gtlitecore.machine.industrial_rock_breaker.name=工业岩石制造厂
@@ -1858,6 +1892,7 @@ gregtech.material.neutronium_superconductor=中子素超导体
 gregtech.material.fluxed_electrum=通流琥珀金
 gregtech.material.arceus_alloy_2_b=阿尔宙斯合金2B
 gregtech.material.incoloy_020=耐热铬铁合金-020
+gregtech.material.hattrium=提布莉姆合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -2186,6 +2221,8 @@ gregtech.material.sylvanite=针碲金矿
 gregtech.material.rheniite=辉铼矿
 gregtech.material.gadolinite=硅铍钇矿
 gregtech.material.euxenite=黑稀金矿
+gregtech.material.platarsite=砷铂矿
+gregtech.material.picotite=铬尖晶石
 
 #  Memory Cards
 metaitem.memory_card.base.name=意识存储卡

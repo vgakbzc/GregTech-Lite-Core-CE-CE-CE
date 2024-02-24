@@ -692,6 +692,8 @@ public class GTLiteMaterials {
     public static Material Rheniite;
     public static Material Gadolinite;
     public static Material Euxenite;
+    public static Material Platarsite;
+    public static Material Picotite;
 
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
