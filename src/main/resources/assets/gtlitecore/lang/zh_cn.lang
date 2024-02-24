@@ -1099,7 +1099,7 @@ gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm=最大并行数：§e128§7
 
 gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=用于抹杀物质与能量的界限
+gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=抹杀物质与能量的界限
 gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=最大并行数：§e256§7
 
 gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
@@ -1316,7 +1316,7 @@ gtlitecore.machine.industrial_centrifuge.tooltip.3=最大并行数：§e16 * (�
 
 gtlitecore.machine.zhuhai_fishing_pond.name=珠海渔场
 gtlitecore.machine.zhuhai_fishing_pond.mode=当前模式：%s
-gtlitecore.machine.zhuhai_fishing_pond.mode.0=模式: 捕捞鱼类
+gtlitecore.machine.zhuhai_fishing_pond.mode.0=模式：捕捞鱼类
 gtlitecore.machine.zhuhai_fishing_pond.mode.1=模式：捕捞垃圾
 gtlitecore.machine.zhuhai_fishing_pond.mode.2=模式：捕捞宝藏
 gtlitecore.machine.zhuhai_fishing_pond.error=输出槽已满
