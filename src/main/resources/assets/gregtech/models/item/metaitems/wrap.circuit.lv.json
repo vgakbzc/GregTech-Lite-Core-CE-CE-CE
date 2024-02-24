@@ -1,8 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "gregtech:items/metaitems/circuit.microprocessor",
-    "layer1": "gtlitecore:items/metaitems/wrap_overlay",
-    "layer2": "gtlitecore:items/metaitems/voltages/lv"
+    "layer0": "gtlitecore:items/metaitems/wraps/lv"
   }
 }
