@@ -1,7 +1,5 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import net.minecraftforge.fluids.FluidStack;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -10,48 +8,132 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class HeatExchanger {
 
     public static void init() {
+        BasicHeatExchange();
+        //  TODO SolarPanelTowerHeatExchange();
+        Fuels();
+    }
 
+    private static void BasicHeatExchange() {
         //  Lava
-        for (FluidStack stack : new FluidStack[] {
-                Lava.getFluid(1),
-                Helium.getPlasma(1),                     // Mark 1 Fusion
-                Nitrogen.getPlasma(1),                   // Mark 2 Fusion
-                Oxygen.getPlasma(1),                     // Mark 2 Fusion
-                Argon.getPlasma(1),                      // Mark 2 Fusion
-                Iron.getPlasma(1),                       // Mark 2 Fusion
-                Tin.getPlasma(1),                        // Mark 2 Fusion
-                Adamantium.getPlasma(1),                 // Mark 2 Fusion
-                QuasifissioningPlasma.getPlasma(1),      // Mark 2 Fusion
-                Nickel.getPlasma(1),                     // Mark 3 Fusion
-                Americium.getPlasma(1),                  // Mark 3 Fusion
-                Vibranium.getPlasma(1),                  // Mark 3 Fusion
-                Taranium.getPlasma(1),                   // Mark 3 Fusion
-                Mithril.getPlasma(1),                    // Mark 3 Fusion
-                IchorLiquid.getPlasma(1),                // Mark 4 Fusion
-                Hypogen.getPlasma(1),                    // Mark 5 Fusion
-                AstralTitanium.getPlasma(1),             // Mark 5 Fusion
-                CelestialTungsten.getPlasma(1),          // Mark 5 Fusion
-                DegenerateRhenium.getPlasma(1),          // Stellar Furnace
-                CosmicFabric.getPlasma(1),               // Stellar Furnace
-                QuarkGluonPlasma.getPlasma(1),           // Stellar Furnace
-                HeavyQuarkDegenerateMatter.getPlasma(1), // Stellar Furnace
-                DenseNeutronPlasma.getPlasma(1),         // Stellar Furnace
-                HighEnergyQuarkGluonPlasma.getPlasma(1), // Stellar Furnace
-                StarCoreMatter.getPlasma(1),             // Space Elevator
-                FleroviumYtterbiumPlasma.getPlasma(1)    // Decay Generator
-        }) {
-            HEAT_EXCHANGE_RECIPES.recipeBuilder()
-                    .fluidInputs(DistilledWater.getFluid(5))
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(SuperheatedSteam.getFluid(80 * 5))
-                    .fluidOutputs(Steam.getFluid(160 * 5))
-                    .fluidOutputs(SupercriticalSteam.getFluid(1))
-                    .maxRate(1600)
-                    .flowRate(500)
-                    .duration(20)
-                    .buildAndRegister();
-        }
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Lava.getFluid(1))
+                .fluidOutputs(Steam.getFluid(160 * 5))
+                .fluidOutputs(SuperheatedSteam.getFluid(80 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(1))
+                .maxRate(1600)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
 
+        Mark1Fusion();
+        Mark2Fusion();
+        Mark3Fusion();
+    }
+
+    private static void Mark1Fusion() {
+        //  Helium Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Helium.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(160 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(80 * 5))
+                .fluidOutputs(Helium.getFluid(1))
+                .maxRate(1600)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+    }
+
+    private static void Mark2Fusion() {
+        //  Nitrogen Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Nitrogen.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(320 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(160 * 5))
+                .fluidOutputs(Nitrogen.getFluid(1))
+                .maxRate(3200)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+
+        //  Oxygen Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Oxygen.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(320 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(160 * 5))
+                .fluidOutputs(Oxygen.getFluid(1))
+                .maxRate(3200)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+
+        //  Argon Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Argon.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(320 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(160 * 5))
+                .fluidOutputs(Argon.getFluid(1))
+                .maxRate(3200)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+
+        //  Iron Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Iron.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(320 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(160 * 5))
+                .fluidOutputs(Iron.getFluid(1))
+                .maxRate(3200)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+
+        //  Tin Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Tin.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(320 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(160 * 5))
+                .fluidOutputs(Tin.getFluid(1))
+                .maxRate(3200)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+    }
+
+    private static void Mark3Fusion() {
+        //  Nickel Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Nickel.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(640 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(320 * 5))
+                .fluidOutputs(Nickel.getFluid(1))
+                .maxRate(6400)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+
+        //  Americium Plasma
+        HEAT_EXCHANGE_RECIPES.recipeBuilder()
+                .fluidInputs(DistilledWater.getFluid(5))
+                .fluidInputs(Americium.getPlasma(1))
+                .fluidOutputs(SuperheatedSteam.getFluid(640 * 5))
+                .fluidOutputs(SupercriticalSteam.getFluid(320 * 5))
+                .fluidOutputs(Americium.getFluid(1))
+                .maxRate(6400)
+                .flowRate(500)
+                .duration(20)
+                .buildAndRegister();
+    }
+
+    private static void Fuels() {
         //  Superheated Steam
         HIGH_PRESSURE_STEAM_TURBINE_RECIPES.recipeBuilder()
                 .fluidInputs(SuperheatedSteam.getFluid(320))
