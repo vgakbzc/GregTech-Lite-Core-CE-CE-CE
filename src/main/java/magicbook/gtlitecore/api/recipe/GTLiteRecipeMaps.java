@@ -459,8 +459,8 @@ public class GTLiteRecipeMaps {
                 .setSound(GTSoundEvents.MIXER);
 
         //  Heat Exchanger RecipeMap
-        HEAT_EXCHANGE_RECIPES = new RecipeMap<>("heat_exchanger_recipes", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
-                .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+        HEAT_EXCHANGE_RECIPES = new RecipeMapHeatExchanger<>("heat_exchanger_recipes", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
+                .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_HEAT_EXCHANGE, ProgressWidget.MoveType.HORIZONTAL)
                 .setSound(GTSoundEvents.BATH);
 
         //  Bio Reactor RecipeMap

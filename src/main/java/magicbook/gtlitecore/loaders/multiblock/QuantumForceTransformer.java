@@ -235,8 +235,7 @@ public class QuantumForceTransformer {
                 .CasingTier(5)
                 .buildAndRegister();
 
-        //  Biological Item
-        //  todo if more biological material added later, then this recipe need to be replaced
+        //  Biological Items
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
                 .circuitMeta(11)
                 .notConsumable(swarm, Naquadria)
@@ -255,6 +254,9 @@ public class QuantumForceTransformer {
                 .fluidOutputs(SterileGrowthMedium.getFluid(64000))
                 .fluidOutputs(RawGrowthMedium.getFluid(64000))
                 .fluidOutputs(BZMedium.getFluid(16000))
+                .fluidOutputs(Biotin.getFluid(32000))
+                .fluidOutputs(VitaminA.getFluid(16000))
+                .fluidOutputs(LinoleicAcid.getFluid(64000))
                 .EUt(VA[UEV])
                 .duration(400)
                 .CasingTier(4)
