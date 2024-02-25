@@ -260,10 +260,10 @@ public class GTLiteMetaTileEntities {
         IMPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(50, new MetaTileEntityItemBus(gtliteId("item_hatch.import.uiv"), 11, false));
         IMPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(51, new MetaTileEntityItemBus(gtliteId("item_hatch.import.uxv"), 12, false));
         IMPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(52, new MetaTileEntityItemBus(gtliteId("item_hatch.import.opv"), 13, false));
-        EXPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(53, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uev"), 10, false));
-        EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(54, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uiv"), 11, false));
-        EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(55, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uxv"), 12, false));
-        EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(56, new MetaTileEntityItemBus(gtliteId("item_hatch.export.opv"), 13, false));
+        EXPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(53, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uev"), 10, true));
+        EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(54, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uiv"), 11, true));
+        EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(55, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uxv"), 12, true));
+        EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(56, new MetaTileEntityItemBus(gtliteId("item_hatch.export.opv"), 13, true));
 
         //  Single Machine range: 15000-16000
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);

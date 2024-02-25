@@ -5,7 +5,6 @@ import gregtech.api.items.toolitem.*;
 import gregtech.common.items.ToolItems;
 import gregtech.common.items.tool.*;
 import gregtech.core.sound.GTSoundEvents;
-import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.GTLiteValues;
 import net.minecraft.entity.monster.EntityGolem;
 import net.minecraft.init.SoundEvents;
@@ -118,7 +117,7 @@ public class GTLiteTools {
                                 .efficiencyMultiplier(10F)
                                 .brokenStack(ToolHelper.SUPPLY_POWER_UNIT_EV)
                                 .behaviors(TreeFellingBehavior.INSTANCE))
-                        .sound(GTSoundEvents.ASSEMBLER, true)
+                        .sound(GTSoundEvents.ELECTROLYZER, true)
                         .toolClasses("pickaxe", "axe", "sword", "shovel", "wrench", "wirecutter")
                         .electric(GTValues.EV)
         );

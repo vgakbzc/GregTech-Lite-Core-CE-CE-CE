@@ -22,9 +22,14 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -32,10 +37,12 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import javax.annotation.Nonnull;
+import java.text.DecimalFormat;
 import java.util.Objects;
 import java.util.function.Function;
 
 import static gregtech.api.GregTechAPI.HEATING_COILS;
+import static magicbook.gtlitecore.api.utils.ChatCalculatorHelper.eval;
 
 @Mod.EventBusSubscriber(modid = GTLiteCore.MODID)
 public class CommonProxy {
@@ -194,4 +201,53 @@ public class CommonProxy {
             HEATING_COILS.put(GTLiteMetaBlocks.WIRE_COIL.getState(type), type);
         }
     }
+
+    @SubscribeEvent
+    public static void registerServerChatEvents(@Nonnull ServerChatEvent event) {
+        String message = event.getMessage();
+
+        if (!message.startsWith("="))
+            return;
+
+        if (event.getPlayer() == null)
+            return;
+
+        event.setCanceled(true);
+
+        if (message.startsWith("=help")) { //  if player send =help, then return guide of this function.
+            for (int i = 1; i <= 12; i++) {
+                event.getPlayer().sendMessage(new TextComponentTranslation(String.format("gtlitecore.chat_calculator.help.%s", i), i == 3 ? new TextComponentString("%").setStyle(new Style().setColor(TextFormatting.AQUA)) : new TextComponentString[]{}));
+            }
+        } else {
+            double result; // calculate result
+            String stripped = message.substring(1); // strip the = sign
+            String[] split = stripped.split(","); // split into expression and args
+
+            event.getPlayer().sendMessage(new TextComponentString(stripped).setStyle(new Style().setColor(TextFormatting.AQUA))); // send the input to only the player
+            try {
+                result = eval(split[0].toLowerCase(), event.getPlayer());
+            } catch (Exception e) {
+                // send the error to the player
+                event.getPlayer().sendMessage(new TextComponentString(e.getMessage()).setStyle(new Style().setColor(TextFormatting.RED)));
+                return;
+            }
+
+            // parse arguments
+            int decimalPlaces = 3;
+            for (int i = 1; i < split.length; i++) {
+                String arg = split[i];
+                String value = arg.split("=")[1];
+                if (arg.startsWith("places")) decimalPlaces = Integer.parseInt(value.replaceAll("\\s", ""));
+            }
+
+            // format output
+            DecimalFormat formatter = new DecimalFormat("#.###");
+            formatter.setMaximumFractionDigits(decimalPlaces);
+            String formatted = formatter.format(result);
+
+            // return output
+            event.getPlayer().sendMessage(new TextComponentString(formatted).setStyle(new Style().setColor(TextFormatting.GRAY)));
+        }
+    }
+
 }

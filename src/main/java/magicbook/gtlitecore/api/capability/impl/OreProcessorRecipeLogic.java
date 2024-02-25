@@ -33,17 +33,16 @@ import javax.annotation.Nonnull;
 import java.util.*;
 
 /**
- * Recipe Logic for Integrated Ore Processor
- *
- * @author Gate Guardian
+ * @author Gate Guardian, Magic_Sweepy
  *
  * <p>
- *     Based on my friend Gate Guardian's work.
+ *     Based on my friend Gate Guardian's work, this class is the logic for Integrated Ore Processor.
  *     Some code reference <a href="https://github.com/GTNewHorizons/GT5-Unofficial/">GT5u</a>.
  * </p>
  */
 public class OreProcessorRecipeLogic implements IWorkable {
 
+    //  TODO The one probe info view, JEI info view
     private static final int MAX_PARALLEL = 1024; // max parallel per one run.
 
     //  Basic Hash set of all ore types
@@ -261,6 +260,7 @@ public class OreProcessorRecipeLogic implements IWorkable {
         doCompress(t_product);
     }
 
+    //  FIXME getFluidAmount() may cause NPE ticking tile entity, but why?
     @SafeVarargs
     private void doChemicalBath(HashSet<Integer>... tables) {
         List<ItemStack> t_product = new ArrayList<>();
