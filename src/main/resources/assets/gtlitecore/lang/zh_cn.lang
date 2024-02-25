@@ -380,6 +380,24 @@ metaitem.component.optical.optical_imc_board.tooltip=存算一体光学基板
 metaitem.component.optical.photoelectron_soc.name=光电子 SoC
 metaitem.component.optical.photoelectron_soc.tooltip=荧光电路
 
+#  Chat Calculator descriptions
+gtlitecore.chat_calculator.help.1=§a在聊天栏中使用数学表达式！§7使用§b=§7作为起始符号以使用该功能
+gtlitecore.chat_calculator.help.2=§7  §b+§7 与 §b-§7：加与减，亦或者单纯改变其符号。
+gtlitecore.chat_calculator.help.3=§7  §b*§7，§b/§7，与 §b%s§7：乘，除以及取模。
+gtlitecore.chat_calculator.help.4=§7  §b()§7：控制运算符的顺序，主要用于函数。
+gtlitecore.chat_calculator.help.5=§7  §bx§7，§by§7 与 §bz§7：x轴，y轴与z轴。
+gtlitecore.chat_calculator.help.6=§7  §bpi§7 与 §be§7：圆周率与自然常数。
+gtlitecore.chat_calculator.help.7=§7  §b^§7：乘方（取幂）。
+gtlitecore.chat_calculator.help.8=§7  §bsqrt§7：开方。
+gtlitecore.chat_calculator.help.9=§7  §blog§7 与 §bln§7：对数与自然对数。
+gtlitecore.chat_calculator.help.10=§7  §bsin§7，§bcos§7 与 §btan§7：正弦，余弦与正切函数。
+gtlitecore.chat_calculator.help.11=§7  §basin§7，§bacos§7 与 §batan§7：反正弦，反余弦与反正切函数。
+gtlitecore.chat_calculator.help.12=§7  以 §b,places=n§7 结尾的表达式代表了小数点后n位。
+gtlitecore.chat_calculator.error.unexpected_char=未知表达式：%s
+gtlitecore.chat_calculator.error.unknown_func=未知函数：%s
+gtlitecore.chat_calculator.error.parenthesis_func=表达式 %s 后缺少 ')'
+gtlitecore.chat_calculator.error.parenthesis_end=缺少 ')'
+
 #  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
 metaitem.circuit.gooware_processor.tooltip=粘稠的有机浆液附着于表面/n§2ZPM级电路
