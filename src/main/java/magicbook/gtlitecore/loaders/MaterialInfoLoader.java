@@ -39,34 +39,56 @@ public class MaterialInfoLoader {
                 new ItemMaterialInfo(new MaterialStack(Adamantium, M * 8)));
 
         //  UEV Machine Hull
+        OreDictUnifier.registerOre(HULL[UEV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Adamantium, M * 8),
+                new MaterialStack(PedotTMA, M),
+                new MaterialStack(Polyetheretherketone, M * 2)));
 
         //  UIV Machine Casing
         OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV),
                 new ItemMaterialInfo(new MaterialStack(Infinity, M * 8)));
 
         //  UIV Machine Hull
+        OreDictUnifier.registerOre(HULL[UIV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Infinity, M * 8),
+                new MaterialStack(Solarium, M),
+                new MaterialStack(Polyetheretherketone, M * 2)));
 
         //  UXV Machine Casing
         OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV),
                 new ItemMaterialInfo(new MaterialStack(CosmicNeutronium, M * 8)));
 
         //  UXV Machine Hull
+        OreDictUnifier.registerOre(HULL[UXV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(CosmicNeutronium, M * 8),
+                new MaterialStack(Hypogen, M),
+                new MaterialStack(Zylon, M * 2)));
 
         //  OpV Machine Casing
         OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV),
                 new ItemMaterialInfo(new MaterialStack(Spacetime, M * 8)));
 
         //  OpV Machine Hull
+        OreDictUnifier.registerOre(HULL[OpV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Spacetime, M * 8),
+                new MaterialStack(Galaxium, M),
+                new MaterialStack(Zylon, M * 2)));
 
         //  MAX Machine Casing
         OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX),
                 new ItemMaterialInfo(new MaterialStack(Eternity, M * 8)));
 
         //  MAX Machine Hull
+        OreDictUnifier.registerOre(HULL[MAX].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Eternity, M * 8),
+                new MaterialStack(Universium, M),
+                new MaterialStack(Zylon, M * 2)));
 
     }
 
     private static void Glasses() {
+        //  Common Glasses
+
         //  BPA Polycarbonate Glass
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.BPA_POLYCARBONATE_GLASS),
                 new ItemMaterialInfo(new MaterialStack(BPAPolycarbonate, M * 4)));
@@ -82,6 +104,62 @@ public class MaterialInfoLoader {
         //  Infinity Glass
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS),
                 new ItemMaterialInfo(new MaterialStack(Infinity, M * 4)));
+
+        //  Decorative Glasses
+
+        //  Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4)));
+
+        //  Titanium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TITANIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Titanium, M * 4)));
+
+        //  Tungsten reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TUNGSTEN_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Tungsten, M * 4)));
+
+        //  Osmium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.OSMIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Osmium, M * 4)));
+
+        //  Naquadah reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.NAQUADAH_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Naquadah, M * 4)));
+
+        //  Trinium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TRINIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Trinium, M * 4)));
+
+        //  Mithril reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.MITHRIL_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Mithril, M * 4)));
+
+        //  Neutronium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.NEUTRONIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Neutronium, M * 4)));
+
+        //  Abyssalloy reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.ABYSSALLOY_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Abyssalloy, M * 4)));
+
+        //  Heavy Quark Degenerate Matter reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.HEAVY_QUARK_DEGENERATE_MATTER_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(HeavyQuarkDegenerateMatter, M * 4)));
+
+        //  Transcendent Metal reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TRANSCENDENT_METAL_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(TranscendentMetal, M * 4)));
     }
 
     private static void VoltageCoils() {

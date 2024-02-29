@@ -182,6 +182,16 @@ public class OverrideRecipeLoader {
                 .EUt(16)
                 .buildAndRegister();
 
+        //  OpV Hull
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV))
+                .input(cableGtSingle, Galaxium, 2)
+                .fluidInputs(Zylon.getFluid(L * 2))
+                .output(MetaTileEntities.HULL[OpV])
+                .EUt(16)
+                .duration(50)
+                .buildAndRegister();
+
         //  MAX Casing
         ModHandler.addShapedRecipe(true, "casing_max", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX),
                 "PPP", "PwP", "PPP",
@@ -193,6 +203,16 @@ public class OverrideRecipeLoader {
                 .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX))
                 .duration(50)
                 .EUt(16)
+                .buildAndRegister();
+
+        //  MAX Hull
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX))
+                .input(cableGtSingle, Universium, 2)
+                .fluidInputs(Zylon.getFluid(L * 2))
+                .output(MetaTileEntities.HULL[MAX])
+                .EUt(16)
+                .duration(50)
                 .buildAndRegister();
     }
 
