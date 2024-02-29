@@ -158,6 +158,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeTurrentLathingFactory LARGE_TURRENT_LATHING_FACTORY;
     public static MetaTileEntityDysonSwarm DYSON_SWARM;
     public static MetaTileEntityIntegratedOreProcessor INTEGRATED_ORE_PROCESSOR;
+    public static MetaTileEntityLargeFluidPhaseTransformer LARGE_FLUID_PHASE_TRANSFORMER;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
@@ -388,9 +389,9 @@ public class GTLiteMetaTileEntities {
         LARGE_TURRENT_LATHING_FACTORY = registerMultiMetaTileEntity(93, new MetaTileEntityLargeTurrentLathingFactory(gtliteId("large_turrent_lathing_factory")));
         DYSON_SWARM = registerMultiMetaTileEntity(94, new MetaTileEntityDysonSwarm(gtliteId("dyson_swarm")));
         INTEGRATED_ORE_PROCESSOR = registerMultiMetaTileEntity(95, new MetaTileEntityIntegratedOreProcessor(gtliteId("integrated_ore_processor")));
-        //  96 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
-        //  97 SUPERSTRUCTURE_ASSEMBLY_PLANT
-        //  98
+        LARGE_FLUID_PHASE_TRANSFORMER = registerMultiMetaTileEntity(96, new MetaTileEntityLargeFluidPhaseTransformer(gtliteId("large_fluid_phase_transformer")));
+        //  97 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
+        //  98 SUPERSTRUCTURE_ASSEMBLY_PLANT
         //  99
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));

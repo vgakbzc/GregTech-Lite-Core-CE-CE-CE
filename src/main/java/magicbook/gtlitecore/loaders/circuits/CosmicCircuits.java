@@ -216,8 +216,8 @@ public class CosmicCircuits {
 
         //  Universal SoC
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, BlackPlutonium)
                 .input(CHARGED_LEPTON_TRAP_CRYSTAL)
+                .input(NUCLEAR_CLOCK)
                 .input(ROTATING_TRANSPARENT_SURFACE)
                 .input(wireFine, LunaSilver, 4)
                 .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L))

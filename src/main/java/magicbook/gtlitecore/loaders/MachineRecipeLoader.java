@@ -1926,6 +1926,23 @@ public class MachineRecipeLoader {
                         .EUt(VA[ZPM])
                         .duration(800))
                 .buildAndRegister();
+
+        //  Large Fluid Phase Transformer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, HG1223, 4)
+                .input(LARGE_EXTRACTOR, 16)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(plateDouble, HastelloyC276, 4)
+                .input(plateDouble, Ruthenium, 4)
+                .input(gear, Diamond, 4)
+                .input(gearSmall, Iridium, 16)
+                .input(cableGtQuadruple, Osmium, 4)
+                .fluidInputs(WatertightSteel.getFluid(L * 4))
+                .output(LARGE_FLUID_PHASE_TRANSFORMER)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {

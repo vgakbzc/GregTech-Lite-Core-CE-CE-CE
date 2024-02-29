@@ -1453,6 +1453,13 @@ gtlitecore.machine.integrated_ore_processor.mode.4=处理模式：研磨-化学�
 gtlitecore.machine.integrated_ore_processor.void.true=石粉销毁已开启
 gtlitecore.machine.integrated_ore_processor.void.false=石粉销毁已关闭
 
+gtlitecore.machine.large_fluid_phase_transformer.name=大型流体相变厂
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.5=最大并行数：§e4096§7
+
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。

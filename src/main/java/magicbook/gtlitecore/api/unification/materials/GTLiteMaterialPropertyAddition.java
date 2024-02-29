@@ -177,6 +177,8 @@ public class GTLiteMaterialPropertyAddition {
         BlackSteel.addFlags(GENERATE_DOUBLE_PLATE);
         Stellite100.addFlags(GENERATE_DOUBLE_PLATE);
         Bohrium.addFlags(GENERATE_DOUBLE_PLATE);
+        HastelloyC276.addFlags(GENERATE_DOUBLE_PLATE);
+        Ruthenium.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -267,6 +269,7 @@ public class GTLiteMaterialPropertyAddition {
         WroughtIron.addFlags(GENERATE_SMALL_GEAR);
         HSSE.addFlags(GENERATE_SMALL_GEAR);
         Naquadah.addFlags(GENERATE_GEAR);
+        Iridium.addFlags(GENERATE_SMALL_GEAR);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
