@@ -6,7 +6,10 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.items.MetaItems;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -26,6 +29,8 @@ public class MiscRecipes {
 
     public static void init() {
         MixerRecipes();
+        GlassesRecipes();
+        VoltageCoilRecipes();
         ToolRecipes();
         OtherRecipes();
     }
@@ -469,6 +474,104 @@ public class MiscRecipes {
                 .duration(240)
                 .buildAndRegister();
 
+    }
+
+    private static void GlassesRecipes() {
+        //  BPA Polycarbonate Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, BPAPolycarbonate, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.BPA_POLYCARBONATE_GLASS))
+                .EUt(VA[EV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  PMMA Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, PMMA, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.PMMA_GLASS))
+                .EUt(VA[IV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  CBDO Polycarbonate Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, CBDOPolycarbonate, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.CBDO_POLYCARBONATE_GLASS))
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Infinity Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, Infinity, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
+
+    private static void VoltageCoilRecipes() {
+        //  UHV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTellurideMagnetic)
+                .input(wireFine, Vibranium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UHV)
+                .EUt(VA[UHV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UEV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTellurideMagnetic)
+                .input(wireFine, Mithril, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UEV)
+                .EUt(VA[UEV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UIV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(wireFine, Astralium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UIV)
+                .EUt(VA[UIV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UXV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(wireFine, Hikarium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UXV)
+                .EUt(VA[UXV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  OpV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .input(wireFine, Arcanium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_OpV)
+                .EUt(VA[OpV])
+                .duration(200)
+                .buildAndRegister();
     }
 
     private static void OtherRecipes() {

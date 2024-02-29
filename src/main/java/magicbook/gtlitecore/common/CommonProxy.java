@@ -4,6 +4,7 @@ import gregtech.api.GregTechAPI;
 import gregtech.api.block.VariantItemBlock;
 import gregtech.api.cover.CoverDefinition;
 import gregtech.api.recipes.recipeproperties.FusionEUToStartProperty;
+import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
@@ -15,6 +16,7 @@ import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.ServerSupportI18n;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
+import magicbook.gtlitecore.loaders.MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import magicbook.gtlitecore.loaders.components.MaterialComponents;
@@ -186,6 +188,12 @@ public class CommonProxy {
     public static void registerRecipeHandlers(RegistryEvent.Register<IRecipe> event) {
         GTLiteLog.logger.info("Registering recipe handlers...");
         RecipeHandler.init();
+    }
+
+    @SubscribeEvent
+    public static void registerMaterialInfo(GregTechAPI.RegisterEvent<ItemMaterialInfo> event) {
+        GTLiteLog.logger.info("Registering material infos...");
+        MaterialInfoLoader.init();
     }
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
