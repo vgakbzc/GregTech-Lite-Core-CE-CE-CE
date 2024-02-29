@@ -32,8 +32,37 @@ public class MaterialInfoLoader {
         OreDictUnifier.registerOre(HULL[UHV].getStackForm(), new ItemMaterialInfo(
                 new MaterialStack(Orichalcum, M * 8),
                 new MaterialStack(Europium, M),
-                new MaterialStack(Polyetheretherketone, M * 2)
-        ));
+                new MaterialStack(Polyetheretherketone, M * 2)));
+
+        //  UEV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV),
+                new ItemMaterialInfo(new MaterialStack(Adamantium, M * 8)));
+
+        //  UEV Machine Hull
+
+        //  UIV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV),
+                new ItemMaterialInfo(new MaterialStack(Infinity, M * 8)));
+
+        //  UIV Machine Hull
+
+        //  UXV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV),
+                new ItemMaterialInfo(new MaterialStack(CosmicNeutronium, M * 8)));
+
+        //  UXV Machine Hull
+
+        //  OpV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV),
+                new ItemMaterialInfo(new MaterialStack(Spacetime, M * 8)));
+
+        //  OpV Machine Hull
+
+        //  MAX Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX),
+                new ItemMaterialInfo(new MaterialStack(Eternity, M * 8)));
+
+        //  MAX Machine Hull
 
     }
 
