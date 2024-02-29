@@ -16,7 +16,6 @@ public class SpaceElevator {
     public static void init() {
         DrillingModule();
         MiningModule();
-        //AssemblingModule();
     }
 
     private static void DrillingModule() {
