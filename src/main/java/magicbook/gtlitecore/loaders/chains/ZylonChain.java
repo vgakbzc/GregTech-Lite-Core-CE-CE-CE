@@ -57,12 +57,14 @@ public class ZylonChain {
                 .buildAndRegister();
 
         //  C3H6 + HCl -> CH3CHClCH3
+        //  Another Propene + Hydrochloric Acid recipe is GTFO's Isopropyl Chloride, see RecipeConflicts.
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Propene.getFluid(1000))
                 .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .circuitMeta(2)
                 .fluidOutputs(Isochloropropane.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(110)
+                .duration(480)
                 .buildAndRegister();
 
         //  Na2O + C6H6O2 + CH3CHClCH3 + C4H6O3 + 2HNO3 + C3H6 -> C12H16O2(NO2)2 + NaCl + 2H2O + C2H4O2 + C2H3NaO2

@@ -1,11 +1,12 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.items.metaitem.MetaItem;
+import gregtech.api.unification.material.Material;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.ore;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -15,2084 +16,722 @@ public class SpaceElevator {
     public static void init() {
         DrillingModule();
         MiningModule();
-        AssemblingModule();
+        //AssemblingModule();
     }
 
     private static void DrillingModule() {
-
-        //  LV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(2000),
-                RP1RocketFuel.getFluid(2000),
-                DenseHydrazineMixtureFuel.getFluid(500),
-                MethylhydrazineNitrateRocketFuel.getFluid(500)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Oil.getFluid(3000000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(RawOil.getFluid(1400000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(OilLight.getFluid(1950000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(OilHeavy.getFluid(1792000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Oxygen.getFluid(3800000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Nitrogen.getFluid(8500000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Hydrogen.getFluid(2800000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Iron.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Bronze.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  MV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(2000),
-                RP1RocketFuel.getFluid(2000),
-                DenseHydrazineMixtureFuel.getFluid(500),
-                MethylhydrazineNitrateRocketFuel.getFluid(500)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(HeliumNeon.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Ammonia.getFluid(1280000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Ethylene.getFluid(1792000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(SaltWater.getFluid(13000000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(SulfuricAcid.getFluid(1784000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Chlorobenzene.getFluid(1896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(CarbonMonoxide.getFluid(9480000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Methane.getFluid(2792000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Air.getFluid(FluidStorageKeys.GAS, 1000000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  HV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(2000),
-                RP1RocketFuel.getFluid(2000),
-                DenseHydrazineMixtureFuel.getFluid(500),
-                MethylhydrazineNitrateRocketFuel.getFluid(500)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(NetherAir.getFluid(FluidStorageKeys.GAS, 1000000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Nickel.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Lead.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(HydrofluoricAcid.getFluid(1784000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Argon.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Krypton.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Xenon.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(VinylChloride.getFluid(1792000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Deuterium.getFluid(2800000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  EV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(2000),
-                RP1RocketFuel.getFluid(2000),
-                DenseHydrazineMixtureFuel.getFluid(500),
-                MethylhydrazineNitrateRocketFuel.getFluid(500)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(EnderAir.getFluid(FluidStorageKeys.GAS, 1000000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Tritium.getFluid(2800000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Aluminium.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Bromine.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(IodineSlurry.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(SodiumBisulfate.getFluid(450000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Propene.getFluid(1896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Butadiene.getFluid(1896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Isoprene.getFluid(1896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  IV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(2000),
-                RP1RocketFuel.getFluid(2000),
-                DenseHydrazineMixtureFuel.getFluid(500),
-                MethylhydrazineNitrateRocketFuel.getFluid(500)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Radon.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Naquadah.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Magnalium.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Iron3Chloride.getFluid(900000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Blaze.getFluid(1896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Tetrafluoroethylene.getFluid(1792000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(TitaniumTetrachloride.getFluid(896000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(DistilledWater.getFluid(80000000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_IV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(SodiumPotassium.getFluid(450000))
-                    .CasingTier(1)
-                    .EUt(VA[UV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  LuV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(4000),
-                RP1RocketFuel.getFluid(4000),
-                DenseHydrazineMixtureFuel.getFluid(1000),
-                MethylhydrazineNitrateRocketFuel.getFluid(1000)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Beryllium.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Thorium.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Plutonium239.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Plutonium241.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Tungsten.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Neodymium.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(FluoroantimonicAcid.getFluid(450000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(NetherStar.getFluid(450000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_LuV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(DragonBreath.getFluid(450000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  ZPM
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(4000),
-                RP1RocketFuel.getFluid(4000),
-                DenseHydrazineMixtureFuel.getFluid(1000),
-                MethylhydrazineNitrateRocketFuel.getFluid(1000)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(NaquadahEnriched.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Electrum.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Butyraldehyde.getFluid(1792000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(IndiumConcentrate.getFluid(450000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(AquaRegia.getFluid(1896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(BoronTrifluoride.getFluid(1896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Lubricant.getFluid(1896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(PhosphoricAcid.getFluid(1784000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_ZPM.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Epoxy.getFluid(1792000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  UV
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(4000),
-                RP1RocketFuel.getFluid(4000),
-                DenseHydrazineMixtureFuel.getFluid(1000),
-                MethylhydrazineNitrateRocketFuel.getFluid(1000)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(GalliumArsenide.getFluid(900000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Palladium.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(2)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Platinum.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(3)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Caesium.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(4)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Mercury.getFluid(896000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(5)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(Dichloroethane.getFluid(900000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(6)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(LeadZincSolution.getFluid(900000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(7)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(SulfurDichloride.getFluid(900000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UV.getStackForm(16))
-                    .circuitMeta(8)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(BedrockSmoke.getFluid(1792000))
-                    .CasingTier(2)
-                    .EUt(VA[UHV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  UHV 3 6000 2000
-
-        //  UEV 3
-
-        //  UIV 4 8000 4000
-        for (FluidStack stack : new FluidStack[]{
-                RocketFuel.getFluid(8000),
-                RP1RocketFuel.getFluid(8000),
-                DenseHydrazineMixtureFuel.getFluid(4000),
-                MethylhydrazineNitrateRocketFuel.getFluid(4000)}) {
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UIV.getStackForm(16))
-                    .circuitMeta(0)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(RawStarMatter.getFluid(100000))
-                    .CasingTier(4)
-                    .EUt(VA[UIV])
-                    .duration(20)
-                    .buildAndRegister();
-
-            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
-                    .notConsumable(MINING_DRONE_UIV.getStackForm(16))
-                    .circuitMeta(1)
-                    .fluidInputs(new FluidStack[]{stack})
-                    .fluidOutputs(StarCoreMatter.getPlasma(100000))
-                    .CasingTier(4)
-                    .EUt(VA[UIV])
-                    .duration(20)
-                    .buildAndRegister();
-        }
-
-        //  UXV 4
-
-        //  OpV 5
-
-        //  MAX 5
+        //  LV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_LV, Chlorobenzene, 44800, 1, VA[IV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_LV, SulfuricAcid, 39200, 1, VA[IV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_LV, Iron, 44800, 1, VA[IV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_LV, RawOil, 7000, 1, VA[IV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_LV, OilHeavy,89600, 1, VA[IV]);
+
+        //  MV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_MV, CarbonMonoxide, 224000, 1, VH[IV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_MV, Helium, 140000, 1, VH[IV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_MV, SaltWater, 140000, 1, VH[IV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_MV, Helium3, 70000, 1, VH[IV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_MV, Oxygen, 44800, 1, VH[IV]);
+
+        //  HV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_HV, Neon, 1600, 1, VA[LuV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_HV, Hydrogen, 78400, 1, VA[LuV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_HV, Nitrogen, 78400, 1, VA[LuV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_HV, Methane, 89600, 1, VA[LuV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_HV, Deuterium, 78400, 1, VA[LuV]);
+
+        //  EV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_EV, Tritium, 12000, 1, VH[LuV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_EV, Argon, 1600, 1, VH[LuV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_EV, Ammonia, 12000, 1, VH[LuV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_EV, Ethylene, 89600, 1, VH[LuV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_EV, HydrofluoricAcid, 33600, 1, VH[LuV]);
+
+        //  IV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_IV, Fluorine, 89600, 1, VA[ZPM]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_IV, Krypton, 800, 1, VA[ZPM]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_IV, Copper, 44800, 1, VA[ZPM]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_IV, DistilledWater, 89600, 1, VA[ZPM]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_IV, Xenon, 800, 1, VA[ZPM]);
+
+        //  LuV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_LuV, Bromine, 33600, 1, VH[ZPM]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_LuV, Radon, 800, 1, VH[ZPM]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_LuV, IodineSlurry, 12000, 1, VH[ZPM]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_LuV, HydrochloricAcid, 39200, 1, VH[ZPM]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_LuV, Tin, 44800, 1, VH[ZPM]);
+
+        //  ZPM Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_ZPM, LiquidAir, 89600, 1, VA[UV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_ZPM, Nickel, 44800, 1, VA[UV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_ZPM, DinitrogenTetroxide, 39200, 1, VA[UV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_ZPM, Steam, 78400, 1, VA[UV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_ZPM, Toluene, 12000, 1, VA[UV]);
+
+        //  UV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_UV, LiquidNetherAir, 89600, 2, VH[UV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_UV, Propene, 12000, 2, VH[UV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_UV, PhosphoricAcid, 39200, 2, VH[UV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_UV, Lead, 44800, 2, VH[UV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_UV, Ethylbenzene, 12000, 2, VH[UV]);
+
+        //  UHV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_UHV, LiquidEnderAir, 89600, 3, VA[UHV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_UHV, FluoroantimonicAcid, 39200, 3, VA[UHV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_UHV, DragonBreath, 78400, 3, VA[UHV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_UHV, CarbonDisulfide, 33600, 3, VA[UHV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_UHV, Acetylene, 12000, 3, VA[UHV]);
+
+        //  UEV Mining Drone
+        createDrillingModulePlasmaRecipe(1, MINING_DRONE_UEV, StarCoreMatter, 39200, 4, VH[UHV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_UEV, Niobium, 44800, 4, VH[UHV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_UEV, NitrationMixture, 12000, 4, VH[UHV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_UEV, Glowstone, 44800, 4, VH[UHV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_UEV, Mercury, 78400, 4, VH[UHV]);
+
+        //  UIV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_UIV, RawStarMatter, 39200, 5, VA[UEV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_UIV, BedrockSmoke, 44800, 5, VA[UEV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_UIV, ConcentrateDragonBreath, 33600, 5, VA[UEV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_UIV, AquaRegia, 12000, 5, VA[UEV]);
+        createDrillingModuleFluidRecipe(5, MINING_DRONE_UIV, Indium, 78400, 5, VA[UEV]);
+
+        //  UXV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_UXV, CrudeExoticGas, 89600, 5, VH[UEV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_UXV, OganessonBreedingBase, 44800, 5, VH[UEV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_UXV, NetherStar, 33600, 5, VH[UEV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_UXV, RareEarthChloridesSolution, 44800, 5, VH[UEV]);
+
+        //  OpV Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_OpV, WhiteDwarfMatter, 33600, 5, VA[UIV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_OpV, BlackDwarfMatter, 33600, 5, VA[UIV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_OpV, DragonBlood, 12000, 5, VA[UIV]);
+        createDrillingModuleFluidRecipe(4, MINING_DRONE_OpV, Bedrock, 78400, 5, VA[UIV]);
+
+        //  MAX Mining Drone
+        createDrillingModuleFluidRecipe(1, MINING_DRONE_MAX, Galaxium, 12000, 5, VH[UIV]);
     }
 
     private static void MiningModule() {
-        BasicRecipes();
-        AdvancedRecipes();
-    }
-
-    private static void BasicRecipes() {
-        //  Iron-Copper-Aluminium
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(1)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Iron, 1024, 8000, 500)
-                .chancedOutput(ore, Copper, 1024, 8000, 500)
-                .chancedOutput(ore, Gold, 1024, 6000, 500)
-                .chancedOutput(ore, Magnetite, 1024, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrite, 1024, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 1024, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 1024, 6000, 500)
-                .chancedOutput(ore, Aluminium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(1)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Iron, 1024, 8000, 500)
-                .chancedOutput(ore, Copper, 1024, 8000, 500)
-                .chancedOutput(ore, Gold, 1024, 6000, 500)
-                .chancedOutput(ore, Magnetite, 1024, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrite, 1024, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 1024, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 1024, 6000, 500)
-                .chancedOutput(ore, Aluminium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(11)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Iron, 1024, 8000, 500)
-                .chancedOutput(ore, Copper, 1024, 8000, 500)
-                .chancedOutput(ore, Gold, 1024, 6000, 500)
-                .chancedOutput(ore, Magnetite, 1024, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrite, 1024, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 1024, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 1024, 6000, 500)
-                .chancedOutput(ore, Aluminium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(11)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Iron, 1024, 8000, 500)
-                .chancedOutput(ore, Copper, 1024, 8000, 500)
-                .chancedOutput(ore, Gold, 1024, 6000, 500)
-                .chancedOutput(ore, Magnetite, 1024, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrite, 1024, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 1024, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 1024, 6000, 500)
-                .chancedOutput(ore, Aluminium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Nickel-Cobalt-Sulfur
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(2)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Nickel, 1024, 8000, 500)
-                .chancedOutput(ore, Cobalt, 1024, 7000, 500)
-                .chancedOutput(ore, Sulfur, 1024, 9000, 500)
-                .chancedOutput(ore, Garnierite, 1024, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 1024, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BandedIron, 1024, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(2)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Nickel, 1024, 8000, 500)
-                .chancedOutput(ore, Cobalt, 1024, 7000, 500)
-                .chancedOutput(ore, Sulfur, 1024, 9000, 500)
-                .chancedOutput(ore, Garnierite, 1024, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 1024, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BandedIron, 1024, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(12)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Nickel, 1024, 8000, 500)
-                .chancedOutput(ore, Cobalt, 1024, 7000, 500)
-                .chancedOutput(ore, Sulfur, 1024, 9000, 500)
-                .chancedOutput(ore, Garnierite, 1024, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 1024, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BandedIron, 1024, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(12)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Nickel, 1024, 8000, 500)
-                .chancedOutput(ore, Cobalt, 1024, 7000, 500)
-                .chancedOutput(ore, Sulfur, 1024, 9000, 500)
-                .chancedOutput(ore, Garnierite, 1024, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 1024, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 1024, 9000, 500)
-                .chancedOutput(ore, BandedIron, 1024, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Salt-Rock Salt
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(3)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Salt, 1024, 9000, 500)
-                .chancedOutput(ore, RockSalt, 1024, 9000, 500)
-                .chancedOutput(ore, Realgar, 1024, 7000, 500)
-                .chancedOutput(ore, Zeolite, 1024, 8000, 500)
-                .chancedOutput(ore, Asbestos, 1024, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 1024, 7000, 500)
-                .chancedOutput(ore, Spodumene, 1024, 7000, 500)
-                .chancedOutput(ore, Grossular, 1024, 6000, 500)
-                .chancedOutput(ore, Gypsum, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(3)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Salt, 1024, 9000, 500)
-                .chancedOutput(ore, RockSalt, 1024, 9000, 500)
-                .chancedOutput(ore, Realgar, 1024, 7000, 500)
-                .chancedOutput(ore, Zeolite, 1024, 8000, 500)
-                .chancedOutput(ore, Asbestos, 1024, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 1024, 7000, 500)
-                .chancedOutput(ore, Spodumene, 1024, 7000, 500)
-                .chancedOutput(ore, Grossular, 1024, 6000, 500)
-                .chancedOutput(ore, Gypsum, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(13)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Salt, 1024, 9000, 500)
-                .chancedOutput(ore, RockSalt, 1024, 9000, 500)
-                .chancedOutput(ore, Realgar, 1024, 7000, 500)
-                .chancedOutput(ore, Zeolite, 1024, 8000, 500)
-                .chancedOutput(ore, Asbestos, 1024, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 1024, 7000, 500)
-                .chancedOutput(ore, Spodumene, 1024, 7000, 500)
-                .chancedOutput(ore, Grossular, 1024, 6000, 500)
-                .chancedOutput(ore, Gypsum, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(13)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Salt, 1024, 9000, 2000)
-                .chancedOutput(ore, RockSalt, 1024, 9000, 500)
-                .chancedOutput(ore, Realgar, 1024, 7000, 500)
-                .chancedOutput(ore, Zeolite, 1024, 8000, 500)
-                .chancedOutput(ore, Asbestos, 1024, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 1024, 7000, 500)
-                .chancedOutput(ore, Spodumene, 1024, 7000, 500)
-                .chancedOutput(ore, Grossular, 1024, 6000, 500)
-                .chancedOutput(ore, Gypsum, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Quartzites
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(4)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Quartzite, 1024, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, Barite, 1024, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 1024, 8000, 500)
-                .chancedOutput(ore, Topaz, 1024, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(4)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Quartzite, 1024, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, Barite, 1024, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 1024, 8000, 500)
-                .chancedOutput(ore, Topaz, 1024, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(14)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Quartzite, 1024, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, Barite, 1024, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 1024, 8000, 500)
-                .chancedOutput(ore, Topaz, 1024, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV.getStackForm(16))
-                .circuitMeta(14)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Quartzite, 1024, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 1024, 8000, 500)
-                .chancedOutput(ore, Barite, 1024, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 1024, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 1024, 8000, 500)
-                .chancedOutput(ore, Topaz, 1024, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Lead-Silver-Copper
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(5)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lead, 1024, 8000, 500)
-                .chancedOutput(ore, Silver, 1024, 6000, 500)
-                .chancedOutput(ore, Tin, 1024, 9000, 500)
-                .chancedOutput(ore, Galena, 1024, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 1024, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 1024, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 1024, 8000, 500)
-                .chancedOutput(ore, Stibnite, 1024, 6000, 500)
-                .chancedOutput(ore, Bauxite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(5)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lead, 1024, 8000, 500)
-                .chancedOutput(ore, Silver, 1024, 6000, 500)
-                .chancedOutput(ore, Tin, 1024, 9000, 500)
-                .chancedOutput(ore, Galena, 1024, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 1024, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 1024, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 1024, 8000, 500)
-                .chancedOutput(ore, Stibnite, 1024, 6000, 500)
-                .chancedOutput(ore, Bauxite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(15)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Lead, 1024, 8000, 500)
-                .chancedOutput(ore, Silver, 1024, 6000, 500)
-                .chancedOutput(ore, Tin, 1024, 9000, 500)
-                .chancedOutput(ore, Galena, 1024, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 1024, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 1024, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 1024, 8000, 500)
-                .chancedOutput(ore, Stibnite, 1024, 6000, 500)
-                .chancedOutput(ore, Bauxite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(15)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lead, 1024, 8000, 500)
-                .chancedOutput(ore, Silver, 1024, 6000, 500)
-                .chancedOutput(ore, Tin, 1024, 9000, 500)
-                .chancedOutput(ore, Galena, 1024, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 1024, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 1024, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 1024, 8000, 500)
-                .chancedOutput(ore, Stibnite, 1024, 6000, 500)
-                .chancedOutput(ore, Bauxite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Redstone-Diamond-Thorium
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(6)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Redstone, 1024, 8000, 500)
-                .chancedOutput(ore, Diamond, 1024, 7000, 500)
-                .chancedOutput(ore, Emerald, 1024, 6000, 500)
-                .chancedOutput(ore, Ruby, 1024, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 1024, 7000, 500)
-                .chancedOutput(ore, Coal, 1024, 9000, 500)
-                .chancedOutput(ore, Graphite, 1024, 6000, 500)
-                .chancedOutput(ore, Beryllium, 1024, 8000, 500)
-                .chancedOutput(ore, Thorium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(6)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Redstone, 1024, 8000, 500)
-                .chancedOutput(ore, Diamond, 1024, 7000, 500)
-                .chancedOutput(ore, Emerald, 1024, 6000, 500)
-                .chancedOutput(ore, Ruby, 1024, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 1024, 7000, 500)
-                .chancedOutput(ore, Coal, 1024, 9000, 500)
-                .chancedOutput(ore, Graphite, 1024, 6000, 500)
-                .chancedOutput(ore, Beryllium, 1024, 8000, 500)
-                .chancedOutput(ore, Thorium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(16)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Redstone, 1024, 8000, 500)
-                .chancedOutput(ore, Diamond, 1024, 7000, 500)
-                .chancedOutput(ore, Emerald, 1024, 6000, 500)
-                .chancedOutput(ore, Ruby, 1024, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 1024, 7000, 500)
-                .chancedOutput(ore, Coal, 1024, 9000, 500)
-                .chancedOutput(ore, Graphite, 1024, 6000, 500)
-                .chancedOutput(ore, Beryllium, 1024, 8000, 500)
-                .chancedOutput(ore, Thorium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(16)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Redstone, 1024, 8000, 500)
-                .chancedOutput(ore, Diamond, 1024, 7000, 500)
-                .chancedOutput(ore, Emerald, 1024, 6000, 500)
-                .chancedOutput(ore, Ruby, 1024, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 1024, 7000, 500)
-                .chancedOutput(ore, Coal, 1024, 9000, 500)
-                .chancedOutput(ore, Graphite, 1024, 6000, 500)
-                .chancedOutput(ore, Beryllium, 1024, 8000, 500)
-                .chancedOutput(ore, Thorium, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Lapis-Electrotine
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(7)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Sodalite, 1024, 9000, 500)
-                .chancedOutput(ore, Lazurite, 1024, 8000, 500)
-                .chancedOutput(ore, Calcite, 1024, 9000, 500)
-                .chancedOutput(ore, Electrotine, 1024, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 1024, 8000, 500)
-                .chancedOutput(ore, Diatomite, 1024, 6000, 500)
-                .chancedOutput(ore, Alunite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(7)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Sodalite, 1024, 9000, 500)
-                .chancedOutput(ore, Lazurite, 1024, 8000, 500)
-                .chancedOutput(ore, Calcite, 1024, 9000, 500)
-                .chancedOutput(ore, Electrotine, 1024, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 1024, 8000, 500)
-                .chancedOutput(ore, Diatomite, 1024, 6000, 500)
-                .chancedOutput(ore, Alunite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(17)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Sodalite, 1024, 9000, 500)
-                .chancedOutput(ore, Lazurite, 1024, 8000, 500)
-                .chancedOutput(ore, Calcite, 1024, 9000, 500)
-                .chancedOutput(ore, Electrotine, 1024, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 1024, 8000, 500)
-                .chancedOutput(ore, Diatomite, 1024, 6000, 500)
-                .chancedOutput(ore, Alunite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(17)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Lapis, 1024, 8000, 500)
-                .chancedOutput(ore, Sodalite, 1024, 9000, 500)
-                .chancedOutput(ore, Lazurite, 1024, 8000, 500)
-                .chancedOutput(ore, Calcite, 1024, 9000, 500)
-                .chancedOutput(ore, Electrotine, 1024, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 1024, 8000, 500)
-                .chancedOutput(ore, Diatomite, 1024, 6000, 500)
-                .chancedOutput(ore, Alunite, 1024, 7000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Oilsand-Magnesite
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(8)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Oilsands, 1024, 9000, 500)
-                .chancedOutput(ore, Soapstone, 1024, 8000, 500)
-                .chancedOutput(ore, Talc, 1024, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 1024, 7000, 500)
-                .chancedOutput(ore, Trona, 1024, 6000, 500)
-                .chancedOutput(ore, Magnesite, 1024, 7000, 500)
-                .chancedOutput(ore, Olivine, 1024, 7000, 500)
-                .chancedOutput(ore, Bentonite, 1024, 7000, 500)
-                .chancedOutput(ore, Pollucite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(8)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Oilsands, 1024, 9000, 500)
-                .chancedOutput(ore, Soapstone, 1024, 8000, 500)
-                .chancedOutput(ore, Talc, 1024, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 1024, 7000, 500)
-                .chancedOutput(ore, Trona, 1024, 6000, 500)
-                .chancedOutput(ore, Magnesite, 1024, 7000, 500)
-                .chancedOutput(ore, Olivine, 1024, 7000, 500)
-                .chancedOutput(ore, Bentonite, 1024, 7000, 500)
-                .chancedOutput(ore, Pollucite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(18)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Oilsands, 1024, 9000, 500)
-                .chancedOutput(ore, Soapstone, 1024, 8000, 500)
-                .chancedOutput(ore, Talc, 1024, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 1024, 7000, 500)
-                .chancedOutput(ore, Trona, 1024, 6000, 500)
-                .chancedOutput(ore, Magnesite, 1024, 7000, 500)
-                .chancedOutput(ore, Olivine, 1024, 7000, 500)
-                .chancedOutput(ore, Bentonite, 1024, 7000, 500)
-                .chancedOutput(ore, Pollucite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV.getStackForm(16))
-                .circuitMeta(18)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Oilsands, 1024, 9000, 500)
-                .chancedOutput(ore, Soapstone, 1024, 8000, 500)
-                .chancedOutput(ore, Talc, 1024, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 1024, 7000, 500)
-                .chancedOutput(ore, Trona, 1024, 6000, 500)
-                .chancedOutput(ore, Magnesite, 1024, 7000, 500)
-                .chancedOutput(ore, Olivine, 1024, 7000, 500)
-                .chancedOutput(ore, Bentonite, 1024, 7000, 500)
-                .chancedOutput(ore, Pollucite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Lithium-Tungsten-Molybdenum
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(9)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lithium, 1024, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 1024, 7000, 500)
-                .chancedOutput(ore, Scheelite, 1024, 6000, 500)
-                .chancedOutput(ore, Tungstate, 1024, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 1024, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 1024, 8000, 500)
-                .chancedOutput(ore, Powellite, 1024, 7000, 500)
-                .chancedOutput(ore, Chromite, 1024, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(9)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lithium, 1024, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 1024, 7000, 500)
-                .chancedOutput(ore, Scheelite, 1024, 6000, 500)
-                .chancedOutput(ore, Tungstate, 1024, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 1024, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 1024, 8000, 500)
-                .chancedOutput(ore, Powellite, 1024, 7000, 500)
-                .chancedOutput(ore, Chromite, 1024, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(19)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Lithium, 1024, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 1024, 7000, 500)
-                .chancedOutput(ore, Scheelite, 1024, 6000, 500)
-                .chancedOutput(ore, Tungstate, 1024, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 1024, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 1024, 8000, 500)
-                .chancedOutput(ore, Powellite, 1024, 7000, 500)
-                .chancedOutput(ore, Chromite, 1024, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(19)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Lithium, 1024, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 1024, 7000, 500)
-                .chancedOutput(ore, Scheelite, 1024, 6000, 500)
-                .chancedOutput(ore, Tungstate, 1024, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 1024, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 1024, 8000, 500)
-                .chancedOutput(ore, Powellite, 1024, 7000, 500)
-                .chancedOutput(ore, Chromite, 1024, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 1024, 6000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Neodymium-Platinum-Palladium
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(10)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Neodymium, 1024, 6000, 500)
-                .chancedOutput(ore, Platinum, 1024, 7000, 500)
-                .chancedOutput(ore, Palladium, 1024, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 1024, 8000, 500)
-                .chancedOutput(ore, Monazite, 1024, 7000, 500)
-                .chancedOutput(ore, Cooperite, 1024, 8000, 500)
-                .chancedOutput(ore, Bornite, 1024, 9000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(10)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Neodymium, 1024, 6000, 500)
-                .chancedOutput(ore, Platinum, 1024, 7000, 500)
-                .chancedOutput(ore, Palladium, 1024, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 1024, 8000, 500)
-                .chancedOutput(ore, Monazite, 1024, 7000, 500)
-                .chancedOutput(ore, Cooperite, 1024, 8000, 500)
-                .chancedOutput(ore, Bornite, 1024, 9000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(20)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Neodymium, 1024, 6000, 500)
-                .chancedOutput(ore, Platinum, 1024, 7000, 500)
-                .chancedOutput(ore, Palladium, 1024, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 1024, 8000, 500)
-                .chancedOutput(ore, Monazite, 1024, 7000, 500)
-                .chancedOutput(ore, Cooperite, 1024, 8000, 500)
-                .chancedOutput(ore, Bornite, 1024, 9000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(20)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Neodymium, 1024, 6000, 500)
-                .chancedOutput(ore, Platinum, 1024, 7000, 500)
-                .chancedOutput(ore, Palladium, 1024, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 1024, 8000, 500)
-                .chancedOutput(ore, Monazite, 1024, 7000, 500)
-                .chancedOutput(ore, Cooperite, 1024, 8000, 500)
-                .chancedOutput(ore, Bornite, 1024, 9000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Sapphire-Amethyst
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(11)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Sapphire, 1024, 7000, 500)
-                .chancedOutput(ore, Almandine, 1024, 7000, 500)
-                .chancedOutput(ore, Pyrope, 1024, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 1024, 8000, 500)
-                .chancedOutput(ore, Amethyst, 1024, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 1024, 8000, 500)
-                .chancedOutput(ore, Opal, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(11)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Sapphire, 1024, 7000, 500)
-                .chancedOutput(ore, Almandine, 1024, 7000, 500)
-                .chancedOutput(ore, Pyrope, 1024, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 1024, 8000, 500)
-                .chancedOutput(ore, Amethyst, 1024, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 1024, 8000, 500)
-                .chancedOutput(ore, Opal, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(21)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Sapphire, 1024, 7000, 500)
-                .chancedOutput(ore, Almandine, 1024, 7000, 500)
-                .chancedOutput(ore, Pyrope, 1024, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 1024, 8000, 500)
-                .chancedOutput(ore, Amethyst, 1024, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 1024, 8000, 500)
-                .chancedOutput(ore, Opal, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(21)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Sapphire, 1024, 7000, 500)
-                .chancedOutput(ore, Almandine, 1024, 7000, 500)
-                .chancedOutput(ore, Pyrope, 1024, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 1024, 8000, 500)
-                .chancedOutput(ore, Amethyst, 1024, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 1024, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 1024, 8000, 500)
-                .chancedOutput(ore, Opal, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Copper-Tantalum
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(12)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Malachite, 1024, 9000, 500)
-                .chancedOutput(ore, Apatite, 1024, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 1024, 8000, 500)
-                .chancedOutput(ore, Realgar, 1024, 9000, 500)
-                .chancedOutput(ore, Grossular, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 7000, 500)
-                .chancedOutput(ore, Spessartine, 1024, 7000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(12)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Malachite, 1024, 9000, 500)
-                .chancedOutput(ore, Apatite, 1024, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 1024, 8000, 500)
-                .chancedOutput(ore, Realgar, 1024, 9000, 500)
-                .chancedOutput(ore, Grossular, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 7000, 500)
-                .chancedOutput(ore, Spessartine, 1024, 7000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(22)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Malachite, 1024, 9000, 500)
-                .chancedOutput(ore, Apatite, 1024, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 1024, 8000, 500)
-                .chancedOutput(ore, Realgar, 1024, 9000, 500)
-                .chancedOutput(ore, Grossular, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 7000, 500)
-                .chancedOutput(ore, Spessartine, 1024, 7000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV.getStackForm(16))
-                .circuitMeta(22)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Malachite, 1024, 9000, 500)
-                .chancedOutput(ore, Apatite, 1024, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 1024, 8000, 500)
-                .chancedOutput(ore, Realgar, 1024, 9000, 500)
-                .chancedOutput(ore, Grossular, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 1024, 7000, 500)
-                .chancedOutput(ore, Spessartine, 1024, 7000, 500)
-                .chancedOutput(ore, Tantalite, 1024, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 8000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        //  Naquadah-Plutonium-Uranium
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                .circuitMeta(13)
-                .fluidInputs(RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 1024, 7000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 9000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                .circuitMeta(13)
-                .fluidInputs(RP1RocketFuel.getFluid(2000))
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 1024, 7000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 9000, 500)
-                .EUt(VA[UV])
-                .duration(400)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                .circuitMeta(23)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(2000))
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 1024, 7000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 9000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV.getStackForm(16))
-                .circuitMeta(23)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(2000))
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Naquadah, 1024, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 1024, 7000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Uraninite, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 1024, 8000, 500)
-                .chancedOutput(ore, Pyrochlore, 1024, 9000, 500)
-                .EUt(VA[UV])
-                .duration(200)
-                .CasingTier(1)
-                .buildAndRegister();
-    }
-
-    private static void AdvancedRecipes() {
-        //  Proto Adamantium-Trinium
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(1)
-                .fluidInputs(RocketFuel.getFluid(20000))
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(1)
-                .fluidInputs(RP1RocketFuel.getFluid(20000))
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(10)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(20000))
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(10)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(20000))
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, ProtoAdamantium, 1024, 3000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, TriniumTitanide, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        //  Enriched Mithril
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(2)
-                .fluidInputs(RocketFuel.getFluid(20000))
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, Sylvanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(2)
-                .fluidInputs(RP1RocketFuel.getFluid(20000))
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, Sylvanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(12)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(20000))
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, Sylvanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(12)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(20000))
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, EnrichedMithril, 1024, 3000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, Rheniite, 1024, 7000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, Sylvanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        //  Gadolinite-Euxenite
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(3)
-                .fluidInputs(RocketFuel.getFluid(20000))
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(3)
-                .fluidInputs(RP1RocketFuel.getFluid(20000))
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(13)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(20000))
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(13)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(20000))
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Gadolinite, 1024, 8000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, Euxenite, 1024, 6000, 500)
-                .chancedOutput(ore, BismuthRuthenate, 1024, 9000, 500)
-                .chancedOutput(ore, BismuthIridiate, 1024, 8000, 500)
-                .chancedOutput(ore, GermaniumTungstenNitride, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        //  Platarsite-Picotite
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(4)
-                .fluidInputs(RocketFuel.getFluid(20000))
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(4)
-                .fluidInputs(RP1RocketFuel.getFluid(20000))
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(400)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(14)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(20000))
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
-
-        SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
-                .notConsumable(MINING_DRONE_UEV.getStackForm(16))
-                .circuitMeta(14)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(20000))
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Platarsite, 1024, 7000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Picotite, 1024, 8000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .chancedOutput(ore, Kyanite, 1024, 9000, 500)
-                .EUt(VA[UEV])
-                .duration(200)
-                .CasingTier(3)
-                .buildAndRegister();
+
+        //  LV Mining Drone
+
+        //  Iron-Copper-Aluminium vein
+        createMiningModuleRecipe(1, MINING_DRONE_LV,
+                Iron, 8000,
+                Copper, 8000,
+                Gold, 6000,
+                Magnetite, 9000,
+                VanadiumMagnetite, 7000,
+                Pyrite, 8000,
+                Chalcopyrite, 9000,
+                Sphalerite, 6000,
+                Aluminium, 5000,
+                1,
+                VA[IV]);
+
+        //  Nickel-Cobalt-Sulfur vein
+        createMiningModuleRecipe(2, MINING_DRONE_LV,
+                Nickel, 8000,
+                Cobalt, 7000,
+                Sulfur, 9000,
+                Garnierite, 7000,
+                Pentlandite, 6000,
+                YellowLimonite,9000,
+                BrownLimonite, 9000,
+                BandedIron, 8000,
+                Cobaltite, 6000,
+                1,
+                VA[IV]);
+
+        //  Salt-Rock Salt vein
+        createMiningModuleRecipe(3, MINING_DRONE_LV,
+                Salt, 9000,
+                RockSalt, 9000,
+                Realgar, 7000,
+                Zeolite, 8000,
+                Asbestos, 9000,
+                Lepidolite, 7000,
+                Spodumene, 7000,
+                Grossular, 6000,
+                Gypsum, 7000,
+                1,
+                VA[IV]);
+
+        //  Quartzites-Topaz vein
+        createMiningModuleRecipe(4, MINING_DRONE_LV,
+                Quartzite, 9000,
+                NetherQuartz, 8000,
+                CertusQuartz, 8000,
+                Barite, 7000,
+                BasalticMineralSand, 7000,
+                GraniticMineralSand, 7000,
+                FullersEarth, 8000,
+                Topaz, 6000,
+                BlueTopaz, 6000,
+                1,
+                VA[IV]);
+
+        //  MV Mining Drone
+
+        //  Lead-Silver-Copper vein
+        createMiningModuleRecipe(1, MINING_DRONE_MV,
+                Lead, 8000,
+                Silver, 6000,
+                Tin, 9000,
+                Galena, 8000,
+                Cassiterite, 7000,
+                CassiteriteSand, 5000,
+                Tetrahedrite, 8000,
+                Stibnite, 6000,
+                Bauxite, 7000,
+                1,
+                VH[IV]);
+
+        //  Redstone-Diamond-Thorium vein
+        createMiningModuleRecipe(2, MINING_DRONE_MV,
+                Redstone, 8000,
+                Diamond, 7000,
+                Emerald, 6000,
+                Ruby, 6000,
+                Cinnabar, 7000,
+                Coal, 9000,
+                Graphite, 6000,
+                Beryllium, 8000,
+                Thorium, 6000,
+                1,
+                VH[IV]);
+
+        //  Lapis-Electrotine vein
+        createMiningModuleRecipe(3, MINING_DRONE_MV,
+                Lapis, 8000,
+                Sodalite, 7000,
+                Kyanite, 9000,
+                Lazurite, 8000,
+                Calcite, 9000,
+                Electrotine, 6000,
+                Saltpeter, 7000,
+                Diatomite, 8000,
+                Alunite, 6000,
+                1,
+                VH[IV]);
+
+        //  Oilsand-Magnesite vein
+        createMiningModuleRecipe(4, MINING_DRONE_MV,
+                Oilsands, 9000,
+                Soapstone, 8000,
+                Talc, 8000,
+                GlauconiteSand, 7000,
+                Trona, 6000,
+                Magnesite, 7000,
+                Olivine, 7000,
+                Bentonite, 7000,
+                Pollucite, 6000,
+                1,
+                VH[IV]);
+
+        //  HV Mining Drone
+
+        //  Lithium-Tungsten-Molybdenum vein
+        createMiningModuleRecipe(1, MINING_DRONE_HV,
+                Lithium, 9000,
+                Molybdenum, 7000,
+                Scheelite, 6000,
+                Tungstate, 6000,
+                Wulfenite, 8000,
+                Molybdenite, 8000,
+                Powellite, 7000,
+                Chromite, 7000,
+                Ilmenite, 6000,
+                1,
+                VA[LuV]);
+
+        //  Neodymium-Platinum-Palladium vein
+        createMiningModuleRecipe(2, MINING_DRONE_HV,
+                Neodymium, 6000,
+                Platinum, 7000,
+                Palladium, 7000,
+                Bastnasite, 8000,
+                Monazite, 7000,
+                Cooperite, 8000,
+                Bornite, 9000,
+                Tantalite, 8000,
+                Pyrolusite, 8000,
+                1,
+                VA[LuV]);
+
+        //  Sapphire-Amethyst vein
+        createMiningModuleRecipe(3, MINING_DRONE_HV,
+                Sapphire, 7000,
+                Almandine, 7000,
+                Pyrope, 8000,
+                GreenSapphire, 7000,
+                Amethyst, 9000,
+                GarnetRed, 8000,
+                GarnetYellow, 8000,
+                GarnetYellow, 8000,
+                Opal, 8000,
+                1,
+                VA[LuV]);
+
+        //  Copper-Tantalum vein
+        createMiningModuleRecipe(4, MINING_DRONE_HV,
+                Malachite, 9000,
+                Apatite, 8000,
+                TricalciumPhosphate, 8000,
+                Realgar, 9000,
+                Grossular, 8000,
+                Pyrolusite, 7000,
+                Spessartine, 7000,
+                Tantalite, 6000,
+                Pyrochlore, 8000,
+                1,
+                VA[LuV]);
+
+        //  EV Mining Drone
+
+        //  Neodymium-Tungsten-Platinum vein
+        createMiningModuleRecipe(1, MINING_DRONE_EV,
+                Neodymium, 9000,
+                Platinum, 8000,
+                Cooperite, 7000,
+                Tungstate, 8000,
+                Scheelite, 7000,
+                Bauxite, 8000,
+                Palladium, 7000,
+                Pyrochlore, 8000,
+                Grossular, 8000,
+                1,
+                VH[LuV]);
+
+        //  Monazite-Molybdenum vein
+        createMiningModuleRecipe(2, MINING_DRONE_EV,
+                Monazite, 9000,
+                Bastnasite, 8000,
+                Molybdenum, 7000,
+                Molybdenite, 8000,
+                Bornite, 7000,
+                Tantalite, 8000,
+                Almandine, 8000,
+                Apatite, 7000,
+                Ilmenite, 7000,
+                1,
+                VH[LuV]);
+
+        //  Oilsand vein
+        createMiningModuleRecipe(3, MINING_DRONE_EV,
+                Oilsands, 8000,
+                Oilsands, 8000,
+                Oilsands, 8000,
+                Oilsands, 8000,
+                GraniticMineralSand, 7000,
+                GarnetSand, 7000,
+                BasalticMineralSand, 6000,
+                GlauconiteSand, 9000,
+                Quartzite, 7000,
+                1,
+                VH[LuV]);
+
+        //  Silver-Gold-Platinum vein
+        createMiningModuleRecipe(4, MINING_DRONE_EV,
+                Silver, 7000,
+                Silver, 7000,
+                Gold, 6000,
+                Gold, 6000,
+                Platinum, 8000,
+                Platinum, 8000,
+                Lead, 9000,
+                Tin, 9000,
+                Cooperite, 7000,
+                1,
+                VH[LuV]);
+
+        //  IV Mining Drone
+
+        //  Naquadah-Plutonium-Uranium vein
+        createMiningModuleRecipe(1, MINING_DRONE_IV,
+                Naquadah, 6000,
+                Naquadah, 6000,
+                Naquadah, 6000,
+                Plutonium239, 7000,
+                Uraninite, 8000,
+                Uraninite, 8000,
+                Pitchblende, 8000,
+                Pitchblende, 8000,
+                Pyrochlore, 9000,
+                1,
+                VA[ZPM]);
+
+        //  Thorium-Plutonium-Pitchblende vein
+        createMiningModuleRecipe(2, MINING_DRONE_IV,
+                Thorium, 8000,
+                Thorium, 8000,
+                Uraninite, 7000,
+                Uraninite, 7000,
+                Pitchblende, 9000,
+                Pitchblende, 9000,
+                Beryllium, 8000,
+                Emerald, 8000,
+                Olivine, 9000,
+                1,
+                VA[ZPM]);
+
+        //  LuV Mining Drone
+
+        //  Sylvanite-Gold-Silver vein
+        createMiningModuleRecipe(1, MINING_DRONE_LuV,
+                Gold, 8000,
+                Gold, 8000,
+                Gold, 8000,
+                Gold, 8000,
+                Silver, 9000,
+                Silver, 9000,
+                Silver, 9000,
+                Sylvanite, 4000,
+                Sylvanite, 4000,
+                1,
+                VH[ZPM]);
+
+        //  Rhenite-Molybdenum vein
+        createMiningModuleRecipe(2, MINING_DRONE_LuV,
+                Molybdenite, 9000,
+                Molybdenite, 9000,
+                Molybdenite, 9000,
+                Wulfenite, 8000,
+                Wulfenite, 8000,
+                Wulfenite, 8000,
+                Rheniite, 7000,
+                Rheniite, 7000,
+                Rheniite, 7000,
+                1,
+                VH[ZPM]);
+
+        //  ZPM Mining Drone
+
+        //  Naquadah vein
+        createMiningModuleRecipe(1, MINING_DRONE_ZPM,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                1,
+                VA[UV]);
+
+        //  UV Mining Drone
+
+        //  Iridium-Ruthenium vein
+        createMiningModuleRecipe(1, MINING_DRONE_UV,
+                BismuthIridiate, 6000,
+                BismuthIridiate, 6000,
+                BismuthIridiate, 6000,
+                BismuthRuthenate, 6000,
+                BismuthRuthenate, 6000,
+                BismuthRuthenate, 6000,
+                Platinum, 9000,
+                Cooperite, 8000,
+                Palladium, 7000,
+                1,
+                VH[UV]);
+
+        //  Platarsite-Picotite vein
+        createMiningModuleRecipe(2, MINING_DRONE_UV,
+                Platarsite, 7000,
+                Platarsite, 7000,
+                Platarsite, 7000,
+                Platarsite, 7000,
+                Picotite, 8000,
+                Picotite, 8000,
+                Picotite, 8000,
+                Kyanite, 9000,
+                Chromite, 9000,
+                1,
+                VH[UV]);
+
+        //  UHV Mining Drone
+
+        //  Naquadah-Trinium vein
+        createMiningModuleRecipe(1, MINING_DRONE_UHV,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                Naquadah, 8000,
+                TriniumTitanide, 3000,
+                TriniumTitanide, 3000,
+                TriniumTitanide, 3000,
+                2,
+                VA[UHV]);
+
+        //  Gadolinite-Euxenite vein
+        createMiningModuleRecipe(2, MINING_DRONE_UHV,
+                Gadolinite, 7000,
+                Gadolinite, 7000,
+                Gadolinite, 7000,
+                Gadolinite, 7000,
+                Euxenite, 6000,
+                Euxenite, 6000,
+                Euxenite, 6000,
+                Electrotine, 9000,
+                Silver, 8000,
+                2,
+                VA[UHV]);
+
+        //  UEV Mining Drone
+
+        //  Proto Adamantium-Trinium vein
+        createMiningModuleRecipe(1, MINING_DRONE_UEV,
+                ProtoAdamantium, 3000,
+                ProtoAdamantium, 3000,
+                ProtoAdamantium, 3000,
+                TriniumTitanide, 6000,
+                TriniumTitanide, 6000,
+                TriniumTitanide, 6000,
+                BismuthIridiate, 8000,
+                BismuthIridiate, 8000,
+                GermaniumTungstenNitride, 9000,
+                3,
+                VA[UEV]);
+
+        //  UIV Mining Drone
+
+        //  Enriched Mithril-Proto Adamantium vein
+        createMiningModuleRecipe(1, MINING_DRONE_UIV,
+                EnrichedMithril, 3000,
+                EnrichedMithril, 3000,
+                EnrichedMithril, 3000,
+                EnrichedMithril, 3000,
+                ProtoAdamantium, 6000,
+                ProtoAdamantium, 6000,
+                ProtoAdamantium, 6000,
+                ProtoAdamantium, 6000,
+                TriniumTitanide, 8000,
+                4,
+                VH[UEV]);
+
+        //  UXV Mining Drone
+
+        //  OpV Mining Drone
+
+        //  MAX Mining Drone
 
     }
 
-    private static void AssemblingModule() {}
+    private static void createDrillingModuleFluidRecipe(int circuitMeta,
+                                                        MetaItem.MetaValueItem drone,
+                                                        Material fluidOutput,
+                                                        int amount,
+                                                        int casingTier,
+                                                        int voltage) {
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(16000),
+                RP1RocketFuel.getFluid(16000),
+                DenseHydrazineMixtureFuel.getFluid(8000),
+                MethylhydrazineNitrateRocketFuel.getFluid(8000)
+        }) {
+            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta)
+                    .notConsumable(drone.getStackForm(16))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidOutputs(fluidOutput.getFluid(amount))
+                    .EUt(voltage)
+                    .duration(20)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+    }
+
+    private static void createDrillingModulePlasmaRecipe(int circuitMeta,
+                                                         MetaItem.MetaValueItem drone,
+                                                         Material fluidOutput,
+                                                         int amount,
+                                                         int casingTier,
+                                                         int voltage) {
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(16000),
+                RP1RocketFuel.getFluid(16000),
+                DenseHydrazineMixtureFuel.getFluid(8000),
+                MethylhydrazineNitrateRocketFuel.getFluid(8000)
+        }) {
+            SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta)
+                    .notConsumable(drone.getStackForm(16))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidOutputs(fluidOutput.getPlasma(amount))
+                    .EUt(voltage)
+                    .duration(20)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+    }
+
+    private static void createMiningModuleRecipe(int circuitMeta,
+                                                 MetaItem.MetaValueItem drone,
+                                                 Material ore1,
+                                                 int chanceOre1,
+                                                 Material ore2,
+                                                 int chanceOre2,
+                                                 Material ore3,
+                                                 int chanceOre3,
+                                                 Material ore4,
+                                                 int chanceOre4,
+                                                 Material ore5,
+                                                 int chanceOre5,
+                                                 Material ore6,
+                                                 int chanceOre6,
+                                                 Material ore7,
+                                                 int chanceOre7,
+                                                 Material ore8,
+                                                 int chanceOre8,
+                                                 Material ore9,
+                                                 int chanceOre9,
+                                                 int casingTier,
+                                                 int voltage) {
+        //  x1
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(32000),
+                RP1RocketFuel.getFluid(32000)
+        }) {
+            SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta)
+                    .notConsumable(drone.getStackForm(16))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 256, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 256, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 256, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 256, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 256, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 256, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 256, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 256, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 256, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(400)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+
+        for (FluidStack stack : new FluidStack[] {
+                DenseHydrazineMixtureFuel.getFluid(32000),
+                MethylhydrazineNitrateRocketFuel.getFluid(32000)
+        }) {
+            SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta)
+                    .notConsumable(drone.getStackForm(16))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 256, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 256, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 256, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 256, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 256, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 256, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 256, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 256, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 256, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(200)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+
+        //  x2
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(64000),
+                RP1RocketFuel.getFluid(64000)
+        }) {
+            SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta + 5)
+                    .notConsumable(drone.getStackForm(32))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 512, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 512, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 512, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 512, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 512, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 512, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 512, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 512, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 512, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(400)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+
+        for (FluidStack stack : new FluidStack[] {
+                DenseHydrazineMixtureFuel.getFluid(64000),
+                MethylhydrazineNitrateRocketFuel.getFluid(64000)
+        }) {
+            SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta + 5)
+                    .notConsumable(drone.getStackForm(32))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 512, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 512, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 512, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 512, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 512, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 512, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 512, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 512, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 512, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(200)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+
+        //  x4
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(128000),
+                RP1RocketFuel.getFluid(128000)
+        }) {
+            SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta + 10)
+                    .notConsumable(drone.getStackForm(64))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 1024, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 1024, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 1024, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 1024, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 1024, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 1024, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 1024, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 1024, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 1024, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(400)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+
+        for (FluidStack stack : new FluidStack[] {
+                DenseHydrazineMixtureFuel.getFluid(128000),
+                MethylhydrazineNitrateRocketFuel.getFluid(128000)
+        }) {
+            SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+                    .circuitMeta(circuitMeta + 10)
+                    .notConsumable(drone.getStackForm(64))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 1024, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 1024, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 1024, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 1024, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 1024, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 1024, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 1024, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 1024, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 1024, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(200)
+                    .CasingTier(casingTier)
+                    .buildAndRegister();
+        }
+    }
 }
