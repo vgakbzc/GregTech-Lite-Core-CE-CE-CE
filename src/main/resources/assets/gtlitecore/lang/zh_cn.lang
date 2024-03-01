@@ -1574,8 +1574,8 @@ gtlitecore.machine.yotta_fluid_tank.button_usage=切换流体输出模式
 gtlitecore.machine.yotta_fluid_tank.mode=流体输出：%s
 gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
 gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
-gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§c禁用
-gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§a启用
+gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§a启用
+gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§c禁用
 
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
