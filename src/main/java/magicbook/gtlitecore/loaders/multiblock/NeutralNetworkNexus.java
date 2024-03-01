@@ -18,22 +18,31 @@ public class NeutralNetworkNexus {
     }
 
     private static void BreedingMode() {
+
+        //  Basic Breeding
+        createBasicBreeding(Carbon, VA[LV], 6400);
+        createBasicBreeding(Tin, VA[LV], 3800);
+
+        //  Advanced Breeding
         createAdvancedBreeding(Silver, VA[HV], 3200);
         createAdvancedBreeding(Gold, VA[HV], 3600);
-        createEliteBreeding(Graphene, VA[EV], 1800);
-        createBasicBreeding(Carbon, VA[LV], 6400);
-        createUltimateBreeding(Fullerene, VA[UV], 500);
-        createUltimateBreeding(CarbonNanotube, VA[UHV], 300);
         createAdvancedBreeding(Platinum, VA[HV], 3400);
-        createEliteBreeding(Europium, VA[LuV], 800);
         createAdvancedBreeding(Titanium, VA[EV], 2200);
         createAdvancedBreeding(Tungsten, VA[IV], 2800);
+        createAdvancedBreeding(Naquadah, VA[IV], 1800);
+        createAdvancedBreeding(Neodymium, VA[EV], 2400);
+
+        //  Elite Breeding
+        createEliteBreeding(Graphene, VA[EV], 1800);
+        createEliteBreeding(Europium, VA[LuV], 800);
         createEliteBreeding(Americium, VA[ZPM], 600);
         createEliteBreeding(Dubnium, VA[UV], 400);
-        createAdvancedBreeding(Naquadah, VA[IV], 1800);
         createEliteBreeding(NaquadahEnriched, VA[LuV], 1400);
+
+        //  Ultimate Breeding
+        createUltimateBreeding(Fullerene, VA[UV], 500);
+        createUltimateBreeding(CarbonNanotube, VA[UHV], 300);
         createUltimateBreeding(Naquadria, VA[ZPM], 1000);
-        createBasicBreeding(Tin, VA[LV], 3800);
         createUltimateBreeding(Tritanium, VA[UV], 380);
         createUltimateBreeding(Orichalcum, VA[UV], 240);
     }
