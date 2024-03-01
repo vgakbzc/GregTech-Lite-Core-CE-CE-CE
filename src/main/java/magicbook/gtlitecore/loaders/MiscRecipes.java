@@ -321,87 +321,53 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Starlight Liquid
-        CHEMICAL_RECIPES.recipeBuilder()
-                .notConsumable(EMITTER_UV)
-                .input(dust, Celestite)
-                .fluidInputs(NetherStar.getFluid(16))
-                .fluidInputs(Ice.getFluid(1000))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .notConsumable(plate, AstralTitanium)
+                .fluidInputs(NetherStar.getFluid(1000))
                 .fluidOutputs(StarlightLiquid.getFluid(1000))
                 .EUt(VA[UV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(200)
+                .buildAndRegister();
+
+        PYROLYSE_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(plate, CelestialTungsten)
+                .fluidInputs(NetherStar.getFluid(1000))
+                .fluidOutputs(StarlightLiquid.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(200)
                 .buildAndRegister();
 
         //  Celestial Crystal
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, AstralTitanium)
-                .input(dust, Quartzite)
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(gem, CertusQuartz)
+                .notConsumable(lens, Celestite)
                 .fluidInputs(StarlightLiquid.getFluid(L))
                 .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
+                .EUt(VA[UEV])
+                .duration(100)
                 .buildAndRegister();
 
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, CelestialTungsten)
-                .input(dust, Quartzite)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, AstralTitanium)
-                .input(dust, NetherQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, CelestialTungsten)
-                .input(dust, NetherQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, AstralTitanium)
-                .input(dust, CertusQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, CelestialTungsten)
-                .input(dust, CertusQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
+        //  Celestial Crystal recycle
+        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+                .input(dust, CelestialCrystal)
+                .output(dust, CertusQuartz)
+                .fluidOutputs(StarlightLiquid.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(200)
                 .buildAndRegister();
 
         //  Astralium
-        PYROLYSE_RECIPES.recipeBuilder()
+        BLAST_RECIPES.recipeBuilder()
                 .input(dust, CelestialCrystal)
-                .notConsumable(stickLong, CarbonNanotube)
+                .input(dust, OrichalcumEnergized)
                 .fluidInputs(NaquadahEnriched.getFluid(L))
                 .output(ingotHot, Astralium)
-                .fluidOutputs(Naquadah.getFluid(L / 4))
+                .fluidOutputs(Helium.getFluid(125))
                 .EUt(VA[UEV])
                 .duration(200)
+                .blastFurnaceTemp(15000)
                 .buildAndRegister();
 
         //  Nitinol-60

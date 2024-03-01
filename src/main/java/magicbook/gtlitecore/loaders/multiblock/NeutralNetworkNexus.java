@@ -22,6 +22,7 @@ public class NeutralNetworkNexus {
         //  Basic Breeding
         createBasicBreeding(Carbon, VA[LV], 6400);
         createBasicBreeding(Tin, VA[LV], 3800);
+        //createBasicBreeding(Cobalt, VA[MV], 5300);
 
         //  Advanced Breeding
         createAdvancedBreeding(Silver, VA[HV], 3200);
