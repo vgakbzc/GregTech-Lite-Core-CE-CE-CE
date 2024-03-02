@@ -260,7 +260,6 @@ public class OreProcessorRecipeLogic implements IWorkable {
         doCompress(t_product);
     }
 
-    //  FIXME getFluidAmount() may cause NPE ticking tile entity, but why?
     @SafeVarargs
     private void doChemicalBath(HashSet<Integer>... tables) {
         List<ItemStack> t_product = new ArrayList<>();
