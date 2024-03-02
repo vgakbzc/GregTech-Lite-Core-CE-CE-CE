@@ -120,6 +120,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Organic Chemistry
         AmmoniumChloride.setProperty(PropertyKey.FLUID, new FluidProperty());
+        SodiumHydroxide.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);

@@ -1468,6 +1468,65 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("HOCH2CH2NH2", true);
+
+        //  13178 Methoxybenzylidene Butylaniline (MBBA)
+        MBBA = new Material.Builder(getId(), gregtechId("methoxybenzylidene_butylaniline"))
+                .liquid()
+                .color(0xB60099)
+                .components(Carbon, 18, Hydrogen, 21, Nitrogen, 1, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13179 Methoxybenzaldehyde
+        Methoxybenzaldehyde = new Material.Builder(getId(), gregtechId("methoxybenzaldehyde"))
+                .liquid()
+                .color(0x803281)
+                .components(Carbon, 8, Hydrogen, 8, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13180 Butylaniline
+        Butylaniline = new Material.Builder(getId(), gregtechId("butylaniline"))
+                .liquid()
+                .color(0x55BD53)
+                .components(Carbon, 10, Hydrogen, 15, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13181 Iodoxybenzoic Acid
+        IodoxybenzoicAcid = new Material.Builder(getId(), gregtechId("iodoxybenzoic_acid"))
+                .dust()
+                .color(0x533AA9)
+                .iconSet(SHINY)
+                .components(Carbon, 7, Hydrogen, 5, Iodine, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13182 Trimethylchlorosilane
+        Trimethylchlorosilane = new Material.Builder(getId(), gregtechId("trimethylchlorosilane"))
+                .liquid()
+                .color(0x702169)
+                .components(Carbon, 3, Hydrogen, 9, Silicon, 1, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3SiCl", true);
+
+        //  13183 Trimethylsilane
+        Trimethylsilane = new Material.Builder(getId(), gregtechId("trimethylsilane"))
+                .liquid()
+                .color(0x737373)
+                .components(Carbon, 3, Hydrogen, 10, Silicon, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3SiH", true);
+
+        //  13184 Iodobenzoic Acid
+        IodobenzoicAcid = new Material.Builder(getId(), gregtechId("iodobenzoic_acid"))
+                .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .color(0xCDB9BC)
+                .components(Carbon, 7, Hydrogen, 5, Iodine, 1, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

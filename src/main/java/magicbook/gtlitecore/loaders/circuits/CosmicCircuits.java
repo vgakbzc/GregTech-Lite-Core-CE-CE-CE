@@ -7,6 +7,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtechfoodoption.GTFOMaterialHandler.Aminophenol;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -162,6 +163,130 @@ public class CosmicCircuits {
 
     private static void SoC() {
 
+        //  NaCl + HI -> NaI + HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Salt, 2)
+                .fluidInputs(HydroiodicAcid.getFluid(1000))
+                .circuitMeta(1)
+                .output(dust, SodiumIodide, 2)
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(340)
+                .buildAndRegister();
+
+        //  Na + HNO2 -> NaNO2 + H
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .input(dust, Sodium)
+                .fluidInputs(NitrousAcid.getFluid(1000))
+                .output(dust, SodiumNitrite, 4)
+                .fluidOutputs(Hydrogen.getFluid(1000))
+                .EUt(VA[EV])
+                .duration(200)
+                .temperature(437)
+                .buildAndRegister();
+
+        //  NaF + NaNO2 + C6H4(CO)2O + NaOH + NH3 + HCl + 2Cl + H2O -> C7H5IO2 + N + CO2 + 3(NaCl)(H2O)
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodiumIodide, 2)
+                .input(dust, SodiumNitrite, 4)
+                .input(dust, PhthalicAnhydride, 15)
+                .fluidInputs(SodiumHydroxide.getFluid(1000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidInputs(Chlorine.getFluid(2000))
+                .fluidInputs(Water.getFluid(1000))
+                .fluidOutputs(IodobenzoicAcid.getFluid(1000))
+                .fluidOutputs(Nitrogen.getFluid(1000))
+                .fluidOutputs(CarbonDioxide.getFluid(1000))
+                .fluidOutputs(SaltWater.getFluid(3000))
+                .EUt(VA[UEV])
+                .duration(20)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  3C7H5IO2 + H2SO4 + 2O -> 3C7H5IO4 + H2S
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, PotassiumBromate)
+                .fluidInputs(IodobenzoicAcid.getFluid(3000))
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .fluidInputs(Oxygen.getFluid(2000))
+                .output(dust, IodoxybenzoicAcid, 51)
+                .fluidOutputs(HydrogenSulfide.getFluid(1000))
+                .EUt(VA[EV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  Si(CH3)2Cl2 + CH4 -> (CH3)3SiCl + 2H
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Dimethyldichlorosilane.getFluid(1000))
+                .fluidInputs(Methane.getFluid(1000))
+                .circuitMeta(2)
+                .fluidOutputs(Trimethylchlorosilane.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(150)
+                .buildAndRegister();
+
+        //  LiH + (CH3)3SiCl -> (CH3)3SiH + LiCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, LithiumHydride, 2)
+                .fluidInputs(Trimethylchlorosilane.getFluid(1000))
+                .output(dust, LithiumChloride, 2)
+                .fluidOutputs(Trimethylsilane.getFluid(1000))
+                .EUt(VA[LuV])
+                .duration(340)
+                .buildAndRegister();
+
+        //  C7H5IO4 + (CH3)3SiH + C6H5Cl + 2CH2O -> C8H8O2 + (CH3)3SiCl (cycle) + C7H5IO2 (cycle) + 2H
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, CobaltOxide)
+                .input(dust, IodoxybenzoicAcid, 17)
+                .fluidInputs(Trimethylsilane.getFluid(1000))
+                .fluidInputs(Chlorobenzene.getFluid(1000))
+                .fluidInputs(Formaldehyde.getFluid(2000))
+                .fluidOutputs(Methoxybenzaldehyde.getFluid(1000))
+                .fluidOutputs(Trimethylchlorosilane.getFluid(1000))
+                .fluidOutputs(IodobenzoicAcid.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[UHV])
+                .duration(250)
+                .buildAndRegister();
+
+        //  K + I -> KI
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Potassium)
+                .input(dust, Iodine)
+                .circuitMeta(2)
+                .output(dust, PotassiumIodide, 2)
+                .EUt(VA[HV])
+                .duration(180)
+                .buildAndRegister();
+
+        //  KI + CCH7NO + C4H9Li -> LiI + C10H15N + KOH
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumIodide, 2)
+                .inputs(Aminophenol.getItemStack(15))
+                .fluidInputs(Butyllithium.getFluid(1000))
+                .output(dust, LithiumIodide, 2)
+                .fluidOutputs(Butylaniline.getFluid(1000))
+                .fluidOutputs(PotassiumHydroxide.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(240)
+                .buildAndRegister();
+
+        //  C8H8O2 + C10H15N -> C18H21NO + H2O
+        //  todo another catalyst?
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, Technetium)
+                .fluidInputs(Methoxybenzaldehyde.getFluid(1000))
+                .fluidInputs(Butylaniline.getFluid(1000))
+                .fluidOutputs(MBBA.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[UIV])
+                .duration(90)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
         //  Lepton Trap Crystal
         BLAST_RECIPES.recipeBuilder()
                 .input(dust, MetastableHassium)
@@ -206,8 +331,8 @@ public class CosmicCircuits {
                 .input(COLORED_LEDS)
                 .input(gear, CobaltBrass)
                 .input(bolt, Tritanium, 2)
-                .fluidInputs(Hdcs.getFluid(L))
-                .fluidInputs(Lutetium.getFluid(L / 2))
+                .fluidInputs(CarbonNanotube.getFluid(L))
+                .fluidInputs(MBBA.getFluid(500))
                 .output(ROTATING_TRANSPARENT_SURFACE)
                 .EUt(VA[UHV])
                 .duration(120)
@@ -216,8 +341,8 @@ public class CosmicCircuits {
 
         //  Universal SoC
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, BlackPlutonium)
                 .input(CHARGED_LEPTON_TRAP_CRYSTAL)
-                .input(NUCLEAR_CLOCK)
                 .input(ROTATING_TRANSPARENT_SURFACE)
                 .input(wireFine, LunaSilver, 4)
                 .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L))

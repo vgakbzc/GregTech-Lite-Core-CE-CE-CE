@@ -1885,6 +1885,9 @@ gregtech.material.radium_hydroxide=Radium Hydroxide
 gregtech.material.radium_oxide=Radium Oxide
 gregtech.material.ce_lag=Ce:LAG
 gregtech.material.lead_zirconate_titanate=Lead Zirconate Titanate
+gregtech.material.sodium_iodide=Sodium Iodide
+gregtech.material.sodium_nitrite=Sodium Nitrite
+gregtech.material.potassium_iodide=Potassium Iodide
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=Inconel-625
@@ -2142,6 +2145,13 @@ gregtech.material.beta_pinene=β-Pinene
 gregtech.material.propargyl_chloride=Propargyl Chloride
 gregtech.material.propargyl_alcohol=Propargyl Alcohol
 gregtech.material.ethanolamine=Ethanolamine
+gregtech.material.methoxybenzylidene_butylaniline=Methoxybenzylidene Butylaniline (MBBA)
+gregtech.material.methoxybenzaldehyde=Methoxybenzaldehyde
+gregtech.material.butylaniline=Butylaniline
+gregtech.material.iodoxybenzoic_acid=Iodoxybenzoic Acid (IBX)
+gregtech.material.trimethylchlorosilane=Trimethylchlorosilane
+gregtech.material.trimethylsilane=Trimethylsilane
+gregtech.material.iodobenzoic_acid=Iodobenzoic Acid
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=Quark-Gluon

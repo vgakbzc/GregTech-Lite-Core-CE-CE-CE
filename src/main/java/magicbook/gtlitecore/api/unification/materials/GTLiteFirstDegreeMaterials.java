@@ -2188,6 +2188,32 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Lead, 1, Titanium, 1, CubicZirconia, 1, Oxygen, 1)
                 .build()
                 .setFormula("PbZrTiO3", true);
+
+        //  11249 Sodium Iodide
+        SodiumIodide = new Material.Builder(getId(), gregtechId("sodium_iodide"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Iodine.getMaterialRGB())
+                .iconSet(METALLIC)
+                .components(Sodium, 1, Iodine, 1)
+                .build();
+
+        //  11250 Sodium Nitrite
+        SodiumNitrite = new Material.Builder(getId(), gregtechId("sodium_nitrite"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + NitricAcid.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Sodium, 1, Nitrogen, 1, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11251 Potassium Iodide
+        PotassiumIodide = new Material.Builder(getId(), gregtechId("potassium_iodide"))
+                .dust()
+                .color(Potassium.getMaterialRGB() + Iodine.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Potassium, 1, Iodine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
     private static int getId() {

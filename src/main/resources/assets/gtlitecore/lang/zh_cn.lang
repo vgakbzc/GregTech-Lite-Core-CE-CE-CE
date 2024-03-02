@@ -1889,6 +1889,9 @@ gregtech.material.radium_hydroxide=氢氧化镭
 gregtech.material.radium_oxide=氧化镭
 gregtech.material.ce_lag=铈掺杂的镥铝榴石
 gregtech.material.lead_zirconate_titanate=锆钛酸铅
+gregtech.material.sodium_iodide=碘化钠
+gregtech.material.sodium_nitrite=亚硝酸钠
+gregtech.material.potassium_iodide=碘化钾
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -2146,6 +2149,13 @@ gregtech.material.beta_pinene=β-蒎烯
 gregtech.material.propargyl_chloride=炔丙基氯
 gregtech.material.propargyl_alcohol=丙炔醇
 gregtech.material.ethanolamine=乙醇胺
+gregtech.material.methoxybenzylidene_butylaniline=甲氧基苯亚甲基丁基苯胺（MBBA）
+gregtech.material.methoxybenzaldehyde=甲氧基苯甲醛
+gregtech.material.butylaniline=丁基苯胺
+gregtech.material.iodoxybenzoic_acid=碘酰苯甲酸（IBX）
+gregtech.material.trimethylchlorosilane=三甲基氯硅烷
+gregtech.material.trimethylsilane=三甲基硅烷
+gregtech.material.iodobenzoic_acid=间碘苯甲酸
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
