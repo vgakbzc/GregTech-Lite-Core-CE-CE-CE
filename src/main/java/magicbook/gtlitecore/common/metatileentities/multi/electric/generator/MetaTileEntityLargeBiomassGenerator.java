@@ -19,11 +19,17 @@ import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockMachineCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import java.util.List;
 
 import static gregtech.api.GTValues.*;
 
@@ -91,6 +97,16 @@ public class MetaTileEntityLargeBiomassGenerator extends FuelMultiblockControlle
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_BIO_REACTOR_OVERLAY;
+    }
+
+    @Override
+    public void addInformation(ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[LuV]));
+        tooltip.add(I18n.format("gtlitecore.machine.large_biomass_generator.tooltip.1"));
     }
 
 }

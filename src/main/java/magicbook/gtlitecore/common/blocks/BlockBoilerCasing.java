@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasingType> {
+
     public BlockBoilerCasing() {
         super(Material.IRON);
         this.setTranslationKey("boiler_casing");
@@ -24,6 +25,7 @@ public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasi
         this.setDefaultState(this.getState(BoilerCasingType.INCONEL625));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

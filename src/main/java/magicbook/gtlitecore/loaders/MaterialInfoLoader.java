@@ -1,29 +1,15 @@
 package magicbook.gtlitecore.loaders;
 
-import gregtech.api.metatileentity.multiblock.CleanroomType;
-import gregtech.api.recipes.GTRecipeHandler;
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
-import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.items.MetaItems;
-import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.common.blocks.*;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.HERMETIC_UHV;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -39,20 +25,6 @@ public class MaterialInfoLoader {
     private static void MachineCasings() {
 
         //  UHV Machine Casing
-        ModHandler.removeRecipeByName("gregtech:casing_uhv");
-        ModHandler.addShapedRecipe(true, "casing_uhv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV),
-                "PPP", "PwP", "PPP",
-                'P', new UnificationEntry(plate, Orichalcum));
-
-        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, IntCircuitIngredient.getIntegratedCircuit(8), OreDictUnifier.get(plate, Neutronium, 8));
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Orichalcum, 8)
-                .circuitMeta(8)
-                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
-                .EUt(VA[LV])
-                .duration(50)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV),
                 new ItemMaterialInfo(new MaterialStack(Orichalcum, M * 8)));
 
@@ -60,300 +32,192 @@ public class MaterialInfoLoader {
         OreDictUnifier.registerOre(HULL[UHV].getStackForm(), new ItemMaterialInfo(
                 new MaterialStack(Orichalcum, M * 8),
                 new MaterialStack(Europium, M),
-                new MaterialStack(Polyetheretherketone, M * 2)
-        ));
+                new MaterialStack(Polyetheretherketone, M * 2)));
 
-        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
-                new ItemStack[]{OreDictUnifier.get(cableGtSingle, Europium, 2), MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV)},
-                new FluidStack[]{Polybenzimidazole.getFluid(288)});
+        //  UEV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV),
+                new ItemMaterialInfo(new MaterialStack(Adamantium, M * 8)));
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV))
-                .input(cableGtSingle, Europium, 2)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2))
-                .output(MetaTileEntities.HULL[9])
-                .EUt(16)
-                .duration(50)
-                .buildAndRegister();
+        //  UEV Machine Hull
+        OreDictUnifier.registerOre(HULL[UEV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Adamantium, M * 8),
+                new MaterialStack(PedotTMA, M),
+                new MaterialStack(Polyetheretherketone, M * 2)));
 
-        //  UHV Hermetic Casing
-        ModHandler.removeRecipeByName("gregtech:hermetic_casing_max");
-        ModHandler.addShapedRecipe(true, "hermetic_casing_uhv", MetaBlocks.HERMETIC_CASING.getItemVariant(HERMETIC_UHV),
-                "PPP", "PFP", "PPP",
-                'P', new UnificationEntry(plate, Orichalcum),
-                'F', new UnificationEntry(pipeLargeFluid, Duranium));
+        //  UIV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV),
+                new ItemMaterialInfo(new MaterialStack(Infinity, M * 8)));
 
-        //  UHV Quantum Chest
-        ModHandler.removeRecipeByName("gregtech:quantum_chest_uhv");
-        ModHandler.addShapedRecipe(true, "quantum_chest_uhv", MetaTileEntities.QUANTUM_CHEST[9].getStackForm(),
-                "CPC", "PHP", "CFC",
-                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
-                'P', new UnificationEntry(plate, Orichalcum),
-                'F', MetaItems.FIELD_GENERATOR_UV.getStackForm(),
-                'H', MetaTileEntities.HULL[UHV].getStackForm());
+        //  UIV Machine Hull
+        OreDictUnifier.registerOre(HULL[UIV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Infinity, M * 8),
+                new MaterialStack(Solarium, M),
+                new MaterialStack(Polyetheretherketone, M * 2)));
 
-        //  UHV Quantum Tank
-        ModHandler.removeRecipeByName("gregtech:quantum_tank_uhv");
-        ModHandler.addShapedRecipe(true, "quantum_tank_uhv", MetaTileEntities.QUANTUM_TANK[9].getStackForm(),
-                "CGC", "PHP", "CUC",
-                'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
-                'P', new UnificationEntry(plate, Orichalcum),
-                'U', MetaItems.ELECTRIC_PUMP_UV.getStackForm(),
-                'G', MetaItems.FIELD_GENERATOR_UV.getStackForm(),
-                'H', MetaBlocks.HERMETIC_CASING.getItemVariant(HERMETIC_UHV));
+        //  UXV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV),
+                new ItemMaterialInfo(new MaterialStack(CosmicNeutronium, M * 8)));
 
-        //  UEV Casing
-        ModHandler.addShapedRecipe(true, "casing_uev", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV),
-                "PPP", "PwP", "PPP",
-                'P', new UnificationEntry(plate, Adamantium));
+        //  UXV Machine Hull
+        OreDictUnifier.registerOre(HULL[UXV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(CosmicNeutronium, M * 8),
+                new MaterialStack(Hypogen, M),
+                new MaterialStack(Zylon, M * 2)));
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Adamantium, 8)
-                .circuitMeta(8)
-                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV))
-                .duration(50)
-                .EUt(16)
-                .buildAndRegister();
+        //  OpV Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV),
+                new ItemMaterialInfo(new MaterialStack(Spacetime, M * 8)));
 
-        //  UEV Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV))
-                .input(cableGtSingle, PedotTMA, 2)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2))
-                .output(MetaTileEntities.HULL[UEV])
-                .EUt(16)
-                .duration(50)
-                .buildAndRegister();
+        //  OpV Machine Hull
+        OreDictUnifier.registerOre(HULL[OpV].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Spacetime, M * 8),
+                new MaterialStack(Galaxium, M),
+                new MaterialStack(Zylon, M * 2)));
 
-        //  UIV Casing
-        ModHandler.addShapedRecipe(true, "casing_uiv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV),
-                "PPP", "PwP", "PPP",
-                'P', new UnificationEntry(plate, Infinity));
+        //  MAX Machine Casing
+        OreDictUnifier.registerOre(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX),
+                new ItemMaterialInfo(new MaterialStack(Eternity, M * 8)));
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Infinity, 8)
-                .circuitMeta(8)
-                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV))
-                .duration(50)
-                .EUt(16)
-                .buildAndRegister();
-
-        //  UIV Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UIV))
-                .input(cableGtSingle, Solarium, 2)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 2))
-                .output(MetaTileEntities.HULL[UIV])
-                .EUt(16)
-                .duration(50)
-                .buildAndRegister();
-
-        //  UXV Casing
-        ModHandler.addShapedRecipe(true, "casing_uxv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV),
-                "PPP", "PwP", "PPP",
-                'P', new UnificationEntry(plate, CosmicNeutronium));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, CosmicNeutronium, 8)
-                .circuitMeta(8)
-                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV))
-                .duration(50)
-                .EUt(16)
-                .buildAndRegister();
-
-        //  UXV Hull
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UXV))
-                .input(cableGtSingle, Hypogen, 2)
-                .fluidInputs(Zylon.getFluid(L * 2))
-                .output(MetaTileEntities.HULL[UXV])
-                .EUt(16)
-                .duration(50)
-                .buildAndRegister();
-
-        //  OpV Casing
-        ModHandler.addShapedRecipe(true, "casing_opv", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV),
-                "PPP", "PwP", "PPP",
-                'P', new UnificationEntry(plate, Spacetime));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Spacetime, 8)
-                .circuitMeta(8)
-                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.OpV))
-                .duration(50)
-                .EUt(16)
-                .buildAndRegister();
-
-        //  MAX Casing
-        ModHandler.addShapedRecipe(true, "casing_max", MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX),
-                "PPP", "PwP", "PPP",
-                'P', new UnificationEntry(plate, Eternity));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Eternity, 8)
-                .circuitMeta(8)
-                .outputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.MAX))
-                .duration(50)
-                .EUt(16)
-                .buildAndRegister();
+        //  MAX Machine Hull
+        OreDictUnifier.registerOre(HULL[MAX].getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(Eternity, M * 8),
+                new MaterialStack(Universium, M),
+                new MaterialStack(Zylon, M * 2)));
 
     }
 
     private static void Glasses() {
+        //  Common Glasses
 
         //  BPA Polycarbonate Glass
-        VACUUM_CHAMBER_RECIPES.recipeBuilder()
-                .input(plate, BPAPolycarbonate, 4)
-                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
-                .fluidInputs(SolderingAlloy.getFluid(L))
-                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.BPA_POLYCARBONATE_GLASS))
-                .EUt(VA[EV])
-                .duration(200)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.BPA_POLYCARBONATE_GLASS),
                 new ItemMaterialInfo(new MaterialStack(BPAPolycarbonate, M * 4)));
 
         //  PMMA Glass
-        VACUUM_CHAMBER_RECIPES.recipeBuilder()
-                .input(plate, PMMA, 4)
-                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
-                .fluidInputs(SolderingAlloy.getFluid(L))
-                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.PMMA_GLASS))
-                .EUt(VA[IV])
-                .duration(200)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.PMMA_GLASS),
                 new ItemMaterialInfo(new MaterialStack(PMMA, M * 4)));
 
-        //  CBDO Glass
-        VACUUM_CHAMBER_RECIPES.recipeBuilder()
-                .input(plate, CBDOPolycarbonate, 4)
-                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
-                .fluidInputs(SolderingAlloy.getFluid(L))
-                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.CBDO_POLYCARBONATE_GLASS))
-                .EUt(VA[LuV])
-                .duration(200)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
+        //  CBDO Polycarbonate Glass
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.CBDO_POLYCARBONATE_GLASS),
                 new ItemMaterialInfo(new MaterialStack(CBDOPolycarbonate, M * 4)));
 
         //  Infinity Glass
-        VACUUM_CHAMBER_RECIPES.recipeBuilder()
-                .input(plate, Infinity, 4)
-                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
-                .fluidInputs(SolderingAlloy.getFluid(L))
-                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS))
-                .EUt(VA[ZPM])
-                .duration(200)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS),
                 new ItemMaterialInfo(new MaterialStack(Infinity, M * 4)));
+
+        //  Decorative Glasses
+
+        //  Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4)));
+
+        //  Titanium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TITANIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Titanium, M * 4)));
+
+        //  Tungsten reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TUNGSTEN_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Tungsten, M * 4)));
+
+        //  Osmium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.OSMIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Osmium, M * 4)));
+
+        //  Naquadah reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.NAQUADAH_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Naquadah, M * 4)));
+
+        //  Trinium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TRINIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Trinium, M * 4)));
+
+        //  Mithril reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.MITHRIL_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Mithril, M * 4)));
+
+        //  Neutronium reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.NEUTRONIUM_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Neutronium, M * 4)));
+
+        //  Abyssalloy reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.ABYSSALLOY_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(Abyssalloy, M * 4)));
+
+        //  Heavy Quark Degenerate Matter reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.HEAVY_QUARK_DEGENERATE_MATTER_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(HeavyQuarkDegenerateMatter, M * 4)));
+
+        //  Transcendent Metal reinforced Borosilicate Glass
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.DECORATIVE_TRANSPARENT_CASING.getItemVariant(BlockDecorativeTransparentCasing.DecorativeTransparentCasingType.TRANSCENDENT_METAL_REINFORCED_BOROSILICATE_GLASS),
+                new ItemMaterialInfo(new MaterialStack(BorosilicateGlass, M * 4),
+                        new MaterialStack(TranscendentMetal, M * 4)));
     }
 
     private static void VoltageCoils() {
 
         //  UHV Voltage Coil
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(stick, ChromiumGermaniumTellurideMagnetic)
-                .input(wireFine, Vibranium, 16)
-                .circuitMeta(1)
-                .output(VOLTAGE_COIL_UHV)
-                .EUt(VA[UHV])
-                .duration(200)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(VOLTAGE_COIL_UHV.getStackForm(), new ItemMaterialInfo (
                 new MaterialStack(ChromiumGermaniumTellurideMagnetic, M / 2),
                 new MaterialStack(Vibranium, M * 2)));
 
         //  UEV Voltage Coil
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(stick, ChromiumGermaniumTellurideMagnetic)
-                .input(wireFine, Mithril, 16)
-                .circuitMeta(1)
-                .output(VOLTAGE_COIL_UEV)
-                .EUt(VA[UEV])
-                .duration(200)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(VOLTAGE_COIL_UEV.getStackForm(), new ItemMaterialInfo (
                 new MaterialStack(ChromiumGermaniumTellurideMagnetic, M / 2),
                 new MaterialStack(Mithril, M * 2)));
 
         //  UIV Voltage Coil
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
-                .input(wireFine, Astralium, 16)
-                .circuitMeta(1)
-                .output(VOLTAGE_COIL_UIV)
-                .EUt(VA[UIV])
-                .duration(200)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(VOLTAGE_COIL_UIV.getStackForm(), new ItemMaterialInfo (
                 new MaterialStack(PhosphorusDopedEuropiumIronArsenideMagnetic, M / 2),
                 new MaterialStack(Astralium, M * 2)));
 
         //  UXV Voltage Coil
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
-                .input(wireFine, Hikarium, 16)
-                .circuitMeta(1)
-                .output(VOLTAGE_COIL_UXV)
-                .EUt(VA[UXV])
-                .duration(200)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(VOLTAGE_COIL_UXV.getStackForm(), new ItemMaterialInfo(
                 new MaterialStack(PhosphorusDopedEuropiumIronArsenideMagnetic, M / 2),
                 new MaterialStack(Hikarium, M * 2)));
 
         //  OpV Voltage Coil
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(stick, BismuthLawrenciumStrontiumCuprateMagnetic)
-                .input(wireFine, Arcanium, 16)
-                .circuitMeta(1)
-                .output(VOLTAGE_COIL_OpV)
-                .EUt(VA[OpV])
-                .duration(200)
-                .buildAndRegister();
-
         OreDictUnifier.registerOre(VOLTAGE_COIL_OpV.getStackForm(), new ItemMaterialInfo(
                 new MaterialStack(BismuthLawrenciumStrontiumCuprateMagnetic, M / 2),
                 new MaterialStack(Arcanium, M * 2)));
     }
 
     private static void CoilBlocks() {
-        //  Basic Coil Blocks
+        //  Adamantium Coil Block
         OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ADAMANTIUM), new ItemMaterialInfo(
                 new MaterialStack(Adamantium, M * 8),
                 new MaterialStack(SiliconCarbide, M * 2),
                 new MaterialStack(Tritanium, M)));
 
+        //  Ichorium Coil Block
         OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ICHORIUM), new ItemMaterialInfo(
                 new MaterialStack(Ichorium, M * 8),
                 new MaterialStack(Seaborgium, M * 2),
                 new MaterialStack(Adamantium, M)));
 
+        //  Astralium Coil Block
         OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ASTRALIUM), new ItemMaterialInfo(
                 new MaterialStack(Astralium, M * 8),
                 new MaterialStack(Abyssalloy, M * 2),
                 new MaterialStack(Ichorium, M)));
 
-        //  Unique Coil Blocks
+        //  Other Unique Coil Blocks
+
+        //  Quantum Coil
         OreDictUnifier.registerOre(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.QUANTUM_COIL), new ItemMaterialInfo(
                 new MaterialStack(Europium, M * 8),
                 new MaterialStack(Pikyonium64B, M * 2),
                 new MaterialStack(QuantumAlloy, M)));
 
+        //  Hypogen Coil
         OreDictUnifier.registerOre(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.HYPOGEN_COIL_BLOCK), new ItemMaterialInfo(
                 new MaterialStack(Hypogen, M * 8),
                 new MaterialStack(ArceusAlloy2B, M * 2),

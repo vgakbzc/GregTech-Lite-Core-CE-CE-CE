@@ -492,12 +492,10 @@ public class StellarFurnace {
         //  Dimensionally Transcendent Residue is cycle in this recipe.
         STELLAR_FURNACE_RECIPES.recipeBuilder()
                 .input(CHARGED_HYPERCUBE)
-                .input(CONTAINED_KERR_SINGULARITY, 64)
                 .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .fluidInputs(DimensionallyTranscendentResidue.getFluid(16000))
                 .fluidInputs(CosmicComputingMixture.getFluid(L * 8))
                 .fluidInputs(Spacetime.getFluid(L * 4))
-                .output(CONTAINED_KN_SINGULARITY, 64)
                 .output(DIMENSION_GAP)
                 .chancedOutput(dust, Shirabon, 64, 2500, 0)
                 .fluidOutputs(Eternity.getFluid(9216))

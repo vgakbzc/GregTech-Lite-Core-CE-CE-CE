@@ -99,5 +99,4 @@ public class BlockYottaTankCell extends VariantBlock<BlockYottaTankCell.YottaTan
             return getFluidCellName();
         }
     }
-
 }

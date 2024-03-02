@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockPreciseAssemblerCasing extends VariantBlock<BlockPreciseAssemblerCasing.AssemblyCasingTier> {
+
     public BlockPreciseAssemblerCasing() {
         super(Material.IRON);
         this.setTranslationKey("precise_assembler_casing");
@@ -24,6 +25,7 @@ public class BlockPreciseAssemblerCasing extends VariantBlock<BlockPreciseAssemb
         this.setDefaultState(this.getState(AssemblyCasingTier.MK1));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

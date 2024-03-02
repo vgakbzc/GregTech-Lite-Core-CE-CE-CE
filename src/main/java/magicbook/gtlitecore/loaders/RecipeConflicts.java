@@ -10,6 +10,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtechfoodoption.GTFOMaterialHandler.IsopropylChloride;
 
 public class RecipeConflicts {
 
@@ -134,6 +135,19 @@ public class RecipeConflicts {
                 .fluidOutputs(AceticAcid.getFluid(1000))
                 .EUt(VH[LV])
                 .duration(300)
+                .buildAndRegister();
+
+        //  Conflict between Isopropyl Chloride (GTFO) and Isochloropropane
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, Propene.getFluid(1000), HydrochloricAcid.getFluid(1000));
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES, Propene.getFluid(1000), HydrochloricAcid.getFluid(1000));
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Propene.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .circuitMeta(1)
+                .fluidOutputs(IsopropylChloride.getFluid(1000))
+                .EUt(VA[LV])
+                .duration(200)
                 .buildAndRegister();
     }
 }

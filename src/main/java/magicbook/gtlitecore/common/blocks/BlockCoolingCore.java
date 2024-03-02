@@ -25,6 +25,7 @@ public class BlockCoolingCore extends VariantBlock<BlockCoolingCore.CoolingCoreT
         this.setDefaultState(this.getState(CoolingCoreTier.MK1));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

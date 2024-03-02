@@ -32,6 +32,7 @@ public class GTLiteCoverBehavior {
                 (def, tile, side) -> new CoverSolarPanel(def, tile, side, GTValues.V[GTValues.MAX]));
     }
 
+    @SuppressWarnings("rawtypes")
     public static void registerBehavior(ResourceLocation coverId,
                                         MetaItem.MetaValueItem placerItem,
                                         CoverDefinition.CoverCreator behaviorCreator) {

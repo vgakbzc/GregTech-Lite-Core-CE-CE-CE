@@ -57,6 +57,7 @@ public class GTLiteTextures {
     public static OrientedOverlayRenderer DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/dimensionally_transcendent_plasma_forge");
     public static OrientedOverlayRenderer LIGHTNING_ROD_OVERLAY = new OrientedOverlayRenderer("generators/lightning_rod");
     public static OrientedOverlayRenderer DYSON_SWARM_OVERLAY = new OrientedOverlayRenderer("multiblocks/dyson_swarm");
+    public static OrientedOverlayRenderer LARGE_FLUID_PHASE_TRANSFORMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_fluid_phase_transformer");
 
     //  GTLite Overlay Renderer
     public static GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");

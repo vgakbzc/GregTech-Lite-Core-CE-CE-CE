@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockCleanroomCasing extends VariantBlock<BlockCleanroomCasing.CleanroomCasingType> {
+
     public BlockCleanroomCasing() {
         super(Material.IRON);
         this.setTranslationKey("cleanroom_casing");
@@ -24,6 +25,7 @@ public class BlockCleanroomCasing extends VariantBlock<BlockCleanroomCasing.Clea
         this.setDefaultState(this.getState(CleanroomCasingType.ADVANCED_FILTER_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

@@ -16,6 +16,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
+
     public BlockCrucible() {
         super(Material.IRON);
         setTranslationKey("crucible");

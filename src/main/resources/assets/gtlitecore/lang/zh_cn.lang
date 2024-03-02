@@ -908,8 +908,12 @@ gtlitecore.machine.crystallization_crucible.name=结晶坩埚
 gtlitecore.machine.cvd_unit.name=化学气相沉积单元
 
 gtlitecore.machine.plasma_cvd_unit.name=等离子体增强化学气相沉积单元
+gtlitecore.machine.plasma_cvd_unit.tooltip.1=利用等离子体活性促进反应的新型气相沉积技术
+gtlitecore.machine.plasma_cvd_unit.tooltip.2=运行一般的§r化学气相沉积§7配方时，运行耗时为§r(配方时间/2)§7。
 
 gtlitecore.machine.laser_cvd_unit.name=激光诱导化学气相沉积单元
+gtlitecore.machine.laser_cvd_unit.tooltip.1=利用激光束能量激发促进反应的新型气相沉积技术
+gtlitecore.machine.laser_cvd_unit.tooltip.2=运行一般的§r化学气相沉积§7配方时，运行耗时为§r(配方时间/2)§7。
 
 gtlitecore.machine.burner_reactor.name=燃烧反应室
 
@@ -1254,10 +1258,9 @@ gtlitecore.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽�
 
 gtlitecore.machine.large_rocket_engine.name=大型火箭引擎
 gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
-gtlitecore.machine.large_rocket_engine.tooltip.2=§e基础产能功率：§r8192 EU/t§7
 
 gtlitecore.machine.large_biomass_generator.name=大型生物质反应炉
-gtlitecore.machine.large_biomass_generator.tooltip=最高产生§dLuV§7级的能量
+gtlitecore.machine.large_biomass_generator.tooltip.1=植物混融物发电机
 
 gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝
@@ -1453,6 +1456,13 @@ gtlitecore.machine.integrated_ore_processor.mode.4=处理模式：研磨-化学�
 gtlitecore.machine.integrated_ore_processor.void.true=石粉销毁已开启
 gtlitecore.machine.integrated_ore_processor.void.false=石粉销毁已关闭
 
+gtlitecore.machine.large_fluid_phase_transformer.name=大型流体相变厂
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.5=最大并行数：§e4096§7
+
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
@@ -1567,8 +1577,8 @@ gtlitecore.machine.yotta_fluid_tank.button_usage=切换流体输出模式
 gtlitecore.machine.yotta_fluid_tank.mode=流体输出：%s
 gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
 gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
-gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§c禁用
-gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§a启用
+gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§a启用
+gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§c禁用
 
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁
@@ -1809,7 +1819,7 @@ gregtech.material.sodium_acetate=乙酸钠
 gregtech.material.sodium_oxide=氧化钠
 gregtech.material.titanium_nitrate=硝酸钛
 gregtech.material.plutonium_trihydride=三氢化钚
-gregtech.material.plutonium_phosphide=亚磷酸钚
+gregtech.material.plutonium_phosphide=磷化钚
 gregtech.material.neptunium_aluminide=三铝化镎
 gregtech.material.bismuth_trioxide=三氧化二铋
 gregtech.material.ferric_oxide=三氧化二铁
@@ -1879,6 +1889,14 @@ gregtech.material.radium_hydroxide=氢氧化镭
 gregtech.material.radium_oxide=氧化镭
 gregtech.material.ce_lag=铈掺杂的镥铝榴石
 gregtech.material.lead_zirconate_titanate=锆钛酸铅
+gregtech.material.sodium_iodide=碘化钠
+gregtech.material.sodium_nitrite=亚硝酸钠
+gregtech.material.potassium_iodide=碘化钾
+gregtech.material.sodium_pertechnetate=高锝酸钠
+gregtech.material.potassium_pertechnetate=高锝酸钾
+gregtech.material.potassium_nonahydridorhenate=九氢合铼酸钾
+gregtech.material.potassium_nonahydridotechnetate=九氢合锝酸钾
+gregtech.material.potassium_perrhenate=高铼酸钾
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -2066,7 +2084,7 @@ gregtech.material.resorcinol=间苯二酚
 gregtech.material.pre_zylon=预处理柴隆纤维
 gregtech.material.terephthalaldehyde=对苯二甲醛
 gregtech.material.dinitrodipropanyloxybenzene=二硝基二丙氧基苯
-gregtech.material.isochloropropane=异氯丙烷
+gregtech.material.isochloropropane=高纯度异氯丙烷
 gregtech.material.dibromomethylbenzene=二溴甲苯
 gregtech.material.hexanitrohexaaxaisowurtzitane=六硝基六氮杂异伍兹烷（HNIW）
 gregtech.material.crude_hexanitrohexaaxaisowurtzitane=粗制六硝基六氮杂异伍兹烷
@@ -2136,6 +2154,15 @@ gregtech.material.beta_pinene=β-蒎烯
 gregtech.material.propargyl_chloride=炔丙基氯
 gregtech.material.propargyl_alcohol=丙炔醇
 gregtech.material.ethanolamine=乙醇胺
+gregtech.material.methoxybenzylidene_butylaniline=甲氧基苯亚甲基丁基苯胺（MBBA）
+gregtech.material.methoxybenzaldehyde=甲氧基苯甲醛
+gregtech.material.butylaniline=丁基苯胺
+gregtech.material.iodoxybenzoic_acid=碘酰苯甲酸（IBX）
+gregtech.material.trimethylchlorosilane=三甲基氯硅烷
+gregtech.material.trimethylsilane=三甲基硅烷
+gregtech.material.iodobenzoic_acid=间碘苯甲酸
+gregtech.material.tetraethylammonium_bromide=四乙基溴化铵
+gregtech.material.tetraethylammonium_nonahydriorhenidetechnetide=四乙基九氢铼锝化铵
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子

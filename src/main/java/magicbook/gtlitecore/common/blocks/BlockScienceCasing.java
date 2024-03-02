@@ -22,6 +22,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
  */
 @ParametersAreNonnullByDefault
 public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceCasingType> {
+
     public BlockScienceCasing() {
         super(Material.IRON);
         this.setTranslationKey("science_casing");
@@ -32,6 +33,7 @@ public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceC
         this.setDefaultState(this.getState(ScienceCasingType.HIGH_ENERGY_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

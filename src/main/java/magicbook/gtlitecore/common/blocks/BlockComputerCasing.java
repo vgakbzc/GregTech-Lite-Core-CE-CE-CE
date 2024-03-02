@@ -10,6 +10,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockComputerCasing extends VariantBlock<BlockComputerCasing.ComputerCasingType> {
+
     public BlockComputerCasing() {
         super(Material.IRON);
         this.setTranslationKey("computer_casing");

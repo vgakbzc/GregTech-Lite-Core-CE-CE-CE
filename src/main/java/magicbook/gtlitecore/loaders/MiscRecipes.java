@@ -6,7 +6,10 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.items.MetaItems;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -26,6 +29,8 @@ public class MiscRecipes {
 
     public static void init() {
         MixerRecipes();
+        GlassesRecipes();
+        VoltageCoilRecipes();
         ToolRecipes();
         OtherRecipes();
     }
@@ -316,87 +321,53 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Starlight Liquid
-        CHEMICAL_RECIPES.recipeBuilder()
-                .notConsumable(EMITTER_UV)
-                .input(dust, Celestite)
-                .fluidInputs(NetherStar.getFluid(16))
-                .fluidInputs(Ice.getFluid(1000))
+        PYROLYSE_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .notConsumable(plate, AstralTitanium)
+                .fluidInputs(NetherStar.getFluid(1000))
                 .fluidOutputs(StarlightLiquid.getFluid(1000))
                 .EUt(VA[UV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
+                .duration(200)
+                .buildAndRegister();
+
+        PYROLYSE_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(plate, CelestialTungsten)
+                .fluidInputs(NetherStar.getFluid(1000))
+                .fluidOutputs(StarlightLiquid.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(200)
                 .buildAndRegister();
 
         //  Celestial Crystal
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, AstralTitanium)
-                .input(dust, Quartzite)
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(gem, CertusQuartz)
+                .notConsumable(lens, Celestite)
                 .fluidInputs(StarlightLiquid.getFluid(L))
                 .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
+                .EUt(VA[UEV])
+                .duration(100)
                 .buildAndRegister();
 
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, CelestialTungsten)
-                .input(dust, Quartzite)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, AstralTitanium)
-                .input(dust, NetherQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, CelestialTungsten)
-                .input(dust, NetherQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, AstralTitanium)
-                .input(dust, CertusQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        AUTOCLAVE_RECIPES.recipeBuilder()
-                .notConsumable(dust, CelestialTungsten)
-                .input(dust, CertusQuartz)
-                .fluidInputs(StarlightLiquid.getFluid(L))
-                .output(gem, CelestialCrystal)
-                .EUt(VA[UHV])
-                .duration(20)
-                .cleanroom(CleanroomType.CLEANROOM)
+        //  Celestial Crystal recycle
+        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+                .input(dust, CelestialCrystal)
+                .output(dust, CertusQuartz)
+                .fluidOutputs(StarlightLiquid.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(200)
                 .buildAndRegister();
 
         //  Astralium
-        PYROLYSE_RECIPES.recipeBuilder()
+        BLAST_RECIPES.recipeBuilder()
                 .input(dust, CelestialCrystal)
-                .notConsumable(stickLong, CarbonNanotube)
+                .input(dust, OrichalcumEnergized)
                 .fluidInputs(NaquadahEnriched.getFluid(L))
                 .output(ingotHot, Astralium)
-                .fluidOutputs(Naquadah.getFluid(L / 4))
+                .fluidOutputs(Helium.getFluid(125))
                 .EUt(VA[UEV])
                 .duration(200)
+                .blastFurnaceTemp(15000)
                 .buildAndRegister();
 
         //  Nitinol-60
@@ -469,6 +440,104 @@ public class MiscRecipes {
                 .duration(240)
                 .buildAndRegister();
 
+    }
+
+    private static void GlassesRecipes() {
+        //  BPA Polycarbonate Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, BPAPolycarbonate, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.BPA_POLYCARBONATE_GLASS))
+                .EUt(VA[EV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  PMMA Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, PMMA, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.PMMA_GLASS))
+                .EUt(VA[IV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  CBDO Polycarbonate Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, CBDOPolycarbonate, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.CBDO_POLYCARBONATE_GLASS))
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Infinity Glass
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(plate, Infinity, 4)
+                .notConsumable(MetaItems.SHAPE_MOLD_BLOCK)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.INFINITY_GLASS))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
+
+    private static void VoltageCoilRecipes() {
+        //  UHV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTellurideMagnetic)
+                .input(wireFine, Vibranium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UHV)
+                .EUt(VA[UHV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UEV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTellurideMagnetic)
+                .input(wireFine, Mithril, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UEV)
+                .EUt(VA[UEV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UIV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(wireFine, Astralium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UIV)
+                .EUt(VA[UIV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UXV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .input(wireFine, Hikarium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_UXV)
+                .EUt(VA[UXV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  OpV Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .input(wireFine, Arcanium, 16)
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_OpV)
+                .EUt(VA[OpV])
+                .duration(200)
+                .buildAndRegister();
     }
 
     private static void OtherRecipes() {

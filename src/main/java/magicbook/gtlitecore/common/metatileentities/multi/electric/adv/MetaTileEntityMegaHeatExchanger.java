@@ -13,7 +13,7 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.MetaBlocks;
-import magicbook.gtlitecore.api.capability.impl.HeatExchangerLogic;
+import magicbook.gtlitecore.api.capability.impl.HeatExchangerRecipeLogic;
 import magicbook.gtlitecore.api.metatileentity.multi.IHeatExchanger;
 import magicbook.gtlitecore.api.metatileentity.multi.NoEnergyMultiblockController;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
@@ -50,7 +50,7 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
 
     public MetaTileEntityMegaHeatExchanger(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.HEAT_EXCHANGE_RECIPES);
-        this.recipeMapWorkable = new HeatExchangerLogic(this);
+        this.recipeMapWorkable = new HeatExchangerRecipeLogic(this);
     }
 
     @Override
@@ -102,9 +102,9 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
     protected void addDisplayText(List<ITextComponent> textList) {
         super.addDisplayText(textList);
         if (isStructureFormed()) {
-            HeatExchangerLogic logic = (HeatExchangerLogic)recipeMapWorkable;
+            HeatExchangerRecipeLogic logic = (HeatExchangerRecipeLogic)recipeMapWorkable;
             textList.add(new TextComponentTranslation("gtlitecore.machine.heat_exchanger.rate." + logic.isSuperheat(), logic.getRate()));
-            int efficiency = (int) Math.ceil(((HeatExchangerLogic)recipeMapWorkable).getHeatEfficiency() * (40 + 0.6 * thresholdPercentage));
+            int efficiency = (int) Math.ceil(((HeatExchangerRecipeLogic)recipeMapWorkable).getHeatEfficiency() * (40 + 0.6 * thresholdPercentage));
             textList.add(new TextComponentTranslation("gtlitecore.machine.heat_exchanger.efficiency",
                     (efficiency == 0 ? DARK_RED : efficiency <= 40 ? RED : efficiency == 100 ? GREEN : YELLOW).toString() + efficiency + "%"));
             ITextComponent throttleText = new TextComponentTranslation("gtlitecore.machine.heat_exchanger.threshold",
