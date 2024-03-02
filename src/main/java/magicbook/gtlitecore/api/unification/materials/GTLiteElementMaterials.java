@@ -276,7 +276,7 @@ public class GTLiteElementMaterials {
                 .color(0x2D3A9D)
                 .iconSet(BRIGHT)
                 .element(Elements.Hs)
-                .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_GEAR, GENERATE_ROTOR)
+                .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_ROTOR)
                 .blast(14000, BlastProperty.GasTier.HIGHEST)
                 .build();
 
