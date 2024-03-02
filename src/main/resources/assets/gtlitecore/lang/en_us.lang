@@ -1197,8 +1197,8 @@ gtlitecore.machine.heat_exchanger.threshold_decrement=§c降低5%%流量阈值 /
 gtlitecore.machine.heat_exchanger.threshold_increment=§a增加5%%流量阈值 /n§7效率增加3%%
 gtlitecore.machine.heat_exchanger.description=Heat Exchanger is your first Multiblock capable of producing High Pressure Steams.
 gtlitecore.machine.heat_exchanger.heat_time_tooltip=Heating Time: §f%ss
-gtlitecore.machine.heat_exchanger.explosion_tooltip=蒸馏水供应不足会导致爆炸！
-gtlitecore.machine.heat_exchanger.tooltip.parallel=相当于§e%s§7台热交换机。
+gtlitecore.machine.heat_exchanger.explosion_tooltip=Insufficient supply of Distilled Water will cause explosion!
+gtlitecore.machine.heat_exchanger.tooltip.parallel=Equivalent to §e%s§7 Heat Exchanger.
 
 gtlitecore.machine.extreme_heat_exchanger.name=Extreme Heat Exchanger
 
@@ -1242,7 +1242,7 @@ gtlitecore.machine.mega_turbine.gas.name=Mega Gas Turbine
 gtlitecore.machine.mega_turbine.plasma.name=Mega Plasma Turbine
 gtlitecore.machine.mega_turbine.mode.0=Normal Mode
 gtlitecore.machine.mega_turbine.mode.1=High Speed Mode
-gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
+gtlitecore.machine.mega_turbine.description=Mega Turbine is upgraded version of Large Turbine.
 
 gtlitecore.machine.high_pressure_steam_turbine.name=High Pressure Steam Turbine
 
@@ -1253,11 +1253,10 @@ gtlitecore.machine.mega_high_pressure_steam_turbine.name=Mega High Pressure Stea
 gtlitecore.machine.mega_supercritical_steam_turbine.name=Mega Supercritical Steam Turbine
 
 gtlitecore.machine.large_rocket_engine.name=Large Rocket Engine
-gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
-gtlitecore.machine.large_rocket_engine.tooltip.2=§e基础产能功率：§r8192 EU/t§7
+gtlitecore.machine.large_rocket_engine.tooltip.1=Not fly into sky
 
 gtlitecore.machine.large_biomass_generator.name=Large Biomass Generator
-gtlitecore.machine.large_biomass_generator.tooltip=最高产生§dLuV§7级的能量
+gtlitecore.machine.large_biomass_generator.tooltip.1=Plant Blend Generator
 
 gtlitecore.machine.neutral_network_nexus.name=Neutral Network Nexus
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝

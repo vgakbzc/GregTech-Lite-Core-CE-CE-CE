@@ -1254,10 +1254,9 @@ gtlitecore.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽�
 
 gtlitecore.machine.large_rocket_engine.name=大型火箭引擎
 gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
-gtlitecore.machine.large_rocket_engine.tooltip.2=§e基础产能功率：§r8192 EU/t§7
 
 gtlitecore.machine.large_biomass_generator.name=大型生物质反应炉
-gtlitecore.machine.large_biomass_generator.tooltip=最高产生§dLuV§7级的能量
+gtlitecore.machine.large_biomass_generator.tooltip.1=植物混融物发电机
 
 gtlitecore.machine.neutral_network_nexus.name=神经网络意识中枢
 gtlitecore.machine.neutral_network_nexus.tooltip.1=纳米蜂群的小窝

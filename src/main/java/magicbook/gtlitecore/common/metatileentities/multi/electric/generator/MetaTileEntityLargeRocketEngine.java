@@ -99,7 +99,7 @@ public class MetaTileEntityLargeRocketEngine extends FuelMultiblockController {
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[IV]));
         tooltip.add(I18n.format("gtlitecore.machine.large_rocket_engine.tooltip.1"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_rocket_engine.tooltip.2"));
     }
 }
