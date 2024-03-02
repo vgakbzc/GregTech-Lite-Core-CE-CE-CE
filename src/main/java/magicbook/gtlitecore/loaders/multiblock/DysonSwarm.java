@@ -1,7 +1,5 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import gregtech.api.unification.material.MarkerMaterials;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.SolderingAlloy;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -9,6 +7,7 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.DYSON_SWARM_RECIP
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.DYSON_SWARM_MODULE;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.MINING_DRONE_UIV;
 
 public class DysonSwarm {
 
@@ -18,7 +17,7 @@ public class DysonSwarm {
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, Hdcs)
                 .input(plate, HY1301, 2)
-                .input(circuit, MarkerMaterials.Tier.UHV)
+                .input(MINING_DRONE_UIV)
                 .input(wireFine, CarbonNanotube, 4)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4))
                 .fluidInputs(MARM200CeSteel.getFluid(L))

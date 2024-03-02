@@ -10,11 +10,11 @@ public class GTLiteGuiTextures {
     public static final SteamTexture INT_CIRCUIT_OVERLAY_STEAM = SteamTexture.fullImage("textures/gui/progress_bar/int_circuit_overlay_%s.png");
 
     //  Progress Bar
-    public static TextureArea PROGRESS_BAR_NANOSCALE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_nanoscale.png");
-    public static TextureArea PROGRESS_BAR_COMPONENT_ASSEMBLY_LINE_1 = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_component_assembly_line_1.png");
-    public static TextureArea PROGRESS_BAR_COMPONENT_ASSEMBLY_LINE_2 = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_component_assembly_line_2.png");
-    public static TextureArea PROGRESS_BAR_VIRTUAL_COSMOS_SIMULATOR = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_virtual_cosmos_simulator.png");
-    public static TextureArea PROGRESS_BAR_HEAT_EXCHANGE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_heat_exchange.png");
+    public static final TextureArea PROGRESS_BAR_NANOSCALE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_nanoscale.png");
+    public static final TextureArea PROGRESS_BAR_COMPONENT_ASSEMBLY_LINE_1 = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_component_assembly_line_1.png");
+    public static final TextureArea PROGRESS_BAR_COMPONENT_ASSEMBLY_LINE_2 = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_component_assembly_line_2.png");
+    public static final TextureArea PROGRESS_BAR_VIRTUAL_COSMOS_SIMULATOR = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_virtual_cosmos_simulator.png");
+    public static final TextureArea PROGRESS_BAR_HEAT_EXCHANGE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_heat_exchange.png");
 
     //  Overlay
     public static final TextureArea FOIL_OVERLAY = TextureArea.fullImage("textures/gui/overlay/foil_overlay.png");
@@ -31,4 +31,6 @@ public class GTLiteGuiTextures {
     //  Logo
     public static final TextureArea SPACE_ELEVATOR_LOGO = TextureArea.fullImage("textures/gui/icon/space_elevator_logo.png");
     public static final TextureArea SPACE_ELEVATOR_LOGO_DARK = TextureArea.fullImage("textures/gui/icon/space_elevator_logo_dark.png");
+
+    public GTLiteGuiTextures() {}
 }

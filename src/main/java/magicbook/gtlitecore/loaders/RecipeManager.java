@@ -14,7 +14,6 @@ public class RecipeManager {
     public static void init() {
         initBlocks();
         MachineComponents.init();
-        MaterialInfoLoader.init();
         MachineRecipeLoader.init();
         MiscRecipes.init();
         RecipeConflicts.init();

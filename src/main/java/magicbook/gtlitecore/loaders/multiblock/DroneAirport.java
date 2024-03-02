@@ -1,6 +1,9 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
+import gregtech.api.unification.material.Material;
+import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -11,6 +14,7 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
+@SuppressWarnings("rawtypes")
 public class DroneAirport {
 
     public static void init() {
@@ -19,6 +23,7 @@ public class DroneAirport {
         MVstage();
         HVstage();
         EVstage();
+        IVstage();
     }
 
     private static void DroneRecipes() {
@@ -241,911 +246,373 @@ public class DroneAirport {
     }
 
     private static void LVstage() {
+        //  Iron-Copper-Gold vein
+        createDroneAirportRecipe(1, MINING_DRONE_LV,
+                Iron, 8000,
+                Copper, 8000,
+                Gold, 6000,
+                Magnetite, 9000,
+                VanadiumMagnetite, 7000,
+                Pyrite, 8000,
+                Chalcopyrite, 9000,
+                Sphalerite, 6000,
+                Aluminium, 6000,
+                VH[LV]);
 
-        //  Iron-Copper-Gold
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(1)
-                .fluidInputs(RocketFuel.getFluid(100))
-                .chancedOutput(ore, Iron, 64, 8000, 500)
-                .chancedOutput(ore, Copper, 64, 8000, 500)
-                .chancedOutput(ore, Gold, 64, 6000, 500)
-                .chancedOutput(ore, Magnetite, 64, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrite, 64, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 64, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 64, 6000, 500)
-                .chancedOutput(ore, Aluminium, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
+        //  Nickel-Cobalt-Sulfur vein
+        createDroneAirportRecipe(2, MINING_DRONE_LV,
+                Nickel, 8000,
+                Cobalt, 7000,
+                Sulfur, 9000,
+                Garnierite, 7000,
+                Pentlandite, 6000,
+                YellowLimonite, 9000,
+                BrownLimonite, 9000,
+                BandedIron, 8000,
+                Cobaltite, 6000,
+                VH[LV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(1)
-                .fluidInputs(RP1RocketFuel.getFluid(100))
-                .chancedOutput(ore, Iron, 64, 8000, 500)
-                .chancedOutput(ore, Copper, 64, 8000, 500)
-                .chancedOutput(ore, Gold, 64, 6000, 500)
-                .chancedOutput(ore, Magnetite, 64, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrite, 64, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 64, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 64, 6000, 500)
-                .chancedOutput(ore, Aluminium, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
+        //  Salt-Rock Salt vein
+        createDroneAirportRecipe(3, MINING_DRONE_LV,
+                Salt, 9000,
+                RockSalt, 9000,
+                Realgar, 7000,
+                Zeolite, 8000,
+                Asbestos, 9000,
+                Lepidolite, 7000,
+                Spodumene, 7000,
+                Grossular, 6000,
+                Gypsum, 7000,
+                VH[LV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(11)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(100))
-                .chancedOutput(ore, Iron, 64, 8000, 500)
-                .chancedOutput(ore, Copper, 64, 8000, 500)
-                .chancedOutput(ore, Gold, 64, 6000, 500)
-                .chancedOutput(ore, Magnetite, 64, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrite, 64, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 64, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 64, 6000, 500)
-                .chancedOutput(ore, Aluminium, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(11)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(100))
-                .chancedOutput(ore, Iron, 64, 8000, 500)
-                .chancedOutput(ore, Copper, 64, 8000, 500)
-                .chancedOutput(ore, Gold, 64, 6000, 500)
-                .chancedOutput(ore, Magnetite, 64, 9000, 500)
-                .chancedOutput(ore, VanadiumMagnetite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrite, 64, 8000, 500)
-                .chancedOutput(ore, Chalcopyrite, 64, 9000, 500)
-                .chancedOutput(ore, Sphalerite, 64, 6000, 500)
-                .chancedOutput(ore, Aluminium, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Nickel-Cobalt-Sulfur
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(2)
-                .fluidInputs(RocketFuel.getFluid(100))
-                .chancedOutput(ore, Nickel, 64, 8000, 500)
-                .chancedOutput(ore, Cobalt, 64, 7000, 500)
-                .chancedOutput(ore, Sulfur, 64, 9000, 500)
-                .chancedOutput(ore, Garnierite, 64, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 64, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BandedIron, 64, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(2)
-                .fluidInputs(RP1RocketFuel.getFluid(100))
-                .chancedOutput(ore, Nickel, 64, 8000, 500)
-                .chancedOutput(ore, Cobalt, 64, 7000, 500)
-                .chancedOutput(ore, Sulfur, 64, 9000, 500)
-                .chancedOutput(ore, Garnierite, 64, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 64, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BandedIron, 64, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(12)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(100))
-                .chancedOutput(ore, Nickel, 64, 8000, 500)
-                .chancedOutput(ore, Cobalt, 64, 7000, 500)
-                .chancedOutput(ore, Sulfur, 64, 9000, 500)
-                .chancedOutput(ore, Garnierite, 64, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 64, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BandedIron, 64, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(12)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(100))
-                .chancedOutput(ore, Nickel, 64, 8000, 500)
-                .chancedOutput(ore, Cobalt, 64, 7000, 500)
-                .chancedOutput(ore, Sulfur, 64, 9000, 500)
-                .chancedOutput(ore, Garnierite, 64, 7000, 500)
-                .chancedOutput(ore, Pentlandite, 64, 6000, 500)
-                .chancedOutput(ore, YellowLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BrownLimonite, 64, 9000, 500)
-                .chancedOutput(ore, BandedIron, 64, 8000, 500)
-                .chancedOutput(ore, Cobaltite, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Salt-Rock Salt
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(3)
-                .fluidInputs(RocketFuel.getFluid(100))
-                .chancedOutput(ore, Salt, 64, 9000, 500)
-                .chancedOutput(ore, RockSalt, 64, 9000, 500)
-                .chancedOutput(ore, Realgar, 64, 7000, 500)
-                .chancedOutput(ore, Zeolite, 64, 8000, 500)
-                .chancedOutput(ore, Asbestos, 64, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 64, 7000, 500)
-                .chancedOutput(ore, Spodumene, 64, 7000, 500)
-                .chancedOutput(ore, Grossular, 64, 6000, 500)
-                .chancedOutput(ore, Gypsum, 64, 7000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(3)
-                .fluidInputs(RP1RocketFuel.getFluid(100))
-                .chancedOutput(ore, Salt, 64, 9000, 500)
-                .chancedOutput(ore, RockSalt, 64, 9000, 500)
-                .chancedOutput(ore, Realgar, 64, 7000, 500)
-                .chancedOutput(ore, Zeolite, 64, 8000, 500)
-                .chancedOutput(ore, Asbestos, 64, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 64, 7000, 500)
-                .chancedOutput(ore, Spodumene, 64, 7000, 500)
-                .chancedOutput(ore, Grossular, 64, 6000, 500)
-                .chancedOutput(ore, Gypsum, 64, 7000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(13)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(100))
-                .chancedOutput(ore, Salt, 64, 9000, 500)
-                .chancedOutput(ore, RockSalt, 64, 9000, 500)
-                .chancedOutput(ore, Realgar, 64, 7000, 500)
-                .chancedOutput(ore, Zeolite, 64, 8000, 500)
-                .chancedOutput(ore, Asbestos, 64, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 64, 7000, 500)
-                .chancedOutput(ore, Spodumene, 64, 7000, 500)
-                .chancedOutput(ore, Grossular, 64, 6000, 500)
-                .chancedOutput(ore, Gypsum, 64, 7000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(13)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(100))
-                .chancedOutput(ore, Salt, 64, 9000, 500)
-                .chancedOutput(ore, RockSalt, 64, 9000, 500)
-                .chancedOutput(ore, Realgar, 64, 7000, 500)
-                .chancedOutput(ore, Zeolite, 64, 8000, 500)
-                .chancedOutput(ore, Asbestos, 64, 9000, 500)
-                .chancedOutput(ore, Lepidolite, 64, 7000, 500)
-                .chancedOutput(ore, Spodumene, 64, 7000, 500)
-                .chancedOutput(ore, Grossular, 64, 6000, 500)
-                .chancedOutput(ore, Gypsum, 64, 7000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Quartzites
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(4)
-                .fluidInputs(RocketFuel.getFluid(100))
-                .chancedOutput(ore, Quartzite, 64, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 64, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 64, 8000, 500)
-                .chancedOutput(ore, Barite, 64, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 64, 8000, 500)
-                .chancedOutput(ore, Topaz, 64, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(4)
-                .fluidInputs(RP1RocketFuel.getFluid(100))
-                .chancedOutput(ore, Quartzite, 64, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 64, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 64, 8000, 500)
-                .chancedOutput(ore, Barite, 64, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 64, 8000, 500)
-                .chancedOutput(ore, Topaz, 64, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(14)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(100))
-                .chancedOutput(ore, Quartzite, 64, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 64, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 64, 8000, 500)
-                .chancedOutput(ore, Barite, 64, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 64, 8000, 500)
-                .chancedOutput(ore, Topaz, 64, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_LV)
-                .circuitMeta(14)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(100))
-                .chancedOutput(ore, Quartzite, 64, 9000, 500)
-                .chancedOutput(ore, NetherQuartz, 64, 8000, 500)
-                .chancedOutput(ore, CertusQuartz, 64, 8000, 500)
-                .chancedOutput(ore, Barite, 64, 7000, 500)
-                .chancedOutput(ore, BasalticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, GraniticMineralSand, 64, 7000, 500)
-                .chancedOutput(ore, FullersEarth, 64, 8000, 500)
-                .chancedOutput(ore, Topaz, 64, 6000, 500)
-                .chancedOutput(ore, BlueTopaz, 64, 6000, 500)
-                .EUt(VA[LV])
-                .duration(200)
-                .buildAndRegister();
+        //  Quartzites-Topaz vein
+        createDroneAirportRecipe(4, MINING_DRONE_LV,
+                Quartzite, 9000,
+                NetherQuartz, 8000,
+                CertusQuartz, 8000,
+                Barite, 7000,
+                BasalticMineralSand, 7000,
+                GraniticMineralSand, 7000,
+                FullersEarth, 8000,
+                Topaz, 6000,
+                BlueTopaz, 6000,
+                VH[LV]);
     }
 
     private static void MVstage() {
+        //  Lead-Silver-Copper vein
+        createDroneAirportRecipe(1, MINING_DRONE_MV,
+                Lead, 8000,
+                Silver, 6000,
+                Tin, 9000,
+                Galena, 8000,
+                Cassiterite, 7000,
+                CassiteriteSand, 5000,
+                Tetrahedrite, 8000,
+                Stibnite, 6000,
+                Bauxite, 7000,
+                VH[MV]);
 
-        //  Lead-Silver-Copper
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(1)
-                .fluidInputs(RocketFuel.getFluid(200))
-                .chancedOutput(ore, Lead, 64, 8000, 500)
-                .chancedOutput(ore, Silver, 64, 6000, 500)
-                .chancedOutput(ore, Tin, 64, 9000, 500)
-                .chancedOutput(ore, Galena, 64, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 64, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 64, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 64, 8000, 500)
-                .chancedOutput(ore, Stibnite, 64, 6000, 500)
-                .chancedOutput(ore, Bauxite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
+        //  Redstone-Diamond-Thorium vein
+        createDroneAirportRecipe(2, MINING_DRONE_MV,
+                Redstone, 8000,
+                Diamond, 7000,
+                Emerald, 6000,
+                Ruby, 6000,
+                Cinnabar, 7000,
+                Coal, 9000,
+                Graphite, 6000,
+                Beryllium, 8000,
+                Thorium, 6000,
+                VH[MV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(1)
-                .fluidInputs(RP1RocketFuel.getFluid(200))
-                .chancedOutput(ore, Lead, 64, 8000, 500)
-                .chancedOutput(ore, Silver, 64, 6000, 500)
-                .chancedOutput(ore, Tin, 64, 9000, 500)
-                .chancedOutput(ore, Galena, 64, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 64, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 64, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 64, 8000, 500)
-                .chancedOutput(ore, Stibnite, 64, 6000, 500)
-                .chancedOutput(ore, Bauxite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
+        //  Lapis-Electrotine vein
+        createDroneAirportRecipe(3, MINING_DRONE_MV,
+                Lapis, 8000,
+                Sodalite, 7000,
+                Kyanite, 9000,
+                Lazurite, 8000,
+                Calcite, 9000,
+                Electrotine, 6000,
+                Saltpeter, 7000,
+                Diatomite, 8000,
+                Alunite, 6000,
+                VH[MV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(11)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(200))
-                .chancedOutput(ore, Lead, 64, 8000, 500)
-                .chancedOutput(ore, Silver, 64, 6000, 500)
-                .chancedOutput(ore, Tin, 64, 9000, 500)
-                .chancedOutput(ore, Galena, 64, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 64, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 64, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 64, 8000, 500)
-                .chancedOutput(ore, Stibnite, 64, 6000, 500)
-                .chancedOutput(ore, Bauxite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(11)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(200))
-                .chancedOutput(ore, Lead, 64, 8000, 500)
-                .chancedOutput(ore, Silver, 64, 6000, 500)
-                .chancedOutput(ore, Tin, 64, 9000, 500)
-                .chancedOutput(ore, Galena, 64, 8000, 500)
-                .chancedOutput(ore, Cassiterite, 64, 7000, 500)
-                .chancedOutput(ore, CassiteriteSand, 64, 6000, 500)
-                .chancedOutput(ore, Tetrahedrite, 64, 8000, 500)
-                .chancedOutput(ore, Stibnite, 64, 6000, 500)
-                .chancedOutput(ore, Bauxite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Redstone-Diamond-Thorium
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(2)
-                .fluidInputs(RocketFuel.getFluid(200))
-                .chancedOutput(ore, Redstone, 64, 8000, 500)
-                .chancedOutput(ore, Diamond, 64, 7000, 500)
-                .chancedOutput(ore, Emerald, 64, 6000, 500)
-                .chancedOutput(ore, Ruby, 64, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 64, 7000, 500)
-                .chancedOutput(ore, Coal, 64, 9000, 500)
-                .chancedOutput(ore, Graphite, 64, 6000, 500)
-                .chancedOutput(ore, Beryllium, 64, 8000, 500)
-                .chancedOutput(ore, Thorium, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(2)
-                .fluidInputs(RP1RocketFuel.getFluid(200))
-                .chancedOutput(ore, Redstone, 64, 8000, 500)
-                .chancedOutput(ore, Diamond, 64, 7000, 500)
-                .chancedOutput(ore, Emerald, 64, 6000, 500)
-                .chancedOutput(ore, Ruby, 64, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 64, 7000, 500)
-                .chancedOutput(ore, Coal, 64, 9000, 500)
-                .chancedOutput(ore, Graphite, 64, 6000, 500)
-                .chancedOutput(ore, Beryllium, 64, 8000, 500)
-                .chancedOutput(ore, Thorium, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(12)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(200))
-                .chancedOutput(ore, Redstone, 64, 8000, 500)
-                .chancedOutput(ore, Diamond, 64, 7000, 500)
-                .chancedOutput(ore, Emerald, 64, 6000, 500)
-                .chancedOutput(ore, Ruby, 64, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 64, 7000, 500)
-                .chancedOutput(ore, Coal, 64, 9000, 500)
-                .chancedOutput(ore, Graphite, 64, 6000, 500)
-                .chancedOutput(ore, Beryllium, 64, 8000, 500)
-                .chancedOutput(ore, Thorium, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(12)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(200))
-                .chancedOutput(ore, Redstone, 64, 8000, 500)
-                .chancedOutput(ore, Diamond, 64, 7000, 500)
-                .chancedOutput(ore, Emerald, 64, 6000, 500)
-                .chancedOutput(ore, Ruby, 64, 6000, 500)
-                .chancedOutput(ore, Cinnabar, 64, 7000, 500)
-                .chancedOutput(ore, Coal, 64, 9000, 500)
-                .chancedOutput(ore, Graphite, 64, 6000, 500)
-                .chancedOutput(ore, Beryllium, 64, 8000, 500)
-                .chancedOutput(ore, Thorium, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Lapis-Electrotine
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(3)
-                .fluidInputs(RocketFuel.getFluid(200))
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Sodalite, 64, 9000, 500)
-                .chancedOutput(ore, Lazurite, 64, 8000, 500)
-                .chancedOutput(ore, Calcite, 64, 9000, 500)
-                .chancedOutput(ore, Electrotine, 64, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 64, 8000, 500)
-                .chancedOutput(ore, Diatomite, 64, 6000, 500)
-                .chancedOutput(ore, Alunite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(3)
-                .fluidInputs(RP1RocketFuel.getFluid(200))
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Sodalite, 64, 9000, 500)
-                .chancedOutput(ore, Lazurite, 64, 8000, 500)
-                .chancedOutput(ore, Calcite, 64, 9000, 500)
-                .chancedOutput(ore, Electrotine, 64, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 64, 8000, 500)
-                .chancedOutput(ore, Diatomite, 64, 6000, 500)
-                .chancedOutput(ore, Alunite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(13)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(200))
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Sodalite, 64, 9000, 500)
-                .chancedOutput(ore, Lazurite, 64, 8000, 500)
-                .chancedOutput(ore, Calcite, 64, 9000, 500)
-                .chancedOutput(ore, Electrotine, 64, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 64, 8000, 500)
-                .chancedOutput(ore, Diatomite, 64, 6000, 500)
-                .chancedOutput(ore, Alunite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(13)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(200))
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Lapis, 64, 8000, 500)
-                .chancedOutput(ore, Sodalite, 64, 9000, 500)
-                .chancedOutput(ore, Lazurite, 64, 8000, 500)
-                .chancedOutput(ore, Calcite, 64, 9000, 500)
-                .chancedOutput(ore, Electrotine, 64, 7000, 500)
-                .chancedOutput(ore, Saltpeter, 64, 8000, 500)
-                .chancedOutput(ore, Diatomite, 64, 6000, 500)
-                .chancedOutput(ore, Alunite, 64, 7000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Oilsand-Magnesite
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(4)
-                .fluidInputs(RocketFuel.getFluid(200))
-                .chancedOutput(ore, Oilsands, 64, 9000, 500)
-                .chancedOutput(ore, Soapstone, 64, 8000, 500)
-                .chancedOutput(ore, Talc, 64, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 64, 7000, 500)
-                .chancedOutput(ore, Trona, 64, 6000, 500)
-                .chancedOutput(ore, Magnesite, 64, 7000, 500)
-                .chancedOutput(ore, Olivine, 64, 7000, 500)
-                .chancedOutput(ore, Bentonite, 64, 7000, 500)
-                .chancedOutput(ore, Pollucite, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(4)
-                .fluidInputs(RP1RocketFuel.getFluid(200))
-                .chancedOutput(ore, Oilsands, 64, 9000, 500)
-                .chancedOutput(ore, Soapstone, 64, 8000, 500)
-                .chancedOutput(ore, Talc, 64, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 64, 7000, 500)
-                .chancedOutput(ore, Trona, 64, 6000, 500)
-                .chancedOutput(ore, Magnesite, 64, 7000, 500)
-                .chancedOutput(ore, Olivine, 64, 7000, 500)
-                .chancedOutput(ore, Bentonite, 64, 7000, 500)
-                .chancedOutput(ore, Pollucite, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(14)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(200))
-                .chancedOutput(ore, Oilsands, 64, 9000, 500)
-                .chancedOutput(ore, Soapstone, 64, 8000, 500)
-                .chancedOutput(ore, Talc, 64, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 64, 7000, 500)
-                .chancedOutput(ore, Trona, 64, 6000, 500)
-                .chancedOutput(ore, Magnesite, 64, 7000, 500)
-                .chancedOutput(ore, Olivine, 64, 7000, 500)
-                .chancedOutput(ore, Bentonite, 64, 7000, 500)
-                .chancedOutput(ore, Pollucite, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_MV)
-                .circuitMeta(14)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(200))
-                .chancedOutput(ore, Oilsands, 64, 9000, 500)
-                .chancedOutput(ore, Soapstone, 64, 8000, 500)
-                .chancedOutput(ore, Talc, 64, 8000, 500)
-                .chancedOutput(ore, GlauconiteSand, 64, 7000, 500)
-                .chancedOutput(ore, Trona, 64, 6000, 500)
-                .chancedOutput(ore, Magnesite, 64, 7000, 500)
-                .chancedOutput(ore, Olivine, 64, 7000, 500)
-                .chancedOutput(ore, Bentonite, 64, 7000, 500)
-                .chancedOutput(ore, Pollucite, 64, 6000, 500)
-                .EUt(VA[MV])
-                .duration(200)
-                .buildAndRegister();
+        //  Oilsand-Magnesite vein
+        createDroneAirportRecipe(4, MINING_DRONE_MV,
+                Oilsands, 9000,
+                Soapstone, 8000,
+                Talc, 8000,
+                GlauconiteSand, 7000,
+                Trona, 6000,
+                Magnesite, 7000,
+                Olivine, 7000,
+                Bentonite, 7000,
+                Pollucite, 6000,
+                VH[MV]);
     }
 
     private static void HVstage() {
 
-        //  Lithium-Tungsten-Molybdenum
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(1)
-                .fluidInputs(RocketFuel.getFluid(400))
-                .chancedOutput(ore, Lithium, 64, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 64, 7000, 500)
-                .chancedOutput(ore, Scheelite, 64, 6000, 500)
-                .chancedOutput(ore, Tungstate, 64, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 64, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 64, 8000, 500)
-                .chancedOutput(ore, Powellite, 64, 7000, 500)
-                .chancedOutput(ore, Chromite, 64, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 64, 6000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
+        //  Lithium-Tungsten-Molybdenum vein
+        createDroneAirportRecipe(1, MINING_DRONE_HV,
+                Lithium, 9000,
+                Molybdenum, 7000,
+                Scheelite, 6000,
+                Tungstate, 6000,
+                Wulfenite, 8000,
+                Molybdenite, 8000,
+                Powellite, 7000,
+                Chromite, 7000,
+                Ilmenite, 6000,
+                VH[HV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(1)
-                .fluidInputs(RP1RocketFuel.getFluid(400))
-                .chancedOutput(ore, Lithium, 64, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 64, 7000, 500)
-                .chancedOutput(ore, Scheelite, 64, 6000, 500)
-                .chancedOutput(ore, Tungstate, 64, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 64, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 64, 8000, 500)
-                .chancedOutput(ore, Powellite, 64, 7000, 500)
-                .chancedOutput(ore, Chromite, 64, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 64, 6000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
+        //  Neodymium-Platinum-Palladium vein
+        createDroneAirportRecipe(2, MINING_DRONE_HV,
+                Neodymium, 6000,
+                Platinum, 7000,
+                Palladium, 7000,
+                Bastnasite, 8000,
+                Monazite, 7000,
+                Cooperite, 8000,
+                Bornite, 9000,
+                Tantalite, 8000,
+                Pyrolusite, 8000,
+                VH[HV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(11)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(400))
-                .chancedOutput(ore, Lithium, 64, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 64, 7000, 500)
-                .chancedOutput(ore, Scheelite, 64, 6000, 500)
-                .chancedOutput(ore, Tungstate, 64, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 64, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 64, 8000, 500)
-                .chancedOutput(ore, Powellite, 64, 7000, 500)
-                .chancedOutput(ore, Chromite, 64, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 64, 6000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
+        //  Sapphire-Amethyst vein
+        createDroneAirportRecipe(3, MINING_DRONE_HV,
+                Sapphire, 7000,
+                Almandine, 7000,
+                Pyrope, 8000,
+                GreenSapphire, 7000,
+                Amethyst, 9000,
+                GarnetRed, 8000,
+                GarnetYellow, 8000,
+                GarnetYellow, 8000,
+                Opal, 8000,
+                VH[HV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(11)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(400))
-                .chancedOutput(ore, Lithium, 64, 9000, 500)
-                .chancedOutput(ore, Molybdenum, 64, 7000, 500)
-                .chancedOutput(ore, Scheelite, 64, 6000, 500)
-                .chancedOutput(ore, Tungstate, 64, 6000, 500)
-                .chancedOutput(ore, Wulfenite, 64, 8000, 500)
-                .chancedOutput(ore, Molybdenite, 64, 8000, 500)
-                .chancedOutput(ore, Powellite, 64, 7000, 500)
-                .chancedOutput(ore, Chromite, 64, 7000, 500)
-                .chancedOutput(ore, Ilmenite, 64, 6000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Neodymium-Platinum-Palladium
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(2)
-                .fluidInputs(RocketFuel.getFluid(400))
-                .chancedOutput(ore, Neodymium, 64, 6000, 500)
-                .chancedOutput(ore, Platinum, 64, 7000, 500)
-                .chancedOutput(ore, Palladium, 64, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 64, 8000, 500)
-                .chancedOutput(ore, Monazite, 64, 7000, 500)
-                .chancedOutput(ore, Cooperite, 64, 8000, 500)
-                .chancedOutput(ore, Bornite, 64, 9000, 500)
-                .chancedOutput(ore, Tantalite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(2)
-                .fluidInputs(RP1RocketFuel.getFluid(400))
-                .chancedOutput(ore, Neodymium, 64, 6000, 500)
-                .chancedOutput(ore, Platinum, 64, 7000, 500)
-                .chancedOutput(ore, Palladium, 64, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 64, 8000, 500)
-                .chancedOutput(ore, Monazite, 64, 7000, 500)
-                .chancedOutput(ore, Cooperite, 64, 8000, 500)
-                .chancedOutput(ore, Bornite, 64, 9000, 500)
-                .chancedOutput(ore, Tantalite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(12)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(400))
-                .chancedOutput(ore, Neodymium, 64, 6000, 500)
-                .chancedOutput(ore, Platinum, 64, 7000, 500)
-                .chancedOutput(ore, Palladium, 64, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 64, 8000, 500)
-                .chancedOutput(ore, Monazite, 64, 7000, 500)
-                .chancedOutput(ore, Cooperite, 64, 8000, 500)
-                .chancedOutput(ore, Bornite, 64, 9000, 500)
-                .chancedOutput(ore, Tantalite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(12)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(400))
-                .chancedOutput(ore, Neodymium, 64, 6000, 500)
-                .chancedOutput(ore, Platinum, 64, 7000, 500)
-                .chancedOutput(ore, Palladium, 64, 7000, 500)
-                .chancedOutput(ore, Bastnasite, 64, 8000, 500)
-                .chancedOutput(ore, Monazite, 64, 7000, 500)
-                .chancedOutput(ore, Cooperite, 64, 8000, 500)
-                .chancedOutput(ore, Bornite, 64, 9000, 500)
-                .chancedOutput(ore, Tantalite, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Sapphire-Amethyst
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(3)
-                .fluidInputs(RocketFuel.getFluid(400))
-                .chancedOutput(ore, Sapphire, 64, 7000, 500)
-                .chancedOutput(ore, Almandine, 64, 7000, 500)
-                .chancedOutput(ore, Pyrope, 64, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 64, 8000, 500)
-                .chancedOutput(ore, Amethyst, 64, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 64, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 64, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 64, 8000, 500)
-                .chancedOutput(ore, Opal, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(3)
-                .fluidInputs(RP1RocketFuel.getFluid(400))
-                .chancedOutput(ore, Sapphire, 64, 7000, 500)
-                .chancedOutput(ore, Almandine, 64, 7000, 500)
-                .chancedOutput(ore, Pyrope, 64, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 64, 8000, 500)
-                .chancedOutput(ore, Amethyst, 64, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 64, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 64, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 64, 8000, 500)
-                .chancedOutput(ore, Opal, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(13)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(400))
-                .chancedOutput(ore, Sapphire, 64, 7000, 500)
-                .chancedOutput(ore, Almandine, 64, 7000, 500)
-                .chancedOutput(ore, Pyrope, 64, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 64, 8000, 500)
-                .chancedOutput(ore, Amethyst, 64, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 64, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 64, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 64, 8000, 500)
-                .chancedOutput(ore, Opal, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(13)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(400))
-                .chancedOutput(ore, Sapphire, 64, 7000, 500)
-                .chancedOutput(ore, Almandine, 64, 7000, 500)
-                .chancedOutput(ore, Pyrope, 64, 8000, 500)
-                .chancedOutput(ore, GreenSapphire, 64, 8000, 500)
-                .chancedOutput(ore, Amethyst, 64, 9000, 500)
-                .chancedOutput(ore, GarnetRed, 64, 8000, 500)
-                .chancedOutput(ore, GarnetYellow, 64, 8000, 500)
-                .chancedOutput(ore, GarnetSand, 64, 8000, 500)
-                .chancedOutput(ore, Opal, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
-
-        //  Copper-Tantalum
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(4)
-                .fluidInputs(RocketFuel.getFluid(400))
-                .chancedOutput(ore, Malachite, 64, 9000, 500)
-                .chancedOutput(ore, Apatite, 64, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 64, 8000, 500)
-                .chancedOutput(ore, Realgar, 64, 9000, 500)
-                .chancedOutput(ore, Grossular, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 7000, 500)
-                .chancedOutput(ore, Spessartine, 64, 7000, 500)
-                .chancedOutput(ore, Tantalite, 64, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(4)
-                .fluidInputs(RP1RocketFuel.getFluid(400))
-                .chancedOutput(ore, Malachite, 64, 9000, 500)
-                .chancedOutput(ore, Apatite, 64, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 64, 8000, 500)
-                .chancedOutput(ore, Realgar, 64, 9000, 500)
-                .chancedOutput(ore, Grossular, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 7000, 500)
-                .chancedOutput(ore, Spessartine, 64, 7000, 500)
-                .chancedOutput(ore, Tantalite, 64, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(400)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(14)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(400))
-                .chancedOutput(ore, Malachite, 64, 9000, 500)
-                .chancedOutput(ore, Apatite, 64, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 64, 8000, 500)
-                .chancedOutput(ore, Realgar, 64, 9000, 500)
-                .chancedOutput(ore, Grossular, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 7000, 500)
-                .chancedOutput(ore, Spessartine, 64, 7000, 500)
-                .chancedOutput(ore, Tantalite, 64, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
-
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_HV)
-                .circuitMeta(14)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(400))
-                .chancedOutput(ore, Malachite, 64, 9000, 500)
-                .chancedOutput(ore, Apatite, 64, 8000, 500)
-                .chancedOutput(ore, TricalciumPhosphate, 64, 8000, 500)
-                .chancedOutput(ore, Realgar, 64, 9000, 500)
-                .chancedOutput(ore, Grossular, 64, 8000, 500)
-                .chancedOutput(ore, Pyrolusite, 64, 7000, 500)
-                .chancedOutput(ore, Spessartine, 64, 7000, 500)
-                .chancedOutput(ore, Tantalite, 64, 6000, 500)
-                .chancedOutput(ore, Pyrochlore, 64, 8000, 500)
-                .EUt(VA[HV])
-                .duration(200)
-                .buildAndRegister();
+        //  Copper-Tantalum vein
+        createDroneAirportRecipe(4, MINING_DRONE_HV,
+                Malachite, 9000,
+                Apatite, 8000,
+                TricalciumPhosphate, 8000,
+                Realgar, 9000,
+                Grossular, 8000,
+                Pyrolusite, 7000,
+                Spessartine, 7000,
+                Tantalite, 6000,
+                Pyrochlore, 8000,
+                VH[HV]);
     }
 
     private static void EVstage() {
 
-        //  Naquadah-Plutonium-Uranium
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV)
-                .circuitMeta(1)
-                .fluidInputs(RocketFuel.getFluid(800))
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 64, 7000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pyrochlore,  64, 9000, 500)
-                .EUt(VA[EV])
-                .duration(400)
-                .buildAndRegister();
+        //  Naquadah-Plutonium-Uranium vein
+        createDroneAirportRecipe(1, MINING_DRONE_EV,
+                Neodymium, 9000,
+                Platinum, 8000,
+                Cooperite, 7000,
+                Tungstate, 8000,
+                Scheelite, 7000,
+                Bauxite, 8000,
+                Palladium, 7000,
+                Pyrochlore, 8000,
+                Grossular, 8000,
+                VH[EV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV)
-                .circuitMeta(1)
-                .fluidInputs(RP1RocketFuel.getFluid(800))
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 64, 7000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pyrochlore,  64, 9000, 500)
-                .EUt(VA[EV])
-                .duration(400)
-                .buildAndRegister();
+        //  Monazite-Molybdenum vein
+        createDroneAirportRecipe(2, MINING_DRONE_EV,
+                Monazite, 9000,
+                Bastnasite, 8000,
+                Molybdenum, 7000,
+                Molybdenite, 8000,
+                Bornite, 7000,
+                Tantalite, 8000,
+                Almandine, 8000,
+                Apatite, 7000,
+                Ilmenite, 7000,
+                VH[EV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV)
-                .circuitMeta(11)
-                .fluidInputs(DenseHydrazineMixtureFuel.getFluid(800))
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 64, 7000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pyrochlore,  64, 9000, 500)
-                .EUt(VA[EV])
-                .duration(200)
-                .buildAndRegister();
+        //  Oilsand vein
+        createDroneAirportRecipe(3, MINING_DRONE_EV,
+                Oilsands, 8000,
+                Oilsands, 8000,
+                Oilsands, 8000,
+                Oilsands, 8000,
+                GraniticMineralSand, 7000,
+                GarnetSand, 7000,
+                BasalticMineralSand, 6000,
+                GlauconiteSand, 9000,
+                Quartzite, 7000,
+                VH[EV]);
 
-        DRONE_AIRPORT_RECIPES.recipeBuilder()
-                .notConsumable(MINING_DRONE_EV)
-                .circuitMeta(11)
-                .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(800))
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Naquadah, 64, 6000, 500)
-                .chancedOutput(ore, Plutonium239, 64, 7000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Uraninite, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pitchblende, 64, 8000, 500)
-                .chancedOutput(ore, Pyrochlore,  64, 9000, 500)
-                .EUt(VA[EV])
-                .duration(200)
-                .buildAndRegister();
+        //  Silver-Gold-Platinum vein
+        createDroneAirportRecipe(4, MINING_DRONE_EV,
+                Silver, 7000,
+                Silver, 7000,
+                Gold, 6000,
+                Gold, 6000,
+                Platinum, 8000,
+                Platinum, 8000,
+                Lead, 9000,
+                Tin, 9000,
+                Cooperite, 7000,
+                VH[EV]);
     }
+
+    private static void IVstage() {
+
+        //  Naquadah-Plutonium-Uranium vein
+        createDroneAirportRecipe(1, MINING_DRONE_IV,
+                Naquadah, 6000,
+                Naquadah, 6000,
+                Naquadah, 6000,
+                Plutonium239, 7000,
+                Uraninite, 8000,
+                Uraninite, 8000,
+                Pitchblende, 8000,
+                Pitchblende, 8000,
+                Pyrochlore, 9000,
+                VH[IV]);
+
+        //  Thorium-Plutonium-Pitchblende vein
+        createDroneAirportRecipe(2, MINING_DRONE_IV,
+                Thorium, 8000,
+                Thorium, 8000,
+                Uraninite, 7000,
+                Uraninite, 7000,
+                Pitchblende, 9000,
+                Pitchblende, 9000,
+                Beryllium, 8000,
+                Emerald, 8000,
+                Olivine, 9000,
+                VH[IV]);
+
+        //  Sylvanite-Gold-Silver vein
+        createDroneAirportRecipe(3, MINING_DRONE_IV,
+                Gold, 8000,
+                Gold, 8000,
+                Gold, 8000,
+                Gold, 8000,
+                Silver, 9000,
+                Silver, 9000,
+                Silver, 9000,
+                Sylvanite, 4000,
+                Sylvanite, 4000,
+                VH[IV]);
+
+        //  Rhenite-Molybdenum vein
+        createDroneAirportRecipe(4, MINING_DRONE_IV,
+                Molybdenite, 9000,
+                Molybdenite, 9000,
+                Molybdenite, 9000,
+                Wulfenite, 8000,
+                Wulfenite, 8000,
+                Wulfenite, 8000,
+                Rheniite, 7000,
+                Rheniite, 7000,
+                Rheniite, 7000,
+                VH[IV]);
+    }
+
+    private static void createDroneAirportRecipe(int circuitMeta,
+                                                 MetaItem.MetaValueItem drone,
+                                                 Material ore1,
+                                                 int chanceOre1,
+                                                 Material ore2,
+                                                 int chanceOre2,
+                                                 Material ore3,
+                                                 int chanceOre3,
+                                                 Material ore4,
+                                                 int chanceOre4,
+                                                 Material ore5,
+                                                 int chanceOre5,
+                                                 Material ore6,
+                                                 int chanceOre6,
+                                                 Material ore7,
+                                                 int chanceOre7,
+                                                 Material ore8,
+                                                 int chanceOre8,
+                                                 Material ore9,
+                                                 int chanceOre9,
+                                                 int voltage) {
+        //  x1
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(4000),
+                RP1RocketFuel.getFluid(4000),
+                DenseHydrazineMixtureFuel.getFluid(2000),
+                MethylhydrazineNitrateRocketFuel.getFluid(2000)
+        }) {
+            DRONE_AIRPORT_RECIPES.recipeBuilder()
+                    .circuitMeta(circuitMeta)
+                    .notConsumable(drone.getStackForm(4))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 4, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 4, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 4, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 4, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 4, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 4, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 4, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 4, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 4, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(400)
+                    .buildAndRegister();
+        }
+
+        //  x2
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(8000),
+                RP1RocketFuel.getFluid(8000),
+                DenseHydrazineMixtureFuel.getFluid(4000),
+                MethylhydrazineNitrateRocketFuel.getFluid(4000)
+        }) {
+            DRONE_AIRPORT_RECIPES.recipeBuilder()
+                    .circuitMeta(circuitMeta + 5)
+                    .notConsumable(drone.getStackForm(16))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 16, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 16, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 16, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 16, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 16, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 16, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 16, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 16, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 16, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(400)
+                    .buildAndRegister();
+        }
+
+        //  x4
+        for (FluidStack stack : new FluidStack[] {
+                RocketFuel.getFluid(16000),
+                RP1RocketFuel.getFluid(16000),
+                DenseHydrazineMixtureFuel.getFluid(8000),
+                MethylhydrazineNitrateRocketFuel.getFluid(8000)
+        }) {
+            DRONE_AIRPORT_RECIPES.recipeBuilder()
+                    .circuitMeta(circuitMeta + 10)
+                    .notConsumable(drone.getStackForm(64))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .chancedOutput(ore, ore1, 64, chanceOre1, 500)
+                    .chancedOutput(ore, ore2, 64, chanceOre2, 500)
+                    .chancedOutput(ore, ore3, 64, chanceOre3, 500)
+                    .chancedOutput(ore, ore4, 64, chanceOre4, 500)
+                    .chancedOutput(ore, ore5, 64, chanceOre5, 500)
+                    .chancedOutput(ore, ore6, 64, chanceOre6, 500)
+                    .chancedOutput(ore, ore7, 64, chanceOre7, 500)
+                    .chancedOutput(ore, ore8, 64, chanceOre8, 500)
+                    .chancedOutput(ore, ore9, 64, chanceOre9, 500)
+                    .EUt(voltage)
+                    .duration(400)
+                    .buildAndRegister();
+        }
+    }
+
 }

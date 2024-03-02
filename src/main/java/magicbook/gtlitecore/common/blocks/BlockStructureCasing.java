@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.StructureCasingType> {
+
     public BlockStructureCasing() {
         super(Material.IRON);
         this.setTranslationKey("structure_casing");
@@ -24,6 +25,7 @@ public class BlockStructureCasing extends VariantBlock<BlockStructureCasing.Stru
         this.setDefaultState(this.getState(StructureCasingType.MARAGING_STEEL_250_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

@@ -284,6 +284,14 @@ public class GTLiteMaterials {
     public static Material RadiumOxide;
     public static Material CeLAG;
     public static Material LeadZirconateTitanate;
+    public static Material SodiumIodide;
+    public static Material SodiumNitrite;
+    public static Material PotassiumIodide;
+    public static Material SodiumPertechnetate;
+    public static Material PotassiumPertechnetate;
+    public static Material PotassiumNonahydridorhenate;
+    public static Material PotassiumNonahydridotechnetate;
+    public static Material PotassiumPerrhenate;
 
     //  Second Degree Materials (Range: 12001-13000)
     public static Material Inconel625;
@@ -543,6 +551,15 @@ public class GTLiteMaterials {
     public static Material PropargylChloride;
     public static Material PropargylAlcohol;
     public static Material Ethanolamine;
+    public static Material MBBA;
+    public static Material Methoxybenzaldehyde;
+    public static Material Butylaniline;
+    public static Material IodoxybenzoicAcid;
+    public static Material Trimethylchlorosilane;
+    public static Material Trimethylsilane;
+    public static Material IodobenzoicAcid;
+    public static Material TetraethylammoniumBromide;
+    public static Material TetraethylammoniumNonahydriorhenidetechnetide;
 
     //  High Degree Materials (Range: 15001-16000)
     public static Material QuarkGluonPlasma;

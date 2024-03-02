@@ -15,6 +15,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockHermeticCasing extends VariantBlock<BlockHermeticCasing.HermeticCasingType> {
+
     public BlockHermeticCasing() {
         super(Material.IRON);
         this.setTranslationKey("hermetic_casing");
@@ -25,6 +26,7 @@ public class BlockHermeticCasing extends VariantBlock<BlockHermeticCasing.Hermet
         this.setDefaultState(this.getState(HermeticCasingType.HERMETIC_UEV));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,
@@ -33,6 +35,7 @@ public class BlockHermeticCasing extends VariantBlock<BlockHermeticCasing.Hermet
     }
 
     @Nonnull
+    @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }

@@ -13,6 +13,7 @@ import net.minecraft.world.IBlockAccess;
 import javax.annotation.Nonnull;
 
 public class BlockActiveUniqueCasing extends VariantActiveBlock<BlockActiveUniqueCasing.ActiveCasingType> {
+
     public BlockActiveUniqueCasing() {
         super(Material.IRON);
         setTranslationKey("active_unique_casing");
@@ -39,6 +40,7 @@ public class BlockActiveUniqueCasing extends VariantActiveBlock<BlockActiveUniqu
         ADVANCED_CRUSHING_WHEEL("advanced_crushing_wheel"),
         CIRCUIT_ASSEMBLY_LINE_CASING("circuit_assembly_line_casing"),
         ADVANCED_SLICING_BLADE("advanced_slicing_blade");
+
         private final String name;
 
         ActiveCasingType(String name) {

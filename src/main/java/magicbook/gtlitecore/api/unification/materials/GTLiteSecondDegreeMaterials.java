@@ -422,7 +422,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(5325, BlastProperty.GasTier.HIGH)
                         .blastStats(VA[EV], 301))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
 
         //  12031 Staballoy

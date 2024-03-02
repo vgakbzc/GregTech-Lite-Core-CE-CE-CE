@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockMetalCasing extends VariantBlock<BlockMetalCasing.MetalCasingType> {
+
     public BlockMetalCasing() {
         super(Material.IRON);
         this.setTranslationKey("metal_casing");
@@ -24,6 +25,7 @@ public class BlockMetalCasing extends VariantBlock<BlockMetalCasing.MetalCasingT
         this.setDefaultState(this.getState(MetalCasingType.ZIRCONIUM_CARBIDE_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

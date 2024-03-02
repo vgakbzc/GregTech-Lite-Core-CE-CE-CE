@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockComponentAssemblyLineCasing extends VariantBlock<BlockComponentAssemblyLineCasing.CasingTier> {
+
     public BlockComponentAssemblyLineCasing() {
         super(Material.IRON);
         this.setTranslationKey("component_assembly_line_casing");
@@ -24,6 +25,7 @@ public class BlockComponentAssemblyLineCasing extends VariantBlock<BlockComponen
         this.setDefaultState(this.getState(CasingTier.LV));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

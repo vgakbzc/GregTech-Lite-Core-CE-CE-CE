@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasingType> {
+
     public BlockUniqueCasing() {
         super(Material.IRON);
         this.setTranslationKey("unique_casing");
@@ -24,6 +25,7 @@ public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasi
         this.setDefaultState(this.getState(UniqueCasingType.FLOTATION_CELL));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

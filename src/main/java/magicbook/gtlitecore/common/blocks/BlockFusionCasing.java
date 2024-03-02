@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockFusionCasing extends VariantBlock<BlockFusionCasing.FusionCasingType> {
+
     public BlockFusionCasing() {
         super(Material.IRON);
         this.setTranslationKey("fusion_casing");
@@ -24,6 +25,7 @@ public class BlockFusionCasing extends VariantBlock<BlockFusionCasing.FusionCasi
         this.setDefaultState(this.getState(FusionCasingType.FUSION_CASING_MK4));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

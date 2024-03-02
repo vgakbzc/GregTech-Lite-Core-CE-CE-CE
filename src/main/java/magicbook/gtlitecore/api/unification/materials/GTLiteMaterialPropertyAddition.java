@@ -120,6 +120,7 @@ public class GTLiteMaterialPropertyAddition {
 
         //  Organic Chemistry
         AmmoniumChloride.setProperty(PropertyKey.FLUID, new FluidProperty());
+        SodiumHydroxide.setProperty(PropertyKey.FLUID, new FluidProperty());
 
         //  Milled
         Almandine.addFlags(GENERATE_MILLED);
@@ -177,6 +178,8 @@ public class GTLiteMaterialPropertyAddition {
         BlackSteel.addFlags(GENERATE_DOUBLE_PLATE);
         Stellite100.addFlags(GENERATE_DOUBLE_PLATE);
         Bohrium.addFlags(GENERATE_DOUBLE_PLATE);
+        HastelloyC276.addFlags(GENERATE_DOUBLE_PLATE);
+        Ruthenium.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -267,6 +270,7 @@ public class GTLiteMaterialPropertyAddition {
         WroughtIron.addFlags(GENERATE_SMALL_GEAR);
         HSSE.addFlags(GENERATE_SMALL_GEAR);
         Naquadah.addFlags(GENERATE_GEAR);
+        Iridium.addFlags(GENERATE_SMALL_GEAR);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
@@ -305,46 +309,46 @@ public class GTLiteMaterialPropertyAddition {
         //NetherStar.addFlags(CRYSTALLIZABLE); // TODO Another Nether Star recipe, may be set components
 
         //  Nano Swarm
-        Iron.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        IronMagnetic.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Copper.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Nickel.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Cobalt.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Lead.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
-        Redstone.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
+        Iron.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        IronMagnetic.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Copper.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Nickel.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Cobalt.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Lead.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Redstone.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        RedAlloy.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // W.I.P
+        RedAlloy.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Carbon.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Plastic recipe
-        CarbonNanotube.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Plastic recipe
+        Carbon.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        CarbonNanotube.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Graphene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rubber recipe
-        Fullerene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rubber recipe
+        Graphene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Fullerene.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Platinum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Platinum group recipe
+        Platinum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Europium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Thorium-Uranium group recipe
+        Europium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Titanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Titanium-Tungsten-Indium recipe
-        Tungsten.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Titanium-Tungsten-Indium recipe
+        Titanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Tungsten.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Neodymium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rare earth recipe
-        Americium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rare earth recipe
-        Dubnium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Rare earth recipe
+        Neodymium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Americium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Dubnium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Naquadah.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Naquadah group recipe
-        NaquadahEnriched.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Naquadah group recipe
+        Naquadah.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        NaquadahEnriched.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Naquadria.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Biological recipe
+        Naquadria.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Tin.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Adhesive recipe
+        Tin.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Tritanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Higgs Bosons recipe
+        Tritanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Orichalcum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For Quantum Force Transformer Instanton recipe
+        Orichalcum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
-        Silver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching recipes
-        Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM); // For PCB factory Etching recipes
+        Silver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
         Eternity.addFlags(GENERATE_SWARM); // For end game
 

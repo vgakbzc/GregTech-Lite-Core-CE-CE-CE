@@ -13,6 +13,7 @@ import net.minecraft.world.IBlockAccess;
 import javax.annotation.Nonnull;
 
 public class BlockActiveMultiblockCasing extends VariantActiveBlock<BlockActiveMultiblockCasing.ActiveCasingType> {
+
     public BlockActiveMultiblockCasing() {
         super(Material.IRON);
         setTranslationKey("active_multiblock_casing");

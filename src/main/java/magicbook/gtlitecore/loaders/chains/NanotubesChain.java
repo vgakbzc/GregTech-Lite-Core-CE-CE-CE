@@ -300,7 +300,7 @@ public class NanotubesChain {
 
         //  Lanthanum Embedded Fullerene -> Lanthanum Fullerene Nanotube
         PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
-                .notConsumable(plate, Rhenium)
+                .notConsumable(plate, Bohrium)
                 .input(dust, LanthanumEmbeddedFullerene)
                 .fluidInputs(Acetylene.getFluid(3000))
                 .fluidInputs(Cycloparaphenylene.getFluid(7000))
@@ -313,7 +313,7 @@ public class NanotubesChain {
                 .buildAndRegister();
 
         PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
-                .notConsumable(plateDouble, Rhenium)
+                .notConsumable(plateDouble, Bohrium)
                 .input(dust, LanthanumEmbeddedFullerene, 4)
                 .fluidInputs(Acetylene.getFluid(12000))
                 .fluidInputs(Cycloparaphenylene.getFluid(28000))
@@ -330,7 +330,7 @@ public class NanotubesChain {
 
         //  Neutronium Nanotube
         PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
-                .notConsumable(plate, Bohrium)
+                .notConsumable(plate, MetastableHassium)
                 .input(ingot, Neutronium)
                 .fluidInputs(Acetylene.getFluid(3000))
                 .fluidInputs(Cycloparaphenylene.getFluid(7000))
@@ -343,7 +343,7 @@ public class NanotubesChain {
                 .buildAndRegister();
 
         PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
-                .notConsumable(plateDouble, Bohrium)
+                .notConsumable(plateDouble, MetastableHassium)
                 .input(ingot, Neutronium, 4)
                 .fluidInputs(Acetylene.getFluid(12000))
                 .fluidInputs(Cycloparaphenylene.getFluid(28000))

@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockSpaceElevatorCasing extends VariantBlock<BlockSpaceElevatorCasing.ElevatorCasingType> {
+
     public BlockSpaceElevatorCasing() {
         super(Material.IRON);
         this.setTranslationKey("space_elevator_casing");
@@ -24,6 +25,7 @@ public class BlockSpaceElevatorCasing extends VariantBlock<BlockSpaceElevatorCas
         this.setDefaultState(this.getState(ElevatorCasingType.BASIC_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,
