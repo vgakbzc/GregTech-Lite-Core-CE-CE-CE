@@ -274,10 +274,115 @@ public class CosmicCircuits {
                 .duration(240)
                 .buildAndRegister();
 
-        //  C8H8O2 + C10H15N -> C18H21NO + H2O
-        //  todo another catalyst?
+        //  NaOH + Tc + HNO3 -> NaTcO4 + N + 2H
         CHEMICAL_RECIPES.recipeBuilder()
-                .notConsumable(dust, Technetium)
+                .input(dust, SodiumHydroxide, 3)
+                .input(dust, Technetium)
+                .fluidInputs(NitricAcid.getFluid(1000))
+                .output(dust, SodiumPertechnetate, 6)
+                .fluidOutputs(Nitrogen.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(350)
+                .buildAndRegister();
+
+        //  K + NaTcO4 -> KTcO4 + Na
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust, Potassium)
+                .input(dust, SodiumPertechnetate, 6)
+                .output(dust, PotassiumPertechnetate, 6)
+                .output(dust, Sodium)
+                .EUt(VA[ZPM])
+                .duration(280)
+                .blastFurnaceTemp(6500)
+                .buildAndRegister();
+
+        //  Another KTcO4 recipe
+        //  C2H5OK + NaTcO4 -> KTcO4 + C2H5ONa
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust, SodiumPertechnetate, 6)
+                .fluidInputs(PotassiumEthylate.getFluid(1000))
+                .output(dust, PotassiumNonahydridotechnetate, 6)
+                .output(dust, SodiumEthylate, 9)
+                .EUt(VA[ZPM])
+                .duration(140)
+                .blastFurnaceTemp(6500)
+                .buildAndRegister();
+
+        //  KTcO4 + 18K + 13C2H5OH + 4O -> H9K2TcO4 + 4KOH + 13C2H5OK
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumPertechnetate, 6)
+                .input(dust, Potassium, 18)
+                .fluidInputs(Ethanol.getFluid(13000))
+                .fluidInputs(Oxygen.getFluid(4000))
+                .output(dust, PotassiumNonahydridotechnetate, 16)
+                .fluidOutputs(PotassiumHydroxide.getFluid(4000))
+                .fluidOutputs(PotassiumEthylate.getFluid(13000))
+                .EUt(VA[UV])
+                .duration(240)
+                .buildAndRegister();
+
+        //  KReO4 + 18K + 13C2H5OH + 4O -> H9K2ReO4 + 4KOH + 13C2H5OK
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumPerrhenate, 6)
+                .input(dust, Potassium, 18)
+                .fluidInputs(Ethanol.getFluid(13000))
+                .fluidInputs(Oxygen.getFluid(4000))
+                .output(dust, PotassiumNonahydridorhenate, 16)
+                .fluidOutputs(PotassiumHydroxide.getFluid(4000))
+                .fluidOutputs(PotassiumEthylate.getFluid(13000))
+                .EUt(VA[UV])
+                .duration(240)
+                .buildAndRegister();
+
+        //  Another C2H5OK liquid recycle recipe
+        //  C2H5OK + HCl -> KCl + C2H5OH
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(PotassiumEthylate.getFluid(1000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .output(dust, RockSalt, 2)
+                .fluidOutputs(Ethanol.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(40)
+                .buildAndRegister();
+
+        //  NH4ReO4 + KOH -> KReO4 + NH3 + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, AmmoniumPerrhenate, 10)
+                .fluidInputs(PotassiumHydroxide.getFluid(1000))
+                .output(dust, PotassiumPerrhenate, 6)
+                .fluidOutputs(Ammonia.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[LuV])
+                .duration(40)
+                .buildAndRegister();
+
+        //  4C2H4 + NH3 + HBr-> (C2H5)4NBr
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Ethylene.getFluid(4000))
+                .fluidInputs(Ammonia.getFluid(1000))
+                .fluidInputs(HydrobromicAcid.getFluid(1000))
+                .fluidOutputs(TetraethylammoniumBromide.getFluid(1000))
+                .EUt(VA[IV])
+                .duration(240)
+                .buildAndRegister();
+
+        //  H9K2ReO4 + H9K2TcO4 + 2(C2H5)4NBr -> (C2H5)4N(ReH9)(TcH9) + 4K + 2Br
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumNonahydridorhenate, 16)
+                .input(dust, PotassiumNonahydridotechnetate, 16)
+                .fluidInputs(TetraethylammoniumBromide.getFluid(2000))
+                .output(dust, TetraethylammoniumNonahydriorhenidetechnetide, 49)
+                .output(dust, Potassium, 4)
+                .fluidOutputs(Bromine.getFluid(2000))
+                .EUt(VA[UEV])
+                .duration(180)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  C8H8O2 + C10H15N -> C18H21NO + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, TetraethylammoniumNonahydriorhenidetechnetide)
                 .fluidInputs(Methoxybenzaldehyde.getFluid(1000))
                 .fluidInputs(Butylaniline.getFluid(1000))
                 .fluidOutputs(MBBA.getFluid(1000))

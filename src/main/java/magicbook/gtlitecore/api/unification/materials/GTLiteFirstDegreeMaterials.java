@@ -381,6 +381,7 @@ public class GTLiteFirstDegreeMaterials {
         //  11045 Potassium Ethylate
         PotassiumEthylate = new Material.Builder(getId(), gregtechId("potassium_ethylate"))
                 .dust()
+                .liquid()
                 .color(0xFBC47D)
                 .iconSet(DULL)
                 .components(Carbon, 2, Hydrogen, 5, Oxygen, 1, Potassium, 1)
@@ -2212,6 +2213,50 @@ public class GTLiteFirstDegreeMaterials {
                 .color(Potassium.getMaterialRGB() + Iodine.getMaterialRGB())
                 .iconSet(ROUGH)
                 .components(Potassium, 1, Iodine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11252 Sodium Pertechnetate
+        SodiumPertechnetate = new Material.Builder(getId(), gregtechId("sodium_pertechnetate"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Technetium.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Sodium, 1, Technetium, 1, Oxygen, 4)
+                .build();
+
+        //  11253 Potassium Pertechnetate
+        PotassiumPertechnetate = new Material.Builder(getId(), gregtechId("potassium_pertechnetate"))
+                .dust()
+                .color(Potassium.getMaterialRGB() + Technetium.getMaterialRGB())
+                .iconSet(METALLIC)
+                .components(Potassium, 1, Technetium, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11254 Potassium Nonahydridorhenate
+        PotassiumNonahydridorhenate = new Material.Builder(getId(), gregtechId("potassium_nonahydridorhenate"))
+                .dust()
+                .color(0xD89926)
+                .iconSet(SHINY)
+                .components(Hydrogen, 9, Potassium, 2, Rhenium, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11255 Potassium Nonahydridotechnetate
+        PotassiumNonahydridotechnetate = new Material.Builder(getId(), gregtechId("potassium_nonahydridotechnetate"))
+                .dust()
+                .color(0xD6BB09)
+                .iconSet(SHINY)
+                .components(Hydrogen, 9, Potassium, 2, Technetium, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11256 Potassium Perrhenate
+        PotassiumPerrhenate = new Material.Builder(getId(), gregtechId("potassium_perrhenate"))
+                .dust()
+                .color(Potassium.getMaterialRGB() + Rhenium.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Potassium, 1, Rhenium, 1, Oxygen, 4)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
     }

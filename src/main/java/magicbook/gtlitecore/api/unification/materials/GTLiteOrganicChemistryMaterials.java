@@ -1527,6 +1527,25 @@ public class GTLiteOrganicChemistryMaterials {
                 .components(Carbon, 7, Hydrogen, 5, Iodine, 1, Oxygen, 2)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  13185 Tetraethylammonium Bromide
+        TetraethylammoniumBromide = new Material.Builder(getId(), gregtechId("tetraethylammonium_bromide"))
+                .liquid()
+                .color(0x9983A4)
+                .components(Carbon, 8, Hydrogen, 20, Nitrogen, 1, Bromine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C2H5)4NBr", true);
+
+        //  13186 Tetraethylammonium Nonahydriorhenidetechnetide
+        TetraethylammoniumNonahydriorhenidetechnetide = new Material.Builder(getId(), gregtechId("tetraethylammonium_nonahydriorhenidetechnetide"))
+                .dust()
+                .color(0xDA76B6)
+                .iconSet(BRIGHT)
+                .components()
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C2H5)4N(ReH9)(TcH9)", true);
     }
 
     private static int getId() {

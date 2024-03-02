@@ -1888,6 +1888,11 @@ gregtech.material.lead_zirconate_titanate=Lead Zirconate Titanate
 gregtech.material.sodium_iodide=Sodium Iodide
 gregtech.material.sodium_nitrite=Sodium Nitrite
 gregtech.material.potassium_iodide=Potassium Iodide
+gregtech.material.sodium_pertechnetate=Sodium Pertechnetate
+gregtech.material.potassium_pertechnetate=Potassium Pertechnetate
+gregtech.material.potassium_nonahydridorhenate=Potassium Nonahydridorhenate
+gregtech.material.potassium_nonahydridotechnetate=Potassium Nonahydridotechnetate
+gregtech.material.potassium_perrhenate=Potassium Perrhenate
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=Inconel-625
@@ -2152,6 +2157,8 @@ gregtech.material.iodoxybenzoic_acid=Iodoxybenzoic Acid (IBX)
 gregtech.material.trimethylchlorosilane=Trimethylchlorosilane
 gregtech.material.trimethylsilane=Trimethylsilane
 gregtech.material.iodobenzoic_acid=Iodobenzoic Acid
+gregtech.material.tetraethylammonium_bromide=Tetraethylammonium Bromide
+gregtech.material.tetraethylammonium_nonahydriorhenidetechnetide=Tetraethylammonium Nonahydriorhenidetechnetide
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=Quark-Gluon
