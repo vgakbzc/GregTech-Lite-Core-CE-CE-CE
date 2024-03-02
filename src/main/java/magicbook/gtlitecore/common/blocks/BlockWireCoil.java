@@ -27,6 +27,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
+
     public BlockWireCoil() {
         super(Material.IRON);
         this.setTranslationKey("wire_coil");
@@ -38,17 +39,19 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
     }
 
     @Nonnull
+    @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.SOLID;
     }
 
+    @SuppressWarnings("rawtypes, unchecked")
     @SideOnly(Side.CLIENT)
+    @Override
     public void addInformation(@Nonnull ItemStack itemStack,
                                @Nullable World worldIn,
                                @Nonnull List<String> lines,
                                @Nonnull ITooltipFlag tooltipFlag) {
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
-
         VariantItemBlock itemBlock = (VariantItemBlock<CoilType, BlockWireCoil>) itemStack.getItem();
         IBlockState stackState = itemBlock.getBlockState(itemStack);
         CoilType coilType =  this.getState(stackState);
@@ -68,6 +71,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         }
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,
@@ -75,6 +79,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         return false;
     }
 
+    @Override
     protected boolean isBloomEnabled(CoilType value) {
         return ConfigHolder.client.coilsActiveEmissiveTextures;
     }
@@ -100,10 +105,12 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         }
 
         @Nonnull
+        @Override
         public String getName() {
             return this.name;
         }
 
+        @Override
         public int getCoilTemperature() {
             return this.coilTemperature;
         }
@@ -112,20 +119,24 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
             return this.level;
         }
 
+        @Override
         public int getEnergyDiscount() {
             return this.energyDiscount;
         }
 
+        @Override
         public int getTier() {
-            return gregtech.common.blocks.BlockWireCoil.CoilType.TRITANIUM.getTier() + this.ordinal();
+            return this.ordinal() + 8; // tier of tritanium coil block.
         }
 
         @Nullable
+        @Override
         public gregtech.api.unification.material.Material getMaterial() {
             return this.material;
         }
 
         @Nonnull
+        @Override
         public String toString() {
             return this.getName();
         }

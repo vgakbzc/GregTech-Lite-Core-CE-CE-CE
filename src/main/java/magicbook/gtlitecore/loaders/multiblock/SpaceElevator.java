@@ -11,6 +11,7 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
+@SuppressWarnings("rawtypes")
 public class SpaceElevator {
 
     public static void init() {

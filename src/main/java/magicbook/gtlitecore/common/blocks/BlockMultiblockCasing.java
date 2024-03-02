@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.MultiblockCasingType> {
+
     public BlockMultiblockCasing() {
         super(Material.IRON);
         this.setTranslationKey("multiblock_casing");
@@ -24,6 +25,7 @@ public class BlockMultiblockCasing extends VariantBlock<BlockMultiblockCasing.Mu
         this.setDefaultState(this.getState(MultiblockCasingType.SUBSTRATE_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

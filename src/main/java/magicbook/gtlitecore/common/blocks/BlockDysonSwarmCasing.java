@@ -25,6 +25,7 @@ public class BlockDysonSwarmCasing extends VariantBlock<BlockDysonSwarmCasing.Dy
         this.setDefaultState(this.getState(DysonSwarmCasingType.CONTROL_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

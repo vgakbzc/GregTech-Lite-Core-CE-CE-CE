@@ -3,7 +3,6 @@ package magicbook.gtlitecore.api.unification.materials.info;
 import gregtech.api.unification.material.info.MaterialIconSet;
 
 public class GTLiteMaterialIconSet {
-
     public static final MaterialIconSet CUSTOM_INFINITY = new MaterialIconSet("infinity", null, true);
     public static final MaterialIconSet CUSTOM_SPACETIME = new MaterialIconSet("spacetime", null, true);
     public static final MaterialIconSet CUSTOM_DEGENERATE_RHENIUM = new MaterialIconSet("degenerate_rhenium", null, true);

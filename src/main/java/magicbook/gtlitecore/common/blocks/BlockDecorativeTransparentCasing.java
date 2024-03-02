@@ -22,7 +22,9 @@ import javax.annotation.ParametersAreNonnullByDefault;
  *
  * @author Gate Guardian, Magic_Sweepy
  *
- * <p>This transparent casings are some decorative glasses redo by bartworks.</p>
+ * <p>
+ *     This transparent casings are some decorative glasses redo by bartworks.
+ * </p>
  */
 @ParametersAreNonnullByDefault
 public class BlockDecorativeTransparentCasing extends VariantBlock<BlockDecorativeTransparentCasing.DecorativeTransparentCasingType> {
@@ -78,7 +80,6 @@ public class BlockDecorativeTransparentCasing extends VariantBlock<BlockDecorati
                                         BlockPos pos,
                                         EnumFacing side) {
         IBlockState sideState = world.getBlockState(pos.offset(side));
-
         return sideState.getBlock() == this ?
                 getState(sideState) != getState(state) :
                 super.shouldSideBeRendered(state, world, pos, side);

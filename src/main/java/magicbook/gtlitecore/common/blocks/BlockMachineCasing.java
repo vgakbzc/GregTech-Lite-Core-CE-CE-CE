@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockMachineCasing extends VariantBlock<BlockMachineCasing.MachineCasingType> {
+
     public BlockMachineCasing() {
         super(Material.IRON);
         this.setTranslationKey("machine_casing");
@@ -24,6 +25,7 @@ public class BlockMachineCasing extends VariantBlock<BlockMachineCasing.MachineC
         this.setDefaultState(this.getState(MachineCasingType.CURIUM_CASING));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

@@ -23,18 +23,19 @@ import java.util.List;
  * @author Gate Guardian
  *
  * <p>
- *     This class is basic logic for Heat Exchangers.
+ *     This class is basic logic for Heat Exchanger.
  *     Thanks for my friend Gate Guardian create it, I just redo something.
  * </p>
  */
-public class HeatExchangerLogic extends NoEnergyMultiblockRecipeLogic {
+@SuppressWarnings("all")
+public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
 
     private int currentHeat;
     private final int maxHeat;
     private boolean isSuperheat;
     private int rate;
 
-    public HeatExchangerLogic(NoEnergyMultiblockController tileEntity) {
+    public HeatExchangerRecipeLogic(NoEnergyMultiblockController tileEntity) {
         super(tileEntity, tileEntity.recipeMap);
         this.maxHeat = ((IHeatExchanger) tileEntity).getHeatTime() * 20;
     }
@@ -194,7 +195,6 @@ public class HeatExchangerLogic extends NoEnergyMultiblockRecipeLogic {
         isSuperheat = compound.getBoolean("isSuperheat");
     }
 
-    @Deprecated
     @Override
     public void writeInitialData(@Nonnull PacketBuffer buf) {
         super.writeInitialData(buf);
@@ -203,7 +203,6 @@ public class HeatExchangerLogic extends NoEnergyMultiblockRecipeLogic {
         buf.writeBoolean(isSuperheat);
     }
 
-    @Deprecated
     @Override
     public void receiveInitialData(@Nonnull PacketBuffer buf) {
         super.receiveInitialData(buf);

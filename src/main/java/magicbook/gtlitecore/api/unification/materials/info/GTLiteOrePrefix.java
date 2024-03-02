@@ -12,7 +12,6 @@ import static gregtech.api.unification.ore.OrePrefix.Flags.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
 public class GTLiteOrePrefix {
-
     public static final OrePrefix milled = new OrePrefix("milled", -1, null, GTLiteMaterialIconType.milled, ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty.and(mat -> mat.hasFlag(GENERATE_MILLED)), mat -> Collections.singletonList(I18n.format("metaitem.milled.tooltip.flotation")));
 
@@ -32,5 +31,4 @@ public class GTLiteOrePrefix {
 
     public static final OrePrefix singularity = new OrePrefix("singularity", M * 64, null, GTLiteMaterialIconType.singularity, ENABLE_UNIFICATION,
             mat -> mat.hasFlag(GENERATE_SINGULARITY));
-
 }

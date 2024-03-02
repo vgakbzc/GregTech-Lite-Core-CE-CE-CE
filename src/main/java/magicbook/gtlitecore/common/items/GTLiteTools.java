@@ -22,6 +22,7 @@ public class GTLiteTools {
 
     public static void init() {
 
+        //  Combination Wrench (Hammer + Wrench) from GregTech 5 Unofficial
         COMBINATION_WRENCH = ToolItems.register(
                 ItemGTTool.Builder.of(GTLiteValues.MODID, "combination_wrench")
                         .toolStats(b -> b
@@ -34,9 +35,9 @@ public class GTLiteTools {
                         .sound(GTSoundEvents.WRENCH_TOOL, true)
                         .oreDict(ToolOreDict.toolWrench)
                         .secondaryOreDicts(ToolOreDict.toolHammer.toString(), "craftingToolWrench", "craftingToolHardHammer")
-                        .toolClasses(ToolClasses.WRENCH, ToolClasses.HARD_HAMMER)
-        );
+                        .toolClasses(ToolClasses.WRENCH, ToolClasses.HARD_HAMMER));
 
+        //  Universal Spade (Crowbar + Spade + Saw) from Gregicality
         UNIVERSAL_SPADE = ToolItems.register(
                 ItemGTTool.Builder.of(GTLiteValues.MODID, "universal_spade")
                         .toolStats(b -> b
@@ -49,9 +50,9 @@ public class GTLiteTools {
                         .sound(SoundEvents.ENTITY_ITEM_BREAK)
                         .oreDict(ToolOreDict.toolShovel)
                         .secondaryOreDicts(ToolOreDict.toolCrowbar.toString(), ToolOreDict.toolSpade.toString(), ToolOreDict.toolSaw.toString(), "craftingToolSaw")
-                        .toolClasses(ToolClasses.CROWBAR, ToolClasses.SHOVEL, ToolClasses.SAW)
-        );
+                        .toolClasses(ToolClasses.CROWBAR, ToolClasses.SHOVEL, ToolClasses.SAW));
 
+        //  Electric Jackhammer (LV) from Gregtech 5 Unofficial
         ELECTRIC_JACKHAMMER_LV = ToolItems.register(
                 ItemGTTool.Builder.of(GTLiteValues.MODID, "electric_jackhammer.lv")
                         .toolStats(b -> b
@@ -67,9 +68,9 @@ public class GTLiteTools {
                         .secondaryOreDicts(new String[]{"craftingToolHardHammer"})
                         .sound(SoundEvents.BLOCK_ANVIL_LAND, true)
                         .toolClasses("pickaxe", "hammer")
-                        .electric(GTValues.LV)
-        );
+                        .electric(GTValues.LV));
 
+        //  Electric Jackhammer (HV) from Gregtech 5 Unofficial
         ELECTRIC_JACKHAMMER_HV = ToolItems.register(
                 ItemGTTool.Builder.of(GTLiteValues.MODID, "electric_jackhammer.hv")
                         .toolStats(b -> b
@@ -85,9 +86,9 @@ public class GTLiteTools {
                         .secondaryOreDicts(new String[]{"craftingToolHardHammer"})
                         .sound(SoundEvents.BLOCK_ANVIL_LAND, true)
                         .toolClasses("pickaxe", "hammer")
-                        .electric(GTValues.HV)
-        );
+                        .electric(GTValues.HV));
 
+        //  Electric Jackhammer (IV) from Gregtech 5 Unofficial
         ELECTRIC_JACKHAMMER_IV = ToolItems.register(
                 ItemGTTool.Builder.of(GTLiteValues.MODID, "electric_jackhammer.iv")
                         .toolStats(b -> b
@@ -103,9 +104,9 @@ public class GTLiteTools {
                         .secondaryOreDicts(new String[]{"craftingToolHardHammer"})
                         .sound(SoundEvents.BLOCK_ANVIL_LAND, true)
                         .toolClasses("pickaxe", "hammer")
-                        .electric(GTValues.IV)
-        );
+                        .electric(GTValues.IV));
 
+        //  Vajra from Gravitation Suite (an addition of Industrial Craft 2)
         VAJRA = ToolItems.register(
                 ItemGTTool.Builder.of(GTLiteValues.MODID, "vajra")
                         .toolStats(b -> b
@@ -119,8 +120,7 @@ public class GTLiteTools {
                                 .behaviors(TreeFellingBehavior.INSTANCE))
                         .sound(GTSoundEvents.ELECTROLYZER, true)
                         .toolClasses("pickaxe", "axe", "sword", "shovel", "wrench", "wirecutter")
-                        .electric(GTValues.EV)
-        );
+                        .electric(GTValues.EV));
 
     }
 }

@@ -25,6 +25,7 @@ public class BlockExplosive extends VariantBlock<BlockExplosive.ExplosiveType> {
         setDefaultState(getState(ExplosiveType.NAQUADRIA_CHARGE));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,

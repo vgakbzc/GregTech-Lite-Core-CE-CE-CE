@@ -14,6 +14,7 @@ import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
 public class BlockFieldCasing extends VariantBlock<BlockFieldCasing.FieldCasingTier> {
+
     public BlockFieldCasing() {
         super(Material.IRON);
         this.setTranslationKey("field_casing");
@@ -24,6 +25,7 @@ public class BlockFieldCasing extends VariantBlock<BlockFieldCasing.FieldCasingT
         this.setDefaultState(this.getState(FieldCasingTier.ZPM));
     }
 
+    @Override
     public boolean canCreatureSpawn(@Nonnull IBlockState state,
                                     @Nonnull IBlockAccess world,
                                     @Nonnull BlockPos pos,
