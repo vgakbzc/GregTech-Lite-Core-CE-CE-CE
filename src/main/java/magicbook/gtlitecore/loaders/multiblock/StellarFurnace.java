@@ -6,6 +6,7 @@ import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import java.math.BigInteger;
+import java.time.Instant;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -92,6 +93,8 @@ public class StellarFurnace {
         HypercubeChain();
         HikariumChain();
         ShirabonEternityChain();
+        UniversiumChain();
+        EdeniumChain();
     }
 
     private static void DegenerateRheniumChain() {
@@ -258,7 +261,7 @@ public class StellarFurnace {
 
         //  Heavy Quark Degenerate Matter -> High Energy Quark Gluon Plasma
         STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .input(ingot, HeavyQuarkDegenerateMatter)
+                .input(plate, HeavyQuarkDegenerateMatter)
                 .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .fluidOutputs(HighEnergyQuarkGluonPlasma.getPlasma(L))
                 .EUt(VA[UIV])
@@ -515,6 +518,46 @@ public class StellarFurnace {
                 .EUt(VA[OpV])
                 .duration(20)
                 .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
+
+    private static void UniversiumChain() {
+
+        //  Maybe add a new fantastic gem: Stone of the Philosophers and Emerald Tablet processing.
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(CONTAINED_EXOTIC_MATTER) // todo another more fantastic material?
+                .input(ingot, Galaxium)
+                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(16000))
+                .fluidInputs(CosmicComputingMixture.getFluid(L * 8))
+                .fluidInputs(CosmicNeutronium.getFluid(L * 4))
+                .output(TIME_DILATION_CONTAINMENT_UNIT)
+                .fluidOutputs(Universium.getFluid(9216))
+                .EUt(VH[MAX])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .buildAndRegister();
+    }
+
+    private static void EdeniumChain() {
+
+        STELLAR_FURNACE_RECIPES.recipeBuilder()
+                .input(plate, CosmicNeutronium, 8)
+                .input(plate, WhiteDwarfMatter, 8)
+                .input(plate, BlackDwarfMatter, 8)
+                .input(plate, Legendarium, 8)
+                .input(stick, HeavyQuarkDegenerateMatter, 24)
+                .input(screw, BlackPlutonium, 16)
+                .fluidInputs(HiggsBosons.getFluid(1000))
+                .fluidInputs(Instantons.getFluid(1000))
+                .fluidInputs(Hikarium.getFluid(1000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(1000))
+                .fluidInputs(VoidMetal.getFluid(1000))
+                .fluidInputs(Astralium.getFluid(1000))
+                .fluidOutputs(Edenium.getFluid(9216))
+                .EUt(VH[MAX])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
                 .buildAndRegister();
     }
 }
