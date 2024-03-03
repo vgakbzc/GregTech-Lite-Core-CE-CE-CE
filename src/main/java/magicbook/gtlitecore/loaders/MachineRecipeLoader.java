@@ -1178,7 +1178,7 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(plate, MARM200CeSteel),
                 'G', new UnificationEntry(gear, TungstenCarbide),
                 'H', HULL[LuV].getStackForm(),
-                'F', new UnificationEntry(pipeLargeFluid, Inconel625),
+                'F', new UnificationEntry(pipeLargeFluid, Inconel792),
                 'W', new UnificationEntry(cableGtSingle, NiobiumTitanium));
 
         //  Electrolytic Tank
