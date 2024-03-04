@@ -56,6 +56,9 @@ public class VirtualCosmosSimulator {
                 .duration(20)
                 .buildAndRegister();
 
+        //  TODO Rebalance
+        //  TODO This machine should has three modes: Drone Mining Mode, Cosmic Memory Card Mode, Universal Devourer Mode...
+
         VIRTUAL_COSMOS_SIMULATOR_RECIPES.recipeBuilder()
                 .notConsumable(COSMIC_MEMORY_CARD_OVERWORLD)
                 .output(dust, Iron, 25760000)      // 1

@@ -404,7 +404,7 @@ public class GTLiteRecipeMaps {
             .setSound(GTSoundEvents.COMPRESSOR);
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES = new RecipeMapVirtualCosmosSimulator<>("virtual_cosmos_simulator_recipes", 1, 12, 0, 12, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES = new RecipeMapVirtualCosmosSimulator<>("virtual_cosmos_simulator_recipes", 1, 81, 0, 18, new SimpleRecipeBuilder(), false)
             .setSound(GTSoundEvents.ARC);
 
     @ZenProperty

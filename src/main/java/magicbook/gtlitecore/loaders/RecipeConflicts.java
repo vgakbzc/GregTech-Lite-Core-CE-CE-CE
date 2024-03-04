@@ -149,5 +149,23 @@ public class RecipeConflicts {
                 .EUt(VA[LV])
                 .duration(200)
                 .buildAndRegister();
+
+        //  Conflict between Carbon Monoxide and Toluene Diisocyanate
+        GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Carbon)},
+                new FluidStack[]{CarbonDioxide.getFluid(1000)});
+
+        GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Carbon)},
+                new FluidStack[]{CarbonDioxide.getFluid(1000)});
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Carbon)
+                .circuitMeta(1)
+                .fluidInputs(CarbonDioxide.getFluid(1000))
+                .fluidOutputs(CarbonMonoxide.getFluid(2000))
+                .EUt(VA[ULV])
+                .duration(800)
+                .buildAndRegister();
     }
 }
