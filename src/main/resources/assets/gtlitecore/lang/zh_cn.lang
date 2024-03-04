@@ -882,9 +882,9 @@ gtlitecore.machine.lightning_rod.iv.name=精英避雷针
 gtlitecore.machine.lightning_rod.iv.tooltip=利用闪电的力量产生电能
 gtlitecore.machine.lightning_rod.usage=§b用法§7：将原版的§r铁栏杆§7放置其上，其会在雨/雷雨天产生能量。
 
-gtlitecore.machine.industrial_drilling_reg.name=工业钻机
-gtlitecore.machine.industrial_drilling_reg.tooltip.1=钻取放置在钻头下方的方块。
-gtlitecore.machine.industrial_drilling_reg.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
+gtlitecore.machine.industrial_drilling_rig.name=工业钻机
+gtlitecore.machine.industrial_drilling_rig.tooltip.1=钻取放置在钻头下方的方块。
+gtlitecore.machine.industrial_drilling_rig.tooltip.2=目标方块在配方中作为非消耗品时不会被破坏。
 
 gtlitecore.machine.catalytic_reformer.name=催化重整炉
 
@@ -963,7 +963,6 @@ gtlitecore.machine.cryogenic_freezer.name=凛冰冷冻机
 gtlitecore.machine.cryogenic_freezer.tooltip.1=需要提供§b极寒之凛冰§7以工作
 gtlitecore.machine.cryogenic_freezer.tooltip.2=未提供§b极寒之凛冰§7时，凛冰冷冻机将会停机
 gtlitecore.machine.cryogenic_freezer.tooltip.3=运行配方时，运行时间减少至原本配方时间的0.8倍
-gtlitecore.machine.cryogenic_freezer.tooltip.4=最大并行数：§e16§7
 gtlitecore.machine.cryogenic_freezer.amount=极寒之凛冰储量：%sL
 gtlitecore.machine.cryogenic_freezer.subcooled=极寒之凛冰正在使温度极速下降！
 gtlitecore.machine.cryogenic_freezer.warning=极寒之凛冰不足
@@ -1114,23 +1113,18 @@ gtlitecore.machine.advanced_assembly_line.tooltip.8=输入大于等于§4UHV§7�
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
 gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv=最大并行数：§e64§7
 
 gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
 gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm=最大并行数：§e128§7
 
 gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=抹杀物质与能量的界限
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=最大并行数：§e256§7
 
 gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv=最大并行数：§e512§7
 
 gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev=最大并行数：§e1024§7
 
 gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
 
@@ -1143,7 +1137,6 @@ gtlitecore.machine.mega_chemical_reactor.name=大型化工厂
 gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.mega_oil_cracking_unit.name=大型石油裂化厂
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.1=根据线圈等级获得并行与配方能耗减免
@@ -1311,19 +1304,16 @@ gtlitecore.machine.amazon_warehousing_depot.name=亚马逊仓库
 gtlitecore.machine.amazon_warehousing_depot.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.amazon_warehousing_depot.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.arc_furnace_array.name=多极式真空电弧炉
 gtlitecore.machine.arc_furnace_array.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.arc_furnace_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.arc_furnace_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.arc_furnace_array.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.electrolytic_tank.name=大型电解池
 gtlitecore.machine.electrolytic_tank.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.electrolytic_tank.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.electrolytic_tank.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.electrolytic_tank.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.turbine_mixer.name=涡轮搅拌机
 gtlitecore.machine.turbine_mixer.tooltip.1=工业级涡轮搅拌塔
@@ -1374,7 +1364,6 @@ gtlitecore.machine.electromagnetic_separation_plant.tooltip.1=运行§r所有§7
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.large_vacuum_chamber.name=大型真空室
 
@@ -1385,7 +1374,6 @@ gtlitecore.machine.large_euv_mask_aligner.tooltip.1=运行§r精密激光蚀刻�
 gtlitecore.machine.large_euv_mask_aligner.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.large_euv_mask_aligner.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_euv_mask_aligner.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.ion_lithography_factory.name=大型离子光刻厂
 gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
@@ -1411,14 +1399,12 @@ gtlitecore.machine.large_high_pressure_forming_unit.tooltip.1=运行§r所有§7
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_high_pressure_forming_unit.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.large_turrent_lathing_factory.name=大型回转车削厂
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_turrent_lathing_factory.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.dyson_swarm.name=戴森球地面单元
 gtlitecore.machine.dyson_swarm.tooltip.1=指挥戴森球模块附着于相邻恒星以攫取近乎于无穷无限的电力。
@@ -1461,7 +1447,6 @@ gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_fluid_phase_transformer.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
@@ -1488,27 +1473,23 @@ gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.2=运行§r所有§
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3=根据输入电压获得并行
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.4=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.5=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.6=最大并行数：§e4096§7
 
 gtlitecore.machine.trough_type_ore_washer.name=大型槽式洗矿厂
 gtlitecore.machine.trough_type_ore_washer.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
 gtlitecore.machine.trough_type_ore_washer.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.trough_type_ore_washer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.trough_type_ore_washer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.trough_type_ore_washer.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.fixed_sifting_plant.name=大型固定床筛选厂
 gtlitecore.machine.fixed_sifting_plant.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
 gtlitecore.machine.fixed_sifting_plant.tooltip.2=根据输入电压获得并行
 gtlitecore.machine.fixed_sifting_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.fixed_sifting_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.fixed_sifting_plant.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.large_wiremill_array.name=高速线材加工阵列
 gtlitecore.machine.large_wiremill_array.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.large_wiremill_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_wiremill_array.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.circulative_cooling_tower.name=环流冷却塔
 gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
@@ -1539,7 +1520,6 @@ gtlitecore.machine.industrial_rock_breaker.name=工业岩石制造厂
 gtlitecore.machine.industrial_rock_breaker.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
 gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
@@ -2635,6 +2615,9 @@ metaitem.battery.opv.ultimate.tooltip=填满就能通关GregTech Lite
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
+
+#  Universal Tooltips
+gtlitecore.universal.tooltip.max_parallel=最大并行数：§e%s§7
 
 #  Wrap Items
 metaitem.wrap.circuit.ulv.name=封装电路板（§8ULV§r）

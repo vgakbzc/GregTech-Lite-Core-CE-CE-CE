@@ -66,7 +66,7 @@ public class GTLiteMetaTileEntities {
     public static final MetaTileEntityLightningRod[] LIGHTNING_ROD = new MetaTileEntityLightningRod[3];
 
     //  Multiblock Machine range: 16001-20000
-    public static MetaTileEntityIndustrialDrillingReg INDUSTRIAL_DRILLING_REG;
+    public static MetaTileEntityIndustrialDrillingRig INDUSTRIAL_DRILLING_RIG;
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
     public static MetaTileEntitySonicator SONICATOR;
     public static MetaTileEntityHydraulicFracker HYDRAULIC_FRACKER;
@@ -294,7 +294,7 @@ public class GTLiteMetaTileEntities {
         LIGHTNING_ROD[2] = registerMetaTileEntity(15069, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
 
         //  Multiblock Machine range: 16001-20000
-        INDUSTRIAL_DRILLING_REG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingReg(gtliteId("industrial_drilling_reg")));
+        INDUSTRIAL_DRILLING_RIG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingRig(gtliteId("industrial_drilling_rig")));
         CATALYTIC_REFORMER = registerMultiMetaTileEntity(2, new MetaTileEntityCatalyticReformer(gtliteId("catalytic_reformer")));
         SONICATOR = registerMultiMetaTileEntity(3, new MetaTileEntitySonicator(gtliteId("sonicator")));
         HYDRAULIC_FRACKER = registerMultiMetaTileEntity(4, new MetaTileEntityHydraulicFracker(gtliteId("hydraulic_fracker"), ZPM));

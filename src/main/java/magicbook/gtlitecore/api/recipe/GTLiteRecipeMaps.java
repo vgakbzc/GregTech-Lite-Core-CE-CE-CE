@@ -66,8 +66,8 @@ public class GTLiteRecipeMaps {
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES = new RecipeMap<>("drill_recipes", 1, 1, 0, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
-                .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
-                .setSound(GTSoundEvents.MACERATOR);
+            .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+            .setSound(GTSoundEvents.MACERATOR);
 
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer_recipes", 1, 0, 1, 4, new SimpleRecipeBuilder(), false)

@@ -882,9 +882,9 @@ gtlitecore.machine.lightning_rod.iv.name=Elite Lightning Rod
 gtlitecore.machine.lightning_rod.iv.tooltip=Using Lightning to generate Energy
 gtlitecore.machine.lightning_rod.usage=§bUsage§7: Put vanilla §rIron Bars§7 on the top of machine, then will generate energy on rainy/thunder.
 
-gtlitecore.machine.industrial_drilling_reg.name=Industrial Drilling Rig
-gtlitecore.machine.industrial_drilling_reg.tooltip.1=Drills the block placed beneath the Drill Head.
-gtlitecore.machine.industrial_drilling_reg.tooltip.2=The target block is not broken when non-consumable.
+gtlitecore.machine.industrial_drilling_rig.name=Industrial Drilling Rig
+gtlitecore.machine.industrial_drilling_rig.tooltip.1=Drills the block placed beneath the Drill Head.
+gtlitecore.machine.industrial_drilling_rig.tooltip.2=The target block is not broken when non-consumable.
 
 gtlitecore.machine.catalytic_reformer.name=Catalytic Reformer
 
@@ -959,7 +959,6 @@ gtlitecore.machine.cryogenic_freezer.name=Cryogenic Freezer
 gtlitecore.machine.cryogenic_freezer.tooltip.1=Need to provide §bGelid Cryotheum§7 for work.
 gtlitecore.machine.cryogenic_freezer.tooltip.2=未提供§bGelid Cryotheum§7时，凛冰冷冻机将会停机
 gtlitecore.machine.cryogenic_freezer.tooltip.3=运行配方时，运行时间减少至原本配方时间的0.8倍
-gtlitecore.machine.cryogenic_freezer.tooltip.4=Max Parallel: §e16§7
 gtlitecore.machine.cryogenic_freezer.amount=Gelid Cryotheum Amount: %sL
 gtlitecore.machine.cryogenic_freezer.subcooled=Gelid Cryotheum are causing temperature drop rapidly!
 gtlitecore.machine.cryogenic_freezer.warning=Not enough Gelid Cryotheum to run!
@@ -1110,23 +1109,18 @@ gtlitecore.machine.advanced_assembly_line.tooltip.8=输入大于等于§4UHV§7�
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=Compressed Fusion Reactor Computer Mark I
 gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=Millions of Nuclear
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv=Max Parallel: §e64§7
 
 gtlitecore.machine.compressed_fusion_reactor.zpm.name=Compressed Fusion Reactor Computer Mark II
 gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=Ultimate Energy Devourer
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm=Max Parallel: §e128§7
 
 gtlitecore.machine.compressed_fusion_reactor.uv.name=Compressed Fusion Reactor Computer Mark III
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=Erase the Boundary between Matter and Energy
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv=Max Parallel: §e256§7
 
 gtlitecore.machine.compressed_fusion_reactor.uhv.name=Compressed Fusion Reactor Computer Mark IV
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=Stellar Energy Extractor
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv=Max Parallel: §e512§7
 
 gtlitecore.machine.compressed_fusion_reactor.uev.name=Compressed Fusion Reactor Computer Mark V
 gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=Galaxy Furnace
-gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev=Max Parallel: §e1024§7
 
 gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
 
@@ -1139,12 +1133,11 @@ gtlitecore.machine.mega_chemical_reactor.name=Mega Chemical Reactor
 gtlitecore.machine.mega_chemical_reactor.tooltip.1=根据输入电压获得并行
 gtlitecore.machine.mega_chemical_reactor.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.mega_chemical_reactor.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.mega_chemical_reactor.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.mega_oil_cracking_unit.name=Mega Cracking Unit
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.1=根据线圈等级获得并行与配方能耗减免
 gtlitecore.machine.mega_oil_cracking_unit.tooltip.2=线圈每比白铜高一个层级，配方能耗减少10%%。
-gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=最大并行数：§e(线圈等级 * 4)§7
+gtlitecore.machine.mega_oil_cracking_unit.tooltip.3=Max Parallel: §e(线圈等级 * 4)§7
 
 gtlitecore.machine.stellar_furnace.name=Stellar Forge
 gtlitecore.machine.stellar_furnace.tooltip.1=Long term working may cause Cosmic Heat Death
@@ -1175,7 +1168,7 @@ gtlitecore.machine.extreme_industrial_greenhouse.name=Extreme Industrial Greenho
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.1=超级作物培养仓
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.2=结构上方没有日光照射不会降低配方运行速度。
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.3=根据输入电压获得并行与配方时间减免。
-gtlitecore.machine.extreme_industrial_greenhouse.tooltip.4=输入小于§1IV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.extreme_industrial_greenhouse.tooltip.4=When Input Voltage above §1IV§7 tier, then get §e64§7 Parallel.
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.5=输入大于§1IV§7级的电压时，始终获得§e256§7次并行。
 gtlitecore.machine.extreme_industrial_greenhouse.tooltip.6=输入大于§1IV§7级的电压时，配方运行时间减半。
 
@@ -1205,8 +1198,8 @@ gtlitecore.machine.extreme_heat_exchanger.name=Extreme Heat Exchanger
 gtlitecore.machine.mega_heat_exchanger.name=Mega Heat Exchanger
 
 gtlitecore.machine.tree_growth_factory.name=Tree Growth Factory
-gtlitecore.machine.tree_growth_factory.tooltip.1=生态环保型机器
-gtlitecore.machine.tree_growth_factory.tooltip.2=当输入电压大于§6HV§7时，获得§e(2 * 电压等级^2 - 2 * 电压等级 + 5)§7次并行。
+gtlitecore.machine.tree_growth_factory.tooltip.1=Ecological and Environmentally Friendly Machine
+gtlitecore.machine.tree_growth_factory.tooltip.2=When Input Voltage above §6HV§7 tier, then get §e[2 * (Voltage Tier)^2 - 2 * (Voltage Tier) + 5]§7 Parallel.
 
 gtlitecore.machine.large_processing_factory.name=Large Processing Factory
 gtlitecore.machine.large_processing_factory.tooltip.1=Super Material Processor
@@ -1295,31 +1288,28 @@ gtlitecore.machine.pcb_factory.tooltip.29=当然，你并不需要实际输入�
 gtlitecore.machine.pcb_factory.tooltip.30=使PCB工厂的运行耗时变为§r(配方时间/8)§7。
 
 gtlitecore.machine.dangote_distillery.name=Dangote Distillery
-gtlitecore.machine.dangote_distillery.tooltip.1=现代化工业蒸馏，从现在开始
-gtlitecore.machine.dangote_distillery.tooltip.2=运行§r蒸馏室§7配方时，运行耗时为§r(配方时间/4)§7。
-gtlitecore.machine.dangote_distillery.tooltip.3=运行§r蒸馏塔§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.dangote_distillery.tooltip.4=最大并行数：
-gtlitecore.machine.dangote_distillery.tooltip.5=§3UV§7级以下 -> §e4 * (电压等级 * 4)§7
-gtlitecore.machine.dangote_distillery.tooltip.6=§3UV§7级以上 -> §e12 * (电压等级 * 4)§7
-gtlitecore.machine.dangote_distillery.tooltip.7=§c§lMAX§7级以上 -> §e720§7
+gtlitecore.machine.dangote_distillery.tooltip.1=Modern Industrial Distillation, starting from now on
+gtlitecore.machine.dangote_distillery.tooltip.2=When running the §rDistillery§7 recipe, running time is §r(duration/4)§7。
+gtlitecore.machine.dangote_distillery.tooltip.3=When running the §rDistillation Tower§7 recipe, running time is §r(duration/2)§7。
+gtlitecore.machine.dangote_distillery.tooltip.4=Max Parallel:
+gtlitecore.machine.dangote_distillery.tooltip.5=Below §3UV§7 tier -> §e4 * (Voltage Tier * 4)§7
+gtlitecore.machine.dangote_distillery.tooltip.6=Above §3UV§7 tier -> §e12 * (Voltage Tier * 4)§7
+gtlitecore.machine.dangote_distillery.tooltip.7=Above §c§lMAX§7 tier -> §e720§7
 
 gtlitecore.machine.amazon_warehousing_depot.name=Amazon Warehousing Depot
-gtlitecore.machine.amazon_warehousing_depot.tooltip.1=根据输入电压获得并行
-gtlitecore.machine.amazon_warehousing_depot.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.amazon_warehousing_depot.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.amazon_warehousing_depot.tooltip.4=最大并行数：§e4096§7
+gtlitecore.machine.amazon_warehousing_depot.tooltip.1=Obtain Parallel based on Input Voltage
+gtlitecore.machine.amazon_warehousing_depot.tooltip.2=Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
+gtlitecore.machine.amazon_warehousing_depot.tooltip.3=Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
 
 gtlitecore.machine.arc_furnace_array.name=Multipole Vacuum Arc Furnace Array
-gtlitecore.machine.arc_furnace_array.tooltip.1=根据输入电压获得并行
-gtlitecore.machine.arc_furnace_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.arc_furnace_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.arc_furnace_array.tooltip.4=最大并行数：§e4096§7
+gtlitecore.machine.arc_furnace_array.tooltip.1=Obtain Parallel based on Input Voltage
+gtlitecore.machine.arc_furnace_array.tooltip.2=When Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
+gtlitecore.machine.arc_furnace_array.tooltip.3=When Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
 
-gtlitecore.machine.electrolytic_tank.name=大型电解池
-gtlitecore.machine.electrolytic_tank.tooltip.1=根据输入电压获得并行
-gtlitecore.machine.electrolytic_tank.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.electrolytic_tank.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.electrolytic_tank.tooltip.4=最大并行数：§e4096§7
+gtlitecore.machine.electrolytic_tank.name=Large Electrolytic Tank
+gtlitecore.machine.electrolytic_tank.tooltip.1=Obtain Parallel based on Input Voltage
+gtlitecore.machine.electrolytic_tank.tooltip.2=When Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
+gtlitecore.machine.electrolytic_tank.tooltip.3=When Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
 
 gtlitecore.machine.turbine_mixer.name=Turbine Mixer
 gtlitecore.machine.turbine_mixer.tooltip.1=工业级涡轮搅拌塔
@@ -1342,7 +1332,7 @@ gtlitecore.machine.coking_tower.name=Coking Tower
 gtlitecore.machine.coking_tower.tooltip.1=工业焦化厂
 gtlitecore.machine.coking_tower.tooltip.2=根据线圈等级获得并行与配方时间减免
 gtlitecore.machine.coking_tower.tooltip.3=线圈每比白铜高一个等级，配方所需时间变为原本的80%%。
-gtlitecore.machine.coking_tower.tooltip.4=最大并行数：§e(线圈等级 * 16)§7
+gtlitecore.machine.coking_tower.tooltip.4=Max Parallel: §e(线圈等级 * 16)§7
 
 gtlitecore.machine.large_miner.zpm.name=Extreme Ore Drilling Plant
 gtlitecore.machine.large_miner.uv.name=Ultimate Ore Drilling Plant
@@ -1360,17 +1350,16 @@ gtlitecore.machine.large_circuit_assembly_line.tooltip.3=需要§r对应种类§
 gtlitecore.machine.large_circuit_assembly_line.tooltip.4=根据建造的片数获得并行。
 gtlitecore.machine.large_circuit_assembly_line.tooltip.5=允许使用§r任意等级§7的输入总线与输出总线。
 gtlitecore.machine.large_circuit_assembly_line.tooltip.6=物品与流体§c均不需要§7有序输入。
-gtlitecore.machine.large_circuit_assembly_line.tooltip.7=最大并行数：§e(片数 - 4) * 4§7
+gtlitecore.machine.large_circuit_assembly_line.tooltip.7=Max Parallel: §e(片数 - 4) * 4§7
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.1=片数的具体计算由§r输入总线§7的数量确定
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.2=这意味着如果不做任何扩展，则片数为4，此时机器不会并行。
 gtlitecore.machine.large_circuit_assembly_line.tooltip.shift.3=而扩展到最大长度时，片数为16，此时机器会获得48次并行。
 
 gtlitecore.machine.electromagnetic_separation_plant.name=Large Electromagnetic Separation Plant
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.electromagnetic_separation_plant.tooltip.2=Obtain Parallel based on Input Voltage
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.electromagnetic_separation_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.electromagnetic_separation_plant.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.large_vacuum_chamber.name=Large Vacuum Chamber
 
@@ -1378,10 +1367,9 @@ gtlitecore.machine.large_bio_reactor.name=Large Bio Reactor
 
 gtlitecore.machine.large_euv_mask_aligner.name=Large EUV Mask Aligner
 gtlitecore.machine.large_euv_mask_aligner.tooltip.1=运行§r精密激光蚀刻机§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.2=根据输入电压获得并行
-gtlitecore.machine.large_euv_mask_aligner.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_euv_mask_aligner.tooltip.5=最大并行数：§e4096§7
+gtlitecore.machine.large_euv_mask_aligner.tooltip.2=Obtain Parallel based on Input Voltage
+gtlitecore.machine.large_euv_mask_aligner.tooltip.3=When Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
+gtlitecore.machine.large_euv_mask_aligner.tooltip.4=When Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
 
 gtlitecore.machine.ion_lithography_factory.name=Ion Lithography Factory
 gtlitecore.machine.ion_lithography_factory.tooltip.1=最小特征尺寸可达0.01
@@ -1404,17 +1392,15 @@ gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§
 
 gtlitecore.machine.large_high_pressure_forming_unit.name=Large High Pressure Forming Unit
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.large_high_pressure_forming_unit.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_high_pressure_forming_unit.tooltip.2=Obtain Parallel based on Input Voltage
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_high_pressure_forming_unit.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.large_turrent_lathing_factory.name=Large Turrent Lathing Factory
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.large_turrent_lathing_factory.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_turrent_lathing_factory.tooltip.2=Obtain Parallel based on Input Voltage
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_turrent_lathing_factory.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_turrent_lathing_factory.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.dyson_swarm.name=Dyson Swarm
 gtlitecore.machine.dyson_swarm.tooltip.1=指挥戴森球模块附着于相邻恒星以攫取近乎于无穷无限的电力。
@@ -1441,7 +1427,7 @@ gtlitecore.machine.integrated_ore_processor.name=Integrated Ore Processor
 gtlitecore.machine.integrated_ore_processor.tooltip.1=一步完成所有矿石处理。
 gtlitecore.machine.integrated_ore_processor.tooltip.2=每个矿石消耗一定电量，还需要输入2L润滑油与200L蒸馏水。
 gtlitecore.machine.integrated_ore_processor.tooltip.3=矿石的处理时间取决于机器的处理模式。
-gtlitecore.machine.integrated_ore_processor.tooltip.4=最大并行数：§e1024§7
+gtlitecore.machine.integrated_ore_processor.tooltip.4=Max Parallel: §e1024§7
 gtlitecore.machine.integrated_ore_processor.tooltip_shift.1=使用螺丝刀右键点击控制器以切换处理模式。
 gtlitecore.machine.integrated_ore_processor.tooltip_shift.2=使用螺丝刀潜行右键点击控制器以切换石粉销毁模式。
 gtlitecore.machine.integrated_ore_processor.mode.0=Processing Mode: Macerator-Ore Washer-Thermal Centrifuge-Macerator
@@ -1454,10 +1440,9 @@ gtlitecore.machine.integrated_ore_processor.void.false=石粉销毁已关闭
 
 gtlitecore.machine.large_fluid_phase_transformer.name=Large Fluid Phase Transformer
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
-gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=Obtain Parallel based on Input Voltage
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_fluid_phase_transformer.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.bioware_simulator.name=Bioware Simulator
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
@@ -1469,8 +1454,8 @@ gtlitecore.machine.algae_culture_tank.tooltip.1=用于培养不属于这个星�
 gtlitecore.machine.large_gas_collector.name=Large Gas Collector
 gtlitecore.machine.large_gas_collector.tooltip.1=超级空气收集器
 gtlitecore.machine.large_gas_collector.tooltip.2=通过电路调配收集不同维度的气体，不需要位于指定维度。
-gtlitecore.machine.large_gas_collector.tooltip.3=根据输入电压获得并行
-gtlitecore.machine.large_gas_collector.tooltip.4=最大并行数：§e4 * (电压等级 - 4)§7
+gtlitecore.machine.large_gas_collector.tooltip.3=Obtain Parallel based on Input Voltage
+gtlitecore.machine.large_gas_collector.tooltip.4=Max Parallel: §e4 * (Voltage Tier - 4)§7
 
 gtlitecore.machine.ultimate_combustion_engine.name=Ultimate Combustion Engine
 gtlitecore.machine.ultimate_combustion_engine.tooltip=化学能吞噬者
@@ -1481,30 +1466,26 @@ gtlitecore.machine.industrial_induction_furnace.name=Industrial Induction Furnac
 gtlitecore.machine.horizontal_shaft_impact_macerator.name=Large Horizontal Shaft Impact Macerator
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.1=横轴冲击式破碎机
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.2=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
-gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3=根据输入电压获得并行
+gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3=Obtain Parallel based on Input Voltage
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.4=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.5=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.6=最大并行数：§e4096§7
 
 gtlitecore.machine.trough_type_ore_washer.name=Large Trough Type Ore Washer
 gtlitecore.machine.trough_type_ore_washer.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
-gtlitecore.machine.trough_type_ore_washer.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.trough_type_ore_washer.tooltip.2=Obtain Parallel based on Input Voltage
 gtlitecore.machine.trough_type_ore_washer.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.trough_type_ore_washer.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.trough_type_ore_washer.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.fixed_sifting_plant.name=Large Fixed Sifting Plant
 gtlitecore.machine.fixed_sifting_plant.tooltip.1=运行§r所有§7配方时，运行耗时均为§r(配方时间/2)§7。
-gtlitecore.machine.fixed_sifting_plant.tooltip.2=根据输入电压获得并行
+gtlitecore.machine.fixed_sifting_plant.tooltip.2=Obtain Parallel based on Input Voltage
 gtlitecore.machine.fixed_sifting_plant.tooltip.3=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.fixed_sifting_plant.tooltip.4=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.fixed_sifting_plant.tooltip.5=最大并行数：§e4096§7
 
 gtlitecore.machine.large_wiremill_array.name=High Speed Wiremill Array
-gtlitecore.machine.large_wiremill_array.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.large_wiremill_array.tooltip.1=Obtain Parallel based on Input Voltage
 gtlitecore.machine.large_wiremill_array.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.large_wiremill_array.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.circulative_cooling_tower.name=Circulative Cooling Tower
 gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
@@ -1532,10 +1513,9 @@ gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7
 gtlitecore.machine.large_rock_breaker.name=Large Rock Breaker
 
 gtlitecore.machine.industrial_rock_breaker.name=Industrial Rock Breaking Factory
-gtlitecore.machine.industrial_rock_breaker.tooltip.1=根据输入电压获得并行
+gtlitecore.machine.industrial_rock_breaker.tooltip.1=Obtain Parallel based on Input Voltage
 gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
-gtlitecore.machine.industrial_rock_breaker.tooltip.4=最大并行数：§e4096§7
 
 gtlitecore.machine.dimensional_mixer.name=Suprachronal Dimensional Mixing Tower
 gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
@@ -2339,7 +2319,7 @@ metaitem.mixture.carbon_allotrope.name=Carbon Allotrope Mixture
 metaitem.unstable_star.name=Unstable Star
 metaitem.unstable_star.tooltip=Extremely Unstable Nether Star
 metaitem.zenith_star.name=Zenith Star
-metaitem.zenith_star.tooltip=以格雷科技之名，命此星炽若金乌
+metaitem.zenith_star.tooltip=By the powers of GregTech, command the Star to be fiery hot.
 metaitem.quantum_anomaly.name=Quantum Anomaly
 metaitem.magnetron.name=Magnetron
 metaitem.separation_electromagnet.name=Separation Electromagnet
@@ -2350,9 +2330,9 @@ metaitem.memory_foam_plate.tooltip=Not a Mattress
 metaitem.highly_insulating_fullerene_foil.name=Highly Insulating Fullerene Aerogel Fiber
 metaitem.highly_insulating_fullerene_foil.tooltip=Fullerene Derivative Foams
 metaitem.hyperdimensional_drone.name=Hyperdimensional Guidance Drone
-metaitem.hyperdimensional_drone.tooltip=用于引导§6Hyperdimensional Oscillating Matter§7形成正确的结构
+metaitem.hyperdimensional_drone.tooltip=Used to guide §6Hyperdimensional Oscillating Matter§7 to form the correct structure
 metaitem.hyperdimensional_oscillating_matter.name=Hyperdimensional Oscillating Matter
-metaitem.hyperdimensional_oscillating_matter.tooltip=超维度时空乱流凝结物
+metaitem.hyperdimensional_oscillating_matter.tooltip=Superdimensional Spatiotemporal Turbulent Condensate
 metaitem.chromatic_lens.name=Chromatic Lens
 metaitem.chromatic_lens.tooltip=Riot of Colors
 metaitem.neutronium_sphere.name=Neutronium Sphere
@@ -2374,9 +2354,9 @@ metaitem.mining_drone.uxv.name=§eUXV§r Mining Drone
 metaitem.mining_drone.opv.name=§9OpV§r Mining Drone
 metaitem.mining_drone.max.name=§c§lMAX§r Mining Drone
 metaitem.crude_hypercube.name=Crude Hypercube
-metaitem.crude_hypercube.tooltip=四维工程学的初次实践
+metaitem.crude_hypercube.tooltip=The First Practice of Four-Dimensional Engineering
 metaitem.charged_hypercube.name=Charged Hypercube
-metaitem.charged_hypercube.tooltip=真正的超立方体
+metaitem.charged_hypercube.tooltip=A true Hypercube
 metaitem.cosmic_memory_card.name=Cosmic Data Memory Card
 metaitem.cosmic_memory_card.tooltip=用于为§6Virtual Cosmos Simulator§7指定倾向
 metaitem.cosmic_memory_card.overworld.name=Cosmic Data Memory Card - Overworld
@@ -2396,7 +2376,7 @@ metaitem.dyson_swarm_module.tooltip=一个存储着戴森球材料与建造数�
 
 #  Ore Prefixes
 item.material.oreprefix.milled=Milled %s Dust
-metaitem.milled.tooltip.flotation=使用§6Flotation Cell Regular§7进行进一步精选
+metaitem.milled.tooltip.flotation=Using §6Flotation Cell Regular§7 to further flotation
 item.material.oreprefix.seedCrystal=%s Crystal Seed
 item.material.oreprefix.boule=%s Boule
 item.material.oreprefix.swarm=%s Swarm
@@ -2408,9 +2388,9 @@ item.material.oreprefix.singularity=%s Singularity
 metaitem.plasma_containment_cell.name=Plasma Containment Cell
 metaitem.plasma_containment_cell.tooltip=Used to package Plasma
 metaitem.rhenium_plasma_containment_cell.name=Rhenium Plasma Containment Cell
-metaitem.rhenium_plasma_containment_cell.tooltip=使用§6Plasma Condenser§7进行冷却
+metaitem.rhenium_plasma_containment_cell.tooltip=Use §6Plasma Condenser§7 for Cooling
 metaitem.neutron_plasma_containment_cell.name=Neutron Plasma Containment Cell
-metaitem.neutron_plasma_containment_cell.tooltip=使用§6Plasma Condenser§7进行冷却
+metaitem.neutron_plasma_containment_cell.tooltip=Use §6Plasma Condenser§7 for Cooling
 metaitem.extremely_durable_plasma_containment_cell.name=Extremely Durable Plasma Containment Cell
 metaitem.extremely_durable_plasma_containment_cell.tooltip=Used to package Plasma
 metaitem.dense_neutron_plasma_containment_cell.name=Dense Neutron Plasma Containment Cell
@@ -2435,7 +2415,7 @@ metaitem.cosmic_fabric_plasma_containment_cell.name=Cosmic Fabric Plasma Contain
 metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1=一些凡夫俗子曾试图制成过此物，然而它们根本无法理解其中真髓。
 metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2=它们将制成的只有此物的1%%效能的劣质造物称为“二向箔”，多么可笑。
 metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3=真正的寰宇织网如今不过唾手可得之物。
-metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6Plasma Condenser§7进行冷却
+metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=Use §6Plasma Condenser§7 for Cooling
 
 #  Particles
 metaitem.particle.alpha.name=Alpha particle
@@ -2631,6 +2611,9 @@ metaitem.battery.opv.ultimate.tooltip=Fill this to win GregTech Lite
 
 #  Traceability Predicates
 gtlitecore.machine.pattern.firebox=§cAll firebox casings must be the same§r
+
+#  Universal Tooltips
+gtlitecore.universal.tooltip.max_parallel=Max Parallel: §e%s§7
 
 #  Wrap Items
 metaitem.wrap.circuit.ulv.name=§8ULV§r Wrap Circuit

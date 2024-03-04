@@ -104,7 +104,7 @@ public class MetaTileEntityArcFurnaceArray extends RecipeMapMultiblockController
         tooltip.add(I18n.format("gtlitecore.machine.arc_furnace_array.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.arc_furnace_array.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.arc_furnace_array.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.arc_furnace_array.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -130,7 +130,7 @@ public class MetaTileEntityArcFurnaceArray extends RecipeMapMultiblockController
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
     }
 }

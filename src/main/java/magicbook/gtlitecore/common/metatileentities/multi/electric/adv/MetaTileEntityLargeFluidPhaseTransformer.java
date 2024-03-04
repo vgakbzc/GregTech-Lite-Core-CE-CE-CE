@@ -42,8 +42,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
                 RecipeMaps.EXTRACTOR_RECIPES,
                 RecipeMaps.CANNER_RECIPES,
                 RecipeMaps.FLUID_SOLIDFICATION_RECIPES,
-                RecipeMaps.FLUID_HEATER_RECIPES
-        });
+                RecipeMaps.FLUID_HEATER_RECIPES});
         this.recipeMapWorkable = new LargeFluidPhaseTransformerRecipeLogic(this);
     }
 
@@ -119,7 +118,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
         tooltip.add(I18n.format("gtlitecore.machine.large_fluid_phase_transformer.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.large_fluid_phase_transformer.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.large_fluid_phase_transformer.tooltip.4"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_fluid_phase_transformer.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -144,7 +143,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
 
         /**

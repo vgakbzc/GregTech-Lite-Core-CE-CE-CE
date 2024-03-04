@@ -134,7 +134,7 @@ public class MetaTileEntityFixedSiftingPlant extends RecipeMapMultiblockControll
         tooltip.add(I18n.format("gtlitecore.machine.fixed_sifting_plant.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.fixed_sifting_plant.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.fixed_sifting_plant.tooltip.4"));
-        tooltip.add(I18n.format("gtlitecore.machine.fixed_sifting_plant.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
 
     }
 
@@ -161,7 +161,7 @@ public class MetaTileEntityFixedSiftingPlant extends RecipeMapMultiblockControll
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
 
         /**

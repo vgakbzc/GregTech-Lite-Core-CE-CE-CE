@@ -91,7 +91,7 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
         tooltip.add(I18n.format("gtlitecore.machine.cryogenic_freezer.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.cryogenic_freezer.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.cryogenic_freezer.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.cryogenic_freezer.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 16));
     }
 
     @Override

@@ -7,8 +7,8 @@ dependencies {
     implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5121638")
     //  Gregicality Multiblocks 1.2.8
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:5121714")
-    //  GregTech Food Option 1.11.0.1
-    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:5085993")
+    //  GregTech Food Option 1.11.1
+    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:5155451")
     //  AE2 unofficial Extended Life 0.56.2
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5047265")
     //  The One Probe

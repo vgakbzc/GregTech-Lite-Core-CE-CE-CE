@@ -101,7 +101,7 @@ public class MetaTileEntityIndustrialRockBreaker extends RecipeMapMultiblockCont
         tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.industrial_rock_breaker.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @Override
@@ -132,7 +132,7 @@ public class MetaTileEntityIndustrialRockBreaker extends RecipeMapMultiblockCont
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
     }
 }
