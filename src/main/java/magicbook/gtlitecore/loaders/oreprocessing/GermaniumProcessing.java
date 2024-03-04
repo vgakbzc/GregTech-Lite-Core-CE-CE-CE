@@ -10,7 +10,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 /**
  * The Waelz Process
  *
- * <p>Produces Germanium from Sphalerite</p>
+ * <p>
+ *     Produces Germanium from Sphalerite
+ * </p>
  *
  * <p>Main Products: Germanium</p>
  * <p>Side Products: Zinc, Gallium, Manganese</p>

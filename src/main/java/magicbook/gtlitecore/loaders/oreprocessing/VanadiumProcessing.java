@@ -12,7 +12,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  *
  * @author Magic_Sweepy (2023/11/26)
  *
- * <p>Produces Bismuth Vanadate from Vanadium Magnetite</p>
+ * <p>
+ *     Produces Bismuth Vanadate from Vanadium Magnetite
+ * </p>
  *
  * <p>Main Products: Bismuth Vanadate</p>
  * <p>Side Products: Some Nitrogenous compounds</p>

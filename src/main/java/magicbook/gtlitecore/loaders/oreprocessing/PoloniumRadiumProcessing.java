@@ -13,7 +13,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  *
  * @author Magic_Sweepy (2024/02/01)
  *
- * <p>Produces Polonium and Radium from Pitchblende</p>
+ * <p>
+ *     Produces Polonium and Radium from Pitchblende
+ * </p>
  *
  * <p>Main Products: Polonium, Radium</p>
  * <p>Side Products: Uraninite</p>

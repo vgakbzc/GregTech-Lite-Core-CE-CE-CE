@@ -15,7 +15,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Tungsten Process
  *
  * <p>
- * Adds extra steps for making Tungsten
+ *     Adds extra steps for making Tungsten
  * </p>
  *
  * <p>Main Products: Tungsten</p>

@@ -1392,7 +1392,7 @@ gtlitecore.machine.ion_lithography_factory.tooltip.13=§r离子注入§7模式 -
 gtlitecore.machine.ion_lithography_factory.tooltip.14=§r电解机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.15=§r两极磁化机§7模式 -> §e4096§7
 gtlitecore.machine.ion_lithography_factory.tooltip.16=§r电磁选矿机§7模式 -> §e4096§7
-gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
+gtlitecore.machine.ion_lithography_factory.tooltip.17=允许使用§b激光靶仓§7替代能源仓，且二者可以并存。
 
 gtlitecore.machine.large_high_pressure_forming_unit.name=大型压力成型厂
 gtlitecore.machine.large_high_pressure_forming_unit.tooltip.1=运行§r所有§7配方时，运行耗时为§r(配方时间/2)§7。
@@ -1423,6 +1423,7 @@ gtlitecore.machine.dyson_swarm.tooltip.13=返还的戴森球模块将从输出�
 gtlitecore.machine.dyson_swarm.tooltip.14=需要输入§b极寒之凛冰§7作为冷却机组消耗的冷却剂
 gtlitecore.machine.dyson_swarm.tooltip.15=不同发射模式§l不需要§r§7输入不同数量的冷却剂
 gtlitecore.machine.dyson_swarm.tooltip.16=未提供足够极寒之凛冰时，计算机组将停机，进而无法运行机器
+gtlitecore.machine.dyson_swarm.tooltip.17=允许使用§b激光源仓§7替代动力仓，且二者可以并存。
 gtlitecore.machine.dyson_swarm.coolant=冷却机组工作中。
 gtlitecore.machine.dyson_swarm.no_coolant=冷却剂不足！
 gtlitecore.machine.dyson_swarm.uses_per_hour_coolant=工作时消耗§f%,d L/hr§7极寒之凛冰
@@ -1538,7 +1539,7 @@ gtlitecore.machine.dimensional_mixer.tooltip.13=§r离心机§7模式 -> §e4096
 gtlitecore.machine.dimensional_mixer.tooltip.14=§r热力离心§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
-gtlitecore.machine.dimensional_mixer.tooltip.17=允许使用§b激光仓§7替代能源仓，且二者可以并存。
+gtlitecore.machine.dimensional_mixer.tooltip.17=允许使用§b激光靶仓§7替代能源仓，且二者可以并存。
 
 gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
 gtlitecore.machine.yotta_fluid_tank.tooltip.1=超级流体存储器
@@ -1583,7 +1584,7 @@ gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.19=§r燃烧�
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.20=§r合金炉§7模式 -> §e16384§7
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.21=§r合金冶炼炉§7模式 -> §e8192§7
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.22=§r恒星锻炉§7模式 -> §e256§7
-gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.23=允许使用§b激光仓§7替代能源仓，且二者可以并存。
+gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.23=允许使用§b激光靶仓§7替代能源仓，且二者可以并存。
 
 #  Materials
 
