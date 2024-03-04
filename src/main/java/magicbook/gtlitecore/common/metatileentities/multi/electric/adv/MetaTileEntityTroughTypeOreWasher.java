@@ -38,8 +38,7 @@ public class MetaTileEntityTroughTypeOreWasher extends MultiMapMultiblockControl
     public MetaTileEntityTroughTypeOreWasher(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
                 RecipeMaps.ORE_WASHER_RECIPES,
-                RecipeMaps.CHEMICAL_BATH_RECIPES
-        });
+                RecipeMaps.CHEMICAL_BATH_RECIPES});
         this.recipeMapWorkable = new TroughTypeOreWasherRecipeLogic(this);
     }
 
@@ -111,7 +110,7 @@ public class MetaTileEntityTroughTypeOreWasher extends MultiMapMultiblockControl
         tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.4"));
-        tooltip.add(I18n.format("gtlitecore.machine.trough_type_ore_washer.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -137,7 +136,7 @@ public class MetaTileEntityTroughTypeOreWasher extends MultiMapMultiblockControl
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
 
         /**

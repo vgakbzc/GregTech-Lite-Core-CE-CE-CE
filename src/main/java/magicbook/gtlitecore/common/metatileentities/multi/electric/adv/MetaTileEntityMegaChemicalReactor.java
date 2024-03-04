@@ -99,7 +99,7 @@ public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockContro
         tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @Override
@@ -109,6 +109,7 @@ public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockContro
 
     @SuppressWarnings("InnerClassMayBeStatic")
     private class MegaChemicalReactorWorkableHandler extends MultiblockRecipeLogic {
+
         public MegaChemicalReactorWorkableHandler(RecipeMapMultiblockController tileEntity) {
             super(tileEntity, true);
         }
@@ -129,7 +130,7 @@ public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockContro
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
     }
 }

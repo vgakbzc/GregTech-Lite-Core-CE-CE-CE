@@ -37,8 +37,7 @@ public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultib
     public MetaTileEntityHorizontalShaftImpactMacerator(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
                 RecipeMaps.MACERATOR_RECIPES,
-                RecipeMaps.FORGE_HAMMER_RECIPES
-        });
+                RecipeMaps.FORGE_HAMMER_RECIPES});
         this.recipeMapWorkable = new HorizontalShaftImpactMaceratorRecipeLogic(this);
     }
 
@@ -109,7 +108,7 @@ public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultib
         tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.4"));
         tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.5"));
-        tooltip.add(I18n.format("gtlitecore.machine.horizontal_shaft_impact_macerator.tooltip.6"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -135,7 +134,7 @@ public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultib
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
 
         /**

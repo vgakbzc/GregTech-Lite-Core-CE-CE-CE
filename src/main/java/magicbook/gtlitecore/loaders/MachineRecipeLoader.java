@@ -170,8 +170,8 @@ public class MachineRecipeLoader {
 
     private static void MultiblockControllerRecipes() {
 
-        //  Industrial Drilling Reg
-        ModHandler.addShapedRecipe(true, "industrial_drilling_reg", INDUSTRIAL_DRILLING_REG.getStackForm(),
+        //  Industrial Drilling Rig
+        ModHandler.addShapedRecipe(true, "industrial_drilling_rig", INDUSTRIAL_DRILLING_RIG.getStackForm(),
                 "PKP", "CHC", "MMM",
                 'P', ELECTRIC_PISTON_UV.getStackForm(),
                 'K', new UnificationEntry(cableGtQuadruple, YttriumBariumCuprate),

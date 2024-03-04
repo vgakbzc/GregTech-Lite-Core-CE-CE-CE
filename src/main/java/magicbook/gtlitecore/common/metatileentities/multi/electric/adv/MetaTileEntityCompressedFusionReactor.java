@@ -370,11 +370,11 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.1"));
 
         switch (this.tier) {
-            case (LuV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.luv"));
-            case (ZPM) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.zpm"));
-            case (UV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uv"));
-            case (UHV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uhv"));
-            case (UEV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.parallel.uev"));
+            case (LuV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 64));
+            case (ZPM) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 128));
+            case (UV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 256));
+            case (UHV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 512));
+            case (UEV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 1024));
         }
     }
 

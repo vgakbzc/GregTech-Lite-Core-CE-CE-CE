@@ -58,11 +58,12 @@ public class TaraniumProcessing {
 
     private static void BedrockProcess() {
 
+        //  Drilling Bedrock dust and smoke in Bedrock
         DRILLING_RECIPES.recipeBuilder()
                 .notConsumable(new ItemStack(Blocks.BEDROCK))
                 .chancedOutput(dust, Bedrock, 100, 0)
-                .fluidOutputs(BedrockSmoke.getFluid(100))
-                .duration(100)
+                .fluidOutputs(BedrockSmoke.getFluid(1000))
+                .duration(20)
                 .EUt(VA[UHV])
                 .buildAndRegister();
 

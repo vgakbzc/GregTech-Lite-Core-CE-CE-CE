@@ -19,10 +19,10 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockMultiblockCasing;
-import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.client.GTLiteTextures;
+import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
@@ -38,18 +38,18 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class MetaTileEntityIndustrialDrillingReg extends RecipeMapMultiblockController {
+public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockController {
 
     protected BlockPos targetBlock = null;
 
-    public MetaTileEntityIndustrialDrillingReg(ResourceLocation metaTileEntityId) {
+    public MetaTileEntityIndustrialDrillingRig(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.DRILLING_RECIPES);
         this.recipeMapWorkable = new IndustrialDrillWorkableHandler(this);
     }
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new MetaTileEntityIndustrialDrillingReg(metaTileEntityId);
+        return new MetaTileEntityIndustrialDrillingRig(metaTileEntityId);
     }
 
     @Override
@@ -116,7 +116,7 @@ public class MetaTileEntityIndustrialDrillingReg extends RecipeMapMultiblockCont
     }
 
     private static IBlockState getTurbineCasingState() {
-        return MetaBlocks.TURBINE_CASING.getState(BlockTurbineCasing.TurbineCasingType.TUNGSTENSTEEL_GEARBOX);
+        return GTLiteMetaBlocks.STRUCTURE_CASING.getState(BlockStructureCasing.StructureCasingType.NAQUADAH_GEARBOX_CASING);
     }
 
     private static IBlockState getFrameState() {
@@ -153,8 +153,8 @@ public class MetaTileEntityIndustrialDrillingReg extends RecipeMapMultiblockCont
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.industrial_drilling_reg.tooltip.1"));
-        tooltip.add(I18n.format("gtlitecore.machine.industrial_drilling_reg.tooltip.2"));
+        tooltip.add(I18n.format("gtlitecore.machine.industrial_drilling_rig.tooltip.1"));
+        tooltip.add(I18n.format("gtlitecore.machine.industrial_drilling_rig.tooltip.2"));
     }
 
     @Override
@@ -170,8 +170,8 @@ public class MetaTileEntityIndustrialDrillingReg extends RecipeMapMultiblockCont
 
         @Nonnull
         @Override
-        public MetaTileEntityIndustrialDrillingReg getMetaTileEntity() {
-            return (MetaTileEntityIndustrialDrillingReg) super.getMetaTileEntity();
+        public MetaTileEntityIndustrialDrillingRig getMetaTileEntity() {
+            return (MetaTileEntityIndustrialDrillingRig) super.getMetaTileEntity();
         }
 
         @Override
@@ -179,9 +179,9 @@ public class MetaTileEntityIndustrialDrillingReg extends RecipeMapMultiblockCont
                                                       @Nonnull IItemHandlerModifiable importInventory) {
             boolean result = super.setupAndConsumeRecipeInputs(recipe, importInventory);
 
-            // break the block in world if it is consumable
+            //  Break the block in world if it is consumable
             if (result && !recipe.getInputs().get(0).isNonConsumable()) {
-                MetaTileEntityIndustrialDrillingReg drill = getMetaTileEntity();
+                MetaTileEntityIndustrialDrillingRig drill = getMetaTileEntity();
                 if (drill != null) {
                     drill.getWorld().destroyBlock(drill.targetBlock, false);
                 }
