@@ -129,7 +129,7 @@ public class MetaTileEntityElectrolyticTank extends RecipeMapMultiblockControlle
         tooltip.add(I18n.format("gtlitecore.machine.electrolytic_tank.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.electrolytic_tank.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.electrolytic_tank.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.electrolytic_tank.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -154,7 +154,7 @@ public class MetaTileEntityElectrolyticTank extends RecipeMapMultiblockControlle
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
     }
 }

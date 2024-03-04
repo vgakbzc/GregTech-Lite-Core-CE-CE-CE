@@ -170,8 +170,8 @@ public class MachineRecipeLoader {
 
     private static void MultiblockControllerRecipes() {
 
-        //  Industrial Drilling Reg
-        ModHandler.addShapedRecipe(true, "industrial_drilling_reg", INDUSTRIAL_DRILLING_REG.getStackForm(),
+        //  Industrial Drilling Rig
+        ModHandler.addShapedRecipe(true, "industrial_drilling_rig", INDUSTRIAL_DRILLING_RIG.getStackForm(),
                 "PKP", "CHC", "MMM",
                 'P', ELECTRIC_PISTON_UV.getStackForm(),
                 'K', new UnificationEntry(cableGtQuadruple, YttriumBariumCuprate),
@@ -1165,7 +1165,7 @@ public class MachineRecipeLoader {
         ModHandler.addShapedRecipe(true, "high_pressure_steam_turbine", HIGH_PRESSURE_STEAM_TURBINE.getStackForm(),
                 "XRX", "FHF", "WDW",
                 'H', HULL[EV].getStackForm(),
-                'F', new UnificationEntry(pipeNormalFluid, Inconel792),
+                'F', new UnificationEntry(pipeNormalFluid, Titanium),
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV),
                 'R', new UnificationEntry(rotor, Staballoy),
                 'W', new UnificationEntry(cableGtSingle, Aluminium),
@@ -1178,7 +1178,7 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(plate, MARM200CeSteel),
                 'G', new UnificationEntry(gear, TungstenCarbide),
                 'H', HULL[LuV].getStackForm(),
-                'F', new UnificationEntry(pipeLargeFluid, Inconel625),
+                'F', new UnificationEntry(pipeLargeFluid, Inconel792),
                 'W', new UnificationEntry(cableGtSingle, NiobiumTitanium));
 
         //  Electrolytic Tank

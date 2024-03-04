@@ -137,7 +137,7 @@ public class MetaTileEntityLargeTurrentLathingFactory extends MultiMapMultiblock
         tooltip.add(I18n.format("gtlitecore.machine.large_turrent_lathing_factory.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.large_turrent_lathing_factory.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.large_turrent_lathing_factory.tooltip.4"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_turrent_lathing_factory.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -163,7 +163,7 @@ public class MetaTileEntityLargeTurrentLathingFactory extends MultiMapMultiblock
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
 
         /**

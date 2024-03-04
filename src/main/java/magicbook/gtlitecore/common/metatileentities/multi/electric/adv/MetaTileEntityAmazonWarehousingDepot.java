@@ -93,7 +93,7 @@ public class MetaTileEntityAmazonWarehousingDepot extends RecipeMapMultiblockCon
         tooltip.add(I18n.format("gtlitecore.machine.amazon_warehousing_depot.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.amazon_warehousing_depot.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.amazon_warehousing_depot.tooltip.3"));
-        tooltip.add(I18n.format("gtlitecore.machine.amazon_warehousing_depot.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -119,7 +119,7 @@ public class MetaTileEntityAmazonWarehousingDepot extends RecipeMapMultiblockCon
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
     }
 }

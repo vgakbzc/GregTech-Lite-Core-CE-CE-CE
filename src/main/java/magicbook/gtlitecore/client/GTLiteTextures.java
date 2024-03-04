@@ -152,11 +152,11 @@ public class GTLiteTextures {
     public static TextureAtlasSprite COSMIC_7;
     public static TextureAtlasSprite COSMIC_8;
     public static TextureAtlasSprite COSMIC_9;
+    public static TextureAtlasSprite FORCE_FIELD;
 
     public GTLiteTextures() {}
 
     public static void register(TextureMap textureMap) {
-
         HALO = textureMap.registerSprite(gtliteId("items/halo"));
         HALO_NOISE = textureMap.registerSprite(gtliteId("items/halo_noise"));
         COSMIC_0 = textureMap.registerSprite(gtliteId("shader/cosmic_0"));
@@ -181,6 +181,7 @@ public class GTLiteTextures {
                 COSMIC_8,
                 COSMIC_9
         };
+        FORCE_FIELD = textureMap.registerSprite(gtliteId("blocks/multiblocks/quantum_force_transformer/force_field"));
     }
 
     public static void preInit() {

@@ -41,8 +41,7 @@ public class MetaTileEntityLargeEUVMaskAligner extends MultiMapMultiblockControl
     public MetaTileEntityLargeEUVMaskAligner(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
                 RecipeMaps.LASER_ENGRAVER_RECIPES,
-                GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES
-        });
+                GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES});
         this.recipeMapWorkable = new LargeEUVMaskAlignerRecipeLogic(this);
     }
 
@@ -128,7 +127,7 @@ public class MetaTileEntityLargeEUVMaskAligner extends MultiMapMultiblockControl
         tooltip.add(I18n.format("gtlitecore.machine.large_euv_mask_aligner.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.large_euv_mask_aligner.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.large_euv_mask_aligner.tooltip.4"));
-        tooltip.add(I18n.format("gtlitecore.machine.large_euv_mask_aligner.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
@@ -160,7 +159,7 @@ public class MetaTileEntityLargeEUVMaskAligner extends MultiMapMultiblockControl
         @Override
         public int getParallelLimit() {
             int tier = GTUtility.getTierByVoltage(getMaxVoltage());
-            return Math.min(ParallelTier(tier), 4096);
+            return Math.min(ParallelTier(tier), 640);
         }
 
         /**
