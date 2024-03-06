@@ -289,6 +289,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
         tooltip.add(I18n.format("gtlitecore.machine.circulative_cooling_tower.tooltip.19"));
         tooltip.add(I18n.format("gtlitecore.machine.circulative_cooling_tower.tooltip.20"));
         tooltip.add(I18n.format("gtlitecore.machine.circulative_cooling_tower.tooltip.21"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
     public class CirculativeCoolingTowerRecipeLogic extends MultiblockRecipeLogic {

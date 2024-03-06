@@ -248,7 +248,7 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
         tooltip.add(I18n.format("gtlitecore.machine.ion_lithography_factory.tooltip.14"));
         tooltip.add(I18n.format("gtlitecore.machine.ion_lithography_factory.tooltip.15"));
         tooltip.add(I18n.format("gtlitecore.machine.ion_lithography_factory.tooltip.16"));
-        tooltip.add(I18n.format("gtlitecore.machine.ion_lithography_factory.tooltip.17"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
     public class IonLithographyFactoryRecipeLogic extends MultiblockRecipeLogic {

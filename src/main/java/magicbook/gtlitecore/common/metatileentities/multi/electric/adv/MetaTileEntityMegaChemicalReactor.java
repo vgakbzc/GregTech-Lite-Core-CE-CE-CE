@@ -96,9 +96,9 @@ public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockContro
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.get_parallel_by_voltage"));
         tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.2"));
-        tooltip.add(I18n.format("gtlitecore.machine.mega_chemical_reactor.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 640));
     }
 
