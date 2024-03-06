@@ -10,7 +10,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Niobium-Tantalum Process
  *
  * <p>
- * Produces Niobium and Tantalum from Tantalite and Pyrochlore
+ *     Produces Niobium and Tantalum from Tantalite and Pyrochlore
  * </p>
  *
  * <p>Main Products: Niobium, Tantalum</p>

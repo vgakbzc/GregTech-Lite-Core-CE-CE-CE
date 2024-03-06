@@ -40,6 +40,7 @@ import java.util.List;
 import static gregtech.api.GTValues.*;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.optionalStates;
 
+//  TODO redo workable handler and recipe maps, maybe split nano assembling mode to a new nano swarm-related machine.
 public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
 
     private byte auxiliaryUpgradeNumber = 0;

@@ -11,7 +11,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Thallium Process
  *
  * <p>
- * Produces Thallium from Pyrite or Galena
+ *     Produces Thallium from Pyrite or Galena
  * </p>
  *
  * <p>Main Products: Thallium</p>

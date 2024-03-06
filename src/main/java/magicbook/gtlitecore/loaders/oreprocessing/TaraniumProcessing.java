@@ -20,7 +20,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  *
  * The Taranium Production Process
  *
- * <p>Produces Taranium and Bedrock Dust from Bedrock Smoke</p>
+ * <p>
+ *     Produces Taranium and Bedrock Dust from Bedrock Smoke
+ * </p>
  *
  * <p>Main Products: Taranium Dust, Taranium Fuels, Bedrock Dust</p>
  * <p>Side Products: Platinum, Iridium, Osmium</p>

@@ -12,7 +12,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  *
  * @author Magic_Sweepy (2023/12/11)
  *
- * <p>Produces Strontium from Pyrochlore</p>
+ * <p>
+ *     Produces Strontium from Pyrochlore
+ * </p>
  *
  * <p>Main Products: Strontium</p>
  * <p>Side Products: Niobium, Tantalum</p>

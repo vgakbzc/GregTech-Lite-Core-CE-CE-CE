@@ -19,7 +19,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Platinum Process
  *
  * <p>
- * Produces Platinum Group Metals from Platinum Group Sludge
+ *     Produces Platinum Group Metals from Platinum Group Sludge
  * </p>
  *
  * <p>Main Products: Platinum, Palladium, Rhodium, Ruthenium, Iridium, Osmium</p>
