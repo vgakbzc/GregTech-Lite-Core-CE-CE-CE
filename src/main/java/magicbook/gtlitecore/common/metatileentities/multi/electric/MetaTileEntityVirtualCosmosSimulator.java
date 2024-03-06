@@ -38,6 +38,7 @@ import java.util.List;
 import static gregtech.api.GTValues.L;
 import static gregtech.api.unification.material.Materials.Helium;
 
+//  TODO redo workable handler of this machine (if possible, add a new renderer in middle part of structure).
 public class MetaTileEntityVirtualCosmosSimulator extends RecipeMapMultiblockController {
 
     public MetaTileEntityVirtualCosmosSimulator(ResourceLocation metaTileEntityId) {

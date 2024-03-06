@@ -14,7 +14,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Rare Earth Extraction Process
  *
  * <p>
- * Produces Rare Earth Element Oxides from Rare Earth
+ *     Produces Rare Earth Element Oxides from Rare Earth
  * </p>
  *
  * <p>Main Products: All of the REE Oxides</p>

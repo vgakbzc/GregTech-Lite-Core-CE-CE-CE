@@ -11,7 +11,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Rubidium Process
  *
  * <p>
- * Produces Rubidium and Caesium from Pollucite
+ *     Produces Rubidium and Caesium from Pollucite
  * </p>
  *
  * <p>Main Products: Rubidium, Caesium</p>

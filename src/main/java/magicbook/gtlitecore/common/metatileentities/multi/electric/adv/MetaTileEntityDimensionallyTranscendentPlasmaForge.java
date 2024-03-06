@@ -269,7 +269,7 @@ public class MetaTileEntityDimensionallyTranscendentPlasmaForge extends MultiMap
         tooltip.add(I18n.format("gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.20"));
         tooltip.add(I18n.format("gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.21"));
         tooltip.add(I18n.format("gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.22"));
-        tooltip.add(I18n.format("gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.23"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
     @Override

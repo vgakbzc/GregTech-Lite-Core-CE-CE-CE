@@ -65,7 +65,7 @@ public class SpaceElevator {
         //  ZPM Mining Drone
         createDrillingModuleFluidRecipe(1, MINING_DRONE_ZPM, LiquidAir, 89600, 1, VA[UV]);
         createDrillingModuleFluidRecipe(2, MINING_DRONE_ZPM, Nickel, 44800, 1, VA[UV]);
-        createDrillingModuleFluidRecipe(3, MINING_DRONE_ZPM, DinitrogenTetroxide, 39200, 1, VA[UV]);
+        createDrillingModuleFluidRecipe(3, MINING_DRONE_ZPM, NitricAcid, 39200, 1, VA[UV]);
         createDrillingModuleFluidRecipe(4, MINING_DRONE_ZPM, Steam, 78400, 1, VA[UV]);
         createDrillingModuleFluidRecipe(5, MINING_DRONE_ZPM, Toluene, 12000, 1, VA[UV]);
 
@@ -102,15 +102,18 @@ public class SpaceElevator {
         createDrillingModuleFluidRecipe(2, MINING_DRONE_UXV, OganessonBreedingBase, 44800, 5, VH[UEV]);
         createDrillingModuleFluidRecipe(3, MINING_DRONE_UXV, NetherStar, 33600, 5, VH[UEV]);
         createDrillingModuleFluidRecipe(4, MINING_DRONE_UXV, RareEarthChloridesSolution, 44800, 5, VH[UEV]);
+        createDrillingModulePlasmaRecipe(5, MINING_DRONE_UXV, Helium, 78400, 5, VH[UEV]);
 
         //  OpV Mining Drone
         createDrillingModuleFluidRecipe(1, MINING_DRONE_OpV, WhiteDwarfMatter, 33600, 5, VA[UIV]);
         createDrillingModuleFluidRecipe(2, MINING_DRONE_OpV, BlackDwarfMatter, 33600, 5, VA[UIV]);
         createDrillingModuleFluidRecipe(3, MINING_DRONE_OpV, DragonBlood, 12000, 5, VA[UIV]);
         createDrillingModuleFluidRecipe(4, MINING_DRONE_OpV, Bedrock, 78400, 5, VA[UIV]);
+        createDrillingModulePlasmaRecipe(4, MINING_DRONE_OpV, Argon, 44800, 5, VA[UIV]);
 
         //  MAX Mining Drone
         createDrillingModuleFluidRecipe(1, MINING_DRONE_MAX, Galaxium, 12000, 5, VH[UIV]);
+        createDrillingModuleFluidRecipe(2, MINING_DRONE_MAX, SuperluminalTachyonJet, 33600, 5, VH[UIV]);
     }
 
     private static void MiningModule() {

@@ -17,8 +17,8 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  * The Molybdenum Process
  *
  * <p>
- * Produces Molybdenum from Molybdenite, Powellite, or Wulfenite.
- * Produces Rhenium from Molybdenite
+ *     Produces Molybdenum from Molybdenite, Powellite, or Wulfenite.
+ *     Produces Rhenium from Molybdenite
  * </p>
  *
  * <p>Main Products: Molybdenum, Rhenium</p>
