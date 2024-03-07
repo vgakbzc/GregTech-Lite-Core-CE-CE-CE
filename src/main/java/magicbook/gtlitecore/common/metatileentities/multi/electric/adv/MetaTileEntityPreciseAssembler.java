@@ -169,7 +169,11 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return Textures.FUSION_REACTOR_OVERLAY;
+        if (this.CasingTier <= 3) {
+            return Textures.FUSION_REACTOR_OVERLAY;
+        } else {
+            return GTLiteTextures.PRECISE_ASSEMBLER_OVERLAY;
+        }
     }
 
     @SuppressWarnings("all")
