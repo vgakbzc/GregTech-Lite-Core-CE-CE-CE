@@ -1136,9 +1136,9 @@ public class OverrideRecipeLoader {
                     'P', new UnificationEntry(plate, Eternity));
         }
 
-        //  todo some recipe should be delete, e.g. UHV multi fluid hatch?
         ItemBuses();
         FluidHatches();
+        MultiFluidHatches();
         EnergyHathces();
     }
 
@@ -1442,6 +1442,67 @@ public class OverrideRecipeLoader {
                     .buildAndRegister();
         }
 
+    }
+
+    private static void MultiFluidHatches() {
+
+        //  UHV 4x
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(4), FLUID_IMPORT_HATCH[UHV].getStackForm(), OreDictUnifier.get(pipeQuadrupleFluid, Neutronium)},
+                new FluidStack[]{Polybenzimidazole.getFluid(576)});
+
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(4), FLUID_EXPORT_HATCH[UHV].getStackForm(), OreDictUnifier.get(pipeQuadrupleFluid, Neutronium)},
+                new FluidStack[]{Polybenzimidazole.getFluid(576)});
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(FLUID_IMPORT_HATCH[UHV])
+                .input(pipeQuadrupleFluid, Duranium)
+                .circuitMeta(4)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(QUADRUPLE_IMPORT_HATCH[5]) // UHV
+                .EUt(VA[UV])
+                .duration(300)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(FLUID_EXPORT_HATCH[UHV])
+                .input(pipeQuadrupleFluid, Duranium)
+                .circuitMeta(4)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(QUADRUPLE_EXPORT_HATCH[5]) // UHV
+                .EUt(VA[UV])
+                .duration(300)
+                .buildAndRegister();
+
+        //  UHV 9x
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(9), FLUID_IMPORT_HATCH[UHV].getStackForm(), OreDictUnifier.get(pipeNonupleFluid, Neutronium)},
+                new FluidStack[]{Polybenzimidazole.getFluid(1296)});
+
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
+                new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(9), FLUID_EXPORT_HATCH[UHV].getStackForm(), OreDictUnifier.get(pipeNonupleFluid, Neutronium)},
+                new FluidStack[]{Polybenzimidazole.getFluid(1296)});
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(FLUID_IMPORT_HATCH[UHV])
+                .input(pipeNonupleFluid, Duranium)
+                .circuitMeta(9)
+                .fluidInputs(Polyetheretherketone.getFluid(1296))
+                .output(NONUPLE_IMPORT_HATCH[5]) // UHV
+                .EUt(VA[UV])
+                .duration(600)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(FLUID_EXPORT_HATCH[UHV])
+                .input(pipeNonupleFluid, Duranium)
+                .circuitMeta(9)
+                .fluidInputs(Polyetheretherketone.getFluid(1296))
+                .output(NONUPLE_EXPORT_HATCH[5]) // UHV
+                .EUt(VA[UV])
+                .duration(600)
+                .buildAndRegister();
     }
 
     private static void EnergyHathces() {

@@ -70,15 +70,15 @@ public class RubberChain {
                 .duration(140)
                 .buildAndRegister();
 
-        //  C6H6 + F -> C6H5F + HCl
+        //  C6H6 + 2F -> C6H5F + HF
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(Benzene.getFluid(1000))
-                .fluidInputs(Fluorine.getFluid(1000))
+                .fluidInputs(Fluorine.getFluid(2000))
                 .circuitMeta(1)
                 .fluidOutputs(Fluorobenzene.getFluid(1000))
-                .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .EUt(VA[LV])
-                .duration(280)
+                .fluidOutputs(HydrofluoricAcid.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(60)
                 .buildAndRegister();
 
         //  2C6H5F + 6HF + O -> C5H4F8O + 2C3H6

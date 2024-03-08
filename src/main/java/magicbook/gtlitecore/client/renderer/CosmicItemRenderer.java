@@ -24,7 +24,6 @@ import org.lwjgl.opengl.GL11;
 import java.util.HashMap;
 import java.util.List;
 
-@Deprecated
 public class CosmicItemRenderer extends WrappedItemRenderer {
 
     private static final HashMap<TextureAtlasSprite, IBakedModel> spriteQuadCache = new HashMap<>();

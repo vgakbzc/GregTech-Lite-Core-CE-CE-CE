@@ -12,7 +12,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.function.Supplier;
 
-@Deprecated
 public class HaloRenderItemBehavior implements IHaloRenderBehavior {
 
     private final int haloSize;

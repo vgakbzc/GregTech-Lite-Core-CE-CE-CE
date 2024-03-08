@@ -20,7 +20,6 @@ import net.minecraftforge.common.model.IModelState;
 import java.util.LinkedList;
 import java.util.List;
 
-@Deprecated
 public abstract class WrappedItemRenderer extends PerspectiveAwareItemRenderer {
 
     protected IBakedModel wrapped;

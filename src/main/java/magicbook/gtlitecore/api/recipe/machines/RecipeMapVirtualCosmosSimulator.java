@@ -25,7 +25,7 @@ public class RecipeMapVirtualCosmosSimulator<R extends RecipeBuilder<R>> extends
     @Override
     public ModularUI.Builder createJeiUITemplate(IItemHandlerModifiable importItems, IItemHandlerModifiable exportItems, FluidTankList importFluids, FluidTankList exportFluids, int yOffset) {
         ModularUI.Builder builder = ModularUI.builder(GuiTextures.BACKGROUND, 176, 196 * 2 + 10)
-                .widget(new ProgressWidget(200, 88 - 10, 18, 20, 15, GuiTextures.PROGRESS_BAR_HAMMER, ProgressWidget.MoveType.VERTICAL_DOWNWARDS));
+                .widget(new ProgressWidget(200, 88 - 9, 18, 18, 15, GuiTextures.PROGRESS_BAR_HAMMER, ProgressWidget.MoveType.VERTICAL_DOWNWARDS));
         this.addInventorySlotGroup(builder, importItems, importFluids, false, yOffset);
         this.addInventorySlotGroup(builder, exportItems, exportFluids, true, yOffset);
         return builder;
