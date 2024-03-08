@@ -5,7 +5,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-@Deprecated
 @SideOnly(Side.CLIENT)
 public class RenderBufferHelper {
 
