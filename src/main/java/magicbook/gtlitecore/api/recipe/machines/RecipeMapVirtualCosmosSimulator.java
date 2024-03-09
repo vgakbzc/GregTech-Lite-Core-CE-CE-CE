@@ -46,6 +46,7 @@ public class RecipeMapVirtualCosmosSimulator<R extends RecipeBuilder<R>> extends
                     addSlot(builder, startOutputsX + 18 * j, startOutputsY + 18 * i, slotIndex, itemHandler, fluidHandler, false, true);
                 }
             }
+            //  TODO clean it!
             //  fluid output slots
             int StartOutputsY = 18 + 15 + 18 * 8;
             addSlot(builder, startOutputsX, StartOutputsY + 18, 0, itemHandler, fluidHandler, true, false);
@@ -71,4 +72,6 @@ public class RecipeMapVirtualCosmosSimulator<R extends RecipeBuilder<R>> extends
             addSlot(builder, 88 - 10, 0, 0, itemHandler, fluidHandler, false, false);
         }
     }
+
+    //  FIXME, this recipe map's JEI info is too compact, so...maybe needs to rewrite addSlot() in RecipeMap class (or rewrite drawInBackground() in SlotWidget class?).
 }
