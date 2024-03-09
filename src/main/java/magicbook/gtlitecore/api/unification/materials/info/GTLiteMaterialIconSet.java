@@ -10,7 +10,7 @@ public class GTLiteMaterialIconSet {
     public static final MaterialIconSet CUSTOM_DEGENERATE_RHENIUM = new MaterialIconSet("degenerate_rhenium", null, true);
     public static final MaterialIconSet CUSTOM_LEGENDARIUM = new MaterialIconSet("legendarium", null, true);
     public static final MaterialIconSet CUSTOM_MHCSM = new MaterialIconSet("mhcsm", null, true);
-    public static final MaterialIconSet CUSTOM_ETERNITY = new MaterialIconSet("eternity", null, true);
+    public static final MaterialIconSetWithRenderer CUSTOM_ETERNITY = new MaterialIconSetWithRenderer("eternity", null, true, new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true));
     public static final MaterialIconSet CUSTOM_RHUGNOR = new MaterialIconSet("rhugnor", null, true);
     public static final MaterialIconSet CUSTOM_HYPOGEN = new MaterialIconSet("hypogen", null, true);
     public static final MaterialIconSetWithRenderer CUSTOM_COSMIC_NEUTRONIUM = new MaterialIconSetWithRenderer("cosmic_neutronium", null, true, new HaloRenderItemBehavior(10, 0x33FFFFFF, () -> GTLiteTextures.HALO_NOISE, true));
