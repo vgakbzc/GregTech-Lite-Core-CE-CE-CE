@@ -343,6 +343,8 @@ public class MiscRecipes {
         NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
                 .input(gem, CertusQuartz)
                 .notConsumable(lens, Celestite)
+                .notConsumable(lens, PrHoYLF)
+                .notConsumable(lens, LeadZirconateTitanate)
                 .fluidInputs(StarlightLiquid.getFluid(L))
                 .output(gem, CelestialCrystal)
                 .EUt(VA[UEV])

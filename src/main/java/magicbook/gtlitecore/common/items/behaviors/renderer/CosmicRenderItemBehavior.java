@@ -9,13 +9,16 @@ import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
+@SuppressWarnings("rawtypes")
 public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
 
-    private final Supplier<TextureAtlasSprite> supplier;
+    private final Supplier supplier;
     private final int maskOpacity;
 
     public CosmicRenderItemBehavior(Supplier<TextureAtlasSprite> supplier,
@@ -24,10 +27,11 @@ public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
         this.maskOpacity = maskOpacity;
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public TextureAtlasSprite getMaskTexture(ItemStack stack,
                                              @Nullable EntityLivingBase player) {
-        return supplier.get();
+        return (TextureAtlasSprite) supplier.get();
     }
 
     @Override
