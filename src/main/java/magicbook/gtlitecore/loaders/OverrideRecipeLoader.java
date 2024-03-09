@@ -605,39 +605,6 @@ public class OverrideRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  UHASoC
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(NEUTRONIUM_WAFER)
-                .notConsumable(lens, MagnetoResonatic)
-                .output(UHASOC_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(UHASOC_WAFER)
-                .fluidInputs(Water.getFluid(1000))
-                .output(UHASOC_CHIP, 6)
-                .EUt(VA[LuV])
-                .duration(1800)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(UHASOC_WAFER)
-                .fluidInputs(DistilledWater.getFluid(750))
-                .output(UHASOC_CHIP, 6)
-                .EUt(VA[LuV])
-                .duration(1350)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(UHASOC_WAFER)
-                .fluidInputs(Lubricant.getFluid(250))
-                .output(UHASOC_CHIP, 6)
-                .EUt(VA[LuV])
-                .duration(900)
-                .buildAndRegister();
     }
 
     private static void RubberOverrides() {
