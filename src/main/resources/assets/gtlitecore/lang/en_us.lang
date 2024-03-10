@@ -730,6 +730,12 @@ gtlitecore.machine.item_hatch.export.uiv.name=§2UIV§r Output Bus
 gtlitecore.machine.item_hatch.export.uxv.name=§eUXV§r Output Bus
 gtlitecore.machine.item_hatch.export.opv.name=§9OpV§r Output Bus
 
+#  Integrations
+
+##  The One Probe
+gtlitecore.top.item_outputs=Item Crafting:
+gtlitecore.top.fluid_outputs=Fluid Crafting:
+
 #  Machines
 gtlitecore.machine.chemical_dryer.lv.name=Basic Chemical Dryer
 gtlitecore.machine.chemical_dryer.lv.tooltip=Cannot be used to dry hair

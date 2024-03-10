@@ -12,7 +12,7 @@ dependencies {
     //  AE2 unofficial Extended Life 0.56.2
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5047265")
     //  The One Probe
-    runtimeOnly 'curse.maven:top-245211:2667280'
+    implementation rfg.deobf("curse.maven:top-245211:2667280");
     //  Groovy Script 0.7.0
     implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
     //  CraftTweaker2 API
