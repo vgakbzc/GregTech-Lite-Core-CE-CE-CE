@@ -222,7 +222,7 @@ public class CommonProxy {
 
         event.setCanceled(true);
 
-        if (message.startsWith("=help")) { //  if player send =help, then return guide of this function.
+        if (message.startsWith("=help")) { //  If player send =help, then return guide of this function.
             for (int i = 1; i <= 12; i++) {
                 event.getPlayer().sendMessage(new TextComponentTranslation(String.format("gtlitecore.chat_calculator.help.%s", i), i == 3 ? new TextComponentString("%").setStyle(new Style().setColor(TextFormatting.AQUA)) : new TextComponentString[]{}));
             }
