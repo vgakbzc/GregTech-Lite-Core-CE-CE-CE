@@ -37,12 +37,16 @@ public class GTLiteCore {
     @Mod.EventHandler
     public void onConstruction(FMLConstructionEvent event) {
         ConfigHolder.machines.highTierContent = true;
+        ConfigHolder.machines.enableHighTierSolars = true;
     }
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
         GTLiteLog.logger.info("Enabled highTierContent in GregTech...");
         ConfigHolder.machines.highTierContent = true;
+
+        GTLiteLog.logger.info("Enabled highTierSolars in GregTech...");
+        ConfigHolder.machines.enableHighTierSolars = true;
 
         GTLiteMetaItems.init();
         GTLiteMetaBlocks.init();
