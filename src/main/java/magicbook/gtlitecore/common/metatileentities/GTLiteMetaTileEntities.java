@@ -176,13 +176,20 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
 
     /**
-     * @param machines Pre-init Machine name, e.g. public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
-     * @param startId Machine id range;
-     * @param name Machine name;
-     * @param recipeMap Machine recipemap;
-     * @param progressIndicator Progress bar;
-     * @param texture Textures;
-     * @param isBricked Is Bricked textures or not.
+     * Steam Machine init method.
+     *
+     * <p>
+     *     Please see {@link SimpleSteamMetaTileEntity}, this method is packaged of this class,
+     *     and used for init some basic steam machines (e.g. Steam Vacuum Chamber).
+     * </p>
+     *
+     * @param machines           Machine, you should pre-init it.
+     * @param startId            Start id, because this method generate 2 machine in 1 work (steam + high pressure steam), so it take up 2 id.
+     * @param name               Unlocalized name, use bronze and steel as a suffix to distinguish steam and high pressure steam.
+     * @param recipeMap          Recipe map, plase use recipe map in {@link RecipeMaps} or same class in other addition mods.
+     * @param progressIndicator  Progress Bar Indicator, this parameter is not same as progress bar in {@link Textures}, please see {@link SteamProgressIndicator}.
+     * @param texture            Overlay textures, please use textures in {@link Textures} or same class in other addition mods.
+     * @param isBricked          Extra texture of machine, if is bricked, then add a brick texture on side and front.
      */
     private static void registerSimpleSteamMetaTileEntity(SimpleSteamMetaTileEntity[] machines,
                                                           int startId,
@@ -195,20 +202,36 @@ public class GTLiteMetaTileEntities {
         machines[1] = registerMetaTileEntity(startId + 1, new SimpleSteamMetaTileEntity(gtliteId(String.format("%s.steel", name)), recipeMap, progressIndicator, texture, isBricked, true));
     }
 
-    //  Multiblock Part range: 14000-14999
+    /**
+     * Multiblock part init method.
+     *
+     * <p>
+     *     Multiblock Part range: 14000-14999.
+     *     Used to init multiblock part (e.g. {@link gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiblockPart}).
+     * </p>
+     */
     private static <F extends MetaTileEntity> F registerPartMetaTileEntity(int id, F mte) {
-        if (id > 1000) return null;
+        if (id > 1000)
+            return null;
         return registerMetaTileEntity(id + 13999, mte);
     }
 
-    //  Multiblock Machine range: 16001-20000
+    /**
+     * Multiblock machine init method.
+     *
+     * <p>
+     *     Multiblock Machine range: 16001-20000.
+     *     Used to init multiblock machine (e.g. {@link gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController}).
+     * </p>
+     */
     private static <T extends MultiblockControllerBase> T registerMultiMetaTileEntity(int id, T mte) {
         return registerMetaTileEntity(id + 16000, mte);
     }
 
     public static void init() {
 
-        //  Multiblock Part range: 14000-14999
+        //  Multiblock Parts
+        //  Range: 14000-14999
         MULTIPART_GRIND_BALL_HATCH = registerPartMetaTileEntity(1, new MetaTileEntityGrindBallHatch(gtliteId("grind_ball_hatch")));
         MULTIPART_REINFORCED_ROTOR_HOLDER[0] = registerPartMetaTileEntity(2, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.luv"), LuV));
         MULTIPART_REINFORCED_ROTOR_HOLDER[1] = registerPartMetaTileEntity(3, new MetaTileEntityReinforcedRotorHolder(gtliteId("reinforced_rotor_holder.zpm"), ZPM));
@@ -266,7 +289,8 @@ public class GTLiteMetaTileEntities {
         EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(55, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uxv"), 12, true));
         EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(56, new MetaTileEntityItemBus(gtliteId("item_hatch.export.opv"), 13, true));
 
-        //  Single Machine range: 15000-16000
+        //  Single Machines
+        //  Range: 15000-16000
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
         registerSimpleSteamMetaTileEntity(STEAM_VACUUM_CHAMBER, 15013, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, SteamProgressIndicators.COMPRESS, Textures.GAS_COLLECTOR_OVERLAY, false);
         registerSimpleMetaTileEntity(VACUUM_CHAMBER, 15015, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, Textures.GAS_COLLECTOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
@@ -293,7 +317,8 @@ public class GTLiteMetaTileEntities {
         LIGHTNING_ROD[1] = registerMetaTileEntity(15068, new MetaTileEntityLightningRod(gtliteId("lightning_rod.ev"), EV));
         LIGHTNING_ROD[2] = registerMetaTileEntity(15069, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
 
-        //  Multiblock Machine range: 16001-20000
+        //  Multiblock Machines
+        //  Range: 16001-20000
         INDUSTRIAL_DRILLING_RIG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingRig(gtliteId("industrial_drilling_rig")));
         CATALYTIC_REFORMER = registerMultiMetaTileEntity(2, new MetaTileEntityCatalyticReformer(gtliteId("catalytic_reformer")));
         SONICATOR = registerMultiMetaTileEntity(3, new MetaTileEntitySonicator(gtliteId("sonicator")));
