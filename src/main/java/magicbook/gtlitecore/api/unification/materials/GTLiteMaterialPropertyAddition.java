@@ -301,6 +301,7 @@ public class GTLiteMaterialPropertyAddition {
         Tungsten.addFlags(GENERATE_FINE_WIRE);
         RTMAlloy.addFlags(GENERATE_FINE_WIRE);
         Trinium.addFlags(GENERATE_FINE_WIRE);
+        UraniumTriplatinum.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

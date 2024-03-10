@@ -1478,7 +1478,7 @@ public class OverrideRecipeLoader {
                 .input(wireFine, HSSG, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .fluidInputs(BorosilicateGlass.getFluid(3000))
-                .output(COVER_SOLAR_PANEL_IV)
+                .output(COVER_SOLAR_PANEL_IV, 2)
                 .scannerResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_EV.getStackForm())
                         .EUt(VA[ZPM])
@@ -1497,7 +1497,7 @@ public class OverrideRecipeLoader {
                 .input(wireFine, Naquadah, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .fluidInputs(BorosilicateGlass.getFluid(3000))
-                .output(COVER_SOLAR_PANEL_LUV)
+                .output(COVER_SOLAR_PANEL_LUV, 2)
                 .scannerResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_IV.getStackForm())
                         .EUt(VA[UV])
@@ -1517,7 +1517,7 @@ public class OverrideRecipeLoader {
                 .fluidInputs(SolderingAlloy.getFluid(L * 2))
                 .fluidInputs(BorosilicateGlass.getFluid(6000))
                 .fluidInputs(Polyetheretherketone.getFluid(L))
-                .output(COVER_SOLAR_PANEL_ZPM)
+                .output(COVER_SOLAR_PANEL_ZPM, 2)
                 .stationResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_LUV.getStackForm())
                         .EUt(VA[UHV])
@@ -1537,7 +1537,7 @@ public class OverrideRecipeLoader {
                 .fluidInputs(SolderingAlloy.getFluid(L * 2))
                 .fluidInputs(BorosilicateGlass.getFluid(6000))
                 .fluidInputs(Polyetheretherketone.getFluid(L))
-                .output(COVER_SOLAR_PANEL_UV)
+                .output(COVER_SOLAR_PANEL_UV, 2)
                 .stationResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_ZPM.getStackForm())
                         .EUt(VA[UEV])
