@@ -9,7 +9,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.cclop.LightMapOperation;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.ConfigHolder;
-import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.GTLiteValues;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
