@@ -10,6 +10,7 @@ import gregtech.client.renderer.cclop.LightMapOperation;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.ConfigHolder;
 import magicbook.gtlitecore.GTLiteCore;
+import magicbook.gtlitecore.api.GTLiteValues;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.BlockRenderLayer;
@@ -52,7 +53,7 @@ public class GTLiteOverlayRenderer implements ICubeRenderer {
 
     @SideOnly(Side.CLIENT)
     public void registerIcons(TextureMap textureMap) {
-        String modID = GTLiteCore.MODID;
+        String modID = GTLiteValues.MODID;
         String path = this.path;
         String[] split = this.path.split(":");
         if (split.length == 2) {

@@ -37,13 +37,15 @@ public class HaloItemRenderer extends WrappedItemRenderer {
         super(state, getter);
     }
 
+    /**
+     * @param stack          Item stack, should check if it in gregtech's {@link MetaItem} class, otherwise cause crash when it in AE2 Pattern (please see: {@link appeng.items.misc.ItemEncodedPattern}).
+     * @param transformType  Transform type, used to check if it in GUI.
+     */
     @Override
     public void renderItem(ItemStack stack, ItemCameraTransforms.TransformType transformType) {
-        //  If item is in MetaItem (gregtech), then add a new renderer on it.
         if (stack.getItem() instanceof MetaItem) {
             Tessellator tess = Tessellator.getInstance();
             BufferBuilder buffer = tess.getBuffer();
-            //  If item in gui, then add renderer.
             if (transformType == ItemCameraTransforms.TransformType.GUI) {
                 MetaItem<?>.MetaValueItem valueItem = ((MetaItem<?>) stack.getItem()).getItem(stack);
                 IHaloRenderBehavior hri = null;
