@@ -720,6 +720,12 @@ gtlitecore.machine.fluid_hatch.export.uiv.name=输出仓（§2UIV§r）
 gtlitecore.machine.fluid_hatch.export.uxv.name=输出仓（§eUXV§r）
 gtlitecore.machine.fluid_hatch.export.opv.name=输出仓（§9OpV§r）
 
+#  Integrations
+
+##  The One Probe
+gtlitecore.top.item_outputs=物品制作中
+gtlitecore.top.fluid_outputs=流体制作中
+
 #  Item Hatches
 gtlitecore.machine.item_hatch.import.uev.name=输入总线（§aUEV§r）
 gtlitecore.machine.item_hatch.import.uiv.name=输入总线（§2UIV§r）
