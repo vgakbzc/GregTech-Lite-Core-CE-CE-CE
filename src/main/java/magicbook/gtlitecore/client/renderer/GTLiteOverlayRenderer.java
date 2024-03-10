@@ -23,6 +23,16 @@ import javax.annotation.Nullable;
 
 import static magicbook.gtlitecore.client.utils.BloomEffectUtils.getRealBloomLayer;
 
+/**
+ * Overlay Renderer for Blocks.
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Another same class is {@link gregtech.client.renderer.texture.cube.SimpleOverlayRenderer},
+ *     this class is an easier version of overlay renderer in GregTech and used in all blocks of GTLite core.
+ * </p>
+ */
 public class GTLiteOverlayRenderer implements ICubeRenderer {
 
     private final String path;
