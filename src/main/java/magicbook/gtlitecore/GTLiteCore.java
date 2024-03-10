@@ -7,9 +7,11 @@ import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
+import magicbook.gtlitecore.integration.GTLiteIntegration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid        = GTLiteCore.MODID,
@@ -48,5 +50,11 @@ public class GTLiteCore {
         GTLiteMetaTileEntities.init();
 
         proxy.preLoad();
+    }
+
+    @Mod.EventHandler
+    public void onInit(FMLInitializationEvent event) {
+        GTLiteLog.logger.info("Registering Integration Modules...");
+        GTLiteIntegration.init();
     }
 }

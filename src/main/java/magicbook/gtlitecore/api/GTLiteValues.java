@@ -24,6 +24,8 @@ public class GTLiteValues {
 
     public static final String MODID_EIO = "enderio";
 
+    public static final String MODID_TOP = "theoneprobe";
+
     public static final Material[] tierList = {
             MarkerMaterials.Tier.ULV,
             MarkerMaterials.Tier.LV,
