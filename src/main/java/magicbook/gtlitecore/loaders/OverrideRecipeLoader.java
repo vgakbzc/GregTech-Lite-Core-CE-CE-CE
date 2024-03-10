@@ -1227,7 +1227,7 @@ public class OverrideRecipeLoader {
         ModHandler.removeRecipeByName("gregtech:solar_panel_lv");
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, CobaltBrass)
-                .input(COVER_SOLAR_PANEL_ULV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 4)
                 .input(CARBON_FIBER_PLATE, 8)
                 .input(circuit, MarkerMaterials.Tier.MV, 2)
@@ -1242,7 +1242,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, CobaltBrass)
-                .input(COVER_SOLAR_PANEL_ULV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 4)
                 .input(CARBON_FIBER_PLATE, 8)
                 .input(circuit, MarkerMaterials.Tier.MV, 2)
@@ -1257,7 +1257,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, CobaltBrass)
-                .input(COVER_SOLAR_PANEL_ULV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 4)
                 .input(CARBON_FIBER_PLATE, 8)
                 .input(circuit, MarkerMaterials.Tier.MV, 2)
@@ -1272,7 +1272,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, CobaltBrass)
-                .input(COVER_SOLAR_PANEL_ULV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 4)
                 .input(CARBON_FIBER_PLATE, 8)
                 .input(circuit, MarkerMaterials.Tier.MV, 2)
@@ -1288,7 +1288,7 @@ public class OverrideRecipeLoader {
         //  MV Solar Panel
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, VanadiumSteel)
-                .input(COVER_SOLAR_PANEL_LV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 8)
                 .input(CARBON_FIBER_PLATE, 16)
                 .input(circuit, MarkerMaterials.Tier.HV, 2)
@@ -1303,7 +1303,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, VanadiumSteel)
-                .input(COVER_SOLAR_PANEL_LV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 8)
                 .input(CARBON_FIBER_PLATE, 16)
                 .input(circuit, MarkerMaterials.Tier.HV, 2)
@@ -1318,7 +1318,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, VanadiumSteel)
-                .input(COVER_SOLAR_PANEL_LV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 8)
                 .input(CARBON_FIBER_PLATE, 16)
                 .input(circuit, MarkerMaterials.Tier.HV, 2)
@@ -1333,7 +1333,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, VanadiumSteel)
-                .input(COVER_SOLAR_PANEL_LV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 8)
                 .input(CARBON_FIBER_PLATE, 16)
                 .input(circuit, MarkerMaterials.Tier.HV, 2)
@@ -1349,7 +1349,7 @@ public class OverrideRecipeLoader {
         //  HV Solar Panel
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, BlueSteel)
-                .input(COVER_SOLAR_PANEL_MV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 16)
                 .input(CARBON_FIBER_PLATE, 32)
                 .input(circuit, MarkerMaterials.Tier.EV, 2)
@@ -1364,7 +1364,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, BlueSteel)
-                .input(COVER_SOLAR_PANEL_MV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 16)
                 .input(CARBON_FIBER_PLATE, 32)
                 .input(circuit, MarkerMaterials.Tier.EV, 2)
@@ -1379,7 +1379,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, BlueSteel)
-                .input(COVER_SOLAR_PANEL_MV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 16)
                 .input(CARBON_FIBER_PLATE, 32)
                 .input(circuit, MarkerMaterials.Tier.EV, 2)
@@ -1394,7 +1394,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, BlueSteel)
-                .input(COVER_SOLAR_PANEL_MV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 16)
                 .input(CARBON_FIBER_PLATE, 32)
                 .input(circuit, MarkerMaterials.Tier.EV, 2)
@@ -1410,7 +1410,7 @@ public class OverrideRecipeLoader {
         //  EV Solar Panel
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenCarbide)
-                .input(COVER_SOLAR_PANEL_HV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 32)
                 .input(CARBON_FIBER_PLATE, 64)
                 .input(circuit, MarkerMaterials.Tier.IV, 2)
@@ -1425,7 +1425,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenCarbide)
-                .input(COVER_SOLAR_PANEL_HV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 32)
                 .input(CARBON_FIBER_PLATE, 64)
                 .input(circuit, MarkerMaterials.Tier.IV, 2)
@@ -1440,7 +1440,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenCarbide)
-                .input(COVER_SOLAR_PANEL_HV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 32)
                 .input(CARBON_FIBER_PLATE, 64)
                 .input(circuit, MarkerMaterials.Tier.IV, 2)
@@ -1455,7 +1455,7 @@ public class OverrideRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenCarbide)
-                .input(COVER_SOLAR_PANEL_HV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, GalliumArsenide, 32)
                 .input(CARBON_FIBER_PLATE, 64)
                 .input(circuit, MarkerMaterials.Tier.IV, 2)
@@ -1471,7 +1471,7 @@ public class OverrideRecipeLoader {
         //  IV Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, HSSE)
-                .input(COVER_SOLAR_PANEL_EV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, IndiumGalliumPhosphide, 4)
                 .input(VOLTAGE_COIL_IV, 2)
                 .input(foil, NiobiumTitanium, 8)
@@ -1490,7 +1490,7 @@ public class OverrideRecipeLoader {
         //  LuV Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, NaquadahAlloy)
-                .input(COVER_SOLAR_PANEL_IV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, IndiumGalliumPhosphide, 8)
                 .input(VOLTAGE_COIL_LuV, 2)
                 .input(foil, VanadiumGallium, 8)
@@ -1509,7 +1509,7 @@ public class OverrideRecipeLoader {
         //  ZPM Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Duranium)
-                .input(COVER_SOLAR_PANEL_LUV, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, IndiumGalliumPhosphide, 16)
                 .input(VOLTAGE_COIL_ZPM, 2)
                 .input(foil, YttriumBariumCuprate, 8)
@@ -1521,7 +1521,7 @@ public class OverrideRecipeLoader {
                 .stationResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_LUV.getStackForm())
                         .EUt(VA[UHV])
-                        .CWUt(64))
+                        .CWUt(32))
                 .EUt(VA[UHV])
                 .duration(200)
                 .buildAndRegister();
@@ -1529,7 +1529,7 @@ public class OverrideRecipeLoader {
         //  UV Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Orichalcum)
-                .input(COVER_SOLAR_PANEL_ZPM, 2)
+                .input(COVER_SOLAR_PANEL, 2)
                 .input(plate, IndiumGalliumPhosphide, 32)
                 .input(VOLTAGE_COIL_UV, 2)
                 .input(foil, Europium, 8)
@@ -1541,7 +1541,7 @@ public class OverrideRecipeLoader {
                 .stationResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_ZPM.getStackForm())
                         .EUt(VA[UEV])
-                        .CWUt(128))
+                        .CWUt(64))
                 .EUt(VA[UEV])
                 .duration(200)
                 .buildAndRegister();
