@@ -9,6 +9,7 @@ import gregtech.common.covers.CoverPump;
 import gregtech.common.covers.CoverRoboticArm;
 import gregtech.common.covers.CoverSolarPanel;
 import magicbook.gtlitecore.GTLiteCore;
+import magicbook.gtlitecore.api.GTLiteValues;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.util.ResourceLocation;
 
@@ -16,19 +17,19 @@ public class GTLiteCoverBehavior {
 
     public static void init() {
 
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID, "pump.ulv"), GTLiteMetaItems.ELECTRIC_PUMP_ULV,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID, "pump.ulv"), GTLiteMetaItems.ELECTRIC_PUMP_ULV,
                 (def, tile, side) -> new CoverPump(def, tile, side, GTValues.ULV, 320));
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID, "conveyor.ulv"), GTLiteMetaItems.CONVEYOR_MODULE_ULV,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID, "conveyor.ulv"), GTLiteMetaItems.CONVEYOR_MODULE_ULV,
                 (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.ULV, 4));
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID, "robot_arm.ulv"), GTLiteMetaItems.ROBOT_ARM_ULV,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID, "robot_arm.ulv"), GTLiteMetaItems.ROBOT_ARM_ULV,
                 (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.ULV, 4));
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID, "pump.max"), GTLiteMetaItems.ELECTRIC_PUMP_MAX,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID, "pump.max"), GTLiteMetaItems.ELECTRIC_PUMP_MAX,
                 (def, tile, side) -> new CoverPump(def, tile, side, GTValues.MAX, 1048576));
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID, "conveyor.max"), GTLiteMetaItems.CONVEYOR_MODULE_MAX,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID, "conveyor.max"), GTLiteMetaItems.CONVEYOR_MODULE_MAX,
                 (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.MAX, 1024));
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID, "robot_arm.max"), GTLiteMetaItems.ROBOT_ARM_MAX,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID, "robot_arm.max"), GTLiteMetaItems.ROBOT_ARM_MAX,
                 (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.MAX, 1024));
-        registerBehavior(new ResourceLocation(GTLiteCore.MODID,  "solar_panel.max"), GTLiteMetaItems.COVER_SOLAR_PANEL_MAX,
+        registerBehavior(new ResourceLocation(GTLiteValues.MODID,  "solar_panel.max"), GTLiteMetaItems.COVER_SOLAR_PANEL_MAX,
                 (def, tile, side) -> new CoverSolarPanel(def, tile, side, GTValues.V[GTValues.MAX]));
     }
 

@@ -14,6 +14,15 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+/**
+ * Grindball Item Behavior
+ *
+ * @author Gate Guardian
+ *
+ * <p>
+ *     Item behavior for grindball (used in {@link magicbook.gtlitecore.common.metatileentities.multi.part.MetaTileEntityGrindBallHatch} of {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIsaMill}).
+ * </p>
+ */
 public class GrindBallBehavior extends AbstractMaterialPartBehavior implements IItemMaxStackSizeProvider {
 
     @Override
@@ -24,7 +33,6 @@ public class GrindBallBehavior extends AbstractMaterialPartBehavior implements I
             return 100;
     }
 
-    @SuppressWarnings("unused")
     public int getBallDurabilityPercent(ItemStack itemStack) {
         return 100 - 100 * getPartDamage(itemStack) / getPartMaxDurability(itemStack);
     }
@@ -59,13 +67,17 @@ public class GrindBallBehavior extends AbstractMaterialPartBehavior implements I
 
     @Nullable
     public static GrindBallBehavior getInstanceFor(@Nonnull ItemStack itemStack) {
-        if (!(itemStack.getItem() instanceof MetaItem)) return null;
+        if (!(itemStack.getItem() instanceof MetaItem))
+            return null;
 
         MetaItem<?>.MetaValueItem valueItem = ((MetaItem<?>) itemStack.getItem()).getItem(itemStack);
-        if (valueItem == null) return null;
+        if (valueItem == null)
+            return null;
 
         IItemDurabilityManager durabilityManager = valueItem.getDurabilityManager();
-        if (!(durabilityManager instanceof GrindBallBehavior)) return null;
+
+        if (!(durabilityManager instanceof GrindBallBehavior))
+            return null;
 
         return (GrindBallBehavior) durabilityManager;
     }
