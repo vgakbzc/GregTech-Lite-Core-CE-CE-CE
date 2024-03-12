@@ -26,6 +26,8 @@ import java.util.List;
 import static gregtech.api.recipes.logic.OverclockingLogic.standardOverclockingLogic;
 
 /**
+ * No Energy Multiblock Recipe Logic.
+ *
  * @author Gate Guardian
  *
  * <p>
