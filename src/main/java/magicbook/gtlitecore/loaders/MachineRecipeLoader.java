@@ -2696,7 +2696,6 @@ public class MachineRecipeLoader {
                 .input(frameGt, Infinity)
                 .input(plateDense, Infinity, 6)
                 .input(ROBOT_ARM_UIV, 8)
-                .input(ROBOT_ARM_UIV, 8)
                 .input(ELECTRIC_PISTON_UIV, 10)
                 .input(ELECTRIC_MOTOR_UIV, 16)
                 .input(gear, Infinity, 4)
