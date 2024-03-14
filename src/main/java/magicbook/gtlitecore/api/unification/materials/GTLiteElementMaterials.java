@@ -344,8 +344,7 @@ public class GTLiteElementMaterials {
                 .iconSet(CUSTOM_ETERNITY)
                 .element(GTLiteElements.Eternity)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
-                .build()
-                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+                .build();
 
         //  10025 Tiberium
         Tiberium = new Material.Builder(getId(), gregtechId("tiberium"))
@@ -411,6 +410,19 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[OpV], 27)
                         .vacuumStats(VA[OpV], 50))
                 .fluidPipeProperties(160000, 40000, true, true, true, true)
+                .build();
+
+        //  10030 Omnium
+        Omnium = new Material.Builder(getId(), gregtechId("omnium"))
+                .ingot()
+                .fluid()
+                .iconSet(CUSTOM_OMNIUM)
+                .element(GTLiteElements.Omnium)
+                .blast(b -> b
+                        .temp(18400, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[MAX], 999)
+                        .vacuumStats(VA[MAX], 999))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
                 .build();
     }
 
