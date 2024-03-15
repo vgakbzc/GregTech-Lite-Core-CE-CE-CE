@@ -720,6 +720,25 @@ gtlitecore.machine.fluid_hatch.export.uiv.name=§2UIV§r Output Hatch
 gtlitecore.machine.fluid_hatch.export.uxv.name=§eUXV§r Output Hatch
 gtlitecore.machine.fluid_hatch.export.opv.name=§9OpV§r Output Hatch
 
+
+gtlitecore.machine.fluid_hatch.import_4x.uev.name=§aUEV§r Quadruple Input Hatch
+gtlitecore.machine.fluid_hatch.import_4x.uiv.name=§2UIV§r Quadruple Input Hatch
+gtlitecore.machine.fluid_hatch.import_4x.uxv.name=§eUXV§r Quadruple Input Hatch
+gtlitecore.machine.fluid_hatch.import_4x.opv.name=§9OpV§r Quadruple Input Hatch
+gtlitecore.machine.fluid_hatch.export_4x.uev.name=§aUEV§r Quadruple Output Hatch
+gtlitecore.machine.fluid_hatch.export_4x.uiv.name=§2UIV§r Quadruple Output Hatch
+gtlitecore.machine.fluid_hatch.export_4x.uxv.name=§eUXV§r Quadruple Output Hatch
+gtlitecore.machine.fluid_hatch.export_4x.opv.name=§9OpV§r Quadruple Output Hatch
+
+gtlitecore.machine.fluid_hatch.import_9x.uev.name=§aUEV§r Nonuple Input Hatch
+gtlitecore.machine.fluid_hatch.import_9x.uiv.name=§2UIV§r Nonuple Input Hatch
+gtlitecore.machine.fluid_hatch.import_9x.uxv.name=§eUXV§r Nonuple Input Hatch
+gtlitecore.machine.fluid_hatch.import_9x.opv.name=§9OpV§r Nonuple Input Hatch
+gtlitecore.machine.fluid_hatch.export_9x.uev.name=§aUEV§r Nonuple Output Hatch
+gtlitecore.machine.fluid_hatch.export_9x.uiv.name=§2UIV§r Nonuple Output Hatch
+gtlitecore.machine.fluid_hatch.export_9x.uxv.name=§eUXV§r Nonuple Output Hatch
+gtlitecore.machine.fluid_hatch.export_9x.opv.name=§9OpV§r Nonuple Output Hatch
+
 #  Item Hatches
 gtlitecore.machine.item_hatch.import.uev.name=§aUEV§r Input Bus
 gtlitecore.machine.item_hatch.import.uiv.name=§2UIV§r Input Bus

@@ -720,6 +720,24 @@ gtlitecore.machine.fluid_hatch.export.uiv.name=输出仓（§2UIV§r）
 gtlitecore.machine.fluid_hatch.export.uxv.name=输出仓（§eUXV§r）
 gtlitecore.machine.fluid_hatch.export.opv.name=输出仓（§9OpV§r）
 
+gtlitecore.machine.fluid_hatch.import_4x.uev.name=四重输入仓（§aUEV§r）
+gtlitecore.machine.fluid_hatch.import_4x.uiv.name=四重输入仓（§2UIV§r）
+gtlitecore.machine.fluid_hatch.import_4x.uxv.name=四重输入仓（§eUXV§r）
+gtlitecore.machine.fluid_hatch.import_4x.opv.name=四重输入仓（§9OpV§r）
+gtlitecore.machine.fluid_hatch.export_4x.uev.name=四重输出仓（§aUEV§r）
+gtlitecore.machine.fluid_hatch.export_4x.uiv.name=四重输出仓（§2UIV§r）
+gtlitecore.machine.fluid_hatch.export_4x.uxv.name=四重输出仓（§eUXV§r）
+gtlitecore.machine.fluid_hatch.export_4x.opv.name=四重输出仓（§9OpV§r）
+
+gtlitecore.machine.fluid_hatch.import_9x.uev.name=九重输入仓（§aUEV§r）
+gtlitecore.machine.fluid_hatch.import_9x.uiv.name=九重输入仓（§2UIV§r）
+gtlitecore.machine.fluid_hatch.import_9x.uxv.name=九重输入仓（§eUXV§r）
+gtlitecore.machine.fluid_hatch.import_9x.opv.name=九重输入仓（§9OpV§r）
+gtlitecore.machine.fluid_hatch.export_9x.uev.name=九重输出仓（§aUEV§r）
+gtlitecore.machine.fluid_hatch.export_9x.uiv.name=九重输出仓（§2UIV§r）
+gtlitecore.machine.fluid_hatch.export_9x.uxv.name=九重输出仓（§eUXV§r）
+gtlitecore.machine.fluid_hatch.export_9x.opv.name=九重输出仓（§9OpV§r）
+
 #  Integrations
 
 ##  The One Probe
