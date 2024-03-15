@@ -31,7 +31,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
-import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.EXPORT_FLUID_HATCH;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.NONUPLE_EXPORT_FLUID_HATCH;
 
 public class OverrideRecipeLoader {
 
@@ -1103,10 +1103,450 @@ public class OverrideRecipeLoader {
                     'P', new UnificationEntry(plate, Eternity));
         }
 
+        SolarPanels();
         ItemBuses();
         FluidHatches();
         MultiFluidHatches();
         EnergyHathces();
+    }
+
+    private static void SolarPanels() {
+
+        //  Basic Solar Panel
+        ModHandler.removeRecipeByName("gregtech:solar_panel_basic");
+        ModHandler.addShapedRecipe(true, "solar_panel.basic", COVER_SOLAR_PANEL.getStackForm(),
+                "SAS", "XPX",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ULV),
+                'P', CARBON_FIBER_PLATE,
+                'S', SILICON_WAFER,
+                'A', new UnificationEntry(plate, Glass));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.ULV, 2)
+                .input(CARBON_FIBER_PLATE)
+                .input(SILICON_WAFER, 2)
+                .circuitMeta(18)
+                .fluidInputs(Glass.getFluid(L))
+                .output(COVER_SOLAR_PANEL, 2)
+                .EUt(VA[LV])
+                .duration(400)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.ULV, 2)
+                .input(CARBON_FIBER_PLATE)
+                .input(SILICON_WAFER, 2)
+                .circuitMeta(18)
+                .fluidInputs(BorosilicateGlass.getFluid(L / 2))
+                .output(COVER_SOLAR_PANEL, 2)
+                .EUt(VA[LV])
+                .duration(200)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.ULV, 2)
+                .input(CARBON_FIBER_PLATE)
+                .input(SILICON_WAFER, 2)
+                .circuitMeta(18)
+                .fluidInputs(GSTGlass.getFluid(L / 4))
+                .output(COVER_SOLAR_PANEL, 2)
+                .EUt(VA[LV])
+                .duration(100)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.ULV, 2)
+                .input(CARBON_FIBER_PLATE)
+                .input(SILICON_WAFER, 2)
+                .circuitMeta(18)
+                .fluidInputs(ZBLANGlass.getFluid(L / 4))
+                .output(COVER_SOLAR_PANEL, 2)
+                .EUt(VA[LV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  ULV Solar Panel
+        ModHandler.removeRecipeByName("gregtech:solar_panel_ulv");
+        ModHandler.addShapedRecipe(true, "solar_panel.ulv", COVER_SOLAR_PANEL_ULV.getStackForm(),
+                "AGA", "XCX", "P P",
+                'C', COVER_SOLAR_PANEL,
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.LV),
+                'P', new UnificationEntry(plate, GalliumArsenide),
+                'A', CARBON_FIBER_PLATE,
+                'G', new UnificationEntry(plate, Glass));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(COVER_SOLAR_PANEL)
+                .input(circuit, MarkerMaterials.Tier.LV, 2)
+                .input(CARBON_FIBER_PLATE, 2)
+                .input(plate, GalliumArsenide, 2)
+                .circuitMeta(18)
+                .fluidInputs(Glass.getFluid(L))
+                .output(COVER_SOLAR_PANEL_ULV, 2)
+                .EUt(VA[MV])
+                .duration(400)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(COVER_SOLAR_PANEL)
+                .input(circuit, MarkerMaterials.Tier.LV, 2)
+                .input(CARBON_FIBER_PLATE, 2)
+                .input(plate, GalliumArsenide, 2)
+                .circuitMeta(18)
+                .fluidInputs(BorosilicateGlass.getFluid(L / 2))
+                .output(COVER_SOLAR_PANEL_ULV, 2)
+                .EUt(VA[MV])
+                .duration(200)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(COVER_SOLAR_PANEL)
+                .input(circuit, MarkerMaterials.Tier.LV, 2)
+                .input(CARBON_FIBER_PLATE, 2)
+                .input(plate, GalliumArsenide, 2)
+                .circuitMeta(18)
+                .fluidInputs(GSTGlass.getFluid(L / 4))
+                .output(COVER_SOLAR_PANEL_ULV, 2)
+                .EUt(VA[MV])
+                .duration(100)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(COVER_SOLAR_PANEL)
+                .input(circuit, MarkerMaterials.Tier.LV, 2)
+                .input(CARBON_FIBER_PLATE, 2)
+                .input(plate, GalliumArsenide, 2)
+                .circuitMeta(18)
+                .fluidInputs(ZBLANGlass.getFluid(L / 4))
+                .output(COVER_SOLAR_PANEL_ULV, 2)
+                .EUt(VA[MV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  LV Solar Panel
+        ModHandler.removeRecipeByName("gregtech:solar_panel_lv");
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, CobaltBrass)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 4)
+                .input(CARBON_FIBER_PLATE, 8)
+                .input(circuit, MarkerMaterials.Tier.MV, 2)
+                .input(wireFine, Cupronickel, 4)
+                .circuitMeta(18)
+                .fluidInputs(Glass.getFluid(L * 4))
+                .output(COVER_SOLAR_PANEL_LV, 2)
+                .EUt(VA[HV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, CobaltBrass)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 4)
+                .input(CARBON_FIBER_PLATE, 8)
+                .input(circuit, MarkerMaterials.Tier.MV, 2)
+                .input(wireFine, Cupronickel, 4)
+                .circuitMeta(18)
+                .fluidInputs(BorosilicateGlass.getFluid(L * 2))
+                .output(COVER_SOLAR_PANEL_LV, 2)
+                .EUt(VA[HV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, CobaltBrass)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 4)
+                .input(CARBON_FIBER_PLATE, 8)
+                .input(circuit, MarkerMaterials.Tier.MV, 2)
+                .input(wireFine, Cupronickel, 4)
+                .circuitMeta(18)
+                .fluidInputs(GSTGlass.getFluid(L))
+                .output(COVER_SOLAR_PANEL_LV, 2)
+                .EUt(VA[HV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, CobaltBrass)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 4)
+                .input(CARBON_FIBER_PLATE, 8)
+                .input(circuit, MarkerMaterials.Tier.MV, 2)
+                .input(wireFine, Cupronickel, 4)
+                .circuitMeta(18)
+                .fluidInputs(ZBLANGlass.getFluid(L))
+                .output(COVER_SOLAR_PANEL_LV, 2)
+                .EUt(VA[HV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  MV Solar Panel
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, VanadiumSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 8)
+                .input(CARBON_FIBER_PLATE, 16)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(wireFine, Kanthal, 4)
+                .circuitMeta(18)
+                .fluidInputs(Glass.getFluid(L * 4))
+                .output(COVER_SOLAR_PANEL_MV, 2)
+                .EUt(VA[EV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, VanadiumSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 8)
+                .input(CARBON_FIBER_PLATE, 16)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(wireFine, Kanthal, 4)
+                .circuitMeta(18)
+                .fluidInputs(BorosilicateGlass.getFluid(L * 2))
+                .output(COVER_SOLAR_PANEL_MV, 2)
+                .EUt(VA[EV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, VanadiumSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 8)
+                .input(CARBON_FIBER_PLATE, 16)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(wireFine, Kanthal, 4)
+                .circuitMeta(18)
+                .fluidInputs(GSTGlass.getFluid(L))
+                .output(COVER_SOLAR_PANEL_MV, 2)
+                .EUt(VA[EV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, VanadiumSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 8)
+                .input(CARBON_FIBER_PLATE, 16)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(wireFine, Kanthal, 4)
+                .circuitMeta(18)
+                .fluidInputs(ZBLANGlass.getFluid(L))
+                .output(COVER_SOLAR_PANEL_MV, 2)
+                .EUt(VA[EV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  HV Solar Panel
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlueSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 16)
+                .input(CARBON_FIBER_PLATE, 32)
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(wireFine, Nichrome, 4)
+                .circuitMeta(18)
+                .fluidInputs(Glass.getFluid(L * 8))
+                .output(COVER_SOLAR_PANEL_HV, 2)
+                .EUt(VA[IV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlueSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 16)
+                .input(CARBON_FIBER_PLATE, 32)
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(wireFine, Nichrome, 4)
+                .circuitMeta(18)
+                .fluidInputs(BorosilicateGlass.getFluid(L * 4))
+                .output(COVER_SOLAR_PANEL_HV, 2)
+                .EUt(VA[IV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlueSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 16)
+                .input(CARBON_FIBER_PLATE, 32)
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(wireFine, Nichrome, 4)
+                .circuitMeta(18)
+                .fluidInputs(GSTGlass.getFluid(L * 2))
+                .output(COVER_SOLAR_PANEL_HV, 2)
+                .EUt(VA[IV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlueSteel)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 16)
+                .input(CARBON_FIBER_PLATE, 32)
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(wireFine, Nichrome, 4)
+                .circuitMeta(18)
+                .fluidInputs(ZBLANGlass.getFluid(L * 2))
+                .output(COVER_SOLAR_PANEL_HV, 2)
+                .EUt(VA[IV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  EV Solar Panel
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenCarbide)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 32)
+                .input(CARBON_FIBER_PLATE, 64)
+                .input(circuit, MarkerMaterials.Tier.IV, 2)
+                .input(wireFine, RTMAlloy, 4)
+                .circuitMeta(18)
+                .fluidInputs(Glass.getFluid(L * 8))
+                .output(COVER_SOLAR_PANEL_EV, 2)
+                .EUt(VA[LuV])
+                .duration(400)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenCarbide)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 32)
+                .input(CARBON_FIBER_PLATE, 64)
+                .input(circuit, MarkerMaterials.Tier.IV, 2)
+                .input(wireFine, RTMAlloy, 4)
+                .circuitMeta(18)
+                .fluidInputs(BorosilicateGlass.getFluid(L * 4))
+                .output(COVER_SOLAR_PANEL_EV, 2)
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenCarbide)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 32)
+                .input(CARBON_FIBER_PLATE, 64)
+                .input(circuit, MarkerMaterials.Tier.IV, 2)
+                .input(wireFine, RTMAlloy, 4)
+                .circuitMeta(18)
+                .fluidInputs(GSTGlass.getFluid(L * 2))
+                .output(COVER_SOLAR_PANEL_EV, 2)
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TungstenCarbide)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, GalliumArsenide, 32)
+                .input(CARBON_FIBER_PLATE, 64)
+                .input(circuit, MarkerMaterials.Tier.IV, 2)
+                .input(wireFine, RTMAlloy, 4)
+                .circuitMeta(18)
+                .fluidInputs(ZBLANGlass.getFluid(L * 2))
+                .output(COVER_SOLAR_PANEL_EV, 2)
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  IV Solar Panel
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, HSSE)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 4)
+                .input(VOLTAGE_COIL_IV, 2)
+                .input(foil, NiobiumTitanium, 8)
+                .input(wireFine, HSSG, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .fluidInputs(BorosilicateGlass.getFluid(3000))
+                .output(COVER_SOLAR_PANEL_IV, 2)
+                .scannerResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_EV.getStackForm())
+                        .EUt(VA[ZPM])
+                        .duration(600))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .buildAndRegister();
+
+        //  LuV Solar Panel
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, NaquadahAlloy)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 8)
+                .input(VOLTAGE_COIL_LuV, 2)
+                .input(foil, VanadiumGallium, 8)
+                .input(wireFine, Naquadah, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .fluidInputs(BorosilicateGlass.getFluid(3000))
+                .output(COVER_SOLAR_PANEL_LUV, 2)
+                .scannerResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_IV.getStackForm())
+                        .EUt(VA[UV])
+                        .duration(600))
+                .EUt(VA[UV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  ZPM Solar Panel
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Duranium)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 16)
+                .input(VOLTAGE_COIL_ZPM, 2)
+                .input(foil, YttriumBariumCuprate, 8)
+                .input(wireFine, Trinium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 2))
+                .fluidInputs(BorosilicateGlass.getFluid(6000))
+                .fluidInputs(Polyetheretherketone.getFluid(L))
+                .output(COVER_SOLAR_PANEL_ZPM, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_LUV.getStackForm())
+                        .EUt(VA[UHV])
+                        .CWUt(32))
+                .EUt(VA[UHV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UV Solar Panel
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Orichalcum)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 32)
+                .input(VOLTAGE_COIL_UV, 2)
+                .input(foil, Europium, 8)
+                .input(wireFine, Tritanium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 2))
+                .fluidInputs(BorosilicateGlass.getFluid(6000))
+                .fluidInputs(Polyetheretherketone.getFluid(L))
+                .output(COVER_SOLAR_PANEL_UV, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_ZPM.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(64))
+                .EUt(VA[UEV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  MAX Solar Panel (todo update this recipe when gtlitecore have UHV-OpV Solar Panels)
     }
 
     private static void ItemBuses() {
@@ -1442,6 +1882,123 @@ public class OverrideRecipeLoader {
                 .duration(300)
                 .buildAndRegister();
 
+        //  UEV 4x
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_10", QUADRUPLE_IMPORT_FLUID_HATCH[0].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_EXPORT_FLUID_HATCH[0].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_10", QUADRUPLE_EXPORT_FLUID_HATCH[0].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_IMPORT_FLUID_HATCH[0].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[0]) // UEV
+                .input(pipeQuadrupleFluid, Lafium)
+                .circuitMeta(4)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(QUADRUPLE_IMPORT_FLUID_HATCH[0]) // UEV
+                .EUt(VA[UHV])
+                .duration(300)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[0]) // UEV
+                .input(pipeQuadrupleFluid, Lafium)
+                .circuitMeta(4)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                .output(QUADRUPLE_EXPORT_FLUID_HATCH[0]) // UEV
+                .EUt(VA[UHV])
+                .duration(300)
+                .buildAndRegister();
+
+        //  UIV 4x
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_11", QUADRUPLE_IMPORT_FLUID_HATCH[1].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_EXPORT_FLUID_HATCH[1].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_11", QUADRUPLE_EXPORT_FLUID_HATCH[1].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_IMPORT_FLUID_HATCH[1].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[1]) // UIV
+                .input(pipeQuadrupleFluid, CrystalMatrix)
+                .circuitMeta(4)
+                .fluidInputs(Kevlar.getFluid(L * 4))
+                .output(QUADRUPLE_IMPORT_FLUID_HATCH[1]) // UIV
+                .EUt(VA[UEV])
+                .duration(300)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[1]) // UIV
+                .input(pipeQuadrupleFluid, CrystalMatrix)
+                .circuitMeta(4)
+                .fluidInputs(Kevlar.getFluid(L * 4))
+                .output(QUADRUPLE_EXPORT_FLUID_HATCH[1]) // UIV
+                .EUt(VA[UEV])
+                .duration(300)
+                .buildAndRegister();
+
+        //  UXV 4x
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_12", QUADRUPLE_IMPORT_FLUID_HATCH[2].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_EXPORT_FLUID_HATCH[2].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_12", QUADRUPLE_EXPORT_FLUID_HATCH[2].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_IMPORT_FLUID_HATCH[2].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[2]) // UXV
+                .input(pipeQuadrupleFluid, QuantumchromodynamicallyConfinedMatter)
+                .circuitMeta(4)
+                .fluidInputs(Kevlar.getFluid(L * 4))
+                .output(QUADRUPLE_IMPORT_FLUID_HATCH[2]) // UXV
+                .EUt(VA[UIV])
+                .duration(300)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[2]) // UXV
+                .input(pipeQuadrupleFluid, QuantumchromodynamicallyConfinedMatter)
+                .circuitMeta(4)
+                .fluidInputs(Kevlar.getFluid(L * 4))
+                .output(QUADRUPLE_EXPORT_FLUID_HATCH[2]) // UXV
+                .EUt(VA[UIV])
+                .duration(300)
+                .buildAndRegister();
+
+        //  OpV 4x
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_13", QUADRUPLE_IMPORT_FLUID_HATCH[3].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_EXPORT_FLUID_HATCH[3].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_13", QUADRUPLE_EXPORT_FLUID_HATCH[3].getStackForm(),
+                " d ", " H ", "   ",
+                'H', QUADRUPLE_IMPORT_FLUID_HATCH[3].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[3]) // OpV
+                .input(pipeQuadrupleFluid, Fatalium)
+                .circuitMeta(4)
+                .fluidInputs(CosmicFabric.getFluid(L * 4))
+                .output(QUADRUPLE_IMPORT_FLUID_HATCH[3]) // OpV
+                .EUt(VA[UXV])
+                .duration(300)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[3]) // OpV
+                .input(pipeQuadrupleFluid, Fatalium)
+                .circuitMeta(4)
+                .fluidInputs(CosmicFabric.getFluid(L * 4))
+                .output(QUADRUPLE_EXPORT_FLUID_HATCH[3]) // OpV
+                .EUt(VA[UXV])
+                .duration(300)
+                .buildAndRegister();
+
+
         //  UHV 9x
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
                 new ItemStack[]{IntCircuitIngredient.getIntegratedCircuit(9), FLUID_IMPORT_HATCH[UHV].getStackForm(), OreDictUnifier.get(pipeNonupleFluid, Neutronium)},
@@ -1455,7 +2012,7 @@ public class OverrideRecipeLoader {
                 .input(FLUID_IMPORT_HATCH[UHV])
                 .input(pipeNonupleFluid, Duranium)
                 .circuitMeta(9)
-                .fluidInputs(Polyetheretherketone.getFluid(1296))
+                .fluidInputs(Polyetheretherketone.getFluid(L * 9))
                 .output(NONUPLE_IMPORT_HATCH[5]) // UHV
                 .EUt(VA[UV])
                 .duration(600)
@@ -1465,9 +2022,125 @@ public class OverrideRecipeLoader {
                 .input(FLUID_EXPORT_HATCH[UHV])
                 .input(pipeNonupleFluid, Duranium)
                 .circuitMeta(9)
-                .fluidInputs(Polyetheretherketone.getFluid(1296))
+                .fluidInputs(Polyetheretherketone.getFluid(L * 9))
                 .output(NONUPLE_EXPORT_HATCH[5]) // UHV
                 .EUt(VA[UV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  UEV 9x
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_10", NONUPLE_IMPORT_FLUID_HATCH[0].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_EXPORT_FLUID_HATCH[0].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_10", NONUPLE_EXPORT_FLUID_HATCH[0].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_IMPORT_FLUID_HATCH[0].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[0]) // UEV
+                .input(pipeNonupleFluid, Lafium)
+                .circuitMeta(9)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 9))
+                .output(NONUPLE_IMPORT_FLUID_HATCH[0]) // UEV
+                .EUt(VA[UHV])
+                .duration(600)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[0]) // UEV
+                .input(pipeNonupleFluid, Lafium)
+                .circuitMeta(9)
+                .fluidInputs(Polyetheretherketone.getFluid(L * 9))
+                .output(NONUPLE_EXPORT_FLUID_HATCH[0]) // UEV
+                .EUt(VA[UHV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  UIV 9x
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_11", NONUPLE_IMPORT_FLUID_HATCH[1].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_EXPORT_FLUID_HATCH[1].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_11", NONUPLE_EXPORT_FLUID_HATCH[1].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_IMPORT_FLUID_HATCH[1].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[1]) // UIV
+                .input(pipeNonupleFluid, CrystalMatrix)
+                .circuitMeta(9)
+                .fluidInputs(Kevlar.getFluid(L * 9))
+                .output(NONUPLE_IMPORT_FLUID_HATCH[1]) // UIV
+                .EUt(VA[UEV])
+                .duration(600)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[1]) // UIV
+                .input(pipeNonupleFluid, CrystalMatrix)
+                .circuitMeta(9)
+                .fluidInputs(Kevlar.getFluid(L * 9))
+                .output(NONUPLE_EXPORT_FLUID_HATCH[1]) // UIV
+                .EUt(VA[UEV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  UXV 9x
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_12", NONUPLE_IMPORT_FLUID_HATCH[2].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_EXPORT_FLUID_HATCH[2].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_12", NONUPLE_EXPORT_FLUID_HATCH[2].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_IMPORT_FLUID_HATCH[2].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[2]) // UXV
+                .input(pipeNonupleFluid, QuantumchromodynamicallyConfinedMatter)
+                .circuitMeta(9)
+                .fluidInputs(Kevlar.getFluid(L * 9))
+                .output(NONUPLE_IMPORT_FLUID_HATCH[2]) // UXV
+                .EUt(VA[UIV])
+                .duration(600)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[2]) // UXV
+                .input(pipeNonupleFluid, QuantumchromodynamicallyConfinedMatter)
+                .circuitMeta(9)
+                .fluidInputs(Kevlar.getFluid(L * 9))
+                .output(NONUPLE_EXPORT_FLUID_HATCH[2]) // UXV
+                .EUt(VA[UIV])
+                .duration(600)
+                .buildAndRegister();
+
+        //  OpV 9x
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_13", NONUPLE_IMPORT_FLUID_HATCH[3].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_EXPORT_FLUID_HATCH[3].getStackForm());
+
+        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_13", NONUPLE_EXPORT_FLUID_HATCH[3].getStackForm(),
+                " d ", " H ", "   ",
+                'H', NONUPLE_IMPORT_FLUID_HATCH[3].getStackForm());
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(IMPORT_FLUID_HATCH[3]) // OpV
+                .input(pipeNonupleFluid, Fatalium)
+                .circuitMeta(9)
+                .fluidInputs(CosmicFabric.getFluid(L * 9))
+                .output(NONUPLE_IMPORT_FLUID_HATCH[3]) // OpV
+                .EUt(VA[UXV])
+                .duration(600)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(EXPORT_FLUID_HATCH[3]) // OpV
+                .input(pipeNonupleFluid, Fatalium)
+                .circuitMeta(9)
+                .fluidInputs(CosmicFabric.getFluid(L * 9))
+                .output(NONUPLE_EXPORT_FLUID_HATCH[3]) // OpV
+                .EUt(VA[UXV])
                 .duration(600)
                 .buildAndRegister();
     }

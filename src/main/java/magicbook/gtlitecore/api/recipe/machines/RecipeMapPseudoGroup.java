@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * Pseudo Group Recipe Map
+ *
+ * @author Gate Guardian
+ */
 public class RecipeMapPseudoGroup<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
     private final RecipeMap<R> recipeMap1;

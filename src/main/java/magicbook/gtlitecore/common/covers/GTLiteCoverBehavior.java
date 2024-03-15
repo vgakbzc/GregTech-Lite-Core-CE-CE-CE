@@ -8,7 +8,6 @@ import gregtech.common.covers.CoverConveyor;
 import gregtech.common.covers.CoverPump;
 import gregtech.common.covers.CoverRoboticArm;
 import gregtech.common.covers.CoverSolarPanel;
-import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.GTLiteValues;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.util.ResourceLocation;
@@ -33,6 +32,18 @@ public class GTLiteCoverBehavior {
                 (def, tile, side) -> new CoverSolarPanel(def, tile, side, GTValues.V[GTValues.MAX]));
     }
 
+    /**
+     * Used to register cover behavior.
+     *
+     * <p>
+     *     Please pre init item in {@link GTLiteMetaItems},
+     *     and use {@link gregtech.api.items.metaitem.MetaItem.MetaValueItem#addComponents} to add tooltips.
+     * </p>
+     *
+     * @param coverId          Resource Location of cover, please use modid of gtlitecore (please see: {@link GTLiteValues#MODID}, do not use value in mod main class).
+     * @param placerItem       Set which item has this cover behavior.
+     * @param behaviorCreator  Definition of cover, use lambda to define a cover (you can see some example at gregtech/common/covers).
+     */
     @SuppressWarnings("rawtypes")
     public static void registerBehavior(ResourceLocation coverId,
                                         MetaItem.MetaValueItem placerItem,

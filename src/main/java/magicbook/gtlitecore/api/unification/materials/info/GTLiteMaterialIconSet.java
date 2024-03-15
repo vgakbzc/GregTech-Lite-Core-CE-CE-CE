@@ -16,4 +16,5 @@ public class GTLiteMaterialIconSet {
     public static final MaterialIconSetWithRenderer CUSTOM_COSMIC_NEUTRONIUM = new MaterialIconSetWithRenderer("cosmic_neutronium", null, true, new HaloRenderItemBehavior(10, 0x33FFFFFF, () -> GTLiteTextures.HALO_NOISE, true));
     public static final MaterialIconSet CUSTOM_MAGNETO_RESONATIC = new MaterialIconSet("magneto_resonatic", null, true);
     public static final MaterialIconSet REAGENT = new MaterialIconSet("reagent", null, true);
+    public static final MaterialIconSet CUSTOM_OMNIUM = new MaterialIconSetWithRenderer("omnium", null, true, new HaloRenderItemBehavior(10, 0xFFFFFFFF, () -> GTLiteTextures.HALO, true));
 }

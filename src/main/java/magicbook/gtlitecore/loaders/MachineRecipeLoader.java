@@ -1885,14 +1885,15 @@ public class MachineRecipeLoader {
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(HULL[UIV])
                 .input(SENSOR_UIV, 2)
-                .input(circuit, MarkerMaterials.Tier.UIV, 8)
                 .input(plate, VoidMetal, 16)
+                .input(circuit, MarkerMaterials.Tier.UIV, 8)
+                .input(COVER_SOLAR_PANEL_UV, 4)
                 .input(VOLTAGE_COIL_UIV, 2)
                 .input(wireGtOctal, FullereneSuperconductor, 4)
-                .fluidInputs(SolderingAlloy.getFluid(16000))
-                .fluidInputs(SuperheavyHAlloy.getFluid(8000))
-                .fluidInputs(SuperheavyLAlloy.getFluid(8000))
-                .fluidInputs(Zylon.getFluid(5760))
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .fluidInputs(SuperheavyHAlloy.getFluid(L * 4))
+                .fluidInputs(Zylon.getFluid(L * 2))
                 .output(DYSON_SWARM)
                 .EUt(VA[UIV])
                 .duration(1200)
@@ -2695,7 +2696,6 @@ public class MachineRecipeLoader {
                 .input(frameGt, Infinity)
                 .input(plateDense, Infinity, 6)
                 .input(ROBOT_ARM_UIV, 8)
-                .input(ROBOT_ARM_UIV, 8)
                 .input(ELECTRIC_PISTON_UIV, 10)
                 .input(ELECTRIC_MOTOR_UIV, 16)
                 .input(gear, Infinity, 4)
@@ -3076,7 +3076,7 @@ public class MachineRecipeLoader {
 
         ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(MetaBlocks.CLEANROOM_CASING.getItemVariant(gregtech.common.blocks.BlockCleanroomCasing.CasingType.PLASCRETE))
-                .fluidInputs(FluorinatedEthylenePropylene.getFluid(L * 2))
+                .fluidInputs(FluorinatedEthylenePropylene.getFluid(L * 2)) // todo use more powerful plastic, this is too soft!
                 .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.FLOOR))
                 .circuitMeta(6)
                 .EUt(VA[HV])
@@ -4561,28 +4561,33 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Dyson Swarm Control Casing
-        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, CelestialTungsten)
                 .input(plate, Pikyonium64B, 6)
-                .input(circuit, MarkerMaterials.Tier.UV, 4)
-                .input(cableGtSingle, AstralTitanium, 2)
-                .fluidInputs(SolderingAlloy.getFluid(L * 16))
-                .fluidInputs(PCBCoolant.getFluid(L * 4))
-                .fluidInputs(Hattrium.getFluid(L))
+                .input(EMITTER_UHV, 2)
+                .input(SENSOR_UHV, 2)
+                .input(FEMTO_PIC_CHIP, 4)
+                .input(COVER_ENERGY_DETECTOR_ADVANCED, 8)
+                .input(cableGtDouble, AstralTitanium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .fluidInputs(Osmiridium.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_CASING, 8))
+                .stationResearch(b -> b
+                        .researchStack(TIERED_HATCH[UIV].getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(288))
                 .EUt(8000000)
                 .duration(400)
-                .CasingTier(6) // UIV
                 .buildAndRegister();
 
         //  Control Primary
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
-                .input(wireGtDouble, UraniumTriplatinum, 8)
+                .input(frameGt, IncoloyMA813)
                 .input(ring, Naquadah, 32)
-                .input(FEMTO_PIC_CHIP, 4)
-                .input(foil, RutheniumTriniumAmericiumNeutronate, 2)
-                .fluidInputs(Osmiridium.getFluid(L * 4))
-                .fluidInputs(CrystalMatrix.getFluid(L / 4))
+                .input(foil, RutheniumTriniumAmericiumNeutronate, 16)
+                .input(wireFine, UraniumTriplatinum, 4)
+                .fluidInputs(TinAlloy.getFluid(L * 4))
+                .fluidInputs(HSSE.getFluid(L * 2))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_PRIMARY, 4))
                 .EUt(8000000)
                 .duration(200)
@@ -4590,21 +4595,21 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Control Secondary
-        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+        ASSEMBLER_RECIPES.recipeBuilder()
                 .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.MOLECULAR_COIL))
+                .input(gear, Duranium)
+                .input(gearSmall, Orichalcum)
                 .input(ring, RTMAlloy, 32)
-                .input(FEMTO_PIC_CHIP, 4)
-                .input(wireGtSingle, Hikarium, 2)
-                .fluidInputs(Trinium.getFluid(L * 4))
-                .fluidInputs(WhiteDwarfMatter.getFluid(L / 4))
+                .input(wireFine, Trinium, 4)
+                .fluidInputs(Hikarium.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_SECONDARY, 4))
                 .EUt(8000000)
                 .duration(200)
-                .CasingTier(5) // UEV
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Control Toroid
-        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                 .input(frameGt, MetastableOganesson)
                 .input(foil, WhiteDwarfMatter, 8)
                 .input(screw, Neutronium, 4)
@@ -4612,7 +4617,7 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_TOROID))
                 .EUt(8000000)
                 .duration(20)
-                .CasingTier(6) // UIV
+                .CasingTier(5)
                 .buildAndRegister();
 
         //  Depolyment Casing
@@ -4630,45 +4635,59 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Depolyment Magnet
-        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, HY1301)
-                .input(plate, PedotPSS, 2)
+                .input(plate, NaquadahEnriched, 4)
+                .input(plate, PedotPSS, 4)
                 .input(ELECTRON)
-                .input(foil, EnrichedNaquadahTriniumEuropiumDuranide, 4)
-                .fluidInputs(UraniumRhodiumDinaquadide.getFluid(L * 2))
-                .fluidInputs(IndiumTinBariumTitaniumCuprate.getFluid(L))
+                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 2)
+                .input(ring, HMS1J79Alloy, 32)
+                .input(foil, QuantumAlloy, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(UraniumRhodiumDinaquadide.getFluid(L * 4))
+                .fluidInputs(Germanium.getFluid(L))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_MAGNET, 4))
+                .stationResearch(b -> b
+                        .researchStack(EXCITATION_MAINTAINER.getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(288))
                 .EUt(8000000)
                 .duration(400)
-                .CasingTier(6) // UIV
                 .buildAndRegister();
 
         //  Receiver Casing
-        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, LanthanumGroupHAlloy)
-                .input(EMITTER_UIV, 2)
-                .input(lens, NetherStar)
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, LanthanumGroupHAlloy)
+                .input(CONVEYOR_MODULE_UEV)
+                .input(ELECTRIC_PUMP_UEV)
+                .input(plateDouble, TitanSteel, 2)
+                .input(foil, SuperheavyLAlloy, 16)
                 .input(wireFine, LunaSilver, 4)
-                .fluidInputs(IncoloyMA813.getFluid(L))
-                .fluidInputs(TitanSteel.getFluid(L / 2))
+                .fluidInputs(FluxedElectrum.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.RECEIVER_CASING, 8))
                 .EUt(8000000)
                 .duration(400)
-                .CasingTier(6) // UIV
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Receiver Core
-        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Darmstadtium)
-                .input(FIELD_GENERATOR_UIV, 2)
                 .input(plate, HastelloyK243, 4)
-                .input(wireGtSingle, Solarium, 2)
+                .input(plate, ArceusAlloy2B, 4)
+                .input(FIELD_GENERATOR_UEV, 2)
+                .input(foil, Tairitsium, 16)
+                .input(cableGtDouble, Solarium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(ChargedCaesiumCeriumCobaltIndiumAlloy.getFluid(L * 2))
                 .fluidInputs(Mendelevium.getFluid(L))
-                .fluidInputs(Duranium.getFluid(L / 2))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_CORE))
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5))
+                        .EUt(VA[UIV])
+                        .CWUt(288))
                 .EUt(8000000)
-                .duration(200)
-                .CasingTier(6) // UIV
+                .duration(100)
                 .buildAndRegister();
     }
 }
