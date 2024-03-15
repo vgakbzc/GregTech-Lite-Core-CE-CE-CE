@@ -25,8 +25,8 @@ import java.util.function.Supplier;
 public class GTLiteUtils {
 
     /**
-     * @param name  String name in the namespace.
-     * @return      GregTech Lite resource location, pay attention, do not use gtliteId() in Materials init.
+     * @param name  Name in gtlitecore's namespace, used to init some internal things in gtlitecore.
+     * @return      GregTech Lite resource location (namespace), pay attention, do not use gtliteId() in Materials init.
      */
     @Nonnull
     public static ResourceLocation gtliteId(@Nonnull String name) {
@@ -35,7 +35,7 @@ public class GTLiteUtils {
 
     /**
      * @param number  Long number.
-     * @return        Just a rewrite of formatNumbers().
+     * @return        Just a rewrite of formatNumbers(), please see {@link TextFormattingUtil#formatNumbers(long)}.
      */
     public static String formatNumbers(long number) {
         return TextFormattingUtil.formatNumbers(number);
@@ -43,7 +43,7 @@ public class GTLiteUtils {
 
     /**
      * @param number  Double number.
-     * @return        Just a rewrite of formatNumbers().
+     * @return        Just a rewrite of formatNumbers(), please see {@link TextFormattingUtil#formatNumbers(double)}.
      */
     public static String formatNumbers(double number) {
         return TextFormattingUtil.formatNumbers(number);
@@ -75,7 +75,8 @@ public class GTLiteUtils {
 
     /**
      * @param lists  List.
-     * @return       List size, used to get ArrayList<List<IBlockState>> in some block tier multiblocks.
+     * @return       List size, used to get ArrayList<List<IBlockState>> in some block tier multiblocks,
+     *               please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler}.
      */
     public static <T> int maxLength(List<List<T>> lists) {
         return lists.stream()
@@ -87,7 +88,8 @@ public class GTLiteUtils {
     /**
      * @param list    List.
      * @param length  List size.
-     * @return        The final list, used to recheck list of IBlockState in some block tier multiblocks.
+     * @return        The final list, used to recheck list of IBlockState in some block tier multiblocks,
+     *                please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler}.
      */
     public static <T> List<T> consistentList(List<T> list,
                                              int length) {
@@ -105,6 +107,7 @@ public class GTLiteUtils {
     /**
      * @param tile  MetaTileEntity.
      * @return      MetaTileEntityHolder, used to get special block info in Traceability Predicate.
+     *              Please see: {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#ROTOR_HOLDER}.
      */
     public static MetaTileEntityHolder getTileEntity(MetaTileEntity tile) {
         MetaTileEntityHolder holder = new MetaTileEntityHolder();

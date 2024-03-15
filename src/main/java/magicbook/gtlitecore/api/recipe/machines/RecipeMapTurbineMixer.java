@@ -10,6 +10,11 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 
 import javax.annotation.Nonnull;
 
+/**
+ * Turbine Mixer Recipe Map
+ *
+ * @author Magic_Sweepy
+ */
 public class RecipeMapTurbineMixer<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
     public RecipeMapTurbineMixer(@Nonnull String unlocalizedName,

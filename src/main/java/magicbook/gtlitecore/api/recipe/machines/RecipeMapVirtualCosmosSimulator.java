@@ -10,6 +10,11 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 
 import javax.annotation.Nonnull;
 
+/**
+ * Virtual Cosmos Simulator Recipe Map
+ *
+ * @author Colen (original author), Magic_Sweepy
+ */
 public class RecipeMapVirtualCosmosSimulator<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
     public RecipeMapVirtualCosmosSimulator(@Nonnull String unlocalizedName,
