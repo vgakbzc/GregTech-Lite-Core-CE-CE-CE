@@ -56,8 +56,8 @@ public class GrindBallBehavior extends AbstractMaterialPartBehavior implements I
             material = Materials.Aluminium;
         int maxDurability = getPartMaxDurability(stack);
         int damage = getPartDamage(stack);
-        lines.add(I18n.format("metaitem.tool.tooltip.durability", maxDurability - damage, maxDurability));
         lines.add(I18n.format("metaitem.tool.tooltip.primary_material", material.getLocalizedName()));
+        lines.add(I18n.format("metaitem.tool.tooltip.durability", maxDurability - damage, maxDurability));
     }
 
     @Override

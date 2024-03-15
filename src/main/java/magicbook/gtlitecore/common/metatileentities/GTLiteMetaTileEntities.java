@@ -51,6 +51,10 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityFluidHatch[] EXPORT_FLUID_HATCH = new MetaTileEntityFluidHatch[4];
     public static MetaTileEntityItemBus[] IMPORT_ITEM_HATCH = new MetaTileEntityItemBus[4];
     public static MetaTileEntityItemBus[] EXPORT_ITEM_HATCH = new MetaTileEntityItemBus[4];
+    public static MetaTileEntityMultiFluidHatch[] QUADRUPLE_IMPORT_FLUID_HATCH = new MetaTileEntityMultiFluidHatch[4];
+    public static MetaTileEntityMultiFluidHatch[] QUADRUPLE_EXPORT_FLUID_HATCH = new MetaTileEntityMultiFluidHatch[4];
+    public static MetaTileEntityMultiFluidHatch[] NONUPLE_IMPORT_FLUID_HATCH = new MetaTileEntityMultiFluidHatch[4];
+    public static MetaTileEntityMultiFluidHatch[] NONUPLE_EXPORT_FLUID_HATCH = new MetaTileEntityMultiFluidHatch[4];
 
     //  Single Machine range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[V.length - 1];
@@ -288,6 +292,22 @@ public class GTLiteMetaTileEntities {
         EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(54, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uiv"), 11, true));
         EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(55, new MetaTileEntityItemBus(gtliteId("item_hatch.export.uxv"), 12, true));
         EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(56, new MetaTileEntityItemBus(gtliteId("item_hatch.export.opv"), 13, true));
+        QUADRUPLE_IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(57, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uev"), 10, 4, false));
+        QUADRUPLE_IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(58, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uiv"), 11, 4, false));
+        QUADRUPLE_IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(59, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uxv"), 12, 4, false));
+        QUADRUPLE_IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(60, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_4x.opv"), 13, 4, false));
+        QUADRUPLE_EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(61, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uev"), 10, 4, true));
+        QUADRUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(62, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uiv"), 11, 4, true));
+        QUADRUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(63, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uxv"), 12, 4, true));
+        QUADRUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(64, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_4x.opv"), 13, 4, true));
+        NONUPLE_IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(65, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uev"), 10, 9, false));
+        NONUPLE_IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(66, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uiv"), 11, 9, false));
+        NONUPLE_IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(67, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uxv"), 12, 9, false));
+        NONUPLE_IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(68, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.import_9x.opv"), 13, 9, false));
+        NONUPLE_EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(69, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uev"), 10, 9, true));
+        NONUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(70, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uiv"), 11, 9, true));
+        NONUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(71, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uxv"), 12, 9, true));
+        NONUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(72, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.opv"), 13, 9, true));
 
         //  Single Machines
         //  Range: 15000-16000

@@ -117,9 +117,9 @@ public class GTLiteTraceabilityPredicate {
      *
      * <p>This is a special state for {@link gregtech.api.pattern.FactoryBlockPattern} used for some update meta tile entities.</p>
      *
-     * @param mark  Symbol to get these infoes in formStructure().
+     * @param mark           Symbol to get these infoes in formStructure().
      * @param allowedStates  Allowed state, i.e. block mean of this symbol (like: 'S', getCasingState()), and getCasingState() is a {@link IBlockState} getter.
-     * @return  Just like blockMatcher parameter in {@link gregtech.api.pattern.FactoryBlockPattern}, you can use correspond text (mark) to check if the aisle is your upgrade structure part.
+     * @return               Just like blockMatcher parameter in {@link gregtech.api.pattern.FactoryBlockPattern}, you can use correspond text (mark) to check if the aisle is your upgrade structure part.
      */
     public static TraceabilityPredicate optionalStates(String mark, IBlockState... allowedStates) {
         return new TraceabilityPredicate(blockWorldState -> {
@@ -139,9 +139,9 @@ public class GTLiteTraceabilityPredicate {
      *
      * <p>This is a special ability for {@link gregtech.api.pattern.FactoryBlockPattern} used for some update meta tile entities.</p>
      *
-     * @param mark  Symbol to get these infoes in formStructure().
+     * @param mark              Symbol to get these infoes in formStructure().
      * @param allowedAbilities  Allowed ability, i.e. ability mean of this symbol (like: abilities(MultiblockAbility.IMPORT_ITEM), please use abilities in {@link MultiblockAbility}).
-     * @return  Just like abilities() in {@link gregtech.api.metatileentity.multiblock.MultiblockControllerBase}, you can use correspond text (mark) to check if the ability is your upgrade structure part.
+     * @return                  Just like abilities() in {@link gregtech.api.metatileentity.multiblock.MultiblockControllerBase}, you can use correspond text (mark) to check if the ability is your upgrade structure part.
      */
     public static TraceabilityPredicate optionalAbilities(String mark, MultiblockAbility<?>... allowedAbilities) {
         return new TraceabilityPredicate(blockWorldState -> {
