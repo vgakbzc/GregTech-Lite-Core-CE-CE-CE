@@ -1701,7 +1701,7 @@ public class GTLiteFirstDegreeMaterials {
                 .dust()
                 .color(0x787449)
                 .iconSet(DULL)
-                .components(Sodium, 1, Oxygen, 2, Boron, 1, Fluorine, 4)
+                .components(Nitrogen, 1, Oxygen, 2, Boron, 1, Fluorine, 4)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
@@ -1710,7 +1710,7 @@ public class GTLiteFirstDegreeMaterials {
                 .dust()
                 .color(0xA32A8C)
                 .iconSet(ROUGH)
-                .components(Sodium, 1, Oxygen, 1, Boron, 1, Fluorine, 4)
+                .components(Nitrogen, 1, Oxygen, 1, Boron, 1, Fluorine, 4)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
