@@ -3707,7 +3707,7 @@ public class MachineRecipeLoader {
                 .input(rotor, Iridium, 2)
                 .input(pipeTinyFluid, VanadiumSteel, 16)
                 .input(plate, TinAlloy, 16)
-                .input(cableGtSingle, UraniumTriplatinum)
+                .input(wireFine, UraniumTriplatinum, 4)
                 .fluidInputs(PCBCoolant.getFluid(L * 2))
                 .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.BIOWARE_COMPUTER_HEAT_VENT, 2))
                 .EUt(VA[IV])
