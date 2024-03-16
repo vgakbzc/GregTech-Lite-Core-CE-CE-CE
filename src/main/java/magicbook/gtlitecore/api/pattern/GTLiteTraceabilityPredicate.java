@@ -27,7 +27,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import static magicbook.gtlitecore.api.GTLiteAPI.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getCandidates;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getTileEntity;
 
 public class GTLiteTraceabilityPredicate {
 

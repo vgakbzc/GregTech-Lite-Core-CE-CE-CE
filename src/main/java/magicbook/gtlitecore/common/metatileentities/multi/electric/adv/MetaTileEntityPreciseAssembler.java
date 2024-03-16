@@ -47,7 +47,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.LuV;
 
 public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController {
 

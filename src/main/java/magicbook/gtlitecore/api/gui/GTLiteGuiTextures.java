@@ -32,5 +32,16 @@ public class GTLiteGuiTextures {
     public static final TextureArea SPACE_ELEVATOR_LOGO = TextureArea.fullImage("textures/gui/icon/space_elevator_logo.png");
     public static final TextureArea SPACE_ELEVATOR_LOGO_DARK = TextureArea.fullImage("textures/gui/icon/space_elevator_logo_dark.png");
 
+    //  Icon
+    public static final TextureArea QC_COMPONENT_OUTLINE = TextureArea.fullImage("textures/gui/widget/quantum_computer/component_outline.png");
+    public static final TextureArea QC_ICON_EMPTY_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/empty_component.png");
+    public static final TextureArea QC_ICON_COMPUTATION_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/computation_component.png");
+    public static final TextureArea QC_ICON_ADVANCED_COMPUTATION_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/advanced_computation_component.png");
+    public static final TextureArea QC_ICON_DAMAGED_COMPUTATION_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/damaged_computation_component.png");
+    public static final TextureArea QC_ICON_DAMAGED_ADVANCED_COMPUTATION_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/damaged_advanced_computation_component.png");
+    public static final TextureArea QC_ICON_HEAT_SINK_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/heat_sink_component.png");
+    public static final TextureArea QC_ICON_ACTIVE_COOLER_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/active_cooler_component.png");
+    public static final TextureArea QC_ICON_BRIDGE_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/bridge_component.png");
+
     public GTLiteGuiTextures() {}
 }

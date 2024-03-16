@@ -48,8 +48,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.GTValues.EV;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.unification.material.Materials.Titanium;
 
 public class MetaTileEntityCrystallizationCrucible extends RecipeMapMultiblockController implements IHeatingCoil {
 

@@ -305,6 +305,13 @@ tile.dyson_swarm_casing.receiver_casing.name=戴森球能量接收基座机械�
 tile.dyson_swarm_casing.hypogen_coil_block.name=海珀珍线圈方块
 tile.dyson_swarm_casing.deployment_core.name=戴森球模块部署单元核心
 
+tile.quantum_computer_casing.computer_casing.name=量子计算机外壳
+tile.quantum_computer_casing.computer_casing.tooltip=绝对无尘环境
+tile.quantum_computer_casing.advanced_computer_casing.name=高级量子计算机外壳
+tile.quantum_computer_casing.advanced_computer_casing.tooltip=千兆个量子带宽
+tile.quantum_computer_casing.heat_vent.name=量子计算机恒温仓
+tile.quantum_computer_casing.heat_vent.tooltip=用于平衡机器内部的运行平台温度
+
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
 metaitem.board.gooware.tooltip=杜邦™ Pyralux® TK层压薄膜
@@ -1561,6 +1568,44 @@ gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.19=§r燃烧�
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.20=§r合金炉§7模式 -> §e16384§7
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.21=§r合金冶炼炉§7模式 -> §e8192§7
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.22=§r恒星锻炉§7模式 -> §e256§7
+
+gtlitecore.machine.quantum_computer.name=量子计算机
+gtlitecore.machine.quantum_computer.tooltip.1=一台可能会引来§c肃正协议§7的超级计算机集群
+gtlitecore.machine.quantum_computer.tooltip.2=用于产生无穷无尽的算力以供研究使用
+gtlitecore.machine.quantum_computer.max_computation=最大算力：%s
+gtlitecore.machine.quantum_computer.max_cooling_demand=冷却液需求：%s
+gtlitecore.machine.quantum_computer.max_cooling_available=冷却液可用：%s
+gtlitecore.machine.quantum_computer.max_coolant_required=冷却液还需：%s
+gtlitecore.machine.quantum_computer.coolant_name=电介质多氯联苯冷却液
+gtlitecore.machine.quantum_computer.bridging_enabled=桥接已启动
+gtlitecore.machine.quantum_computer.bridging_disabled=桥接已关闭
+gtlitecore.machine.quantum_computer.warning.title=结构警告：
+gtlitecore.machine.quantum_computer.warning.multiple_bridges=- 多个桥接组件（没有额外好处）
+gtlitecore.machine.quantum_computer.warning.no_computation=- 没有计算组件（无法进行计算）
+gtlitecore.machine.quantum_computer.warning.low_cooling=- 机器冷却不足（可能损坏组件）
+gtlitecore.machine.quantum_computer.warning.high_temperature=机器温度已达到容许最大温度的一半，请注意控制温度！
+gtlitecore.machine.quantum_computer.error.computation_damaged=计算组件损坏！
+gtlitecore.machine.quantum_computer.error.overheat=机器已进入过热状态，计算组件损坏率持续增加！
+gtlitecore.machine.quantum_computer.error.damaged=机器组件在过热状态下将会损毁！
+
+gtlitecore.machine.qc_empty_component.name=量子计算机结构维持组件
+gtlitecore.machine.qc_empty_component.tooltip=用于维持计算机集群的整体结构
+
+gtlitecore.machine.qc_computation_component.name=量子位并行叠加计算组件
+gtlitecore.machine.qc_computation_component.tooltip=量子纠缠计算
+
+gtlitecore.machine.qc_advanced_computation_component.name=相干态超导量子信息计算组件
+gtlitecore.machine.qc_advanced_computation_component.tooltip=量子光学的简单应用
+
+gtlitecore.machine.qc_heat_sink_component.name=量子计算机恒温冷却组件
+gtlitecore.machine.qc_heat_sink_component.tooltip=真正意义的免费冷却
+
+gtlitecore.machine.qc_active_cooler_component.name=量子计算机主动热量交换冷却组件
+gtlitecore.machine.qc_active_cooler_component.tooltip=更少的花费，更多的冷却
+
+gtlitecore.machine.qc_bridge_component.name=爱因斯坦-罗森桥量子信息桥接组件
+gtlitecore.machine.qc_bridge_component.tooltip=跨时空信息桥接
+gtlitecore.machine.qc_bridge_component.desc=允许§f量子计算机§7与§f网络交换机§7连接
 
 #  Materials
 

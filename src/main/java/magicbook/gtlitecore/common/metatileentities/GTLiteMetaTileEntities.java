@@ -56,6 +56,11 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMultiFluidHatch[] NONUPLE_IMPORT_FLUID_HATCH = new MetaTileEntityMultiFluidHatch[4];
     public static MetaTileEntityMultiFluidHatch[] NONUPLE_EXPORT_FLUID_HATCH = new MetaTileEntityMultiFluidHatch[4];
 
+    public static MetaTileEntityQCComponentEmpty QC_EMPTY_COMPONENT;
+    public static MetaTileEntityQCComponentComputation[] QC_COMPUTATION_COMPONENT = new MetaTileEntityQCComponentComputation[2];
+    public static MetaTileEntityQCComponentCooler[] QC_COOLER_COMPONENT = new MetaTileEntityQCComponentCooler[2];
+    public static MetaTileEntityQCComponentBridge QC_BRIDGE_COMPONENT;
+
     //  Single Machine range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[V.length - 1];
     public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
@@ -178,6 +183,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
     public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
     public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
+    public static MetaTileEntityQuantumComputer QUANTUM_COMPUTER;
 
     /**
      * Steam Machine init method.
@@ -308,6 +314,13 @@ public class GTLiteMetaTileEntities {
         NONUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(70, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uiv"), 11, 9, true));
         NONUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(71, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uxv"), 12, 9, true));
         NONUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(72, new MetaTileEntityMultiFluidHatch(gtliteId("fluid_hatch.export_9x.opv"), 13, 9, true));
+
+        QC_EMPTY_COMPONENT = registerPartMetaTileEntity(100, new MetaTileEntityQCComponentEmpty(gtliteId("qc_empty_component")));
+        QC_COMPUTATION_COMPONENT[0] = registerPartMetaTileEntity(101, new MetaTileEntityQCComponentComputation(gtliteId("qc_computation_component"), false));
+        QC_COMPUTATION_COMPONENT[1] = registerPartMetaTileEntity(102, new MetaTileEntityQCComponentComputation(gtliteId("qc_advanced_computation_component"), true));
+        QC_COOLER_COMPONENT[0] = registerPartMetaTileEntity(103, new MetaTileEntityQCComponentCooler(gtliteId("qc_heat_sink_component"), false));
+        QC_COOLER_COMPONENT[1] = registerPartMetaTileEntity(104, new MetaTileEntityQCComponentCooler(gtliteId("qc_active_cooler_component"), true));
+        QC_BRIDGE_COMPONENT = registerPartMetaTileEntity(105, new MetaTileEntityQCComponentBridge(gtliteId("qc_bridge_component")));
 
         //  Single Machines
         //  Range: 15000-16000
@@ -464,5 +477,6 @@ public class GTLiteMetaTileEntities {
         //  151 TWENTY_FIVE_FLUID_TANK
         //  Free ID: 152-199
         DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE = registerMultiMetaTileEntity(200, new MetaTileEntityDimensionallyTranscendentPlasmaForge(gtliteId("dimensionally_transcendent_plasma_forge")));
+        QUANTUM_COMPUTER = registerMultiMetaTileEntity(201, new MetaTileEntityQuantumComputer(gtliteId("quantum_computer")));
     }
 }

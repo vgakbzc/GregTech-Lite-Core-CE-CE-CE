@@ -5,9 +5,11 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
-import static gregtechfoodoption.GTFOMaterialHandler.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.ingot;
+import static gregtech.common.items.MetaItems.BLACKLIGHT;
+import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
+import static gregtechfoodoption.GTFOMaterialHandler.Glyoxal;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 

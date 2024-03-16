@@ -39,7 +39,6 @@ import static gregtechfoodoption.machines.GTFOTileEntities.SLICER;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
-import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.NONUPLE_EXPORT_FLUID_HATCH;
 
 public class OverrideRecipeLoader {
 

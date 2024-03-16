@@ -4,10 +4,13 @@ import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.unification.material.Material;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static gregtech.api.unification.material.Materials.Helium;
+import static gregtech.api.unification.material.Materials.Ice;
+import static gregtech.api.unification.ore.OrePrefix.ingot;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_INGOT;
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_PLATE;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PLASMA_CONDENSER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 

@@ -242,6 +242,7 @@ public class GTLiteMaterialPropertyAddition {
         Lawrencium.addFlags(GENERATE_ROD);
         Roentgenium.addFlags(GENERATE_ROD);
         Meitnerium.addFlags(GENERATE_ROD);
+        Rutherfordium.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -279,6 +280,7 @@ public class GTLiteMaterialPropertyAddition {
         Dubnium.addFlags(GENERATE_BOLT_SCREW);
         Livermorium.addFlags(GENERATE_BOLT_SCREW);
         BlueSteel.addFlags(GENERATE_BOLT_SCREW);
+        Rutherfordium.addFlags(GENERATE_BOLT_SCREW);
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
