@@ -25,7 +25,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 /**
- * Fishing Pond Recipe Logic
+ * Fishing Pond Recipe Logic.
  *
  * @author Gate Guardian
  *
