@@ -528,13 +528,10 @@ public class TaraniumProcessing {
                 .EUt(VA[ZPM] * 2)
                 .buildAndRegister();
 
-        //  Remove vibranium dust -> hot ingot
-        GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES, OreDictUnifier.get(dust, Vibranium), IntCircuitIngredient.getIntegratedCircuit(1));
-        GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
-                new ItemStack[]{OreDictUnifier.get(dust, Vibranium),
-                                IntCircuitIngredient.getIntegratedCircuit(2)},
-                new FluidStack[]{Argon.getFluid(50)});
+        //  Vibranium dust -> hot ingot used for Quantum Force Transformer,
+        //  in common game, you can not get vibranium dust in your bedrock processing stage.
 
+        //  Another common vibranium hot ingot recipes.
         FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
                 .notConsumable(MetaItems.SHAPE_MOLD_INGOT)
                 .fluidInputs(Vibranium.getPlasma(L))

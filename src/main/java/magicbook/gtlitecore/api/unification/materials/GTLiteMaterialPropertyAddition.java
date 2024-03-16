@@ -186,6 +186,7 @@ public class GTLiteMaterialPropertyAddition {
         Rhenium.addFlags(GENERATE_DENSE);
         Tritanium.addFlags(GENERATE_DENSE);
         Osmiridium.addFlags(GENERATE_DENSE);
+        WroughtIron.addFlags(GENERATE_DENSE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);

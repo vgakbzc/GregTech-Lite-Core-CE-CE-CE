@@ -6,6 +6,7 @@ import gregtech.api.recipes.ModHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockBatteryPart;
 import gregtech.common.blocks.BlockMachineCasing;
@@ -13,11 +14,17 @@ import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
+import gregtech.loaders.recipe.CraftingComponent;
+import gregtech.loaders.recipe.MetaTileEntityLoader;
+import gregtechfoodoption.recipe.GTFOMachineRecipes;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.blocks.BlockHermeticCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
 import static gregtech.api.GTValues.*;
@@ -28,6 +35,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.HERMETIC_UHV;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static gregtechfoodoption.machines.GTFOTileEntities.SLICER;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
@@ -42,8 +50,19 @@ public class OverrideRecipeLoader {
         SteamStageOverrides();
         HighTierOverrides();
         GCYMOverrides();
+        GTFOOverrides();
     }
 
+    /**
+     * Override of Machine Casings.
+     *
+     * <p>
+     *     This class is an override about machine casings like tiered hull,
+     *     also override quantum chest/tank recipes, because in GregTech vanilla environment,
+     *     UHV main material ({@link CraftingComponent#HULL}) is {@link Materials#Neutronium},
+     *     but in gtlitecore, UHV main material is {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#Orichalcum}.
+     * </p>
+     */
     private static void MachineCasingOverrides() {
         //  UHV Machine Casing
         ModHandler.removeRecipeByName("gregtech:casing_uhv");
@@ -216,11 +235,16 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
     }
 
+    /**
+     * Override of Silicon Wafers
+     *
+     * <p>
+     *     This is a necessary tweak about {@link Materials#Neutronium}, because in gtlitecore,
+     *     you needs to build Fusion Reactor Mark V to get Neutronium,
+     *     so in the same tier, you can not get Neutronium Wafer same as vanilla GregTech environment.
+     * </p>
+     */
     private static void SiliconWaferOverrides() {
-
-        //  This is a necessary tweak about Neutronium, because in gtlitecore,
-        //  you needs to build Fusion Reactor Mk V to get Neutronium,
-        //  so in the same tier, you can not get Neutronium Wafer same as vanilla CEu environment.
 
         //  Delete Neutronium Boule recipe
         GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
@@ -229,6 +253,7 @@ public class OverrideRecipeLoader {
                         OreDictUnifier.get(dust, GalliumArsenide, 2)},
                 new FluidStack[]{Xenon.getFluid(8000)});
 
+        //  Delete Neutronium Boule -> Wafer recipes
         GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES,
                 new ItemStack[]{NEUTRONIUM_BOULE.getStackForm()},
                 new FluidStack[]{Water.getFluid(1000)});
@@ -607,8 +632,21 @@ public class OverrideRecipeLoader {
 
     }
 
+    /**
+     * Override of Rubbers
+     *
+     * <p>
+     *     In gtlitecore, we add two new rubbers (please see:
+     *      {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#NitrileButadieneRubber},
+     *      {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#PolyPhosphonitrileFluoroRubber}),
+     *     so we should add some recipes about old rubbers in GregTech.
+     * </p>
+     */
     private static void RubberOverrides() {
+
         //  Conveyor Module Recipes
+
+        //  LV Conveyor Module
         ModHandler.addShapedRecipe(true, "conveyor_module_lv_nitrile_butadiene_rubber", CONVEYOR_MODULE_LV.getStackForm(),
                 "PPP", "MWM", "PPP",
                 'P', new UnificationEntry(plate, NitrileButadieneRubber),
@@ -635,6 +673,7 @@ public class OverrideRecipeLoader {
                     .buildAndRegister();
         }
 
+        //  MV Conveyor Module
         ModHandler.addShapedRecipe(true, "conveyor_module_mv_nitrile_butadiene_rubber", CONVEYOR_MODULE_MV.getStackForm(),
                 "PPP", "MWM", "PPP",
                 'P', new UnificationEntry(plate, NitrileButadieneRubber),
@@ -661,6 +700,7 @@ public class OverrideRecipeLoader {
                     .buildAndRegister();
         }
 
+        //  HV Conveyor Module
         ModHandler.addShapedRecipe(true, "conveyor_module_hv_nitrile_butadiene_rubber", CONVEYOR_MODULE_HV.getStackForm(),
                 "PPP", "MWM", "PPP",
                 'P', new UnificationEntry(plate, NitrileButadieneRubber),
@@ -687,6 +727,7 @@ public class OverrideRecipeLoader {
                     .buildAndRegister();
         }
 
+        //  EV Conveyor Module
         ModHandler.addShapedRecipe(true, "conveyor_module_ev_nitrile_butadiene_rubber", CONVEYOR_MODULE_EV.getStackForm(),
                 "PPP", "MWM", "PPP",
                 'P', new UnificationEntry(plate, NitrileButadieneRubber),
@@ -713,6 +754,7 @@ public class OverrideRecipeLoader {
                     .buildAndRegister();
         }
 
+        //  IV Conveyor Module
         ModHandler.addShapedRecipe(true, "conveyor_module_iv_nitrile_butadiene_rubber", CONVEYOR_MODULE_IV.getStackForm(),
                 "PPP", "MWM", "PPP",
                 'P', new UnificationEntry(plate, NitrileButadieneRubber),
@@ -739,9 +781,11 @@ public class OverrideRecipeLoader {
                     .buildAndRegister();
         }
 
-        //  TODO LuV-UV
+        //  todo maybe we can add recipes of LuV-UV conveyor modules, but they are assembly line recipes.
 
         //  Electric Pump Recipes
+
+        //  LV Electric Pump
         ModHandler.addShapedRecipe(true, "electric_pump_lv_nitrile_butadiene_rubber", ELECTRIC_PUMP_LV.getStackForm(),
                 "SRO", "dPw", "OMW",
                 'S', new UnificationEntry(screw, Tin),
@@ -784,6 +828,7 @@ public class OverrideRecipeLoader {
                 .duration(20)
                 .buildAndRegister();
 
+        //  MV Electric Pump
         ModHandler.addShapedRecipe(true, "electric_pump_mv_nitrile_butadiene_rubber", ELECTRIC_PUMP_MV.getStackForm(),
                 "SRO", "dPw", "OMW",
                 'S', new UnificationEntry(screw, Bronze),
@@ -826,6 +871,7 @@ public class OverrideRecipeLoader {
                 .duration(20)
                 .buildAndRegister();
 
+        //  HV Electric Pump
         ModHandler.addShapedRecipe(true, "electric_pump_hv_nitrile_butadiene_rubber", ELECTRIC_PUMP_HV.getStackForm(),
                 "SRO", "dPw", "OMW",
                 'S', new UnificationEntry(screw, Steel),
@@ -868,6 +914,7 @@ public class OverrideRecipeLoader {
                 .duration(20)
                 .buildAndRegister();
 
+        //  EV Electric Pump
         ModHandler.addShapedRecipe(true, "electric_pump_ev_nitrile_butadiene_rubber", ELECTRIC_PUMP_EV.getStackForm(),
                 "SRO", "dPw", "OMW",
                 'S', new UnificationEntry(screw, StainlessSteel),
@@ -910,6 +957,7 @@ public class OverrideRecipeLoader {
                 .duration(20)
                 .buildAndRegister();
 
+        //  IV Electric Pump
         ModHandler.addShapedRecipe(true, "electric_pump_iv_nitrile_butadiene_rubber", ELECTRIC_PUMP_IV.getStackForm(),
                 "SRO", "dPw", "OMW",
                 'S', new UnificationEntry(screw, TungstenSteel),
@@ -952,13 +1000,19 @@ public class OverrideRecipeLoader {
                 .duration(20)
                 .buildAndRegister();
 
-        //  TODO LuV-UV
+        //  todo maybe we can add recipes of LuV-UV electric pumps, but they are assembly line recipes.
     }
 
+    /**
+     * Override of Steam Stage Machines
+     *
+     * <p>
+     *     In modpack environment, player needs craft ULV components to make steam stage machines.
+     *     This override has a big todo: some steam machine override recipes is added by modpack scripts (CraftTweaker), we needs to redo it in this class.
+     * </p>
+     */
     private static void SteamStageOverrides() {
-
         if (GTLiteConfigHolder.machines.enableHarderSteamStageMachine) {
-
             ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_bronze");
             ModHandler.addShapedRecipe(true, "steam_boiler_coal_bronze", MetaTileEntities.STEAM_BOILER_COAL_BRONZE.getStackForm(),
                     "PPP", "CHC", "BFB",
@@ -1020,6 +1074,13 @@ public class OverrideRecipeLoader {
         }
     }
 
+    /**
+     * Overrides of some High Tier misc contents
+     *
+     * <p>
+     *     Some overrides of High Tier Hermetic casings, capacitors and End game items.
+     * </p>
+     */
     private static void HighTierOverrides() {
 
         //  Hermetic Casings
@@ -3340,6 +3401,15 @@ public class OverrideRecipeLoader {
         }
     }
 
+    /**
+     * Overrides of Gregicality Multiblocks
+     *
+     * <p>
+     *     Some machines in gtlitecore environment is too hard to make it, so we rewrite some recipes.
+     *     Machines like Mega Blast furnace and Large Circuit Assembler is too unuseful.
+     *     You can control this overrides by {@link GTLiteConfigHolder}.
+     * </p>
+     */
     private static void GCYMOverrides() {
 
         //  A little tweaks about Mega Blast Furnace and Mega Vacuum Freezer.
@@ -3412,6 +3482,58 @@ public class OverrideRecipeLoader {
                     'P', new UnificationEntry(plate, Eternity),
                     'C', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX));
         }
-
     }
+
+    /**
+     * Overrides of GregTech Food Option Machines.
+     *
+     * <p>
+     *     Because some machines in gregtechfoodoption do not support UHV+ stage recipes, so we rewrite it.
+     *     We reinit a component map about dense plate, the original map is in {@link GTFOMachineRecipes#init()}.
+     *     This override can not control by {@link GTLiteConfigHolder}, because it just a compatibility between two mods.
+     * </p>
+     */
+    private static void GTFOOverrides() {
+        //  Remove original recipes, use gtlitecore register machine recipes.
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.lv");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.mv");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.hv");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.ev");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.iv");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.luv");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.zpm");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.uv");
+        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.uhv");
+
+        //  A new map of dense plate component, is not same as gregtechfoodoption's.
+        CraftingComponent.Component PLATE_DENSE = new CraftingComponent.Component(Stream.of(
+                new Object[]{0, new UnificationEntry(plateDense, WroughtIron)},
+                new Object[]{1, new UnificationEntry(plateDense, Steel)},
+                new Object[]{2, new UnificationEntry(plateDense, Aluminium)},
+                new Object[]{3, new UnificationEntry(plateDense, StainlessSteel)},
+                new Object[]{4, new UnificationEntry(plateDense, Titanium)},
+                new Object[]{5, new UnificationEntry(plateDense, TungstenSteel)},
+                new Object[]{6, new UnificationEntry(plateDense, RhodiumPlatedPalladium)},
+                new Object[]{7, new UnificationEntry(plateDense, NaquadahAlloy)},
+                new Object[]{8, new UnificationEntry(plateDense, Darmstadtium)},
+                new Object[]{9, new UnificationEntry(plateDense, Orichalcum)},
+                new Object[]{10, new UnificationEntry(plateDense, Adamantium)},
+                new Object[]{11, new UnificationEntry(plateDense, Infinity)},
+                new Object[]{12, new UnificationEntry(plateDense, CosmicNeutronium)},
+                new Object[]{13, new UnificationEntry(plateDense, Spacetime)},
+                new Object[]{14, new UnificationEntry(plateDense, Eternity)})
+                .collect(Collectors.toMap((data) -> (Integer)data[0], (data) -> data[1])));
+
+        //  new recipes of Slicer
+        MetaTileEntityLoader.registerMachineRecipe(SLICER,
+                "PXW", "SHX", "DCW",
+                'P', CraftingComponent.PISTON,
+                'X', CraftingComponent.CIRCUIT,
+                'W', CraftingComponent.CABLE,
+                'S', CraftingComponent.SAWBLADE,
+                'H', CraftingComponent.HULL,
+                'D', PLATE_DENSE,
+                'C', CraftingComponent.CONVEYOR);
+    }
+
 }
