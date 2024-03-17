@@ -82,7 +82,6 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
                 amountOC,
                 getOverclockingDurationDivisor(),
                 getOverclockingVoltageMultiplier()
-
         );
     }
 

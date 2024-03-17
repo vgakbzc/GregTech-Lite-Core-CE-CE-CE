@@ -31,7 +31,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.EV;
 
 public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockController {
 

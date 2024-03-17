@@ -8,8 +8,8 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
-import static gregtech.api.util.GTUtility.*;
-import static gregtechfoodoption.GTFOMaterialHandler.*;
+import static gregtech.api.util.GTUtility.gregtechId;
+import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class GTLiteOrganicChemistryMaterials {
