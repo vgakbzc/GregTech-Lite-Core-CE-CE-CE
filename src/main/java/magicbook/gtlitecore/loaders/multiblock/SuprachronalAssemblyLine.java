@@ -88,8 +88,50 @@ public class SuprachronalAssemblyLine {
                 .buildAndRegister();
 
         //  Exotic Singularity
+        SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(singularity, Duranium) // 1 Duranium
+                .input(singularity, Tritanium) // 2 Tritanium
+                .input(singularity, AstralTitanium) // 3 Astral Titanium
+                .input(singularity, CelestialTungsten) // 4 Celestial Tungsten
+                .input(singularity, Ichorium) // 5 Ichorium
+                .input(singularity, Astralium) // 6 Astralium
+                .input(singularity, Hikarium) // 7 Hikarium
+                .input(singularity, Rhugnor) // 8 Rhugnor
+                .input(singularity, DragonBreath) // 9 Dragon Breath
+                .input(singularity, ConcentrateDragonBreath) // 10 Concentrate Dragon Breath
+                .input(singularity, DragonBlood) // 11 Dragon Blood
+                .input(singularity, Hypogen) // 12 Hypogen
+                .input(singularity, CosmicNeutronium) // 13 Cosmic Neutronium
+                .input(singularity, MagnetoHydrodynamicallyConstrainedStarMatter) // 14 MHDCS
+                .input(singularity, Spacetime) // 15 Spacetime
+                .input(singularity, TranscendentMetal) // 16 Transcendent Metal
+                .output(EXOTIC_SINGULARITY)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
 
         //  Ancient Singularity
+        SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(singularity, Water) // 1 Water
+                .input(singularity, Lava) // 2 Lava
+                .input(singularity, Wood) // 3 Wood
+                .input(singularity, Stone) // 4 Stone
+                .input(singularity, Netherrack) // 5 Nether
+                .input(singularity, Endstone) // 6 Endstone
+                .input(singularity, Emerald) // 7 Emerald
+                .input(singularity, Obsidian) // 8 Obsidian
+                .input(singularity, TreatedWood) // 9 Treated Wood
+                .input(singularity, Gunpowder) // 10 Gunpowder
+                .input(singularity, Diamond) // 11 Diamond
+                .input(singularity, NetherQuartz) // 12 Nether Quartz
+                .input(singularity, Brick) // 13 Brick
+                .input(singularity, Coal) // 14 Coal
+                .input(singularity, Steam) // 15 Steam
+                .input(singularity, Clay) // 16 Clay
+                .output(ANCIENT_SINGULARITY)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
 
         //  Void Singularity
 

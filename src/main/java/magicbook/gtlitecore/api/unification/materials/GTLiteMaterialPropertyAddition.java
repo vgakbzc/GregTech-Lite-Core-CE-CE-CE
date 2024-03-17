@@ -394,6 +394,40 @@ public class GTLiteMaterialPropertyAddition {
         Ichorium.addFlags(GENERATE_SINGULARITY);
         CrystalMatrix.addFlags(GENERATE_SINGULARITY);
 
+        Duranium.addFlags(GENERATE_SINGULARITY);
+        Tritanium.addFlags(GENERATE_SINGULARITY);
+        AstralTitanium.addFlags(GENERATE_SINGULARITY);
+        CelestialTungsten.addFlags(GENERATE_SINGULARITY);
+        Ichorium.addFlags(GENERATE_SINGULARITY);
+        Astralium.addFlags(GENERATE_SINGULARITY);
+        Hikarium.addFlags(GENERATE_SINGULARITY);
+        Rhugnor.addFlags(GENERATE_SINGULARITY);
+        DragonBreath.addFlags(GENERATE_SINGULARITY);
+        ConcentrateDragonBreath.addFlags(GENERATE_SINGULARITY);
+        DragonBlood.addFlags(GENERATE_SINGULARITY);
+        Hypogen.addFlags(GENERATE_SINGULARITY);
+        CosmicNeutronium.addFlags(GENERATE_SINGULARITY);
+        MagnetoHydrodynamicallyConstrainedStarMatter.addFlags(GENERATE_SINGULARITY);
+        Spacetime.addFlags(GENERATE_SINGULARITY);
+        TranscendentMetal.addFlags(GENERATE_SINGULARITY);
+
+        Water.addFlags(GENERATE_SINGULARITY);
+        Lava.addFlags(GENERATE_SINGULARITY);
+        Wood.addFlags(GENERATE_SINGULARITY);
+        Stone.addFlags(GENERATE_SINGULARITY);
+        Netherrack.addFlags(GENERATE_SINGULARITY);
+        Endstone.addFlags(GENERATE_SINGULARITY);
+        Emerald.addFlags(GENERATE_SINGULARITY);
+        Obsidian.addFlags(GENERATE_SINGULARITY);
+        TreatedWood.addFlags(GENERATE_SINGULARITY);
+        Gunpowder.addFlags(GENERATE_SINGULARITY);
+        Diamond.addFlags(GENERATE_SINGULARITY);
+        NetherQuartz.addFlags(GENERATE_SINGULARITY);
+        Brick.addFlags(GENERATE_SINGULARITY);
+        Coal.addFlags(GENERATE_SINGULARITY);
+        Steam.addFlags(GENERATE_SINGULARITY);
+        Clay.addFlags(GENERATE_SINGULARITY);
+
         Infinity.addFlags(GENERATE_SINGULARITY);
         Eternity.addFlags(GENERATE_SINGULARITY); // For end game
 
