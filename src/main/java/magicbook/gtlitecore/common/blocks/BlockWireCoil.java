@@ -57,7 +57,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         CoilType coilType =  this.getState(stackState);
         lines.add(I18n.format("tile.wire_coil.tooltip_heat", coilType.coilTemperature));
         if (TooltipHelper.isShiftDown()) {
-            int coilTier = coilType.ordinal();
+            int coilTier = coilType.getTier();
             lines.add(I18n.format("tile.wire_coil.tooltip_smelter"));
             lines.add(I18n.format("tile.wire_coil.tooltip_parallel_smelter", coilType.level * 32));
             int EUt = MetaTileEntityMultiSmelter.getEUtForParallel(MetaTileEntityMultiSmelter.getMaxParallel(coilType.getLevel()), coilType.getEnergyDiscount());
@@ -126,7 +126,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
 
         @Override
         public int getTier() {
-            return this.ordinal() + 8; // tier of tritanium coil block.
+            return this.ordinal() + 8 + 1; // tier of tritanium coil block.
         }
 
         @Nullable
