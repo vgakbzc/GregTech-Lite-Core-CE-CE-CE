@@ -41,6 +41,7 @@ import static gregtech.api.GTValues.LuV;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.optionalStates;
 
 //  TODO redo workable handler and recipe maps, maybe split nano assembling mode to a new nano swarm-related machine.
+//  TODO add recipe tier, and compare with auxiliaryUpgradeNumber though checkRecipe().
 public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
 
     private byte auxiliaryUpgradeNumber = 0;

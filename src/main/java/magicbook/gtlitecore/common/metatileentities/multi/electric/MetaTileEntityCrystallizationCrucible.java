@@ -3,6 +3,7 @@ package magicbook.gtlitecore.common.metatileentities.multi.electric;
 import gregicality.multiblocks.common.block.GCYMMetaBlocks;
 import gregicality.multiblocks.common.block.blocks.BlockUniqueCasing;
 import gregtech.api.GTValues;
+import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.capability.IHeatingCoil;
 import gregtech.api.capability.impl.HeatingCoilRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
@@ -70,11 +71,10 @@ public class MetaTileEntityCrystallizationCrucible extends RecipeMapMultiblockCo
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
         Object type = context.get("CoilType");
-        if (type instanceof BlockWireCoil.CoilType)
-            this.temperature = ((BlockWireCoil.CoilType) type).getCoilTemperature();
+        if (type instanceof IHeatingCoilBlockStats)
+            this.temperature = ((IHeatingCoilBlockStats) type).getCoilTemperature();
         else
             this.temperature = BlockWireCoil.CoilType.CUPRONICKEL.getCoilTemperature();
-
         this.temperature += 100 * Math.max(0, GTUtility.getTierByVoltage(getEnergyContainer().getInputVoltage()) - GTValues.MV);
     }
 
