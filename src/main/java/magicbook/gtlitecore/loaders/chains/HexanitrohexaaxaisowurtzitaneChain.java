@@ -72,10 +72,10 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .duration(20)
                 .buildAndRegister();
 
-        //  6NH3 + 4CH2O -> (CH2)6N4 + 6H2O
+        //  4NH3 + 6CH2O -> (CH2)6N4 + 6H2O
         CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(Ammonia.getFluid(6000))
-                .fluidInputs(Formaldehyde.getFluid(4000))
+                .fluidInputs(Ammonia.getFluid(4000))
+                .fluidInputs(Formaldehyde.getFluid(6000))
                 .output(dust, Hexamethylenetetramine, 22)
                 .fluidOutputs(Water.getFluid(6000))
                 .EUt(VA[HV])
