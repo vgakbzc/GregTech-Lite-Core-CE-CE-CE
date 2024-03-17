@@ -34,11 +34,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.UIV;
+import static gregtech.api.GTValues.VA;
 
 public class MetaTileEntityDysonSwarm extends FuelMultiblockController {
 

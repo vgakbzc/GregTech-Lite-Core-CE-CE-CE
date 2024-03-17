@@ -1,8 +1,11 @@
 package magicbook.gtlitecore.client;
 
 import codechicken.lib.texture.TextureUtils;
+import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
+import gregtech.client.renderer.texture.cube.SidedCubeRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
+import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IndustrialCentrifugeRenderer;
 import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
@@ -59,6 +62,7 @@ public class GTLiteTextures {
     public static final OrientedOverlayRenderer DYSON_SWARM_OVERLAY = new OrientedOverlayRenderer("multiblocks/dyson_swarm");
     public static final OrientedOverlayRenderer LARGE_FLUID_PHASE_TRANSFORMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/large_fluid_phase_transformer");
     public static final OrientedOverlayRenderer PRECISE_ASSEMBLER_OVERLAY = new OrientedOverlayRenderer("multiblocks/precise_assembler");
+    public static final OrientedOverlayRenderer QUANTUM_COMPUTER_OVERLAY = new OrientedOverlayRenderer("multiblocks/quantum_computer");
 
     //  GTLite Overlay Renderer
     public static final GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -128,11 +132,31 @@ public class GTLiteTextures {
     public static final GTLiteOverlayRenderer HATTRIUM_CASING = new GTLiteOverlayRenderer("casings/hattrium_casing");
     public static final GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
 
+    //  Simple Overlay Renderer
+    public static final SimpleOverlayRenderer QC_EMPTY_COMPONENT_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/empty");
+    public static final SimpleOverlayRenderer QC_COMPUTATION_COMPONENT_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/computation");
+    public static final SimpleOverlayRenderer QC_ADVANCED_COMPUTATION_COMPONENT_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/computation_advanced");
+    public static final SimpleOverlayRenderer QC_COMPUTATION_COMPONENT_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/computation_active");
+    public static final SimpleOverlayRenderer QC_ADVANCED_COMPUTATION_COMPONENT_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/computation_advanced_active");
+    public static final SimpleOverlayRenderer QC_HEAT_SINK_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/heat_sink");
+    public static final SimpleOverlayRenderer QC_ACTIVE_COOLER_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/active_cooler");
+    public static final SimpleOverlayRenderer QC_ACTIVE_COOLER_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/active_cooler_active");
+    public static final SimpleOverlayRenderer QC_DAMAGED_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/damaged");
+    public static final SimpleOverlayRenderer QC_DAMAGED_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/damaged_active");
+    public static final SimpleOverlayRenderer QC_ADVANCED_DAMAGED_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/damaged_advanced");
+    public static final SimpleOverlayRenderer QC_ADVANCED_DAMAGED_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/damaged_advanced_active");
+    public static final SimpleOverlayRenderer QC_BRIDGE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/bridge");
+    public static final SimpleOverlayRenderer QC_BRIDGE_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/bridge_active");
+
     //  Simple Oriented Cube Renderer
     public static final SimpleOrientedCubeRenderer ADVANCED_FILTER_IRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_filter_iridium_front");
     public static final SimpleOrientedCubeRenderer ADVANCED_GRATE_OSMIRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_grate_osmiridium_front");
     public static final SimpleOrientedCubeRenderer FORCE_FIELD_CONSTRAINED_CASING = new SimpleOrientedCubeRenderer("casings/force_field_constrained_casing");
     public static final SimpleOrientedCubeRenderer RECEIVER_CASING = new SimpleOrientedCubeRenderer("casings/receiver_casing");
+
+    //  Sided Cube Renderer
+    public static final ICubeRenderer COMPUTER_CASING = new SidedCubeRenderer("casings/quantum_computer_casing");
+    public static final ICubeRenderer ADVANCED_COMPUTER_CASING = new SidedCubeRenderer("casings/advanced_quantum_computer_casing");
 
     //  Custom Renderer
     public static IsaMillRenderer ISA_MILL = new IsaMillRenderer();

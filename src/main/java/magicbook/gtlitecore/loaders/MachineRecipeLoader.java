@@ -4,26 +4,27 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.*;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockMetalCasing;
+import gregtech.common.blocks.*;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
-import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockCleanroomCasing;
 import magicbook.gtlitecore.common.blocks.BlockComputerCasing;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
+import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.init.Items;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
@@ -31,7 +32,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
@@ -1944,6 +1945,99 @@ public class MachineRecipeLoader {
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Quantum Computer
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HIGH_PERFORMANCE_COMPUTING_ARRAY)
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(SENSOR_UV, 8)
+                .input(FIELD_GENERATOR_UV, 8)
+                .input(TOOL_DATA_MODULE)
+                .input(COVER_SCREEN, 2)
+                .input(NANO_PIC_CHIP, 16)
+                .input(ring, Orichalcum, 32)
+                .input(wireGtDouble, EnrichedNaquadahTriniumEuropiumDuranide, 16)
+                .input(screw, Rutherfordium, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(YttriumBariumCuprate.getFluid(L * 8))
+                .fluidInputs(Naquadria.getFluid(L))
+                .output(QUANTUM_COMPUTER)
+                .stationResearch(b -> b
+                        .researchStack(HIGH_PERFORMANCE_COMPUTING_ARRAY.getStackForm())
+                        .EUt(VA[UV])
+                        .CWUt(64))
+                .EUt(VA[UV])
+                .duration(800)
+                .buildAndRegister();
+
+        //  Quantum Computer Components
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.COMPUTER_CASING))
+                .input(circuit, MarkerMaterials.Tier.LuV)
+                .input(TOOL_DATA_ORB)
+                .fluidInputs(PCBCoolant.getFluid(2000))
+                .output(QC_EMPTY_COMPONENT)
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QC_EMPTY_COMPONENT)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(FIELD_GENERATOR_ZPM)
+                .fluidInputs(PCBCoolant.getFluid(2000))
+                .output(QC_COMPUTATION_COMPONENT[0])
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QC_COMPUTATION_COMPONENT[0])
+                .input(circuit, MarkerMaterials.Tier.UHV, 4)
+                .input(FIELD_GENERATOR_UV)
+                .fluidInputs(PCBCoolant.getFluid(2000))
+                .output(QC_COMPUTATION_COMPONENT[1])
+                .EUt(VA[UV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(QC_EMPTY_COMPONENT)
+                .input(plate, StainlessSteel, 32)
+                .input(screw, Titanium, 8)
+                .fluidInputs(PCBCoolant.getFluid(2000))
+                .output(QC_COOLER_COMPONENT[0])
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.ADVANCED_COMPUTER_CASING))
+                .input(plate, StainlessSteel, 16)
+                .input(pipeTinyFluid, Titanium, 16)
+                .input(screw, Titanium, 8)
+                .fluidInputs(PCBCoolant.getFluid(2000))
+                .output(QC_COOLER_COMPONENT[1])
+                .EUt(VA[LuV])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.ADVANCED_COMPUTER_CASING))
+                .input(circuit, MarkerMaterials.Tier.UHV)
+                .input(EMITTER_UV)
+                .input(MetaBlocks.OPTICAL_PIPES[0], 2)
+                .fluidInputs(PCBCoolant.getFluid(2000))
+                .output(QC_BRIDGE_COMPONENT)
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -3707,7 +3801,7 @@ public class MachineRecipeLoader {
                 .input(rotor, Iridium, 2)
                 .input(pipeTinyFluid, VanadiumSteel, 16)
                 .input(plate, TinAlloy, 16)
-                .input(cableGtSingle, UraniumTriplatinum)
+                .input(wireFine, UraniumTriplatinum, 4)
                 .fluidInputs(PCBCoolant.getFluid(L * 2))
                 .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.BIOWARE_COMPUTER_HEAT_VENT, 2))
                 .EUt(VA[IV])
@@ -4688,6 +4782,45 @@ public class MachineRecipeLoader {
                         .CWUt(288))
                 .EUt(8000000)
                 .duration(100)
+                .buildAndRegister();
+
+        //  Quantum Computer Casings
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Duranium)
+                .input(plate, Duranium, 6)
+                .input(circuit, MarkerMaterials.Tier.ZPM)
+                .input(wireFine, Osmiridium, 32)
+                .input(wireFine, Rhenium, 32)
+                .input(wireGtSingle, YttriumBariumCuprate, 2)
+                .outputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.COMPUTER_CASING, 2))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.COMPUTER_CASING))
+                .input(circuit, MarkerMaterials.Tier.UV)
+                .input(wireFine, Titanium, 64)
+                .input(wireFine, RedAlloy, 64)
+                .input(wireGtSingle, UraniumRhodiumDinaquadide, 4)
+                .outputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.ADVANCED_COMPUTER_CASING))
+                .EUt(VA[ZPM])
+                .duration(200)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Titanium)
+                .input(ELECTRIC_MOTOR_LuV, 2)
+                .input(rotor, Titanium, 2)
+                .input(pipeTinyFluid, Titanium, 16)
+                .input(plate, BlackBronze, 16)
+                .input(wireGtSingle, IndiumTinBariumTitaniumCuprate)
+                .outputs(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING.getItemVariant(BlockQuantumComputerCasing.QCCasingType.HEAT_VENT, 2))
+                .EUt(VA[LuV])
+                .duration(100)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 }

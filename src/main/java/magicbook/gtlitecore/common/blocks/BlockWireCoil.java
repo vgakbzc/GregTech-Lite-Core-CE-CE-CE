@@ -90,6 +90,8 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         ICHORIUM("ichorium", 16600, 64, 32, GTLiteMaterials.Ichorium),
         ASTRALIUM("astralium", 18400, 128, 64, GTLiteMaterials.Astralium);
 
+        //  todo maybe add Hikarium Coil as a final coil.
+
         private final String name;
         private final int coilTemperature;
         private final int level;
@@ -126,7 +128,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
 
         @Override
         public int getTier() {
-            return this.ordinal() + 8 + 1; // tier of tritanium coil block.
+            return this.ordinal() + 9; // new coil tier, after tier of tritanium coil.
         }
 
         @Nullable

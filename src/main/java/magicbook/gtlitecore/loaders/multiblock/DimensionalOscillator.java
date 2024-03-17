@@ -1,8 +1,9 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.ring;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.DIMENSIONAL_OSCILLATOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
