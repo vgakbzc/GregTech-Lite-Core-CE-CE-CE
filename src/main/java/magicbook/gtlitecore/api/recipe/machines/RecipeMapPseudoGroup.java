@@ -79,7 +79,10 @@ public class RecipeMapPseudoGroup<R extends RecipeBuilder<R>> extends RecipeMap<
     private int checkCircuit(@Nonnull List<ItemStack> inputs) {
         for (ItemStack stack : inputs) {
             if (MetaItems.INTEGRATED_CIRCUIT.isItemEqual(stack)) {
-                return IntCircuitIngredient.getCircuitConfiguration(stack);
+                // only circuits with correct configuration will be considered
+                int num = IntCircuitIngredient.getCircuitConfiguration(stack);
+                if (num >= 20 && num <= 22)
+                    return num;
             }
         }
         return 0;
