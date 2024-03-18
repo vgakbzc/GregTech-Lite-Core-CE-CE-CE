@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.block;
 import static gregtech.common.blocks.MetaBlocks.ITNT;
+import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CONDENSER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
@@ -17,9 +18,9 @@ public class Condenser {
         MetricSingularities();
         ExoticSingularities();
         AncientSingularities();
-        //  todo VoidSingularities();
-        //  todo EigenSingularities();
-        //  todo WeirdSingularities();
+        VoidSingularities();
+        EigenSingularities();
+        WeirdSingularities();
     }
 
     private static void MagicSingularities() {
@@ -65,7 +66,7 @@ public class Condenser {
         createSingularityRecipe(Tritanium, true);
         createSingularityRecipe(AstralTitanium, true);
         createSingularityRecipe(CelestialTungsten, true);
-        createSingularityRecipe(Ichorium, true);
+        createSingularityRecipe(Bedrock, false);
         createSingularityRecipe(Astralium, true);
         createSingularityRecipe(Hikarium, true);
         createSingularityRecipe(Rhugnor, true);
@@ -134,6 +135,70 @@ public class Condenser {
         createSingularityRecipe(Coal, true);
         createSingularityRecipe(Steam, false);
         createSingularityRecipe(Clay, true);
+    }
+
+    private static void VoidSingularities() {
+        createSingularityRecipe(Air, false);
+        createSingularityRecipe(NetherAir, false);
+        createSingularityRecipe(EnderAir, false);
+        createSingularityRecipe(Carbon, false);
+        createSingularityRecipe(Hydrogen, false);
+        createSingularityRecipe(Oxygen, false);
+        createSingularityRecipe(Chlorine, false);
+        createSingularityRecipe(Fluorine, false);
+        createSingularityRecipe(Helium, false);
+        createSingularityRecipe(Neon, false);
+        createSingularityRecipe(Argon, false);
+        createSingularityRecipe(Krypton, false);
+        createSingularityRecipe(Xenon, false);
+        createSingularityRecipe(Radon, false);
+        createSingularityRecipe(MetastableOganesson, true);
+        createSingularityRecipe(RainbowSap, false);
+    }
+
+    private static void EigenSingularities() {
+        createSingularityRecipe(Bronze, true);
+        createSingularityRecipe(Steel, true);
+        createSingularityRecipe(Aluminium, true);
+        createSingularityRecipe(StainlessSteel, true);
+        createSingularityRecipe(CobaltBrass, true);
+        createSingularityRecipe(VanadiumSteel, true);
+        createSingularityRecipe(BlackSteel, true);
+        createSingularityRecipe(BlueSteel, true);
+        createSingularityRecipe(RedSteel, true);
+        createSingularityRecipe(TungstenSteel, true);
+        createSingularityRecipe(HSSG, true);
+        createSingularityRecipe(HSSE, true);
+        createSingularityRecipe(HSSS, true);
+        createSingularityRecipe(Ruridit, true);
+        createSingularityRecipe(Osmiridium, true);
+        createSingularityRecipe(NaquadahAlloy, true);
+    }
+
+    private static void WeirdSingularities() {
+        createSingularityRecipe(BlazingPyrotheum, false);
+        createSingularityRecipe(GelidCryotheum, false);
+        createSingularityRecipe(Tiberium, false);
+
+        CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(QuarkGluonPlasma.getPlasma(L * 9 * 64))
+                .output(singularity, QuarkGluonPlasma)
+                .EUt(VA[IV])
+                .duration((int) QuarkGluonPlasma.getMass() * 8)
+                .buildAndRegister();
+
+        createSingularityRecipe(LightQuarks, false);
+        createSingularityRecipe(HeavyQuarks, false);
+        createSingularityRecipe(Gluons, false);
+        createSingularityRecipe(Instantons, false);
+        createSingularityRecipe(HiggsBosons, false);
+        createSingularityRecipe(HeavyLepton, false);
+        createSingularityRecipe(TemporalFluid, false);
+        createSingularityRecipe(HeavyQuarkDegenerateMatter, true);
+        createSingularityRecipe(QuantumchromodynamicallyConfinedMatter, true);
+        createSingularityRecipe(BlackDwarfMatter, true);
+        createSingularityRecipe(WhiteDwarfMatter, true);
+        createSingularityRecipe(DimensionallyTranscendentResidue, false);
     }
 
     private static void createSingularityRecipe(Material material,

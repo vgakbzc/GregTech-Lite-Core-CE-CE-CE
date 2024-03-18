@@ -7,6 +7,7 @@ import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
@@ -398,7 +399,7 @@ public class GTLiteMaterialPropertyAddition {
         Tritanium.addFlags(GENERATE_SINGULARITY);
         AstralTitanium.addFlags(GENERATE_SINGULARITY);
         CelestialTungsten.addFlags(GENERATE_SINGULARITY);
-        Ichorium.addFlags(GENERATE_SINGULARITY);
+        Bedrock.addFlags(GENERATE_SINGULARITY);
         Astralium.addFlags(GENERATE_SINGULARITY);
         Hikarium.addFlags(GENERATE_SINGULARITY);
         Rhugnor.addFlags(GENERATE_SINGULARITY);
@@ -427,6 +428,57 @@ public class GTLiteMaterialPropertyAddition {
         Coal.addFlags(GENERATE_SINGULARITY);
         Steam.addFlags(GENERATE_SINGULARITY);
         Clay.addFlags(GENERATE_SINGULARITY);
+
+        Air.addFlags(GENERATE_SINGULARITY);
+        NetherAir.addFlags(GENERATE_SINGULARITY);
+        EnderAir.addFlags(GENERATE_SINGULARITY);
+        Carbon.addFlags(GENERATE_SINGULARITY);
+        Hydrogen.addFlags(GENERATE_SINGULARITY);
+        Oxygen.addFlags(GENERATE_SINGULARITY);
+        Chlorine.addFlags(GENERATE_SINGULARITY);
+        Fluorine.addFlags(GENERATE_SINGULARITY);
+        Helium.addFlags(GENERATE_SINGULARITY);
+        Neon.addFlags(GENERATE_SINGULARITY);
+        Argon.addFlags(GENERATE_SINGULARITY);
+        Krypton.addFlags(GENERATE_SINGULARITY);
+        Xenon.addFlags(GENERATE_SINGULARITY);
+        Radon.addFlags(GENERATE_SINGULARITY);
+        MetastableOganesson.addFlags(GENERATE_SINGULARITY);
+        RainbowSap.addFlags(GENERATE_SINGULARITY);
+
+        Bronze.addFlags(GENERATE_SINGULARITY);
+        Steel.addFlags(GENERATE_SINGULARITY);
+        Aluminium.addFlags(GENERATE_SINGULARITY);
+        StainlessSteel.addFlags(GENERATE_SINGULARITY);
+        CobaltBrass.addFlags(GENERATE_SINGULARITY);
+        VanadiumSteel.addFlags(GENERATE_SINGULARITY);
+        BlackSteel.addFlags(GENERATE_SINGULARITY);
+        BlueSteel.addFlags(GENERATE_SINGULARITY);
+        RedSteel.addFlags(GENERATE_SINGULARITY);
+        TungstenSteel.addFlags(GENERATE_SINGULARITY);
+        HSSG.addFlags(GENERATE_SINGULARITY);
+        HSSE.addFlags(GENERATE_SINGULARITY);
+        HSSS.addFlags(GENERATE_SINGULARITY);
+        Ruridit.addFlags(GENERATE_SINGULARITY);
+        Osmiridium.addFlags(GENERATE_SINGULARITY);
+        NaquadahAlloy.addFlags(GENERATE_SINGULARITY);
+
+        BlazingPyrotheum.addFlags(GENERATE_SINGULARITY);
+        GelidCryotheum.addFlags(GENERATE_SINGULARITY);
+        Tiberium.addFlags(GENERATE_SINGULARITY);
+        QuarkGluonPlasma.addFlags(GENERATE_SINGULARITY);
+        LightQuarks.addFlags(GENERATE_SINGULARITY);
+        HeavyQuarks.addFlags(GENERATE_SINGULARITY);
+        Gluons.addFlags(GENERATE_SINGULARITY);
+        Instantons.addFlags(GENERATE_SINGULARITY);
+        HiggsBosons.addFlags(GENERATE_SINGULARITY);
+        HeavyLepton.addFlags(GENERATE_SINGULARITY);
+        TemporalFluid.addFlags(GENERATE_SINGULARITY);
+        HeavyQuarkDegenerateMatter.addFlags(GENERATE_SINGULARITY);
+        QuantumchromodynamicallyConfinedMatter.addFlags(GENERATE_SINGULARITY);
+        BlackDwarfMatter.addFlags(GENERATE_SINGULARITY);
+        WhiteDwarfMatter.addFlags(GENERATE_SINGULARITY);
+        DimensionallyTranscendentResidue.addFlags(GENERATE_SINGULARITY);
 
         Infinity.addFlags(GENERATE_SINGULARITY);
         Eternity.addFlags(GENERATE_SINGULARITY); // For end game

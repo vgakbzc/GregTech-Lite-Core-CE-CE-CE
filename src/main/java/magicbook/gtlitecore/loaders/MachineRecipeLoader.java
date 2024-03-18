@@ -3787,7 +3787,7 @@ public class MachineRecipeLoader {
                 .input(circuit, MarkerMaterials.Tier.LuV)
                 .input(wireFine, Aluminium, 64)
                 .input(wireFine, Cupronickel, 64)
-                .input(cableGtSingle, SamariumIronArsenicOxide, 4)
+                .input(wireGtSingle, SamariumIronArsenicOxide, 4)
                 .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.ADVANCED_BIOWARE_COMPUTER_CASING, 2))
                 .EUt(VA[LuV])
                 .duration(100)
