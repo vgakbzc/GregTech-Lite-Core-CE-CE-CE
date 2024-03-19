@@ -745,6 +745,23 @@ gtlitecore.machine.fluid_hatch.export_9x.uiv.name=九重输出仓（§2UIV§r）
 gtlitecore.machine.fluid_hatch.export_9x.uxv.name=九重输出仓（§eUXV§r）
 gtlitecore.machine.fluid_hatch.export_9x.opv.name=九重输出仓（§9OpV§r）
 
+#  General Circuits
+metaitem.general_circuit.ulv.name=任意§8ULV§r电路
+metaitem.general_circuit.lv.name=任意§7LV§r电路
+metaitem.general_circuit.mv.name=任意§bMV§r电路
+metaitem.general_circuit.hv.name=任意§6HV§r电路
+metaitem.general_circuit.ev.name=任意§5EV§r电路
+metaitem.general_circuit.iv.name=任意§1IV§r电路
+metaitem.general_circuit.luv.name=任意§dLuV§r电路
+metaitem.general_circuit.zpm.name=任意§cZPM§r电路
+metaitem.general_circuit.uv.name=任意§3UV§r电路
+metaitem.general_circuit.uhv.name=任意§4UHV§r电路
+metaitem.general_circuit.uev.name=任意§aUEV§r电路
+metaitem.general_circuit.uiv.name=任意§2UIV§r电路
+metaitem.general_circuit.uxv.name=任意§eUXV§r电路
+metaitem.general_circuit.opv.name=任意§9OpV§r电路
+metaitem.general_circuit.max.name=任意§c§lMAX§r电路
+
 #  Integrations
 
 ##  The One Probe
