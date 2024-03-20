@@ -157,6 +157,7 @@ public class GTLiteMaterialPropertyAddition {
         Meitnerium.addFlags(GENERATE_PLATE);
         Roentgenium.addFlags(GENERATE_PLATE);
         Bohrium.addFlags(GENERATE_PLATE);
+        Actinium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);

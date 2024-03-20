@@ -1310,7 +1310,7 @@ public class MachineRecipeLoader {
         //  Algae Culture Tank
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(HULL[ZPM])
-                .input(plate, Mendelevium, 4)
+                .input(plate, Actinium, 4)
                 .input(plate, Naquadria, 4)
                 .input(circuit, MarkerMaterials.Tier.UV, 2)
                 .input(ELECTRIC_PUMP_ZPM, 2)
