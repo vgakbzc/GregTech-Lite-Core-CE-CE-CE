@@ -149,6 +149,7 @@ public class SupracausalCircuits {
                 .output(MACROWORMHOLE_GENERATOR)
                 .EUt(VA[UXV])
                 .duration(20)
+                .CasingTier(5)
                 .buildAndRegister();
 
         //  Stabilized Wormhole Generator

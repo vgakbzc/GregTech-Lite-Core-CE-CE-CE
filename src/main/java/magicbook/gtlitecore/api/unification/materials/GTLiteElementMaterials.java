@@ -230,7 +230,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.AstralTitanium)
                 .cableProperties(V[UIV], 32, 12, false)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_RING)
                 .build();
 
         //  10015 Celestial Tungsten
