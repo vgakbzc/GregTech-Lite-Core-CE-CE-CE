@@ -174,7 +174,7 @@ public class DroneAirport {
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_UHV.getStackForm())
                         .EUt(VA[UHV])
-                        .CWUt(96))
+                        .CWUt(128))
                 .buildAndRegister();
 
         //  UIV
@@ -191,7 +191,7 @@ public class DroneAirport {
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_UEV.getStackForm())
                         .EUt(VA[UEV])
-                        .CWUt(128))
+                        .CWUt(256))
                 .buildAndRegister();
 
         //  UXV
@@ -208,7 +208,7 @@ public class DroneAirport {
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_UIV.getStackForm())
                         .EUt(VA[UIV])
-                        .CWUt(160))
+                        .CWUt(512))
                 .buildAndRegister();
 
         //  OpV
@@ -225,7 +225,7 @@ public class DroneAirport {
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_UXV.getStackForm())
                         .EUt(VA[UXV])
-                        .CWUt(192))
+                        .CWUt(1024))
                 .buildAndRegister();
 
         //  MAX
@@ -242,7 +242,7 @@ public class DroneAirport {
                 .stationResearch(b -> b
                         .researchStack(MINING_DRONE_OpV.getStackForm())
                         .EUt(VA[OpV])
-                        .CWUt(224))
+                        .CWUt(2048))
                 .buildAndRegister();
     }
 
