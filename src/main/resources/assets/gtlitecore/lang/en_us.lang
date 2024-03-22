@@ -746,6 +746,23 @@ gtlitecore.machine.fluid_hatch.export_9x.uiv.name=§2UIV§r Nonuple Output Hatch
 gtlitecore.machine.fluid_hatch.export_9x.uxv.name=§eUXV§r Nonuple Output Hatch
 gtlitecore.machine.fluid_hatch.export_9x.opv.name=§9OpV§r Nonuple Output Hatch
 
+#  General Circuits
+metaitem.general_circuit.ulv.name=General Circuit (§8ULV§r)
+metaitem.general_circuit.lv.name=General Circuit (§7LV§r)
+metaitem.general_circuit.mv.name=General Circuit (§bMV§r)
+metaitem.general_circuit.hv.name=General Circuit (§6HV§r)
+metaitem.general_circuit.ev.name=General Circuit (§5EV§r)
+metaitem.general_circuit.iv.name=General Circuit (§1IV§r)
+metaitem.general_circuit.luv.name=General Circuit (§dLuV§r)
+metaitem.general_circuit.zpm.name=General Circuit (§cZPM§r)
+metaitem.general_circuit.uv.name=General Circuit (§3UV§r)
+metaitem.general_circuit.uhv.name=General Circuit (§4UHV§r)
+metaitem.general_circuit.uev.name=General Circuit (§aUEV§r)
+metaitem.general_circuit.uiv.name=General Circuit (§2UIV§r)
+metaitem.general_circuit.uxv.name=General Circuit (§eUXV§r)
+metaitem.general_circuit.opv.name=General Circuit (§9OpV§r)
+metaitem.general_circuit.max.name=General Circuit (§c§lMAX§r)
+
 #  Item Hatches
 gtlitecore.machine.item_hatch.import.uev.name=§aUEV§r Input Bus
 gtlitecore.machine.item_hatch.import.uiv.name=§2UIV§r Input Bus
