@@ -3493,16 +3493,12 @@ public class OverrideRecipeLoader {
      * </p>
      */
     private static void GTFOOverrides() {
+
         //  Remove original recipes, use gtlitecore register machine recipes.
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.lv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.mv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.hv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.ev");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.iv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.luv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.zpm");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.uv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.uhv");
+        String[] voltageList = {"lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv"};
+        for (int i = 0; i < 9; i++) {
+            ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer." + voltageList[i]);
+        }
 
         //  A new map of dense plate component, is not same as gregtechfoodoption's.
         CraftingComponent.Component PLATE_DENSE = new CraftingComponent.Component(Stream.of(
