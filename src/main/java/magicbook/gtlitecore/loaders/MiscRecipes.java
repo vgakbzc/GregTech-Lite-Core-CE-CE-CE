@@ -1184,5 +1184,197 @@ public class MiscRecipes {
                 .CasingTier(8)
                 .buildAndRegister();
 
+        //  General Circuits
+
+        //  ULV
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.ULV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_ULV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  LV
+        ModHandler.addShapedRecipe("general_circuit.lv", GENERAL_CIRCUIT_LV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.LV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.LV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_LV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  MV
+        ModHandler.addShapedRecipe("general_circuit.mv", GENERAL_CIRCUIT_MV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.MV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_MV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  HV
+        ModHandler.addShapedRecipe("general_circuit.hv", GENERAL_CIRCUIT_HV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.HV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.HV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_HV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  EV
+        ModHandler.addShapedRecipe("general_circuit.ev", GENERAL_CIRCUIT_EV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.EV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.EV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_EV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  IV
+        ModHandler.addShapedRecipe("general_circuit.iv", GENERAL_CIRCUIT_IV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.IV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.IV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_IV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  LuV
+        ModHandler.addShapedRecipe("general_circuit.luv", GENERAL_CIRCUIT_LuV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.LuV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.LuV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_LuV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  ZPM
+        ModHandler.addShapedRecipe("general_circuit.zpm", GENERAL_CIRCUIT_ZPM.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.ZPM)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_ZPM)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  UV
+        ModHandler.addShapedRecipe("general_circuit.uv", GENERAL_CIRCUIT_UV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_UV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  UHV
+        ModHandler.addShapedRecipe("general_circuit.uhv", GENERAL_CIRCUIT_UHV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UHV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_UHV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  UEV
+        ModHandler.addShapedRecipe("general_circuit.uev", GENERAL_CIRCUIT_UEV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UEV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_UEV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  UIV
+        ModHandler.addShapedRecipe("general_circuit.uiv", GENERAL_CIRCUIT_UIV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UIV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UIV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_UIV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  UXV
+        ModHandler.addShapedRecipe("general_circuit.uxv", GENERAL_CIRCUIT_UXV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UXV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.UXV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_UXV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  OpV
+        ModHandler.addShapedRecipe("general_circuit.opv", GENERAL_CIRCUIT_OpV.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.OpV));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.OpV)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_OpV)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+
+        //  MAX
+        ModHandler.addShapedRecipe("general_circuit.max", GENERAL_CIRCUIT_MAX.getStackForm(),
+                " X ",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX));
+
+        PACKER_RECIPES.recipeBuilder()
+                .input(circuit, MarkerMaterials.Tier.MAX)
+                .circuitMeta(5)
+                .output(GENERAL_CIRCUIT_MAX)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
     }
 }

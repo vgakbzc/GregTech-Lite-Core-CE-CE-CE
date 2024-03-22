@@ -1310,7 +1310,7 @@ public class MachineRecipeLoader {
         //  Algae Culture Tank
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(HULL[ZPM])
-                .input(plate, Mendelevium, 4)
+                .input(plate, Actinium, 4)
                 .input(plate, Naquadria, 4)
                 .input(circuit, MarkerMaterials.Tier.UV, 2)
                 .input(ELECTRIC_PUMP_ZPM, 2)
@@ -3787,7 +3787,7 @@ public class MachineRecipeLoader {
                 .input(circuit, MarkerMaterials.Tier.LuV)
                 .input(wireFine, Aluminium, 64)
                 .input(wireFine, Cupronickel, 64)
-                .input(cableGtSingle, SamariumIronArsenicOxide, 4)
+                .input(wireGtSingle, SamariumIronArsenicOxide, 4)
                 .outputs(GTLiteMetaBlocks.COMPUTER_CASING.getItemVariant(BlockComputerCasing.ComputerCasingType.ADVANCED_BIOWARE_COMPUTER_CASING, 2))
                 .EUt(VA[LuV])
                 .duration(100)
