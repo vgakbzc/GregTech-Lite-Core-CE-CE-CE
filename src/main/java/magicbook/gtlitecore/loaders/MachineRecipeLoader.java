@@ -430,6 +430,7 @@ public class MachineRecipeLoader {
                 .input(MINING_DRONE_UV, 8)
                 .input(plateDouble, Vibranium, 32)
                 .input(UNMANNED_DRONE_AIRPORT, 16)
+                .input(PLANETARY_GAS_SIPHON, 16)
                 .input(GRAVITATION_ENGINE, 8)
                 .input(CONVEYOR_MODULE_UV, 16)
                 .input(ROBOT_ARM_UV, 16)
@@ -2038,6 +2039,16 @@ public class MachineRecipeLoader {
                 .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Planetary Gas Siphon
+        ModHandler.addShapedRecipe(true, "planetary_gas_siphon", PLANETARY_GAS_SIPHON.getStackForm(),
+                "MAM", "XHX", "SPS",
+                'H', HULL[ZPM].getStackForm(),
+                'P', new UnificationEntry(pipeNormalFluid, TungstenCarbide),
+                'S', new UnificationEntry(screw, LithiumTitanate),
+                'A', ELECTRIC_PUMP_ZPM,
+                'M', ELECTRIC_MOTOR_ZPM,
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM));
     }
 
     private static void MachineCasingRecipes() {
