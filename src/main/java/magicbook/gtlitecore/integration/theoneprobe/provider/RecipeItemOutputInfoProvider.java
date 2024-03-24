@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.integration.theoneprobe;
+package magicbook.gtlitecore.integration.theoneprobe.provider;
 
 import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IWorkable;
