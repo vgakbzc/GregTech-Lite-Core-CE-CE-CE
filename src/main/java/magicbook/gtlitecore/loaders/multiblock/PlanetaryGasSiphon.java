@@ -19,7 +19,7 @@ public class PlanetaryGasSiphon {
         MetaItem<?>.MetaValueItem[] Drone = { MINING_DRONE_LV, MINING_DRONE_MV, MINING_DRONE_HV, MINING_DRONE_EV, MINING_DRONE_IV,
                 MINING_DRONE_LuV, MINING_DRONE_ZPM };
         Material[] Pipe = { Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, NiobiumTitanium, Iridium };
-        Material[] Drill = { Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, RhodiumPlatedPalladium, NaquadahAlloy };
+        Material[] Drill = { Steel, Aluminium, StainlessSteel, Titanium, TungstenSteel, HSSE, NaquadahAlloy };
 
         //  LV Mining Drone
         createPlanetaryGasSiphonRecipe(1, Drone[0], Pipe[0], Drill[0], Nitrogen,        30000, Energy[0]);
