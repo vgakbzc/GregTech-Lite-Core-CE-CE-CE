@@ -50,8 +50,10 @@ public class MetaTileEntityPlanetaryGasSiphon extends RecipeMapMultiblockControl
                 .aisle("F   F", "F   F", "CCCCC", "     ", "     ", "     ", "     ", "     ", "     ", "     ")
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState())
+                        .setMinGlobalLimited(24)
                         .or(autoAbilities()))
                 .where('F', states(getFrameState()))
+                .where(' ', any())
                 .build();
     }
 

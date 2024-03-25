@@ -12,7 +12,6 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SPACE_ELEVATOR_MI
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
-@SuppressWarnings("rawtypes")
 public class SpaceElevator {
 
     public static void init() {
@@ -608,7 +607,7 @@ public class SpaceElevator {
     }
 
     private static void createDrillingModuleFluidRecipe(int circuitMeta,
-                                                        MetaItem.MetaValueItem drone,
+                                                        MetaItem<?>.MetaValueItem drone,
                                                         Material fluidOutput,
                                                         int amount,
                                                         int casingTier,
@@ -632,7 +631,7 @@ public class SpaceElevator {
     }
 
     private static void createDrillingModulePlasmaRecipe(int circuitMeta,
-                                                         MetaItem.MetaValueItem drone,
+                                                         MetaItem<?>.MetaValueItem drone,
                                                          Material fluidOutput,
                                                          int amount,
                                                          int casingTier,
@@ -656,7 +655,7 @@ public class SpaceElevator {
     }
 
     private static void createMiningModuleRecipe(int circuitMeta,
-                                                 MetaItem.MetaValueItem drone,
+                                                 MetaItem<?>.MetaValueItem drone,
                                                  Material ore1,
                                                  int chanceOre1,
                                                  Material ore2,
