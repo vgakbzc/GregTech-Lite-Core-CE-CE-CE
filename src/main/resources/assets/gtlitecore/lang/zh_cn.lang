@@ -1454,6 +1454,10 @@ gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 
+gtlitecore.machine.planetary_gas_siphon.name=行星气体钻机
+gtlitecore.machine.planetary_gas_siphon.tooltip.1=太空资源提取技术的飞跃！
+gtlitecore.machine.planetary_gas_siphon.tooltip.2=利用§6采矿无人机§7提取行星大气并转换为可供利用的物质形态。
+
 gtlitecore.machine.bioware_simulator.name=生物活性模拟器
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
@@ -2552,6 +2556,7 @@ recipemap.biomass_generator_recipes.name=生物质发电机
 recipemap.large_gas_collector_recipes.name=大型集气室
 recipemap.virtual_cosmos_simulator_recipes.name=虚拟宇宙物质解压
 recipemap.large_circuit_assembly_line_recipes.name=大型电路装配线
+recipemap.planetary_gas_siphon_recipes.name=行星气体提取
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

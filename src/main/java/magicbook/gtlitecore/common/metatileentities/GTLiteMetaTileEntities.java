@@ -168,6 +168,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityDysonSwarm DYSON_SWARM;
     public static MetaTileEntityIntegratedOreProcessor INTEGRATED_ORE_PROCESSOR;
     public static MetaTileEntityLargeFluidPhaseTransformer LARGE_FLUID_PHASE_TRANSFORMER;
+    public static MetaTileEntityPlanetaryGasSiphon PLANETARY_GAS_SIPHON;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
     public static MetaTileEntityLargeGasCollector LARGE_GAS_COLLECTOR;
@@ -450,7 +451,7 @@ public class GTLiteMetaTileEntities {
         LARGE_FLUID_PHASE_TRANSFORMER = registerMultiMetaTileEntity(96, new MetaTileEntityLargeFluidPhaseTransformer(gtliteId("large_fluid_phase_transformer")));
         //  97 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
         //  98 SUPERSTRUCTURE_ASSEMBLY_PLANT
-        //  99
+        PLANETARY_GAS_SIPHON = registerMultiMetaTileEntity(99, new MetaTileEntityPlanetaryGasSiphon(gtliteId("planetary_gas_siphon")));
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
         LARGE_GAS_COLLECTOR = registerMultiMetaTileEntity(102, new MetaTileEntityLargeGasCollector(gtliteId("large_gas_collector")));

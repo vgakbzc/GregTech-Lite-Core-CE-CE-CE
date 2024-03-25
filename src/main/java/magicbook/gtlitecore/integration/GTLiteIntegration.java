@@ -2,8 +2,8 @@ package magicbook.gtlitecore.integration;
 
 import magicbook.gtlitecore.api.GTLiteValues;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
-import magicbook.gtlitecore.integration.theoneprobe.RecipeFluidOutputInfoProvider;
-import magicbook.gtlitecore.integration.theoneprobe.RecipeItemOutputInfoProvider;
+import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeFluidOutputInfoProvider;
+import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeItemOutputInfoProvider;
 import mcjty.theoneprobe.TheOneProbe;
 import mcjty.theoneprobe.api.ITheOneProbe;
 import net.minecraftforge.fml.common.Loader;
