@@ -282,7 +282,7 @@ public class SupracausalCircuits {
                 .input(SPACETIME_CONDENSER)
                 .input(SUPRACAUSAL_ASSEMBLY, 2)
                 .input(SUPRACAUSAL_DIODE, 8)
-                .input(COSMIC_CPU_CHIP, 16) // TODO new chip
+                .input(COSMIC_CPU_CHIP, 16) // TODO new chip or not
                 .input(SUPRACAUSAL_MEMORY_CHIP, 32)
                 .input(wireFine, HeavyQuarkDegenerateMatter, 24)
                 .input(foil, Hikarium, 32)

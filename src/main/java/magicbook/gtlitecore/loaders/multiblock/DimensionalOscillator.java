@@ -53,5 +53,17 @@ public class DimensionalOscillator {
                 .EUt(VA[UXV])
                 .duration(100)
                 .buildAndRegister();
+
+        //  Fatalium Plasma -> Fatalium
+        //  Fatalium plasma recipe back to fusion reactor recipe
+        DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
+                .notConsumable(plate, Galaxium)
+                .fluidInputs(Fatalium.getPlasma(L))
+                .fluidInputs(Hypogen.getFluid(L * 4))
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(16000))
+                .fluidOutputs(Fatalium.getFluid(L))
+                .EUt(VA[OpV])
+                .duration(20)
+                .buildAndRegister();
     }
 }

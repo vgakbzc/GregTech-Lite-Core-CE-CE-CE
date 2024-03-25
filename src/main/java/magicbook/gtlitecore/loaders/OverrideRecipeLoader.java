@@ -8,14 +8,13 @@ import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.BlockBatteryPart;
-import gregtech.common.blocks.BlockMachineCasing;
-import gregtech.common.blocks.BlockSteamCasing;
-import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.blocks.*;
 import gregtech.common.items.MetaItems;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import gregtechfoodoption.block.GTFOGlassCasing;
+import gregtechfoodoption.block.GTFOMetaBlocks;
 import gregtechfoodoption.recipe.GTFOMachineRecipes;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.blocks.BlockHermeticCasing;
@@ -35,7 +34,9 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.HERMETIC_UHV;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static gregtechfoodoption.GTFOMaterialHandler.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.SLICER;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BIO_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
@@ -1942,122 +1943,123 @@ public class OverrideRecipeLoader {
                 .duration(300)
                 .buildAndRegister();
 
-        //  UEV 4x
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_10", QUADRUPLE_IMPORT_FLUID_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_EXPORT_FLUID_HATCH[0].getStackForm());
+        if (GTLiteConfigHolder.machines.enableHighTierMultiFluidHatch) {
+            //  UEV 4x
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_10", QUADRUPLE_IMPORT_FLUID_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_EXPORT_FLUID_HATCH[0].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_10", QUADRUPLE_EXPORT_FLUID_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_IMPORT_FLUID_HATCH[0].getStackForm());
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_10", QUADRUPLE_EXPORT_FLUID_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_IMPORT_FLUID_HATCH[0].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[0]) // UEV
-                .input(pipeQuadrupleFluid, Lafium)
-                .circuitMeta(4)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
-                .output(QUADRUPLE_IMPORT_FLUID_HATCH[0]) // UEV
-                .EUt(VA[UHV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[0]) // UEV
+                    .input(pipeQuadrupleFluid, Lafium)
+                    .circuitMeta(4)
+                    .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                    .output(QUADRUPLE_IMPORT_FLUID_HATCH[0]) // UEV
+                    .EUt(VA[UHV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[0]) // UEV
-                .input(pipeQuadrupleFluid, Lafium)
-                .circuitMeta(4)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 4))
-                .output(QUADRUPLE_EXPORT_FLUID_HATCH[0]) // UEV
-                .EUt(VA[UHV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[0]) // UEV
+                    .input(pipeQuadrupleFluid, Lafium)
+                    .circuitMeta(4)
+                    .fluidInputs(Polyetheretherketone.getFluid(L * 4))
+                    .output(QUADRUPLE_EXPORT_FLUID_HATCH[0]) // UEV
+                    .EUt(VA[UHV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UIV 4x
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_11", QUADRUPLE_IMPORT_FLUID_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_EXPORT_FLUID_HATCH[1].getStackForm());
+            //  UIV 4x
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_11", QUADRUPLE_IMPORT_FLUID_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_EXPORT_FLUID_HATCH[1].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_11", QUADRUPLE_EXPORT_FLUID_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_IMPORT_FLUID_HATCH[1].getStackForm());
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_11", QUADRUPLE_EXPORT_FLUID_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_IMPORT_FLUID_HATCH[1].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[1]) // UIV
-                .input(pipeQuadrupleFluid, CrystalMatrix)
-                .circuitMeta(4)
-                .fluidInputs(Kevlar.getFluid(L * 4))
-                .output(QUADRUPLE_IMPORT_FLUID_HATCH[1]) // UIV
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[1]) // UIV
+                    .input(pipeQuadrupleFluid, CrystalMatrix)
+                    .circuitMeta(4)
+                    .fluidInputs(Kevlar.getFluid(L * 4))
+                    .output(QUADRUPLE_IMPORT_FLUID_HATCH[1]) // UIV
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[1]) // UIV
-                .input(pipeQuadrupleFluid, CrystalMatrix)
-                .circuitMeta(4)
-                .fluidInputs(Kevlar.getFluid(L * 4))
-                .output(QUADRUPLE_EXPORT_FLUID_HATCH[1]) // UIV
-                .EUt(VA[UEV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[1]) // UIV
+                    .input(pipeQuadrupleFluid, CrystalMatrix)
+                    .circuitMeta(4)
+                    .fluidInputs(Kevlar.getFluid(L * 4))
+                    .output(QUADRUPLE_EXPORT_FLUID_HATCH[1]) // UIV
+                    .EUt(VA[UEV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  UXV 4x
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_12", QUADRUPLE_IMPORT_FLUID_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_EXPORT_FLUID_HATCH[2].getStackForm());
+            //  UXV 4x
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_12", QUADRUPLE_IMPORT_FLUID_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_EXPORT_FLUID_HATCH[2].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_12", QUADRUPLE_EXPORT_FLUID_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_IMPORT_FLUID_HATCH[2].getStackForm());
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_12", QUADRUPLE_EXPORT_FLUID_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_IMPORT_FLUID_HATCH[2].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[2]) // UXV
-                .input(pipeQuadrupleFluid, QuantumchromodynamicallyConfinedMatter)
-                .circuitMeta(4)
-                .fluidInputs(Kevlar.getFluid(L * 4))
-                .output(QUADRUPLE_IMPORT_FLUID_HATCH[2]) // UXV
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[2]) // UXV
+                    .input(pipeQuadrupleFluid, QuantumchromodynamicallyConfinedMatter)
+                    .circuitMeta(4)
+                    .fluidInputs(Kevlar.getFluid(L * 4))
+                    .output(QUADRUPLE_IMPORT_FLUID_HATCH[2]) // UXV
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[2]) // UXV
-                .input(pipeQuadrupleFluid, QuantumchromodynamicallyConfinedMatter)
-                .circuitMeta(4)
-                .fluidInputs(Kevlar.getFluid(L * 4))
-                .output(QUADRUPLE_EXPORT_FLUID_HATCH[2]) // UXV
-                .EUt(VA[UIV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[2]) // UXV
+                    .input(pipeQuadrupleFluid, QuantumchromodynamicallyConfinedMatter)
+                    .circuitMeta(4)
+                    .fluidInputs(Kevlar.getFluid(L * 4))
+                    .output(QUADRUPLE_EXPORT_FLUID_HATCH[2]) // UXV
+                    .EUt(VA[UIV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        //  OpV 4x
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_13", QUADRUPLE_IMPORT_FLUID_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_EXPORT_FLUID_HATCH[3].getStackForm());
+            //  OpV 4x
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_input_to_output_13", QUADRUPLE_IMPORT_FLUID_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_EXPORT_FLUID_HATCH[3].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_13", QUADRUPLE_EXPORT_FLUID_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', QUADRUPLE_IMPORT_FLUID_HATCH[3].getStackForm());
+            ModHandler.addShapedRecipe(true, "quadruple_fluid_hatch_output_to_input_13", QUADRUPLE_EXPORT_FLUID_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', QUADRUPLE_IMPORT_FLUID_HATCH[3].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[3]) // OpV
-                .input(pipeQuadrupleFluid, Fatalium)
-                .circuitMeta(4)
-                .fluidInputs(CosmicFabric.getFluid(L * 4))
-                .output(QUADRUPLE_IMPORT_FLUID_HATCH[3]) // OpV
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[3]) // OpV
+                    .input(pipeQuadrupleFluid, Fatalium)
+                    .circuitMeta(4)
+                    .fluidInputs(CosmicFabric.getFluid(L * 4))
+                    .output(QUADRUPLE_IMPORT_FLUID_HATCH[3]) // OpV
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[3]) // OpV
-                .input(pipeQuadrupleFluid, Fatalium)
-                .circuitMeta(4)
-                .fluidInputs(CosmicFabric.getFluid(L * 4))
-                .output(QUADRUPLE_EXPORT_FLUID_HATCH[3]) // OpV
-                .EUt(VA[UXV])
-                .duration(300)
-                .buildAndRegister();
-
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[3]) // OpV
+                    .input(pipeQuadrupleFluid, Fatalium)
+                    .circuitMeta(4)
+                    .fluidInputs(CosmicFabric.getFluid(L * 4))
+                    .output(QUADRUPLE_EXPORT_FLUID_HATCH[3]) // OpV
+                    .EUt(VA[UXV])
+                    .duration(300)
+                    .buildAndRegister();
+        }
 
         //  UHV 9x
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
@@ -2088,121 +2090,123 @@ public class OverrideRecipeLoader {
                 .duration(600)
                 .buildAndRegister();
 
-        //  UEV 9x
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_10", NONUPLE_IMPORT_FLUID_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_EXPORT_FLUID_HATCH[0].getStackForm());
+        if (GTLiteConfigHolder.machines.enableHighTierMultiFluidHatch) {
+            //  UEV 9x
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_10", NONUPLE_IMPORT_FLUID_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_EXPORT_FLUID_HATCH[0].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_10", NONUPLE_EXPORT_FLUID_HATCH[0].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_IMPORT_FLUID_HATCH[0].getStackForm());
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_10", NONUPLE_EXPORT_FLUID_HATCH[0].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_IMPORT_FLUID_HATCH[0].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[0]) // UEV
-                .input(pipeNonupleFluid, Lafium)
-                .circuitMeta(9)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 9))
-                .output(NONUPLE_IMPORT_FLUID_HATCH[0]) // UEV
-                .EUt(VA[UHV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[0]) // UEV
+                    .input(pipeNonupleFluid, Lafium)
+                    .circuitMeta(9)
+                    .fluidInputs(Polyetheretherketone.getFluid(L * 9))
+                    .output(NONUPLE_IMPORT_FLUID_HATCH[0]) // UEV
+                    .EUt(VA[UHV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[0]) // UEV
-                .input(pipeNonupleFluid, Lafium)
-                .circuitMeta(9)
-                .fluidInputs(Polyetheretherketone.getFluid(L * 9))
-                .output(NONUPLE_EXPORT_FLUID_HATCH[0]) // UEV
-                .EUt(VA[UHV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[0]) // UEV
+                    .input(pipeNonupleFluid, Lafium)
+                    .circuitMeta(9)
+                    .fluidInputs(Polyetheretherketone.getFluid(L * 9))
+                    .output(NONUPLE_EXPORT_FLUID_HATCH[0]) // UEV
+                    .EUt(VA[UHV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UIV 9x
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_11", NONUPLE_IMPORT_FLUID_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_EXPORT_FLUID_HATCH[1].getStackForm());
+            //  UIV 9x
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_11", NONUPLE_IMPORT_FLUID_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_EXPORT_FLUID_HATCH[1].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_11", NONUPLE_EXPORT_FLUID_HATCH[1].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_IMPORT_FLUID_HATCH[1].getStackForm());
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_11", NONUPLE_EXPORT_FLUID_HATCH[1].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_IMPORT_FLUID_HATCH[1].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[1]) // UIV
-                .input(pipeNonupleFluid, CrystalMatrix)
-                .circuitMeta(9)
-                .fluidInputs(Kevlar.getFluid(L * 9))
-                .output(NONUPLE_IMPORT_FLUID_HATCH[1]) // UIV
-                .EUt(VA[UEV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[1]) // UIV
+                    .input(pipeNonupleFluid, CrystalMatrix)
+                    .circuitMeta(9)
+                    .fluidInputs(Kevlar.getFluid(L * 9))
+                    .output(NONUPLE_IMPORT_FLUID_HATCH[1]) // UIV
+                    .EUt(VA[UEV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[1]) // UIV
-                .input(pipeNonupleFluid, CrystalMatrix)
-                .circuitMeta(9)
-                .fluidInputs(Kevlar.getFluid(L * 9))
-                .output(NONUPLE_EXPORT_FLUID_HATCH[1]) // UIV
-                .EUt(VA[UEV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[1]) // UIV
+                    .input(pipeNonupleFluid, CrystalMatrix)
+                    .circuitMeta(9)
+                    .fluidInputs(Kevlar.getFluid(L * 9))
+                    .output(NONUPLE_EXPORT_FLUID_HATCH[1]) // UIV
+                    .EUt(VA[UEV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  UXV 9x
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_12", NONUPLE_IMPORT_FLUID_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_EXPORT_FLUID_HATCH[2].getStackForm());
+            //  UXV 9x
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_12", NONUPLE_IMPORT_FLUID_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_EXPORT_FLUID_HATCH[2].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_12", NONUPLE_EXPORT_FLUID_HATCH[2].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_IMPORT_FLUID_HATCH[2].getStackForm());
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_12", NONUPLE_EXPORT_FLUID_HATCH[2].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_IMPORT_FLUID_HATCH[2].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[2]) // UXV
-                .input(pipeNonupleFluid, QuantumchromodynamicallyConfinedMatter)
-                .circuitMeta(9)
-                .fluidInputs(Kevlar.getFluid(L * 9))
-                .output(NONUPLE_IMPORT_FLUID_HATCH[2]) // UXV
-                .EUt(VA[UIV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[2]) // UXV
+                    .input(pipeNonupleFluid, QuantumchromodynamicallyConfinedMatter)
+                    .circuitMeta(9)
+                    .fluidInputs(Kevlar.getFluid(L * 9))
+                    .output(NONUPLE_IMPORT_FLUID_HATCH[2]) // UXV
+                    .EUt(VA[UIV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[2]) // UXV
-                .input(pipeNonupleFluid, QuantumchromodynamicallyConfinedMatter)
-                .circuitMeta(9)
-                .fluidInputs(Kevlar.getFluid(L * 9))
-                .output(NONUPLE_EXPORT_FLUID_HATCH[2]) // UXV
-                .EUt(VA[UIV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[2]) // UXV
+                    .input(pipeNonupleFluid, QuantumchromodynamicallyConfinedMatter)
+                    .circuitMeta(9)
+                    .fluidInputs(Kevlar.getFluid(L * 9))
+                    .output(NONUPLE_EXPORT_FLUID_HATCH[2]) // UXV
+                    .EUt(VA[UIV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        //  OpV 9x
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_13", NONUPLE_IMPORT_FLUID_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_EXPORT_FLUID_HATCH[3].getStackForm());
+            //  OpV 9x
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_input_to_output_13", NONUPLE_IMPORT_FLUID_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_EXPORT_FLUID_HATCH[3].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_13", NONUPLE_EXPORT_FLUID_HATCH[3].getStackForm(),
-                " d ", " H ", "   ",
-                'H', NONUPLE_IMPORT_FLUID_HATCH[3].getStackForm());
+            ModHandler.addShapedRecipe(true, "nonuple_fluid_hatch_output_to_input_13", NONUPLE_EXPORT_FLUID_HATCH[3].getStackForm(),
+                    " d ", " H ", "   ",
+                    'H', NONUPLE_IMPORT_FLUID_HATCH[3].getStackForm());
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(IMPORT_FLUID_HATCH[3]) // OpV
-                .input(pipeNonupleFluid, Fatalium)
-                .circuitMeta(9)
-                .fluidInputs(CosmicFabric.getFluid(L * 9))
-                .output(NONUPLE_IMPORT_FLUID_HATCH[3]) // OpV
-                .EUt(VA[UXV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(IMPORT_FLUID_HATCH[3]) // OpV
+                    .input(pipeNonupleFluid, Fatalium)
+                    .circuitMeta(9)
+                    .fluidInputs(CosmicFabric.getFluid(L * 9))
+                    .output(NONUPLE_IMPORT_FLUID_HATCH[3]) // OpV
+                    .EUt(VA[UXV])
+                    .duration(600)
+                    .buildAndRegister();
 
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(EXPORT_FLUID_HATCH[3]) // OpV
-                .input(pipeNonupleFluid, Fatalium)
-                .circuitMeta(9)
-                .fluidInputs(CosmicFabric.getFluid(L * 9))
-                .output(NONUPLE_EXPORT_FLUID_HATCH[3]) // OpV
-                .EUt(VA[UXV])
-                .duration(600)
-                .buildAndRegister();
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(EXPORT_FLUID_HATCH[3]) // OpV
+                    .input(pipeNonupleFluid, Fatalium)
+                    .circuitMeta(9)
+                    .fluidInputs(CosmicFabric.getFluid(L * 9))
+                    .output(NONUPLE_EXPORT_FLUID_HATCH[3]) // OpV
+                    .EUt(VA[UXV])
+                    .duration(600)
+                    .buildAndRegister();
+        }
     }
 
     private static void EnergyHathces() {
@@ -3493,16 +3497,12 @@ public class OverrideRecipeLoader {
      * </p>
      */
     private static void GTFOOverrides() {
+
         //  Remove original recipes, use gtlitecore register machine recipes.
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.lv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.mv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.hv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.ev");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.iv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.luv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.zpm");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.uv");
-        ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer.uhv");
+        String[] voltageList = {"lv", "mv", "hv", "ev", "iv", "luv", "zpm", "uv", "uhv"};
+        for (int i = 0; i < 9; i++) {
+            ModHandler.removeRecipeByName("gregtechfoodoption:gregtechfoodoption.machine.slicer." + voltageList[i]);
+        }
 
         //  A new map of dense plate component, is not same as gregtechfoodoption's.
         CraftingComponent.Component PLATE_DENSE = new CraftingComponent.Component(Stream.of(
@@ -3533,6 +3533,66 @@ public class OverrideRecipeLoader {
                 'H', CraftingComponent.HULL,
                 'D', PLATE_DENSE,
                 'C', CraftingComponent.CONVEYOR);
+
+        if (GTLiteConfigHolder.compats.enableGTFOTweaks) {
+
+            //  Greenhouse Glass
+            //  Why this recipe use assembler not alloy smelter?
+            GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, CupricHydrogenArsenite.getItemStack(), MetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockGlassCasing.CasingType.TEMPERED_GLASS));
+
+            ALLOY_SMELTER_RECIPES.recipeBuilder()
+                    .inputs(MetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockGlassCasing.CasingType.TEMPERED_GLASS))
+                    .inputs(CupricHydrogenArsenite.getItemStack())
+                    .outputs(GTFOMetaBlocks.GTFO_GLASS_CASING.getItemVariant(GTFOGlassCasing.CasingType.GREENHOUSE_GLASS))
+                    .EUt(24)
+                    .duration(60)
+                    .buildAndRegister();
+
+            //  Unfired Porcelain Tile
+            //  Why this recipe consume my shape mold!? :(
+            GTRecipeHandler.removeRecipesByInputs(FORMING_PRESS_RECIPES, BoneChinaClay.getItemStack(2), SHAPE_MOLD_PLATE.getStackForm());
+
+            FORMING_PRESS_RECIPES.recipeBuilder()
+                    .inputs(BoneChinaClay.getItemStack(2))
+                    .notConsumable(SHAPE_MOLD_PLATE)
+                    .outputs(UnfiredPorcelainTile.getItemStack())
+                    .EUt(28)
+                    .duration(160)
+                    .buildAndRegister();
+
+            //  Nitrophenols
+            //  Why this recipe use chemical reactor not centrifuge?
+            GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES, Nitrophenols.getFluid(1000));
+            GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES, Nitrophenols.getFluid(1000));
+
+
+            CENTRIFUGE_RECIPES.recipeBuilder()
+                    .fluidInputs(Nitrophenols.getFluid(1000))
+                    .outputs(IVNitrophenol.getItemStack(15))
+                    .outputs(IINitrophenol.getItemStack(15))
+                    .EUt(VA[HV])
+                    .duration(10)
+                    .buildAndRegister();
+
+            //  todo Use of 2-Nitrophenol
+
+            //  Fungal Rennet Solution
+            //  Please use Bio Reactor recipe!
+            GTRecipeHandler.removeRecipesByInputs(MIXER_RECIPES,
+                    new ItemStack[]{PenicilliumRoqueforti.getItemStack()},
+                    new FluidStack[]{LacticAcidBacteria.getFluid(1), CrudeRennetSolution.getFluid(250)});
+
+            BIO_REACTOR_RECIPES.recipeBuilder()
+                    .inputs(PenicilliumRoqueforti.getItemStack())
+                    .fluidInputs(LacticAcidBacteria.getFluid(1))
+                    .fluidInputs(CrudeRennetSolution.getFluid(250))
+                    .fluidOutputs(FungalRennetSolution.getFluid(250))
+                    .EUt(110)
+                    .duration(120)
+                    .buildAndRegister();
+
+        }
+
     }
 
 }

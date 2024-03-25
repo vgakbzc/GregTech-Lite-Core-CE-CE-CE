@@ -402,6 +402,7 @@ public class GTLiteElementMaterials {
         Fatalium = new Material.Builder(getId(), gregtechId("fatalium"))
                 .ingot()
                 .fluid()
+                .plasma()
                 .color(0xFFECEF)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Fatalium)

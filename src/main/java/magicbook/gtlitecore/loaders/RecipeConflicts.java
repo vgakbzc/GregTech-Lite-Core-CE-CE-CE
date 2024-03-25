@@ -68,12 +68,10 @@ public class RecipeConflicts {
         //  Conflict between Polydimethylsiloxane and Carbon Tetrachloride
         GTRecipeHandler.removeRecipesByInputs(CHEMICAL_RECIPES,
                 new ItemStack[]{OreDictUnifier.get(dust, Silicon), IntCircuitIngredient.getIntegratedCircuit(2)},
-                new FluidStack[]{Water.getFluid(1000), Chlorine.getFluid(4000), Methane.getFluid(2000)}
-        );
+                new FluidStack[]{Water.getFluid(1000), Chlorine.getFluid(4000), Methane.getFluid(2000)});
         GTRecipeHandler.removeRecipesByInputs(LARGE_CHEMICAL_RECIPES,
                 new ItemStack[]{OreDictUnifier.get(dust, Silicon), IntCircuitIngredient.getIntegratedCircuit(2)},
-                new FluidStack[]{Water.getFluid(1000), Chlorine.getFluid(4000), Methane.getFluid(2000)}
-        );
+                new FluidStack[]{Water.getFluid(1000), Chlorine.getFluid(4000), Methane.getFluid(2000)});
 
         LARGE_CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Silicon, 3)

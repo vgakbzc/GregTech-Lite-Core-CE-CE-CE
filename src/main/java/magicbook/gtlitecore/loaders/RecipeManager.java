@@ -142,5 +142,6 @@ public class RecipeManager {
         VirtualCosmosSimulator.init();
         LargeCircuitAssemblyLine.init();
         DysonSwarm.init();
+        PlanetaryGasSiphon.init();
     }
 }

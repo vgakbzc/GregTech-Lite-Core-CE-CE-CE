@@ -253,7 +253,8 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(14777458)
                 .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
                 .components(Carbon, 8, Hydrogen, 8, Sulfur, 1, Oxygen, 3)
-                .build();
+                .build()
+                .setFormula("C8H7SO3H", true);
 
         //  13029 PEDOT:PSS
         PedotPSS = new Material.Builder(getId(), gregtechId("pedot_pss"))
