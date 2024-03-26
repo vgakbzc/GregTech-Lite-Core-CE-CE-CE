@@ -514,7 +514,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Same as {@link GTLiteRecipeMaps#BURNER_REACTOR_RECIPES}, just a low temperature version,
+     *     Same as {@link #BURNER_REACTOR_RECIPES}, just a low temperature version,
      *     but please do not use high temperature in this recipes (if not, so why do not you use Burner Reactor recipe map).
      * </p>
      */
@@ -527,11 +527,27 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.dust, GTLiteMaterials.Tiberium)
+     *          .input(OrePrefix.dust, GTLiteMaterials.OrichalcumEnergized)
+     *          .circuitMeta(11)
+     *          .fluidInputs(Materials.NaquadahEnriched.getFluid(2000))
+     *          .fluidInputs(GTLiteMaterials.Vibranium.getPlasma(1000))
+     *          .fluidInputs(GTLiteMaterials.HeavyHyperFuel.getFluid(400))
+     *          .fluidInputs(GTLiteMaterials.SuperheavyExoticGas.getFluid(200))
+     *          .fluidOutputs(GTLiteMaterials.HyperFuelMkII.getFluid(3000))
+     *          .EUt(VA[UEV])
+     *          .duration(100)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Just a simple recipe map, used to product fuels (and some advanced recipes about low stage fuels,
+     *     like {@link gregtech.api.unification.material.Materials#CetaneBoostedDiesel}).
+     *     And some materials like {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#Vibranium},
+     *     can and only can product by this machine (some trivia: in
+     *      <a href="https://github.com/GregTechCEu/gregicality-science">Gregicality Science</a>,
+     *     this material product by a special recipe map 'Superheavy Reaction'.).
      * </p>
      */
     @ZenProperty
@@ -549,11 +565,18 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
+     *          .fluidInputs(GTLiteMaterials.HyperFuelMkII.getFluid(1))
+     *          .duration(300)
+     *          .EUt(524288)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Like {@link #NAQUADAH_REACTOR_RECIPES}, you should add it in your config,
+     *     same like fuel's heat value tweak config in
+     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#misc}
+     *     of cause, this is just some QoL settings.
      * </p>
      */
     @ZenProperty
@@ -566,11 +589,16 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
+     *          .fluidInputs(GTLiteMaterials.HyperFuelMkIII.getFluid(1))
+     *          .duration(600)
+     *          .EUt(2097152)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Advanced Hyper Reactor recipe map, in this recipe map,
+     *     some materials product more energy (like {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#LightHyperFuel}).
      * </p>
      */
     @ZenProperty
@@ -583,11 +611,15 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
+     *          .fluidInputs(HyperFuelMkIV.getFluid(1))
+     *          .duration(1200)
+     *          .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark4)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Same like {@link #HYPER_REACTOR_MK1_RECIPES} and {@link #HYPER_REACTOR_MK2_RECIPES}.
      * </p>
      */
     @ZenProperty
@@ -627,10 +659,22 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.FLOTATION_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.dust, GTLiteMaterials.PotassiumEthylxanthate, 32)
+     *          .input(GTLiteOrePrefix.milled, Materials.Chalcopyrite, 64)
+     *          .input(GTLiteOrePrefix.milled, Materials.Chalcopyrite, 64)
+     *          .input(GTLiteOrePrefix.milled, Materials.Chalcopyrite, 64)
+     *          .input(GTLiteOrePrefix.milled, Materials.Chalcopyrite, 64)
+     *          .fluidInputs(GTLiteMaterials.Turpentine.getFluid(12000))
+     *          .fluidOutputs(GTLiteMaterials.ChalcopyriteFront.getFluid(1000))
+     *          .EUt(VA[IV])
+     *          .duration(9600)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
+     *     Next processing step before after {@link #ISA_MILL_RECIPES},
+     *     please see {@link magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing}.
      * </p>
      */
     @ZenProperty
@@ -642,11 +686,22 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.VACUUM_DRYING_RECIPES.recipeBuilder()
+     *          .fluidInputs(GTLiteMaterials.MonaziteFront.getFluid(4000))
+     *          .output(OrePrefix.dust, Materials.Erbium, 64)
+     *          .output(OrePrefix.dust, Materials.Zirconium, 64)
+     *          .output(OrePrefix.dust, Materials.Lanthanum, 32)
+     *          .output(OrePrefix.dust, Materials.Lutetium, 16)
+     *          .output(OrePrefix.dust, Materials.Europium, 8)
+     *          .EUt(VA[ZPM])
+     *          .duration(2400)
+     *          .blastFurnaceTemp(5500)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Final step of Isa Mill Ore Processing chain (after {@link #FLOTATION_RECIPES}),
+     *     same as EBF's temperature system (but just have some special ranges).
      * </p>
      */
     @ZenProperty
@@ -664,11 +719,19 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.DRONE_AIRPORT_RECIPES.recipeBuilder()
+     *          .notConsumable(GTLiteMetaItems.MINING_DRONE_EV.getStackForm(16))
+     *          .circuitMeta(1)
+     *          .fluidInputs(GTLiteMaterials.MethylhydrazineNitrateRocketFuel.getFluid(4000))
+     *          .chancedOutput(OrePrefix.ore, Materials.Naquadah, 64, 5000, 500)
+     *          .EUt(VA[EV)
+     *          .duration(8)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Simple recipe map, please see {@link magicbook.gtlitecore.loaders.multiblock.DroneAirport}.
+     *     Usually used special method, please use this method.
      * </p>
      */
     @ZenProperty
@@ -682,11 +745,20 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.ION_IMPLANTATOR_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.ring, GTLiteMaterials.Fullerene)
+     *          .input(OrePrefix.wireFine, GTLiteMaterials.ThalliumCopperChloride, 4)
+     *          .fluidInputs(GTLiteMaterials.Kevlar.getFluid(L))
+     *          .output(GTLiteMetaItems.SPINTRONIC_INDUCTOR, 16)
+     *          .duration(160)
+     *          .EUt(VA[UHV])
+     *          .cleanroom(CleanroomType.CLEANROOM)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Used to product advanced smd inductor, such as {@link magicbook.gtlitecore.loaders.circuits.CosmicCircuits}.
+     *     Now this recipe map just have this function (may be add more recipes for other function).
      * </p>
      */
     @ZenProperty
@@ -698,11 +770,33 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+     *          .input(GTLiteMetaItems.FLUID_CORE_T7)
+     *          .input(MetaItems.FIELD_GENERATOR_UV)
+     *          .input(MetaTileEntities.QUANTUM_TANK[5])
+     *          .input(OrePrefix.foil, GTLiteMaterials.PolyPhosphonitrileFluoroRubber, 64)
+     *          .fluidInputs(GTLiteMaterials.Polyetheretherketone.getFluid(L * 128))
+     *          .fluidInputs(Materials.TinAlloy.getFluid(L * 128))
+     *          .fluidInputs(Materials.Lubricant.getFluid(7000))
+     *          .fluidInputs(GTLiteMaterials.CelestialTungsten.getFluid(L * 4))
+     *          .output(GTLiteMetaItems.FLUID_CORE_T8)
+     *          .EUt(VA[UIV])
+     *          .duration(400)
+     *          .CasingTier(6)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Port from Prim's mod <a href="https://github.com/GTNewHorizons/GoodGenerator">Good Generator</a>,
+     *     and this recipe map has special property (different predicate of casings and internal casings),
+     *     casings is {@link magicbook.gtlitecore.common.blocks.BlockPreciseAssemblerCasing},
+     *     internal casings is {@link gregtech.common.blocks.BlockMachineCasing} (above LuV).
+     *     Usually used for some high tier components and System on Chip of advanced circuits (above wetware circuit),
+     *     and also have some advanced recipes for original circuits (like wetware processing unit).
+     *     Please use .CasingTier() method to define total tier of recipe,
+     *     you can see {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#PA_CASING} and
+     *      {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#PA_INTERNAL_CASING},
+     *     these predicates control this machine recipes.
      * </p>
      */
     @ZenProperty
@@ -716,11 +810,19 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.COMPONENT_ASSEMBLER_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.cableGtDouble, Materials.Tungsten, 2)
+     *          .input(OrePrefix.stick, Materials.TungstenSteel, 2)
+     *          .input(OrePrefix.stick, Materials.NeodymiumMagnetic)
+     *          .input(wireGtDouble, Materials.Graphene, 4)
+     *          .output(MetaItems.ELECTRIC_MOTOR_IV)
+     *          .EUt(VA[LV])
+     *          .duration(20)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Easy version of {@link #COMPONENT_ASSEMBLY_LINE_RECIPES}, so just a simple recipe map.
      * </p>
      */
     @ZenProperty
@@ -733,11 +835,32 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.PhosphorusDopedEuropiumIronArsenideMagnetic, 64)
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.Legendarium, 64)
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.Legendarium, 64)
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.Legendarium, 64)
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.Legendarium, 64)
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.Legendarium, 64)
+     *          .input(OrePrefix.stickLong, GTLiteMaterials.Legendarium, 64)
+     *          .input(OrePrefix.cableGtHex, GTLiteMaterials.Solarium, 8)
+     *          .fluidInputs(Materials.SolderingAlloy.getFluid(L * 32 * 64))
+     *          .fluidInputs(Materials.Lubricant.getFluid(448000))
+     *          .fluidInputs(GTLiteMaterials.Zylon.getFluid(L * 4 * 64))
+     *          .fluidInputs(GTLiteMaterials.Astralium.getFluid(L * 2 * 64))
+     *          .fluidInputs(GTLiteMaterials.Abyssalloy.getFluid(L * 16 * 64))
+     *          .output(MetaItems.ELECTRIC_MOTOR_UIV, 64)
+     *          .EUt(VA[UIV])
+     *          .duration(1800)
+     *          .CasingTier(UIV)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Port from Prim's mod <a href="https://github.com/GTNewHorizons/GoodGenerator">Good Generator</a>,
+     *     and this recipe map has special property (predicate blocks in {@link magicbook.gtlitecore.common.blocks.BlockComponentAssemblyLineCasing}),
+     *     please see: {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#CA_CASING}.
+     *     Used special JEI page textures, please see {@link RecipeMapComponentAssemblyLine}.
      * </p>
      */
     @ZenProperty
@@ -748,11 +871,22 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.TREE_GROWTH_RECIPES.recipeBuilder()
+     *          .notConsumable(new ItemStack(Blocks.SAPLING, 1, 4))
+     *          .circuitMeta(1)
+     *          .fluidInputs(Materials.Water.getFluid(200))
+     *          .outputs(new ItemStack(Blocks.LOG2, 8, 0))
+     *          .outputs(new ItemStack(Blocks.LEAVES2, 4, 0))
+     *          .chancedOutput(new ItemStack(Blocks.SAPLING, 1, 4), 4000, 500)
+     *          .chancedOutput(new ItemStack(Items.APPLE), 2000, 500)
+     *          .EUt(VA[LV])
+     *          .duration(100)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Simple recipes for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityTreeGrowthFactory}.
+     *     TODO maybe rebalanced this recipe map and {@link gregtechfoodoption.recipe.chain.GreenhouseChain}.
      * </p>
      */
     @ZenProperty
