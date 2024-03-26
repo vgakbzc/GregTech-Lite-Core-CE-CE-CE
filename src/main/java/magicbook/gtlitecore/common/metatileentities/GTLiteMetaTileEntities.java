@@ -36,9 +36,35 @@ import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTile
 import static gregtech.common.metatileentities.MetaTileEntities.registerSimpleMetaTileEntity;
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
 
+/**
+ * Meta Tile Entities
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is the basic class about machines in gtlitecore,
+ *     all single/multi machines init in this class, so this class's function is same as
+ *      {@link gregtech.common.metatileentities.MetaTileEntities}).
+ *     ID range of gtlitecore meta tile entities:
+ *
+ *     <pre>
+ *         14000-14999: Multiblock Parts,<br>
+ *         15000-16000: Single Machines,<br>
+ *         16001-20000: Multiblock Machines.<br>
+ *     </pre>
+ *
+ *     Some ID is free in this range (but maybe add new machines in this free IDs).
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteMetaTileEntities {
 
-    //  Multiblock Part range: 14000-14999
+    ////////////////////////
+    //  Multiblock Parts  //
+    ////////////////////////
+
+    //  ID Range: 14000-14999
     public static MetaTileEntityGrindBallHatch MULTIPART_GRIND_BALL_HATCH;
     public static final MetaTileEntityReinforcedRotorHolder[] MULTIPART_REINFORCED_ROTOR_HOLDER = new MetaTileEntityReinforcedRotorHolder[8];
     public static MetaTileEntityEnergyHatch[] INPUT_ENERGY_HATCH_4A = new MetaTileEntityEnergyHatch[4];
@@ -61,7 +87,11 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityQCComponentCooler[] QC_COOLER_COMPONENT = new MetaTileEntityQCComponentCooler[2];
     public static MetaTileEntityQCComponentBridge QC_BRIDGE_COMPONENT;
 
-    //  Single Machine range: 15000-16000
+    ///////////////////////
+    //  Single Machines  //
+    ///////////////////////
+
+    //  ID Range: 15000-16000
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DRYER = new SimpleMachineMetaTileEntity[V.length - 1];
     public static SimpleSteamMetaTileEntity[] STEAM_VACUUM_CHAMBER = new SimpleSteamMetaTileEntity[2];
     public static SimpleMachineMetaTileEntity[] VACUUM_CHAMBER = new SimpleMachineMetaTileEntity[V.length - 1];
@@ -74,7 +104,11 @@ public class GTLiteMetaTileEntities {
     public static final SimpleGeneratorMetaTileEntity[] BIOMASS_GENERATOR = new SimpleGeneratorMetaTileEntity[3];
     public static final MetaTileEntityLightningRod[] LIGHTNING_ROD = new MetaTileEntityLightningRod[3];
 
-    //  Multiblock Machine range: 16001-20000
+    ///////////////////////////
+    //  Multiblock Machines  //
+    ///////////////////////////
+
+    //  ID Range: 16001-20000
     public static MetaTileEntityIndustrialDrillingRig INDUSTRIAL_DRILLING_RIG;
     public static MetaTileEntityCatalyticReformer CATALYTIC_REFORMER;
     public static MetaTileEntitySonicator SONICATOR;
