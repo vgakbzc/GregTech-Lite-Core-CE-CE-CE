@@ -1089,11 +1089,20 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.SPACE_ELEVATOR_DRILLING_MODULE.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .notConsumable(GTLiteMetaItems.MINING_DRONE_ZPM.getStackForm(16))
+     *          .fluidInputs(Materials.RocketFuel.getFluid(16000))
+     *          .fluidOutputs(Materials.Naquadah.getFluid(80000))
+     *          .EUt(VH[ZPM])
+     *          .duration(20)
+     *          .CasingTier(2)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
      *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
+     *     Predicate casing tier by motor casings in {@link magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing}.
      *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
@@ -1107,11 +1116,19 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.SPACE_ELEVATOR_MINING_MODULE.recipeBuilder()
+     *          .circuitMeta(30)
+     *          .notConsumable(GTLiteMetaItems.MINING_DRONE_OpV.getStackForm(16))
+     *          .chancedOutput(OrePrefix.ore, Materials.Naquadah, 4096)
+     *          .EUt(VA[UV)
+     *          .duration(Materials.Naquadah.getMass() * Materials.NaquadahEnriched.getMass())
+     *          .CasingTier(3)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
      *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
+     *     Predicate casing tier by motor casings in {@link magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing}.
      *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
@@ -1126,11 +1143,25 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+     *          .input(OrePrefix.frameGt, GTLiteMaterials.BlackPlutonium)
+     *          .input(GTLiteMetaItems.COSMIC_INFORMATION_MODULE)
+     *          .input(GTLiteMetaItems.CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT)
+     *          .input(GTLiteMetaItems.CLADDED_OPTICAL_FIBER_CORE, 8)
+     *          .input(GTLiteMetaItems.BOSE_EINSTEIN_CONDENSATE, 4)
+     *          .input(OrePrefix.wireGtSingle, GTLiteMaterials.AstralTitanium, 2)
+     *          .fluidInputs(GTLiteMaterials.CosmicComputingMixture.getFluid(1000))
+     *          .fluidInputs(GTLiteMaterials.PlatinumGroupAlloy.getFluid(L))
+     *          .output(GTLiteMetaItems.HOLOGRAPHIC_INFORMATION_IMC, 2)
+     *          .EUt(VA[UIV])
+     *          .duration(20)
+     *          .CasingTier(5)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
      *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
+     *     Predicate casing tier by motor casings in {@link magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing}.
      *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
@@ -1140,42 +1171,30 @@ public class GTLiteRecipeMaps {
             .setSound(GTSoundEvents.ASSEMBLER);
 
     /**
-     * Example:
-     *
-     * <pre>
-     *
-     * </pre>
-     *
      * <p>
-     *
+     *     Fake recipe map groups for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeProcessingFactory}.
+     *     This processing mode consist of three common recipes: {@link RecipeMaps#COMPRESSOR_RECIPES}, {@link RecipeMaps#LATHE_RECIPES},
+     *     and {@link RecipeMaps#POLARIZER_RECIPES}, and use different circuit to check it, please see {@link RecipeMapPseudoGroup}.
      * </p>
      */
     @ZenProperty
     public static final RecipeMapPseudoGroup<SimpleRecipeBuilder> PROCESSING_MODE_A = new RecipeMapPseudoGroup<>("processing_mode_a", 1, 2, 1, 1, new SimpleRecipeBuilder(), RecipeMaps.COMPRESSOR_RECIPES, RecipeMaps.LATHE_RECIPES, RecipeMaps.POLARIZER_RECIPES, true);
 
     /**
-     * Example:
-     *
-     * <pre>
-     *
-     * </pre>
-     *
      * <p>
-     *
+     *     Fake recipe map groups for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeProcessingFactory}.
+     *     This processing mode consist of three common recipes: {@link RecipeMaps#FERMENTING_RECIPES}, {@link RecipeMaps#EXTRACTOR_RECIPES},
+     *     and {@link RecipeMaps#CANNER_RECIPES}, and use different circuit to check it, please see {@link RecipeMapPseudoGroup}.
      * </p>
      */
     @ZenProperty
     public static final RecipeMapPseudoGroup<SimpleRecipeBuilder> PROCESSING_MODE_B = new RecipeMapPseudoGroup<>("processing_mode_b", 2, 2, 1, 1, new SimpleRecipeBuilder(), RecipeMaps.FERMENTING_RECIPES, RecipeMaps.EXTRACTOR_RECIPES, RecipeMaps.CANNER_RECIPES, true);
 
     /**
-     * Example:
-     *
-     * <pre>
-     *
-     * </pre>
-     *
      * <p>
-     *
+     *     Fake recipe map groups for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeProcessingFactory}.
+     *     This processing mode consist of three common recipes: {@link RecipeMaps#LASER_ENGRAVER_RECIPES}, {@link RecipeMaps#AUTOCLAVE_RECIPES},
+     *     and {@link RecipeMaps#FLUID_SOLIDFICATION_RECIPES}, and use different circuit to check it, please see {@link RecipeMapPseudoGroup}.
      * </p>
      */
     @ZenProperty
@@ -1185,11 +1204,17 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.MOLECULAR_TRANSFORMER_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.ingot, Materials.Tin)
+     *          .output(OrePrefix.ingot, Materials.Silver)
+     *          .EUt(VA[EV])
+     *          .duration(600)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Used to build some fantastic transform, such as iron -> iridium,
+     *     please see: {@link magicbook.gtlitecore.loaders.multiblock.MolecularTransformer}.
      * </p>
      */
     @ZenProperty
@@ -1197,17 +1222,24 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_1)
             .setSlotOverlay(true, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.SCIENCE);
+            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : GTSoundEvents.ARC);
 
     /**
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.COSMIC_RAY_DETECTOR_RECIPES.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .fluidOutputs(HeavyLepton.getFluid(40))
+     *          .EUt((int) V[UHV])
+     *          .duration(1)
+     *          .Altitude(80)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     A special check recipe map, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityCosmicRayDetector}.
+     *     This recipe map will check altitude of special block in multiblock structure.
      * </p>
      */
     @ZenProperty
@@ -1219,11 +1251,24 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
+     *          .circuitMeta(3)
+     *          .notConsumable(GTLiteOrePrefix.swarm, Gold)
+     *          .input(OrePrefix.plate, GTLiteMaterials.KaptonK)
+     *          .input(OrePrefix.foil, Materials.AnnealedCopper, 42)
+     *          .input(OrePrefix.foil, Materials.Copper, 42)
+     *          .fluidInputs(Materials.SulfuricAcid.getFluid(1322))
+     *          .fluidInputs(Materials.Iron3Chloride.getFluid(661))
+     *          .output(MetaItems.PLASTIC_CIRCUIT_BOARD, 91)
+     *          .EUt(368640)
+     *          .duration(132)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Mode for PCB Factory, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory}.
+     *     Used nano swarm as catalyst in common situation (tier 2: silver, tier 3: gold).
+     *     TODO maybe deprecate or tweak, if redo pcb factory in future.
      * </p>
      */
     @ZenProperty
@@ -1237,11 +1282,19 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.plate, GTLiteMaterials.KaptonK)
+     *          .input(OrePrefix.foil, Materials.Glass, 64)
+     *          .output(MetaItems.WETWARE_CIRCUIT_BOARD, 125)
+     *          .EUt(491520)
+     *          .duration(392)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Mode for PCB Factory, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory}.
+     *     Unused now.
+     *     TODO maybe deprecate or tweak, if redo pcb factory in future.
      * </p>
      */
     @ZenProperty
@@ -1255,11 +1308,23 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+     *          .input(lens, Glass)
+     *          .input(CARBON_FIBERS, 8)
+     *          .fluidInputs(Materials.Helium.getFluid(L * 8)})
+     *          .fluidInputs(Materials.Iron3Chloride.getFluid(4000))
+     *          .fluidInputs(Materials.Lubricant.getFluid(250))
+     *          .output(nanosensor, Carbon)
+     *          .EUt(VA[IV])
+     *          .duration(200)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Mode for PCB Factory, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory}.
+     *     Used to create Nanosensor and Nanotube, please see {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix}.
+     *     TODO maybe deprecate or tweak, if redo pcb factory in future.
+     *     Another TODO: maybe split this mode to a new machine (such as Nano Forge?).
      * </p>
      */
     @ZenProperty
@@ -1272,11 +1337,22 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .input(GTLiteOrePrefix.nanotube, Materials.Carbon)
+     *          .input(GTLiteOrePrefix.nanosensor, Materials.Carbon)
+     *          .input(MetaItems.SIMPLE_SYSTEM_ON_CHIP, 8)
+     *          .input(OrePrefix.dust, Materials.Carbon, 4)
+     *          .fluidInputs(PCBCoolant.getFluid(L))
+     *          .output(GTLiteOrePrefix.swarm, Materials.Carbon)
+     *          .EUt(VA[LV])
+     *          .duration(200)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     One of two modes of Neutral Network Nexus, used to breeding nano swarm.
+     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
      * </p>
      */
     @ZenProperty
@@ -1289,11 +1365,21 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .input(GTLiteOrePrefix.swarm, Materials.Copper)
+     *          .input(GTLiteOrePrefix.swarm, Materials.Redstone)
+     *          .chancedOutput(GTLiteOrePrefix.swarm, Materials.Copper, 8000, 0)
+     *          .chancedOutput(GTLiteOrePrefix.swarm, Materials.Redstone, 8000, 0)
+     *          .chancedOutput(GTLiteOrePrefix.swarm, Materials.RedAlloy, 2000, 500)
+     *          .EUt(VA[IV])
+     *          .duration(200)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     One of two modes of Neutral Network Nexus, used to hybridizing nano swarm.
+     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
      * </p>
      */
     @ZenProperty
