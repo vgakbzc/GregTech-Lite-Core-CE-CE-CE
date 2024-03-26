@@ -13,6 +13,7 @@ import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
+import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
 
@@ -900,11 +901,23 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.COLLIDER_RECIPES.recipeBuilder()
+     *          .fluidInputs(Materials.Copper.getFluid(L))
+     *          .fluidInputs(Materials.Caesium.getFluid(L))
+     *          .fluidOutputs(Materials.Actinium.getFluid(L))
+     *          .fluidOutputs(GTLiteMaterials.FreeElectronGas.getFluid(L))
+     *          .EUt(VA[IV])
+     *          .duration(200)
+     *          .CasingTier(1)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Used {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#FIELD_CASING} predicate,
+     *     just another voltage property (so you can use voltage name, but should above ZPM),
+     *     predicate blocks in {@link magicbook.gtlitecore.common.blocks.BlockFieldCasing}.
+     *     If you add recipes of particles, then should output some Free Electric Gas.
+     *     For high energy physics recipes, you should add circuit to distinguish recipes (pay attention conflicts!).
      * </p>
      */
     @ZenProperty
@@ -919,11 +932,20 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
+     *          .notConsumable(OrePrefix.plate, GTLiteMaterials.Galaxium)
+     *          .fluidInputs(GTLiteMaterials.Fatalium.getPlasma(L))
+     *          .fluidInputs(GTLiteMaterials.Hypogen.getFluid(L * 4))
+     *          .fluidInputs(GTLiteMaterials.DimensionallyTranscendentResidue.getFluid(16000))
+     *          .fluidOutputs(GTLiteMaterials.Fatalium.getFluid(L))
+     *          .EUt(VA[OpV])
+     *          .duration(20)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Maybe just a advanced version of {@link RecipeMaps#IMPLOSION_RECIPES},
+     *     but you do not needs to use tnt! Used to some advanced materials for UIV+.
      * </p>
      */
     @ZenProperty
@@ -937,17 +959,27 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
             .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
-            .setSound(GTSoundEvents.SCIENCE);
+            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : SoundEvents.ENTITY_GENERIC_EXPLODE);
 
     /**
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.STELLAR_FURNACE_RECIPES.recipeBuilder()
+     *          .input(OrePrefix.ingot, Materials.Rhenium)
+     *          .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.NAQUADRIA_CHARGE))
+     *          .fluidOutputs(GTLiteMaterials.DegenerateRhenium.getPlasma(1000))
+     *          .EUt(VA[UIV])
+     *          .duration(20)
+     *          .temperature(BigInteger.valueOf(3932160))
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Basic processing recipe in UEV+, use a special recipe builder.
+     *     The different between {@link NoCoilTemperatureRecipeBuilder} and {@link NoCoilHigherTemperatureRecipeBuilder} is data type,
+     *     this recipe builder use {@link java.math.BigInteger}, so you can write some big numbers in this recipe maps.
+     *     Pay attention, if you use too big numbers, then may be cause some problem about {@link RecipeMap}.
      * </p>
      */
     @ZenProperty
@@ -957,17 +989,27 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
-            .setSound(GTSoundEvents.FURNACE);
+            .setSound(GTValues.FOOLS.get() ? SoundEvents.ENTITY_GENERIC_EXPLODE : GTSoundEvents.FURNACE);
 
     /**
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.PLASMA_CONDENSER_RECIPES.recipeBuilder()
+     *          .input(GTLiteMetaItems.RHENIUM_PLASMA_CONTAINMENT_CELL)
+     *          .fluidInputs(Materials.Helium.getFluid(FluidStorageKeys.LIQUID, 16000))
+     *          .circuitMeta(1)
+     *          .output(GTLiteMetaItems.PLASMA_CONTAINMENT_CELL)
+     *          .fluidOutputs(GTLiteMaterials.DegenerateRhenium.getFluid(1000))
+     *          .fluidOutputs(Materials.Helium.getFluid(FluidStorageKeys.GAS, 16000))
+     *          .EUt(VA[UEV])
+     *          .duration(100)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Simple recipe. please see {@link magicbook.gtlitecore.loaders.multiblock.PlasmaCondenser},
+     *     used to add materials and containment cells cooling recipes.
      * </p>
      */
     @ZenProperty
@@ -979,27 +1021,58 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.DECAY_GENERATOR_RECIPES.recipeBuilder()
+     *          .fluidInputs(GTLiteMaterials.QuasifissioningPlasma.getPlasma(1000))
+     *          .fluidOutputs(GTLiteMaterials.FleroviumYtterbiumPlasma.getPlasma(1000))
+     *          .EUt(VA[ZPM])
+     *          .duration(160)
+     *          .CasingTier(1)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Used {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#FIELD_CASING} predicate,
+     *     just another voltage property (so you can use voltage name, but should above ZPM),
+     *     predicate blocks in {@link magicbook.gtlitecore.common.blocks.BlockFieldCasing}.
+     *     Same as {@link #COLLIDER_RECIPES}, used {@link FieldCasingTierRecipeBuilder}.
      * </p>
      */
     @ZenProperty
     public static final RecipeMap<FieldCasingTierRecipeBuilder> DECAY_GENERATOR_RECIPES = new RecipeMap<>("decay_generator_recipes", 1, 1, 1, 1, new FieldCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, ProgressWidget.MoveType.VERTICAL_DOWNWARDS)
-            .setSound(GTSoundEvents.SCIENCE);
+            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : GTSoundEvents.ARC);
 
     /**
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.SUPRACHRONAL_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+     *          .input(GTLiteOrePrefix.singularity, Materials.Water)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Lava)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Wood)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Stone)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Netherrack)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Endstone)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Emerald)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Obsidian)
+     *          .input(GTLiteOrePrefix.singularity, Materials.TreatedWood)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Gunpowder)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Diamond)
+     *          .input(GTLiteOrePrefix.singularity, Materials.NetherQuartz)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Brick)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Coal)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Steam)
+     *          .input(GTLiteOrePrefix.singularity, Materials.Clay)
+     *          .output(GTLiteMetaItems.ANCIENT_SINGULARITY)
+     *          .EUt(VA[MAX])
+     *          .duration(20)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     End machine in OpV stage, please see {@link magicbook.gtlitecore.loaders.multiblock.SuprachronalAssemblyLine}.
+     *     Used {@link RecipeMapSuprachronalAssemblyLine} for JEI page, just like {@link gregtech.api.recipes.machines.RecipeMapAssemblyLine},
+     *     but not has research property (but this recipe map is also simple recipe builder).
      * </p>
      */
     @ZenProperty
@@ -1020,7 +1093,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *
+     *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
+     *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
     @ZenProperty
@@ -1037,7 +1111,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *
+     *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
+     *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
     @ZenProperty
@@ -1055,7 +1130,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *
+     *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
+     *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
     @ZenProperty
