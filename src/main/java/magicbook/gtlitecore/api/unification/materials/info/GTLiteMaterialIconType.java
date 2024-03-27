@@ -2,6 +2,18 @@ package magicbook.gtlitecore.api.unification.materials.info;
 
 import gregtech.api.unification.material.info.MaterialIconType;
 
+/**
+ * Material Icon Type
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Material Icon Type class for gtlitecore, like {@link MaterialIconType}.
+ *     This class is related class of {@link GTLiteMaterialIconSet}.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteMaterialIconType {
     public static final MaterialIconType milled = new MaterialIconType("milled");
     public static final MaterialIconType seedCrystal = new MaterialIconType("seedCrystal");

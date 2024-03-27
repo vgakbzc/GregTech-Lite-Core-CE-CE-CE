@@ -4,6 +4,20 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 import magicbook.gtlitecore.client.GTLiteTextures;
 import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavior;
 
+/**
+ * Material Icon Set
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Material Icon set class for gtlitecore, like {@link MaterialIconSet}.
+ *     But some icon set use extended shader, please see: {@link MaterialIconSetWithRenderer}.
+ *     This extended icon set required mixin of gregtech's meta item classes,
+ *     such as {@link gregtech.api.items.metaitem.MetaItem.MetaValueItem}.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteMaterialIconSet {
     public static final MaterialIconSetWithRenderer CUSTOM_INFINITY = new MaterialIconSetWithRenderer("infinity", null, true, new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true));
     public static final MaterialIconSet CUSTOM_SPACETIME = new MaterialIconSet("spacetime", null, true);

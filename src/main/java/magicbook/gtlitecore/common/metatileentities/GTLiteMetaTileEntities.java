@@ -50,7 +50,7 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
  *     <pre>
  *         14000-14999: Multiblock Parts,<br>
  *         15000-16000: Single Machines,<br>
- *         16001-20000: Multiblock Machines.<br>
+ *         16001-20000: Multiblock Machines.
  *     </pre>
  *
  *     Some ID is free in this range (but maybe add new machines in this free IDs).
