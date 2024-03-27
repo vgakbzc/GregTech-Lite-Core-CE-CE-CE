@@ -210,6 +210,32 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
             .setSound(GTSoundEvents.COMPRESSOR);
 
+    /**
+     * Example:
+     *
+     * <pre>
+     *     GTLiteRecipeMaps.SIMULATOR_RECIPES.recipeBuilder()
+     *          .notConsumable(GTLiteMetaItems.MEMORY_CARD_ZOMBIE)
+     *          .circuitMeta(1)
+     *          .chancedOutput(new ItemStack(Items.ROTTEN_FLESH, 64), 8000, 500)
+     *          .EUt(VA[LV])
+     *          .duration(1200)
+     *          .buildAndRegister();
+     * </pre>
+     *
+     * <p>
+     *     Recipe map for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#SIMULATOR},
+     *     maybe seems like Simulator in <a href="https://github.com/xt9/DeepMobLearning">Deep Mob Learning</a> Mod.
+     *     If you add new recipe, then you can add it in your config, please see:
+     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#machines
+     *     of cause, this is just some QoL settings.
+     * </p>
+     */
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES = new RecipeMap<>("simulator_recipes", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSoundEvents.SCIENCE);
+
     //////////////////////////////////////
     //  Multiblock Machine Recipe Maps  //
     //////////////////////////////////////
@@ -1392,11 +1418,29 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+     *          .circuitMeta(11)
+     *          .notConsumable(GTLiteOrePrefix.swarm, GTLiteMaterials.Fullerene)
+     *          .input(OrePrefix.dust, Materials.Carbon, 64)
+     *          .fluidInputs(Materials.Chlorine.getFluid(16000))
+     *          .fluidInputs(Materials.Hydrogen.getFluid(16000))
+     *          .fluidInputs(Materials.Oxygen.getFluid(16000))
+     *          .fluidOutputs(GTLiteMaterials.NitrileButadieneRubber.getFluid(9216))
+     *          .fluidOutputs(GTLiteMaterials.PolyPhosphonitrileFluoroRubber.getFluid(9216))
+     *          .fluidOutputs(GTLiteMaterials.Polyetheretherketone.getFluid(18432))
+     *          .fluidOutputs(Materials.Rubber.getFluid(36864))
+     *          .EUt(VA[UV])
+     *          .duration(400)
+     *          .CasingTier(2)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.QuantumForceTransformer},
+     *     This recipe map's predicate like {@link #COLLIDER_RECIPES}.
+     *     If you want to add new recipes, please use swarm ({@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix#swarm})
+     *     as catalyst, and add a advanced version of your recipe (use different swarm as catalyst),
+     *     and add a special circuit to resolve conflicts.
      * </p>
      */
     @ZenProperty
@@ -1408,11 +1452,27 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.TURBINE_MIXER_RECIPES.recipeBuilder()
+     *          .circuitMeta(8)
+     *          .input(OrePrefix.dust, Materials.Gadolinium)
+     *          .input(OrePrefix.dust, Materials.Terbium)
+     *          .input(OrePrefix.dust, Materials.Dysprosium)
+     *          .input(OrePrefix.dust, Materials.Holmium)
+     *          .input(OrePrefix.dust, Materials.Erbium)
+     *          .input(OrePrefix.dust, Materials.Thulium)
+     *          .input(OrePrefix.dust, Materials.Ytterbium)
+     *          .input(OrePrefix.dust, Materials.Lutetium)
+     *          .output(OrePrefix.dust, GTLiteMaterials.LanthanumGroupHAlloy, 8)
+     *          .EUt(VA[UEV])
+     *          .duration(180)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Extended version of {@link RecipeMaps#MIXER_RECIPES}, has 9 input slots and 6 fluid input slots,
+     *     usually add special component material recipe in this recipe map (such as {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#Periodicium}).
+     *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this recipe map be advanced version of mixer recipes,
+     *          or create recipes of {@link gregicality.multiblocks.api.recipes.GCYMRecipeMaps#ALLOY_BLAST_RECIPES} via recipe handler.
      * </p>
      */
     @ZenProperty
@@ -1426,11 +1486,24 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.HEAT_EXCHANGE_RECIPES.recipeBuilder()
+     *          .fluidInputs(Materials.DistilledWater.getFluid(5))
+     *          .fluidInputs(Materials.Helium.getPlasma(1))
+     *          .fluidOutputs(GTLiteMaterials.SuperheatedSteam.getFluid(160 * 5))
+     *          .fluidOutputs(GTLiteMaterials.SupercriticalSteam.getFluid(80 * 5))
+     *          .fluidOutputs(Materials.Helium.getFluid(1))
+     *          .maxRate(1600)
+     *          .flowRate(500)
+     *          .duration(20)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Please see: {@link FlowRateRecipeBuilder}, this recipe map has two special property.
+     *     Pay attention, the correspond machine also has some special check,
+     *     please see: {@link magicbook.gtlitecore.api.capability.impl.HeatExchangerRecipeLogic}.
+     *     If you still understand, then you can see {@link magicbook.gtlitecore.loaders.multiblock.HeatExchanger}.
+     *     Textures of JEI page from Prim's mod <a href="https://github.com/GTNewHorizons/GoodGenerator">Good Generator</a>.
      * </p>
      */
     @ZenProperty
@@ -1442,11 +1515,18 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_RECIPES.recipeBuilder()
+     *          .fluidInputs(GTLiteMaterials.SuperheatedSteam.getFluid(320))
+     *          .fluidOutputs(Materials.DistilledWater.getFluid(64))
+     *          .EUt((int) V[MV])
+     *          .duration(10)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Fuel Recipe map like {@link RecipeMaps#GAS_TURBINE_FUELS},
+     *     used for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#HIGH_PRESSURE_STEAM_TURBINE},
+     *     and its mega version {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#MEGA_HIGH_PRESSURE_STEAM_TURBINE}.
      * </p>
      */
     @ZenProperty
@@ -1460,11 +1540,18 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_RECIPES.recipeBuilder()
+     *          .fluidInputs(GTLiteMaterials.SupercriticalSteam.getFluid(640))
+     *          .fluidOutputs(Materials.DistilledWater.getFluid(128))
+     *          .EUt((int) V[EV])
+     *          .duration(10)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Fuel Recipe map like {@link RecipeMaps#GAS_TURBINE_FUELS},
+     *     used for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#SUPERCRITICAL_STEAM_TURBINE},
+     *     and its mega version {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#MEGA_SUPERCRITICAL_STEAM_TURBINE}.
      * </p>
      */
     @ZenProperty
@@ -1478,11 +1565,17 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.BIOWARE_SIMULATOR.recipeBuilder()
+     *          .notConsumable(GTLiteMetaItems.MINING_DRONE_EV.getStackForm(35))
+     *          .fluidInputs(Materials.Biomass.getFluid(80000))
+     *          .output(OrePrefix.dust, Materials.Naquadah, 64)
+     *          .EUt(VHA[UV])
+     *          .duration(2000)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Unused now, maybe just a advanced version of {@link #SIMULATOR_RECIPES}.
      * </p>
      */
     @ZenProperty
@@ -1499,27 +1592,21 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+     *          .notConsumable(OrePrefix.lens, GTLiteMaterials.MagnetoResonatic)
+     *          .notConsumable(OrePrefix.lens, GTLiteMaterials.NdYAG)
+     *          .notConsumable(OrePrefix.lens, Materials.NetherStar)
+     *          .input(MetaItems.NEUTRONIUM_WAFER)
+     *          .output(GTLiteMetaItems.UHASOC_WAFER, 32)
+     *          .EUt(VA[LuV])
+     *          .duration(50)
+     *          .cleanroom(CleanroomType.CLEANROOM)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
-     * </p>
-     */
-    @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES = new RecipeMap<>("simulator_recipes", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.SCIENCE);
-
-    /**
-     * Example:
-     *
-     * <pre>
-     *
-     * </pre>
-     *
-     * <p>
-     *
+     *     Advanced version of {@link RecipeMaps#LASER_ENGRAVER_RECIPES}.
+     *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this recipe map be advanced version of laser engraver recipes.
      * </p>
      */
     @ZenProperty
@@ -1533,11 +1620,21 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+     *          .input(GTLiteMetaItems.BARNARDA_C_ZOOXANTHELLAE, 2)
+     *          .circuitMeta(1)
+     *          .fluidInputs(Materials.Mutagen.getFluid(2))
+     *          .output(GTLiteMetaItems.BARNARDA_C_ZOOXANTHELLAE, 16)
+     *          .EUt(VA[UV])
+     *          .duration(200)
+     *          .temperature(109)
+     *          .cleanroom(CleanroomType.STERILE_CLEANROOM)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Just a easy recipe for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityAlgaeCultureTank}.
+     *     TODO maybe add more common algae recipes in this recipe map.
      * </p>
      */
     @ZenProperty
@@ -1551,11 +1648,15 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+     *          .fluidInputs(Materials.FermentedBiomass.getFluid(200))
+     *          .EUt((int) V[EV])
+     *          .duration(20)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Simple fuel recipe map for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#BIOMASS_GENERATOR}.
      * </p>
      */
     @ZenProperty
@@ -1568,11 +1669,19 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.LARGE_GAS_COLLECTOR_RECIPES.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .notConsumable(MetaItems.ELECTRIC_PUMP_LV)
+     *          .fluidOutputs(Materials.Air.getFluid(40000))
+     *          .EUt(VA[HV])
+     *          .duration(200)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Advanced version of {@link RecipeMaps#GAS_COLLECTOR_RECIPES},
+     *     please see: {@link magicbook.gtlitecore.loaders.multiblock.LargeGasCollector}.
+     *     Use different circuits and electric pumps to resolve conflicts.
      * </p>
      */
     @ZenProperty
@@ -1584,11 +1693,18 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.VIRTUAL_COSMOS_SIMULATOR_RECIPES.recipeBuilder()
+     *          .notConsumable(COSMIC_MEMORY_CARD_OVERWORLD)
+     *          .output(dust, Stone, 240891153)
+     *          .EUt(VA[UXV])
+     *          .duration(1200)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Special JEI page {@link RecipeMapVirtualCosmosSimulator},
+     *     like Eye of Harmony in <a href="https://github.com/GTNewHorizons/TecTech">TecTech</a>.
+     *     This recipe map has 81 output slots and 18 fluid output slots.
      * </p>
      */
     @ZenProperty
@@ -1599,11 +1715,26 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+     *          .notConsumable(MetaItems.QUANTUM_PROCESSOR_EV)
+     *          .input(GTLiteMetaItems.WRAP_EXTREME_CIRCUIT_BOARD, 2)
+     *          .input(MetaItems.QUBIT_CENTRAL_PROCESSING_UNIT_WAFER, 8)
+     *          .input(MetaItems.NANO_CENTRAL_PROCESSING_UNIT_WAFER, 4)
+     *          .input(GTLiteMetaItems.WRAP_ADVANCED_SMD_CAPACITOR, 6)
+     *          .input(GTLiteMetaItems.WRAP_ADVANCED_SMD_TRANSISTOR, 6)
+     *          .input(OrePrefix.wireGtHex, Materials.Platinum, 12)
+     *          .fluidInputs(Materials.SolderingAlloy.getFluid(72 * 64))
+     *          .output(MetaItems.QUANTUM_PROCESSOR_EV, 64)
+     *          .EUt(VA[EV])
+     *          .duration(800)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Recipe Map for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeCircuitAssemblyLine}.
+     *     In this recipe map, please put not consumable item on the last slot in item input slots.
+     *     Because Large Circuit Assembly Line use special ui ({@link RecipeMapLargeCircuitAssemblyLine}),
+     *     you should make it on special slot on left hand.
      * </p>
      */
     @ZenProperty
@@ -1617,11 +1748,21 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.DYSON_SWARM_RECIPES.recipeBuilder()
+     *          .circuitMeta(2)
+     *          .input(GTLiteMetaItems.DYSON_SWARM_MODULE, 4)
+     *          .chancedOutput(GTLiteMetaItems.DYSON_SWARM_MODULE, 5000, 0)
+     *          .chancedOutput(GTLiteMetaItems.DYSON_SWARM_MODULE, 5000, 0)
+     *          .chancedOutput(GTLiteMetaItems.DYSON_SWARM_MODULE, 5000, 0)
+     *          .chancedOutput(GTLiteMetaItems.DYSON_SWARM_MODULE, 5000, 0)
+     *          .EUt(40000000)
+     *          .duration(200)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Fake fuel recipe map of {@link magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityDysonSwarm},
+     *     TODO maybe deprecate or tweak, if redo dyson swarm in future.
      * </p>
      */
     @ZenProperty
@@ -1633,11 +1774,21 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *
+     *     GTLiteRecipeMaps.PLANETARY_GAS_SIPHON_RECIPES.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .notConsumable(GTLiteMetaItems.MINING_DRONE_OpV.getStackForm(64))
+     *          .input(OrePrefix.pipeNormalFluid, GTLiteMaterials.CrystalMatrix, 16)
+     *          .input(OrePrefix.toolHeadDrill, GTLiteMaterials.Hypogen, 8)
+     *          .fluidInputs(Materials.RocketFuel.getFluid(16000))
+     *          .fluidOutputs(GTLiteMaterials.Spacetime.getFluid(160000))
+     *          .EUt((int) V[MAX])
+     *          .duration(2000)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *
+     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.PlanetaryGasSiphon},
+     *     may be just a easy version of {@link #SPACE_ELEVATOR_DRILLING_MODULE}.
      * </p>
      */
     @ZenProperty
