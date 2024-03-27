@@ -227,7 +227,7 @@ public class GTLiteRecipeMaps {
      *     Recipe map for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#SIMULATOR},
      *     maybe seems like Simulator in <a href="https://github.com/xt9/DeepMobLearning">Deep Mob Learning</a> Mod.
      *     If you add new recipe, then you can add it in your config, please see:
-     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#machines
+     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#machines}
      *     of cause, this is just some QoL settings.
      * </p>
      */
