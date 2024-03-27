@@ -11,6 +11,19 @@ import static gregtech.api.unification.ore.OrePrefix.Conditions.hasGemProperty;
 import static gregtech.api.unification.ore.OrePrefix.Flags.ENABLE_UNIFICATION;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
 
+/**
+ * Ore Prefix
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     New ore prefixes in gtlitecore, like {@link OrePrefix}.
+ *     TODO when ALongStringOfNumbers' <a href="https://github.com/GregTechCEu/GregTech/pull/2013">issue</a> merged,
+ *          material amount numbers in this class should redo (for 2.9 milestone).
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteOrePrefix {
     public static final OrePrefix milled = new OrePrefix("milled", -1, null, GTLiteMaterialIconType.milled, ENABLE_UNIFICATION,
             OrePrefix.Conditions.hasOreProperty.and(mat -> mat.hasFlag(GENERATE_MILLED)), mat -> Collections.singletonList(I18n.format("metaitem.milled.tooltip.flotation")));

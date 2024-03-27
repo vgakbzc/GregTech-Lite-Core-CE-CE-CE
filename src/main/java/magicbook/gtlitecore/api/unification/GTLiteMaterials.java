@@ -3,8 +3,38 @@ package magicbook.gtlitecore.api.unification;
 import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.api.unification.materials.*;
 
+/**
+ * Materials
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is material class of gtlitecore,
+ *     just like {@link gregtech.api.unification.material.Materials}.
+ *     ID range of gtlitecore materials:
+ *
+ *     <pre>
+ *         10000-11000: Element Materials ({@link GTLiteElementMaterials}),<br>
+ *         11001-12000: First Degree Materials ({@link GTLiteFirstDegreeMaterials}),<br>
+ *         12001-13000: Second Degree Materials ({@link GTLiteSecondDegreeMaterials}),<br>
+ *         13001-15000: Organic Chemistry Materials ({@link GTLiteOrganicChemistryMaterials}),<br>
+ *         15001-16000: High Degree Materials ({@link GTLiteHighDegreeMaterials}),<br>
+ *         18000-20000: Unknown Composition Materials ({@link GTLiteUnknownCompositionMaterials}),<br>
+ *         20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}).
+ *     </pre>
+ *
+ *     Some ID is free in this range (but maybe add new machines in this free IDs).
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteMaterials {
-    //  Element Materials (Range: 10000-11000)
+
+    /////////////////////////
+    //  Element Materials  //
+    /////////////////////////
+
+    //  ID Range: 10000-11000
     public static Material Orichalcum;
     public static Material Vibranium;
     public static Material Adamantium;
@@ -38,7 +68,11 @@ public class GTLiteMaterials {
     public static Material Fatalium;
     public static Material Omnium;
 
-    //  First Degree Materials (Range: 11001-12000)
+    //////////////////////////////
+    //  First Degree Materials  //
+    //////////////////////////////
+
+    //  ID Range: 11001-12000
     public static Material PlatinumGroupResidue;
     public static Material PlatinumGroupConcentrate;
     public static Material PurifiedPlatinumGroupConcentrate;
@@ -294,7 +328,11 @@ public class GTLiteMaterials {
     public static Material PotassiumNonahydridotechnetate;
     public static Material PotassiumPerrhenate;
 
-    //  Second Degree Materials (Range: 12001-13000)
+    ///////////////////////////////
+    //  Second Degree Materials  //
+    ///////////////////////////////
+
+    //  ID Range: 12001-13000
     public static Material Inconel625;
     public static Material HastelloyN;
     public static Material AusteniticStainlessSteel904L;
@@ -374,7 +412,11 @@ public class GTLiteMaterials {
     public static Material Incoloy020;
     public static Material Hattrium;
 
-    //  Organic Chemistry Materials (Range: 13001-15000)
+    ///////////////////////////////////
+    //  Organic Chemistry Materials  //
+    ///////////////////////////////////
+
+    //  ID Range: 13001-15000
     public static Material KaptonK;
     public static Material KaptonE;
     public static Material Polyetheretherketone;
@@ -562,7 +604,11 @@ public class GTLiteMaterials {
     public static Material TetraethylammoniumBromide;
     public static Material TetraethylammoniumNonahydriorhenidetechnetide;
 
-    //  High Degree Materials (Range: 15001-16000)
+    /////////////////////////////
+    //  High Degree Materials  //
+    /////////////////////////////
+
+    //  ID Range: 15001-16000
     public static Material QuarkGluonPlasma;
     public static Material HeavyQuarks;
     public static Material LightQuarks;
@@ -586,7 +632,11 @@ public class GTLiteMaterials {
     public static Material DimensionallyTranscendentResidue;
     public static Material SuperluminalTachyonJet;
 
-    //  Unknown Composition Materials (Range: 18000-20000)
+    /////////////////////////////////////
+    //  Unknown Composition Materials  //
+    /////////////////////////////////////
+
+    //  ID Range: 18000-20000
     public static Material FracuringFluid;
     public static Material RareEarthHydroxidesSolution;
     public static Material RareEarthChloridesSolution;
@@ -699,7 +749,11 @@ public class GTLiteMaterials {
     public static Material EGF;
     public static Material CAT;
 
-    //  Other Materials
+    //////////////////////////////
+    //  Third Degree Materials  //
+    //////////////////////////////
+
+    //  ID Range: 20001-21000
     public static Material ProtoAdamantium;
     public static Material EnrichedMithril;
     public static Material TriniumTitanide;

@@ -4,6 +4,19 @@ import gregtech.api.unification.material.info.MaterialFlag;
 import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.PropertyKey;
 
+/**
+ * Material Flags
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Material Flag class of gtlitecore, like {@link MaterialFlags}.
+ *     Please see related classes: {@link GTLiteOrePrefix},
+ *     and {@link GTLiteMaterialIconSet}, etc.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteMaterialFlags {
 
     public static final MaterialFlag GENERATE_MILLED = new MaterialFlag.Builder("generate_milled")
