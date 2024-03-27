@@ -8,7 +8,7 @@ import net.minecraftforge.fluids.FluidStack;
 import java.io.IOException;
 
 /**
- * Fluid Stack Helper.
+ * Fluid Stack Helper
  *
  * <p>
  *     This class is a completion of the class {@link FluidStack},
