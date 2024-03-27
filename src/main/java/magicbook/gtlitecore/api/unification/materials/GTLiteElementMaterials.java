@@ -425,6 +425,28 @@ public class GTLiteElementMaterials {
                         .vacuumStats(VA[MAX], 999))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
                 .build();
+
+        //  10031 Magmatter
+        Magmatter = new Material.Builder(getId(), gregtechId("magmatter"))
+                .ingot()
+                .fluid()
+                .iconSet(CUSTOM_MAGMATTER)
+                .element(GTLiteElements.Magmatter)
+                .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[MAX], 1024, 36, false)
+                .build();
+
+        //  10032 Primordial Matter
+        PrimordialMatter = new Material.Builder(getId(), gregtechId("primordial_matter"))
+                .ingot()
+                .fluid()
+                .color(0xffd6fb)
+                .iconSet(SHINY)
+                .element(GTLiteElements.PrimordialMatter)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[MAX], 500, 125, false)
+                .build();
+
     }
 
     private static int getId() {

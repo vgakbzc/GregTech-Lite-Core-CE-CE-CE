@@ -24,6 +24,7 @@ import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MiscRecipes {
@@ -604,6 +605,7 @@ public class MiscRecipes {
                 .duration(110)
                 .buildAndRegister();
 
+        MagmatterComponents();
     }
 
     private static void ToolRecipes() {
@@ -1376,5 +1378,24 @@ public class MiscRecipes {
                 .EUt(VA[ULV])
                 .duration(20)
                 .buildAndRegister();
+    }
+
+    private static void MagmatterComponents() {
+
+        //  Fluid
+        //  back to dimensional oscillator recipes
+
+        //  Ingot
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(ingot, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(ingot, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  TODO other components
     }
 }

@@ -1796,5 +1796,16 @@ public class GTLiteRecipeMaps {
             .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_SPACE_ELEVATOR_DRILLING_MODULE, ProgressWidget.MoveType.VERTICAL)
             .setSound(GTSoundEvents.MINER);
 
+    /**
+     * TODO MAYBE use new tiered predicate, lens tier, for this recipe map.
+     *      This recipe map is for a OpV+ stage machine, but still draft now.
+      */
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> NICOLL_DYSON_BEAM_RECIPES = new RecipeMap<>("nicoll_dyson_beam_recipes", 3, 2, 1, 0, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+            .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+            .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
+
     public GTLiteRecipeMaps() {}
 }

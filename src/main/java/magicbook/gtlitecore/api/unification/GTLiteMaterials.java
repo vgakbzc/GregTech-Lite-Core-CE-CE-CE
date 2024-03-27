@@ -67,6 +67,8 @@ public class GTLiteMaterials {
     public static Material Edenium;
     public static Material Fatalium;
     public static Material Omnium;
+    public static Material Magmatter;
+    public static Material PrimordialMatter;
 
     //////////////////////////////
     //  First Degree Materials  //
