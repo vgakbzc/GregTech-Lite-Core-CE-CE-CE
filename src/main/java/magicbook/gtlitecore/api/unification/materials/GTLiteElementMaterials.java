@@ -6,6 +6,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
+import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet;
 import net.minecraft.init.Enchantments;
 import net.minecraft.util.text.TextFormatting;
 
@@ -440,8 +441,8 @@ public class GTLiteElementMaterials {
         PrimordialMatter = new Material.Builder(getId(), gregtechId("primordial_matter"))
                 .ingot()
                 .fluid()
-                .color(0xffd6fb)
-                .iconSet(SHINY)
+                .color(0xFFD6FB)
+                .iconSet(GTLiteMaterialIconSet.CUSTOM_PRIMORDIAL_MATTER)
                 .element(GTLiteElements.PrimordialMatter)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 500, 125, false)
