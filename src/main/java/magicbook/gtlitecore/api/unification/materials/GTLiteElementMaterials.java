@@ -113,8 +113,8 @@ public class GTLiteElementMaterials {
         CrystalMatrix = new Material.Builder(getId(), gregtechId("crystal_matrix"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature(660450))
-                .color(0x70ecff)
-                .iconSet(BRIGHT)
+                .color(0xC0FFFF)
+                .iconSet(CUSTOM_CRYSTAL_MATRIX)
                 .element(GTLiteElements.CrystalMatrix)
                 .fluidPipeProperties(40000, 10000, true, true, true, true)
                 .build();
