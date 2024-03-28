@@ -2,13 +2,14 @@ package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.unification.material.Material;
+import gregtech.common.blocks.MetaBlocks;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.ore;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SPACE_ELEVATOR_DRILLING_MODULE;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SPACE_ELEVATOR_MINING_MODULE;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.ELECTRIC_PUMP_OpV;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -17,6 +18,7 @@ public class SpaceElevator {
     public static void init() {
         DrillingModule();
         MiningModule();
+        AssemblingModule();
     }
 
     private static void DrillingModule() {
@@ -603,6 +605,105 @@ public class SpaceElevator {
         //  OpV Mining Drone
 
         //  MAX Mining Drone
+
+    }
+
+    private static void AssemblingModule() {
+
+        //  1x Magmatter cable
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(wireGtSingle, Magmatter)
+                .input(plate, Kevlar)
+                .input(ELECTRIC_PUMP_OpV)
+                .input(OPTICAL_FIBER, 2)
+                .input(foil, CosmicFabric)
+                .input(CLADDED_OPTICAL_FIBER_CORE, 4)
+                .input(MetaBlocks.OPTICAL_PIPES[0])
+                .fluidInputs(NitrileButadieneRubber.getFluid(5000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(5000))
+                .fluidInputs(Spacetime.getFluid(2000))
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(cableGtSingle, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .CasingTier(5)
+                .buildAndRegister();
+
+        //  2x Magmatter cable
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(wireGtDouble, Magmatter)
+                .input(plate, Kevlar, 2)
+                .input(ELECTRIC_PUMP_OpV, 2)
+                .input(OPTICAL_FIBER, 4)
+                .input(foil, CosmicFabric, 2)
+                .input(CLADDED_OPTICAL_FIBER_CORE, 8)
+                .input(MetaBlocks.OPTICAL_PIPES[0], 2)
+                .fluidInputs(NitrileButadieneRubber.getFluid(10000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(10000))
+                .fluidInputs(Spacetime.getFluid(4000))
+                .fluidInputs(Magmatter.getFluid(L * 2))
+                .output(cableGtDouble, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .CasingTier(5)
+                .buildAndRegister();
+
+        //  4x Magmatter cable
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(wireGtQuadruple, Magmatter)
+                .input(plate, Kevlar, 4)
+                .input(ELECTRIC_PUMP_OpV, 4)
+                .input(OPTICAL_FIBER, 8)
+                .input(foil, CosmicFabric, 4)
+                .input(CLADDED_OPTICAL_FIBER_CORE, 16)
+                .input(MetaBlocks.OPTICAL_PIPES[0], 4)
+                .fluidInputs(NitrileButadieneRubber.getFluid(20000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(20000))
+                .fluidInputs(Spacetime.getFluid(8000))
+                .fluidInputs(Magmatter.getFluid(L * 4))
+                .output(cableGtQuadruple, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .CasingTier(5)
+                .buildAndRegister();
+
+        //  8x Magmatter cable
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(wireGtOctal, Magmatter)
+                .input(plate, Kevlar, 8)
+                .input(ELECTRIC_PUMP_OpV, 8)
+                .input(OPTICAL_FIBER, 16)
+                .input(foil, CosmicFabric, 8)
+                .input(CLADDED_OPTICAL_FIBER_CORE, 32)
+                .input(MetaBlocks.OPTICAL_PIPES[0], 8)
+                .fluidInputs(NitrileButadieneRubber.getFluid(40000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(40000))
+                .fluidInputs(Spacetime.getFluid(16000))
+                .fluidInputs(Magmatter.getFluid(L * 8))
+                .output(cableGtOctal, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .CasingTier(5)
+                .buildAndRegister();
+
+        //  16x Magmatter cable
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(wireGtHex, Magmatter)
+                .input(plate, Kevlar, 16)
+                .input(ELECTRIC_PUMP_OpV, 16)
+                .input(OPTICAL_FIBER, 32)
+                .input(foil, CosmicFabric, 32)
+                .input(CLADDED_OPTICAL_FIBER_CORE, 64)
+                .input(MetaBlocks.OPTICAL_PIPES[0], 16)
+                .fluidInputs(NitrileButadieneRubber.getFluid(80000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(80000))
+                .fluidInputs(Spacetime.getFluid(32000))
+                .fluidInputs(Magmatter.getFluid(L * 16))
+                .output(cableGtHex, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .CasingTier(5)
+                .buildAndRegister();
 
     }
 

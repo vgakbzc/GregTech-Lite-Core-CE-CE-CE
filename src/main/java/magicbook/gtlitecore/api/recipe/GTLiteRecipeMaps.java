@@ -1797,7 +1797,7 @@ public class GTLiteRecipeMaps {
             .setSound(GTSoundEvents.MINER);
 
     /**
-     * TODO MAYBE use new tiered predicate, lens tier, for this recipe map.
+     * TODO MAYBE use new tiered predicate, gravitional lens tier, for this recipe map.
      *      This recipe map is for a OpV+ stage machine, but still draft now.
       */
     @ZenProperty
