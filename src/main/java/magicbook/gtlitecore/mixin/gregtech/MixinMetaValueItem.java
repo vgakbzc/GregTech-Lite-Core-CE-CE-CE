@@ -5,11 +5,17 @@ import gregtech.api.items.metaitem.stats.IItemComponent;
 import magicbook.gtlitecore.api.item.IItemRenderer;
 import magicbook.gtlitecore.api.item.IItemRendererManager;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
+/**
+ * @author Gate Guardian
+ *
+ * @since 2.8.7-beta
+ */
 @Mixin(value = MetaItem.MetaValueItem.class, remap = false)
 public abstract class MixinMetaValueItem implements IItemRenderer {
 

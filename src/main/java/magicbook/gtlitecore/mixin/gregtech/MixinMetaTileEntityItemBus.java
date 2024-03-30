@@ -9,6 +9,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.spongepowered.asm.mixin.Mixin;
 
+/**
+ * @author Magic_Sweepy
+ *
+ * @since 2.8.7-beta
+ */
 @Mixin(MetaTileEntityItemBus.class)
 public abstract class MixinMetaTileEntityItemBus extends MetaTileEntityMultiblockNotifiablePart implements IMultiblockAbilityPart<IItemHandlerModifiable>, IControllable, IGhostSlotConfigurable {
 
@@ -18,6 +23,7 @@ public abstract class MixinMetaTileEntityItemBus extends MetaTileEntityMultibloc
         super(metaTileEntityId, tier, isExport);
     }
 
+    @SuppressWarnings("unused")
     private int getInventorySize() {
         int sizeRoot = 1 + Math.min(14, this.getTier());
         return sizeRoot * sizeRoot;

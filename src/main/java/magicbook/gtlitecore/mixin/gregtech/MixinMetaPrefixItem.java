@@ -15,6 +15,11 @@ import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
 import java.util.Map;
 
+/**
+ * @author Gate Guardian
+ *
+ * @since 2.8.7-beta
+ */
 @Mixin(value = MetaPrefixItem.class, remap = false)
 public abstract class MixinMetaPrefixItem extends StandardMetaItem {
 

@@ -149,9 +149,9 @@ public class SpaceElevator {
         createDrillingModuleFluidRecipe( 9, Drone[9], BedrockSmoke,       78400, 4, Energy[9]);
         createDrillingModuleFluidRecipe(10, Drone[9], Naquadria,          12000, 4, Energy[9]);
 
-        //  UIV Mining Drone 5
+        //  UIV Mining Drone
         createDrillingModuleFluidRecipe(1,  Drone[10], RawStarMatter,              39200, 5, Energy[10]);
-        createDrillingModuleFluidRecipe(2,  Drone[10], BedrockSmoke,               44800, 5, Energy[10]);
+        createDrillingModuleFluidRecipe(2,  Drone[10], BedrockSootSolution,        44800, 5, Energy[10]);
         createDrillingModuleFluidRecipe(3,  Drone[10], RareEarthChloridesSolution, 78400, 5, Energy[10]);
         createDrillingModuleFluidRecipe(4,  Drone[10], OganessonBreedingBase,      33600, 5, Energy[10]);
         createDrillingModuleFluidRecipe(5,  Drone[10], Einsteinium,                12000, 5, Energy[10]);
