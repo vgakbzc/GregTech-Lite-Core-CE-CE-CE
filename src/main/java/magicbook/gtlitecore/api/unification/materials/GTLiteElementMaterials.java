@@ -6,6 +6,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
+import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet;
 import net.minecraft.init.Enchantments;
 import net.minecraft.util.text.TextFormatting;
 
@@ -112,8 +113,8 @@ public class GTLiteElementMaterials {
         CrystalMatrix = new Material.Builder(getId(), gregtechId("crystal_matrix"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature(660450))
-                .color(0x70ecff)
-                .iconSet(BRIGHT)
+                .color(0xC0FFFF)
+                .iconSet(CUSTOM_CRYSTAL_MATRIX)
                 .element(GTLiteElements.CrystalMatrix)
                 .fluidPipeProperties(40000, 10000, true, true, true, true)
                 .build();
@@ -425,6 +426,28 @@ public class GTLiteElementMaterials {
                         .vacuumStats(VA[MAX], 999))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
                 .build();
+
+        //  10031 Magmatter
+        Magmatter = new Material.Builder(getId(), gregtechId("magmatter"))
+                .ingot()
+                .fluid()
+                .iconSet(CUSTOM_MAGMATTER)
+                .element(GTLiteElements.Magmatter)
+                .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[MAX], 1024, 36, false)
+                .build();
+
+        //  10032 Primordial Matter
+        PrimordialMatter = new Material.Builder(getId(), gregtechId("primordial_matter"))
+                .ingot()
+                .fluid()
+                .color(0xFFD6FB)
+                .iconSet(GTLiteMaterialIconSet.CUSTOM_PRIMORDIAL_MATTER)
+                .element(GTLiteElements.PrimordialMatter)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(V[MAX], 500, 125, false)
+                .build();
+
     }
 
     private static int getId() {

@@ -1,5 +1,11 @@
 package magicbook.gtlitecore.loaders;
 
+import magicbook.gtlitecore.api.GTLiteValues;
+import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
+import magicbook.gtlitecore.integration.gregtechfoodoption.GTFOMachineRecipeLoader;
+import magicbook.gtlitecore.integration.gregtechfoodoption.GTFOMiscRecipes;
+import magicbook.gtlitecore.integration.gregtechfoodoption.GTFOOverrideRecipeLoader;
+import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
 import magicbook.gtlitecore.loaders.blocks.Crucibles;
 import magicbook.gtlitecore.loaders.blocks.DecorativeBlocks;
 import magicbook.gtlitecore.loaders.blocks.Explosives;
@@ -9,6 +15,7 @@ import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.multiblock.*;
 import magicbook.gtlitecore.loaders.oreprocessing.*;
+import net.minecraftforge.fml.common.Loader;
 
 public class RecipeManager {
 
@@ -18,7 +25,17 @@ public class RecipeManager {
         initBlocks();
         MachineComponents.init();
         MachineRecipeLoader.init();
+
+        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+            GTFOMachineRecipeLoader.init();
+        }
+
         MiscRecipes.init();
+
+        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+            GTFOMiscRecipes.init();
+        }
+
         RecipeConflicts.init();
       
         initChains();
@@ -28,6 +45,14 @@ public class RecipeManager {
 
         FusionLoader.init();
         OverrideRecipeLoader.init();
+
+        if (Loader.isModLoaded(GTLiteValues.MODID_GCYM)) {
+            GCYMOverrideRecipeLoader.init();
+        }
+
+        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+            GTFOOverrideRecipeLoader.init();
+        }
     }
 
     private static void initBlocks() {
@@ -82,6 +107,10 @@ public class RecipeManager {
         TurpentineChain.init();
         ZirconiumChain.init();
         ZylonChain.init();
+
+        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+            GTFORecipeManager.initChains();
+        }
     }
 
     private static void initOreProcessings() {

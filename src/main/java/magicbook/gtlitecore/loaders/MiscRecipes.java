@@ -24,6 +24,7 @@ import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MiscRecipes {
@@ -604,6 +605,7 @@ public class MiscRecipes {
                 .duration(110)
                 .buildAndRegister();
 
+        MagmatterComponents();
     }
 
     private static void ToolRecipes() {
@@ -1376,5 +1378,116 @@ public class MiscRecipes {
                 .EUt(VA[ULV])
                 .duration(20)
                 .buildAndRegister();
+    }
+
+    private static void MagmatterComponents() {
+
+        //  Fluid
+        //  back to dimensional oscillator recipes.
+
+        //  Dust
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(dust, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(dust, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Dust Small
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(dustSmall, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(dustSmall, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Dust Tiny
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(dustTiny, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(dustTiny, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Nugget
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(nugget, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(nugget, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Ingot
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(ingot, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(ingot, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Block
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(block, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(block, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Plate
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(plate, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Foil
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(foil, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(foil, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Wire Fine
+        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+                .input(wireFine, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(wireFine, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
+        //  Wires
+        //  back to Stellar Furnace recipes.
+
+        //  Cables
+        //  back to Space Elevator Assembler recipes.
     }
 }

@@ -29,7 +29,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Rubber.getFluid(36864))
                 .EUt(VA[ZPM])
                 .duration(400)
-                .CasingTier(1)
+                .CasingTier(1) // ZPM
                 .buildAndRegister();
 
         //  T2 Rubber recipe
@@ -47,8 +47,10 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Rubber.getFluid(36864))
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
+
+        //  TODO T3 Rubber recipe
 
         //  T1 Plastic recipe
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -66,12 +68,12 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Polybenzimidazole.getFluid(9216))
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
 
         //  T2 Plastic recipe
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
-                .circuitMeta(2)
+                .circuitMeta(12)
                 .notConsumable(swarm, CarbonNanotube)
                 .fluidInputs(Chlorine.getFluid(16000))
                 .fluidInputs(Hydrogen.getFluid(16000))
@@ -81,11 +83,30 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Polybenzimidazole.getFluid(18432))
                 .fluidOutputs(PolystyreneSulfonate.getFluid(9216))
                 .fluidOutputs(FluorinatedEthylenePropylene.getFluid(18432))
+                .fluidOutputs(KaptonK.getFluid(9216))
                 .fluidOutputs(Zylon.getFluid(9216))
-                .fluidOutputs(Kevlar.getFluid(9216))
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3)
+                .CasingTier(3) // UHV
+                .buildAndRegister();
+
+        //  T3 Plastic recipe
+        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+                .circuitMeta(22)
+                .notConsumable(swarm, FullerenePolymerMatrix)
+                .fluidInputs(Chlorine.getFluid(16000))
+                .fluidInputs(Hydrogen.getFluid(16000))
+                .fluidInputs(Oxygen.getFluid(16000))
+                .fluidInputs(Fluorine.getFluid(16000))
+                .fluidOutputs(Polybenzimidazole.getFluid(36864))
+                .fluidOutputs(Zylon.getFluid(18432))
+                .fluidOutputs(KaptonE.getFluid(9216))
+                .fluidOutputs(KaptonK.getFluid(18432))
+                .fluidOutputs(Kevlar.getFluid(9216))
+                .fluidOutputs(Polycaprolactam.getFluid(9216))
+                .EUt(VA[UEV])
+                .duration(400)
+                .CasingTier(4) // UEV
                 .buildAndRegister();
 
         //  Platinum group
@@ -102,7 +123,7 @@ public class QuantumForceTransformer {
                 .output(dust, Ruthenium, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
 
         //  Thorium-Uranium group
@@ -116,7 +137,7 @@ public class QuantumForceTransformer {
                 .output(dust, Plutonium241, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
 
         //  Titanium-Tungsten-Indium Group
@@ -132,7 +153,7 @@ public class QuantumForceTransformer {
                 .output(dust, Indium, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -147,7 +168,7 @@ public class QuantumForceTransformer {
                 .output(dust, Indium, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
 
         //  Rare Earth Group
@@ -163,7 +184,7 @@ public class QuantumForceTransformer {
                 .output(dust, Samarium, 64)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3)
+                .CasingTier(3) // UHV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -178,7 +199,7 @@ public class QuantumForceTransformer {
                 .output(dust, Erbium, 64)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3)
+                .CasingTier(3) // UHV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -194,7 +215,7 @@ public class QuantumForceTransformer {
                 .output(dust, Gallium, 64)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3)
+                .CasingTier(3) // UHV
                 .buildAndRegister();
 
         //  Naquadah group
@@ -213,7 +234,7 @@ public class QuantumForceTransformer {
                 .output(dust, Adamantium, 64)
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4)
+                .CasingTier(4) // UEV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -232,10 +253,10 @@ public class QuantumForceTransformer {
                 .output(dust, CelestialTungsten, 64)
                 .EUt(VA[UIV])
                 .duration(400)
-                .CasingTier(5)
+                .CasingTier(5) // UIV
                 .buildAndRegister();
 
-        //  Biological Items
+        //  T1 Biological Items
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
                 .circuitMeta(11)
                 .notConsumable(swarm, Naquadria)
@@ -259,8 +280,11 @@ public class QuantumForceTransformer {
                 .fluidOutputs(LinoleicAcid.getFluid(64000))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4)
+                .CasingTier(4) // UEV
                 .buildAndRegister();
+
+        //  TODO T2 Biological Items
+        //       Maybe product Exotic Mutagen and new cells.
 
         //  Adhesives
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -276,7 +300,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(SolderingAlloy.getFluid(18432))
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2)
+                .CasingTier(2) // UV
                 .buildAndRegister();
 
         //  Others, free circuit meta: 13-19
@@ -292,7 +316,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(HiggsBosons.getFluid(3000))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4)
+                .CasingTier(4) // UEV
                 .buildAndRegister();
 
         //  Instantons
@@ -306,7 +330,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Instantons.getFluid(3000))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4)
+                .CasingTier(4) // UEV
                 .buildAndRegister();
 
         //  Hypercube
@@ -329,7 +353,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Americium.getPlasma(250))
                 .EUt(VA[UXV])
                 .duration(20)
-                .CasingTier(6)
+                .CasingTier(6) // UXV
                 .buildAndRegister();
 
         //  Temporal Fluid
@@ -347,7 +371,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(TemporalFluid.getFluid(6000))
                 .EUt(VA[UIV])
                 .duration(120)
-                .CasingTier(5)
+                .CasingTier(5) // UIV
                 .buildAndRegister();
 
         //  Quantum Anomaly
@@ -357,7 +381,7 @@ public class QuantumForceTransformer {
                 .chancedOutput(QUANTUM_ANOMALY, 5000, 0)
                 .EUt(VA[UIV])
                 .duration(200)
-                .CasingTier(5)
+                .CasingTier(5) // UIV
                 .buildAndRegister();
 
     }

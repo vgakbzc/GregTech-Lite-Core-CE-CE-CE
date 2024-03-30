@@ -143,6 +143,28 @@ public class MachineComponents {
                        .EUt(VA[UXV]))
                .buildAndRegister();
 
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .input(stickLong, Omnium, 4)
+                .input(ring, Omnium, 4)
+                .input(round, Omnium, 8)
+                .input(wireFine, Magmatter, 64)
+                .input(wireFine, Magmatter, 64)
+                .input(cableGtSingle, Universium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(Lubricant.getFluid(13000))
+                .fluidInputs(CosmicFabric.getFluid(L * 32)) // todo new plastic?
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(ELECTRIC_MOTOR_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_MOTOR_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
+
     }
 
     private static void ConveyorModule() {
@@ -257,6 +279,27 @@ public class MachineComponents {
                         .researchStack(CONVEYOR_MODULE_UXV.getStackForm())
                         .CWUt(1024)
                         .EUt(VA[UXV]))
+                .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_MAX, 2)
+                .input(plate, Omnium, 2)
+                .input(ring, Omnium, 4)
+                .input(round, Omnium, 16)
+                .input(screw, Omnium, 4)
+                .input(cableGtSingle, Universium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(Lubricant.getFluid(13000))
+                .fluidInputs(PolyPhosphonitrileFluoroRubber.getFluid(L * 72))
+                .fluidInputs(PrimordialMatter.getFluid(L * 32))
+                .output(CONVEYOR_MODULE_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(CONVEYOR_MODULE_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
                 .buildAndRegister();
     }
 
@@ -383,6 +426,29 @@ public class MachineComponents {
                         .researchStack(ELECTRIC_PISTON_UXV.getStackForm())
                         .CWUt(1024)
                         .EUt(VA[UXV]))
+                .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_MAX)
+                .input(plate, Omnium, 4)
+                .input(ring, Omnium, 4)
+                .input(round, Omnium, 16)
+                .input(stick, Omnium, 4)
+                .input(gear, Eternity)
+                .input(gearSmall, Eternity, 2)
+                .input(cableGtSingle, Universium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(Lubricant.getFluid(13000))
+                .fluidInputs(CosmicFabric.getFluid(L * 32))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(ELECTRIC_PISTON_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_PISTON_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
                 .buildAndRegister();
     }
 
@@ -515,6 +581,30 @@ public class MachineComponents {
                         .CWUt(1024)
                         .EUt(VA[UXV]))
                 .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(stickLong, Omnium, 4)
+                .input(gear, Omnium)
+                .input(gearSmall, Omnium, 3)
+                .input(ELECTRIC_MOTOR_MAX, 2)
+                .input(ELECTRIC_PISTON_MAX)
+                .input(circuit, MarkerMaterials.Tier.MAX)
+                .input(circuit, MarkerMaterials.Tier.OpV, 2)
+                .input(circuit, MarkerMaterials.Tier.UXV, 4)
+                .input(cableGtSingle, Universium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                .fluidInputs(Lubricant.getFluid(13000))
+                .fluidInputs(CosmicFabric.getFluid(L * 32))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(ROBOT_ARM_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(ROBOT_ARM_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
     }
 
     private static void ElectricPump() {
@@ -636,6 +726,9 @@ public class MachineComponents {
                         .CWUt(1024)
                         .EUt(VA[UXV]))
                 .buildAndRegister();
+
+        //  MAX
+        //  todo needs to create a new material for pipe
     }
 
     private static void Emitter() {
@@ -756,6 +849,28 @@ public class MachineComponents {
                         .CWUt(1024)
                         .EUt(VA[UXV]))
                 .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Omnium)
+                .input(ELECTRIC_MOTOR_MAX)
+                .input(stickLong, Omnium, 4)
+                .input(ZENITH_STAR)
+                .input(circuit, MarkerMaterials.Tier.MAX, 2)
+                .input(foil, PrimordialMatter, 64)
+                .input(foil, PrimordialMatter, 64)
+                .input(cableGtSingle, Universium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 512))
+                .fluidInputs(CosmicFabric.getFluid(L * 32))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(EMITTER_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(EMITTER_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
     }
 
     private static void Sensor() {
@@ -873,6 +988,27 @@ public class MachineComponents {
                         .researchStack(SENSOR_UXV.getStackForm())
                         .CWUt(1024)
                         .EUt(VA[UXV]))
+                .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Omnium)
+                .input(plate, Omnium, 4)
+                .input(ZENITH_STAR)
+                .input(circuit, MarkerMaterials.Tier.MAX, 2)
+                .input(foil, Magmatter, 64) // todo find better material
+                .input(foil, Magmatter, 32)
+                .input(cableGtSingle, Universium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 512))
+                .fluidInputs(CosmicFabric.getFluid(L * 32))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(SENSOR_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(SENSOR_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
                 .buildAndRegister();
     }
 
@@ -994,5 +1130,8 @@ public class MachineComponents {
                         .CWUt(1024)
                         .EUt(VA[UXV]))
                 .buildAndRegister();
+
+        //  MAX
+        //  todo needs to create max superconductor.
     }
 }

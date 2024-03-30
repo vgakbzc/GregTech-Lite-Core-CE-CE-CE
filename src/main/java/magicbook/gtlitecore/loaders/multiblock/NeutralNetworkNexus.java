@@ -10,6 +10,7 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NEUTRAL_NETWORK_N
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.UHASOC_CHIP;
 
 public class NeutralNetworkNexus {
 
@@ -47,6 +48,9 @@ public class NeutralNetworkNexus {
         createUltimateBreeding(Naquadria, VA[ZPM], 1000);
         createUltimateBreeding(Tritanium, VA[UV], 380);
         createUltimateBreeding(Orichalcum, VA[UV], 240);
+
+        //  Infinite Breeding
+        createInfiniteBreeding(FullerenePolymerMatrix, VA[UIV], 120);
     }
 
     private static void HybridizingMode() {
@@ -122,6 +126,22 @@ public class NeutralNetworkNexus {
                 .input(HIGHLY_ADVANCED_SOC, 8)
                 .input(dust, Carbon, 32)
                 .fluidInputs(PCBCoolant.getFluid(L * 64))
+                .output(swarm, material)
+                .EUt(consumeEnergy)
+                .duration(duration)
+                .buildAndRegister();
+    }
+
+    private static void createInfiniteBreeding(Material material,
+                                               int consumeEnergy,
+                                               int duration) {
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .circuitMeta(1)
+                .input(nanotube, material)
+                .input(nanosensor, material)
+                .input(UHASOC_CHIP, 8)
+                .input(dust, Carbon, 64)
+                .fluidInputs(PCBCoolant.getFluid(L * 256))
                 .output(swarm, material)
                 .EUt(consumeEnergy)
                 .duration(duration)
