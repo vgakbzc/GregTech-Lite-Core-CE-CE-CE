@@ -1663,6 +1663,8 @@ gregtech.material.shirabon=调谐幻金
 gregtech.material.edenium=伊甸神钢
 gregtech.material.fatalium=命识魂金
 gregtech.material.omnium=万象
+gregtech.material.magmatter=纯磁物质
+gregtech.material.primordial_matter=始源物质
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -2557,6 +2559,7 @@ recipemap.large_gas_collector_recipes.name=大型集气室
 recipemap.virtual_cosmos_simulator_recipes.name=虚拟宇宙物质解压
 recipemap.large_circuit_assembly_line_recipes.name=大型电路装配线
 recipemap.planetary_gas_siphon_recipes.name=行星气体提取
+recipemap.nicoll_dyson_beam_recipes.name=尼科尔-戴森光束集聚
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

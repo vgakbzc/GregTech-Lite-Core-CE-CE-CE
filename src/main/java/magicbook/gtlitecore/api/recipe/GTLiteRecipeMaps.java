@@ -227,7 +227,7 @@ public class GTLiteRecipeMaps {
      *     Recipe map for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#SIMULATOR},
      *     maybe seems like Simulator in <a href="https://github.com/xt9/DeepMobLearning">Deep Mob Learning</a> Mod.
      *     If you add new recipe, then you can add it in your config, please see:
-     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#machines
+     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#machines}
      *     of cause, this is just some QoL settings.
      * </p>
      */
@@ -1795,6 +1795,17 @@ public class GTLiteRecipeMaps {
     public static final RecipeMap<SimpleRecipeBuilder> PLANETARY_GAS_SIPHON_RECIPES = new RecipeMap<>("planetary_gas_siphon_recipes", 4, 0, 1, 1, new SimpleRecipeBuilder(), false)
             .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_SPACE_ELEVATOR_DRILLING_MODULE, ProgressWidget.MoveType.VERTICAL)
             .setSound(GTSoundEvents.MINER);
+
+    /**
+     * TODO MAYBE use new tiered predicate, gravitional lens tier, for this recipe map.
+     *      This recipe map is for a OpV+ stage machine, but still draft now.
+      */
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> NICOLL_DYSON_BEAM_RECIPES = new RecipeMap<>("nicoll_dyson_beam_recipes", 3, 2, 1, 0, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+            .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+            .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 
     public GTLiteRecipeMaps() {}
 }

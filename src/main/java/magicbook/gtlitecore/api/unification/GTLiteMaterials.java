@@ -20,7 +20,8 @@ import magicbook.gtlitecore.api.unification.materials.*;
  *         13001-15000: Organic Chemistry Materials ({@link GTLiteOrganicChemistryMaterials}),<br>
  *         15001-16000: High Degree Materials ({@link GTLiteHighDegreeMaterials}),<br>
  *         18000-20000: Unknown Composition Materials ({@link GTLiteUnknownCompositionMaterials}),<br>
- *         20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}).
+ *         20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}),<br>
+ *         21001-22000: Mod Compatibility Materials ({@link GTLiteModCompatibilityMaterials}).
  *     </pre>
  *
  *     Some ID is free in this range (but maybe add new machines in this free IDs).
@@ -67,6 +68,8 @@ public class GTLiteMaterials {
     public static Material Edenium;
     public static Material Fatalium;
     public static Material Omnium;
+    public static Material Magmatter;
+    public static Material PrimordialMatter;
 
     //////////////////////////////
     //  First Degree Materials  //
@@ -775,5 +778,6 @@ public class GTLiteMaterials {
         GTLiteHighDegreeMaterials.register();         // 15001-16000
         GTLiteUnknownCompositionMaterials.register(); // 18000-20000
         GTLiteThirdDegreeMaterials.register();        // 20001-21000
+        GTLiteModCompatibilityMaterials.register();   // 21001-22000
     }
 }

@@ -33,4 +33,6 @@ public class GTLiteElements {
     public static final Element Edenium = Elements.add(433, 362, -1, null, "Edenium", "◊Ed◊", false);
     public static final Element Fatalium = Elements.add(655, 408, -1, null, "Fatalium", "Ft⏧", false);
     public static final Element Omnium = Elements.add(99999, 99999, -1, null, "Omnium", "Om⦼", false);
+    public static final Element Magmatter = Elements.add(1931, 1994, -1, null, "Magmatter", "M⎋", false);
+    public static final Element PrimordialMatter = Elements.add(50000, 50000, -1, null, "PrimordialMatter", "Pm⎋", false);
 }

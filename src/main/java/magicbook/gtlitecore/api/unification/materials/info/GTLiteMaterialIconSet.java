@@ -31,4 +31,7 @@ public class GTLiteMaterialIconSet {
     public static final MaterialIconSet CUSTOM_MAGNETO_RESONATIC = new MaterialIconSet("magneto_resonatic", null, true);
     public static final MaterialIconSet REAGENT = new MaterialIconSet("reagent", null, true);
     public static final MaterialIconSet CUSTOM_OMNIUM = new MaterialIconSetWithRenderer("omnium", null, true, new HaloRenderItemBehavior(10, 0xFFFFFFFF, () -> GTLiteTextures.HALO, true));
+    public static final MaterialIconSetWithRenderer CUSTOM_MAGMATTER = new MaterialIconSetWithRenderer("magmatter", null, true, new HaloRenderItemBehavior(10, 0x33FFFFFF, () -> GTLiteTextures.HALO_NOISE, true));
+    public static final MaterialIconSetWithRenderer CUSTOM_PRIMORDIAL_MATTER = new MaterialIconSetWithRenderer("primordial_matter", null, true, new HaloRenderItemBehavior(10, 0xFFCCF7FB, () -> GTLiteTextures.HALO, true));
+    public static final MaterialIconSet CUSTOM_CRYSTAL_MATRIX = new MaterialIconSet("crystal_matrix", null, true);
 }
