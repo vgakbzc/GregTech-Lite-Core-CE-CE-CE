@@ -76,7 +76,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x2F0B01)
                 .iconSet(SHINY)
                 .components(Lead, 1, Iron, 1, Carbon, 153, Hydrogen, 36, Nitrogen, 1, Oxygen, 2)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD)
                 .build();
 
         //  13007 Cosmic Fabric
