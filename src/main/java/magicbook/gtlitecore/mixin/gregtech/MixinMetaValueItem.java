@@ -26,6 +26,9 @@ public abstract class MixinMetaValueItem implements IItemRenderer {
         return rendererManager;
     }
 
+    /**
+     * @reason  Used to add renderer manager to item components.
+     */
     @Inject(
             method = "addItemComponentsInternal([Lgregtech/api/items/metaitem/stats/IItemComponent;)V",
             at = @At(
@@ -39,7 +42,7 @@ public abstract class MixinMetaValueItem implements IItemRenderer {
                                            IItemComponent[] var2,
                                            int var3, int var4,
                                            IItemComponent itemComponent) {
-        if (itemComponent instanceof  IItemRendererManager manager) {
+        if (itemComponent instanceof IItemRendererManager manager) {
             rendererManager = manager;
         }
     }

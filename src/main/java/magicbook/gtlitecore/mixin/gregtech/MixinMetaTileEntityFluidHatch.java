@@ -22,6 +22,13 @@ public abstract class MixinMetaTileEntityFluidHatch extends MetaTileEntityMultib
         super(metaTileEntityId, tier, isExport);
     }
 
+    /**
+     * <p>
+     *     Used to change max value of tier in this method.
+     * </p>
+     *
+     * @return  Inventory size of Fluid Hatch.
+     */
     @SuppressWarnings("unused")
     private int getInventorySize() {
         return 8000 * (1 << Math.min(14, this.getTier()));

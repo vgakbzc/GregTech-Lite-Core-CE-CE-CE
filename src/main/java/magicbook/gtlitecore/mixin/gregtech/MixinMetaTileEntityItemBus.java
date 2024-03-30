@@ -23,6 +23,13 @@ public abstract class MixinMetaTileEntityItemBus extends MetaTileEntityMultibloc
         super(metaTileEntityId, tier, isExport);
     }
 
+    /**
+     * <p>
+     *     Used to change max value of tier in this method.
+     * </p>
+     *
+     * @return  Inventory size of Item Bus.
+     */
     @SuppressWarnings("unused")
     private int getInventorySize() {
         int sizeRoot = 1 + Math.min(14, this.getTier());
