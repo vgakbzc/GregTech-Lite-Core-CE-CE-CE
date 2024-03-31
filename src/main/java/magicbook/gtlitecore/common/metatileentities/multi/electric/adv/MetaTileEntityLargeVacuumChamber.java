@@ -81,4 +81,9 @@ public class MetaTileEntityLargeVacuumChamber extends GCYMRecipeMapMultiblockCon
         return GTLiteTextures.LARGE_ROCKET_ENGINE_OVERLAY;
     }
 
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
+
 }
