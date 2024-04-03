@@ -67,6 +67,7 @@ public class ShaderUtils {
         useShader(0);
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     public static boolean useShaders() {
         return OpenGlHelper.shadersSupported;
     }

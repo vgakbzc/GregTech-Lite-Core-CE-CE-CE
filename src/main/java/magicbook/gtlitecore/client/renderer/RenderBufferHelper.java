@@ -75,10 +75,11 @@ public class RenderBufferHelper {
         float r = red, g = green, b = blue;
 
         if (shade) {
-            r *= 0.6;
-            g *= 0.6;
-            b *= 0.6;
+            r *= 0.6F;
+            g *= 0.6F;
+            b *= 0.6F;
         }
+
         buffer.pos(minX, minY, minZ).color(r, g, b, a).endVertex();
         buffer.pos(minX, minY, maxZ).color(r, g, b, a).endVertex();
         buffer.pos(minX, maxY, maxZ).color(r, g, b, a).endVertex();
