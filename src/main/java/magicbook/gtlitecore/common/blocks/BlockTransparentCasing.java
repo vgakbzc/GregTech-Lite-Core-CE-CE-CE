@@ -89,7 +89,8 @@ public class BlockTransparentCasing extends VariantActiveBlock<BlockTransparentC
         PMMA_GLASS("pmma_glass"),
         CBDO_POLYCARBONATE_GLASS("cbdo_polycarbonate_glass"),
         INFINITY_GLASS("infinity_glass"),
-        QUANTUM_GLASS("quantum_glass");
+        QUANTUM_GLASS("quantum_glass"),
+        SPATIALLY_TRANSCENDENT_GRAVITATIONAL_LENS("spatially_transcendent_gravitational_lens");
 
         private final String name;
 

@@ -1386,7 +1386,7 @@ public class MiscRecipes {
         //  back to dimensional oscillator recipes.
 
         //  Dust
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(dust, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1397,7 +1397,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Dust Small
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(dustSmall, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1408,7 +1408,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Dust Tiny
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(dustTiny, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1419,7 +1419,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Nugget
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(nugget, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1430,7 +1430,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Ingot
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(ingot, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1441,7 +1441,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Block
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(block, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1452,7 +1452,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Plate
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1463,7 +1463,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Foil
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(foil, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
@@ -1474,7 +1474,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Wire Fine
-        NICOLL_DYSON_BEAM_RECIPES.recipeBuilder()
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(wireFine, MagnetoHydrodynamicallyConstrainedStarMatter)
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)

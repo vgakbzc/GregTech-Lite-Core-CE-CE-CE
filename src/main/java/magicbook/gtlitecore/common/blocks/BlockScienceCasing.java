@@ -49,7 +49,11 @@ public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceC
         HOLLOW_CASING("hollow_casing"),
         SPACETIME_CASING("spacetime_casing"),
         DIMENSIONAL_BRIDGE_CASING("dimensional_bridge_casing"),
-        DIMENSIONAL_PRESERVE_CASING("dimensional_preserve_casing");
+        DIMENSIONAL_PRESERVE_CASING("dimensional_preserve_casing"),
+        SINGULARITY_REINFORCED_STELLAR_SHIELDING_CASING("singularity_reinforced_stellar_shielding_casing"),
+        CELESTIAL_MATTER_GUIDANCE_CASING("celestial_matter_guidance_casing"),
+        BOUNDLESS_GRAVITATIONALLY_SEVERED_STRUCTURE_CASING("boundless_gravitationally_severed_structure_casing"),
+        TRANSCENDENTALLY_AMPLIFIED_MAGNETIC_CONFINEMENT_CASING("transcendentally_amplified_magnetic_confinement_casing");
 
         private final String name;
 

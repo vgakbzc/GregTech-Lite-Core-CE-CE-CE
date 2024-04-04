@@ -1513,14 +1513,14 @@ public class MachineRecipeLoader {
                 .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(128000))
                 .fluidInputs(Arcanium.getFluid(57600))
                 .fluidInputs(Universium.getFluid(28800))
-                .fluidInputs(DegenerateRhenium.getFluid(14400))
+                .fluidInputs(Shirabon.getFluid(14400))
                 .output(SUPRACHRONAL_ASSEMBLY_LINE)
                 .EUt(VA[OpV])
                 .duration(1200)
                 .stationResearch(b -> b
                         .researchStack(DIMENSIONAL_OSCILLATOR.getStackForm())
                         .EUt(VA[OpV])
-                        .CWUt(576))
+                        .CWUt(2048))
                 .buildAndRegister();
 
         //  Virtual Cosmos Simulator
@@ -2049,6 +2049,37 @@ public class MachineRecipeLoader {
                 'A', ELECTRIC_PUMP_ZPM,
                 'M', ELECTRIC_MOTOR_ZPM,
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM));
+
+        //  Nicoll-Dyson Beamer
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, MagnetoHydrodynamicallyConstrainedStarMatter, 4)
+                .input(DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE, 16)
+                .input(DIMENSIONAL_OSCILLATOR, 16)
+                .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                .input(EMITTER_OpV, 4)
+                .input(SENSOR_OpV, 4)
+                .input(FIELD_GENERATOR_OpV, 4)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SINGULARITY_REINFORCED_STELLAR_SHIELDING_CASING, 4))
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.CELESTIAL_MATTER_GUIDANCE_CASING, 4))
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.BOUNDLESS_GRAVITATIONALLY_SEVERED_STRUCTURE_CASING, 4))
+                .input(plateDouble, Octiron, 32)
+                .input(plateDouble, Spacetime, 32)
+                .input(plateDouble, Arcanium, 32)
+                .input(plateDouble, Hypogen, 32)
+                .input(gear, CosmicNeutronium, 16)
+                .input(cableGtQuadruple, Shirabon, 4)
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(128000))
+                .fluidInputs(Edenium.getFluid(57600))
+                .fluidInputs(Eternity.getFluid(28800))
+                .fluidInputs(Astralium.getFluid(14400))
+                .output(NICOLL_DYSON_BEAMER)
+                .EUt(VA[OpV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(VIRTUAL_COSMOS_SIMULATOR.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {

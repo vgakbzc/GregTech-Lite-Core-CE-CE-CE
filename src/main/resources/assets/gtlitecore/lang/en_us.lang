@@ -214,6 +214,14 @@ tile.science_casing.dimensional_bridge_casing.name=Dimensional Bridge Machine Ca
 tile.science_casing.dimensional_bridge_casing.tooltip=Used to connect Time and Space from Different Dimensions
 tile.science_casing.dimensional_preserve_casing.name=Dimensional Preserve Machine Casing
 tile.science_casing.dimensional_preserve_casing.tooltip=Used to Maintain Time and Space at Dimensional Boundaries
+tile.science_casing.singularity_reinforced_stellar_shielding_casing.name=Singularity Reinforced Stellar Shielding Casing
+tile.science_casing.singularity_reinforced_stellar_shielding_casing.tooltip=Shielded by the Event Horizon of a Singularity
+tile.science_casing.celestial_matter_guidance_casing.name=Celestial Matter Guidance Casing
+tile.science_casing.celestial_matter_guidance_casing.tooltip=Designed to route Stellar Matter using Spacetime Distortion
+tile.science_casing.boundless_gravitationally_severed_structure_casing.name=Boundless Gravitationally Severed Structure Casing
+tile.science_casing.boundless_gravitationally_severed_structure_casing.tooltip=Not even a Black Hole could tear it apart.
+tile.science_casing.transcendentally_amplified_magnetic_confinement_casing.name=Transcendentally Amplified Confinement Casing
+tile.science_casing.transcendentally_amplified_magnetic_confinement_casing.tooltip=Creates enormous Magnetic Fields capable of constraining entire Neutron Stars.
 
 tile.field_casing.zpm.name=§cZPM§r Containment Field Generator
 tile.field_casing.uv.name=§3UV§r Containment Field Generator
@@ -238,6 +246,8 @@ tile.transparent_casing.infinity_glass.name=Infinity Glass
 tile.transparent_casing.infinity_glass.tooltip=Rainbow Glass
 tile.transparent_casing.quantum_glass.name=Quantum Glass
 tile.transparent_casing.quantum_glass.tooltip=Ultimate Force Field Constrained Glass
+tile.transparent_casing.spatially_transcendent_gravitational_lens.name=Spatially Transcendent Gravitational Lens
+tile.transparent_casing.spatially_transcendent_gravitational_lens.tooltip=Gravitational lensing taken literal
 
 tile.explosive_block.naquadria_charge.name=Naquadria Charge
 tile.explosive_block.taranium_charge.name=Taranium Charge
@@ -1617,6 +1627,13 @@ gtlitecore.machine.qc_bridge_component.name=Einstein-Rosen Quantum Info Bridge C
 gtlitecore.machine.qc_bridge_component.tooltip=跨时空信息桥接
 gtlitecore.machine.qc_bridge_component.desc=允许§fQuantum Computer§7与§fNetwork Switch§7连接
 
+gtlitecore.machine.nicoll_dyson_beamer.name=Nicoll-Dyson Beamer
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.1=能够弹指之间转移千兆尺度能量的疯狂机器，泄露的一丝能量能够摧毁整个超星系团。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.2=对戴森球的研究中促成了你对这台巨大的武器与工具的灵感，并最终造就了这台机器。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.3=这台机器化无穷无尽的时空为冶炼炉区域，以维度的因果作为工作时使用的燃料。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.4=§6千兆能量聚焦§7模式可以运行所有§a恒星炎炀锻炉§7配方。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.5=§6超维因果爆震§7模式可以运行所有§9维度震荡仪§7配方。
+
 #  Materials
 
 ##  Element Materials
@@ -2548,7 +2565,9 @@ recipemap.large_gas_collector_recipes.name=Large Gas Collector
 recipemap.virtual_cosmos_simulator_recipes.name=Virtual Cosmos Matter Decompress
 recipemap.large_circuit_assembly_line_recipes.name=Large Circuit Assembly Line
 recipemap.planetary_gas_siphon_recipes.name=Planetary Gas Extraction
-recipemap.nicoll_dyson_beam_recipes.name=Nicoll-Dyson Beam
+recipemap.nicoll_dyson_beamer_forging_module.name=Neutron Flow Traction
+recipemap.nicoll_dyson_beamer_burning_module.name=Gigabit Energy Focus
+recipemap.nicoll_dyson_beamer_oscillating_module.name=Transcendent Causality Oscillation
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=Temperature: %,dK

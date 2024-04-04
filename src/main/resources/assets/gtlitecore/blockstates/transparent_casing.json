@@ -71,6 +71,21 @@
         "bot_all": "gtlitecore:blocks/casings/quantum_glass",
         "top_all": "gtlitecore:blocks/casings/quantum_glass_bloom"
       }
+    },
+    "active=false,variant=spatially_transcendent_gravitational_lens": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/spatially_transcendent_gravitational_lens"
+      }
+    },
+    "active=true,variant=spatially_transcendent_gravitational_lens": {
+      "model": "gregtech:cube_2_layer_all",
+      "ambientocclusion": false,
+      "textures": {
+        "bot_all": "gtlitecore:blocks/casings/spatially_transcendent_gravitational_lens",
+        "top_all": "gtlitecore:blocks/casings/spatially_transcendent_gravitational_lens_bloom"
+      }
     }
   }
 }
