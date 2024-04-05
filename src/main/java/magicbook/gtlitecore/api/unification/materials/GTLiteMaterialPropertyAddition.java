@@ -361,6 +361,8 @@ public class GTLiteMaterialPropertyAddition {
         Silver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
+        WhiteDwarfMatter.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+
         Eternity.addFlags(GENERATE_SWARM); // For end game
 
         //  Singularity
