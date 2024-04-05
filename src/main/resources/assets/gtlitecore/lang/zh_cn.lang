@@ -322,6 +322,10 @@ tile.quantum_computer_casing.advanced_computer_casing.tooltip=千兆个量子带
 tile.quantum_computer_casing.heat_vent.name=量子计算机恒温仓
 tile.quantum_computer_casing.heat_vent.tooltip=用于平衡机器内部的运行平台温度
 
+tile.graviton_casing.remote_graviton_flow_modulator.name=远程引力子流调节器
+tile.graviton_casing.medial_graviton_flow_modulator.name=介质引力子流调节器
+tile.graviton_casing.central_graviton_flow_modulator.name=中心引力子流调节器
+
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
 metaitem.board.gooware.tooltip=杜邦™ Pyralux® TK层压薄膜
@@ -1644,6 +1648,10 @@ gtlitecore.machine.nicoll_dyson_beamer.tooltip.2=对戴森球的研究中促成�
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.3=这台机器化无穷无尽的时空为冶炼炉区域，以维度的因果作为工作时使用的燃料。
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.4=§6千兆能量聚焦§7模式可以运行所有§a恒星炎炀锻炉§7配方。
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.5=§6超维因果爆震§7模式可以运行所有§9维度震荡仪§7配方。
+gtlitecore.machine.nicoll_dyson_beamer.tier=引力子流强度：
+gtlitecore.machine.nicoll_dyson_beamer.tier.1=低
+gtlitecore.machine.nicoll_dyson_beamer.tier.2=中
+gtlitecore.machine.nicoll_dyson_beamer.tier.3=高
 
 #  Materials
 

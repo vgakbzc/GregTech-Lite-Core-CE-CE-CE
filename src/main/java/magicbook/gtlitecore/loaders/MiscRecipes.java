@@ -1380,6 +1380,7 @@ public class MiscRecipes {
                 .buildAndRegister();
     }
 
+    //  TODO Split this to Nicoll-Dyson Beamer recipe class.
     private static void MagmatterComponents() {
 
         //  Fluid

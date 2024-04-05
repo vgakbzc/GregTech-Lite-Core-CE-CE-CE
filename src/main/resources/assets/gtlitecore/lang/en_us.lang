@@ -315,12 +315,16 @@ tile.dyson_swarm_casing.receiver_casing.name=Dyson Swarm Energy Receiver Machine
 tile.dyson_swarm_casing.hypogen_coil_block.name=Hypogen Coil Block
 tile.dyson_swarm_casing.deployment_core.name=Dyson Swarm Deployment Unit Core
 
-tile.quantum_computer.computer_casing.name=Quantum Computer Casing
-tile.quantum_computer.computer_casing.tooltip=绝对无尘环境
-tile.quantum_computer.advanced_computer_casing.name=Advanced Quantum Computer Casing
-tile.quantum_computer.advanced_computer_casing.tooltip=千兆个量子带宽
-tile.quantum_computer.heat_vent.name=Quantum Computer Cryostat
-tile.quantum_computer.heat_vent.tooltip=用于平衡机器内部的运行平台温度
+tile.quantum_computer_casing.computer_casing.name=Quantum Computer Casing
+tile.quantum_computer_casing.computer_casing.tooltip=绝对无尘环境
+tile.quantum_computer_casing.advanced_computer_casing.name=Advanced Quantum Computer Casing
+tile.quantum_computer_casing.advanced_computer_casing.tooltip=千兆个量子带宽
+tile.quantum_computer_casing.heat_vent.name=Quantum Computer Cryostat
+tile.quantum_computer_casing.heat_vent.tooltip=用于平衡机器内部的运行平台温度
+
+tile.graviton_casing.remote_graviton_flow_modulator.name=Remote Graviton Flow Modulator
+tile.graviton_casing.medial_graviton_flow_modulator.name=Medial Graviton Flow Modulator
+tile.graviton_casing.central_graviton_flow_modulator.name=Central Graviton Flow Modulator
 
 #  Boards
 metaitem.board.gooware.name=Kapton™ Board
