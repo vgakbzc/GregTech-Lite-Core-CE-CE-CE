@@ -181,4 +181,8 @@ public class GTLiteTraceabilityPredicate {
     //  Cooling Core Predicate
     public static Supplier<TierTraceabilityPredicate> COOLING_CORE = () -> new TierTraceabilityPredicate(MAP_COOLING_CORE,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_COOLING_CORE.get(s)).getIntTier()), "CoolingCore", null);
+
+    //  Graviton Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> GRAVITON_CASING = () -> new TierTraceabilityPredicate(MAP_GRAVITON_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_GRAVITON_CASING.get(s)).getIntTier()), "GravitonCasing", null);
 }

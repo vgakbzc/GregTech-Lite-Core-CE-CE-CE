@@ -35,6 +35,7 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_SPACE_ELEVATOR_MOTOR = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IYottaTankData> MAP_YOT_TANK_CELL = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_COOLING_CORE = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_GRAVITON_CASING = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -154,5 +155,16 @@ public class GTLiteAPI {
 
         MAP_COOLING_CORE.put(GTLiteMetaBlocks.COOLING_CORE.getState(BlockCoolingCore.CoolingCoreTier.MK4),
                 new WrappedIntTier(BlockCoolingCore.CoolingCoreTier.MK4, 4));
+
+        //  Graviton Casing
+        MAP_GRAVITON_CASING.put(GTLiteMetaBlocks.GRAVITON_CASING.getState(BlockGravitonCasing.GravitonCasingType.REMOTE_GRAVITON_FLOW_MODULATOR),
+                new WrappedIntTier(BlockGravitonCasing.GravitonCasingType.REMOTE_GRAVITON_FLOW_MODULATOR, 1));
+
+        MAP_GRAVITON_CASING.put(GTLiteMetaBlocks.GRAVITON_CASING.getState(BlockGravitonCasing.GravitonCasingType.MEDIAL_GRAVITON_FLOW_MODULATOR),
+                new WrappedIntTier(BlockGravitonCasing.GravitonCasingType.MEDIAL_GRAVITON_FLOW_MODULATOR, 2));
+
+        MAP_GRAVITON_CASING.put(GTLiteMetaBlocks.GRAVITON_CASING.getState(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR),
+                new WrappedIntTier(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR, 3));
+
     }
 }

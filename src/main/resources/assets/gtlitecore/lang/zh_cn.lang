@@ -214,6 +214,14 @@ tile.science_casing.dimensional_bridge_casing.name=维度桥接机械方块
 tile.science_casing.dimensional_bridge_casing.tooltip=用于连接不同维度的时间与空间
 tile.science_casing.dimensional_preserve_casing.name=维度边界约束保持机械方块
 tile.science_casing.dimensional_preserve_casing.tooltip=用于保持维度边界的时间与空间
+tile.science_casing.singularity_reinforced_stellar_shielding_casing.name=奇点强化恒星防护机器外壳
+tile.science_casing.singularity_reinforced_stellar_shielding_casing.tooltip=事件视界防护的初次实践
+tile.science_casing.celestial_matter_guidance_casing.name=星际物质导航机器外壳
+tile.science_casing.celestial_matter_guidance_casing.tooltip=用于利用时空扭曲来路由星际物质
+tile.science_casing.boundless_gravitationally_severed_structure_casing.name=无尽边界引力撕裂机器外壳
+tile.science_casing.boundless_gravitationally_severed_structure_casing.tooltip=黑洞也无法将其撕裂
+tile.science_casing.transcendentally_amplified_magnetic_confinement_casing.name=超激发磁约束机器外壳
+tile.science_casing.transcendentally_amplified_magnetic_confinement_casing.tooltip=用于产生能够约束整颗中子星的巨大磁场
 
 tile.field_casing.zpm.name=遏制场发生器（§cZPM§r）
 tile.field_casing.uv.name=遏制场发生器（§3UV§r）
@@ -238,6 +246,8 @@ tile.transparent_casing.infinity_glass.name=无尽玻璃
 tile.transparent_casing.infinity_glass.tooltip=彩虹玻璃
 tile.transparent_casing.quantum_glass.name=量子玻璃
 tile.transparent_casing.quantum_glass.tooltip=究极力场约束玻璃
+tile.transparent_casing.spatially_transcendent_gravitational_lens.name=超空间引力透镜
+tile.transparent_casing.spatially_transcendent_gravitational_lens.tooltip=字面意义的引力透镜
 
 tile.explosive_block.naquadria_charge.name=超能硅岩爆弹
 tile.explosive_block.taranium_charge.name=塔兰金属爆弹
@@ -311,6 +321,10 @@ tile.quantum_computer_casing.advanced_computer_casing.name=高级量子计算机
 tile.quantum_computer_casing.advanced_computer_casing.tooltip=千兆个量子带宽
 tile.quantum_computer_casing.heat_vent.name=量子计算机恒温仓
 tile.quantum_computer_casing.heat_vent.tooltip=用于平衡机器内部的运行平台温度
+
+tile.graviton_casing.remote_graviton_flow_modulator.name=远程引力子流调节器
+tile.graviton_casing.medial_graviton_flow_modulator.name=介质引力子流调节器
+tile.graviton_casing.central_graviton_flow_modulator.name=中心引力子流调节器
 
 #  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -1628,6 +1642,17 @@ gtlitecore.machine.qc_bridge_component.name=爱因斯坦-罗森桥量子信息�
 gtlitecore.machine.qc_bridge_component.tooltip=跨时空信息桥接
 gtlitecore.machine.qc_bridge_component.desc=允许§f量子计算机§7与§f网络交换机§7连接
 
+gtlitecore.machine.nicoll_dyson_beamer.name=尼科尔-戴森光束
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.1=能够弹指之间转移千兆尺度能量的疯狂机器，泄露的一丝能量能够摧毁整个超星系团。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.2=对戴森球的研究中促成了你对这台巨大的武器与工具的灵感，并最终造就了这台机器。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.3=这台机器化无穷无尽的时空为冶炼炉区域，以维度的因果作为工作时使用的燃料。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.4=§6千兆能量聚焦§7模式可以运行所有§a恒星炎炀锻炉§7配方。
+gtlitecore.machine.nicoll_dyson_beamer.tooltip.5=§6超维因果爆震§7模式可以运行所有§9维度震荡仪§7配方。
+gtlitecore.machine.nicoll_dyson_beamer.tier=引力子流强度：
+gtlitecore.machine.nicoll_dyson_beamer.tier.1=低
+gtlitecore.machine.nicoll_dyson_beamer.tier.2=中
+gtlitecore.machine.nicoll_dyson_beamer.tier.3=高
+
 #  Materials
 
 ##  Element Materials
@@ -2423,6 +2448,10 @@ metaitem.piezoelectric_crystal.name=压电晶体
 metaitem.piezoelectric_crystal.tooltip=用于组装精密实验器件
 metaitem.dyson_swarm_module.name=戴森球模块
 metaitem.dyson_swarm_module.tooltip=一个存储着戴森球材料与建造数据的无人机
+metaitem.hyperstable_self_healing_adhesive.name=超稳态自修复粘合剂
+metaitem.hyperstable_self_healing_adhesive.tooltip=选择性完全粘合，即使在撕裂或损坏时也有效
+metaitem.supersolid_spacetime_continuum.name=超固态时空连续体
+metaitem.supersolid_spacetime_continuum.tooltip=如液体般流动，不反射任何射线与粒子，完美地将其吸收与传递
 
 #  Ore Prefixes
 item.material.oreprefix.milled=碾磨%s矿石粉
@@ -2559,7 +2588,9 @@ recipemap.large_gas_collector_recipes.name=大型集气室
 recipemap.virtual_cosmos_simulator_recipes.name=虚拟宇宙物质解压
 recipemap.large_circuit_assembly_line_recipes.name=大型电路装配线
 recipemap.planetary_gas_siphon_recipes.name=行星气体提取
-recipemap.nicoll_dyson_beam_recipes.name=尼科尔-戴森光束集聚
+recipemap.nicoll_dyson_beamer_forging_module.name=中子乱流牵引
+recipemap.nicoll_dyson_beamer_burning_module.name=千兆能量聚焦
+recipemap.nicoll_dyson_beamer_oscillating_module.name=超维因果爆震
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

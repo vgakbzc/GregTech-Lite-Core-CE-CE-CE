@@ -51,6 +51,7 @@ public class NeutralNetworkNexus {
 
         //  Infinite Breeding
         createInfiniteBreeding(FullerenePolymerMatrix, VA[UIV], 120);
+        createInfiniteBreeding(WhiteDwarfMatter, VA[UXV], 80);
     }
 
     private static void HybridizingMode() {

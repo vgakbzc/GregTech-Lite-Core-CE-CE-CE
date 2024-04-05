@@ -65,18 +65,7 @@ public class DimensionalOscillator {
                 .duration(20)
                 .buildAndRegister();
 
-        //  Magmatter
-        DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
-                .notConsumable(spring, Edenium)
-                .input(BOSE_EINSTEIN_CONDENSATE)
-                .fluidInputs(RawStarMatter.getFluid(4000))
-                .fluidInputs(StarCoreMatter.getPlasma(4000))
-                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(4000))
-                .output(BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT)
-                .fluidOutputs(Magmatter.getFluid(16000))
-                .EUt(VA[MAX])
-                .duration(20)
-                .buildAndRegister();
+
 
         //  1x Magmatter wire cycle recipe
         DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()

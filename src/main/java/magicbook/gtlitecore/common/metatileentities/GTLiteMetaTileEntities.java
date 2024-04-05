@@ -219,6 +219,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
     public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
     public static MetaTileEntityQuantumComputer QUANTUM_COMPUTER;
+    public static MetaTileEntityNicollDysonBeamer NICOLL_DYSON_BEAMER;
 
     /**
      * Steam Machine init method.
@@ -513,5 +514,6 @@ public class GTLiteMetaTileEntities {
         //  Free ID: 152-199
         DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE = registerMultiMetaTileEntity(200, new MetaTileEntityDimensionallyTranscendentPlasmaForge(gtliteId("dimensionally_transcendent_plasma_forge")));
         QUANTUM_COMPUTER = registerMultiMetaTileEntity(201, new MetaTileEntityQuantumComputer(gtliteId("quantum_computer")));
+        NICOLL_DYSON_BEAMER = registerMultiMetaTileEntity(202, new MetaTileEntityNicollDysonBeamer(gtliteId("nicoll_dyson_beamer")));
     }
 }

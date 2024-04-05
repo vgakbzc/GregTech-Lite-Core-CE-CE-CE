@@ -9,10 +9,12 @@ import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
+import magicbook.gtlitecore.api.recipe.properties.GravitonCasingTierProperty;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -958,6 +960,31 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
+     * TODO
+     * </pre>
+     *
+     * <p>
+     *     This recipe map is advanced version of {@link #DIMENSIONAL_OSCILLATOR_RECIPES},
+     *     for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+     * </p>
+     */
+    @ZenProperty
+    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_oscillating_module", 3, 3, 3, 3, new GravitonCasingTierRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+            .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(true, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
+            .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
+            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : SoundEvents.ENTITY_GENERIC_EXPLODE);
+
+    /**
+     * Example:
+     *
+     * <pre>
      *     GTLiteRecipeMaps.DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
      *          .notConsumable(OrePrefix.plate, GTLiteMaterials.Galaxium)
      *          .fluidInputs(GTLiteMaterials.Fatalium.getPlasma(L))
@@ -985,7 +1012,39 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
             .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
-            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : SoundEvents.ENTITY_GENERIC_EXPLODE);
+            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : SoundEvents.ENTITY_GENERIC_EXPLODE)
+            .onRecipeBuild((recipeBuilder) -> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
+                    .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
+                    .fluidInputs(recipeBuilder.getFluidInputs())
+                    .outputs(recipeBuilder.getOutputs())
+                    .chancedOutputs(recipeBuilder.getChancedOutputs())
+                    .fluidOutputs(recipeBuilder.getFluidOutputs())
+                    .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
+                    .duration(recipeBuilder.getDuration())
+                    .EUt(recipeBuilder.getEUt())
+                    .CasingTier(1)
+                    .buildAndRegister());
+
+    /**
+     * Example:
+     *
+     * <pre>
+     *     TODO
+     * </pre>
+     *
+     * <p>
+     *     This recipe map is advanced version of {@link #STELLAR_FURNACE_RECIPES},
+     *     for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+     * </p>
+     */
+    @ZenProperty
+    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> NICOLL_DYSON_BEAMER_BURNING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_burning_module", 6, 6, 6, 6, new NoCoilHigherTemperatureRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
+            .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setSound(GTSoundEvents.FURNACE);
 
     /**
      * Example:
@@ -1015,7 +1074,18 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
-            .setSound(GTValues.FOOLS.get() ? SoundEvents.ENTITY_GENERIC_EXPLODE : GTSoundEvents.FURNACE);
+            .setSound(GTValues.FOOLS.get() ? SoundEvents.ENTITY_GENERIC_EXPLODE : GTSoundEvents.FURNACE)
+            .onRecipeBuild((recipeBuilder) -> NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                    .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
+                    .fluidInputs(recipeBuilder.getFluidInputs())
+                    .outputs(recipeBuilder.getOutputs())
+                    .chancedOutputs(recipeBuilder.getChancedOutputs())
+                    .fluidOutputs(recipeBuilder.getFluidOutputs())
+                    .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
+                    .duration(recipeBuilder.getDuration())
+                    .EUt(recipeBuilder.getEUt())
+                    .temperature(recipeBuilder.getTemperature())
+                    .buildAndRegister());
 
     /**
      * Example:
@@ -1797,11 +1867,18 @@ public class GTLiteRecipeMaps {
             .setSound(GTSoundEvents.MINER);
 
     /**
-     * TODO MAYBE use new tiered predicate, gravitional lens tier, for this recipe map.
-     *      This recipe map is for a OpV+ stage machine, but still draft now.
-      */
+     * Example:
+     *
+     * <pre>
+     *     TODO
+     * </pre>
+     *
+     * <p>
+     *     This recipe map is for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+     * </p>
+     */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NICOLL_DYSON_BEAM_RECIPES = new RecipeMap<>("nicoll_dyson_beam_recipes", 3, 2, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_FORGING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_forging_module", 3, 2, 1, 0, new GravitonCasingTierRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)

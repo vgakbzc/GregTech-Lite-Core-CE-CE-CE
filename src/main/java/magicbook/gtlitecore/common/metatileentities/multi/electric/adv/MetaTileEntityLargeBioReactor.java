@@ -76,4 +76,9 @@ public class MetaTileEntityLargeBioReactor extends GCYMRecipeMapMultiblockContro
     protected OrientedOverlayRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_BIO_REACTOR_OVERLAY;
     }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
+    }
 }

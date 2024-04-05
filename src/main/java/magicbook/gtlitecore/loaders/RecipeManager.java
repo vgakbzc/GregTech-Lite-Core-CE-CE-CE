@@ -172,5 +172,6 @@ public class RecipeManager {
         LargeCircuitAssemblyLine.init();
         DysonSwarm.init();
         PlanetaryGasSiphon.init();
+        NicollDysonBeamer.init();
     }
 }

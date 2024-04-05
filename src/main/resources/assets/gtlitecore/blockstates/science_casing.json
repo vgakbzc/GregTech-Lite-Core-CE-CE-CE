@@ -51,6 +51,30 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/dimensional_preserve_casing"
         }
+      },
+      "singularity_reinforced_stellar_shielding_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/singularity_reinforced_stellar_shielding_casing"
+        }
+      },
+      "celestial_matter_guidance_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/celestial_matter_guidance_casing"
+        }
+      },
+      "boundless_gravitationally_severed_structure_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/boundless_gravitationally_severed_structure_casing"
+        }
+      },
+      "transcendentally_amplified_magnetic_confinement_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/transcendentally_amplified_magnetic_confinement_casing"
+        }
       }
     }
   }

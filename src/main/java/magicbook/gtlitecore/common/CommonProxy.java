@@ -8,10 +8,7 @@ import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
-import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
-import magicbook.gtlitecore.api.recipe.properties.ComponentCasingTierProperty;
-import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
-import magicbook.gtlitecore.api.recipe.properties.SpaceElevatorCasingTierProperty;
+import magicbook.gtlitecore.api.recipe.properties.*;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.ServerSupportI18n;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -89,6 +86,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.COOLING_CORE);
         registry.register(GTLiteMetaBlocks.DYSON_SWARM_CASING);
         registry.register(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING);
+        registry.register(GTLiteMetaBlocks.GRAVITON_CASING);
     }
 
     @SubscribeEvent
@@ -122,6 +120,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.COOLING_CORE, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.DYSON_SWARM_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.GRAVITON_CASING, VariantItemBlock::new));
     }
 
     @Nonnull
@@ -182,6 +181,10 @@ public class CommonProxy {
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(3, "(MK3)");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(4, "(MK4)");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(5, "(MK5)");
+        //  Graviton Casing Tiers
+        GravitonCasingTierProperty.registerGravitonCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.1", "Low"));
+        GravitonCasingTierProperty.registerGravitonCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.2", "Medium"));
+        GravitonCasingTierProperty.registerGravitonCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.3", "High"));
 
         RecipeManager.init();
     }

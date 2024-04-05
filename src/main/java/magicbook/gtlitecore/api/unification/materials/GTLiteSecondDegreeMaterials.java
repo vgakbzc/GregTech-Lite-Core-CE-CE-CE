@@ -576,7 +576,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(14960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV], 1236))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_RING)
                 .build();
 
         //  12043 Superheavy-L Alloy
@@ -714,7 +714,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(14500, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 300))
-                .flags(GENERATE_ROD, GENERATE_RING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_GEAR)
                 .build();
 
         //  12053 Halogen Mixture
@@ -868,7 +868,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(16600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[ULV], 88888)
                         .vacuumStats(VA[ULV], 88888))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME)
                 .toolStats(new ToolProperty(36.0F, 80.0F, 100000, 30))
                 .build();
 
