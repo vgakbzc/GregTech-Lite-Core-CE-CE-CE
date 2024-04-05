@@ -1,9 +1,13 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+
 import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumCarbide;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.screw;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.QUANTUM_FORCE_TRANSFORMER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -382,6 +386,26 @@ public class QuantumForceTransformer {
                 .EUt(VA[UIV])
                 .duration(200)
                 .CasingTier(5) // UIV
+                .buildAndRegister();
+
+        //  Spatially Transcendent Gravitational Lens
+        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
+                .circuitMeta(26)
+                .notConsumable(GRAVITON_TRANSDUCER)
+                .inputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.QUANTUM_GLASS))
+                .input(QCD_PROTECTIVE_PLATING, 2)
+                .input(GRAVITON)
+                .input(screw, Spacetime, 8)
+                .fluidInputs(SolderingAlloy.getFluid(32000))
+                .fluidInputs(ZBLANGlass.getFluid(16000))
+                .fluidInputs(GSTGlass.getFluid(16000))
+                .fluidInputs(Rhugnor.getFluid(3000))
+                .fluidInputs(CosmicFabric.getFluid(1000))
+                .fluidInputs(TranscendentMetal.getFluid(L))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.SPATIALLY_TRANSCENDENT_GRAVITATIONAL_LENS))
+                .EUt(VA[UXV])
+                .duration(20)
+                .CasingTier(7) // OpV
                 .buildAndRegister();
 
     }

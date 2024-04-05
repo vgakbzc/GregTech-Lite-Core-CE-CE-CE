@@ -255,7 +255,17 @@ public class NicollDysonBeamer {
                 .CasingTier(1)
                 .buildAndRegister();
 
-        //  TODO T3 casings material.
+        //  Supersolid Spacetime Continuum
+        NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
+                .notConsumable(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .input(HYPERSTABLE_SELF_HEALING_ADHESIVE)
+                .input(QUANTUM_ANOMALY)
+                .fluidInputs(Spacetime.getFluid(8000))
+                .chancedOutput(SUPERSOLID_SPACETIME_CONTINUUM, 2000, 0)
+                .EUt(VA[MAX])
+                .duration(20)
+                .CasingTier(2)
+                .buildAndRegister();
 
         //  Magmatter Liquid
         //  This is basic material to create other Magmatter components.

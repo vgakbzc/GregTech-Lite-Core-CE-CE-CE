@@ -280,6 +280,7 @@ public class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem PIEZOELECTRIC_CRYSTAL;
     public static MetaItem<?>.MetaValueItem DYSON_SWARM_MODULE;
     public static MetaItem<?>.MetaValueItem HYPERSTABLE_SELF_HEALING_ADHESIVE;
+    public static MetaItem<?>.MetaValueItem SUPERSOLID_SPACETIME_CONTINUUM;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

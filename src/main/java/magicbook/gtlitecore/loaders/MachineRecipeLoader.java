@@ -23,8 +23,7 @@ import net.minecraft.init.Items;
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
@@ -32,6 +31,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
@@ -4866,5 +4866,159 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Nicoll-Dyson Beamer Casings
+
+        //  Singularity Reinforced Stellar Shielding Casing
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ULTIMATE_HIGH_ENERGY_CASING, 16))
+                .input(plate, Tantalloy61, 6)
+                .input(singularity, BlackDwarfMatter)
+                .input(QUANTUM_CHEST[9])
+                .input(QUANTUM_TANK[9])
+                .input(screw, CelestialTungsten, 24)
+                .input(wireGtSingle, BoronFranciumCarbideSuperconductor, 2)
+                .fluidInputs(Hdcs.getFluid(36000))
+                .fluidInputs(Octiron.getFluid(18000))
+                .fluidInputs(Neutronium.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SINGULARITY_REINFORCED_STELLAR_SHIELDING_CASING, 16))
+                .EUt(VH[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.ULTIMATE_HIGH_ENERGY_CASING))
+                        .CWUt(1024)
+                        .EUt(VH[OpV]))
+                .buildAndRegister();
+
+        //  Celestial Matter Guidance Casing
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Spacetime, 4)
+                .inputs(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK4, 16))
+                .input(POWER_SUBSTATION, 32)
+                .input(swarm, WhiteDwarfMatter)
+                .input(QCD_PROTECTIVE_PLATING, 4)
+                .input(PICO_PIC_CHIP, 16)
+                .input(wireFine, Hypogen, 24)
+                .fluidInputs(AstralTitanium.getFluid(36000))
+                .fluidInputs(Astralium.getFluid(18000))
+                .fluidInputs(Tairitsium.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.CELESTIAL_MATTER_GUIDANCE_CASING, 16))
+                .EUt(VH[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5))
+                        .CWUt(1024)
+                        .EUt(VH[OpV]))
+                .buildAndRegister();
+
+        //  Boundless Gravitationally Severed Structure Casing
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .inputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_CASING, 16))
+                .input(singularity, Vibranium)
+                .input(ELECTRIC_PISTON_UXV, 2)
+                .input(FIELD_GENERATOR_UXV, 2)
+                .inputs(GTLiteMetaBlocks.YOTTA_TANK_CELL.getItemVariant(BlockYottaTankCell.YottaTankCellTier.T10))
+                .inputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.QUANTUM_COIL, 8))
+                .input(wireFine, Shirabon, 32)
+                .fluidInputs(CelestialTungsten.getFluid(36000))
+                .fluidInputs(Arcanium.getFluid(18000))
+                .fluidInputs(ArceusAlloy2B.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.BOUNDLESS_GRAVITATIONALLY_SEVERED_STRUCTURE_CASING, 16))
+                .EUt(VH[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING))
+                        .CWUt(1024)
+                        .EUt(VH[OpV]))
+                .buildAndRegister();
+
+        //  Transcendentally Amplified Magnetic Confinement Casing
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal, 4)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.MOLECULAR_COIL, 16))
+                .input(plateDouble, Arcanium, 16)
+                .input(ACTIVE_TRANSFORMER, 32)
+                .input(ring, SuperheavyHAlloy, 64)
+                .input(wireFine, MagnetoHydrodynamicallyConstrainedStarMatter, 24)
+                .input(screw, ChargedCaesiumCeriumCobaltIndiumAlloy, 8)
+                .fluidInputs(BlackPlutonium.getFluid(36000))
+                .fluidInputs(Fatalium.getFluid(18000))
+                .fluidInputs(HastelloyK243.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.TRANSCENDENTALLY_AMPLIFIED_MAGNETIC_CONFINEMENT_CASING, 16))
+                .EUt(VH[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_MAGNET))
+                        .CWUt(1024)
+                        .EUt(VH[OpV]))
+                .buildAndRegister();
+
+        //  Remote Graviton Flow Modulator (T1)
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, BlackTitanium, 4)
+                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.HOLLOW_CASING, 16))
+                .input(ELECTRIC_PUMP_OpV)
+                .input(GRAVITON_TRANSDUCER, 2)
+                .input(gear, LanthanumGroupLAlloy, 16)
+                .input(pipeNormalFluid, Neutronium, 4)
+                .input(wireFine, CosmicNeutronium, 4)
+                .fluidInputs(Hattrium.getFluid(36000))
+                .fluidInputs(Trinaquadalloy.getFluid(18000))
+                .fluidInputs(HeavyQuarkDegenerateMatter.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.REMOTE_GRAVITON_FLOW_MODULATOR, 16))
+                .EUt(VA[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.HOLLOW_CASING))
+                        .CWUt(1024)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
+
+        //  Medial Graviton Flow Modulator (T2)
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, BlackPlutonium, 4)
+                .inputs(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.REMOTE_GRAVITON_FLOW_MODULATOR, 16))
+                .input(HYPERSTABLE_SELF_HEALING_ADHESIVE, 16)
+                .input(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM, 2)
+                .input(gear, ActiniumGroupLAlloy, 24)
+                .input(pipeNormalFluid, QuantumchromodynamicallyConfinedMatter, 8)
+                .input(wireFine, Edenium, 16)
+                .fluidInputs(Tairitsium.getFluid(36000))
+                .fluidInputs(TantalumHafniumSeaborgiumCarbide.getFluid(18000))
+                .fluidInputs(Hikarium.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.MEDIAL_GRAVITON_FLOW_MODULATOR, 16))
+                .EUt(VA[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.REMOTE_GRAVITON_FLOW_MODULATOR))
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
+
+        //  Central Graviton Flow Modulator (T3)
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Octiron, 4)
+                .inputs(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.MEDIAL_GRAVITON_FLOW_MODULATOR, 16))
+                .input(SUPERSOLID_SPACETIME_CONTINUUM, 16)
+                .input(TOPOLOGICAL_MANIPULATOR_UNIT, 2)
+                .input(gear, ActiniumGroupHAlloy, 32)
+                .input(pipeNormalFluid, Fatalium, 16)
+                .input(wireFine, Universium, 32)
+                .fluidInputs(Galaxium.getFluid(36000))
+                .fluidInputs(Spacetime.getFluid(18000))
+                .fluidInputs(Eternity.getFluid(8000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR, 16))
+                .EUt(VA[OpV])
+                .duration(20)
+                .stationResearch(b -> b
+                        .researchStack(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR))
+                        .CWUt(4096)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
     }
 }

@@ -288,7 +288,7 @@ public class GTLiteElementMaterials {
                 .color(0x29288A)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Galaxium)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[OpV], 64, 32, false)
                 .build();
 
@@ -299,7 +299,7 @@ public class GTLiteElementMaterials {
                 .color(0xD872EB)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Universium)
-                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 128, 64, false)
                 .build();
 

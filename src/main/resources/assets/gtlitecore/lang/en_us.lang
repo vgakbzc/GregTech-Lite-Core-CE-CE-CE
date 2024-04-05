@@ -2435,6 +2435,8 @@ metaitem.dyson_swarm_module.name=Dyson Swarm Module
 metaitem.dyson_swarm_module.tooltip=一个存储着戴森球材料与建造数据的无人机
 metaitem.hyperstable_self_healing_adhesive.name=Hyperstable Self-Healing Adhesive
 metaitem.hyperstable_self_healing_adhesive.tooltip==Complete and Selective Adhesion, even when torn or damaged
+metaitem.supersolid_spacetime_continuum.name=Supersolid Spacetime Cotinuum
+metaitem.supersolid_spacetime_continuum.tooltip=Flows like a Fluid and reflects nothing, perfect Absorption and Transfer
 
 #  Ore Prefixes
 item.material.oreprefix.milled=Milled %s Dust
