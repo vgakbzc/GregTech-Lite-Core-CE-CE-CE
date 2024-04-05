@@ -95,7 +95,6 @@ public class StellarFurnace {
         ShirabonEternityChain();
         UniversiumChain();
         EdeniumChain();
-        MagmatterComponents();
     }
 
     private static void DegenerateRheniumChain() {
@@ -564,25 +563,5 @@ public class StellarFurnace {
                 .duration(200)
                 .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
                 .buildAndRegister();
-    }
-
-    private static void MagmatterComponents() {
-
-        //  1x wire
-        STELLAR_FURNACE_RECIPES.recipeBuilder()
-                .input(wireFine, Magmatter, 4)
-                .inputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
-                .fluidInputs(Magmatter.getFluid(L))
-                .fluidInputs(Spacetime.getFluid(L * 4))
-                .fluidInputs(CosmicNeutronium.getFluid(1000))
-                .output(wireGtSingle, Magmatter)
-                .EUt(VA[MAX])
-                .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
-                .buildAndRegister();
-
-        //  Other wire recipes
-        //  back to Dimensional Oscillator recipes.
-
     }
 }

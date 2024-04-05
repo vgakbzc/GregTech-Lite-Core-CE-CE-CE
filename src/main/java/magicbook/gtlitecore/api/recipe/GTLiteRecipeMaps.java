@@ -14,6 +14,7 @@ import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
+import magicbook.gtlitecore.api.recipe.properties.GravitonCasingTierProperty;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -968,7 +969,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_oscillating_module", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_oscillating_module", 3, 3, 3, 3, new GravitonCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
@@ -1013,15 +1014,16 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
             .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : SoundEvents.ENTITY_GENERIC_EXPLODE)
             .onRecipeBuild((recipeBuilder) -> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
-            .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
-            .fluidInputs(recipeBuilder.getFluidInputs())
-            .outputs(recipeBuilder.getOutputs())
-            .chancedOutputs(recipeBuilder.getChancedOutputs())
-            .fluidOutputs(recipeBuilder.getFluidOutputs())
-            .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
-            .duration(recipeBuilder.getDuration())
-            .EUt(recipeBuilder.getEUt())
-            .buildAndRegister());
+                    .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
+                    .fluidInputs(recipeBuilder.getFluidInputs())
+                    .outputs(recipeBuilder.getOutputs())
+                    .chancedOutputs(recipeBuilder.getChancedOutputs())
+                    .fluidOutputs(recipeBuilder.getFluidOutputs())
+                    .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
+                    .duration(recipeBuilder.getDuration())
+                    .EUt(recipeBuilder.getEUt())
+                    .CasingTier(1)
+                    .buildAndRegister());
 
     /**
      * Example:
@@ -1876,7 +1878,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NICOLL_DYSON_BEAMER_FORGING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_forging_module", 3, 2, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_FORGING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_forging_module", 3, 2, 1, 0, new GravitonCasingTierRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)

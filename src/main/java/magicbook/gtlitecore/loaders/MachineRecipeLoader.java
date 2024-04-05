@@ -4864,5 +4864,7 @@ public class MachineRecipeLoader {
                 .duration(100)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+
+        //  Nicoll-Dyson Beamer Casings
     }
 }
