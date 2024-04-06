@@ -16,6 +16,12 @@ import java.math.BigInteger;
  * No Coil Higher Temperature Recipe Builder
  *
  * @author Magic_Sweepy
+ *
+ * <p>
+ *     Same as {@link NoCoilTemperatureRecipeBuilder}, but use {@link BigInteger}.
+ *     Used for some recipes which need big number info (but not a real predicate lol),
+ *     such that {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityStellarFurnace}.
+ * </p>
  */
 public class NoCoilHigherTemperatureRecipeBuilder extends RecipeBuilder<NoCoilHigherTemperatureRecipeBuilder> {
 

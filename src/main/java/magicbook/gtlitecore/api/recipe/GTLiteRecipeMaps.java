@@ -14,7 +14,6 @@ import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
-import magicbook.gtlitecore.api.recipe.properties.GravitonCasingTierProperty;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;

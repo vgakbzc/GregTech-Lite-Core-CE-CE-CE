@@ -15,6 +15,14 @@ import javax.annotation.Nonnull;
 
 /**
  * No Coil Temperature Recipe Builder
+ *
+ * <p>
+ *     Used for some multiblock machine which does not has wire coil,
+ *     but require a temperature info view (maybe has a new predicate in same time).
+ *     Like {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator},
+ *     this multiblock has a new predicate, but has no coil and require a temperature info,
+ *     so used this recipe builder to support auxiliary temperature.
+ * </p>
  */
 public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperatureRecipeBuilder> {
 
