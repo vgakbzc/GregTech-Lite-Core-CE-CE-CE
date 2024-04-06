@@ -8,4 +8,5 @@ public class GTLiteDataCode {
     public static final int ChannelHeatExchangerHeat = 9904;
     public static final int ChannelHeatExchangerSuperheat = 9905;
     public static final int ChannelHeatExchangerRate = 9906;
+    public static final int ChannelWirelessEnergyHatchUUID = 9907;
 }

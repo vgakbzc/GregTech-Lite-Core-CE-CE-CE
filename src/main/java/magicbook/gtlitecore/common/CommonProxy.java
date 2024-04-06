@@ -262,5 +262,4 @@ public class CommonProxy {
             event.getPlayer().sendMessage(new TextComponentString(formatted).setStyle(new Style().setColor(TextFormatting.GRAY)));
         }
     }
-
 }
