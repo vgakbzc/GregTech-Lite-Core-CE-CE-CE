@@ -25,6 +25,7 @@ public class GTOverrideRecipeManager {
         MultiFluidHatches.init();
         EnergyHatches.init();
         LaserHatches.init();
+        WirelessEnergyHatches.init();
     }
 
 }
