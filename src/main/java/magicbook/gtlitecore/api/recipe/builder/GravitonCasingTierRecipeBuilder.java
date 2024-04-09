@@ -11,7 +11,15 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import javax.annotation.Nonnull;
 
 /**
+ * Graviton Casing Recipe Builder
+ *
  * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class creates a recipe builder for Graviton Casing Tier system (please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+ *     You should use {@link gregtech.api.capability.impl.MultiblockRecipeLogic#checkRecipe(Recipe)} to implement correspondent function about this recipe.
+ *     About related recipe property, please see: {@link GravitonCasingTierProperty}.
+ * </p>
  */
 public class GravitonCasingTierRecipeBuilder extends RecipeBuilder<GravitonCasingTierRecipeBuilder> {
 

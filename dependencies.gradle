@@ -1,7 +1,7 @@
 dependencies {
     //  Had Enough Items 4.25.1
     implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
-    //  Code Chicken Lib 1.8+
+    //  Code Chicken Lib 3.2.3.358
     implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
     //  GregTech CEu 2.8.7-beta
     implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5121638")
@@ -12,7 +12,7 @@ dependencies {
     //  AE2 unofficial Extended Life 0.56.2
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5047265")
     //  The One Probe
-    implementation rfg.deobf("curse.maven:top-245211:2667280");
+    implementation rfg.deobf("curse.maven:top-245211:2667280")
     //  Groovy Script 0.7.0
     implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
     //  CraftTweaker2 API

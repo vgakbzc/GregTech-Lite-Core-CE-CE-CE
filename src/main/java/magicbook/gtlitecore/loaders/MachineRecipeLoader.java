@@ -5016,7 +5016,7 @@ public class MachineRecipeLoader {
                 .EUt(VA[OpV])
                 .duration(20)
                 .stationResearch(b -> b
-                        .researchStack(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR))
+                        .researchStack(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.MEDIAL_GRAVITON_FLOW_MODULATOR))
                         .CWUt(4096)
                         .EUt(VA[OpV]))
                 .buildAndRegister();
