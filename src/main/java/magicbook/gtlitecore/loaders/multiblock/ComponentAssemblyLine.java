@@ -852,7 +852,7 @@ public class ComponentAssemblyLine {
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Arcanium.getFluid(L * 16 * 64))
                     .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64 + L * 32)) // round + screw
-                    .output(CONVEYOR_MODULE_OpV)
+                    .output(CONVEYOR_MODULE_OpV, 64)
                     .EUt(VA[OpV])
                     .duration(2100)
                     .CasingTier(OpV)

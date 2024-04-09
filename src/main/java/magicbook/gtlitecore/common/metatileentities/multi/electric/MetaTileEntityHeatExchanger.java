@@ -40,6 +40,8 @@ import java.util.List;
 import static gregtech.api.gui.widgets.AdvancedTextWidget.withHoverTextTranslate;
 import static net.minecraft.util.text.TextFormatting.*;
 
+//  TODO In Nuclear Fission branch, GTCEu add a new machine which also named by 'Heat Exchanger',
+//       if this branch is merged, should renamed it to 'Reactor Heat Exchanger'.
 public class MetaTileEntityHeatExchanger extends NoEnergyMultiblockController implements IHeatExchanger {
 
     private final int heatTime = 150;

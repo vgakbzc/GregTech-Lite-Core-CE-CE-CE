@@ -2,12 +2,14 @@ package magicbook.gtlitecore;
 
 import gregtech.common.ConfigHolder;
 import magicbook.gtlitecore.api.GTLiteAPI;
+import magicbook.gtlitecore.api.misc.WirelessEnergyNetworkWorldSavedData;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import magicbook.gtlitecore.integration.GTLiteIntegration;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLConstructionEvent;
@@ -60,5 +62,6 @@ public class GTLiteCore {
     public void onInit(FMLInitializationEvent event) {
         GTLiteLog.logger.info("Registering Integration Modules...");
         GTLiteIntegration.init();
+        MinecraftForge.EVENT_BUS.register(new WirelessEnergyNetworkWorldSavedData());
     }
 }

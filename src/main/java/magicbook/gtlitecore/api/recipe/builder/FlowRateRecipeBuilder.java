@@ -18,6 +18,16 @@ import javax.annotation.Nonnull;
  * Flow Rate Recipe Builder
  *
  * @author Gate Guardian
+ *
+ * <p>
+ *     This recipe builder creates a recipe use two Properties,
+ *     which one is {@link FlowRateProperty}, and another one is {@link MaxRateProperty}.
+ *     Its used for {@link magicbook.gtlitecore.api.capability.impl.HeatExchangerRecipeLogic}.
+ * </p>
+ *
+ * FIXME Maybe caused error by {@link RecipeMap} in Heat Exchanger running,
+ *       but idk why. Maybe resolved in the next version,
+ *       see: <a href="https://github.com/GregTechCEu/GregTech/pull/2438">a merged pull</a>.
  */
 public class FlowRateRecipeBuilder extends RecipeBuilder<FlowRateRecipeBuilder> {
 

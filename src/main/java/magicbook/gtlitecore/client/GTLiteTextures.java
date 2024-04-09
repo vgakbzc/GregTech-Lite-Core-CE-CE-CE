@@ -136,6 +136,17 @@ public class GTLiteTextures {
     public static final GTLiteOverlayRenderer SINGULARITY_REINFORCED_STELLAR_SHIELDING_CASING = new GTLiteOverlayRenderer("casings/singularity_reinforced_stellar_shielding_casing");
     public static final GTLiteOverlayRenderer TRANSCENDENTALLY_AMPLIFIED_MAGNETIC_CONFINEMENT_CASING = new GTLiteOverlayRenderer("casings/transcendentally_amplified_magnetic_confinement_casing");
     public static final GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_4x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.4x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_16x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.16x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_64x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.64x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_256x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.256x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_1024x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.1024x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_4096x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.4096x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_16384x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.16384x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_65536x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.65536x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_262144x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.262144x");
+    public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_1048576x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.1048576x");
 
     //  Simple Overlay Renderer
     public static final SimpleOverlayRenderer QC_EMPTY_COMPONENT_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/empty");

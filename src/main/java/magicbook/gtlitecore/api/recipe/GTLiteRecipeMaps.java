@@ -14,7 +14,6 @@ import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
-import magicbook.gtlitecore.api.recipe.properties.GravitonCasingTierProperty;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -960,12 +959,27 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     * TODO
+     *     GTLiteRecipeMaps.NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
+     *          .notConsumable(OrePrefix.spring, GTLiteMaterials.Edenium)
+     *          .input(GTLiteMetaItems.BOSE_EINSTEIN_CONDENSATE, 64)
+     *          .input(GTLiteMetaItems.HYPERSTABLE_SELF_HEALING_ADHESIVE, 4)
+     *          .fluidInputs(GTLiteMaterial.RawStarMatter.getFluid(16000))
+     *          .fluidInputs(GTLiteMaterial.StarCoreMatter.getPlasma(16000))
+     *          .fluidInputs(GTLiteMaterial.QuantumchromodynamicallyConfinedMatter.getFluid(16000))
+     *          .output(GTLiteMetaItems.BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT, 64)
+     *          .fluidOutputs(GTLiteMaterials.Magmatter.getFluid(16000))
+     *          .EUt(VA[MAX])
+     *          .duration(20)
+     *          .CasingTier(2)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
      *     This recipe map is advanced version of {@link #DIMENSIONAL_OSCILLATOR_RECIPES},
-     *     for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+     *     used special recipe property {@link GravitonCasingTierRecipeBuilder},
+     *     and predicate tier by blocks in {@link magicbook.gtlitecore.common.blocks.BlockGravitonCasing}.
+     *     All Dimensional Oscillator recipe will generate a same recipe in this recipe map,
+     *     these recipes all have 1 tier property (mean low).
      * </p>
      */
     @ZenProperty
@@ -1029,12 +1043,23 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *     TODO
+     *     GTLiteRecipeMaps.NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+     *          .input(OrePrefix.wireFine, GTLiteMaterials.Magmatter, 4)
+     *          .input(GTLiteMetaItems.HYPERSTABLE_SELF_HEALING_ADHESIVE)
+     *          .input(GTLiteMetaItems.MANIFOLD_OSCILLATORY_POWER_CELL, 16)
+     *          .fluidInputs(GTLiteMaterials.Magmatter.getFluid(L))
+     *          .fluidInputs(GTLiteMaterials.Spacetime.getFluid(L * 4))
+     *          .fluidInputs(GTLiteMaterials.CosmicNeutronium.getFluid(1000))
+     *          .output(OrePrefix.wireGtSingle, GTLiteMaterials.Magmatter)
+     *          .EUt(VA[MAX])
+     *          .duration(20)
+     *          .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
      *     This recipe map is advanced version of {@link #STELLAR_FURNACE_RECIPES},
-     *     for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+     *     all Stellar Furnace recipe will generate a same recipe in this recipe map.
      * </p>
      */
     @ZenProperty
@@ -1870,11 +1895,21 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *     TODO
+     *     GTLiteRecipeMaps.NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
+     *          .input(OrePrefix.dust, GTLiteMaterials.MagnetoHydrodynamicallyConstrainedStarMatter)
+     *          .input(GTLiteOrePrefix.swarm, GTLiteMaterials.Eternity, 2)
+     *          .input(GTLiteMetaItems.MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+     *          .fluidInputs(GTLiteMaterials.Magmatter.getFluid(L))
+     *          .output(OrePrefix.dust, GTLiteMaterials.Magmatter)
+     *          .EUt(VA[MAX])
+     *          .duration(20)
+     *          .CasingTier(3)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *     This recipe map is for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer}.
+     *     This recipe map used special recipe property {@link GravitonCasingTierRecipeBuilder},
+     *     and predicate tier by blocks in {@link magicbook.gtlitecore.common.blocks.BlockGravitonCasing}.
      * </p>
      */
     @ZenProperty

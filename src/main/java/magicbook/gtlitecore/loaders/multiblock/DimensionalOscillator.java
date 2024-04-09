@@ -65,8 +65,6 @@ public class DimensionalOscillator {
                 .duration(20)
                 .buildAndRegister();
 
-
-
         //  1x Magmatter wire cycle recipe
         DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
                 .input(wireGtSingle, Magmatter)
