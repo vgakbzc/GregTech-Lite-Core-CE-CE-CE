@@ -26,10 +26,15 @@ public class GTLiteMaterialPropertyAddition {
         Scandium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         Terbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Terbium.setMaterialRGB(0xA274A2);
         Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
+        Dysprosium.setMaterialRGB(0xDD79DD);
         // Holmium.setProperty(PropertyKey.DUST, new DustProperty());
+        Holmium.setMaterialRGB(0xC38E2F);
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Erbium.setMaterialRGB(0xCC6633);
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
+        Thulium.setMaterialRGB(0x44B6A0);
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
