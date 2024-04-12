@@ -76,8 +76,8 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
         return builder.build(this.getHolder(),entityPlayer);
     }
 
-    @Override
     @SideOnly(Side.CLIENT)
+    @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
                                @Nonnull List<String> tooltip,
@@ -86,8 +86,8 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
         tooltip.add(I18n.format("gtlitecore.machine.isa_mill.grindball_hatch.only"));
     }
 
-    @Override
     @SideOnly(Side.CLIENT)
+    @Override
     public void addToolUsages(ItemStack stack,
                               @Nullable World world,
                               List<String> tooltip,
@@ -97,12 +97,14 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
         super.addToolUsages(stack, world, tooltip, advanced);
     }
 
+    @Override
     public void writeInitialSyncData(PacketBuffer buf) {
         super.writeInitialSyncData(buf);
         buf.writeBoolean(this.needUpdate);
         buf.writeCompoundTag(itemHolder.serializeNBT());
     }
 
+    @Override
     public void receiveInitialSyncData(PacketBuffer buf) {
         super.receiveInitialSyncData(buf);
         this.needUpdate = buf.readBoolean();
@@ -113,6 +115,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
         }
     }
 
+    @Override
     public NBTTagCompound writeToNBT(NBTTagCompound data) {
         super.writeToNBT(data);
         data.setBoolean("needUpdate", this.needUpdate);
@@ -120,6 +123,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
         return data;
     }
 
+    @Override
     public void readFromNBT(NBTTagCompound data) {
         super.readFromNBT(data);
         if (data.hasKey("needUpdate")) {
@@ -171,6 +175,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
     public void registerAbilities(List<IGrindBallHatch> list) {list.add(this);}
 
     private class ItemGrindBallHolder extends ItemStackHandler {
+
         @Nullable
         private GrindBallBehavior getBallBehavior() {
             ItemStack stack = getStackInSlot(0);
@@ -189,7 +194,8 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
         }
 
         private void damageBall(int damageAmount) {
-            if (!hasBall()) return;
+            if (!hasBall())
+                return;
             //noinspection ConstantConditions
             getBallBehavior().applyGrindBallDamage(getStackInSlot(0), damageAmount);
         }

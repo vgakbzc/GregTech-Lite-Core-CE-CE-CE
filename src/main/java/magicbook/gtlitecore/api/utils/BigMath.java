@@ -14,6 +14,8 @@ import java.math.BigInteger;
  */
 public class BigMath {
 
+    private BigMath() {}
+
     /**
      * Returns the smaller of two {@code BigInteger} values.
      * If the arguments have the same value, the result is that same value.

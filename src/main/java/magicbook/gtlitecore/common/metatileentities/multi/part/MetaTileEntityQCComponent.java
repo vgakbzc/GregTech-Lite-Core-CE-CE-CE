@@ -41,13 +41,22 @@ import java.util.List;
 
 public abstract class MetaTileEntityQCComponent extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IQCComponentHatch>, IQCComponentHatch {
 
+    /**
+     * Used to predicate component if damaged.
+     */
     private boolean damaged;
+
+    /**
+     * Used to prdicate component if advanced.
+     *
+     * @return  If component is advanced, then return true.
+     *          Used to provide two versions of one part.
+     */
+    public abstract boolean isAdvanced();
 
     public MetaTileEntityQCComponent(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTValues.UHV);
     }
-
-    public abstract boolean isAdvanced();
 
     public boolean doesAllowBridging() {
         return false;

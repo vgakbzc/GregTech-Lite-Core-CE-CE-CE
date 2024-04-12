@@ -1121,6 +1121,8 @@ public class PCBFactory {
         createNanotubeRecipe(Orichalcum, VA[UV], 810);
         createNanotubeRecipe(FullerenePolymerMatrix, VA[UEV], 210);
         createNanotubeRecipe(WhiteDwarfMatter, VA[UIV], 180);
+        createNanotubeRecipe(BlackDwarfMatter, VA[UIV], 180);
+        createNanotubeRecipe(Galaxium, VA[UXV], 120);
     }
 
     private static void NanosensorRecipes() {
@@ -1180,6 +1182,8 @@ public class PCBFactory {
         createNanosensorRecipe(Orichalcum, VA[UV], 810);
         createNanosensorRecipe(FullerenePolymerMatrix, VA[UEV], 210);
         createNanosensorRecipe(WhiteDwarfMatter, VA[UIV], 180);
+        createNanosensorRecipe(BlackDwarfMatter, VA[UIV], 180);
+        createNanosensorRecipe(Galaxium, VA[UXV], 120);
     }
 
     private static void createNanotubeRecipe(Material material,

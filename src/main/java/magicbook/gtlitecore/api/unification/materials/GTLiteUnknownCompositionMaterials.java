@@ -6,8 +6,7 @@ import gregtech.api.unification.material.Material;
 import net.minecraft.util.text.TextFormatting;
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
-import static gregtech.api.unification.material.info.MaterialFlags.DISABLE_DECOMPOSITION;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -658,7 +657,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .gem()
                 .color(0x3B48A7)
                 .iconSet(CERTUS)
-                .flags(DISABLE_CRYSTALLIZATION)
+                .flags(DISABLE_CRYSTALLIZATION, GENERATE_PLATE, GENERATE_LENS)
                 .build()
                 .setFormula("Ax⚶?", false);
 

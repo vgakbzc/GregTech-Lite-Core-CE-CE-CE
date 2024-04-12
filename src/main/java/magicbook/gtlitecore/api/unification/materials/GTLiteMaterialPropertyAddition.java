@@ -26,10 +26,15 @@ public class GTLiteMaterialPropertyAddition {
         Scandium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         Terbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Terbium.setMaterialRGB(0xA274A2);
         Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
+        Dysprosium.setMaterialRGB(0xDD79DD);
         // Holmium.setProperty(PropertyKey.DUST, new DustProperty());
+        Holmium.setMaterialRGB(0xC38E2F);
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
+        Erbium.setMaterialRGB(0xCC6633);
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
+        Thulium.setMaterialRGB(0x44B6A0);
         Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
         Ytterbium.setProperty(PropertyKey.FLUID, new FluidProperty());
 
@@ -307,6 +312,7 @@ public class GTLiteMaterialPropertyAddition {
         RTMAlloy.addFlags(GENERATE_FINE_WIRE);
         Trinium.addFlags(GENERATE_FINE_WIRE);
         UraniumTriplatinum.addFlags(GENERATE_FINE_WIRE);
+        SolderingAlloy.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
@@ -362,6 +368,8 @@ public class GTLiteMaterialPropertyAddition {
         Gold.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
         WhiteDwarfMatter.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        BlackDwarfMatter.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Galaxium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
         Eternity.addFlags(GENERATE_SWARM); // For end game
 
