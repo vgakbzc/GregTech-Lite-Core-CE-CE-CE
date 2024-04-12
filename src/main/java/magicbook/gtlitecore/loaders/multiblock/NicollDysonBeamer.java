@@ -1,6 +1,9 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.common.blocks.MetaBlocks;
+import magicbook.gtlitecore.common.blocks.BlockCoolingCore;
+import magicbook.gtlitecore.common.blocks.BlockDysonSwarmCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import java.math.BigInteger;
 
@@ -9,6 +12,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -22,8 +26,290 @@ public class NicollDysonBeamer {
 
     private static void BurningModule() {
 
+        //  Aluminium -> Crystal Matrix (UHV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(1)
+                .fluidInputs(Aluminium.getFluid(73728))
+                .fluidInputs(CosmicComputingMixture.getFluid(65017))
+                .fluidOutputs(CrystalMatrix.getFluid(73728))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
+                .EUt(VA[UHV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Aluminium -> Crystal Matrix (UEV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(11)
+                .fluidInputs(Aluminium.getFluid(147456))
+                .fluidInputs(CosmicComputingMixture.getFluid(25442))
+                .fluidOutputs(CrystalMatrix.getFluid(147456))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
+                .EUt(VA[UEV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Aluminium -> Crystal Matrix (UIV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(21)
+                .fluidInputs(Aluminium.getFluid(589824))
+                .fluidInputs(CosmicComputingMixture.getFluid(4632))
+                .fluidOutputs(CrystalMatrix.getFluid(589824))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
+                .EUt(VA[UIV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Crystal Matrix -> Infinity (UEV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(2)
+                .fluidInputs(CrystalMatrix.getFluid(73728))
+                .fluidInputs(CosmicComputingMixture.getFluid(65017))
+                .fluidOutputs(Infinity.getFluid(73728))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
+                .EUt(VA[UEV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Crystal Matrix -> Infinity (UIV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(12)
+                .fluidInputs(CrystalMatrix.getFluid(147456))
+                .fluidInputs(CosmicComputingMixture.getFluid(25442))
+                .fluidOutputs(Infinity.getFluid(147456))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
+                .EUt(VA[UIV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Crystal Matrix -> Infinity (UXV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(22)
+                .fluidInputs(CrystalMatrix.getFluid(589824))
+                .fluidInputs(CosmicComputingMixture.getFluid(4632))
+                .fluidOutputs(Infinity.getFluid(589824))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Iron -> Neutronium (UIV)
+        //  Better than Fusion Reactor recipe, but when you have this machine,
+        //  you do not need more neutronium lol.
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(3)
+                .fluidInputs(Iron.getPlasma(73728))
+                .fluidInputs(CosmicComputingMixture.getFluid(65017))
+                .fluidOutputs(Neutronium.getFluid(73728))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
+                .EUt(VA[UIV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Iron -> Neutronium (UXV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(13)
+                .fluidInputs(Iron.getPlasma(147456))
+                .fluidInputs(CosmicComputingMixture.getFluid(25442))
+                .fluidOutputs(Neutronium.getFluid(147456))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Iron -> Neutronium (OpV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(23)
+                .fluidInputs(Iron.getPlasma(589824))
+                .fluidInputs(CosmicComputingMixture.getFluid(4632))
+                .fluidOutputs(Neutronium.getFluid(589824))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
+                .EUt(VA[OpV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Neutronium -> Cosmic Neutronium (UXV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(4)
+                .fluidInputs(Neutronium.getFluid(73728))
+                .fluidInputs(CosmicComputingMixture.getFluid(65017))
+                .fluidOutputs(CosmicNeutronium.getFluid(73728))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Neutronium -> Cosmic Neutronium (OpV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(14)
+                .fluidInputs(Neutronium.getFluid(147456))
+                .fluidInputs(CosmicComputingMixture.getFluid(25442))
+                .fluidOutputs(CosmicNeutronium.getFluid(147456))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
+                .EUt(VA[OpV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Neutronium -> Cosmic Neutronium (MAX)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(24)
+                .fluidInputs(Neutronium.getFluid(589824))
+                .fluidInputs(CosmicComputingMixture.getFluid(4632))
+                .fluidOutputs(CosmicNeutronium.getFluid(589824))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
+                .EUt(VA[MAX])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Copper -> Ichorium (UEV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(5)
+                .fluidInputs(Copper.getFluid(73728))
+                .fluidInputs(CosmicComputingMixture.getFluid(65017))
+                .fluidOutputs(Ichorium.getFluid(73728))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
+                .EUt(VA[UEV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Copper -> Ichorium (UIV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(15)
+                .fluidInputs(Copper.getFluid(147456))
+                .fluidInputs(CosmicComputingMixture.getFluid(25442))
+                .fluidOutputs(Ichorium.getFluid(147456))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
+                .EUt(VA[UIV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Copper -> Ichorium (UXV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(25)
+                .fluidInputs(Copper.getFluid(589824))
+                .fluidInputs(CosmicComputingMixture.getFluid(4632))
+                .fluidOutputs(Ichorium.getFluid(589824))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Ichorium -> Hypogen (UXV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(6)
+                .fluidInputs(Ichorium.getFluid(73728))
+                .fluidInputs(CosmicComputingMixture.getFluid(65017))
+                .fluidOutputs(Hypogen.getFluid(73728))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
+                .EUt(VA[UXV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Ichorium -> Hypogen (OpV)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(16)
+                .fluidInputs(Ichorium.getFluid(147456))
+                .fluidInputs(CosmicComputingMixture.getFluid(25442))
+                .fluidOutputs(Hypogen.getFluid(147456))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
+                .EUt(VA[OpV])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Ichorium -> Hypogen (MAX)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(26)
+                .fluidInputs(Ichorium.getFluid(589824))
+                .fluidInputs(CosmicComputingMixture.getFluid(4632))
+                .fluidOutputs(Hypogen.getFluid(589824))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
+                .EUt(VA[MAX])
+                .duration(200)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  7
+
+        //  8
+
+        //  Advanced Crude Hypercube recipe
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(9)
+                .input(stick, CosmicNeutronium, 12)
+                .input(stick, Tairitsium, 12)
+                .input(stick, TranscendentMetal, 8)
+                .input(plate, Botmium, 24)
+                .input(ring, FluxedElectrum,4)
+                .input(screw, Orichalcum, 16)
+                .fluidInputs(CosmicComputingMixture.getFluid(1000))
+                .output(CRUDE_HYPERCUBE, 8)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(1000))
+                .EUt(128000000) //  UXV
+                .duration(20)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Ultimate Crude Hypercube recipe
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(19)
+                .input(stick, TranscendentMetal, 32)
+                .input(plate, BlackTitanium, 24)
+                .input(screw, TitanSteel, 16)
+                .input(QUANTUM_ANOMALY)
+                .fluidInputs(CosmicComputingMixture.getFluid(1000))
+                .output(CRUDE_HYPERCUBE, 16)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(2000))
+                .EUt(512000000) //  OpV
+                .duration(20)
+                .buildAndRegister();
+
+        //  Quantum Anomaly
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(CHROMATIC_LENS)
+                .notConsumable(TOPOLOGICAL_MANIPULATOR_UNIT)
+                .input(ALPHA_PARTICLE)
+                .fluidInputs(Duranium.getFluid(L))
+                .fluidInputs(CosmicComputingMixture.getFluid(92))
+                .output(QUANTUM_ANOMALY)
+                .EUt(VA[UEV])
+                .duration(20)
+                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .buildAndRegister();
+
+        //  Dimension Gap
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(GTLiteMetaBlocks.COOLING_CORE.getItemVariant(BlockCoolingCore.CoolingCoreTier.MK4))
+                .input(plateDense, Hypogen)
+                .input(gem, CubicZirconia, 32)
+                .input(swarm, BlackDwarfMatter, 2)
+                .fluidInputs(TemporalFluid.getFluid(147456))
+                .fluidInputs(Spacetime.getFluid(100000))
+                .output(DIMENSION_GAP, 64)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(200000))
+                .fluidOutputs(HiggsBosons.getFluid(147456))
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
+
         //  1x Magmatter Wire
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(1)
                 .input(wireFine, Magmatter, 4)
                 .input(HYPERSTABLE_SELF_HEALING_ADHESIVE)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 16)
@@ -38,6 +324,7 @@ public class NicollDysonBeamer {
 
         //  1x Magmatter cable
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(1)
                 .input(wireGtSingle, Magmatter)
                 .input(foil, CosmicFabric, 2)
                 .input(MetaBlocks.OPTICAL_PIPES[0])
@@ -56,6 +343,7 @@ public class NicollDysonBeamer {
 
         //  2x Magmatter cable
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(2)
                 .input(wireGtDouble, Magmatter)
                 .input(foil, CosmicFabric, 4)
                 .input(MetaBlocks.OPTICAL_PIPES[0], 2)
@@ -74,6 +362,7 @@ public class NicollDysonBeamer {
 
         //  4x Magmatter cable
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(4)
                 .input(wireGtQuadruple, Magmatter)
                 .input(foil, CosmicFabric, 8)
                 .input(MetaBlocks.OPTICAL_PIPES[0], 4)
@@ -92,6 +381,7 @@ public class NicollDysonBeamer {
 
         //  8x Magmatter cable
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(8)
                 .input(wireGtOctal, Magmatter)
                 .input(foil, CosmicFabric, 16)
                 .input(MetaBlocks.OPTICAL_PIPES[0], 8)
@@ -110,6 +400,7 @@ public class NicollDysonBeamer {
 
         //  16x Magmatter cable
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(16)
                 .input(wireGtHex, Magmatter)
                 .input(foil, CosmicFabric, 32)
                 .input(MetaBlocks.OPTICAL_PIPES[0], 16)
@@ -243,12 +534,17 @@ public class NicollDysonBeamer {
         //  Hyperstable Self-Healing Adhesive
         //  Basic materials for some recipe of this machine, and T2 casings.
         NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
+                .notConsumable(lens, CelestialCrystal)
                 .notConsumable(DIMENSION_GAP)
                 .input(GLUON)
+                .input(singularity, Clay)
                 .input(QUANTUM_ANOMALY)
-                .fluidInputs(SolderingAlloy.getFluid(5760000))
+                .input(wireFine, SolderingAlloy, 8)
                 .fluidInputs(Lubricant.getFluid(5760000))
                 .fluidInputs(SodiumPotassium.getFluid(5760000))
+                .fluidInputs(QuantumAlloy.getFluid(L * 40))
+                .fluidInputs(CelestialTungsten.getFluid(L * 20))
+                .fluidInputs(Spacetime.getFluid(L * 4))
                 .chancedOutput(HYPERSTABLE_SELF_HEALING_ADHESIVE.getStackForm(), 2000, 0)
                 .EUt(VA[MAX])
                 .duration(20)
@@ -258,9 +554,15 @@ public class NicollDysonBeamer {
         //  Supersolid Spacetime Continuum
         NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
                 .notConsumable(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .notConsumable(ROTATING_TRANSPARENT_SURFACE)
                 .input(HYPERSTABLE_SELF_HEALING_ADHESIVE)
+                .input(singularity, Naquadria)
                 .input(QUANTUM_ANOMALY)
-                .fluidInputs(Spacetime.getFluid(8000))
+                .input(swarm, Galaxium, 2)
+                .fluidInputs(Hikarium.getFluid(L * 40))
+                .fluidInputs(CosmicNeutronium.getFluid(L * 40))
+                .fluidInputs(Spacetime.getFluid(L * 4))
+                .fluidInputs(Eternity.getFluid(L))
                 .chancedOutput(SUPERSOLID_SPACETIME_CONTINUUM, 2000, 0)
                 .EUt(VA[MAX])
                 .duration(20)
@@ -270,12 +572,18 @@ public class NicollDysonBeamer {
         //  Magmatter Liquid
         //  This is basic material to create other Magmatter components.
         NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
-                .notConsumable(spring, Edenium)
+                .notConsumable(RYDBERG_SPINORIAL_ASSEMBLY)
+                .notConsumable(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_MAGNET))
                 .input(BOSE_EINSTEIN_CONDENSATE, 64)
+                .input(singularity, Taranium)
                 .input(HYPERSTABLE_SELF_HEALING_ADHESIVE, 4)
-                .fluidInputs(RawStarMatter.getFluid(16000))
-                .fluidInputs(StarCoreMatter.getPlasma(16000))
-                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(16000))
+                .input(wireFine, QuantumchromodynamicallyConfinedMatter, 32)
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(64000))
+                .fluidInputs(MercuryCadmiumTelluride.getFluid(64000))
+                .fluidInputs(MBBA.getFluid(48000))
+                .fluidInputs(ChargedCaesiumCeriumCobaltIndiumAlloy.getFluid(32000))
+                .fluidInputs(Spacetime.getFluid(4000))
+                .fluidInputs(Eternity.getFluid(L * 4))
                 .output(BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT, 64)
                 .fluidOutputs(Magmatter.getFluid(16000))
                 .EUt(VA[MAX])

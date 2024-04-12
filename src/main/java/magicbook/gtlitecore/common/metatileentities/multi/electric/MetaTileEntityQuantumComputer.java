@@ -67,10 +67,16 @@ import javax.annotation.Nullable;
 import java.util.*;
 import java.util.function.Supplier;
 
+/**
+ * Quantum Computer
+ *
+ * <p>
+ *     Just an Advanced HPCA, used to provide more CWU for UHV+ stages.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class MetaTileEntityQuantumComputer extends MultiblockWithDisplayBase implements IOpticalComputationProvider, IControllable, IProgressBarMultiblock {
-
-    private static final double IDLE_TEMPERATURE = 100.0;
-    private static final double DAMAGE_TEMPERATURE = 2000.0;
 
     private IEnergyContainer energyContainer = new EnergyContainerList(new ArrayList<>());
     private IFluidHandler coolantHandler;
