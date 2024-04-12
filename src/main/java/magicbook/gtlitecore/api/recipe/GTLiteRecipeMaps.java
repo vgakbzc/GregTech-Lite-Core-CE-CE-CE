@@ -983,7 +983,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_oscillating_module", 3, 3, 3, 3, new GravitonCasingTierRecipeBuilder(), false)
+    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_oscillating_module", 6, 6, 6, 6, new GravitonCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
@@ -1064,8 +1064,12 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> NICOLL_DYSON_BEAMER_BURNING_MODULE = new RecipeMap<>("nicoll_dyson_beamer_burning_module", 6, 6, 6, 6, new NoCoilHigherTemperatureRecipeBuilder(), false)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
+    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> NICOLL_DYSON_BEAMER_BURNING_MODULE = new RecipeMapNDBBurningModule<>("nicoll_dyson_beamer_burning_module", 9, 9, 9, 9, new NoCoilHigherTemperatureRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL)
+            .setSlotOverlay(false, false, false, GuiTextures.FILTER_SLOT_OVERLAY)
+            .setSlotOverlay(false, false, true, GuiTextures.FILTER_SLOT_OVERLAY)
+            .setSlotOverlay(true, false, false, GuiTextures.FILTER_SLOT_OVERLAY)
+            .setSlotOverlay(true, false, true, GuiTextures.FILTER_SLOT_OVERLAY)
             .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
@@ -1919,6 +1923,7 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 
     public GTLiteRecipeMaps() {}

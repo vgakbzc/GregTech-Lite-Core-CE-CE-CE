@@ -312,7 +312,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UHV], 1200)
                         .vacuumStats(VA[ZPM], 180))
                 .components(TitaniumTungstenCarbide, 6, AusteniticStainlessSteel904L, 3, Ruby, 3)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12022 Quantum Alloy
@@ -969,7 +969,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8400, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[ZPM], 877)
                         .vacuumStats(VA[IV], 405))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING)
                 .build();
 
         //  12074 Arceus Alloy 2B
