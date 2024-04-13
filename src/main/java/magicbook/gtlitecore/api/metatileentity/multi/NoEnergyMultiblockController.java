@@ -35,6 +35,21 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * No Energy Multiblock Controller
+ *
+ * @author Gate Guardian
+ *
+ * <p>
+ *     Multiblock Controller which does not use energy,
+ *     used for some special machines (like primitive blast furnace,
+ *     but do not have special GUI).
+ *     This multiblock controller used special logic,
+ *     please see: {@link NoEnergyMultiblockRecipeLogic}.
+ * </p>
+ *
+ * @since 2.7.4-beta
+ */
 public abstract class NoEnergyMultiblockController extends MultiblockWithDisplayBase implements IDataInfoProvider, ICleanroomReceiver, IDistinctBusController {
 
     public final RecipeMap<?> recipeMap;

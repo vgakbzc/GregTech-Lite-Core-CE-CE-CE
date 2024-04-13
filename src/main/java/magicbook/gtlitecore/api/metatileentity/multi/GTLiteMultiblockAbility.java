@@ -5,6 +5,18 @@ import magicbook.gtlitecore.api.capability.IGrindBallHatch;
 import magicbook.gtlitecore.api.capability.IQCComponentHatch;
 import magicbook.gtlitecore.api.capability.IReinforcedRotorHolder;
 
+/**
+ * Multiblock Ability for gtlitecore
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Multiblock Ability class for gtlitecore,
+ *     just same as {@link MultiblockAbility}.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteMultiblockAbility {
 
     public static final MultiblockAbility<IGrindBallHatch> GRINDBALL_MULTIBLOCK_ABILITY = new MultiblockAbility<>("grindball");

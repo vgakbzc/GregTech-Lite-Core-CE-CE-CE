@@ -38,7 +38,9 @@ public class HaloItemRenderer extends WrappedItemRenderer {
     }
 
     /**
-     * @param stack          Item stack, should check if it in gregtech's {@link MetaItem} class, otherwise cause crash when it in AE2 Pattern (please see: {@link appeng.items.misc.ItemEncodedPattern}).
+     * @param stack          Item stack, should check if it in gregtech's {@link MetaItem} class,
+     *                       otherwise cause crash when it in AE2 Pattern,
+     *                       please see: {@link appeng.items.misc.ItemEncodedPattern}.
      * @param transformType  Transform type, used to check if it in GUI.
      */
     @Override

@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 import org.lwjgl.opengl.ARBShaderObjects;
 
 public class CosmicShaderHelper {
+
     public static final ShaderCallback shaderCallback;
 
     public static float[] lightlevel = new float[3];

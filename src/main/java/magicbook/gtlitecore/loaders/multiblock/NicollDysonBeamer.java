@@ -5,8 +5,6 @@ import magicbook.gtlitecore.common.blocks.BlockCoolingCore;
 import magicbook.gtlitecore.common.blocks.BlockDysonSwarmCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
-import java.math.BigInteger;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;

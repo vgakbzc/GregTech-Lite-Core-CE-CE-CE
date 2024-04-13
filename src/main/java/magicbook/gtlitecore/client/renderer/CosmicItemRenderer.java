@@ -52,7 +52,9 @@ public class CosmicItemRenderer extends WrappedItemRenderer {
     }
 
     /**
-     * @param stack          Item stack, should check if it in gregtech's {@link MetaItem} class, otherwise cause crash when it in AE2 Pattern (please see: {@link appeng.items.misc.ItemEncodedPattern}).
+     * @param stack          Item stack, should check if it in gregtech's {@link MetaItem} class,
+     *                       otherwise cause crash when it in AE2 Pattern,
+     *                       please see: {@link appeng.items.misc.ItemEncodedPattern}.
      * @param transformType  Transform type, used to check if it in GUI.
      */
     @Override
@@ -67,6 +69,12 @@ public class CosmicItemRenderer extends WrappedItemRenderer {
         }
     }
 
+    /**
+     * Simple Renderer for common situation.
+     *
+     * @param stack   Item stack.
+     * @param player  Player.
+     */
     protected void renderSimple(ItemStack stack, EntityLivingBase player) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
@@ -106,6 +114,12 @@ public class CosmicItemRenderer extends WrappedItemRenderer {
         GlStateManager.popMatrix();
     }
 
+    /**
+     * Renderer for GUI Internal situation.
+     *
+     * @param stack   Item stack.
+     * @param player  Player.
+     */
     protected void renderInventory(ItemStack stack, EntityLivingBase player) {
         GlStateManager.pushMatrix();
         GlStateManager.enableBlend();
