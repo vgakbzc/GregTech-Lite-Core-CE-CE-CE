@@ -30,16 +30,34 @@ import static magicbook.gtlitecore.client.utils.BloomEffectUtils.getRealBloomLay
  *
  * <p>
  *     Another same class is {@link gregtech.client.renderer.texture.cube.SimpleOverlayRenderer},
- *     this class is an easier version of overlay renderer in GregTech and used in all blocks of GTLite core.
+ *     this class is an easier version of overlay renderer in GregTech and used in all blocks of gtlitecore.
  * </p>
  */
 public class GTLiteOverlayRenderer implements ICubeRenderer {
 
+    /**
+     * Path of your texture (in resource location).
+     */
     private final String path;
 
+    /**
+     * Basic texture.
+     *
+     * <p>
+     *     Used {@link TextureAtlasSprite} to load texture.
+     * </p>
+     */
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite sprite;
 
+    /**
+     * Emissive texture (extended texture).
+     *
+     * <p>
+     *     Also used {@link TextureAtlasSprite},
+     *     if you add '_emissive' prefix on files, then add an extended sprite.
+     * </p>
+     */
     @Nullable
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite spriteEmissive;
@@ -50,6 +68,17 @@ public class GTLiteOverlayRenderer implements ICubeRenderer {
         Textures.iconRegisters.add(this);
     }
 
+    /**
+     * Register texture icon in gtlitecore.
+     *
+     * <p>
+     *     Pay attention, this method do not have namespace tweak,
+     *     it means if you use {@link GTLiteOverlayRenderer},
+     *     then return texture is all in gtlitecore's namespace.
+     * </p>
+     *
+     * @param textureMap  Texture Map.
+     */
     @SideOnly(Side.CLIENT)
     public void registerIcons(TextureMap textureMap) {
         String modID = GTLiteValues.MODID;
@@ -66,8 +95,31 @@ public class GTLiteOverlayRenderer implements ICubeRenderer {
         }
     }
 
+    /**
+     * Register Extended textures.
+     *
+     * <p>
+     *     If texture has extended emissive, and settings are load,
+     *     i.e. correspond setting in {@link ConfigHolder} is true.
+     *     Then load a extended emissive texture.
+     * </p>
+     *
+     * @param renderState       Special Renderer State.
+     * @param translation       Translation Matrix.
+     * @param pipeline          Vertex Operation.
+     * @param bounds            Boundaries.
+     * @param frontFacing       Front Face.
+     * @param isActive          Used to check if machine is active.
+     * @param isWorkingEnabled  Used to check if machine is working enabled.
+     */
     @SideOnly(Side.CLIENT)
-    public void renderOrientedState(CCRenderState renderState, Matrix4 translation, IVertexOperation[] pipeline, Cuboid6 bounds, EnumFacing frontFacing, boolean isActive, boolean isWorkingEnabled) {
+    public void renderOrientedState(CCRenderState renderState,
+                                    Matrix4 translation,
+                                    IVertexOperation[] pipeline,
+                                    Cuboid6 bounds,
+                                    EnumFacing frontFacing,
+                                    boolean isActive,
+                                    boolean isWorkingEnabled) {
         Textures.renderFace(renderState, translation, pipeline, frontFacing, bounds, this.sprite, BlockRenderLayer.CUTOUT_MIPPED);
         if (this.spriteEmissive != null) {
             if (ConfigHolder.client.machinesEmissiveTextures) {
@@ -79,6 +131,11 @@ public class GTLiteOverlayRenderer implements ICubeRenderer {
         }
     }
 
+    /**
+     * Particle Sprite Getter
+     *
+     * @return  Texture Atlas Sprite.
+     */
     @SideOnly(Side.CLIENT)
     public TextureAtlasSprite getParticleSprite() {
         return this.sprite;

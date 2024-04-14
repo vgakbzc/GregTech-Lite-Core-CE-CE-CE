@@ -4,6 +4,7 @@ import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IWorkable;
 import gregtech.api.capability.impl.AbstractRecipeLogic;
 import gregtech.integration.theoneprobe.provider.CapabilityInfoProvider;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import mcjty.theoneprobe.api.ElementAlignment;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
@@ -42,15 +43,17 @@ public class RecipeItemOutputInfoProvider extends CapabilityInfoProvider<IWorkab
                                 TileEntity tileEntity,
                                 IProbeHitData data) {
         if (capability.getProgress() > 0 && capability instanceof AbstractRecipeLogic) {
-            IProbeInfo horizontalPane = info.horizontal(info.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
-            List<ItemStack> itemOutputs = new ArrayList<>(ObfuscationReflectionHelper.getPrivateValue(AbstractRecipeLogic.class, (AbstractRecipeLogic) capability, "itemOutputs"));
-            if (!itemOutputs.isEmpty()) {
-                horizontalPane.text(TextStyleClass.INFO + "{*gtlitecore.top.item_outputs*}");
-                for (ItemStack itemStack : itemOutputs) {
-                    if (itemStack != null) {
-                        horizontalPane.item(itemStack);
-                        if (itemOutputs.size() <= 2) {
-                            horizontalPane.itemLabel(itemStack);
+            if (GTLiteConfigHolder.compats.enableTOPRecipeOutputInfo) {
+                IProbeInfo horizontalPane = info.horizontal(info.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
+                List<ItemStack> itemOutputs = new ArrayList<>(ObfuscationReflectionHelper.getPrivateValue(AbstractRecipeLogic.class, (AbstractRecipeLogic) capability, "itemOutputs"));
+                if (!itemOutputs.isEmpty()) {
+                    horizontalPane.text(TextStyleClass.INFO + "{*gtlitecore.top.item_outputs*}");
+                    for (ItemStack itemStack : itemOutputs) {
+                        if (itemStack != null) {
+                            horizontalPane.item(itemStack);
+                            if (itemOutputs.size() <= 2) {
+                                horizontalPane.itemLabel(itemStack);
+                            }
                         }
                     }
                 }

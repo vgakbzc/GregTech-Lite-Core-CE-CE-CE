@@ -3,6 +3,11 @@ package magicbook.gtlitecore.api.metatileentity.single;
 import gregtech.api.gui.resources.SteamTexture;
 import gregtech.api.gui.widgets.ProgressWidget;
 
+/**
+ * Steam Progress Bar Indicator
+ *
+ * @since 2.7.4-beta
+ */
 public class SteamProgressIndicator {
 
     public SteamTexture progressBarTexture;

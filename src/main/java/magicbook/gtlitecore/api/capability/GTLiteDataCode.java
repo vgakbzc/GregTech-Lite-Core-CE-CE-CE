@@ -1,5 +1,18 @@
 package magicbook.gtlitecore.api.capability;
 
+/**
+ * Data Codes for gtlitecore.
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Another class please see {@link gregtech.api.capability.GregtechDataCodes},
+ *     in the main class, channel id start from 0, and in this class,
+ *     channel ID range is 9900-10000 (roughly).
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteDataCode {
     public static final int ChannelPreciseAssembler1 = 9900;
     public static final int ChannelPreciseAssembler2 = 9901;

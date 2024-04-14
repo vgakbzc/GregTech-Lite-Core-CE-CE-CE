@@ -5,8 +5,6 @@ import magicbook.gtlitecore.common.blocks.BlockCoolingCore;
 import magicbook.gtlitecore.common.blocks.BlockDysonSwarmCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
-import java.math.BigInteger;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -35,7 +33,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
                 .EUt(VA[UHV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Aluminium -> Crystal Matrix (UEV)
@@ -47,7 +45,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
                 .EUt(VA[UEV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Aluminium -> Crystal Matrix (UIV)
@@ -59,7 +57,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VA[UIV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  Crystal Matrix -> Infinity (UEV)
@@ -71,7 +69,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
                 .EUt(VA[UEV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Crystal Matrix -> Infinity (UIV)
@@ -83,7 +81,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
                 .EUt(VA[UIV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Crystal Matrix -> Infinity (UXV)
@@ -95,7 +93,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  Iron -> Neutronium (UIV)
@@ -109,7 +107,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
                 .EUt(VA[UIV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Iron -> Neutronium (UXV)
@@ -121,7 +119,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Iron -> Neutronium (OpV)
@@ -133,7 +131,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VA[OpV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  Neutronium -> Cosmic Neutronium (UXV)
@@ -145,7 +143,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Neutronium -> Cosmic Neutronium (OpV)
@@ -157,7 +155,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
                 .EUt(VA[OpV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Neutronium -> Cosmic Neutronium (MAX)
@@ -169,7 +167,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VA[MAX])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  Copper -> Ichorium (UEV)
@@ -181,7 +179,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
                 .EUt(VA[UEV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Copper -> Ichorium (UIV)
@@ -193,7 +191,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
                 .EUt(VA[UIV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Copper -> Ichorium (UXV)
@@ -205,7 +203,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  Ichorium -> Hypogen (UXV)
@@ -217,7 +215,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(8127))
                 .EUt(VA[UXV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Ichorium -> Hypogen (OpV)
@@ -229,7 +227,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6360))
                 .EUt(VA[OpV])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Ichorium -> Hypogen (MAX)
@@ -241,7 +239,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VA[MAX])
                 .duration(200)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  7
@@ -262,7 +260,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(1000))
                 .EUt(128000000) //  UXV
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  Ultimate Crude Hypercube recipe
@@ -277,6 +275,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(2000))
                 .EUt(512000000) //  OpV
                 .duration(20)
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  Quantum Anomaly
@@ -289,7 +288,7 @@ public class NicollDysonBeamer {
                 .output(QUANTUM_ANOMALY)
                 .EUt(VA[UEV])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE)) // TODO find better number
+                .CasingTier(1)
                 .buildAndRegister();
 
         //  Dimension Gap
@@ -305,6 +304,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(HiggsBosons.getFluid(147456))
                 .EUt(VA[MAX])
                 .duration(20)
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  1x Magmatter Wire
@@ -319,7 +319,7 @@ public class NicollDysonBeamer {
                 .output(wireGtSingle, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .CasingTier(3)
                 .buildAndRegister();
 
         //  1x Magmatter cable
@@ -338,7 +338,7 @@ public class NicollDysonBeamer {
                 .output(cableGtSingle, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  2x Magmatter cable
@@ -357,7 +357,7 @@ public class NicollDysonBeamer {
                 .output(cableGtDouble, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  4x Magmatter cable
@@ -376,7 +376,7 @@ public class NicollDysonBeamer {
                 .output(cableGtQuadruple, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  8x Magmatter cable
@@ -395,7 +395,7 @@ public class NicollDysonBeamer {
                 .output(cableGtOctal, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .CasingTier(2)
                 .buildAndRegister();
 
         //  16x Magmatter cable
@@ -414,7 +414,7 @@ public class NicollDysonBeamer {
                 .output(cableGtHex, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
-                .temperature(BigInteger.valueOf(Integer.MAX_VALUE))
+                .CasingTier(2)
                 .buildAndRegister();
     }
 
