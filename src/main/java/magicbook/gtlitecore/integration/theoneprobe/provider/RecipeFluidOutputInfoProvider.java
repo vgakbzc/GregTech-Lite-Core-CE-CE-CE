@@ -4,6 +4,9 @@ import gregtech.api.capability.GregtechTileCapabilities;
 import gregtech.api.capability.IWorkable;
 import gregtech.api.capability.impl.AbstractRecipeLogic;
 import gregtech.integration.theoneprobe.provider.CapabilityInfoProvider;
+import magicbook.gtlitecore.api.gui.impl.FluidStyle;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.integration.theoneprobe.FluidStackElement;
 import mcjty.theoneprobe.api.ElementAlignment;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
@@ -45,20 +48,23 @@ public class RecipeFluidOutputInfoProvider extends CapabilityInfoProvider<IWorka
                                 TileEntity tileEntity,
                                 IProbeHitData data) {
         if (capability.getProgress() > 0 && capability instanceof  AbstractRecipeLogic) {
-            IProbeInfo horizontalPane = info.horizontal(info.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
-            List<FluidStack> fluidOutputs = new ArrayList<>(ObfuscationReflectionHelper.getPrivateValue(AbstractRecipeLogic.class, (AbstractRecipeLogic) capability, "fluidOutputs"));
-            //  check if fluid output is empty.
-            if (!fluidOutputs.isEmpty()) {
-                horizontalPane.text(TextStyleClass.INFO + "{*gtlitecore.top.fluid_outputs*}");
-                //  if recipe outputs have many fluids, then view all fluids (so we ergodic it).
-                for (FluidStack fluidStack : fluidOutputs) {
-                    IProbeInfo HorizontalPane = info.horizontal(info.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
-                    HorizontalPane.icon(fluidStack.getFluid().getStill(), -1, -1, 16, 16, info.defaultIconStyle().width(20));
-                    HorizontalPane.text(TextStyleClass.INFO + fluidStack.getLocalizedName());
-                    if (fluidStack.amount >= 1000) {
-                        HorizontalPane.text(TextStyleClass.INFO + " * " + (fluidStack.amount / 1000) + "B");
-                    } else {
-                        HorizontalPane.text(TextStyleClass.INFO + " * " + fluidStack.amount + "mB");
+            if (GTLiteConfigHolder.compats.enableTOPRecipeOutputInfo) {
+                IProbeInfo horizontalPane = info.horizontal(info.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
+                List<FluidStack> fluidOutputs = new ArrayList<>(ObfuscationReflectionHelper.getPrivateValue(AbstractRecipeLogic.class, (AbstractRecipeLogic) capability, "fluidOutputs"));
+                //  check if fluid output is empty.
+                if (!fluidOutputs.isEmpty()) {
+                    horizontalPane.text(TextStyleClass.INFO + "{*gtlitecore.top.fluid_outputs*}");
+                    //  if recipe outputs have many fluids, then view all fluids (so we ergodic it).
+                    for (FluidStack fluidStack : fluidOutputs) {
+                        IProbeInfo HorizontalPane = info.horizontal(info.defaultLayoutStyle().alignment(ElementAlignment.ALIGN_CENTER));
+                        //HorizontalPane.icon(fluidStack.getFluid().getStill(), -1, -1, 16, 16, info.defaultIconStyle().width(20));
+                        HorizontalPane.element(new FluidStackElement(fluidStack, new FluidStyle()));
+                        HorizontalPane.text(TextStyleClass.INFO + fluidStack.getLocalizedName());
+                        if (fluidStack.amount >= 1000) {
+                            HorizontalPane.text(TextStyleClass.INFO + " * " + (fluidStack.amount / 1000) + "B");
+                        } else {
+                            HorizontalPane.text(TextStyleClass.INFO + " * " + fluidStack.amount + "mB");
+                        }
                     }
                 }
             }

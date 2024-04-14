@@ -49,6 +49,13 @@ public class GTLiteConfigHolder {
         @Comment({"Enable some recipe tweaks of GTFO (such as Greenhouse Glass).", "Default: true"})
         public boolean enableGTFOTweaks = true;
 
+        @Comment({"Enable Integration Module of The One Probe.", "Default: true"})
+        @RequiresMcRestart
+        public boolean enableTOPModule = true;
+
+        @Comment({"Enable Recipe Output Info. [The One Probe Module]", "Default: true"})
+        public boolean enableTOPRecipeOutputInfo = true;
+
         public CompatibilityOptions() {}
     }
 

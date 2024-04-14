@@ -4,6 +4,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.text.TextComponentTranslation;
 
 /**
+ * Chat Calculator Helper
+ *
  * @author Tech22
  *
  * <p>

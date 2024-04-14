@@ -1064,7 +1064,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> NICOLL_DYSON_BEAMER_BURNING_MODULE = new RecipeMapNDBBurningModule<>("nicoll_dyson_beamer_burning_module", 9, 9, 9, 9, new NoCoilHigherTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<GravitonCasingTierRecipeBuilder> NICOLL_DYSON_BEAMER_BURNING_MODULE = new RecipeMapNDBBurningModule<>("nicoll_dyson_beamer_burning_module", 9, 9, 9, 9, new GravitonCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, false, false, GuiTextures.FILTER_SLOT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.FILTER_SLOT_OVERLAY)
@@ -1114,7 +1114,7 @@ public class GTLiteRecipeMaps {
                     .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
                     .duration(recipeBuilder.getDuration())
                     .EUt(recipeBuilder.getEUt())
-                    .temperature(recipeBuilder.getTemperature())
+                    .CasingTier(1)
                     .hidden() // Hidden same recipes in NDB Burning Module recipes.
                     .buildAndRegister());
 

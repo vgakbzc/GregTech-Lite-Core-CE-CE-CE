@@ -10,6 +10,8 @@ import java.util.UUID;
  * <p>
  *     The original class is from <a href="https://github.com/GTNewHorizons/GT5-Unofficial">GT5u</a>.
  * </p>
+ *
+ * @since 2.8.7-beta
  */
 public abstract class GlobalVariableStorage {
 

@@ -15,6 +15,18 @@ import java.util.LinkedList;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+/**
+ * Tier Traceability Predicate
+ *
+ * @author Gate Guardian
+ *
+ * <p>
+ *     Special Traceability Predicate used {@link IBlockTier},
+ *     add tier system of special blocks (use hash map to init these blocks).
+ * </p>
+ *
+ * @since 2.7.4-beta
+ */
 public class TierTraceabilityPredicate extends TraceabilityPredicate {
 
     private final Object2ObjectOpenHashMap<IBlockState, IBlockTier> map;

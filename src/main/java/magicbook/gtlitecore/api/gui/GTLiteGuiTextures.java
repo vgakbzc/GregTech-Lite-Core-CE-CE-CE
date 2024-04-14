@@ -3,6 +3,18 @@ package magicbook.gtlitecore.api.gui;
 import gregtech.api.gui.resources.SteamTexture;
 import gregtech.api.gui.resources.TextureArea;
 
+/**
+ * Gui Textures of gtlitecore
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     Used to load Gui Textures like overlay, progress bar,
+ *     button, logo and icon, same as {@link gregtech.api.gui.GuiTextures}.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteGuiTextures {
 
     //  Steam Overlay

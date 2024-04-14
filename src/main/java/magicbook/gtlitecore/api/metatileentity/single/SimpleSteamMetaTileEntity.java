@@ -40,6 +40,8 @@ import java.util.Arrays;
  *     please see: {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#registerSimpleSteamMetaTileEntity(SimpleSteamMetaTileEntity[], int, String, RecipeMap, SteamProgressIndicator, ICubeRenderer, boolean)}.
  *     You needs to use progress bar through {@link SteamProgressIndicators}.
  * </p>
+ *
+ * @since 2.7.4-beta
  */
 @SuppressWarnings("all")
 public class SimpleSteamMetaTileEntity extends SteamMetaTileEntity {

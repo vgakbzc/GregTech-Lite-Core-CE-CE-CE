@@ -25,6 +25,8 @@ import static magicbook.gtlitecore.api.misc.GlobalVariableStorage.WirelessEnergy
  *     and the original class is from <a href="https://github.com/GTNewHorizons/GT5-Unofficial">GT5u</a>,
  *     please see this path 'src/main/java/gregtech/common/misc/WirelessEnergyNetworkWorldSavedData.java' in GT5u.
  * </p>
+ *
+ * @since 2.8.7-beta
  */
 public class WirelessEnergyNetworkWorldSavedData extends WorldSavedData {
 
