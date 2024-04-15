@@ -145,8 +145,10 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.GRAVITON_CASING, VariantItemBlock::new));
 
-        GTLiteLog.logger.info("Registering Behavior Additions of GregTech...");
-        GTLiteBehaviorAddition.init();
+        if (GTLiteConfigHolder.compats.enableDataItemRenderer) {
+            GTLiteLog.logger.info("Registering Behavior Additions of GregTech...");
+            GTLiteBehaviorAddition.init();
+        }
     }
 
     /**
