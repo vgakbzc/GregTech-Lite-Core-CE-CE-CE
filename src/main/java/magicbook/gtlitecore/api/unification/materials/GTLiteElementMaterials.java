@@ -112,11 +112,12 @@ public class GTLiteElementMaterials {
         //  10005 Crystal Matrix
         CrystalMatrix = new Material.Builder(getId(), gregtechId("crystal_matrix"))
                 .ingot()
-                .liquid(new FluidBuilder().temperature(660450))
+                .liquid(new FluidBuilder().temperature(660450).customStill())
                 .color(0xC0FFFF)
-                .iconSet(CUSTOM_CRYSTAL_MATRIX)
+                .iconSet(BRIGHT)
                 .element(GTLiteElements.CrystalMatrix)
                 .fluidPipeProperties(40000, 10000, true, true, true, true)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  10006 Ichorium
@@ -323,7 +324,7 @@ public class GTLiteElementMaterials {
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Astralium)
                 .blast(15000, BlastProperty.GasTier.HIGHEST)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING)
                 .cableProperties(V[UIV], 48, 24, false)
                 .build();
 
@@ -412,6 +413,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[OpV], 27)
                         .vacuumStats(VA[OpV], 50))
                 .fluidPipeProperties(160000, 40000, true, true, true, true)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  10030 Omnium
