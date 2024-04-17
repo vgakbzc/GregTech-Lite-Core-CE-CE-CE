@@ -15,6 +15,7 @@ public class GTOverrideRecipeManager {
     }
 
     private static void initBlocks() {
+        Machines.init();
         MachineCasings.init();
         HermeticCasings.init();
     }
@@ -26,6 +27,7 @@ public class GTOverrideRecipeManager {
         EnergyHatches.init();
         LaserHatches.init();
         WirelessEnergyHatches.init();
+        CreativeHatches.init();
     }
 
 }
