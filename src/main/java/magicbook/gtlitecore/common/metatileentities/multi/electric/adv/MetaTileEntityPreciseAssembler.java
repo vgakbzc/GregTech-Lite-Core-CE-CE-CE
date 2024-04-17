@@ -102,16 +102,13 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         super.formStructure(context);
         Object CasingTier = context.get("PACasingTieredStats");
         Object InternalCasingTier = context.get("PAInternalCasingTieredStats");
-
         this.CasingTier = GTLiteUtils.getOrDefault(
                 () -> CasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) CasingTier).getIntTier(), 0);
         this.InternalCasingTier = GTLiteUtils.getOrDefault(
                 () -> InternalCasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) InternalCasingTier).getIntTier(), 0);
-
-        this.tier = this.CasingTier = this.InternalCasingTier;
-
+        this.tier = this.CasingTier;
         this.writeCustomData(GTLiteDataCode.ChannelPreciseAssembler1, buf -> buf.writeInt(this.CasingTier));
     }
 
@@ -267,6 +264,9 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.4"));
         tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.5"));
         tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.6"));
+        tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.7"));
+        tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.8"));
+        tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.9"));
     }
 
     @Override
@@ -274,6 +274,11 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         return true;
     }
 
+    /**
+     * Getter of Casing Tier.
+     *
+     * @return  Main Casing Tier (Precise Assembly Casing).
+     */
     public int getCasingTier() {
         return this.CasingTier;
     }
@@ -296,9 +301,17 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         @Override
         public void setMaxProgress(int maxProgress) {
             if (isPrecise()) {
-                this.maxProgressTime = maxProgress ;
+                if (getCasingTier() > 3) {
+                    this.maxProgressTime = (int) Math.floor(maxProgress * Math.pow(0.8, tier));
+                } else {
+                    this.maxProgressTime = maxProgress;
+                }
             } else {
-                this.maxProgressTime = maxProgress / 2;
+                if (getCasingTier() > 3) {
+                    this.maxProgressTime = (int) Math.floor(maxProgress * Math.pow(0.8, tier));
+                } else {
+                    this.maxProgressTime = maxProgress / 2;
+                }
             }
         }
 
