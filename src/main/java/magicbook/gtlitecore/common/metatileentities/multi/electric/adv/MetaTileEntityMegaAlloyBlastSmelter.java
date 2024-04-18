@@ -52,6 +52,13 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+/**
+ * Mega Alloy Blast Smelter
+ *
+ * @author Gate Guardian
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityMegaAlloyBlastSmelter extends RecipeMapMultiblockController implements IHeatingCoil {
 
     private int blastFurnaceTemperature;

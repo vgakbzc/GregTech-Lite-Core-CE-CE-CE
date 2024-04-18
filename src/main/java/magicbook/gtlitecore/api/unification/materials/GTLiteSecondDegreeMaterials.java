@@ -471,7 +471,7 @@ public class GTLiteSecondDegreeMaterials {
                 .iconSet(SHINY)
                 .blast(3100)
                 .components(Lithium, 2, Titanium, 1, Oxygen, 3)
-                .flags(DISABLE_DECOMPOSITION, GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .fluidPipeProperties(2830, 200, true, true, false, false)
                 .build();
 

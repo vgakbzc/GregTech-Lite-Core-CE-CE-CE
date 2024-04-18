@@ -2,6 +2,7 @@ package magicbook.gtlitecore.loaders;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.blocks.BlockMachineCasing;
@@ -31,8 +32,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
@@ -1003,14 +1003,25 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Neutral Network Nexus
-        ModHandler.addShapedRecipe(true, "neutral_network_nexus", NEUTRAL_NETWORK_NEXUS.getStackForm(),
-                "RSR", "FHF", "WMW",
-                'H', HULL[ZPM].getStackForm(),
-                'S', new UnificationEntry(spring, Trinium),
-                'W', new UnificationEntry(cableGtSingle, VanadiumGallium),
-                'M', ELECTRIC_MOTOR_ZPM,
-                'F', FIELD_GENERATOR_ZPM,
-                'R', new UnificationEntry(plate, Americium));
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(HULL[ZPM])
+                .input(nanotube, Carbon)
+                .input(CONVEYOR_MODULE_ZPM, 4)
+                .input(FIELD_GENERATOR_ZPM, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 4)
+                .input(spring, Trinium, 2)
+                .input(cableGtQuadruple, VanadiumGallium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .fluidInputs(HSSS.getFluid(L * 16))
+                .output(NEUTRAL_NETWORK_NEXUS)
+                .scannerResearch(b -> b
+                        .researchStack(OreDictUnifier.get(nanosensor, Carbon))
+                        .EUt(VA[ZPM])
+                        .duration(600))
+                .EUt(VA[ZPM])
+                .duration(1200)
+                .buildAndRegister();
 
         //  PCB Factory
         ASSEMBLY_LINE_RECIPES.recipeBuilder()

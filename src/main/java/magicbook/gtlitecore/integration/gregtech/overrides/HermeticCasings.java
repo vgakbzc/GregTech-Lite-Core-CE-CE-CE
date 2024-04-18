@@ -19,6 +19,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class HermeticCasings {
 
     public static void init() {
+
         //  Hermetic Casings
         ModHandler.addShapedRecipe(true, "hermetic_casing_uev", GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_UEV),
                 "ppp", "pPp", "ppp",

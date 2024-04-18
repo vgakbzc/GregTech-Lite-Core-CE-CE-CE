@@ -56,6 +56,9 @@ public class GTLiteConfigHolder {
         @Comment({"Enable Recipe Output Info. [The One Probe Module]", "Default: true"})
         public boolean enableTOPRecipeOutputInfo = true;
 
+        @Comment({"Enable Extended Renderer of Data Items (such as Data stick).", "Default: true"})
+        public boolean enableDataItemRenderer = true;
+
         public CompatibilityOptions() {}
     }
 

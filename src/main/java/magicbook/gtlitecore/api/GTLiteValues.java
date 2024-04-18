@@ -112,4 +112,6 @@ public class GTLiteValues {
             MarkerMaterials.Color.Red,
             MarkerMaterials.Color.Black
     };
+
+    public static final int[] VZ = new int[] { 1, 30, 100, 500, 2000, 8000, 30000, 100000, 500000, 2000000, 8000000, 30000000, 100000000, 500000000, 2000000000 };
 }

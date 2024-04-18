@@ -62,6 +62,8 @@ import java.util.List;
  * <p>
  *     Based on my friend Gate Guardian's work about this machine.
  * </p>
+ *
+ * @since 2.7.4-beta
  */
 public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase implements IDataInfoProvider {
 

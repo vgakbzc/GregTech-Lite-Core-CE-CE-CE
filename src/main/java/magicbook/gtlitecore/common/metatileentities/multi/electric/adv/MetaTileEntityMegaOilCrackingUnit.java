@@ -45,6 +45,13 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+/**
+ * Mega Oil Cracking Unit
+ *
+ * @author Gate Guardian
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockController {
 
     private int coilTier;
