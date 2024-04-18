@@ -1435,7 +1435,7 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *     GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES.recipeBuilder()
+     *     GTLiteRecipeMaps.NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
      *          .input(lens, Glass)
      *          .input(CARBON_FIBERS, 8)
      *          .fluidInputs(Materials.Helium.getFluid(L * 8)})
@@ -1448,16 +1448,16 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Mode for PCB Factory, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory}.
-     *     Used to create Nanosensor and Nanotube, please see {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix}.
-     *     TODO maybe deprecate or tweak, if redo pcb factory in future.
-     *     Another TODO: maybe split this mode to a new machine (such as Nano Forge?).
+     *     One of three modes of Neutral Network Nexus, used to create Nanosensor and Nanotube,
+     *     please see {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix}.
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_NANO_RECIPES = new RecipeMap<>("pcb_factory_nano_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
-            .setSlotOverlay(true, false, true, GuiTextures.SCANNER_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+    public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE = new RecipeMap<>("neutral_network_nexus_assembling_module", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.IN_SLOT_OVERLAY)
+            .setSlotOverlay(false, false, true, GuiTextures.IN_SLOT_OVERLAY)
+            .setSlotOverlay(true, false, true, GuiTextures.OUT_SLOT_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER);
 
     /**
@@ -1478,14 +1478,18 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     One of two modes of Neutral Network Nexus, used to breeding nano swarm.
+     *     One of three modes of Neutral Network Nexus, used to breeding nano swarm.
      *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_BREEDING_MODE = new RecipeMap<>("neutral_network_nexus_breeding_mode", 6, 6, 3, 3, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SwarmTierRecipeBuilder> NEUTRAL_NETWORK_NEXUS_BREEDING_MODE = new RecipeMap<>("neutral_network_nexus_breeding_mode", 6, 1, 3, 0, new SwarmTierRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
+            .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+            .setSlotOverlay(true, false, true, GuiTextures.EXTRACTOR_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER);
 
     /**
@@ -1507,6 +1511,7 @@ public class GTLiteRecipeMaps {
      * <p>
      *     One of two modes of Neutral Network Nexus, used to hybridizing nano swarm.
      *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
+     *     TODO Add recipe and system of this mode.
      * </p>
      */
     @ZenProperty

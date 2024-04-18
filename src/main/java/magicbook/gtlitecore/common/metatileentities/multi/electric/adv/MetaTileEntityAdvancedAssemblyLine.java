@@ -67,6 +67,8 @@ import static gregtech.api.util.GTUtility.gregtechId;
  *     Thanks my friend tong-ge's wonderful create, this job should be attributed to him.
  *     This machine is different with GigaGramFab's same name machine.
  * </p>
+ *
+ * @since 2.8.7-beta
  */
 public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockController {
 

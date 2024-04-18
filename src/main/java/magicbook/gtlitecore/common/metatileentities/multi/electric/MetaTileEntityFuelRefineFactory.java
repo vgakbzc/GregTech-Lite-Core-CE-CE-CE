@@ -32,6 +32,13 @@ import java.util.List;
 
 import static gregtech.api.unification.material.Materials.NaquadahAlloy;
 
+/**
+ * Fuel Refine Factory
+ *
+ * @author Magic_Sweepy
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityFuelRefineFactory extends RecipeMapMultiblockController {
 
     public MetaTileEntityFuelRefineFactory(ResourceLocation metaTileEntityId) {

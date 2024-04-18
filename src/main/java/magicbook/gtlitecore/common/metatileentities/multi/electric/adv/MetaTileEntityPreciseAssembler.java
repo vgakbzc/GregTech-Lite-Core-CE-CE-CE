@@ -50,6 +50,17 @@ import java.util.stream.Collectors;
 import static gregtech.api.GTValues.LV;
 import static gregtech.api.GTValues.LuV;
 
+/**
+ * Precise Assembler MT-3662
+ *
+ * @author Glodblock (original author)
+ *
+ * <p>
+ *     Thanks my friend Gate Guardian help me fix my port of GoodGenerator's machine.
+ * </p>
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController {
 
     private int CasingTier;

@@ -228,6 +228,11 @@ public class CommonProxy {
         GravitonCasingTierProperty.registerGravitonCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.2", "Medium"));
         GravitonCasingTierProperty.registerGravitonCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.3", "High"));
 
+        GTLiteLog.logger.info("Registering Swarm Tier for recipe...");
+        SwarmTierProperty.registerSwarmTier(1, "I");
+        SwarmTierProperty.registerSwarmTier(2, "II");
+        SwarmTierProperty.registerSwarmTier(3, "III");
+
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
         RecipeManager.init();
     }

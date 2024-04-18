@@ -61,6 +61,8 @@ import static gregtech.api.GTValues.*;
  *     Fusion reactor, but can parallel recipes! The original idea of this machine is from GoodGenerator.
  *     Thanks my friend tong-ge fix some bug of my work, this job should be attributed to him.
  * </p>
+ *
+ * @since 2.8.7-beta
  */
 public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockController {
 
