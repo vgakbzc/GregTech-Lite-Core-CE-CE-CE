@@ -33,6 +33,13 @@ import java.util.List;
 
 import static gregtech.api.GTValues.EV;
 
+/**
+ * Mega Chemical Reactor
+ *
+ * @author Gate Guardian
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityMegaChemicalReactor extends RecipeMapMultiblockController {
 
     public MetaTileEntityMegaChemicalReactor(ResourceLocation metaTileEntityId) {

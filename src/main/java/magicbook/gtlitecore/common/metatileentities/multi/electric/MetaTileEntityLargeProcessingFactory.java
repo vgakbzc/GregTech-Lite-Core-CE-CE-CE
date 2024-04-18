@@ -29,8 +29,14 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+/**
+ * Large Processing Factory
+ *
+ * @author Gate Guardian
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockController {
-
 
     public MetaTileEntityLargeProcessingFactory(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{

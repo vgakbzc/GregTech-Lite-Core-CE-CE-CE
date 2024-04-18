@@ -40,7 +40,7 @@ import static gregtech.api.GTValues.EV;
 import static gregtech.api.GTValues.LuV;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.optionalStates;
 
-//  TODO redo workable handler and recipe maps, maybe split nano assembling mode to a new nano swarm-related machine.
+//  TODO redo workable handler.
 //  TODO add recipe tier, and compare with auxiliaryUpgradeNumber though checkRecipe().
 public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
 
@@ -50,9 +50,7 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
     public MetaTileEntityPCBFactory(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
                 GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES,
-                GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES,
-                GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES
-        });
+                GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES});
         this.recipeMapWorkable = new PCBFactoryRecipeLogic(this);
     }
 
@@ -511,13 +509,6 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
         }
 
         /**
-         * @return Check if machine in Nano mode.
-         */
-        private boolean isNanoMode() {
-            return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_NANO_RECIPES;
-        }
-
-        /**
          * @return Get parallel by auxiliaryUpgradeNumber, when auxiliary = 1, 3, 4, then return correspond parallel to recipe.
          */
         @Override
@@ -534,9 +525,9 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
                 } else {
                     return 1;
                 }
-            } else if (isNanoMode()) {
+            } else if (isEtchMode() || isBioMode()) {
                 if (auxiliaryUpgradeNumber == 4) { // T3
-                    return  maxParallel();
+                    return maxParallel();
                 } else {
                     return 1;
                 }

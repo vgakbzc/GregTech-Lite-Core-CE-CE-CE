@@ -46,6 +46,17 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Component Assembly Line
+ *
+ * @author MadMan310 (original author), Gate Guardian, Magic_Sweepy
+ *
+ * <p>
+ *     Port from GoodGenerator, thanks my friend Gate Guardian help me fix somethings..
+ * </p>
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockController {
 
     private int casingTier;

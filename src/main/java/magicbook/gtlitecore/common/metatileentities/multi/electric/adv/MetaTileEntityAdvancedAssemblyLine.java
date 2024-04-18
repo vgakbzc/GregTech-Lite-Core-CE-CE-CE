@@ -67,6 +67,8 @@ import static gregtech.api.util.GTUtility.gregtechId;
  *     Thanks my friend tong-ge's wonderful create, this job should be attributed to him.
  *     This machine is different with GigaGramFab's same name machine.
  * </p>
+ *
+ * @since 2.8.7-beta
  */
 public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockController {
 
@@ -90,7 +92,8 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.FRONT, RelativeDirection.UP, RelativeDirection.RIGHT)
                 .aisle("FIF", "RTR", "SAG", " Y ")
-                .aisle("FIF", "RTR", "DAG", " Y ").setRepeatable(3, 15)
+                .aisle("FIF", "RTR", "DAG", " Y ")
+                .setRepeatable(3, 15)
                 .aisle("FOF", "RTR", "DAG", " Y ")
                 .where('S', this.selfPredicate())
                 .where('F', states(getCasingState())

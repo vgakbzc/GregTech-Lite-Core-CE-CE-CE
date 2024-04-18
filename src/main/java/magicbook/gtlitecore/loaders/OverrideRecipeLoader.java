@@ -4,14 +4,8 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
-import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.*;
-import gregtech.common.metatileentities.MetaTileEntities;
-import magicbook.gtlitecore.common.GTLiteConfigHolder;
-import magicbook.gtlitecore.common.blocks.BlockHermeticCasing;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.integration.gregtech.GTOverrideRecipeManager;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
@@ -22,7 +16,6 @@ import static gregtech.api.unification.material.MarkerMaterials.Color.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -30,11 +23,8 @@ public class OverrideRecipeLoader {
 
     public static void init() {
         GTOverrideRecipeManager.init();
-
         SiliconWaferOverrides();
         RubberOverrides();
-        SteamStageOverrides();
-        HighTierOverrides();
     }
 
     /**
@@ -803,147 +793,6 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
 
         //  todo maybe we can add recipes of LuV-UV electric pumps, but they are assembly line recipes.
-    }
-
-    /**
-     * Override of Steam Stage Machines
-     *
-     * <p>
-     *     In modpack environment, player needs craft ULV components to make steam stage machines.
-     *     This override has a big todo: some steam machine override recipes is added by modpack scripts (CraftTweaker), we needs to redo it in this class.
-     * </p>
-     */
-    private static void SteamStageOverrides() {
-        if (GTLiteConfigHolder.machines.enableHarderSteamStageMachine) {
-            ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_bronze");
-            ModHandler.addShapedRecipe(true, "steam_boiler_coal_bronze", MetaTileEntities.STEAM_BOILER_COAL_BRONZE.getStackForm(),
-                    "PPP", "CHC", "BFB",
-                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
-                    'C', CONVEYOR_MODULE_ULV,
-                    'P', new UnificationEntry(plate, Bronze),
-                    'B', new UnificationEntry(block, Brick),
-                    'F', "craftingFurnace");
-
-            ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_steel");
-            ModHandler.addShapedRecipe(true, "steam_boiler_coal_steel", MetaTileEntities.STEAM_BOILER_COAL_STEEL.getStackForm(),
-                    "PPP", "RHC", "BFB",
-                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
-                    'C', CONVEYOR_MODULE_ULV,
-                    'R', ROBOT_ARM_ULV,
-                    'P', new UnificationEntry(plate, Steel),
-                    'B', new UnificationEntry(block, Brick),
-                    'F', "craftingFurnace");
-
-            ModHandler.removeRecipeByName("gregtech:steam_boiler_solar_bronze");
-            ModHandler.addShapedRecipe(true, "steam_boiler_solar_bronze", MetaTileEntities.STEAM_BOILER_SOLAR_BRONZE.getStackForm(),
-                    "PPP", "CHU", "BAB",
-                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
-                    'C', CONVEYOR_MODULE_ULV,
-                    'U', ELECTRIC_PUMP_ULV,
-                    'P', new UnificationEntry(plate, Bronze),
-                    'B', new UnificationEntry(block, Brick),
-                    'A', new UnificationEntry(pipeSmallFluid, Bronze));
-
-            ModHandler.removeRecipeByName("gregtech:steam_boiler_solar_steel");
-            ModHandler.addShapedRecipe(true, "steam_boiler_solar_steel", MetaTileEntities.STEAM_BOILER_SOLAR_STEEL.getStackForm(),
-                    "PGP", "CHU", "BRB",
-                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
-                    'C', CONVEYOR_MODULE_ULV,
-                    'U', ELECTRIC_PUMP_ULV,
-                    'R', ROBOT_ARM_ULV,
-                    'B', new UnificationEntry(pipeSmallFluid, TinAlloy),
-                    'P', new UnificationEntry(plate, Steel),
-                    'G', new UnificationEntry(plate, Glass));
-
-            ModHandler.removeRecipeByName("gregtech:steam_boiler_lava_bronze");
-            ModHandler.addShapedRecipe(true, "steam_boiler_lava_bronze", MetaTileEntities.STEAM_BOILER_LAVA_BRONZE.getStackForm(),
-                    "PPP", "UHU", "BAB",
-                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.BRONZE_BRICKS_HULL),
-                    'U', ELECTRIC_PUMP_ULV,
-                    'P', new UnificationEntry(plate, Bronze),
-                    'B', new UnificationEntry(block, Brick),
-                    'A', new UnificationEntry(pipeSmallFluid, Bronze));
-
-            ModHandler.removeRecipeByName("gregtech:steam_boiler_lava_steel");
-            ModHandler.addShapedRecipe(true, "steam_boiler_lava_steel", MetaTileEntities.STEAM_BOILER_LAVA_STEEL.getStackForm(),
-                    "PPP", "UHR", "BAB",
-                    'H', MetaBlocks.STEAM_CASING.getItemVariant(BlockSteamCasing.SteamCasingType.STEEL_BRICKS_HULL),
-                    'U', ELECTRIC_PUMP_ULV,
-                    'R', ROBOT_ARM_ULV,
-                    'P', new UnificationEntry(plate, Steel),
-                    'B', new UnificationEntry(block, Brick),
-                    'A', new UnificationEntry(pipeSmallFluid, TinAlloy));
-        }
-    }
-
-    /**
-     * Overrides of some High Tier misc contents
-     *
-     * <p>
-     *     Some overrides of High Tier Hermetic casings, capacitors and End game items.
-     * </p>
-     */
-    private static void HighTierOverrides() {
-
-        //  Empty Capacitor (for Power Substation)
-        GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES,
-                OreDictUnifier.get(frameGt, Neutronium),
-                OreDictUnifier.get(plate, Neutronium, 6),
-                OreDictUnifier.get(screw, Neutronium, 24));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(frameGt, Orichalcum)
-                .input(plate, Orichalcum, 6)
-                .input(screw, Orichalcum, 24)
-                .outputs(MetaBlocks.BATTERY_BLOCK.getItemVariant(BlockBatteryPart.BatteryPartType.EMPTY_TIER_III))
-                .EUt(VA[ZPM])
-                .duration(400)
-                .buildAndRegister();
-
-        //  End Game things
-        //  a.k.a. creative things!
-        if (GTLiteConfigHolder.misc.enableCreativeRecipe) {
-            ModHandler.addShapedRecipe(true, "quantum_tank_creative", CREATIVE_TANK.getStackForm(),
-                    "XFX", "PHP", "XpX",
-                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
-                    'F', FIELD_GENERATOR_MAX,
-                    'P', new UnificationEntry(plate, Eternity),
-                    'p', ELECTRIC_PUMP_MAX,
-                    'H', GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_MAX));
-
-            ModHandler.addShapedRecipe(true, "quantum_chest_creative", CREATIVE_CHEST.getStackForm(),
-                    "XPX", "PHP", "XFX",
-                    'H', HULL[MAX].getStackForm(),
-                    'P', new UnificationEntry(plate, Eternity),
-                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
-                    'F', FIELD_GENERATOR_MAX);
-
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                    .input(ITEM_IMPORT_BUS[UHV])
-                    .input(TOOL_DATA_MODULE, 4)
-                    .input(circuit, MarkerMaterials.Tier.MAX, 4)
-                    .fluidInputs(SolderingAlloy.getFluid(5760))
-                    .fluidInputs(Eternity.getFluid(2880))
-                    .fluidInputs(Spacetime.getFluid(1440))
-                    .fluidInputs(Infinity.getFluid(576))
-                    .output(CREATIVE_DATA_HATCH)
-                    .stationResearch(b -> b
-                            .researchStack(ADVANCED_DATA_ACCESS_HATCH.getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[MAX]))
-                    .EUt(VA[MAX])
-                    .duration(200)
-                    .buildAndRegister();
-
-            ModHandler.addShapedRecipe(true, "creative_energy_unit", CREATIVE_ENERGY.getStackForm(),
-                    "IXI", "EHS", "IPI",
-                    'H', HULL[MAX].getStackForm(),
-                    'I', FEMTO_PIC_CHIP,
-                    'X', new UnificationEntry(circuit, MarkerMaterials.Tier.MAX),
-                    'E', EMITTER_MAX,
-                    'S', SENSOR_MAX,
-                    'P', new UnificationEntry(plate, Eternity));
-        }
     }
 
 }

@@ -46,6 +46,13 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Large Circuit Assembly Line
+ *
+ * @author Magic_Sweepy
+ *
+ * @since 2.8.7-beta
+ */
 public class MetaTileEntityLargeCircuitAssemblyLine extends RecipeMapMultiblockController {
 
     private static final ResourceLocation LASER_LOCATION = GTUtility.gregtechId("textures/fx/laser/laser.png");

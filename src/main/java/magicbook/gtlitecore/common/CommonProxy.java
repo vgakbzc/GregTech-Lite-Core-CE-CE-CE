@@ -145,8 +145,10 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.GRAVITON_CASING, VariantItemBlock::new));
 
-        GTLiteLog.logger.info("Registering Behavior Additions of GregTech...");
-        GTLiteBehaviorAddition.init();
+        if (GTLiteConfigHolder.compats.enableDataItemRenderer) {
+            GTLiteLog.logger.info("Registering Behavior Additions of GregTech...");
+            GTLiteBehaviorAddition.init();
+        }
     }
 
     /**
@@ -225,6 +227,11 @@ public class CommonProxy {
         GravitonCasingTierProperty.registerGravitonCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.1", "Low"));
         GravitonCasingTierProperty.registerGravitonCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.2", "Medium"));
         GravitonCasingTierProperty.registerGravitonCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.3", "High"));
+
+        GTLiteLog.logger.info("Registering Swarm Tier for recipe...");
+        SwarmTierProperty.registerSwarmTier(1, "I");
+        SwarmTierProperty.registerSwarmTier(2, "II");
+        SwarmTierProperty.registerSwarmTier(3, "III");
 
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
         RecipeManager.init();
