@@ -163,6 +163,7 @@ public class GTLiteMaterialPropertyAddition {
         Roentgenium.addFlags(GENERATE_PLATE);
         Bohrium.addFlags(GENERATE_PLATE);
         Actinium.addFlags(GENERATE_PLATE);
+        Vanadium.addFlags(GENERATE_PLATE);
 
         //  Double Plate
         HastelloyX.addFlags(GENERATE_DOUBLE_PLATE);
@@ -250,6 +251,7 @@ public class GTLiteMaterialPropertyAddition {
         Roentgenium.addFlags(GENERATE_ROD);
         Meitnerium.addFlags(GENERATE_ROD);
         Rutherfordium.addFlags(GENERATE_ROD);
+        Vanadium.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -371,6 +373,18 @@ public class GTLiteMaterialPropertyAddition {
         Galaxium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
         Eternity.addFlags(GENERATE_SWARM);
+
+        Steel.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        TungstenSteel.addFlags(GENERATE_SWARM);
+
+        Chrome.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Molybdenum.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Vanadium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        HSSG.addFlags(GENERATE_SWARM);
+
+        Iridium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Osmium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        HSSS.addFlags(GENERATE_SWARM);
 
         //  Singularity
         Iron.addFlags(GENERATE_SINGULARITY);
