@@ -9,6 +9,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -31,8 +33,8 @@ public class OpticalCircuits {
                 .input(foil, Americium, 4)
                 .fluidInputs(FluorinatedEthylenePropylene.getFluid(L * 2))//  TODO Find better material
                 .output(OPTICAL_BOARD)
-                .duration(40)
                 .EUt(VA[UHV])
+                .duration(2 * SECOND)
                 .temperature(980)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -46,8 +48,8 @@ public class OpticalCircuits {
                     .input(foil, Americium, 64)
                     .fluidInputs(stack)
                     .output(OPTICAL_CIRCUIT_BOARD)
-                    .duration(210)
                     .EUt(VA[IV])
+                    .duration(10 * SECOND + 10)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
         }
@@ -66,7 +68,7 @@ public class OpticalCircuits {
                 .fluidInputs(Fluorine.getFluid(6200))
                 .output(dust, ZBLANGlass, 11)
                 .EUt(VA[HV])
-                .duration(500)
+                .duration(25 * SECOND)
                 .buildAndRegister();
 
         ALLOY_BLAST_RECIPES.recipeBuilder()
@@ -78,9 +80,9 @@ public class OpticalCircuits {
                 .fluidInputs(Fluorine.getFluid(6200))
                 .circuitMeta(5)
                 .fluidOutputs(ZBLANGlass.getFluid(L * 11))
-                .blastFurnaceTemp(1073)
-                .duration(1800)
                 .EUt(VA[HV])
+                .duration(MINUTE + MINUTE / 2)
+                .blastFurnaceTemp(1073)
                 .buildAndRegister();
 
         //  GST Glass
@@ -91,7 +93,7 @@ public class OpticalCircuits {
                 .circuitMeta(3)
                 .output(dust, GSTGlass, 9)
                 .EUt(VA[HV])
-                .duration(250)
+                .duration(12 * SECOND + 10)
                 .buildAndRegister();
 
         ALLOY_BLAST_RECIPES.recipeBuilder()
@@ -100,9 +102,9 @@ public class OpticalCircuits {
                 .input(dust, Tellurium, 5)
                 .circuitMeta(3)
                 .fluidOutputs(GSTGlass.getFluid(L * 9))
-                .blastFurnaceTemp(873)
-                .duration(1600)
                 .EUt(VA[HV])
+                .duration(MINUTE + 20 * SECOND)
+                .blastFurnaceTemp(873)
                 .buildAndRegister();
 
         //  Er-doped ZBLAN Glass
@@ -110,8 +112,8 @@ public class OpticalCircuits {
                 .input(ingot, ZBLANGlass)
                 .input(dust, Erbium)
                 .output(ingot, ErbiumDopedZBLANGlass, 2)
-                .duration(200)
                 .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Pr-doped ZBLAN Glass
@@ -119,8 +121,8 @@ public class OpticalCircuits {
                 .input(ingot, ZBLANGlass)
                 .input(dust, Praseodymium)
                 .output(ingot, PraseodymiumDopedZBLANGlass, 2)
-                .duration(200)
                 .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  PRAM
@@ -129,8 +131,8 @@ public class OpticalCircuits {
                 .input(plate, GSTGlass, 2)
                 .input(foil, Americium, 8)
                 .output(PHASE_CHANGE_MEMORY, 4)
-                .duration(200)
                 .EUt(VA[UHV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -140,8 +142,8 @@ public class OpticalCircuits {
                 .input(OPTICAL_FIBER, 2)
                 .input(foil, Trinium, 8)
                 .output(OPTICAL_NOR_MEMORY_CHIP, 4)
-                .duration(200)
                 .EUt(VA[UHV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -151,8 +153,8 @@ public class OpticalCircuits {
                 .fluidInputs(Chlorine.getFluid(4000))
                 .circuitMeta(1)
                 .fluidOutputs(SiliconTetrachloride.getFluid(1000))
-                .duration(300)
                 .EUt(VA[LV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         //  Another GeCl4 recipe
@@ -164,7 +166,7 @@ public class OpticalCircuits {
                 .fluidInputs(Chlorine.getFluid(4000))
                 .fluidOutputs(GermaniumTetrachloride.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(350)
+                .duration(17 * SECOND + 10)
                 .buildAndRegister();
 
         //  Optical Fiber
@@ -174,8 +176,8 @@ public class OpticalCircuits {
                 .fluidInputs(SiliconTetrachloride.getFluid(1000))
                 .notConsumable(SHAPE_EXTRUDER_WIRE)
                 .output(OPTICAL_FIBER, 8)
-                .duration(400)
                 .EUt(VA[LuV])
+                .duration(20 * SECOND)
                 .temperature(1800)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -187,8 +189,8 @@ public class OpticalCircuits {
                 .input(dust, PraseodymiumDopedZBLANGlass, 2)
                 .input(dust, TantalumPentoxide, 7)
                 .output(DIELECTRIC_MIRROR)
-                .duration(600)
                 .EUt(VA[LuV])
+                .duration(MINUTE / 2)
                 .temperature(2820)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -201,8 +203,8 @@ public class OpticalCircuits {
                 .input(cableGtSingle, Platinum, 2)
                 .fluidInputs(BorosilicateGlass.getFluid(L * 2))
                 .output(EMPTY_LASER_ASSEMBLY)
-                .duration(100)
                 .EUt(VA[IV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Helium-Neon Laser
@@ -211,7 +213,7 @@ public class OpticalCircuits {
                 .fluidInputs(Neon.getFluid(1000))
                 .fluidOutputs(HeliumNeon.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         CANNER_RECIPES.recipeBuilder()
@@ -219,7 +221,7 @@ public class OpticalCircuits {
                 .fluidInputs(HeliumNeon.getFluid(1000))
                 .output(HELIUM_NEON_LASER)
                 .EUt(VA[HV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -229,7 +231,7 @@ public class OpticalCircuits {
                 .input(gem, NdYAG)
                 .output(ND_YAG_LASER)
                 .EUt(VA[HV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -241,7 +243,7 @@ public class OpticalCircuits {
                 .input(lens, Diamond, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(OPTICAL_LASER_CONTROL_UNIT)
-                .duration(600)
+                .duration(MINUTE / 2)
                 .EUt(VA[UHV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -254,8 +256,8 @@ public class OpticalCircuits {
                 .input(dust, CadmiumSulfide)
                 .fluidInputs(KaptonE.getFluid(L * 2))
                 .output(OPTICAL_RESISTOR, 16)
-                .duration(160)
                 .EUt(VA[UV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -264,8 +266,8 @@ public class OpticalCircuits {
                 .input(foil, Germanium)
                 .fluidInputs(KaptonE.getFluid(L))
                 .output(OPTICAL_TRANSISTOR, 16)
-                .duration(160)
                 .EUt(VA[UV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -274,8 +276,8 @@ public class OpticalCircuits {
                 .input(plate, ErbiumDopedZBLANGlass)
                 .fluidInputs(KaptonE.getFluid(L / 4))
                 .output(OPTICAL_CAPACITOR, 16)
-                .duration(160)
                 .EUt(VA[UV])
+                .duration(8 * SECOND)
                 .temperature(487)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -285,8 +287,8 @@ public class OpticalCircuits {
                 .input(wireFine, BorosilicateGlass, 4)
                 .fluidInputs(KaptonE.getFluid(L / 2))
                 .output(OPTICAL_DIODE, 16)
-                .duration(160)
                 .EUt(VA[UV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -295,8 +297,8 @@ public class OpticalCircuits {
                 .input(plate, PMMA)
                 .fluidInputs(KaptonE.getFluid(L))
                 .output(OPTICAL_INDUCTOR, 16)
-                .duration(160)
                 .EUt(VA[UV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -312,7 +314,7 @@ public class OpticalCircuits {
                 .fluidInputs(Ethanol.getFluid(1000))
                 .fluidOutputs(ElectrolyteReflectorMixture.getFluid(1000))
                 .EUt(VA[UHV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -326,7 +328,7 @@ public class OpticalCircuits {
                 .output(dust, Rutile, 3)
                 .fluidOutputs(Ethanol.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -336,7 +338,7 @@ public class OpticalCircuits {
                 .input(dust, Bohrium, 8)
                 .output(STRONTIUM_CARBONATE_BOHRIUM_BOULE)
                 .EUt(VA[ZPM])
-                .duration(120)
+                .duration(6 * SECOND)
                 .blastFurnaceTemp(6000)
                 .buildAndRegister();
 
@@ -346,7 +348,7 @@ public class OpticalCircuits {
                 .fluidInputs(Lubricant.getFluid(300))
                 .outputs(STRONTIUM_CARBONATE_BOHRIUM_WAFER.getStackForm(6))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -357,7 +359,7 @@ public class OpticalCircuits {
                 .fluidInputs(ElectrolyteReflectorMixture.getFluid(16))
                 .output(STRONTIUM_CARBONATE_OPTICAL_WAFER)
                 .EUt(VA[UV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -366,8 +368,8 @@ public class OpticalCircuits {
                 .input(STRONTIUM_CARBONATE_OPTICAL_WAFER)
                 .fluidInputs(Lubricant.getFluid(200))
                 .output(STRONTIUM_CARBONATE_OPTICAL_CHIP, 8)
-                .duration(100)
                 .EUt(VA[EV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -380,7 +382,7 @@ public class OpticalCircuits {
                 .fluidInputs(TinAlloy.getFluid(L * 2))
                 .output(OPTICAL_IMC_BOARD, 2)
                 .EUt(VA[UEV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .CasingTier(3) // UV
                 .buildAndRegister();
 
@@ -392,7 +394,7 @@ public class OpticalCircuits {
                 .input(NEUTRONIUM_WAFER)
                 .output(UHASOC_WAFER, 32)
                 .EUt(VA[LuV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -401,7 +403,7 @@ public class OpticalCircuits {
                 .fluidInputs(Water.getFluid(1000))
                 .output(UHASOC_CHIP, 6)
                 .EUt(VA[LuV])
-                .duration(1800)
+                .duration(MINUTE + MINUTE / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -410,7 +412,7 @@ public class OpticalCircuits {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .output(UHASOC_CHIP, 6)
                 .EUt(VA[LuV])
-                .duration(1350)
+                .duration(MINUTE + 7 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -419,7 +421,7 @@ public class OpticalCircuits {
                 .fluidInputs(Lubricant.getFluid(250))
                 .output(UHASOC_CHIP, 6)
                 .EUt(VA[LuV])
-                .duration(900)
+                .duration(45 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -433,7 +435,7 @@ public class OpticalCircuits {
                 .fluidInputs(Glowstone.getFluid(4000))
                 .output(PHOTOELECTRON_SOC, 4)
                 .EUt(VA[UEV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .CasingTier(5) // UEV
                 .buildAndRegister();
     }
@@ -450,8 +452,8 @@ public class OpticalCircuits {
                 .input(OPTICAL_FIBER, 8)
                 .output(OPTICAL_PROCESSOR, 2)
                 .solderMultiplier(1)
-                .duration(200)
                 .EUt(VA[UHV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -462,8 +464,8 @@ public class OpticalCircuits {
                 .input(bolt, Adamantium, 8)
                 .output(OPTICAL_PROCESSOR, 4)
                 .solderMultiplier(1)
-                .duration(100)
                 .EUt(VA[UEV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -477,8 +479,8 @@ public class OpticalCircuits {
                 .input(OPTICAL_FIBER, 16)
                 .output(OPTICAL_ASSEMBLY, 2)
                 .solderMultiplier(2)
-                .duration(400)
                 .EUt(VA[UHV])
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -496,8 +498,8 @@ public class OpticalCircuits {
                 .fluidInputs(Polyetheretherketone.getFluid(2304))
                 .fluidInputs(Vibranium.getFluid(1152))
                 .output(OPTICAL_COMPUTER)
-                .duration(400)
                 .EUt(VA[UHV])
+                .duration(20 * SECOND)
                 .stationResearch(b -> b
                         .researchStack(OPTICAL_ASSEMBLY.getStackForm())
                         .CWUt(64)
@@ -522,8 +524,8 @@ public class OpticalCircuits {
                 .fluidInputs(Vibranium.getFluid(2304))
                 .fluidInputs(KaptonK.getFluid(1152))
                 .output(OPTICAL_MAINFRAME)
-                .duration(1200)
                 .EUt(VA[UEV])
+                .duration(MINUTE)
                 .stationResearch(b -> b
                         .researchStack(OPTICAL_COMPUTER.getStackForm())
                         .CWUt(384)

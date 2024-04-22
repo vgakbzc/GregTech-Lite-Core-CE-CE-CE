@@ -13,6 +13,8 @@ import static gregtech.api.unification.material.MarkerMaterials.Color.Blue;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -39,8 +41,8 @@ public class CrystalCircuits {
                 .input(dust, CubicZirconia, 64)
                 .input(dust, Europium, 8)
                 .output(CUBIC_ZIRCONIA_EUROPIUM_BOULE)
-                .duration(120)
                 .EUt(VA[MV])
+                .duration(6 * SECOND)
                 .blastFurnaceTemp(3000)
                 .buildAndRegister();
 
@@ -49,8 +51,8 @@ public class CrystalCircuits {
                 .input(CUBIC_ZIRCONIA_EUROPIUM_BOULE)
                 .fluidInputs(Lubricant.getFluid(100))
                 .output(CUBIC_ZIRCONIA_EUROPIUM_WAFER, 8)
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -59,8 +61,8 @@ public class CrystalCircuits {
                 .input(CUBIC_ZIRCONIA_EUROPIUM_WAFER)
                 .notConsumable(lens, NetherStar)
                 .output(CRYSTAL_INTERFACE_WAFER)
-                .duration(20)
                 .EUt(VA[LuV])
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -69,8 +71,8 @@ public class CrystalCircuits {
                 .input(CRYSTAL_INTERFACE_WAFER)
                 .fluidInputs(Lubricant.getFluid(100))
                 .output(CRYSTAL_INTERFACE_CHIP, 8)
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -79,8 +81,8 @@ public class CrystalCircuits {
                 .input(gemExquisite, Sapphire)
                 .notConsumable(lens, Sapphire)
                 .output(SAPPHIRE_CHIP)
-                .duration(1200)
                 .EUt(VA[MV])
+                .duration(MINUTE)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -89,8 +91,8 @@ public class CrystalCircuits {
                 .input(gemExquisite, Ruby)
                 .notConsumable(lens, Ruby)
                 .output(RUBY_CHIP)
-                .duration(1200)
                 .EUt(VA[MV])
+                .duration(MINUTE)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -99,8 +101,8 @@ public class CrystalCircuits {
                 .input(gemExquisite, Diamond)
                 .notConsumable(lens, Diamond)
                 .output(DIAMOND_CHIP)
-                .duration(1200)
                 .EUt(VA[MV])
+                .duration(MINUTE)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -112,8 +114,8 @@ public class CrystalCircuits {
                 .input(bolt, Platinum, 4)
                 .output(SAPPHIRE_MODULATOR, 8)
                 .solderMultiplier(1)
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -124,8 +126,8 @@ public class CrystalCircuits {
                 .input(wireFine, Palladium, 8)
                 .input(bolt, Platinum, 4)
                 .output(RUBY_MODULATOR, 8)
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -136,8 +138,8 @@ public class CrystalCircuits {
                 .input(wireFine, Palladium, 8)
                 .input(bolt, Platinum, 4)
                 .output(DIAMOND_MODULATOR, 8)
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -149,8 +151,8 @@ public class CrystalCircuits {
                 .input(DIAMOND_MODULATOR)
                 .input(wireFine, Europium, 4)
                 .output(CRYSTAL_SOC_SOCKET)
-                .duration(100)
                 .EUt(VA[LuV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -159,8 +161,8 @@ public class CrystalCircuits {
                 .input(CRYSTAL_SOC_SOCKET)
                 .input(CRYSTAL_CENTRAL_PROCESSING_UNIT)
                 .output(CRYSTAL_SYSTEM_ON_CHIP)
-                .duration(100)
                 .EUt(VA[ZPM])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -176,7 +178,7 @@ public class CrystalCircuits {
                 .circuitMeta(3)
                 .output(dust, CeLAG, 7)
                 .EUt(VA[ZPM])
-                .duration(180)
+                .duration(9 * SECOND)
                 .buildAndRegister();
 
         //  Advanced Crystal CPU recipes
@@ -187,7 +189,7 @@ public class CrystalCircuits {
                 .fluidInputs(Europium.getFluid(4))
                 .output(CRYSTAL_CENTRAL_PROCESSING_UNIT)
                 .EUt(VA[HV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -197,7 +199,7 @@ public class CrystalCircuits {
                 .fluidInputs(Europium.getFluid(4))
                 .output(CRYSTAL_CENTRAL_PROCESSING_UNIT)
                 .EUt(VA[HV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -210,7 +212,7 @@ public class CrystalCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(CRYSTAL_SOC_SOCKET, 2)
                 .EUt(VA[UV])
-                .duration(20)
+                .duration(SECOND)
                 .CasingTier(3)
                 .buildAndRegister();
     }
@@ -247,7 +249,7 @@ public class CrystalCircuits {
                     .output(CRYSTAL_ASSEMBLY_LUV, 2)
                     .solderMultiplier(2)
                     .EUt(9600)
-                    .duration(400)
+                    .duration(20 * SECOND)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
         }

@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -26,8 +27,8 @@ public class BoronNitrideChain {
                 .output(dust, BoricAcid, 16)
                 .output(dust, Salt, 4)
                 .fluidOutputs(Water.getFluid(5000))
-                .duration(300)
                 .EUt(VA[MV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         //  2H3BO3 -> B2O3 + 3H2O
@@ -35,8 +36,8 @@ public class BoronNitrideChain {
                 .input(dust, BoricAcid, 8)
                 .output(dust, BoronTrioxide, 5)
                 .fluidOutputs(Water.getFluid(3000))
-                .duration(100)
                 .EUt(VA[MV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -48,8 +49,8 @@ public class BoronNitrideChain {
                 .fluidInputs(HydrofluoricAcid.getFluid(6000))
                 .fluidOutputs(BoronTrifluoride.getFluid(2000))
                 .fluidOutputs(Water.getFluid(3000))
-                .duration(160)
                 .EUt(VA[HV])
+                .duration(8 * SECOND)
                 .buildAndRegister();
 
         //  Li + H -> LiH
@@ -57,9 +58,9 @@ public class BoronNitrideChain {
                 .input(dust, Lithium)
                 .fluidInputs(Hydrogen.getFluid(1000))
                 .output(ingot, LithiumHydride)
-                .temperature(873)
-                .duration(300)
                 .EUt(VA[HV])
+                .duration(300)
+                .temperature(873)
                 .buildAndRegister();
 
         //  8BF3 + 6LiH -> B2H6 + 6LiBF4
@@ -68,8 +69,8 @@ public class BoronNitrideChain {
                 .fluidInputs(BoronTrifluoride.getFluid(8000))
                 .output(dust, LithiumTetrafluoroborate, 36)
                 .fluidOutputs(Diborane.getFluid(1000))
-                .duration(640)
                 .EUt(VA[HV])
+                .duration(32 * SECOND)
                 .buildAndRegister();
 
         //  LiBF4 -> LiH + BF3
@@ -77,8 +78,8 @@ public class BoronNitrideChain {
                 .input(dust, LithiumTetrafluoroborate, 6)
                 .output(ingot, LithiumHydride, 2)
                 .fluidOutputs(BoronTrifluoride.getFluid(1000))
-                .duration(80)
                 .EUt(VA[LV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  3B2H6 + 6NH3 -> 2B3H6N3 + 24H
@@ -87,8 +88,8 @@ public class BoronNitrideChain {
                 .fluidInputs(Ammonia.getFluid(6000))
                 .fluidOutputs(Borazine.getFluid(2000))
                 .fluidOutputs(Hydrogen.getFluid(24000))
-                .duration(400)
                 .EUt(VA[LuV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  B2O3 + 3C + 6Cl -> 2BCl3 + 3CO
@@ -98,9 +99,9 @@ public class BoronNitrideChain {
                 .fluidInputs(Chlorine.getFluid(6000))
                 .fluidOutputs(BoronTrichloride.getFluid(2000))
                 .fluidOutputs(CarbonMonoxide.getFluid(3000))
-                .temperature(774)
-                .duration(90)
                 .EUt(VA[HV])
+                .duration(4 * SECOND + 10)
+                .temperature(774)
                 .buildAndRegister();
 
         //  3BCl3 + 3NH4Cl -> B3Cl3H3N3 + 9HCl
@@ -109,8 +110,8 @@ public class BoronNitrideChain {
                 .fluidInputs(BoronTrichloride.getFluid(3000))
                 .fluidOutputs(Trichloroborazine.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(9000))
-                .duration(400)
                 .EUt(VA[IV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
     }
 
@@ -122,8 +123,8 @@ public class BoronNitrideChain {
                 .fluidInputs(Oxygen.getFluid(3000))
                 .output(gem, HexagonalBoronNitride, 6)
                 .fluidOutputs(Water.getFluid(3000))
-                .duration(400)
                 .EUt(VA[UV])
+                .duration(20 * SECOND)
                 .temperature(1300)
                 .buildAndRegister();
 
@@ -133,17 +134,17 @@ public class BoronNitrideChain {
                 .input(dust, Boron)
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .output(gem, HexagonalBoronNitride, 2)
-                .temperature(2900)
-                .duration(80)
                 .EUt(VA[UEV])
+                .duration(4 * SECOND)
+                .temperature(2900)
                 .buildAndRegister();
 
         //  h-BN -> c-BN
         CVD_UNIT_RECIPES.recipeBuilder()
                 .input(dust, HexagonalBoronNitride)
                 .output(gem, CubicBoronNitride)
-                .duration(100)
                 .EUt(VA[UV])
+                .duration(5 * SECOND)
                 .temperature(3501)
                 .buildAndRegister();
 
@@ -153,8 +154,8 @@ public class BoronNitrideChain {
                 .fluidInputs(Trichloroborazine.getFluid(1000))
                 .output(dust, AmorphousBoronNitride, 6)
                 .fluidOutputs(HydrochloricAcid.getFluid(3000))
-                .duration(200)
                 .EUt(VA[ZPM])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  c-BN + C -> BCN
@@ -162,9 +163,9 @@ public class BoronNitrideChain {
                 .input(dust, CubicBoronNitride)
                 .input(dust, Carbon)
                 .output(gem, Heterodiamond, 2)
-                .explosivesAmount(32)
-                .duration(20)
                 .EUt(VA[LV])
+                .duration(SECOND)
+                .explosivesAmount(32)
                 .buildAndRegister();
 
         //  c-BN + C -> BCN
@@ -173,8 +174,8 @@ public class BoronNitrideChain {
                 .input(dust, Carbon)
                 .output(gem, Heterodiamond, 2)
                 .explosivesType(MetaItems.DYNAMITE.getStackForm(16))
-                .duration(20)
                 .EUt(VA[LV])
+                .duration(SECOND)
                 .buildAndRegister();
 
         //  BCN + C -> c-BC2N
@@ -182,8 +183,8 @@ public class BoronNitrideChain {
                 .input(dust, Heterodiamond)
                 .input(dust, Carbon)
                 .output(gem, CubicHeterodiamond)
-                .duration(400)
                 .EUt(VA[UHV])
+                .duration(20 * SECOND)
                 .temperature(2200)
                 .buildAndRegister();
     }

@@ -10,6 +10,8 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtechfoodoption.GTFOMaterialHandler.Blood;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -31,8 +33,8 @@ public class GoowareCircuits {
                 .input(foil, Europium, 4)
                 .fluidInputs(FluorinatedEthylenePropylene.getFluid(L))
                 .output(GOOWARE_BOARD)
-                .duration(40)
                 .EUt(VA[UV])
+                .duration(2 * SECOND)
                 .temperature(493)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -46,7 +48,7 @@ public class GoowareCircuits {
                     .input(foil, YttriumBariumCuprate, 48)
                     .fluidInputs(new FluidStack[]{stack})
                     .output(GOOWARE_CIRCUIT_BOARD)
-                    .duration(210)
+                    .duration(10 * SECOND + 10)
                     .EUt(GTValues.VA[EV])
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
@@ -66,8 +68,8 @@ public class GoowareCircuits {
                 .input(ELECTRIC_MOTOR_LuV)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .outputs(BZ_REACTION_CHAMBER.getStackForm())
-                .duration(600)
                 .EUt(VA[UV])
+                .duration(MINUTE / 2)
                 .buildAndRegister();
 
         //  Non-linear Chemical Oscillator
@@ -75,8 +77,8 @@ public class GoowareCircuits {
                 .inputs(BZ_REACTION_CHAMBER.getStackForm())
                 .fluidInputs(BZMedium.getFluid(500))
                 .outputs(NONLINEAR_CHEMICAL_OSCILLATOR.getStackForm())
-                .duration(60)
                 .EUt(VA[IV])
+                .duration(3 * SECOND)
                 .buildAndRegister();
     }
 
@@ -93,7 +95,7 @@ public class GoowareCircuits {
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, LeadZirconateTitanate, 4)
                 .EUt(VA[LuV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .buildAndRegister();
 
         //  Piezoelectric Crystal
@@ -103,7 +105,7 @@ public class GoowareCircuits {
                 .fluidInputs(TinAlloy.getFluid(L))
                 .output(PIEZOELECTRIC_CRYSTAL)
                 .EUt(VA[HV])
-                .duration(215)
+                .duration(10 * SECOND + 15)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -116,7 +118,7 @@ public class GoowareCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(L * 2))
                 .output(ULTRASONIC_HOMOGENIZER)
                 .EUt(VA[LuV])
-                .duration(430)
+                .duration(21 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -127,7 +129,7 @@ public class GoowareCircuits {
                 .fluidOutputs(BloodCells.getFluid(500))
                 .fluidOutputs(BloodPlasma.getFluid(500))
                 .EUt(VA[HV])
-                .duration(800)
+                .duration(40 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -137,7 +139,7 @@ public class GoowareCircuits {
                 .fluidOutputs(BloodCells.getFluid(8000))
                 .fluidOutputs(BloodPlasma.getFluid(8000))
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Blood Plasma -> bFGF, EGF, CAT
@@ -147,7 +149,7 @@ public class GoowareCircuits {
                 .fluidOutputs(EGF.getFluid(200))
                 .fluidOutputs(CAT.getFluid(200))
                 .EUt(VA[HV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .buildAndRegister();
 
         //  Biotin
@@ -159,7 +161,7 @@ public class GoowareCircuits {
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .fluidOutputs(Biotin.getFluid(1000))
                 .EUt(VH[IV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         BIO_REACTOR_RECIPES.recipeBuilder()
@@ -170,7 +172,7 @@ public class GoowareCircuits {
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .fluidOutputs(Biotin.getFluid(1000))
                 .EUt(VH[IV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         BIO_REACTOR_RECIPES.recipeBuilder()
@@ -181,7 +183,7 @@ public class GoowareCircuits {
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .fluidOutputs(Biotin.getFluid(1000))
                 .EUt(VH[IV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         BIO_REACTOR_RECIPES.recipeBuilder()
@@ -192,7 +194,7 @@ public class GoowareCircuits {
                 .fluidInputs(Nitrogen.getFluid(1000))
                 .fluidOutputs(Biotin.getFluid(1000))
                 .EUt(VH[IV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  Linoleic Acid
@@ -202,7 +204,7 @@ public class GoowareCircuits {
                 .fluidOutputs(LinoleicAcid.getFluid(1000))
                 .fluidOutputs(Biomass.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(2800)
+                .duration(2 * MINUTE + 20 * SECOND)
                 .buildAndRegister();
 
         SONICATION_RECIPES.recipeBuilder()
@@ -210,7 +212,7 @@ public class GoowareCircuits {
                 .fluidOutputs(LinoleicAcid.getFluid(16000))
                 .fluidOutputs(Biomass.getFluid(16000))
                 .EUt(VA[HV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  Turpentine -> β-Pinene
@@ -220,7 +222,7 @@ public class GoowareCircuits {
                 .output(dust, BetaPinene, 26)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .EUt(VA[LV])
-                .duration(110)
+                .duration(5 * SECOND + 10)
                 .buildAndRegister();
 
         //  C10H16 + 2H2O + 2C5H6 -> 2C10H16O
@@ -230,7 +232,7 @@ public class GoowareCircuits {
                 .fluidInputs(Water.getFluid(2000))
                 .fluidOutputs(Citral.getFluid(2000))
                 .EUt(VA[EV])
-                .duration(500)
+                .duration(25 * SECOND)
                 .buildAndRegister();
 
         //  C10H16O + C3H6O -> C13H20O + H2O
@@ -240,7 +242,7 @@ public class GoowareCircuits {
                 .fluidOutputs(BetaIonone.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(250)
+                .duration(12 * SECOND + 10)
                 .buildAndRegister();
 
         //  CH2O + C2H2 -> CHCCH2OH
@@ -250,7 +252,7 @@ public class GoowareCircuits {
                 .fluidInputs(Acetylene.getFluid(1000))
                 .fluidOutputs(PropargylAlcohol.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .buildAndRegister();
 
         //  CHCCH2OH + HCl -> yuHC2CH2Cl + H2O
@@ -260,7 +262,7 @@ public class GoowareCircuits {
                 .fluidOutputs(PropargylChloride.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  25C13H20O + 5HC2CH2Cl -> 17C20H30O + 8O + 5HCl
@@ -271,7 +273,7 @@ public class GoowareCircuits {
                 .fluidOutputs(Oxygen.getFluid(8000))
                 .fluidOutputs(HydrochloricAcid.getFluid(5000))
                 .EUt(VA[IV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  C2H4O + NH3 -> HOCH2CH2NH2
@@ -280,7 +282,7 @@ public class GoowareCircuits {
                 .fluidInputs(Ammonia.getFluid(1000))
                 .fluidOutputs(Ethanolamine.getFluid(1000))
                 .EUt(VH[EV])
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  B27
@@ -292,7 +294,7 @@ public class GoowareCircuits {
                 .fluidInputs(Ethanolamine.getFluid(1000))
                 .fluidOutputs(B27.getFluid(5000))
                 .EUt(VA[ZPM])
-                .duration(150)
+                .duration(7 * SECOND + 10)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
 
@@ -302,7 +304,7 @@ public class GoowareCircuits {
                 .fluidInputs(B27.getFluid(100))
                 .output(BIO_DISH)
                 .EUt(VA[ZPM])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
 
@@ -315,7 +317,7 @@ public class GoowareCircuits {
                 .output(PETRI_DISH)
                 .fluidOutputs(ExoticMutagen.getFluid(4000))
                 .EUt(VA[UV])
-                .duration(80)
+                .duration(4 * SECOND)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
 
@@ -327,7 +329,7 @@ public class GoowareCircuits {
                 .fluidInputs(ExoticMutagen.getFluid(500))
                 .output(BIO_CELL, 64)
                 .EUt(VA[ZPM])
-                .duration(600)
+                .duration(MINUTE / 2)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
 
@@ -341,7 +343,7 @@ public class GoowareCircuits {
                 .fluidInputs(Lubricant.getFluid(2000))
                 .outputs(INTRAVITAL_SOC.getStackForm(2))
                 .EUt(VA[UHV])
-                .duration(480)
+                .duration(24 * SECOND)
                 .CasingTier(4) // UHV
                 .buildAndRegister();
     }
@@ -358,8 +360,8 @@ public class GoowareCircuits {
                 .input(wireFine, Europium, 8)
                 .solderMultiplier(1)
                 .output(GOOWARE_PROCESSOR, 2)
-                .duration(200)
                 .EUt(VA[UV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -370,8 +372,8 @@ public class GoowareCircuits {
                 .input(wireFine, Europium, 8)
                 .solderMultiplier(1)
                 .output(GOOWARE_PROCESSOR, 4)
-                .duration(100)
                 .EUt(VA[UHV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -385,8 +387,8 @@ public class GoowareCircuits {
                 .input(wireFine, Europium, 16)
                 .output(GOOWARE_ASSEMBLY, 2)
                 .solderMultiplier(2)
-                .duration(400)
                 .EUt(VA[UV])
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -402,8 +404,8 @@ public class GoowareCircuits {
                 .input(plate, Americium, 4)
                 .fluidInputs(SolderingAlloy.getFluid(2304))
                 .output(GOOWARE_COMPUTER)
-                .duration(400)
                 .EUt(VA[UV])
+                .duration(20 * SECOND)
                 .stationResearch(b -> b
                         .researchStack(GOOWARE_ASSEMBLY.getStackForm())
                         .CWUt(32)
@@ -427,8 +429,8 @@ public class GoowareCircuits {
                 .fluidInputs(KaptonE.getFluid(2304))
                 .fluidInputs(Polyetheretherketone.getFluid(1152))
                 .output(GOOWARE_MAINFRAME)
-                .duration(800)
                 .EUt(VA[UHV])
+                .duration(40 * SECOND)
                 .stationResearch(b -> b
                         .researchStack(GOOWARE_COMPUTER.getStackForm())
                         .CWUt(192)

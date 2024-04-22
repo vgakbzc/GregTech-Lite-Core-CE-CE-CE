@@ -7,13 +7,14 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.common.items.MetaItems.PETRI_DISH;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
+import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BIO_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class FullerenePolymerMatrixChain {
 
     public static void init() {
-
         PCBSChain();
         PdFullereneMatrixChain();
 
@@ -22,8 +23,8 @@ public class FullerenePolymerMatrixChain {
                 .input(dust, PalladiumFullereneMatrix)
                 .fluidInputs(PCBS.getFluid(1000))
                 .output(dust, FullerenePolymerMatrix, 2)
-                .EUt(8000000)
-                .duration(40)
+                .EUt(VZ[UEV])
+                .duration(2 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -37,7 +38,7 @@ public class FullerenePolymerMatrixChain {
                 .fluidOutputs(HydroiodicAcid.getFluid(4000))
                 .fluidOutputs(Nitrogen.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(210)
+                .duration(10 * SECOND + 10)
                 .buildAndRegister();
 
         //  2LiH + Al2O3 + 3H2O -> 2LiAlH4 + 6O
@@ -48,7 +49,7 @@ public class FullerenePolymerMatrixChain {
                 .output(dust, LithiumAluminiumHydride, 12)
                 .fluidOutputs(Oxygen.getFluid(6000))
                 .EUt(VA[EV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  LiH + AlH3 -> LiAlH4
@@ -57,7 +58,7 @@ public class FullerenePolymerMatrixChain {
                 .input(dust, AluminiumHydride, 4)
                 .output(dust, LithiumAluminiumHydride, 6)
                 .EUt(VA[HV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .buildAndRegister();
 
         //  LiI + H -> HI + Li
@@ -67,7 +68,7 @@ public class FullerenePolymerMatrixChain {
                 .output(dust, Lithium)
                 .fluidOutputs(HydroiodicAcid.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  LiAlH4 + C3H3N + HI + 2H2O + C8H8 -> AlH3 (cycle) + LiI (cycle) + C11H14O2 + NH3
@@ -83,7 +84,7 @@ public class FullerenePolymerMatrixChain {
                 .fluidOutputs(PhenylpentanoicAcid.getFluid(1000))
                 .fluidOutputs(Ammonia.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(110)
+                .duration(5 * SECOND + 10)
                 .buildAndRegister();
 
         //  H2S + 2CH4O -> (CH3)2S + 2H2O
@@ -94,7 +95,7 @@ public class FullerenePolymerMatrixChain {
                 .fluidOutputs(DimethylSulfide.getFluid(1000))
                 .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[MV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  8C60 + 7C8H8 + 8CH2Cl2 + 8C11H14O2 + 8(CH3)2S + C6H5Cl-> 8PdC73H15NFe + 24HCl + 8C7H8 + 8H2S
@@ -109,8 +110,8 @@ public class FullerenePolymerMatrixChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(24000))
                 .fluidOutputs(Toluene.getFluid(8000))
                 .fluidOutputs(HydrogenSulfide.getFluid(8000))
-                .EUt(125829120)
-                .duration(60)
+                .EUt(VA[UXV])
+                .duration(3 * SECOND)
                 .buildAndRegister();
     }
 
@@ -124,7 +125,7 @@ public class FullerenePolymerMatrixChain {
                 .notConsumable(dust, Salt)
                 .fluidOutputs(Glycine.getFluid(5000))
                 .EUt(VA[EV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  NH2CH2COOH + CH4 -> C3H7NO2 + H2
@@ -135,7 +136,7 @@ public class FullerenePolymerMatrixChain {
                 .output(dust, Sarcosine, 13)
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(480)
+                .duration(24 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -146,7 +147,7 @@ public class FullerenePolymerMatrixChain {
                 .output(dust, SodiumEthoxide, 9)
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  C7H8 + C4H8 + FeCl3 -> C10H10Fe + CH2Cl2 + HCl + 3H (lost)
@@ -161,7 +162,7 @@ public class FullerenePolymerMatrixChain {
                 .fluidOutputs(Dichloromethane.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  3C2H5ONa + C3H7NO2 + C60 + CHCl3 + C10H10Fe -> 3NaCl + C74H19FeN + CO2 + C2H6O
@@ -178,7 +179,7 @@ public class FullerenePolymerMatrixChain {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .fluidOutputs(Ethanol.getFluid(3000))
                 .EUt(VA[UV])
-                .duration(600)
+                .duration(30 * SECOND)
                 .buildAndRegister();
 
         //  Pd + C74H19FeN -> PdC73H15NFe
@@ -187,8 +188,8 @@ public class FullerenePolymerMatrixChain {
                 .fluidInputs(Ferrocenylfulleropyrddolidine.getFluid(1000))
                 .notConsumable(NitricAcid.getFluid(1))
                 .output(dust, PalladiumFullereneMatrix)
-                .EUt(2000000)
-                .duration(200)
+                .EUt(VZ[UHV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 }

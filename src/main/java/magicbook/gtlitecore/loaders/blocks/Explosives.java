@@ -9,6 +9,7 @@ import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.GELLED_TOLUENE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class Explosives {
@@ -26,7 +27,7 @@ public class Explosives {
                 .fluidInputs(GlycerylTrinitrate.getFluid(1000))
                 .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.NAQUADRIA_CHARGE))
                 .EUt(VA[UHV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -42,7 +43,7 @@ public class Explosives {
                 .fluidInputs(GlycerylTrinitrate.getFluid(3000))
                 .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.TARANIUM_CHARGE))
                 .EUt(VA[UEV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Leptonic Charge
@@ -55,7 +56,7 @@ public class Explosives {
                 .fluidInputs(HeavyLepton.getFluid(1000))
                 .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.LEPTONIC_CHARGE))
                 .EUt(VA[UIV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  QCD Charge
@@ -68,7 +69,7 @@ public class Explosives {
                 .fluidInputs(Gluons.getFluid(1000))
                 .outputs(GTLiteMetaBlocks.EXPLOSIVE_BLOCK.getItemVariant(BlockExplosive.ExplosiveType.QUANTUM_CHROMODYNAMIC_CHARGE))
                 .EUt(VA[UXV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 }

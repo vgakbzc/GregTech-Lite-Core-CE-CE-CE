@@ -13,6 +13,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.component;
 import static gregtech.api.unification.ore.OrePrefix.wireFine;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 
 public class ProcessorCircuits {
 
@@ -51,7 +52,7 @@ public class ProcessorCircuits {
                     .solderMultiplier(2)
                     .output(PROCESSOR_ASSEMBLY_HV, 2)
                     .EUt(90)
-                    .duration(400)
+                    .duration(20 * SECOND)
                     .buildAndRegister();
         }
     }

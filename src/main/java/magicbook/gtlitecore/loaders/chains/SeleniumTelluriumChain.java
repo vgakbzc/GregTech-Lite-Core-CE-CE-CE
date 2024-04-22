@@ -6,6 +6,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtechfoodoption.GTFOMaterialHandler.BlueVitriol;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -23,8 +25,8 @@ public class SeleniumTelluriumChain {
                 .chancedOutput(dust, ChalcogenAnodeMud, 500, 0)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(1000))
-                .duration(100)
-                .EUt(60)
+                .EUt(VH[MV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Optional recovery of metals to provide some nice bonus
@@ -33,8 +35,8 @@ public class SeleniumTelluriumChain {
                 .output(dust, Silver)
                 .chancedOutput(dust, Copper, 1000, 1000)
                 .chancedOutput(dust, Gold, 750, 750)
-                .duration(300)
-                .EUt(64)
+                .EUt((int) (V[MV] / 2))
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         TelluriumProcess();
@@ -52,9 +54,9 @@ public class SeleniumTelluriumChain {
                 .output(dust, SeleniumDioxide, 3)
                 .output(ingot, Silver, 2)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
-                .duration(600)
-                .temperature(1900)
                 .EUt(VA[HV])
+                .duration(MINUTE / 2)
+                .temperature(1900)
                 .buildAndRegister();
 
         //  Na2TeO3 + H2O -> TeO2 + 2NaOH
@@ -63,8 +65,8 @@ public class SeleniumTelluriumChain {
                 .fluidInputs(Water.getFluid(1000))
                 .output(dust, TelluriumDioxide, 3)
                 .output(dust, SodiumHydroxide, 6)
-                .duration(400)
                 .EUt(VA[MV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  TeO2 + 2SO2 + H2O -> Te + H2SO4 + SO3
@@ -75,8 +77,8 @@ public class SeleniumTelluriumChain {
                 .output(dust, Tellurium)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(SulfurTrioxide.getFluid(1000))
-                .duration(300)
                 .EUt(VA[EV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
     }
 
@@ -87,8 +89,8 @@ public class SeleniumTelluriumChain {
                 .input(dust, SeleniumDioxide, 3)
                 .fluidInputs(Water.getFluid(1000))
                 .output(dust, SelenousAcid, 6)
-                .duration(400)
                 .EUt(VA[MV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  H2SeO3 + 2SO2 -> Se + H2SO4 + SO3
@@ -98,8 +100,8 @@ public class SeleniumTelluriumChain {
                 .output(dust, Selenium)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(SulfurTrioxide.getFluid(1000))
-                .duration(300)
                 .EUt(VA[EV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
     }
 }

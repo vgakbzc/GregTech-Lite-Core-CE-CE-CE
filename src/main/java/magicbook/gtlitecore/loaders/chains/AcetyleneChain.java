@@ -5,6 +5,7 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.gem;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -18,9 +19,9 @@ public class AcetyleneChain {
                 .input(dust, Carbon, 3)
                 .output(dust, CalciumCarbide, 3)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .temperature(2473)
-                .duration(500)
                 .EUt(VA[MV])
+                .duration(25 * SECOND)
+                .temperature(2473)
                 .buildAndRegister();
 
         INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
@@ -28,9 +29,9 @@ public class AcetyleneChain {
                 .input(gem, Coke)
                 .output(dust, CalciumCarbide, 3)
                 .fluidOutputs(CarbonMonoxide.getFluid(1000))
-                .temperature(2473)
-                .duration(200)
                 .EUt(VA[MV])
+                .duration(10 * SECOND)
+                .temperature(2473)
                 .buildAndRegister();
 
         //  CaC2 + 2H2O -> Ca(OH)2 + C2H2
@@ -39,8 +40,8 @@ public class AcetyleneChain {
                 .fluidInputs(Water.getFluid(2000))
                 .output(dust, CalciumHydroxide, 5)
                 .fluidOutputs(Acetylene.getFluid(1000))
-                .duration(80)
                 .EUt(VA[LV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  Ca(OH)2 + CO2 -> CaCO3 + H2O
@@ -49,8 +50,8 @@ public class AcetyleneChain {
                 .fluidInputs(CarbonDioxide.getFluid(1000))
                 .output(dust, Calcite, 5)
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(80)
                 .EUt(VA[LV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
     }
 }

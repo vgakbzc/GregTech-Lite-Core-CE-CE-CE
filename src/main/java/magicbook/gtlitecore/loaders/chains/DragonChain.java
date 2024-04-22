@@ -10,6 +10,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.Endstone;
 import static gregtech.api.unification.material.Materials.Radon;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SONICATION_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -23,7 +24,7 @@ public class DragonChain {
                 .output(Items.GLASS_BOTTLE)
                 .fluidOutputs(DragonBreath.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .buildAndRegister();
 
         CANNER_RECIPES.recipeBuilder()
@@ -31,7 +32,7 @@ public class DragonChain {
                 .fluidInputs(DragonBreath.getFluid(1000))
                 .output(Items.DRAGON_BREATH)
                 .EUt(VA[ULV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Dragon breath -> Concentrate Dragon Breath
@@ -40,19 +41,20 @@ public class DragonChain {
                 .fluidInputs(DragonBreath.getFluid(1000))
                 .fluidOutputs(ConcentrateDragonBreath.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Concentrate Dragon Breath + Rn -> Dragon Blood
         //  This is a material for Hypogen's fusion recipe, another material is Rhugnor.
+        //  TODO rebalanced it.
         SONICATION_RECIPES.recipeBuilder()
                 .fluidInputs(ConcentrateDragonBreath.getFluid(200))
                 .fluidInputs(Radon.getFluid(1000))
                 .chancedOutput(dust, Endstone, 2000, 0)
                 .fluidOutputs(DragonBlood.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(400)
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }

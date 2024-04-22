@@ -11,6 +11,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fluids.FluidRegistry;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import javax.annotation.Nonnull;
 import java.math.BigInteger;
@@ -25,8 +28,10 @@ import java.util.function.Supplier;
 public class GTLiteUtils {
 
     /**
-     * @param name  Name in gtlitecore's namespace, used to init some internal things in gtlitecore.
-     * @return      GregTech Lite resource location (namespace), pay attention, do not use gtliteId() in Materials init.
+     * @param name  Name in namespace {@code gtlitecore}, used to init some internal things in this mod.
+     * @return      Resource Location of {@code gtlitecore}, pay attention,
+     *              do not use this method in Materials init, please see {@link gregtech.api.unification.material.Materials}.
+     *              You should use {@link gregtech.api.util.GTUtility#gregtechId(String)}.
      */
     @Nonnull
     public static ResourceLocation gtliteId(@Nonnull String name) {
@@ -34,8 +39,140 @@ public class GTLiteUtils {
     }
 
     /**
+     * Get item stack by {@code modid} and {@code name} of item stack.
+     *
+     * @param modid  Mod ID.
+     * @param name   Item name.
+     * @return       Item stack in {@code modid} which named by {@code name}.
+     */
+    @Nonnull
+    public static ItemStack getItemById(String modid, String name) {
+        return GameRegistry.makeItemStack(modid + ":" + name, 0, 1, null);
+    }
+
+    /**
+     * Get item stack by {@code modid} and {@code name} of item stack.
+     *
+     * @param modid   Mod ID.
+     * @param name    Item name.
+     * @param amount  Amount of Item.
+     * @return        Allocate amount Item stack in {@code modid} which named by {@code name}.
+     */
+    @Nonnull
+    public static ItemStack getItemById(String modid, String name, int amount) {
+        return GameRegistry.makeItemStack(modid + ":" + name, 0, amount, null);
+    }
+
+    /**
+     * Get item stack with NBT data by {@code modid} and {@code name} of item stack.
+     *
+     * @param modid  Mod ID.
+     * @param name   Item Name.
+     * @param nbt    NBT data of Item.
+     * @return       Item stack with NBT data in {@code modid} which named by {@code name}.
+     */
+    @Nonnull
+    public static ItemStack getItemById(String modid, String name, NBTTagCompound nbt) {
+        return GameRegistry.makeItemStack(modid + ":" + name, 0, 1, nbt != null ? nbt.toString() : null);
+    }
+
+    /**
+     * Get item stack with nbt data by {@code modid} and {@code name} of item stack.
+     *
+     * @param modid   Mod ID.
+     * @param name    Item Name.
+     * @param amount  Amount of Item.
+     * @param nbt     NBT data of Item.
+     * @return        Allocate amount Item stack with NBT data in {@code modid} which named by {@code name}.
+     */
+    @Nonnull
+    public static ItemStack getItemById(String modid, String name, int amount, NBTTagCompound nbt) {
+        return GameRegistry.makeItemStack(modid + ":" + name, 0, amount, nbt != null ? nbt.toString() : null);
+    }
+
+    /**
+     * Get item stack by {@code modid} and {@code name} of item stack which has metadata.
+     *
+     * @param modid  Mod ID.
+     * @param name   Item name.
+     * @param meta   Metadata of {@code name} item.
+     * @return       Item stack in {@code modid} which named by {@code name} and has metadata {@code meta}.
+     */
+    @Nonnull
+    public static ItemStack getMetaItemById(String modid, String name, int meta) {
+        return GameRegistry.makeItemStack(modid + ":" + name, meta, 1, null);
+    }
+
+    /**
+     * Get item stack by {@code modid} and {@code name} of item stack which has metadata.
+     *
+     * @param modid   Mod ID.
+     * @param name    Item name.
+     * @param meta    Metadata of {@code name} item.
+     * @param amount  Amount of {@code name} item.
+     * @return        Allocate amount Item stack in {@code modid} which named by {@code name} and has metadata {@code meta}.
+     */
+    @Nonnull
+    public static ItemStack getMetaItemById(String modid, String name, int meta, int amount) {
+        return GameRegistry.makeItemStack(modid + ":" + name, meta, amount, null);
+    }
+
+    /**
+     * Get item stack with NBT data by {@code modid} and {@code name} of item stack which has metadata.
+     *
+     * @param modid  Mod ID.
+     * @param name   Item name.
+     * @param meta   Metadata of {@code name} item.
+     * @param nbt    NBT data of item.
+     * @return       Item stack with NBT data in {@code modid} which named by {@code name} and has metadata {@code meta}.
+     */
+    @Nonnull
+    public static ItemStack getMetaItemById(String modid, String name, int meta, NBTTagCompound nbt) {
+        return GameRegistry.makeItemStack(modid + ":" + name, meta, 1, nbt != null ? nbt.toString() : null);
+    }
+
+    /**
+     * Get item stack with NBT data by {@code modid} and {@code name} of item stack which has metadata.
+     *
+     * @param modid   Mod ID.
+     * @param name    Item name.
+     * @param meta    Metadata of {@code name} item.
+     * @param amount  Amount of {@code name} item.
+     * @param nbt     NBT data of item.
+     * @return        Allocate amount Item stack with NBT data in {@code modid} which named by {@code name} and has metadata {@code meta}.
+     */
+    @Nonnull
+    public static ItemStack getMetaItemById(String modid, String name, int meta, int amount, NBTTagCompound nbt) {
+        return GameRegistry.makeItemStack(modid + ":" + name, meta, amount, nbt != null ? nbt.toString() : null);
+    }
+
+    /**
+     * Get fluid stack by {@code name}.
+     *
+     * @param name  Fluid name.
+     * @return      Fluid stack named by {@code name}.
+     */
+    @Nonnull
+    public static FluidStack getFluidById(String name) {
+        return Objects.requireNonNull(FluidRegistry.getFluidStack(name, 1000));
+    }
+
+    /**
+     * Get fluid stack by {@code name}.
+     *
+     * @param name    Fluid name.
+     * @param amount  Amount of {@code name} fluid.
+     * @return        Allocate amount fluid stack named by {@code name}.
+     */
+    @Nonnull
+    public static FluidStack getFluidById(String name, int amount) {
+        return Objects.requireNonNull(FluidRegistry.getFluidStack(name, amount));
+    }
+
+    /**
      * @param number  Long number.
-     * @return        Just a rewrite of formatNumbers(), please see {@link TextFormattingUtil#formatNumbers(long)}.
+     * @return        Just a rewrite of formatNumbers(),
+     *                please see {@link TextFormattingUtil#formatNumbers(long)}.
      */
     public static String formatNumbers(long number) {
         return TextFormattingUtil.formatNumbers(number);
@@ -43,7 +180,8 @@ public class GTLiteUtils {
 
     /**
      * @param number  Double number.
-     * @return        Just a rewrite of formatNumbers(), please see {@link TextFormattingUtil#formatNumbers(double)}.
+     * @return        Just a rewrite of formatNumbers(),
+     *                please see {@link TextFormattingUtil#formatNumbers(double)}.
      */
     public static String formatNumbers(double number) {
         return TextFormattingUtil.formatNumbers(number);
@@ -53,7 +191,8 @@ public class GTLiteUtils {
      * @param tag           NBT tag.
      * @param key           Key.
      * @param defaultValue  Default value.
-     * @return              If tag has special key, then return integer of key (value), if not, then return default value.
+     * @return              If tag has special key, then return integer of key (value),
+     *                      if not, then return default value.
      */
     public static int getOrDefault(NBTTagCompound tag,
                                    String key,
@@ -164,29 +303,6 @@ public class GTLiteUtils {
         }else {
             return Math.min(value, max);
         }
-    }
-
-    /**
-     * @param values  Long value.
-     * @return        Summarized values.
-     */
-    public static BigInteger summarizedValue(long[] values) {
-        BigInteger retValue = BigInteger.ZERO;
-        long currentSum = 0;
-
-        for (long value : values) {
-            if (currentSum != 0 && value > Long.MAX_VALUE - currentSum) {
-                retValue = retValue.add(BigInteger.valueOf(currentSum));
-                currentSum = 0;
-            }
-            currentSum += value;
-        }
-
-        if (currentSum != 0) {
-            retValue = retValue.add(BigInteger.valueOf(currentSum));
-        }
-
-        return retValue;
     }
 
     /**

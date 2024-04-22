@@ -4,6 +4,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.seedCrystal;
 
@@ -17,8 +18,8 @@ public class MagnetoResonaticChain {
                 .input(dust, Iron)
                 .fluidInputs(DistilledWater.getFluid(L))
                 .output(seedCrystal, Prasiolite)
-                .duration(400)
                 .EUt(VA[MV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  3Te + 2Bi -> Be2Te3
@@ -28,7 +29,7 @@ public class MagnetoResonaticChain {
                 .notConsumable(SulfuricAcid.getFluid(1))
                 .output(dust, BismuthTellurite, 5)
                 .EUt(VA[MV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .buildAndRegister();
 
         //  Magneto Resonatic
@@ -40,7 +41,7 @@ public class MagnetoResonaticChain {
                 .circuitMeta(4)
                 .output(dust, MagnetoResonatic, 9)
                 .EUt(VA[MV])
-                .duration(80)
+                .duration(4 * SECOND)
                 .buildAndRegister();
     }
 }

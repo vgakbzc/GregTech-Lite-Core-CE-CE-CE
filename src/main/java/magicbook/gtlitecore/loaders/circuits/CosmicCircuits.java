@@ -8,6 +8,8 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtechfoodoption.GTFOMaterialHandler.Aminophenol;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -32,7 +34,7 @@ public class CosmicCircuits {
                 .fluidInputs(Astralium.getFluid(L))
                 .output(COSMIC_INFORMATION_MODULE)
                 .EUt(VA[UIV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .CasingTier(4)
                 .buildAndRegister();
 
@@ -48,7 +50,7 @@ public class CosmicCircuits {
                 .fluidInputs(PlatinumGroupAlloy.getFluid(L))
                 .output(HOLOGRAPHIC_INFORMATION_IMC, 2)
                 .EUt(VA[UIV])
-                .duration(20)
+                .duration(SECOND)
                 .CasingTier(5)
                 .buildAndRegister();
     }
@@ -69,7 +71,7 @@ public class CosmicCircuits {
                 .fluidInputs(Thorium.getFluid(5000))
                 .output(NUCLEAR_CLOCK)
                 .EUt(VA[UEV])
-                .duration(35)
+                .duration(SECOND + 15)
                 .CasingTier(4)
                 .buildAndRegister();
 
@@ -82,7 +84,7 @@ public class CosmicCircuits {
                 .fluidInputs(SuperheavyHAlloy.getFluid(L))
                 .output(CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT)
                 .EUt(VA[UIV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -96,7 +98,7 @@ public class CosmicCircuits {
                 .fluidInputs(Neutronium.getFluid(L * 2))
                 .output(CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT, 2)
                 .EUt(VA[UIV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .CasingTier(4) // UHV
                 .buildAndRegister();
 
@@ -106,7 +108,7 @@ public class CosmicCircuits {
                 .fluidInputs(Zylon.getFluid(16))
                 .output(CLADDED_OPTICAL_FIBER_CORE)
                 .EUt(VA[LuV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Cosmic CPU process
@@ -117,7 +119,7 @@ public class CosmicCircuits {
                 .fluidInputs(CosmicComputingMixture.getFluid(L))
                 .output(UNTREATED_COSMIC_CPU)
                 .EUt(VA[UV])
-                .duration(300)
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -125,7 +127,7 @@ public class CosmicCircuits {
                 .fluidInputs(CosmicNeutronium.getFluid(16))
                 .output(UNTREATED_COSMIC_CPU)
                 .EUt(VA[UV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Untreated Cosmic CPU Wafer -> Cosmic CPU Wafer
@@ -136,7 +138,7 @@ public class CosmicCircuits {
                 .fluidInputs(HSQ.getFluid(L * 4))
                 .output(COSMIC_CPU)
                 .EUt(VA[UEV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -146,7 +148,7 @@ public class CosmicCircuits {
                 .fluidInputs(KPR.getFluid(L * 4))
                 .output(COSMIC_CPU)
                 .EUt(VA[UEV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -156,7 +158,7 @@ public class CosmicCircuits {
                 .fluidInputs(Lubricant.getFluid(6000))
                 .output(COSMIC_CPU_CHIP, 32)
                 .EUt(VA[UV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -171,7 +173,7 @@ public class CosmicCircuits {
                 .output(dust, SodiumIodide, 2)
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  Na + HNO2 -> NaNO2 + H
@@ -181,7 +183,7 @@ public class CosmicCircuits {
                 .output(dust, SodiumNitrite, 4)
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .temperature(437)
                 .buildAndRegister();
 
@@ -199,7 +201,7 @@ public class CosmicCircuits {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .fluidOutputs(SaltWater.getFluid(3000))
                 .EUt(VA[UEV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -212,7 +214,7 @@ public class CosmicCircuits {
                 .output(dust, IodoxybenzoicAcid, 51)
                 .fluidOutputs(HydrogenSulfide.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Si(CH3)2Cl2 + CH4 -> (CH3)3SiCl + 2H
@@ -223,7 +225,7 @@ public class CosmicCircuits {
                 .fluidOutputs(Trimethylchlorosilane.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(150)
+                .duration(7 * SECOND + 10)
                 .buildAndRegister();
 
         //  LiH + (CH3)3SiCl -> (CH3)3SiH + LiCl
@@ -233,7 +235,7 @@ public class CosmicCircuits {
                 .output(dust, LithiumChloride, 2)
                 .fluidOutputs(Trimethylsilane.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  C7H5IO4 + (CH3)3SiH + C6H5Cl + 2CH2O -> C8H8O2 + (CH3)3SiCl (cycle) + C7H5IO2 (cycle) + 2H
@@ -248,7 +250,7 @@ public class CosmicCircuits {
                 .fluidOutputs(IodobenzoicAcid.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[UHV])
-                .duration(250)
+                .duration(12 * SECOND + 10)
                 .buildAndRegister();
 
         //  K + I -> KI
@@ -258,7 +260,7 @@ public class CosmicCircuits {
                 .circuitMeta(2)
                 .output(dust, PotassiumIodide, 2)
                 .EUt(VA[HV])
-                .duration(180)
+                .duration(9 * SECOND)
                 .buildAndRegister();
 
         //  KI + CCH7NO + C4H9Li -> LiI + C10H15N + KOH
@@ -270,7 +272,7 @@ public class CosmicCircuits {
                 .fluidOutputs(Butylaniline.getFluid(1000))
                 .fluidOutputs(PotassiumHydroxide.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  NaOH + Tc + HNO3 -> NaTcO4 + N + 2H
@@ -282,7 +284,7 @@ public class CosmicCircuits {
                 .fluidOutputs(Nitrogen.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(350)
+                .duration(17 * SECOND + 10)
                 .buildAndRegister();
 
         //  K + NaTcO4 -> KTcO4 + Na
@@ -292,7 +294,7 @@ public class CosmicCircuits {
                 .output(dust, PotassiumPertechnetate, 6)
                 .output(dust, Sodium)
                 .EUt(VA[ZPM])
-                .duration(280)
+                .duration(14 * SECOND)
                 .blastFurnaceTemp(6500)
                 .buildAndRegister();
 
@@ -304,7 +306,7 @@ public class CosmicCircuits {
                 .output(dust, PotassiumNonahydridotechnetate, 6)
                 .output(dust, SodiumEthylate, 9)
                 .EUt(VA[ZPM])
-                .duration(140)
+                .duration(7 * SECOND)
                 .blastFurnaceTemp(6500)
                 .buildAndRegister();
 
@@ -318,7 +320,7 @@ public class CosmicCircuits {
                 .fluidOutputs(PotassiumHydroxide.getFluid(4000))
                 .fluidOutputs(PotassiumEthylate.getFluid(13000))
                 .EUt(VA[UV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  KReO4 + 18K + 13C2H5OH + 4O -> H9K2ReO4 + 4KOH + 13C2H5OK
@@ -331,7 +333,7 @@ public class CosmicCircuits {
                 .fluidOutputs(PotassiumHydroxide.getFluid(4000))
                 .fluidOutputs(PotassiumEthylate.getFluid(13000))
                 .EUt(VA[UV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  Another C2H5OK liquid recycle recipe
@@ -342,7 +344,7 @@ public class CosmicCircuits {
                 .output(dust, RockSalt, 2)
                 .fluidOutputs(Ethanol.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  NH4ReO4 + KOH -> KReO4 + NH3 + H2O
@@ -353,7 +355,7 @@ public class CosmicCircuits {
                 .fluidOutputs(Ammonia.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  4C2H4 + NH3 + HBr-> (C2H5)4NBr
@@ -363,7 +365,7 @@ public class CosmicCircuits {
                 .fluidInputs(HydrobromicAcid.getFluid(1000))
                 .fluidOutputs(TetraethylammoniumBromide.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  H9K2ReO4 + H9K2TcO4 + 2(C2H5)4NBr -> (C2H5)4N(ReH9)(TcH9) + 4K + 2Br
@@ -375,7 +377,7 @@ public class CosmicCircuits {
                 .output(dust, Potassium, 4)
                 .fluidOutputs(Bromine.getFluid(2000))
                 .EUt(VA[UEV])
-                .duration(180)
+                .duration(9 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -387,7 +389,7 @@ public class CosmicCircuits {
                 .fluidOutputs(MBBA.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[UIV])
-                .duration(90)
+                .duration(4 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -399,7 +401,7 @@ public class CosmicCircuits {
                 .fluidInputs(NaquadahAlloy.getFluid(L))
                 .output(LEPTON_TRAP_CRYSTAL)
                 .EUt(3450000)
-                .duration(340)
+                .duration(17 * SECOND)
                 .blastFurnaceTemp(10900)
                 .buildAndRegister();
 
@@ -411,7 +413,7 @@ public class CosmicCircuits {
                 .fluidInputs(FreeElectronGas.getFluid(500))
                 .output(CHARGED_LEPTON_TRAP_CRYSTAL)
                 .EUt(VA[UV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .temperature(133)
                 .buildAndRegister();
 
@@ -425,7 +427,7 @@ public class CosmicCircuits {
                 .fluidInputs(Tin.getPlasma(L / 4))
                 .output(COLORED_LEDS)
                 .EUt(VA[LuV])
-                .duration(350)
+                .duration(17 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -439,7 +441,7 @@ public class CosmicCircuits {
                 .fluidInputs(MBBA.getFluid(500))
                 .output(ROTATING_TRANSPARENT_SURFACE)
                 .EUt(VA[UHV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -454,7 +456,7 @@ public class CosmicCircuits {
                 .fluidInputs(FullereneSuperconductor.getFluid(L / 2))
                 .output(UNIVERSAL_SOC, 4)
                 .EUt(VA[UXV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .CasingTier(7) // UXV
                 .buildAndRegister();
     }
@@ -468,7 +470,7 @@ public class CosmicCircuits {
                 .fluidInputs(Zylon.getFluid(L * 2))
                 .output(COSMIC_TRANSISTOR, 32)
                 .EUt(VA[UEV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -478,7 +480,7 @@ public class CosmicCircuits {
                 .fluidInputs(Zylon.getFluid(L * 2))
                 .output(COSMIC_RESISTOR, 32)
                 .EUt(VA[UEV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .temperature(4960)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -489,7 +491,7 @@ public class CosmicCircuits {
                 .fluidInputs(Zylon.getFluid(L * 2))
                 .output(COSMIC_CAPACITOR, 32)
                 .EUt(VA[UEV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .temperature(5630)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -500,7 +502,7 @@ public class CosmicCircuits {
                 .fluidInputs(Zylon.getFluid(L * 2))
                 .output(COSMIC_INDUCTOR, 32)
                 .EUt(VA[UEV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -511,7 +513,7 @@ public class CosmicCircuits {
                 .fluidInputs(Zylon.getFluid(L * 2))
                 .output(COSMIC_DIODE, 32)
                 .EUt(VA[UEV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -524,7 +526,7 @@ public class CosmicCircuits {
                 .input(wireFine, SuperheavyLAlloy, 16)
                 .output(COSMIC_MEMORY_CHIP, 4)
                 .EUt(VA[UIV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -542,7 +544,7 @@ public class CosmicCircuits {
                 .solderMultiplier(1)
                 .output(COSMIC_PROCESSOR, 2)
                 .EUt(VA[UIV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -554,7 +556,7 @@ public class CosmicCircuits {
                 .solderMultiplier(1)
                 .output(COSMIC_PROCESSOR, 4)
                 .EUt(VA[UXV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -569,7 +571,7 @@ public class CosmicCircuits {
                 .solderMultiplier(2)
                 .output(COSMIC_ASSEMBLY, 2)
                 .EUt(VA[UIV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -592,7 +594,7 @@ public class CosmicCircuits {
                         .researchStack(COSMIC_ASSEMBLY.getStackForm())
                         .EUt(VA[UIV])
                         .CWUt(256))
-                .duration(400)
+                .duration(20 * SECOND)
                 .EUt(VA[UIV])
                 .buildAndRegister();
 
@@ -618,7 +620,7 @@ public class CosmicCircuits {
                         .researchStack(COSMIC_COMPUTER.getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(512))
-                .duration(1200)
+                .duration(MINUTE + 20 * SECOND)
                 .EUt(VA[UXV])
                 .buildAndRegister();
     }
@@ -631,7 +633,7 @@ public class CosmicCircuits {
                 .input(dust, Iodine)
                 .output(dust, CaesiumIodide, 2)
                 .EUt(VA[MV])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  CsI + Tl + Tm -> Tl/Tm:CsI
@@ -641,7 +643,7 @@ public class CosmicCircuits {
                 .input(dust, Thulium)
                 .output(dust, TlTmDopedCaesiumIodide, 4)
                 .EUt(VA[EV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -653,7 +655,7 @@ public class CosmicCircuits {
                 .output(dust, CadmiumTungstate, 6)
                 .fluidOutputs(SulfurDioxide.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  3GeO2 + 2Bi2O3 -> Bi4Ge3O12
@@ -662,7 +664,7 @@ public class CosmicCircuits {
                 .input(dust, BismuthTrioxide, 10)
                 .output(dust, BismuthGermanate, 19)
                 .EUt(VA[LuV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .buildAndRegister();
 
         //  Scintillator Crystal
@@ -674,7 +676,7 @@ public class CosmicCircuits {
                 .input(dust, BismuthGermanate, 19)
                 .output(SCINTILLATOR_CRYSTAL)
                 .EUt(VA[UHV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -687,7 +689,7 @@ public class CosmicCircuits {
                 .fluidInputs(TinAlloy.getFluid(L * 2))
                 .output(SCINTILLATOR)
                 .EUt(VA[UHV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }

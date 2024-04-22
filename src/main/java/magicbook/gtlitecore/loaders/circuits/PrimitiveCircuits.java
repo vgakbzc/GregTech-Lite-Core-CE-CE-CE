@@ -9,12 +9,13 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GTValues.LV;
-import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.VACUUM_TUBE_COMPONENT;
 
@@ -46,8 +47,8 @@ public class PrimitiveCircuits {
                 .notConsumable(stickLong, Iron)
                 .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(Glue.getFluid(200))
-                .EUt(8)
-                .duration(600)
+                .EUt((int) V[ULV])
+                .duration(MINUTE / 2)
                 .buildAndRegister();
 
         //  Glass Tube -> Vacuum Tube Component
@@ -64,8 +65,8 @@ public class PrimitiveCircuits {
                 .input(wireFine, Copper, 4)
                 .fluidInputs(Glue.getFluid(200))
                 .output(VACUUM_TUBE, 2)
-                .EUt(8)
-                .duration(200)
+                .EUt((int) V[ULV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -73,7 +74,7 @@ public class PrimitiveCircuits {
                 .input(wireFine, Copper, 4)
                 .output(VACUUM_TUBE, 2)
                 .EUt(VA[LV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -81,7 +82,7 @@ public class PrimitiveCircuits {
                 .input(wireFine, AnnealedCopper, 4)
                 .output(VACUUM_TUBE, 2)
                 .EUt(VA[LV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
     }
 }

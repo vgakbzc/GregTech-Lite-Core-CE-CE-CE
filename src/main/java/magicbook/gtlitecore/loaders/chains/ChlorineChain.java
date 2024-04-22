@@ -5,6 +5,7 @@ import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.plate;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -18,7 +19,7 @@ public class ChlorineChain {
                 .fluidInputs(Chlorine.getFluid(5000))
                 .fluidOutputs(ChlorinatedSolvents.getFluid(7000))
                 .EUt(VA[EV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  14(CH4)2Cl5 -> CH3Cl + CH2Cl2 + CHCl3 + CCl4
@@ -29,7 +30,7 @@ public class ChlorineChain {
                 .fluidOutputs(Dichloromethane.getFluid(2170))
                 .fluidOutputs(Chloroform.getFluid(2170))
                 .fluidOutputs(CarbonTetrachloride.getFluid(1330))
-                .duration(360)
+                .duration(18 * SECOND)
                 .EUt(VA[EV])
                 .buildAndRegister();
     }
