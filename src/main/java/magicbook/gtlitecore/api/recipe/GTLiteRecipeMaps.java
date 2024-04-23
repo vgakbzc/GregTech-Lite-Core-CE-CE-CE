@@ -1511,13 +1511,17 @@ public class GTLiteRecipeMaps {
      * <p>
      *     One of two modes of Neutral Network Nexus, used to hybridizing nano swarm.
      *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
-     *     TODO Add recipe and system of this mode.
      * </p>
      */
     @ZenProperty
     public static final RecipeMap<SwarmTierRecipeBuilder> NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE = new RecipeMap<>("neutral_network_nexus_hybridizing_mode", 6, 6, 3, 3, new SwarmTierRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
+            .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+            .setSlotOverlay(true, false, false, GuiTextures.CIRCUIT_OVERLAY)
+            .setSlotOverlay(true, false, true, GuiTextures.CIRCUIT_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER);
 
     /**
