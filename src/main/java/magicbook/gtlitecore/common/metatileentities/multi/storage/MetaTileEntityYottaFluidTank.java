@@ -51,7 +51,7 @@ import java.util.List;
 import java.util.Map;
 
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.CELL_PREDICATE;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.summarizedValue;
+import static magicbook.gtlitecore.api.utils.BigMath.summarizedValue;
 
 /**
  * Yotta Fluid Tank for GregTech CEu

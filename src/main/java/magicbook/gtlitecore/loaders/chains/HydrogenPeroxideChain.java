@@ -6,6 +6,8 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.dustTiny;
 import static gregtech.common.items.MetaItems.BLACKLIGHT;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class HydrogenPeroxideChain {
@@ -17,8 +19,8 @@ public class HydrogenPeroxideChain {
                 .fluidInputs(PhthalicAcid.getFluid(1000))
                 .output(dust, PhthalicAnhydride, 13)
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(200)
                 .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Anthraquinone Process
@@ -29,8 +31,8 @@ public class HydrogenPeroxideChain {
                 .fluidInputs(Ethylbenzene.getFluid(1000))
                 .fluidOutputs(Ethylanthraquinone.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(1000)
                 .EUt(VA[EV])
+                .duration(MINUTE - 10 * SECOND)
                 .buildAndRegister();
 
         //  C6H4(CO)2C6H3Et + 6H -> C6H4(CH2OH)2C6H3Et
@@ -39,8 +41,8 @@ public class HydrogenPeroxideChain {
                 .fluidInputs(Ethylanthraquinone.getFluid(1000))
                 .fluidInputs(Hydrogen.getFluid(6000))
                 .fluidOutputs(Ethylanthrahydroquinone.getFluid(1000))
-                .duration(400)
                 .EUt(VA[IV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  C6H4(CH2OH)2C6H3Et + 6O -> C6H4(CO)2C6H3Et + 3H2O2
@@ -49,8 +51,8 @@ public class HydrogenPeroxideChain {
                 .fluidInputs(Oxygen.getFluid(6000))
                 .fluidOutputs(Ethylanthraquinone.getFluid(1000))
                 .fluidOutputs(HydrogenPeroxide.getFluid(3000))
-                .duration(40)
                 .EUt(VA[EV])
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  2H + 2O -> H2O2
@@ -60,7 +62,7 @@ public class HydrogenPeroxideChain {
                 .fluidInputs(Oxygen.getFluid(2000))
                 .fluidOutputs(HydrogenPeroxide.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  12H2O -> 6H2O2 + 6H
@@ -72,7 +74,7 @@ public class HydrogenPeroxideChain {
                 .fluidOutputs(HydrogenPeroxide.getFluid(6000))
                 .fluidOutputs(Hydrogen.getFluid(6000))
                 .EUt(VA[UV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
     }
 }

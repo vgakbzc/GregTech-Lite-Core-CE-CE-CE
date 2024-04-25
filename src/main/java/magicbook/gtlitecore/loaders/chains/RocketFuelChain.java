@@ -3,12 +3,12 @@ package magicbook.gtlitecore.loaders.chains;
 import gregtech.api.recipes.GTRecipeHandler;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
-import static gregtech.api.GTValues.HV;
-import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.COMBUSTION_GENERATOR_FUELS;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.ROCKET_ENGINE_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -25,7 +25,7 @@ public class RocketFuelChain {
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(RocketFuel.getFluid(16))
                 .EUt(GTLiteConfigHolder.misc.heatValueRocketFuel)
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  RP-1 Rocket Fuel
@@ -34,13 +34,13 @@ public class RocketFuelChain {
                 .fluidInputs(Oxygen.getFluid(1000))
                 .fluidOutputs(RP1RocketFuel.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(16)
+                .duration(SECOND - 4)
                 .buildAndRegister();
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(RP1RocketFuel.getFluid(12))
                 .EUt(GTLiteConfigHolder.misc.heatValueRP1RocketFuel)
-                .duration(20)
+                .duration(SECOND)
                 .buildAndRegister();
 
         //  Dense Hydrazine Mixture Fuel
@@ -48,14 +48,14 @@ public class RocketFuelChain {
                 .fluidInputs(Dimethylhydrazine.getFluid(1000))
                 .fluidInputs(Methanol.getFluid(1000))
                 .fluidOutputs(DenseHydrazineMixtureFuel.getFluid(1000))
-                .EUt(240)
-                .duration(120)
+                .EUt(VH[HV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(DenseHydrazineMixtureFuel.getFluid(9))
                 .EUt(GTLiteConfigHolder.misc.heatValueDenseHydrazineMixtureRocketFuel)
-                .duration(80)
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  C + N2H4 + H2 -> CH6N2
@@ -65,7 +65,7 @@ public class RocketFuelChain {
                 .fluidInputs(Hydrogen.getFluid(2000))
                 .fluidOutputs(Methylhydrazine.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(480)
+                .duration(24 * SECOND)
                 .buildAndRegister();
 
         //  Methylhydrazine Nitrate Rocket Fuel
@@ -74,13 +74,13 @@ public class RocketFuelChain {
                 .fluidInputs(Tetranitromethane.getFluid(1000))
                 .fluidOutputs(MethylhydrazineNitrateRocketFuel.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         ROCKET_ENGINE_RECIPES.recipeBuilder()
                 .fluidInputs(MethylhydrazineNitrateRocketFuel.getFluid(6))
                 .EUt(GTLiteConfigHolder.misc.heatValueMethylhydrazineNitrateRocketFuel)
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
     }
 }

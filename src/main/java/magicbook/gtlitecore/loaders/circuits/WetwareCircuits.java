@@ -13,6 +13,7 @@ import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonK;
@@ -66,7 +67,7 @@ public class WetwareCircuits {
                 .fluidInputs(SterileGrowthMedium.getFluid(125))
                 .output(NEURO_PROCESSOR, 2)
                 .EUt(VA[UHV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .CasingTier(4)
                 .buildAndRegister();
 
@@ -104,7 +105,7 @@ public class WetwareCircuits {
                     .output(WETWARE_PROCESSOR_ASSEMBLY_ZPM, 2)
                     .solderMultiplier(2)
                     .EUt(38400)
-                    .duration(400)
+                    .duration(20 * SECOND)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
         }

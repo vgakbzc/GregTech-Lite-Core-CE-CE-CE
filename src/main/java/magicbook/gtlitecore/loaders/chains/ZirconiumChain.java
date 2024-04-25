@@ -5,6 +5,7 @@ import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.gem;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CubicZirconia;
 
@@ -19,7 +20,7 @@ public class ZirconiumChain {
                 .fluidInputs(Oxygen.getFluid(2000))
                 .output(gem, CubicZirconia)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .temperature(1132)
                 .buildAndRegister();
     }

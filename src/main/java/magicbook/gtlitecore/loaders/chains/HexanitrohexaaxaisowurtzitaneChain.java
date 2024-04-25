@@ -10,6 +10,7 @@ import static gregtech.api.unification.ore.OrePrefix.ingot;
 import static gregtech.common.items.MetaItems.BLACKLIGHT;
 import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
 import static gregtechfoodoption.GTFOMaterialHandler.Glyoxal;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -41,7 +42,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, Gypsum, 6)
                 .output(dust, AmmoniumCarbonate, 14) // Another (NH4)2CO3 recipe from Lu/Tm:YVO, but it is byproduct in chemical dryer recipes
                 .EUt(VA[MV])
-                .duration(270)
+                .duration(13 * SECOND + 10)
                 .temperature(598)
                 .buildAndRegister();
 
@@ -53,7 +54,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  NH4CH3CO2 -> CH3CONH2
@@ -61,7 +62,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .input(dust, AmmoniumAcetate, 12)
                 .output(dust, Acetamide, 9)
                 .EUt(VA[MV])
-                .duration(20)
+                .duration(SECOND)
                 .buildAndRegister();
 
         //  CH3CONH2 -> CH3CN
@@ -69,7 +70,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .input(dust, Acetamide, 9)
                 .output(dust, Acetonitrile, 6)
                 .EUt(VA[HV])
-                .duration(20)
+                .duration(SECOND)
                 .buildAndRegister();
 
         //  4NH3 + 6CH2O -> (CH2)6N4 + 6H2O
@@ -79,7 +80,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, Hexamethylenetetramine, 22)
                 .fluidOutputs(Water.getFluid(6000))
                 .EUt(VA[HV])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  C7H8 + 2Cl -> C7H7Cl + HCl
@@ -90,7 +91,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(BenzylChloride.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  (CH2)6N4 + C7H7Cl + 2HCl + 6H2O -> C7H9N + 3NH4Cl + 6CH2O
@@ -103,7 +104,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(AmmoniumChloride.getFluid(3000))
                 .fluidOutputs(Formaldehyde.getFluid(6000))
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  CH3CN + 3C2H2O2 + 6C7H9N -> C48H48N6
@@ -114,7 +115,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .notConsumable(Hydrogen.getFluid(1))
                 .output(dust, Hexabenzylhexaazaisowurtzitane, 102)
                 .EUt(VA[IV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -135,7 +136,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(Toluene.getFluid(4000))
                 .fluidOutputs(Oxygen.getFluid(4000))
                 .EUt(VA[ZPM])
-                .duration(120)
+                .duration(6 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -150,7 +151,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(MaleicAnhydride.getFluid(1000))
                 .fluidOutputs(Water.getFluid(4000))
                 .EUt(VA[HV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .buildAndRegister();
 
         //  2C4H2O3 + H + H2O -> C4H6O4
@@ -161,7 +162,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidInputs(Water.getFluid(1000))
                 .output(dust, SuccinicAcid, 14)
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  C4H6O4 + C4H6O3 -> (CH2CO)2O + 2C2H4O2
@@ -172,7 +173,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, SuccinicAnhydride, 11)
                 .fluidOutputs(AceticAcid.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(20)
+                .duration(SECOND)
                 .buildAndRegister();
     }
 
@@ -185,7 +186,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, PotassiumCarbonate, 6)
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[LV])
-                .duration(30)
+                .duration(SECOND + 10)
                 .buildAndRegister();
 
         //  K2CO3 + 2SO2 + H2O -> 2KHSO3 + CO2 (cycle)
@@ -196,7 +197,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, PotassiumBisulfite, 12)
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(150)
+                .duration(7 * SECOND + 10)
                 .buildAndRegister();
 
         //  KNO3 + PbS -> KNO2 + Pd + S (lost)
@@ -206,7 +207,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, PotassiumNitrite, 4)
                 .output(ingot, Lead)
                 .EUt(VA[HV])
-                .duration(450)
+                .duration(22 * SECOND + 10)
                 .temperature(1300)
                 .buildAndRegister();
 
@@ -219,7 +220,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(NitrousAcid.getFluid(1000))
                 .fluidOutputs(SodiumAcetate.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .temperature(576)
                 .buildAndRegister();
 
@@ -230,7 +231,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, PotassiumHydroxylaminedisulfonate, 13)
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  2K2NHS2O7 + 4H2O -> (NH3OH)2SO4 + 2K2SO4 + H2SO4
@@ -241,7 +242,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, PotassiumSulfate, 14)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  (NH3OH)2SO4 + CuCl2 -> 2HONH2HCl + SO3 + CuO
@@ -252,7 +253,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(HydroxylamineHydrochloride.getFluid(2000))
                 .fluidOutputs(SulfurTrioxide.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  6(CH2CO)2O + 6Na + 6HONH2HCl + 6C7H8 + 40CH4O -> (CH2CO)2NOH + 6NaCl + 6H + 6H2O
@@ -267,7 +268,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(Hydrogen.getFluid(6000))
                 .fluidOutputs(Water.getFluid(6000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -280,7 +281,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, SuccinimidylAcetate, 18)
                 .fluidOutputs(AceticAcid.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
     }
 
@@ -296,7 +297,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(NitricOxide.getFluid(4000))
                 .fluidOutputs(Benzaldehyde.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  TODO Benzaldehyde cycle
@@ -313,7 +314,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, NitroniumTetrafluoroborate, 8)
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  2BF3 + 2HF + 2N2O4 -> NaOBF4 + HNO3
@@ -325,7 +326,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, NitrosoniumTetrafluoroborate, 7)
                 .fluidOutputs(NitricAcid.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  C14H18N8O6 + 6NaO2BF4 + 4H2O -> C6H6N12O12 + 2NaOBF4 + 4HBF4 + 4C2H4O2
@@ -338,7 +339,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(TetrafluoroboricAcid.getFluid(4000))
                 .fluidOutputs(AceticAcid.getFluid(4000))
                 .EUt(VA[UV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -349,7 +350,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(HydrofluoricAcid.getFluid(4000))
                 .fluidOutputs(BoricAcid.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -363,7 +364,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidInputs(Steam.getFluid(1000))
                 .fluidOutputs(SilicaGelBase.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
@@ -373,7 +374,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(Steam.getFluid(1000))
                 .EUt(VA[LV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  (SiO2)(HCl)(NaOH)(H2O) -> SiO2 + NaCl
@@ -382,7 +383,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .output(dust, SilicaGel, 3)
                 .output(dust, Salt, 2)
                 .EUt(VA[HV])
-                .duration(130)
+                .duration(6 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -393,7 +394,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .fluidInputs(Ethylenediamine.getFluid(1000))
                 .output(dust, Hexanitrohexaaxaisowurtzitane, 36)
                 .EUt(VA[UV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }

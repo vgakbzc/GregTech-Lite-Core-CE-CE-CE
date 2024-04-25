@@ -1,13 +1,13 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.common.blocks.MetaBlocks;
-import magicbook.gtlitecore.common.blocks.BlockCoolingCore;
-import magicbook.gtlitecore.common.blocks.BlockDysonSwarmCasing;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.blocks.*;
 
+import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
@@ -244,7 +244,85 @@ public class NicollDysonBeamer {
 
         //  7
 
-        //  8
+        //  Advanced Shirabon recipe
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(8)
+                .notConsumable(CHARGED_HYPERCUBE)
+                .notConsumable(swarm, HSSG)
+                .notConsumable(CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT)
+                .input(dust, Rhodium, 64)
+                .input(DIMENSION_GAP, 4)
+                .input(swarm, WhiteDwarfMatter, 2)
+                .fluidInputs(Spacetime.getFluid(L * 40))
+                .fluidInputs(Eternity.getFluid(L * 4))
+                .fluidInputs(CosmicComputingMixture.getFluid(1000))
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(1000))
+                .EUt(VZ[UXV])
+                .duration(200)
+                .CasingTier(1)
+                .buildAndRegister();
+
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(18)
+                .notConsumable(CHARGED_HYPERCUBE)
+                .notConsumable(swarm, HSSS)
+                .notConsumable(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING))
+                .notConsumable(CHARGED_LEPTON_TRAP_CRYSTAL)
+                .input(singularity, Rhodium)
+                .input(DIMENSION_GAP, 4)
+                .input(swarm, Galaxium, 2)
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(160000))
+                .fluidInputs(Infinity.getFluid(80000))
+                .fluidInputs(CosmicComputingMixture.getFluid(40000))
+                .fluidInputs(Spacetime.getFluid(L * 20))
+                .fluidInputs(Eternity.getFluid(L * 10))
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(40000))
+                .EUt(VZ[OpV])
+                .duration(200)
+                .CasingTier(2)
+                .buildAndRegister();
+
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(28)
+                .notConsumable(CHARGED_HYPERCUBE)
+                .notConsumable(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM)
+                .notConsumable(singularity, TranscendentMetal)
+                .notConsumable(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.MAX))
+                .notConsumable(TOPOLOGICAL_INSULATOR_TUBE)
+                .input(plateDense, PlatinumGroupAlloy, 16)
+                .input(PHOTON)
+                .input(swarm, Eternity, 2)
+                .fluidInputs(CrystalMatrix.getFluid(L * 160))
+                .fluidInputs(Infinity.getFluid(L * 80))
+                .fluidInputs(CosmicNeutronium.getFluid(L * 40))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(18000))
+                .fluidInputs(CosmicComputingMixture.getFluid(6000))
+                .fluidInputs(Spacetime.getFluid(L * 8))
+                .fluidInputs(Eternity.getFluid(L * 4))
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .output(dust, Shirabon, 64)
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(6000))
+                .EUt(VZ[MAX])
+                .duration(200)
+                .CasingTier(3)
+                .buildAndRegister();
 
         //  Advanced Crude Hypercube recipe
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()

@@ -4,6 +4,7 @@ import static gregtech.api.GTValues.MV;
 import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.plate;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ParaXylene;
 
@@ -18,8 +19,8 @@ public class OilChain {
                 .fluidOutputs(Benzene.getFluid(200))
                 .fluidOutputs(ParaXylene.getFluid(350))
                 .fluidOutputs(Ethylbenzene.getFluid(200))
-                .duration(120)
                 .EUt(VA[MV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         CATALYTIC_REFORMER_RECIPES.recipeBuilder()
@@ -29,8 +30,8 @@ public class OilChain {
                 .fluidOutputs(Benzene.getFluid(400))
                 .fluidOutputs(ParaXylene.getFluid(700))
                 .fluidOutputs(Ethylbenzene.getFluid(400))
-                .duration(120)
                 .EUt(VA[MV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
     }
 }

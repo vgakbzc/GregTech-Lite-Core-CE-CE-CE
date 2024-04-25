@@ -8,6 +8,8 @@ import static gregtech.api.unification.material.Materials.Neutronium;
 import static gregtech.api.unification.material.Materials.SolderingAlloy;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
@@ -34,12 +36,12 @@ public class SupracausalCircuits {
                 .input(wireFine, Hikarium, 8)
                 .fluidInputs(Galaxium.getFluid(L))
                 .output(SPACETIME_CONDENSER)
+                .EUt(VA[UXV])
+                .duration(SECOND)
                 .stationResearch(b -> b
                         .researchStack(COSMIC_INFORMATION_MODULE.getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(256))
-                .EUt(VA[UXV])
-                .duration(20)
                 .buildAndRegister();
 
         //  Supracausal Processing Unit
@@ -61,7 +63,7 @@ public class SupracausalCircuits {
                 .fluidInputs(CosmicNeutronium.getFluid(1000))
                 .output(LIGHT_CONE_MODULE, 2)
                 .EUt(VA[UXV])
-                .duration(20)
+                .duration(SECOND)
                 .CasingTier(5)
                 .buildAndRegister();
 
@@ -78,7 +80,7 @@ public class SupracausalCircuits {
                 .fluidInputs(FreeElectronGas.getFluid(1000))
                 .output(CONTAINED_KERR_SINGULARITY)
                 .EUt(VA[UEV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -94,7 +96,7 @@ public class SupracausalCircuits {
                 .fluidInputs(HiggsBosons.getFluid(L * 4))
                 .output(GRAVITON_TRANSDUCER)
                 .EUt(VA[UXV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -107,7 +109,7 @@ public class SupracausalCircuits {
                 .fluidInputs(Instantons.getFluid(L * 4))
                 .output(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM)
                 .EUt(VA[UXV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -120,7 +122,7 @@ public class SupracausalCircuits {
                 .fluidInputs(TemporalFluid.getFluid(L * 4))
                 .output(TOPOLOGICAL_MANIPULATOR_UNIT)
                 .EUt(VA[UXV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -133,7 +135,7 @@ public class SupracausalCircuits {
                 .fluidInputs(Taranium.getFluid(L * 4))
                 .output(MICROWORMHOLE_GENERATOR)
                 .EUt(VA[UXV])
-                .duration(20)
+                .duration(SECOND)
                 .CasingTier(7) // UXV
                 .buildAndRegister();
 
@@ -148,7 +150,7 @@ public class SupracausalCircuits {
                 .fluidInputs(CelestialTungsten.getFluid(L * 4))
                 .output(MACROWORMHOLE_GENERATOR)
                 .EUt(VA[UXV])
-                .duration(20)
+                .duration(SECOND)
                 .CasingTier(5)
                 .buildAndRegister();
 
@@ -161,12 +163,12 @@ public class SupracausalCircuits {
                 .input(BATTERY_UXV_LANTHANUM_NICKEL_OXIDE)
                 .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
                 .output(STABILIZED_WORMHOLE_GENERATOR)
+                .EUt(VA[UXV])
+                .duration(SECOND)
                 .stationResearch(b -> b
                         .researchStack(MACROWORMHOLE_GENERATOR.getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(256))
-                .EUt(VA[UXV])
-                .duration(20)
                 .buildAndRegister();
 
         //  Contained High Density Protonic Matter -> Contained Exotic Matter
@@ -182,7 +184,7 @@ public class SupracausalCircuits {
                 .input(bolt, Taranium, 2)
                 .output(SUPRACAUSAL_MEMORY_CHIP, 4)
                 .EUt(VA[UXV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -197,7 +199,7 @@ public class SupracausalCircuits {
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_TRANSISTOR, 32)
                 .EUt(VA[UIV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -207,7 +209,7 @@ public class SupracausalCircuits {
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_RESISTOR, 32)
                 .EUt(VA[UIV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .temperature(6675)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -218,7 +220,7 @@ public class SupracausalCircuits {
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_CAPACITOR, 32)
                 .EUt(VA[UIV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .temperature(7432)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -230,7 +232,7 @@ public class SupracausalCircuits {
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_DIODE, 32)
                 .EUt(VA[UIV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -240,7 +242,7 @@ public class SupracausalCircuits {
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 2))
                 .output(SUPRACAUSAL_INDUCTOR, 32)
                 .EUt(VA[UIV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -258,7 +260,7 @@ public class SupracausalCircuits {
                 .solderMultiplier(1)
                 .output(SUPRACAUSAL_PROCESSOR, 2)
                 .EUt(VA[UXV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -273,7 +275,7 @@ public class SupracausalCircuits {
                 .solderMultiplier(2)
                 .output(SUPRACAUSAL_ASSEMBLY, 2)
                 .EUt(VA[UXV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -292,12 +294,12 @@ public class SupracausalCircuits {
                 .fluidInputs(Zylon.getFluid(9216))
                 .fluidInputs(Hypogen.getFluid(4608))
                 .output(SUPRACAUSAL_COMPUTER)
+                .EUt(VA[UXV])
+                .duration(20 * SECOND)
                 .stationResearch(b -> b
                         .researchStack(SUPRACAUSAL_ASSEMBLY.getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(512))
-                .duration(400)
-                .EUt(VA[UXV])
                 .buildAndRegister();
 
         //  Supracausal Mainframe
@@ -319,7 +321,7 @@ public class SupracausalCircuits {
                 .fluidInputs(Zylon.getFluid(8640))
                 .output(SUPRACAUSAL_MAINFRAME)
                 .EUt(VA[OpV])
-                .duration(1200)
+                .duration(2 * MINUTE)
                 .stationResearch(b -> b
                         .researchStack(SUPRACAUSAL_COMPUTER.getStackForm())
                         .EUt(VA[OpV])

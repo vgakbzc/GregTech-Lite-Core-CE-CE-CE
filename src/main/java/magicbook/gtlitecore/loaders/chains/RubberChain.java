@@ -6,6 +6,7 @@ import static gregtech.api.recipes.RecipeMaps.LARGE_CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.common.items.MetaItems.BLACKLIGHT;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BURNER_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CRYOGENIC_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -29,7 +30,7 @@ public class RubberChain {
                 .fluidOutputs(Acrylonitrile.getFluid(6000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[LuV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  C4H6 + C3H3N -> C7H9N
@@ -40,7 +41,7 @@ public class RubberChain {
                 .notConsumable(HydrogenPeroxide.getFluid(1))
                 .fluidOutputs(NitrileButadieneRubber.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .temperature(286)
                 .buildAndRegister();
     }
@@ -56,7 +57,7 @@ public class RubberChain {
                 .fluidOutputs(Steam.getFluid(3000))
                 .fluidOutputs(HydrochloricAcid.getFluid(6000))
                 .EUt(VA[HV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .temperature(796)
                 .buildAndRegister();
 
@@ -67,9 +68,9 @@ public class RubberChain {
                 .fluidInputs(Fluorine.getFluid(2000))
                 .output(dust, SodiumTrifluoroethanolate, 11)
                 .fluidOutputs(Hydrogen.getFluid(2000))
-                .temperature(344)
                 .EUt(VA[EV])
-                .duration(140)
+                .duration(7 * SECOND)
+                .temperature(344)
                 .buildAndRegister();
 
         //  C6H6 + 2F -> C6H5F + HF
@@ -80,7 +81,7 @@ public class RubberChain {
                 .fluidOutputs(Fluorobenzene.getFluid(1000))
                 .fluidOutputs(HydrofluoricAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  2C6H5F + 6HF + O -> C5H4F8O + 2C3H6
@@ -92,7 +93,7 @@ public class RubberChain {
                 .fluidOutputs(OctafluoroPentanol.getFluid(1000))
                 .fluidOutputs(Propene.getFluid(2000))
                 .EUt(VA[ZPM])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  NaC2H4OF3 + Cl6N3P3 + 4C5H4F8O -> C24H16O8N4P4F40 + NaF (cycle) + 3POCl3 (cycle)
@@ -104,7 +105,7 @@ public class RubberChain {
                 .fluidOutputs(PolyPhosphonitrileFluoroRubber.getFluid(1000))
                 .fluidOutputs(PhosphorylChloride.getFluid(3000))
                 .EUt(VA[UV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .buildAndRegister();
     }
 }

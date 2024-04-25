@@ -11,6 +11,7 @@ import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.wireFine;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 
 public class QuantumCircuits {
 
@@ -68,7 +69,7 @@ public class QuantumCircuits {
                     .solderMultiplier(2)
                     .output(QUANTUM_ASSEMBLY_IV, 2)
                     .EUt(2400)
-                    .duration(400)
+                    .duration(20 * SECOND)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -82,7 +83,7 @@ public class QuantumCircuits {
                     .solderMultiplier(2)
                     .output(QUANTUM_ASSEMBLY_IV, 2)
                     .EUt(2400)
-                    .duration(200)
+                    .duration(10 * SECOND)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
         }

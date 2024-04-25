@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders.chains;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class BPAPolycarbonateChain {
@@ -18,7 +19,7 @@ public class BPAPolycarbonateChain {
                 .fluidOutputs(DimethylCarbonate.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  C3H6O3 + 2C6H6O -> C13H10O3 + 2CH4O (cycle)
@@ -28,7 +29,7 @@ public class BPAPolycarbonateChain {
                 .fluidOutputs(DiphenylCarbonate.getFluid(1000))
                 .fluidOutputs(Methanol.getFluid(2000))
                 .EUt(VA[EV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  C13H10O3 + C15H16O2 -> BPA Polycarbonate + 2C6H6O (cycle)
@@ -38,7 +39,7 @@ public class BPAPolycarbonateChain {
                 .fluidOutputs(BPAPolycarbonate.getFluid(L))
                 .fluidOutputs(Phenol.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .buildAndRegister();
     }
 }

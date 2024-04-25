@@ -1,10 +1,10 @@
 package magicbook.gtlitecore.loaders.chains;
 
-import static gregtech.api.GTValues.HV;
-import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -12,10 +12,9 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 public class BrineChain {
 
     //  Complete Bromine-Iodine Chain
-    //  in gcys, this is infinite bromine until Sodium Chloride Solution is separate from Salt Water
+    //  in gcys, this is infinite bromine until Sodium Chloride Solution is separate from Salt Water.
 
     public static void init() {
-
         IodineChain();
         BromineChain();
     }
@@ -28,8 +27,8 @@ public class BrineChain {
                 .fluidInputs(SaltWater.getFluid(1000))
                 .output(dust, Potassium)
                 .fluidOutputs(IodizedBrine.getFluid(1000))
-                .EUt(1280)
-                .duration(240)
+                .EUt(VA[EV])
+                .duration(12 * SECOND)
                 .temperature(1128)
                 .buildAndRegister();
 
@@ -38,8 +37,8 @@ public class BrineChain {
                 .fluidInputs(IodizedBrine.getFluid(1000))
                 .fluidInputs(Chlorine.getFluid(300))
                 .fluidOutputs(IodineBrineMixture.getFluid(1300))
-                .EUt(480)
-                .duration(240)
+                .EUt(VHA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  I?Cl -> Br? + I?
@@ -47,16 +46,16 @@ public class BrineChain {
                 .fluidInputs(IodineBrineMixture.getFluid(1300))
                 .fluidOutputs(BrominatedBrine.getFluid(1000))
                 .fluidOutputs(IodineSlurry.getFluid(300))
-                .EUt(980)
-                .duration(120)
+                .EUt(VA[HV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  I? -> I
         CHEMICAL_DRYER_RECIPES.recipeBuilder()
                 .fluidInputs(IodineSlurry.getFluid(1200))
                 .output(dust, Iodine)
-                .EUt(1280)
-                .duration(200)
+                .EUt(VA[EV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -67,8 +66,8 @@ public class BrineChain {
                 .fluidInputs(BrominatedBrine.getFluid(1000))
                 .fluidInputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(AcidicBrominatedBrine.getFluid(1000))
-                .EUt(480)
-                .duration(200)
+                .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Br?(H2SO4) + SO2 + H2O -> H2SO4Br(H2O)Cl2
@@ -79,8 +78,8 @@ public class BrineChain {
                 .circuitMeta(3)
                 .fluidOutputs(BromineSulfateSolution.getFluid(1000))
                 .fluidOutputs(SaltWater.getFluid(1000))
-                .EUt(480)
-                .duration(200)
+                .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  2H2SO4Br(H2O)Cl2 + H2O -> 3H2SO4Br(H2O)2Cl2
@@ -90,7 +89,7 @@ public class BrineChain {
                 .fluidOutputs(OverheatedBromineSulfateSolution.getFluid(3000))
                 .temperature(2250)
                 .EUt(VA[HV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  3H2SO4Br(H2O)2Cl2 -> Br(H2O) + H2O + 2Cl + H2SO4
@@ -101,23 +100,23 @@ public class BrineChain {
                 .fluidOutputs(Chlorine.getFluid(2000))
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .buildAndRegister();
 
         //  Br(H2O) -> Br + H2O (lost)
         CHEMICAL_DRYER_RECIPES.recipeBuilder()
                 .fluidInputs(WetBromine.getFluid(1000))
                 .fluidOutputs(Bromine.getFluid(1000))
-                .EUt(360)
-                .duration(80)
+                .EUt(VHA[HV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  Salt Water recycle
         CHEMICAL_DRYER_RECIPES.recipeBuilder()
                 .fluidInputs(DebrominatedWater.getFluid(1000))
                 .fluidOutputs(SaltWater.getFluid(100))
-                .EUt(360)
-                .duration(80)
+                .EUt(VH[HV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
     }
 
