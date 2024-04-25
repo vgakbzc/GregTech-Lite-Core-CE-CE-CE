@@ -6,8 +6,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumCarbide;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.screw;
+import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.QUANTUM_FORCE_TRANSFORMER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -393,9 +392,9 @@ public class QuantumForceTransformer {
                 .circuitMeta(26)
                 .notConsumable(GRAVITON_TRANSDUCER)
                 .inputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.QUANTUM_GLASS))
+                .input(lens, Spacetime)
                 .input(QCD_PROTECTIVE_PLATING, 2)
                 .input(GRAVITON)
-                .input(screw, Spacetime, 8)
                 .fluidInputs(SolderingAlloy.getFluid(32000))
                 .fluidInputs(ZBLANGlass.getFluid(16000))
                 .fluidInputs(GSTGlass.getFluid(16000))

@@ -119,7 +119,7 @@ public class GTLiteHighDegreeMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature(600000000))
                 .iconSet(CUSTOM_MHCSM)
-                .flags(NO_SMELTING, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(NO_SMELTING, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_ROUND, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_LENS)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
@@ -193,7 +193,7 @@ public class GTLiteHighDegreeMaterials {
 
         //  15021 Dimensionally Transcendent Residue
         DimensionallyTranscendentResidue = new Material.Builder(getId(), gregtechId("dimensionally_transcendent_residue"))
-                .liquid(new FluidBuilder().temperature(999999999).customStill())
+                .liquid(new FluidBuilder().temperature(200000000).customStill())
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
@@ -201,6 +201,36 @@ public class GTLiteHighDegreeMaterials {
         SuperluminalTachyonJet = new Material.Builder(getId(), gregtechId("superluminal_tachyon_jet"))
                 .liquid(new FluidBuilder().temperature(89340))
                 .color(0x11F7C9)
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  15023 Crude Dimensionally Transcendent Catalyst
+        CrudeDimensionallyTranscendentCatalyst = new Material.Builder(getId(), gregtechId("crude_dimensionally_transcendent_catalyst"))
+                .liquid(new FluidBuilder().temperature(250000000).customStill())
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  24092 Prosaic Dimensionally Transcendent Catalyst
+        ProsaicDimensionallyTranscendentCatalyst = new Material.Builder(getId(), gregtechId("prosaic_dimensionally_transcendent_catalyst"))
+                .liquid(new FluidBuilder().temperature(500000000).customStill())
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  24093 Resplendent Dimensionally Transcendent Catalyst
+        ResplendentDimensionallyTranscendentCatalyst = new Material.Builder(getId(), gregtechId("resplendent_dimensionally_transcendent_catalyst"))
+                .liquid(new FluidBuilder().temperature(750000000).customStill())
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  24094 Exotic Dimensionally Transcendent Catalyst
+        ExoticDimensionallyTranscendentCatalyst = new Material.Builder(getId(), gregtechId("exotic_dimensionally_transcendent_catalyst"))
+                .liquid(new FluidBuilder().temperature(1000000000).customStill())
+                .build()
+                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+
+        //  24095 Zenith Dimensionally Transcendent Catalyst
+        ZenithDimensionallyTranscendentCatalyst = new Material.Builder(getId(), gregtechId("zenith_dimensionally_transcendent_catalyst"))
+                .liquid(new FluidBuilder().temperature(2000000000).customStill())
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
     }

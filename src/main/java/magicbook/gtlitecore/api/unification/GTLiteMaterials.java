@@ -634,6 +634,11 @@ public class GTLiteMaterials {
     public static Material StarCoreMatter;
     public static Material DimensionallyTranscendentResidue;
     public static Material SuperluminalTachyonJet;
+    public static Material CrudeDimensionallyTranscendentCatalyst;
+    public static Material ProsaicDimensionallyTranscendentCatalyst;
+    public static Material ResplendentDimensionallyTranscendentCatalyst;
+    public static Material ExoticDimensionallyTranscendentCatalyst;
+    public static Material ZenithDimensionallyTranscendentCatalyst;
 
     /////////////////////////////////////
     //  Unknown Composition Materials  //

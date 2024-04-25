@@ -115,7 +115,7 @@ public class NeutralNetworkNexus {
         //  White Dwarf Matter Swarm
         NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
                 .notConsumable(lens, CelestialCrystal)
-                .notConsumable(lens, LithiumNiobate)
+                .notConsumable(lens, Infinity)
                 .notConsumable(QUANTUM_ANOMALY)
                 .input(nanotube, WhiteDwarfMatter)
                 .input(nanosensor, WhiteDwarfMatter)
@@ -132,7 +132,7 @@ public class NeutralNetworkNexus {
         //  Black Dwarf Matter Swarm
         NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
                 .notConsumable(lens, NetherStar)
-                .notConsumable(lens, MagnetoResonatic)
+                .notConsumable(lens, CrystalMatrix)
                 .notConsumable(QUANTUM_ANOMALY)
                 .input(nanotube, BlackDwarfMatter)
                 .input(nanosensor, BlackDwarfMatter)
@@ -149,7 +149,7 @@ public class NeutralNetworkNexus {
         //  Galaxium Swarm
         NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
                 .notConsumable(CHROMATIC_LENS)
-                .notConsumable(QUANTUM_ANOMALY)
+                .notConsumable(lens, Spacetime)
                 .input(nanotube, Galaxium)
                 .input(nanosensor, Galaxium)
                 .input(UHASOC_WAFER, 64)

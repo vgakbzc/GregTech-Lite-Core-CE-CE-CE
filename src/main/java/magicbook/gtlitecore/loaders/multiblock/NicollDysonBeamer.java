@@ -3,10 +3,10 @@ package magicbook.gtlitecore.loaders.multiblock;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.common.blocks.*;
 
-import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.FIELD_GENERATOR_OpV;
 import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -382,6 +382,92 @@ public class NicollDysonBeamer {
                 .fluidOutputs(HiggsBosons.getFluid(147456))
                 .EUt(VA[MAX])
                 .duration(20)
+                .CasingTier(3)
+                .buildAndRegister();
+
+
+        //  Crude Dimensionally Transcendent Catalyst
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(lens, CrystalMatrix)
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(1000))
+                .fluidInputs(Helium.getPlasma(1000))
+                .fluidInputs(Oxygen.getPlasma(1000))
+                .fluidInputs(Iron.getPlasma(1000))
+                .fluidOutputs(CrudeDimensionallyTranscendentCatalyst.getFluid(1000))
+                .EUt(VZ[UEV])
+                .duration(200)
+                .CasingTier(1)
+                .buildAndRegister();
+
+        //  Prosaic Dimensionally Transcendent Catalyst
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(QUANTUM_ANOMALY)
+                .notConsumable(lens, Infinity)
+                .fluidInputs(CrudeDimensionallyTranscendentCatalyst.getFluid(1000))
+                .fluidInputs(Argon.getPlasma(1000))
+                .fluidInputs(Nitrogen.getPlasma(1000))
+                .fluidInputs(Americium.getPlasma(1000))
+                .fluidOutputs(ProsaicDimensionallyTranscendentCatalyst.getFluid(1000))
+                .EUt(VZ[UIV])
+                .duration(200)
+                .CasingTier(1)
+                .buildAndRegister();
+
+        //  Resplendent Dimensionally Transcendent Catalyst
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(QUANTUM_ANOMALY)
+                .notConsumable(lens, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .notConsumable(CHROMATIC_LENS)
+                .fluidInputs(ProsaicDimensionallyTranscendentCatalyst.getFluid(1000))
+                .fluidInputs(Tin.getPlasma(1000))
+                .fluidInputs(Nickel.getPlasma(1000))
+                .fluidInputs(FleroviumYtterbiumPlasma.getPlasma(1000))
+                .fluidOutputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(1000))
+                .EUt(VZ[UXV])
+                .duration(200)
+                .CasingTier(2)
+                .buildAndRegister();
+
+        //  Exotic Dimensionally Transcendent Catalyst
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(CHARGED_HYPERCUBE)
+                .notConsumable(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .notConsumable(lens, Spacetime)
+                .notConsumable(SUPERSOLID_SPACETIME_CONTINUUM)
+                .fluidInputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(1000))
+                .fluidInputs(Taranium.getPlasma(1000))
+                .fluidInputs(Adamantium.getPlasma(1000))
+                .fluidInputs(Vibranium.getPlasma(1000))
+                .fluidInputs(Mithril.getPlasma(1000))
+                .fluidInputs(Hypogen.getPlasma(1000))
+                .fluidInputs(IchorLiquid.getPlasma(1000))
+                .fluidInputs(DegenerateRhenium.getPlasma(1000))
+                .fluidInputs(QuarkGluonPlasma.getPlasma(1000))
+                .fluidOutputs(ExoticDimensionallyTranscendentCatalyst.getFluid(1000))
+                .EUt(VZ[OpV])
+                .duration(200)
+                .CasingTier(3)
+                .buildAndRegister();
+
+        //  Zenith Dimensionally Transcendent Catalyst
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .notConsumable(CHARGED_HYPERCUBE)
+                .notConsumable(LIGHT_CONE_MODULE)
+                .notConsumable(lens, Eternity)
+                .notConsumable(FIELD_GENERATOR_OpV)
+                .notConsumable(swarm, Galaxium)
+                .fluidInputs(ExoticDimensionallyTranscendentCatalyst.getFluid(1000))
+                .fluidInputs(AstralTitanium.getPlasma(1000))
+                .fluidInputs(CelestialTungsten.getPlasma(1000))
+                .fluidInputs(DenseNeutronPlasma.getPlasma(1000))
+                .fluidInputs(HeavyQuarkDegenerateMatter.getPlasma(1000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(1000))
+                .fluidInputs(Fatalium.getPlasma(1000))
+                .fluidInputs(CosmicFabric.getPlasma(1000))
+                .fluidInputs(CosmicComputingMixture.getFluid(1000))
+                .fluidOutputs(ZenithDimensionallyTranscendentCatalyst.getFluid(1000))
+                .EUt(VZ[MAX])
+                .duration(200)
                 .CasingTier(3)
                 .buildAndRegister();
 

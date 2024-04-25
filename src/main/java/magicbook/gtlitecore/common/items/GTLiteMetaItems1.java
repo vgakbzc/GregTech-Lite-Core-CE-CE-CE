@@ -57,79 +57,35 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SPINTRONIC_MAINFRAME = this.addItem(19, "circuit.spintronic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         COSMIC_PROCESSOR = this.addItem(20, "circuit.cosmic_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.cosmic_processor.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_processor.tooltip.2",
-                    1, 100,
-                    DARK_PURPLE,
-                    DARK_RED).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_processor.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
         }));
         COSMIC_ASSEMBLY = this.addItem(21, "circuit.cosmic_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.cosmic_assembly.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_assembly.tooltip.2",
-                    1, 100,
-                    DARK_PURPLE,
-                    DARK_RED).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_assembly.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
         }));
         COSMIC_COMPUTER = this.addItem(22, "circuit.cosmic_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.cosmic_computer.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_computer.tooltip.2",
-                    1, 100,
-                    DARK_PURPLE,
-                    DARK_RED).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_computer.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
         }));
         COSMIC_MAINFRAME = this.addItem(23, "circuit.cosmic_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.cosmic_mainframe.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_mainframe.tooltip.2",
-                    1, 100,
-                    DARK_PURPLE,
-                    DARK_RED).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.cosmic_mainframe.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
         }));
         SUPRACAUSAL_PROCESSOR = this.addItem(24, "circuit.supracausal_processor").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.supracausal_processor.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_processor.tooltip.2",
-                    1, 100,
-                    RED,
-                    GOLD,
-                    YELLOW,
-                    GREEN,
-                    AQUA,
-                    BLUE,
-                    LIGHT_PURPLE).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_processor.tooltip.2", 1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
         }));
         SUPRACAUSAL_ASSEMBLY = this.addItem(25, "circuit.supracausal_assembly").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.supracausal_assembly.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_assembly.tooltip.2",
-                    1, 100,
-                    RED,
-                    GOLD,
-                    YELLOW,
-                    GREEN,
-                    AQUA,
-                    BLUE,
-                    LIGHT_PURPLE).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_assembly.tooltip.2", 1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
         }));
         SUPRACAUSAL_COMPUTER = this.addItem(26, "circuit.supracausal_computer").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.supracausal_computer.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_computer.tooltip.2",
-                    1, 100,
-                    RED,
-                    GOLD,
-                    YELLOW,
-                    GREEN,
-                    AQUA,
-                    BLUE,
-                    LIGHT_PURPLE).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_computer.tooltip.2", 1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
         }));
         SUPRACAUSAL_MAINFRAME = this.addItem(27, "circuit.supracausal_mainframe").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT).addComponents(new TooltipBehavior((lines) -> {
             lines.add(I18n.format("metaitem.circuit.supracausal_mainframe.tooltip.1"));
-            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_mainframe.tooltip.2",
-                    1, 100,
-                    RED + BOLD,
-                    GOLD + BOLD,
-                    YELLOW + BOLD,
-                    GREEN + BOLD,
-                    AQUA + BOLD,
-                    BLUE + BOLD,
-                    LIGHT_PURPLE + BOLD).get());
+            lines.add(translatedAnimatedText("metaitem.circuit.supracausal_mainframe.tooltip.2", 1, 100, RED + BOLD, GOLD + BOLD, YELLOW + BOLD, GREEN + BOLD, AQUA + BOLD, BLUE + BOLD, LIGHT_PURPLE + BOLD).get());
         }));
         SUPRACHRONAL_CIRCUIT_ULV = this.addItem(28, "circuit.suprachronal.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         SUPRACHRONAL_CIRCUIT_LV = this.addItem(29, "circuit.suprachronal.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);

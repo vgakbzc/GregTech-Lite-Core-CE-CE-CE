@@ -2238,6 +2238,11 @@ gregtech.material.white_dwarf_matter=White Dwarf Matter
 gregtech.material.star_core_matter=Star Core Matter
 gregtech.material.dimensionally_transcendent_residue=Dimensionally Transcendent Residue
 gregtech.material.superluminal_tachyon_jet=Superluminal Tachyon Jet
+gregtech.material.crude_dimensionally_transcendent_catalyst=Crude Dimensionally Transcendent Catalyst
+gregtech.material.prosaic_dimensionally_transcendent_catalyst=Prosaic Dimensionally Transcendent Catalyst
+gregtech.material.resplendent_dimensionally_transcendent_catalyst=Resplendent Dimensionally Transcendent Catalyst
+gregtech.material.exotic_dimensionally_transcendent_catalyst=Exotic Dimensionally Transcendent Catalyst
+gregtech.material.zenith_dimensionally_transcendent_catalyst=Zenith Dimensionally Transcendent Catalyst
 
 ##  Unknown Composition Materials
 gregtech.material.fracturing_fluid=Fracturing Fluid

@@ -23,10 +23,10 @@ import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.QUANTUM_TANK;
 import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MiscRecipes {
@@ -605,6 +605,51 @@ public class MiscRecipes {
                 .output(wireFine, Graphene, 4)
                 .EUt(7)
                 .duration(110)
+                .buildAndRegister();
+
+        //  Crystal Matrix Lens
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, CrystalMatrix)
+                .output(lens, CrystalMatrix)
+                .output(dustSmall, CrystalMatrix)
+                .EUt(VA[UV])
+                .duration(MINUTE)
+                .buildAndRegister();
+
+        //  Infinity Lens
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, Infinity)
+                .output(lens, Infinity)
+                .output(dustSmall, Infinity)
+                .EUt(VA[UHV])
+                .duration(MINUTE / 2)
+                .buildAndRegister();
+
+        //  Magneto Hydrodynamically Constrained Star Matter
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .output(lens, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .output(dustSmall, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .EUt(VA[UEV])
+                .duration(MINUTE / 4)
+                .buildAndRegister();
+
+        //  Spacetime Lens
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, Spacetime)
+                .output(lens, Spacetime)
+                .output(dustSmall, Spacetime)
+                .EUt(VA[UIV])
+                .duration(MINUTE / 6)
+                .buildAndRegister();
+
+        //  Eternity Lens
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, Eternity)
+                .output(lens, Eternity)
+                .output(dustSmall, Eternity)
+                .EUt(VA[UXV])
+                .duration(MINUTE / 8)
                 .buildAndRegister();
     }
 

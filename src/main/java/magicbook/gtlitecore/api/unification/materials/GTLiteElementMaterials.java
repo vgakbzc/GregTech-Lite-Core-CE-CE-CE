@@ -99,7 +99,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 5901))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_DENSE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FINE_WIRE, GENERATE_DENSE, GENERATE_LENS)
                 .toolStats(ToolProperty.Builder.of(10.0F, 150.0F, 80000, 30)
                         .magnetic()
                         .unbreakable()
@@ -117,7 +117,7 @@ public class GTLiteElementMaterials {
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.CrystalMatrix)
                 .fluidPipeProperties(40000, 10000, true, true, true, true)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_LENS)
                 .build();
 
         //  10006 Ichorium
@@ -165,7 +165,7 @@ public class GTLiteElementMaterials {
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[OpV], 100)
                         .vacuumStats(VA[OpV], 100))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS)
                 .element(GTLiteElements.SpaceTime)
                 .rotorStats(360.0F, 1.0F, 524288000)
                 .build()
@@ -345,7 +345,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .iconSet(CUSTOM_ETERNITY)
                 .element(GTLiteElements.Eternity)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS)
                 .build();
 
         //  10025 Tiberium
