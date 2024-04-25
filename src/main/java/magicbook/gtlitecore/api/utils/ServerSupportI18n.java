@@ -34,7 +34,7 @@ public class ServerSupportI18n {
     /**
      * Client name helper.
      *
-     * @param clientName  Client side localized name, i.e. I18n.format().
+     * @param clientName  Client side localized name, i.e. {@code I18n.format(clientName)}.
      * @return            Return a client name by format() in {@link I18n}.
      */
     public static String clientHelper(String clientName) {

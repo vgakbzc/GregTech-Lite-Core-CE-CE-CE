@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.api.gui;
 
+import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.resources.SteamTexture;
 import gregtech.api.gui.resources.TextureArea;
 
@@ -10,7 +11,7 @@ import gregtech.api.gui.resources.TextureArea;
  *
  * <p>
  *     Used to load Gui Textures like overlay, progress bar,
- *     button, logo and icon, same as {@link gregtech.api.gui.GuiTextures}.
+ *     button, logo and icon, same as {@link GuiTextures}.
  * </p>
  *
  * @since 2.8.7-beta

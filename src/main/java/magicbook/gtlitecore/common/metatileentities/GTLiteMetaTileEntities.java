@@ -42,10 +42,8 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
  * @author Magic_Sweepy
  *
  * <p>
- *     This class is the basic class about machines in gtlitecore,
- *     all single/multi machines init in this class, so this class's function is same as
- *      {@link gregtech.common.metatileentities.MetaTileEntities}).
- *     ID range of gtlitecore meta tile entities:
+ *     This class is the {@code MetaTileEntity} class in {@code gtlitecore},
+ *     ID range of {@code gtlitecore} meta tile entities:
  *
  *     <pre>
  *         14000-14999: Multiblock Parts,<br>
@@ -58,6 +56,7 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
  *
  * @since 2.8.7-beta
  */
+@SuppressWarnings("all")
 public class GTLiteMetaTileEntities {
 
     ////////////////////////
@@ -244,20 +243,27 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityNicollDysonBeamer NICOLL_DYSON_BEAMER;
 
     /**
-     * Steam Machine init method.
+     * Register a Steam machine and its correspondence High Pressure Steam machine.
      *
      * <p>
      *     Please see {@link SimpleSteamMetaTileEntity}, this method is packaged of this class,
-     *     and used for init some basic steam machines (e.g. Steam Vacuum Chamber).
+     *     and used for init some basic steam machines, like {@link #STEAM_VACUUM_CHAMBER}.
      * </p>
      *
-     * @param machines           Machine, you should pre-init it.
-     * @param startId            Start id, because this method generate 2 machine in 1 work (steam + high pressure steam), so it take up 2 id.
-     * @param name               Unlocalized name, use bronze and steel as a suffix to distinguish steam and high pressure steam.
-     * @param recipeMap          Recipe map, plase use recipe map in {@link RecipeMaps} or same class in other addition mods.
-     * @param progressIndicator  Progress Bar Indicator, this parameter is not same as progress bar in {@link Textures}, please see {@link SteamProgressIndicator}.
-     * @param texture            Overlay textures, please use textures in {@link Textures} or same class in other addition mods.
-     * @param isBricked          Extra texture of machine, if is bricked, then add a brick texture on side and front.
+     * @param machines           Steam {@code MetaTileEntity} machine.
+     * @param startId            Start ID of Machine, each machine use two ID (use the first ID you wanted),
+     *                           this method will generated Steam and High Hressure Steam two version of your machine.
+     * @param name               Unlocalized Name, use {@code bronze} and {@code steel} as suffix auto,
+     *                           two suffixes correspondence to two version of your machine (Steam and High Pressure Steam).
+     * @param recipeMap          Machine {@code RecipeMap}, you can use {@code RecipeMap} in {@link GTLiteRecipeMaps} or {@link RecipeMaps},
+     *                           or another {@code RecipeMap} class in other addition mods.
+     * @param progressIndicator  Progress Bar Indicator, this parameter is not same as progress bar in {@link Textures},
+     *                           please see {@link SteamProgressIndicator}.
+     * @param texture            Overlay textures, please use textures in {@link GTLiteTextures} or {@link Textures},
+     *                           or another {@code Texture} class in other addition mods.
+     * @param isBricked          Extended texture of machine, if {@code isBricked} is true, then add bricked texture on side and front,
+     *                           please see: {@link Textures#STEAM_BRICKED_CASING_BRONZE} and {@link Textures#STEAM_BRICKED_CASING_STEEL}.
+     *
      */
     private static void registerSimpleSteamMetaTileEntity(SimpleSteamMetaTileEntity[] machines,
                                                           int startId,
@@ -271,12 +277,10 @@ public class GTLiteMetaTileEntities {
     }
 
     /**
-     * Multiblock part init method.
+     * Register a Multiblock Part of {@code MetaTileEntity}.
      *
-     * <p>
-     *     Multiblock Part range: 14000-14999.
-     *     Used to init multiblock part (e.g. {@link gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiblockPart}).
-     * </p>
+     * @param id   ID of Multiblock Part.
+     * @param mte  {@code MetaTileEntity}, should use your Multiblock Part class.
      */
     private static <F extends MetaTileEntity> F registerPartMetaTileEntity(int id, F mte) {
         if (id > 1000)
@@ -285,12 +289,10 @@ public class GTLiteMetaTileEntities {
     }
 
     /**
-     * Multiblock machine init method.
+     * Register a {@code MetaTileEntity} machine.
      *
-     * <p>
-     *     Multiblock Machine range: 16001-20000.
-     *     Used to init multiblock machine (e.g. {@link gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController}).
-     * </p>
+     * @param id   ID of {@code MetaTileEntity} machine.
+     * @param mte  {@code MetaTileEntity}, should use your {@code MetaTileEntity} class.
      */
     private static <T extends MultiblockControllerBase> T registerMultiMetaTileEntity(int id, T mte) {
         return registerMetaTileEntity(id + 16000, mte);
