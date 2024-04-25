@@ -8,6 +8,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.BismuthTellurite;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.MagnetoResonatic;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -30,7 +31,7 @@ public class MagnetoResonaticCircuits {
                 .input(dust, MagnetoResonatic)
                 .output(MAGNETO_RESONATIC_BOARD)
                 .EUt(VA[HV])
-                .duration(300)
+                .duration(MINUTE / 4)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -40,12 +41,14 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(L * 2))
                 .output(MAGNETO_RESONATIC_CIRCUIT_BOARD)
                 .EUt(VA[EV])
-                .duration(600)
+                .duration(MINUTE / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 
     private static void Circuits() {
+
+        int baseDuration = 75;
 
         //  ULV
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
@@ -58,7 +61,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(36))
                 .output(MAGNETO_RESONATIC_CIRCUIT_ULV, 4)
                 .EUt(VA[LV])
-                .duration(75)
+                .duration(baseDuration)
                 .buildAndRegister();
 
         //  LV
@@ -72,7 +75,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(72))
                 .output(MAGNETO_RESONATIC_CIRCUIT_LV, 4)
                 .EUt(VA[MV])
-                .duration(150)
+                .duration(baseDuration * 2)
                 .buildAndRegister();
 
         //  MV
@@ -86,7 +89,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(108))
                 .output(MAGNETO_RESONATIC_CIRCUIT_MV, 4)
                 .EUt(VA[HV])
-                .duration(225)
+                .duration(baseDuration * 3)
                 .buildAndRegister();
 
         //  HV
@@ -100,7 +103,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(MAGNETO_RESONATIC_CIRCUIT_HV, 4)
                 .EUt(VA[EV])
-                .duration(300)
+                .duration(baseDuration * 4)
                 .buildAndRegister();
 
         //  EV
@@ -114,7 +117,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(180))
                 .output(MAGNETO_RESONATIC_CIRCUIT_EV, 4)
                 .EUt(VA[IV])
-                .duration(375)
+                .duration(baseDuration * 5)
                 .buildAndRegister();
 
         //  IV
@@ -128,7 +131,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(864))
                 .output(MAGNETO_RESONATIC_CIRCUIT_IV, 4)
                 .EUt(VA[LuV])
-                .duration(450)
+                .duration(baseDuration * 6)
                 .buildAndRegister();
 
         //  LuV
@@ -142,7 +145,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(1008))
                 .output(MAGNETO_RESONATIC_CIRCUIT_LuV, 4)
                 .EUt(VA[ZPM])
-                .duration(525)
+                .duration(baseDuration * 7)
                 .buildAndRegister();
 
         //  ZPM
@@ -156,7 +159,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(4608))
                 .output(MAGNETO_RESONATIC_CIRCUIT_ZPM, 4)
                 .EUt(VA[UV])
-                .duration(600)
+                .duration(baseDuration * 8)
                 .buildAndRegister();
 
         //  UV
@@ -170,7 +173,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(5184))
                 .output(MAGNETO_RESONATIC_CIRCUIT_UV, 4)
                 .EUt(VA[UHV])
-                .duration(675)
+                .duration(baseDuration * 9)
                 .buildAndRegister();
 
         //  UHV
@@ -184,7 +187,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(5760))
                 .output(MAGNETO_RESONATIC_CIRCUIT_UHV, 4)
                 .EUt(VA[UEV])
-                .duration(750)
+                .duration(baseDuration * 10)
                 .buildAndRegister();
 
         //  UEV
@@ -198,7 +201,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(6336))
                 .output(MAGNETO_RESONATIC_CIRCUIT_UEV, 4)
                 .EUt(VA[UIV])
-                .duration(825)
+                .duration(baseDuration * 11)
                 .buildAndRegister();
 
         //  UIV
@@ -212,7 +215,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(6912))
                 .output(MAGNETO_RESONATIC_CIRCUIT_UIV, 4)
                 .EUt(VA[UXV])
-                .duration(900)
+                .duration(baseDuration * 12)
                 .buildAndRegister();
 
         //  UXV
@@ -226,7 +229,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(7488))
                 .output(MAGNETO_RESONATIC_CIRCUIT_UXV, 4)
                 .EUt(VA[OpV])
-                .duration(975)
+                .duration(baseDuration * 13)
                 .buildAndRegister();
 
         //  OpV
@@ -240,7 +243,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(8064))
                 .output(MAGNETO_RESONATIC_CIRCUIT_OpV, 4)
                 .EUt(VA[MAX])
-                .duration(1050)
+                .duration(baseDuration * 14)
                 .buildAndRegister();
         //  MAX
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
@@ -253,7 +256,7 @@ public class MagnetoResonaticCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(8640))
                 .output(MAGNETO_RESONATIC_CIRCUIT_MAX, 4)
                 .EUt((int) V[MAX])
-                .duration(1124)
+                .duration(baseDuration * 15)
                 .buildAndRegister();
     }
 }

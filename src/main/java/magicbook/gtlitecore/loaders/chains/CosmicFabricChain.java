@@ -7,6 +7,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_BLOCK;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -25,7 +26,7 @@ public class CosmicFabricChain {
                 .fluidInputs(Polyetheretherketone.getFluid(L * 2))
                 .output(COSMIC_FABRIC)
                 .EUt(VA[UEV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -46,7 +47,7 @@ public class CosmicFabricChain {
                 .fluidInputs(Nitrogen.getFluid(2000))
                 .fluidOutputs(TolueneDiisocyanate.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  2C9H6N2O2 + 8C2H6O2 + 2O -> 2C17H16N2O4 + 14H2O
@@ -57,7 +58,7 @@ public class CosmicFabricChain {
                 .fluidOutputs(Polyurethane.getFluid(2000))
                 .fluidOutputs(Water.getFluid(14000))
                 .EUt(VA[HV])
-                .duration(110)
+                .duration(5 * SECOND + 10)
                 .buildAndRegister();
 
         //  CaCO3 + C17H16N2O4 + C2H6O2 -> C20H22N2O9Ca?
@@ -68,7 +69,7 @@ public class CosmicFabricChain {
                 .fluidInputs(Air.getFluid(1000))
                 .fluidOutputs(ViscoelasticPolyurethane.getFluid(2000))
                 .EUt(VA[EV])
-                .duration(150)
+                .duration(7 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -77,7 +78,7 @@ public class CosmicFabricChain {
                 .fluidInputs(ViscoelasticPolyurethane.getFluid(1000))
                 .output(MEMORY_FOAM_PLATE)
                 .EUt(VA[EV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -92,7 +93,7 @@ public class CosmicFabricChain {
                 .output(dust, SodiumAzanide, 4)
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  NaNH2 + N2O4 -> NaN3 + H2O + 3O
@@ -103,7 +104,7 @@ public class CosmicFabricChain {
                 .fluidOutputs(Water.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(3000))
                 .EUt(VA[EV])
-                .duration(80)
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  C3H6O + CH4 -> C4H10O
@@ -113,7 +114,7 @@ public class CosmicFabricChain {
                 .fluidInputs(Methane.getFluid(1000))
                 .fluidOutputs(Tertbutanol.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(126)
+                .duration(6 * SECOND + 6)
                 .buildAndRegister();
 
         //  2C4H10O + 2CO2 -> C10H18O5 + H2O
@@ -123,7 +124,7 @@ public class CosmicFabricChain {
                 .output(dust, DitertbutylDicarbonate, 33)
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(260)
+                .duration(13 * SECOND)
                 .buildAndRegister();
 
         //  C10H18O5 + 2NaN3 + 2K -> 2Na + 3K2O + 2C5H9N3O2
@@ -135,7 +136,7 @@ public class CosmicFabricChain {
                 .output(dust, Potash, 6)
                 .fluidOutputs(Tertbutylcarbonylazide.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(210)
+                .duration(10 * SECOND + 10)
                 .buildAndRegister();
 
         //  C60 + 4C5H9N3O2 + 8H2O + 4CO -> C60N12H12 + 8CO2 + 4C4H10O (cycle)
@@ -148,7 +149,7 @@ public class CosmicFabricChain {
                 .fluidOutputs(CarbonDioxide.getFluid(8000))
                 .fluidOutputs(Tertbutanol.getFluid(4000))
                 .EUt(VA[LuV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  Aminated Fullerene -> Azafullerene
@@ -157,7 +158,7 @@ public class CosmicFabricChain {
                 .fluidInputs(AminatedFullerene.getFluid(1000))
                 .fluidOutputs(Azafullerene.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  PbFeC153H36NO2 + C60H12N12 -> Fullerene Fiber
@@ -166,7 +167,7 @@ public class CosmicFabricChain {
                 .fluidInputs(Azafullerene.getFluid(10))
                 .output(FULLERENE_FIBER)
                 .EUt(VA[UV])
-                .duration(350)
+                .duration(17 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }

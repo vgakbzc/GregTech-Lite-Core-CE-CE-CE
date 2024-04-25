@@ -10,6 +10,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.plate;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.HexagonalBoronNitride;
 
@@ -24,7 +25,7 @@ public class Crucibles {
                     .fluidInputs(Tin.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BRONZE_CRUCIBLE))
                     .EUt(VA[ULV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .buildAndRegister();
 
             //  Invar Crucible (2395 K, LV stage)
@@ -34,7 +35,7 @@ public class Crucibles {
                     .fluidInputs(TinAlloy.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.INVAR_CRUCIBLE))
                     .EUt(VA[LV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .buildAndRegister();
 
             //  Quartzite Crucible (2482 K, MV stage)
@@ -44,7 +45,7 @@ public class Crucibles {
                     .fluidInputs(SolderingAlloy.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.QUARTZ_CRUCIBLE))
                     .EUt(VA[MV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .buildAndRegister();
 
             //  Chrome Crucible (2725 K, HV stage)
@@ -54,7 +55,7 @@ public class Crucibles {
                     .fluidInputs(Steel.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.CHROME_CRUCIBLE))
                     .EUt(VA[HV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -65,7 +66,7 @@ public class Crucibles {
                     .fluidInputs(Aluminium.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.VANADIUM_CRUCIBLE))
                     .EUt(VA[EV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -76,7 +77,7 @@ public class Crucibles {
                     .fluidInputs(Aluminium.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.NIOBIUM_TITANIUM_CRUCIBLE))
                     .EUt(VA[EV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -87,7 +88,7 @@ public class Crucibles {
                     .fluidInputs(StainlessSteel.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.IRIDIUM_CRUCIBLE))
                     .EUt(VA[IV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -98,7 +99,7 @@ public class Crucibles {
                     .fluidInputs(StainlessSteel.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.MOLYBDENUM_CRUCIBLE))
                     .EUt(VA[IV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -109,7 +110,7 @@ public class Crucibles {
                     .fluidInputs(Titanium.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.TUNGSTEN_CRUCIBLE))
                     .EUt(VA[LuV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -120,7 +121,7 @@ public class Crucibles {
                     .fluidInputs(Titanium.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.OSMIUM_CRUCIBLE))
                     .EUt(VA[LuV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -131,7 +132,7 @@ public class Crucibles {
                     .fluidInputs(TungstenSteel.getFluid(L * 4))
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.GRAPHITE_CRUCIBLE))
                     .EUt(VA[ZPM])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
 
@@ -142,7 +143,7 @@ public class Crucibles {
                     .circuitMeta(5)
                     .outputs(GTLiteMetaBlocks.CRUCIBLE.getItemVariant(BlockCrucible.CrucibleType.BORON_NITRIDE_CRUCIBLE))
                     .EUt(VA[UV])
-                    .duration(1200)
+                    .duration(MINUTE)
                     .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
         } else {

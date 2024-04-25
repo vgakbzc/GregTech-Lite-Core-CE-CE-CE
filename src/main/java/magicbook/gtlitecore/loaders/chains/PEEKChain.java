@@ -5,6 +5,7 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.LARGE_CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class PEEKChain {
@@ -21,7 +22,7 @@ public class PEEKChain {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  Na2CO3 + C6H4(OH)2 + 2C6H5F -> C20H12O3 + 2NaF + 2H2O
@@ -33,7 +34,7 @@ public class PEEKChain {
                 .fluidOutputs(Polyetheretherketone.getFluid(2592))
                 .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[UHV])
-                .duration(480)
+                .duration(24 * SECOND)
                 .buildAndRegister();
 
         //  C6H5F + C7H7F + 6Cl + H2O -> (FC6H4)2CO + 6HF
@@ -46,7 +47,7 @@ public class PEEKChain {
                 .output(dust, Difluorobenzophenone, 24)
                 .fluidOutputs(HydrofluoricAcid.getFluid(6000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  C3H6 + C6H6 + 3O -> C6H4(OH)2 + C6H6O2 + C3H6O
@@ -59,7 +60,7 @@ public class PEEKChain {
                 .fluidOutputs(Resorcinol.getFluid(1000))
                 .fluidOutputs(Acetone.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  C6H5F + H2SbF7 + CH4 -> SbF3 + C7H7F + 4HF
@@ -71,7 +72,7 @@ public class PEEKChain {
                 .fluidOutputs(Fluorotoluene.getFluid(1000))
                 .fluidOutputs(HydrofluoricAcid.getFluid(4000))
                 .EUt(VA[HV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
     }

@@ -6,6 +6,7 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.plate;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -21,8 +22,8 @@ public class GalliumNitrideChain {
                 .fluidInputs(Chloromethane.getFluid(3000))
                 .fluidOutputs(Trimethylaluminium.getFluid(500))
                 .output(dust, Salt, 6)
-                .duration(150)
                 .EUt(VA[EV])
+                .duration(7 * SECOND + 10)
                 .buildAndRegister();
 
         //  Ga + 3Cl -> GaCl3
@@ -31,8 +32,8 @@ public class GalliumNitrideChain {
                 .fluidInputs(Chlorine.getFluid(3000))
                 .circuitMeta(3)
                 .output(dust, GalliumTrichloride, 4)
-                .duration(100)
                 .EUt(VA[LV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  GaCl3 + 0.5 Al2(CH3)6 -> Ga(CH3)3 + AlCl3
@@ -41,8 +42,8 @@ public class GalliumNitrideChain {
                 .fluidInputs(Trimethylaluminium.getFluid(500))
                 .output(dust, AluminiumTrichloride, 4)
                 .fluidOutputs(Trimethylgallium.getFluid(1000))
-                .duration(300)
                 .EUt(VA[HV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         //  AlCl3 + 3H2O -> Al(OH)3 + 3HCl
@@ -51,8 +52,8 @@ public class GalliumNitrideChain {
                 .fluidInputs(Water.getFluid(3000))
                 .output(dust, AluminiumHydroxide, 7)
                 .fluidOutputs(HydrochloricAcid.getFluid(3000))
-                .duration(60)
                 .EUt(VA[LV])
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  2Al(OH)3 -> Al2O3 + 3H2O
@@ -60,8 +61,8 @@ public class GalliumNitrideChain {
                 .input(dust, AluminiumHydroxide, 14)
                 .output(dust, Alumina, 5)
                 .fluidOutputs(Water.getFluid(3000))
-                .duration(60)
-                .EUt(16)
+                .EUt(VH[LV])
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         // 2Ga(CH3)3 + 3H2O -> Ga2O3 + 3CH4 + 3H (H lost)
@@ -71,9 +72,9 @@ public class GalliumNitrideChain {
                 .fluidInputs(Water.getFluid(3000))
                 .output(dust, GalliumTrioxide, 5)
                 .fluidOutputs(Methane.getFluid(3000))
-                .temperature(923)
-                .duration(160)
                 .EUt(VA[HV])
+                .duration(8 * SECOND)
+                .temperature(923)
                 .buildAndRegister();
 
         //  Ga2O3 + 2NH3 -> 2GaN + 3H2O
@@ -82,9 +83,9 @@ public class GalliumNitrideChain {
                 .fluidInputs(Ammonia.getFluid(2000))
                 .output(plate, GalliumNitride, 4)
                 .fluidOutputs(Steam.getFluid(3000))
-                .temperature(1023)
-                .duration(250)
                 .EUt(VA[LuV])
+                .duration(12 * SECOND + 10)
+                .temperature(1023)
                 .buildAndRegister();
     }
 }

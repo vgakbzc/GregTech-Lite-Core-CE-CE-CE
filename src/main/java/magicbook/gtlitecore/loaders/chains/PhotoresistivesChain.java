@@ -4,6 +4,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -24,8 +25,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Tetrahydrofuran.getFluid(1000))
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(1500))
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Mg + 2Cl -> MgCl2
@@ -34,8 +35,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(Chlorine.getFluid(2000))
                 .circuitMeta(2)
                 .output(dust, MagnesiumChloride, 3)
-                .duration(50)
                 .EUt(VA[LV])
+                .duration(2 * SECOND + 10)
                 .buildAndRegister();
 
         //  MgCl2 + 2K -> Mg + 2KCl
@@ -45,8 +46,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(Tetrahydrofuran.getFluid(10))
                 .output(dust, HRAMagnesium)
                 .output(dust, RockSalt, 4)
-                .duration(140)
                 .EUt(VA[IV])
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  C2H4 + 2Br -> C2H4Br2
@@ -54,8 +55,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(Ethylene.getFluid(1000))
                 .fluidInputs(Bromine.getFluid(2000))
                 .fluidOutputs(EthyleneDibromide.getFluid(3000))
-                .duration(100)
                 .EUt(VA[MV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Mg + C2H4Br2 -> CH3MgBr + HBr + C (lost)
@@ -64,8 +65,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(EthyleneDibromide.getFluid(3000))
                 .fluidOutputs(GrignardReagent.getFluid(1000))
                 .fluidOutputs(HydrobromicAcid.getFluid(1000))
-                .duration(100)
                 .EUt(VA[LV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -76,8 +77,8 @@ public class PhotoresistivesChain {
                 .input(dust, Cadmium)
                 .fluidInputs(Bromine.getFluid(2000))
                 .output(dust, CadmiumBromide, 3)
-                .duration(100)
                 .EUt(VA[LV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  CdBr2 + 2CH3MgBr -> (CH3)2Cd + 2MgBr2
@@ -86,8 +87,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(GrignardReagent.getFluid(2000))
                 .output(dust, MagnesiumBromide, 6)
                 .fluidOutputs(Dimethylcadmium.getFluid(1000))
-                .duration(100)
                 .EUt(VA[IV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -98,8 +99,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(Ethylene.getFluid(2000))
                 .fluidInputs(HydrogenSulfide.getFluid(1000))
                 .fluidOutputs(DiethylSuflide.getFluid(3000))
-                .duration(150)
                 .EUt(VA[LV])
+                .duration(7 * SECOND + 10)
                 .buildAndRegister();
 
         //  C4H10S -> 2C2H4 + H2S
@@ -107,8 +108,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(DiethylSuflide.getFluid(3000))
                 .fluidOutputs(Ethylene.getFluid(2000))
                 .fluidOutputs(HydrogenSulfide.getFluid(1000))
-                .duration(340)
-                .EUt(7)
+                .EUt(VA[ULV])
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  Cd(CH3)2 + C4H10S -> CdS + C2H6 + C4H10
@@ -118,19 +119,20 @@ public class PhotoresistivesChain {
                 .output(dust, CadmiumSulfide, 2)
                 .fluidOutputs(Ethane.getFluid(1000))
                 .fluidOutputs(Butane.getFluid(1000))
-                .duration(80)
                 .EUt(VA[LuV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
     }
 
     private static void CadmiumSelenide() {
+
         //  2Al + 3Se -> Al2Se3
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, Aluminium, 2)
                 .input(dust, Selenium, 3)
                 .output(dust, AluminiumSelenide, 5)
-                .duration(400)
                 .EUt(VA[LV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  Al2Se3 + 6H2O -> 2Al(OH)3 + 3H2Se
@@ -139,8 +141,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(Water.getFluid(6000))
                 .output(dust, AluminiumHydroxide, 14)
                 .fluidOutputs(HydrogenSelenide.getFluid(3000))
-                .duration(200)
                 .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  (CH3)2Cd + H2Se -> CdSe + 2CH4
@@ -149,8 +151,8 @@ public class PhotoresistivesChain {
                 .fluidInputs(HydrogenSelenide.getFluid(1000))
                 .output(dust, CadmiumSelenide, 2)
                 .fluidOutputs(Methane.getFluid(2000))
-                .duration(80)
                 .EUt(VA[ZPM])
+                .duration(4 * SECOND)
                 .buildAndRegister();
     }
 }

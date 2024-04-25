@@ -7,6 +7,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtechfoodoption.GTFOMaterialHandler.Aminophenol;
 import static gregtechfoodoption.GTFOMaterialHandler.Aniline;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class KaptonChain {
@@ -27,8 +28,8 @@ public class KaptonChain {
                 .fluidInputs(Chloromethane.getFluid(2000))
                 .output(dust, Durene, 24)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
-                .duration(120)
                 .EUt(VA[MV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  C6H2(CH3)4 + 12O -> C6H2(C2O3)2 + 6H2O
@@ -37,8 +38,8 @@ public class KaptonChain {
                 .fluidInputs(Oxygen.getFluid(2000))
                 .output(dust, PyromelliticDianhydride, 3)
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(30)
                 .EUt(VA[HV])
+                .duration(SECOND + 10)
                 .buildAndRegister();
     }
 
@@ -51,8 +52,8 @@ public class KaptonChain {
                 .circuitMeta(1)
                 .outputs(Aminophenol.getItemStack(15))
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(300)
                 .EUt(VA[LV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         //  2C6H5NH2 + C2H5OH -> C12H12N2O + 2CH4
@@ -63,8 +64,8 @@ public class KaptonChain {
                 .notConsumable(HydrochloricAcid.getFluid())
                 .output(dust, Oxydianiline, 27)
                 .fluidOutputs(Methane.getFluid(2000))
-                .duration(100)
                 .EUt(VA[ZPM])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  HOC6H4NH2 + ClC6H4NO2 + H2O -> C12H12N2O + 3O + HCl
@@ -77,8 +78,8 @@ public class KaptonChain {
                 .output(dust, Oxydianiline, 27)
                 .fluidOutputs(Oxygen.getFluid(3000))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .duration(200)
                 .EUt(VA[LV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -90,8 +91,8 @@ public class KaptonChain {
                 .notConsumable(dust, Palladium)
                 .output(dust, BiphenylTetracarboxylicAcidDianhydride, 28)
                 .fluidOutputs(Hydrogen.getFluid(2000))
-                .duration(200)
                 .EUt(VA[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -103,8 +104,8 @@ public class KaptonChain {
                 .fluidInputs(Ammonia.getFluid(2000))
                 .fluidOutputs(Nitroaniline.getFluid(1000))
                 .output(dust, AmmoniumChloride, 2)
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  H2NC6H4NO2 + 6H -> H2NC6H4NH2 + 2H2O
@@ -113,8 +114,8 @@ public class KaptonChain {
                 .fluidInputs(Hydrogen.getFluid(6000))
                 .output(dust, ParaPhenylenediamine, 16)
                 .fluidOutputs(Water.getFluid(2000))
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -125,7 +126,8 @@ public class KaptonChain {
                 .input(dust, PyromelliticDianhydride, 2)
                 .input(dust, Oxydianiline, 3)
                 .fluidOutputs(KaptonK.getFluid(L))
-                .duration(30).EUt(VA[IV])
+                .EUt(VA[IV])
+                .duration(SECOND + 10)
                 .buildAndRegister();
 
         //  2C6H2(C2O3)2 + C12H12N2O + C16H6O6 + H2NC6H4NH2 -> C24H18N2O5 + 30C + 12H + 14O + 2N (loss)
@@ -134,8 +136,8 @@ public class KaptonChain {
                 .input(dust, ParaPhenylenediamine)
                 .fluidInputs(KaptonK.getFluid(L))
                 .fluidOutputs(KaptonE.getFluid(L))
-                .duration(30)
                 .EUt(VA[ZPM])
+                .duration(SECOND + 10)
                 .buildAndRegister();
     }
 }

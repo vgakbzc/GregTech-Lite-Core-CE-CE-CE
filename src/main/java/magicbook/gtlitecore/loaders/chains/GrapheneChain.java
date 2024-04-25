@@ -11,6 +11,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.VACUUM_TUBE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.MAGNETRON;
 
@@ -40,8 +41,8 @@ public class GrapheneChain {
                 .fluidInputs(HydrogenPeroxide.getFluid(1000))
                 .fluidOutputs(Hydrazine.getFluid(1000))
                 .fluidOutputs(Water.getFluid(2000))
-                .duration(80)
                 .EUt(VA[HV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  Graphite -> Graphene Oxide
@@ -52,8 +53,8 @@ public class GrapheneChain {
                 .output(dust, GrapheneOxide)
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
                 .fluidOutputs(NitricAcid.getFluid(1000))
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Graphene Oxide -> Graphene
@@ -62,28 +63,20 @@ public class GrapheneChain {
                 .fluidInputs(Hydrazine.getFluid(100))
                 .fluidInputs(Argon.getFluid(50))
                 .output(dust, Graphene)
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
     private static void SimpleGrapheneChain() {
 
-        // Be + O -> BeO
+        //  Be + O -> BeO
         CHEMICAL_RECIPES.recipeBuilder()
                 .input(dust, Beryllium)
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, BerylliumOxide, 2)
-                .duration(60).EUt(VA[LV]).buildAndRegister();
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(ring, BerylliumOxide, 64)
-                .input(ring, BerylliumOxide, 64)
-                .input(plate, HSLASteel, 6)
-                .inputs(VACUUM_TUBE.getStackForm())
-                .outputs(MAGNETRON.getStackForm())
-                .duration(600)
-                .EUt(VA[IV])
+                .EUt(VA[LV])
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  Graphite -> Graphene
@@ -94,8 +87,8 @@ public class GrapheneChain {
                 .output(dust, Graphene)
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
                 .fluidOutputs(NitricAcid.getFluid(1000))
-                .duration(100)
                 .EUt(VA[HV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 }

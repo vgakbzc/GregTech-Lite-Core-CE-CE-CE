@@ -61,21 +61,26 @@ public class NeutralNetworkNexus {
                 .buildAndRegister();
 
         //  Basic Breeding
-        createBasicBreeding(Carbon, VZ[LV], 6400, Diamond);
-        createBasicBreeding(Tin,    VZ[LV], 3800, Glass);
-        //createBasicBreeding(Cobalt, VZ[MV], 5300);
+        createBasicBreeding(Carbon,   VZ[LV], 6400, Diamond);
+        createBasicBreeding(Tin,      VZ[LV], 3800, Glass);
+        createBasicBreeding(Steel,    VZ[MV], 5300, Sapphire);
+        createBasicBreeding(Chrome,   VZ[MV], 4400, Ruby);
+        createBasicBreeding(Vanadium, VZ[MV], 4700, Emerald);
 
         //  Advanced Breeding
-        createAdvancedBreeding(Silver,    VZ[HV], 3200, NetherStar);
-        createAdvancedBreeding(Gold,      VZ[HV], 3600, Prasiolite);
-        createAdvancedBreeding(Platinum,  VZ[HV], 3400, Glass);
-        createAdvancedBreeding(Titanium,  VZ[EV], 2200, Ruby);
-        createAdvancedBreeding(Tungsten,  VZ[IV], 2800, Sapphire);
-        createAdvancedBreeding(Naquadah,  VZ[IV], 1800, Emerald);
-        createAdvancedBreeding(Neodymium, VZ[EV], 2400, LeadZirconateTitanate);
+        createAdvancedBreeding(Silver,       VZ[HV], 3200, NetherStar);
+        createAdvancedBreeding(Gold,         VZ[HV], 3600, Prasiolite);
+        createAdvancedBreeding(Platinum,     VZ[HV], 3400, Glass);
+        createAdvancedBreeding(Titanium,     VZ[EV], 2200, Ruby);
+        createAdvancedBreeding(Tungsten,     VZ[IV], 2800, Sapphire);
+        createAdvancedBreeding(Naquadah,     VZ[IV], 1800, Emerald);
+        createAdvancedBreeding(Neodymium,    VZ[EV], 2400, LeadZirconateTitanate);
+        createAdvancedBreeding(Molybdenum,   VZ[HV], 3000, Diamond);
 
         //  Elite Breeding
         createEliteBreeding(Graphene,         VZ[EV],  1800, NetherStar, LuTmYVO);
+        createEliteBreeding(Iridium,          VZ[IV],  1400, Diamond,    NetherStar);
+        createEliteBreeding(Osmium,           VZ[IV],  1600, Sapphire,   Diamond);
         createEliteBreeding(Europium,         VZ[LuV], 800 , Celestite,  PrHoYLF);
         createEliteBreeding(Americium,        VZ[ZPM], 600 , Emerald,    CeLAG);
         createEliteBreeding(Dubnium,          VZ[UV],  400 , Sapphire,   LeadZirconateTitanate);
@@ -160,123 +165,134 @@ public class NeutralNetworkNexus {
 
     }
 
-    private static void HybridizingMode() {}
+    private static void BreedingMode() {
+
+        //  Tungsten Steel
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Tungsten)
+                .input(swarm, Steel)
+                .circuitMeta(2)
+                .chancedOutput(swarm, TungstenSteel, 2000, 500)
+                .chancedOutput(swarm, Tungsten, 8000, 0)
+                .chancedOutput(swarm, Steel, 8000, 0)
+                .EUt(VZ[EV])
+                .duration((int) (TungstenSteel.getMass() * TungstenSteel.getMaterialComponents().size()))
+                .tier(1)
+                .buildAndRegister();
+
+        //  HSSG
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, TungstenSteel)
+                .input(swarm, Chrome)
+                .input(swarm, Molybdenum)
+                .input(swarm, Vanadium)
+                .circuitMeta(4)
+                .chancedOutput(swarm, HSSG, 2000, 500)
+                .chancedOutput(swarm, TungstenSteel, 8000, 0)
+                .chancedOutput(swarm, Chrome, 8000, 0)
+                .chancedOutput(swarm, Molybdenum, 8000, 0)
+                .chancedOutput(swarm, Vanadium, 8000, 0)
+                .EUt(VZ[IV])
+                .duration((int) (HSSG.getMass() * HSSG.getMaterialComponents().size()))
+                .tier(2)
+                .buildAndRegister();
+
+        //  HSSS
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, HSSG)
+                .input(swarm, Iridium)
+                .input(swarm, Osmium)
+                .circuitMeta(3)
+                .chancedOutput(swarm, HSSS, 2000, 500)
+                .chancedOutput(swarm, HSSG, 8000, 0)
+                .chancedOutput(swarm, Iridium, 8000, 0)
+                .chancedOutput(swarm, Osmium, 8000, 0)
+                .EUt(VZ[LuV])
+                .duration((int) (HSSS.getMass() * HSSS.getMaterialComponents().size()))
+                .tier(3)
+                .buildAndRegister();
+    }
 
     private static void NanotubeRecipes() {
-        createNanotubeRecipe(Silver, VA[MV], 180);
-        createNanotubeRecipe(Gold, VA[MV], 180);
-        createNanotubeRecipe(Graphene, VA[EV], 340);
-        createNanotubeRecipe(Fullerene, VA[UV], 880);
+        //  Basic Breeding
+        createCarbonNanotube();
+        createNanotubeRecipe(Tin,      VA[LV], 30);
+        createNanotubeRecipe(Steel,    VA[MV], 220);
+        createNanotubeRecipe(Chrome,   VA[MV], 240);
+        createNanotubeRecipe(Vanadium, VA[MV], 230);
 
-        //  Carbon
-        for (FluidStack stack : new FluidStack[]{
-                HSQ.getFluid(2000),
-                KPR.getFluid(1000)}) {
-            for (FluidStack substack : new FluidStack[] {
-                    Polyethylene.getFluid(L * 4),
-                    PolyvinylChloride.getFluid(L * 3),
-                    Polytetrafluoroethylene.getFluid(L * 2),
-                    Epoxy.getFluid(L),
-                    ReinforcedEpoxyResin.getFluid(L / 2),
-                    Polybenzimidazole.getFluid(L / 4),
-                    KaptonK.getFluid(L / 6),
-                    KaptonE.getFluid(L / 8),
-                    Polyetheretherketone.getFluid(L / 12),
-                    Kevlar.getFluid(L / 24),
-                    Zylon.getFluid(L / 48),
-                    FullerenePolymerMatrix.getFluid(1)
-            }) {
-                NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
-                        .input(CARBON_MESH, 4)
-                        .input(CARBON_MESH, 2)
-                        .fluidInputs(new FluidStack[]{stack})
-                        .fluidInputs(new FluidStack[]{substack})
-                        .output(nanotube, Carbon)
-                        .EUt(VA[LV])
-                        .duration(40)
-                        .buildAndRegister();
-            }
-        }
+        //  Advanced Breeding
+        createNanotubeRecipe(Silver,     VA[MV], 180);
+        createNanotubeRecipe(Gold,       VA[MV], 180);
+        createNanotubeRecipe(Platinum,   VA[HV], 290);
+        createNanotubeRecipe(Titanium,   VA[EV], 320);
+        createNanotubeRecipe(Tungsten,   VA[IV], 560);
+        createNanotubeRecipe(Naquadah,   VA[IV], 580);
+        createNanotubeRecipe(Neodymium,  VA[EV], 390);
+        createNanotubeRecipe(Molybdenum, VA[HV], 300);
 
-        createNanotubeRecipe(CarbonNanotube, VA[UHV], 1020);
-        createNanotubeRecipe(Platinum, VA[HV], 290);
-        createNanotubeRecipe(Europium, VA[LuV], 600);
-        createNanotubeRecipe(Titanium, VA[EV], 320);
-        createNanotubeRecipe(Tungsten, VA[IV], 560);
-        createNanotubeRecipe(Neodymium, VA[EV], 390);
-        createNanotubeRecipe(Americium, VA[ZPM], 730);
-        createNanotubeRecipe(Dubnium, VA[UV], 800);
-        createNanotubeRecipe(Naquadah, VA[IV], 580);
+        //  Elite Breeding
+        createNanotubeRecipe(Graphene,         VA[EV],  340);
+        createNanotubeRecipe(Iridium,          VA[IV],  400);
+        createNanotubeRecipe(Osmium,           VA[IV],  380);
+        createNanotubeRecipe(Europium,         VA[LuV], 600);
+        createNanotubeRecipe(Americium,        VA[ZPM], 730);
+        createNanotubeRecipe(Dubnium,          VA[UV],  800);
         createNanotubeRecipe(NaquadahEnriched, VA[LuV], 640);
-        createNanotubeRecipe(Naquadria, VA[ZPM], 700);
-        createNanotubeRecipe(Tin, VA[LV], 30);
-        createNanotubeRecipe(Tritanium, VA[ZPM], 660);
-        createNanotubeRecipe(Orichalcum, VA[UV], 810);
+
+        //  Ultimate Breeding
+        createNanotubeRecipe(Fullerene,      VA[UV],  880);
+        createNanotubeRecipe(CarbonNanotube, VA[UHV], 1020);
+        createNanotubeRecipe(Naquadria,      VA[ZPM], 700);
+        createNanotubeRecipe(Tritanium,      VA[ZPM], 660);
+        createNanotubeRecipe(Orichalcum,     VA[UV],  810);
+
+        //  Infinite Breeding
         createNanotubeRecipe(FullerenePolymerMatrix, VA[UEV], 210);
-        createNanotubeRecipe(WhiteDwarfMatter, VA[UIV], 180);
-        createNanotubeRecipe(BlackDwarfMatter, VA[UIV], 180);
-        createNanotubeRecipe(Galaxium, VA[UXV], 120);
+        createNanotubeRecipe(WhiteDwarfMatter,       VA[UIV], 180);
+        createNanotubeRecipe(BlackDwarfMatter,       VA[UIV], 180);
+        createNanotubeRecipe(Galaxium,               VA[UXV], 120);
     }
 
     private static void NanosensorRecipes() {
-        createNanosensorRecipe(Silver, VA[MV], 180);
-        createNanosensorRecipe(Gold, VA[MV], 180);
-        createNanosensorRecipe(Graphene, VA[EV], 340);
-        createNanosensorRecipe(Fullerene, VA[UV], 880);
+        //  Basic Breeding
+        createCarbonNanosensor();
+        createNanosensorRecipe(Tin,      VA[LV], 30);
+        createNanosensorRecipe(Steel,    VA[MV], 220);
+        createNanosensorRecipe(Chrome,   VA[MV], 240);
+        createNanosensorRecipe(Vanadium, VA[MV], 230);
 
-        //  Carbon
-        for (FluidStack stack : new FluidStack[] {
-                SodiumPersulfate.getFluid(8000),
-                Iron3Chloride.getFluid(4000),
-                TetramethylammoniumHydroxide.getFluid(2000),
-                EDP.getFluid(500)
-        }) {
-            for (FluidStack substack : new FluidStack[] {
-                    Helium.getFluid(L * 8),
-                    Neon.getFluid(L * 4),
-                    Argon.getFluid(L * 2),
-                    Krypton.getFluid(L),
-                    Xenon.getFluid(L / 2),
-                    Radon.getFluid(L / 4),
-                    MetastableOganesson.getFluid(L / 8)
-            }) {
-                for (FluidStack substack2 : new FluidStack[] {
-                        Water.getFluid(1000),
-                        DistilledWater.getFluid(500),
-                        Lubricant.getFluid(250)
-                }) {
-                    NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
-                            .input(lens, Glass)
-                            .input(CARBON_FIBERS, 8)
-                            .fluidInputs(new FluidStack[]{stack})
-                            .fluidInputs(new FluidStack[]{substack})
-                            .fluidInputs(new FluidStack[]{substack2})
-                            .output(nanosensor, Carbon)
-                            .EUt(VA[IV])
-                            .duration(200)
-                            .buildAndRegister();
-                }
-            }
-        }
+        //  Advanced Breeding
+        createNanosensorRecipe(Silver,     VA[MV], 180);
+        createNanosensorRecipe(Gold,       VA[MV], 180);
+        createNanosensorRecipe(Platinum,   VA[HV], 290);
+        createNanosensorRecipe(Titanium,   VA[EV], 320);
+        createNanosensorRecipe(Tungsten,   VA[IV], 560);
+        createNanosensorRecipe(Naquadah,   VA[IV], 580);
+        createNanosensorRecipe(Neodymium,  VA[EV], 390);
+        createNanosensorRecipe(Molybdenum, VA[HV], 300);
 
-        createNanosensorRecipe(CarbonNanotube, VA[UHV], 1020);
-        createNanosensorRecipe(Platinum, VA[HV], 290);
-        createNanosensorRecipe(Europium, VA[LuV], 600);
-        createNanosensorRecipe(Titanium, VA[EV], 320);
-        createNanosensorRecipe(Tungsten, VA[IV], 560);
-        createNanosensorRecipe(Neodymium, VA[EV], 390);
-        createNanosensorRecipe(Americium, VA[ZPM], 730);
-        createNanosensorRecipe(Dubnium, VA[UV], 800);
-        createNanosensorRecipe(Naquadah, VA[IV], 580);
+        //  Elite Breeding
+        createNanosensorRecipe(Graphene,         VA[EV],  340);
+        createNanosensorRecipe(Iridium,          VA[IV],  400);
+        createNanosensorRecipe(Osmium,           VA[IV],  380);
+        createNanosensorRecipe(Europium,         VA[LuV], 600);
+        createNanosensorRecipe(Americium,        VA[ZPM], 730);
+        createNanosensorRecipe(Dubnium,          VA[UV],  800);
         createNanosensorRecipe(NaquadahEnriched, VA[LuV], 640);
-        createNanosensorRecipe(Naquadria, VA[ZPM], 700);
-        createNanosensorRecipe(Tin, VA[LV], 30);
-        createNanosensorRecipe(Tritanium, VA[ZPM], 660);
-        createNanosensorRecipe(Orichalcum, VA[UV], 810);
+
+        //  Ultimate Breeding
+        createNanosensorRecipe(Fullerene,      VA[UV],  880);
+        createNanosensorRecipe(CarbonNanotube, VA[UHV], 1020);
+        createNanosensorRecipe(Naquadria,      VA[ZPM], 700);
+        createNanosensorRecipe(Tritanium,      VA[ZPM], 660);
+        createNanosensorRecipe(Orichalcum,     VA[UV],  810);
+
+        //  Infinite Breeding
         createNanosensorRecipe(FullerenePolymerMatrix, VA[UEV], 210);
-        createNanosensorRecipe(WhiteDwarfMatter, VA[UIV], 180);
-        createNanosensorRecipe(BlackDwarfMatter, VA[UIV], 180);
-        createNanosensorRecipe(Galaxium, VA[UXV], 120);
+        createNanosensorRecipe(WhiteDwarfMatter,       VA[UIV], 180);
+        createNanosensorRecipe(BlackDwarfMatter,       VA[UIV], 180);
+        createNanosensorRecipe(Galaxium,               VA[UXV], 120);
     }
 
     private static void createBasicBreeding(Material material,
@@ -421,6 +437,73 @@ public class NeutralNetworkNexus {
                             .output(nanosensor, material)
                             .EUt(consumeEnergy)
                             .duration(duration)
+                            .buildAndRegister();
+                }
+            }
+        }
+    }
+
+    private static void createCarbonNanotube() {
+        for (FluidStack stack : new FluidStack[]{
+                HSQ.getFluid(2000),
+                KPR.getFluid(1000)}) {
+            for (FluidStack substack : new FluidStack[] {
+                    Polyethylene.getFluid(L * 4),
+                    PolyvinylChloride.getFluid(L * 3),
+                    Polytetrafluoroethylene.getFluid(L * 2),
+                    Epoxy.getFluid(L),
+                    ReinforcedEpoxyResin.getFluid(L / 2),
+                    Polybenzimidazole.getFluid(L / 4),
+                    KaptonK.getFluid(L / 6),
+                    KaptonE.getFluid(L / 8),
+                    Polyetheretherketone.getFluid(L / 12),
+                    Kevlar.getFluid(L / 24),
+                    Zylon.getFluid(L / 48),
+                    FullerenePolymerMatrix.getFluid(1)
+            }) {
+                NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
+                        .input(CARBON_MESH, 4)
+                        .input(CARBON_MESH, 2)
+                        .fluidInputs(new FluidStack[]{stack})
+                        .fluidInputs(new FluidStack[]{substack})
+                        .output(nanotube, Carbon)
+                        .EUt(VA[LV])
+                        .duration(40)
+                        .buildAndRegister();
+            }
+        }
+    }
+
+    private static void createCarbonNanosensor() {
+        for (FluidStack stack : new FluidStack[] {
+                SodiumPersulfate.getFluid(8000),
+                Iron3Chloride.getFluid(4000),
+                TetramethylammoniumHydroxide.getFluid(2000),
+                EDP.getFluid(500)
+        }) {
+            for (FluidStack substack : new FluidStack[] {
+                    Helium.getFluid(L * 8),
+                    Neon.getFluid(L * 4),
+                    Argon.getFluid(L * 2),
+                    Krypton.getFluid(L),
+                    Xenon.getFluid(L / 2),
+                    Radon.getFluid(L / 4),
+                    MetastableOganesson.getFluid(L / 8)
+            }) {
+                for (FluidStack substack2 : new FluidStack[] {
+                        Water.getFluid(1000),
+                        DistilledWater.getFluid(500),
+                        Lubricant.getFluid(250)
+                }) {
+                    NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
+                            .input(lens, Glass)
+                            .input(CARBON_FIBERS, 8)
+                            .fluidInputs(new FluidStack[]{stack})
+                            .fluidInputs(new FluidStack[]{substack})
+                            .fluidInputs(new FluidStack[]{substack2})
+                            .output(nanosensor, Carbon)
+                            .EUt(VA[IV])
+                            .duration(200)
                             .buildAndRegister();
                 }
             }

@@ -6,6 +6,8 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -28,7 +30,7 @@ public class PowerIntCircuitChain {
                 .fluidOutputs(Hydrogen.getFluid(4000))
                 .fluidOutputs(Steam.getFluid(3000))
                 .EUt(VA[EV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .temperature(1304)
                 .buildAndRegister();
 
@@ -41,7 +43,7 @@ public class PowerIntCircuitChain {
                 .output(ingotHot, LithiumNiobate, 6)
                 .fluidOutputs(HydrochloricAcid.getFluid(5000))
                 .EUt(VA[HV])
-                .duration(320)
+                .duration(16 * SECOND)
                 .blastFurnaceTemp(4500)
                 .buildAndRegister();
 
@@ -51,7 +53,7 @@ public class PowerIntCircuitChain {
                 .output(lens, LithiumNiobate)
                 .output(dustSmall, LithiumNiobate)
                 .EUt(VA[MV])
-                .duration(1200)
+                .duration(MINUTE)
                 .buildAndRegister();
 
         //  Nano PIC Wafer
@@ -60,7 +62,7 @@ public class PowerIntCircuitChain {
                 .notConsumable(lens, LithiumNiobate)
                 .output(NANO_PIC_WAFER)
                 .EUt(VA[UV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -70,7 +72,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(Water.getFluid(1000))
                 .output(NANO_PIC_CHIP, 2)
                 .EUt(VA[ZPM])
-                .duration(1800)
+                .duration(MINUTE + MINUTE / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -79,7 +81,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .output(NANO_PIC_CHIP, 2)
                 .EUt(VA[ZPM])
-                .duration(1350)
+                .duration(MINUTE + 7 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -88,7 +90,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(Lubricant.getFluid(250))
                 .output(NANO_PIC_CHIP, 2)
                 .EUt(VA[ZPM])
-                .duration(900)
+                .duration(45 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -103,7 +105,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(HydrochloricAcid.getFluid(30000))
                 .fluidOutputs(LuTmYChloridesSolution.getFluid(30000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Na3VO4 + 2CH4N2O + (LuCl3)2(TmCl3)2(YCl3)6(H2O)15 -> Lu/Tm:YVO? + 0.9Cl
@@ -114,7 +116,7 @@ public class PowerIntCircuitChain {
                 .output(dust, LuTmDopedYttriumVanadateDeposition)
                 .fluidOutputs(Chlorine.getFluid(900))
                 .EUt(VA[ZPM])
-                .duration(120)
+                .duration(6 * SECOND)
                 .temperature(1440)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -127,7 +129,7 @@ public class PowerIntCircuitChain {
                 .output(dust, AmmoniumCarbonate, 14)
                 .fluidOutputs(Propene.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Pico PIC
@@ -136,7 +138,7 @@ public class PowerIntCircuitChain {
                 .notConsumable(lens, LuTmYVO)
                 .output(PICO_PIC_WAFER)
                 .EUt(VA[UHV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -145,7 +147,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(Water.getFluid(1000))
                 .output(PICO_PIC_CHIP, 2)
                 .EUt(VA[UV])
-                .duration(1800)
+                .duration(MINUTE + MINUTE / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -154,7 +156,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .output(PICO_PIC_CHIP, 2)
                 .EUt(VA[UV])
-                .duration(1350)
+                .duration(MINUTE + 7 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -163,7 +165,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(Lubricant.getFluid(250))
                 .output(PICO_PIC_CHIP, 2)
                 .EUt(VA[UV])
-                .duration(900)
+                .duration(45 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -177,7 +179,7 @@ public class PowerIntCircuitChain {
                 .output(dust, LithiumFluoride, 2)
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[MV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  SiF4 + 2HF -> H2SiF6
@@ -186,7 +188,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(HydrofluoricAcid.getFluid(2000))
                 .fluidOutputs(HexafluorosilicicAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  H2SiF6 + 6NH3 + 2H2O -> SiO2 + 6NH4F
@@ -198,7 +200,7 @@ public class PowerIntCircuitChain {
                 .output(dust, SiliconDioxide, 3)
                 .fluidOutputs(AmmoniumFluoride.getFluid(6000))
                 .EUt(VA[HV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  2NH4F -> NH4HF2 + NH3
@@ -207,7 +209,7 @@ public class PowerIntCircuitChain {
                 .output(dust, AmmoniumDifluoride, 8)
                 .fluidOutputs(Ammonia.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  Pr2O3 + Ho2O3 + 3Y2O3 -> (Pr(NO3)3)2(Ho(NO3)3)2(Y(NO3)3)6(H2O)15
@@ -218,7 +220,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(NitricAcid.getFluid(30000))
                 .fluidOutputs(PrHoYNitratesSolution.getFluid(30000))
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Be + LiF + 2NH4HF2 + 2(Pr(NO3)3)2(Ho(NO3)3)2(Y(NO3)3)6(H2O)15 + CO -> Pr/Ho:YLF + BeF2 + 2NH4NO3 + 2HF + CO2
@@ -235,7 +237,7 @@ public class PowerIntCircuitChain {
                 .fluidOutputs(HydrofluoricAcid.getFluid(2000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Femto PIC
@@ -244,7 +246,7 @@ public class PowerIntCircuitChain {
                 .notConsumable(lens, PrHoYLF)
                 .output(FEMTO_PIC_WAFER)
                 .EUt(VA[UEV])
-                .duration(60)
+                .duration(3 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -253,7 +255,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(Water.getFluid(1000))
                 .output(FEMTO_PIC_CHIP, 2)
                 .EUt(VA[UHV])
-                .duration(1800)
+                .duration(MINUTE + MINUTE / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -262,7 +264,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(DistilledWater.getFluid(750))
                 .output(FEMTO_PIC_CHIP, 2)
                 .EUt(VA[UHV])
-                .duration(1350)
+                .duration(MINUTE + 7 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -271,7 +273,7 @@ public class PowerIntCircuitChain {
                 .fluidInputs(Lubricant.getFluid(250))
                 .output(FEMTO_PIC_CHIP, 2)
                 .EUt(VA[UHV])
-                .duration(900)
+                .duration(45 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }

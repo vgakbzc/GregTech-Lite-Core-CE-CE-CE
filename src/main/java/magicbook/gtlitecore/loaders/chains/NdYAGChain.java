@@ -7,6 +7,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.gem;
 import static gregtechfoodoption.GTFOMaterialHandler.HydrogenCyanide;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -27,8 +28,8 @@ public class NdYAGChain {
                 .fluidInputs(Oxygen.getFluid(1000))
                 .output(dust, PotassiumManganate, 7)
                 .fluidOutputs(Water.getFluid(1000))
-                .EUt(30)
-                .duration(170)
+                .EUt(VHA[MV] / 2)
+                .duration(8 * SECOND + 10)
                 .buildAndRegister();
 
         //  3K2MnO4 + 2H2O -> 2KMnO4 + MnO2 (cycle) + 4KOH (cycle)
@@ -38,9 +39,9 @@ public class NdYAGChain {
                 .output(dust, PotassiumPermanganate, 12)
                 .output(dust, Pyrolusite, 3)
                 .fluidOutputs(PotassiumHydroxide.getFluid(4000))
-                .temperature(720)
                 .EUt(VA[MV])
-                .duration(250)
+                .duration(12 * SECOND + 10)
+                .temperature(720)
                 .buildAndRegister();
 
         //  2KMnO4 + 5NH3 + 5HCN + 3H2SO4 -> 2MnSO4 + K2SO4 + 5NH4CNO + 3H2O
@@ -54,7 +55,7 @@ public class NdYAGChain {
                 .fluidOutputs(AmmoniumCyanate.getFluid(5000))
                 .fluidOutputs(Water.getFluid(3000))
                 .EUt(VA[EV])
-                .duration(800)
+                .duration(40 * SECOND)
                 .buildAndRegister();
 
         //  NH4CNO -> CH4N2O
@@ -62,7 +63,7 @@ public class NdYAGChain {
                 .fluidInputs(AmmoniumCyanate.getFluid(1000))
                 .output(dust, Carbamide, 8)
                 .EUt(VA[HV])
-                .duration(320)
+                .duration(16 * SECOND)
                 .buildAndRegister();
     }
 
@@ -74,7 +75,7 @@ public class NdYAGChain {
                 .input(dust, NeodymiumOxide, 5)
                 .output(dust, NeodymiumDopedYttriumOxide, 5)
                 .EUt(VA[IV])
-                .duration(220)
+                .duration(11 * SECOND)
                 .temperature(1880)
                 .buildAndRegister();
     }
@@ -89,7 +90,7 @@ public class NdYAGChain {
                 .fluidOutputs(Tributylamine.getFluid(1000))
                 .fluidOutputs(Water.getFluid(3000))
                 .EUt(VA[HV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  Al2O3 + HNO3 -> 2Al(NO3)3 + 3H2O
@@ -99,7 +100,7 @@ public class NdYAGChain {
                 .output(dust, AluminiumNitrate, 26)
                 .fluidOutputs(Water.getFluid(3000))
                 .EUt(VA[LV])
-                .duration(190)
+                .duration(9 * SECOND + 10)
                 .buildAndRegister();
 
         //  2Al(NO3)3 + CH2Cl2 + 2(C4H9)3N -> (Al2O3)(CH2Cl2)(C12H27N)2 + 2HNO3 (cycle) + NO2
@@ -112,7 +113,7 @@ public class NdYAGChain {
                 .fluidOutputs(NitricAcid.getFluid(2000))
                 .fluidOutputs(NitrogenDioxide.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .buildAndRegister();
 
         //  CH4N2O + Nd:YO? + (Al2O3)(CH2Cl2)(C12H27N)2 -> 2Nd:YAG? + 2(C4H9)3N (cycle)
@@ -123,7 +124,7 @@ public class NdYAGChain {
                 .fluidOutputs(UnprocessedNdYAGSolution.getFluid(2000))
                 .fluidOutputs(Tributylamine.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(320)
+                .duration(16 * SECOND)
                 .buildAndRegister();
 
         //  Nd:YAG? -> Nd:YAG + CH2Cl2 (cycle)
@@ -132,7 +133,7 @@ public class NdYAGChain {
                 .output(gem, NdYAG)
                 .fluidOutputs(Dichloromethane.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(550)
+                .duration(27 * SECOND + 10)
                 .temperature(1884)
                 .buildAndRegister();
     }

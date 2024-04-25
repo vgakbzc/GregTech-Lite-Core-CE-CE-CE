@@ -54,4 +54,27 @@ public class BigMath {
         return maxValue;
     }
 
+    /**
+     * @param values  Long value.
+     * @return        Summarized values.
+     */
+    public static BigInteger summarizedValue(long[] values) {
+        BigInteger retValue = BigInteger.ZERO;
+        long currentSum = 0;
+
+        for (long value : values) {
+            if (currentSum != 0 && value > Long.MAX_VALUE - currentSum) {
+                retValue = retValue.add(BigInteger.valueOf(currentSum));
+                currentSum = 0;
+            }
+            currentSum += value;
+        }
+
+        if (currentSum != 0) {
+            retValue = retValue.add(BigInteger.valueOf(currentSum));
+        }
+
+        return retValue;
+    }
+
 }

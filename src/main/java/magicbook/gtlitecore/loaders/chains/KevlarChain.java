@@ -5,6 +5,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.foil;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -24,8 +25,8 @@ public class KevlarChain {
                 .fluidInputs(Bromine.getFluid(4000))
                 .fluidInputs(Acetylene.getFluid(1000))
                 .fluidOutputs(Tetrabromoethane.getFluid(1000))
-                .duration(80)
                 .EUt(VA[LV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  C6H4(CH3)2 + 6O -> C6H4(CO2H)2 + 2H2O
@@ -39,8 +40,8 @@ public class KevlarChain {
                 .fluidInputs(Air.getFluid(12000))
                 .output(dust, TerephthalicAcid, 3)
                 .fluidOutputs(Water.getFluid(2000))
-                .duration(240)
                 .EUt(VA[ZPM])
+                .duration(12 * SECOND)
                 .buildAndRegister();
     }
 
@@ -52,8 +53,8 @@ public class KevlarChain {
                 .fluidInputs(Chlorine.getFluid(6000))
                 .fluidOutputs(Bistrichloromethylbenzene.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(6000))
-                .duration(200)
                 .EUt(VA[EV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  C6H4(CCl3)2 + C6H4(CO2H)2 -> 2C6H4(COCl)2 + 2HCl
@@ -62,8 +63,8 @@ public class KevlarChain {
                 .fluidInputs(Bistrichloromethylbenzene.getFluid(1000))
                 .output(dust, TerephthaloylChloride, 6)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
-                .duration(100)
-                .EUt(240)
+                .EUt(VH[HV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  C4H8 + HClO + H2O -> C4H10O2 + HCl
@@ -73,8 +74,8 @@ public class KevlarChain {
                 .fluidInputs(Water.getFluid(1000))
                 .fluidOutputs(Butanediol.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .duration(60)
                 .EUt(VA[HV])
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  C4H10O2 -> C4H6O2 + 4H (4H lost)
@@ -82,8 +83,8 @@ public class KevlarChain {
                 .input(dust, Copper)
                 .fluidInputs(Butanediol.getFluid(1000))
                 .fluidOutputs(GammaButyrolactone.getFluid(1000))
-                .duration(120)
                 .EUt(VA[EV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  CH3NH2 + C4H6O2 -> C5H9NO + H2O
@@ -92,8 +93,8 @@ public class KevlarChain {
                 .fluidInputs(GammaButyrolactone.getFluid(1000))
                 .fluidOutputs(NMethylPyrrolidone.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(240)
                 .EUt(VA[IV])
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  Ca + 2Cl -> CaCl2
@@ -102,8 +103,8 @@ public class KevlarChain {
                 .fluidInputs(Chlorine.getFluid(2000))
                 .circuitMeta(2)
                 .output(dust, CalciumChloride, 3)
-                .duration(80)
                 .EUt(VA[LV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  C6H4(NH2)2 + C6H4(COCl)2 -> [-CO-C6H4-CO-NH-C6H4-NH-]n + 2HCl
@@ -115,8 +116,8 @@ public class KevlarChain {
                 .fluidInputs(SulfuricAcid.getFluid(500))
                 .output(dust, Kevlar, 4)
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
-                .duration(400)
                 .EUt(VA[UV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
     }
 }

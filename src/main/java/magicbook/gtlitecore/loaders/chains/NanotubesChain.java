@@ -7,6 +7,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.SHAPE_EXTRUDER_INGOT;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PLASMA_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -34,7 +36,7 @@ public class NanotubesChain {
                 .output(ingot, CarbonNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
                 .EUt(VA[UV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .temperature(993)
                 .buildAndRegister();
 
@@ -46,7 +48,7 @@ public class NanotubesChain {
                 .output(ingot, CarbonNanotube, 4)
                 .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[UEV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .temperature(3972)
                 .buildAndRegister();
 
@@ -54,16 +56,16 @@ public class NanotubesChain {
         ELECTROLYZER_RECIPES.recipeBuilder()
                 .input(dust, CarbonNanotube)
                 .output(dust, Carbon, 48)
+                .EUt(VH[MV])
                 .duration((int) Carbon.getMass() * 48)
-                .EUt(64)
                 .buildAndRegister();
 
         EXTRUDER_RECIPES.recipeBuilder()
                 .input(dust, Fullerene)
                 .notConsumable(SHAPE_EXTRUDER_INGOT)
                 .output(ingot, Fullerene)
-                .duration(400)
-                .EUt(240)
+                .EUt(VH[HV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  CPP cycle
@@ -73,17 +75,19 @@ public class NanotubesChain {
                 .input(foil, Graphene, 24)
                 .input(dust, CarbonNanotube)
                 .output(CARBON_ALLOTROPE_MIXTURE)
+                .EUt(VA[IV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
-                .duration(100).EUt(VA[IV]).buildAndRegister();
+                .buildAndRegister();
 
         //  C96 -> C48 + (C6H4)7(C12)
         ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
                 .input(CARBON_ALLOTROPE_MIXTURE)
                 .output(ingot, CarbonNanotube)
                 .output(GRAPHENE_ALIGNED_CNT, 4)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .duration(200)
                 .EUt(VA[UV])
+                .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  (C6H4)7(C12) -> 7C6H4 + 12C
@@ -91,8 +95,8 @@ public class NanotubesChain {
                 .input(GRAPHENE_ALIGNED_CNT)
                 .output(dust, Carbon, 3)
                 .fluidOutputs(Cycloparaphenylene.getFluid(1750))
-                .duration(50)
                 .EUt(VA[HV])
+                .duration(2 * SECOND + 10)
                 .buildAndRegister();
     }
 
@@ -112,7 +116,7 @@ public class NanotubesChain {
                 .fluidOutputs(Octene.getFluid(3000))
                 .fluidOutputs(HydrofluoricAcid.getFluid(4000))
                 .EUt(VA[UV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         DichlorocyclooctadieneplatiniumChain();
@@ -129,7 +133,7 @@ public class NanotubesChain {
                 .fluidInputs(Butadiene.getFluid(2000))
                 .fluidOutputs(Cyclooctadiene.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(80)
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  K2 + H2PtCl6 -> K2PtCl4 + 2HCl
@@ -139,7 +143,7 @@ public class NanotubesChain {
                 .output(dust, PotassiumTetrachloroplatinate, 7)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(300)
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         //  K2PtCl4 + C8H12 -> C8H12Cl2Pt + 2KCl
@@ -149,7 +153,7 @@ public class NanotubesChain {
                 .output(dust, Dichlorocyclooctadieneplatinium, 23)
                 .output(dust, RockSalt, 4)
                 .EUt(VA[HV])
-                .duration(360)
+                .duration(18 * SECOND)
                 .buildAndRegister();
 
         //  PtCl2 + 4HCl -> H2PtCl6 + 2H
@@ -159,7 +163,7 @@ public class NanotubesChain {
                 .fluidOutputs(HexachloroplatinicAcid.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
     }
 
@@ -174,7 +178,7 @@ public class NanotubesChain {
                 .circuitMeta(22)
                 .fluidOutputs(HydroxylamineDisulfate.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(360)
+                .duration(18 * SECOND)
                 .buildAndRegister();
 
         //  2(NH3OH)2(NH4)2(SO4)2 + 2NH3 -> 2H3NO + 2(NH2)4SO4
@@ -185,7 +189,7 @@ public class NanotubesChain {
                 .fluidOutputs(Hydroxylamine.getFluid(2000))
                 .fluidOutputs(AmmoniumSulfate.getFluid(2000))
                 .EUt(VA[MV])
-                .duration(180)
+                .duration(9 * SECOND)
                 .buildAndRegister();
 
         //  (NH2)4SO4 + H2SO4 -> (NH4)2S2O8 + 2H
@@ -197,7 +201,7 @@ public class NanotubesChain {
                 .fluidOutputs(AmmoniumPersulfate.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[MV])
-                .duration(220)
+                .duration(11 * SECOND)
                 .buildAndRegister();
 
         //  (C6H5)2 + 2I + (NH2)4SO4 + H2SO4 -> C12H8I2 + (NH4)2S2O8 + 4H
@@ -210,7 +214,7 @@ public class NanotubesChain {
                 .fluidOutputs(AmmoniumPersulfate.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(4000))
                 .EUt(VA[HV])
-                .duration(260)
+                .duration(13 * SECOND)
                 .buildAndRegister();
     }
 
@@ -223,7 +227,7 @@ public class NanotubesChain {
                 .circuitMeta(1)
                 .output(dust, SilverChloride, 2)
                 .EUt(VA[MV])
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  2AgCl + H2O -> Ag2O + 2HCl
@@ -234,7 +238,7 @@ public class NanotubesChain {
                 .output(dust, SilverOxide, 3)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(180)
+                .duration(9 * SECOND)
                 .buildAndRegister();
 
         //  3Ag2O + 2BF3 -> B2O3 + AgBF4
@@ -244,8 +248,8 @@ public class NanotubesChain {
                 .notConsumable(Benzene.getFluid(1))
                 .output(dust, BoronTrioxide, 5)
                 .fluidOutputs(SilverTetrafluoroborate.getFluid(6000))
-                .EUt(7680)
-                .duration(650)
+                .EUt(VA[IV])
+                .duration(32 * SECOND + 10)
                 .buildAndRegister();
     }
 
@@ -258,7 +262,7 @@ public class NanotubesChain {
                 .circuitMeta(2)
                 .output(dust, TinChloride, 3)
                 .EUt(VA[LV])
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  SnCl + CH4 + O -> (CH3)3SnCl + 2HCl
@@ -270,8 +274,8 @@ public class NanotubesChain {
                 .fluidInputs(Oxygen.getFluid(1000))
                 .fluidOutputs(TrimethyltinChloride.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
-                .EUt(1920)
-                .duration(260)
+                .EUt(VA[EV])
+                .duration(13 * SECOND)
                 .buildAndRegister();
     }
 
@@ -283,7 +287,7 @@ public class NanotubesChain {
                 .input(dust, GeodesicPolyarene, 2)
                 .output(dust, LanthanumFullereneMixture, 4)
                 .EUt(VA[LuV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -295,7 +299,7 @@ public class NanotubesChain {
                 .output(dust, LanthanumEmbeddedFullerene, 4)
                 .fluidOutputs(Ammonia.getFluid(20000))
                 .EUt(VA[UHV])
-                .duration(320)
+                .duration(16 * SECOND)
                 .temperature(4982)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -310,7 +314,7 @@ public class NanotubesChain {
                 .output(ingot, LanthanumFullereneNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
                 .EUt(VA[UEV])
-                .duration(300)
+                .duration(MINUTE / 4)
                 .temperature(3496)
                 .buildAndRegister();
 
@@ -323,7 +327,7 @@ public class NanotubesChain {
                 .output(ingot, LanthanumFullereneNanotube, 4)
                 .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[UXV])
-                .duration(600)
+                .duration(MINUTE / 2)
                 .temperature(13984)
                 .buildAndRegister();
     }
@@ -340,7 +344,7 @@ public class NanotubesChain {
                 .output(ingot, NeutroniumNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
                 .EUt(VA[UIV])
-                .duration(600)
+                .duration(MINUTE / 2)
                 .temperature(8993)
                 .buildAndRegister();
 
@@ -353,7 +357,7 @@ public class NanotubesChain {
                 .output(ingot, NeutroniumNanotube, 4)
                 .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[OpV])
-                .duration(1200)
+                .duration(MINUTE)
                 .temperature(35972)
                 .buildAndRegister();
     }

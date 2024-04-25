@@ -7,6 +7,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class ZylonChain {
@@ -20,7 +22,7 @@ public class ZylonChain {
                 .circuitMeta(1)
                 .output(dust, SodiumOxide, 3)
                 .EUt(VA[MV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  C6H4(CH3)2 + 2Br + 2O -> C7H6Br2 + 2H2O
@@ -31,7 +33,7 @@ public class ZylonChain {
                 .fluidOutputs(Dibromomethylbenzene.getFluid(1000))
                 .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[IV])
-                .duration(430)
+                .duration(21 * SECOND + 10)
                 .buildAndRegister();
 
         //  C7H8 + 2Br -> C7H6Br2
@@ -41,7 +43,7 @@ public class ZylonChain {
                 .circuitMeta(24)
                 .fluidOutputs(Dibromomethylbenzene.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(215)
+                .duration(10 * SECOND + 15)
                 .buildAndRegister();
 
         //  C7H6Br2 + H2SO4 -> C8H6O2 + 2Br + HS + H2O2
@@ -53,7 +55,7 @@ public class ZylonChain {
                 .fluidOutputs(HydrogenSulfide.getFluid(1000))
                 .fluidOutputs(HydrogenPeroxide.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  C3H6 + HCl -> CH3CHClCH3
@@ -64,7 +66,7 @@ public class ZylonChain {
                 .circuitMeta(2)
                 .fluidOutputs(Isochloropropane.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(480)
+                .duration(24 * SECOND)
                 .buildAndRegister();
 
         //  Na2O + C6H6O2 + CH3CHClCH3 + C4H6O3 + 2HNO3 + C3H6 -> C12H16O2(NO2)2 + NaCl + 2H2O + C2H4O2 + C2H3NaO2
@@ -81,7 +83,7 @@ public class ZylonChain {
                 .fluidOutputs(AceticAcid.getFluid(1000))
                 .fluidOutputs(SodiumAcetate.getFluid(1000))
                 .EUt(VA[UV])
-                .duration(500)
+                .duration(25 * SECOND)
                 .buildAndRegister();
 
         //  C8H6O2 + C12H16O2(NO2)2 -> C20H22N2O2 + 6O
@@ -92,7 +94,7 @@ public class ZylonChain {
                 .output(dust, PreZylon)
                 .fluidOutputs(Oxygen.getFluid(6000))
                 .EUt(VA[UHV])
-                .duration(50)
+                .duration(2 * SECOND + 10)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -102,7 +104,7 @@ public class ZylonChain {
                 .output(dust, Zylon)
                 .fluidOutputs(Propane.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(16000)
+                .duration(10 * MINUTE + ((10 * MINUTE) / 3))
                 .blastFurnaceTemp(10000)
                 .buildAndRegister();
     }

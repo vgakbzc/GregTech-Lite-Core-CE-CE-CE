@@ -10,6 +10,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -32,8 +34,8 @@ public class SpintronicCircuits {
                 .input(foil, Phosphorene, 4)
                 .fluidInputs(FluorinatedEthylenePropylene.getFluid(L * 4))//  TODO Find better material
                 .output(SPINTRONIC_BOARD)
-                .duration(40)
                 .EUt(VA[UEV])
+                .duration(2 * SECOND)
                 .temperature(3580)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -45,9 +47,9 @@ public class SpintronicCircuits {
                     .input(foil, Fullerene, 16)
                     .fluidInputs(stack)
                     .output(SPINTRONIC_CIRCUIT_BOARD)
-                    .cleanroom(CleanroomType.CLEANROOM)
-                    .duration(210)
                     .EUt(VA[LuV])
+                    .duration(10 * SECOND + 10)
+                    .cleanroom(CleanroomType.CLEANROOM)
                     .buildAndRegister();
         }
     }
@@ -62,8 +64,8 @@ public class SpintronicCircuits {
                 .input(foil, Vibranium, 8)
                 .input(wireFine, PedotPSS, 16)
                 .output(SPIN_TRANSFER_TORQUE_MEMORY, 4)
-                .duration(200)
                 .EUt(VA[UEV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -74,8 +76,8 @@ public class SpintronicCircuits {
                 .input(foil, Seaborgium, 8)
                 .input(wireFine, CarbonNanotube, 16)
                 .output(SPINTRONIC_NAND_MEMORY_CHIP, 4)
-                .duration(200)
                 .EUt(VA[UEV])
+                .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -90,8 +92,8 @@ public class SpintronicCircuits {
                 .input(wireFine, ThalliumCopperChloride, 24)
                 .fluidInputs(SolderingAlloy.getFluid(L))
                 .output(ESR_COMPUTATION_UNIT)
-                .duration(600)
                 .EUt(VA[UEV])
+                .duration(MINUTE / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -105,8 +107,8 @@ public class SpintronicCircuits {
                 .input(dust, Sulfur)
                 .notConsumable(plate, CadmiumSulfide)
                 .output(dust, BismuthChalcogenide, 5)
-                .duration(80)
                 .EUt(VA[UV])
+                .duration(4 * SECOND)
                 .temperature(4876)
                 .buildAndRegister();
 
@@ -117,8 +119,8 @@ public class SpintronicCircuits {
                 .fluidInputs(Mercury.getFluid(2000))
                 .circuitMeta(5)
                 .output(dust, MercuryCadmiumTelluride, 5)
-                .duration(400)
                 .EUt(VA[UHV])
+                .duration(20 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -127,9 +129,9 @@ public class SpintronicCircuits {
                 .input(wireFine, MercuryCadmiumTelluride, 16)
                 .input(spring, CarbonNanotube)
                 .output(TOPOLOGICAL_INSULATOR_TUBE)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .duration(20)
                 .EUt(VA[HV])
+                .duration(SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Bose-Einstein Condensate process
@@ -142,8 +144,8 @@ public class SpintronicCircuits {
                 .input(cableGtSingle, Europium, 2)
                 .inputs(MetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockGlassCasing.CasingType.LAMINATED_GLASS, 2))
                 .output(BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT)
-                .duration(80)
                 .EUt(VA[UV])
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  Bose-Einstein Condensate
@@ -151,9 +153,9 @@ public class SpintronicCircuits {
                 .input(BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT)
                 .input(dust, Rubidium, 8)
                 .output(BOSE_EINSTEIN_CONDENSATE)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .duration(20)
                 .EUt(VA[IV])
+                .duration(SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 
@@ -164,8 +166,8 @@ public class SpintronicCircuits {
                 .input(gem, HexagonalBoronNitride)
                 .output(SPINTRONIC_RESISTOR, 16)
                 .fluidInputs(Kevlar.getFluid(L * 2))
-                .duration(160)
                 .EUt(VA[UHV])
+                .duration(8 * SECOND)
                 .temperature(2984)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -175,8 +177,8 @@ public class SpintronicCircuits {
                 .input(plate, AmorphousBoronNitride)
                 .fluidInputs(Kevlar.getFluid(L))
                 .output(SPINTRONIC_TRANSISTOR, 16)
-                .duration(160)
                 .EUt(VA[UHV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -185,8 +187,8 @@ public class SpintronicCircuits {
                 .input(plate, CubicBoronNitride)
                 .fluidInputs(Kevlar.getFluid(L / 4))
                 .output(SPINTRONIC_CAPACITOR, 16)
-                .duration(160)
                 .EUt(VA[UHV])
+                .duration(8 * SECOND)
                 .temperature(2755)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -196,8 +198,8 @@ public class SpintronicCircuits {
                 .input(wireFine, CarbonNanotube, 4)
                 .fluidInputs(Kevlar.getFluid(L / 2))
                 .output(SPINTRONIC_DIODE, 16)
-                .duration(160)
                 .EUt(VA[UHV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -206,8 +208,8 @@ public class SpintronicCircuits {
                 .input(wireFine, ThalliumCopperChloride, 4)
                 .fluidInputs(Kevlar.getFluid(L))
                 .output(SPINTRONIC_INDUCTOR, 16)
-                .duration(160)
                 .EUt(VA[UHV])
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
@@ -221,7 +223,7 @@ public class SpintronicCircuits {
                 .notConsumable(foil, Nickel)
                 .fluidOutputs(Cyclopentadiene.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  C4H9Li + C5H6-> C5H5Li + C4H10
@@ -231,7 +233,7 @@ public class SpintronicCircuits {
                 .fluidOutputs(LithiumCyclopentadienide.getFluid(1000))
                 .fluidOutputs(Butane.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  Cf + 3Cl -> CfCl3
@@ -241,7 +243,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Chlorine.getFluid(3000))
                 .output(dust, CaliforniumTrichloride, 4)
                 .EUt(VA[LV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  3C5H5Li + CfCl3 -> C15H15Cf + 3LiCl
@@ -251,7 +253,7 @@ public class SpintronicCircuits {
                 .output(dust, LithiumChloride, 6)
                 .fluidOutputs(CaliforniumCyclopentadienide.getFluid(1000))
                 .EUt(VA[ZPM])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  X-Ray Waveguide
@@ -260,7 +262,7 @@ public class SpintronicCircuits {
                 .fluidInputs(FullerenePolymerMatrix.getFluid(16))
                 .output(X_RAY_WAVEGUIDE)
                 .EUt(VA[ZPM])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  Microfocus X-Ray Tube
@@ -271,7 +273,7 @@ public class SpintronicCircuits {
                 .fluidInputs(SolderingAlloy.getFluid(L / 2))
                 .output(MICROFOCUS_X_RAY_TUBE)
                 .EUt(VA[ZPM])
-                .duration(80)
+                .duration(4 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -283,7 +285,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Chlorine.getFluid(1000))
                 .output(X_RAY_MIRROR)
                 .EUt(VA[ZPM])
-                .duration(100)
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -295,7 +297,7 @@ public class SpintronicCircuits {
                 .fluidInputs(CaliforniumCyclopentadienide.getFluid(100))
                 .output(X_RAY_LASER)
                 .EUt(VA[UHV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -308,7 +310,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Zylon.getFluid(L / 2))
                 .output(CRYOGENIC_INTERFACE)
                 .EUt(VA[UHV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -321,7 +323,7 @@ public class SpintronicCircuits {
                 .fluidInputs(FreeElectronGas.getFluid(L))
                 .output(EXCITATION_MAINTAINER)
                 .EUt(VA[UEV])
-                .duration(10)
+                .duration(SECOND / 2)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -335,7 +337,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Krypton.getFluid(L / 2))
                 .output(ELECTRON_SOURCE)
                 .EUt(VA[UV])
-                .duration(20)
+                .duration(SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -350,7 +352,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Xenon.getFluid(L))
                 .output(RYDBERG_SPINORIAL_ASSEMBLY)
                 .EUt(VA[UIV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -364,7 +366,7 @@ public class SpintronicCircuits {
                 .fluidInputs(QuantumAlloy.getFluid(L / 2))
                 .output(EXOTIC_SOC, 4)
                 .EUt(VA[UIV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .CasingTier(6) // UIV
                 .buildAndRegister();
     }
@@ -380,7 +382,7 @@ public class SpintronicCircuits {
                 .input(SPINTRONIC_TRANSISTOR, 8)
                 .input(wireFine, CarbonNanotube, 8)
                 .output(SPINTRONIC_PROCESSOR, 2)
-                .duration(200)
+                .duration(10 * SECOND)
                 .EUt(VA[UEV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -391,7 +393,7 @@ public class SpintronicCircuits {
                 .input(wireFine, PedotTMA, 8)
                 .input(bolt, Infinity, 8)
                 .output(SPINTRONIC_PROCESSOR, 4)
-                .duration(100)
+                .duration(5 * SECOND)
                 .EUt(VA[UIV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -406,7 +408,7 @@ public class SpintronicCircuits {
                 .input(wireFine, CarbonNanotube, 16)
                 .output(SPINTRONIC_ASSEMBLY, 2)
                 .solderMultiplier(2)
-                .duration(400)
+                .duration(20 * SECOND)
                 .EUt(VA[UEV])
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -426,7 +428,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Kevlar.getFluid(2304))
                 .fluidInputs(Adamantium.getFluid(1152))
                 .output(SPINTRONIC_COMPUTER)
-                .duration(400)
+                .duration(20 * SECOND)
                 .EUt(VA[UEV])
                 .stationResearch(b -> b
                         .researchStack(SPINTRONIC_ASSEMBLY.getStackForm())
@@ -451,7 +453,7 @@ public class SpintronicCircuits {
                 .fluidInputs(Zylon.getFluid(4608))
                 .fluidInputs(Adamantium.getFluid(2304))
                 .output(SPINTRONIC_MAINFRAME)
-                .duration(1600)
+                .duration(MINUTE + 20 * SECOND)
                 .EUt(VA[UIV])
                 .stationResearch(b -> b
                         .researchStack(SPINTRONIC_COMPUTER.getStackForm())

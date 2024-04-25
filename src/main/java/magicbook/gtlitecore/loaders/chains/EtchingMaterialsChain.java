@@ -4,6 +4,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class EtchingMaterialsChain {
@@ -23,8 +24,8 @@ public class EtchingMaterialsChain {
                 .fluidInputs(Chloromethane.getFluid(1000))
                 .notConsumable(Ethanol.getFluid(4000))
                 .output(dust, TetramethylammoniumChloride, 6)
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  N(CH3)4Cl + KOH -> N(CH3)4OH + KCl
@@ -34,8 +35,8 @@ public class EtchingMaterialsChain {
                 .fluidInputs(Water.getFluid(5000))
                 .output(dust, RockSalt, 2)
                 .fluidOutputs(TetramethylammoniumHydroxide.getFluid(5000))
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -47,8 +48,8 @@ public class EtchingMaterialsChain {
                 .fluidInputs(HydrogenPeroxide.getFluid(1000))
                 .output(dust, Pyrocatechol, 12)
                 .fluidOutputs(Water.getFluid(1000))
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -56,8 +57,8 @@ public class EtchingMaterialsChain {
                 .fluidInputs(DistilledWater.getFluid(500))
                 .fluidInputs(Ethylenediamine.getFluid(500))
                 .fluidOutputs(EDP.getFluid(1000))
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -73,7 +74,7 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(Methyltrichlorosilane.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[MV])
-                .duration(280)
+                .duration(14 * SECOND)
                 .buildAndRegister();
 
         //  CH3Cl3Si + 3CH4O -> CH3Si(CH3O)3 + 3HCl
@@ -83,7 +84,7 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(Methyltrimethoxysilane.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(3000))
                 .EUt(VA[HV])
-                .duration(20)
+                .duration(SECOND)
                 .buildAndRegister();
 
         //  CH3Si(CH3O)3 + 3C2H6O -> CH3Si(OCH3)3 + C3H6 + 3CH4O (cycle)
@@ -94,7 +95,7 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(Propene.getFluid(1000))
                 .fluidOutputs(Methanol.getFluid(3000))
                 .EUt(VA[EV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  CH3Si(OCH3)3 + H -> -[-HSiO1.5-]-
@@ -104,7 +105,7 @@ public class EtchingMaterialsChain {
                 .circuitMeta(1)
                 .fluidOutputs(HSQ.getFluid(1000))
                 .EUt(VA[MV])
-                .duration(20)
+                .duration(SECOND)
                 .buildAndRegister();
     }
 
@@ -119,7 +120,7 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(Benzaldehyde.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(4000))
                 .EUt(VA[EV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  C7H6O + C2H2O-> C9H8O2
@@ -128,7 +129,7 @@ public class EtchingMaterialsChain {
                 .fluidInputs(Ethenone.getFluid(1000))
                 .fluidOutputs(CinnamicAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(160)
+                .duration(8 * SECOND)
                 .buildAndRegister();
 
         //  C9H8O2 -> C8H8
@@ -138,7 +139,7 @@ public class EtchingMaterialsChain {
                 .circuitMeta(1)
                 .fluidOutputs(Styrene.getFluid(100))
                 .EUt(VA[EV])
-                .duration(40)
+                .duration(2 * SECOND)
                 .buildAndRegister();
 
         //  Na2CO3 + 2C9H8O2 -> 2C9H7NaO2 + H2O + CO2
@@ -149,9 +150,8 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(Water.getFluid(1000))
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
-
 
         //  2C9H7NaO2 + CHCl3 -> C9H7ClO + C4H6 + Na2CO3 (cycle) + 2HCl + 5C (lost)
         LARGE_CHEMICAL_RECIPES.recipeBuilder()
@@ -162,7 +162,7 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(Butadiene.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
                 .EUt(VA[LuV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         //  C9H7ClO + C2H4 + 2H2O -> C11H12O3 + HCl + 2H (lost)
@@ -174,7 +174,7 @@ public class EtchingMaterialsChain {
                 .fluidOutputs(KPR.getFluid(1000))
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 }

@@ -14,6 +14,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
+import static gregicality.multiblocks.api.unification.GCYMMaterials.HSLASteel;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -22,6 +23,7 @@ import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.QUANTUM_TANK;
 import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
@@ -607,6 +609,17 @@ public class MiscRecipes {
     }
 
     private static void ToolRecipes() {
+
+        //  Magnetron recipe
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(ring, BerylliumOxide, 64)
+                .input(ring, BerylliumOxide, 64)
+                .input(plate, HSLASteel, 6)
+                .inputs(VACUUM_TUBE.getStackForm())
+                .outputs(MAGNETRON.getStackForm())
+                .EUt(VA[IV])
+                .duration(30 * SECOND)
+                .buildAndRegister();
 
         //  c-BN sawblade
         LATHE_RECIPES.recipeBuilder()

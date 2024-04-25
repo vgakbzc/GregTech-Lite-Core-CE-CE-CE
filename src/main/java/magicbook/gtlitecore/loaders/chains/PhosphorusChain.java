@@ -5,6 +5,8 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_BATH_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -27,9 +29,9 @@ public class PhosphorusChain {
                 .output(dust, Wollastonite, 30)
                 .output(gem, WhitePhosphorus)
                 .fluidOutputs(CarbonDioxide.getFluid(5000))
-                .temperature(1073)
-                .duration(200)
                 .EUt(VA[MV])
+                .duration(10 * SECOND)
+                .temperature(1073)
                 .buildAndRegister();
 
         //  White Phosphorus
@@ -37,8 +39,8 @@ public class PhosphorusChain {
                 .input(dust, Phosphorus, 4)
                 .notConsumable(spring, Kanthal)
                 .output(gem, WhitePhosphorus)
-                .duration(800)
                 .EUt(VA[HV])
+                .duration(40 * SECOND)
                 .buildAndRegister();
 
         //  Red Phosphorus
@@ -46,9 +48,9 @@ public class PhosphorusChain {
                 .input(dust, WhitePhosphorus)
                 .fluidInputs(Argon.getFluid(50))
                 .output(gem, RedPhosphorus)
-                .temperature(573)
-                .duration(200)
                 .EUt(VA[MV])
+                .duration(10 * SECOND)
+                .temperature(573)
                 .buildAndRegister();
 
         //  Violet Phosphorus
@@ -56,16 +58,18 @@ public class PhosphorusChain {
                 .input(dust, WhitePhosphorus)
                 .fluidInputs(Lead.getFluid(L * 2))
                 .output(gem, VioletPhosphorus)
-                .duration(400).EUt(VA[HV]).buildAndRegister();
+                .EUt(VA[HV])
+                .duration(20 * SECOND)
+                .buildAndRegister();
 
         //  Black Phosphorus
         BURNER_REACTOR_RECIPES.recipeBuilder()
                 .input(gem, WhitePhosphorus)
                 .notConsumable(stickLong, VanadiumSteel)
                 .output(gem, BlackPhosphorus)
-                .temperature(524)
-                .duration(100)
                 .EUt(VA[IV])
+                .duration(5 * SECOND)
+                .temperature(524)
                 .buildAndRegister();
 
         //  Blue Phosphorus
@@ -73,8 +77,8 @@ public class PhosphorusChain {
                 .notConsumable(foil, Gold)
                 .input(gem, BlackPhosphorus)
                 .output(dust, BluePhosphorus)
-                .duration(100)
                 .EUt(VA[ZPM])
+                .duration(5 * SECOND)
                 .temperature(3900)
                 .buildAndRegister();
     }
@@ -87,8 +91,8 @@ public class PhosphorusChain {
                 .fluidInputs(DistilledWater.getFluid(200))
                 .fluidInputs(NMethylPyrrolidone.getFluid(800))
                 .fluidOutputs(PhosphoreneSolution.getFluid(1000))
-                .duration(600)
                 .EUt(VA[IV])
+                .duration(MINUTE / 2)
                 .buildAndRegister();
 
         SONICATION_RECIPES.recipeBuilder()
@@ -96,8 +100,8 @@ public class PhosphorusChain {
                 .fluidInputs(Argon.getFluid(100))
                 .output(foil, Phosphorene, 4)
                 .fluidOutputs(NMethylPyrrolidone.getFluid(100))
-                .duration(100)
                 .EUt(VA[LuV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -108,8 +112,8 @@ public class PhosphorusChain {
                 .input(dust, WhitePhosphorus)
                 .fluidInputs(Chlorine.getFluid(12000))
                 .fluidOutputs(PhosphorusTrichloride.getFluid(4000))
-                .duration(120)
                 .EUt(VA[MV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  PCl3 + O -> POCl3
@@ -117,8 +121,8 @@ public class PhosphorusChain {
                 .fluidInputs(PhosphorusTrichloride.getFluid(1000))
                 .fluidInputs(Oxygen.getFluid(1000))
                 .fluidOutputs(PhosphorylChloride.getFluid(1000))
-                .duration(120)
                 .EUt(VA[HV])
+                .duration(6 * SECOND)
                 .buildAndRegister();
     }
 
@@ -129,8 +133,8 @@ public class PhosphorusChain {
                 .input(dust, WhitePhosphorus)
                 .fluidInputs(Water.getFluid(6000))
                 .fluidOutputs(Phosphine.getFluid(4000))
-                .duration(200)
                 .EUt(VA[LV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 }

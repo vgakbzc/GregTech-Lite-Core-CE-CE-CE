@@ -1,10 +1,11 @@
 package magicbook.gtlitecore.loaders.chains;
 
-import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtechfoodoption.GTFOMaterialHandler.HydrogenCyanide;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.AcetoneCyanohydrin;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.PMMA;
 
@@ -17,8 +18,8 @@ public class PMMAChain {
                 .fluidInputs(Acetone.getFluid(1000))
                 .fluidInputs(HydrogenCyanide.getFluid(1000))
                 .fluidOutputs(AcetoneCyanohydrin.getFluid(2000))
-                .duration(150)
-                .EUt(240)
+                .EUt(VH[HV])
+                .duration(7 * SECOND + 10)
                 .buildAndRegister();
 
         //  C4H7NO + CH3OH -> C5H8O2 + NH3
@@ -27,8 +28,8 @@ public class PMMAChain {
                 .fluidInputs(Methanol.getFluid(1000))
                 .fluidOutputs(PMMA.getFluid(L * 4))
                 .fluidOutputs(Ammonia.getFluid(1000))
-                .duration(200)
-                .EUt(240)
+                .EUt(VH[HV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 }

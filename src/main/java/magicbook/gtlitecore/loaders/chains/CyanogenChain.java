@@ -7,6 +7,7 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtechfoodoption.GTFOMaterialHandler.HydrogenCyanide;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BURNER_REACTOR_RECIPES;
 
 public class CyanogenChain {
@@ -23,7 +24,7 @@ public class CyanogenChain {
                     .fluidOutputs(HydrogenCyanide.getFluid(1000))
                     .fluidOutputs(Hydrogen.getFluid(4000))
                     .EUt(VA[MV])
-                    .duration(120)
+                    .duration(6 * SECOND)
                     .buildAndRegister();
 
             //  3CH4 + 3NH3 + 8O -> 3HCN + 8H2O + H (lost)
@@ -34,9 +35,9 @@ public class CyanogenChain {
                     .fluidInputs(Oxygen.getFluid(1000))
                     .fluidOutputs(HydrogenCyanide.getFluid(3000))
                     .fluidOutputs(Steam.getFluid(8000))
-                    .temperature(1473)
-                    .duration(60)
                     .EUt(VA[HV])
+                    .duration(3 * SECOND)
+                    .temperature(1473)
                     .buildAndRegister();
         }
     }

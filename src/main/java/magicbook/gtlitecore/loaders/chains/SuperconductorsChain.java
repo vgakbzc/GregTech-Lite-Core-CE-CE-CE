@@ -5,6 +5,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BURNER_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -18,10 +20,8 @@ public class SuperconductorsChain {
     }
 
     private static void UXVSuperconductors() {
-
         BETSPerrhenateChain();
         BoronFranciumCarbideChain();
-
     }
 
     private static void BETSPerrhenateChain() {
@@ -32,7 +32,7 @@ public class SuperconductorsChain {
                 .fluidInputs(CarbonMonoxide.getFluid(1000))
                 .fluidOutputs(SodiumFormate.getFluid(1000))
                 .EUt(VA[LV])
-                .duration(90)
+                .duration(4 * SECOND + 10)
                 .temperature(288)
                 .buildAndRegister();
 
@@ -43,7 +43,7 @@ public class SuperconductorsChain {
                 .output(dust, SodiumThiosulfate, 7)
                 .fluidOutputs(FormicAcid.getFluid(1000))
                 .EUt(VA[LV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  4Na + 2HCOOH + 2Br + 2H2O -> 4NaOH + C2H2Br2O2 + 2H
@@ -56,7 +56,7 @@ public class SuperconductorsChain {
                 .fluidOutputs(Dibromoacrolein.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[EV])
-                .duration(360)
+                .duration(18 * SECOND)
                 .buildAndRegister();
 
         //  2Na2S2O3 + C2H2Br2O2 + C2H4Cl2 -> 2NaCl + 2NaHSO4 + C4H4S2Br2
@@ -68,7 +68,7 @@ public class SuperconductorsChain {
                 .output(dust, SodiumBisulfate, 14)
                 .fluidOutputs(Bromodihydrothiine.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(320)
+                .duration(16 * SECOND)
                 .buildAndRegister();
 
         //  2Se + C4H4S2Br2 + 2C4H9Li -> C4H4S2Li2Se2 + 2C4H9Br
@@ -79,7 +79,7 @@ public class SuperconductorsChain {
                 .output(dust, Lithiumthiinediselenide,14)
                 .fluidOutputs(Bromobutane.getFluid(2000))
                 .EUt(VA[LuV])
-                .duration(340)
+                .duration(17 * SECOND)
                 .buildAndRegister();
 
         //  2C4H4S2Li2Se2 + C2F4 -> C10H8S4Se4 + 4LiF
@@ -90,7 +90,7 @@ public class SuperconductorsChain {
                 .output(dust, Bisethylenedithiotetraselenafulvalene, 26)
                 .output(dust, LithiumFluoride, 8)
                 .EUt(VA[UHV])
-                .duration(800)
+                .duration(40 * SECOND)
                 .temperature(2500)
                 .buildAndRegister();
 
@@ -101,7 +101,7 @@ public class SuperconductorsChain {
                 .output(dust, BETSPerrhenate, 31)
                 .blastFurnaceTemp(5000)
                 .EUt(VA[LuV])
-                .duration(1200)
+                .duration(MINUTE)
                 .buildAndRegister();
     }
 
@@ -114,7 +114,7 @@ public class SuperconductorsChain {
                 .output(dust, FranciumCarbide, 4)
                 .fluidOutputs(Hydrogen.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(260)
+                .duration(13 * SECOND)
                 .buildAndRegister();
 
         //  4B + 3C -> B4C3
@@ -123,7 +123,7 @@ public class SuperconductorsChain {
                 .input(dust, Carbon, 3)
                 .output(dust, BoronCarbide, 7)
                 .EUt(VA[MV])
-                .duration(550)
+                .duration(27 * SECOND + 10)
                 .blastFurnaceTemp(4000)
                 .buildAndRegister();
 
@@ -134,7 +134,7 @@ public class SuperconductorsChain {
                 .circuitMeta(2)
                 .output(dust, BoronFranciumCarbide, 15)
                 .EUt(VA[EV])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         CENTRIFUGE_RECIPES.recipeBuilder()
@@ -142,7 +142,7 @@ public class SuperconductorsChain {
                 .output(dust, FranciumCarbide, 8)
                 .output(dust, BoronCarbide, 7)
                 .EUt(VA[HV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .buildAndRegister();
     }
 
@@ -156,7 +156,7 @@ public class SuperconductorsChain {
                 .fluidInputs(Chlorine.getFluid(5000))
                 .output(dust, RheniumPentachloride, 6)
                 .EUt(VA[HV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  Hs + 4Cl -> HsCl4
@@ -166,7 +166,7 @@ public class SuperconductorsChain {
                 .fluidInputs(Chlorine.getFluid(4000))
                 .output(dust, HassiumTetrachloride, 5)
                 .EUt(VA[MV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  Tl + Cl -> TlCl
@@ -176,7 +176,7 @@ public class SuperconductorsChain {
                 .fluidInputs(Chlorine.getFluid(1000))
                 .output(dust, ThalliumChloride, 2)
                 .EUt(VA[MV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  TlCuCl3 -> TlCl + CuCl2
@@ -185,7 +185,7 @@ public class SuperconductorsChain {
                 .output(dust, ThalliumChloride, 2)
                 .output(dust, CopperChloride, 3)
                 .EUt(VA[EV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .temperature(1800)
                 .buildAndRegister();
 
@@ -198,7 +198,7 @@ public class SuperconductorsChain {
                 .fluidOutputs(HexafluorophosphoricAcid.getFluid(1000))
                 .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[ZPM])
-                .duration(200)
+                .duration(10 * SECOND)
                 .buildAndRegister();
 
         IsophthaloylbisdiethylthioureaChain();
@@ -214,7 +214,7 @@ public class SuperconductorsChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(7000))
                 .fluidOutputs(Chlorine.getFluid(3000))
                 .EUt(VA[UIV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
     }
@@ -227,7 +227,7 @@ public class SuperconductorsChain {
                 .input(dust, Sulfur)
                 .fluidOutputs(SodiumThiocyanate.getFluid(1000))
                 .EUt(VA[IV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .temperature(980)
                 .buildAndRegister();
 
@@ -238,7 +238,7 @@ public class SuperconductorsChain {
                 .circuitMeta(0)
                 .fluidOutputs(Ethylamine.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(80)
+                .duration(4 * SECOND)
                 .buildAndRegister();
 
         //  NaSCN + HCl + 2C2H5NH2 -> NaCl + (C2H5NH)2CS + NH3 (cycle)
@@ -250,7 +250,7 @@ public class SuperconductorsChain {
                 .fluidOutputs(Diethylthiourea.getFluid(1000))
                 .fluidOutputs(Ammonia.getFluid(1000))
                 .EUt(VA[LuV])
-                .duration(140)
+                .duration(7 * SECOND)
                 .buildAndRegister();
 
         //  C6H6O + H2O2 + 2C2H2O + 2O -> C10H10O6 + H2O
@@ -263,7 +263,7 @@ public class SuperconductorsChain {
                 .fluidOutputs(PhenylenedioxydiaceticAcid.getFluid(1000))
                 .fluidOutputs(Water.getFluid(1000))
                 .EUt(VA[UV])
-                .duration(350)
+                .duration(17 * SECOND + 10)
                 .buildAndRegister();
 
         //  2(C2H5NH)2CS + 2SOCl2 + C10H10O6 -> C18H26N4O2S2 + 4HCl + 2SO2
@@ -275,7 +275,7 @@ public class SuperconductorsChain {
                 .fluidOutputs(HydrochloricAcid.getFluid(4000))
                 .fluidOutputs(SulfurDioxide.getFluid(2000))
                 .EUt(VA[UEV])
-                .duration(80)
+                .duration(4 * SECOND)
                 .buildAndRegister();
     }
 

@@ -563,7 +563,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(10000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 1800))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12042 Superheavy-H Alloy

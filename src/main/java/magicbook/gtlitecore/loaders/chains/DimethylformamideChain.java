@@ -5,6 +5,7 @@ import static gregtech.api.recipes.RecipeMaps.LARGE_CHEMICAL_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BURNER_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -23,8 +24,8 @@ public class DimethylformamideChain {
                 .fluidInputs(Dimethylamine.getFluid(1000))
                 .fluidInputs(CarbonMonoxide.getFluid(1000))
                 .fluidOutputs(Dimethylformamide.getFluid(1000))
-                .duration(200)
                 .EUt(VA[IV])
+                .duration(10 * SECOND)
                 .buildAndRegister();
     }
 
@@ -37,7 +38,7 @@ public class DimethylformamideChain {
                 .output(dust, PotassiumFormate, 6)
                 .fluidOutputs(HydrochloricAcid.getFluid(1000))
                 .EUt(VA[HV])
-                .duration(240)
+                .duration(12 * SECOND)
                 .temperature(980)
                 .buildAndRegister();
 
@@ -47,7 +48,7 @@ public class DimethylformamideChain {
                 .fluidInputs(HydrochloricAcid.getFluid(1000))
                 .fluidOutputs(DimethylamineHydrochloride.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
 
         //  CH3OK + C2H8NCl -> KCl + (CH3)2NC(O)H + H + Cl (lost)
@@ -58,7 +59,7 @@ public class DimethylformamideChain {
                 .fluidOutputs(Dimethylformamide.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(120)
+                .duration(6 * SECOND)
                 .temperature(1488)
                 .buildAndRegister();
     }

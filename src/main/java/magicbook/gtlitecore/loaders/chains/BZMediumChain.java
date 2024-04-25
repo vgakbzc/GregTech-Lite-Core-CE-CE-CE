@@ -4,6 +4,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BURNER_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CRYOGENIC_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -14,14 +15,15 @@ public class BZMediumChain {
         PotassiumBromateChain();
         MalonicAcidChain();
 
+        //  0.8 KBrO3 + 0.25 C3H4O4 + Ce -> BZ Medium
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, PotassiumBromate, 4)
                 .input(dust, MalonicAcid, 3)
                 .input(dust, Cerium)
                 .fluidInputs(DistilledWater.getFluid(1000))
                 .fluidOutputs(BZMedium.getFluid(1000))
-                .duration(100)
                 .EUt(VA[ZPM])
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 
@@ -34,8 +36,8 @@ public class BZMediumChain {
                 .fluidInputs(Water.getFluid(2000))
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(HydrobromicAcid.getFluid(2000))
-                .duration(400)
                 .EUt(VA[HV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  KCl + H2O -> KOH + Cl + H
@@ -46,8 +48,8 @@ public class BZMediumChain {
                 .output(dust, PotassiumHydroxide, 3)
                 .fluidOutputs(Chlorine.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(1000))
-                .duration(720)
                 .EUt(VA[LV])
+                .duration(36 * SECOND)
                 .buildAndRegister();
 
         //  3HBr + 3KOH -> KBrO3 + 3H2O
@@ -56,9 +58,9 @@ public class BZMediumChain {
                 .fluidInputs(PotassiumHydroxide.getFluid(L * 9))
                 .output(dust, PotassiumBromate, 5)
                 .fluidOutputs(Ice.getFluid(3000))
-                .temperature(273)
-                .duration(200)
                 .EUt(VA[HV])
+                .duration(10 * SECOND)
+                .temperature(273)
                 .buildAndRegister();
     }
 
@@ -70,9 +72,9 @@ public class BZMediumChain {
                 .fluidInputs(Chlorine.getFluid(1000))
                 .fluidOutputs(Trichloroethylene.getFluid(1000))
                 .fluidOutputs(Hydrogen.getFluid(3000))
-                .temperature(400)
-                .duration(100)
                 .EUt(VA[EV])
+                .duration(5 * SECOND)
+                .temperature(400)
                 .buildAndRegister();
 
         //  C2HCl3 + 2H2O -> C2H3ClO2 + 2HCl
@@ -82,8 +84,8 @@ public class BZMediumChain {
                 .notConsumable(SulfuricAcid.getFluid(250))
                 .output(dust, ChloroaceticAcid, 8)
                 .fluidOutputs(HydrochloricAcid.getFluid(2000))
-                .duration(100)
                 .EUt(VA[EV])
+                .duration(5 * SECOND)
                 .buildAndRegister();
 
         //  C2H3ClO2 + Na2CO3 + 2H2O -> C3H4O4 + 2NaOH + HClO
@@ -94,8 +96,8 @@ public class BZMediumChain {
                 .output(dust, SodiumHydroxide, 6)
                 .output(dust, MalonicAcid, 11)
                 .fluidOutputs(HypochlorousAcid.getFluid(1000))
-                .duration(400)
                 .EUt(VA[IV])
+                .duration(20 * SECOND)
                 .buildAndRegister();
     }
 }

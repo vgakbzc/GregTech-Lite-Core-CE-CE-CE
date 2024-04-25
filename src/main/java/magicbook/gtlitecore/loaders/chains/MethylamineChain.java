@@ -5,6 +5,8 @@ import static gregtech.api.recipes.RecipeMaps.DISTILLATION_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class MethylamineChain {
@@ -16,8 +18,8 @@ public class MethylamineChain {
                 .fluidInputs(Methanol.getFluid(2000))
                 .fluidInputs(Ammonia.getFluid(1000))
                 .fluidOutputs(MethylamineMixture.getFluid(3000))
-                .duration(1000)
                 .EUt(VA[HV])
+                .duration(MINUTE - 10 * SECOND)
                 .buildAndRegister();
 
         MIXER_RECIPES.recipeBuilder()
@@ -26,8 +28,8 @@ public class MethylamineChain {
                 .fluidInputs(Methanol.getFluid(2000))
                 .fluidInputs(Ammonia.getFluid(1000))
                 .fluidOutputs(MethylamineMixture.getFluid(3000))
-                .duration(1000)
                 .EUt(VA[HV])
+                .duration(MINUTE - 10 * SECOND)
                 .buildAndRegister();
 
         //  6CH3OH + 3NH3 -> CH3NH2 + (CH3)2NH2 + (CH3)3NH2 + 3H2O
@@ -37,8 +39,8 @@ public class MethylamineChain {
                 .fluidOutputs(Dimethylamine.getFluid(1000))
                 .fluidOutputs(Trimethylamine.getFluid(1000))
                 .fluidOutputs(Water.getFluid(3000))
-                .duration(1000)
                 .EUt(VA[LuV])
+                .duration(MINUTE - 10 * SECOND)
                 .disableDistilleryRecipes()
                 .buildAndRegister();
     }

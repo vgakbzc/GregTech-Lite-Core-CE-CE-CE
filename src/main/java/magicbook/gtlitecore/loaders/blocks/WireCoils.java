@@ -9,25 +9,10 @@ import static gregtech.api.unification.material.Materials.Seaborgium;
 import static gregtech.api.unification.material.Materials.Tritanium;
 import static gregtech.api.unification.ore.OrePrefix.foil;
 import static gregtech.api.unification.ore.OrePrefix.wireGtDouble;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class WireCoils {
-
-    /**
-     * @param tier Based on the original duration formula of CEu, with a rounding of 5
-     * @return New coil recipe duration
-     */
-    private static int resultDuration(int tier) {
-        return (45 + tier * 5) * 20;
-    }
-
-    /**
-     * @param tier Based on the original EUt formula of CEu
-     * @return New coil EUt (based on UV tier)
-     */
-    private static int resultEUt(int tier) {
-        return VA[UV + tier];
-    }
 
     public static void init() {
 
@@ -60,5 +45,21 @@ public class WireCoils {
                 .EUt(resultEUt(3))
                 .duration(resultDuration(3))
                 .buildAndRegister();
+    }
+
+    /**
+     * @param tier Based on the original duration formula of CEu, with a rounding of 5
+     * @return New coil recipe duration
+     */
+    private static int resultDuration(int tier) {
+        return (45 + tier * 5) * SECOND;
+    }
+
+    /**
+     * @param tier Based on the original EUt formula of CEu
+     * @return New coil EUt (based on UV tier)
+     */
+    private static int resultEUt(int tier) {
+        return VA[UV + tier];
     }
 }

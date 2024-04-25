@@ -6,6 +6,7 @@ import static gregtech.api.recipes.RecipeMaps.PYROLYSE_RECIPES;
 import static gregtech.api.unification.material.Materials.Steel;
 import static gregtech.api.unification.material.Materials.Tetrafluoroethylene;
 import static gregtech.api.unification.ore.OrePrefix.stick;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.FluorinatedEthylenePropylene;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Hexafluoropropylene;
 
@@ -19,7 +20,7 @@ public class FEPChain {
                 .fluidInputs(Tetrafluoroethylene.getFluid(3000))
                 .fluidOutputs(Hexafluoropropylene.getFluid(2000))
                 .EUt(VA[HV])
-                .duration(400)
+                .duration(20 * SECOND)
                 .buildAndRegister();
 
         //  C2F4 + C3F6 -> C5F10
@@ -28,7 +29,7 @@ public class FEPChain {
                 .fluidInputs(Hexafluoropropylene.getFluid(1000))
                 .fluidOutputs(FluorinatedEthylenePropylene.getFluid(1000))
                 .EUt(VA[EV])
-                .duration(100)
+                .duration(5 * SECOND)
                 .buildAndRegister();
     }
 }
