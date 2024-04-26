@@ -16,6 +16,17 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.DISABLE_CRYSTALLIZATION;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.REAGENT;
 
+/**
+ * First Degree Materials
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is a part of {@code Material} class.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteFirstDegreeMaterials {
 
     //  Range: 11001-12000

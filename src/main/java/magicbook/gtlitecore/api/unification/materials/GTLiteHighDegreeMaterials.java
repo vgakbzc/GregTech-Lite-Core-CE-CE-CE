@@ -15,6 +15,19 @@ import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_MHCSM;
 
+/**
+ * High Degree Materials
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is a part of {@code Material} class,
+ *     all material in this class is all High Energy Physics related,
+ *     or it is just science-fantastic material.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteHighDegreeMaterials {
 
     //  Range: 15001-16000

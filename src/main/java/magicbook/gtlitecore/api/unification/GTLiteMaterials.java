@@ -9,9 +9,8 @@ import magicbook.gtlitecore.api.unification.materials.*;
  * @author Magic_Sweepy
  *
  * <p>
- *     This class is material class of gtlitecore,
- *     just like {@link gregtech.api.unification.material.Materials}.
- *     ID range of gtlitecore materials:
+ *     This class is the {@code Material} class of {@code gtlitecore},
+ *     ID range of {@code gtlitecore} materials:
  *
  *     <pre>
  *         10000-11000: Element Materials ({@link GTLiteElementMaterials}),<br>

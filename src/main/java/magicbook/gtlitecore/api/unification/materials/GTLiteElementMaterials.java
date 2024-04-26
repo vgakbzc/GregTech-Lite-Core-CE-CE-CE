@@ -17,6 +17,19 @@ import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
+/**
+ * Element Materials
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is a part of {@code Material} class,
+ *     similar to name, this class is create correspondence material about {@code Element},
+ *     for element, please see: {@link GTLiteElements}.
+ * </p>
+ *
+ * @since 2.8.7-beta
+ */
 public class GTLiteElementMaterials {
 
     //  Range: 10000-11000

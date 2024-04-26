@@ -42,7 +42,7 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
  * @author Magic_Sweepy
  *
  * <p>
- *     This class is the {@code MetaTileEntity} class in {@code gtlitecore},
+ *     This class is the {@code MetaTileEntity} class of {@code gtlitecore},
  *     ID range of {@code gtlitecore} meta tile entities:
  *
  *     <pre>
