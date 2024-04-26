@@ -1130,7 +1130,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T3)
                 .EUt(VA[LuV])
                 .duration(400)
-                .CasingTier(1)
+                .tier(1) // LuV
                 .buildAndRegister();
 
         //  T4
@@ -1144,7 +1144,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T4)
                 .EUt(VA[ZPM])
                 .duration(400)
-                .CasingTier(2)
+                .tier(2) // ZPM
                 .buildAndRegister();
 
         //  T5
@@ -1159,7 +1159,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T5)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(3)
+                .tier(3) // UV
                 .buildAndRegister();
 
         //  T6
@@ -1175,7 +1175,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T6)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(4)
+                .tier(4) // UHV
                 .buildAndRegister();
 
         //  T7
@@ -1191,7 +1191,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T7)
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(5)
+                .tier(5) // UEV
                 .buildAndRegister();
 
         //  T8
@@ -1207,7 +1207,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T8)
                 .EUt(VA[UIV])
                 .duration(400)
-                .CasingTier(6)
+                .tier(6) // UIV
                 .buildAndRegister();
 
         //  T9
@@ -1223,7 +1223,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T9)
                 .EUt(VA[UXV])
                 .duration(400)
-                .CasingTier(7)
+                .tier(7) // UXV
                 .buildAndRegister();
 
         //  T10
@@ -1239,7 +1239,7 @@ public class MiscRecipes {
                 .output(FLUID_CORE_T10)
                 .EUt(VA[OpV])
                 .duration(400)
-                .CasingTier(8)
+                .tier(8) // OpV
                 .buildAndRegister();
 
         //  General Circuits

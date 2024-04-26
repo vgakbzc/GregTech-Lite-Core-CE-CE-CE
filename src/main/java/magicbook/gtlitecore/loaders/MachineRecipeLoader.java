@@ -31,6 +31,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
+import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
@@ -4724,7 +4725,7 @@ public class MachineRecipeLoader {
                         .researchStack(TIERED_HATCH[UIV].getStackForm())
                         .EUt(VA[UIV])
                         .CWUt(288))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(400)
                 .buildAndRegister();
 
@@ -4737,9 +4738,9 @@ public class MachineRecipeLoader {
                 .fluidInputs(TinAlloy.getFluid(L * 4))
                 .fluidInputs(HSSE.getFluid(L * 2))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_PRIMARY, 4))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(200)
-                .CasingTier(5) // UEV
+                .tier(5) // UEV
                 .buildAndRegister();
 
         //  Control Secondary
@@ -4751,7 +4752,7 @@ public class MachineRecipeLoader {
                 .input(wireFine, Trinium, 4)
                 .fluidInputs(Hikarium.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_SECONDARY, 4))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(200)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -4763,9 +4764,9 @@ public class MachineRecipeLoader {
                 .input(screw, Neutronium, 4)
                 .fluidInputs(BlackTitanium.getFluid(L))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_TOROID))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(20)
-                .CasingTier(5)
+                .tier(5)
                 .buildAndRegister();
 
         //  Depolyment Casing
@@ -4777,9 +4778,9 @@ public class MachineRecipeLoader {
                 .fluidInputs(MetastableFlerovium.getFluid(L))
                 .fluidInputs(PedotTMA.getFluid(L / 2))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_CASING, 8))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(400)
-                .CasingTier(5) // UEV
+                .tier(5) // UEV
                 .buildAndRegister();
 
         //  Depolyment Magnet
@@ -4799,7 +4800,7 @@ public class MachineRecipeLoader {
                         .researchStack(EXCITATION_MAINTAINER.getStackForm())
                         .EUt(VA[UIV])
                         .CWUt(288))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(400)
                 .buildAndRegister();
 
@@ -4813,7 +4814,7 @@ public class MachineRecipeLoader {
                 .input(wireFine, LunaSilver, 4)
                 .fluidInputs(FluxedElectrum.getFluid(L * 4))
                 .outputs(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.RECEIVER_CASING, 8))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(400)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
@@ -4834,7 +4835,7 @@ public class MachineRecipeLoader {
                         .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5))
                         .EUt(VA[UIV])
                         .CWUt(288))
-                .EUt(8000000)
+                .EUt(VZ[UEV])
                 .duration(100)
                 .buildAndRegister();
 

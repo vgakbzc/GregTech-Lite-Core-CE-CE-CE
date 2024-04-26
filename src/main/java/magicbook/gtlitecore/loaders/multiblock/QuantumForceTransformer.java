@@ -33,7 +33,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Rubber.getFluid(36864))
                 .EUt(VA[ZPM])
                 .duration(400)
-                .CasingTier(1) // ZPM
+                .tier(1) // ZPM
                 .buildAndRegister();
 
         //  T2 Rubber recipe
@@ -51,7 +51,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Rubber.getFluid(36864))
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         //  TODO T3 Rubber recipe
@@ -72,7 +72,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Polybenzimidazole.getFluid(9216))
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         //  T2 Plastic recipe
@@ -91,7 +91,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Zylon.getFluid(9216))
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3) // UHV
+                .tier(3) // UHV
                 .buildAndRegister();
 
         //  T3 Plastic recipe
@@ -110,7 +110,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Polycaprolactam.getFluid(9216))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4) // UEV
+                .tier(4) // UEV
                 .buildAndRegister();
 
         //  Platinum group
@@ -127,7 +127,7 @@ public class QuantumForceTransformer {
                 .output(dust, Ruthenium, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         //  Thorium-Uranium group
@@ -141,7 +141,7 @@ public class QuantumForceTransformer {
                 .output(dust, Plutonium241, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         //  Titanium-Tungsten-Indium Group
@@ -157,7 +157,7 @@ public class QuantumForceTransformer {
                 .output(dust, Indium, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -172,7 +172,7 @@ public class QuantumForceTransformer {
                 .output(dust, Indium, 64)
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         //  Rare Earth Group
@@ -188,7 +188,7 @@ public class QuantumForceTransformer {
                 .output(dust, Samarium, 64)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3) // UHV
+                .tier(3) // UHV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -203,7 +203,7 @@ public class QuantumForceTransformer {
                 .output(dust, Erbium, 64)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3) // UHV
+                .tier(3) // UHV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -219,7 +219,7 @@ public class QuantumForceTransformer {
                 .output(dust, Gallium, 64)
                 .EUt(VA[UHV])
                 .duration(400)
-                .CasingTier(3) // UHV
+                .tier(3) // UHV
                 .buildAndRegister();
 
         //  Naquadah group
@@ -238,7 +238,7 @@ public class QuantumForceTransformer {
                 .output(dust, Adamantium, 64)
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4) // UEV
+                .tier(4) // UEV
                 .buildAndRegister();
 
         QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
@@ -257,7 +257,7 @@ public class QuantumForceTransformer {
                 .output(dust, CelestialTungsten, 64)
                 .EUt(VA[UIV])
                 .duration(400)
-                .CasingTier(5) // UIV
+                .tier(5) // UIV
                 .buildAndRegister();
 
         //  T1 Biological Items
@@ -284,7 +284,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(LinoleicAcid.getFluid(64000))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4) // UEV
+                .tier(4) // UEV
                 .buildAndRegister();
 
         //  TODO T2 Biological Items
@@ -304,7 +304,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(SolderingAlloy.getFluid(18432))
                 .EUt(VA[UV])
                 .duration(400)
-                .CasingTier(2) // UV
+                .tier(2) // UV
                 .buildAndRegister();
 
         //  Others, free circuit meta: 13-19
@@ -320,7 +320,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(HiggsBosons.getFluid(3000))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4) // UEV
+                .tier(4) // UEV
                 .buildAndRegister();
 
         //  Instantons
@@ -334,7 +334,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Instantons.getFluid(3000))
                 .EUt(VA[UEV])
                 .duration(400)
-                .CasingTier(4) // UEV
+                .tier(4) // UEV
                 .buildAndRegister();
 
         //  Hypercube
@@ -357,7 +357,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(Americium.getPlasma(250))
                 .EUt(VA[UXV])
                 .duration(20)
-                .CasingTier(6) // UXV
+                .tier(6) // UXV
                 .buildAndRegister();
 
         //  Temporal Fluid
@@ -375,7 +375,7 @@ public class QuantumForceTransformer {
                 .fluidOutputs(TemporalFluid.getFluid(6000))
                 .EUt(VA[UIV])
                 .duration(120)
-                .CasingTier(5) // UIV
+                .tier(5) // UIV
                 .buildAndRegister();
 
         //  Quantum Anomaly
@@ -385,7 +385,7 @@ public class QuantumForceTransformer {
                 .chancedOutput(QUANTUM_ANOMALY, 5000, 0)
                 .EUt(VA[UIV])
                 .duration(200)
-                .CasingTier(5) // UIV
+                .tier(5) // UIV
                 .buildAndRegister();
 
         //  Spatially Transcendent Gravitational Lens
@@ -405,7 +405,7 @@ public class QuantumForceTransformer {
                 .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.SPATIALLY_TRANSCENDENT_GRAVITATIONAL_LENS))
                 .EUt(VA[UXV])
                 .duration(20)
-                .CasingTier(7) // OpV
+                .tier(7) // OpV
                 .buildAndRegister();
 
     }

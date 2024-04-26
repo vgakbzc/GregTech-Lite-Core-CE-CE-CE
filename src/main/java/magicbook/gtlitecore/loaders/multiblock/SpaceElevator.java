@@ -629,7 +629,7 @@ public class SpaceElevator {
                     .fluidOutputs(fluidOutput.getFluid(amount))
                     .EUt(voltage)
                     .duration(20)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
     }
@@ -653,7 +653,7 @@ public class SpaceElevator {
                     .fluidOutputs(fluidOutput.getPlasma(amount))
                     .EUt(voltage)
                     .duration(20)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
     }
@@ -700,7 +700,7 @@ public class SpaceElevator {
                     .chancedOutput(ore, ore9, 256, chanceOre9, 500)
                     .EUt(voltage)
                     .duration(400)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
 
@@ -723,7 +723,7 @@ public class SpaceElevator {
                     .chancedOutput(ore, ore9, 256, chanceOre9, 500)
                     .EUt(voltage)
                     .duration(200)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
 
@@ -747,7 +747,7 @@ public class SpaceElevator {
                     .chancedOutput(ore, ore9, 512, chanceOre9, 500)
                     .EUt(voltage)
                     .duration(400)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
 
@@ -770,7 +770,7 @@ public class SpaceElevator {
                     .chancedOutput(ore, ore9, 512, chanceOre9, 500)
                     .EUt(voltage)
                     .duration(200)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
 
@@ -794,7 +794,7 @@ public class SpaceElevator {
                     .chancedOutput(ore, ore9, 1024, chanceOre9, 500)
                     .EUt(voltage)
                     .duration(400)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
 
@@ -817,7 +817,7 @@ public class SpaceElevator {
                     .chancedOutput(ore, ore9, 1024, chanceOre9, 500)
                     .EUt(voltage)
                     .duration(200)
-                    .CasingTier(casingTier)
+                    .tier(casingTier)
                     .buildAndRegister();
         }
     }

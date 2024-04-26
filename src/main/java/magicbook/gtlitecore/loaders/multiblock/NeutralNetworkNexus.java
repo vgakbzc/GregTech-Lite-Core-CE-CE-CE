@@ -42,7 +42,7 @@ public class NeutralNetworkNexus {
                 .output(nanotube, Carbon)
                 .EUt(VA[ZPM])
                 .duration(400)
-                .CasingTier(2)
+                .tier(2) // ZPM
                 .buildAndRegister();
 
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
@@ -57,7 +57,7 @@ public class NeutralNetworkNexus {
                 .output(nanosensor, Carbon)
                 .EUt(VA[ZPM])
                 .duration(2)
-                .CasingTier(2)
+                .tier(2) // ZPM
                 .buildAndRegister();
 
         //  Basic Breeding

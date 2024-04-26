@@ -1036,7 +1036,7 @@ public class GTLiteRecipeMaps {
                     .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
                     .duration(recipeBuilder.getDuration())
                     .EUt(recipeBuilder.getEUt())
-                    .CasingTier(1)
+                    .tier(1)
                     .hidden() // Hidden same recipes in NDB Oscillating Module recipe.
                     .buildAndRegister());
 
@@ -1114,7 +1114,7 @@ public class GTLiteRecipeMaps {
                     .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
                     .duration(recipeBuilder.getDuration())
                     .EUt(recipeBuilder.getEUt())
-                    .CasingTier(1)
+                    .tier(1)
                     .hidden() // Hidden same recipes in NDB Burning Module recipes.
                     .buildAndRegister());
 
