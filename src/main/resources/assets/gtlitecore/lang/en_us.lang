@@ -2597,6 +2597,7 @@ recipemap.planetary_gas_siphon_recipes.name=Planetary Gas Extraction
 recipemap.nicoll_dyson_beamer_forging_module.name=Neutron Flow Traction
 recipemap.nicoll_dyson_beamer_burning_module.name=Gigabit Energy Focus
 recipemap.nicoll_dyson_beamer_oscillating_module.name=Transcendent Causality Oscillation
+recipemap.eternity_garden_recipes.name=Eternity Garden
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=Temperature: %,dK

@@ -2611,6 +2611,7 @@ recipemap.planetary_gas_siphon_recipes.name=行星气体提取
 recipemap.nicoll_dyson_beamer_forging_module.name=中子乱流牵引
 recipemap.nicoll_dyson_beamer_burning_module.name=千兆能量聚焦
 recipemap.nicoll_dyson_beamer_oscillating_module.name=超维因果爆震
+recipemap.eternity_garden_recipes.name=永恒花园
 
 #  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

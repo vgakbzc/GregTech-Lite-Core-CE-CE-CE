@@ -30,12 +30,17 @@ public class GTLiteGuiTextures {
     public static final TextureArea PROGRESS_BAR_SPACE_ELEVATOR_MINING_MODULE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_mining_module.png");
     public static final TextureArea PROGRESS_BAR_SPACE_ELEVATOR_DRILLING_MODULE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_drilling_module.png");
     public static final TextureArea PROGRESS_BAR_FORGING_MODULE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_forging_module.png");
+    public static final TextureArea PROGRESS_BAR_ETERNITY_GARDEN = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_eternity_garden.png");
 
     //  Overlay
     public static final TextureArea FOIL_OVERLAY = TextureArea.fullImage("textures/gui/overlay/foil_overlay.png");
     public static final TextureArea NANOSCALE_OVERLAY_1 = TextureArea.fullImage("textures/gui/overlay/nanoscale_overlay_1.png");
     public static final TextureArea NANOSCALE_OVERLAY_2 = TextureArea.fullImage("textures/gui/overlay/nanoscale_overlay_2.png");
     public static final TextureArea DISH_OVERLAY = TextureArea.fullImage("textures/gui/overlay/dish_overlay.png");
+    public static final TextureArea GREEN_OVERLAY = TextureArea.fullImage("textures/gui/overlay/green_overlay.png");
+    public static final TextureArea RED_OVERLAY = TextureArea.fullImage("textures/gui/overlay/red_overlay.png");
+    public static final TextureArea PINK_OVERLAY = TextureArea.fullImage("textures/gui/overlay/pink_overlay.png");
+    public static final TextureArea BLUE_OVERLAY = TextureArea.fullImage("textures/gui/overlay/blue_overlay.png");
 
     //  Button
     public static final TextureArea BUTTON_STRUCTURE_SWITCHING = TextureArea.fullImage("textures/gui/widget/button_structure_switching.png");
@@ -46,6 +51,7 @@ public class GTLiteGuiTextures {
     //  Logo
     public static final TextureArea SPACE_ELEVATOR_LOGO = TextureArea.fullImage("textures/gui/icon/space_elevator_logo.png");
     public static final TextureArea SPACE_ELEVATOR_LOGO_DARK = TextureArea.fullImage("textures/gui/icon/space_elevator_logo_dark.png");
+    public static final TextureArea ETERNITY_GARDEN_LOGO = TextureArea.fullImage("textures/gui/icon/eternity_garden_logo.png");
 
     //  Icon
     public static final TextureArea QC_COMPONENT_OUTLINE = TextureArea.fullImage("textures/gui/widget/quantum_computer/component_outline.png");

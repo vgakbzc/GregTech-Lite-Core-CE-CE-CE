@@ -1935,5 +1935,17 @@ public class GTLiteRecipeMaps {
             .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_FORGING_MODULE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> ETERNITY_GARDEN_RECIPES = new RecipeMapEternityGarden<>("eternity_garden_recipes", 7, 7, 7, 7, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GTLiteGuiTextures.PINK_OVERLAY)
+            .setSlotOverlay(false, false, true, GTLiteGuiTextures.PINK_OVERLAY)
+            .setSlotOverlay(false, true, false, GTLiteGuiTextures.GREEN_OVERLAY)
+            .setSlotOverlay(false, true, true, GTLiteGuiTextures.GREEN_OVERLAY)
+            .setSlotOverlay(true, false, false, GTLiteGuiTextures.BLUE_OVERLAY)
+            .setSlotOverlay(true, false, true, GTLiteGuiTextures.BLUE_OVERLAY)
+            .setSlotOverlay(true, true, false, GTLiteGuiTextures.RED_OVERLAY)
+            .setSlotOverlay(true, true, true, GTLiteGuiTextures.RED_OVERLAY)
+            .setSound(SoundEvents.BLOCK_CHORUS_FLOWER_GROW);
+
     public GTLiteRecipeMaps() {}
 }
