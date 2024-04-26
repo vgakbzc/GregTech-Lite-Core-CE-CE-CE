@@ -462,6 +462,7 @@ public class NeutralNetworkNexus {
                     FullerenePolymerMatrix.getFluid(1)
             }) {
                 NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
+                        .circuitMeta(1)
                         .input(CARBON_MESH, 4)
                         .input(CARBON_MESH, 2)
                         .fluidInputs(new FluidStack[]{stack})
@@ -496,6 +497,7 @@ public class NeutralNetworkNexus {
                         Lubricant.getFluid(250)
                 }) {
                     NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE.recipeBuilder()
+                            .circuitMeta(1)
                             .input(lens, Glass)
                             .input(CARBON_FIBERS, 8)
                             .fluidInputs(new FluidStack[]{stack})
