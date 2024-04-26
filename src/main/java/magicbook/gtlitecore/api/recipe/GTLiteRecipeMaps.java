@@ -1932,7 +1932,7 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
+            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_FORGING_MODULE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 
     public GTLiteRecipeMaps() {}
