@@ -1,5 +1,6 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.renderer.handler;
 
+import magicbook.gtlitecore.client.utils.RenderBufferHelper;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;

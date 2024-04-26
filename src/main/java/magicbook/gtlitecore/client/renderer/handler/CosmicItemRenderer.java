@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.renderer.handler;
 
 import codechicken.lib.model.ItemQuadBakery;
 import codechicken.lib.model.bakedmodels.ModelProperties;

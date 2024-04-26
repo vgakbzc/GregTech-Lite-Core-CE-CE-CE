@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.utils;
 
 import net.minecraft.entity.item.EntityItem;
 

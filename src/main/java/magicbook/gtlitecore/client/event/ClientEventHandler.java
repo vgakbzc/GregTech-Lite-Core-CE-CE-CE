@@ -1,5 +1,6 @@
-package magicbook.gtlitecore.client;
+package magicbook.gtlitecore.client.event;
 
+import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.client.shader.CosmicShaderHelper;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraftforge.client.event.GuiScreenEvent;

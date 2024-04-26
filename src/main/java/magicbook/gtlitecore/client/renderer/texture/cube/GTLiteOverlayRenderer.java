@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.renderer.texture.cube;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;

@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.renderer.handler;
 
 import codechicken.lib.model.ModelRegistryHelper;
 import net.minecraft.client.Minecraft;

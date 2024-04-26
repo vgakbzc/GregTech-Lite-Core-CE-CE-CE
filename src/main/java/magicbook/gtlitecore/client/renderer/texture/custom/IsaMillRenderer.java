@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer.texture;
+package magicbook.gtlitecore.client.renderer.texture.custom;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;

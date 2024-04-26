@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client;
+package magicbook.gtlitecore.client.renderer.texture;
 
 import codechicken.lib.texture.TextureUtils;
 import gregtech.client.renderer.ICubeRenderer;
@@ -6,10 +6,10 @@ import gregtech.client.renderer.texture.cube.OrientedOverlayRenderer;
 import gregtech.client.renderer.texture.cube.SidedCubeRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOrientedCubeRenderer;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
-import magicbook.gtlitecore.client.renderer.GTLiteOverlayRenderer;
-import magicbook.gtlitecore.client.renderer.texture.IndustrialCentrifugeRenderer;
-import magicbook.gtlitecore.client.renderer.texture.IsaMillRenderer;
-import magicbook.gtlitecore.client.renderer.texture.TurbineMixerRenderer;
+import magicbook.gtlitecore.client.renderer.texture.cube.GTLiteOverlayRenderer;
+import magicbook.gtlitecore.client.renderer.texture.custom.IndustrialCentrifugeRenderer;
+import magicbook.gtlitecore.client.renderer.texture.custom.IsaMillRenderer;
+import magicbook.gtlitecore.client.renderer.texture.custom.TurbineMixerRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 

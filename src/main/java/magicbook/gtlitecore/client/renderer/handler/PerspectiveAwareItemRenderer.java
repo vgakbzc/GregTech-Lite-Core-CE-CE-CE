@@ -1,7 +1,8 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.renderer.handler;
 
 import codechicken.lib.render.item.IItemRenderer;
 import com.google.common.collect.ImmutableList;
+import magicbook.gtlitecore.client.utils.IEntityItemTickCallback;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ItemOverrideList;
 import net.minecraft.entity.EntityLivingBase;

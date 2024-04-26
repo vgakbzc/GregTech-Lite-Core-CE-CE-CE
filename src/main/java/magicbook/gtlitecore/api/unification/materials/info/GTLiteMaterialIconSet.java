@@ -1,7 +1,7 @@
 package magicbook.gtlitecore.api.unification.materials.info;
 
 import gregtech.api.unification.material.info.MaterialIconSet;
-import magicbook.gtlitecore.client.GTLiteTextures;
+import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavior;
 
 /**

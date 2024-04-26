@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.renderer.handler;
 
 import codechicken.lib.colour.Colour;
 import gregtech.api.items.metaitem.MetaItem;

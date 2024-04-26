@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.client.renderer.texture;
+package magicbook.gtlitecore.client.renderer.texture.custom;
 
 import codechicken.lib.render.CCRenderState;
 import codechicken.lib.render.pipeline.IVertexOperation;
@@ -16,15 +16,15 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
- * Turbine Mixer Controller Renderer
+ * Industrial Centrifuge Controller Renderer.
  *
  * @author Magic_Sweepy
  *
  * <p>
- *     Used for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityTurbineMixer}.
+ *     Used for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityIndustrialCentrifuge}.
  * </p>
  */
-public class TurbineMixerRenderer implements TextureUtils.IIconRegister {
+public class IndustrialCentrifugeRenderer implements TextureUtils.IIconRegister {
 
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite baseBackgroundSprite;
@@ -32,15 +32,15 @@ public class TurbineMixerRenderer implements TextureUtils.IIconRegister {
     @SideOnly(Side.CLIENT)
     private TextureAtlasSprite activeBladeSprite;
 
-    public TurbineMixerRenderer() {
+    public IndustrialCentrifugeRenderer() {
         Textures.iconRegisters.add(this);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void registerIcons(TextureMap textureMap) {
-        this.baseBackgroundSprite = textureMap.registerSprite(new ResourceLocation(GTLiteValues.MODID, "blocks/multiblocks/turbine_mixer/base_background"));
-        this.activeBladeSprite = textureMap.registerSprite(new ResourceLocation(GTLiteValues.MODID, "blocks/multiblocks/turbine_mixer/rotor_spinning"));
+        this.baseBackgroundSprite = textureMap.registerSprite(new ResourceLocation(GTLiteValues.MODID, "blocks/multiblocks/industrial_centrifuge/base_background"));
+        this.activeBladeSprite = textureMap.registerSprite(new ResourceLocation(GTLiteValues.MODID, "blocks/multiblocks/industrial_centrifuge/rotor_spinning"));
     }
 
     @SideOnly(Side.CLIENT)

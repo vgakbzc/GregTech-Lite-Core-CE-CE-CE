@@ -1,5 +1,6 @@
-package magicbook.gtlitecore.client.renderer;
+package magicbook.gtlitecore.client.utils;
 
+import magicbook.gtlitecore.client.renderer.handler.StructureSelectRenderer;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.util.EnumFacing;
 import net.minecraftforge.fml.relauncher.Side;
