@@ -2,9 +2,15 @@ package magicbook.gtlitecore.api.utils;
 
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.unification.material.Materials;
 import gregtech.api.util.BlockInfo;
+import gregtech.api.util.GTUtility;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.common.blocks.MetaBlocks;
+import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,8 +35,8 @@ public class GTLiteUtils {
     /**
      * @param name  Name in namespace {@code gtlitecore}, used to init some internal things in this mod.
      * @return      Resource Location of {@code gtlitecore}, pay attention,
-     *              do not use this method in Materials init, please see {@link gregtech.api.unification.material.Materials}.
-     *              You should use {@link gregtech.api.util.GTUtility#gregtechId(String)}.
+     *              do not use this method in Materials init, please see {@link Materials}.
+     *              You should use {@link GTUtility#gregtechId(String)}.
      */
     @Nonnull
     public static ResourceLocation gtliteId(@Nonnull String name) {
@@ -214,7 +220,7 @@ public class GTLiteUtils {
     /**
      * @param lists  List.
      * @return       List size, used to get ArrayList<List<IBlockState>> in some block tier multiblocks,
-     *               please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler}.
+     *               please see: {@link MetaTileEntityPreciseAssembler}.
      */
     public static <T> int maxLength(List<List<T>> lists) {
         return lists.stream()
@@ -227,7 +233,7 @@ public class GTLiteUtils {
      * @param list    List.
      * @param length  List size.
      * @return        The final list, used to recheck list of IBlockState in some block tier multiblocks,
-     *                please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler}.
+     *                please see: {@link MetaTileEntityPreciseAssembler}.
      */
     public static <T> List<T> consistentList(List<T> list,
                                              int length) {
@@ -245,7 +251,7 @@ public class GTLiteUtils {
     /**
      * @param tile  MetaTileEntity.
      * @return      MetaTileEntityHolder, used to get special block info in Traceability Predicate.
-     *              Please see: {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#ROTOR_HOLDER}.
+     *              Please see: {@link GTLiteTraceabilityPredicate#ROTOR_HOLDER}.
      */
     public static MetaTileEntityHolder getTileEntity(MetaTileEntity tile) {
         MetaTileEntityHolder holder = new MetaTileEntityHolder();
@@ -379,6 +385,27 @@ public class GTLiteUtils {
             if (isStackValid(tStack))
                 return ((ItemStack) tStack).copy();
         return null;
+    }
+
+    /**
+     * Get {@code RecipeMap} of Large Processing Factory by {@code index}.
+     *
+     * @param index  Index of {@code RecipeMap}, each three Indexes correspondence one Processing Mode.
+     * @return       Correspondence {@code RecipeMap} of {@code index}.
+     */
+    public static RecipeMap<?> getProcessingRecipe(int index) {
+        return switch (index) {
+            case 1 -> RecipeMaps.COMPRESSOR_RECIPES;
+            case 2 -> RecipeMaps.LATHE_RECIPES;
+            case 3 -> RecipeMaps.POLARIZER_RECIPES;
+            case 4 -> RecipeMaps.FERMENTING_RECIPES;
+            case 5 -> RecipeMaps.EXTRACTOR_RECIPES;
+            case 6 -> RecipeMaps.CANNER_RECIPES;
+            case 7 -> RecipeMaps.LASER_ENGRAVER_RECIPES;
+            case 8 -> RecipeMaps.AUTOCLAVE_RECIPES;
+            case 9 -> RecipeMaps.FLUID_SOLIDFICATION_RECIPES;
+            default -> null;
+        };
     }
 
 }

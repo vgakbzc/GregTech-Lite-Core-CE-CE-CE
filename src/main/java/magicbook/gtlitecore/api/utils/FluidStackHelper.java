@@ -22,6 +22,12 @@ import java.io.IOException;
  */
 public class FluidStackHelper {
 
+    /**
+     * Read Fluid Stack Data from {@code ByteBuf}.
+     *
+     * @param dataIn  Data which from {@code ByteBuf}.
+     * @return        Fluid Stack Data (read from {@code ByteBuf}).
+     */
     public static FluidStack readFromBuf(ByteBuf dataIn) {
         PacketBuffer buf = new PacketBuffer(dataIn);
         try {
@@ -37,6 +43,12 @@ public class FluidStackHelper {
         }
     }
 
+    /**
+     * Write Fluid Stack Data to {@code ByteBuf}.
+     *
+     * @param dataOut     Target buffer of data which will write to it.
+     * @param fluidStack  Fluid Stack.
+     */
     public static void writeToBuf(ByteBuf dataOut, FluidStack fluidStack) {
         PacketBuffer buf = new PacketBuffer(dataOut);
         NBTTagCompound nbt = new NBTTagCompound();
