@@ -1489,6 +1489,14 @@ gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
 
+gtlitecore.machine.industrial_vacuum_chamber.name=Large Industrial Vacuum Chamber
+gtlitecore.machine.industrial_vacuum_chamber.tooltip.1=Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
+gtlitecore.machine.industrial_vacuum_chamber.tooltip.2=Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
+
+gtlitecore.machine.industrial_bio_reactor.name=Industrial Bio Reactor
+gtlitecore.machine.industrial_bio_reactor.tooltip.1=Input Voltage below §5EV§7 tier, then get §e64§7 Parallel.
+gtlitecore.machine.industrial_bio_reactor.tooltip.2=Input Voltage above or equal to §1IV§7 tier, then get §e[64 * (Voltage Tier - 4)]§7 Parallel.
+
 gtlitecore.machine.bioware_simulator.name=Bioware Simulator
 gtlitecore.machine.bioware_simulator.tooltip.1=活性菌群网络集群计算
 gtlitecore.machine.bioware_simulator.tooltip.2=用于模拟各式各样的怪物模型，并产出相应的战利品。
@@ -2036,6 +2044,7 @@ gregtech.material.fluxed_electrum=Fluxed Electrum
 gregtech.material.arceus_alloy_2_b=Arceus Alloy 2B
 gregtech.material.incoloy_020=Incoloy-020
 gregtech.material.hattrium=Hattrium
+gregtech.material.duraluminium_alloy=Duraluminium Alloy-65A
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=Kapton-K

@@ -78,6 +78,7 @@ tile.structure_casing.naquadah_casing.name=坚固耐用硅岩机器外壳
 tile.structure_casing.naquadah_gearbox_casing.name=硅岩齿轮箱外壳
 tile.structure_casing.hattrium_casing.name=防冻提布莉姆合金机器外壳
 tile.structure_casing.circulative_cooling_casing.name=环流冷却机械方块
+tile.structure_casing.duraluminium_alloy_casing.name=洁净硬铝合金-65A机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -1492,6 +1493,14 @@ gtlitecore.machine.large_fluid_phase_transformer.tooltip.1=运行§r所有§7配
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.2=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_fluid_phase_transformer.tooltip.3=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 
+gtlitecore.machine.industrial_vacuum_chamber.name=大型工业真空室
+gtlitecore.machine.industrial_vacuum_chamber.tooltip.1=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.industrial_vacuum_chamber.tooltip.2=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+
+gtlitecore.machine.industrial_bio_reactor.name=大型工业生物仓
+gtlitecore.machine.industrial_bio_reactor.tooltip.1=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.industrial_bio_reactor.tooltip.2=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+
 gtlitecore.machine.planetary_gas_siphon.name=行星气体钻机
 gtlitecore.machine.planetary_gas_siphon.tooltip.1=太空资源提取技术的飞跃！
 gtlitecore.machine.planetary_gas_siphon.tooltip.2=利用§6采矿无人机§7提取行星大气并转换为可供利用的物质形态。
@@ -2050,6 +2059,7 @@ gregtech.material.fluxed_electrum=通流琥珀金
 gregtech.material.arceus_alloy_2_b=阿尔宙斯合金2B
 gregtech.material.incoloy_020=耐热铬铁合金-020
 gregtech.material.hattrium=提布莉姆合金
+gregtech.material.duraluminium_alloy=硬铝合金-65A
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

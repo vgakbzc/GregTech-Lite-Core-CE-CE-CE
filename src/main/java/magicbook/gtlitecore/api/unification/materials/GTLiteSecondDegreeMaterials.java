@@ -74,7 +74,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[EV], 944)
                         .vacuumStats(VA[HV], 320))
                 .components(StainlessSteel, 8, NickelZincFerrite, 4, Kanthal, 4, Molybdenum, 4)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12004 Tanmolyium Beta-C
@@ -102,7 +102,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[EV], 454)
                         .vacuumStats(VA[MV], 280))
                 .components(Cobalt, 4, Chrome, 3, Phosphorus, 2, Molybdenum, 1)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12006 Hastelloy-X78
@@ -459,7 +459,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(5680, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[IV], 680))
                 .components(Iron, 23, Cobalt, 9, Chrome, 9, Nickel, 9)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12033 Tantalloy-61
@@ -1022,6 +1022,20 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(10800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 318)
                         .vacuumStats(VA[LuV], 109))
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12077 Duraluminium Alloy
+        DuraluminiumAlloy = new Material.Builder(getId(), gregtechId("duraluminium_alloy"))
+                .ingot()
+                .fluid()
+                .color(0xF1C1F0)
+                .iconSet(METALLIC)
+                .components(Aluminium, 18, Copper, 3, Manganese, 3, Magnesium, 3, Chrome, 2, Silicon, 2)
+                .blast(b -> b
+                        .temp(4400, BlastProperty.GasTier.MID)
+                        .blastStats(VA[IV], 540)
+                        .vacuumStats(VA[HV], 280))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
     }

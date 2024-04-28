@@ -135,6 +135,7 @@ public class GTLiteTextures {
     public static final GTLiteOverlayRenderer BERKELIUM_CASING = new GTLiteOverlayRenderer("casings/berkelium_casing");
     public static final GTLiteOverlayRenderer SINGULARITY_REINFORCED_STELLAR_SHIELDING_CASING = new GTLiteOverlayRenderer("casings/singularity_reinforced_stellar_shielding_casing");
     public static final GTLiteOverlayRenderer TRANSCENDENTALLY_AMPLIFIED_MAGNETIC_CONFINEMENT_CASING = new GTLiteOverlayRenderer("casings/transcendentally_amplified_magnetic_confinement_casing");
+    public static final GTLiteOverlayRenderer DURALUMINIUM_ALLOY_CASING = new GTLiteOverlayRenderer("casings/duraluminium_alloy_casing");
     public static final GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
     public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch");
     public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_4x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.4x");

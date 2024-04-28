@@ -45,11 +45,11 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
  *     This class is the {@code MetaTileEntity} class of {@code gtlitecore},
  *     ID range of {@code gtlitecore} meta tile entities:
  *
- *     <pre>
- *         14000-14999: Multiblock Parts,<br>
- *         15000-16000: Single Machines,<br>
- *         16001-20000: Multiblock Machines.
- *     </pre>
+ *     <ul>
+ *         <li>14000-14999: Multiblock Parts,</li>
+ *         <li>15000-16000: Single Machines,</li>
+ *         <li>16001-20000: Multiblock Machines.</li>
+ *     </ul>
  *
  *     Some ID is free in this range (but maybe add new machines in this free IDs).
  * </p>
@@ -223,6 +223,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityDysonSwarm DYSON_SWARM;
     public static MetaTileEntityIntegratedOreProcessor INTEGRATED_ORE_PROCESSOR;
     public static MetaTileEntityLargeFluidPhaseTransformer LARGE_FLUID_PHASE_TRANSFORMER;
+    public static MetaTileEntityIndustrialVacuumChamber INDUSTRIAL_VACUUM_CHAMBER;
+    public static MetaTileEntityIndustrialBioReactor INDUSTRIAL_BIO_REACTOR;
     public static MetaTileEntityPlanetaryGasSiphon PLANETARY_GAS_SIPHON;
     public static MetaTileEntityBiowareSimulator BIOWARE_SIMULATOR;
     public static MetaTileEntityAlgaeCultureTank ALGAE_CULTURE_TANK;
@@ -838,8 +840,8 @@ public class GTLiteMetaTileEntities {
         DYSON_SWARM = registerMultiMetaTileEntity(94, new MetaTileEntityDysonSwarm(gtliteId("dyson_swarm")));
         INTEGRATED_ORE_PROCESSOR = registerMultiMetaTileEntity(95, new MetaTileEntityIntegratedOreProcessor(gtliteId("integrated_ore_processor")));
         LARGE_FLUID_PHASE_TRANSFORMER = registerMultiMetaTileEntity(96, new MetaTileEntityLargeFluidPhaseTransformer(gtliteId("large_fluid_phase_transformer")));
-        //  97 GRAVITY_FIELD_CONSTRAINT_ROLLING_PLANT
-        //  98 SUPERSTRUCTURE_ASSEMBLY_PLANT
+        INDUSTRIAL_VACUUM_CHAMBER = registerMultiMetaTileEntity(97, new MetaTileEntityIndustrialVacuumChamber(gtliteId("industrial_vacuum_chamber")));
+        INDUSTRIAL_BIO_REACTOR = registerMultiMetaTileEntity(98, new MetaTileEntityIndustrialBioReactor(gtliteId("industrial_bio_reactor")));
         PLANETARY_GAS_SIPHON = registerMultiMetaTileEntity(99, new MetaTileEntityPlanetaryGasSiphon(gtliteId("planetary_gas_siphon")));
         BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));

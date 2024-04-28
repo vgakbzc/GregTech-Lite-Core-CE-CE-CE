@@ -12,16 +12,16 @@ import magicbook.gtlitecore.api.unification.materials.*;
  *     This class is the {@code Material} class of {@code gtlitecore},
  *     ID range of {@code gtlitecore} materials:
  *
- *     <pre>
- *         10000-11000: Element Materials ({@link GTLiteElementMaterials}),<br>
- *         11001-12000: First Degree Materials ({@link GTLiteFirstDegreeMaterials}),<br>
- *         12001-13000: Second Degree Materials ({@link GTLiteSecondDegreeMaterials}),<br>
- *         13001-15000: Organic Chemistry Materials ({@link GTLiteOrganicChemistryMaterials}),<br>
- *         15001-16000: High Degree Materials ({@link GTLiteHighDegreeMaterials}),<br>
- *         18000-20000: Unknown Composition Materials ({@link GTLiteUnknownCompositionMaterials}),<br>
- *         20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}),<br>
- *         21001-22000: Mod Compatibility Materials ({@link GTLiteModCompatibilityMaterials}).
- *     </pre>
+ *     <ul>
+ *         <li>10000-11000: Element Materials ({@link GTLiteElementMaterials}),</li>
+ *         <li>11001-12000: First Degree Materials ({@link GTLiteFirstDegreeMaterials}),</li>
+ *         <li>12001-13000: Second Degree Materials ({@link GTLiteSecondDegreeMaterials}),</li>
+ *         <li>13001-15000: Organic Chemistry Materials ({@link GTLiteOrganicChemistryMaterials}),</li>
+ *         <li>15001-16000: High Degree Materials ({@link GTLiteHighDegreeMaterials}),</li>
+ *         <li>18000-20000: Unknown Composition Materials ({@link GTLiteUnknownCompositionMaterials}),</li>
+ *         <li>20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}),</li>
+ *         <li>21001-22000: Mod Compatibility Materials ({@link GTLiteModCompatibilityMaterials}).</li>
+ *     </ul>
  *
  *     Some ID is free in this range (but maybe add new machines in this free IDs).
  * </p>
@@ -413,6 +413,7 @@ public class GTLiteMaterials {
     public static Material ArceusAlloy2B;
     public static Material Incoloy020;
     public static Material Hattrium;
+    public static Material DuraluminiumAlloy;
 
     ///////////////////////////////////
     //  Organic Chemistry Materials  //

@@ -2093,6 +2093,38 @@ public class MachineRecipeLoader {
                         .CWUt(2048)
                         .EUt(VA[OpV]))
                 .buildAndRegister();
+
+        //  Industrial Vacuum Chamber
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, RedSteel, 4)
+                .input(LARGE_VACUUM_CHAMBER, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, IncoloyMA956, 4)
+                .input(plateDouble, Talonite, 4)
+                .input(gear, Ruthenium, 4)
+                .input(gearSmall, IncoloyDS, 16)
+                .input(cableGtQuadruple, TungstenSteel, 4)
+                .fluidInputs(VanadiumSteel.getFluid(L * 4))
+                .output(INDUSTRIAL_VACUUM_CHAMBER)
+                .EUt(VA[IV])
+                .duration(800)
+                .buildAndRegister();
+
+        //  Industrial Bio Reactor
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BismuthBronze, 4)
+                .input(LARGE_BIO_REACTOR, 16)
+                .input(circuit, MarkerMaterials.Tier.IV, 16)
+                .input(plateDouble, AusteniticStainlessSteel904L, 4)
+                .input(plateDouble, CobaltBrass, 4)
+                .input(gear, Talonite, 4)
+                .input(gearSmall, Inconel792, 16)
+                .input(cableGtQuadruple, RTMAlloy, 4)
+                .fluidInputs(Inconel625.getFluid(L * 4))
+                .output(INDUSTRIAL_BIO_REACTOR)
+                .EUt(VA[IV])
+                .duration(1200)
+                .buildAndRegister();
     }
 
     private static void MachineCasingRecipes() {
@@ -5033,5 +5065,21 @@ public class MachineRecipeLoader {
                         .CWUt(4096)
                         .EUt(VA[OpV]))
                 .buildAndRegister();
+
+        //  Duraluminium Casing
+        ModHandler.addShapedRecipe(true, "duraluminium_casing", GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.DURALUMINIUM_ALLOY_CASING, 2),
+                "PhP", "PFP","PwP",
+                'P', new UnificationEntry(plate, DuraluminiumAlloy),
+                'F', new UnificationEntry(frameGt, DuraluminiumAlloy));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, DuraluminiumAlloy, 6)
+                .input(frameGt, DuraluminiumAlloy)
+                .circuitMeta(6)
+                .outputs(GTLiteMetaBlocks.STRUCTURE_CASING.getItemVariant(BlockStructureCasing.StructureCasingType.DURALUMINIUM_ALLOY_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
     }
 }
