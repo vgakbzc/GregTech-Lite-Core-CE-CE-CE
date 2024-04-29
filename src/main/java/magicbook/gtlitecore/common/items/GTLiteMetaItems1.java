@@ -6,16 +6,20 @@ import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.items.metaitem.stats.IItemComponent;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.unification.stack.ItemMaterialInfo;
+import gregtech.api.unification.stack.MaterialStack;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.items.behaviors.ProspectorScannerBehavior;
 import gregtech.common.items.behaviors.TooltipBehavior;
 import magicbook.gtlitecore.api.GTLiteAPI;
+import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
 import net.minecraft.client.resources.I18n;
 import org.lwjgl.input.Keyboard;
 
+import static gregtech.api.GTValues.M;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -677,6 +681,66 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         ETA_MESON = this.addItem(424, "particle.eta_meson")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
+
+        //  Extruders
+        EXOTIC_SHAPE_EXTRUDERS[0] = EXOTIC_SHAPE_EXTRUDER_PLATE = this.addItem(450, "shape.exotic_extruder.plate")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[1] = EXOTIC_SHAPE_EXTRUDER_ROD = this.addItem(451, "shape.exotic_extruder.rod")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[2] = EXOTIC_SHAPE_EXTRUDER_BOLT = this.addItem(452, "shape.exotic_extruder.bolt")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[3] = EXOTIC_SHAPE_EXTRUDER_RING = this.addItem(453, "shape.exotic_extruder.ring")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[4] = EXOTIC_SHAPE_EXTRUDER_CELL = this.addItem(454, "shape.exotic_extruder.cell")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[5] = EXOTIC_SHAPE_EXTRUDER_INGOT = this.addItem(455, "shape.exotic_extruder.ingot")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[6] = EXOTIC_SHAPE_EXTRUDER_WIRE = this.addItem(456, "shape.exotic_extruder.wire")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[7] = EXOTIC_SHAPE_EXTRUDER_PIPE_TINY = this.addItem(457, "shape.exotic_extruder.pipe.tiny")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[8] = EXOTIC_SHAPE_EXTRUDER_PIPE_SMALL = this.addItem(458, "shape.exotic_extruder.pipe.small")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[9] = EXOTIC_SHAPE_EXTRUDER_PIPE_NORMAL = this.addItem(459, "shape.exotic_extruder.pipe.normal")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[10] = EXOTIC_SHAPE_EXTRUDER_PIPE_LARGE = this.addItem(460, "shape.exotic_extruder.pipe.large")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[11] = EXOTIC_SHAPE_EXTRUDER_PIPE_HUGE = this.addItem(461, "shape.exotic_extruder.pipe.huge")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[12] = EXOTIC_SHAPE_EXTRUDER_BLOCK = this.addItem(462, "shape.exotic_extruder.block")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        //  Exotic Extruder Shapes index 13-20 (inclusive), id 463-470 (inclusive) are unused
+
+        EXOTIC_SHAPE_EXTRUDERS[21] = EXOTIC_SHAPE_EXTRUDER_GEAR = addItem(471, "shape.exotic_extruder.gear")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[22] = EXOTIC_SHAPE_EXTRUDER_BOTTLE = addItem(472, "shape.exotic_extruder.bottle")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[23] = EXOTIC_SHAPE_EXTRUDER_FOIL = addItem(473, "shape.exotic_extruder.foil")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[24] = EXOTIC_SHAPE_EXTRUDER_GEAR_SMALL = addItem(474, "shape.exotic_extruder.gear_small")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[25] = EXOTIC_SHAPE_EXTRUDER_ROD_LONG = addItem(475, "shape.exotic_extruder.rod_long")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
+
+        EXOTIC_SHAPE_EXTRUDERS[26] = EXOTIC_SHAPE_EXTRUDER_ROTOR = addItem(476, "shape.exotic_extruder.rotor")
+                .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
 
         //  Wrap Items
         WRAP_CIRCUIT_ULV = this.addItem(500, "wrap.circuit.ulv")

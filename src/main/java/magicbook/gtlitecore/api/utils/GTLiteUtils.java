@@ -4,11 +4,13 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.BlockInfo;
 import gregtech.api.util.GTUtility;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.common.blocks.MetaBlocks;
+import gregtech.loaders.recipe.handlers.PartsRecipeHandler;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler;
 import net.minecraft.block.state.IBlockState;
@@ -28,6 +30,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
+
+import static gregtech.api.GTValues.*;
 
 @SuppressWarnings("unused")
 public class GTLiteUtils {
@@ -406,6 +410,22 @@ public class GTLiteUtils {
             case 9 -> RecipeMaps.FLUID_SOLIDFICATION_RECIPES;
             default -> null;
         };
+    }
+
+    /**
+     * Get {@code voltage} by property of {@code material}.
+     *
+     * <p>
+     *     The original method is in {@link PartsRecipeHandler} (private),
+     *     this method is used for same situation in {@code gtlitecore}.
+     * </p>
+     *
+     * @param material  Material.
+     * @return          If {@code BlastTemperature() > 2800}, then return {@code VA[LV]},
+     *                  else return {@code VA[ULV]}.
+     */
+    public static int getVoltageMultiplier(Material material) {
+        return material.getBlastTemperature() > 2800 ? VA[LV] : VA[ULV];
     }
 
 }
