@@ -171,14 +171,26 @@ public class OpticalCircuits {
 
         //  Optical Fiber
         LASER_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_EXTRUDER_WIRE)
                 .fluidInputs(GermaniumTetrachloride.getFluid(250))
                 .fluidInputs(PhosphorylChloride.getFluid(250))
                 .fluidInputs(SiliconTetrachloride.getFluid(1000))
-                .notConsumable(SHAPE_EXTRUDER_WIRE)
                 .output(OPTICAL_FIBER, 8)
                 .EUt(VA[LuV])
                 .duration(20 * SECOND)
                 .temperature(1800)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(EXOTIC_SHAPE_EXTRUDER_WIRE)
+                .fluidInputs(GermaniumTetrachloride.getFluid(2000))
+                .fluidInputs(PhosphorylChloride.getFluid(2000))
+                .fluidInputs(SiliconTetrachloride.getFluid(8000))
+                .output(OPTICAL_FIBER, 64)
+                .EUt(VA[ZPM])
+                .duration(20 * SECOND)
+                .temperature(3600)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
