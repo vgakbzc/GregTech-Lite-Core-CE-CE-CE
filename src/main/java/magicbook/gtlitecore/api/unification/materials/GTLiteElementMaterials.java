@@ -8,12 +8,12 @@ import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
 import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet;
 import net.minecraft.init.Enchantments;
-import net.minecraft.util.text.TextFormatting;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
+import static magicbook.gtlitecore.api.GTLiteValues.addObfuscatedFormula;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
@@ -182,7 +182,7 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.SpaceTime)
                 .rotorStats(360.0F, 1.0F, 524288000)
                 .build()
-                .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
+                .setFormula(addObfuscatedFormula(), false);
 
         //  10010 Solarium
         Solarium = new Material.Builder(getId(), gregtechId("solarium"))
