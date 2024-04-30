@@ -6,7 +6,6 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
-import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet;
 import net.minecraft.init.Enchantments;
 
 import static gregtech.api.GTValues.*;
@@ -203,7 +202,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) (V[UIV] - V[UV])))
                 .color(0xBE00FF)
-                .iconSet(CUSTOM_RHUGNOR)
+                .iconSet(NUCLEAR)
                 .element(GTLiteElements.Rhugnor)
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
@@ -218,7 +217,7 @@ public class GTLiteElementMaterials {
                 .plasma(new FluidBuilder().temperature((int) (V[UXV] - V[LuV])))
                 .element(GTLiteElements.Hypogen)
                 .color(0xDC784B)
-                .iconSet(CUSTOM_HYPOGEN)
+                .iconSet(ENRICHED)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 32, 16, false)
                 .build();
@@ -403,7 +402,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .fluid()
                 .color(0xFFE140)
-                .iconSet(CUSTOM_LEGENDARIUM)
+                .iconSet(ENRICHED)
                 .element(GTLiteElements.Edenium)
                 .blast(b -> b
                         .temp(17800, BlastProperty.GasTier.HIGHEST)
@@ -411,6 +410,16 @@ public class GTLiteElementMaterials {
                         .vacuumStats(VA[OpV], 365))
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING)
                 .cableProperties(V[OpV], 360, 640, false)
+                .toolStats(ToolProperty.Builder.of(50.0F, 8000.0F, 500000, 99)
+                        .unbreakable()
+                        .magnetic()
+                        .enchantment(Enchantments.SHARPNESS, 10)
+                        .enchantment(Enchantments.SWEEPING, 10)
+                        .enchantment(Enchantments.LOOTING, 10)
+                        .enchantment(Enchantments.FIRE_ASPECT, 10)
+                        .enchantment(Enchantments.EFFICIENCY, 10)
+                        .enchantment(Enchantments.FORTUNE, 10)
+                        .build())
                 .build();
 
         //  10029 Fatalium
@@ -457,7 +466,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .fluid()
                 .color(0xFFD6FB)
-                .iconSet(GTLiteMaterialIconSet.CUSTOM_PRIMORDIAL_MATTER)
+                .iconSet(BRIGHT)
                 .element(GTLiteElements.PrimordialMatter)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 500, 125, false)

@@ -12,8 +12,7 @@ import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_LEGENDARIUM;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_MAGNETO_RESONATIC;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
 /**
  * Second Degree Materials
@@ -542,7 +541,7 @@ public class GTLiteSecondDegreeMaterials {
                 .ingot()
                 .fluid()
                 .color(0xF58FDA)
-                .iconSet(CUSTOM_LEGENDARIUM)
+                .iconSet(ENRICHED)
                 .components(Naquadria, 1, Trinium, 1, Duranium, 1, Tritanium, 1, Orichalcum, 1, Adamantium, 1, Vibranium, 1, Taranium, 1)
                 .blast(b -> b
                         .temp(16500, BlastProperty.GasTier.HIGHEST)
