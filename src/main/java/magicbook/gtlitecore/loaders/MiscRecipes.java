@@ -557,7 +557,7 @@ public class MiscRecipes {
 
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(QUANTUM_STAR)
-                .fluidInputs(Orichalcum.getFluid(288))
+                .fluidInputs(Orichalcum.getFluid(L * 2))
                 .output(GRAVI_STAR)
                 .EUt(VA[IV])
                 .duration(480)
@@ -566,7 +566,7 @@ public class MiscRecipes {
         //  Unstable Star
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(GRAVI_STAR)
-                .fluidInputs(Rhugnor.getFluid(288))
+                .fluidInputs(Rhugnor.getFluid(L * 2))
                 .output(UNSTABLE_STAR)
                 .EUt(VA[LuV])
                 .duration(240)
@@ -575,7 +575,7 @@ public class MiscRecipes {
         //  Zenith Star
         AUTOCLAVE_RECIPES.recipeBuilder()
                 .input(UNSTABLE_STAR)
-                .fluidInputs(CosmicComputingMixture.getFluid(288))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(L * 2))
                 .output(ZENITH_STAR)
                 .EUt(VA[ZPM])
                 .duration(120)
