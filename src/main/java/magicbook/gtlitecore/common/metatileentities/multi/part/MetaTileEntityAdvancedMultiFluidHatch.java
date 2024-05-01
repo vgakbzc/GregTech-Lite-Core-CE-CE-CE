@@ -17,6 +17,7 @@ import gregtech.api.metatileentity.multiblock.IMultiblockAbilityPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.client.renderer.texture.cube.SimpleOverlayRenderer;
+import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiFluidHatch;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiblockNotifiablePart;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -35,11 +36,11 @@ import java.util.List;
 
 /**
  * <p>
- *     Just a rewrite of {@link gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiFluidHatch},
+ *     Just a rewrite of {@link MetaTileEntityMultiFluidHatch},
  *     this class does not support UHV+, so i just create a new and init them.
  * </p>
  */
-public class MetaTileEntityMultiFluidHatch extends MetaTileEntityMultiblockNotifiablePart implements IMultiblockAbilityPart<IFluidTank>, IControllable {
+public class MetaTileEntityAdvancedMultiFluidHatch extends MetaTileEntityMultiblockNotifiablePart implements IMultiblockAbilityPart<IFluidTank>, IControllable {
 
     private static final int BASE_TANK_SIZE = 8000;
     private final int numSlots;
@@ -47,13 +48,13 @@ public class MetaTileEntityMultiFluidHatch extends MetaTileEntityMultiblockNotif
     private final FluidTankList fluidTankList;
     private boolean workingEnabled = true;
 
-    public MetaTileEntityMultiFluidHatch(ResourceLocation metaTileEntityId,
-                                         int tier,
-                                         int numSlots,
-                                         boolean isExport) {
+    public MetaTileEntityAdvancedMultiFluidHatch(ResourceLocation metaTileEntityId,
+                                                 int tier,
+                                                 int numSlots,
+                                                 boolean isExport) {
         super(metaTileEntityId, tier, isExport);
         this.numSlots = numSlots;
-        this.tankSize = 8000 * (1 << Math.min(14, tier)) / (numSlots == 4 ? 4 : 8);
+        this.tankSize = BASE_TANK_SIZE * (1 << Math.min(14, tier)) / (numSlots == 4 ? 4 : 8);
 
         FluidTank[] fluidsHandlers = new FluidTank[numSlots];
         for (int i = 0; i < fluidsHandlers.length; ++i) {
@@ -66,7 +67,7 @@ public class MetaTileEntityMultiFluidHatch extends MetaTileEntityMultiblockNotif
 
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new MetaTileEntityMultiFluidHatch(metaTileEntityId, getTier(), numSlots, isExportHatch);
+        return new MetaTileEntityAdvancedMultiFluidHatch(metaTileEntityId, getTier(), numSlots, isExportHatch);
     }
 
     @Override
@@ -93,9 +94,7 @@ public class MetaTileEntityMultiFluidHatch extends MetaTileEntityMultiblockNotif
         this.workingEnabled = workingEnabled;
         World world = this.getWorld();
         if (world != null && !world.isRemote) {
-            this.writeCustomData(GregtechDataCodes.WORKING_ENABLED, (buf) -> {
-                buf.writeBoolean(workingEnabled);
-            });
+            this.writeCustomData(GregtechDataCodes.WORKING_ENABLED, (buf) -> buf.writeBoolean(workingEnabled));
         }
     }
 

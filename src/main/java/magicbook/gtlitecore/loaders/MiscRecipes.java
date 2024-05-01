@@ -675,6 +675,26 @@ public class MiscRecipes {
                 .EUt(240)
                 .buildAndRegister();
 
+        //  Soapstone Grindball
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(dust, Soapstone, 4)
+                .notConsumable(SHAPE_MOLD_BALL)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .output(GRINDBALL_SOAPSTONE)
+                .EUt(VA[MV])
+                .duration(300)
+                .buildAndRegister();
+
+        //  Aluminium Grindball
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(dust, Aluminium, 4)
+                .notConsumable(SHAPE_MOLD_BALL)
+                .fluidInputs(SolderingAlloy.getFluid(L))
+                .output(GRINDBALL_ALUMINIUM)
+                .EUt(VA[HV])
+                .duration(300)
+                .buildAndRegister();
+
         //  Boron Nitride Grinder
         ModHandler.addShapedRecipe("component_grinder_boron_nitride", COMPONENT_GRINDER_BORON_NITRIDE.getStackForm(),
                 "PDP", "DGD", "PDP",

@@ -14,6 +14,7 @@ import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityMultiblockPart;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
 import magicbook.gtlitecore.api.capability.impl.WirelessEnergyContainerHandler;
+import magicbook.gtlitecore.api.misc.WirelessEnergyNetworkWorldSavedData;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -40,8 +41,8 @@ import java.util.function.Consumer;
  *
  * <p>
  *     This class creates wireless energy hatch by {@link WirelessEnergyContainerHandler},
- *     integration related energy hatch in GT5u and TecTech, and use world saved data,
- *     {@link magicbook.gtlitecore.api.misc.WirelessEnergyNetworkWorldSavedData}.
+ *     integration related energy hatch in {@code GT5u} and {@code TecTech}, and use world saved data
+ *     at {@link WirelessEnergyNetworkWorldSavedData}.
  * </p>
  *
  * FIXME Sometime caused crash, but why?

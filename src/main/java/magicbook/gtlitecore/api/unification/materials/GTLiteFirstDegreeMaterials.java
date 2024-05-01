@@ -535,7 +535,7 @@ public class GTLiteFirstDegreeMaterials {
                 .gem()
                 .color(0x545572)
                 .iconSet(DIAMOND)
-                .flags(GENERATE_PLATE, DISABLE_DECOMPOSITION, DISABLE_CRYSTALLIZATION, FLAMMABLE, EXPLOSIVE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, DISABLE_DECOMPOSITION, DISABLE_CRYSTALLIZATION, FLAMMABLE, EXPLOSIVE)
                 .components(Boron, 1, Nitrogen, 1)
                 .toolStats(new ToolProperty(14.0F, 9.0F, 12400, 15))
                 .build()

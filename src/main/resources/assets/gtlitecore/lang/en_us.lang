@@ -1594,6 +1594,11 @@ gtlitecore.machine.ultimate_processing_array.tooltip.1=作为补偿，§r无论�
 
 gtlitecore.machine.large_alloy_smelter.name=大型合金炉
 
+gtlitecore.machine.reinforced_rotor_holder.lv.name=强化转子支架（§7LV§r）
+gtlitecore.machine.reinforced_rotor_holder.mv.name=强化转子支架（§bMV§r）
+gtlitecore.machine.reinforced_rotor_holder.hv.name=强化转子支架（§6HV§r）
+gtlitecore.machine.reinforced_rotor_holder.ev.name=强化转子支架（§5EV§r）
+gtlitecore.machine.reinforced_rotor_holder.iv.name=强化转子支架（§1IV§r）
 gtlitecore.machine.reinforced_rotor_holder.luv.name=强化转子支架（§dLuV§r）
 gtlitecore.machine.reinforced_rotor_holder.zpm.name=强化转子支架（§cZPM§r）
 gtlitecore.machine.reinforced_rotor_holder.uv.name=强化转子支架（§3UV§r）
@@ -1603,22 +1608,23 @@ gtlitecore.machine.reinforced_rotor_holder.uiv.name=强化转子支架（§2UIV�
 gtlitecore.machine.reinforced_rotor_holder.uxv.name=强化转子支架（§eUXV§r）
 gtlitecore.machine.reinforced_rotor_holder.opv.name=强化转子支架（§9OpV§r）
 gtlitecore.machine.reinforced_rotor_holder.tooltip.1=超高强度转子支架
-gtlitecore.machine.reinforced_rotor_holder.tooltip.2=用于各类§6特大涡轮§7的强化版转子支架
-gtlitecore.machine.reinforced_rotor_holder.error=必须使用同一等级的转子固定器
-gtlitecore.machine.mega_turbine.steam.name=特大蒸汽涡轮
-gtlitecore.machine.mega_turbine.gas.name=特大燃气涡轮
-gtlitecore.machine.mega_turbine.plasma.name=特大等离子体涡轮
-gtlitecore.machine.mega_turbine.mode.0=正常模式
-gtlitecore.machine.mega_turbine.mode.1=高速模式
+gtlitecore.machine.reinforced_rotor_holder.tooltip.2=用于转速更快的大型涡轮的特殊转子支架
+gtlitecore.machine.reinforced_rotor_holder.error=必须使用同一等级的转子支架
+
+gtlitecore.machine.mega_turbine.steam.name=Mega Steam Turbine
+gtlitecore.machine.mega_turbine.gas.name=Mega Gas Turbine
+gtlitecore.machine.mega_turbine.plasma.name=Mega Plasma Turbine
+gtlitecore.machine.mega_turbine.mode.0=Normal Mode
+gtlitecore.machine.mega_turbine.mode.1=High Speed Mode
 gtlitecore.machine.mega_turbine.description=特大涡轮是大型涡轮的升级版。
 
-gtlitecore.machine.high_pressure_steam_turbine.name=高压蒸汽涡轮
+gtlitecore.machine.high_pressure_steam_turbine.name=High Pressure Steam Turbine
 
-gtlitecore.machine.supercritical_steam_turbine.name=超临界蒸汽涡轮
+gtlitecore.machine.supercritical_steam_turbine.name=Supercritical Stema Turbine
 
-gtlitecore.machine.mega_high_pressure_steam_turbine.name=特大高压蒸汽涡轮
+gtlitecore.machine.mega_high_pressure_steam_turbine.name=Mega High Pressure Steam Turbine
 
-gtlitecore.machine.mega_supercritical_steam_turbine.name=特大超临界蒸汽涡轮
+gtlitecore.machine.mega_supercritical_steam_turbine.name=Mega Supercritical Stema Turbine
 
 gtlitecore.machine.large_rocket_engine.name=大型火箭引擎
 gtlitecore.machine.large_rocket_engine.tooltip.1=并不会飞上天空
