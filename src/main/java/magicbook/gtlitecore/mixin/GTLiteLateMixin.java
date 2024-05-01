@@ -1,10 +1,11 @@
-package magicbook.gtlitecore;
+package magicbook.gtlitecore.mixin;
 
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 import java.util.Collections;
 import java.util.List;
 
+@SuppressWarnings("unused")
 public class GTLiteLateMixin implements ILateMixinLoader {
 
     @Override

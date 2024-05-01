@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.api.utils;
 
 import io.netty.buffer.ByteBuf;
+import magicbook.gtlitecore.integration.theoneprobe.FluidStackElement;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fluids.FluidStack;
@@ -15,7 +16,7 @@ import java.io.IOException;
  *     add some interaction method about fluid stack, nbt tag and packet buffer.
  *     This class is based on MCTian-mi's work (on MIT License):
  *      <a href="https://github.com/MCTian-mi/GregicProbe">Gregic Probe</a>,
- *     and used for {@link magicbook.gtlitecore.integration.theoneprobe.FluidStackElement}.
+ *     and used for {@link FluidStackElement}.
  *     The thought train referred to my friend Gate Guardian's work,
  *      <a href="https://github.com/EpimorphismMC/Monazite">Monazite</a>.
  * </p>

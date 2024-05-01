@@ -1,5 +1,6 @@
-package magicbook.gtlitecore;
+package magicbook.gtlitecore.mixin;
 
+import magicbook.gtlitecore.GTLiteCore;
 import net.minecraftforge.common.ForgeVersion;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
