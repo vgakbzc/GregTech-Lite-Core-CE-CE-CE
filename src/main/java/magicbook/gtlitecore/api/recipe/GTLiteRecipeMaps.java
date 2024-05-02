@@ -10,10 +10,19 @@ import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.recipes.ingredients.GTRecipeInput;
+import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
+import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
+import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags;
+import magicbook.gtlitecore.common.blocks.BlockCrucible;
+import magicbook.gtlitecore.common.items.GTLiteMetaItems;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialDrillingRig;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialRoaster;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator;
+import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -68,7 +77,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> CHEMICAL_DRYER_RECIPES = new RecipeMap<>("chemical_dryer_recipes", 1, 2, 1, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> CHEMICAL_DRYER_RECIPES = new RecipeMap<>("chemical_dryer", 1, 2, 1, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(true, false, false, GuiTextures.DUST_OVERLAY)
@@ -95,7 +104,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> VACUUM_CHAMBER_RECIPES = new RecipeMap<>("vacuum_chamber_recipes", 4, 1, 2, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> VACUUM_CHAMBER_RECIPES = new RecipeMap<>("vacuum_chamber", 4, 1, 2, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER);
@@ -121,7 +130,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES = new RecipeMap<>("naquadah_reactor_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES = new RecipeMap<>("naquadah_reactor", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COMBUSTION)
             .allowEmptyOutput();
@@ -146,7 +155,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES = new RecipeMap<>("rocket_engine_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES = new RecipeMap<>("rocket_engine", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
             .setSound(GTSoundEvents.COMBUSTION)
             .allowEmptyOutput();
 
@@ -176,7 +185,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor_recipes", 6, 1, 3, 2, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor", 6, 1, 3, 2, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.DUST_OVERLAY)
             .setSlotOverlay(false, false, true, GTLiteGuiTextures.DISH_OVERLAY)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
@@ -206,7 +215,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> CONDENSER_RECIPES = new RecipeMap<>("condenser_recipes", 1, 1, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> CONDENSER_RECIPES = new RecipeMap<>("condenser", 1, 1, 1, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
             .setSound(GTSoundEvents.COMPRESSOR);
@@ -233,7 +242,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES = new RecipeMap<>("simulator_recipes", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES = new RecipeMap<>("simulator", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.SCIENCE);
 
@@ -255,7 +264,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     This recipe map is for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialDrillingRig}.
+     *     This recipe map is for {@link MetaTileEntityIndustrialDrillingRig}.
      *     Pay attention, this multiblock machine has a special check, so please use block in input,
      *     this machine will break the block which below the drill head block in structures.
      *     If you use not consumable input, then drill head in this multiblock will not break the below block,
@@ -263,7 +272,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES = new RecipeMap<>("drill_recipes", 1, 1, 0, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES = new RecipeMap<>("industrial_drilling_rig", 1, 1, 0, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.CRUSHED_ORE_OVERLAY)
             .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
             .setSound(GTSoundEvents.MACERATOR);
@@ -289,7 +298,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer_recipes", 1, 0, 1, 4, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer", 1, 0, 1, 4, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CRACKING, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FURNACE);
 
@@ -314,7 +323,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> SONICATION_RECIPES = new RecipeMap<>("sonication_recipes", 0, 1, 2, 2, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> SONICATION_RECIPES = new RecipeMap<>("sonicator", 0, 1, 2, 2, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, true, false, GuiTextures.BREWER_OVERLAY)
                 .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_3)
                 .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
@@ -338,15 +347,15 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Please see {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator},
+     *     Please see {@link MetaTileEntityNanoscaleFabricator},
      *     this machine has a special check, though we use {@link NoCoilTemperatureRecipeBuilder}, this machine still check temperature when run recipes,
-     *     the current temperature dependencies to temperature info in {@link magicbook.gtlitecore.common.blocks.BlockCrucible}.
+     *     the current temperature dependencies to temperature info in {@link BlockCrucible}.
      *     And this recipe map has a special overlay {@link GTLiteGuiTextures#NANOSCALE_OVERLAY_1} and {@link GTLiteGuiTextures#NANOSCALE_OVERLAY_2},
      *     these pictures are same, but one used for item, one used for fluid.
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> MOLECULAR_BEAM_RECIPES = new RecipeMap<>("molecular_beam_recipes", 6, 1, 2,  0, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> MOLECULAR_BEAM_RECIPES = new RecipeMap<>("nanoscale_fabricator", 6, 1, 2,  0, new NoCoilTemperatureRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GTLiteGuiTextures.NANOSCALE_OVERLAY_1)
             .setSlotOverlay(false, false, true, GTLiteGuiTextures.NANOSCALE_OVERLAY_1)
             .setSlotOverlay(false, true, false, GTLiteGuiTextures.NANOSCALE_OVERLAY_2)
@@ -372,13 +381,13 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Used for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialRoaster},
-     *     this machine get temperature by {@link gregtech.common.blocks.BlockFireboxCasing} via a special traceability predicate,
-     *     please see {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#FIRE_BOX}.
+     *     Used for {@link MetaTileEntityIndustrialRoaster},
+     *     this machine get temperature by {@link BlockFireboxCasing} via a special traceability predicate,
+     *     please see {@link GTLiteTraceabilityPredicate#FIRE_BOX}.
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> INDUSTRIAL_ROASTER_RECIPES = new RecipeMap<>("industrial_roaster_recipes", 3, 3, 3,  3, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> INDUSTRIAL_ROASTER_RECIPES = new RecipeMap<>("industrial_roaster", 3, 3, 3,  3, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FURNACE);
 
@@ -398,17 +407,17 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     This recipe map is actually unused in the same situation,
-     *     just create some special boule (like {@link magicbook.gtlitecore.common.items.GTLiteMetaItems#STRONTIUM_CARBONATE_BOHRIUM_BOULE}) recipes,
-     *     because recipe handler {@link magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler} generates all recipes (if gem has components).
+     *     just create some special boule (like {@link GTLiteMetaItems#STRONTIUM_CARBONATE_BOHRIUM_BOULE}) recipes,
+     *     because recipe handler {@link BouleRecipeHandler} generates all recipes (if gem has components).
      *     If you want to add crystal seed/boule recipes, then you can add a special flags for your material,
-     *     please see {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags#GENERATE_BOULE},
-     *     if you do not wan to add, then use {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags#DISABLE_CRYSTALLIZATION}.
+     *     please see {@link GTLiteMaterialFlags#GENERATE_BOULE},
+     *     if you do not wan to add, then use {@link GTLiteMaterialFlags#DISABLE_CRYSTALLIZATION}.
      *     This recipe can auto-calculate temperature by components' temperature and amount (if not, then get common temperature like cupronickel coil),
      *     this machine support new coil block in gtlitecore, so you should pay attention for the component temperature (sometime cause some problem).
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<BlastRecipeBuilder> CRYSTALLIZATION_RECIPES = new RecipeMap<>("crystallization_recipes", 6, 1, 3, 0, new BlastRecipeBuilder(), false)
+    public static final RecipeMap<BlastRecipeBuilder> CRYSTALLIZATION_RECIPES = new RecipeMap<>("crystallization_crucible", 6, 1, 3, 0, new BlastRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CRYSTALLIZATION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FURNACE);
 
@@ -433,7 +442,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CVD_UNIT_RECIPES = new RecipeMap<>("cvd_unit_recipes", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CVD_UNIT_RECIPES = new RecipeMap<>("cvd_unit", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COOLING);
 
@@ -466,7 +475,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> PLASMA_CVD_UNIT_RECIPES = new RecipeMap<>("plasma_cvd_unit_recipes", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> PLASMA_CVD_UNIT_RECIPES = new RecipeMap<>("plasma_cvd_unit", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COOLING);
 
@@ -495,7 +504,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> LASER_CVD_UNIT_RECIPES = new RecipeMap<>("laser_cvd_unit_recipes", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> LASER_CVD_UNIT_RECIPES = new RecipeMap<>("laser_cvd_unit", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COOLING);
 
@@ -521,7 +530,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor_recipes", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC);
 
@@ -547,7 +556,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor_recipes", 3, 2, 3, 2, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor", 3, 2, 3, 2, new NoCoilTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COOLING);
 
@@ -579,7 +588,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> FUEL_REFINE_FACTORY_RECIPES = new RecipeMap<>("fuel_refine_factory_recipes", 3, 4, 4, 2, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> FUEL_REFINE_FACTORY_RECIPES = new RecipeMap<>("fuel_refine_factory", 3, 4, 4, 2, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
             .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
@@ -608,7 +617,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK1_RECIPES = new RecipeMap<>("hyper_reactor_mk1_recipes", 0, 0, 1,0 , new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK1_RECIPES = new RecipeMap<>("hyper_reactor_mk1", 0, 0, 1,0 , new FuelRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC)
             .allowEmptyOutput();
@@ -630,7 +639,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK2_RECIPES = new RecipeMap<>("hyper_reactor_mk2_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK2_RECIPES = new RecipeMap<>("hyper_reactor_mk2", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC)
             .allowEmptyOutput();
@@ -651,7 +660,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK3_RECIPES = new RecipeMap<>("hyper_reactor_mk3_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK3_RECIPES = new RecipeMap<>("hyper_reactor_mk3", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC)
             .allowEmptyOutput();
@@ -679,7 +688,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES = new RecipeMap<>("isa_mill_recipes", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
+    public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES = new RecipeMap<>("isa_mill", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.MACERATOR);
 
@@ -706,7 +715,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_RECIPES = new RecipeMap<>("flotation_recipes", 6, 0, 1, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_RECIPES = new RecipeMap<>("flotation_cell_regulator", 6, 0, 1, 1, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.BATH);
 
@@ -733,7 +742,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<BlastRecipeBuilder> VACUUM_DRYING_RECIPES = new RecipeMap<>("vacuum_drying_recipes", 1, 9, 2, 0, new BlastRecipeBuilder(), false)
+    public static final RecipeMap<BlastRecipeBuilder> VACUUM_DRYING_RECIPES = new RecipeMap<>("vacuum_drying_furnace", 1, 9, 2, 0, new BlastRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)
             .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)
@@ -763,7 +772,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> DRONE_AIRPORT_RECIPES = new RecipeMap<>("drone_airport_recipes", 2, 9, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> DRONE_AIRPORT_RECIPES = new RecipeMap<>("unmanned_drone_airport", 2, 9, 1, 0, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
@@ -790,7 +799,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> ION_IMPLANTATOR_RECIPES = new RecipeMap<>("ion_implantator_recipes", 3, 1, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> ION_IMPLANTATOR_RECIPES = new RecipeMap<>("ion_implantator", 3, 1, 1, 0, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ELECTROLYZER);
 
@@ -828,7 +837,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<AssemblyCasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES = new RecipeMapPreciseAssembler<>("precise_assembler_recipes", 4, 1, 4, 0, new AssemblyCasingTierRecipeBuilder(), false)
+    public static final RecipeMap<AssemblyCasingTierRecipeBuilder> PRECISE_ASSEMBLER_RECIPES = new RecipeMapPreciseAssembler<>("precise_assembler", 4, 1, 4, 0, new AssemblyCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
@@ -854,7 +863,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>("component_assembler_recipes", 6, 1, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> COMPONENT_ASSEMBLER_RECIPES = new RecipeMap<>("component_assembler", 6, 1, 1, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
             .setSound(GTSoundEvents.ASSEMBLER);
@@ -892,7 +901,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<ComponentCasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>("component_assembly_line_recipes", 12, 1, 12, 0, new ComponentCasingTierRecipeBuilder(), false)
+    public static final RecipeMap<ComponentCasingTierRecipeBuilder> COMPONENT_ASSEMBLY_LINE_RECIPES = new RecipeMapComponentAssemblyLine<>("component_assembly_line", 12, 1, 12, 0, new ComponentCasingTierRecipeBuilder(), false)
             .setSound(GTSoundEvents.ASSEMBLER);
 
     /**
@@ -918,7 +927,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> TREE_GROWTH_RECIPES = new RecipeMap<>("tree_growth_recipes", 2, 4, 2, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> TREE_GROWTH_RECIPES = new RecipeMap<>("tree_growth_factory", 2, 4, 2, 0, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
@@ -948,7 +957,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FieldCasingTierRecipeBuilder> COLLIDER_RECIPES = new RecipeMap<>("collider_recipes", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
+    public static final RecipeMap<FieldCasingTierRecipeBuilder> COLLIDER_RECIPES = new RecipeMap<>("collider", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, false, false, GuiTextures.IMPLOSION_OVERLAY_1)
@@ -1016,7 +1025,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> DIMENSIONAL_OSCILLATOR_RECIPES = new RecipeMap<>("dimensional_oscillator_recipes", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> DIMENSIONAL_OSCILLATOR_RECIPES = new RecipeMap<>("dimensional_oscillator", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
@@ -1098,7 +1107,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> STELLAR_FURNACE_RECIPES = new RecipeMap<>("stellar_furnace_recipes", 6, 6, 6, 6, new NoCoilHigherTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilHigherTemperatureRecipeBuilder> STELLAR_FURNACE_RECIPES = new RecipeMap<>("stellar_furnace", 6, 6, 6, 6, new NoCoilHigherTemperatureRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
             .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
             .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
@@ -1140,7 +1149,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_CONDENSER_RECIPES = new RecipeMap<>("plasma_condenser_recipes", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_CONDENSER_RECIPES = new RecipeMap<>("plasma_condenser", 3, 3, 3, 3, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_REPLICATOR, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COOLING);
 
@@ -1165,7 +1174,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FieldCasingTierRecipeBuilder> DECAY_GENERATOR_RECIPES = new RecipeMap<>("decay_generator_recipes", 1, 1, 1, 1, new FieldCasingTierRecipeBuilder(), false)
+    public static final RecipeMap<FieldCasingTierRecipeBuilder> DECAY_GENERATOR_RECIPES = new RecipeMap<>("decay_generator", 1, 1, 1, 1, new FieldCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_HAMMER, ProgressWidget.MoveType.VERTICAL_DOWNWARDS)
             .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : GTSoundEvents.ARC);
 
@@ -1203,7 +1212,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> SUPRACHRONAL_ASSEMBLY_LINE_RECIPES = new RecipeMapSuprachronalAssemblyLine<>("suprachronal_assembly_line_recipes", 16, 1, 4, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> SUPRACHRONAL_ASSEMBLY_LINE_RECIPES = new RecipeMapSuprachronalAssemblyLine<>("suprachronal_assembly_line", 16, 1, 4, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.BOX_OVERLAY)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
@@ -1345,7 +1354,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> MOLECULAR_TRANSFORMER_RECIPES = new RecipeMap<>("molecular_transformer_recipes", 1, 1, 0, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> MOLECULAR_TRANSFORMER_RECIPES = new RecipeMap<>("molecular_transformer", 1, 1, 0, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_1)
             .setSlotOverlay(true, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_COMPRESS, ProgressWidget.MoveType.HORIZONTAL)
@@ -1370,7 +1379,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<AltitudeRecipeBuilder> COSMIC_RAY_DETECTOR_RECIPES = new RecipeMap<>("cosmic_ray_detector_recipes", 4, 4, 2, 2, new AltitudeRecipeBuilder(), false)
+    public static final RecipeMap<AltitudeRecipeBuilder> COSMIC_RAY_DETECTOR_RECIPES = new RecipeMap<>("cosmic_ray_detector", 4, 4, 2, 2, new AltitudeRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MASS_FAB, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC);
 
@@ -1399,7 +1408,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_ETCH_RECIPES = new RecipeMap<>("pcb_factory_etch_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_ETCH_RECIPES = new RecipeMap<>("pcb_factory_etching_mode", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
@@ -1425,7 +1434,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_BIO_RECIPES = new RecipeMap<>("pcb_factory_bio_recipes", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_BIO_RECIPES = new RecipeMap<>("pcb_factory_bio_etching_mode", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
@@ -1453,7 +1462,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE = new RecipeMap<>("neutral_network_nexus_assembling_module", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE = new RecipeMap<>("neutral_network_nexus_assembling_mode", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.IN_SLOT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.IN_SLOT_OVERLAY)
             .setSlotOverlay(true, false, true, GuiTextures.OUT_SLOT_OVERLAY)
@@ -1554,7 +1563,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FieldCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer_recipes", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
+    public static final RecipeMap<FieldCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC);
 
@@ -1586,7 +1595,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> TURBINE_MIXER_RECIPES = new RecipeMapTurbineMixer<>("turbine_mixer_recipes", 9, 1, 6, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> TURBINE_MIXER_RECIPES = new RecipeMapTurbineMixer<>("turbine_mixer", 9, 1, 6, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY)
             .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.CIRCULAR)
@@ -1617,7 +1626,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES = new RecipeMapHeatExchanger<>("heat_exchanger_recipes", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
+    public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES = new RecipeMapHeatExchanger<>("heat_exchanger", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
             .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_HEAT_EXCHANGE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.BATH);
 
@@ -1640,7 +1649,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_RECIPES = new RecipeMap<>("high_pressure_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> HIGH_PRESSURE_STEAM_TURBINE_RECIPES = new RecipeMap<>("high_pressure_steam_turbine", 0, 0, 1, 1, new FuelRecipeBuilder(), false)
             .setSlotOverlay(false, true, true, GuiTextures.DARK_CANISTER_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
             .allowEmptyOutput()
@@ -1665,7 +1674,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_RECIPES = new RecipeMap<>("supercritical_steam_turbine_recipes", 0, 0, 1, 1, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> SUPERCRITICAL_STEAM_TURBINE_RECIPES = new RecipeMap<>("supercritical_steam_turbine", 0, 0, 1, 1, new FuelRecipeBuilder(), false)
             .setSlotOverlay(false, true, true, GuiTextures.DARK_CANISTER_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
             .allowEmptyOutput()
@@ -1689,7 +1698,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> BIOWARE_SIMULATOR_RECIPES = new RecipeMap<>("bioware_simulator_recipes", 2, 2, 2, 2, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> BIOWARE_SIMULATOR_RECIPES = new RecipeMap<>("bioware_simulator", 2, 2, 2, 2, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.DATA_ORB_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.FILTER_SLOT_OVERLAY)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
@@ -1720,7 +1729,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES = new RecipeMap<>("nano_scale_mask_aligner_recipes", 4, 2, 2, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES = new RecipeMap<>("nano_scale_mask_aligner", 4, 2, 2, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.LENS_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.LENS_OVERLAY)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
@@ -1748,7 +1757,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank_recipes", 2, 1, 2, 0, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank", 2, 1, 2, 0, new NoCoilTemperatureRecipeBuilder(), false)
             .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
@@ -1770,7 +1779,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> BIOMASS_GENERATOR_RECIPES = new RecipeMap<>("biomass_generator_recipes", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
+    public static final RecipeMap<FuelRecipeBuilder> BIOMASS_GENERATOR_RECIPES = new RecipeMap<>("biomass_generator", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.BATH)
             .allowEmptyOutput();
@@ -1795,7 +1804,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> LARGE_GAS_COLLECTOR_RECIPES = new RecipeMap<>("large_gas_collector_recipes", 2, 0, 0, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> LARGE_GAS_COLLECTOR_RECIPES = new RecipeMap<>("large_gas_collector", 2, 0, 0, 1, new SimpleRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_GAS_COLLECTOR, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COMPRESSOR);
 
@@ -1818,7 +1827,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES = new RecipeMapVirtualCosmosSimulator<>("virtual_cosmos_simulator_recipes", 1, 81, 0, 18, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> VIRTUAL_COSMOS_SIMULATOR_RECIPES = new RecipeMapVirtualCosmosSimulator<>("virtual_cosmos_simulator", 1, 81, 0, 18, new SimpleRecipeBuilder(), false)
             .setSound(GTSoundEvents.ARC);
 
     /**
@@ -1848,7 +1857,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES = new RecipeMapLargeCircuitAssemblyLine<>("large_circuit_assembly_line_recipes", 7, 1, 1, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES = new RecipeMapLargeCircuitAssemblyLine<>("large_circuit_assembly_line", 7, 1, 1, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.DATA_ORB_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
@@ -1876,7 +1885,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<FuelRecipeBuilder> DYSON_SWARM_RECIPES = new RecipeMap<>("dyson_swarm_recipes", 2, 8, 0, 0, new FuelRecipeBuilder(), true)
+    public static final RecipeMap<FuelRecipeBuilder> DYSON_SWARM_RECIPES = new RecipeMap<>("dyson_swarm", 2, 8, 0, 0, new FuelRecipeBuilder(), true)
             .allowEmptyOutput()
             .setSound(GTSoundEvents.COOLING);
 
@@ -1902,7 +1911,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PLANETARY_GAS_SIPHON_RECIPES = new RecipeMap<>("planetary_gas_siphon_recipes", 4, 0, 1, 1, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> PLANETARY_GAS_SIPHON_RECIPES = new RecipeMap<>("planetary_gas_siphon", 4, 0, 1, 1, new SimpleRecipeBuilder(), false)
             .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_SPACE_ELEVATOR_DRILLING_MODULE, ProgressWidget.MoveType.VERTICAL)
             .setSound(GTSoundEvents.MINER);
 
@@ -1936,7 +1945,7 @@ public class GTLiteRecipeMaps {
             .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> ETERNITY_GARDEN_RECIPES = new RecipeMapEternityGarden<>("eternity_garden_recipes", 7, 7, 7, 7, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> ETERNITY_GARDEN_RECIPES = new RecipeMapEternityGarden<>("eternity_garden", 7, 7, 7, 7, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GTLiteGuiTextures.PINK_OVERLAY)
             .setSlotOverlay(false, false, true, GTLiteGuiTextures.PINK_OVERLAY)
             .setSlotOverlay(false, true, false, GTLiteGuiTextures.GREEN_OVERLAY)
