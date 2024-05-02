@@ -6,11 +6,18 @@
   "minVersion": "0.8.3",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "architecturecraft.MixinBlockSawbench",
+    "architecturecraft.MixinBlockShape",
+    "architecturecraft.MixinEnumShape",
+    "architecturecraft.MixinTileSawbench",
     "gregtech.MixinMetaTileEntityFluidHatch",
-    "gregtech.MixinMetaTileEntityItemBus"
+    "gregtech.MixinMetaTileEntityItemBus",
+    "theoneprobe.MixinHarvestInfoTools"
   ],
   "server": [],
   "client": [
+    "architecturecraft.MixinGuiSawbench",
+    "architecturecraft.MixinRenderRoof",
     "gregtech.MixinMetaItem",
     "gregtech.MixinMetaPrefixItem",
     "gregtech.MixinMetaValueItem"

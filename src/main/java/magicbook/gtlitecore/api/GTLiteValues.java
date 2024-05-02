@@ -146,5 +146,10 @@ public class GTLiteValues {
      */
     public static final String MODID_TOP = "theoneprobe";
 
+    /**
+     * Integration {@code modid}.
+     */
+    public static final String MODID_AC = "architecturecraft";
+
     private GTLiteValues() {}
 }

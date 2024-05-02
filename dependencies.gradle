@@ -15,6 +15,8 @@ dependencies {
     implementation rfg.deobf("curse.maven:top-245211:2667280")
     //  Groovy Script 0.7.0
     implementation rfg.deobf("curse.maven:groovyscript-687577:4905039")
+    //  Architecture Craft 3.108
+    implementation rfg.deobf("curse.maven:architecturecraft-tridev-277631:4344128")
     //  CraftTweaker2 API
     compileOnly(rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684'))
     //  CTM API

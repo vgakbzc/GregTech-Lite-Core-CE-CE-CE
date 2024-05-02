@@ -49,6 +49,9 @@ public class GTLiteConfigHolder {
         @Comment({"Enable some recipe tweaks of GTFO (such as Greenhouse Glass).", "Default: true"})
         public boolean enableGTFOTweaks = true;
 
+        @Comment({"Enable Extended Renderer of Data Items (such as Data stick).", "Default: true"})
+        public boolean enableDataItemRenderer = true;
+
         @Comment({"Enable Integration Module of The One Probe.", "Default: true"})
         @RequiresMcRestart
         public boolean enableTOPModule = true;
@@ -56,8 +59,8 @@ public class GTLiteConfigHolder {
         @Comment({"Enable Recipe Output Info. [The One Probe Module]", "Default: true"})
         public boolean enableTOPRecipeOutputInfo = true;
 
-        @Comment({"Enable Extended Renderer of Data Items (such as Data stick).", "Default: true"})
-        public boolean enableDataItemRenderer = true;
+        @Comment({"Enable Integration Module of Architecture Craft.", "Default: true"})
+        public boolean enableArchitectureCraftModule = true;
 
         public CompatibilityOptions() {}
     }
