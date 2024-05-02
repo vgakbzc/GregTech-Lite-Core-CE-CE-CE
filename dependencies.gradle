@@ -23,6 +23,9 @@ dependencies {
     //  [AE2uEL] AE2 Unofficial Extended Life - 0.56.2
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5047265")
 
+    //  [AE2FC] AE2 Fluid Crafting Rework - 2.5.11
+    implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5278333")
+
     //  [NAE2] Neeve's AE2 Additions - 1.6.1 (GTLite)
     implementation rfg.deobf(files("libs/nae2-1.6.1-GTLite.jar"))
 
