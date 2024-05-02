@@ -169,12 +169,14 @@ void main (void)
 		}
 	}
 
-	// apply lighting
+	//  Apply lighting
     vec3 shade = light.rgb * (lightmix) + vec3(1.0-lightmix,1.0-lightmix,1.0-lightmix);
     col.rgb *= shade;
     
-    // apply mask
-    col.a *= mask.r * opacity;
+    //  Apply mask
+    //  Fix by PR#37 (https://github.com/GTNewHorizons/Avaritia/pull/37).
+    //  col.a *= mask.r * opacity;
+    col.a *= mask.a * opacity;
     
 	col = clamp(col,0.0,1.0);
 	
