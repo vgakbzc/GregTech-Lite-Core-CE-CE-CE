@@ -430,4 +430,57 @@ public class GTLiteUtils {
         return material.getBlastTemperature() > 2800 ? VA[LV] : VA[ULV];
     }
 
+    /**
+     * Get Item Stack by NBT data.
+     *
+     * <p>
+     *     Used to get prepare Item Stack by custom NBT data.
+     *     Functionally, this method is same as {@code loadItem(NBTTagCompound, String)}.
+     * </p>
+     *
+     * @param nbt  NBT data.
+     * @return     Correspondence Item of NBT data.
+     */
+    public static ItemStack readItemFromNBT(NBTTagCompound nbt) {
+        ItemStack stack = new ItemStack(nbt);
+        if (nbt.hasKey("stackSize"))
+            stack.setCount(nbt.getInteger("stackSize"));
+        return stack;
+    }
+
+    /**
+     * Save Item Stack to NBT data.
+     *
+     * <p>
+     *     Used to save custom Item Stack and NBT data.
+     *     Functionally, this method is same as {@code saveItem(NBTTagCompound, String, ItemStack)}.
+     * </p>
+     *
+     * @param stack  Item Stack.
+     * @param nbt    NBT data of Item Stack.
+     */
+    public static void writeItemToNBT(ItemStack stack, NBTTagCompound nbt) {
+        stack.writeToNBT(nbt);
+        if (stack.getCount() > 127) {
+            nbt.setInteger("stackSize", stack.getCount());
+        }
+    }
+
+    /**
+     * Set Item Stack to NBT data.
+     *
+     * <p>
+     *     Used to set custom Item Stack to NBT data,
+     *     this method use {@link #writeItemToNBT(ItemStack, NBTTagCompound)} to custom NBT data.
+     * </p>
+     *
+     * @param stack  Item Stack.
+     * @return       Correspondenced NBT data which prepare to seted.
+     */
+    public static NBTTagCompound setItemToNBT(ItemStack stack) {
+        NBTTagCompound nbt = new NBTTagCompound();
+        writeItemToNBT(stack, nbt);
+        return nbt;
+    }
+
 }
