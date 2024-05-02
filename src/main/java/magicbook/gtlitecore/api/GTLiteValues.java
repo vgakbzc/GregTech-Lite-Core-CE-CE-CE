@@ -124,10 +124,14 @@ public class GTLiteValues {
     public static final String MODID_GTFO = "gregtechfoodoption";
 
     /**
-     * @deprecated Integration {@code modid}.
+     * Integration {@code modid}.
      */
-    @Deprecated
     public static final String MODID_AE2 = "appliedenergistics2";
+
+    /**
+     * Integration {@code modid}, please see: {@code integration/nae2}.
+     */
+    public static final String MODID_NAE2 = "nae2";
 
     /**
      * @deprecated Integration {@code modid}.

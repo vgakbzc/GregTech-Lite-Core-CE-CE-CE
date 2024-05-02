@@ -12,7 +12,8 @@
     "architecturecraft.MixinTileSawbench",
     "gregtech.MixinMetaTileEntityFluidHatch",
     "gregtech.MixinMetaTileEntityItemBus",
-    "theoneprobe.MixinHarvestInfoTools"
+    "theoneprobe.MixinHarvestInfoTools",
+    "topaddons.MixinAddonArchitectureCraft"
   ],
   "server": [],
   "client": [

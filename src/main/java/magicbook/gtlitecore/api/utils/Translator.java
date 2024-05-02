@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.Language;
 import net.minecraft.client.resources.LanguageManager;
 import net.minecraft.util.text.translation.I18n;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 
 import java.util.IllegalFormatException;
 import java.util.Locale;
@@ -63,5 +64,62 @@ public final class Translator {
         }
 
         return Locale.getDefault();
+    }
+
+    /**
+     * Common translate method.
+     *
+     * <p>
+     *     Functionally, this method is like {@link ServerSupportI18n#format(String, String)},
+     *     used for some special situation (please see effective field checker below).
+     * </p>
+     *
+     * @param key     Translation Key.
+     * @param params  Pamameters.
+     * @return        If on client side, then return same like {@code I18n#format()}.
+     *                If not, then return by server side {@code I18n} class,
+     *                please see: {@link #translateServerSide(String, Object...)}.
+     */
+    public static String translate(String key, Object... params) {
+        if (isDedicatedServer())
+            return translateServerSide(key, params);
+        try {
+            return net.minecraft.client.resources.I18n.format(key, params);
+        } catch (Exception e) {
+            return translateServerSide(key, params);
+        }
+    }
+
+    @SuppressWarnings("deprecation")
+    private static String translateServerSide(String key, Object... params) {
+        try {
+            var localTranslated = I18n.translateToLocalFormatted(key, params);
+            if (!localTranslated.equals(key))
+                return localTranslated;
+
+            var fallbackTranslated = I18n.translateToFallback(key);
+            if (!fallbackTranslated.equals(key) && params.length != 0) {
+                try {
+                    fallbackTranslated = String.format(fallbackTranslated, params);
+                } catch (IllegalFormatException var5) {
+                    fallbackTranslated = "Format error: " + fallbackTranslated;
+                }
+            }
+            return fallbackTranslated;
+        } catch (Exception e) {
+            return key;
+        }
+    }
+
+    public static boolean isClient() {
+        return FMLCommonHandler.instance().getEffectiveSide().isClient();
+    }
+
+    public static boolean isServer() {
+        return FMLCommonHandler.instance().getEffectiveSide().isServer();
+    }
+
+    public static boolean isDedicatedServer() {
+        return FMLCommonHandler.instance().getSide().isServer();
     }
 }
