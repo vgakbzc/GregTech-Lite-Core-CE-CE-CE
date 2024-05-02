@@ -24,6 +24,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntit
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator;
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
 import net.minecraft.init.SoundEvents;
+import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
 
@@ -47,7 +48,7 @@ import java.util.function.Consumer;
  *
  * @since 2.8.7-beta
  */
-@ZenExpansion("mods.gregtech.recipe.RecipeMaps")
+@ZenClass("mods.gtlitecore.recipe.RecipeMaps")
 @ZenRegister
 public class GTLiteRecipeMaps {
 
