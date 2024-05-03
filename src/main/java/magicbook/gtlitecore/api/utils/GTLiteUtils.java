@@ -39,14 +39,26 @@ public class GTLiteUtils {
     /**
      * Get {@code ResourceLocation} of {@code gtlitecore}.
      *
-     * @param name  Name in namespace {@code gtlitecore}, used to init some internal things in this mod.
+     * @param path  Name in namespace {@code gtlitecore}, used to init some internal things in this mod.
      * @return      Resource Location of {@code gtlitecore}, pay attention,
      *              do not use this method in Materials init, please see {@link Materials}.
      *              You should use {@link GTUtility#gregtechId(String)}.
      */
     @Nonnull
-    public static ResourceLocation gtliteId(@Nonnull String name) {
-        return new ResourceLocation("gtlitecore", name);
+    public static ResourceLocation gtliteId(@Nonnull String path) {
+        return new ResourceLocation("gtlitecore", path);
+    }
+
+    /**
+     * Get {@code ResourceLocation} of other mod.
+     *
+     * @param modid  Mod ID.
+     * @param path   Name in {@code modid} namespace.
+     * @return       Namespace of {@code modid}.
+     */
+    @Nonnull
+    public static ResourceLocation getResourceLocation(String modid, @Nonnull String path) {
+        return new ResourceLocation(modid, path);
     }
 
     /**

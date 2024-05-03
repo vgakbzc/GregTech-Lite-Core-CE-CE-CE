@@ -12,6 +12,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
+import magicbook.gtlitecore.api.GTLiteValues;
 import magicbook.gtlitecore.api.metatileentity.single.SimpleSteamMetaTileEntity;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicator;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicators;
@@ -19,6 +20,7 @@ import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.BlockMetalCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -30,6 +32,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.part.*;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargePrimitiveBlastFurnace;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
+import net.minecraftforge.fml.common.Loader;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
@@ -124,6 +127,7 @@ public class GTLiteMetaTileEntities {
     public static SimpleMachineMetaTileEntity[] SIMULATOR = new SimpleMachineMetaTileEntity[IV + 1];
     public static final SimpleGeneratorMetaTileEntity[] BIOMASS_GENERATOR = new SimpleGeneratorMetaTileEntity[3];
     public static final MetaTileEntityLightningRod[] LIGHTNING_ROD = new MetaTileEntityLightningRod[3];
+    public static SimpleMachineMetaTileEntity[] AUTO_CHISEL = new SimpleMachineMetaTileEntity[3];
 
     ///////////////////////////
     //  Multiblock Machines  //
@@ -239,6 +243,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
+    public static MetaTileEntityLargeAutoChisel LARGE_AUTO_CHISEL;
+    public static MetaTileEntityIndustrial3DPrinter INDUSTRIAL_3D_PRINTER;
     public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
     public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
     public static MetaTileEntityQuantumComputer QUANTUM_COMPUTER;
@@ -469,6 +475,14 @@ public class GTLiteMetaTileEntities {
         LIGHTNING_ROD[1] = registerMetaTileEntity(15068, new MetaTileEntityLightningRod(gtliteId("lightning_rod.ev"), EV));
         LIGHTNING_ROD[2] = registerMetaTileEntity(15069, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
 
+        if (GTLiteConfigHolder.compats.enableChiselModule) {
+            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+                AUTO_CHISEL[0] = registerMetaTileEntity(15070, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.lv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 1, true, GTUtility.genericGeneratorTankSizeFunction));
+                AUTO_CHISEL[1] = registerMetaTileEntity(15071, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.mv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 2, true, GTUtility.genericGeneratorTankSizeFunction));
+                AUTO_CHISEL[2] = registerMetaTileEntity(15072, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.hv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 3, true, GTUtility.genericGeneratorTankSizeFunction));
+            }
+        }
+
         //  Multiblock Machines
         //  Range: 16001-20000
         INDUSTRIAL_DRILLING_RIG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingRig(gtliteId("industrial_drilling_rig")));
@@ -591,7 +605,19 @@ public class GTLiteMetaTileEntities {
         //  118
         //  119
         DIMENSIONAL_MIXER = registerMultiMetaTileEntity(120, new MetaTileEntityDimensionalMixer(gtliteId("dimensional_mixer")));
-        //  Free ID: 121-149
+        //  Free ID: 121-139
+        if (GTLiteConfigHolder.compats.enableChiselModule) {
+            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+                LARGE_AUTO_CHISEL = registerMultiMetaTileEntity(140, new MetaTileEntityLargeAutoChisel(gtliteId("large_auto_chisel")));
+            }
+        }
+        //  141
+        if (GTLiteConfigHolder.compats.enableChiselModule) {
+            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+                INDUSTRIAL_3D_PRINTER = registerMultiMetaTileEntity(142, new MetaTileEntityIndustrial3DPrinter(gtliteId("industrial_3d_printer")));
+            }
+        }
+        //  Free ID: 143-149
         YOTTA_FLUID_TANK = registerMultiMetaTileEntity(150, new MetaTileEntityYottaFluidTank(gtliteId("yotta_fluid_tank")));
         //  151 TWENTY_FIVE_FLUID_TANK
         //  Free ID: 152-199

@@ -26,6 +26,7 @@ val chemical_dryer as RecipeMap = <recipemap:chemical_dryer>
 | Condenser           | `condenser`           | 1           | 1            | 1            | 0             |
 | Simulator           | `simulator`           | 2           | 2            | 0            | 0             |
 | Component Assembler | `component_assembler` | 6           | 1            | 1            | 0             |
+| Auto Chisel         | `auto_chisel`         | 2           | 1            | 0            | 0             |
 
 ###  Multiblock Machine RecipeMap
 

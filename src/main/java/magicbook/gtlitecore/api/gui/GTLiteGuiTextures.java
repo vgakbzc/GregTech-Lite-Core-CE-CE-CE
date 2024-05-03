@@ -31,6 +31,7 @@ public class GTLiteGuiTextures {
     public static final TextureArea PROGRESS_BAR_SPACE_ELEVATOR_DRILLING_MODULE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_drilling_module.png");
     public static final TextureArea PROGRESS_BAR_FORGING_MODULE = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_forging_module.png");
     public static final TextureArea PROGRESS_BAR_ETERNITY_GARDEN = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_eternity_garden.png");
+    public static final TextureArea PROGRESS_BAR_CHISEL = TextureArea.fullImage("textures/gui/progress_bar/progress_bar_chisel.png");
 
     //  Overlay
     public static final TextureArea FOIL_OVERLAY = TextureArea.fullImage("textures/gui/overlay/foil_overlay.png");

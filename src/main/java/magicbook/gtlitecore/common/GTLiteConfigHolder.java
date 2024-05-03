@@ -60,7 +60,12 @@ public class GTLiteConfigHolder {
         public boolean enableTOPRecipeOutputInfo = true;
 
         @Comment({"Enable Integration Module of Architecture Craft.", "Default: true"})
+        @RequiresMcRestart
         public boolean enableArchitectureCraftModule = true;
+
+        @Comment({"Enable Integration Module of Chisel.", "Default: true"})
+        @RequiresMcRestart
+        public boolean enableChiselModule = true;
 
         public CompatibilityOptions() {}
     }

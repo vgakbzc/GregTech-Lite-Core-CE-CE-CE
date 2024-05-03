@@ -1,6 +1,9 @@
 package magicbook.gtlitecore.loaders;
 
 import magicbook.gtlitecore.api.GTLiteValues;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.integration.chisel.AutoChiselRecipeLoader;
+import magicbook.gtlitecore.integration.chisel.ChiselMachineRecipeLoader;
 import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFOMachineRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFOMiscRecipes;
@@ -30,6 +33,12 @@ public class RecipeManager {
             GTFOMachineRecipeLoader.init();
         }
 
+        if (GTLiteConfigHolder.compats.enableChiselModule) {
+            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+                ChiselMachineRecipeLoader.init();
+            }
+        }
+
         MiscRecipes.init();
 
         if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
@@ -52,6 +61,12 @@ public class RecipeManager {
 
         if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
             GTFOOverrideRecipeLoader.init();
+        }
+
+        if (GTLiteConfigHolder.compats.enableChiselModule) {
+            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+                AutoChiselRecipeLoader.init();
+            }
         }
     }
 

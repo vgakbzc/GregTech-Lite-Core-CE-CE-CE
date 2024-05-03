@@ -134,9 +134,8 @@ public class GTLiteValues {
     public static final String MODID_NAE2 = "nae2";
 
     /**
-     * @deprecated Integration {@code modid}.
+     * Integration {@code modid}.
      */
-    @Deprecated
     public static final String MODID_XU2 = "extrautils2";
 
     /**
@@ -154,6 +153,16 @@ public class GTLiteValues {
      * Integration {@code modid}.
      */
     public static final String MODID_AC = "architecturecraft";
+
+    /**
+     * Integration {@code modid}.
+     */
+    public static final String MODID_AA = "actuallyadditions";
+
+    /**
+     * Integration {@code modid}.
+     */
+    public static final String MODID_CHISEL = "chisel";
 
     private GTLiteValues() {}
 }

@@ -1282,6 +1282,13 @@ gtlitecore.machine.lightning_rod.iv.name=精英避雷针
 gtlitecore.machine.lightning_rod.iv.tooltip=利用闪电的力量产生电能
 gtlitecore.machine.lightning_rod.usage=§b用法§7：将原版的§r铁栏杆§7放置其上，其会在雨/雷雨天产生能量。
 
+gtlitecore.machine.auto_chisel.lv.name=基础自动凿子
+gtlitecore.machine.auto_chisel.lv.tooltip=电子雕刻家
+gtlitecore.machine.auto_chisel.mv.name=进阶自动凿子
+gtlitecore.machine.auto_chisel.mv.tooltip=电子雕刻家
+gtlitecore.machine.auto_chisel.hv.name=进阶自动凿子 II
+gtlitecore.machine.auto_chisel.hv.tooltip=电子雕刻家
+
 ##  Multiblock Machines
 gtlitecore.machine.industrial_drilling_rig.name=工业钻机
 gtlitecore.machine.industrial_drilling_rig.tooltip.1=钻取放置在钻头下方的方块。
@@ -1919,6 +1926,12 @@ gtlitecore.machine.dimensional_mixer.tooltip.13=§r离心机§7模式 -> §e4096
 gtlitecore.machine.dimensional_mixer.tooltip.14=§r热力离心§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
+
+gtlitecore.machine.large_auto_chisel.name=大型自动雕凿机
+
+gtlitecore.machine.industrial_3d_printer.name=工业3D打印机
+gtlitecore.machine.industrial_3d_printer.tooltip.1=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.industrial_3d_printer.tooltip.2=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 
 gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
 gtlitecore.machine.yotta_fluid_tank.tooltip.1=超级流体存储器
@@ -3310,6 +3323,7 @@ recipemap.nicoll_dyson_beamer_forging_module.name=中子乱流牵引
 recipemap.nicoll_dyson_beamer_burning_module.name=千兆能量聚焦
 recipemap.nicoll_dyson_beamer_oscillating_module.name=超维因果爆震
 recipemap.eternity_garden.name=永恒花园
+recipemap.auto_chisel.name=自动凿子
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

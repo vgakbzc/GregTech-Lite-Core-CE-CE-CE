@@ -25,7 +25,6 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntit
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
-import stanhebben.zenscript.annotations.ZenExpansion;
 import stanhebben.zenscript.annotations.ZenProperty;
 
 import java.util.function.Consumer;
@@ -1956,6 +1955,12 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, true, false, GTLiteGuiTextures.RED_OVERLAY)
             .setSlotOverlay(true, true, true, GTLiteGuiTextures.RED_OVERLAY)
             .setSound(SoundEvents.BLOCK_CHORUS_FLOWER_GROW);
+
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> AUTO_CHISEL_RECIPES = new RecipeMap<>("auto_chisel", 2, 1, 0, 0, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.BOXED_BACKGROUND)
+            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_CHISEL, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSoundEvents.FILE_TOOL);
 
     public GTLiteRecipeMaps() {}
 }

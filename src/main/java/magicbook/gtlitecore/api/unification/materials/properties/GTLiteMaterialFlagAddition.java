@@ -174,6 +174,7 @@ public class GTLiteMaterialFlagAddition {
         HSSE.addFlags(GENERATE_SMALL_GEAR);
         Naquadah.addFlags(GENERATE_GEAR);
         Iridium.addFlags(GENERATE_SMALL_GEAR);
+        HSLASteel.addFlags(GENERATE_SMALL_GEAR);
 
         //  Bolt & Screw
         Dubnium.addFlags(GENERATE_BOLT_SCREW);

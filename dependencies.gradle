@@ -23,7 +23,7 @@ dependencies {
     //  [AE2uEL] AE2 Unofficial Extended Life - 0.56.2
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5047265")
 
-    //  [AE2FC] AE2 Fluid Crafting Rework - 2.5.11
+    //  [AE2FC] AE2 Fluid Crafting Rework - 2.5.11r
     implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5278333")
 
     //  [NAE2] Neeve's AE2 Additions - 1.6.1 (GTLite)
@@ -43,13 +43,22 @@ dependencies {
     compileOnly rfg.deobf("curse.maven:ctm-267602:2915363")
 
     /* ------------------- Soft Deps, Compile Time Declaration ------------------- */
+    //  [AA] Actually Additions - r152
+    compileOnly rfg.deobf("curse.maven:actually-additions-228404:3117927")
+
     //  [AC] Architecture Craft - 3.108
     compileOnly rfg.deobf("curse.maven:architecturecraft-tridev-277631:4344128")
 
-    //  [TOPA] Top Addons - 1.13.0
-    compileOnly rfg.deobf("curse.maven:top-addons-247111:2887479")
+    //  [ ] Chisel - 1.0.2.45
+    compileOnly rfg.deobf("curse.maven:chisel-235279:2915375")
+
+    //  [ExU] Extra Utilities 2 - 1.9.9
+    compileOnly rfg.deobf("curse.maven:extra-utilities-225561:2678374")
 
     //  [GrS] Groovy Script - 0.7.0
     compileOnly rfg.deobf("curse.maven:groovyscript-687577:4905039")
+
+    //  [TOPA] Top Addons - 1.13.0
+    compileOnly rfg.deobf("curse.maven:top-addons-247111:2887479")
 
 }

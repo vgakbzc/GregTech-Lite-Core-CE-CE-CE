@@ -1282,6 +1282,13 @@ gtlitecore.machine.lightning_rod.iv.name=Elite Lightning Rod
 gtlitecore.machine.lightning_rod.iv.tooltip=Using Lightning to generate Energy
 gtlitecore.machine.lightning_rod.usage=§bUsage§7: Put vanilla §rIron Bars§7 on the top of machine, then will generate energy on rainy/thunder.
 
+gtlitecore.machine.auto_chisel.lv.name=Basic Auto Chisel
+gtlitecore.machine.auto_chisel.lv.tooltip=Cyber Sculptor
+gtlitecore.machine.auto_chisel.mv.name=Advanced Auto Chisel
+gtlitecore.machine.auto_chisel.mv.tooltip=Cyber Sculptor
+gtlitecore.machine.auto_chisel.hv.name=Advanced Auto Chisel II
+gtlitecore.machine.auto_chisel.hv.tooltip=Cyber Sculptor
+
 ##  Multiblock Machines
 gtlitecore.machine.industrial_drilling_rig.name=Industrial Drilling Rig
 gtlitecore.machine.industrial_drilling_rig.tooltip.1=Drills the block placed beneath the Drill Head.
@@ -1919,6 +1926,8 @@ gtlitecore.machine.dimensional_mixer.tooltip.13=§r离心机§7模式 -> §e4096
 gtlitecore.machine.dimensional_mixer.tooltip.14=§r热力离心§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
+
+gtlitecore.machine.large_auto_chisel.name=Large Auto Chisel
 
 gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
 gtlitecore.machine.yotta_fluid_tank.tooltip.1=超级流体存储器
@@ -3311,6 +3320,7 @@ recipemap.nicoll_dyson_beamer_forging_module.name=Neutron Flow Traction
 recipemap.nicoll_dyson_beamer_burning_module.name=Gigabit Energy Focus
 recipemap.nicoll_dyson_beamer_oscillating_module.name=Transcendent Causality Oscillation
 recipemap.eternity_garden.name=Eternity Garden
+recipemap.auto_chisel.name=Auto Chisel
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=Temperature: %,d K
