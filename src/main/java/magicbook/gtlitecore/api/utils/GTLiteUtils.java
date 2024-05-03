@@ -57,7 +57,7 @@ public class GTLiteUtils {
      * @return       Namespace of {@code modid}.
      */
     @Nonnull
-    public static ResourceLocation getResourceLocation(String modid, @Nonnull String path) {
+    public static ResourceLocation getId(String modid, @Nonnull String path) {
         return new ResourceLocation(modid, path);
     }
 

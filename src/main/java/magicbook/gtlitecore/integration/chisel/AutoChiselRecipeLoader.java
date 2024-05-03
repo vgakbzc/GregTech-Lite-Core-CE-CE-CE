@@ -47,7 +47,7 @@ public class AutoChiselRecipeLoader {
                     "uncraft_blockiron", "uncraft_blockaluminium", "uncraft_blockcobalt", "uncraft_blocknickel",
                     "uncraft_blockelectrum", "uncraft_blockuranium", "uncraft_blockcopper", "uncraft_blockbronze",
                     "uncraft_blockinvar", "uncraft_blockgold").forEach(
-                    block -> ModHandler.removeRecipeByName(getResourceLocation(MODID_CHISEL, block)));
+                    block -> ModHandler.removeRecipeByName(getId(MODID_CHISEL, block)));
         }
 
         // Material Blocks
@@ -67,7 +67,7 @@ public class AutoChiselRecipeLoader {
                     "glass/terrain-glass-steelframe", "glass/terrain-glassstone", "glass/terrain-glassstreak",
                     "glass/terrain-glass-thickgrid", "glass/a1-glasswindow-ironfencemodern", "glass/chrono",
                     "glass/chinese2", "glass/japanese2").forEach(
-                    block -> ModHandler.removeRecipeByName(getResourceLocation(MODID_CHISEL, block)));
+                    block -> ModHandler.removeRecipeByName(getId(MODID_CHISEL, block)));
         }
 
         //  Lamps
