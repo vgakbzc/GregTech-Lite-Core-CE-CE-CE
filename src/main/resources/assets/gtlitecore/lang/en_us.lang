@@ -1929,6 +1929,10 @@ gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2
 
 gtlitecore.machine.large_auto_chisel.name=Large Auto Chisel
 
+gtlitecore.machine.industrial_3d_printer.name=Industrial 3D Printer
+gtlitecore.machine.industrial_3d_printer.tooltip.1=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
+gtlitecore.machine.industrial_3d_printer.tooltip.2=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+
 gtlitecore.machine.yotta_fluid_tank.name=YOT储罐
 gtlitecore.machine.yotta_fluid_tank.tooltip.1=超级流体存储器
 gtlitecore.machine.yotta_fluid_tank.tooltip.2=使用输入/输出仓与储罐交互。
