@@ -86,8 +86,9 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0x4F404F)
                 .iconSet(METALLIC)
-                .flags(GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
                 .element(GTLiteElements.Tn)
+                .itemPipeProperties(1920, 128)
                 .build();
 
         //  10003 Mithril
@@ -207,7 +208,8 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 3340))
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .itemPipeProperties(12000, 280)
                 .build();
 
         //  10012 Hypogen
@@ -229,7 +231,8 @@ public class GTLiteElementMaterials {
                 .color(0x20142C)
                 .iconSet(DULL)
                 .element(GTLiteElements.VoidMetal)
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .itemPipeProperties(36, 256)
                 .build();
 
         //  10014 Astral Titanium
@@ -259,6 +262,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.CelestialTungsten)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .itemPipeProperties(8360, 496)
                 .build();
 
         //  10016 Metastable Oganesson

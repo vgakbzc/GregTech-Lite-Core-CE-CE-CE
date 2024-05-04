@@ -115,7 +115,8 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UHV], 1997)
                         .vacuumStats(VA[LuV], 340))
                 .components(NaquadahAlloy, 10, Rhenium, 5, Naquadria, 4, Gadolinium, 3, Strontium, 2, Polonium, 3, Rutherfordium, 2)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .itemPipeProperties(630, 128)
                 .build();
 
         //  12007 Silicon Carbide
@@ -230,6 +231,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[ZPM], 1277)
                         .vacuumStats(VA[IV], 400))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_ROTOR)
+                .itemPipeProperties(120, 80)
                 .build();
 
         //  12015 Lafium
@@ -574,6 +576,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(10000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 1800))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .itemPipeProperties(7800, 32)
                 .build();
 
         //  12042 Superheavy-H Alloy
@@ -837,7 +840,8 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 304)
                         .vacuumStats(VA[ZPM], 680))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .itemPipeProperties(1260, 256)
                 .build();
 
         //  12063 Nitinol-60
