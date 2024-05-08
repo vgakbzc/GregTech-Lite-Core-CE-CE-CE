@@ -5,10 +5,10 @@ dependencies {
     //  [CCL] Code Chicken Lib - 3.2.3.358
     implementation rfg.deobf("curse.maven:codechicken-lib-1-8-242818:2779848")
 
-    //  [GT] GregTech - 2.8.7-beta
+    //  [GT] GregTech - 2.8.8-beta
     //  TODO Maybe use GTCEu Maven in future,
     //       another possible: port this mod and use new fork mod as dep.
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5121638")
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5322654")
 
     //  [GCYM] Gregicality Multiblocks - 1.2.8
     //  TODO Maybe use GTCEu Maven in future,
