@@ -35,7 +35,11 @@ These are some of the things you will find in this mod:
 
 #### Integrations
 
+- __Architecture Craft Integration__: Forked from [Nomi Labs](https://github.com/Nomi-CEu/Nomi-Labs), add some new textures and shapes.
+- __Chisel Integration__: Add Auto Chisel and Multiblock version GregTech Machine.
+- __Lazy AE2 Integration__: Forked from [Lazy AE2 Patch](https://github.com/Team-Fruit/Lazy-AE2-Patch), add some JEI function support of Lazy AE2 Machines.
 - __The One Probe Integration__: Forked from [Gregic Probe](https://github.com/vfyjxf/GregicProbe), add more info of Machines and Multiblocks.
+- __TOP Addon Integration__: Forked from [Nomi Labs](https://github.com/Nomi-CEu/Nomi-Labs), fix conflicts with Architecture Craft block info.
 
 ### Project Goal
 

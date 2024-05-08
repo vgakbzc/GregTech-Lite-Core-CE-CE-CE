@@ -13,6 +13,7 @@
     "gregtech.MixinMetaTileEntityFluidHatch",
     "gregtech.MixinMetaTileEntityItemBus",
     "theoneprobe.MixinHarvestInfoTools",
+    "threng.MixinPacketInventoryAction",
     "topaddons.MixinAddonArchitectureCraft"
   ],
   "server": [],
@@ -21,6 +22,12 @@
     "architecturecraft.MixinRenderRoof",
     "gregtech.MixinMetaItem",
     "gregtech.MixinMetaPrefixItem",
-    "gregtech.MixinMetaValueItem"
-  ]
+    "gregtech.MixinMetaValueItem",
+    "threng.MixinContainerTile",
+    "threng.MixinInventoryRequest",
+    "threng.MixinGuiLevelMaintainer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
 }

@@ -29,6 +29,12 @@ dependencies {
     //  [NAE2] Neeve's AE2 Additions - 1.6.1 (GTLite)
     implementation rfg.deobf(files("libs/nae2-1.6.1-GTLite.jar"))
 
+    //  [LN] Lib Nine - 1.2.1
+    implementation rfg.deobf("curse.maven:libnine-322344:3509087")
+
+    //  [LAE] Lazy AE2 - 1.1.2.6
+    implementation rfg.deobf("curse.maven:lazy-ae2-322347:3254160")
+
     //  [HEI] Had Enough Items - 4.25.1
     implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
 
