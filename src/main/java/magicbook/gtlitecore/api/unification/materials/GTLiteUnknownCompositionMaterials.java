@@ -3,7 +3,11 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.fluids.FluidBuilder;
 import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
+import magicbook.gtlitecore.api.annotations.MaterialIDChecker;
+import magicbook.gtlitecore.api.utils.GTLiteLog;
 import net.minecraft.util.text.TextFormatting;
+
+import java.lang.reflect.Field;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
@@ -812,5 +816,27 @@ public class GTLiteUnknownCompositionMaterials {
             return startId++;
         }
         throw new ArrayIndexOutOfBoundsException();
+    }
+
+    public static void checkMaterialID() throws IllegalAccessException {
+        for (Field field : GTLiteUnknownCompositionMaterials.class.getFields()) {
+            MaterialIDChecker checker = field.getAnnotation(MaterialIDChecker.class);
+            if (checker != null) {
+                Object startID = field.get(startId);
+                Object endID = field.get(endId);
+                if (startID instanceof Integer start && endID instanceof Integer end) {
+                    if (start != checker.startID()) {
+                        GTLiteLog.logger.warn("Start ID in Target Material class " + field.getName() + " seems have some conflicts or errors.");
+                    } else {
+                        GTLiteLog.logger.info("Start ID in Target Material class " + field.getName() + " has no problem.");
+                    }
+                    if (end != checker.endID()) {
+                        GTLiteLog.logger.warn("End ID in Target Material class " + field.getName() + " seems have some conflicts or errors.");
+                    } else {
+                        GTLiteLog.logger.info("End ID in Target Material class " + field.getName() + " has no probelm.");
+                    }
+                }
+            }
+        }
     }
 }
