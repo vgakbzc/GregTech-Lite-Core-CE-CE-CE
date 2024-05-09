@@ -176,11 +176,11 @@ public class CommonProxy {
     public static void registerRecipes(RegistryEvent.Register<IRecipe> event) {
         GTLiteLog.logger.info("Registering recipes...");
 
-        GTLiteLog.logger.info("Registering Extended Tier of Fusion Reactor Recipe...");
+        GTLiteLog.logger.info("Registering Extended Tier of Fusion Reactor recipe...");
         FusionEUToStartProperty.registerFusionTier(9, "(MK4)");
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
 
-        GTLiteLog.logger.info("Registering Precise Assembly Tier for Recipe...");
+        GTLiteLog.logger.info("Registering Precise Assembly Tier for recipe...");
         AssemblyCasingTierProperty.registerAssemblyCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.1", "(MK1)"));
         AssemblyCasingTierProperty.registerAssemblyCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.2", "(MK2)"));
         AssemblyCasingTierProperty.registerAssemblyCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.3", "(MK3)"));
@@ -190,7 +190,7 @@ public class CommonProxy {
         AssemblyCasingTierProperty.registerAssemblyCasingTier(7, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.7", "(MK7)"));
         AssemblyCasingTierProperty.registerAssemblyCasingTier(8, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.8", "(MK8)"));
 
-        GTLiteLog.logger.info("Registering Component Assembly Line Tier for Recipe...");
+        GTLiteLog.logger.info("Registering Component Assembly Line Tier for recipe...");
         ComponentCasingTierProperty.registerComponentCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.1", "(LV)"));
         ComponentCasingTierProperty.registerComponentCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.2", "(MV)"));
         ComponentCasingTierProperty.registerComponentCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.3", "(HV)"));
@@ -206,7 +206,7 @@ public class CommonProxy {
         ComponentCasingTierProperty.registerComponentCasingTier(13, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.13", "(OpV)"));
         ComponentCasingTierProperty.registerComponentCasingTier(14, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.14", "(MAX)"));
 
-        GTLiteLog.logger.info("Registering Field Casing Tier for Recipe...");
+        GTLiteLog.logger.info("Registering Field Casing Tier for recipe...");
         FieldCasingTierProperty.registerFieldCasingTier(1, "1 (ZPM)");
         FieldCasingTierProperty.registerFieldCasingTier(2, "2 (UV)");
         FieldCasingTierProperty.registerFieldCasingTier(3, "3 (UHV)");
@@ -216,24 +216,24 @@ public class CommonProxy {
         FieldCasingTierProperty.registerFieldCasingTier(7, "7 (OpV)");
         FieldCasingTierProperty.registerFieldCasingTier(8, "8 (MAX)");
 
-        GTLiteLog.logger.info("Registering Space Elevator Tier for Recipe...");
+        GTLiteLog.logger.info("Registering Space Elevator Tier for recipe...");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(1, "(MK1)");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(2, "(MK2)");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(3, "(MK3)");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(4, "(MK4)");
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(5, "(MK5)");
 
-        GTLiteLog.logger.info("Registering Graviton Casing Tier for Recipe...");
+        GTLiteLog.logger.info("Registering Graviton Casing Tier for recipe...");
         GravitonCasingTierProperty.registerGravitonCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.1", "Low"));
         GravitonCasingTierProperty.registerGravitonCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.2", "Medium"));
         GravitonCasingTierProperty.registerGravitonCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.3", "High"));
 
-        GTLiteLog.logger.info("Registering Swarm Tier for Recipe...");
+        GTLiteLog.logger.info("Registering Swarm Tier for recipe...");
         SwarmTierProperty.registerSwarmTier(1, "I");
         SwarmTierProperty.registerSwarmTier(2, "II");
         SwarmTierProperty.registerSwarmTier(3, "III");
 
-        GTLiteLog.logger.info("Registering all Recipes and Integration Recipes...");
+        GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
         RecipeManager.init();
     }
 
@@ -250,7 +250,7 @@ public class CommonProxy {
      */
     @SubscribeEvent
     public static void registerRecipeHandlers(RegistryEvent.Register<IRecipe> event) {
-        GTLiteLog.logger.info("Registering Recipe Handlers...");
+        GTLiteLog.logger.info("Registering recipe handlers...");
         RecipeHandler.init();
     }
 
@@ -266,7 +266,7 @@ public class CommonProxy {
      */
     @SubscribeEvent
     public static void registerMaterialInfo(GregTechAPI.RegisterEvent<ItemMaterialInfo> event) {
-        GTLiteLog.logger.info("Registering Material Infos...");
+        GTLiteLog.logger.info("Registering material infos...");
         MaterialInfoLoader.init();
     }
 
@@ -284,7 +284,7 @@ public class CommonProxy {
      */
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void registerMaterialComponents(GregTechAPI.RegisterEvent<CraftingComponent> event) {
-        GTLiteLog.logger.info("Registering Material Components...");
+        GTLiteLog.logger.info("Registering material components...");
         MaterialComponents.init();
     }
 
@@ -304,7 +304,7 @@ public class CommonProxy {
      */
     @SubscribeEvent(priority = EventPriority.LOW)
     public static void registerWireCoil(GregTechAPI.RegisterEvent<BlockWireCoil> event) {
-        GTLiteLog.logger.info("Registering Wire Coils...");
+        GTLiteLog.logger.info("Registering wire coils...");
         for (magicbook.gtlitecore.common.blocks.BlockWireCoil.CoilType type : magicbook.gtlitecore.common.blocks.BlockWireCoil.CoilType.values()) {
             HEATING_COILS.put(GTLiteMetaBlocks.WIRE_COIL.getState(type), type);
         }
