@@ -3,11 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
-import magicbook.gtlitecore.api.annotations.MaterialIDChecker;
-import magicbook.gtlitecore.api.utils.GTLiteLog;
 import net.minecraft.util.text.TextFormatting;
-
-import java.lang.reflect.Field;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregtech.api.GTValues.*;
@@ -29,7 +25,6 @@ import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterial
  *
  * @since 2.8.7-beta
  */
-@MaterialIDChecker(startID = 12001, endID = 13000)
 public class GTLiteSecondDegreeMaterials {
 
     //  Range: 12001-13000
@@ -1054,27 +1049,4 @@ public class GTLiteSecondDegreeMaterials {
         }
         throw new ArrayIndexOutOfBoundsException();
     }
-
-    public static void checkMaterialID() throws IllegalAccessException {
-        for (Field field : GTLiteSecondDegreeMaterials.class.getFields()) {
-            MaterialIDChecker checker = field.getAnnotation(MaterialIDChecker.class);
-            if (checker != null) {
-                Object startID = field.get(startId);
-                Object endID = field.get(endId);
-                if (startID instanceof Integer start && endID instanceof Integer end) {
-                    if (start != checker.startID()) {
-                        GTLiteLog.logger.warn("Start ID in Target Material class " + field.getName() + " seems have some conflicts or errors.");
-                    } else {
-                        GTLiteLog.logger.info("Start ID in Target Material class " + field.getName() + " has no problem.");
-                    }
-                    if (end != checker.endID()) {
-                        GTLiteLog.logger.warn("End ID in Target Material class " + field.getName() + " seems have some conflicts or errors.");
-                    } else {
-                        GTLiteLog.logger.info("End ID in Target Material class " + field.getName() + " has no probelm.");
-                    }
-                }
-            }
-        }
-    }
-
 }
