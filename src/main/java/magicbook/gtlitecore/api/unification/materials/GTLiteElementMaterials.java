@@ -5,6 +5,7 @@ import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
+import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
 import net.minecraft.init.Enchantments;
 
@@ -14,6 +15,7 @@ import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.GTLiteValues.addObfuscatedFormula;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
 /**
@@ -29,15 +31,12 @@ import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterial
  *
  * @since 2.8.7-beta
  */
+@MaterialIDRange(startID = 10000, endID = 11000)
 public class GTLiteElementMaterials {
-
-    //  Range: 10000-11000
-    private static int startId = 10000;
-    private static final int endId = startId + 1000;
 
     public static void register() {
         //  10000 Orichalcum
-        Orichalcum = new Material.Builder(getId(), gregtechId("orichalcum"))
+        Orichalcum = new Material.Builder(getID(), gregtechId("orichalcum"))
                 .ingot()
                 .fluid()
                 .color(0x72A0C1)
@@ -53,7 +52,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10001 Vibranium
-        Vibranium = new Material.Builder(getId(), gregtechId("vibranium"))
+        Vibranium = new Material.Builder(getID(), gregtechId("vibranium"))
                 .ingot()
                 .fluid()
                 .plasma()
@@ -66,7 +65,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10001 Adamantium
-        Adamantium = new Material.Builder(getId(), gregtechId("adamantium"))
+        Adamantium = new Material.Builder(getID(), gregtechId("adamantium"))
                 .ingot()
                 .fluid()
                 .plasma()
@@ -80,7 +79,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10002 Taranium
-        Taranium = new Material.Builder(getId(), gregtechId("taranium"))
+        Taranium = new Material.Builder(getID(), gregtechId("taranium"))
                 .ingot()
                 .fluid()
                 .plasma()
@@ -92,7 +91,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10003 Mithril
-        Mithril = new Material.Builder(getId(), gregtechId("mithril"))
+        Mithril = new Material.Builder(getID(), gregtechId("mithril"))
                 .ingot()
                 .liquid()
                 .plasma()
@@ -104,7 +103,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10004 Infinity
-        Infinity = new Material.Builder(getId(), gregtechId("infinity"))
+        Infinity = new Material.Builder(getID(), gregtechId("infinity"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) V[UIV]).customStill())
                 .iconSet(CUSTOM_INFINITY)
@@ -123,7 +122,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10005 Crystal Matrix
-        CrystalMatrix = new Material.Builder(getId(), gregtechId("crystal_matrix"))
+        CrystalMatrix = new Material.Builder(getID(), gregtechId("crystal_matrix"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature(660450).customStill())
                 .color(0xC0FFFF)
@@ -134,7 +133,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10006 Ichorium
-        Ichorium = new Material.Builder(getId(), gregtechId("ichorium"))
+        Ichorium = new Material.Builder(getID(), gregtechId("ichorium"))
                 .ingot()
                 .liquid()
                 .color(0xE5A559)
@@ -149,14 +148,14 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10007 Ichor Liquid
-        IchorLiquid = new Material.Builder(getId(), gregtechId("ichor_liquid"))
+        IchorLiquid = new Material.Builder(getID(), gregtechId("ichor_liquid"))
                 .plasma(new FluidBuilder().temperature(214748))
                 .color(0xE5A559)
                 .element(GTLiteElements.IchorLiquid)
                 .build();
 
         //  10008 Cosmic Neutronium
-        CosmicNeutronium = new Material.Builder(getId(), gregtechId("cosmic_neutronium"))
+        CosmicNeutronium = new Material.Builder(getID(), gregtechId("cosmic_neutronium"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature(2000000000).customStill())
                 .color(0x000000)
@@ -170,7 +169,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10009 Spacetime
-        Spacetime = new Material.Builder(getId(), gregtechId("spacetime"))
+        Spacetime = new Material.Builder(getID(), gregtechId("spacetime"))
                 .ingot()
                 .liquid(new FluidBuilder().customStill())
                 .iconSet(CUSTOM_SPACETIME)
@@ -185,7 +184,7 @@ public class GTLiteElementMaterials {
                 .setFormula(addObfuscatedFormula(), false);
 
         //  10010 Solarium
-        Solarium = new Material.Builder(getId(), gregtechId("solarium"))
+        Solarium = new Material.Builder(getID(), gregtechId("solarium"))
                 .ingot()
                 .liquid()
                 .color(0xFFFF33)
@@ -199,7 +198,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10011 Rhugnor
-        Rhugnor = new Material.Builder(getId(), gregtechId("rhugnor"))
+        Rhugnor = new Material.Builder(getID(), gregtechId("rhugnor"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) (V[UIV] - V[UV])))
                 .color(0xBE00FF)
@@ -213,7 +212,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10012 Hypogen
-        Hypogen = new Material.Builder(getId(), gregtechId("hypogen"))
+        Hypogen = new Material.Builder(getID(), gregtechId("hypogen"))
                 .ingot()
                 .liquid()
                 .plasma(new FluidBuilder().temperature((int) (V[UXV] - V[LuV])))
@@ -225,7 +224,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10013 Void Metal
-        VoidMetal = new Material.Builder(getId(), gregtechId("void_metal"))
+        VoidMetal = new Material.Builder(getID(), gregtechId("void_metal"))
                 .ingot()
                 .liquid()
                 .color(0x20142C)
@@ -236,7 +235,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10014 Astral Titanium
-        AstralTitanium = new Material.Builder(getId(), gregtechId("astral_titanium"))
+        AstralTitanium = new Material.Builder(getID(), gregtechId("astral_titanium"))
                 .ingot()
                 .liquid()
                 .plasma()
@@ -251,7 +250,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10015 Celestial Tungsten
-        CelestialTungsten = new Material.Builder(getId(), gregtechId("celestial_tungsten"))
+        CelestialTungsten = new Material.Builder(getID(), gregtechId("celestial_tungsten"))
                 .ingot()
                 .liquid()
                 .plasma()
@@ -266,7 +265,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10016 Metastable Oganesson
-        MetastableOganesson = new Material.Builder(getId(), gregtechId("metastable_oganesson"))
+        MetastableOganesson = new Material.Builder(getID(), gregtechId("metastable_oganesson"))
                 .ingot()
                 .gas()
                 .color(0xE61C24)
@@ -277,7 +276,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10017 Metastable Flerovium
-        MetastableFlerovium = new Material.Builder(getId(), gregtechId("metastable_flerovium"))
+        MetastableFlerovium = new Material.Builder(getID(), gregtechId("metastable_flerovium"))
                 .ingot()
                 .liquid()
                 .color(0x521973)
@@ -288,7 +287,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10018 Metastable Hassium
-        MetastableHassium = new Material.Builder(getId(), gregtechId("metastable_hassium"))
+        MetastableHassium = new Material.Builder(getID(), gregtechId("metastable_hassium"))
                 .ingot()
                 .fluid()
                 .color(0x2D3A9D)
@@ -299,7 +298,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10019 Galaxium
-        Galaxium = new Material.Builder(getId(), gregtechId("galaxium"))
+        Galaxium = new Material.Builder(getID(), gregtechId("galaxium"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) (V[OpV] - V[IV])))
                 .color(0x29288A)
@@ -310,7 +309,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10020 Universium
-        Universium = new Material.Builder(getId(), gregtechId("universium"))
+        Universium = new Material.Builder(getID(), gregtechId("universium"))
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) V[MAX]))
                 .color(0xD872EB)
@@ -321,7 +320,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10021 Degenerate Rhenium
-        DegenerateRhenium = new Material.Builder(getId(), gregtechId("degenerate_rhenium"))
+        DegenerateRhenium = new Material.Builder(getID(), gregtechId("degenerate_rhenium"))
                 .dust()
                 .liquid()
                 .plasma(new FluidBuilder().temperature((int) V[UV]))
@@ -333,7 +332,7 @@ public class GTLiteElementMaterials {
                 .setFormula("§cR§de", false);
 
         //  10022 Astralium
-        Astralium = new Material.Builder(getId(), gregtechId("astralium"))
+        Astralium = new Material.Builder(getID(), gregtechId("astralium"))
                 .ingot()
                 .liquid()
                 .color(0x3B48A7)
@@ -345,7 +344,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10023 Hikarium
-        Hikarium = new Material.Builder(getId(), gregtechId("hikarium"))
+        Hikarium = new Material.Builder(getID(), gregtechId("hikarium"))
                 .ingot()
                 .liquid()
                 .color(0xCCF7FB)
@@ -356,7 +355,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10024 Eternity
-        Eternity = new Material.Builder(getId(), gregtechId("eternity"))
+        Eternity = new Material.Builder(getID(), gregtechId("eternity"))
                 .ingot()
                 .liquid()
                 .iconSet(CUSTOM_ETERNITY)
@@ -365,7 +364,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10025 Tiberium
-        Tiberium = new Material.Builder(getId(), gregtechId("tiberium"))
+        Tiberium = new Material.Builder(getID(), gregtechId("tiberium"))
                 .dust()
                 .liquid()
                 .color(0x79B349)
@@ -374,7 +373,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10026 Luna Silver
-        LunaSilver = new Material.Builder(getId(), gregtechId("luna_silver"))
+        LunaSilver = new Material.Builder(getID(), gregtechId("luna_silver"))
                 .ingot()
                 .fluid()
                 .color(0x0B8596)
@@ -387,7 +386,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10027 Shirabon
-        Shirabon = new Material.Builder(getId(), gregtechId("shirabon"))
+        Shirabon = new Material.Builder(getID(), gregtechId("shirabon"))
                 .ingot()
                 .fluid()
                 .color(0xe0156d)
@@ -402,7 +401,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10028 Edenium
-        Edenium = new Material.Builder(getId(), gregtechId("edenium"))
+        Edenium = new Material.Builder(getID(), gregtechId("edenium"))
                 .ingot()
                 .fluid()
                 .color(0xFFE140)
@@ -427,7 +426,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10029 Fatalium
-        Fatalium = new Material.Builder(getId(), gregtechId("fatalium"))
+        Fatalium = new Material.Builder(getID(), gregtechId("fatalium"))
                 .ingot()
                 .fluid()
                 .plasma()
@@ -443,7 +442,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10030 Omnium
-        Omnium = new Material.Builder(getId(), gregtechId("omnium"))
+        Omnium = new Material.Builder(getID(), gregtechId("omnium"))
                 .ingot()
                 .fluid()
                 .iconSet(CUSTOM_OMNIUM)
@@ -456,7 +455,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10031 Magmatter
-        Magmatter = new Material.Builder(getId(), gregtechId("magmatter"))
+        Magmatter = new Material.Builder(getID(), gregtechId("magmatter"))
                 .ingot()
                 .fluid()
                 .iconSet(CUSTOM_MAGMATTER)
@@ -466,7 +465,7 @@ public class GTLiteElementMaterials {
                 .build();
 
         //  10032 Primordial Matter
-        PrimordialMatter = new Material.Builder(getId(), gregtechId("primordial_matter"))
+        PrimordialMatter = new Material.Builder(getID(), gregtechId("primordial_matter"))
                 .ingot()
                 .fluid()
                 .color(0xFFD6FB)
@@ -475,13 +474,5 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 500, 125, false)
                 .build();
-
-    }
-
-    private static int getId() {
-        if (startId < endId) {
-            return startId++;
-        }
-        throw new ArrayIndexOutOfBoundsException();
     }
 }

@@ -1,10 +1,9 @@
 package magicbook.gtlitecore.api.unification.materials;
 
-public class GTLiteModCompatibilityMaterials {
+import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 
-    //  Range: 21001-22000
-    private static int startId = 21001;
-    private static final int endId = startId + 999;
+@MaterialIDRange(startID = 21001, endID = 22000)
+public class GTLiteModCompatibilityMaterials {
 
     //  TODO empty now, but in some version can add it from gtlite's craft tweaker files.
     public static void register() {
@@ -47,13 +46,6 @@ public class GTLiteModCompatibilityMaterials {
         //  21032 Signalum
 
         //  21033 Enderium
-    }
-
-    private static int getId() {
-        if (startId < endId) {
-            return startId++;
-        }
-        throw new ArrayIndexOutOfBoundsException();
     }
 
 }

@@ -3,6 +3,7 @@ package magicbook.gtlitecore.api.unification.materials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
+import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 import net.minecraft.util.text.TextFormatting;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
@@ -11,6 +12,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
+import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
@@ -25,15 +27,12 @@ import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterial
  *
  * @since 2.8.7-beta
  */
+@MaterialIDRange(startID = 12001, endID = 13000)
 public class GTLiteSecondDegreeMaterials {
-
-    //  Range: 12001-13000
-    private static int startId = 12001;
-    private static final int endId = startId + 999;
 
     public static void register() {
         //  12001 Inconel-625
-        Inconel625 = new Material.Builder(getId(), gregtechId("inconel_625"))
+        Inconel625 = new Material.Builder(getID(), gregtechId("inconel_625"))
                 .ingot()
                 .fluid()
                 .color(0x3fcc60)
@@ -48,7 +47,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
       
         //  12002 Hastelloy-N
-        HastelloyN = new Material.Builder(getId(), gregtechId("hastelloy_n"))
+        HastelloyN = new Material.Builder(getID(), gregtechId("hastelloy_n"))
                 .ingot()
                 .fluid()
                 .color(0x939554)
@@ -63,7 +62,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12003 Austenitic Stainless Steel-904L
-        AusteniticStainlessSteel904L = new Material.Builder(getId(), gregtechId("super_austenitic_stainless_steel_904_l"))
+        AusteniticStainlessSteel904L = new Material.Builder(getID(), gregtechId("super_austenitic_stainless_steel_904_l"))
                 .ingot()
                 .fluid()
                 .color(0x881357)
@@ -77,7 +76,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12004 Tanmolyium Beta-C
-        TanmolyiumBetaC = new Material.Builder(getId(), gregtechId("tanmolyium_beta_c"))
+        TanmolyiumBetaC = new Material.Builder(getID(), gregtechId("tanmolyium_beta_c"))
                 .ingot()
                 .fluid()
                 .color(0xc72fcc)
@@ -91,7 +90,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12005 Talonite
-        Talonite = new Material.Builder(getId(), gregtechId("talonite"))
+        Talonite = new Material.Builder(getID(), gregtechId("talonite"))
                 .ingot()
                 .fluid()
                 .color(0x9991A5)
@@ -105,7 +104,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12006 Hastelloy-X78
-        HastelloyX78 = new Material.Builder(getId(), gregtechId("hastelloy_x_78"))
+        HastelloyX78 = new Material.Builder(getID(), gregtechId("hastelloy_x_78"))
                 .ingot()
                 .fluid()
                 .color(0x6BA3E3)
@@ -120,7 +119,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12007 Silicon Carbide
-        SiliconCarbide = new Material.Builder(getId(), gregtechId("silicon_carbide"))
+        SiliconCarbide = new Material.Builder(getID(), gregtechId("silicon_carbide"))
                 .dust()
                 .fluid()
                 .color(0x4D4D4D)
@@ -136,7 +135,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12008 MAR-M200 Steel
-        MARM200Steel = new Material.Builder(getId(), gregtechId("mar_m_200_steel"))
+        MARM200Steel = new Material.Builder(getID(), gregtechId("mar_m_200_steel"))
                 .ingot()
                 .fluid()
                 .color(0x515151)
@@ -150,7 +149,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12009 MAR-M200-Ce Steel
-        MARM200CeSteel = new Material.Builder(getId(), gregtechId("mar_m_200_ce_steel"))
+        MARM200CeSteel = new Material.Builder(getID(), gregtechId("mar_m_200_ce_steel"))
                 .ingot()
                 .fluid()
                 .color(0x383030)
@@ -164,7 +163,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12010 Stellite
-        Stellite = new Material.Builder(getId(), gregtechId("stellite"))
+        Stellite = new Material.Builder(getID(), gregtechId("stellite"))
                 .ingot()
                 .fluid()
                 .color(0x9991A5)
@@ -178,7 +177,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12011 Hastelloy-C59
-        HastelloyC59 = new Material.Builder(getId(), gregtechId("hastelloy_c_59"))
+        HastelloyC59 = new Material.Builder(getID(), gregtechId("hastelloy_c_59"))
                 .ingot()
                 .fluid()
                 .color(0xD6D0F0)
@@ -192,7 +191,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12012 HMS-1J79Alloy
-        HMS1J79Alloy = new Material.Builder(getId(), gregtechId("hms_1_j_79_alloy"))
+        HMS1J79Alloy = new Material.Builder(getID(), gregtechId("hms_1_j_79_alloy"))
                 .ingot()
                 .fluid()
                 .color(0xD1CB0B)
@@ -206,7 +205,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12013 High Strength Structural Steel-HY130-1
-        HY1301 = new Material.Builder(getId(), gregtechId("hy_1301"))
+        HY1301 = new Material.Builder(getID(), gregtechId("hy_1301"))
                 .ingot()
                 .fluid()
                 .color(0x6F3E57)
@@ -220,7 +219,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12014 Incoloy-MA813
-        IncoloyMA813 = new Material.Builder(getId(), gregtechId("incoloy_ma_813"))
+        IncoloyMA813 = new Material.Builder(getID(), gregtechId("incoloy_ma_813"))
                 .ingot()
                 .fluid()
                 .color(0x6CF076)
@@ -235,7 +234,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12015 Lafium
-        Lafium = new Material.Builder(getId(), gregtechId("lafium"))
+        Lafium = new Material.Builder(getID(), gregtechId("lafium"))
                 .ingot()
                 .fluid()
                 .color(0x0D0D60)
@@ -250,7 +249,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12016 Inconel-792
-        Inconel792 = new Material.Builder(getId(), gregtechId("inconel_792"))
+        Inconel792 = new Material.Builder(getID(), gregtechId("inconel_792"))
                 .ingot()
                 .fluid()
                 .color(0x6CF076)
@@ -265,7 +264,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12017 Eglin Steel Base
-        EglinSteelBase = new Material.Builder(getId(), gregtechId("eglin_steel_base"))
+        EglinSteelBase = new Material.Builder(getID(), gregtechId("eglin_steel_base"))
                 .dust()
                 .color(0x8B4513)
                 .iconSet(SAND)
@@ -273,7 +272,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12018 Eglin Steel
-        EglinSteel = new Material.Builder(getId(), gregtechId("eglin_steel"))
+        EglinSteel = new Material.Builder(getID(), gregtechId("eglin_steel"))
                 .ingot()
                 .fluid()
                 .color(0x8B4513)
@@ -286,7 +285,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12019 Pikyonium-64B
-        Pikyonium64B = new Material.Builder(getId(), gregtechId("pikyonium_64_b"))
+        Pikyonium64B = new Material.Builder(getID(), gregtechId("pikyonium_64_b"))
                 .ingot()
                 .fluid()
                 .color(0x3467BA)
@@ -300,7 +299,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12020 Cinobite
-        Cinobite = new Material.Builder(getId(), gregtechId("cinobite"))
+        Cinobite = new Material.Builder(getID(), gregtechId("cinobite"))
                 .ingot()
                 .fluid()
                 .color(0x010101)
@@ -314,7 +313,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12021 Titan Steel
-        TitanSteel = new Material.Builder(getId(), gregtechId("titan_steel"))
+        TitanSteel = new Material.Builder(getID(), gregtechId("titan_steel"))
                 .ingot()
                 .fluid()
                 .color(0xAA0D0D)
@@ -328,7 +327,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12022 Quantum Alloy
-        QuantumAlloy = new Material.Builder(getId(), gregtechId("quantum_alloy"))
+        QuantumAlloy = new Material.Builder(getID(), gregtechId("quantum_alloy"))
                 .ingot()
                 .fluid()
                 .color(0x954FE0)
@@ -343,7 +342,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12023 Prasiolite
-        Prasiolite = new Material.Builder(getId(), gregtechId("prasiolite"))
+        Prasiolite = new Material.Builder(getID(), gregtechId("prasiolite"))
                 .gem()
                 .color(0x9EB749)
                 .iconSet(QUARTZ)
@@ -352,7 +351,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12024 Bismuth Tellurite
-        BismuthTellurite = new Material.Builder(getId(), gregtechId("bismuth_tellurite"))
+        BismuthTellurite = new Material.Builder(getID(), gregtechId("bismuth_tellurite"))
                 .dust()
                 .color(0x0E8933)
                 .iconSet(DULL)
@@ -360,7 +359,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12025 Magneto Resonatic
-        MagnetoResonatic = new Material.Builder(getId(), gregtechId("magneto_resonatic"))
+        MagnetoResonatic = new Material.Builder(getID(), gregtechId("magneto_resonatic"))
                 .gem()
                 .color(0xFF97FF)
                 .iconSet(CUSTOM_MAGNETO_RESONATIC)
@@ -369,7 +368,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12026 HDCS (High Durability Compound Steel)
-        Hdcs = new Material.Builder(getId(), gregtechId("hdcs"))
+        Hdcs = new Material.Builder(getID(), gregtechId("hdcs"))
                 .ingot()
                 .fluid()
                 .color(0x334433)
@@ -386,7 +385,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12027 Zirconium Carbide
-        ZirconiumCarbide = new Material.Builder(getId(), gregtechId("zirconium_carbide"))
+        ZirconiumCarbide = new Material.Builder(getID(), gregtechId("zirconium_carbide"))
                 .ingot()
                 .fluid()
                 .color(0xFFDACD)
@@ -399,7 +398,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12028 Maraging Steel 250
-        MaragingSteel250 = new Material.Builder(getId(), gregtechId("maraging_steel_250"))
+        MaragingSteel250 = new Material.Builder(getID(), gregtechId("maraging_steel_250"))
                 .ingot()
                 .fluid()
                 .color(0xA5ADB2)
@@ -412,7 +411,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12029 HMS-1J22 Alloy
-        HMS1J22Alloy = new Material.Builder(getId(), gregtechId("hms_1_j_22_alloy"))
+        HMS1J22Alloy = new Material.Builder(getID(), gregtechId("hms_1_j_22_alloy"))
                 .ingot()
                 .fluid()
                 .color(0x9E927D)
@@ -425,7 +424,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12030 HG-1223
-        HG1223 = new Material.Builder(getId(), gregtechId("hg_1223"))
+        HG1223 = new Material.Builder(getID(), gregtechId("hg_1223"))
                 .ingot()
                 .fluid()
                 .color(0x235497)
@@ -438,7 +437,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12031 Staballoy
-        Staballoy = new Material.Builder(getId(), gregtechId("staballoy"))
+        Staballoy = new Material.Builder(getID(), gregtechId("staballoy"))
                 .ingot()
                 .fluid()
                 .color(0x444B42)
@@ -451,7 +450,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12032 Incoloy-DS
-        IncoloyDS = new Material.Builder(getId(), gregtechId("incoloy_ds"))
+        IncoloyDS = new Material.Builder(getID(), gregtechId("incoloy_ds"))
                 .ingot()
                 .fluid()
                 .color(0x6746B7)
@@ -464,7 +463,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12033 Tantalloy-61
-        Tantalloy61 = new Material.Builder(getId(), gregtechId("tantalloy_61"))
+        Tantalloy61 = new Material.Builder(getID(), gregtechId("tantalloy_61"))
                 .ingot()
                 .fluid()
                 .color(0x717171)
@@ -477,7 +476,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12034 Lithium Titanate
-        LithiumTitanate = new Material.Builder(getId(), gregtechId("lithium_titanate"))
+        LithiumTitanate = new Material.Builder(getID(), gregtechId("lithium_titanate"))
                 .ingot()
                 .color(0xFE71A9)
                 .iconSet(SHINY)
@@ -488,7 +487,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12035 Lanthanum Fullerene Nanotube
-        LanthanumFullereneNanotube = new Material.Builder(getId(), gregtechId("lanthanum_fullerene_nanotube"))
+        LanthanumFullereneNanotube = new Material.Builder(getID(), gregtechId("lanthanum_fullerene_nanotube"))
                 .ingot()
                 .color(0xD24473)
                 .iconSet(BRIGHT)
@@ -497,7 +496,7 @@ public class GTLiteSecondDegreeMaterials {
                 .setFormula("(C60H30)C48La2", true);
 
         //  12036 Fullerene Superconductor
-        FullereneSuperconductor = new Material.Builder(getId(), gregtechId("fullerene_superconductor"))
+        FullereneSuperconductor = new Material.Builder(getID(), gregtechId("fullerene_superconductor"))
                 .ingot()
                 .fluid()
                 .color(0x8BF743)
@@ -511,7 +510,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12037 Black Titanium
-        BlackTitanium = new Material.Builder(getId(), gregtechId("black_titanium"))
+        BlackTitanium = new Material.Builder(getID(), gregtechId("black_titanium"))
                 .ingot()
                 .fluid()
                 .color(0x6C003B)
@@ -525,7 +524,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12038 Black Plutonium
-        BlackPlutonium = new Material.Builder(getId(), gregtechId("black_plutonium"))
+        BlackPlutonium = new Material.Builder(getID(), gregtechId("black_plutonium"))
                 .ingot()
                 .fluid()
                 .color(0x060606)
@@ -539,7 +538,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12039 Legendarium
-        Legendarium = new Material.Builder(getId(), gregtechId("legendarium"))
+        Legendarium = new Material.Builder(getID(), gregtechId("legendarium"))
                 .ingot()
                 .fluid()
                 .color(0xF58FDA)
@@ -552,7 +551,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12040 Abyssalloy
-        Abyssalloy = new Material.Builder(getId(), gregtechId("abyssalloy"))
+        Abyssalloy = new Material.Builder(getID(), gregtechId("abyssalloy"))
                 .ingot()
                 .fluid()
                 .color(0x9E706A)
@@ -566,7 +565,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12041 Platinum Group Alloy
-        PlatinumGroupAlloy = new Material.Builder(getId(), gregtechId("platinum_group_alloy"))
+        PlatinumGroupAlloy = new Material.Builder(getID(), gregtechId("platinum_group_alloy"))
                 .ingot()
                 .fluid()
                 .color(Gold.getMaterialRGB() + Silver.getMaterialRGB() + Platinum.getMaterialRGB() + Palladium.getMaterialRGB() + Ruthenium.getMaterialRGB() + Rhodium.getMaterialRGB() + Iridium.getMaterialRGB() + Osmium.getMaterialRGB())
@@ -580,7 +579,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12042 Superheavy-H Alloy
-        SuperheavyHAlloy = new Material.Builder(getId(), gregtechId("superheavy_h_alloy"))
+        SuperheavyHAlloy = new Material.Builder(getID(), gregtechId("superheavy_h_alloy"))
                 .ingot()
                 .fluid()
                 .color(0xE84B36)
@@ -593,7 +592,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12043 Superheavy-L Alloy
-        SuperheavyLAlloy = new Material.Builder(getId(), gregtechId("superheavy_l_alloy"))
+        SuperheavyLAlloy = new Material.Builder(getID(), gregtechId("superheavy_l_alloy"))
                 .ingot()
                 .fluid()
                 .color(0x4D8BE9)
@@ -606,7 +605,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12044 Alkalis Group Alloy
-        AlkalisGroupAlloy = new Material.Builder(getId(), gregtechId("alkalis_group_alloy"))
+        AlkalisGroupAlloy = new Material.Builder(getID(), gregtechId("alkalis_group_alloy"))
                 .ingot()
                 .fluid()
                 .color(Lithium.getMaterialRGB() + Sodium.getMaterialRGB() + Potassium.getMaterialRGB() + Rubidium.getMaterialRGB() + Caesium.getMaterialRGB() + Francium.getMaterialRGB())
@@ -619,7 +618,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12045 Alkaline Earth Group Alloy
-        AlkalineEarthGroupAlloy = new Material.Builder(getId(), gregtechId("alkaline_earth_group_alloy"))
+        AlkalineEarthGroupAlloy = new Material.Builder(getID(), gregtechId("alkaline_earth_group_alloy"))
                 .ingot()
                 .fluid()
                 .color(Beryllium.getMaterialRGB() + Magnesium.getMaterialRGB() + Calcium.getMaterialRGB() + Strontium.getMaterialRGB() + Barium.getMaterialRGB() + Radium.getMaterialRGB())
@@ -631,7 +630,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12046 Transition-L Alloy
-        TransitionLAlloy = new Material.Builder(getId(), gregtechId("transition_l_alloy"))
+        TransitionLAlloy = new Material.Builder(getID(), gregtechId("transition_l_alloy"))
                 .ingot()
                 .fluid()
                 .color(Titanium.getMaterialRGB() + Vanadium.getMaterialRGB() + Chrome.getMaterialRGB() + Manganese.getMaterialRGB() + Iron.getMaterialRGB() + Cobalt.getMaterialRGB() + Nickel.getMaterialRGB() + Copper.getMaterialRGB())
@@ -644,7 +643,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12047 Transition-H Alloy
-        TransitionHAlloy = new Material.Builder(getId(), gregtechId("transition_h_alloy"))
+        TransitionHAlloy = new Material.Builder(getID(), gregtechId("transition_h_alloy"))
                 .ingot()
                 .fluid()
                 .color(Zirconium.getMaterialRGB() + Niobium.getMaterialRGB() + Molybdenum.getMaterialRGB() + Technetium.getMaterialRGB() + Hafnium.getMaterialRGB() + Tantalum.getMaterialRGB() + Tungsten.getMaterialRGB() + Rhenium.getMaterialRGB())
@@ -657,7 +656,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12048 Refractory Alloy
-        RefractoryAlloy = new Material.Builder(getId(), gregtechId("refractory_alloy"))
+        RefractoryAlloy = new Material.Builder(getID(), gregtechId("refractory_alloy"))
                 .ingot()
                 .fluid()
                 .color(Aluminium.getMaterialRGB() + Zinc.getMaterialRGB() + Gallium.getMaterialRGB() + Germanium.getMaterialRGB() + Cadmium.getMaterialRGB() + Indium.getMaterialRGB() + Tin.getMaterialRGB() + Antimony.getMaterialRGB())
@@ -670,7 +669,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12049 Inert Gas Mixture
-        InertGasMixture = new Material.Builder(getId(), gregtechId("inert_gas_mixture"))
+        InertGasMixture = new Material.Builder(getID(), gregtechId("inert_gas_mixture"))
                 .gas()
                 .color(Helium.getMaterialRGB() + Neon.getMaterialRGB() + Argon.getMaterialRGB() + Krypton.getMaterialRGB() + Xenon.getMaterialRGB() + Radon.getMaterialRGB())
                 .components(Helium, 1, Neon, 1, Argon, 1, Krypton, 1, Xenon, 1, Radon, 1)
@@ -678,7 +677,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12050 Lanthanum Group-L Alloy
-        LanthanumGroupLAlloy = new Material.Builder(getId(), gregtechId("lanthanum_group_l_alloy"))
+        LanthanumGroupLAlloy = new Material.Builder(getID(), gregtechId("lanthanum_group_l_alloy"))
                 .ingot()
                 .fluid()
                 .color(Lanthanum.getMaterialRGB() + Cerium.getMaterialRGB() + Praseodymium.getMaterialRGB() + Neodymium.getMaterialRGB() + Promethium.getMaterialRGB() + Samarium.getMaterialRGB() + Europium.getMaterialRGB() + Scandium.getMaterialRGB())
@@ -691,7 +690,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12051 Lanthanum Group-H Alloy
-        LanthanumGroupHAlloy = new Material.Builder(getId(), gregtechId("lanthanum_group_h_alloy"))
+        LanthanumGroupHAlloy = new Material.Builder(getID(), gregtechId("lanthanum_group_h_alloy"))
                 .ingot()
                 .fluid()
                 .color(Gadolinium.getMaterialRGB() + Terbium.getMaterialRGB() + Dysprosium.getMaterialRGB() + Holmium.getMaterialRGB() + Erbium.getMaterialRGB() + Thulium.getMaterialRGB() + Ytterbium.getMaterialRGB() + Lutetium.getMaterialRGB())
@@ -704,7 +703,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12051 Actinium Group-L Alloy
-        ActiniumGroupLAlloy = new Material.Builder(getId(), gregtechId("actinium_group_l_alloy"))
+        ActiniumGroupLAlloy = new Material.Builder(getID(), gregtechId("actinium_group_l_alloy"))
                 .ingot()
                 .fluid()
                 .color(Actinium.getMaterialRGB() + Thorium.getMaterialRGB() + Protactinium.getMaterialRGB() + Uranium238.getMaterialRGB() + Neptunium.getMaterialRGB() + Plutonium241.getMaterialRGB() + Americium.getMaterialRGB() + Yttrium.getMaterialRGB())
@@ -718,7 +717,7 @@ public class GTLiteSecondDegreeMaterials {
                 .setFormula("AcThPaUNpPuAmY", false);
 
         //  12052 Actinium Group-H Alloy
-        ActiniumGroupHAlloy = new Material.Builder(getId(), gregtechId("actinium_group_h_alloy"))
+        ActiniumGroupHAlloy = new Material.Builder(getID(), gregtechId("actinium_group_h_alloy"))
                 .ingot()
                 .fluid()
                 .color(Curium.getMaterialRGB() + Berkelium.getMaterialRGB() + Californium.getMaterialRGB() + Einsteinium.getMaterialRGB() + Fermium.getMaterialRGB() + Mendelevium.getMaterialRGB() + Nobelium.getMaterialRGB() + Lawrencium.getMaterialRGB())
@@ -731,7 +730,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12053 Halogen Mixture
-        HalogenMixture = new Material.Builder(getId(), gregtechId("halogen_mixture"))
+        HalogenMixture = new Material.Builder(getID(), gregtechId("halogen_mixture"))
                 .liquid()
                 .color(Fluorine.getMaterialRGB() + Chlorine.getMaterialRGB() + Bromine.getMaterialRGB() + Iodine.getMaterialRGB() + Astatine.getMaterialRGB())
                 .components(Fluorine, 1, Chlorine, 1, Bromine, 1, Iodine, 1, Astatine, 1)
@@ -739,7 +738,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12054 Non-metallic Mixture
-        NonMetallicMixture = new Material.Builder(getId(), gregtechId("non_metallic_mixture"))
+        NonMetallicMixture = new Material.Builder(getID(), gregtechId("non_metallic_mixture"))
                 .liquid()
                 .color(Hydrogen.getMaterialRGB() + Boron.getMaterialRGB() + Carbon.getMaterialRGB() + Nitrogen.getMaterialRGB() + Oxygen.getMaterialRGB() + Silicon.getMaterialRGB() + Phosphorus.getMaterialRGB() + Sulfur.getMaterialRGB() + Arsenic.getMaterialRGB() + Selenium.getMaterialRGB() + Tellurium.getMaterialRGB())
                 .components(Hydrogen, 1, Boron, 1, Carbon, 1, Nitrogen, 1, Oxygen, 1, Silicon, 1, Phosphorus, 1, Sulfur, 1, Arsenic, 1, Selenium, 1, Tellurium, 1)
@@ -747,7 +746,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12055 Toxic Alloy
-        ToxicAlloy = new Material.Builder(getId(), gregtechId("toxic_alloy"))
+        ToxicAlloy = new Material.Builder(getID(), gregtechId("toxic_alloy"))
                 .ingot()
                 .fluid()
                 .color(Mercury.getMaterialRGB() + Thallium.getMaterialRGB() + Lead.getMaterialRGB() + Bismuth.getMaterialRGB() + Polonium.getMaterialRGB())
@@ -760,7 +759,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12056 Rare Earth Alloy
-        RareEarthAlloy = new Material.Builder(getId(), gregtechId("rare_earth_alloy"))
+        RareEarthAlloy = new Material.Builder(getID(), gregtechId("rare_earth_alloy"))
                 .dust()
                 .color(LanthanumGroupLAlloy.getMaterialRGB() + LanthanumGroupHAlloy.getMaterialRGB() + ActiniumGroupLAlloy.getMaterialRGB() + ActiniumGroupHAlloy.getMaterialRGB())
                 .components(LanthanumGroupLAlloy, 1, LanthanumGroupHAlloy, 1, ActiniumGroupLAlloy, 1, ActiniumGroupHAlloy, 1)
@@ -769,7 +768,7 @@ public class GTLiteSecondDegreeMaterials {
                 .setFormula("LaCePrNdPmSmEuGdTbDyHoErTmYbLuScYAcThPaUNpPuAmCmBkCfEsFmMdNoLr", false);
 
         //  12057 Periodicium
-        Periodicium = new Material.Builder(getId(), gregtechId("periodicium"))
+        Periodicium = new Material.Builder(getID(), gregtechId("periodicium"))
                 .ingot()
                 .liquid()
                 .color(0x3D4BF6)
@@ -781,7 +780,7 @@ public class GTLiteSecondDegreeMaterials {
                 .setFormula("HHeLiBeBCNOFNeNaMgAlSiPSClArKCaScTiVCrMnFeCoNiCuZnGaGeAsSeBrKrRbSrYZrNbMoTcRuRhPdAgCdInSnSbTeIXeCsBaLaCePrNdPmSmEuGdTbDyHoErTmYbLuHfTaWReOsIrPtAuHgTlPbBiPoAtRnFrRaAcThPaUNpPuAmCmBkCfEsFmMdNoLrRfDbSgBhHsMtDsRgCnNhFlMcLvTsOg");
 
         //  12058 Charged Caesium-Cerium-Cobalt-Indium Alloy
-        ChargedCaesiumCeriumCobaltIndiumAlloy = new Material.Builder(getId(), gregtechId("charged_caesium_cerium_cobalt_indium_alloy"))
+        ChargedCaesiumCeriumCobaltIndiumAlloy = new Material.Builder(getID(), gregtechId("charged_caesium_cerium_cobalt_indium_alloy"))
                 .ingot()
                 .fluid()
                 .color(0x01E068)
@@ -794,7 +793,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12059 BETSPerrhenate
-        BETSPerrhenate = new Material.Builder(getId(), gregtechId("bets_perrhenate"))
+        BETSPerrhenate = new Material.Builder(getID(), gregtechId("bets_perrhenate"))
                 .dust()
                 .color(0x98E993)
                 .flags(DISABLE_DECOMPOSITION)
@@ -803,7 +802,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12060 Boron Francium Carbide Superconductor
-        BoronFranciumCarbideSuperconductor = new Material.Builder(getId(), gregtechId("boron_francium_carbide_superconductor"))
+        BoronFranciumCarbideSuperconductor = new Material.Builder(getID(), gregtechId("boron_francium_carbide_superconductor"))
                 .ingot()
                 .fluid()
                 .color(0x359FFC)
@@ -817,7 +816,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12061 Tantalum Hafnium Seaborgium Carbide
-        TantalumHafniumSeaborgiumCarbide = new Material.Builder(getId(), gregtechId("tantalum_hafnium_seaborgium_carbide"))
+        TantalumHafniumSeaborgiumCarbide = new Material.Builder(getID(), gregtechId("tantalum_hafnium_seaborgium_carbide"))
                 .ingot()
                 .fluid()
                 .color(0x2C2C2C)
@@ -830,7 +829,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12062 Hastelloy-K243
-        HastelloyK243 = new Material.Builder(getId(), gregtechId("hastelloy_k_243"))
+        HastelloyK243 = new Material.Builder(getID(), gregtechId("hastelloy_k_243"))
                 .ingot()
                 .fluid()
                 .color(0x92D959)
@@ -845,7 +844,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12063 Nitinol-60
-        Nitinol60 = new Material.Builder(getId(), gregtechId("nitinol_60"))
+        Nitinol60 = new Material.Builder(getID(), gregtechId("nitinol_60"))
                 .ingot()
                 .fluid()
                 .color(0xCCB0EC)
@@ -859,7 +858,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12064 Tumbaga
-        Tumbaga = new Material.Builder(getId(), gregtechId("tumbaga"))
+        Tumbaga = new Material.Builder(getID(), gregtechId("tumbaga"))
                 .ingot()
                 .fluid()
                 .color(0xF2A80E)
@@ -872,7 +871,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12065 Octiron
-        Octiron = new Material.Builder(getId(), gregtechId("octiron"))
+        Octiron = new Material.Builder(getID(), gregtechId("octiron"))
                 .ingot()
                 .fluid()
                 .color(0x3B4129)
@@ -887,7 +886,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12066 Botmium
-        Botmium = new Material.Builder(getId(), gregtechId("botmium"))
+        Botmium = new Material.Builder(getID(), gregtechId("botmium"))
                 .ingot()
                 .fluid()
                 .color(0x51AD6D)
@@ -901,7 +900,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12067 Tairitsium
-        Tairitsium = new Material.Builder(getId(), gregtechId("tairitsium"))
+        Tairitsium = new Material.Builder(getID(), gregtechId("tairitsium"))
                 .ingot()
                 .fluid()
                 .color(0x003F5F)
@@ -915,7 +914,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12068 Transcendent Metal
-        TranscendentMetal = new Material.Builder(getId(), gregtechId("transcendent_metal"))
+        TranscendentMetal = new Material.Builder(getID(), gregtechId("transcendent_metal"))
                 .ingot()
                 .liquid()
                 .color(0x1A1A1A)
@@ -929,7 +928,7 @@ public class GTLiteSecondDegreeMaterials {
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 
         //  12070 Arcanium
-        Arcanium = new Material.Builder(getId(), gregtechId("arcanium"))
+        Arcanium = new Material.Builder(getID(), gregtechId("arcanium"))
                 .ingot()
                 .fluid()
                 .color(0xD54338)
@@ -944,7 +943,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12071 Laurenium
-        Laurenium = new Material.Builder(getId(), gregtechId("laurenium"))
+        Laurenium = new Material.Builder(getID(), gregtechId("laurenium"))
                 .ingot()
                 .fluid()
                 .color(0xE564E4)
@@ -958,7 +957,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12072 NeutroniumSuperconductor
-        NeutroniumSuperconductor = new Material.Builder(getId(), gregtechId("neutronium_superconductor"))
+        NeutroniumSuperconductor = new Material.Builder(getID(), gregtechId("neutronium_superconductor"))
                 .ingot()
                 .fluid()
                 .color(0xF8BCD5)
@@ -973,7 +972,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12073 Fluxed Electrum
-        FluxedElectrum = new Material.Builder(getId(), gregtechId("fluxed_electrum"))
+        FluxedElectrum = new Material.Builder(getID(), gregtechId("fluxed_electrum"))
                 .ingot()
                 .fluid()
                 .color(0xFFE049)
@@ -987,7 +986,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12074 Arceus Alloy 2B
-        ArceusAlloy2B = new Material.Builder(getId(), gregtechId("arceus_alloy_2_b"))
+        ArceusAlloy2B = new Material.Builder(getID(), gregtechId("arceus_alloy_2_b"))
                 .ingot()
                 .fluid()
                 .color(0xC4A415)
@@ -1001,7 +1000,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12075 Incoloy-020
-        Incoloy020 = new Material.Builder(getId(), gregtechId("incoloy_020"))
+        Incoloy020 = new Material.Builder(getID(), gregtechId("incoloy_020"))
                 .ingot()
                 .fluid()
                 .color(0x634F46)
@@ -1015,7 +1014,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12076 Hattrium
-        Hattrium = new Material.Builder(getId(), gregtechId("hattrium"))
+        Hattrium = new Material.Builder(getID(), gregtechId("hattrium"))
                 .ingot()
                 .fluid()
                 .color(0xE0F3F3)
@@ -1029,7 +1028,7 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
 
         //  12077 Duraluminium Alloy
-        DuraluminiumAlloy = new Material.Builder(getId(), gregtechId("duraluminium_alloy"))
+        DuraluminiumAlloy = new Material.Builder(getID(), gregtechId("duraluminium_alloy"))
                 .ingot()
                 .fluid()
                 .color(0xF1C1F0)
@@ -1043,10 +1042,4 @@ public class GTLiteSecondDegreeMaterials {
                 .build();
     }
 
-    private static int getId() {
-        if (startId < endId) {
-            return startId++;
-        }
-        throw new ArrayIndexOutOfBoundsException();
-    }
 }

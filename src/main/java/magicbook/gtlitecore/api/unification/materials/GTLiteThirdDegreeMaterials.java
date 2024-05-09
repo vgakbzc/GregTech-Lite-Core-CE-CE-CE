@@ -1,11 +1,13 @@
 package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.unification.material.Material;
+import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
+import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 /**
@@ -19,16 +21,13 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
  *
  * @since 2.8.7-beta
  */
+@MaterialIDRange(startID = 20001, endID = 21000)
 public class GTLiteThirdDegreeMaterials {
-
-    //  Range: 20001-21000
-    private static int startId = 20001;
-    private static final int endId = startId + 999;
 
     public static void register() {
 
         //  20001 Proto Adamantium
-        ProtoAdamantium = new Material.Builder(getId(), gregtechId("proto_adamantium"))
+        ProtoAdamantium = new Material.Builder(getID(), gregtechId("proto_adamantium"))
                 .dust()
                 .ore(1, 1, true)
                 .addOreByproducts(Adamantite)
@@ -39,7 +38,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20002 Enriched Mithril
-        EnrichedMithril = new Material.Builder(getId(), gregtechId("enriched_mithril"))
+        EnrichedMithril = new Material.Builder(getID(), gregtechId("enriched_mithril"))
                 .dust()
                 .ore(1, 1, true)
                 .addOreByproducts(Mithril)
@@ -49,7 +48,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20003 Trinium Titanide
-        TriniumTitanide = new Material.Builder(getId(), gregtechId("trinium_titanide"))
+        TriniumTitanide = new Material.Builder(getID(), gregtechId("trinium_titanide"))
                 .dust()
                 .ore(1, 1, false)
                 .addOreByproducts(Trinium)
@@ -59,7 +58,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20004 Germanium Tungsten Nitride
-        GermaniumTungstenNitride = new Material.Builder(getId(), gregtechId("germanium_tungsten_nitride"))
+        GermaniumTungstenNitride = new Material.Builder(getID(), gregtechId("germanium_tungsten_nitride"))
                 .dust()
                 .ore(1, 1, false)
                 .addOreByproducts(Germanium)
@@ -69,7 +68,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20005 Bismuth Iridiate
-        BismuthIridiate = new Material.Builder(getId(), gregtechId("bismuth_iridiate"))
+        BismuthIridiate = new Material.Builder(getID(), gregtechId("bismuth_iridiate"))
                 .dust()
                 .ore(1,1, false)
                 .addOreByproducts(Iridium)
@@ -79,7 +78,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20006 Bismuth Ruthenate
-        BismuthRuthenate = new Material.Builder(getId(), gregtechId("bismuth_ruthenate"))
+        BismuthRuthenate = new Material.Builder(getID(), gregtechId("bismuth_ruthenate"))
                 .dust()
                 .ore(1, 1, false)
                 .addOreByproducts(Ruthenium)
@@ -89,7 +88,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20007 Sylvanite
-        Sylvanite = new Material.Builder(getId(), gregtechId("sylvanite"))
+        Sylvanite = new Material.Builder(getID(), gregtechId("sylvanite"))
                 .dust()
                 .ore(2, 2, false)
                 .addOreByproducts(Electrum)
@@ -99,7 +98,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20008 Rheniite
-        Rheniite = new Material.Builder(getId(), gregtechId("rheniite"))
+        Rheniite = new Material.Builder(getID(), gregtechId("rheniite"))
                 .dust()
                 .ore(1, 2, false)
                 .addOreByproducts(Rhenium)
@@ -109,7 +108,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20009 Gadolinite
-        Gadolinite = new Material.Builder(getId(), gregtechId("gadolinite"))
+        Gadolinite = new Material.Builder(getID(), gregtechId("gadolinite"))
                 .dust()
                 .ore(1, 1, false)
                 .addOreByproducts(Yttrium)
@@ -121,7 +120,7 @@ public class GTLiteThirdDegreeMaterials {
                 .setFormula("Y2FeBe2(SiO4)2O2", true);
 
         //  20010 Euxenite
-        Euxenite = new Material.Builder(getId(), gregtechId("euxenite"))
+        Euxenite = new Material.Builder(getID(), gregtechId("euxenite"))
                 .dust()
                 .ore(2, 1, false)
                 .addOreByproducts(Thorium)
@@ -132,7 +131,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20011 Platarsite
-        Platarsite = new Material.Builder(getId(), gregtechId("platarsite"))
+        Platarsite = new Material.Builder(getID(), gregtechId("platarsite"))
                 .dust()
                 .ore(3, 2, false)
                 .addOreByproducts(Rhodium)
@@ -143,7 +142,7 @@ public class GTLiteThirdDegreeMaterials {
                 .build();
 
         //  20012 Picotite
-        Picotite = new Material.Builder(getId(), gregtechId("picotite"))
+        Picotite = new Material.Builder(getID(), gregtechId("picotite"))
                 .gem(3)
                 .ore(2, 3, false)
                 .addOreByproducts(Magnesium)
@@ -153,11 +152,5 @@ public class GTLiteThirdDegreeMaterials {
                 .components(Iron, 1, Chrome, 2, Oxygen, 4)
                 .build();
     }
-
-    private static int getId() {
-        if (startId < endId) {
-            return startId++;
-        }
-        throw new ArrayIndexOutOfBoundsException();
-    }
+    
 }

@@ -17,7 +17,7 @@ import magicbook.gtlitecore.api.unification.materials.*;
  *         <li>11001-12000: First Degree Materials ({@link GTLiteFirstDegreeMaterials}),</li>
  *         <li>12001-13000: Second Degree Materials ({@link GTLiteSecondDegreeMaterials}),</li>
  *         <li>13001-15000: Organic Chemistry Materials ({@link GTLiteOrganicChemistryMaterials}),</li>
- *         <li>15001-16000: High Degree Materials ({@link GTLiteHighDegreeMaterials}),</li>
+ *         <li>15001-16000: Higher Degree Materials ({@link GTLiteHigherDegreeMaterials}),</li>
  *         <li>18000-20000: Unknown Composition Materials ({@link GTLiteUnknownCompositionMaterials}),</li>
  *         <li>20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}),</li>
  *         <li>21001-22000: Mod Compatibility Materials ({@link GTLiteModCompatibilityMaterials}).</li>
@@ -780,7 +780,7 @@ public class GTLiteMaterials {
         GTLiteFirstDegreeMaterials.register();        // 11001-12000
         GTLiteSecondDegreeMaterials.register();       // 12001-13000
         GTLiteOrganicChemistryMaterials.register();   // 13001-15000
-        GTLiteHighDegreeMaterials.register();         // 15001-16000
+        GTLiteHigherDegreeMaterials.register();       // 15001-16000
         GTLiteUnknownCompositionMaterials.register(); // 18000-20000
         GTLiteThirdDegreeMaterials.register();        // 20001-21000
         GTLiteModCompatibilityMaterials.register();   // 21001-22000
