@@ -210,7 +210,11 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem EMITTER_MAX;
     public static MetaItem<?>.MetaValueItem SENSOR_MAX;
     public static MetaItem<?>.MetaValueItem FIELD_GENERATOR_MAX;
-
+    public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_UHV;
+    public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_UEV;
+    public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_UIV;
+    public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_UXV;
+    public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_OpV;
     public static MetaItem<?>.MetaValueItem COVER_SOLAR_PANEL_MAX;
 
     //  Tools

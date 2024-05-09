@@ -1920,7 +1920,7 @@ public class MachineRecipeLoader {
                 .input(SENSOR_UIV, 2)
                 .input(plate, VoidMetal, 16)
                 .input(circuit, MarkerMaterials.Tier.UIV, 8)
-                .input(COVER_SOLAR_PANEL_UV, 4)
+                .input(COVER_SOLAR_PANEL_UIV, 4)
                 .input(VOLTAGE_COIL_UIV, 2)
                 .input(wireGtOctal, FullereneSuperconductor, 4)
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))

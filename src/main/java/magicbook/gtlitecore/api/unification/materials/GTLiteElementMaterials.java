@@ -58,7 +58,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0xC880FF)
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_DENSE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_DENSE, GENERATE_FRAME)
                 .element(GTLiteElements.Vb)
                 .blast(4852, BlastProperty.GasTier.HIGH)
                 .rotorStats(30.0F, 15.0F, 640000)
@@ -71,7 +71,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0xFF0040)
                 .iconSet(METALLIC)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DENSE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DENSE, GENERATE_FINE_WIRE)
                 .element(GTLiteElements.Ad)
                 .blast(5225, BlastProperty.GasTier.HIGH)
                 .cableProperties(V[UHV], 24, 24, false)
@@ -144,7 +144,7 @@ public class GTLiteElementMaterials {
                         .vacuumStats(VA[ZPM], 1880))
                 .element(GTLiteElements.Ichorium)
                 .cableProperties(V[UEV], 36, 18, false)
-                .flags(GENERATE_ROD, GENERATE_SPRING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  10007 Ichor Liquid
@@ -190,7 +190,7 @@ public class GTLiteElementMaterials {
                 .color(0xFFFF33)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Solarium)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV]))
@@ -219,7 +219,7 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.Hypogen)
                 .color(0xDC784B)
                 .iconSet(ENRICHED)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_LENS)
                 .cableProperties(V[UXV], 32, 16, false)
                 .build();
 
@@ -411,7 +411,7 @@ public class GTLiteElementMaterials {
                         .temp(17800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[OpV], 365)
                         .vacuumStats(VA[OpV], 365))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_LONG_ROD, GENERATE_SPRING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_LONG_ROD, GENERATE_SPRING, GENERATE_FRAME)
                 .cableProperties(V[OpV], 360, 640, false)
                 .toolStats(ToolProperty.Builder.of(50.0F, 8000.0F, 500000, 99)
                         .unbreakable()

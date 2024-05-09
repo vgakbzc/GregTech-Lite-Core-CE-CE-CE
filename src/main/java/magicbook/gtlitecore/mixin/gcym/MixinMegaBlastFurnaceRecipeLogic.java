@@ -2,6 +2,7 @@ package magicbook.gtlitecore.mixin.gcym;
 
 import gregicality.multiblocks.api.capability.impl.GCYMMultiblockRecipeLogic;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(targets = "gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaTileEntityMegaBlastFurnace$MegaBlastFurnaceRecipeLogic", remap = false)
@@ -16,6 +17,10 @@ public class MixinMegaBlastFurnaceRecipeLogic extends GCYMMultiblockRecipeLogic 
      */
     @Override
     public void setMaxProgress(int maxProgress) {
-        this.maxProgressTime = maxProgress / 2;
+        if (GTLiteConfigHolder.compats.enableMegaBlastFurnaceTweak) {
+            this.maxProgressTime = maxProgress / 2;
+        } else {
+            this.maxProgressTime = maxProgress;
+        }
     }
 }

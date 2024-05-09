@@ -19,11 +19,12 @@ import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
 import net.minecraft.client.resources.I18n;
 import org.lwjgl.input.Keyboard;
 
-import static gregtech.api.GTValues.M;
+import static gregtech.api.GTValues.*;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class GTLiteMetaItems1 extends StandardMetaItem {
+
     public GTLiteMetaItems1() {
         this.setRegistryName("gtlite_meta_item_1");
         setCreativeTab(GTLiteAPI.TAB_GTLITE);
@@ -31,37 +32,49 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
     public void registerSubItems() {
 
-        //  Boards
+        /* ------------------------------------------------------------------------ Boards ------------------------------------------------------------------------ */
+
+        //  Gooware Board
         GOOWARE_BOARD = this.addItem(0, "board.gooware")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  Optical Board
         OPTICAL_BOARD = this.addItem(1, "board.optical")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  Spintronic Board
         SPINTRONIC_BOARD = this.addItem(2, "board.spintronic")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  Magneto Resonatic Board
         if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
             MAGNETO_RESONATIC_BOARD = this.addItem(3, "board.magneto_resonatic")
                     .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         }
 
-        //  Circuit Boards
+        /* -------------------------------------------------------------------- Circuit Boards -------------------------------------------------------------------- */
+
+        //  Gooware Circuit Board
         GOOWARE_CIRCUIT_BOARD = this.addItem(4, "circuit_board.gooware")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  Optical Circuit Board
         OPTICAL_CIRCUIT_BOARD = this.addItem(5, "circuit_board.optical")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  Spintronic Circuit Board
         SPINTRONIC_CIRCUIT_BOARD = this.addItem(6, "circuit_board.spintronic")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  Magneto Circuit Board
         if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
             MAGNETO_RESONATIC_CIRCUIT_BOARD = this.addItem(7, "circuit_board.magneto_resonatic")
                     .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         }
 
-        //  Circuits
+        /* ----------------------------------------------------------------------- Circuits ----------------------------------------------------------------------- */
+
+        //  ID 8-11: Gooware Circuits (ZPM-UEV)
         GOOWARE_PROCESSOR = this.addItem(8, "circuit.gooware_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
@@ -78,6 +91,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  ID 12-15: Optical Circuits (UV-UIV)
         OPTICAL_PROCESSOR = this.addItem(12, "circuit.optical_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
@@ -94,6 +108,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  ID 16-19: Spintronic Circuits (UHV-UXV)
         SPINTRONIC_PROCESSOR = this.addItem(16, "circuit.spintronic_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
@@ -110,12 +125,14 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        //  ID 20-23: Cosmic Processor (UEV-OpV)
         COSMIC_PROCESSOR = this.addItem(20, "circuit.cosmic_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.cosmic_processor.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_processor.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_processor.tooltip.2",
+                            1, 100, DARK_PURPLE, DARK_RED).get());
                 }));
 
         COSMIC_ASSEMBLY = this.addItem(21, "circuit.cosmic_assembly")
@@ -123,7 +140,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.cosmic_assembly.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_assembly.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_assembly.tooltip.2",
+                            1, 100, DARK_PURPLE, DARK_RED).get());
                 }));
 
         COSMIC_COMPUTER = this.addItem(22, "circuit.cosmic_computer")
@@ -131,7 +149,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.cosmic_computer.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_computer.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_computer.tooltip.2",
+                            1, 100, DARK_PURPLE, DARK_RED).get());
                 }));
 
         COSMIC_MAINFRAME = this.addItem(23, "circuit.cosmic_mainframe")
@@ -139,15 +158,18 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.cosmic_mainframe.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_mainframe.tooltip.2", 1, 100, DARK_PURPLE, DARK_RED).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.cosmic_mainframe.tooltip.2",
+                            1, 100, DARK_PURPLE, DARK_RED).get());
                 }));
 
+        //  ID 24-27: Supracausal Circuits (UIV-MAX)
         SUPRACAUSAL_PROCESSOR = this.addItem(24, "circuit.supracausal_processor")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.supracausal_processor.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_processor.tooltip.2", 1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_processor.tooltip.2",
+                            1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
                 }));
 
         SUPRACAUSAL_ASSEMBLY = this.addItem(25, "circuit.supracausal_assembly")
@@ -155,7 +177,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.supracausal_assembly.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_assembly.tooltip.2", 1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_assembly.tooltip.2",
+                            1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
                 }));
 
         SUPRACAUSAL_COMPUTER = this.addItem(26, "circuit.supracausal_computer")
@@ -163,7 +186,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.supracausal_computer.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_computer.tooltip.2", 1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_computer.tooltip.2",
+                            1, 100, RED, GOLD, YELLOW, GREEN, AQUA, BLUE, LIGHT_PURPLE).get());
                 }));
 
         SUPRACAUSAL_MAINFRAME = this.addItem(27, "circuit.supracausal_mainframe")
@@ -171,66 +195,168 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT)
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.circuit.supracausal_mainframe.tooltip.1"));
-                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_mainframe.tooltip.2", 1, 100, RED + BOLD, GOLD + BOLD, YELLOW + BOLD, GREEN + BOLD, AQUA + BOLD, BLUE + BOLD, LIGHT_PURPLE + BOLD).get());
+                    lines.add(translatedAnimatedText("metaitem.circuit.supracausal_mainframe.tooltip.2",
+                            1, 100, RED + BOLD, GOLD + BOLD, YELLOW + BOLD, GREEN + BOLD,
+                            AQUA + BOLD, BLUE + BOLD, LIGHT_PURPLE + BOLD).get());
                 }));
 
-        SUPRACHRONAL_CIRCUIT_ULV = this.addItem(28, "circuit.suprachronal.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_LV = this.addItem(29, "circuit.suprachronal.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_MV = this.addItem(30, "circuit.suprachronal.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_HV = this.addItem(31, "circuit.suprachronal.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_EV = this.addItem(32, "circuit.suprachronal.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_IV = this.addItem(33, "circuit.suprachronal.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_LuV = this.addItem(34, "circuit.suprachronal.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_ZPM = this.addItem(35, "circuit.suprachronal.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_UV = this.addItem(36, "circuit.suprachronal.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_UHV = this.addItem(37, "circuit.suprachronal.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_UEV = this.addItem(38, "circuit.suprachronal.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_UIV = this.addItem(39, "circuit.suprachronal.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_UXV = this.addItem(40, "circuit.suprachronal.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_OpV = this.addItem(41, "circuit.suprachronal.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-        SUPRACHRONAL_CIRCUIT_MAX = this.addItem(42, "circuit.suprachronal.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+        //  ID 28-42: Suprachronal Circuits (ULV-MAX)
+        SUPRACHRONAL_CIRCUIT_ULV = this.addItem(28, "circuit.suprachronal.ulv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        SUPRACHRONAL_CIRCUIT_LV = this.addItem(29, "circuit.suprachronal.lv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_MV = this.addItem(30, "circuit.suprachronal.mv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_HV = this.addItem(31, "circuit.suprachronal.hv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_EV = this.addItem(32, "circuit.suprachronal.ev")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_IV = this.addItem(33, "circuit.suprachronal.iv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_LuV = this.addItem(34, "circuit.suprachronal.luv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_ZPM = this.addItem(35, "circuit.suprachronal.zpm")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_UV = this.addItem(36, "circuit.suprachronal.uv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_UHV = this.addItem(37, "circuit.suprachronal.uhv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_UEV = this.addItem(38, "circuit.suprachronal.uev")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_UIV = this.addItem(39, "circuit.suprachronal.uiv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_UXV = this.addItem(40, "circuit.suprachronal.uxv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_OpV = this.addItem(41, "circuit.suprachronal.opv")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        SUPRACHRONAL_CIRCUIT_MAX = this.addItem(42, "circuit.suprachronal.max")
+                .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+        //  ID 43-57: Magneto Resonatic Circuits (ULV-MAX)
         if (GTLiteConfigHolder.recipes.enableMagnetoResonaticCircuit) {
-            MAGNETO_RESONATIC_CIRCUIT_ULV = this.addItem(43, "circuit.magneto_resonatic.ulv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_LV = this.addItem(44, "circuit.magneto_resonatic.lv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_MV = this.addItem(45, "circuit.magneto_resonatic.mv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_HV = this.addItem(46, "circuit.magneto_resonatic.hv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_EV = this.addItem(47, "circuit.magneto_resonatic.ev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_IV = this.addItem(48, "circuit.magneto_resonatic.iv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_LuV = this.addItem(49, "circuit.magneto_resonatic.luv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_ZPM = this.addItem(50, "circuit.magneto_resonatic.zpm").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_UV = this.addItem(51, "circuit.magneto_resonatic.uv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_UHV = this.addItem(52, "circuit.magneto_resonatic.uhv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_UEV = this.addItem(53, "circuit.magneto_resonatic.uev").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_UIV = this.addItem(54, "circuit.magneto_resonatic.uiv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_UXV = this.addItem(55, "circuit.magneto_resonatic.uxv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
-            MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max").setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX).setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+            MAGNETO_RESONATIC_CIRCUIT_ULV = this.addItem(43, "circuit.magneto_resonatic.ulv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_LV = this.addItem(44, "circuit.magneto_resonatic.lv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_MV = this.addItem(45, "circuit.magneto_resonatic.mv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_HV = this.addItem(46, "circuit.magneto_resonatic.hv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.HV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_EV = this.addItem(47, "circuit.magneto_resonatic.ev")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.EV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_IV = this.addItem(48, "circuit.magneto_resonatic.iv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.IV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_LuV = this.addItem(49, "circuit.magneto_resonatic.luv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.LuV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_ZPM = this.addItem(50, "circuit.magneto_resonatic.zpm")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ZPM)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_UV = this.addItem(51, "circuit.magneto_resonatic.uv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_UHV = this.addItem(52, "circuit.magneto_resonatic.uhv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UHV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_UEV = this.addItem(53, "circuit.magneto_resonatic.uev")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UEV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_UIV = this.addItem(54, "circuit.magneto_resonatic.uiv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UIV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_UXV = this.addItem(55, "circuit.magneto_resonatic.uxv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.UXV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_OpV = this.addItem(56, "circuit.magneto_resonatic.opv")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.OpV)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
+
+            MAGNETO_RESONATIC_CIRCUIT_MAX = this.addItem(57, "circuit.magneto_resonatic.max")
+                    .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX)
+                    .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
         }
 
-        //  SMDs
+        /* ------------------------------------------------------------------------- SMDs ------------------------------------------------------------------------- */
+
+        //  ID 58-62: Optical SMDs
         OPTICAL_TRANSISTOR = this.addItem(58, "component.optical_smd.transistor");
         OPTICAL_RESISTOR = this.addItem(59, "component.optical_smd.resistor");
         OPTICAL_CAPACITOR = this.addItem(60, "component.optical_smd.capacitor");
         OPTICAL_DIODE = this.addItem(61, "component.optical_smd.diode");
         OPTICAL_INDUCTOR = this.addItem(62, "component.optical_smd.inductor");
+
+        //  ID 63-67: Spintronic SMDs
         SPINTRONIC_TRANSISTOR = this.addItem(63, "component.spintronic_smd.transistor");
         SPINTRONIC_RESISTOR = this.addItem(64, "component.spintronic_smd.resistor");
         SPINTRONIC_CAPACITOR = this.addItem(65, "component.spintronic_smd.capacitor");
         SPINTRONIC_DIODE = this.addItem(66, "component.spintronic_smd.diode");
         SPINTRONIC_INDUCTOR = this.addItem(67, "component.spintronic_smd.inductor");
+
+        //  ID 68-72: Cosmic SMDs
         COSMIC_TRANSISTOR = this.addItem(68, "component.cosmic_smd.transistor");
         COSMIC_RESISTOR = this.addItem(69, "component.cosmic_smd.resistor");
         COSMIC_CAPACITOR = this.addItem(70, "component.cosmic_smd.capacitor");
         COSMIC_DIODE = this.addItem(71, "component.cosmic_smd.diode");
         COSMIC_INDUCTOR = this.addItem(72, "component.cosmic_smd.inductor");
+
+        //  ID 73-77: Supracausal SMDs
         SUPRACAUSAL_TRANSISTOR = this.addItem(73, "component.supracausal_smd.transistor");
         SUPRACAUSAL_RESISTOR = this.addItem(74, "component.supracausal_smd.resistor");
         SUPRACAUSAL_CAPACITOR = this.addItem(75, "component.supracausal_smd.capacitor");
         SUPRACAUSAL_DIODE = this.addItem(76, "component.supracausal_smd.diode");
         SUPRACAUSAL_INDUCTOR = this.addItem(77, "component.supracausal_smd.inductor");
 
-        //  Circuit Components
+        /* ------------------------------------------------------------------ Circuit Components ------------------------------------------------------------------ */
+
+        //  ID 78-85: Circuit Processing Units
         BZ_REACTION_CHAMBER = this.addItem(78, "component.gooware.reaction_chamber");
         NONLINEAR_CHEMICAL_OSCILLATOR = this.addItem(79, "component.gooware.nonlinear_chemical_oscillator");
         OPTICAL_LASER_CONTROL_UNIT = this.addItem(80, "component.optical.optical_laser_control_unit");
@@ -239,14 +365,20 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         HOLOGRAPHIC_INFORMATION_IMC = this.addItem(83, "component.cosmic.holographic_imc");
         SPACETIME_CONDENSER = this.addItem(84, "component.supracausal.spacetime_condenser");
         LIGHT_CONE_MODULE = this.addItem(85, "component.supracausal.light_cone_module");
+
+        //  ID 86-90: Optical Circuit Components
         OPTICAL_FIBER = this.addItem(86, "component.optical.optical_fiber");
         DIELECTRIC_MIRROR = this.addItem(87, "component.optical.dielectric_mirror");
         EMPTY_LASER_ASSEMBLY = this.addItem(88, "component.optical.emitter.empty");
         HELIUM_NEON_LASER = this.addItem(89, "component.optical.emitter.helium_neon");
         ND_YAG_LASER = this.addItem(90, "component.optical.emitter.nd_yag");
+
+        //  ID 91-93: Spintronic Circuit Components
         TOPOLOGICAL_INSULATOR_TUBE = this.addItem(91, "component.spintronic.topological_insulator");
         BOSE_EINSTEIN_CONDENSATE_CONTAINMENT_UNIT = this.addItem(92, "component.spintronic.bose_einstein_condensate_containment_unit");
         BOSE_EINSTEIN_CONDENSATE = this.addItem(93, "component.spintronic.bose_einstein_condensate");
+
+        //  ID 94-100: Cosmic Circuit Components
         CLADDED_OPTICAL_FIBER_CORE = this.addItem(94, "component.cosmic.cladded_optical_fiber_core");
         CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT = this.addItem(95, "component.cosmic.closed_timelike_curve_computational_unit");
         CLOSED_TIMELIKE_CURVE_GUIDANCE_UNIT = this.addItem(96, "component.cosmic.closed_timelike_curve_guidance_unit");
@@ -254,6 +386,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MANIFOLD_OSCILLATORY_POWER_CELL = this.addItem(98, "component.cosmic.manifold_oscillatory_power_cell");
         SCINTILLATOR = this.addItem(99, "component.cosmic.scintillator");
         SCINTILLATOR_CRYSTAL = this.addItem(100, "component.cosmic.scintillator_crystal");
+
+        //  ID 101-108: Supracausal Circuit Components
         TOPOLOGICAL_MANIPULATOR_UNIT = this.addItem(101, "component.supracausal.topological_manipulator_unit");
         GRAVITON_TRANSDUCER = this.addItem(102, "component.supracausal.graviton_transducer");
         RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM = this.addItem(103, "component.supracausal.relativistic_spinorial_memory_system");
@@ -263,8 +397,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EIGENFOLDED_SPACETIME_MANIFOLD = this.addItem(107, "component.supracausal.eigenfolded_space_time_manifold");
         RECURSIVELY_FOLDED_NEGATIVE_SPACE = this.addItem(108, "component.supracausal.recursively_folded_negative_space");
 
+        //  ID 120, 121: Gooware SoC Components
         BIO_CELL = this.addItem(120, "component.gooware.bio_cell");
         BIO_DISH = this.addItem(121, "component.gooware.bio_dish");
+
+        //  ID 122-130: Spintronic SoC Components
         RYDBERG_SPINORIAL_ASSEMBLY = this.addItem(122, "component.spintronic.rydberg_spinorial_assembly");
         CRYOGENIC_INTERFACE = this.addItem(123, "component.spintronic.cryogenic_interface");
         EXCITATION_MAINTAINER = this.addItem(124, "component.spintronic.excitation_maintainer");
@@ -274,13 +411,21 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         X_RAY_MIRROR = this.addItem(128, "component.spintronic.x_ray_mirror");
         MICROFOCUS_X_RAY_TUBE = this.addItem(129, "component.spintronic.microfocus_x_ray_tube");
         EXOTIC_SOC = this.addItem(130, "component.spintronic.exotic_soc");
+
+        //  ID 131-135: Cosmic SoC Components
         LEPTON_TRAP_CRYSTAL = this.addItem(131, "component.cosmic.lepton_trap_crystal");
         CHARGED_LEPTON_TRAP_CRYSTAL = this.addItem(132, "component.cosmic.charged_lepton_trap_crystal");
         COLORED_LEDS = this.addItem(133, "component.cosmic.colored_leds");
         ROTATING_TRANSPARENT_SURFACE = this.addItem(134, "component.cosmic.rotating_transparent_surface");
         UNIVERSAL_SOC = this.addItem(135, "component.cosmic.universal_soc");
 
+        //  Free ID 136-148
+        //  TODO Supracausal SoC and some related things.
+
+        //  ID 149: Primitive Circuit Component
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");
+
+        //  ID 150-156: Crystal SoC Component
         DIAMOND_CHIP = this.addItem(150, "component.crystal.diamond_chip");
         RUBY_CHIP = this.addItem(151, "component.crystal.ruby_chip");
         SAPPHIRE_CHIP = this.addItem(152, "component.crystal.sapphire_chip");
@@ -289,15 +434,21 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SAPPHIRE_MODULATOR = this.addItem(155, "component.crystal.sapphire_modulator");
         CRYSTAL_SOC_SOCKET = this.addItem(156, "component.crystal.system_on_chip_socket");
 
-        //  Boules and Wafers
+        /* ------------------------------------------------------------------- Boule and Wafers ------------------------------------------------------------------- */
+
+        //  ID 200-205: Power Integrated Circuits
         NANO_PIC_WAFER = this.addItem(200, "wafer.nano_pic");
         NANO_PIC_CHIP = this.addItem(201, "wafer.chip.nano_pic");
         PICO_PIC_WAFER = this.addItem(202, "wafer.pico_pic");
         PICO_PIC_CHIP = this.addItem(203, "wafer.chip.pico_pic");
         FEMTO_PIC_WAFER = this.addItem(204, "wafer.femto_pic");
         FEMTO_PIC_CHIP = this.addItem(205, "wafer.chip.femto_pic");
+
+        //  ID 206, 207: High Tier Boule and Wafers
         DUBNIUM_BOULE = this.addItem(206, "boule.dubnium");
         DUBNIUM_WAFER = this.addItem(207, "wafer.dubnium");
+
+        //  ID 208-217: Special Wafer and Chips for Circuits
         PHASE_CHANGE_MEMORY = this.addItem(208, "wafer.chip.phase_change_memory");
         OPTICAL_NOR_MEMORY_CHIP = this.addItem(209, "wafer.chip.optical_nor_memory_chip");
         SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(210, "wafer.chip.spin_transfer_torque_memory");
@@ -307,14 +458,24 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         COSMIC_CPU_CHIP = this.addItem(214, "wafer.chip.cosmic_cpu");
         COSMIC_MEMORY_CHIP = this.addItem(215, "wafer.chip.cosmic_memory");
 
+        //  Free ID 216: Maybe for Supracausal CPU Chip
+
         SUPRACAUSAL_MEMORY_CHIP = this.addItem(217, "wafer.chip.supracausal_memory");
+
+        //  ID 218, 219: High Tier SoC Wafer and Chips
         UHASOC_WAFER = this.addItem(218, "wafer.uhasoc");
         UHASOC_CHIP = this.addItem(219, "wafer.chip.uhasoc");
+
+        //  ID 220-223: Special Crystal Boule and Wafers (for Crystal SoC)
         CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(220, "boule.cubic_zirconia.europium");
         CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(221, "wafer.cubic_zirconia.europium");
         CRYSTAL_INTERFACE_WAFER = this.addItem(222, "wafer.crystal_interface");
         CRYSTAL_INTERFACE_CHIP = this.addItem(223, "wafer.chip.crystal_interface");
+
+        //  ID 224: Gooware SoC
         INTRAVITAL_SOC = this.addItem(224, "component.gooware.intravital_soc");
+
+        //  ID 225-230: Optical SoC Components (Special Optical Crystal Boule and Wafers)
         STRONTIUM_CARBONATE_BOHRIUM_BOULE = this.addItem(225, "boule.strontium_carbonate.bohrium");
         STRONTIUM_CARBONATE_BOHRIUM_WAFER = this.addItem(226, "wafer.strontium_carbonate.bohrium");
         STRONTIUM_CARBONATE_OPTICAL_WAFER = this.addItem(227, "component.optical.strontium_carbonate_wafer");
@@ -322,14 +483,17 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         OPTICAL_IMC_BOARD = this.addItem(229, "component.optical.optical_imc_board");
         PHOTOELECTRON_SOC = this.addItem(230, "component.optical.photoelectron_soc");
 
-        //  Voltage Coils
+        /* -------------------------------------------------------------------- Voltage Coils --------------------------------------------------------------------- */
+
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");
         VOLTAGE_COIL_UEV = this.addItem(251, "voltage_coil.uev");
         VOLTAGE_COIL_UIV = this.addItem(252, "voltage_coil.uiv");
         VOLTAGE_COIL_UXV = this.addItem(253, "voltage_coil.uxv");
         VOLTAGE_COIL_OpV = this.addItem(254, "voltage_coil.opv");
 
-        //  Covers
+        /* ------------------------------------------------------------------------ Covers ------------------------------------------------------------------------ */
+
+        //  ID 255-262: ULV tier Components
         ELECTRIC_MOTOR_ULV = this.addItem(255, "cover.electric_motor.ulv");
         ELECTRIC_PISTON_ULV = this.addItem(256, "cover.electric_piston.ulv");
 
@@ -357,6 +521,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         ELECTRIC_MOTOR_MAX = this.addItem(263, "cover.electric_motor.max");
         ELECTRIC_PISTON_MAX = this.addItem(264, "cover.electric_piston.max");
 
+        //  ID 265-270 MAX tier Components
         ELECTRIC_PUMP_MAX = this.addItem(265, "cover.electric_pump.max")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.electric.pump.tooltip"));
@@ -379,32 +544,72 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SENSOR_MAX = this.addItem(269, "cover.sensor.max");
         FIELD_GENERATOR_MAX = this.addItem(270, "cover.field_generator.max");
 
+        //  ID 271-276: High Tier Solar Panels (UHV-MAX)
         if (GTLiteConfigHolder.tools.enableHighTierSolarPanel) {
-            //  Free Id: 270-275 for UHV-OpV Solar Panels
+            COVER_SOLAR_PANEL_UHV = this.addItem(271, "cover.solar_panel.uhv")
+                    .addComponents(new TooltipBehavior((lines) -> {
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UHV], VNF[UHV]));
+                    }));
+
+            COVER_SOLAR_PANEL_UEV = this.addItem(272, "cover.solar_panel.uev")
+                    .addComponents(new TooltipBehavior((lines) -> {
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UEV], VNF[UEV]));
+                    }));
+
+            COVER_SOLAR_PANEL_UIV = this.addItem(273, "cover.solar_panel.uiv")
+                    .addComponents(new TooltipBehavior((lines) -> {
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UIV], VNF[UIV]));
+                    }));
+
+            COVER_SOLAR_PANEL_UXV = this.addItem(274, "cover.solar_panel.uxv")
+                    .addComponents(new TooltipBehavior((lines) -> {
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UXV], VNF[UXV]));
+                    }));
+
+            COVER_SOLAR_PANEL_OpV = this.addItem(275, "cover.solar_panel.opv")
+                    .addComponents(new TooltipBehavior((lines) -> {
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
+                        lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
+                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[OpV], VNF[OpV]));
+                    }));
+
             COVER_SOLAR_PANEL_MAX = this.addItem(276, "cover.solar_panel.max")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
-                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", GTValues.V[GTValues.MAX], GTValues.VNF[GTValues.MAX]));
-            }));
+                        lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[MAX], VNF[MAX]));
+                    }));
         }
 
-        //  Tools
+        /* ------------------------------------------------------------------------ Tools ------------------------------------------------------------------------- */
+
+        //  ID 280, 281: Prospectors
         if (GTLiteConfigHolder.tools.enableEVProspector) {
             PROSPECTOR_EV = this.addItem(280, "tool.prospector.ev")
-                    .addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, 4), new ProspectorScannerBehavior(5, 4)})
+                    .addComponents(new IItemComponent[]{ElectricStats.createElectricItem(500000000L, EV),
+                            new ProspectorScannerBehavior(5, EV)})
                     .setMaxStackSize(1)
                     .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
         }
 
         if (GTLiteConfigHolder.tools.enableZPMProspector) {
             PROSPECTOR_ZPM = this.addItem(281, "tool.prospector.zpm")
-                    .addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, 7), new ProspectorScannerBehavior(7, 7)})
+                    .addComponents(new IItemComponent[]{ElectricStats.createElectricItem(4000000000L, ZPM),
+                            new ProspectorScannerBehavior(7, ZPM)})
                     .setMaxStackSize(1)
                     .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
         }
 
         if (GTLiteConfigHolder.tools.enableHighTierBattery) {
+            //  ID 284-289: High Tier Battery Hulls
             BATTERY_HULL_SMALL_LITHIUM_SULFIDE = this.addItem(284, "battery.hull.uhv");
             BATTERY_HULL_MEDIUM_LITHIUM_SULFIDE = this.addItem(285, "battery.hull.uev");
             BATTERY_HULL_LARGE_LITHIUM_SULFIDE = this.addItem(286, "battery.hull.uiv");
@@ -412,8 +617,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
             BATTERY_HULL_MEDIUM_LANTHANUM_NICKEL_OXIDE = this.addItem(288, "battery.hull.opv");
             BATTERY_HULL_LARGE_LANTHANUM_NICKEL_OXIDE = this.addItem(289, "battery.hull.max");
 
+            //  ID 290-295: High Tier Common Batteries
             BATTERY_UHV_LITHIUM_SULFIDE = this.addItem(290, "battery.uhv.lithium_sulfide")
-                    .addComponents(ElectricStats.createRechargeableBattery(10485760000L, GTValues.UHV))
+                    .addComponents(ElectricStats.createRechargeableBattery(10485760000L, UHV))
                     .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.UHV)
                     .setModelAmount(8)
                     .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
@@ -447,6 +653,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                     .setModelAmount(8)
                     .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
 
+            //  ID 296-299: High Tier Ultimate Batteries
             if (GTLiteConfigHolder.tools.enableHighTierUltimateBattery) {
                 ULTIMATE_BATTERY_MK2 = this.addItem(296, "battery.uev.ultimate")
                         .addComponents(ElectricStats.createRechargeableBattery(Long.MAX_VALUE, GTValues.UEV))
@@ -473,7 +680,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                         .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
             }
         }
-        //  Others
+
+        /* ---------------------------------------------------------------------- Misc Items ---------------------------------------------------------------------- */
+
+        //  ID 300, 301: Grindballs
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone")
                 .setMaxStackSize(1)
                 .addComponents(new GrindBallBehavior())
@@ -484,27 +694,44 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .addComponents(new GrindBallBehavior())
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
 
+        //  ID 302, 303: Grinder for Machines
         COMPONENT_GRINDER_BORON_NITRIDE = this.addItem(302, "component.grinder.boron_nitride");
         COMPONENT_GRINDER_BLACK_PLUTONIUM = this.addItem(303, "component.grinder.black_plutonium");
+
+        //  ID 304-306: Middle Products of Material Processing
         QCD_PROTECTIVE_PLATING = this.addItem(304, "qcd_protective_plating");
         CARBON_ALLOTROPE_MIXTURE = this.addItem(305, "mixture.carbon_allotrope");
         GRAPHENE_ALIGNED_CNT = this.addItem(306, "cnt.graphene_aligned");
+
+        //  ID 307, 308: Stars for High Tier Emitter
         UNSTABLE_STAR = this.addItem(307, "unstable_star");
         ZENITH_STAR = this.addItem(308, "zenith_star");
+
+        //  ID 309: Quantum Anomaly (a little special item, and sometimes use this as a lens)
         QUANTUM_ANOMALY = this.addItem(309, "quantum_anomaly");
+
+        //  ID 310, 311: Pseudo Crafting Tools
         MAGNETRON = this.addItem(310, "magnetron");
         SEPARATION_ELECTROMAGNET = this.addItem(311, "separation_electromagnet");
+
+        //  ID 312-314: Middle Products of Cosmic Fabric Processing
         COSMIC_FABRIC = this.addItem(312, "cosmic_fabric");
         MEMORY_FOAM_PLATE = this.addItem(313, "memory_foam_plate");
         FULLERENE_FIBER = this.addItem(314, "highly_insulating_fullerene_foil");
+
+        //  ID 315, 316: Basic Material and Catalyst of Suprachronal Assembly Line
         HYPERDIMENSIONAL_DRONE = this.addItem(315, "hyperdimensional_drone");
         HYPERDIMENSIONAL_OSCILLATING_MATTER = this.addItem(316, "hyperdimensional_oscillating_matter");
 
+        //  ID 317: Chromatic Lens (special lens)
         CHROMATIC_LENS = this.addItem(317, "chromatic_lens")
                 .addOreDict("craftingLensChromatic");
 
+        //  ID 318, 319: Neutronium Derivatives
         NEUTRONIUM_SPHERE = this.addItem(318, "neutronium_sphere");
         TRIPLET_NEUTRONIUM_SPHERE = this.addItem(319, "triplet_neutronium_sphere");
+
+        //  ID 320-333: Mining Drones (LV-MAX)
         MINING_DRONE_LV = this.addItem(320, "mining_drone.lv");
         MINING_DRONE_MV = this.addItem(321, "mining_drone.mv");
         MINING_DRONE_HV = this.addItem(322, "mining_drone.hv");
@@ -519,20 +746,34 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MINING_DRONE_UXV = this.addItem(331, "mining_drone.uxv");
         MINING_DRONE_OpV = this.addItem(332, "mining_drone.opv");
         MINING_DRONE_MAX = this.addItem(333, "mining_drone.max");
+
+        //  ID 334, 335: Hypercubes
         CRUDE_HYPERCUBE = this.addItem(334, "crude_hypercube");
         CHARGED_HYPERCUBE = this.addItem(335, "charged_hypercube");
+
+        //  ID 336-339: Cosmic Memory Card for Virtual Cosmos Simulator
         COSMIC_MEMORY_CARD = this.addItem(336, "cosmic_memory_card");
         COSMIC_MEMORY_CARD_OVERWORLD = this.addItem(337, "cosmic_memory_card.overworld");
         COSMIC_MEMORY_CARD_NETHER = this.addItem(338, "cosmic_memory_card.nether");
         COSMIC_MEMORY_CARD_END = this.addItem(339, "cosmic_memory_card.end");
+
+        //  ID 340: Middle Product of Eternity-Shirabon Processing
         DIMENSION_GAP = this.addItem(340, "dimension_gap");
+
+        //  ID 341-342: Pseudo Crafting Tools of Gooware SoC Processing
         ULTRASONIC_HOMOGENIZER = this.addItem(341, "ultrasonic_homogenizer");
         PIEZOELECTRIC_CRYSTAL = this.addItem(342, "piezoelectric_crystal");
+
+        //  ID 343: Consumed Item of Dyson Swarm
         DYSON_SWARM_MODULE = this.addItem(343, "dyson_swarm_module");
+
+        //  ID 344: Upgrade Materials of Nicoll-Dyson Beamer (also as some Basic Components of Material)
         HYPERSTABLE_SELF_HEALING_ADHESIVE = this.addItem(344, "hyperstable_self_healing_adhesive");
         SUPERSOLID_SPACETIME_CONTINUUM = this.addItem(345, "supersolid_spacetime_continuum");
 
-        //  High Energy Physics Items
+        /* ------------------------------------------------------------------ High Energy Items ------------------------------------------------------------------- */
+
+        //  ID 350-361: Containment Cell/Units
         PLASMA_CONTAINMENT_CELL = this.addItem(350, "plasma_containment_cell");
         RHENIUM_PLASMA_CONTAINMENT_CELL = this.addItem(351, "rhenium_plasma_containment_cell");
         NEUTRON_PLASMA_CONTAINMENT_CELL = this.addItem(352, "neutron_plasma_containment_cell");
@@ -545,8 +786,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         CONTAINED_KERR_SINGULARITY = this.addItem(359, "contained_kerr_singularity");
         CONTAINED_HIGH_DENSITY_PROTONIC_MATTER = this.addItem(360, "contained_high_density_protonic_matter");
         CONTAINED_EXOTIC_MATTER = this.addItem(361, "contained_exotic_matter");
+
+        //  ID 362: Middle Product of Cosmic Neutronium Processing
         CHARGED_TRIPLET_NEUTRONIUM_SPHERE = this.addItem(362, "charged_triplet_neutronium_sphere");
 
+        //  ID 363: Middle Product of Cosmic Fabric Processing
         COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL = this.addItem(363, "cosmic_fabric_plasma_containment_cell")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.1"));
@@ -555,7 +799,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                     lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4"));
                 }));
 
-        //  Algae
+        /* ------------------------------------------------------------------------- Algae ------------------------------------------------------------------------ */
+
+        //  ID 370-373: Barnarda-C Algae
         BARNARDA_C_BASE = this.addItem(370, "alga.barnarda_c.base");
 
         BARNARDA_C_CHLORELLA = this.addItem(371, "alga.barnarda_c.chlorella")
@@ -567,6 +813,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         BARNARDA_C_ZOOXANTHELLAE = this.addItem(373, "alga.barnarda_c.zooxanthellae")
                 .addOreDict("dyeOrange");
 
+        //  ID 374-377: Tau Ceti-F Algae
         TAU_CETI_F_BASE = this.addItem(374, "alga.tau_ceti_f.base");
 
         TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(375, "alga.tau_ceti_f.scenedesmus_obliquus")
@@ -578,6 +825,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         TAU_CETI_F_SPIRULINA = this.addItem(377, "alga.tau_ceti_f.spirulina")
                 .addOreDict("dyeBlue");
 
+        //  ID 378-381: Proxima-B Algae
         PROXIMA_B_BASE = this.addItem(378, "alga.proxima_b.base");
 
         PROXIMA_B_CONCHOSPORE = this.addItem(379, "alga.proxima_b.conchospore")
@@ -589,7 +837,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         PROXIMA_B_SPIROGYRA = this.addItem(381, "alga.proxima_b.spirogyra")
                 .addOreDict("dyeGray");
 
-        //  Memory Cards
+        /* -------------------------------------------------------------------- Memory Cards  --------------------------------------------------------------------- */
+
         MEMORY_CARD_BASE = this.addItem(385, "memory_card.base");
         MEMORY_CARD_ZOMBIE = this.addItem(386, "memory_card.zombie");
         MEMORY_CARD_SKELETON = this.addItem(387, "memory_card.skeleton");
@@ -606,7 +855,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         MEMORY_CARD_WITHER = this.addItem(398, "memory_card.wither");
         MEMORY_CARD_ENDER_DRAGON = this.addItem(399, "memory_card.ender_dragon");
 
-        //  Particles
+        /* ----------------------------------------------------------------------- Particles ---------------------------------------------------------------------- */
+
         ALPHA_PARTICLE = this.addItem(400, "particle.alpha")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
 
@@ -682,7 +932,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         ETA_MESON = this.addItem(424, "particle.eta_meson")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_PARTICLE);
 
-        //  Extruders
+        /* ----------------------------------------------------------------------- Extruders ---------------------------------------------------------------------- */
+
         EXOTIC_SHAPE_EXTRUDERS[0] = EXOTIC_SHAPE_EXTRUDER_PLATE = this.addItem(450, "shape.exotic_extruder.plate")
                 .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
 
@@ -722,7 +973,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EXOTIC_SHAPE_EXTRUDERS[12] = EXOTIC_SHAPE_EXTRUDER_BLOCK = this.addItem(462, "shape.exotic_extruder.block")
                 .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
 
-        //  Exotic Extruder Shapes index 13-20 (inclusive), id 463-470 (inclusive) are unused
+        //  Free ID 463-470: also index 13-20 (inclusive) are unused (but do not add item in this ID range)
 
         EXOTIC_SHAPE_EXTRUDERS[21] = EXOTIC_SHAPE_EXTRUDER_GEAR = addItem(471, "shape.exotic_extruder.gear")
                 .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
@@ -742,7 +993,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         EXOTIC_SHAPE_EXTRUDERS[26] = EXOTIC_SHAPE_EXTRUDER_ROTOR = addItem(476, "shape.exotic_extruder.rotor")
                 .setMaterialInfo(new ItemMaterialInfo(new MaterialStack(GTLiteMaterials.WhiteDwarfMatter, M * 4)));
 
-        //  Wrap Items
+        /* ---------------------------------------------------------------------- Wrap Items ---------------------------------------------------------------------- */
+
+        //  ID 500-514: Wrap Circuits
         WRAP_CIRCUIT_ULV = this.addItem(500, "wrap.circuit.ulv")
                 .addOreDict("wrapCircuitUlv")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
@@ -803,6 +1056,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .addOreDict("wrapCircuitMax")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 515-524: Wrap Circuit Boards
         WRAP_BASIC_CIRCUIT_BOARD = this.addItem(515, "wrap.circuit_board.basic")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -833,6 +1087,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_SPINTRONIC_CIRCUIT_BOARD = this.addItem(524, "wrap.circuit_board.spintronic")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 525-529: Wrap SMDs
         WRAP_SMD_TRANSISTOR = this.addItem(525, "wrap.smd.transistor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -848,6 +1103,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_SMD_INDUCTOR = this.addItem(529, "wrap.smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 530-534: Wrap Advanced SMDs
         WRAP_ADVANCED_SMD_TRANSISTOR = this.addItem(530, "wrap.advanced_smd.transistor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -863,6 +1119,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_ADVANCED_SMD_INDUCTOR = this.addItem(534, "wrap.advanced_smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 535-539: Wrap Optical SMDs
         WRAP_OPTICAL_SMD_TRANSISTOR = this.addItem(535, "wrap.optical_smd.transistor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -878,6 +1135,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_OPTICAL_SMD_INDUCTOR = this.addItem(539, "wrap.optical_smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 540-544: Wrap Spintronic SMDs
         WRAP_SPINTRONIC_SMD_TRANSISTOR = this.addItem(540, "wrap.spintronic_smd.transistor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -893,6 +1151,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_SPINTRONIC_SMD_INDUCTOR = this.addItem(544, "wrap.spintronic_smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 545-549: Wrap Cosmic SMDs
         WRAP_COSMIC_SMD_TRANSISTOR = this.addItem(545, "wrap.cosmic_smd.transistor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -908,6 +1167,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_COSMIC_SMD_INDUCTOR = this.addItem(549, "wrap.cosmic_smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
+        //  ID 550-554: Wrap Supracausal SMDs
         WRAP_SUPRACAUSAL_SMD_TRANSISTOR = this.addItem(550, "wrap.supracausal_smd.transistor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
@@ -923,7 +1183,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WRAP_SUPRACAUSAL_SMD_INDUCTOR = this.addItem(554, "wrap.supracausal_smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
 
-        //  Singularities
+        /* -------------------------------------------------------------------- Singularities --------------------------------------------------------------------- */
+
         MAGIC_SINGULARITY = this.addItem(800, "singularity.magic")
                 .addOreDict("singularityMagic");
 
@@ -945,7 +1206,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         WEIRD_SINGULARITY = this.addItem(806, "singularity.weird")
                 .addOreDict("singularityWeird");
 
-        //  Fluid Cores
+        /* --------------------------------------------------------------------- Fluid Cores ---------------------------------------------------------------------- */
+
         FLUID_CORE_T1 = this.addItem(900, "fluid_core.t1");
         FLUID_CORE_T2 = this.addItem(901, "fluid_core.t2");
         FLUID_CORE_T3 = this.addItem(902, "fluid_core.t3");
@@ -957,7 +1219,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FLUID_CORE_T9 = this.addItem(908, "fluid_core.t9");
         FLUID_CORE_T10 = this.addItem(909, "fluid_core.t10");
 
-        //  General Circuits
+        /* ------------------------------------------------------------------- General Circuits ------------------------------------------------------------------- */
+
         GENERAL_CIRCUIT_ULV = this.addItem(910, "general_circuit.ulv")
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.ULV)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
@@ -1019,7 +1282,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
 
-        //  Debug Items
+        /* --------------------------------------------------------------------- Debug Items ---------------------------------------------------------------------- */
+
         STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer")
                 .addComponents(StructureWriterBehavior.INSTANCE)
                 .addComponents(new TooltipBehavior((lines) -> {

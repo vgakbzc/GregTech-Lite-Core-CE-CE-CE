@@ -635,6 +635,15 @@ public class MiscRecipes {
                 .duration(MINUTE / 4)
                 .buildAndRegister();
 
+        //  Hypogen
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, Hypogen)
+                .output(lens, Hypogen)
+                .output(dustSmall, Hypogen)
+                .EUt(VA[UEV])
+                .duration(MINUTE / 4)
+                .buildAndRegister();
+
         //  Spacetime Lens
         LATHE_RECIPES.recipeBuilder()
                 .input(plate, Spacetime)

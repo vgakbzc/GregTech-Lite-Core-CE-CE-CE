@@ -112,6 +112,23 @@ public class NeutralNetworkNexus {
                 .tier(3)
                 .buildAndRegister();
 
+        //  Neutronium Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, Hypogen)
+                .notConsumable(lens, Infinity)
+                .input(nanotube, Neutronium)
+                .input(nanosensor, Neutronium)
+                .input(UHASOC_CHIP, 32)
+                .input(NEUTRONIUM_SPHERE, 8)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(CrystalMatrix.getFluid(8000))
+                .fluidInputs(ActiniumGroupHAlloy.getFluid(L * 4))
+                .output(swarm, Neutronium, 4)
+                .EUt(VZ[UIV])
+                .duration(180)
+                .tier(3)
+                .buildAndRegister();
+
         //  White Dwarf Matter Swarm
         NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
                 .notConsumable(lens, CelestialCrystal)
@@ -249,6 +266,7 @@ public class NeutralNetworkNexus {
 
         //  Infinite Breeding
         createNanotubeRecipe(FullerenePolymerMatrix, VA[UEV], 210);
+        createNanotubeRecipe(Neutronium,             VA[UEV], 240);
         createNanotubeRecipe(WhiteDwarfMatter,       VA[UIV], 180);
         createNanotubeRecipe(BlackDwarfMatter,       VA[UIV], 180);
         createNanotubeRecipe(Galaxium,               VA[UXV], 120);
@@ -290,6 +308,7 @@ public class NeutralNetworkNexus {
 
         //  Infinite Breeding
         createNanosensorRecipe(FullerenePolymerMatrix, VA[UEV], 210);
+        createNanosensorRecipe(Neutronium,             VA[UEV], 240);
         createNanosensorRecipe(WhiteDwarfMatter,       VA[UIV], 180);
         createNanosensorRecipe(BlackDwarfMatter,       VA[UIV], 180);
         createNanosensorRecipe(Galaxium,               VA[UXV], 120);

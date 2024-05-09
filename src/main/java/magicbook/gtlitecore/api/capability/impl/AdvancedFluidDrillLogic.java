@@ -42,7 +42,7 @@ public class AdvancedFluidDrillLogic {
                             }
 
                             ++this.progressTime;
-                            if (this.progressTime % 20 == 0) {
+                            if (this.progressTime % MAX_PROGRESS == 0) {
                                 this.progressTime = 0;
                                 int amount = this.getFluidToProduce();
                                 if (this.metaTileEntity.fillTanks(new FluidStack(this.veinFluid, amount), true)) {
@@ -185,7 +185,7 @@ public class AdvancedFluidDrillLogic {
     }
 
     public double getProgressPercent() {
-        return (double)this.getProgressTime() * 1.0 / 20.0;
+        return (double) this.getProgressTime() / MAX_PROGRESS;
     }
 
     protected boolean isOverclocked() {

@@ -5,6 +5,7 @@ import gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaT
 import gregtech.api.capability.IHeatingCoil;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -37,7 +38,9 @@ public abstract class MixinMetaTileEntityMegaBlastFurnace extends GCYMRecipeMapM
             at = @At("TAIL"))
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced,
                                CallbackInfo ci) {
-        tooltip.add(I18n.format("gtlitecore.machine.volcanus.tooltip.3"));
+        if (GTLiteConfigHolder.compats.enableMegaBlastFurnaceTweak) {
+            tooltip.add(I18n.format("gtlitecore.machine.volcanus.tooltip.3"));
+        }
     }
 
 }

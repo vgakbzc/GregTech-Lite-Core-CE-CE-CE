@@ -12,6 +12,8 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 /**
  * Override of Solar Panels
@@ -76,7 +78,7 @@ public class SolarPanels {
                 .duration(100)
                 .buildAndRegister();
 
-        //  ULV Solar Panel
+        //  ULV
         ModHandler.removeRecipeByName("gregtech:solar_panel_ulv");
         ModHandler.addShapedRecipe(true, "solar_panel.ulv", COVER_SOLAR_PANEL_ULV.getStackForm(),
                 "AGA", "XCX", "P P",
@@ -134,7 +136,7 @@ public class SolarPanels {
                 .duration(100)
                 .buildAndRegister();
 
-        //  LV Solar Panel
+        //  LV
         ModHandler.removeRecipeByName("gregtech:solar_panel_lv");
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, CobaltBrass)
@@ -196,7 +198,7 @@ public class SolarPanels {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  MV Solar Panel
+        //  MV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, VanadiumSteel)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -257,7 +259,7 @@ public class SolarPanels {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  HV Solar Panel
+        //  HV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, BlueSteel)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -318,7 +320,7 @@ public class SolarPanels {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  EV Solar Panel
+        //  EV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, TungstenCarbide)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -379,7 +381,7 @@ public class SolarPanels {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  IV Solar Panel
+        //  IV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, HSSE)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -398,7 +400,7 @@ public class SolarPanels {
                 .duration(200)
                 .buildAndRegister();
 
-        //  LuV Solar Panel
+        //  LuV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, NaquadahAlloy)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -406,8 +408,8 @@ public class SolarPanels {
                 .input(VOLTAGE_COIL_LuV, 2)
                 .input(foil, VanadiumGallium, 8)
                 .input(wireFine, Naquadah, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L))
-                .fluidInputs(BorosilicateGlass.getFluid(3000))
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .fluidInputs(BorosilicateGlass.getFluid(6000))
                 .output(COVER_SOLAR_PANEL_LUV, 2)
                 .scannerResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_IV.getStackForm())
@@ -417,7 +419,7 @@ public class SolarPanels {
                 .duration(200)
                 .buildAndRegister();
 
-        //  ZPM Solar Panel
+        //  ZPM
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Duranium)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -425,19 +427,18 @@ public class SolarPanels {
                 .input(VOLTAGE_COIL_ZPM, 2)
                 .input(foil, YttriumBariumCuprate, 8)
                 .input(wireFine, Trinium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 2))
-                .fluidInputs(BorosilicateGlass.getFluid(6000))
-                .fluidInputs(Polyetheretherketone.getFluid(L))
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .fluidInputs(BPAPolycarbonate.getFluid(12000))
                 .output(COVER_SOLAR_PANEL_ZPM, 2)
                 .stationResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_LUV.getStackForm())
-                        .EUt(VA[UHV])
+                        .EUt(VA[UV])
                         .CWUt(32))
-                .EUt(VA[UHV])
+                .EUt(VA[UV])
                 .duration(200)
                 .buildAndRegister();
 
-        //  UV Solar Panel
+        //  UV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Orichalcum)
                 .input(COVER_SOLAR_PANEL, 2)
@@ -445,18 +446,152 @@ public class SolarPanels {
                 .input(VOLTAGE_COIL_UV, 2)
                 .input(foil, Europium, 8)
                 .input(wireFine, Tritanium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(L * 2))
-                .fluidInputs(BorosilicateGlass.getFluid(6000))
-                .fluidInputs(Polyetheretherketone.getFluid(L))
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(BPAPolycarbonate.getFluid(15000))
+                .fluidInputs(Polybenzimidazole.getFluid(L))
                 .output(COVER_SOLAR_PANEL_UV, 2)
                 .stationResearch(b -> b
                         .researchStack(COVER_SOLAR_PANEL_ZPM.getStackForm())
-                        .EUt(VA[UEV])
+                        .EUt(VA[UHV])
                         .CWUt(64))
+                .EUt(VA[UHV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UHV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Vibranium)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 64)
+                .input(VOLTAGE_COIL_UHV, 2)
+                .input(foil, PedotTMA, 8)
+                .input(wireFine, Adamantium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(PMMA.getFluid(18000))
+                .fluidInputs(Adamantium.getFluid(L * 4))
+                .fluidInputs(Polyetheretherketone.getFluid(L))
+                .output(COVER_SOLAR_PANEL_UHV, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_UV.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(128))
                 .EUt(VA[UEV])
                 .duration(200)
                 .buildAndRegister();
 
-        //  MAX Solar Panel (todo update this recipe when gtlitecore have UHV-OpV Solar Panels)
+        //  UEV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, BlackTitanium)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 64)
+                .input(plate, IndiumGalliumPhosphide, 32)
+                .input(VOLTAGE_COIL_UEV, 2)
+                .input(foil, Solarium, 8)
+                .input(wireFine, Ichorium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                .fluidInputs(PMMA.getFluid(21000))
+                .fluidInputs(Hdcs.getFluid(L * 8))
+                .fluidInputs(Kevlar.getFluid(L * 4))
+                .output(COVER_SOLAR_PANEL_UEV, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_UHV.getStackForm())
+                        .EUt(VA[UEV])
+                        .CWUt(256))
+                .EUt(VA[UEV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Neutronium)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 64)
+                .input(plate, IndiumGalliumPhosphide, 64)
+                .input(VOLTAGE_COIL_UIV, 2)
+                .input(foil, Hypogen, 8)
+                .input(wireFine, Astralium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 128))
+                .fluidInputs(CBDOPolycarbonate.getFluid(24000))
+                .fluidInputs(Legendarium.getFluid(L * 16))
+                .fluidInputs(Zylon.getFluid(L * 8))
+                .output(COVER_SOLAR_PANEL_UIV, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_UEV.getStackForm())
+                        .EUt(VA[UIV])
+                        .CWUt(512))
+                .EUt(VA[UIV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  UXV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, BlackPlutonium)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plate, IndiumGalliumPhosphide, 64)
+                .input(plate, IndiumGalliumPhosphide, 64)
+                .input(plateDouble, Solarium, 16)
+                .input(VOLTAGE_COIL_UXV, 2)
+                .input(foil, Galaxium, 8)
+                .input(wireFine, Hikarium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(CBDOPolycarbonate.getFluid(27000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 32))
+                .fluidInputs(FullerenePolymerMatrix.getFluid(L * 16))
+                .output(COVER_SOLAR_PANEL_UXV, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_UIV.getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(1024))
+                .EUt(VA[UXV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  OpV
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Octiron)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(plateDouble, IndiumGalliumPhosphide, 32)
+                .input(plateDouble, IndiumGalliumPhosphide, 32)
+                .input(plateDouble, Solarium, 32)
+                .input(VOLTAGE_COIL_OpV, 2)
+                .input(foil, Universium, 8)
+                .input(wireFine, Arcanium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 512))
+                .fluidInputs(Infinity.getFluid(30000))
+                .fluidInputs(TranscendentMetal.getFluid(L * 64))
+                .fluidInputs(CosmicFabric.getFluid(L * 32))
+                .output(COVER_SOLAR_PANEL_OpV, 2)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_UXV.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(2048))
+                .EUt(VA[OpV])
+                .duration(200)
+                .buildAndRegister();
+
+        //  MAX
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Edenium)
+                .input(COVER_SOLAR_PANEL, 2)
+                .input(SENSOR_MAX)
+                .input(plateDouble, IndiumGalliumPhosphide, 32)
+                .input(plateDouble, IndiumGalliumPhosphide, 32)
+                .input(plateDouble, Solarium, 32)
+                .input(plateDouble, Solarium, 32)
+                .input(swarm, Neutronium, 8)
+                .input(wireFine, Magmatter, 16)
+                .input(CHARGED_HYPERCUBE)
+                .fluidInputs(SolderingAlloy.getFluid(L * 1024))
+                .fluidInputs(Infinity.getFluid(60000))
+                .fluidInputs(Omnium.getFluid(L * 128))
+                .fluidInputs(PrimordialMatter.getFluid(L * 64))
+                .output(COVER_SOLAR_PANEL_MAX)
+                .stationResearch(b -> b
+                        .researchStack(COVER_SOLAR_PANEL_OpV.getStackForm())
+                        .EUt(VA[MAX])
+                        .CWUt(4096))
+                .EUt(VA[MAX])
+                .duration(200)
+                .buildAndRegister();
     }
 }

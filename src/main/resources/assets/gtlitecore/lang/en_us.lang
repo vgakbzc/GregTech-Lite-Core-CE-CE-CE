@@ -674,7 +674,11 @@ metaitem.cover.robot_arm.max.name=§c§lMAX§r Robot Arm
 metaitem.cover.emitter.max.name=§c§lMAX§r Emitter
 metaitem.cover.sensor.max.name=§c§lMAX§r Sensor
 metaitem.cover.field_generator.max.name=§c§lMAX§r Field Generator
-
+metaitem.cover.solar_panel.uhv.name=§4UHV§r Solar Panel
+metaitem.cover.solar_panel.uev.name=§aUEV§r Solar Panel
+metaitem.cover.solar_panel.uiv.name=§2UIV§r Solar Panel
+metaitem.cover.solar_panel.uxv.name=§eUXV§r Solar Panel
+metaitem.cover.solar_panel.opv.name=§9OpV§r Solar Panel
 metaitem.cover.solar_panel.max.name=§c§lMAX§r Solar Panel
 
 ##  Debug Items

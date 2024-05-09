@@ -674,7 +674,11 @@ metaitem.cover.robot_arm.max.name=机械臂（§c§lMAX§r）
 metaitem.cover.emitter.max.name=发射器（§c§lMAX§r）
 metaitem.cover.sensor.max.name=传感器（§c§lMAX§r）
 metaitem.cover.field_generator.max.name=力场发生器（§c§lMAX§r）
-
+metaitem.cover.solar_panel.uhv.name=太阳能覆盖板（§4UHV§r）
+metaitem.cover.solar_panel.uev.name=太阳能覆盖板（§aUEV§r）
+metaitem.cover.solar_panel.uiv.name=太阳能覆盖板（§2UIV§r）
+metaitem.cover.solar_panel.uxv.name=太阳能覆盖板（§eUXV§r）
+metaitem.cover.solar_panel.opv.name=太阳能覆盖板（§9OpV§r）
 metaitem.cover.solar_panel.max.name=太阳能覆盖板（§c§lMAX§r）
 
 ##  Debug Items

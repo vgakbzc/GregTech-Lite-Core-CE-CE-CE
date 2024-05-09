@@ -12,12 +12,12 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class GTLiteCoverBehavior {
 
     public static void init() {
-        registerBehavior("pump.ulv",       ELECTRIC_PUMP_ULV,      (def, tile, side) -> new CoverPump(def, tile, side, GTValues.ULV, 320));
-        registerBehavior("conveyor.ulv",   CONVEYOR_MODULE_ULV,    (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.ULV, 4));
-        registerBehavior("robot_arm.ulv",  ROBOT_ARM_ULV,          (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.ULV, 4));
-        registerBehavior("pump.max",       ELECTRIC_PUMP_MAX,      (def, tile, side) -> new CoverPump(def, tile, side, GTValues.MAX, 1048576));
-        registerBehavior("conveyor.max",   CONVEYOR_MODULE_MAX,    (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.MAX, 1024));
-        registerBehavior("robot_arm.max",  ROBOT_ARM_MAX,          (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.MAX, 1024));
+        registerBehavior("pump.ulv",        ELECTRIC_PUMP_ULV,     (def, tile, side) -> new CoverPump(def, tile, side, GTValues.ULV, 320));
+        registerBehavior("conveyor.ulv",    CONVEYOR_MODULE_ULV,   (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.ULV, 4));
+        registerBehavior("robot_arm.ulv",   ROBOT_ARM_ULV,         (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.ULV, 4));
+        registerBehavior("pump.max",        ELECTRIC_PUMP_MAX,     (def, tile, side) -> new CoverPump(def, tile, side, GTValues.MAX, 1048576));
+        registerBehavior("conveyor.max",    CONVEYOR_MODULE_MAX,   (def, tile, side) -> new CoverConveyor(def, tile, side, GTValues.MAX, 1024));
+        registerBehavior("robot_arm.max",   ROBOT_ARM_MAX,         (def, tile, side) -> new CoverRoboticArm(def, tile, side, GTValues.MAX, 1024));
         registerBehavior("solar_panel.max", COVER_SOLAR_PANEL_MAX, (def, tile, side) -> new CoverSolarPanel(def, tile, side, GTValues.V[GTValues.MAX]));
     }
 

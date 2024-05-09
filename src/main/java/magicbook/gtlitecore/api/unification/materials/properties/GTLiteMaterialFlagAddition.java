@@ -78,6 +78,7 @@ public class GTLiteMaterialFlagAddition {
         Bohrium.addFlags(GENERATE_DOUBLE_PLATE);
         HastelloyC276.addFlags(GENERATE_DOUBLE_PLATE);
         Ruthenium.addFlags(GENERATE_DOUBLE_PLATE);
+        IndiumGalliumPhosphide.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -276,6 +277,8 @@ public class GTLiteMaterialFlagAddition {
         Iridium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         Osmium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         HSSS.addFlags(GENERATE_SWARM);
+
+        Neutronium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
 
         //  Singularity
         Iron.addFlags(GENERATE_SINGULARITY);

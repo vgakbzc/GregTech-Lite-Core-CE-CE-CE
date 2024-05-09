@@ -5,6 +5,7 @@ import gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaT
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.client.utils.TooltipHelper;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -27,13 +28,17 @@ public abstract class MixinMetaTileEntityMegaVacuumFreezer extends GCYMRecipeMap
     @Inject(method = "<init>",
             at = @At("TAIL"))
     public void createNewConstructor(CallbackInfo ci) {
-        this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
+        if (GTLiteConfigHolder.compats.enableMegaVacuumFreezerTweak) {
+            this.recipeMapWorkable = new MultiblockRecipeLogic(this, true);
+        }
     }
 
     @Override
     public void addInformation(ItemStack stack, @Nullable World player, List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
-        tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        if (GTLiteConfigHolder.compats.enableMegaVacuumFreezerTweak) {
+            tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        }
     }
 
 }
