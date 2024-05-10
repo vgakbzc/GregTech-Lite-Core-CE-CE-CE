@@ -3329,6 +3329,8 @@ recipemap.nicoll_dyson_beamer_burning_module.name=Gigabit Energy Focus
 recipemap.nicoll_dyson_beamer_oscillating_module.name=Transcendent Causality Oscillation
 recipemap.eternity_garden.name=Eternity Garden
 recipemap.auto_chisel.name=Auto Chisel
+recipemap.dimensionally_transcendent_neutronium_forge_transmutation_mode.name=Plasma Transmutation
+recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=Plasma Fusion
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=Temperature: %,d K

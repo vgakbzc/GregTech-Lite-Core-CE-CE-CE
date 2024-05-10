@@ -3328,6 +3328,8 @@ recipemap.nicoll_dyson_beamer_burning_module.name=千兆能量聚焦
 recipemap.nicoll_dyson_beamer_oscillating_module.name=超维因果爆震
 recipemap.eternity_garden.name=永恒花园
 recipemap.auto_chisel.name=自动凿子
+recipemap.dimensionally_transcendent_neutronium_forge_transmutation_mode.name=等离子嬗变
+recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=等离子聚合
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

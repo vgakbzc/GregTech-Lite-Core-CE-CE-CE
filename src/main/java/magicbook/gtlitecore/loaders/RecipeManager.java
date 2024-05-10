@@ -189,5 +189,6 @@ public class RecipeManager {
         PlanetaryGasSiphon.init();
         NicollDysonBeamer.init();
         EternityGarden.init();
+        DimensionallyTranscendentNeutroniumForge.init();
     }
 }

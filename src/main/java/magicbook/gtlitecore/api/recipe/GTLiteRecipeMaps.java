@@ -1962,5 +1962,13 @@ public class GTLiteRecipeMaps {
             .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_CHISEL, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FILE_TOOL);
 
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_TRANSMUTATION_RECIPES = new RecipeMap<>("dimensionally_transcendent_neutronium_forge_transmutation_mode", 0, 0, 1, 1, new SimpleRecipeBuilder(), false);
+
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_FUSION_RECIPES = new RecipeMapDTNFFusionMode<>("dimensionally_transcendent_neutronium_forge_fusion_mode", 1, 0, 20, 1, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSoundEvents.MIXER);
+
     public GTLiteRecipeMaps() {}
 }
