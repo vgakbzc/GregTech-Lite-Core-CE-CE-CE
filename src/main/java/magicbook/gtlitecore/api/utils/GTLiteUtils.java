@@ -301,10 +301,19 @@ public class GTLiteUtils {
     }
 
     /**
-     * @param value  Int value.
-     * @param min    Min value.
-     * @param max    Max value.
-     * @return       If value < min value, then return min, if value >= min, then return min(value, max).
+     * Used to `clamp` a value ({@code int}) to a given range.
+     *
+     * <p>
+     *     This function will `clamp` a value to given range,
+     *     If {@code value} smaller than {@code min}, then return {@code min},
+     *     and if {@code value} bigger than or equal to {@code min}, then check it
+     *     if bigger than {@code max}, and return the smaller one.
+     * </p>
+     *
+     * @param value  Origin value which will be clamped.
+     * @param min    Range Minimium point.
+     * @param max    Range Maximium point.
+     * @return       Value in given range.
      */
     public static int clamp(int value, int min, int max) {
         if (value < min) {
@@ -315,15 +324,24 @@ public class GTLiteUtils {
     }
 
     /**
-     * @param value  Double value.
-     * @param min    Min value.
-     * @param max    Max value.
-     * @return       If value < min value, then return min, if value >= min, then return min(value, max).
+     * Used to `clamp` a value ({@code double}) to a given range.
+     *
+     * <p>
+     *     This function will `clamp` a value to given range,
+     *     If {@code value} smaller than {@code min}, then return {@code min},
+     *     and if {@code value} bigger than or equal to {@code min}, then check it
+     *     if bigger than {@code max}, and return the smaller one.
+     * </p>
+     *
+     * @param value  Origin value which will be clamped.
+     * @param min    Range Minimium point.
+     * @param max    Range Maximium point.
+     * @return       Value in given range.
      */
     public static double clamp(double value, double min, double max) {
         if (value < min) {
             return min;
-        }else {
+        } else {
             return Math.min(value, max);
         }
     }

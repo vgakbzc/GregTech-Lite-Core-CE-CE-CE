@@ -12,6 +12,7 @@ import java.math.BigInteger;
  *
  * TODO other methods.
  */
+@SuppressWarnings("unused")
 public class BigMath {
 
     private BigMath() {}
@@ -75,6 +76,33 @@ public class BigMath {
         }
 
         return retValue;
+    }
+
+    /**
+     * Used to `clamp` a value ({@code BigInteger}) to a given range.
+     *
+     * <p>
+     *     This function will `clamp` a value to given range,
+     *     If {@code value} smaller than {@code min}, then return {@code min},
+     *     and if {@code value} bigger than or equal to {@code min}, then check it
+     *     if bigger than {@code max}, and return the smaller one.
+     * </p>
+     *
+     * @param value  Origin value which will be clamped.
+     * @param min    Range Minimium point.
+     * @param max    Range Maximium point.
+     * @return       Value in given range.
+     *
+     * @see GTLiteUtils#clamp(int, int, int)
+     * @see GTLiteUtils#clamp(double, double, double)
+     */
+    public static BigInteger clamp(BigInteger value, BigInteger min, BigInteger max) {
+        int result = value.compareTo(min);
+        if (result < 0) {
+            return min;
+        } else {
+            return min(value, max);
+        }
     }
 
 }

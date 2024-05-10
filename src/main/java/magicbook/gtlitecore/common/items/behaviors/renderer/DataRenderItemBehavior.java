@@ -4,6 +4,7 @@ import codechicken.lib.model.ModelRegistryHelper;
 import codechicken.lib.util.TransformUtils;
 import magicbook.gtlitecore.api.item.IItemRendererManager;
 import magicbook.gtlitecore.client.renderer.handler.DataItemRenderer;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.util.ResourceLocation;
 
@@ -13,9 +14,14 @@ import net.minecraft.util.ResourceLocation;
  * @author Gate Guardian
  *
  * <p>
- *     Add new render about vanilla data items (e.g. data stick),
- *     now data stick will render the product when SHIFT is pressed.
+ *     This Item Behavior is a Extended Renderer adder of Meta Item (in GregTech),
+ *     used {@link DataItemRenderer} to add a extended info of data item,
+ *     such as Data Stick/Orb and Module. This renderere init by another bus,
+ *     and can use {@code enableDataItemRenderer} in {@link GTLiteConfigHolder#compats}
+ *     to enable/disable this function (todo seems cause server crash).
  * </p>
+ *
+ * @since 2.8.7-beta
  */
 public class DataRenderItemBehavior implements IItemRendererManager {
 

@@ -4,6 +4,9 @@ import codechicken.lib.model.ModelRegistryHelper;
 import codechicken.lib.util.TransformUtils;
 import magicbook.gtlitecore.api.item.ICosmicRenderBehavior;
 import magicbook.gtlitecore.client.renderer.handler.CosmicItemRenderer;
+import magicbook.gtlitecore.mixin.gregtech.MixinMetaItem;
+import magicbook.gtlitecore.mixin.gregtech.MixinMetaPrefixItem;
+import magicbook.gtlitecore.mixin.gregtech.MixinMetaValueItem;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.entity.EntityLivingBase;
@@ -21,15 +24,21 @@ import java.util.function.Supplier;
  * @author Gate Guardian
  *
  * <p>
- *     This renderer is transplanted from <a href="https://github.com/GTNewHorizons/GT5-Unofficial">GT5u</a>.
- *     Use {@link CosmicItemRenderer} to add a extra renderer to items (should mixin gregtech's item renderer, please see e.g. {@link magicbook.gtlitecore.mixin.gregtech.MixinMetaItem}).
- *     Thanks for tong-ge to fix problem of getMaskTexture() cause server side crash (problem of {@link TextureAtlasSprite}).
+ *     This Item Behavior is a Extended Renderer adder of Meta Item (in GregTech),
+ *     used {@link CosmicItemRenderer} to add a mask to item (and same effect for Meta Value/Prefix Item).
+ *     Thanks my friend tong-ge fix problem of {@link #getMaskTexture(ItemStack, EntityLivingBase)}.
  * </p>
+ *
+ * @see CosmicItemRenderer
+ * @see MixinMetaItem
+ * @see MixinMetaValueItem
+ * @see MixinMetaPrefixItem
+ *
+ * @since 2.7.4-beta
  */
-@SuppressWarnings("rawtypes")
 public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
 
-    private final Supplier supplier;
+    private final Supplier<?> supplier;
     private final int maskOpacity;
 
     public CosmicRenderItemBehavior(Supplier<TextureAtlasSprite> supplier,
@@ -38,6 +47,13 @@ public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
         this.maskOpacity = maskOpacity;
     }
 
+    /**
+     * Mask Texture Getter.
+     *
+     * @param stack   The stack being rendered.
+     * @param player  The entity holding the item, May be null, If null assume either inventory, or ground.
+     * @return        Mask Texture.
+     */
     @SideOnly(Side.CLIENT)
     @Override
     public TextureAtlasSprite getMaskTexture(ItemStack stack,
@@ -45,6 +61,13 @@ public class CosmicRenderItemBehavior implements ICosmicRenderBehavior {
         return (TextureAtlasSprite) supplier.get();
     }
 
+    /**
+     * Mask Opacity Getter.
+     *
+     * @param stack   The stack being rendered.
+     * @param player  The entity holding the item, May be null, If null assume either inventory, or ground.
+     * @return        Mask Opacity.
+     */
     @Override
     public float getMaskOpacity(ItemStack stack,
                                 @Nullable EntityLivingBase player) {
