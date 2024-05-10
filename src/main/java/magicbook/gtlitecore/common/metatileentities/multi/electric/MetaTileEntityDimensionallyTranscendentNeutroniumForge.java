@@ -284,7 +284,7 @@ public class MetaTileEntityDimensionallyTranscendentNeutroniumForge extends Mult
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GTLiteTextures.DIMENSIONAL_OSCILLATOR_OVERLAY;
+        return Textures.FUSION_REACTOR_OVERLAY;
     }
 
     @Override
