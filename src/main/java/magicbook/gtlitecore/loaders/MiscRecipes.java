@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
@@ -549,6 +550,8 @@ public class MiscRecipes {
     private static void OtherRecipes() {
         FluidCores();
         ExoticExtruders();
+        MetastableOganessonChain();
+        MetastableHassiumChain();
 
         //  Gravi Star
         GTRecipeHandler.removeRecipesByInputs(AUTOCLAVE_RECIPES,
@@ -1637,6 +1640,66 @@ public class MiscRecipes {
                 .output(EXOTIC_SHAPE_EXTRUDER_ROTOR)
                 .EUt(VA[UXV])
                 .duration(200)
+                .buildAndRegister();
+    }
+
+    private static void MetastableOganessonChain() {
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(1296)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
+                new FluidStack[]{MetastableOganesson.getFluid(144)});
+
+        //  Metastable Oganesson liquid -> Metastable Oganesson hot ingot
+        VACUUM_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(MetastableOganesson.getFluid(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 500))
+                .output(ingotHot, MetastableOganesson)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 500))
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+    }
+
+    private static void MetastableHassiumChain() {
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(1296)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(144)});
+
+        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
+                new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
+                new FluidStack[]{MetastableHassium.getFluid(144)});
+
+        //  Metastable Hassium liquid -> Metastable Hassium hot ingot
+        VACUUM_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_INGOT)
+                .fluidInputs(MetastableHassium.getFluid(L))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 500))
+                .output(ingotHot, MetastableHassium)
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 500))
+                .EUt(VA[UV])
+                .duration(100)
                 .buildAndRegister();
     }
 

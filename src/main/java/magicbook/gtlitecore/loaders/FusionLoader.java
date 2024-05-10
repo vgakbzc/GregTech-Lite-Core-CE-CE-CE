@@ -1,397 +1,592 @@
 package magicbook.gtlitecore.loaders;
 
-import gregtech.api.fluids.store.FluidStorageKeys;
-import gregtech.api.recipes.GTRecipeHandler;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fluids.FluidStack;
-
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.ingotHot;
-import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
 public class FusionLoader {
 
     public static void init() {
-        Elements();
-        FantasyMaterials();
-    }
 
-    private static void Elements() {
+        /* -------------------------------- MK1 -------------------------------- */
 
-        //  Americium + Neon -> Dubnium
-        //  Mk III recipe, for you next wafer and next radioactive rod.
+        //  Magnesium + Oxygen -> Calcium (plasma)
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Americium.getFluid(16))
-                .fluidInputs(Neon.getFluid(125))
-                .fluidOutputs(Dubnium.getFluid(125))
-                .EUt(VA[ZPM])
-                .duration(160)
-                .EUToStart(380000000L)
+                .fluidInputs(Magnesium.getFluid(128))
+                .fluidInputs(Oxygen.getFluid(128))
+                .fluidOutputs(Calcium.getPlasma(16))
+                .EUt(VA[IV])
+                .duration((int) (6.4 * SECOND))
+                .EUToStart(120000000L) // MK1
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Calcium.getPlasma(1))
+                .fluidOutputs(Calcium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (3.8 * SECOND))
+                .buildAndRegister();
+
+        //  Helium (plasma) + Lithium -> Boron (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Helium.getPlasma(L))
+                .fluidInputs(Lithium.getFluid(L))
+                .fluidOutputs(Boron.getPlasma(L))
+                .EUt(VA[LuV] / 3)
+                .duration(12 * SECOND)
+                .EUToStart(50000000L)
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Boron.getPlasma(1))
+                .fluidOutputs(Boron.getFluid(1))
+                .EUt((int) V[EV])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  Boron (plasma) + Calcium (plasma) -> Neon (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Boron.getPlasma(L))
+                .fluidInputs(Calcium.getPlasma(16))
+                .fluidOutputs(Neon.getPlasma(1000))
+                .EUt(VA[LuV] / 3)
+                .duration((int) (3.2 * SECOND))
+                .EUToStart(100000000L) // MK1
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Neon.getPlasma(1))
+                .fluidOutputs(Neon.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (4.5 * SECOND))
+                .buildAndRegister();
+
+        /* -------------------------------- MK2 -------------------------------- */
+
+        //  Aluminium + Lithium -> Sulfur (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Aluminium.getFluid(16))
+                .fluidInputs(Lithium.getFluid(16))
+                .fluidOutputs(Sulfur.getPlasma(L))
+                .EUt(VA[LuV] / 3)
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(240000000L) // MK2
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Sulfur.getPlasma(1))
+                .fluidOutputs(Sulfur.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (5.6 * SECOND))
+                .buildAndRegister();
+
+        //  Copper + Tritium -> Zinc (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Copper.getFluid(L / 2))
+                .fluidInputs(Tritium.getFluid(250))
+                .fluidOutputs(Zinc.getPlasma(L / 2))
+                .EUt(49152) // ZPM
+                .duration((int) (0.8 * SECOND))
+                .EUToStart(180000000L) // MK2
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Zinc.getPlasma(1))
+                .fluidOutputs(Zinc.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (4.9 * SECOND))
+                .buildAndRegister();
+
+        //  Cobalt + Silicon -> Niobium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Cobalt.getFluid(L))
+                .fluidInputs(Silicon.getFluid(L))
+                .fluidOutputs(Niobium.getPlasma(L))
+                .EUt(49152) // ZPM
+                .duration((int) (0.8 * SECOND))
+                .EUToStart(200000000L) // MK2
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Niobium.getPlasma(1))
+                .fluidOutputs(Niobium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (5.2 * SECOND))
+                .buildAndRegister();
+
+        //  Aluminium + Fluorine -> Titanium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Aluminium.getFluid(L))
+                .fluidInputs(Fluorine.getFluid(L))
+                .fluidOutputs(Titanium.getPlasma(L))
+                .EUt(49152) // ZPM
+                .duration(8 * SECOND)
+                .EUToStart(100000000) // MK2
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Titanium.getPlasma(1))
+                .fluidOutputs(Titanium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (7.6 * SECOND))
+                .buildAndRegister();
+
+        //  Niobium (plasma) + Zinc (plasma) -> Krypton (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Niobium.getPlasma(L))
+                .fluidInputs(Zinc.getPlasma(L))
+                .fluidOutputs(Krypton.getPlasma(L))
+                .EUt((int) V[ZPM])
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(300000000L) // MK2
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Krypton.getPlasma(1))
+                .fluidOutputs(Krypton.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (7.2 * SECOND))
                 .buildAndRegister();
 
         //  Plutonium-241 + Neon -> Rutherfordium
-        //  Mk II recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Plutonium241.getFluid(16))
                 .fluidInputs(Neon.getFluid(16))
                 .fluidOutputs(Rutherfordium.getFluid(16))
                 .EUt(VA[LuV])
-                .duration(120)
-                .EUToStart(250000000L)
+                .duration(6 * SECOND)
+                .EUToStart(250000000L) // MK2
                 .buildAndRegister();
 
-        //  Plutonium-241 + Titanium -> Livermorium
-        //  Mk IV recipe, next radioactive rod material.
+        /* -------------------------------- MK3 -------------------------------- */
+
+        //  Gold + Arsenic -> Silver (plasma)
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Plutonium241.getFluid(32))
-                .fluidInputs(Titanium.getFluid(32))
-                .fluidOutputs(Livermorium.getFluid(64))
-                .EUt(VA[UHV])
-                .duration(200)
-                .EUToStart(850000000L)
+                .fluidInputs(Gold.getFluid(L))
+                .fluidInputs(Arsenic.getFluid(L))
+                .fluidOutputs(Silver.getPlasma(L))
+                .EUt(49152) // ZPM
+                .duration((int) (0.8 * SECOND))
+                .EUToStart(350000000L) // MK3
                 .buildAndRegister();
 
-        //  Plutonium-241 + Calcium -> Seaborgium
-        //  Mk IV recipe, basic material for UEV stage.
-        //  If you want to make Fusion Reactor Mk V, then you need to get this material first.
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Silver.getPlasma(1))
+                .fluidOutputs(Silver.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (8.4 * SECOND))
+                .buildAndRegister();
+
+        //  Tantalum + Zinc (plasma) -> Bismuth (plasma)
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Plutonium241.getFluid(16))
-                .fluidInputs(Calcium.getFluid(32))
-                .fluidOutputs(Seaborgium.getFluid(48))
+                .fluidInputs(Tantalum.getFluid(L))
+                .fluidInputs(Zinc.getPlasma(L / 2))
+                .fluidOutputs(Bismuth.getPlasma(L))
+                .EUt(98304) // ZPM
+                .duration((int) (0.8 * SECOND))
+                .EUToStart(350000000L) // MK3
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Bismuth.getPlasma(1))
+                .fluidOutputs(Bismuth.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (9.2 * SECOND))
+                .buildAndRegister();
+
+        //  Curium + Americium (plasma) -> Xenon (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Curium.getFluid(L))
+                .fluidInputs(Americium.getPlasma(L))
+                .fluidOutputs(Xenon.getPlasma(L))
                 .EUt(VA[UV])
-                .duration(220)
-                .EUToStart(650000000L)
+                .duration((int) (0.8 * SECOND))
+                .EUToStart(500000000L) // MK3
                 .buildAndRegister();
 
-        //  Metastable Oganesson Chain
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Xenon.getPlasma(1))
+                .fluidOutputs(Xenon.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (17.4 * SECOND))
+                .buildAndRegister();
 
-        //  Oganesson Breeding Base + Curium -> Hot Oganesson
-        //  Mk IV recipe
+        //  Iridium + Fluorine -> Radon (plasma)
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(OganessonBreedingBase.getFluid(L))
-                .fluidInputs(Curium.getFluid(36))
-                .fluidOutputs(MetastableOganesson.getFluid(L))
-                .EUt(VA[UHV])
-                .duration(100)
-                .EUToStart(700000000L)
+                .fluidInputs(Iridium.getFluid(L))
+                .fluidInputs(Fluorine.getFluid(500))
+                .fluidOutputs(Radon.getPlasma(L))
+                .EUt(98304) // ZPM
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(450000000L) // MK3
                 .buildAndRegister();
 
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},
-                new FluidStack[]{MetastableOganesson.getFluid(144)});
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},
-                new FluidStack[]{MetastableOganesson.getFluid(1296)});
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()},
-                new FluidStack[]{MetastableOganesson.getFluid(144)});
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
-                new FluidStack[]{MetastableOganesson.getFluid(144)});
-
-        //  Metastable Oganesson liquid -> Metastable Oganesson hot ingot
-        VACUUM_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(MetastableOganesson.getFluid(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 500))
-                .output(ingotHot, MetastableOganesson)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 500))
-                .EUt(VA[UV])
-                .duration(100)
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Radon.getPlasma(1))
+                .fluidOutputs(Radon.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (18.9 * SECOND))
                 .buildAndRegister();
 
-        //  Quasi-fissioning Plasma
-        //  Mk IV recipe, this fusion recipe is the first step of Metastable Flerovium chain.
-        //  back to Decay Generator recipe.
+        //  Americium + Neon -> Dubnium
         FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Uranium238.getFluid(125))
-                .fluidInputs(Uranium238.getFluid(125))
-                .fluidOutputs(QuasifissioningPlasma.getPlasma(125))
-                .EUt(600000)
-                .duration(100)
-                .EUToStart(250000000L)
-                .buildAndRegister();
-
-        //  Metastable Hassium
-        //  Mk V recipe
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(ScandiumTitaniumMixture.getFluid(L * 2))
-                .fluidInputs(RadiumRadonMixture.getFluid(1000))
-                .fluidOutputs(MetastableHassium.getFluid(L * 4))
-                .EUt(VA[UEV])
-                .duration(80)
-                .EUToStart(900000000L)
-                .buildAndRegister();
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_INGOT.getStackForm()},
-                new FluidStack[]{MetastableHassium.getFluid(144)});
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_BLOCK.getStackForm()},
-                new FluidStack[]{MetastableHassium.getFluid(1296)});
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_NUGGET.getStackForm()},
-                new FluidStack[]{MetastableHassium.getFluid(144)});
-
-        GTRecipeHandler.removeRecipesByInputs(FLUID_SOLIDFICATION_RECIPES,
-                new ItemStack[]{SHAPE_MOLD_PLATE.getStackForm()},
-                new FluidStack[]{MetastableHassium.getFluid(144)});
-
-        //  Metastable Hassium liquid -> Metastable Hassium hot ingot
-        VACUUM_RECIPES.recipeBuilder()
-                .notConsumable(SHAPE_MOLD_INGOT)
-                .fluidInputs(MetastableHassium.getFluid(L))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 500))
-                .output(ingotHot, MetastableHassium)
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 500))
-                .EUt(VA[UV])
-                .duration(100)
-                .buildAndRegister();
-
-        //  Curium + Sodium -> Bohrium
-        //  Mk IV recipe
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Curium.getFluid(L * 2))
-                .fluidInputs(Sodium.getFluid(L * 2))
-                .fluidOutputs(Bohrium.getFluid(L * 4))
-                .EUt(VA[UHV])
-                .duration(140)
-                .EUToStart(800000000L)
-                .buildAndRegister();
-
-        //  Iron + Bismuth -> Meitnerium
-        //  Mk IV recipe
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Iron.getPlasma(L))
-                .fluidInputs(Bismuth.getFluid(L))
-                .fluidOutputs(Meitnerium.getFluid(L * 2))
-                .EUt(VA[UHV])
-                .duration(140)
-                .EUToStart(400000000L)
-                .buildAndRegister();
-
-        //  Nickel + Bismuth -> Roentgenium
-        //  Mk IV recipe
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Nickel.getPlasma(L))
-                .fluidInputs(Bismuth.getFluid(L))
-                .fluidOutputs(Roentgenium.getFluid(L * 2))
-                .EUt(VA[UHV])
-                .duration(180)
-                .EUToStart(440000000L)
+                .fluidInputs(Americium.getFluid(16))
+                .fluidInputs(Neon.getFluid(125))
+                .fluidOutputs(Dubnium.getFluid(125))
+                .EUt(VA[ZPM])
+                .duration(8 * SECOND)
+                .EUToStart(380000000L) // MK3
                 .buildAndRegister();
 
         //  Nickel + Polonium -> Copernicium
-        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Nickel.getPlasma(L * 4))
                 .fluidInputs(Polonium.getFluid(L * 4))
                 .fluidOutputs(Copernicium.getFluid(L * 4))
                 .EUt(VA[UV])
-                .duration(100)
-                .EUToStart(480000000L)
+                .duration(5 * SECOND)
+                .EUToStart(480000000L) // MK3
                 .buildAndRegister();
 
         //  Nickel + Astatine -> Nihonium
-        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Nickel.getPlasma(L * 2))
                 .fluidInputs(Astatine.getFluid(L * 2))
                 .fluidOutputs(Nihonium.getFluid(L * 4))
-                .EUt(358690)
-                .duration(180)
-                .EUToStart(410000000L)
+                .EUt(VA[UV] / 2)
+                .duration(9 * SECOND)
+                .EUToStart(410000000L) // MK3
                 .buildAndRegister();
 
         //  Neptunium + Titanium -> Moscovium
-        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Neptunium.getFluid(L * 2))
                 .fluidInputs(Titanium.getFluid(L * 2))
                 .fluidOutputs(Moscovium.getFluid(L * 4))
-                .EUt(473960)
-                .duration(220)
-                .EUToStart(380000000L)
+                .EUt(VH[UV])
+                .duration(11 * SECOND)
+                .EUToStart(380000000L) // MK3
                 .buildAndRegister();
 
         //  Americium + Titanium -> Tennessine
-        //  Mk III recipe
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Americium.getFluid(L * 2))
                 .fluidInputs(Titanium.getFluid(L * 2))
                 .fluidOutputs(Tennessine.getFluid(L * 4))
-                .EUt(509370)
-                .duration(300)
-                .EUToStart(420000000L)
-                .buildAndRegister();
-    }
-
-    private static void FantasyMaterials() {
-
-        //  Nether Star + Bedrock -> Ichor Liquid
-        //  Mk IV recipe, you need this to make Ichorium.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(NetherStar.getFluid(L))
-                .fluidInputs(Bedrock.getFluid(1000))
-                .fluidOutputs(IchorLiquid.getPlasma(L * 4))
-                .EUt(VA[UHV])
-                .duration(45)
-                .EUToStart(650000000L)
-                .buildAndRegister();
-
-        //  Nether Star + Glowstone -> Solarium
-        //  Mk IV recipe, this material is UIV stage wire.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(NetherStar.getFluid(L))
-                .fluidInputs(Glowstone.getFluid(1000))
-                .fluidOutputs(Solarium.getFluid(L * 4))
-                .EUt(VA[UHV])
-                .duration(45)
-                .EUToStart(650000000L)
-                .buildAndRegister();
-
-        //  Silver + Starlight Liquid -> Luna Silver
-        //  Mk IV recipe, this material is used to make Cosmic SoC and some UIV+ things.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Silver.getFluid(L / 2))
-                .fluidInputs(StarlightLiquid.getFluid(L / 2))
-                .fluidOutputs(LunaSilver.getFluid(L))
-                .EUt(VA[UHV])
-                .duration(45)
-                .EUToStart(650000000L)
-                .buildAndRegister();
-
-        //  Ichor Liquid + Radon -> Ichorium
-        //  Mk IV recipe, you need this to make Ichorium wire coil block.
-        //  When you get ichorium, you can make UEV stage components, and then get Fusion Reactor Mk V.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(IchorLiquid.getPlasma(L))
-                .fluidInputs(Radon.getFluid(1000))
-                .fluidOutputs(Ichorium.getFluid(500))
-                .EUt(VA[UHV])
-                .duration(100)
-                .EUToStart(1200000000L)
+                .EUt(VHA[UV])
+                .duration(15 * SECOND)
+                .EUToStart(420000000L) // MK3
                 .buildAndRegister();
 
         //  Orichalcum + Zirconium -> Mithril
-        //  Mk III recipe, you need this to make Infinity.
-        //  Of cource, you also need mithril to get Fusion Reactor Mk V.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Orichalcum.getFluid(16))
                 .fluidInputs(Zirconium.getFluid(L * 4))
                 .fluidOutputs(Mithril.getPlasma(L * 4))
                 .EUt(VA[UV])
-                .duration(60)
-                .EUToStart(450000000L)
-                .buildAndRegister();
-
-        //  Vibranium + Duranium -> Crystal Matrix
-        //  Mk IV recipe, you need this to make Infinity.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(Vibranium.getPlasma(16))
-                .fluidInputs(Duranium.getFluid(L * 2))
-                .fluidOutputs(CrystalMatrix.getFluid(L * 2))
-                .EUt(VA[UHV])
-                .duration(120)
-                .EUToStart(800000000L)
-                .buildAndRegister();
-
-        //  Crystal Matrix + Mithril -> Infinity
-        //  Mk V recipe, this material is UIV stage main material.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(CrystalMatrix.getFluid(L * 2))
-                .fluidInputs(Mithril.getFluid(L * 2))
-                .fluidOutputs(Infinity.getFluid(L * 4))
-                .EUt(VA[UEV])
-                .duration(240)
-                .EUToStart(2550000000L)
-                .buildAndRegister();
-
-        //  Void Metal + Bedrock -> Rhugnor
-        //  Mk IV recipe, you need this to make hypogen.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(VoidMetal.getFluid(L * 2))
-                .fluidInputs(Bedrock.getFluid(1000))
-                .fluidOutputs(Rhugnor.getFluid(L * 4))
-                .EUt(VA[UHV])
-                .duration(160)
-                .EUToStart(900000000L)
-                .buildAndRegister();
-
-        //  Dragon Blood + Rhugnor -> Hypogen
-        //  Mk V recipe, this material is UXV stage wire.
-        FUSION_RECIPES.recipeBuilder()
-                .fluidInputs(DragonBlood.getFluid(L * 4))
-                .fluidInputs(Rhugnor.getFluid(L * 4))
-                .fluidOutputs(Hypogen.getPlasma(L * 8))
-                .EUt(VA[UEV])
-                .duration(320)
-                .EUToStart(2530000000L)
+                .duration(3 * SECOND)
+                .EUToStart(450000000L) // MK3
                 .buildAndRegister();
 
         //  Neon + Bedrock -> Taranium plasma
-        //  Mk III recipe, a basic material to make higher plasma.
-        //  Pay attention, this plasma can not condense to taranium.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Neon.getFluid(L))
                 .fluidInputs(Bedrock.getFluid(L))
                 .fluidOutputs(Taranium.getPlasma(L * 2))
                 .EUt(VA[UV])
-                .duration(64)
-                .EUToStart(360000000L)
+                .duration((int) (3.2 * SECOND))
+                .EUToStart(360000000L) // MK3
                 .buildAndRegister();
 
-        //  Titanium + Taranium plasma -> Astral Titanium
-        //  Mk V recipe, this material is UIV stage components.
+        /* -------------------------------- MK4 -------------------------------- */
+
+        //  Radon (plasma) + Nitrogen (plasma) -> Neptunium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Radon.getPlasma(100))
+                .fluidInputs(Nitrogen.getPlasma(100))
+                .fluidOutputs(Neptunium.getPlasma(100))
+                .EUt(VA[UHV])
+                .duration((int) (12.8 * SECOND))
+                .EUToStart(940000000L) // MK4
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Neptunium.getPlasma(1))
+                .fluidOutputs(Neptunium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (34.5 * SECOND))
+                .buildAndRegister();
+
+        //  Americium (plasma) + Boron (plasma) -> Fermium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Americium.getPlasma(100))
+                .fluidInputs(Boron.getPlasma(100))
+                .fluidOutputs(Fermium.getPlasma(100))
+                .EUt(VA[UHV])
+                .duration((int) (13.2 * SECOND))
+                .EUToStart(960000000L) // MK4
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Fermium.getPlasma(1))
+                .fluidOutputs(Fermium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (38.7 * SECOND))
+                .buildAndRegister();
+
+        //  Plutonium-241 + Titanium -> Livermorium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Plutonium241.getFluid(32))
+                .fluidInputs(Titanium.getFluid(32))
+                .fluidOutputs(Livermorium.getFluid(64))
+                .EUt(VA[UHV])
+                .duration(10 * SECOND)
+                .EUToStart(850000000L) // MK4
+                .buildAndRegister();
+
+        //  Plutonium-241 + Calcium -> Seaborgium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Plutonium241.getFluid(16))
+                .fluidInputs(Calcium.getFluid(32))
+                .fluidOutputs(Seaborgium.getFluid(48))
+                .EUt(VA[UV])
+                .duration(11 * SECOND)
+                .EUToStart(650000000L) // MK4
+                .buildAndRegister();
+
+        //  Oganesson Breeding Base + Curium -> Hot Oganesson
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(OganessonBreedingBase.getFluid(L))
+                .fluidInputs(Curium.getFluid(36))
+                .fluidOutputs(MetastableOganesson.getFluid(L))
+                .EUt(VA[UHV])
+                .duration(5 * SECOND)
+                .EUToStart(700000000L) // MK4
+                .buildAndRegister();
+
+        //  Uranium-238 + Uranium-238 -> Quasi-fissioning Plasma
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Uranium238.getFluid(125))
+                .fluidInputs(Uranium238.getFluid(125))
+                .fluidOutputs(QuasifissioningPlasma.getPlasma(125))
+                .EUt(600000)
+                .duration(5 * SECOND)
+                .EUToStart(250000000L) // MK4
+                .buildAndRegister();
+
+        //  Curium + Sodium -> Bohrium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Curium.getFluid(L * 2))
+                .fluidInputs(Sodium.getFluid(L * 2))
+                .fluidOutputs(Bohrium.getFluid(L * 4))
+                .EUt(VA[UHV])
+                .duration(7 * SECOND)
+                .EUToStart(800000000L) // MK4
+                .buildAndRegister();
+
+        //  Iron + Bismuth -> Meitnerium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Iron.getPlasma(L))
+                .fluidInputs(Bismuth.getFluid(L))
+                .fluidOutputs(Meitnerium.getFluid(L * 2))
+                .EUt(VA[UHV])
+                .duration(6 * SECOND)
+                .EUToStart(400000000L) // MK4
+                .buildAndRegister();
+
+        //  Nickel + Bismuth -> Roentgenium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Nickel.getPlasma(L))
+                .fluidInputs(Bismuth.getFluid(L))
+                .fluidOutputs(Roentgenium.getFluid(L * 2))
+                .EUt(VA[UHV])
+                .duration(9 * SECOND)
+                .EUToStart(440000000L) // MK4
+                .buildAndRegister();
+
+        //  Nether Star + Bedrock -> Ichor Liquid (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(NetherStar.getFluid(L))
+                .fluidInputs(Bedrock.getFluid(1000))
+                .fluidOutputs(IchorLiquid.getPlasma(L * 4))
+                .EUt(VA[UHV])
+                .duration((int) (2.5 * SECOND))
+                .EUToStart(650000000L) // MK4
+                .buildAndRegister();
+
+        //  Nether Star + Glowstone -> Solarium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(NetherStar.getFluid(L))
+                .fluidInputs(Glowstone.getFluid(1000))
+                .fluidOutputs(Solarium.getFluid(L * 4))
+                .EUt(VA[UHV])
+                .duration((int) (3.1 * SECOND))
+                .EUToStart(650000000L) // MK4
+                .buildAndRegister();
+
+        //  Silver + Starlight Liquid -> Luna Silver
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Silver.getFluid(L / 2))
+                .fluidInputs(StarlightLiquid.getFluid(L / 2))
+                .fluidOutputs(LunaSilver.getFluid(L))
+                .EUt(VA[UHV])
+                .duration((int) (2.8 * SECOND))
+                .EUToStart(650000000L) // MK4
+                .buildAndRegister();
+
+        //  Ichor Liquid + Radon -> Ichorium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(IchorLiquid.getPlasma(L))
+                .fluidInputs(Radon.getFluid(1000))
+                .fluidOutputs(Ichorium.getFluid(500))
+                .EUt(VA[UHV])
+                .duration(5 * SECOND)
+                .EUToStart(1200000000L) // MK4
+                .buildAndRegister();
+
+        //  Vibranium + Duranium -> Crystal Matrix
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Vibranium.getPlasma(16))
+                .fluidInputs(Duranium.getFluid(L * 2))
+                .fluidOutputs(CrystalMatrix.getFluid(L * 2))
+                .EUt(VA[UHV])
+                .duration(6 * SECOND)
+                .EUToStart(800000000L) // MK4
+                .buildAndRegister();
+
+        //  Void Metal + Bedrock -> Rhugnor
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(VoidMetal.getFluid(L * 2))
+                .fluidInputs(Bedrock.getFluid(1000))
+                .fluidOutputs(Rhugnor.getFluid(L * 4))
+                .EUt(VA[UHV])
+                .duration(8 * SECOND)
+                .EUToStart(900000000L) // MK4
+                .buildAndRegister();
+
+        /* -------------------------------- MK5 -------------------------------- */
+
+        //  Lutetium + Vanadium -> Plutonium-241 (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Lutetium.getFluid(L))
+                .fluidInputs(Vanadium.getFluid(L))
+                .fluidOutputs(Plutonium241.getPlasma(L))
+                .EUt(VA[UEV] / 2)
+                .duration(14 * SECOND)
+                .EUToStart(1800000000L) // MK5
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Plutonium241.getPlasma(1))
+                .fluidOutputs(Plutonium241.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (47.8 * SECOND))
+                .buildAndRegister();
+
+        //  Tellurium + Zinc -> Lead (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Tellurium.getFluid(L))
+                .fluidInputs(Zinc.getFluid(L))
+                .fluidOutputs(Lead.getPlasma(L))
+                .EUt(VA[UEV])
+                .duration(12 * SECOND)
+                .EUToStart(1800000000L) // MK5
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Lead.getPlasma(1))
+                .fluidOutputs(Lead.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (46.4 * SECOND))
+                .buildAndRegister();
+
+        //  Osmium + Silicon -> Thorium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Osmium.getFluid(L))
+                .fluidInputs(Silicon.getFluid(L))
+                .fluidOutputs(Thorium.getPlasma(L))
+                .EUt(VH[UEV] / 2)
+                .duration((int) (13.5 * SECOND))
+                .EUToStart(1800000000L) // MK5
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Thorium.getPlasma(1))
+                .fluidOutputs(Thorium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (52.2 * SECOND))
+                .buildAndRegister();
+
+        //  Scandium-Titanium Mixture + Radium-Radon Mixture -> Metastable Hassium
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(ScandiumTitaniumMixture.getFluid(L * 2))
+                .fluidInputs(RadiumRadonMixture.getFluid(1000))
+                .fluidOutputs(MetastableHassium.getFluid(L * 4))
+                .EUt(VA[UEV])
+                .duration(4 * SECOND)
+                .EUToStart(900000000L) // MK5
+                .buildAndRegister();
+
+        //  Crystal Matrix + Mithril -> Infinity
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(CrystalMatrix.getFluid(L * 2))
+                .fluidInputs(Mithril.getFluid(L * 2))
+                .fluidOutputs(Infinity.getFluid(L * 4))
+                .EUt(VA[UEV])
+                .duration(12 * SECOND)
+                .EUToStart(2550000000L) // MK5
+                .buildAndRegister();
+
+        //  Dragon Blood + Rhugnor -> Hypogen
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(DragonBlood.getFluid(L * 4))
+                .fluidInputs(Rhugnor.getFluid(L * 4))
+                .fluidOutputs(Hypogen.getPlasma(L * 8))
+                .EUt(VA[UEV])
+                .duration(16 * SECOND)
+                .EUToStart(2530000000L) // MK5
+                .buildAndRegister();
+
+        //  Titanium + Taranium (plasma) -> Astral Titanium (plasma)
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Titanium.getFluid(L * 2))
                 .fluidInputs(Taranium.getPlasma(L * 2))
                 .fluidOutputs(AstralTitanium.getPlasma(L * 4))
                 .EUt(VA[UEV])
-                .duration(32)
-                .EUToStart(1800000000L)
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(1800000000L) // MK5
                 .buildAndRegister();
 
         //  Tungsten + Taranium plasma -> Celestial Tungsten
-        //  Mk V recipe, this material is UIV stage components.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Tungsten.getFluid(L * 2))
                 .fluidInputs(Taranium.getPlasma(L * 2))
                 .fluidOutputs(CelestialTungsten.getPlasma(L * 4))
                 .EUt(VA[UEV])
-                .duration(32)
-                .EUToStart(1800000000L)
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(1800000000L) // MK5
                 .buildAndRegister();
 
         //  Bohrium + Naquadria -> Neutronium
-        //  Mk V recipe, a basic material in UIV+ stage.
-        //  The original recipe of Neutronium in vanilla CEu environment is Orichalcum recipe now.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Bohrium.getFluid(128))
                 .fluidInputs(Naquadria.getFluid(128))
                 .fluidOutputs(Neutronium.getFluid(32))
                 .EUt(VA[UEV])
-                .EUToStart(1300000000L)
-                .duration(200)
+                .duration(10 * SECOND)
+                .EUToStart(1300000000L) // MK5
                 .buildAndRegister();
 
         //  Hikarium + Tairitsium -> Fatalium plasma
-        //  Mk V recipe, OpV material pre step.
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Hikarium.getFluid(L * 4))
                 .fluidInputs(Tairitsium.getFluid(L * 4))
                 .fluidOutputs(Fatalium.getPlasma(L * 2))
                 .EUt(VA[UEV])
-                .EUToStart(2550000000L)
-                .duration(20)
+                .duration(SECOND)
+                .EUToStart(2550000000L) // MK5
                 .buildAndRegister();
     }
 }
