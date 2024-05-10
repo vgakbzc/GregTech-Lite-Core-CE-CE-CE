@@ -1963,12 +1963,19 @@ public class GTLiteRecipeMaps {
             .setSound(GTSoundEvents.FILE_TOOL);
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_TRANSMUTATION_RECIPES = new RecipeMap<>("dimensionally_transcendent_neutronium_forge_transmutation_mode", 0, 0, 1, 1, new SimpleRecipeBuilder(), false);
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_TRANSMUTATION_RECIPES = new RecipeMap<>("dimensionally_transcendent_neutronium_forge_transmutation_mode", 1, 0, 1, 1, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSoundEvents.ARC);
 
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> PLASMA_FUSION_RECIPES = new RecipeMapDTNFFusionMode<>("dimensionally_transcendent_neutronium_forge_fusion_mode", 1, 0, 20, 1, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.MIXER);
+
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_COLLISION_RECIPES = new RecipeMapNDBBurningModule<>("dimensionally_transcendent_neutronium_forge_collision_mode", 9, 9, 9, 9, new SimpleRecipeBuilder(), false);
 
     public GTLiteRecipeMaps() {}
 }

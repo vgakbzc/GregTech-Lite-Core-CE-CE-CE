@@ -180,7 +180,7 @@ public class GTLiteHigherDegreeMaterials {
                 .blast(b -> b
                         .temp(15800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV]))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .cableProperties(V[UXV], 128, 256, false)
                 .build()
                 .setFormula(addObfuscatedFormula(), false);

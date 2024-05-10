@@ -35,6 +35,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
+import static java.util.Calendar.SECOND;
 import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -2142,6 +2143,37 @@ public class MachineRecipeLoader {
                 .output(INDUSTRIAL_BIO_REACTOR)
                 .EUt(VA[IV])
                 .duration(1200)
+                .buildAndRegister();
+
+        //  Dimensionally Transcendent Neutronium Forge
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Spacetime, 4)
+                .input(DYSON_SWARM, 2)
+                .input(DIMENSIONAL_MIXER, 4)
+                .input(COMPRESSED_FUSION_REACTOR[4], 16)
+                .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                .input(EMITTER_UXV, 4)
+                .input(SENSOR_UXV, 4)
+                .input(FIELD_GENERATOR_UXV, 4)
+                .input(swarm, Neutronium, 16)
+                .input(VOLTAGE_COIL_UXV, 64)
+                .input(plateDense, TranscendentMetal, 4)
+                .input(plateDense, Hypogen, 4)
+                .input(gear, Edenium, 16)
+                .input(gear, BlackDwarfMatter, 16)
+                .input(stickLong, WhiteDwarfMatter, 32)
+                .input(wireGtOctal, BoronFranciumCarbideSuperconductor, 8)
+                .fluidInputs(Galaxium.getFluid(65536))
+                .fluidInputs(Shirabon.getFluid(57600))
+                .fluidInputs(CosmicNeutronium.getFluid(28800))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(28800))
+                .output(DIMENSIONALLY_TRANSCENDENT_NEUTRONIUM_FORGE)
+                .EUt(VA[UXV])
+                .duration(60 * SECOND)
+                .stationResearch(b -> b
+                        .researchStack(COMPRESSED_FUSION_REACTOR[4].getStackForm())
+                        .EUt(VA[UXV])
+                        .CWUt(576))
                 .buildAndRegister();
     }
 

@@ -923,7 +923,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 3)
                         .vacuumStats(VA[UXV], 3))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW, GENERATE_RING, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_ROUND)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED + "aaaaaa", false);
 

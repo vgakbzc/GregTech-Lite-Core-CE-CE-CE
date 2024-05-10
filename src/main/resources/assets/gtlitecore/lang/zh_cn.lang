@@ -2030,6 +2030,16 @@ gtlitecore.machine.nicoll_dyson_beamer.tier.1=低
 gtlitecore.machine.nicoll_dyson_beamer.tier.2=中
 gtlitecore.machine.nicoll_dyson_beamer.tier.3=高
 
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.name=超维度中子锻造厂
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.1=一些低等文明的短视者将其称为神迹，而我们称之为物理。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.2=另一些低等文明将它的劣质复制品用于居住，并称之为“环形世界”或“奥尔德森盘”。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.3=建立在巨大的、跨星系的环形超区段上的超级锻造厂，你彻底征服物质界的象征。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.4=一切结构维持设施与工程设施均建立在这个环形超区段中，无数的纳米机器人在其中工作。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.5=切换机器模式以聚焦锻造厂运行的超区段侧重。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.6=§6物质嬗变§7超区段：可以直接将材料转换为其等离子形态，相当于一台超级聚变反应堆。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.7=§6等离子聚合§7超区段：用于生产特殊的等离子体聚合燃料以备使用（用于§c尼科尔-戴森光束§r）。
+gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.8=§6对撞加速§7超区段：相当于一台星系级环形粒子加速器，借助这种力量可以强行剥离并重组物质的成分。
+
 ##  Multiblock Parts
 
 ###  Energy Hatches
@@ -3328,8 +3338,9 @@ recipemap.nicoll_dyson_beamer_burning_module.name=千兆能量聚焦
 recipemap.nicoll_dyson_beamer_oscillating_module.name=超维因果爆震
 recipemap.eternity_garden.name=永恒花园
 recipemap.auto_chisel.name=自动凿子
-recipemap.dimensionally_transcendent_neutronium_forge_transmutation_mode.name=等离子嬗变
-recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=等离子聚合
+recipemap.dimensionally_transcendent_neutronium_forge_transmutation_mode.name=物质嬗变超区段
+recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=等离子聚合超区段
+recipemap.dimensionally_transcendent_neutronium_forge_collision_mode.name=对撞加速超区段
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

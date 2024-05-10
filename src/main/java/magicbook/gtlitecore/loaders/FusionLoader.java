@@ -123,7 +123,7 @@ public class FusionLoader {
                 .fluidOutputs(Titanium.getPlasma(L))
                 .EUt(49152) // ZPM
                 .duration(8 * SECOND)
-                .EUToStart(100000000) // MK2
+                .EUToStart(300000000L) // MK2
                 .buildAndRegister();
 
         PLASMA_GENERATOR_FUELS.recipeBuilder()
