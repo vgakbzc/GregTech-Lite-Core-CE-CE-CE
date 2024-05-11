@@ -3,6 +3,8 @@ package magicbook.gtlitecore.loaders.multiblock;
 import gregtech.api.unification.material.Material;
 import net.minecraftforge.fluids.FluidStack;
 
+import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumCarbide;
+import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumTungstenCarbide;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -195,6 +197,42 @@ public class NeutralNetworkNexus {
                 .EUt(VZ[EV])
                 .duration((int) (TungstenSteel.getMass() * TungstenSteel.getMaterialComponents().size()))
                 .tier(1)
+                .buildAndRegister();
+
+        //  Tungsten Carbide
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Tungsten)
+                .input(swarm, Carbon)
+                .circuitMeta(2)
+                .chancedOutput(swarm, TungstenCarbide, 2000, 500)
+                .chancedOutput(swarm, Tungsten, 8000, 0)
+                .chancedOutput(swarm, Steel, 8000, 0)
+                .EUt(VZ[EV])
+                .duration((int) (TungstenCarbide.getMass() * TungstenCarbide.getMaterialComponents().size()))
+                .buildAndRegister();
+
+        //  Titanium Carbide
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Titanium)
+                .input(swarm, Carbon)
+                .circuitMeta(2)
+                .chancedOutput(swarm, TitaniumCarbide, 2000, 500)
+                .chancedOutput(swarm ,Titanium, 8000, 0)
+                .chancedOutput(swarm, Carbon, 8000, 0)
+                .EUt(VZ[EV])
+                .duration((int) (TitaniumCarbide.getMass() * TitaniumCarbide.getMaterialComponents().size()))
+                .buildAndRegister();
+
+        //  Titanium Tungsten Carbide
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, TungstenCarbide)
+                .input(swarm, TitaniumCarbide)
+                .circuitMeta(2)
+                .chancedOutput(swarm, TitaniumTungstenCarbide, 2000, 500)
+                .chancedOutput(swarm, TungstenCarbide, 8000, 0)
+                .chancedOutput(swarm, TitaniumCarbide, 8000, 0)
+                .EUt(VZ[EV])
+                .duration((int) (TitaniumTungstenCarbide.getMass() * TitaniumTungstenCarbide.getMaterialComponents().size()))
                 .buildAndRegister();
 
         //  HSSG

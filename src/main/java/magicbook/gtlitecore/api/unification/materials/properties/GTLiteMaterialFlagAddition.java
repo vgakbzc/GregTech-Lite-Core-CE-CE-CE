@@ -207,6 +207,7 @@ public class GTLiteMaterialFlagAddition {
         Trinium.addFlags(GENERATE_FINE_WIRE);
         UraniumTriplatinum.addFlags(GENERATE_FINE_WIRE);
         SolderingAlloy.addFlags(GENERATE_FINE_WIRE);
+        Neutronium.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
@@ -279,6 +280,10 @@ public class GTLiteMaterialFlagAddition {
         HSSS.addFlags(GENERATE_SWARM);
 
         Neutronium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+
+        TungstenCarbide.addFlags(GENERATE_SWARM);
+        TitaniumCarbide.addFlags(GENERATE_SWARM);
+        TitaniumTungstenCarbide.addFlags(GENERATE_SWARM);
 
         //  Singularity
         Iron.addFlags(GENERATE_SINGULARITY);
