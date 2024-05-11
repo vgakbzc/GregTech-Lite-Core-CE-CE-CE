@@ -45,7 +45,7 @@ public class RecipeMapDTNFFusionMode<R extends RecipeBuilder<R>> extends RecipeM
                 }
             }
         } else {
-            int StartInputsX = 14 + 18 * 4 + 32;
+            int StartInputsX = 14 + 18 * 4 + 35;
             int StartInputsY = 9 + 18 * 2;
             addSlot(builder, StartInputsX, StartInputsY, 0, itemHandler, fluidHandler, true, true);
         }

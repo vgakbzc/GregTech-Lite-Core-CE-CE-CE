@@ -1965,17 +1965,27 @@ public class GTLiteRecipeMaps {
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> PLASMA_TRANSMUTATION_RECIPES = new RecipeMap<>("dimensionally_transcendent_neutronium_forge_transmutation_mode", 1, 0, 1, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC);
 
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> PLASMA_FUSION_RECIPES = new RecipeMapDTNFFusionMode<>("dimensionally_transcendent_neutronium_forge_fusion_mode", 1, 0, 20, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_FUSION, ProgressWidget.MoveType.HORIZONTAL)
+            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_PLASMA_FUSION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.MIXER);
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_COLLISION_RECIPES = new RecipeMapNDBBurningModule<>("dimensionally_transcendent_neutronium_forge_collision_mode", 9, 9, 9, 9, new SimpleRecipeBuilder(), false);
+    public static final RecipeMap<SimpleRecipeBuilder> PLASMA_COLLISION_RECIPES = new RecipeMapNDBBurningModule<>("dimensionally_transcendent_neutronium_forge_collision_mode", 9, 9, 9, 9, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.VIAL_OVERLAY_1)
+            .setSlotOverlay(false, false, true, GuiTextures.VIAL_OVERLAY_1)
+            .setSlotOverlay(true, false, false, GuiTextures.CRACKING_OVERLAY_2)
+            .setSlotOverlay(true, false, true, GuiTextures.CRACKING_OVERLAY_2)
+            .setSlotOverlay(false, true, false, GuiTextures.VIAL_OVERLAY_2)
+            .setSlotOverlay(false, true, true, GuiTextures.VIAL_OVERLAY_2)
+            .setSlotOverlay(true, true, false, GuiTextures.LIGHTNING_OVERLAY_2)
+            .setSlotOverlay(true, true, true, GuiTextures.LIGHTNING_OVERLAY_2)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSoundEvents.ELECTROLYZER);
 
     public GTLiteRecipeMaps() {}
 }
