@@ -388,25 +388,5 @@ public class QuantumForceTransformer {
                 .tier(5) // UIV
                 .buildAndRegister();
 
-        //  Spatially Transcendent Gravitational Lens
-        QUANTUM_FORCE_TRANSFORMER_RECIPES.recipeBuilder()
-                .circuitMeta(26)
-                .notConsumable(GRAVITON_TRANSDUCER)
-                .inputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.QUANTUM_GLASS))
-                .input(lens, Spacetime)
-                .input(QCD_PROTECTIVE_PLATING, 2)
-                .input(GRAVITON)
-                .fluidInputs(SolderingAlloy.getFluid(32000))
-                .fluidInputs(ZBLANGlass.getFluid(16000))
-                .fluidInputs(GSTGlass.getFluid(16000))
-                .fluidInputs(Rhugnor.getFluid(3000))
-                .fluidInputs(CosmicFabric.getFluid(1000))
-                .fluidInputs(TranscendentMetal.getFluid(L))
-                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.SPATIALLY_TRANSCENDENT_GRAVITATIONAL_LENS))
-                .EUt(VA[UXV])
-                .duration(20)
-                .tier(7) // OpV
-                .buildAndRegister();
-
     }
 }

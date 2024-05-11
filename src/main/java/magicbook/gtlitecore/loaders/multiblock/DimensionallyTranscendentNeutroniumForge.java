@@ -1,13 +1,16 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
 import gregtech.api.unification.material.Material;
+import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
+import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumCarbide;
 import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumTungstenCarbide;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.lens;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.metatileentities.MetaTileEntities.HULL;
+import static gregtech.common.metatileentities.MetaTileEntities.WORLD_ACCELERATOR;
 import static magicbook.gtlitecore.api.GTLiteValues.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -199,7 +202,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(ALPHA_PARTICLE, 64)
                 .output(ALPHA_PARTICLE, 64)
                 .output(ALPHA_PARTICLE, 64)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -221,7 +224,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(Z_BOSON, 64)
                 .output(W_BOSON, 64)
                 .output(HIGGS_BOSON, 64)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -246,7 +249,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(ELECTRON_NEUTRINO, 64)
                 .output(MUON_NEUTRINO, 64)
                 .output(TAU_NEUTRINO, 64)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -271,7 +274,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(STRANGE_QUARK, 64)
                 .output(TOP_QUARK, 64)
                 .output(BOTTOM_QUARK, 64)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -296,7 +299,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(PROTON, 64)
                 .output(NEUTRON, 64)
                 .output(HIGGS_BOSON, 64)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -318,7 +321,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(ELECTRON, 64)
                 .output(LAMBDA_BARYON, 64)
                 .output(OMEGA_BARYON, 64)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -344,7 +347,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .fluidOutputs(PolyphenyleneSulfide.getFluid(368640))
                 .fluidOutputs(Polyetheretherketone.getFluid(368640))
                 .fluidOutputs(Rubber.getFluid(737280))
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -373,7 +376,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .fluidOutputs(Polytetrafluoroethylene.getFluid(368640))
                 .fluidOutputs(PolyvinylChloride.getFluid(737280))
                 .fluidOutputs(Polyethylene.getFluid(737280))
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -401,7 +404,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .fluidOutputs(Polycaprolactam.getFluid(368640))
                 .fluidOutputs(PolyvinylButyral.getFluid(737280))
                 .fluidOutputs(ReinforcedEpoxyResin.getFluid(737280))
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -429,7 +432,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(dust, Osmium, 2048)
                 .output(dust, Rhodium, 2048)
                 .output(dust, Ruthenium, 2048)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -457,7 +460,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(dust, Vibranium, 2048)
                 .output(dust, Taranium, 2048)
                 .output(dust, Mithril, 2048)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -485,7 +488,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(dust, Europium, 2048)
                 .output(dust, Gadolinium, 2048)
                 .output(dust, Terbium, 2048)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -513,7 +516,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(dust, Scandium, 2048)
                 .output(dust, Yttrium, 2048)
                 .output(dust, Gallium, 2048)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -543,7 +546,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(dust, Plutonium239, 2048)
                 .output(dust, Plutonium241, 2048)
                 .output(dust, Americium, 2048)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
@@ -573,13 +576,66 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .output(dust, Nobelium, 2048)
                 .output(dust, Lawrencium, 2048)
                 .output(dust, Indium, 2048)
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(5 * MINUTE)
                 .buildAndRegister();
 
-        //  Circuit 15:
+        //  Circuit 15: Adhesive
 
-        //  Circuit 16: Adhesive and Biological Items
+        //  Circuit 16: Biological Materials A
+
+        //  Circuit 17: Biological Materials B
+
+        //  Circuit 18:
+
+        //  Circuit 19:
+
+        //  Circuit 20:
+
+        //  Circuit 21:
+
+        //  Circuit 22:
+
+        //  Circuit 23:
+
+        //  Circuit 24:
+
+        //  Circuit 25:
+
+        //  Circuit 26:
+
+        //  Circuit 27:
+
+        //  Circuit 28:
+
+        //  Circuit 29:
+
+        //  Circuit 30:
+
+        //  Circuit 31:
+
+        //  Circuit 32: Spatially Transcendent Gravitational Lens
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(32)
+                .input(HULL[OpV])
+                .inputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.QUANTUM_GLASS))
+                .input(lens, Spacetime)
+                .input(plateDouble, CosmicNeutronium, 8)
+                .input(RECURSIVELY_FOLDED_NEGATIVE_SPACE, 2)
+                .input(WORLD_ACCELERATOR[7], 4)
+                .input(CHARM_QUARK, 16)
+                .input(wireFine, Rhugnor, 32)
+                .fluidInputs(ZBLANGlass.getFluid(1280000))
+                .fluidInputs(GSTGlass.getFluid(1280000))
+                .fluidInputs(PMMA.getFluid(1280000))
+                .fluidInputs(CBDOPolycarbonate.getFluid(1280000))
+                .fluidInputs(BPAPolycarbonate.getFluid(1280000))
+                .fluidInputs(BorosilicateGlass.getFluid(1280000))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(160000))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_CASING.getItemVariant(BlockTransparentCasing.TransparentCasingType.SPATIALLY_TRANSCENDENT_GRAVITATIONAL_LENS))
+                .EUt(VZ[MAX])
+                .duration(MINUTE / 2)
+                .buildAndRegister();
 
     }
 
@@ -588,7 +644,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .circuitMeta(1)
                 .fluidInputs(material.getFluid(1000))
                 .fluidOutputs(material.getPlasma(1000))
-                .EUt(VA[OpV])
+                .EUt(VZ[OpV])
                 .duration(SECOND)
                 .buildAndRegister();
 
@@ -596,7 +652,7 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .circuitMeta(10)
                 .fluidInputs(material.getFluid(10000))
                 .fluidOutputs(material.getPlasma(10000))
-                .EUt(VA[OpV])
+                .EUt(VZ[OpV])
                 .duration(SECOND)
                 .buildAndRegister();
     }

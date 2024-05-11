@@ -207,7 +207,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 3340))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .itemPipeProperties(12000, 280)
                 .build();
 
@@ -350,7 +350,7 @@ public class GTLiteElementMaterials {
                 .color(0xCCF7FB)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Hikarium)
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 64, 32, false)
                 .build();
 

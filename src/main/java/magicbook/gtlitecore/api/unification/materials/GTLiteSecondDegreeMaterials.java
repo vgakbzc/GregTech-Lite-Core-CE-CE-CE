@@ -561,7 +561,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UEV]))
                 .components(StainlessSteel, 5, TungstenCarbide, 5, Nichrome, 5, IncoloyMA956, 5, Germanium, 1, Rutherfordium, 1, Radon, 1)
                 .cableProperties(V[UIV], 64, 64, false)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12041 Platinum Group Alloy
@@ -726,7 +726,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(14500, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 300))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12053 Halogen Mixture
@@ -839,7 +839,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 304)
                         .vacuumStats(VA[ZPM], 680))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
                 .itemPipeProperties(1260, 256)
                 .build();
 
@@ -881,7 +881,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(16600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[ULV], 88888)
                         .vacuumStats(VA[ULV], 88888))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR)
                 .toolStats(new ToolProperty(36.0F, 80.0F, 100000, 30))
                 .build();
 
