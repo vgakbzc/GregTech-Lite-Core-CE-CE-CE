@@ -36,6 +36,7 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IYottaTankData> MAP_YOT_TANK_CELL = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_COOLING_CORE = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_GRAVITON_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FUSION_COIL = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -166,5 +167,20 @@ public class GTLiteAPI {
         MAP_GRAVITON_CASING.put(GTLiteMetaBlocks.GRAVITON_CASING.getState(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR),
                 new WrappedIntTier(BlockGravitonCasing.GravitonCasingType.CENTRAL_GRAVITON_FLOW_MODULATOR, 3));
 
+        //  Fusion Coil
+        MAP_FUSION_COIL.put(MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL),
+                new WrappedIntTier(gregtech.common.blocks.BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL, 1));
+
+        MAP_FUSION_COIL.put(MetaBlocks.FUSION_CASING.getState(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL),
+                new WrappedIntTier(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL, 2));
+
+        MAP_FUSION_COIL.put(GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2),
+                new WrappedIntTier(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2, 3));
+
+        MAP_FUSION_COIL.put(GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3),
+                new WrappedIntTier(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3, 4));
+
+        MAP_FUSION_COIL.put(GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK4),
+                new WrappedIntTier(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK4, 5));
     }
 }

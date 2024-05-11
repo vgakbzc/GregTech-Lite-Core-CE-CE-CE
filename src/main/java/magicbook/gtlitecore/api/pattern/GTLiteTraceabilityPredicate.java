@@ -230,4 +230,8 @@ public class GTLiteTraceabilityPredicate {
     //  Graviton Casing Predicate
     public static Supplier<TierTraceabilityPredicate> GRAVITON_CASING = () -> new TierTraceabilityPredicate(MAP_GRAVITON_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_GRAVITON_CASING.get(s)).getIntTier()), "GravitonCasing", null);
+
+    //  Fusion Coil Predicate
+    public static Supplier<TierTraceabilityPredicate> FUSION_COIL = () -> new TierTraceabilityPredicate(MAP_FUSION_COIL,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_FUSION_COIL.get(s)).getIntTier()), "FusionCoil", null);
 }
