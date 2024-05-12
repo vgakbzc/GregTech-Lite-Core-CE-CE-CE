@@ -656,7 +656,7 @@ public class GTLiteUnknownCompositionMaterials {
 
         //  24071 Starlight Liquid
         StarlightLiquid = new Material.Builder(getID(), gregtechId("starlight_liquid"))
-                .liquid()
+                .liquid(new FluidBuilder().block().luminosity(3).customStill().customFlow().temperature(1))
                 .iconSet(DULL)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()

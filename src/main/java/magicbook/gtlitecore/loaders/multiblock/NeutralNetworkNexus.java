@@ -68,6 +68,7 @@ public class NeutralNetworkNexus {
         createBasicBreeding(Steel,    VZ[MV], 5300, Sapphire);
         createBasicBreeding(Chrome,   VZ[MV], 4400, Ruby);
         createBasicBreeding(Vanadium, VZ[MV], 4700, Emerald);
+        createBasicBreeding(Copper,   VZ[LV], 5000, Ruby);
 
         //  Advanced Breeding
         createAdvancedBreeding(Silver,       VZ[HV], 3200, NetherStar);
@@ -78,6 +79,7 @@ public class NeutralNetworkNexus {
         createAdvancedBreeding(Naquadah,     VZ[IV], 1800, Emerald);
         createAdvancedBreeding(Neodymium,    VZ[EV], 2400, LeadZirconateTitanate);
         createAdvancedBreeding(Molybdenum,   VZ[HV], 3000, Diamond);
+        createAdvancedBreeding(Ruthenium,    VZ[EV], 2700, Sapphire);
 
         //  Elite Breeding
         createEliteBreeding(Graphene,         VZ[EV],  1800, NetherStar, LuTmYVO);
@@ -186,6 +188,45 @@ public class NeutralNetworkNexus {
 
     private static void HybridizingMode() {
 
+        //  Rose Gold
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Copper)
+                .input(swarm, Gold)
+                .circuitMeta(2)
+                .chancedOutput(swarm, RoseGold, 2000, 500)
+                .chancedOutput(swarm, Copper, 8000, 0)
+                .chancedOutput(swarm, Gold, 8000, 0)
+                .EUt(VZ[MV])
+                .duration((int) (RoseGold.getMass() * RoseGold.getMaterialComponents().size()))
+                .tier(1)
+                .buildAndRegister();
+
+        //  Sterling Silver
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Copper)
+                .input(swarm, Silver)
+                .circuitMeta(2)
+                .chancedOutput(swarm, SterlingSilver, 2000, 500)
+                .chancedOutput(swarm, Copper, 8000, 0)
+                .chancedOutput(swarm, Silver, 8000, 0)
+                .EUt(VZ[MV])
+                .duration((int) (SterlingSilver.getMass() * SterlingSilver.getMaterialComponents().size()))
+                .tier(1)
+                .buildAndRegister();
+
+        //  Electrum
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Gold)
+                .input(swarm, Silver)
+                .circuitMeta(2)
+                .chancedOutput(swarm, Electrum, 2000, 500)
+                .chancedOutput(swarm, Gold, 8000, 0)
+                .chancedOutput(swarm, Silver, 8000, 0)
+                .EUt(VZ[HV])
+                .duration((int) (Electrum.getMass() * Electrum.getMaterialComponents().size()))
+                .tier(1)
+                .buildAndRegister();
+
         //  Tungsten Steel
         NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
                 .input(swarm, Tungsten)
@@ -252,6 +293,19 @@ public class NeutralNetworkNexus {
                 .tier(2)
                 .buildAndRegister();
 
+        //  Ruridit
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Ruthenium)
+                .input(swarm, Iridium)
+                .circuitMeta(2)
+                .chancedOutput(swarm, Ruridit, 2000, 500)
+                .chancedOutput(swarm, Ruthenium, 8000, 0)
+                .chancedOutput(swarm, Iridium, 8000, 0)
+                .EUt(VZ[LuV])
+                .duration((int) (Ruridit.getMass() * Ruridit.getMaterialComponents().size()))
+                .tier(2)
+                .buildAndRegister();
+
         //  HSSS
         NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
                 .input(swarm, HSSG)
@@ -266,6 +320,36 @@ public class NeutralNetworkNexus {
                 .duration((int) (HSSS.getMass() * HSSS.getMaterialComponents().size()))
                 .tier(3)
                 .buildAndRegister();
+
+        //  Osmiridium
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Iridium)
+                .input(swarm, Osmium)
+                .circuitMeta(2)
+                .chancedOutput(swarm, Osmiridium, 2000, 500)
+                .chancedOutput(swarm, Iridium, 8000, 0)
+                .chancedOutput(swarm, Osmium, 8000, 0)
+                .EUt(VZ[LuV])
+                .duration((int) (Osmiridium.getMass() * Osmiridium.getMaterialComponents().size()))
+                .tier(3)
+                .buildAndRegister();
+
+        //  Fluxed Electrum
+        NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE.recipeBuilder()
+                .input(swarm, Electrum)
+                .input(swarm, RoseGold)
+                .input(swarm, SterlingSilver)
+                .input(swarm, NaquadahEnriched)
+                .circuitMeta(4)
+                .chancedOutput(swarm, FluxedElectrum, 2000, 500)
+                .chancedOutput(swarm, Electrum, 8000, 0)
+                .chancedOutput(swarm, RoseGold, 8000, 0)
+                .chancedOutput(swarm, SterlingSilver, 8000, 0)
+                .chancedOutput(swarm, NaquadahEnriched, 8000, 0)
+                .EUt(VZ[UV])
+                .duration((int) (FluxedElectrum.getMass() * FluxedElectrum.getMaterialComponents().size()))
+                .tier(3)
+                .buildAndRegister();
     }
 
     private static void NanotubeRecipes() {
@@ -275,6 +359,7 @@ public class NeutralNetworkNexus {
         createNanotubeRecipe(Steel,    VA[MV], 220);
         createNanotubeRecipe(Chrome,   VA[MV], 240);
         createNanotubeRecipe(Vanadium, VA[MV], 230);
+        createNanotubeRecipe(Copper,   VA[LV], 180);
 
         //  Advanced Breeding
         createNanotubeRecipe(Silver,     VA[MV], 180);
@@ -285,6 +370,7 @@ public class NeutralNetworkNexus {
         createNanotubeRecipe(Naquadah,   VA[IV], 580);
         createNanotubeRecipe(Neodymium,  VA[EV], 390);
         createNanotubeRecipe(Molybdenum, VA[HV], 300);
+        createNanotubeRecipe(Ruthenium,  VA[EV], 400);
 
         //  Elite Breeding
         createNanotubeRecipe(Graphene,         VA[EV],  340);
@@ -317,6 +403,7 @@ public class NeutralNetworkNexus {
         createNanosensorRecipe(Steel,    VA[MV], 220);
         createNanosensorRecipe(Chrome,   VA[MV], 240);
         createNanosensorRecipe(Vanadium, VA[MV], 230);
+        createNanosensorRecipe(Copper,   VA[LV], 180);
 
         //  Advanced Breeding
         createNanosensorRecipe(Silver,     VA[MV], 180);
@@ -327,6 +414,7 @@ public class NeutralNetworkNexus {
         createNanosensorRecipe(Naquadah,   VA[IV], 580);
         createNanosensorRecipe(Neodymium,  VA[EV], 390);
         createNanosensorRecipe(Molybdenum, VA[HV], 300);
+        createNanosensorRecipe(Ruthenium,  VA[EV], 400);
 
         //  Elite Breeding
         createNanosensorRecipe(Graphene,         VA[EV],  340);

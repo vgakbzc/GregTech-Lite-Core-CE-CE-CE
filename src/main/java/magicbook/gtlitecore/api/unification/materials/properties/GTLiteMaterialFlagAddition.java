@@ -208,6 +208,7 @@ public class GTLiteMaterialFlagAddition {
         UraniumTriplatinum.addFlags(GENERATE_FINE_WIRE);
         SolderingAlloy.addFlags(GENERATE_FINE_WIRE);
         Neutronium.addFlags(GENERATE_FINE_WIRE);
+        Ruthenium.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
@@ -222,7 +223,6 @@ public class GTLiteMaterialFlagAddition {
         //  Nano Swarm
         //Iron.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         //IronMagnetic.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
-        //Copper.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         //Nickel.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         //Cobalt.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
         //Lead.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
@@ -284,6 +284,18 @@ public class GTLiteMaterialFlagAddition {
         TungstenCarbide.addFlags(GENERATE_SWARM);
         TitaniumCarbide.addFlags(GENERATE_SWARM);
         TitaniumTungstenCarbide.addFlags(GENERATE_SWARM);
+
+        Electrum.addFlags(GENERATE_SWARM);
+
+        Ruthenium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Ruridit.addFlags(GENERATE_SWARM);
+
+        Copper.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        RoseGold.addFlags(GENERATE_SWARM);
+        SterlingSilver.addFlags(GENERATE_SWARM);
+        FluxedElectrum.addFlags(GENERATE_SWARM);
+
+        Osmiridium.addFlags(GENERATE_SWARM);
 
         //  Singularity
         Iron.addFlags(GENERATE_SINGULARITY);

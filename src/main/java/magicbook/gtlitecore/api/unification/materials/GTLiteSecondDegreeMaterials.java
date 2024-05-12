@@ -825,7 +825,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 53))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_BOLT_SCREW)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12062 Hastelloy-K243
@@ -839,7 +839,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 304)
                         .vacuumStats(VA[ZPM], 680))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
                 .itemPipeProperties(1260, 256)
                 .build();
 
@@ -854,7 +854,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(1941, BlastProperty.GasTier.HIGH)
                         .blastStats(VA[EV], 650)
                         .vacuumStats(VA[MV], 144))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
 
         //  12064 Tumbaga
@@ -867,7 +867,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(1200, BlastProperty.GasTier.MID)
                         .blastStats(VA[HV], 980))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
                 .build();
 
         //  12065 Octiron
@@ -896,7 +896,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8495, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 120)
                         .vacuumStats(VA[UV], 165))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12067 Tairitsium
@@ -910,7 +910,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(7400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 400)
                         .vacuumStats(VA[EV], 130))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  12068 Transcendent Metal

@@ -9,8 +9,11 @@ import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumTung
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.FIELD_GENERATOR_UXV;
+import static gregtech.common.items.MetaItems.STEM_CELLS;
 import static gregtech.common.metatileentities.MetaTileEntities.HULL;
 import static gregtech.common.metatileentities.MetaTileEntities.WORLD_ACCELERATOR;
+import static gregtechfoodoption.GTFOMaterialHandler.Blood;
 import static magicbook.gtlitecore.api.GTLiteValues.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -581,18 +584,175 @@ public class DimensionallyTranscendentNeutroniumForge {
                 .buildAndRegister();
 
         //  Circuit 15: Adhesive
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(15)
+                .notConsumable(lens, Prasiolite)
+                .notConsumable(swarm, Electrum)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .fluidInputs(Hydrogen.getFluid(720000))
+                .fluidInputs(Oxygen.getFluid(720000))
+                .fluidInputs(CrudeDimensionallyTranscendentCatalyst.getFluid(160000))
+                .fluidOutputs(Tin.getFluid(184320))
+                .fluidOutputs(Lead.getFluid(184320))
+                .fluidOutputs(Antimony.getFluid(368640))
+                .fluidOutputs(Glue.getFluid(737280))
+                .fluidOutputs(SolderingAlloy.getFluid(737280))
+                .EUt(VZ[UXV])
+                .duration(5 * MINUTE)
+                .buildAndRegister();
 
         //  Circuit 16: Biological Materials A
+        //  Basic Biological Materials, the most important product is Sterile Growth Medium,
+        //  in next recipe, you should use this material to product other advanced materials.
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(16)
+                .notConsumable(lens, Emerald)
+                .notConsumable(swarm, Ruthenium)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .input(dust, Calcium, 64)
+                .input(dust, Calcium, 64)
+                .input(dust, Meat, 64)
+                .input(dust, Meat, 64)
+                .fluidInputs(Hydrogen.getFluid(720000))
+                .fluidInputs(Oxygen.getFluid(720000))
+                .fluidInputs(Nitrogen.getFluid(720000))
+                .fluidInputs(ProsaicDimensionallyTranscendentCatalyst.getFluid(160000))
+                .output(dust, Collagen, 2048)
+                .output(dust, Gelatin, 2048)
+                .output(dust, Agar, 2048)
+                .fluidOutputs(SterileGrowthMedium.getFluid(184320))
+                .fluidOutputs(Mutagen.getFluid(184320))
+                .fluidOutputs(EnrichedBacterialSludge.getFluid(184320))
+                .fluidOutputs(RawGrowthMedium.getFluid(368640))
+                .fluidOutputs(BacterialSludge.getFluid(368640))
+                .fluidOutputs(Bacteria.getFluid(368640))
+                .fluidOutputs(FermentedBiomass.getFluid(737280))
+                .fluidOutputs(Biomass.getFluid(737280))
+                .fluidOutputs(Turpentine.getFluid(737280))
+                .EUt(VZ[UXV])
+                .duration(5 * MINUTE)
+                .buildAndRegister();
 
         //  Circuit 17: Biological Materials B
+        //  Product some advanced Biological Materials like B27 and Exotic Mutagen,
+        //  this recipe is enriched version of same effect recipe in Quantum Force Transformer.
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(17)
+                .notConsumable(lens, CeLAG)
+                .notConsumable(swarm, Ruridit)
+                .input(dust, Carbon, 64)
+                .input(dust, Carbon, 64)
+                .input(dust, Calcium, 64)
+                .input(dust, Calcium, 64)
+                .input(dust, Meat, 64)
+                .input(dust, Meat, 64)
+                .fluidInputs(Hydrogen.getFluid(720000))
+                .fluidInputs(Oxygen.getFluid(720000))
+                .fluidInputs(Nitrogen.getFluid(720000))
+                .fluidInputs(SterileGrowthMedium.getFluid(720000))
+                .fluidInputs(Mutagen.getFluid(720000))
+                .fluidInputs(ExoticDimensionallyTranscendentCatalyst.getFluid(160000))
+                .output(STEM_CELLS, 2048)
+                .output(STEM_CELLS, 2048)
+                .output(STEM_CELLS, 2048)
+                .output(STEM_CELLS, 2048)
+                .output(STEM_CELLS, 2048)
+                .output(STEM_CELLS, 2048)
+                .fluidOutputs(B27.getFluid(184320))
+                .fluidOutputs(BZMedium.getFluid(184320))
+                .fluidOutputs(ExoticMutagen.getFluid(184320))
+                .fluidOutputs(VitaminA.getFluid(368640))
+                .fluidOutputs(Ethanolamine.getFluid(368640))
+                .fluidOutputs(BloodPlasma.getFluid(368640))
+                .fluidOutputs(Blood.getFluid(737280))
+                .fluidOutputs(LinoleicAcid.getFluid(737280))
+                .fluidOutputs(Biotin.getFluid(737280))
+                .EUt(VZ[UXV])
+                .duration(5 * MINUTE)
+                .buildAndRegister();
 
-        //  Circuit 18:
+        //  Circuit 18: Solarium and Luna Silver
+        //  Used Glowstone and Electrotine to product Solarium and Luna Silver,
+        //  whichs are both components of Arcanium (if you just want them,
+        //  then you should put them in Electric Blast Furnace again).
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(18)
+                .notConsumable(X_RAY_MIRROR)
+                .notConsumable(swarm, RoseGold)
+                .input(dust, Glowstone, 64)
+                .input(dust, Glowstone, 64)
+                .input(dust, Glowstone, 64)
+                .input(dust, Electrotine, 64)
+                .input(dust, Electrotine, 64)
+                .input(dust, Electrotine, 64)
+                .fluidInputs(StarlightLiquid.getFluid(720000))
+                .fluidInputs(SuperluminalTachyonJet.getFluid(720000))
+                .fluidInputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(160000))
+                .output(dust, Solarium, 2048)
+                .output(dust, LunaSilver, 2048)
+                .EUt(VZ[UXV])
+                .duration(10 * MINUTE)
+                .buildAndRegister();
 
-        //  Circuit 19:
+        //  Circuit 19: Hikarium and Tairitsium
+        //  Used Photon and Tau particle to product Hikarium and Tairitsium dust,
+        //  but but but! Please carry dusts to Electric Blast Furnace!
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(19)
+                .notConsumable(lens, Eternity)
+                .notConsumable(swarm, FluxedElectrum)
+                .input(PHOTON, 64)
+                .input(PHOTON, 64)
+                .input(PHOTON, 64)
+                .input(TAU, 64)
+                .input(TAU, 64)
+                .input(TAU, 64)
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(160000))
+                .output(dust, Hikarium, 2048)
+                .output(dust, Tairitsium, 2048)
+                .EUt(VZ[UXV])
+                .duration(10 * MINUTE)
+                .buildAndRegister();
 
-        //  Circuit 20:
+        //  Circuit 20: Temporal Fluid, Instantons and Higgs Bosons
+        //  This recipe allowed player get 3 components of CCM which product in Quantum Force Transformer
+        //  with 1 times work, and you just needs to use Dragon Blood and Starlight Liquid.
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(27)
+                .notConsumable(FIELD_GENERATOR_UXV)
+                .notConsumable(swarm, Osmiridium)
+                .fluidInputs(DragonBlood.getFluid(720000))
+                .fluidInputs(StarlightLiquid.getFluid(720000))
+                .fluidInputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(160000))
+                .fluidOutputs(TemporalFluid.getFluid(184320))
+                .fluidOutputs(Instantons.getFluid(184320))
+                .fluidOutputs(HiggsBosons.getFluid(184320))
+                .EUt(VZ[UXV])
+                .duration(5 * MINUTE)
+                .buildAndRegister();
 
-        //  Circuit 21:
+        //  Circuit 21: Cosmic Computing Mixture
+        //  In stellar forge recipe, 1 times work use (8000, 8000, 32000, 4000, 4000, 4000) get 60000 CCM,
+        //  this recipe is 10x CCM product and has extended 2x buff.
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(28)
+                .fluidInputs(Gluons.getFluid(80000))
+                .fluidInputs(HeavyQuarks.getFluid(80000))
+                .fluidInputs(HeavyLepton.getFluid(320000))
+                .fluidInputs(HiggsBosons.getFluid(40000))
+                .fluidInputs(TemporalFluid.getFluid(40000))
+                .fluidInputs(Instantons.getFluid(40000))
+                .fluidInputs(ExoticDimensionallyTranscendentCatalyst.getFluid(160000))
+                .fluidOutputs(CosmicComputingMixture.getFluid(1200000))
+                .EUt(VZ[UXV])
+                .duration(5 * MINUTE)
+                .buildAndRegister();
 
         //  Circuit 22:
 
@@ -615,6 +775,7 @@ public class DimensionallyTranscendentNeutroniumForge {
         //  Circuit 31:
 
         //  Circuit 32: Spatially Transcendent Gravitational Lens
+        //  Usage: 9 (per 9 times work).
         PLASMA_COLLISION_RECIPES.recipeBuilder()
                 .circuitMeta(32)
                 .input(HULL[OpV])

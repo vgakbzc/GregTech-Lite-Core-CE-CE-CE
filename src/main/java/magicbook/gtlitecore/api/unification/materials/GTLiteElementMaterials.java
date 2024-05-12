@@ -193,7 +193,8 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
-                        .blastStats(VA[UEV]))
+                        .blastStats(VA[UEV], 800)
+                        .vacuumStats(VA[UEV], 400))
                 .cableProperties(V[UIV], 16, 8, false)
                 .build();
 
@@ -350,6 +351,10 @@ public class GTLiteElementMaterials {
                 .color(0xCCF7FB)
                 .iconSet(BRIGHT)
                 .element(GTLiteElements.Hikarium)
+                .blast(b -> b
+                        .temp(18000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 480)
+                        .vacuumStats(VA[UXV], 240))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[UXV], 64, 32, false)
                 .build();
@@ -381,7 +386,8 @@ public class GTLiteElementMaterials {
                 .element(GTLiteElements.LunaSilver)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
-                        .blastStats(VA[UEV]))
+                        .blastStats(VA[UEV], 800)
+                        .vacuumStats(VA[UEV], 400))
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
