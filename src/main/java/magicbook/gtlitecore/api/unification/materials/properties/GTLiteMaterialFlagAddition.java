@@ -209,6 +209,10 @@ public class GTLiteMaterialFlagAddition {
         SolderingAlloy.addFlags(GENERATE_FINE_WIRE);
         Neutronium.addFlags(GENERATE_FINE_WIRE);
         Ruthenium.addFlags(GENERATE_FINE_WIRE);
+        Osmium.addFlags(GENERATE_FINE_WIRE);
+        Chrome.addFlags(GENERATE_FINE_WIRE);
+        Molybdenum.addFlags(GENERATE_FINE_WIRE);
+        Vanadium.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);
