@@ -150,7 +150,7 @@ public class GTLiteValues {
     public static final String MODID_TOP = "theoneprobe";
 
     /**
-     * Integration {@code modid}.
+     * Integration {@code modid}, please see: {@code integration/architecturecraft}.
      */
     public static final String MODID_AC = "architecturecraft";
 
@@ -160,7 +160,7 @@ public class GTLiteValues {
     public static final String MODID_AA = "actuallyadditions";
 
     /**
-     * Integration {@code modid}.
+     * Integration {@code modid}, please see: {@code integration/chisel}.
      */
     public static final String MODID_CHISEL = "chisel";
 
