@@ -602,6 +602,14 @@ public class MiscRecipes {
                 .duration(490)
                 .buildAndRegister();
 
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(dust, Graphene)
+                .notConsumable(EXOTIC_SHAPE_EXTRUDER_ROD)
+                .output(stick, Graphene, 2)
+                .EUt(42)
+                .duration(20)
+                .buildAndRegister();
+
         //  Graphene Fine Wire
         WIREMILL_RECIPES.recipeBuilder()
                 .input(wireGtSingle, Graphene)

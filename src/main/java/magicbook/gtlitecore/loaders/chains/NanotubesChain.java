@@ -12,8 +12,7 @@ import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PLASMA_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.CARBON_ALLOTROPE_MIXTURE;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.GRAPHENE_ALIGNED_CNT;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class NanotubesChain {
 
@@ -66,6 +65,14 @@ public class NanotubesChain {
                 .output(ingot, Fullerene)
                 .EUt(VH[HV])
                 .duration(20 * SECOND)
+                .buildAndRegister();
+
+        EXTRUDER_RECIPES.recipeBuilder()
+                .input(dust, Fullerene)
+                .notConsumable(EXOTIC_SHAPE_EXTRUDER_INGOT)
+                .output(ingot, Fullerene)
+                .EUt(VH[HV])
+                .duration(SECOND)
                 .buildAndRegister();
 
         //  CPP cycle
