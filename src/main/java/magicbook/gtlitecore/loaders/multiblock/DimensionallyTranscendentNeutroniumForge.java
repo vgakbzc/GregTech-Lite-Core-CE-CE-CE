@@ -742,6 +742,8 @@ public class DimensionallyTranscendentNeutroniumForge {
         //  this recipe is 10x CCM product and has extended 2x buff.
         PLASMA_COLLISION_RECIPES.recipeBuilder()
                 .circuitMeta(28)
+                .notConsumable(lens, Hypogen)
+                .notConsumable(CHROMATIC_LENS)
                 .fluidInputs(Gluons.getFluid(80000))
                 .fluidInputs(HeavyQuarks.getFluid(80000))
                 .fluidInputs(HeavyLepton.getFluid(320000))
