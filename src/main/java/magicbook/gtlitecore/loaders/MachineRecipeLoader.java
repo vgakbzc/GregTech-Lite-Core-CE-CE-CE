@@ -4546,7 +4546,7 @@ public class MachineRecipeLoader {
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, HeavyQuarkDegenerateMatter, 4)
                 .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.MOLECULAR_COIL, 16))
-                .input(plateDense, HastelloyK243, 16)
+                .input(plateDense, HastelloyK243, 6)
                 .input(ACTIVE_TRANSFORMER, 64)
                 .input(ring, SuperheavyHAlloy, 64)
                 .input(wireFine, MagnetoHydrodynamicallyConstrainedStarMatter, 24)
