@@ -249,7 +249,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
     public static MetaTileEntityQuantumComputer QUANTUM_COMPUTER;
     public static MetaTileEntityNicollDysonBeamer NICOLL_DYSON_BEAMER;
-    public static MetaTileEntityDimensionallyTranscendentNeutroniumForge DIMENSIONALLY_TRANSCENDENT_NEUTRONIUM_FORGE;
+    public static MetaTileEntitySuprachronalNeutroniumForge SUPRACHRONAL_NEUTRONIUM_FORGE;
 
     /**
      * Register a Steam machine and its correspondence High Pressure Steam machine.
@@ -625,6 +625,6 @@ public class GTLiteMetaTileEntities {
         DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE = registerMultiMetaTileEntity(200, new MetaTileEntityDimensionallyTranscendentPlasmaForge(gtliteId("dimensionally_transcendent_plasma_forge")));
         QUANTUM_COMPUTER = registerMultiMetaTileEntity(201, new MetaTileEntityQuantumComputer(gtliteId("quantum_computer")));
         NICOLL_DYSON_BEAMER = registerMultiMetaTileEntity(202, new MetaTileEntityNicollDysonBeamer(gtliteId("nicoll_dyson_beamer")));
-        DIMENSIONALLY_TRANSCENDENT_NEUTRONIUM_FORGE = registerMultiMetaTileEntity(203, new MetaTileEntityDimensionallyTranscendentNeutroniumForge(gtliteId("dimensionally_transcendent_neutronium_forge")));
+        SUPRACHRONAL_NEUTRONIUM_FORGE = registerMultiMetaTileEntity(203, new MetaTileEntitySuprachronalNeutroniumForge(gtliteId("suprachronal_neutronium_forge")));
     }
 }

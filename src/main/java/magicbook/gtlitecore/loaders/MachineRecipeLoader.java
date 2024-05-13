@@ -2167,7 +2167,7 @@ public class MachineRecipeLoader {
                 .fluidInputs(Shirabon.getFluid(57600))
                 .fluidInputs(CosmicNeutronium.getFluid(28800))
                 .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(28800))
-                .output(DIMENSIONALLY_TRANSCENDENT_NEUTRONIUM_FORGE)
+                .output(SUPRACHRONAL_NEUTRONIUM_FORGE)
                 .EUt(VA[UXV])
                 .duration(60 * SECOND)
                 .stationResearch(b -> b

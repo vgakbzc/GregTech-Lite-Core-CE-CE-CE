@@ -2030,21 +2030,23 @@ gtlitecore.machine.nicoll_dyson_beamer.tier.1=低
 gtlitecore.machine.nicoll_dyson_beamer.tier.2=中
 gtlitecore.machine.nicoll_dyson_beamer.tier.3=高
 
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.name=超维度中子锻造厂
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.1=一些低等文明的短视者将其称为神迹，而我们称之为物理。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.2=另一些低等文明将它的劣质复制品用于居住，并称之为“环形世界”或“奥尔德森盘”。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.3=建立在巨大的、跨星系的环形超区段上的超级锻造厂，你彻底征服物质界的象征。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.4=一切结构维持设施与工程设施均建立在这个环形超区段中，无数的纳米机器人在其中工作。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.5=使用不同的§6聚变线圈方块§7会提高配方时间减免，按住 SHIFT 键以查看具体数值。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.6=切换机器模式以聚焦锻造厂运行的超区段侧重，所有超区段均自带无损超频效果。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.7=§6物质嬗变§7超区段：可以直接将材料转换为其等离子形态，相当于一台超级聚变反应堆。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.8=§6等离子聚合§7超区段：用于生产特殊的等离子体聚合燃料以备使用。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip.9=§6对撞加速§7超区段：可以强行剥离并重组物质的成分，相当于一台星系级环形粒子加速器。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip_shift.1=使用§2超导线圈方块§7：配方时间减少10%%。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip_shift.2=使用§2聚变线圈方块§7：配方时间减少20%%。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip_shift.3=使用§2高级聚变线圈方块§7：配方时间减少40%%。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip_shift.4=使用§2终极聚变线圈方块§7：配方时间减少60%%。
-gtlitecore.machine.dimensionally_transcendent_neutronium_forge.tooltip_shift.5=使用§2恒星聚变线圈方块§7：配方时间减少80%%。
+gtlitecore.machine.suprachronal_neutronium_forge.name=超时空中子锻造厂
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.1=长时间开机或导致世界线混乱现象的发生
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.2=你彻底征服物质界的象征。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.3=只是一台浮跃于时间与空间的夹缝中的超区段结构。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.4=一些低等文明的短视者将其称为神迹，而我们称之为物理。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.5=另一些低等文明将它的劣质复制品用于居住，并称之为“环形世界”或“奥尔德森盘”。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.6=或许宇宙中的某些存在会对这台机器感到不安，因为它彻底撕碎了时空的秩序。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.7=使用不同的§6聚变线圈方块§7会提高配方时间减免，按住 SHIFT 键以查看具体效果。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.8=切换机器模式以聚焦锻造厂运行的超区段侧重，所有超区段均自带§r无损超频§7效果。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.9=§6物质嬗变§7超区段：可以直接将材料转换为其等离子形态，相当于一台超级聚变反应堆。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.10=§6等离子聚合§7超区段：用于生产特殊的等离子体聚合燃料以备使用。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip.11=§6对撞加速§7超区段：可以强行剥离并重组物质的成分，相当于一台星系级环形粒子加速器。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.1=使用§2超导线圈方块§7：配方时间减少10%%。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.2=使用§2聚变线圈方块§7：配方时间减少20%%。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.3=使用§2高级聚变线圈方块§7：配方时间减少40%%
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.4=使用§2终极聚变线圈方块§7：配方时间减少60%%。
+gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.5=使用§2恒星聚变线圈方块§7：配方时间减少80%%。
 
 ##  Multiblock Parts
 
