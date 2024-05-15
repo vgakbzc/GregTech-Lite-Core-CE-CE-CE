@@ -3447,7 +3447,7 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BIOLOGICAL_STERILE_MACHINE_CASING, ConfigHolder.recipes.casingsPerCraft))
                 .EUt(VA[ZPM])
                 .duration(50)
-                .build();
+                .buildAndRegister();
 
         //  Infinity Cooling Casing (Thermosink Casing)
         ASSEMBLER_RECIPES.recipeBuilder()

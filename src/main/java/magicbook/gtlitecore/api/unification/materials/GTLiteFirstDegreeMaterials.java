@@ -695,7 +695,7 @@ public class GTLiteFirstDegreeMaterials {
                 .ingot()
                 .color(0xFFF458)
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
                 .components(Gallium, 1, Nitrogen, 1)
                 .build();
 

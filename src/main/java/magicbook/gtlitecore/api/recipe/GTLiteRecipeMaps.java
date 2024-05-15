@@ -1393,7 +1393,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<PCBFactoryRecipeBuilder> PCB_FACTORY_RECIPES = new RecipeMap<>("pcb_factory", 6, 1, 3, 0, new PCBFactoryRecipeBuilder(), false)
+    public static final RecipeMap<PCBFactoryRecipeBuilder> PCB_FACTORY_RECIPES = new RecipeMap<>("pcb_factory", 6, 9, 3, 0, new PCBFactoryRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
