@@ -4,25 +4,33 @@ import crafttweaker.annotations.ZenRegister;
 import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.widgets.ProgressWidget;
+import gregtech.api.pattern.FactoryBlockPattern;
+import gregtech.api.pattern.MultiblockShapeInfo;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.recipes.ingredients.GTRecipeInput;
+import gregtech.api.unification.material.Materials;
 import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
+import magicbook.gtlitecore.api.recipe.properties.PCBFactoryBioUpgradeProperty;
+import magicbook.gtlitecore.api.recipe.properties.PCBFactoryProperty;
+import magicbook.gtlitecore.api.recipe.properties.SwarmTierProperty;
+import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags;
+import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.BlockCrucible;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialDrillingRig;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityIndustrialRoaster;
-import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
+import magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus;
+import magicbook.gtlitecore.loaders.multiblock.PCBFactory;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -1374,7 +1382,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     A special check recipe map, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityCosmicRayDetector}.
+     *     A special check recipe map, please see: {@link MetaTileEntityCosmicRayDetector}.
      *     This recipe map will check altitude of special block in multiblock structure.
      * </p>
      */
@@ -1387,10 +1395,120 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
+     *     GTLiteRecipeMaps.PCB_FACTORY_RECIPES.recipeBuilder()
+     *          .circuitMeta(1)
+     *          .input(plate, Wood)
+     *          .input(foil, Lead, 16)
+     *          .input(foil, WroughtIron, 16)
+     *          .fluidInputs(SulfuricAcid.getFluid(500))
+     *          .fluidInputs(Iron3CHloride.getFluid(250))
+     *          .output(MetaItems.BASIC_CIRCUIT_BOARD, 8)
+     *          .EUt(VA[ULV] * 3 / 4)
+     *          .duration(20)
+     *          .tier(1)
+     *          .isBioUpgrade(1)
+     *          .buildAndRegister();
      * </pre>
      *
      * <p>
+     *     This recipe is used for {@link MetaTileEntityPCBFactory}, pay attention, this description is useful for
+     *     devs which want add PCB Factory recipes, this Recipe Map is just used for Auto-generated Recipes in {@link PCBFactory},
+     *     of cause you can use this as common Recipe Map. But in this description, we will show how add Auto-generated recipes
+     *     for a Circuit Board. In {@code gtlitecore}, we add 12 plastic tier ({@link PCBFactory#plasticTier}) by default:
+     *
+     *     <ul>
+     *         <li>1 -> {@link Materials#Polyethylene};</li>
+     *         <li>2 -> {@link Materials#PolyvinylChloride};</li>
+     *         <li>3 -> {@link Materials#Polytetrafluoroethylene};</li>
+     *         <li>4 -> {@link Materials#Epoxy};</li>
+     *         <li>5 -> {@link Materials#ReinforcedEpoxyResin};</li>
+     *         <li>6 -> {@link Materials#Polybenzimidazole};</li>
+     *         <li>7 -> {@link GTLiteMaterials#KaptonK};</li>
+     *         <li>8 -> {@link GTLiteMaterials#KaptonE};</li>
+     *         <li>9 -> {@link GTLiteMaterials#Polyetheretherketone};</li>
+     *         <li>10 -> {@link GTLiteMaterials#Kevlar};</li>
+     *         <li>11 -> {@link GTLiteMaterials#Zylon};</li>
+     *         <li>12 -> {@link GTLiteMaterials#FullerenePolymerMatrix};</li>
+     *     </ul>
+     *
+     *     Though we can define more {@code plasticTier}, the {@code maxOutputs} slot limit of this Recipe Map is too small
+     *     than some advanced recipes. So we just add 12 {@code plasticTier}. In {@code gtlitecore}, we have following Circuit
+     *     Boards (consists of vanilla GregTech Circuit Boards):
+     *
+     *     <ul>
+     *         <li>1 -> Plastic Circuit Board -> Processor Circuit;</li>
+     *         <li>2 -> Advanced Circuit Board -> Nano Circuit;</li>
+     *         <li>3 -> Extreme Circuit Board -> Quantum Circuit;</li>
+     *         <li>4 -> Elite Circuit Board -> Crystal Circuit;</li>
+     *         <li>5 -> Wetware Circuit Board -> Wetware Circuits;</li>
+     *         <li>6 -> Super Circuit Board -> Gooware Circuits;</li>
+     *         <li>7 -> Ultimate Circuit Board -> Optical Circuits;</li>
+     *         <li>8 -> Infinite Circuit Board -> All Circuits beyond Optical Circuit;</li>
+     *     </ul>
+     *
+     *     Imaginatively, for default {@code plasticTier}, you can add 4 new circuit type exactly (when add fifth, will cause
+     *     problem because it is higher than maximum {@code plasticTier}). Here is a example of Auto-generated recipes:
+     *
+     *     <pre>
+     *         for (int tier = 1; tier <= plasticTier; tier++) {
+     *             int boardAmount = (int) Math.ceil(8 * Math.sqrt(Math.pow(2, tier - 1)));
+     *             List<ItemStack> boards = new ArrayList<>();
+     *             for (int i = boardAmount; i > 64; i -= 64) {
+     *                 boards.add(PLASTIC_CIRCUIT_BOARD.getStackForm(64));
+     *                 boardAmount -= 64;
+     *             }
+     *             boards.add(PLASTIC_CIRCUIT_BOARD.getStackForm(boardAmount));
+     *             PCB_FACTORY_RECIPES.recipeBuilder()
+     *                     .circuitMeta(1)
+     *                     .input(plate, plasticTiers.inverse().get(tier))
+     *                     .input(foil, AnnealedCopper, (int) (16 * (Math.sqrt(tier))))
+     *                     .input(foil, Copper, (int) (16 * Math.sqrt(tier)))
+     *                     .fluidInputs(SulfuricAcid.getFluid((int) (500 * Math.sqrt(tier))))
+     *                     .fluidInputs(Iron3Chloride.getFluid((int) (250 * Math.sqrt(tier))))
+     *                     .outputs(boards.toArray(new ItemStack[0]))
+     *                     .EUt(VA[tier] * 3 / 4)
+     *                     .duration((int) Math.ceil(600 / Math.sqrt(Math.pow(1.5, tier - 1.5))))
+     *                     .tier(1)
+     *                     .buildAndRegister();
+     *         }
+     *     </pre>
+     *
+     *     In this example, we use a {@code HashBiSet} to storage plastic tier infos (which called by {@code plasticTiers}),
+     *     and the first part is a simple stack spliting step (used to make Recipe Map list more clean, effect of this step
+     *     is split total number of stacks to each stack), and the second part is Recipe Builder, we use fixed datas about:
+     *
+     *     <ul>
+     *         <li>{@code circuitMeta}: Used 1, 2 and 3 to preserve different of 3 {@code tier} recipes;</li>
+     *         <li>{@code input}: Used 2 different Material Foil, and amount is always {@code 16 * sqrt(tier)};</li>
+     *         <li>{@code fluidInputs}: Used Etching Liquid, {@link Materials#SulfuricAcid} is fixed usage,
+     *                                  others required related recipes.</li>
+     *         <li>{@code EUt}: Used {@code VA[tier] * 3 / 4} in T1 recipe, and use {@code VA[tier + 1] * 3 / 4}
+     *                          in T2 and T3 recipes.</li>
+     *         <li>{@code duration}: Used {@code ceil(600 / sqrt(pow(1.5, tier - 1.5)))} for T1 recipe,
+     *                               used {@code ceil(500 / sqrt(pow(1.5, tier - 1.5)))} for T2 recipe,
+     *                               used {@code ceil(400 / sqrt(pow(1.5, tier - 1.5)))} for T3 recipe;</li>
+     *         <li>{@code tier}: Used to check {@code mainUpgradeNumber} in {@link MetaTileEntityPCBFactory}
+     *                           used 1, 2 and 3 to check it Main Structure Tier (T1, T2, T3), T1 is just the
+     *                           Basic Structure of Multiblock.</li>
+     *         <li>{@code isBioUpgrade}: Used to check {@code bioUpgradeNumber} in {@link MetaTileEntityPCBFactory},
+     *                                   1 means {@code true} (consider for the future contents, use {@code Integer}
+     *                                   maybe more safe for update).</li>
+     *     </ul>
+     *
+     *     If you want to add new Upgrade, then you should add it structure for {@link MetaTileEntityPCBFactory},
+     *     an auxiliary structure in Multiblock Structure should have a {@code context} which wrote in {@code formStructure()},
+     *     and has related Structure in {@link FactoryBlockPattern} part and Structure View part ({@link MultiblockShapeInfo}).
+     *     Then, you should add a new Recipe Property (and init it in {@link CommonProxy}), and compare it in Main Recipe Builder,
+     *     i.e. {@link PCBFactoryRecipeBuilder#applyProperty(String, Object)}.
      * </p>
+     *
+     * @see MetaTileEntityPCBFactory
+     * @see PCBFactoryRecipeBuilder
+     * @see PCBFactoryProperty
+     * @see PCBFactoryBioUpgradeProperty
+     * @see PCBFactory
+     *
+     * @since 2.8.8-beta
      */
     @ZenProperty
     public static final RecipeMap<PCBFactoryRecipeBuilder> PCB_FACTORY_RECIPES = new RecipeMap<>("pcb_factory", 6, 9, 3, 0, new PCBFactoryRecipeBuilder(), false)
@@ -1416,9 +1534,15 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     One of three modes of Neutral Network Nexus, used to create Nanosensor and Nanotube,
-     *     please see {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix}.
+     *     One of three modes of Neutral Network Nexus, used to create Nanosensor and Nanotube.
      * </p>
+     *
+     * @see MetaTileEntityNeutralNetworkNexus
+     * @see SwarmTierRecipeBuilder
+     * @see SwarmTierProperty
+     * @see NeutralNetworkNexus
+     *
+     * @since 2.8.7-beta
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> NEUTRAL_NETWORK_NEXUS_ASSEMBLING_MODE = new RecipeMap<>("neutral_network_nexus_assembling_mode", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
@@ -1447,8 +1571,14 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     One of three modes of Neutral Network Nexus, used to breeding nano swarm.
-     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
      * </p>
+     *
+     * @see MetaTileEntityNeutralNetworkNexus
+     * @see SwarmTierRecipeBuilder
+     * @see SwarmTierProperty
+     * @see NeutralNetworkNexus
+     *
+     * @since 2.8.7-beta
      */
     @ZenProperty
     public static final RecipeMap<SwarmTierRecipeBuilder> NEUTRAL_NETWORK_NEXUS_BREEDING_MODE = new RecipeMap<>("neutral_network_nexus_breeding_mode", 6, 1, 3, 0, new SwarmTierRecipeBuilder(), false)
@@ -1478,8 +1608,14 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     One of two modes of Neutral Network Nexus, used to hybridizing nano swarm.
-     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus}.
      * </p>
+     *
+     * @see MetaTileEntityNeutralNetworkNexus
+     * @see SwarmTierRecipeBuilder
+     * @see SwarmTierProperty
+     * @see NeutralNetworkNexus
+     *
+     * @since 2.8.7-beta
      */
     @ZenProperty
     public static final RecipeMap<SwarmTierRecipeBuilder> NEUTRAL_NETWORK_NEXUS_HYBRIDIZING_MODE = new RecipeMap<>("neutral_network_nexus_hybridizing_mode", 6, 6, 3, 3, new SwarmTierRecipeBuilder(), false)

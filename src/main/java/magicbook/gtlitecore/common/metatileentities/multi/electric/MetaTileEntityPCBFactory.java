@@ -499,7 +499,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         MultiblockDisplayText.builder(textList, this.isStructureFormed())
                 .addCustom((tl) -> {
                     if (this.isStructureFormed()) {
-                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.pcb_factory.structure.tier", this.getMainUpgradeNumber()));
+                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.pcb_factory.structure.info", this.getMainUpgradeNumber(), this.getTraceSize()));
                         if (this.getCoolingUpgradeNumber() > 0) {
                             tl.add(TextComponentUtil.translationWithColor(TextFormatting.AQUA, "gtlitecore.machine.pcb_factory.structure.cooling_tower"));
                             if (this.getCoolingUpgradeNumber() == 2) {
@@ -515,11 +515,6 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                 .addEnergyUsageLine(this.recipeMapWorkable.getEnergyContainer())
                 .addEnergyTierLine(GTUtility.getTierByVoltage(this.recipeMapWorkable.getMaxVoltage()))
                 .addParallelsLine(this.recipeMapWorkable.getParallelLimit())
-                .addCustom((tl) -> {
-                    if (this.isStructureFormed()) {
-                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.pcb_factory.trace_size", this.getTraceSize()));
-                    }
-                })
                 .addWorkingStatusLine()
                 .addProgressLine(this.recipeMapWorkable.getProgressPercent());
     }
