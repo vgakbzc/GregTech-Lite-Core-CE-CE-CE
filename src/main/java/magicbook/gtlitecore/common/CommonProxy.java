@@ -233,6 +233,12 @@ public class CommonProxy {
         SwarmTierProperty.registerSwarmTier(2, "II");
         SwarmTierProperty.registerSwarmTier(3, "III");
 
+        GTLiteLog.logger.info("Registering PCB Factory Tier for recipe...");
+        PCBFactoryProperty.registerPCBFactoryTier(1, "1");
+        PCBFactoryProperty.registerPCBFactoryTier(2, "2");
+        PCBFactoryProperty.registerPCBFactoryTier(3, "3");
+        PCBFactoryBioUpgradeProperty.registerPCBFactoryBioUpgradeTier(1, "");
+
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
         RecipeManager.init();
     }

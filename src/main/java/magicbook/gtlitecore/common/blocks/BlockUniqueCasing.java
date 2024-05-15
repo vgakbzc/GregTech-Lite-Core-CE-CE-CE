@@ -39,7 +39,6 @@ public class BlockUniqueCasing extends VariantBlock<BlockUniqueCasing.UniqueCasi
         ADVANCED_HYPER_CASING("advanced_hyper_casing"),
         STELLAR_CONTAINMENT_CASING("stellar_containment_casing"),
         REFLECTIVE_CASING("reflective_casing"),
-        COMPMUTING_CASING("computing_casing"),
         QUANTUM_COIL("quantum_coil");
 
         private final String name;

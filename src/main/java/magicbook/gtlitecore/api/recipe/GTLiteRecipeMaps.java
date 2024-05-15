@@ -1387,56 +1387,15 @@ public class GTLiteRecipeMaps {
      * Example:
      *
      * <pre>
-     *     GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES.recipeBuilder()
-     *          .circuitMeta(3)
-     *          .notConsumable(GTLiteOrePrefix.swarm, Gold)
-     *          .input(OrePrefix.plate, GTLiteMaterials.KaptonK)
-     *          .input(OrePrefix.foil, Materials.AnnealedCopper, 42)
-     *          .input(OrePrefix.foil, Materials.Copper, 42)
-     *          .fluidInputs(Materials.SulfuricAcid.getFluid(1322))
-     *          .fluidInputs(Materials.Iron3Chloride.getFluid(661))
-     *          .output(MetaItems.PLASTIC_CIRCUIT_BOARD, 91)
-     *          .EUt(368640)
-     *          .duration(132)
-     *          .buildAndRegister();
      * </pre>
      *
      * <p>
-     *     Mode for PCB Factory, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory}.
-     *     Used nano swarm as catalyst in common situation (tier 2: silver, tier 3: gold).
-     *     TODO maybe deprecate or tweak, if redo pcb factory in future.
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_ETCH_RECIPES = new RecipeMap<>("pcb_factory_etching_mode", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<PCBFactoryRecipeBuilder> PCB_FACTORY_RECIPES = new RecipeMap<>("pcb_factory", 6, 1, 3, 0, new PCBFactoryRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.CIRCUIT_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.CIRCUIT_OVERLAY)
-            .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
-            .setSound(GTSoundEvents.ASSEMBLER);
-
-    /**
-     * Example:
-     *
-     * <pre>
-     *     GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES.recipeBuilder()
-     *          .input(OrePrefix.plate, GTLiteMaterials.KaptonK)
-     *          .input(OrePrefix.foil, Materials.Glass, 64)
-     *          .output(MetaItems.WETWARE_CIRCUIT_BOARD, 125)
-     *          .EUt(491520)
-     *          .duration(392)
-     *          .buildAndRegister();
-     * </pre>
-     *
-     * <p>
-     *     Mode for PCB Factory, please see: {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory}.
-     *     Unused now.
-     *     TODO maybe deprecate or tweak, if redo pcb factory in future.
-     * </p>
-     */
-    @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> PCB_FACTORY_BIO_RECIPES = new RecipeMap<>("pcb_factory_bio_etching_mode", 6, 1, 3, 0, new SimpleRecipeBuilder(), false)
-            .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
-            .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ASSEMBLER);
 

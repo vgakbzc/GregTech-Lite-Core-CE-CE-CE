@@ -75,8 +75,6 @@ tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
 tile.unique_casing.advanced_hyper_casing.name=黑矮星物质强化超能硅岩机器外壳
 tile.unique_casing.stellar_containment_casing.name=恒星热力容器
 tile.unique_casing.reflective_casing.name=抗形变反射面机器外壳
-tile.unique_casing.computing_casing.name=扫描数据计算单元
-tile.unique_casing.computing_casing.tooltip=用于为§6PCB工厂§7提供对扫描对象的自动分析演算的功能
 tile.unique_casing.quantum_coil.name=超维度转换线圈方块
 tile.unique_casing.quantum_coil.tooltip=用于从超维度提取物质与能量
 

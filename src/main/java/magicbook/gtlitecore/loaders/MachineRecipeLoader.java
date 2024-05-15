@@ -1045,25 +1045,25 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  PCB Factory
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, RhodiumPlatedPalladium, 4)
-                .input(CIRCUIT_ASSEMBLER[IV], 4)
-                .input(plate, Osmiridium, 4)
-                .input(circuit, MarkerMaterials.Tier.LuV, 16)
-                .input(gear, Ruridit, 2)
-                .input(ROBOT_ARM_LuV, 4)
-                .input(cableGtSingle, NiobiumTitanium, 16)
-                .fluidInputs(SolderingAlloy.getFluid(5760))
-                .fluidInputs(Lubricant.getFluid(12000))
-                .fluidInputs(PCBCoolant.getFluid(1000))
-                .output(PCB_FACTORY)
-                .scannerResearch(b -> b
-                        .researchStack(CIRCUIT_ASSEMBLER[IV].getStackForm())
-                        .EUt(VA[IV])
-                        .duration(600))
-                .EUt(VA[LuV])
-                .duration(1200)
-                .buildAndRegister();
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .input(frameGt, RhodiumPlatedPalladium, 4)
+        //        .input(CIRCUIT_ASSEMBLER[IV], 4)
+        //        .input(plate, Osmiridium, 4)
+        //        .input(circuit, MarkerMaterials.Tier.LuV, 16)
+        //        .input(gear, Ruridit, 2)
+        //        .input(ROBOT_ARM_LuV, 4)
+        //        .input(cableGtSingle, NiobiumTitanium, 16)
+        //        .fluidInputs(SolderingAlloy.getFluid(5760))
+        //        .fluidInputs(Lubricant.getFluid(12000))
+        //        .fluidInputs(PCBCoolant.getFluid(1000))
+        //        .output(PCB_FACTORY)
+        //        .scannerResearch(b -> b
+        //                .researchStack(CIRCUIT_ASSEMBLER[IV].getStackForm())
+        //                .EUt(VA[IV])
+        //                .duration(600))
+        //        .EUt(VA[LuV])
+        //        .duration(1200)
+        //        .buildAndRegister();
 
         //  Quantum Force Transformer
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -3496,26 +3496,6 @@ public class MachineRecipeLoader {
                 .EUt(VA[UHV])
                 .duration(50)
                 .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        //  Computing casing
-        ModHandler.addShapedRecipe(true, "computing_casing", GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.COMPMUTING_CASING, 2),
-                "pPp", "wCw", "pSp",
-                'C', GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING),
-                'P', COVER_SCREEN,
-                'p', new UnificationEntry(plate, RhodiumPlatedPalladium),
-                'S', SENSOR_IV,
-                'w', new UnificationEntry(wireGtSingle, Cobalt));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .inputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING))
-                .input(COVER_SCREEN)
-                .input(plate, RhodiumPlatedPalladium, 4)
-                .input(SENSOR_IV)
-                .input(wireGtSingle, Cobalt, 2)
-                .outputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.COMPMUTING_CASING, 2))
-                .EUt(VA[LV])
-                .duration(50)
                 .buildAndRegister();
     }
 

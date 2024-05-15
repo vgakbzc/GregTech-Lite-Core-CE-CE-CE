@@ -1,16 +1,29 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.foil;
-import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PCB_FACTORY_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonK;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 
 public class PCBFactory {
 
+    public static void init() {
+
+        PCB_FACTORY_RECIPES.recipeBuilder()
+                .input(ingot, Iron)
+                .output(ingot, Gold)
+                .EUt(VA[LV])
+                .duration(1)
+                .tier(1)
+                .isBioUpgrade(1)
+                .buildAndRegister();
+    }
+/*
     public static void init() {
         BasicCircuitBoard();
         GoodCircuitBoard();
@@ -1058,4 +1071,6 @@ public class PCBFactory {
     private static void OpticalCircuitBoard() {}
 
     private static void SpintronicCircuitBoard() {}
+
+ */
 }

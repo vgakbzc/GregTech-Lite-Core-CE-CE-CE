@@ -28,7 +28,7 @@ public class GrindBallProperty extends RecipeProperty<Integer> {
     private static String getGrindBallTier(int grindballTier) {
         if (grindballTier == 1) {
             return I18n.format("gtlitecore.machine.isa_mill.grind_ball.soapstone") ;
-        }else {
+        } else {
             return I18n.format("gtlitecore.machine.isa_mill.grind_ball.aluminium");
         }
     }

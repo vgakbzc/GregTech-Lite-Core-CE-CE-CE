@@ -42,15 +42,14 @@ import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.optio
 
 //  TODO redo workable handler.
 //  TODO add recipe tier, and compare with auxiliaryUpgradeNumber though checkRecipe().
-public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
-
+public class MetaTileEntityPCBFactory{
+/*
     private byte auxiliaryUpgradeNumber = 0;
     private static final TraceabilityPredicate SNOW_LAYER = new TraceabilityPredicate(blockWorldState -> GTUtility.isBlockSnow(blockWorldState.getBlockState()));
 
     public MetaTileEntityPCBFactory(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
-                GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES,
-                GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES});
+                GTLiteRecipeMaps.PCB_FACTORY_RECIPES});
         this.recipeMapWorkable = new PCBFactoryRecipeLogic(this);
     }
 
@@ -194,6 +193,9 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
      *
      * @return Total Structure of PCB Factory, it means this structure consist of all upgrades.
      */
+
+
+    /*
     @Nonnull
     @Override
     protected BlockPattern createStructurePattern() {
@@ -312,7 +314,7 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
     }
 
     private static IBlockState getUniqueCasingState() {
-        return GTLiteMetaBlocks.UNIQUE_CASING.getState(BlockUniqueCasing.UniqueCasingType.COMPMUTING_CASING);
+        return 1;
     }
 
     private static IBlockState getBoilerCasingState() {
@@ -497,6 +499,8 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
         /**
          * @return Check if machine in Etching mode.
          */
+
+    /*
         private boolean isEtchMode() {
             return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_ETCH_RECIPES;
         }
@@ -504,6 +508,8 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
         /**
          * @return Check if machine in Bio mode.
          */
+
+    /*
         private boolean isBioMode() {
             return getRecipeMap() == GTLiteRecipeMaps.PCB_FACTORY_BIO_RECIPES;
         }
@@ -511,6 +517,8 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
         /**
          * @return Get parallel by auxiliaryUpgradeNumber, when auxiliary = 1, 3, 4, then return correspond parallel to recipe.
          */
+
+    /*
         @Override
         public int getParallelLimit() {
             if (isEtchMode()) {
@@ -539,6 +547,8 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
         /**
          * @param maxProgress Get redution by auxiliaryUpgradeNumber, when auxiliary = 2, 5, then get 1/4, 1/8 progress time.
          */
+
+    /*
         @Override
         public void setMaxProgress(int maxProgress) {
             if (auxiliaryUpgradeNumber == 2) { // Water Cooling Tower
@@ -548,5 +558,6 @@ public class MetaTileEntityPCBFactory extends MultiMapMultiblockController {
                 this.maxProgressTime = maxProgress / 8;
             }
         }
-    }
+    }*/
+
 }
