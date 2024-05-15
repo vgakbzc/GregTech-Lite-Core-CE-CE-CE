@@ -555,7 +555,7 @@ public class GTLiteMetaTileEntities {
         LARGE_ROCKET_ENGINE = registerMultiMetaTileEntity(67, new MetaTileEntityLargeRocketEngine(gtliteId("large_rocket_engine")));
         LARGE_BIOMASS_GENERATOR = registerMultiMetaTileEntity(68, new MetaTileEntityLargeBiomassGenerator(gtliteId("large_biomass_generator")));
         NEUTRAL_NETWORK_NEXUS = registerMultiMetaTileEntity(69, new MetaTileEntityNeutralNetworkNexus(gtliteId("neutral_network_nexus")));
-        //PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
+        PCB_FACTORY = registerMultiMetaTileEntity(70, new MetaTileEntityPCBFactory(gtliteId("pcb_factory")));
         DANGOTE_DISTILLERY = registerMultiMetaTileEntity(71, new MetaTileEntityDangoteDistillery(gtliteId("dangote_distillery")));
         AMAZON_WAREHOUSING_DEPOT = registerMultiMetaTileEntity(72, new MetaTileEntityAmazonWarehousingDepot(gtliteId("amazon_warehousing_depot")));
         ARC_FURNACE_ARRAY = registerMultiMetaTileEntity(73, new MetaTileEntityArcFurnaceArray(gtliteId("arc_furnace_array")));

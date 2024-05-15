@@ -131,7 +131,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UV])
                         .vacuumStats(VA[EV], 280))
                 .cableProperties(V[UHV], 6, 8, false)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_GEAR, GENERATE_FRAME)
                 .build();
 
         //  12008 MAR-M200 Steel

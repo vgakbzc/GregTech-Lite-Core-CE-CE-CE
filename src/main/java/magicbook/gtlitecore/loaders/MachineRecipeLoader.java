@@ -3443,20 +3443,6 @@ public class MachineRecipeLoader {
                 .duration(50)
                 .buildAndRegister();
 
-        //  Water cooling casing
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(frameGt, StainlessSteel)
-                .input(plate, HY1301, 4)
-                .input(pipeNormalFluid, Polybenzimidazole)
-                .input(ELECTRIC_PUMP_EV)
-                .input(wireFine, NiobiumTitanium, 4)
-                .fluidInputs(PCBCoolant.getFluid(L * 2))
-                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.WATER_COOLED_MACHINE_CASING, 2))
-                .EUt(VA[ZPM])
-                .duration(50)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
         //  Bio chamber casing
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, VanadiumSteel)

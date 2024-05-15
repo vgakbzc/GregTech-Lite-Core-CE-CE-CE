@@ -145,8 +145,6 @@ tile.pcb_factory_casing.radiation_proof_scan_framework_casing.name=抗辐射特�
 tile.pcb_factory_casing.radiation_proof_scan_framework_casing.tooltip=可直接扫描核反应堆/n§6PCB工厂§7-外壳等级：§bIII§7
 tile.pcb_factory_casing.biological_sterile_machine_casing.name=生物级无菌机器外壳
 tile.pcb_factory_casing.biological_sterile_machine_casing.tooltip=比无菌超净间更干净/n§6PCB工厂§7-§a生物仓外壳§7
-tile.pcb_factory_casing.water_cooled_machine_casing.name=水冷机器外壳
-tile.pcb_factory_casing.water_cooled_machine_casing.tooltip=散热器件/n§6PCB工厂§7-§b水冷塔外壳§7
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
 tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7
 
@@ -1649,8 +1647,30 @@ gtlitecore.machine.neutral_network_nexus.tooltip.4=在§r多方块结构提示§
 gtlitecore.machine.neutral_network_nexus.tier=机器等级：
 
 gtlitecore.machine.pcb_factory.name=PCB工厂
-gtlitecore.machine.pcb_factory_tier=等级：
+gtlitecore.machine.pcb_factory.tooltip.1=机器类型：§e电路基板工厂§7
+gtlitecore.machine.pcb_factory.tooltip.2=带有附属结构，附属结构的等级限制了最大配方等级。
+gtlitecore.machine.pcb_factory.tooltip.3=2级与3级PCB工厂支持放置额外的纳米蜂群计算并行，
+gtlitecore.machine.pcb_factory.tooltip.4=- 2级：每放入1个§r银纳米蜂群§7，并行便增加1；
+gtlitecore.machine.pcb_factory.tooltip.5=- 3级：每放入1个§6金纳米蜂群§7，并行便增加2；
+gtlitecore.machine.pcb_factory.tooltip.6=通过放置额外的纳米蜂群获得的并行没有最大上限。
+gtlitecore.machine.pcb_factory.tooltip.7=需要升级冷却结构才能解锁机器的超频功能，
+gtlitecore.machine.pcb_factory.tooltip.8=- 建造§b水冷塔§7后，解锁配方的默认超频功能；
+gtlitecore.machine.pcb_factory.tooltip.9=- 建造§9空冻塔§7后，解锁配方的
+gtlitecore.machine.pcb_factory.tooltip.9.25=完美超频
+gtlitecore.machine.pcb_factory.tooltip.9.5=功能；
+gtlitecore.machine.pcb_factory.tooltip.10=建造§2生物室§7以解锁高级电路板配方。
+gtlitecore.machine.pcb_factory.tooltip.11=调整机器的带宽（默认为100μm，每次±25μm）以获得特殊效果，
+gtlitecore.machine.pcb_factory.tooltip.12=- 带宽每缩短25μm，配方时间就减少20%%，耗能就增加50%%；
+gtlitecore.machine.pcb_factory.tooltip.13=- 带宽每放宽25μm，配方时间就增加20%%，耗能就减少10%%；
+gtlitecore.machine.pcb_factory.tooltip.14=机器的最小带宽为25μm，最大带宽为200μm。
+
+gtlitecore.machine.pcb_factory_tier=PCB工厂等级：
 gtlitecore.machine.pcb_factory.bio_upgrade=需要生物仓升级
+
+gtlitecore.machine.pcb_factory.trace_size.decrement=§c放宽25μm带宽 /n§7配方时间增加20%%，耗电量减少50%%
+gtlitecore.machine.pcb_factory.trace_size.increment=§a缩短25μm带宽 /n§7配方时间减少20%%，耗电量增加50%%
+
+gtlitecore.machine.pcb_factory.description=
 
 gtlitecore.machine.dangote_distillery.name=丹格特蒸馏厂
 gtlitecore.machine.dangote_distillery.tooltip.1=现代化工业蒸馏，从现在开始
