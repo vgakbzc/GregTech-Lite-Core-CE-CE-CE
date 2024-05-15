@@ -15,22 +15,26 @@ import gregtech.api.recipes.ingredients.GTRecipeInput;
 import gregtech.api.unification.material.Materials;
 import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.core.sound.GTSoundEvents;
+import magicbook.gtlitecore.api.capability.impl.HeatExchangerRecipeLogic;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.builder.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
-import magicbook.gtlitecore.api.recipe.properties.PCBFactoryBioUpgradeProperty;
-import magicbook.gtlitecore.api.recipe.properties.PCBFactoryProperty;
-import magicbook.gtlitecore.api.recipe.properties.SwarmTierProperty;
+import magicbook.gtlitecore.api.recipe.properties.*;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags;
+import magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix;
 import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.BlockCrucible;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityExtremeHeatExchanger;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityMegaHeatExchanger;
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
+import magicbook.gtlitecore.loaders.multiblock.HeatExchanger;
 import magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus;
 import magicbook.gtlitecore.loaders.multiblock.PCBFactory;
+import magicbook.gtlitecore.loaders.multiblock.QuantumForceTransformer;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
@@ -1650,12 +1654,19 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Please see: {@link magicbook.gtlitecore.loaders.multiblock.QuantumForceTransformer},
      *     This recipe map's predicate like {@link #COLLIDER_RECIPES}.
-     *     If you want to add new recipes, please use swarm ({@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix#swarm})
+     *     If you want to add new recipes, please use swarm ({@link GTLiteOrePrefix#swarm})
      *     as catalyst, and add a advanced version of your recipe (use different swarm as catalyst),
      *     and add a special circuit to resolve conflicts.
      * </p>
+     *
+     * @see MetaTileEntityQuantumForceTransformer
+     * @see FieldCasingTierRecipeBuilder
+     * @see FieldCasingTierProperty
+     * @see QuantumForceTransformer
+     *
+     * @since 2.7.4-beta
+     *
      */
     @ZenProperty
     public static final RecipeMap<FieldCasingTierRecipeBuilder> QUANTUM_FORCE_TRANSFORMER_RECIPES = new RecipeMap<>("quantum_force_transformer", 6, 6, 6, 6, new FieldCasingTierRecipeBuilder(), false)
@@ -1714,11 +1725,20 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Please see: {@link FlowRateRecipeBuilder}, this recipe map has two special property.
-     *     Pay attention, the correspond machine also has some special check,
-     *     please see: {@link magicbook.gtlitecore.api.capability.impl.HeatExchangerRecipeLogic}.
-     *     If you still understand, then you can see {@link magicbook.gtlitecore.loaders.multiblock.HeatExchanger}.
+     *     Pay attention, the correspond machine also has some special check.
      *     Textures of JEI page from Prim's mod <a href="https://github.com/GTNewHorizons/GoodGenerator">Good Generator</a>.
      * </p>
+     *
+     * @see MetaTileEntityHeatExchanger
+     * @see MetaTileEntityExtremeHeatExchanger
+     * @see MetaTileEntityMegaHeatExchanger
+     * @see HeatExchangerRecipeLogic
+     * @see FlowRateRecipeBuilder
+     * @see FlowRateProperty
+     * @see MaxRateProperty
+     * @see HeatExchanger
+     *
+     * @since 2.7.4-beta
      */
     @ZenProperty
     public static final RecipeMap<FlowRateRecipeBuilder> HEAT_EXCHANGE_RECIPES = new RecipeMapHeatExchanger<>("heat_exchanger", 0, 0, 2, 3, new FlowRateRecipeBuilder(), false)
