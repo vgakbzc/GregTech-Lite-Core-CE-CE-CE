@@ -28,7 +28,7 @@ public class PCBFactoryProperty extends RecipeProperty<Integer> {
 
     @Override
     public void drawInfo(@Nonnull Minecraft minecraft, int x, int y, int color, Object value) {
-        minecraft.fontRenderer.drawString(I18n.format("gtlitecore.machine.pcb_factory_tier", castValue(value).toString()) + getPCBFactoryTier(castValue(value)), x, y, color);
+        minecraft.fontRenderer.drawString(I18n.format("gtlitecore.machine.pcb_factory.tier", castValue(value).toString()) + getPCBFactoryTier(castValue(value)), x, y, color);
     }
 
     private static String getPCBFactoryTier(Integer tier) {

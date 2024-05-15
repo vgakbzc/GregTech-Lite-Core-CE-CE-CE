@@ -1664,13 +1664,19 @@ gtlitecore.machine.pcb_factory.tooltip.12=- 带宽每缩短25μm，配方时间�
 gtlitecore.machine.pcb_factory.tooltip.13=- 带宽每放宽25μm，配方时间就增加20%%，耗能就减少10%%；
 gtlitecore.machine.pcb_factory.tooltip.14=机器的最小带宽为25μm，最大带宽为200μm。
 
-gtlitecore.machine.pcb_factory_tier=PCB工厂等级：
+gtlitecore.machine.pcb_factory.description=PCB工厂（电路基板工厂）是一台多方块机器。这台机器会利用你输入的各种塑料来制造出电路基板，而不是继续使用化学反应釜慢吞吞地操作。
+
+gtlitecore.machine.pcb_factory.tier=PCB工厂等级：
 gtlitecore.machine.pcb_factory.bio_upgrade=需要生物仓升级
 
+gtlitecore.machine.pcb_factory.trace_size=带宽：%s μm
 gtlitecore.machine.pcb_factory.trace_size.decrement=§c放宽25μm带宽 /n§7配方时间增加20%%，耗电量减少50%%
 gtlitecore.machine.pcb_factory.trace_size.increment=§a缩短25μm带宽 /n§7配方时间减少20%%，耗电量增加50%%
 
-gtlitecore.machine.pcb_factory.description=
+gtlitecore.machine.pcb_factory.structure.tier=结构等级：%s
+gtlitecore.machine.pcb_factory.structure.cooling_tower=冷却已启用
+gtlitecore.machine.pcb_factory.structure.thermosink=内部温度正在逼近绝对零度
+gtlitecore.machine.pcb_factory.structure.bio_chamber=有机黏菌充斥于生物仓中
 
 gtlitecore.machine.dangote_distillery.name=丹格特蒸馏厂
 gtlitecore.machine.dangote_distillery.tooltip.1=现代化工业蒸馏，从现在开始

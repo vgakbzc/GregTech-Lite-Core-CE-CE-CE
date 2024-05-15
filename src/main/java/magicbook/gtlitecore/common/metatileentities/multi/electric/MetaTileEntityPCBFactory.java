@@ -11,12 +11,14 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.*;
 import gregtech.api.recipes.Recipe;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.TextComponentUtil;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.*;
@@ -39,6 +41,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -119,6 +122,8 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
     @Override
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
+        //  Main Structure T1
+        this.mainUpgradeNumber +=1;
         //  Main Structure T2
         if (context.get("mainUpgradeT2") != null) {
             this.mainUpgradeNumber += 1;
@@ -145,7 +150,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
      * Default number of Parameters:
      *
      * <ul>
-     *     <li>{@link #mainUpgradeNumber} -> 1;</li>
+     *     <li>{@link #mainUpgradeNumber} -> 0;</li>
      *     <li>{@link #bioUpgradeNumber} -> 0;</li>
      *     <li>{@link #coolingUpgradeNumber} -> 0.</li>
      * </ul>
@@ -153,7 +158,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
     @Override
     public void invalidateStructure() {
         super.invalidateStructure();
-        this.mainUpgradeNumber = 1;
+        this.mainUpgradeNumber = 0;
         this.bioUpgradeNumber = 0;
         this.coolingUpgradeNumber = 0;
     }
@@ -489,6 +494,35 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         return new String[]{I18n.format("gtlitecore.machine.pcb_factory.description")};
     }
 
+    @Override
+    protected void addDisplayText(List<ITextComponent> textList) {
+        MultiblockDisplayText.builder(textList, this.isStructureFormed())
+                .addCustom((tl) -> {
+                    if (this.isStructureFormed()) {
+                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.pcb_factory.structure.tier", this.getMainUpgradeNumber()));
+                        if (this.getCoolingUpgradeNumber() > 0) {
+                            tl.add(TextComponentUtil.translationWithColor(TextFormatting.AQUA, "gtlitecore.machine.pcb_factory.structure.cooling_tower"));
+                            if (this.getCoolingUpgradeNumber() == 2) {
+                                tl.add(TextComponentUtil.translationWithColor(TextFormatting.BLUE, "gtlitecore.machine.pcb_factory.structure.thermosink"));
+                            }
+                        }
+                        if (this.getBioUpgradeNumber() == 1)  {
+                            tl.add(TextComponentUtil.translationWithColor(TextFormatting.GREEN, "gtlitecore.machine.pcb_factory.structure.bio_chamber"));
+                        }
+                    }
+                })
+                .setWorkingStatus(this.recipeMapWorkable.isWorkingEnabled(), this.recipeMapWorkable.isActive())
+                .addEnergyUsageLine(this.recipeMapWorkable.getEnergyContainer())
+                .addEnergyTierLine(GTUtility.getTierByVoltage(this.recipeMapWorkable.getMaxVoltage()))
+                .addParallelsLine(this.recipeMapWorkable.getParallelLimit())
+                .addCustom((tl) -> {
+                    if (this.isStructureFormed()) {
+                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gtlitecore.machine.pcb_factory.trace_size", this.getTraceSize()));
+                    }
+                })
+                .addWorkingStatusLine()
+                .addProgressLine(this.recipeMapWorkable.getProgressPercent());
+    }
 
     @Override
     public boolean canBeDistinct() {
