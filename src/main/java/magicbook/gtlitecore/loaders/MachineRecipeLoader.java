@@ -36,6 +36,7 @@ import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
 import static java.util.Calendar.SECOND;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -1045,25 +1046,26 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  PCB Factory
-        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
-        //        .input(frameGt, RhodiumPlatedPalladium, 4)
-        //        .input(CIRCUIT_ASSEMBLER[IV], 4)
-        //        .input(plate, Osmiridium, 4)
-        //        .input(circuit, MarkerMaterials.Tier.LuV, 16)
-        //        .input(gear, Ruridit, 2)
-        //        .input(ROBOT_ARM_LuV, 4)
-        //        .input(cableGtSingle, NiobiumTitanium, 16)
-        //        .fluidInputs(SolderingAlloy.getFluid(5760))
-        //        .fluidInputs(Lubricant.getFluid(12000))
-        //        .fluidInputs(PCBCoolant.getFluid(1000))
-        //        .output(PCB_FACTORY)
-        //        .scannerResearch(b -> b
-        //                .researchStack(CIRCUIT_ASSEMBLER[IV].getStackForm())
-        //                .EUt(VA[IV])
-        //                .duration(600))
-        //        .EUt(VA[LuV])
-        //        .duration(1200)
-        //        .buildAndRegister();
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, RhodiumPlatedPalladium, 4)
+                .input(CIRCUIT_ASSEMBLER[IV], 4)
+                .input(plate, Osmiridium, 4)
+                .input(circuit, MarkerMaterials.Tier.LuV, 16)
+                .input(gear, Ruridit, 2)
+                .input(ROBOT_ARM_LuV, 8)
+                .input(cableGtSingle, NiobiumTitanium, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .fluidInputs(PCBCoolant.getFluid(4000))
+                .fluidInputs(NaquadahEnriched.getFluid(L * 4))
+                .output(PCB_FACTORY)
+                .scannerResearch(b -> b
+                        .researchStack(WETWARE_CIRCUIT_BOARD.getStackForm())
+                        .EUt(VA[IV])
+                        .duration(MINUTE / 2))
+                .EUt(VA[LuV])
+                .duration(MINUTE)
+                .buildAndRegister();
 
         //  Quantum Force Transformer
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -3413,75 +3415,50 @@ public class MachineRecipeLoader {
     }
 
     private static void PCBFactoryCasings() {
-        //  PCB T1 casing
-        ModHandler.addShapedRecipe(true, "photolithographic_framework_casing", GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING, 2),
-                "PhP", "PFP","PwP",
-                'P', new UnificationEntry(plate, Iridium),
-                'F', new UnificationEntry(frameGt, Naquadah));
 
+        //  Basic Photolithographic Framework Casing (Main Structure T1 Casing)
+        createCasingRecipe("basic_photolithographic_framework_casing",
+                GTLiteMetaBlocks.PCB_FACTORY_CASING,
+                BlockPCBFactoryCasing.PCBFactoryCasingType.BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING,
+                ArtheriumB47,
+                NaquadahAlloy);
+
+        //  Mold Printing Assembly Framework Casing (Main Structure T2 Casing)
+        createCasingRecipe("mold_printing_assembly_framework_casing",
+                GTLiteMetaBlocks.PCB_FACTORY_CASING,
+                BlockPCBFactoryCasing.PCBFactoryCasingType.MOLD_PRINTING_ASSEMBLY_FRAMEWORK_CASING,
+                Pikyonium64B,
+                Trinaquadalloy);
+
+        //  Radiation Proof Scan Framework Casing (Main Structure T3 Casing)
+        createCasingRecipe("radiation_proof_scan_framework_casing",
+                GTLiteMetaBlocks.PCB_FACTORY_CASING,
+                BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING,
+                ArceusAlloy2B,
+                Tairitsium);
+
+        //  Biological Sterile Machine Casing (Bio Chamber Casing)
         ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Iridium, 6)
-                .input(frameGt, Naquadah)
+                .input(frameGt, Polybenzimidazole)
+                .input(PETRI_DISH, 2)
+                .input(plate, KaptonK, 6)
                 .circuitMeta(6)
-                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BASIC_PHOTOLITHOGRAPHIC_FRAMEWORK_CASING, 2))
-                .EUt(VA[LV])
-                .duration(50)
-                .buildAndRegister();
-
-        //  PCB T2 casing
-        ModHandler.addShapedRecipe(true, "mold_printing_assembly_framework_casing", GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.MOLD_PRINTING_ASSEMBLY_FRAMEWORK_CASING, 2),
-                "PhP", "PFP","PwP",
-                'P', new UnificationEntry(plate, Pikyonium64B),
-                'F', new UnificationEntry(frameGt, NaquadahEnriched));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, Pikyonium64B, 6)
-                .input(frameGt, NaquadahEnriched)
-                .circuitMeta(6)
-                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.MOLD_PRINTING_ASSEMBLY_FRAMEWORK_CASING, 2))
-                .EUt(VA[LV])
-                .duration(50)
-                .buildAndRegister();
-
-        //  Bio chamber casing
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(frameGt, VanadiumSteel)
-                .input(plate, BlackSteel, 4)
-                .input(FIELD_GENERATOR_EV)
-                .input(STEM_CELLS, 2)
-                .input(wireFine, VanadiumGallium, 4)
-                .fluidInputs(PCBCoolant.getFluid(L * 2))
-                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BIOLOGICAL_STERILE_MACHINE_CASING, 2))
+                .fluidInputs(Mutagen.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.BIOLOGICAL_STERILE_MACHINE_CASING, ConfigHolder.recipes.casingsPerCraft))
                 .EUt(VA[ZPM])
                 .duration(50)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
+                .build();
 
-        //  PCB T3 casing
+        //  Infinity Cooling Casing (Thermosink Casing)
         ASSEMBLER_RECIPES.recipeBuilder()
-                .input(frameGt, Tritanium)
-                .input(plate, Cinobite, 4)
-                .input(TOOL_DATA_STICK)
-                .input(wireFine, Tin, 4)
-                .fluidInputs(PCBCoolant.getFluid(L * 2))
-                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.RADIATION_PROOF_SCAN_FRAMEWORK_CASING, 2))
-                .EUt(VA[UV])
+                .input(frameGt, VoidMetal)
+                .input(rotor, Infinity, 2)
+                .input(plate, LunaSilver, 6)
+                .circuitMeta(6)
+                .fluidInputs(GelidCryotheum.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.INFINITY_COOLED_MACHINE_CASING, ConfigHolder.recipes.casingsPerCraft))
+                .EUt(VA[UEV])
                 .duration(50)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        //  Infinity cooling casing
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(frameGt, Orichalcum)
-                .input(plate, Infinity, 4)
-                .input(pipeNormalFluid, Lafium)
-                .input(ELECTRIC_PUMP_LuV)
-                .input(wireFine, Europium, 4)
-                .fluidInputs(PCBCoolant.getFluid(L * 2))
-                .outputs(GTLiteMetaBlocks.PCB_FACTORY_CASING.getItemVariant(BlockPCBFactoryCasing.PCBFactoryCasingType.INFINITY_COOLED_MACHINE_CASING, 2))
-                .EUt(VA[UHV])
-                .duration(50)
-                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 

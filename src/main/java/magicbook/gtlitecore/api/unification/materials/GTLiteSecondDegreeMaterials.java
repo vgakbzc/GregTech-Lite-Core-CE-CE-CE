@@ -910,7 +910,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(7400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 400)
                         .vacuumStats(VA[EV], 130))
-                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME)
                 .build();
 
         //  12068 Transcendent Metal
@@ -1039,6 +1039,20 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[IV], 540)
                         .vacuumStats(VA[HV], 280))
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .build();
+
+        //  12078 Artherium-B47
+        ArtheriumB47 = new Material.Builder(getID(), gregtechId("artherium_b_47"))
+                .ingot()
+                .fluid()
+                .color(0x88BBBB)
+                .iconSet(SHINY)
+                .components(NaquadahEnriched, 12, HastelloyX, 9, Tin, 8, Arsenic, 7, Caesium, 4, Osmiridium, 3, Trinium, 2)
+                .flags(GENERATE_PLATE)
+                .blast(b -> b
+                        .temp(6500, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[LuV], 160)
+                        .vacuumStats(VA[EV], 480))
                 .build();
     }
 

@@ -138,15 +138,15 @@ tile.space_elevator_casing.floor.name=超高强度塑料混凝土方块
 tile.space_elevator_casing.cable_casing.name=太空电梯动力系统控制核心
 
 tile.pcb_factory_casing.basic_photolithographic_framework_casing.name=精密光刻框架外壳
-tile.pcb_factory_casing.basic_photolithographic_framework_casing.tooltip=超高精度激光蚀刻/n§6PCB工厂§7-外壳等级：§bI§7
+tile.pcb_factory_casing.basic_photolithographic_framework_casing.tooltip=超高精度激光蚀刻
 tile.pcb_factory_casing.mold_printing_assembly_framework_casing.name=纳米级模板印刷框架外壳
-tile.pcb_factory_casing.mold_printing_assembly_framework_casing.tooltip=家用3D打印机/n§6PCB工厂§7-外壳等级：§bII§7
+tile.pcb_factory_casing.mold_printing_assembly_framework_casing.tooltip=家用3D打印机
 tile.pcb_factory_casing.radiation_proof_scan_framework_casing.name=抗辐射特殊器件扫描框架外壳
-tile.pcb_factory_casing.radiation_proof_scan_framework_casing.tooltip=可直接扫描核反应堆/n§6PCB工厂§7-外壳等级：§bIII§7
+tile.pcb_factory_casing.radiation_proof_scan_framework_casing.tooltip=可直接扫描核反应堆
 tile.pcb_factory_casing.biological_sterile_machine_casing.name=生物级无菌机器外壳
-tile.pcb_factory_casing.biological_sterile_machine_casing.tooltip=比无菌超净间更干净/n§6PCB工厂§7-§a生物仓外壳§7
+tile.pcb_factory_casing.biological_sterile_machine_casing.tooltip=比无菌超净间更干净
 tile.pcb_factory_casing.infinity_cooled_machine_casing.name=无尽冷却机器外壳
-tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度/n§6PCB工厂§7-§b空冻塔外壳§7
+tile.pcb_factory_casing.infinity_cooled_machine_casing.tooltip=无限接近于绝对零度
 
 tile.computer_casing.bioware_computer_casing.name=生物计算机外壳
 tile.computer_casing.bioware_computer_casing.tooltip=绝对无菌环境
@@ -1659,19 +1659,19 @@ gtlitecore.machine.pcb_factory.tooltip.9=- 建造§9空冻塔§7后，解锁配�
 gtlitecore.machine.pcb_factory.tooltip.9.25=完美超频
 gtlitecore.machine.pcb_factory.tooltip.9.5=功能；
 gtlitecore.machine.pcb_factory.tooltip.10=建造§2生物室§7以解锁高级电路板配方。
-gtlitecore.machine.pcb_factory.tooltip.11=调整机器的带宽（默认为100μm，每次±25μm）以获得特殊效果，
-gtlitecore.machine.pcb_factory.tooltip.12=- 带宽每缩短25μm，配方时间就减少20%%，耗能就增加50%%；
-gtlitecore.machine.pcb_factory.tooltip.13=- 带宽每放宽25μm，配方时间就增加20%%，耗能就减少10%%；
-gtlitecore.machine.pcb_factory.tooltip.14=机器的最小带宽为25μm，最大带宽为200μm。
+gtlitecore.machine.pcb_factory.tooltip.11=调整机器的线宽（默认为100μm，每次±25μm）以获得特殊效果，
+gtlitecore.machine.pcb_factory.tooltip.12=- 线宽每缩短25μm，配方时间就减少20%%，耗能就增加50%%；
+gtlitecore.machine.pcb_factory.tooltip.13=- 线宽每放宽25μm，配方时间就增加20%%，耗能就减少10%%；
+gtlitecore.machine.pcb_factory.tooltip.14=机器的最小线宽为25μm，最大线宽为200μm。
 
 gtlitecore.machine.pcb_factory.description=PCB工厂（电路基板工厂）是一台多方块机器。这台机器会利用你输入的各种塑料来制造出电路基板，而不是继续使用化学反应釜慢吞吞地操作。
 
 gtlitecore.machine.pcb_factory.tier=PCB工厂等级：
 gtlitecore.machine.pcb_factory.bio_upgrade=需要生物仓升级
 
-gtlitecore.machine.pcb_factory.trace_size=带宽：%s μm
-gtlitecore.machine.pcb_factory.trace_size.decrement=§c放宽25μm带宽 /n§7配方时间增加20%%，耗电量减少50%%
-gtlitecore.machine.pcb_factory.trace_size.increment=§a缩短25μm带宽 /n§7配方时间减少20%%，耗电量增加50%%
+gtlitecore.machine.pcb_factory.trace_size=线宽：%s μm
+gtlitecore.machine.pcb_factory.trace_size.decrement=§c放宽25μm线宽 /n§7配方时间增加20%%，耗电量减少50%%
+gtlitecore.machine.pcb_factory.trace_size.increment=§a缩短25μm线宽 /n§7配方时间减少20%%，耗电量增加50%%
 
 gtlitecore.machine.pcb_factory.structure.tier=结构等级：%s
 gtlitecore.machine.pcb_factory.structure.cooling_tower=冷却已启用
@@ -2847,7 +2847,8 @@ gregtech.material.fluxed_electrum=通流琥珀金
 gregtech.material.arceus_alloy_2_b=阿尔宙斯合金2B
 gregtech.material.incoloy_020=耐热铬铁合金-020
 gregtech.material.hattrium=提布莉姆合金
-gregtech.material.duraluminium_alloy=硬铝合金-65A
+gregtech.material.duraluminium_alloy=硬铝合金65A
+gregtech.material.artherium_b_47=艾瑟瑞姆合金-B47
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

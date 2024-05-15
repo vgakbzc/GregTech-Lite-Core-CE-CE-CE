@@ -231,7 +231,7 @@ public class GTLiteElementMaterials {
                 .color(0x20142C)
                 .iconSet(DULL)
                 .element(GTLiteElements.Vd)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .itemPipeProperties(36, 256)
                 .build();
 

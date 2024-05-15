@@ -2848,7 +2848,8 @@ gregtech.material.fluxed_electrum=Fluxed Electrum
 gregtech.material.arceus_alloy_2_b=Arceus Alloy 2B
 gregtech.material.incoloy_020=Incoloy-020
 gregtech.material.hattrium=Hattrium
-gregtech.material.duraluminium_alloy=Duraluminium Alloy-65A
+gregtech.material.duraluminium_alloy=Duraluminium Alloy 65A
+gregtech.material.artherium_b_47=Artherium-B47
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=Kapton-K

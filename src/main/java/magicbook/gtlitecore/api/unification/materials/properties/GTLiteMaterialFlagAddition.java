@@ -124,6 +124,7 @@ public class GTLiteMaterialFlagAddition {
         Rhodium.addFlags(GENERATE_FRAME);
         TantalumCarbide.addFlags(GENERATE_FRAME);
         Duranium.addFlags(GENERATE_FRAME);
+        Trinaquadalloy.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -143,6 +144,7 @@ public class GTLiteMaterialFlagAddition {
         Meitnerium.addFlags(GENERATE_ROD);
         Rutherfordium.addFlags(GENERATE_ROD);
         Vanadium.addFlags(GENERATE_ROD);
+        Trinaquadalloy.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);

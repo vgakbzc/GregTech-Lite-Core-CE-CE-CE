@@ -414,6 +414,7 @@ public class GTLiteMaterials {
     public static Material Incoloy020;
     public static Material Hattrium;
     public static Material DuraluminiumAlloy;
+    public static Material ArtheriumB47;
 
     ///////////////////////////////////
     //  Organic Chemistry Materials  //
