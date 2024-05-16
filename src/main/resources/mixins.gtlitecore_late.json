@@ -12,9 +12,6 @@
     "architecturecraft.MixinTileSawbench",
     "gregtech.MixinMetaTileEntityFluidHatch",
     "gregtech.MixinMetaTileEntityItemBus",
-    "gcym.MixinMegaBlastFurnaceRecipeLogic",
-    "gcym.MixinMetaTileEntityMegaBlastFurnace",
-    "gcym.MixinMetaTileEntityMegaVacuumFreezer",
     "theoneprobe.MixinHarvestInfoTools",
     "threng.MixinPacketInventoryAction",
     "topaddons.MixinAddonArchitectureCraft"
