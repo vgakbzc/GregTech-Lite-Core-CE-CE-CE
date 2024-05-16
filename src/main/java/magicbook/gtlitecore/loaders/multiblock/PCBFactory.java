@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import appeng.util.item.ItemList;
 import com.google.common.collect.HashBiMap;
 import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
@@ -39,7 +38,6 @@ public class PCBFactory {
         addPlasticTier(Kevlar, 10);
         addPlasticTier(Zylon, 11);
         addPlasticTier(FullerenePolymerMatrix, 12);
-        // addPlasticTier(CosmicFabric, 13);
 
         //  Plastic Circuit Board (T1)
         for (int tier = 1; tier <= plasticTier; tier++) {

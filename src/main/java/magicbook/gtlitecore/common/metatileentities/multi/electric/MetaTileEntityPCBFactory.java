@@ -25,6 +25,7 @@ import gregtech.common.blocks.*;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
+import magicbook.gtlitecore.api.recipe.builder.PCBFactoryRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.properties.PCBFactoryBioUpgradeProperty;
 import magicbook.gtlitecore.api.recipe.properties.PCBFactoryProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
@@ -33,6 +34,7 @@ import magicbook.gtlitecore.common.blocks.BlockPCBFactoryCasing;
 import magicbook.gtlitecore.common.blocks.BlockStructureCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
+import magicbook.gtlitecore.loaders.multiblock.PCBFactory;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.Blocks;
@@ -73,6 +75,11 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtils.clamp;
  *     now we just have one Bio Upgrade: Bio Chamber, so this properties is maybe too complex than its effect.
  * </p>
  *
+ * @see PCBFactoryRecipeBuilder
+ * @see PCBFactoryProperty
+ * @see PCBFactoryBioUpgradeProperty
+ * @see PCBFactory
+ *
  * @since 2.8.8-beta
  */
 public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
@@ -82,12 +89,13 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
     private byte bioUpgradeNumber = 0;
     private byte coolingUpgradeNumber = 0;
 
-    //  Special Parameters (Default: 100μm)
+    //  Special Parameters (Default: 100μm, Range: 25μm-200μm)
     private int traceSize = 100;
-    private int minTraceSize = 25;
-    private int maxTraceSize = 200;
+    private final int minTraceSize = 25;
+    private final int maxTraceSize = 200;
 
     //  Traceability Predicate Utility
+    //  Used to check snow layer on block (for Multiblock Structure).
     private static final TraceabilityPredicate SNOW_LAYER = new TraceabilityPredicate(blockWorldState -> GTUtility.isBlockSnow(blockWorldState.getBlockState()));
 
     public MetaTileEntityPCBFactory(ResourceLocation metaTileEntityId) {
@@ -271,6 +279,24 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
                 .build();
     }
 
+    /**
+     * Casing State Getter.
+     *
+     * <p>
+     *     Getter for Multiblock Structure:
+     *
+     *     <ul>
+     *         <li>{@code T1StructureCasing} -> Basic Photolithographic Framework Casing (Main Structure T1);</li>
+     *         <li>{@code T2StructureCasing} -> Mold Printing Assembly Framework Casing (Main Structure T2, Cooling Upgrade T1, T2);</li>
+     *         <li>{@code T3StructureCasing} -> Radiation Proof Scan Framework Casing (Main Structure T3);</li>
+     *         <li>{@code NaquadahAlloyCasing} -> Naquadah Alloy Casing (Main Structure T3, Cooling Upgrade T1);</li>
+     *         <li>{@code BioChamberCasing} -> Biological Sterile Machine Casing (Bio Upgrade).</li>
+     *     </ul>
+     * </p>
+     *
+     * @param type  Type of Block State.
+     * @return      Block State for Getter.
+     */
     private static IBlockState getCasingState(String type) {
         return switch (type) {
             case "T1StructureCasing" ->
@@ -293,6 +319,25 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         return MetaBlocks.CLEANROOM_CASING.getState(BlockCleanroomCasing.CasingType.PLASCRETE);
     }
 
+    /**
+     * Casing State Getter.
+     *
+     * <p>
+     *     Getter for Multiblock Structure:
+     *
+     *     <ul>
+     *         <li>{@code T1Grate} -> Grate Casing (Main Structure T1);</li>
+     *         <li>{@code T1Substrate} -> Substrate Casing (Main Structure T2);</li>
+     *         <li>{@code CoolingTowerIntake} -> Extreme Engine Intake Casing (Cooling Upgrade T1, T2);</li>
+     *     </ul>
+     *
+     *     In GT5 Unofficial block corresponded {@code T1Substrate} is {@code frameGtVibrantAlloy},
+     *     but in {@code gtlitecore}, we have this special multiblock casing ^^.
+     * </p>
+     *
+     * @param type  Type of Block State.
+     * @return      Block State for Getter.
+     */
     private static IBlockState getThirdCasingState(String type) {
         return switch (type) {
             case "T1Grate" ->
@@ -313,6 +358,24 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         return MetaBlocks.FUSION_CASING.getState(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL);
     }
 
+    /**
+     * Frame State Getter.
+     *
+     * <p>
+     *     Getter for Multiblock Structure:
+     *
+     *     <ul>
+     *         <li>{@code T1Frame} -> {@code frameGtHslaSteel} (Main Structure T1);</li>
+     *         <li>{@code T2Frame} -> {@code frameGtTungstenSteel} (Main Structure T2);</li>
+     *         <li>{@code CoolingTowerFrame} -> {@code frameGtBlackSteel} (Cooling Upgrade T1);</li>
+     *         <li>{@code BioChamberFrame} -> {@code frameGtSiliconCarbide} (Bio Upgrade);</li>
+     *         <li>{@code ThermosinkFrame} -> {@code frameGtNaquadah} (Cooling Upgrade T2).</li>
+     *     </ul>
+     * </p>
+     *
+     * @param type  Type of Block State.
+     * @return      Block State for Getter.
+     */
     private static IBlockState getFrameState(String type) {
         return switch (type) {
             case "T1Frame" ->
@@ -329,6 +392,21 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         };
     }
 
+    /**
+     * Glass State Getter.
+     *
+     * <p>
+     *     Getter for Multiblock Structure:
+     *
+     *     <ul>
+     *         <li>{@code T1StructureGlass} -> Laminated Glass (Main Structure T1);</li>
+     *         <li>{@code BioChamberGlass} -> Cleanroom Glass (Bio Upgrade).</li>
+     *     </ul>
+     * </p>
+     *
+     * @param type  Type of Block State.
+     * @return      Block State for Getter.
+     */
     private static IBlockState getGlassState(String type) {
         return switch (type) {
             case "T1StructureGlass"
@@ -339,6 +417,18 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
         };
     }
 
+    /**
+     * Flex Button of Trace size.
+     *
+     * <p>
+     *     This method create two button about {@link #traceSize} (Unit: μm),
+     *     this parameter control many things in {@link PCBFactoryRecipeLogic}.
+     *     In this button, you can increment and decrement {@link #traceSize}
+     *     in range {@link #minTraceSize} to {@link #maxTraceSize}.
+     * </p>
+     *
+     * @return  Flex Button of Multiblock Controller GUI.
+     */
     @Nonnull
     @Override
     protected Widget getFlexButton(int x, int y, int width, int height) {
@@ -526,7 +616,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
 
     @Override
     protected boolean shouldShowVoidingModeButton() {
-        return false;
+        return true;
     }
 
     public int getMainUpgradeNumber() {
@@ -543,14 +633,6 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
 
     public int getTraceSize() {
         return this.traceSize;
-    }
-
-    public int getMaxTraceSize() {
-        return this.maxTraceSize;
-    }
-
-    public int getMinTraceSize() {
-        return this.minTraceSize;
     }
 
     private class PCBFactoryRecipeLogic extends MultiblockRecipeLogic {
