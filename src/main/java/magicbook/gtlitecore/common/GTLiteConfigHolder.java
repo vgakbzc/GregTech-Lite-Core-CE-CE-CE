@@ -67,12 +67,6 @@ public class GTLiteConfigHolder {
         @RequiresMcRestart
         public boolean enableChiselModule = true;
 
-        @Comment({"Enable Tweak of Mega Blast Furnace, will add 1/2 duration reduction.", "Default: true"})
-        public boolean enableMegaBlastFurnaceTweak = true;
-
-        @Comment({"Enable Tweak of Mega Vacuum Freezer, will add Perfect OC.", "Default: true"})
-        public boolean enableMegaVacuumFreezerTweak = true;
-
         public CompatibilityOptions() {}
     }
 

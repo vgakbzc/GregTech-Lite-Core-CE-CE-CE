@@ -7,10 +7,30 @@ import gregtech.api.util.EnumValidationResult;
 import magicbook.gtlitecore.api.recipe.properties.PCBFactoryBioUpgradeProperty;
 import magicbook.gtlitecore.api.recipe.properties.PCBFactoryProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityPCBFactory;
+import magicbook.gtlitecore.loaders.multiblock.PCBFactory;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.annotation.Nonnull;
 
+/**
+ * PCB Factory Recipe Builder
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This Recipe Builder is for the Multiblock {@link MetaTileEntityPCBFactory},
+ *     used for add Main Structure tier (correspondenced to {@code mainUpgradeNumber})
+ *     and Bio Chamber tier (correspondenced to {@code bioUpgradeNumber}).
+ * </p>
+ *
+ * @see MetaTileEntityPCBFactory
+ * @see PCBFactoryProperty
+ * @see PCBFactoryBioUpgradeProperty
+ * @see PCBFactory
+ *
+ * @since 2.8.8-beta
+ */
 public class PCBFactoryRecipeBuilder extends RecipeBuilder<PCBFactoryRecipeBuilder> {
 
    public PCBFactoryRecipeBuilder() {}

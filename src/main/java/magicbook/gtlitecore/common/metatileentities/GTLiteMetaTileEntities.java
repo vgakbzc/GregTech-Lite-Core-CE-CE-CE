@@ -441,6 +441,7 @@ public class GTLiteMetaTileEntities {
             WIRELESS_OUTPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(78 + 315 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1048576a." + tier), i, 1048576, true));
         }
 
+        //  Quantum Computer Components
         QC_EMPTY_COMPONENT                        = registerPartMetaTileEntity(500, new MetaTileEntityQCComponentEmpty(      gtliteId("qc_empty_component")));
         QC_COMPUTATION_COMPONENT[0]               = registerPartMetaTileEntity(501, new MetaTileEntityQCComponentComputation(gtliteId("qc_computation_component"),                                          false));
         QC_COMPUTATION_COMPONENT[1]               = registerPartMetaTileEntity(502, new MetaTileEntityQCComponentComputation(gtliteId("qc_advanced_computation_component"),                                 true));
@@ -450,24 +451,40 @@ public class GTLiteMetaTileEntities {
 
         //  Single Machines
         //  Range: 15000-16000
+
+        //  LV-OpV Chemical Dryer
         registerSimpleMetaTileEntity(CHEMICAL_DRYER, 15000, "chemical_dryer", GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES, GTLiteTextures.CHEMICAL_DRYER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+
+        //  Steam/High Pressure Steam + LV-OpV Vacuum Chamber
         registerSimpleSteamMetaTileEntity(STEAM_VACUUM_CHAMBER, 15013, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, SteamProgressIndicators.COMPRESS, Textures.GAS_COLLECTOR_OVERLAY, false);
         registerSimpleMetaTileEntity(VACUUM_CHAMBER, 15015, "vacuum_chamber", GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES, Textures.GAS_COLLECTOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+
+        //  IV-UV Naquadah Reactor
         NAQUADAH_REACTOR[0] = registerMetaTileEntity(15028, new SimpleGeneratorMetaTileEntity(gtliteId("naquadah_reactor.iv"), GTLiteRecipeMaps.NAQUADAH_REACTOR_RECIPES, GTLiteTextures.NAQUADAH_REACTOR_OVERLAY, 5, GTUtility.genericGeneratorTankSizeFunction));
         NAQUADAH_REACTOR[1] = registerMetaTileEntity(15029, new SimpleGeneratorMetaTileEntity(gtliteId("naquadah_reactor.luv"), GTLiteRecipeMaps.NAQUADAH_REACTOR_RECIPES, GTLiteTextures.NAQUADAH_REACTOR_OVERLAY, 6, GTUtility.genericGeneratorTankSizeFunction));
         NAQUADAH_REACTOR[2] = registerMetaTileEntity(15030, new SimpleGeneratorMetaTileEntity(gtliteId("naquadah_reactor.zpm"), GTLiteRecipeMaps.NAQUADAH_REACTOR_RECIPES, GTLiteTextures.NAQUADAH_REACTOR_OVERLAY, 7, GTUtility.genericGeneratorTankSizeFunction));
         NAQUADAH_REACTOR[3] = registerMetaTileEntity(15031, new SimpleGeneratorMetaTileEntity(gtliteId("naquadah_reactor.uv"), GTLiteRecipeMaps.NAQUADAH_REACTOR_RECIPES, GTLiteTextures.NAQUADAH_REACTOR_OVERLAY, 8, GTUtility.genericGeneratorTankSizeFunction));
+
+        //  HV-IV Rocket Engine
         ROCKET_ENGINE[0] = registerMetaTileEntity(15032, new SimpleGeneratorMetaTileEntity(gtliteId("rocket_engine.hv"), GTLiteRecipeMaps.ROCKET_ENGINE_RECIPES, GTLiteTextures.ROCKET_ENGINE_OVERLAY, 3, GTUtility.genericGeneratorTankSizeFunction));
         ROCKET_ENGINE[1] = registerMetaTileEntity(15033, new SimpleGeneratorMetaTileEntity(gtliteId("rocket_engine.ev"), GTLiteRecipeMaps.ROCKET_ENGINE_RECIPES, GTLiteTextures.ROCKET_ENGINE_OVERLAY, 4, GTUtility.genericGeneratorTankSizeFunction));
         ROCKET_ENGINE[2] = registerMetaTileEntity(15034, new SimpleGeneratorMetaTileEntity(gtliteId("rocket_engine.iv"), GTLiteRecipeMaps.ROCKET_ENGINE_RECIPES, GTLiteTextures.ROCKET_ENGINE_OVERLAY, 5, GTUtility.genericGeneratorTankSizeFunction));
+
+        //  LV-IV Component Assembler
         registerSimpleMetaTileEntity(COMPONENT_ASSEMBLER, 15035, "component_assembler", GTLiteRecipeMaps.COMPONENT_ASSEMBLER_RECIPES, Textures.ASSEMBLER_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+
+        //  LV-OpV Bio Reactor
         registerSimpleMetaTileEntity(BIO_REACTOR, 15040, "bio_reactor", GTLiteRecipeMaps.BIO_REACTOR_RECIPES, GTLiteTextures.BIO_REACTOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+
+        //  UV-OpV Condenser
         CONDENSER[0] = registerMetaTileEntity(15053, new SimpleMachineMetaTileEntity(gtliteId("condenser.uv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 8, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[1] = registerMetaTileEntity(15054, new SimpleMachineMetaTileEntity(gtliteId("condenser.uhv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 9, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[2] = registerMetaTileEntity(15055, new SimpleMachineMetaTileEntity(gtliteId("condenser.uev"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 10, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[3] = registerMetaTileEntity(15056, new SimpleMachineMetaTileEntity(gtliteId("condenser.uiv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 11, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[4] = registerMetaTileEntity(15057, new SimpleMachineMetaTileEntity(gtliteId("condenser.uxv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 12, true, GTUtility.genericGeneratorTankSizeFunction));
         CONDENSER[5] = registerMetaTileEntity(15058, new SimpleMachineMetaTileEntity(gtliteId("condenser.opv"), GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, 13, true, GTUtility.genericGeneratorTankSizeFunction));
+
+        //  LV-IV Simulator
         registerSimpleMetaTileEntity(SIMULATOR, 15059, "simulator", GTLiteRecipeMaps.SIMULATOR_RECIPES, GTLiteTextures.SIMULATOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
         BIOMASS_GENERATOR[0] = registerMetaTileEntity(15064, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.ev"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, 4, GTUtility.genericGeneratorTankSizeFunction));
         BIOMASS_GENERATOR[1] = registerMetaTileEntity(15065, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.iv"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, 5, GTUtility.genericGeneratorTankSizeFunction));
@@ -476,6 +493,7 @@ public class GTLiteMetaTileEntities {
         LIGHTNING_ROD[1] = registerMetaTileEntity(15068, new MetaTileEntityLightningRod(gtliteId("lightning_rod.ev"), EV));
         LIGHTNING_ROD[2] = registerMetaTileEntity(15069, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
 
+        //  LV-HV Auto Chisel (Required Chisel Module enable)
         if (GTLiteConfigHolder.compats.enableChiselModule) {
             if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
                 AUTO_CHISEL[0] = registerMetaTileEntity(15070, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.lv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 1, true, GTUtility.genericGeneratorTankSizeFunction));
