@@ -37,7 +37,7 @@ public class PEEKChain {
                 .duration(24 * SECOND)
                 .buildAndRegister();
 
-        //  C6H5F + C7H7F + 6Cl + H2O -> (FC6H4)2CO + 6HF
+        //  C6H5F + C7H7F + 6Cl + H2O -> (FC6H4)2CO + 6HCl
         LARGE_CHEMICAL_RECIPES.recipeBuilder()
                 .notConsumable(dust, Zinc)
                 .fluidInputs(Fluorobenzene.getFluid(1000))
@@ -45,7 +45,7 @@ public class PEEKChain {
                 .fluidInputs(Chlorine.getFluid(6000))
                 .fluidInputs(Water.getFluid(1000))
                 .output(dust, Difluorobenzophenone, 24)
-                .fluidOutputs(HydrofluoricAcid.getFluid(6000))
+                .fluidOutputs(HydrochloricAcid.getFluid(6000))
                 .EUt(VA[EV])
                 .duration(10 * SECOND)
                 .buildAndRegister();
