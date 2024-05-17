@@ -29,6 +29,7 @@ import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
+import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -195,9 +196,17 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
         if (this.recipeMapWorkable.isActive()) {
-            return Textures.ACTIVE_FUSION_TEXTURE;
+            switch (tier) {
+                case UHV -> { return GTLiteTextures.ADVANCED_FUSION_TEXTURE; }
+                case UEV -> { return GTLiteTextures.ULTIMATE_FUSION_TEXTURE; }
+                default -> { return Textures.ACTIVE_FUSION_TEXTURE; }
+            }
         } else {
-            return Textures.FUSION_TEXTURE;
+            switch (tier) {
+                case UHV -> { return GTLiteTextures.ADVANCED_FUSION_TEXTURE; }
+                case UEV -> { return GTLiteTextures.ULTIMATE_FUSION_TEXTURE; }
+                default -> { return Textures.FUSION_TEXTURE; }
+            }
         }
     }
 

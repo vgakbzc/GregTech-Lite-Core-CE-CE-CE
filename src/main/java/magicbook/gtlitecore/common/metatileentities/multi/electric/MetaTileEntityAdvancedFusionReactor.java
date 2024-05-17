@@ -27,6 +27,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
+import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
@@ -47,6 +48,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.function.BooleanSupplier;
 import java.util.function.DoubleSupplier;
+
+import static gregtech.api.GTValues.UEV;
+import static gregtech.api.GTValues.UHV;
 
 public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockController {
 
@@ -118,7 +122,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
                 .where('c', states(getCasingState()))
                 .where('E', states(getCasingState())
                         .or(metaTileEntities(Arrays.stream(MetaTileEntities.ENERGY_INPUT_HATCH)
-                                .filter(mte -> mte != null && tier <= mte.getTier() && mte.getTier() <= GTValues.UEV)
+                                .filter(mte -> mte != null && tier <= mte.getTier() && mte.getTier() <= UEV)
                                 .toArray(MetaTileEntity[]::new))
                                 .setMinGlobalLimited(1)
                                 .setPreviewCount(16))
@@ -161,9 +165,17 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart sourcePart) {
         if (this.recipeMapWorkable.isActive()) {
-            return Textures.ACTIVE_FUSION_TEXTURE;
+            if (tier == UHV) {
+                return GTLiteTextures.ADVANCED_ACTIVE_FUSION_TEXTURE;
+            } else {
+                return GTLiteTextures.ULTIMATE_ACTIVE_FUSION_TEXTURE;
+            }
         } else {
-            return Textures.FUSION_TEXTURE;
+            if (tier == UHV) {
+                return GTLiteTextures.ADVANCED_FUSION_TEXTURE;
+            } else {
+                return GTLiteTextures.ULTIMATE_FUSION_TEXTURE;
+            }
         }
     }
 
@@ -271,7 +283,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
                 .setWarningStatus(this.getWarningLogo(), this::addWarningText)
                 .setErrorStatus(this.getErrorLogo(), this::addErrorText));
         //  Fusion Reactor Title
-        if (this.tier == GTValues.UHV) {
+        if (this.tier == UHV) {
             builder.widget((new ImageWidget(66, 9, 67, 12, GTLiteGuiTextures.FUSION_REACTOR_MK4_TITLE)).setIgnoreColor(true));
         } else {
             builder.widget((new ImageWidget(65, 9, 69, 12, GTLiteGuiTextures.FUSION_REACTOR_MK5_TITLE)).setIgnoreColor(true));

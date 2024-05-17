@@ -165,6 +165,10 @@ public class GTLiteTextures {
     public static final SimpleOverlayRenderer QC_ADVANCED_DAMAGED_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/damaged_advanced_active");
     public static final SimpleOverlayRenderer QC_BRIDGE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/bridge");
     public static final SimpleOverlayRenderer QC_BRIDGE_ACTIVE_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/bridge_active");
+    public static final SimpleOverlayRenderer ADVANCED_FUSION_TEXTURE = new SimpleOverlayRenderer("casings/fusion/machine_casing_advanced_fusion_hatch");
+    public static final SimpleOverlayRenderer ULTIMATE_FUSION_TEXTURE = new SimpleOverlayRenderer("casings/fusion/machine_casing_ultimate_fusion_hatch");
+    public static final SimpleOverlayRenderer ADVANCED_ACTIVE_FUSION_TEXTURE = new SimpleOverlayRenderer("casings/fusion/machine_casing_advanced_fusion_hatch_blue");
+    public static final SimpleOverlayRenderer ULTIMATE_ACTIVE_FUSION_TEXTURE = new SimpleOverlayRenderer("casings/fusion/machine_casing_ultimate_fusion_hatch_blue");
 
     //  Simple Oriented Cube Renderer
     public static final SimpleOrientedCubeRenderer ADVANCED_FILTER_IRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_filter_iridium_front");
