@@ -245,7 +245,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 260))
                 .components(HastelloyN, 8, Naquadria, 4, Samarium, 2, Tungsten, 4, Aluminium, 6, Nickel, 8, Titanium, 4, Carbon, 2, Argon, 2)
                 .fluidPipeProperties(23000, 8000, true, true, true, true)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FRAME)
                 .build();
 
         //  12016 Inconel-792

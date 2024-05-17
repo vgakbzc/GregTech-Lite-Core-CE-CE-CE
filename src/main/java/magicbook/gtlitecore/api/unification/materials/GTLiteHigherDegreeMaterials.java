@@ -166,7 +166,7 @@ public class GTLiteHigherDegreeMaterials {
                 .blast(b -> b
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV]))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .fluidPipeProperties(80000, 20000, true, true, true, true)
                 .build()
                 .setFormula(addObfuscatedFormula(), false);

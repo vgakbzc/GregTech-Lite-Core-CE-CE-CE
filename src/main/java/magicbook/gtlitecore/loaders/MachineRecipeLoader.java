@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
+import gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities;
 import gregtech.api.block.VariantBlock;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
@@ -43,6 +44,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR;
 
 public class MachineRecipeLoader {
 
@@ -1112,7 +1114,7 @@ public class MachineRecipeLoader {
                 .fluidInputs(Adamantium.getFluid(L * 4))
                 .output(DIMENSIONAL_OSCILLATOR)
                 .stationResearch(b -> b
-                        .researchStack(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING))
+                        .researchStack(ELECTRIC_IMPLOSION_COMPRESSOR.getStackForm())
                         .EUt(VA[UEV])
                         .CWUt(576))
                 .EUt(VA[UIV])
@@ -2176,6 +2178,26 @@ public class MachineRecipeLoader {
                         .researchStack(COMPRESSED_FUSION_REACTOR[4].getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(576))
+                .buildAndRegister();
+
+        //  Electric Implosion Compressor
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, SiliconCarbide)
+                .input(GCYMMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR, 2)
+                .input(FIELD_GENERATOR_UV, 4)
+                .input(ELECTRIC_PISTON_UV, 8)
+                .input(ring, NaquadahAlloy, 32)
+                .input(cableGtSingle, Europium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 32))
+                .fluidInputs(Osmiridium.getFluid(L * 16))
+                .fluidInputs(Americium.getFluid(L * 4))
+                .output(ELECTRIC_IMPLOSION_COMPRESSOR)
+                .EUt(VA[UV])
+                .duration(MINUTE / 2)
+                .stationResearch(b -> b
+                        .researchStack(GCYMMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR.getStackForm())
+                        .CWUt(64)
+                        .EUt(VA[ZPM]))
                 .buildAndRegister();
     }
 

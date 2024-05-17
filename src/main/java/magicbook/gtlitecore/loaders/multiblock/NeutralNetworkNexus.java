@@ -133,6 +133,125 @@ public class NeutralNetworkNexus {
                 .tier(3)
                 .buildAndRegister();
 
+        //  Astralium Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, CelestialCrystal)
+                .notConsumable(CHROMATIC_LENS)
+                .notConsumable(QUANTUM_ANOMALY)
+                .input(nanotube, Astralium)
+                .input(nanosensor, Astralium)
+                .input(UHASOC_CHIP, 32)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(StarlightLiquid.getFluid(8000))
+                .fluidInputs(DimensionallyTranscendentResidue.getFluid(L * 4))
+                .output(swarm, Astralium, 4)
+                .EUt(VZ[UIV])
+                .duration(160)
+                .tier(3)
+                .buildAndRegister();
+
+        //  Solarium Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, NetherStar)
+                .notConsumable(lens, NdYAG)
+                .input(nanotube, Solarium)
+                .input(nanosensor, Solarium)
+                .input(UHASOC_CHIP, 32)
+                .input(dust, Glowstone, 16)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(ElectrolyteReflectorMixture.getFluid(8000))
+                .fluidInputs(ChargedCaesiumCeriumCobaltIndiumAlloy.getFluid(L * 4))
+                .output(swarm, Solarium, 4)
+                .EUt(VZ[UIV])
+                .duration(150)
+                .tier(3)
+                .buildAndRegister();
+
+        //  Luna Silver Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, NetherStar)
+                .notConsumable(lens, Celestite)
+                .input(nanotube, LunaSilver)
+                .input(nanosensor, LunaSilver)
+                .input(UHASOC_CHIP, 32)
+                .input(dust, Electrotine, 16)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(Silver.getPlasma(8000))
+                .fluidInputs(TantalumHafniumSeaborgiumCarbide.getFluid(L * 4))
+                .output(swarm, LunaSilver, 4)
+                .EUt(VZ[UIV])
+                .duration(150)
+                .tier(3)
+                .buildAndRegister();
+
+        //  Astral Titanium Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, CelestialCrystal)
+                .notConsumable(lens, LeadZirconateTitanate)
+                .notConsumable(QUANTUM_ANOMALY)
+                .input(nanotube, AstralTitanium)
+                .input(nanosensor, AstralTitanium)
+                .input(UHASOC_CHIP, 32)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(LightQuarks.getFluid(8000))
+                .fluidInputs(Titanium.getPlasma(L * 4))
+                .output(swarm, AstralTitanium, 4)
+                .EUt(VZ[UXV])
+                .duration(160)
+                .tier(3)
+                .buildAndRegister();
+
+        //  Celestial Tungsten Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, CelestialCrystal)
+                .notConsumable(lens, LuTmYVO)
+                .notConsumable(QUANTUM_ANOMALY)
+                .input(nanotube, CelestialTungsten)
+                .input(nanosensor, CelestialTungsten)
+                .input(UHASOC_CHIP, 32)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(HeavyQuarks.getFluid(8000))
+                .fluidInputs(Lead.getPlasma(L * 4))
+                .output(swarm, CelestialTungsten, 4)
+                .EUt(VZ[UXV])
+                .duration(160)
+                .tier(3)
+                .buildAndRegister();
+
+        //  Heavy Quark Degenerated Matter Swarm
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, CeLAG)
+                .notConsumable(CHROMATIC_LENS)
+                .input(nanotube, HeavyQuarkDegenerateMatter)
+                .input(nanosensor, HeavyQuarkDegenerateMatter)
+                .input(UHASOC_CHIP, 32)
+                .input(QCD_PROTECTIVE_PLATING, 2)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(HeavyQuarkEnrichedMixture.getFluid(8000))
+                .fluidInputs(CosmicComputingMixture.getFluid(L * 4))
+                .output(swarm, HeavyQuarkDegenerateMatter)
+                .EUt(VZ[UXV])
+                .duration(180)
+                .tier(3)
+                .buildAndRegister();
+
+        //  Quantumchromodynamically Confined Matter
+        NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
+                .notConsumable(lens, LithiumNiobate)
+                .notConsumable(CHROMATIC_LENS)
+                .input(nanotube, QuantumchromodynamicallyConfinedMatter)
+                .input(nanosensor, QuantumchromodynamicallyConfinedMatter)
+                .input(UHASOC_CHIP, 32)
+                .input(QCD_PROTECTIVE_PLATING, 2)
+                .fluidInputs(PCBCoolant.getFluid(32000))
+                .fluidInputs(HeavyLepton.getFluid(8000))
+                .fluidInputs(CosmicComputingMixture.getFluid(L * 4))
+                .output(swarm, QuantumchromodynamicallyConfinedMatter, 4)
+                .EUt(VZ[UXV])
+                .duration(180)
+                .tier(3)
+                .buildAndRegister();
+
         //  White Dwarf Matter Swarm
         NEUTRAL_NETWORK_NEXUS_BREEDING_MODE.recipeBuilder()
                 .notConsumable(lens, CelestialCrystal)
@@ -389,11 +508,18 @@ public class NeutralNetworkNexus {
         createNanotubeRecipe(Orichalcum,     VA[UV],  810);
 
         //  Infinite Breeding
-        createNanotubeRecipe(FullerenePolymerMatrix, VA[UEV], 210);
-        createNanotubeRecipe(Neutronium,             VA[UEV], 240);
-        createNanotubeRecipe(WhiteDwarfMatter,       VA[UIV], 180);
-        createNanotubeRecipe(BlackDwarfMatter,       VA[UIV], 180);
-        createNanotubeRecipe(Galaxium,               VA[UXV], 120);
+        createNanotubeRecipe(FullerenePolymerMatrix,                 VA[UEV], 210);
+        createNanotubeRecipe(Neutronium,                             VA[UEV], 240);
+        createNanotubeRecipe(Astralium,                              VA[UEV], 220);
+        createNanotubeRecipe(Solarium,                               VA[UEV], 280);
+        createNanotubeRecipe(LunaSilver,                             VA[UEV], 280);
+        createNanotubeRecipe(AstralTitanium,                         VA[UEV], 220);
+        createNanotubeRecipe(CelestialTungsten,                      VA[UEV], 220);
+        createNanotubeRecipe(HeavyQuarkDegenerateMatter,             VA[UIV], 200);
+        createNanotubeRecipe(QuantumchromodynamicallyConfinedMatter, VA[UIV], 200);
+        createNanotubeRecipe(WhiteDwarfMatter,                       VA[UIV], 180);
+        createNanotubeRecipe(BlackDwarfMatter,                       VA[UIV], 180);
+        createNanotubeRecipe(Galaxium,                               VA[UXV], 120);
     }
 
     private static void NanosensorRecipes() {
@@ -433,11 +559,18 @@ public class NeutralNetworkNexus {
         createNanosensorRecipe(Orichalcum,     VA[UV],  810);
 
         //  Infinite Breeding
-        createNanosensorRecipe(FullerenePolymerMatrix, VA[UEV], 210);
-        createNanosensorRecipe(Neutronium,             VA[UEV], 240);
-        createNanosensorRecipe(WhiteDwarfMatter,       VA[UIV], 180);
-        createNanosensorRecipe(BlackDwarfMatter,       VA[UIV], 180);
-        createNanosensorRecipe(Galaxium,               VA[UXV], 120);
+        createNanosensorRecipe(FullerenePolymerMatrix,                 VA[UEV], 210);
+        createNanosensorRecipe(Neutronium,                             VA[UEV], 240);
+        createNanosensorRecipe(Astralium,                              VA[UEV], 220);
+        createNanosensorRecipe(Solarium,                               VA[UEV], 280);
+        createNanosensorRecipe(LunaSilver,                             VA[UEV], 280);
+        createNanosensorRecipe(AstralTitanium,                         VA[UEV], 220);
+        createNanosensorRecipe(CelestialTungsten,                      VA[UEV], 220);
+        createNanosensorRecipe(HeavyQuarkDegenerateMatter,             VA[UIV], 200);
+        createNanosensorRecipe(QuantumchromodynamicallyConfinedMatter, VA[UIV], 200);
+        createNanosensorRecipe(WhiteDwarfMatter,                       VA[UIV], 180);
+        createNanosensorRecipe(BlackDwarfMatter,                       VA[UIV], 180);
+        createNanosensorRecipe(Galaxium,                               VA[UXV], 120);
     }
 
     private static void createBasicBreeding(Material material,

@@ -303,6 +303,14 @@ public class GTLiteMaterialFlagAddition {
 
         Osmiridium.addFlags(GENERATE_SWARM);
 
+        AstralTitanium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        CelestialTungsten.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Astralium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        Solarium.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        LunaSilver.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        HeavyQuarkDegenerateMatter.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+        QuantumchromodynamicallyConfinedMatter.addFlags(GENERATE_NANOTUBE, GENERATE_NANOSENSOR, GENERATE_SWARM);
+
         //  Singularity
         Iron.addFlags(GENERATE_SINGULARITY);
         Copper.addFlags(GENERATE_SINGULARITY);

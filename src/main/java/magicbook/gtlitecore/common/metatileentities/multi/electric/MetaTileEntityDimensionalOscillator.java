@@ -106,5 +106,6 @@ public class MetaTileEntityDimensionalOscillator extends RecipeMapMultiblockCont
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.BLINKING_RED + I18n.format("gtlitecore.machine.dimensional_oscillator.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.dimensional_oscillator.tooltip.2"));
+        tooltip.add(I18n.format("gtlitecore.machine.dimensional_oscillator.tooltip.3"));
     }
 }

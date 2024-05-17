@@ -311,19 +311,19 @@ tile.graviton_casing.medial_graviton_flow_modulator.name=介质引力子流调�
 tile.graviton_casing.central_graviton_flow_modulator.name=中心引力子流调节器
 
 tile.implosion_coil.orichalcum.name=山铜聚爆缓冲线圈
-tile.implosion_coil.orichalcum.tooltip=
+tile.implosion_coil.orichalcum.tooltip=基础缓冲组件
 tile.implosion_coil.adamantium.name=精金聚爆缓冲线圈
-tile.implosion_coil.adamantium.tooltip=
+tile.implosion_coil.adamantium.tooltip=进阶缓冲组件
 tile.implosion_coil.vibranium.name=振金聚爆缓冲线圈
-tile.implosion_coil.vibranium.tooltip=
+tile.implosion_coil.vibranium.tooltip=高级缓冲组件
 tile.implosion_coil.infinity.name=无尽聚爆缓冲线圈
-tile.implosion_coil.infinity.tooltip=
+tile.implosion_coil.infinity.tooltip=精英缓冲组件
 tile.implosion_coil.spacetime.name=时空聚爆缓冲线圈
-tile.implosion_coil.spacetime.tooltip=
+tile.implosion_coil.spacetime.tooltip=史诗缓冲组件
 tile.implosion_coil.transcendent_metal.name=超时空金属聚爆缓冲线圈
-tile.implosion_coil.transcendent_metal.tooltip=
+tile.implosion_coil.transcendent_metal.tooltip=传奇缓冲组件
 tile.implosion_coil.eternity.name=永恒聚爆缓冲线圈
-tile.implosion_coil.eternity.tooltip=
+tile.implosion_coil.eternity.tooltip=终焉缓冲组件
 
 #  Items
 
@@ -1445,6 +1445,7 @@ gtlitecore.machine.collider.tooltip.2=§6遏制场发生器§7的等级限制了
 gtlitecore.machine.dimensional_oscillator.name=维度震荡仪
 gtlitecore.machine.dimensional_oscillator.tooltip.1=长时间开机或导致时空乱流现象的发生
 gtlitecore.machine.dimensional_oscillator.tooltip.2=用于破坏维度的时空平衡以制造极端环境
+gtlitecore.machine.dimensional_oscillator.tooltip.3=可以运行所有§e电动聚爆压缩机§7配方。
 
 gtlitecore.machine.decay_generator.name=衰变发生器
 gtlitecore.machine.decay_generator.tooltip.1=抹杀一切超长的衰变周期
@@ -1918,7 +1919,7 @@ gtlitecore.machine.electric_implosion_compressor.name=电动聚爆压缩机
 gtlitecore.machine.electric_implosion_compressor.tooltip.1=机器类型：§e聚爆压缩机§7
 gtlitecore.machine.electric_implosion_compressor.tooltip.2=爆炸就是艺术。
 gtlitecore.machine.electric_implosion_compressor.tooltip.3=拥有普通聚爆压缩机的全部配方，不需要使用爆炸物。
-gtlitecore.machine.electric_implosion_compressor.tooltip.4=根据§6聚爆缓冲线圈§7获得并行。
+gtlitecore.machine.electric_implosion_compressor.tooltip.4=根据§6聚爆缓冲线圈§7获得并行，所有线圈必须保持一致。
 gtlitecore.machine.electric_implosion_compressor.tooltip.5=最大并行数：§e4^(线圈等级-1)§7
 
 gtlitecore.machine.large_rock_breaker.name=大型碎岩塔

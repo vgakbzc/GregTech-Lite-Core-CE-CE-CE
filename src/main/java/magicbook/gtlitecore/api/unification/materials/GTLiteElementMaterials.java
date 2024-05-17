@@ -261,7 +261,7 @@ public class GTLiteElementMaterials {
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.CelestialTungsten)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_FINE_WIRE)
                 .itemPipeProperties(8360, 496)
                 .build();
 
@@ -388,7 +388,7 @@ public class GTLiteElementMaterials {
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 800)
                         .vacuumStats(VA[UEV], 400))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  10027 Shirabon
@@ -402,7 +402,7 @@ public class GTLiteElementMaterials {
                         .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 144)
                         .vacuumStats(VA[UXV], 288))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING)
                 .cableProperties(V[OpV], 288, 144, false)
                 .build();
 
