@@ -40,6 +40,7 @@ public class GTLiteMetaBlocks {
     public static BlockDysonSwarmCasing DYSON_SWARM_CASING;
     public static BlockQuantumComputerCasing QUANTUM_COMPUTER_CASING;
     public static BlockGravitonCasing GRAVITON_CASING;
+    public static BlockImplosionCoil IMPLOSION_COIL;
 
     private GTLiteMetaBlocks() {}
 
@@ -155,6 +156,10 @@ public class GTLiteMetaBlocks {
         GRAVITON_CASING = new BlockGravitonCasing();
         GRAVITON_CASING.setRegistryName("graviton_casing");
         GRAVITON_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        IMPLOSION_COIL = new BlockImplosionCoil();
+        IMPLOSION_COIL.setRegistryName("implosion_coil");
+        IMPLOSION_COIL.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -183,6 +188,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(DYSON_SWARM_CASING);
         registerItemModel(QUANTUM_COMPUTER_CASING);
         registerItemModel(GRAVITON_CASING);
+        registerItemModel(IMPLOSION_COIL);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();

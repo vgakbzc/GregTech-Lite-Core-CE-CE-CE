@@ -1047,7 +1047,7 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, true, false, GuiTextures.MOLECULAR_OVERLAY_2)
             .setSlotOverlay(true, true, true, GuiTextures.MOLECULAR_OVERLAY_2)
-            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.SCIENCE : SoundEvents.ENTITY_GENERIC_EXPLODE)
+            .setSound(GTValues.FOOLS.get() ? GTSoundEvents.ARC : SoundEvents.ENTITY_GENERIC_EXPLODE)
             .onRecipeBuild((recipeBuilder) -> NICOLL_DYSON_BEAMER_OSCILLATING_MODULE.recipeBuilder()
                     .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
                     .fluidInputs(recipeBuilder.getFluidInputs())
@@ -2101,6 +2101,24 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, true, true, GuiTextures.LIGHTNING_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_CIRCUIT_ASSEMBLER, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ELECTROLYZER);
+
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> ELECTRIC_IMPLOSION_RECIPES = new RecipeMap<>("electric_implosion_compressor", 3, 2, 0, 0, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
+            .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
+            .setSlotOverlay(true, false, true, GuiTextures.DUST_OVERLAY)
+            .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE)
+            .onRecipeBuild((recipeBuilder) -> DIMENSIONAL_OSCILLATOR_RECIPES.recipeBuilder()
+                    .inputs(recipeBuilder.getInputs().toArray(new GTRecipeInput[0]))
+                    .fluidInputs(recipeBuilder.getFluidInputs())
+                    .outputs(recipeBuilder.getOutputs())
+                    .chancedOutputs(recipeBuilder.getChancedOutputs())
+                    .fluidOutputs(recipeBuilder.getFluidOutputs())
+                    .chancedFluidOutputs(recipeBuilder.getChancedFluidOutputs())
+                    .EUt(recipeBuilder.getEUt())
+                    .duration(recipeBuilder.getDuration())
+                    .hidden() // Hidden same recipes in Dimensional Oscillator.
+                    .buildAndRegister());
 
     public GTLiteRecipeMaps() {}
 }

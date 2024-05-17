@@ -95,7 +95,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .liquid(new FluidBuilder().temperature(83654))
                 .plasma()
                 .color(0x9E19CF)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
 
         //  13008 Methyl Formate

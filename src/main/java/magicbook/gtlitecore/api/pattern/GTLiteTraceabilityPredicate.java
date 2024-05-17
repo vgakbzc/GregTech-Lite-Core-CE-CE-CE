@@ -234,4 +234,8 @@ public class GTLiteTraceabilityPredicate {
     //  Fusion Coil Predicate
     public static Supplier<TierTraceabilityPredicate> FUSION_COIL = () -> new TierTraceabilityPredicate(MAP_FUSION_COIL,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_FUSION_COIL.get(s)).getIntTier()), "FusionCoil", null);
+
+    //  Implosion Coil Predicate
+    public static Supplier<TierTraceabilityPredicate> IMPLOSION_COIL = () -> new TierTraceabilityPredicate(MAP_IMPLOSION_COIL,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_IMPLOSION_COIL.get(s)).getIntTier()), "ImplosionCoil", null);
 }

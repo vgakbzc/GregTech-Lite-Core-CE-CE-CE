@@ -28,6 +28,7 @@ public class CosmicCircuits {
 
         //  Cosmic Board
         SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(SPINTRONIC_CIRCUIT_BOARD)
                 .input(plate, DegenerateRhenium, 2)
                 .input(plate, HeavyQuarkDegenerateMatter, 2)
                 .input(wireFine, Abyssalloy, 6)

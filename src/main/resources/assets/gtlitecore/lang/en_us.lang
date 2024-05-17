@@ -68,7 +68,8 @@ tile.structure_casing.duraluminium_alloy_casing.name=洁净硬铝合金-65A机�
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
-tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
+tile.boiler_casing.polybenzimidazole_pipe.name=Polybenzimidazole Pipe Casing
+tile.boiler_casing.lafium_pipe.name=Lafium Pipe Casing
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
@@ -308,6 +309,21 @@ tile.quantum_computer_casing.heat_vent.tooltip=用于平衡机器内部的运行
 tile.graviton_casing.remote_graviton_flow_modulator.name=远程引力子流调节器
 tile.graviton_casing.medial_graviton_flow_modulator.name=介质引力子流调节器
 tile.graviton_casing.central_graviton_flow_modulator.name=中心引力子流调节器
+
+tile.implosion_coil.orichalcum.name=山铜聚爆缓冲线圈
+tile.implosion_coil.orichalcum.tooltip=
+tile.implosion_coil.adamantium.name=精金聚爆缓冲线圈
+tile.implosion_coil.adamantium.tooltip=
+tile.implosion_coil.vibranium.name=振金聚爆缓冲线圈
+tile.implosion_coil.vibranium.tooltip=
+tile.implosion_coil.infinity.name=无尽聚爆缓冲线圈
+tile.implosion_coil.infinity.tooltip=
+tile.implosion_coil.spacetime.name=时空聚爆缓冲线圈
+tile.implosion_coil.spacetime.tooltip=
+tile.implosion_coil.transcendent_metal.name=超时空金属聚爆缓冲线圈
+tile.implosion_coil.transcendent_metal.tooltip=
+tile.implosion_coil.eternity.name=永恒聚爆缓冲线圈
+tile.implosion_coil.eternity.tooltip=
 
 #  Items
 
@@ -1898,6 +1914,13 @@ gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r低温反应室§7模
 gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
 gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
 
+gtlitecore.machine.electric_implosion_compressor.name=电动聚爆压缩机
+gtlitecore.machine.electric_implosion_compressor.tooltip.1=机器类型：§e聚爆压缩机§7
+gtlitecore.machine.electric_implosion_compressor.tooltip.2=爆炸就是艺术。
+gtlitecore.machine.electric_implosion_compressor.tooltip.3=拥有普通聚爆压缩机的全部配方，不需要使用爆炸物。
+gtlitecore.machine.electric_implosion_compressor.tooltip.4=根据§6聚爆缓冲线圈§7获得并行。
+gtlitecore.machine.electric_implosion_compressor.tooltip.5=最大并行数：§e4^(线圈等级-1)§7
+
 gtlitecore.machine.large_rock_breaker.name=大型碎岩塔
 
 gtlitecore.machine.industrial_rock_breaker.name=工业岩石制造厂
@@ -3341,7 +3364,7 @@ recipemap.auto_chisel.name=Auto Chisel
 recipemap.dimensionally_transcendent_neutronium_forge_transmutation_mode.name=物质嬗变超区段
 recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=等离子聚合超区段
 recipemap.dimensionally_transcendent_neutronium_forge_collision_mode.name=对撞加速超区段
-
+recipemap.electric_implosion_compressor.name=Electric Implosion Compressor
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=Temperature: %,d K

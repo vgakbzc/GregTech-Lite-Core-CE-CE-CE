@@ -1,24 +1,54 @@
 package magicbook.gtlitecore.loaders.handlers;
 
+import gregtech.api.GTValues;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.builders.ImplosionRecipeBuilder;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.Material;
+import gregtech.api.unification.material.Materials;
+import gregtech.api.unification.material.info.MaterialFlags;
 import gregtech.api.unification.material.properties.DustProperty;
 import gregtech.api.unification.material.properties.IngotProperty;
 import gregtech.api.unification.material.properties.PropertyKey;
 import gregtech.api.unification.ore.OrePrefix;
+import gregtech.api.util.GTUtility;
+import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.items.MetaItems;
+import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.GTValues.M;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.getVoltageMultiplier;
 
 public class MaterialRecipeHandler {
 
     public static void register() {
+        OrePrefix.dust.addProcessingHandler(PropertyKey.DUST, MaterialRecipeHandler::processDust);
         OrePrefix.ingot.addProcessingHandler(PropertyKey.INGOT, MaterialRecipeHandler::processIngot);
         OrePrefix.block.addProcessingHandler(PropertyKey.DUST, MaterialRecipeHandler::processBlock);
+    }
+
+    /**
+     * Processing dust to gem by Electric Implosion Compressor.
+     */
+    public static void processDust(OrePrefix dustPrefix, Material material, DustProperty property) {
+        ItemStack dustStack = OreDictUnifier.get(dustPrefix, material);
+        if (material.hasProperty(PropertyKey.GEM)) {
+            ItemStack gemStack = OreDictUnifier.get(OrePrefix.gem, material);
+            if (!material.hasFlag(MaterialFlags.EXPLOSIVE) && !material.hasFlag(MaterialFlags.FLAMMABLE)) {
+                GTLiteRecipeMaps.ELECTRIC_IMPLOSION_RECIPES.recipeBuilder()
+                        .inputs(GTUtility.copy(4, dustStack))
+                        .outputs(GTUtility.copy(3, gemStack))
+                        .chancedOutput(OrePrefix.dust, Materials.DarkAsh, 2500, 0)
+                        .EUt(VA[LV])
+                        .duration(SECOND)
+                        .buildAndRegister();
+            }
+        }
     }
 
     /**

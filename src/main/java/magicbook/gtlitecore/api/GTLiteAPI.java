@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.api;
 
+import appeng.api.definitions.IBlocks;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.BaseCreativeTab;
@@ -37,6 +38,7 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_COOLING_CORE = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_GRAVITON_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FUSION_COIL = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_IMPLOSION_COIL = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -182,5 +184,27 @@ public class GTLiteAPI {
 
         MAP_FUSION_COIL.put(GTLiteMetaBlocks.FUSION_CASING.getState(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK4),
                 new WrappedIntTier(BlockFusionCasing.FusionCasingType.FUSION_COIL_MK4, 5));
+
+        //  Implosion Coil
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.ORICHALCUM),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.ORICHALCUM, 1));
+
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.ADAMANTIUM),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.ADAMANTIUM, 2));
+
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.VIBRANIUM),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.VIBRANIUM, 3));
+
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.INFINITY),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.INFINITY, 4));
+
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.SPACETIME),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.SPACETIME, 5));
+
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.TRANSCENDENT_METAL),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.TRANSCENDENT_METAL, 6));
+
+        MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.ETERNITY),
+                new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.ETERNITY, 7));
     }
 }

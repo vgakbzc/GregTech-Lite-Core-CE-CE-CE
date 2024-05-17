@@ -240,6 +240,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityFixedSiftingPlant FIXED_SIFTING_PLANT;
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
     public static MetaTileEntityCirculativeCoolingTower CIRCULATIVE_COOLING_TOWER;
+    public static MetaTileEntityElectricImplosionCompressor ELECTRIC_IMPLOSION_COMPRESSOR;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
@@ -613,8 +614,8 @@ public class GTLiteMetaTileEntities {
         FIXED_SIFTING_PLANT = registerMultiMetaTileEntity(107, new MetaTileEntityFixedSiftingPlant(gtliteId("fixed_sifting_plant")));
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
         CIRCULATIVE_COOLING_TOWER = registerMultiMetaTileEntity(109, new MetaTileEntityCirculativeCoolingTower(gtliteId("circulative_cooling_tower")));
-        //  110 MATERIAL_TRANSMUTATION_ARRAY
-        //  111
+        ELECTRIC_IMPLOSION_COMPRESSOR = registerMultiMetaTileEntity(110, new MetaTileEntityElectricImplosionCompressor(gtliteId("electric_implosion_compressor")));
+        //  111 MATERIAL_TRANSMUTATION_ARRAY
         //  112
         //  113
         //  114

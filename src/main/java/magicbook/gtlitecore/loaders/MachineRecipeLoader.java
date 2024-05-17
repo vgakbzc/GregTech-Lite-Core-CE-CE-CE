@@ -2195,6 +2195,7 @@ public class MachineRecipeLoader {
         ComponentAssemblyCasings();
         DysonSwarmCasings();
         NicollDysonBeamerCasings();
+        ImplosionCoils();
     }
 
     private static void MetalCasings() {
@@ -2695,6 +2696,13 @@ public class MachineRecipeLoader {
                 GTLiteMetaBlocks.STRUCTURE_CASING,
                 BlockStructureCasing.StructureCasingType.DURALUMINIUM_ALLOY_CASING,
                 DuraluminiumAlloy);
+
+        //  Lafium Pipe Casing
+        ModHandler.addShapedRecipe(true, "lafium_pipe", GTLiteMetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.LAFIUM, 2),
+                "APA", "PFP", "APA",
+                'A', new UnificationEntry(plate, Lafium),
+                'P', new UnificationEntry(pipeNormalFluid, Lafium),
+                'F', new UnificationEntry(frameGt, Lafium));
     }
 
     private static void HighEnergyPhysicsCasings() {
@@ -4574,6 +4582,112 @@ public class MachineRecipeLoader {
                         .researchStack(GTLiteMetaBlocks.GRAVITON_CASING.getItemVariant(BlockGravitonCasing.GravitonCasingType.MEDIAL_GRAVITON_FLOW_MODULATOR))
                         .CWUt(4096)
                         .EUt(VA[MAX]))
+                .buildAndRegister();
+    }
+
+    private static void ImplosionCoils() {
+
+        //  Orichalcum
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Trinaquadalloy)
+                .input(block, Orichalcum, 4)
+                .input(MEMORY_FOAM_PLATE, 16)
+                .input(VOLTAGE_COIL_UV, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(ArtheriumB47.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.ORICHALCUM, 2))
+                .EUt(VH[UV])
+                .duration(20 * SECOND)
+                .tier(3) // UV
+                .buildAndRegister();
+
+        //  Adamantium
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Cinobite)
+                .input(block, Adamantium, 4)
+                .input(MEMORY_FOAM_PLATE, 16)
+                .input(VOLTAGE_COIL_UHV, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(IncoloyMA813.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.ADAMANTIUM, 2))
+                .EUt(VH[UHV])
+                .duration(20 * SECOND)
+                .tier(4) // UHV
+                .buildAndRegister();
+
+        //  Vibranium
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TitanSteel)
+                .input(block, Vibranium, 4)
+                .input(MEMORY_FOAM_PLATE, 32)
+                .input(VOLTAGE_COIL_UEV, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(ArceusAlloy2B.getFluid(L * 4))
+                .fluidInputs(Hdcs.getFluid(L))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.VIBRANIUM, 2))
+                .EUt(VH[UEV])
+                .duration(20 * SECOND)
+                .tier(5) // UEV
+                .buildAndRegister();
+
+        //  Infinity
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlackTitanium)
+                .input(block, Infinity, 4)
+                .input(MEMORY_FOAM_PLATE, 32)
+                .input(VOLTAGE_COIL_UIV, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(SuperheavyLAlloy.getFluid(L * 4))
+                .fluidInputs(Abyssalloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.INFINITY, 2))
+                .EUt(VH[UIV])
+                .duration(20 * SECOND)
+                .tier(6) // UIV
+                .buildAndRegister();
+
+        //  Spacetime
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, BlackPlutonium)
+                .input(block, Spacetime, 4)
+                .input(COSMIC_FABRIC, 32)
+                .input(VOLTAGE_COIL_UXV, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(SuperheavyHAlloy.getFluid(L * 4))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.SPACETIME, 2))
+                .EUt(VH[UXV])
+                .duration(20 * SECOND)
+                .tier(7) // UXV
+                .buildAndRegister();
+
+        //  Transcendent Metal
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Edenium)
+                .input(block, TranscendentMetal, 4)
+                .input(COSMIC_FABRIC, 32)
+                .input(VOLTAGE_COIL_OpV, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(Shirabon.getFluid(L * 4))
+                .fluidInputs(Arcanium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.TRANSCENDENT_METAL, 2))
+                .EUt(VH[OpV])
+                .duration(20 * SECOND)
+                .tier(8) // OpV
+                .buildAndRegister();
+
+        //  Eternity
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, TranscendentMetal)
+                .inputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.TRANSCENDENT_METAL, 2))
+                .input(block, Eternity, 4)
+                .input(wireFine, CosmicFabric, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 16))
+                .fluidInputs(Magmatter.getFluid(L * 4))
+                .fluidInputs(Omnium.getFluid(L))
+                .outputs(GTLiteMetaBlocks.IMPLOSION_COIL.getItemVariant(BlockImplosionCoil.ImplosionCoilType.ETERNITY, 2))
+                .EUt(VH[MAX])
+                .duration(20 * SECOND)
+                .tier(8) // OpV
                 .buildAndRegister();
     }
 

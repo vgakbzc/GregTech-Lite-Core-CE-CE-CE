@@ -13,16 +13,16 @@ import javax.annotation.Nonnull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
-public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasingType> {
+public class BlockImplosionCoil extends VariantBlock<BlockImplosionCoil.ImplosionCoilType> {
 
-    public BlockBoilerCasing() {
+    public BlockImplosionCoil() {
         super(Material.IRON);
-        this.setTranslationKey("boiler_casing");
+        this.setTranslationKey("implosion_coil");
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel("wrench", 1);
-        this.setDefaultState(this.getState(BoilerCasingType.INCONEL625));
+        this.setHarvestLevel("wrench", 2);
+        this.setDefaultState(this.getState(ImplosionCoilType.ORICHALCUM));
     }
 
     @Override
@@ -33,15 +33,18 @@ public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasi
         return false;
     }
 
-    public enum BoilerCasingType implements IStringSerializable {
-        INCONEL625("inconel_625_pipe"),
-        HASTELLOY_N("hastelloy_n_pipe"),
-        POLYBENZIMIDAZOLE("polybenzimidazole_pipe"),
-        LAFIUM("lafium_pipe");
+    public enum ImplosionCoilType implements IStringSerializable {
+        ORICHALCUM("orichalcum"),                 // UV
+        ADAMANTIUM("adamantium"),                 // UHV
+        VIBRANIUM("vibranium"),                   // UEV
+        INFINITY("infinity"),                     // UIV
+        SPACETIME("spacetime"),                   // UXV
+        TRANSCENDENT_METAL("transcendent_metal"), // OpV
+        ETERNITY("eternity");                     // MAX
 
         private final String name;
 
-        BoilerCasingType(String name) {
+        ImplosionCoilType(String name) {
             this.name = name;
         }
 
@@ -50,5 +53,6 @@ public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasi
         public String getName() {
             return name;
         }
+
     }
 }

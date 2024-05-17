@@ -1,0 +1,49 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "variant": {
+      "orichalcum": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/orichalcum"
+        }
+      },
+      "adamantium": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/adamantium"
+        }
+      },
+      "vibranium": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/vibranium"
+        }
+      },
+      "infinity": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/infinity"
+        }
+      },
+      "spacetime": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/spacetime"
+        }
+      },
+      "transcendent_metal": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/transcendent_metal"
+        }
+      },
+      "eternity": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/coils/implosion/eternity"
+        }
+      }
+    }
+  }
+}

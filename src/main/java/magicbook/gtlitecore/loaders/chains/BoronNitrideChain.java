@@ -168,12 +168,28 @@ public class BoronNitrideChain {
                 .explosivesAmount(32)
                 .buildAndRegister();
 
+        ELECTRIC_IMPLOSION_RECIPES.recipeBuilder()
+                .input(dust, CubicBoronNitride)
+                .input(dust, Carbon)
+                .output(gem, Heterodiamond, 2)
+                .EUt(VA[LV])
+                .duration(SECOND)
+                .buildAndRegister();
+
         //  c-BN + C -> BCN
         IMPLOSION_RECIPES.recipeBuilder()
                 .input(dust, CubicBoronNitride)
                 .input(dust, Carbon)
                 .output(gem, Heterodiamond, 2)
                 .explosivesType(MetaItems.DYNAMITE.getStackForm(16))
+                .EUt(VA[LV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        ELECTRIC_IMPLOSION_RECIPES.recipeBuilder()
+                .input(dust, CubicBoronNitride)
+                .input(dust, Carbon)
+                .output(gem, Heterodiamond, 2)
                 .EUt(VA[LV])
                 .duration(SECOND)
                 .buildAndRegister();

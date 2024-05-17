@@ -84,6 +84,7 @@ val chemical_dryer as RecipeMap = <recipemap:chemical_dryer>
 |                               | `nicoll_dyson_beamer_burning_module`                             | 9           | 9            | 9            | 9             |
 |                               | `nicoll_dyson_beamer_forging_module`                             | 3           | 2            | 1            | 0             |
 | Eternity Garden               | `eternity_garden`                                                | 7           | 7            | 7            | 7             |
+| Electric Implosion Compressor | `electric_implosion_compressor`                                  | 3           | 2            | 0            | 0             |
 
 ###  Generator RecipeMap
 
