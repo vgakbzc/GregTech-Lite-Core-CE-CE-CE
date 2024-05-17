@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.api;
 
+import gregtech.api.GTValues;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
@@ -8,13 +9,30 @@ import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import net.minecraft.util.text.TextFormatting;
 
+import java.math.BigInteger;
+import java.util.Arrays;
+
+import static gregtech.api.GTValues.*;
+
 @SuppressWarnings("unused")
 public class GTLiteValues {
 
     /**
      * Special Voltage for some recipes needs integer based energy consumed.
+     * This voltage is based on {@link GTValues#V} but less than it (but more precious).
      */
     public static final int[] VZ = new int[] { 1, 30, 100, 500, 2000, 8000, 30000, 100000, 500000, 2000000, 8000000, 30000000, 100000000, 500000000, 2000000000 };
+
+    /**
+     * Particle Voltage, this voltage is exactly like {@link GTValues#VA}, but use {@code long} like {@link GTValues#V},
+     * it is also lower than the recipe to use a full amperage of that tier.
+     */
+    public static final long[] VP = Arrays.stream(V)
+            .map(i -> BigInteger.valueOf(i)
+                    .multiply(BigInteger.valueOf(VA[LV]))
+                    .divide(BigInteger.valueOf(V[LV]))
+                    .longValueExact())
+            .toArray();
 
     /**
      * Tier list for {@link OrePrefix#circuit}, used in some recipes.
@@ -55,6 +73,46 @@ public class GTLiteValues {
      * just 1/4 {@link #HOUR} and 1/2 {@link #HALF_HOUR} (means 15 minute and 900 second).
      */
     public static final int QUAT_HOUR = HOUR / 4;
+
+    /**
+     * Math Unit: Kilo/Thousand (10^3).
+     */
+    public static final int K = (int) Math.pow(10, 3);
+
+    /**
+     * Math Unit: Mega/Million (10^6).
+     */
+    public static final int M = (int) Math.pow(10, 6);
+
+    /**
+     * Math Unit: Giga/Billion (10^9).
+     */
+    public static final int G = (int) Math.pow(10, 9);
+
+    /**
+     * Math Unit: Tera/Trillion (10^12).
+     */
+    public static final int T = (int) Math.pow(10, 12);
+
+    /**
+     * Math Unit: Peta/Quadrillion (10^15)
+     */
+    public static final int P = (int) Math.pow(10, 15);
+
+    /**
+     * Math Unit: Exa/Quintillion (10^18)
+     */
+    public static final int E = (int) Math.pow(10, 18);
+
+    /**
+     * Math Unit: Zetta/Sextillion (10^21)
+     */
+    public static final int Z = (int) Math.pow(10, 21);
+
+    /**
+     * Math Unit: Yotta/Septillion (10^24)
+     */
+    public static final int Y = (int) Math.pow(10, 24);
 
     /**
      * Special String for some {@code formula}, please see: {@link GTLiteMaterials}.
