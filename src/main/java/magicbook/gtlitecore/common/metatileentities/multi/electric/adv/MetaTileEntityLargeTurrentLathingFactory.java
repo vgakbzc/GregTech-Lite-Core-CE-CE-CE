@@ -65,6 +65,7 @@ public class MetaTileEntityLargeTurrentLathingFactory extends MultiMapMultiblock
                 .aisle("XXSXX", " P P ", " P P ", " P P ", "XXXXX")
                 .where('S', this.selfPredicate())
                 .where('X', states(getCasingState())
+                        .setMinGlobalLimited(60)
                         .or(autoAbilities()))
                 .where('C', states(getCasingState()))
                 .where('P', states(getBoilerCasingState()))
