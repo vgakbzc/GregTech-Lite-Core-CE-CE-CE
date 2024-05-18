@@ -33,7 +33,6 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -45,24 +44,46 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
-import java.util.function.BooleanSupplier;
 import java.util.function.DoubleSupplier;
 
-import static gregtech.api.GTValues.UEV;
-import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.*;
 
+/**
+ * Advanced Fusion Reactor
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is used for Fusion Reactor Computer Mark 4 and 5,
+ *     we called these Multiblock machines by Advanced Fusion Reactor in common.
+ *     We split {@code color} parameter and related {@code BloomRenderer} contents,
+ *     because these Multiblock machines do not need extended Bloom renderer.
+ * </p>
+ *
+ * @since 2.7.4-beta
+ */
 public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockController {
 
+    //  Tier of Fusion Reactor, used to add more fusion reactors by one class,
+    //  we use {@link #UHV} and {@link #UEV} for Mark 4 and 5.
     private final int tier;
+
+    //  Block State of Fusion Reactor, for Advanced Fusion Reactor,
+    //  there are 3 new blocks required: Cryostat, Divertor and Vacuum.
+    //  We added this info to Multiblock Structure in {@link GTLiteMetaTileEntities}.
     public final IBlockState casingState;
     public final IBlockState coilState;
     public final IBlockState cryostatState;
     public final IBlockState divertorState;
     public final IBlockState vacuumState;
+
+    //  Internal Energy Container, just like common Fusion Reactors.
     private EnergyContainerList inputEnergyContainers;
+
+    //  Heat, like common Fusion Reactors.
     private long heat = 0;
-    private Integer color;
+
+    //  Used for Special Progress Bar in Modular UI.
     private final FusionProgressSupplier progressBarSupplier;
 
     public MetaTileEntityAdvancedFusionReactor(ResourceLocation metaTileEntityId,
@@ -212,6 +233,17 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         };
     }
 
+    /**
+     * Calculate Energy Storage by Energy Hatch amount and tier.
+     *
+     * <ul>
+     *     <li>{@link #tier} = UHV (Mark 4) -> 1280M EU;</li>
+     *     <li>{@link #tier} = UEV (Mark 5) -> 2560M EU.</li>
+     * </ul>
+     *
+     * @param energyInputAmount  Energy Hatch amount.
+     * @return                   Energy Storage of Fusion Reactor.
+     */
     private long calculateEnergyStorageFactor(int energyInputAmount) {
         return energyInputAmount * (long) Math.pow(2, tier - 6) * 10000000L;
     }
@@ -223,104 +255,96 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
             if (energyAdded > 0) this.inputEnergyContainers.removeEnergy(energyAdded);
         }
         super.updateFormedValid();
-        if (recipeMapWorkable.isWorking() && color == null) {
-            if (recipeMapWorkable.getPreviousRecipe() != null && recipeMapWorkable.getPreviousRecipe().getFluidOutputs().size() > 0) {
-                int newColor = 0xFF000000 | recipeMapWorkable.getPreviousRecipe().getFluidOutputs().get(0).getFluid().getColor();
-                if (!Objects.equals(color, newColor)) {
-                    color = newColor;
-                    writeCustomData(GregtechDataCodes.UPDATE_COLOR, this::writeColor);
-                }
-            }
-        } else if (!recipeMapWorkable.isWorking() && isStructureFormed() && color != null) {
-            color = null;
-            writeCustomData(GregtechDataCodes.UPDATE_COLOR, this::writeColor);
-        }
-    }
-
-    @Override
-    public void writeInitialSyncData(PacketBuffer buf) {
-        super.writeInitialSyncData(buf);
-        writeColor(buf);
-    }
-
-    @Override
-    public void receiveInitialSyncData(PacketBuffer buf) {
-        super.receiveInitialSyncData(buf);
-        readColor(buf);
-    }
-
-    @Override
-    public void receiveCustomData(int dataId, PacketBuffer buf) {
-        super.receiveCustomData(dataId, buf);
-        if (dataId == GregtechDataCodes.UPDATE_COLOR) {
-            readColor(buf);
-        }
-    }
-
-    private void readColor(PacketBuffer buf) {
-        color = buf.readBoolean() ? buf.readVarInt() : null;
-    }
-
-    private void writeColor(PacketBuffer buf) {
-        buf.writeBoolean(color != null);
-        if (color != null) {
-            buf.writeVarInt(color);
-        }
     }
 
     @Override
     protected ModularUI.Builder createUITemplate(EntityPlayer entityPlayer) {
+        //  Background
         ModularUI.Builder builder = ModularUI.builder(GuiTextures.BACKGROUND, 198, 236);
+
+        //  Display
         builder.image(4, 4, 190, 138, GuiTextures.DISPLAY);
+
         //  Energy Bar
-        builder.widget((new ProgressWidget(() -> this.energyContainer.getEnergyCapacity() > 0L ? 1.0 * (double) this.energyContainer.getEnergyStored() / (double) this.energyContainer.getEnergyCapacity() : 0.0, 4, 144, 94, 7, GuiTextures.PROGRESS_BAR_FUSION_ENERGY, ProgressWidget.MoveType.HORIZONTAL))
+        builder.widget(new ProgressWidget(() -> this.energyContainer.getEnergyCapacity() > 0L ? 1.0 * this.energyContainer.getEnergyStored() / (double) this.energyContainer.getEnergyCapacity() : 0.0,
+                4, 144, 94, 7, GuiTextures.PROGRESS_BAR_FUSION_ENERGY, ProgressWidget.MoveType.HORIZONTAL)
                 .setHoverTextConsumer(this::addEnergyBarHoverText));
+
         //  Heat Bar
-        builder.widget((new ProgressWidget(() -> this.energyContainer.getEnergyCapacity() > 0L ? 1.0 * (double) this.heat / (double) this.energyContainer.getEnergyCapacity() : 0.0, 100, 144, 94, 7, GuiTextures.PROGRESS_BAR_FUSION_HEAT, ProgressWidget.MoveType.HORIZONTAL))
+        builder.widget(new ProgressWidget(() -> this.energyContainer.getEnergyCapacity() > 0L ? 1.0 * this.heat / (double) this.energyContainer.getEnergyCapacity() : 0.0,
+                100, 144, 94, 7, GuiTextures.PROGRESS_BAR_FUSION_HEAT, ProgressWidget.MoveType.HORIZONTAL)
                 .setHoverTextConsumer(this::addHeatBarHoverText));
-        //  Logo
+
+        //  Indicator Image Widget (Logo)
         builder.widget((new IndicatorImageWidget(174, 122, 17, 17, this.getLogo()))
                 .setWarningStatus(this.getWarningLogo(), this::addWarningText)
                 .setErrorStatus(this.getErrorLogo(), this::addErrorText));
-        //  Fusion Reactor Title
+
+        //  Title (MK4 and MK5)
         if (this.tier == UHV) {
-            builder.widget((new ImageWidget(66, 9, 67, 12, GTLiteGuiTextures.FUSION_REACTOR_MK4_TITLE)).setIgnoreColor(true));
+            builder.widget((new ImageWidget(66, 9, 67, 12, GTLiteGuiTextures.FUSION_REACTOR_MK4_TITLE))
+                    .setIgnoreColor(true));
         } else {
-            builder.widget((new ImageWidget(65, 9, 69, 12, GTLiteGuiTextures.FUSION_REACTOR_MK5_TITLE)).setIgnoreColor(true));
+            builder.widget((new ImageWidget(65, 9, 69, 12, GTLiteGuiTextures.FUSION_REACTOR_MK5_TITLE))
+                    .setIgnoreColor(true));
         }
-        //  Fusion Reactor Diagram
-        builder.widget((new ImageWidget(55, 24, 89, 101, GuiTextures.FUSION_REACTOR_DIAGRAM)).setIgnoreColor(true));
+
+        //  Fusion Diagram + Progress Bar
+        builder.widget(new ImageWidget(55, 24, 89, 101, GuiTextures.FUSION_REACTOR_DIAGRAM)
+                .setIgnoreColor(true));
         builder.widget(FusionProgressSupplier.Type.BOTTOM_LEFT.getWidget(this));
         builder.widget(FusionProgressSupplier.Type.TOP_LEFT.getWidget(this));
         builder.widget(FusionProgressSupplier.Type.TOP_RIGHT.getWidget(this));
         builder.widget(FusionProgressSupplier.Type.BOTTOM_RIGHT.getWidget(this));
-        builder.widget((new ImageWidget(7, 98, 108, 41, GuiTextures.FUSION_REACTOR_LEGEND)).setIgnoreColor(true));
-        //  Bottom
-        TextureArea var10007 = GuiTextures.BUTTON_POWER;
-        MultiblockRecipeLogic var10008 = this.recipeMapWorkable;
-        Objects.requireNonNull(var10008);
-        BooleanSupplier var3 = var10008::isWorkingEnabled;
-        MultiblockRecipeLogic var10009 = this.recipeMapWorkable;
-        Objects.requireNonNull(var10009);
-        builder.widget(new ImageCycleButtonWidget(173, 211, 18, 18, var10007, var3, var10009::setWorkingEnabled));
+
+        //  Fusion Legend
+        builder.widget(new ImageWidget(7, 98, 108, 41, GuiTextures.FUSION_REACTOR_LEGEND)
+                .setIgnoreColor(true));
+
+        //  Power Button + Detail
+        builder.widget(new ImageCycleButtonWidget(173, 211, 18, 18, GuiTextures.BUTTON_POWER,
+                recipeMapWorkable::isWorkingEnabled, recipeMapWorkable::setWorkingEnabled));
         builder.widget(new ImageWidget(173, 229, 18, 6, GuiTextures.BUTTON_POWER_DETAIL));
-        builder.widget((new ImageCycleButtonWidget(173, 189, 18, 18, GuiTextures.BUTTON_VOID_MULTIBLOCK, 4, this::getVoidingMode, this::setVoidingMode))
+
+        //  Voiding Mode Button
+        builder.widget(new ImageCycleButtonWidget(173, 189, 18, 18, GuiTextures.BUTTON_VOID_MULTIBLOCK, 4,
+                this::getVoidingMode, this::setVoidingMode)
                 .setTooltipHoverString(MultiblockWithDisplayBase::getVoidingModeTooltip));
-        builder.widget((new ImageWidget(173, 171, 18, 18, GuiTextures.BUTTON_NO_DISTINCT_BUSES))
+
+        //  Distinct Buses Unavailable Image
+        builder.widget(new ImageWidget(173, 171, 18, 18, GuiTextures.BUTTON_NO_DISTINCT_BUSES)
                 .setTooltip("gregtech.multiblock.universal.distinct_not_supported"));
-        builder.widget(this.getFlexButton(173, 153, 18, 18));
+
+        // Flex Unavailable Image
+        builder.widget(getFlexButton(173, 153, 18, 18));
+
+        // Player Inventory
         builder.bindPlayerInventory(entityPlayer.inventory, 153);
         return builder;
     }
 
     private void addEnergyBarHoverText(List<ITextComponent> hoverList) {
-        ITextComponent energyInfo = TextComponentUtil.stringWithColor(TextFormatting.AQUA, TextFormattingUtil.formatNumbers(this.energyContainer.getEnergyStored()) + " / " + TextFormattingUtil.formatNumbers(this.energyContainer.getEnergyCapacity()) + " EU");
-        hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.energy_stored", energyInfo));
+        ITextComponent energyInfo = TextComponentUtil.stringWithColor(
+                TextFormatting.AQUA,
+                TextFormattingUtil.formatNumbers(this.energyContainer.getEnergyStored()) + " / "
+                        + TextFormattingUtil.formatNumbers(this.energyContainer.getEnergyCapacity()) + " EU");
+
+        hoverList.add(TextComponentUtil.translationWithColor(
+                TextFormatting.GRAY,
+                "gregtech.multiblock.energy_stored",
+                energyInfo));
     }
 
     private void addHeatBarHoverText(List<ITextComponent> hoverList) {
-        ITextComponent heatInfo = TextComponentUtil.stringWithColor(TextFormatting.RED, TextFormattingUtil.formatNumbers(this.heat) + " / " + TextFormattingUtil.formatNumbers(this.energyContainer.getEnergyCapacity()));
-        hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.fusion_reactor.heat", heatInfo));
+        ITextComponent heatInfo = TextComponentUtil.stringWithColor(
+                TextFormatting.RED,
+                TextFormattingUtil.formatNumbers(this.heat) + " / "
+                        + TextFormattingUtil.formatNumbers(this.energyContainer.getEnergyCapacity()));
+
+        hoverList.add(TextComponentUtil.translationWithColor(
+                TextFormatting.GRAY,
+                "gregtech.multiblock.fusion_reactor.heat",
+                heatInfo));
     }
 
     @Override
@@ -339,77 +363,93 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     }
 
     private static class FusionProgressSupplier {
+
         private final AtomicDouble tracker = new AtomicDouble(0.0);
-        private final ProgressWidget.TimedProgressSupplier bottomLeft = new ProgressWidget.TimedProgressSupplier(200, 164, false) {
-            public double getAsDouble() {
-                double val = super.getAsDouble();
-                FusionProgressSupplier.this.tracker.set(val);
-                return val >= 0.25 ? 1.0 : 4.0 * val;
-            }
+        private final ProgressWidget.TimedProgressSupplier bottomLeft;
+        private final DoubleSupplier topLeft;
+        private final DoubleSupplier topRight;
+        private final DoubleSupplier bottomRight;
 
-            public void resetCountdown() {
-                super.resetCountdown();
-                FusionProgressSupplier.this.tracker.set(0.0);
-            }
-        };
-        private final DoubleSupplier topLeft = () -> {
-            double val = this.tracker.get();
-            if (val < 0.25) {
-                return 0.0;
-            } else {
-                return val >= 0.5 ? 1.0 : 4.0 * (val - 0.25);
-            }
-        };
-        private final DoubleSupplier topRight = () -> {
-            double val = this.tracker.get();
-            if (val < 0.5) {
-                return 0.0;
-            } else {
-                return val >= 0.75 ? 1.0 : 4.0 * (val - 0.5);
-            }
-        };
-        private final DoubleSupplier bottomRight = () -> {
-            double val = this.tracker.get();
-            if (val < 0.75) {
-                return 0.0;
-            } else {
-                return val >= 1.0 ? 1.0 : 4.0 * (val - 0.75);
-            }
-        };
+        public FusionProgressSupplier() {
 
-        public FusionProgressSupplier() {}
+            //  Bottom Left, fill on [0, 0.25)
+            bottomLeft = new ProgressWidget.TimedProgressSupplier(200, 164, false) {
 
-        public void resetCountdown() {
-            this.bottomLeft.resetCountdown();
+                @Override
+                public double getAsDouble() {
+                    double val = super.getAsDouble();
+                    tracker.set(val);
+                    if (val >= 0.25) {
+                        return 1;
+                    }
+                    return 4 * val;
+                }
+
+                @Override
+                public void resetCountdown() {
+                    super.resetCountdown();
+                    tracker.set(0);
+                }
+            };
+
+            // Top Left, fill on [0.25, 0.5)
+            topLeft = () -> {
+                double val = tracker.get();
+                if (val < 0.25) {
+                    return 0;
+                } else if (val >= 0.5) {
+                    return 1;
+                }
+                return 4 * (val - 0.25);
+            };
+
+            // Top Right, fill on [0.5, 0.75)
+            topRight = () -> {
+                double val = tracker.get();
+                if (val < 0.5) {
+                    return 0;
+                } else if (val >= 0.75) {
+                    return 1;
+                }
+                return 4 * (val - 0.5);
+            };
+
+            // Bottom Right, fill on [0.75, 1.0]
+            bottomRight = () -> {
+                double val = tracker.get();
+                if (val < 0.75) {
+                    return 0;
+                } else if (val >= 1) {
+                    return 1;
+                }
+                return 4 * (val - 0.75);
+            };
         }
 
-        public DoubleSupplier getSupplier(FusionProgressSupplier.Type type) {
-            Object var10000;
-            switch (type) {
-                case BOTTOM_LEFT:
-                    var10000 = this.bottomLeft;
-                    break;
-                case TOP_LEFT:
-                    var10000 = this.topLeft;
-                    break;
-                case TOP_RIGHT:
-                    var10000 = this.topRight;
-                    break;
-                case BOTTOM_RIGHT:
-                    var10000 = this.bottomRight;
-                    break;
-                default:
-                    throw new IncompatibleClassChangeError();
-            }
+        @SuppressWarnings("unused")
+        public void resetCountdown() {
+            bottomLeft.resetCountdown();
+        }
 
-            return (DoubleSupplier) var10000;
+        public DoubleSupplier getSupplier(Type type) {
+            return switch (type) {
+                case BOTTOM_LEFT -> bottomLeft;
+                case TOP_LEFT -> topLeft;
+                case TOP_RIGHT -> topRight;
+                case BOTTOM_RIGHT -> bottomRight;
+            };
         }
 
         private enum Type {
-            BOTTOM_LEFT(61, 66, 35, 41, GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_BL, ProgressWidget.MoveType.VERTICAL),
-            TOP_LEFT(61, 30, 41, 35, GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_TL, ProgressWidget.MoveType.HORIZONTAL),
-            TOP_RIGHT(103, 30, 35, 41, GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_TR, ProgressWidget.MoveType.VERTICAL_DOWNWARDS),
-            BOTTOM_RIGHT(97, 72, 41, 35, GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_BR, ProgressWidget.MoveType.HORIZONTAL_BACKWARDS);
+
+            BOTTOM_LEFT(61, 66, 35, 41,
+                    GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_BL, ProgressWidget.MoveType.VERTICAL),
+            TOP_LEFT(61, 30, 41, 35,
+                    GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_TL, ProgressWidget.MoveType.HORIZONTAL),
+            TOP_RIGHT(103, 30, 35, 41,
+                    GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_TR, ProgressWidget.MoveType.VERTICAL_DOWNWARDS),
+            BOTTOM_RIGHT(97, 72, 41, 35,
+                    GuiTextures.PROGRESS_BAR_FUSION_REACTOR_DIAGRAM_BR, ProgressWidget.MoveType.HORIZONTAL_BACKWARDS);
 
             private final int x;
             private final int y;
@@ -428,11 +468,16 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
             }
 
             public ProgressWidget getWidget(MetaTileEntityAdvancedFusionReactor instance) {
-                return (new ProgressWidget(() -> instance.recipeMapWorkable.isActive() ? instance.progressBarSupplier.getSupplier(this).getAsDouble() : 0.0, this.x, this.y, this.width, this.height, this.texture, this.moveType))
+                return new ProgressWidget(
+                        () -> instance.recipeMapWorkable.isActive() ?
+                                instance.progressBarSupplier.getSupplier(this).getAsDouble() : 0,
+                        x, y, width, height, texture, moveType)
                         .setIgnoreColor(true)
-                        .setHoverTextConsumer((tl) -> MultiblockDisplayText.builder(tl, instance.isStructureFormed())
-                                .setWorkingStatus(instance.recipeMapWorkable.isWorkingEnabled(), instance.recipeMapWorkable.isActive())
-                                .addWorkingStatusLine());
+                        .setHoverTextConsumer(
+                                tl -> MultiblockDisplayText.builder(tl, instance.isStructureFormed())
+                                        .setWorkingStatus(instance.recipeMapWorkable.isWorkingEnabled(),
+                                                instance.recipeMapWorkable.isActive())
+                                        .addWorkingStatusLine());
             }
         }
     }
