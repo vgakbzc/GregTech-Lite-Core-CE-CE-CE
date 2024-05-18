@@ -685,86 +685,69 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
 
             //  At first, check if CFR has enough energy to run recipe (this check is very rough),
             //  if {@code EUToStart} property of {@link RecipeMaps#FUSION_RECIPES} is bigger than energy stored, then return false.
-            if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > energyContainer.getEnergyCapacity())
+            long startCost = recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L);
+            if (startCost > energyContainer.getEnergyCapacity())
                 return false;
 
             //  An Extended check of CFR, check tier of CFR and {@code EUToStart} of recipes,
             //  CFR cannot run recipes higher than its {@link #tier}.
-            switch (tier) {
-                case LuV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 160000000L)
-                        return false;
-                }
-                case ZPM -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 320000000L)
-                        return false;
-                }
-                case UV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 640000000L)
-                        return false;
-                }
-                case UHV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 1280000000L)
-                        return false;
-                }
-                case UEV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 2560000000L)
-                        return false;
-                }
-            }
+            final long[] euToStart = { 160000000L, 320000000L, 640000000L, 1280000000L, 2560000000L };
+            if (startCost > euToStart[tier - 6])
+                return false;
 
             //  Set Parallel to Recipe Map
             int parallelBase = 64;
+
             switch (tier) {
                 case LuV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                    if (startCost <= 160000000L) {
                         this.setParallelLimit(parallelBase);
                     }
                 }
                 case ZPM -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                    if (startCost <= 160000000L) {
                         this.setParallelLimit(parallelBase * 2);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                    } else if (startCost <= 320000000L) {
                         this.setParallelLimit(parallelBase);
                     }
                 }
                 case UV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                    if (startCost <= 160000000L) {
                         this.setParallelLimit(parallelBase * 3);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                    } else if (startCost <= 320000000L) {
                         this.setParallelLimit(parallelBase * 2);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 640000000L) {
+                    } else if (startCost <= 640000000L) {
                         this.setParallelLimit(parallelBase);
                     }
                 }
                 case UHV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                    if (startCost <= 160000000L) {
                         this.setParallelLimit(parallelBase * 4);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                    } else if (startCost <= 320000000L) {
                         this.setParallelLimit(parallelBase * 3);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 640000000L) {
+                    } else if (startCost <= 640000000L) {
                         this.setParallelLimit(parallelBase * 2);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 1280000000L) {
+                    } else if (startCost <= 1280000000L) {
                         this.setParallelLimit(parallelBase);
                     }
                 }
                 case UEV -> {
-                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                    if (startCost <= 160000000L) {
                         this.setParallelLimit(parallelBase * 5);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                    } else if (startCost <= 320000000L) {
                         this.setParallelLimit(parallelBase * 4);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 640000000L) {
+                    } else if (startCost <= 640000000L) {
                         this.setParallelLimit(parallelBase * 3);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 1280000000L) {
+                    } else if (startCost <= 1280000000L) {
                         this.setParallelLimit(parallelBase * 2);
-                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 2560000000L) {
+                    } else if (startCost <= 2560000000L) {
                         this.setParallelLimit(parallelBase * 2);
                     }
                 }
             }
 
             //  Differential of Heat.
-            long heatDiff = recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) - heat;
+            long heatDiff = startCost - heat;
 
             //  If Heat Stored is bigger than or equal to Energy required, then return true.
             if (heatDiff <= 0)

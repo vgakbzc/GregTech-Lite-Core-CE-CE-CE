@@ -67,4 +67,8 @@ dependencies {
     //  [TOPA] Top Addons - 1.13.0
     compileOnly rfg.deobf("curse.maven:top-addons-247111:2887479")
 
+    /* ------------------- Soft Deps, Runtime Time Declaration ------------------- */
+
+    //  [ ] Spark - 1.6.3
+    //runtimeOnly rfg.deobf("curse.maven:spark-361579:3542217")
 }
