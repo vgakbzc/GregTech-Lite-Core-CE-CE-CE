@@ -80,9 +80,20 @@ public class GTLiteValues {
     public static final int K = (int) Math.pow(10, 3);
 
     /**
+     * Same as {@link #K}, used to resolve conflict.
+     */
+    public static final int Kilo = K;
+
+    /**
      * Math Unit: Mega/Million (10^6).
      */
     public static final int M = (int) Math.pow(10, 6);
+
+    /**
+     * Same as {@link #M}, used to resolve conflict.
+     * because when use {@link #M}, it has conflict with {@link GTValues#M}.
+     */
+    public static final int Million = M;
 
     /**
      * Math Unit: Giga/Billion (10^9).
@@ -90,9 +101,19 @@ public class GTLiteValues {
     public static final int G = (int) Math.pow(10, 9);
 
     /**
+     * Same as {@link #G}, used to resolve conflict.
+     */
+    public static final int Giga = G;
+
+    /**
      * Math Unit: Tera/Trillion (10^12).
      */
     public static final int T = (int) Math.pow(10, 12);
+
+    /**
+     * Same as {@link #T}, used to resolve conflict.
+     */
+    public static final int Tera = T;
 
     /**
      * Math Unit: Peta/Quadrillion (10^15)
@@ -100,9 +121,19 @@ public class GTLiteValues {
     public static final int P = (int) Math.pow(10, 15);
 
     /**
+     * Same as {@link #P}, used to resolve conflict.
+     */
+    public static final int Peta = P;
+
+    /**
      * Math Unit: Exa/Quintillion (10^18)
      */
     public static final int E = (int) Math.pow(10, 18);
+
+    /**
+     * Same as {@link #E}, used to resolve conflict.
+     */
+    public static final int Exa = E;
 
     /**
      * Math Unit: Zetta/Sextillion (10^21)
@@ -110,9 +141,19 @@ public class GTLiteValues {
     public static final int Z = (int) Math.pow(10, 21);
 
     /**
+     * Same as {@link #Z}, used to resolve conflict.
+     */
+    public static final int Zetta = Z;
+
+    /**
      * Math Unit: Yotta/Septillion (10^24)
      */
     public static final int Y = (int) Math.pow(10, 24);
+
+    /**
+     * Same as {@link #Y}, used to resolve conflict.
+     */
+    public static final int Yotta = Y;
 
     /**
      * Special String for some {@code formula}, please see: {@link GTLiteMaterials}.

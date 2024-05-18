@@ -2,6 +2,7 @@ package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
 
 import com.google.common.util.concurrent.AtomicDouble;
 import gregtech.api.GTValues;
+import gregtech.api.capability.GregtechCapabilities;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.capability.IEnergyContainer;
 import gregtech.api.capability.impl.*;
@@ -27,7 +28,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import net.minecraft.block.state.IBlockState;
@@ -44,7 +44,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.DoubleSupplier;
 
@@ -79,11 +78,10 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
     public final IBlockState frameState;
 
     //  Internal Energy Container, just like common Fusion Reactors.
-    //  TODO Add new Recipe Logic like GoodGenerator, split Internal Energy Stored
-    //       and Recipe Energy Requirement.
     private EnergyContainerList inputEnergyContainers;
 
     //  Heat, like common Fusion Reactors.
+    //  TODO Delete Heat system of CFR?
     private long heat = 0;
 
     //  Used for Special Progress Bar in Modular UI.
@@ -180,10 +178,14 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                 .where('F', states(getFrameState()))
                 .where('H', states(getCoilState()))
                 .where('E', states(getCasingState())
-                        .or(metaTileEntities(Arrays.stream(MetaTileEntities.ENERGY_INPUT_HATCH)
-                                .filter(mte -> mte != null && tier <= mte.getTier() && mte.getTier() <= GTValues.UEV)
+                        .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.INPUT_ENERGY)
+                                .stream()
+                                .filter(mte -> {
+                                    IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
+                                    return container != null && container.getInputVoltage() == V[tier];
+                                })
                                 .toArray(MetaTileEntity[]::new))
-                                .setMinGlobalLimited(1)
+                                .setMaxGlobalLimited(32)
                                 .setPreviewCount(32)))
                 .where('#', air())
                 .where(' ', any())
@@ -241,14 +243,19 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
 
     @Override
     protected void initializeAbilities() {
+        //  Common ability
         this.inputInventory = new ItemHandlerList(getAbilities(MultiblockAbility.IMPORT_ITEMS));
         this.inputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.IMPORT_FLUIDS));
         this.outputInventory = new ItemHandlerList(getAbilities(MultiblockAbility.EXPORT_ITEMS));
         this.outputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+
+        //  Energy Input ability
         List<IEnergyContainer> energyInputs = getAbilities(MultiblockAbility.INPUT_ENERGY);
         this.inputEnergyContainers = new EnergyContainerList(energyInputs);
-        long euCapacity = calculateEnergyStorageFactor(Math.min(16, energyInputs.size()));
-        this.energyContainer = new EnergyContainerHandler(this, euCapacity, GTValues.V[tier], 0, 0, 0) {
+
+        //  EU Capacity = Energy Hatch amount * Energy Stored (half of original Fusion Reactor).
+        long euCapacity = calculateEnergyStorageFactor(energyInputs.size());
+        this.energyContainer = new EnergyContainerHandler(this, euCapacity, V[tier], 0, 0, 0) {
             @Nonnull
             @Override
             public String getName() {
@@ -261,32 +268,36 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
      * Calculate Energy Storage by Energy Hatch amount and tier.
      *
      * <p>
-     *     For CFR, we add a special property of this, though you can use 32 Energy Hatches,
-     *     but in {@link #initializeAbilities()}, CFR just read 16 Energy Hatches because if
-     *     can read all Energy Hatches, then Energy Storage will cause Energy requirement of
-     *     Recipe has some problem (For example: Mark 1 CFR can run Mark 2 Fusion recipes).
+     *     For {@code calculateEnergyStorageFactor} in common Fusion Reactor,
+     *     the parameter of {@code energyInputAmount} is 16, but for CFR, this parameter
+     *     is 32. So we need get half Energy Storage than common Fusion Reactor.
+     *     We create a long list {@code energyStored} to storage Energy Storage of all CFR:
      *
      *     <ul>
-     *         <li>{@link #tier} = LuV (Mark 1) -> 160M EU;</li>
-     *         <li>{@link #tier} = ZPM (Mark 2) -> 320M EU;</li>
-     *         <li>{@link #tier} = UV (Mark 3) -> 640M EU;</li>
-     *         <li>{@link #tier} = UHV (Mark 4) -> 1280M EU;</li>
-     *         <li>{@link #tier} = UEV (Mark 5) -> 2560M EU.</li>
+     *         <li>Mark 1: {@code 5,000,000} (5M) -> {@code 160,000,000} (160M);</li>
+     *         <li>Mark 2: {@code 10,000,000} (10M) -> {@code 320,000,000} (320M);</li>
+     *         <li>Mark 3: {@code 20,000,000} (20M) -> {@code 640,000,000} (640M);</li>
+     *         <li>Mark 4: {@code 80,000,000} (80M) -> {@code 1,280,000,000} (1280M);</li>
+     *         <li>Mark 5: {@code 320,000,000} (320M) -> {@code 2,560,000,000} (2560M);</li>
      *     </ul>
+     *
+     *     The Multiplier is {@code energyInputAmount} (32 default).
      * </p>
      *
      * @param energyInputAmount  Energy Hatch amount (is fake actually).
      * @return                   Energy Storage of Fusion Reactor.
      */
     private long calculateEnergyStorageFactor(int energyInputAmount) {
-        return energyInputAmount * (long) Math.pow(2, tier - 6) * 10000000L;
+        long[] energyStored = { 5000000L, 10000000L, 20000000L, 80000000L, 320000000L };
+        return energyInputAmount * energyStored[tier - 6];
     }
 
     @Override
     protected void updateFormedValid() {
         if (this.inputEnergyContainers.getEnergyStored() > 0) {
             long energyAdded = this.energyContainer.addEnergy(this.inputEnergyContainers.getEnergyStored());
-            if (energyAdded > 0) this.inputEnergyContainers.removeEnergy(energyAdded);
+            if (energyAdded > 0)
+                this.inputEnergyContainers.removeEnergy(energyAdded);
         }
         super.updateFormedValid();
     }
@@ -390,27 +401,71 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                                @Nullable World player,
                                @Nonnull List<String> tooltip,
                                boolean advanced) {
+        long actuallyEnergyStored = calculateEnergyStorageFactor(32) / 1000000L;
         super.addInformation(stack, player, tooltip, advanced);
         switch (this.tier) {
-            case (LuV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.luv"));
-            case (ZPM) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm"));
-            case (UV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.uv"));
-            case (UHV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv"));
-            case (UEV) -> tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.uev"));
+            case LuV -> {
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.1"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.2"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.3"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.4"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.5"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.6"));
+                tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.common_oc"));
+            }
+            case ZPM -> {
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.1"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.2"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.3"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.4"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.5"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.6"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.7"));
+                tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.common_oc"));
+            }
+            case UV -> {
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.1"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.2"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.3"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.4"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.5"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.6"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.7"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.8"));
+                tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.common_oc"));
+            }
+            case UHV -> {
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.1"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.2"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.3"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.4"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.5"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.6"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.7"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.8"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.9"));
+                tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.perfect_oc"));
+            }
+            case UEV -> {
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.1"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.2"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.3"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.4"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.5"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.6"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.7"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.8"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.9"));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.10"));
+                tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
+                tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.perfect_oc"));
+            }
         }
 
-        tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", calculateEnergyStorageFactor(16) / 1000000L));
-        tooltip.add(I18n.format("gregtech.machine.fusion_reactor.overclocking"));
-
-        tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.tooltip.1"));
-
-        switch (this.tier) {
-            case (LuV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 64));
-            case (ZPM) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 128));
-            case (UV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 256));
-            case (UHV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 512));
-            case (UEV) -> tooltip.add(I18n.format("gtlitecore.universal.tooltip.max_parallel", 1024));
-        }
     }
 
     @Override
@@ -491,7 +546,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             bottomLeft.resetCountdown();
         }
 
-        public DoubleSupplier getSupplier(MetaTileEntityCompressedFusionReactor.FusionProgressSupplier.Type type) {
+        public DoubleSupplier getSupplier(Type type) {
             return switch (type) {
                 case BOTTOM_LEFT -> bottomLeft;
                 case TOP_LEFT -> topLeft;
@@ -548,26 +603,67 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             super(tileEntity);
         }
 
+        /**
+         * OC Duration Divisor Getter.
+         *
+         * <p>
+         *     Get {@code 2.0D} (Duration / 2) when {@code tier} less than 4.
+         *     Get {@code 4.0D} (Duration / 4) when {@code tier} bigger than or equal to 4.
+         * </p>
+         *
+         * @return  OC Duration Divisor.
+         */
         @Override
         protected double getOverclockingDurationDivisor() {
-            return 2.0D;
+            if (tier >= 4) {
+                return 4.0D;
+            } else {
+                return 2.0D;
+            }
         }
 
+        /**
+         * OC Voltage Multiplier Getter.
+         *
+         * <p>
+         *     Get {@code 2.0D} (Energy consumed ×2) when {@code tier} less than 4.
+         *     Get {@code 4.0D} (Energy consumed ×4) when {@code tier} bigger than or equal to 4.
+         *
+         *     <ul>
+         *         <li>Mark 1-3: 2/2 Perfect OC.</li>
+         *         <li>Mark 4 and Mark 5: 4/4 Perfect OC.</li>
+         *     </ul>
+         * </p>
+         *
+         * @return  OC Voltage Multiplier.
+         */
         @Override
         protected double getOverclockingVoltageMultiplier() {
-            return 2.0D;
+            if (tier >= 4) {
+                return 4.0D;
+            } else {
+                return 2.0D;
+            }
         }
 
         @Override
         public long getMaxVoltage() {
-            return Math.min(GTValues.V[tier], super.getMaxVoltage());
+            return Math.min(V[tier], super.getMaxVoltage());
         }
 
+        /**
+         * Allowed CFR get higher Maximum Parallel Voltage to parallel recipe.
+         * Used to allowed {@link #setParallelLimit(int)} in {@link #checkRecipe(Recipe)} use more energy,
+         * whether some high energy required recipes cannot paralle.
+         *
+         * @return  Max Parallel Voltage.
+         */
         @Override
         public long getMaxParallelVoltage() {
             IEnergyContainer container = ((MetaTileEntityCompressedFusionReactor) this.metaTileEntity).inputEnergyContainers;
             return Math.min(GTValues.V[tier] * getParallelLimit(), container.getInputVoltage());
         }
+
 
         @Override
         public void updateWorkable() {
@@ -587,22 +683,100 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             if (!super.checkRecipe(recipe))
                 return false;
 
-            // if the reactor is not able to hold enough energy for it, do not run the recipe
+            //  At first, check if CFR has enough energy to run recipe (this check is very rough),
+            //  if {@code EUToStart} property of {@link RecipeMaps#FUSION_RECIPES} is bigger than energy stored, then return false.
             if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > energyContainer.getEnergyCapacity())
                 return false;
 
+            //  An Extended check of CFR, check tier of CFR and {@code EUToStart} of recipes,
+            //  CFR cannot run recipes higher than its {@link #tier}.
+            switch (tier) {
+                case LuV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 160000000L)
+                        return false;
+                }
+                case ZPM -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 320000000L)
+                        return false;
+                }
+                case UV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 640000000L)
+                        return false;
+                }
+                case UHV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 1280000000L)
+                        return false;
+                }
+                case UEV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) > 2560000000L)
+                        return false;
+                }
+            }
+
+            //  Set Parallel to Recipe Map
+            int parallelBase = 64;
+            switch (tier) {
+                case LuV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                        this.setParallelLimit(parallelBase);
+                    }
+                }
+                case ZPM -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                        this.setParallelLimit(parallelBase * 2);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                        this.setParallelLimit(parallelBase);
+                    }
+                }
+                case UV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                        this.setParallelLimit(parallelBase * 3);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                        this.setParallelLimit(parallelBase * 2);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 640000000L) {
+                        this.setParallelLimit(parallelBase);
+                    }
+                }
+                case UHV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                        this.setParallelLimit(parallelBase * 4);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                        this.setParallelLimit(parallelBase * 3);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 640000000L) {
+                        this.setParallelLimit(parallelBase * 2);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 1280000000L) {
+                        this.setParallelLimit(parallelBase);
+                    }
+                }
+                case UEV -> {
+                    if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 160000000L) {
+                        this.setParallelLimit(parallelBase * 5);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 320000000L) {
+                        this.setParallelLimit(parallelBase * 4);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 640000000L) {
+                        this.setParallelLimit(parallelBase * 3);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 1280000000L) {
+                        this.setParallelLimit(parallelBase * 2);
+                    } else if (recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) <= 2560000000L) {
+                        this.setParallelLimit(parallelBase * 2);
+                    }
+                }
+            }
+
+            //  Differential of Heat.
             long heatDiff = recipe.getProperty(FusionEUToStartProperty.getInstance(), 0L) - heat;
-            // if the stored heat is >= required energy, recipe is okay to run
+
+            //  If Heat Stored is bigger than or equal to Energy required, then return true.
             if (heatDiff <= 0)
                 return true;
 
-            // if the remaining energy needed is more than stored, do not run
+            //  If the remaining energy needed is more than stored, do not run
             if (energyContainer.getEnergyStored() < heatDiff)
                 return false;
 
-            // remove the energy needed
+            //  Remove the energy needed
             energyContainer.removeEnergy(heatDiff);
-            // increase the stored heat
+            //  Increase the stored heat
             heat += heatDiff;
             return true;
         }
@@ -619,21 +793,6 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         public void deserializeNBT(@Nonnull NBTTagCompound compound) {
             super.deserializeNBT(compound);
             heat = compound.getLong("Heat");
-        }
-
-        @Override
-        public int getParallelLimit() {
-            if (tier == LuV) {
-                return 64;
-            } else if (tier == ZPM) {
-                return 128;
-            } else if (tier == UV) {
-                return 256;
-            } else if (tier == UHV) {
-                return 512;
-            } else {
-                return 1024;
-            }
         }
     }
 }

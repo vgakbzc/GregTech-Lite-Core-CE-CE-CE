@@ -1508,21 +1508,57 @@ gtlitecore.machine.advanced_assembly_line.tooltip.6=输入小于等于§3UV§7�
 gtlitecore.machine.advanced_assembly_line.tooltip.7=输入大于等于§4UHV§7级的电压时，始终获得§e(2^(电压等级 - 8) + 4)§7次并行。
 
 gtlitecore.machine.compressed_fusion_reactor.luv.name=压缩核聚变反应堆控制电脑 Mk I
-gtlitecore.machine.compressed_fusion_reactor.tooltip.luv=百万核弹
+gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.1=百万核弹
+gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.2=可以放置至多32个能源仓，包括高安与无线能源仓，
+gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.3=每个能源仓提供§r131,072 EU/t§7的输入与§r5M EU§7的容量。
+gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.4=当配方所需的启动能量消耗高于§e(能源仓数 * 容量)§7时无法运行。
+gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.5=最大并行数：
+gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.6=- 启动能量 < 160,000,000 EU：§e64§7
 
 gtlitecore.machine.compressed_fusion_reactor.zpm.name=压缩核聚变反应堆控制电脑 Mk II
-gtlitecore.machine.compressed_fusion_reactor.tooltip.zpm=究极能量吞噬者
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.1=究极能量吞噬者
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.2=可以放置至多32个能源仓，包括高安与无线能源仓，
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.3=每个能源仓提供§r524,288 EU/t§7的输入与§r10M EU§7的容量。
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.4=当配方所需的启动能量消耗高于§e(能源仓数 * 容量)§7时无法运行。
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.5=最大并行数：
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.6=- 启动能量 < 160,000,000 EU: §e128§7
+gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.7=- 启动能量 < 320,000,000 EU: §e64§7
 
 gtlitecore.machine.compressed_fusion_reactor.uv.name=压缩核聚变反应堆控制电脑 Mk III
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uv=抹杀物质与能量的界限
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.1=恒星能量提取器
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.2=可以放置至多32个能源仓，包括高安与无线能源仓，
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.3=每个能源仓提供§r1,572,864 EU/t§7的输入与§r20M EU§7的容量。
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.4=当配方所需的启动能量消耗高于§e(能源仓数 * 容量)§7时无法运行。
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.5=最大并行数：
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.6=- 启动能量 < 160,000,000 EU: §e192§7
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.7=- 启动能量 < 320,000,000 EU: §e128§7
+gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.8=- 启动能量 < 640,000,000 EU: §e64§7
 
 gtlitecore.machine.compressed_fusion_reactor.uhv.name=压缩核聚变反应堆控制电脑 Mk IV
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uhv=恒星能量提取器
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.1=御星天炉
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.2=可以放置至多32个能源仓，包括高安与无线能源仓，
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.3=每个能源仓提供§r33,554,432 EU/t§7的输入与§r80M EU§7的容量。
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.4=当配方所需的启动能量消耗高于§e(能源仓数 * 容量)§7时无法运行。
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.5=最大并行数：
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.6=- 启动能量 < 160,000,000 EU: §e256§7
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.7=- 启动能量 < 320,000,000 EU: §e192§7
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.8=- 启动能量 < 640,000,000 EU: §e128§7
+gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.9=- 启动能量 < 1,200,000,000 EU: §e64§7
 
 gtlitecore.machine.compressed_fusion_reactor.uev.name=压缩核聚变反应堆控制电脑 Mk V
-gtlitecore.machine.compressed_fusion_reactor.tooltip.uev=御星天炉
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.1=抹杀物质与能量的界限
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.2=可以放置至多32个能源仓，包括高安与无线能源仓，
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.3=每个能源仓提供§r167,772,160 EU/t§7的输入与§r320M EU§7的容量。
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.4=当配方所需的启动能量消耗高于§e(能源仓数 * 容量)§7时无法运行。
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.5=最大并行数：
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.6=- 启动能量 < 160,000,000 EU: §e320§7
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.7=- 启动能量 < 320,000,000 EU: §e256§7
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.8=- 启动能量 < 640,000,000 EU: §e192§7
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.9=- 启动能量 < 1,200,000,000 EU: §e128§7
+gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.10=- 启动能量 < 2,000,000,000 EU: §e128§7
 
-gtlitecore.machine.compressed_fusion_reactor.tooltip.1=根据聚变反应堆等级获得并行
+gtlitecore.machine.compressed_fusion_reactor.common_oc=超频将使能耗翻§r2§7倍，处理时间减少至§r1/2§7（2/2无损超频）。
+gtlitecore.machine.compressed_fusion_reactor.perfect_oc=超频将使能耗翻§r4§7倍，处理时间减少至§r1/4§7（4/4无损超频）。
 
 gtlitecore.machine.mega_alloy_blast_smelter.name=大型合金冶炼厂
 gtlitecore.machine.mega_alloy_blast_smelter.tooltip.1=根据线圈等级获得并行与配方时间减免
