@@ -68,7 +68,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     //  we use {@link #UHV} and {@link #UEV} for Mark 4 and 5.
     private final int tier;
 
-    //  Block State of Fusion Reactor, for Advanced Fusion Reactor,
+    //  Block State for Advanced Fusion Reactor,
     //  there are 3 new blocks required: Cryostat, Divertor and Vacuum.
     //  We added this info to Multiblock Structure in {@link GTLiteMetaTileEntities}.
     public final IBlockState casingState;
@@ -275,17 +275,17 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
                 100, 144, 94, 7, GuiTextures.PROGRESS_BAR_FUSION_HEAT, ProgressWidget.MoveType.HORIZONTAL)
                 .setHoverTextConsumer(this::addHeatBarHoverText));
 
-        //  Indicator Image Widget (Logo)
-        builder.widget((new IndicatorImageWidget(174, 122, 17, 17, this.getLogo()))
+        //  Indicator Image Widget (logo)
+        builder.widget(new IndicatorImageWidget(174, 122, 17, 17, this.getLogo())
                 .setWarningStatus(this.getWarningLogo(), this::addWarningText)
                 .setErrorStatus(this.getErrorLogo(), this::addErrorText));
 
         //  Title (MK4 and MK5)
         if (this.tier == UHV) {
-            builder.widget((new ImageWidget(66, 9, 67, 12, GTLiteGuiTextures.FUSION_REACTOR_MK4_TITLE))
+            builder.widget(new ImageWidget(66, 9, 67, 12, GTLiteGuiTextures.FUSION_REACTOR_MK4_TITLE)
                     .setIgnoreColor(true));
         } else {
-            builder.widget((new ImageWidget(65, 9, 69, 12, GTLiteGuiTextures.FUSION_REACTOR_MK5_TITLE))
+            builder.widget(new ImageWidget(65, 9, 69, 12, GTLiteGuiTextures.FUSION_REACTOR_MK5_TITLE)
                     .setIgnoreColor(true));
         }
 
@@ -303,7 +303,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
 
         //  Power Button + Detail
         builder.widget(new ImageCycleButtonWidget(173, 211, 18, 18, GuiTextures.BUTTON_POWER,
-                recipeMapWorkable::isWorkingEnabled, recipeMapWorkable::setWorkingEnabled));
+                this.recipeMapWorkable::isWorkingEnabled, this.recipeMapWorkable::setWorkingEnabled));
         builder.widget(new ImageWidget(173, 229, 18, 6, GuiTextures.BUTTON_POWER_DETAIL));
 
         //  Voiding Mode Button
@@ -315,10 +315,10 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         builder.widget(new ImageWidget(173, 171, 18, 18, GuiTextures.BUTTON_NO_DISTINCT_BUSES)
                 .setTooltip("gregtech.multiblock.universal.distinct_not_supported"));
 
-        // Flex Unavailable Image
-        builder.widget(getFlexButton(173, 153, 18, 18));
+        //  Flex Unavailable Image
+        builder.widget(this.getFlexButton(173, 153, 18, 18));
 
-        // Player Inventory
+        //  Player Inventory
         builder.bindPlayerInventory(entityPlayer.inventory, 153);
         return builder;
     }
