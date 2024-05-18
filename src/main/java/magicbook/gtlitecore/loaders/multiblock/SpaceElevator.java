@@ -50,7 +50,7 @@ public class SpaceElevator {
         createDrillingModuleFluidRecipe(7,  Drone[1], Argon,     8000,  1, Energy[1]);
         createDrillingModuleFluidRecipe(8,  Drone[1], Ammonia,   12000, 1, Energy[1]);
         createDrillingModuleFluidRecipe(9,  Drone[1], Ethylene,  89600, 1, Energy[1]);
-        createDrillingModuleFluidRecipe(10, Drone[1], Steam,     78400, 1, Energy[1]);
+        createDrillingModuleFluidRecipe(10, Drone[1], Chlorine,  78400, 1, Energy[1]);
 
         //  HV Mining Drone
         createDrillingModuleFluidRecipe(1,  Drone[2], Fluorine,         89600, 1, Energy[2]);
