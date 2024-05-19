@@ -20,7 +20,7 @@ import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
-public class DimensionallyTranscendentNeutroniumForge {
+public class SuprachronalNeutroniumForge {
 
     public static void init() {
         TransmutationMode();

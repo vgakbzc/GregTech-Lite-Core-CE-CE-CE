@@ -181,7 +181,6 @@ public class RecipeManager {
         BioReactor.init();
         Simulator.init();
         HeatExchanger.init();
-        AlgaeCultureTank.init();
         LargeGasCollector.init();
         Condenser.init();
         VirtualCosmosSimulator.init();
@@ -190,6 +189,6 @@ public class RecipeManager {
         PlanetaryGasSiphon.init();
         NicollDysonBeamer.init();
         EternityGarden.init();
-        DimensionallyTranscendentNeutroniumForge.init();
+        SuprachronalNeutroniumForge.init();
     }
 }

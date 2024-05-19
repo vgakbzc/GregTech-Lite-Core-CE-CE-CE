@@ -7,6 +7,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.common.items.MetaItems.STEM_CELLS;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BIO_REACTOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ExoticMutagen;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.BIO_CELL;
@@ -65,6 +66,53 @@ public class BioReactor {
                 .EUt(VA[UV])
                 .duration(150)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        BiomassGeneratorRecipes();
+    }
+
+    private static void BiomassGeneratorRecipes() {
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Biomass.getFluid(200))
+                .EUt(GTLiteConfigHolder.misc.heatValueBiomass)
+                .duration(10)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(FermentedBiomass.getFluid(200))
+                .EUt(GTLiteConfigHolder.misc.heatValueFermentedBiomass)
+                .duration(20)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(BacterialSludge.getFluid(200))
+                .EUt(GTLiteConfigHolder.misc.heatValueBacterialSludge)
+                .duration(30)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(EnrichedBacterialSludge.getFluid(200))
+                .EUt(GTLiteConfigHolder.misc.heatValueBacterialSludge)
+                .duration(40)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(SterileGrowthMedium.getFluid(200))
+                .EUt(GTLiteConfigHolder.misc.heatValueSterileGrowthMedium)
+                .duration(50)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(Mutagen.getFluid(200))
+                .EUt(GTLiteConfigHolder.misc.heatValueMutagen)
+                .duration(60)
+                .buildAndRegister();
+
+        BIOMASS_GENERATOR_RECIPES.recipeBuilder()
+                .fluidInputs(ExoticMutagen.getFluid(400))
+                .EUt(GTLiteConfigHolder.misc.heatValueExoticMutagen)
+                .duration(80)
                 .buildAndRegister();
     }
 }

@@ -618,6 +618,7 @@ public class TaraniumProcessing {
     }
 
     private static void FuelRefineFactoryRecipes() {
+
         //  Cetane Boosted Diesel
         FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
                 .fluidInputs(Diesel.getFluid(1000))
@@ -846,9 +847,91 @@ public class TaraniumProcessing {
                 .output(dust, Naquadah, 2)
                 .output(dust, Osmium, 2)
                 .fluidOutputs(DilutedSulfuricAcid.getFluid(900))
-                .duration(200)
                 .EUt(VA[UHV])
+                .duration(200)
                 .buildAndRegister();
+
+        //  Hyper Fuel MK2
+        FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+                .input(dust, Tiberium)
+                .input(dust, OrichalcumEnergized)
+                .circuitMeta(11)
+                .fluidInputs(NaquadahEnriched.getFluid(2000))
+                .fluidInputs(Vibranium.getPlasma(1000))
+                .fluidInputs(HeavyHyperFuel.getFluid(400))
+                .fluidInputs(SuperheavyExoticGas.getFluid(200))
+                .fluidOutputs(HyperFuelMkII.getFluid(3000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+                .input(dust, Tiberium)
+                .input(dust, OrichalcumEnergized)
+                .circuitMeta(12)
+                .fluidInputs(NaquadahEnriched.getFluid(2000))
+                .fluidInputs(Vibranium.getPlasma(1000))
+                .fluidInputs(HeavyHyperFuel.getFluid(800))
+                .fluidInputs(HeavyExoticGas.getFluid(400))
+                .fluidOutputs(HyperFuelMkII.getFluid(2000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+                .input(dust, Tiberium)
+                .input(dust, OrichalcumEnergized)
+                .circuitMeta(13)
+                .fluidInputs(NaquadahEnriched.getFluid(2000))
+                .fluidInputs(Vibranium.getPlasma(1000))
+                .fluidInputs(MediumHyperFuel.getFluid(1600))
+                .fluidInputs(MediumExoticGas.getFluid(1400))
+                .fluidOutputs(HyperFuelMkII.getFluid(1000))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+                .input(dust, Tiberium)
+                .input(dust, OrichalcumEnergized)
+                .circuitMeta(13)
+                .fluidInputs(NaquadahEnriched.getFluid(2000))
+                .fluidInputs(Vibranium.getPlasma(1000))
+                .fluidInputs(LightHyperFuel.getFluid(3200))
+                .fluidInputs(LightExoticGas.getFluid(2000))
+                .fluidOutputs(HyperFuelMkII.getFluid(500))
+                .EUt(VA[UEV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Hyper Fuels MK3
+        FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+                .input(dust, Rhugnor)
+                .input(dust, Adamantium)
+                .circuitMeta(14)
+                .fluidInputs(StarlightLiquid.getFluid(8000))
+                .fluidInputs(AstralTitanium.getFluid(1000))
+                .fluidInputs(CelestialTungsten.getFluid(1000))
+                .fluidInputs(HyperFuelMkII.getFluid(2000))
+                .fluidOutputs(HyperFuelMkIII.getFluid(1000))
+                .EUt(VA[UIV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  Hyper Fuel MK4
+        FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
+                .input(dust, Hypogen)
+                .input(dust, Astralium)
+                .circuitMeta(15)
+                .fluidInputs(Ichorium.getFluid(8000))
+                .fluidInputs(Galaxium.getFluid(2000))
+                .fluidInputs(CrystalMatrix.getFluid(2000))
+                .fluidInputs(HyperFuelMkIII.getFluid(4000))
+                .fluidOutputs(HyperFuelMkIV.getFluid(500))
+                .EUt(VA[UXV])
+                .duration(100)
+                .buildAndRegister();
+
     }
 
     private static void HyperReactorRecipes() {
@@ -872,6 +955,12 @@ public class TaraniumProcessing {
                 .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark1)
                 .buildAndRegister();
 
+        HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
+                .fluidInputs(HyperFuelMkII.getFluid(1))
+                .duration(300)
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark2)
+                .buildAndRegister();
+
         //  Hyper Reactor Mk II
         HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
                 .fluidInputs(LightHyperFuel.getFluid(1))
@@ -891,6 +980,12 @@ public class TaraniumProcessing {
                 .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark2)
                 .buildAndRegister();
 
+        HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
+                .fluidInputs(HyperFuelMkIII.getFluid(1))
+                .duration(600)
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark3)
+                .buildAndRegister();
+
         //  Hyper Reactor Mk III
         HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
                 .fluidInputs(LightHyperFuel.getFluid(1))
@@ -908,6 +1003,12 @@ public class TaraniumProcessing {
                 .fluidInputs(HeavyHyperFuel.getFluid(1))
                 .duration(600)
                 .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelsMark3)
+                .buildAndRegister();
+
+        HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
+                .fluidInputs(HyperFuelMkIV.getFluid(1))
+                .duration(1200)
+                .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark4)
                 .buildAndRegister();
     }
 }
