@@ -13,6 +13,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.metatileentity.multiblock.MultiblockWithDisplayBase;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
@@ -144,7 +145,7 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GTLiteTextures.FARM_OVERLAY;
+        return GTLiteTextures.ALGAE_FARM_OVERLAY;
     }
 
     @Override
@@ -180,20 +181,14 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
 
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
-        super.addDisplayText(textList);
-        if (!isStructureFormed())
-            return;
-
-        if (!logic.isWorkingEnabled()) {
-            textList.add(new TextComponentTranslation("gregtech.multiblock.work_paused"));
-
-        } else if (logic.isActive()) {
-            textList.add(new TextComponentTranslation("gregtech.multiblock.running"));
-            int currentProgress = (int) (logic.getProgressPercent() * 100);
-            textList.add(new TextComponentTranslation("gregtech.multiblock.progress", currentProgress));
-        } else {
-            textList.add(new TextComponentTranslation("gregtech.multiblock.idling"));
-        }
+        AlgaeFarmRecipeLogic recipeLogic = this.logic;
+        MultiblockDisplayText.builder(textList, this.isStructureFormed())
+                .setWorkingStatus(recipeLogic.isWorkingEnabled(), recipeLogic.isActive())
+                .setWorkingStatusKeys(
+                        "gregtech.multiblock.idling",
+                        "gregtech.multiblock.work_paused",
+                        "gtlitecore.machine.algae_farm.running")
+                .addWorkingStatusLine();
     }
 
     @Override

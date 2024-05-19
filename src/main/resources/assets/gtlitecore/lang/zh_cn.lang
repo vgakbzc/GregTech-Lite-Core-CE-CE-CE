@@ -2002,6 +2002,7 @@ gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096
 gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
 
 gtlitecore.machine.algae_farm.name=藻类农场
+gtlitecore.machine.algae_farm.running=藻类生长中
 
 gtlitecore.machine.large_auto_chisel.name=大型自动雕凿机
 
