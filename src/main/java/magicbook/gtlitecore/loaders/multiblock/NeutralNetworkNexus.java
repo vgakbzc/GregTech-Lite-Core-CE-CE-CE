@@ -369,6 +369,7 @@ public class NeutralNetworkNexus {
                 .chancedOutput(swarm, Steel, 8000, 0)
                 .EUt(VZ[EV])
                 .duration((int) (TungstenCarbide.getMass() * TungstenCarbide.getMaterialComponents().size()))
+                .tier(1)
                 .buildAndRegister();
 
         //  Titanium Carbide
@@ -381,6 +382,7 @@ public class NeutralNetworkNexus {
                 .chancedOutput(swarm, Carbon, 8000, 0)
                 .EUt(VZ[EV])
                 .duration((int) (TitaniumCarbide.getMass() * TitaniumCarbide.getMaterialComponents().size()))
+                .tier(1)
                 .buildAndRegister();
 
         //  Titanium Tungsten Carbide
@@ -393,6 +395,7 @@ public class NeutralNetworkNexus {
                 .chancedOutput(swarm, TitaniumCarbide, 8000, 0)
                 .EUt(VZ[EV])
                 .duration((int) (TitaniumTungstenCarbide.getMass() * TitaniumTungstenCarbide.getMaterialComponents().size()))
+                .tier(1)
                 .buildAndRegister();
 
         //  HSSG
