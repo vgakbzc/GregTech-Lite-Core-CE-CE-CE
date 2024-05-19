@@ -20,7 +20,7 @@ import java.util.Map;
  *
  * <p>
  *     This Processor search Stack Trace to get all Element related
- *     this Annotation, and use a loop to get these datas (Technically
+ *     this Annotation, and use a loop to get these datas (technically
  *     speaking, if you use JDK 9+ environment, then you can use another
  *     method to implement this function; you can use {@code StackWalker}
  *     class to modify this Processor, just use {@code getInstance()}

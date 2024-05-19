@@ -12,6 +12,7 @@ import gregtech.api.recipes.builders.BlastRecipeBuilder;
 import gregtech.api.recipes.builders.FuelRecipeBuilder;
 import gregtech.api.recipes.builders.SimpleRecipeBuilder;
 import gregtech.api.recipes.ingredients.GTRecipeInput;
+import gregtech.api.recipes.machines.RecipeMapAssemblyLine;
 import gregtech.api.unification.material.Materials;
 import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.core.sound.GTSoundEvents;
@@ -25,20 +26,27 @@ import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags;
 import magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix;
 import magicbook.gtlitecore.common.CommonProxy;
-import magicbook.gtlitecore.common.blocks.BlockCrucible;
+import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
+import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityExtremeHeatExchanger;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityMegaHeatExchanger;
+import magicbook.gtlitecore.loaders.chains.KevlarChain;
+import magicbook.gtlitecore.loaders.chains.NanotubesChain;
+import magicbook.gtlitecore.loaders.circuits.CosmicCircuits;
+import magicbook.gtlitecore.loaders.circuits.GoowareCircuits;
+import magicbook.gtlitecore.loaders.circuits.OpticalCircuits;
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
-import magicbook.gtlitecore.loaders.multiblock.HeatExchanger;
-import magicbook.gtlitecore.loaders.multiblock.NeutralNetworkNexus;
-import magicbook.gtlitecore.loaders.multiblock.PCBFactory;
-import magicbook.gtlitecore.loaders.multiblock.QuantumForceTransformer;
+import magicbook.gtlitecore.loaders.multiblock.*;
+import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
+import magicbook.gtlitecore.loaders.oreprocessing.TaraniumProcessing;
 import net.minecraft.init.SoundEvents;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenProperty;
 
+import java.math.BigInteger;
 import java.util.function.Consumer;
 
 /**
@@ -134,11 +142,10 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Naquadah Reactor recipe map, if you add some fuel recipes, you should add it in your config,
-     *     same like fuel's heat value tweak config in
-     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#misc}
-     *     of cause, this is just some QoL settings.
-     *     Because this is the first generator recipe map, so maybe something should be warning:
-     *     do not use negative energy consume (if not, then your generator fuel cannot emitted energy).
+     *     same like fuel's heat value tweak config in {@link GTLiteConfigHolder#misc}, of cause,
+     *     this is just some QoL settings. Because this is the first generator recipe map,
+     *     so maybe something should be warning: do not use negative energy consume,
+     *     if not, then your generator fuel cannot emitted energy.
      * </p>
      */
     @ZenProperty
@@ -160,8 +167,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Another liquid-only generator, rocket engine, you should add it in your config,
-     *     same like fuel's heat value tweak config in
-     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#misc}
+     *     same like fuel's heat value tweak config in {@link GTLiteConfigHolder#misc},
      *     of cause, this is just some QoL settings.
      *     In example, this symbol 'L' is {@link GTValues#L}, it means 144.
      * </p>
@@ -222,8 +228,8 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     For singularity processing, this recipe map is just a simple recipe map.
-     *     But we use a new method to init its recipes, please see {@link magicbook.gtlitecore.loaders.multiblock.Condenser}.
-     *     Please use {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix#singularity} for outputs.
+     *     But we use a new method to init its recipes, please see {@link Condenser}.
+     *     Please use {@link GTLiteOrePrefix#singularity} for outputs.
      * </p>
      */
     @ZenProperty
@@ -246,10 +252,9 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Recipe map for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#SIMULATOR},
+     *     Recipe map for {@link GTLiteMetaTileEntities#SIMULATOR},
      *     maybe seems like Simulator in <a href="https://github.com/xt9/DeepMobLearning">Deep Mob Learning</a> Mod.
-     *     If you add new recipe, then you can add it in your config, please see:
-     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#machines}
+     *     If you add new recipe, then you can add it in your config, please see {@link GTLiteConfigHolder#machines},
      *     of cause, this is just some QoL settings.
      * </p>
      */
@@ -280,7 +285,7 @@ public class GTLiteRecipeMaps {
      *     Pay attention, this multiblock machine has a special check, so please use block in input,
      *     this machine will break the block which below the drill head block in structures.
      *     If you use not consumable input, then drill head in this multiblock will not break the below block,
-     *     for the example, please see: {@link magicbook.gtlitecore.loaders.oreprocessing.TaraniumProcessing}.
+     *     for the example, please see: {@link TaraniumProcessing}.
      * </p>
      */
     @ZenProperty
@@ -329,9 +334,9 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Just simple recipe map, used for some biological processing common,
-     *     such as Blood processing in {@link magicbook.gtlitecore.loaders.circuits.GoowareCircuits}.
+     *     such as Blood processing in {@link GoowareCircuits}.
      *     This recipe map has a special overlay {@link GTLiteGuiTextures#FOIL_OVERLAY},
-     *     because is used for cycle Phosphorene foil in {@link magicbook.gtlitecore.loaders.chains.KevlarChain}.
+     *     because is used for cycle Phosphorene foil in {@link KevlarChain}.
      * </p>
      */
     @ZenProperty
@@ -477,8 +482,8 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Plasma CVD Unit recipe is for some nanotube recipes now,
-     *     please see {@link magicbook.gtlitecore.loaders.chains.NanotubesChain}.
-     *     You should use different catalyst (usually use plate or double plate) to create recipes,
+     *     please see {@link NanotubesChain}. You should use different catalyst,
+     *     usually use plate or double plate, to create recipes,
      *     if not, then will cause conflicts (not warning in log, but cannot run in game).
      *     This machine's recipes have advanced version all, if use plate catalyst,
      *     then use double plate catalyst in advanced recipe,
@@ -509,8 +514,8 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Used for some advanced smd capacitor recipes (above gooware circuit),
-     *     such as {@link magicbook.gtlitecore.loaders.circuits.OpticalCircuits},
-     *     and some special materials (like optical fiber, please see {@link magicbook.gtlitecore.common.items.GTLiteMetaItems#OPTICAL_FIBER}).
+     *     such as {@link OpticalCircuits}, and some special materials,
+     *     like optical fiber, please see {@link GTLiteMetaItems#OPTICAL_FIBER}.
      *     Sometimes recipes need use cleanroom and temperature both, in this situation, please put cleanroom at the last (for consistency of JEI pages).
      *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this recipe map be advanced version of cvd unit recipes.
      * </p>
@@ -592,8 +597,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Just a simple recipe map, used to product fuels (and some advanced recipes about low stage fuels,
-     *     like {@link gregtech.api.unification.material.Materials#CetaneBoostedDiesel}).
-     *     And some materials like {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#Vibranium},
+     *     like {@link Materials#CetaneBoostedDiesel}). And some materials like {@link GTLiteMaterials#Vibranium},
      *     can and only can product by this machine (some trivia: in
      *      <a href="https://github.com/GregTechCEu/gregicality-science">Gregicality Science</a>,
      *     this material product by a special recipe map 'Superheavy Reaction'.).
@@ -623,8 +627,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Like {@link #NAQUADAH_REACTOR_RECIPES}, you should add it in your config,
-     *     same like fuel's heat value tweak config in
-     *      {@link magicbook.gtlitecore.common.GTLiteConfigHolder#misc}
+     *     same like fuel's heat value tweak config in {@link GTLiteConfigHolder#misc},
      *     of cause, this is just some QoL settings.
      * </p>
      */
@@ -647,7 +650,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Advanced Hyper Reactor recipe map, in this recipe map,
-     *     some materials product more energy (like {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#LightHyperFuel}).
+     *     some materials product more energy (like {@link GTLiteMaterials#LightHyperFuel}).
      * </p>
      */
     @ZenProperty
@@ -693,9 +696,9 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Related to the special ore prefix {@link magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix#milled},
-     *     this recipe map has a special property: grindball (please see {@link magicbook.gtlitecore.common.items.GTLiteMetaItems#GRINDBALL_ALUMINIUM}
-     *     and {@link magicbook.gtlitecore.common.items.GTLiteMetaItems#GRINDBALL_SOAPSTONE}).
+     *     Related to the special ore prefix {@link GTLiteOrePrefix#milled},
+     *     this recipe map has a special property: grindball (please see {@link GTLiteMetaItems#GRINDBALL_ALUMINIUM}
+     *     and {@link GTLiteMetaItems#GRINDBALL_SOAPSTONE}).
      *     Please use 1 or 2 to tweak grindball material (one correspond soapstone and another correspond to aluminium).
      * </p>
      */
@@ -723,7 +726,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Next processing step before after {@link #ISA_MILL_RECIPES},
-     *     please see {@link magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing}.
+     *     please see {@link IsaMillOreProcessing}.
      * </p>
      */
     @ZenProperty
@@ -779,7 +782,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Simple recipe map, please see {@link magicbook.gtlitecore.loaders.multiblock.DroneAirport}.
+     *     Simple recipe map, please see {@link DroneAirport}.
      *     Usually used special method, please use this method.
      * </p>
      */
@@ -806,7 +809,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Used to product advanced smd inductor, such as {@link magicbook.gtlitecore.loaders.circuits.CosmicCircuits}.
+     *     Used to product advanced smd inductor, such as {@link CosmicCircuits}.
      *     Now this recipe map just have this function (may be add more recipes for other function).
      * </p>
      */
@@ -838,13 +841,13 @@ public class GTLiteRecipeMaps {
      * <p>
      *     Port from Prim's mod <a href="https://github.com/GTNewHorizons/GoodGenerator">Good Generator</a>,
      *     and this recipe map has special property (different predicate of casings and internal casings),
-     *     casings is {@link magicbook.gtlitecore.common.blocks.BlockPreciseAssemblerCasing},
-     *     internal casings is {@link gregtech.common.blocks.BlockMachineCasing} (above LuV).
+     *     casings is {@link BlockPreciseAssemblerCasing},
+     *     internal casings is {@link BlockMachineCasing} (above LuV).
      *     Usually used for some high tier components and System on Chip of advanced circuits (above wetware circuit),
      *     and also have some advanced recipes for original circuits (like wetware processing unit).
      *     Please use .CasingTier() method to define total tier of recipe,
-     *     you can see {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#PA_CASING} and
-     *      {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#PA_INTERNAL_CASING},
+     *     you can see {@link GTLiteTraceabilityPredicate#PA_CASING} and
+     *      {@link GTLiteTraceabilityPredicate#PA_INTERNAL_CASING},
      *     these predicates control this machine recipes.
      * </p>
      */
@@ -907,8 +910,8 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Port from Prim's mod <a href="https://github.com/GTNewHorizons/GoodGenerator">Good Generator</a>,
-     *     and this recipe map has special property (predicate blocks in {@link magicbook.gtlitecore.common.blocks.BlockComponentAssemblyLineCasing}),
-     *     please see: {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#CA_CASING}.
+     *     and this recipe map has special property (predicate blocks in {@link BlockComponentAssemblyLineCasing}),
+     *     please see: {@link GTLiteTraceabilityPredicate#CA_CASING}.
      *     Used special JEI page textures, please see {@link RecipeMapComponentAssemblyLine}.
      * </p>
      */
@@ -934,7 +937,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Simple recipes for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityTreeGrowthFactory}.
+     *     Simple recipes for {@link MetaTileEntityTreeGrowthFactory}.
      *     TODO maybe rebalanced this recipe map and {@link gregtechfoodoption.recipe.chain.GreenhouseChain}.
      * </p>
      */
@@ -961,9 +964,9 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Used {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#FIELD_CASING} predicate,
+     *     Used {@link GTLiteTraceabilityPredicate#FIELD_CASING} predicate,
      *     just another voltage property (so you can use voltage name, but should above ZPM),
-     *     predicate blocks in {@link magicbook.gtlitecore.common.blocks.BlockFieldCasing}.
+     *     predicate blocks in {@link BlockFieldCasing}.
      *     If you add recipes of particles, then should output some Free Electric Gas.
      *     For high energy physics recipes, you should add circuit to distinguish recipes (pay attention conflicts!).
      * </p>
@@ -998,7 +1001,7 @@ public class GTLiteRecipeMaps {
      * <p>
      *     This recipe map is advanced version of {@link #DIMENSIONAL_OSCILLATOR_RECIPES},
      *     used special recipe property {@link GravitonCasingTierRecipeBuilder},
-     *     and predicate tier by blocks in {@link magicbook.gtlitecore.common.blocks.BlockGravitonCasing}.
+     *     and predicate tier by blocks in {@link BlockGravitonCasing}.
      *     All Dimensional Oscillator recipe will generate a same recipe in this recipe map,
      *     these recipes all have 1 tier property (mean low).
      * </p>
@@ -1114,7 +1117,7 @@ public class GTLiteRecipeMaps {
      * <p>
      *     Basic processing recipe in UEV+, use a special recipe builder.
      *     The different between {@link NoCoilTemperatureRecipeBuilder} and {@link NoCoilHigherTemperatureRecipeBuilder} is data type,
-     *     this recipe builder use {@link java.math.BigInteger}, so you can write some big numbers in this recipe maps.
+     *     this recipe builder use {@link BigInteger}, so you can write some big numbers in this recipe maps.
      *     Pay attention, if you use too big numbers, then may be cause some problem about {@link RecipeMap}.
      * </p>
      */
@@ -1156,7 +1159,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Simple recipe. please see {@link magicbook.gtlitecore.loaders.multiblock.PlasmaCondenser},
+     *     Simple recipe. please see {@link PlasmaCondenser},
      *     used to add materials and containment cells cooling recipes.
      * </p>
      */
@@ -1179,9 +1182,9 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Used {@link magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate#FIELD_CASING} predicate,
+     *     Used {@link GTLiteTraceabilityPredicate#FIELD_CASING} predicate,
      *     just another voltage property (so you can use voltage name, but should above ZPM),
-     *     predicate blocks in {@link magicbook.gtlitecore.common.blocks.BlockFieldCasing}.
+     *     predicate blocks in {@link BlockFieldCasing}.
      *     Same as {@link #COLLIDER_RECIPES}, used {@link FieldCasingTierRecipeBuilder}.
      * </p>
      */
@@ -1218,8 +1221,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     End machine in OpV stage, please see {@link magicbook.gtlitecore.loaders.multiblock.SuprachronalAssemblyLine}.
-     *     Used {@link RecipeMapSuprachronalAssemblyLine} for JEI page, just like {@link gregtech.api.recipes.machines.RecipeMapAssemblyLine},
+     *     End machine in OpV stage, please see {@link SuprachronalAssemblyLine}.
+     *     Used {@link RecipeMapSuprachronalAssemblyLine} for JEI page, just like {@link RecipeMapAssemblyLine},
      *     but not has research property (but this recipe map is also simple recipe builder).
      * </p>
      */
@@ -1249,8 +1252,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
-     *     Predicate casing tier by motor casings in {@link magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing}.
+     *     One of three module of space elevator modules, please see {@link SpaceElevator}.
+     *     Predicate casing tier by motor casings in {@link BlockActiveMultiblockCasing}.
      *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
@@ -1275,8 +1278,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
-     *     Predicate casing tier by motor casings in {@link magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing}.
+     *     One of three module of space elevator modules, please see {@link SpaceElevator}.
+     *     Predicate casing tier by motor casings in {@link BlockActiveMultiblockCasing}.
      *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
@@ -1308,8 +1311,8 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     One of three module of space elevator modules, please see {@link magicbook.gtlitecore.loaders.multiblock.SpaceElevator}.
-     *     Predicate casing tier by motor casings in {@link magicbook.gtlitecore.common.blocks.BlockActiveMultiblockCasing}.
+     *     One of three module of space elevator modules, please see {@link SpaceElevator}.
+     *     Predicate casing tier by motor casings in {@link BlockActiveMultiblockCasing}.
      *     TODO maybe deprecate or tweak, if redo space elevator in future.
      * </p>
      */
@@ -1320,7 +1323,7 @@ public class GTLiteRecipeMaps {
 
     /**
      * <p>
-     *     Fake recipe map groups for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeProcessingFactory}.
+     *     Fake recipe map groups for {@link MetaTileEntityLargeProcessingFactory}.
      *     This processing mode consist of three common recipes: {@link RecipeMaps#COMPRESSOR_RECIPES}, {@link RecipeMaps#LATHE_RECIPES},
      *     and {@link RecipeMaps#POLARIZER_RECIPES}, and use different circuit to check it, please see {@link RecipeMapPseudoGroup}.
      * </p>
@@ -1330,7 +1333,7 @@ public class GTLiteRecipeMaps {
 
     /**
      * <p>
-     *     Fake recipe map groups for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeProcessingFactory}.
+     *     Fake recipe map groups for {@link MetaTileEntityLargeProcessingFactory}.
      *     This processing mode consist of three common recipes: {@link RecipeMaps#FERMENTING_RECIPES}, {@link RecipeMaps#EXTRACTOR_RECIPES},
      *     and {@link RecipeMaps#CANNER_RECIPES}, and use different circuit to check it, please see {@link RecipeMapPseudoGroup}.
      * </p>
@@ -1340,7 +1343,7 @@ public class GTLiteRecipeMaps {
 
     /**
      * <p>
-     *     Fake recipe map groups for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeProcessingFactory}.
+     *     Fake recipe map groups for {@link MetaTileEntityLargeProcessingFactory}.
      *     This processing mode consist of three common recipes: {@link RecipeMaps#LASER_ENGRAVER_RECIPES}, {@link RecipeMaps#AUTOCLAVE_RECIPES},
      *     and {@link RecipeMaps#FLUID_SOLIDFICATION_RECIPES}, and use different circuit to check it, please see {@link RecipeMapPseudoGroup}.
      * </p>
@@ -1362,7 +1365,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Used to build some fantastic transform, such as iron -> iridium,
-     *     please see: {@link magicbook.gtlitecore.loaders.multiblock.MolecularTransformer}.
+     *     please see: {@link MolecularTransformer}.
      * </p>
      */
     @ZenProperty
@@ -1398,7 +1401,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.PCB_FACTORY_RECIPES.recipeBuilder()
      *          .circuitMeta(1)
      *          .input(plate, Wood)
@@ -1412,7 +1415,7 @@ public class GTLiteRecipeMaps {
      *          .tier(1)
      *          .isBioUpgrade(1)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
      *     This recipe is used for {@link MetaTileEntityPCBFactory}, pay attention, this description is useful for
@@ -1453,7 +1456,7 @@ public class GTLiteRecipeMaps {
      *     Imaginatively, for default {@code plasticTier}, you can add 4 new circuit type exactly (when add fifth, will cause
      *     problem because it is higher than maximum {@code plasticTier}). Here is a example of Auto-generated recipes:
      *
-     *     <pre>
+     *     <pre>{@code
      *         for (int tier = 1; tier <= plasticTier; tier++) {
      *             int boardAmount = (int) Math.ceil(8 * Math.sqrt(Math.pow(2, tier - 1)));
      *             List<ItemStack> boards = new ArrayList<>();
@@ -1475,7 +1478,7 @@ public class GTLiteRecipeMaps {
      *                     .tier(1)
      *                     .buildAndRegister();
      *         }
-     *     </pre>
+     *     }</pre>
      *
      *     In this example, we use a {@code HashBiSet} to storage plastic tier infos (which called by {@code plasticTiers}),
      *     and the first part is a simple stack spliting step (used to make Recipe Map list more clean, effect of this step
@@ -1695,7 +1698,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Extended version of {@link RecipeMaps#MIXER_RECIPES}, has 9 input slots and 6 fluid input slots,
-     *     usually add special component material recipe in this recipe map (such as {@link magicbook.gtlitecore.api.unification.GTLiteMaterials#Periodicium}).
+     *     usually add special component material recipe in this recipe map (such as {@link GTLiteMaterials#Periodicium}).
      *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this recipe map be advanced version of mixer recipes,
      *          or create recipes of {@link gregicality.multiblocks.api.recipes.GCYMRecipeMaps#ALLOY_BLAST_RECIPES} via recipe handler.
      * </p>
@@ -1759,8 +1762,8 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Fuel Recipe map like {@link RecipeMaps#GAS_TURBINE_FUELS},
-     *     used for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#HIGH_PRESSURE_STEAM_TURBINE},
-     *     and its mega version {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#MEGA_HIGH_PRESSURE_STEAM_TURBINE}.
+     *     used for {@link GTLiteMetaTileEntities#HIGH_PRESSURE_STEAM_TURBINE},
+     *     and its mega version {@link GTLiteMetaTileEntities#MEGA_HIGH_PRESSURE_STEAM_TURBINE}.
      * </p>
      */
     @ZenProperty
@@ -1784,8 +1787,8 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Fuel Recipe map like {@link RecipeMaps#GAS_TURBINE_FUELS},
-     *     used for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#SUPERCRITICAL_STEAM_TURBINE},
-     *     and its mega version {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#MEGA_SUPERCRITICAL_STEAM_TURBINE}.
+     *     used for {@link GTLiteMetaTileEntities#SUPERCRITICAL_STEAM_TURBINE},
+     *     and its mega version {@link GTLiteMetaTileEntities#MEGA_SUPERCRITICAL_STEAM_TURBINE}.
      * </p>
      */
     @ZenProperty
@@ -1867,7 +1870,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Just a easy recipe for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityAlgaeCultureTank}.
+     *     Just a easy recipe for {@link MetaTileEntityAlgaeCultureTank}.
      *     TODO maybe add more common algae recipes in this recipe map.
      * </p>
      */
@@ -1890,7 +1893,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Simple fuel recipe map for {@link magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities#BIOMASS_GENERATOR}.
+     *     Simple fuel recipe map for {@link GTLiteMetaTileEntities#BIOMASS_GENERATOR}.
      * </p>
      */
     @ZenProperty
@@ -1914,7 +1917,7 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Advanced version of {@link RecipeMaps#GAS_COLLECTOR_RECIPES},
-     *     please see: {@link magicbook.gtlitecore.loaders.multiblock.LargeGasCollector}.
+     *     please see: {@link LargeGasCollector}.
      *     Use different circuits and electric pumps to resolve conflicts.
      * </p>
      */
@@ -1965,7 +1968,7 @@ public class GTLiteRecipeMaps {
      * </pre>
      *
      * <p>
-     *     Recipe Map for {@link magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeCircuitAssemblyLine}.
+     *     Recipe Map for {@link MetaTileEntityLargeCircuitAssemblyLine}.
      *     In this recipe map, please put not consumable item on the last slot in item input slots.
      *     Because Large Circuit Assembly Line use special ui ({@link RecipeMapLargeCircuitAssemblyLine}),
      *     you should make it on special slot on left hand.
