@@ -302,20 +302,6 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CHARGED_TRIPLET_NEUTRONIUM_SPHERE;
     public static MetaItem<?>.MetaValueItem COSMIC_FABRIC_PLASMA_CONTAINMENT_CELL;
 
-    //  Algae
-    public static MetaItem<?>.MetaValueItem BARNARDA_C_BASE;
-    public static MetaItem<?>.MetaValueItem BARNARDA_C_CHLORELLA;
-    public static MetaItem<?>.MetaValueItem BARNARDA_C_BRYOPSIS_HYPNOIDES;
-    public static MetaItem<?>.MetaValueItem BARNARDA_C_ZOOXANTHELLAE;
-    public static MetaItem<?>.MetaValueItem TAU_CETI_F_BASE;
-    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SCENEDESMUS_OBLIQUUS;
-    public static MetaItem<?>.MetaValueItem TAU_CETI_F_PHAEOPHYTA;
-    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SPIRULINA;
-    public static MetaItem<?>.MetaValueItem PROXIMA_B_BASE;
-    public static MetaItem<?>.MetaValueItem PROXIMA_B_CONCHOSPORE;
-    public static MetaItem<?>.MetaValueItem PROXIMA_B_POLYSIPHONIA_SENTICULOSA;
-    public static MetaItem<?>.MetaValueItem PROXIMA_B_SPIROGYRA;
-
     //  Memory Cards
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_BASE;
     public static MetaItem<?>.MetaValueItem MEMORY_CARD_ZOMBIE;
@@ -438,6 +424,34 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_CAPACITOR;
     public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_DIODE;
     public static MetaItem<?>.MetaValueItem WRAP_SUPRACAUSAL_SMD_INDUCTOR;
+
+    //  Algae
+    public static MetaItem<?>.MetaValueItem ORDINARY_ALGAE;
+    public static MetaItem<?>.MetaValueItem RED_ALGAE;
+    public static MetaItem<?>.MetaValueItem GREEN_ALGAE;
+    public static MetaItem<?>.MetaValueItem GOLD_ALGAE;
+    public static MetaItem<?>.MetaValueItem BROWN_ALGAE;
+    public static MetaItem<?>.MetaValueItem BLUE_ALGAE;
+    public static MetaItem<?>.MetaValueItem RED_CELLULOSE_FIBER;
+    public static MetaItem<?>.MetaValueItem GREEN_CELLULOSE_FIBER;
+    public static MetaItem<?>.MetaValueItem GOLD_CELLULOSE_FIBER;
+    public static MetaItem<?>.MetaValueItem ALGINIC_ACID;
+    public static MetaItem<?>.MetaValueItem CELLULOSE_PULP;
+    public static MetaItem<?>.MetaValueItem BIOLOGICAL_RESIN;
+
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_CHLORELLA;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_BRYOPSIS_HYPNOIDES;
+    public static MetaItem<?>.MetaValueItem BARNARDA_C_ZOOXANTHELLAE;
+
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SCENEDESMUS_OBLIQUUS;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_PHAEOPHYTA;
+    public static MetaItem<?>.MetaValueItem TAU_CETI_F_SPIRULINA;
+
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_CONCHOSPORE;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_POLYSIPHONIA_SENTICULOSA;
+    public static MetaItem<?>.MetaValueItem PROXIMA_B_SPIROGYRA;
+
+    public static MetaItem<?>.MetaValueItem CONTAMINATED_PETRI_DISH;
 
     //  Singularities
     public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;

@@ -187,7 +187,7 @@ public class GTLiteMaterialFlagAddition {
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
-        Berkelium.addFlags(GENERATE_ROTOR);
+        Cobalt.addFlags(GENERATE_ROTOR);
         Naquadah.addFlags(GENERATE_ROTOR);
         Meitnerium.addFlags(GENERATE_ROTOR);
         Nobelium.addFlags(GENERATE_ROTOR);

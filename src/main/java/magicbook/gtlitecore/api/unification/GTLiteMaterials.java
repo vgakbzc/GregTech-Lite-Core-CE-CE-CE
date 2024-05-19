@@ -607,6 +607,7 @@ public class GTLiteMaterials {
     public static Material IodobenzoicAcid;
     public static Material TetraethylammoniumBromide;
     public static Material TetraethylammoniumNonahydriorhenidetechnetide;
+    public static Material PiranhaSolution;
 
     /////////////////////////////
     //  High Degree Materials  //
@@ -757,6 +758,8 @@ public class GTLiteMaterials {
     public static Material BFGF;
     public static Material EGF;
     public static Material CAT;
+    public static Material MarineAlgae;
+    public static Material AlienMarineAlgae;
 
     //////////////////////////////
     //  Third Degree Materials  //

@@ -26,6 +26,7 @@ import javax.annotation.Nonnull;
 import java.util.List;
 
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.getFluidById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.isNotStaticWater;
 
 /**
  * Fishing Pond Recipe Logic.
@@ -134,17 +135,6 @@ public class FishingPondRecipeLogic implements IWorkable {
     }
 
     /**
-     * Check if machine structure not has static water.
-     *
-     * @param block  Block (use vanilla {@code block} class).
-     * @return       If Block is Air or Flowing Water, then return true;
-     *               If not, then return false.
-     */
-    private boolean isNotStaticWater(Block block) {
-        return block == Blocks.AIR || block == Blocks.FLOWING_WATER;
-    }
-
-    /**
      * Used to check consume liquid to fill structure water requied.
      *
      * @param fluid  Fluid Stack.
@@ -174,11 +164,11 @@ public class FishingPondRecipeLogic implements IWorkable {
      * </p>
      */
     public void update() {
-        if (tileEntity.getWorld().isRemote)
+        if (this.tileEntity.getWorld().isRemote)
             return;
-        if (!checkWater())
+        if (!this.checkWater())
             return;
-        if (hasMaintenance && ((IMaintenance) tileEntity).getNumMaintenanceProblems() > 5)
+        if (this.hasMaintenance && ((IMaintenance) this.tileEntity).getNumMaintenanceProblems() > 5)
             return;
         if (!this.isWorkingEnabled)
             return;
@@ -364,8 +354,8 @@ public class FishingPondRecipeLogic implements IWorkable {
     public void setWorkingEnabled(boolean isWorkingEnabled) {
         if (this.isWorkingEnabled != isWorkingEnabled) {
             this.isWorkingEnabled = isWorkingEnabled;
-            tileEntity.markDirty();
-            if (tileEntity.getWorld() != null && !tileEntity.getWorld().isRemote) {
+            this.tileEntity.markDirty();
+            if (this.tileEntity.getWorld() != null && !this.tileEntity.getWorld().isRemote) {
                 this.tileEntity.writeCustomData(GregtechDataCodes.WORKING_ENABLED, buf -> buf.writeBoolean(isWorkingEnabled));
             }
         }
@@ -382,7 +372,7 @@ public class FishingPondRecipeLogic implements IWorkable {
      */
     @Override
     public boolean isWorkingEnabled() {
-        return isWorkingEnabled;
+        return this.isWorkingEnabled;
     }
 
     /**
@@ -484,7 +474,7 @@ public class FishingPondRecipeLogic implements IWorkable {
     }
 
     /**
-     * @return  whether the rig was active and needs an update
+     * @return  whether Fishing Pond was active and needs an update
      */
     public boolean wasActiveAndNeedsUpdate() {
         return this.wasActiveAndNeedsUpdate;

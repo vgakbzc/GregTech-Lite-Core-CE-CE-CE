@@ -13,7 +13,9 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.loaders.recipe.handlers.PartsRecipeHandler;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -511,6 +513,17 @@ public class GTLiteUtils {
         NBTTagCompound nbt = new NBTTagCompound();
         writeItemToNBT(stack, nbt);
         return nbt;
+    }
+
+    /**
+     * Check if machine structure not has static water.
+     *
+     * @param block  Block (use vanilla {@code block} class).
+     * @return       If Block is Air or Flowing Water, then return true;
+     *               If not, then return false.
+     */
+    public static boolean isNotStaticWater(Block block) {
+        return block == Blocks.AIR || block == Blocks.FLOWING_WATER;
     }
 
 }

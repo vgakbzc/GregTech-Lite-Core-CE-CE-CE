@@ -1871,13 +1871,14 @@ public class GTLiteRecipeMaps {
      *
      * <p>
      *     Just a easy recipe for {@link MetaTileEntityAlgaeCultureTank}.
-     *     TODO maybe add more common algae recipes in this recipe map.
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank", 2, 1, 2, 0, new NoCoilTemperatureRecipeBuilder(), false)
-            .setSlotOverlay(false, true, false, GuiTextures.MOLECULAR_OVERLAY_3)
-            .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)
+    public static final RecipeMap<SimpleRecipeBuilder> ALGAE_CULTURE_TANK_RECIPES = new RecipeMap<>("algae_culture_tank", 6, 2, 1, 1, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.DUST_OVERLAY)
+            .setSlotOverlay(false, false, true, GuiTextures.DUST_OVERLAY)
+            .setSlotOverlay(true, false, false, GuiTextures.DUST_OVERLAY)
+            .setSlotOverlay(true, false, true, GTLiteGuiTextures.DISH_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW_MULTIPLE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.BATH);
 

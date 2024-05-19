@@ -163,7 +163,7 @@ public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultibloc
     @Nonnull
     @Override
     protected ICubeRenderer getFrontOverlay() {
-        return GTLiteTextures.DIMENSIONALLY_TRANSCENDENT_NEUTRONIUM_FORGE_OVERLAY;
+        return GTLiteTextures.SUPRACHRONAL_NEUTRONIUM_FORGE_OVERLAY;
     }
 
     @Override

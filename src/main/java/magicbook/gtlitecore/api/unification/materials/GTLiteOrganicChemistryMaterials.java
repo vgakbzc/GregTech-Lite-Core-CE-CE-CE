@@ -1553,10 +1553,19 @@ public class GTLiteOrganicChemistryMaterials {
                 .dust()
                 .color(0xDA76B6)
                 .iconSet(BRIGHT)
-                .components()
+                .components(Carbon, 8, Hydrogen, 38, Rhenium, 1, Technetium, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("(C2H5)4N(ReH9)(TcH9)", true);
+
+        //  13187 Piranha Solution
+        PiranhaSolution = new Material.Builder(getID(), gregtechId("piranha_solution"))
+                .liquid()
+                .color(0x5B59C7)
+                .components(HydrogenPeroxide, 1, SulfuricAcid, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
     }
 
 }

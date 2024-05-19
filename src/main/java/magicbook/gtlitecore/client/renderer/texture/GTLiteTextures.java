@@ -65,7 +65,7 @@ public class GTLiteTextures {
     public static final OrientedOverlayRenderer QUANTUM_COMPUTER_OVERLAY = new OrientedOverlayRenderer("multiblocks/quantum_computer");
     public static final OrientedOverlayRenderer PLANETARY_GAS_SIPHON_OVERLAY = new OrientedOverlayRenderer("multiblocks/planetary_gas_siphon");
     public static final OrientedOverlayRenderer NICOLL_DYSON_BEAMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/nicoll_dyson_beamer");
-    public static final OrientedOverlayRenderer DIMENSIONALLY_TRANSCENDENT_NEUTRONIUM_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/dimensionally_transcendent_neutronium_forge");
+    public static final OrientedOverlayRenderer SUPRACHRONAL_NEUTRONIUM_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/suprachronal_neutronium_forge");
 
     //  GTLite Overlay Renderer
     public static final GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");

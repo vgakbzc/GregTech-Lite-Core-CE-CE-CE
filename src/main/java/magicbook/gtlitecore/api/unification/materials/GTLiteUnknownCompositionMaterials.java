@@ -754,22 +754,19 @@ public class GTLiteUnknownCompositionMaterials {
         HyperFuelMkII = new Material.Builder(getID(), gregtechId("hyper_fuel_mk_ii"))
                 .liquid()
                 .color(0xE00059)
-                .build()
-                .setFormula("NqOrVb*Tb*?", false);
+                .build();
 
         //  24084 Hyper Fuel Mk III
         HyperFuelMkIII = new Material.Builder(getID(), gregtechId("hyper_fuel_mk_iii"))
                 .liquid()
                 .color(0xB900FF)
-                .build()
-                .setFormula("(NqOrVb*Tb*?)Fs⚶Ax⚶✧◇✧✦◆✦?", false);
+                .build();
 
         //  24085 Hyper Fuel Mk IV
         HyperFuelMkIV = new Material.Builder(getID(), gregtechId("hyper_fuel_mk_iv"))
                 .liquid()
                 .color(0xFFC951)
-                .build()
-                .setFormula("((NqOrVb*Tb*?)Fs⚶Ax⚶✧◇✧✦◆✦?)Hy⚶Ax⚶✦☯✧Gx⚶◊◇◊", false);
+                .build();
 
         //  24086 Blood Cells
         BloodCells = new Material.Builder(getID(), gregtechId("blood_cells"))
@@ -804,6 +801,21 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0x72B5EA)
                 .build()
                 .setFormula("CAT", false);
+
+        //  24091 Marine Algae
+        MarineAlgae = new Material.Builder(getID(), gregtechId("marine_algae"))
+                .liquid(new FluidBuilder().temperature(300))
+                .color(0x2CD82C)
+                .iconSet(DULL)
+                .build();
+
+        //  24092 Alien Marine Algae
+        AlienMarineAlgae = new Material.Builder(getID(), gregtechId("alien_marine_algae"))
+                .liquid(new FluidBuilder().temperature(350))
+                .color(0xD327D3)
+                .iconSet(DULL)
+                .build();
+
     }
 
 }

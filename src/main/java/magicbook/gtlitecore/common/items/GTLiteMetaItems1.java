@@ -799,44 +799,6 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                     lines.add(I18n.format("metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4"));
                 }));
 
-        /* ------------------------------------------------------------------------- Algae ------------------------------------------------------------------------ */
-
-        //  ID 370-373: Barnarda-C Algae
-        BARNARDA_C_BASE = this.addItem(370, "alga.barnarda_c.base");
-
-        BARNARDA_C_CHLORELLA = this.addItem(371, "alga.barnarda_c.chlorella")
-                .addOreDict("dyePurple");
-
-        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(372, "alga.barnarda_c.bryopsis_hypnoides")
-                .addOreDict("dyeGreen");
-
-        BARNARDA_C_ZOOXANTHELLAE = this.addItem(373, "alga.barnarda_c.zooxanthellae")
-                .addOreDict("dyeOrange");
-
-        //  ID 374-377: Tau Ceti-F Algae
-        TAU_CETI_F_BASE = this.addItem(374, "alga.tau_ceti_f.base");
-
-        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(375, "alga.tau_ceti_f.scenedesmus_obliquus")
-                .addOreDict("dyeLime");
-
-        TAU_CETI_F_PHAEOPHYTA = this.addItem(376, "alga.tau_ceti_f.phaeophyta")
-                .addOreDict("dyeBrown");
-
-        TAU_CETI_F_SPIRULINA = this.addItem(377, "alga.tau_ceti_f.spirulina")
-                .addOreDict("dyeBlue");
-
-        //  ID 378-381: Proxima-B Algae
-        PROXIMA_B_BASE = this.addItem(378, "alga.proxima_b.base");
-
-        PROXIMA_B_CONCHOSPORE = this.addItem(379, "alga.proxima_b.conchospore")
-                .addOreDict("dyeRed");
-
-        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(380, "alga.proxima_b.polysiphonia_senticulosa")
-                .addOreDict("dyeYellow");
-
-        PROXIMA_B_SPIROGYRA = this.addItem(381, "alga.proxima_b.spirogyra")
-                .addOreDict("dyeGray");
-
         /* -------------------------------------------------------------------- Memory Cards  --------------------------------------------------------------------- */
 
         MEMORY_CARD_BASE = this.addItem(385, "memory_card.base");
@@ -1182,6 +1144,76 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         WRAP_SUPRACAUSAL_SMD_INDUCTOR = this.addItem(554, "wrap.supracausal_smd.inductor")
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_WRAP);
+
+        /* ------------------------------------------------------------------------- Algae ------------------------------------------------------------------------ */
+
+        //  ID 700-710: Common Algae
+        ORDINARY_ALGAE = this.addItem(700, "algae.ordinary")
+                .addOreDict("algaeOrdinary");
+
+        RED_ALGAE = this.addItem(701, "algae.red")
+                .addOreDict("algaeRed");
+
+        GREEN_ALGAE = this.addItem(702, "algae.green")
+                .addOreDict("algaeGreen");
+
+        GOLD_ALGAE = this.addItem(703, "algae.gold")
+                .addOreDict("algaeGold");
+
+        BROWN_ALGAE = this.addItem(704, "algae.brown")
+                .addOreDict("algaeBrown");
+
+        BLUE_ALGAE = this.addItem(705, "algae.blue")
+                .addOreDict("algaeBlue");
+
+        RED_CELLULOSE_FIBER = this.addItem(706, "algae.cellulose_fiber.red")
+                .addOreDict("fiberCelluloseRed");
+
+        GREEN_CELLULOSE_FIBER = this.addItem(707, "algae.cellulose_fiber.green")
+                .addOreDict("fiberCelluloseGreen");
+
+        GOLD_CELLULOSE_FIBER = this.addItem(708, "algae.cellulose_fiber.gold")
+                .addOreDict("fiberCelluloseGold");
+
+        ALGINIC_ACID = this.addItem(709, "algae.alginic_acid")
+                .addOreDict("dustAlginicAcid");
+
+        CELLULOSE_PULP = this.addItem(710, "algae.cellulose_pulp")
+                .addOreDict("dustCellulosePulp");
+
+        BIOLOGICAL_RESIN = this.addItem(711, "algae.biological_resin")
+                .addOreDict("dustBiologicalResin");
+
+        //  ID 711-715 Alien Algae
+        BARNARDA_C_CHLORELLA = this.addItem(712, "algae.barnarda_c.chlorella")
+                .addOreDict("dyePurple");
+
+        BARNARDA_C_BRYOPSIS_HYPNOIDES = this.addItem(713, "algae.barnarda_c.bryopsis_hypnoides")
+                .addOreDict("dyeGreen");
+
+        BARNARDA_C_ZOOXANTHELLAE = this.addItem(714, "algae.barnarda_c.zooxanthellae")
+                .addOreDict("dyeOrange");
+
+        TAU_CETI_F_SCENEDESMUS_OBLIQUUS = this.addItem(715, "algae.tau_ceti_f.scenedesmus_obliquus")
+                .addOreDict("dyeLime");
+
+        TAU_CETI_F_PHAEOPHYTA = this.addItem(716, "algae.tau_ceti_f.phaeophyta")
+                .addOreDict("dyeBrown");
+
+        TAU_CETI_F_SPIRULINA = this.addItem(717, "algae.tau_ceti_f.spirulina")
+                .addOreDict("dyeBlue");
+
+        PROXIMA_B_CONCHOSPORE = this.addItem(718, "algae.proxima_b.conchospore")
+                .addOreDict("dyeRed");
+
+        PROXIMA_B_POLYSIPHONIA_SENTICULOSA = this.addItem(719, "algae.proxima_b.polysiphonia_senticulosa")
+                .addOreDict("dyeYellow");
+
+        PROXIMA_B_SPIROGYRA = this.addItem(720, "algae.proxima_b.spirogyra")
+                .addOreDict("dyeGray");
+
+        //  Others
+        CONTAMINATED_PETRI_DISH = this.addItem(721, "algae.contaminated_petri_dish");
 
         /* -------------------------------------------------------------------- Singularities --------------------------------------------------------------------- */
 

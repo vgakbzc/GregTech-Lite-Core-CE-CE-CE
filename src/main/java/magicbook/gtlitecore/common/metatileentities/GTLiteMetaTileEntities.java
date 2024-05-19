@@ -244,6 +244,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
+    public static MetaTileEntityAlgaeFarm ALGAE_FARM;
     public static MetaTileEntityLargeAutoChisel LARGE_AUTO_CHISEL;
     public static MetaTileEntityIndustrial3DPrinter INDUSTRIAL_3D_PRINTER;
     public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
@@ -625,7 +626,8 @@ public class GTLiteMetaTileEntities {
         //  118
         //  119
         DIMENSIONAL_MIXER = registerMultiMetaTileEntity(120, new MetaTileEntityDimensionalMixer(gtliteId("dimensional_mixer")));
-        //  Free ID: 121-139
+        ALGAE_FARM = registerMultiMetaTileEntity(121, new MetaTileEntityAlgaeFarm(gtliteId("algae_farm")));
+        //  Free ID: 122-139
         if (GTLiteConfigHolder.compats.enableChiselModule) {
             if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
                 LARGE_AUTO_CHISEL = registerMultiMetaTileEntity(140, new MetaTileEntityLargeAutoChisel(gtliteId("large_auto_chisel")));

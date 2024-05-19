@@ -328,18 +328,33 @@ tile.implosion_coil.eternity.tooltip=终焉缓冲组件
 #  Items
 
 ##  Algae
-metaitem.alga.barnarda_c.base.name=未知巴纳德C藻类
-metaitem.alga.barnarda_c.chlorella.name=巴纳德C球藻
-metaitem.alga.barnarda_c.bryopsis_hypnoides.name=巴纳德C藓羽藻
-metaitem.alga.barnarda_c.zooxanthellae.name=巴纳德C黄藻
-metaitem.alga.tau_ceti_f.base.name=未知天仓五藻类
-metaitem.alga.tau_ceti_f.scenedesmus_obliquus.name=天仓五斜生栅藻
-metaitem.alga.tau_ceti_f.phaeophyta.name=天苍五褐藻
-metaitem.alga.tau_ceti_f.spirulina.name=天苍五螺旋蓝藻
-metaitem.alga.proxima_b.base.name=未知比邻星B藻类
-metaitem.alga.proxima_b.conchospore.name=比邻星B壳班藻
-metaitem.alga.proxima_b.polysiphonia_senticulosa.name=比邻星B多管藻
-metaitem.alga.proxima_b.spirogyra.name=比邻星B水绵藻
+metaitem.algae.ordinary.name=藻
+metaitem.algae.red.name=红藻
+metaitem.algae.green.name=绿藻
+metaitem.algae.gold.name=金藻
+metaitem.algae.brown.name=褐藻
+metaitem.algae.blue.name=蓝藻
+metaitem.algae.cellulose_fiber.red.name=红藻纤维素
+metaitem.algae.cellulose_fiber.green.name=绿藻纤维素
+metaitem.algae.cellulose_fiber.gold.name=金藻纤维素
+metaitem.algae.alginic_acid.name=藻酸
+metaitem.algae.cellulose_pulp.name=纤维素浆
+metaitem.algae.biological_resin.name=生物树脂
+
+metaitem.algae.barnarda_c.chlorella.name=巴纳德C球藻
+metaitem.algae.barnarda_c.bryopsis_hypnoides.name=巴纳德C藓羽藻
+metaitem.algae.barnarda_c.zooxanthellae.name=巴纳德C黄藻
+
+metaitem.algae.tau_ceti_f.scenedesmus_obliquus.name=天仓五斜生栅藻
+metaitem.algae.tau_ceti_f.phaeophyta.name=天苍五褐藻
+metaitem.algae.tau_ceti_f.spirulina.name=天苍五螺旋蓝藻
+
+metaitem.algae.proxima_b.conchospore.name=比邻星B壳班藻
+metaitem.algae.proxima_b.polysiphonia_senticulosa.name=比邻星B多管藻
+metaitem.algae.proxima_b.spirogyra.name=比邻星B水绵藻
+
+metaitem.algae.contaminated_petri_dish.name=被藻类污染的培养皿
+metaitem.algae.contaminated_petri_dish.tooltip=充满微生物与藻类
 
 ##  Boards
 metaitem.board.gooware.name=Kapton™电路基板
@@ -1894,8 +1909,12 @@ gtlitecore.machine.bioware_simulator.tooltip.3=运行§r所有§7配方时，运
 gtlitecore.machine.bioware_simulator.tooltip.4=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.bioware_simulator.tooltip.5=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 
-gtlitecore.machine.algae_culture_tank.name=异星藻类培养缸
-gtlitecore.machine.algae_culture_tank.tooltip.1=用于培养不属于这个星球的奇异藻类
+gtlitecore.machine.algae_culture_tank.name=藻类培养缸
+gtlitecore.machine.algae_culture_tank.tooltip.1=根据使用的机器外壳类型获得加成。
+gtlitecore.machine.algae_culture_tank.tooltip_shift.1=使用§2洁净硬铝合金-65A机器外壳§7时，获得2/2无损超频效果。
+gtlitecore.machine.algae_culture_tank.tooltip_shift.2=使用§2耐热奥氏体不锈钢抗腐蚀机器外壳§7时，获得§e16§7并行。
+gtlitecore.machine.algae_culture_tank.tooltip_shift.3=使用§2安全稳定铌钛合金机器外壳§7时，获得4/4无损超频效果与§e8§7并行。
+gtlitecore.machine.algae_culture_tank.tooltip_shift.4=使用§2抗腐蚀镄机器外壳§7时，获得2/2无损超频效果，50%%配方时间减免与§e4§7并行。
 
 gtlitecore.machine.large_gas_collector.name=大型集气室
 gtlitecore.machine.large_gas_collector.tooltip.1=超级空气收集器
@@ -1981,6 +2000,8 @@ gtlitecore.machine.dimensional_mixer.tooltip.13=§r离心机§7模式 -> §e4096
 gtlitecore.machine.dimensional_mixer.tooltip.14=§r热力离心§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.15=§r筛选器§7模式 -> §e4096§7
 gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2048§7
+
+gtlitecore.machine.algae_farm.name=藻类农场
 
 gtlitecore.machine.large_auto_chisel.name=大型自动雕凿机
 
@@ -3092,6 +3113,7 @@ gregtech.material.trimethylsilane=三甲基硅烷
 gregtech.material.iodobenzoic_acid=间碘苯甲酸
 gregtech.material.tetraethylammonium_bromide=四乙基溴化铵
 gregtech.material.tetraethylammonium_nonahydriorhenidetechnetide=四乙基九氢铼锝化铵
+gregtech.material.piranha_solution=食人鱼洗液
 
 ##  High Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -3234,6 +3256,8 @@ gregtech.material.blood_plasma=血浆
 gregtech.material.bfgf=碱性成纤维细胞生长因子（bFGF）
 gregtech.material.egf=表皮细胞生长因子（EGF）
 gregtech.material.cat=过氧化氢酶（CAT）
+gregtech.material.marine_algae=海藻基质
+gregtech.material.alien_marine_algae=异星海藻基质
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金

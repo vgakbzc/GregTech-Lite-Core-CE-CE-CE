@@ -1344,24 +1344,6 @@ public class MachineRecipeLoader {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  Algae Culture Tank
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[ZPM])
-                .input(plate, Actinium, 4)
-                .input(plate, Naquadria, 4)
-                .input(circuit, MarkerMaterials.Tier.UV, 2)
-                .input(ELECTRIC_PUMP_ZPM, 2)
-                .input(FIELD_GENERATOR_ZPM, 2)
-                .input(pipeLargeFluid, LithiumTitanate)
-                .input(rotor, Berkelium, 2)
-                .input(wireFine, Cobalt, 16)
-                .fluidInputs(Mutagen.getFluid(L * 4))
-                .output(ALGAE_CULTURE_TANK)
-                .EUt(VA[ZPM])
-                .duration(1200)
-                .cleanroom(CleanroomType.STERILE_CLEANROOM)
-                .buildAndRegister();
-
         //  Extreme Large Miner
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(HULL[ZPM])
@@ -2198,6 +2180,35 @@ public class MachineRecipeLoader {
                         .researchStack(GCYMMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR.getStackForm())
                         .CWUt(64)
                         .EUt(VA[ZPM]))
+                .buildAndRegister();
+
+        //  Algae Farm
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Iron)
+                .input(TIERED_HATCH[MV])
+                .input(ELECTRIC_PUMP_MV, 4)
+                .input(pipeTinyFluid, Lead, 2)
+                .fluidInputs(Aluminium.getFluid(L * 4))
+                .circuitMeta(2)
+                .output(ALGAE_FARM)
+                .EUt(VA[MV])
+                .duration(20 * SECOND)
+                .buildAndRegister();
+
+        //  Algae Culture Tank
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Ultimet)
+                .input(TIERED_HATCH[HV])
+                .input(ELECTRIC_PUMP_HV, 2)
+                .input(FLUID_FILTER)
+                .input(rotor, Cobalt, 4)
+                .input(cableGtSingle, Electrum, 2)
+                .fluidInputs(Tumbaga.getFluid(L * 4))
+                .circuitMeta(2)
+                .output(ALGAE_CULTURE_TANK)
+                .EUt(VA[HV])
+                .duration(30 * SECOND)
+                .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
     }
 

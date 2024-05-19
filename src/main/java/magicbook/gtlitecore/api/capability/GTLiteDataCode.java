@@ -24,4 +24,6 @@ public class GTLiteDataCode {
     public static final int ChannelHeatExchangerSuperheat = 9905;
     public static final int ChannelHeatExchangerRate = 9906;
     public static final int ChannelWirelessEnergyHatchUUID = 9907;
+    public static final int ChannelAlgaeCultureTank1 = 9908;
+    public static final int ChannelAlgaeCultureTank2 = 9909;
 }

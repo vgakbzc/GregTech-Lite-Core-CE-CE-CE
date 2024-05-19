@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.api;
 
-import appeng.api.definitions.IBlocks;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.util.BaseCreativeTab;
@@ -39,6 +38,8 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_GRAVITON_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FUSION_COIL = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_IMPLOSION_COIL = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_MACHINE_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_ACT_CASING = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -206,5 +207,67 @@ public class GTLiteAPI {
 
         MAP_IMPLOSION_COIL.put(GTLiteMetaBlocks.IMPLOSION_COIL.getState(BlockImplosionCoil.ImplosionCoilType.ETERNITY),
                 new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.ETERNITY, 7));
+
+        //  Machine Casing
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ULV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.ULV, 0));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.LV, 1));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.MV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.MV, 2));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.HV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.HV, 3));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.EV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.EV, 4));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.IV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.IV, 5));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LuV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.LuV, 6));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ZPM),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.ZPM, 7));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UV, 8));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UHV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UHV, 9));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UEV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UEV, 10));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UIV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UIV, 11));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UXV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UXV, 12));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.OpV),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.OpV, 13));
+
+        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.MAX),
+                new WrappedIntTier(BlockMachineCasing.MachineCasingType.MAX, 14));
+
+        //  Algae Culture Tank Casing
+        MAP_ACT_CASING.put(MetaBlocks.METAL_CASING.getState(gregtech.common.blocks.BlockMetalCasing.MetalCasingType.STAINLESS_CLEAN),
+                new WrappedIntTier(gregtech.common.blocks.BlockMetalCasing.MetalCasingType.STAINLESS_CLEAN, 1));
+
+        MAP_ACT_CASING.put(GTLiteMetaBlocks.STRUCTURE_CASING.getState(BlockStructureCasing.StructureCasingType.DURALUMINIUM_ALLOY_CASING),
+                new WrappedIntTier(BlockStructureCasing.StructureCasingType.DURALUMINIUM_ALLOY_CASING, 2));
+
+        MAP_ACT_CASING.put(GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING),
+                new WrappedIntTier(BlockMetalCasing.MetalCasingType.AUSTENITIC_STAINLESS_STEEL_CASING, 3));
+
+        MAP_ACT_CASING.put(GTLiteMetaBlocks.MACHINE_CASING.getState(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING),
+                new WrappedIntTier(magicbook.gtlitecore.common.blocks.BlockMachineCasing.MachineCasingType.NIOBIUM_TITANIUM_CASING, 4));
+
+        MAP_ACT_CASING.put(GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.FERMIUM_CASING),
+                new WrappedIntTier(BlockMetalCasing.MetalCasingType.FERMIUM_CASING, 5));
     }
 }

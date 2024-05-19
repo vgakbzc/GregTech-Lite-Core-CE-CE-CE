@@ -238,4 +238,12 @@ public class GTLiteTraceabilityPredicate {
     //  Implosion Coil Predicate
     public static Supplier<TierTraceabilityPredicate> IMPLOSION_COIL = () -> new TierTraceabilityPredicate(MAP_IMPLOSION_COIL,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_IMPLOSION_COIL.get(s)).getIntTier()), "ImplosionCoil", null);
+
+    //  Machine Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> MACHINE_CASING = () -> new TierTraceabilityPredicate(MAP_MACHINE_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_MACHINE_CASING.get(s)).getIntTier()), "MachineCasing", null);
+
+    //  Algae Culture Tank Predicate
+    public static Supplier<TierTraceabilityPredicate> ACT_CASING = () -> new TierTraceabilityPredicate(MAP_ACT_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_ACT_CASING.get(s)).getIntTier()), "AlgaeCultureTankCasing", null);
 }

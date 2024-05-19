@@ -79,6 +79,7 @@ public class RecipeManager {
 
     private static void initChains() {
         AcetyleneChain.init();
+        AlgaeChain.init();
         AmmoniaChain.init();
         BoronNitrideChain.init();
         BrineChain.init();
