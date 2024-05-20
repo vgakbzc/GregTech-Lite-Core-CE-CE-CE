@@ -4,6 +4,7 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.stack.UnificationEntry;
 import magicbook.gtlitecore.integration.gregtech.GTOverrideRecipeManager;
@@ -16,6 +17,7 @@ import static gregtech.api.unification.material.MarkerMaterials.Color.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.NitrileButadieneRubber;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.PolyPhosphonitrileFluoroRubber;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.DUBNIUM_BOULE;
@@ -27,6 +29,7 @@ public class OverrideRecipeLoader {
         GTOverrideRecipeManager.init();
         SiliconWaferOverrides();
         RubberOverrides();
+        MiscOverrides();
     }
 
     /**
@@ -795,6 +798,55 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
 
         //  todo maybe we can add recipes of LuV-UV electric pumps, but they are assembly line recipes.
+    }
+
+    private static void MiscOverrides() {
+
+        //  Remove Energy Cluster recipe.
+        GTRecipeHandler.removeRecipesByInputs(ASSEMBLY_LINE_RECIPES,
+                new ItemStack[]{
+                        WETWARE_CIRCUIT_BOARD.getStackForm(),
+                        OreDictUnifier.get(plate, Americium, 16),
+                        WETWARE_SUPER_COMPUTER_UV.getStackForm(4),
+                        ENERGY_MODULE.getStackForm(),
+                        FIELD_GENERATOR_ZPM.getStackForm(),
+                        ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT.getStackForm(32),
+                        ADVANCED_SMD_DIODE.getStackForm(16),
+                        ADVANCED_SMD_CAPACITOR.getStackForm(16),
+                        ADVANCED_SMD_RESISTOR.getStackForm(16),
+                        ADVANCED_SMD_TRANSISTOR.getStackForm(16),
+                        ADVANCED_SMD_INDUCTOR.getStackForm(16),
+                        OreDictUnifier.get(wireFine, Osmiridium, 64),
+                        OreDictUnifier.get(bolt, Naquadria, 16)
+                },
+                new FluidStack[]{
+                        SolderingAlloy.getFluid(2880),
+                        Polybenzimidazole.getFluid(576)});
+
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(WETWARE_CIRCUIT_BOARD)
+                .input(plate, Americium, 16)
+                .input(circuit, MarkerMaterials.Tier.UV, 4)
+                .input(ENERGY_MODULE)
+                .input(FIELD_GENERATOR_ZPM)
+                .input(ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT, 32)
+                .input(ADVANCED_SMD_DIODE, 16)
+                .input(ADVANCED_SMD_CAPACITOR, 16)
+                .input(ADVANCED_SMD_RESISTOR, 16)
+                .input(ADVANCED_SMD_TRANSISTOR, 16)
+                .input(ADVANCED_SMD_INDUCTOR, 16)
+                .input(wireFine, Osmiridium, 64)
+                .input(bolt, Naquadria, 16)
+                .fluidInputs(SolderingAlloy.getFluid(2880))
+                .fluidInputs(Polybenzimidazole.getFluid(576))
+                .output(ENERGY_CLUSTER)
+                .EUt(200000) // UV
+                .duration(70 * SECOND)
+                .stationResearch(b -> b
+                        .researchStack(ENERGY_MODULE.getStackForm())
+                        .CWUt(96)
+                        .EUt(VA[ZPM]))
+                .buildAndRegister();
     }
 
 }

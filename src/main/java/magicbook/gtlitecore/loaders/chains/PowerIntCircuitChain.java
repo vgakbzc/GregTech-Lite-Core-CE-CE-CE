@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.items.MetaItems.NEUTRONIUM_WAFER;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -63,6 +64,15 @@ public class PowerIntCircuitChain {
                 .output(NANO_PIC_WAFER)
                 .EUt(VA[UV])
                 .duration(SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(NEUTRONIUM_WAFER)
+                .notConsumable(lens, LithiumNiobate)
+                .output(NANO_PIC_WAFER, 2)
+                .EUt(VA[UHV])
+                .duration(SECOND / 4)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
