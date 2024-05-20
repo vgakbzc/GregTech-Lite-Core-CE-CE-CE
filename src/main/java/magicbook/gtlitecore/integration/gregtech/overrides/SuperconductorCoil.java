@@ -45,12 +45,34 @@ public class SuperconductorCoil {
 
         //  Add recipe use UIV Superconductor (Fullerene Superconductor)
         ASSEMBLER_RECIPES.recipeBuilder()
-                .input(wireGtDouble, FullereneSuperconductor)
-                .input(foil, NiobiumTitanium)
+                .input(wireGtDouble, FullereneSuperconductor, 2)
+                .input(foil, NiobiumTitanium, 2)
                 .fluidInputs(Trinium.getFluid(L * 4))
-                .outputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL))
+                .outputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL, 2))
                 .EUt(VA[UIV])
                 .duration(5 * SECOND)
                 .buildAndRegister();
+
+        //  UXV Superconductor (Boron Francium Carbide Superconductor)
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireGtDouble, BoronFranciumCarbideSuperconductor, 2)
+                .input(foil, NiobiumTitanium, 2)
+                .fluidInputs(Trinium.getFluid(L * 4))
+                .outputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL, 4))
+                .EUt(VA[UXV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  OpV Superconductor (Neutronium Superconductor)
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireGtDouble, NeutroniumSuperconductor, 2)
+                .input(foil, NiobiumTitanium, 2)
+                .fluidInputs(Trinium.getFluid(L * 4))
+                .outputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL, 8))
+                .EUt(VA[OpV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  TODO MAX Superconductor
     }
 }
