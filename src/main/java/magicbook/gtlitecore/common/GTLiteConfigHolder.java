@@ -177,6 +177,10 @@ public class GTLiteConfigHolder {
         @Comment({"Allow Gas Turbine use Exotic Gases to product EU/t.", "Default: true"})
         public boolean enableExoticGasTurbineRecipe = true;
 
+        @Comment({"Crude Exotic Gas EU/t product in Gas Turbine.", "Default: 512"})
+        @RangeInt(min = 1, max = 1024)
+        public int heatValueCrudeExoticGas = 512;
+
         @Comment({"Exotic Gases EU/t product in Gas Turbine.", "Default: 1024"})
         @RangeInt(min = 1, max = 2048)
         public int heatValueExoticGas = 1024;

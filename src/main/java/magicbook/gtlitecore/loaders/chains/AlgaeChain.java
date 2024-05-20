@@ -252,7 +252,7 @@ public class AlgaeChain {
                 .fluidInputs(Mutagen.getFluid(200))
                 .chancedFluidOutput(AlienMarineAlgae.getFluid(250), 5000, 500)
                 .fluidOutputs(MarineAlgae.getFluid(750))
-                .EUt(VA[LuV])
+                .EUt(VA[IV])
                 .duration(10 * SECOND)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
@@ -262,7 +262,7 @@ public class AlgaeChain {
                 .fluidInputs(ExoticMutagen.getFluid(200))
                 .fluidOutputs(AlienMarineAlgae.getFluid(250))
                 .fluidOutputs(MarineAlgae.getFluid(750))
-                .EUt(VA[ZPM])
+                .EUt(VA[LuV])
                 .duration(10 * SECOND)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
                 .buildAndRegister();
@@ -600,6 +600,12 @@ public class AlgaeChain {
 
         //  Exotic Gas
         if (GTLiteConfigHolder.misc.enableExoticGasTurbineRecipe) {
+            GAS_TURBINE_FUELS.recipeBuilder()
+                    .fluidInputs(CrudeExoticGas.getFluid(1))
+                    .EUt(GTLiteConfigHolder.misc.heatValueCrudeExoticGas)
+                    .duration(240)
+                    .buildAndRegister();
+
             GAS_TURBINE_FUELS.recipeBuilder()
                     .fluidInputs(SuperheavyExoticGas.getFluid(1))
                     .EUt(GTLiteConfigHolder.misc.heatValueExoticGas)
