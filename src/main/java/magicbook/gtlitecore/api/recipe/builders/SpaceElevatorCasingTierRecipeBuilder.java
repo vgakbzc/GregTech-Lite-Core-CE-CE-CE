@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.api.recipe.builder;
+package magicbook.gtlitecore.api.recipe.builders;
 
 import gregtech.api.recipes.Recipe;
 import gregtech.api.recipes.RecipeBuilder;

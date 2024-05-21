@@ -25,7 +25,7 @@ import gregtech.common.blocks.*;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.recipe.builder.PCBFactoryRecipeBuilder;
+import magicbook.gtlitecore.api.recipe.builders.PCBFactoryRecipeBuilder;
 import magicbook.gtlitecore.api.recipe.properties.PCBFactoryBioUpgradeProperty;
 import magicbook.gtlitecore.api.recipe.properties.PCBFactoryProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;

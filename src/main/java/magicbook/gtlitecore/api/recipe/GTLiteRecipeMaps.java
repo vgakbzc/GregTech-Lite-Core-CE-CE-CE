@@ -19,7 +19,7 @@ import gregtech.core.sound.GTSoundEvents;
 import magicbook.gtlitecore.api.capability.impl.HeatExchangerRecipeLogic;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
-import magicbook.gtlitecore.api.recipe.builder.*;
+import magicbook.gtlitecore.api.recipe.builders.*;
 import magicbook.gtlitecore.api.recipe.machines.*;
 import magicbook.gtlitecore.api.recipe.properties.*;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
