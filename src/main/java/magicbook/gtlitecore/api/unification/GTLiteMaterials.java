@@ -13,18 +13,27 @@ import magicbook.gtlitecore.api.unification.materials.*;
  *     ID range of {@code gtlitecore} materials:
  *
  *     <ul>
- *         <li>10000-11000: Element Materials ({@link GTLiteElementMaterials}),</li>
- *         <li>11001-12000: First Degree Materials ({@link GTLiteFirstDegreeMaterials}),</li>
- *         <li>12001-13000: Second Degree Materials ({@link GTLiteSecondDegreeMaterials}),</li>
- *         <li>13001-15000: Organic Chemistry Materials ({@link GTLiteOrganicChemistryMaterials}),</li>
- *         <li>15001-16000: Higher Degree Materials ({@link GTLiteHigherDegreeMaterials}),</li>
- *         <li>18000-20000: Unknown Composition Materials ({@link GTLiteUnknownCompositionMaterials}),</li>
- *         <li>20001-21000: Third Degree Materials ({@link GTLiteThirdDegreeMaterials}),</li>
- *         <li>21001-22000: Mod Compatibility Materials ({@link GTLiteModCompatibilityMaterials}).</li>
+ *         <li>10000-11000: Element Materials,</li>
+ *         <li>11001-12000: First Degree Materials,</li>
+ *         <li>12001-13000: Second Degree Materials,</li>
+ *         <li>13001-15000: Organic Chemistry Materials,</li>
+ *         <li>15001-16000: Higher Degree Materials,</li>
+ *         <li>18000-20000: Unknown Composition Materials,</li>
+ *         <li>20001-21000: Third Degree Materials,</li>
+ *         <li>21001-22000: Mod Compatibility Materials.</li>
  *     </ul>
  *
  *     Some ID is free in this range (but maybe add new machines in this free IDs).
  * </p>
+ *
+ * @see GTLiteElementMaterials
+ * @see GTLiteFirstDegreeMaterials
+ * @see GTLiteSecondDegreeMaterials
+ * @see GTLiteOrganicChemistryMaterials
+ * @see GTLiteHigherDegreeMaterials
+ * @see GTLiteUnknownCompositionMaterials
+ * @see GTLiteThirdDegreeMaterials
+ * @see GTLiteModCompatibilityMaterials
  *
  * @since 2.8.7-beta
  */

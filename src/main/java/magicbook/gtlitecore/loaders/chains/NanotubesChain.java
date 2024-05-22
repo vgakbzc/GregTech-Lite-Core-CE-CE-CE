@@ -47,7 +47,7 @@ public class NanotubesChain {
                 .output(ingot, CarbonNanotube, 4)
                 .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[UEV])
-                .duration(20 * SECOND)
+                .duration((5 * SECOND) / 4)
                 .temperature(3972)
                 .buildAndRegister();
 
@@ -321,7 +321,7 @@ public class NanotubesChain {
                 .output(ingot, LanthanumFullereneNanotube)
                 .fluidOutputs(Ammonia.getFluid(10000))
                 .EUt(VA[UEV])
-                .duration(MINUTE / 4)
+                .duration(15 * SECOND)
                 .temperature(3496)
                 .buildAndRegister();
 
@@ -334,7 +334,7 @@ public class NanotubesChain {
                 .output(ingot, LanthanumFullereneNanotube, 4)
                 .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[UXV])
-                .duration(MINUTE / 2)
+                .duration((15 * SECOND) / 4)
                 .temperature(13984)
                 .buildAndRegister();
     }
@@ -364,7 +364,7 @@ public class NanotubesChain {
                 .output(ingot, NeutroniumNanotube, 4)
                 .fluidOutputs(Ammonia.getFluid(40000))
                 .EUt(VA[OpV])
-                .duration(MINUTE)
+                .duration((MINUTE / 2) / 4)
                 .temperature(35972)
                 .buildAndRegister();
     }

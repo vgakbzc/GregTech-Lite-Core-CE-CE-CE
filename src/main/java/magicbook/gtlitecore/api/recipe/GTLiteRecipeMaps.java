@@ -3,9 +3,11 @@ package magicbook.gtlitecore.api.recipe;
 import crafttweaker.annotations.ZenRegister;
 import gregtech.api.GTValues;
 import gregtech.api.gui.GuiTextures;
+import gregtech.api.gui.resources.TextureArea;
 import gregtech.api.gui.widgets.ProgressWidget;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.MultiblockShapeInfo;
+import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.builders.BlastRecipeBuilder;
@@ -33,11 +35,8 @@ import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityExtremeHeatExchanger;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityMegaHeatExchanger;
-import magicbook.gtlitecore.loaders.chains.KevlarChain;
-import magicbook.gtlitecore.loaders.chains.NanotubesChain;
-import magicbook.gtlitecore.loaders.circuits.CosmicCircuits;
-import magicbook.gtlitecore.loaders.circuits.GoowareCircuits;
-import magicbook.gtlitecore.loaders.circuits.OpticalCircuits;
+import magicbook.gtlitecore.loaders.chains.*;
+import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
 import magicbook.gtlitecore.loaders.multiblock.*;
 import magicbook.gtlitecore.loaders.oreprocessing.IsaMillOreProcessing;
@@ -55,14 +54,18 @@ import java.util.function.Consumer;
  * @author Magic_Sweepy
  *
  * <p>
- *     This class is the basic class of gtlitecore recipe maps.
- *     Has same zen class name as {@link RecipeMaps}, but some function maybe error.
+ *     This class is the basic class of {@code gtlitecore} recipe maps.
+ *     Examples and notes in this class is not for ZenScript (CraftTweaker),
+ *     these descriptions are for Java, so if you want create a addition mod,
+ *     then you can read and learn it (maybe needs some basic tutorials).
  * </p>
  *
  * <p>
- *     Another hint is examples and notes in this class is not for ZenScript (CraftTweaker),
- *     these descriptions are for java, so if you want create a addition mod of gtlitecore,
- *     then you can read and learn it (maybe needs some basic tutorials).
+ *     This class is also a {@link ZenClass}, in CraftTweaker, you can use
+ *     <pre>{@code
+ *         mods.gtlitecore.recipe.RecipeMaps
+ *     }</pre>
+ *     to use this class (fixme some parameter maybe error now).
  * </p>
  *
  * @since 2.8.7-beta
@@ -78,7 +81,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES.recipeBuilder()
      *          .input(OrePrefix.dust, Materials.Naquadria)
      *          .fluidInputs(GTLiteMaterials.Orichalcum.getFluid(1000))
@@ -87,13 +90,15 @@ public class GTLiteRecipeMaps {
      *          .EUt(VA[EV])
      *          .duration(1200)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     This is a basic example about how to create a chemical dryer recipes.
-     *     Pay attention, this machine's recipe map is not like the same name machine's recipe map in
-     *      <a href="https://github.com/GregTechCEu/gregicality-legacy">Gregicality</a>,
-     *     so do not use so many inputs or outputs.
+     *     Another name is `Dehydrator` (some mod use this name, such as GT++ and GCY),
+     *     we use `Chemical Dryer` like Gregicality Science. This Recipe Map has 1 inputs,
+     *     2 outputs, and 1 fluid inputs and 1 fluid outputs, just like Gregicality Science.
+     *     If you want to tweak these settings, please init it before this class load,
+     *     you can use some method like {@link RecipeMap#setMaxInputs(int)} (change size),
+     *     and {@link RecipeMap#setSlotOverlay(boolean, boolean, TextureArea)} (change texture).
      * </p>
      */
     @ZenProperty
@@ -107,7 +112,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES.recipeBuilder()
      *          .notConsumable(GTLiteMetaItems.MINING_DRONE_LV.getStackForm(2))
      *          .input(OrePrefix.String, Materials.Bronze)
@@ -116,11 +121,13 @@ public class GTLiteRecipeMaps {
      *          .EUt((int) (V[OpV]))
      *          .duration(Materials.Bronze.getMass() * 16)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Vacuum Chamber is a special machine in gtlitecore, this machine has steam and high pressure steam version,
-     *     so you can create steam stage recipes by custom numbers below LV in .EUt() method.
+     *     Vacuum Chamber is special machine from Gregicality Science (has many different),
+     *     in {@code gtlitecore}, this machine has Steam/High Pressure Steam version,
+     *     so if you want add Steam stage recipes, you can use {@code V[ULV]} or {@code V[LV]}
+     *     in Energy Consumed, i.e. {@link RecipeBuilder#EUt(int)}
      * </p>
      */
     @ZenProperty
@@ -132,21 +139,28 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.NAQUADAH_REACTOR_RECIPES.recipeBuilder()
      *          .fluidInputs(Materials.NaquadahEnriched)
      *          .EUt(3356)
      *          .duration(124)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Naquadah Reactor recipe map, if you add some fuel recipes, you should add it in your config,
-     *     same like fuel's heat value tweak config in {@link GTLiteConfigHolder#misc}, of cause,
-     *     this is just some QoL settings. Because this is the first generator recipe map,
-     *     so maybe something should be warning: do not use negative energy consume,
-     *     if not, then your generator fuel cannot emitted energy.
+     *     Fuel Recipe Map for Naquadah Reactor (Gregicality Style, so has not product).
+     *     In {@code gtlitecore}, all fuel of Generators can tweak heat value by config,
+     *     we wrote it in {@link GTLiteConfigHolder#misc} in common, and use below formatting:
+     *
+     *     <pre>{@code
+     *         heatValueFuelName
+     *     }</pre>
+     *
+     *     and set a range to give player choice chance (do not too large). Please use non-negative
+     *     energy consumed, if not, then your generator fuel cannot emitted any energy.
      * </p>
+     *
+     * @see TaraniumProcessing
      */
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> NAQUADAH_REACTOR_RECIPES = new RecipeMap<>("naquadah_reactor", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
@@ -157,20 +171,20 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.ROCKET_ENGINE_RECIPES.recipeBuilder()
      *          .fluidInputs(Materials.Helium.getFluid(FluidStorageKeys.LIQUID, L / 4))
      *          .EUt(VHA[IV])
      *          .duration(15)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Another liquid-only generator, rocket engine, you should add it in your config,
-     *     same like fuel's heat value tweak config in {@link GTLiteConfigHolder#misc},
-     *     of cause, this is just some QoL settings.
-     *     In example, this symbol 'L' is {@link GTValues#L}, it means 144.
+     *     Rocket Engine is another Liquid-Only Generator, just like Naquadah Reactor.
+     *     In example, this symbol 'L' is {@link GTValues#L}, means 144 (liquid unit).
      * </p>
+     *
+     * @see RocketFuelChain
      */
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> ROCKET_ENGINE_RECIPES = new RecipeMap<>("rocket_engine", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
@@ -180,7 +194,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.BIO_REACTOR_RECIPES.recipeBuilder()
      *          .circuitMeta(1)
      *          .fluidInputs(Materials.Biomass.getFluid(L * 4))
@@ -191,16 +205,14 @@ public class GTLiteRecipeMaps {
      *          .duration(1200)
      *          .cleanroom(CleanroomType.CLEANROOM)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Port from the same name machine in
-     *      <a href="https://github.com/GTNewHorizons/bartworks">Bartworks</a>,
-     *     but recipe style like Bio Reactor in
-     *      <a href="https://github.com/GregTechCEu/gregicality-legacy">Gregicality</a>.
-     *     This machine use a special GUI texture, please see {@link GTLiteGuiTextures#DISH_OVERLAY},
-     *     this texture is just a petri dish icon.
+     *     Bio Reactor (a.k.a. Biological Reactor) is a Chemical Reactor-like machine,
+     *     the prototype of this machine is Bio Lab in Bartworks.
      * </p>
+     *
+     * @see BioReactor
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> BIO_REACTOR_RECIPES = new RecipeMap<>("bio_reactor", 6, 1, 3, 2, new SimpleRecipeBuilder(), false)
@@ -217,20 +229,23 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.CONDENSER_RECIPES.recipeBuilder()
      *          .input(OrePrefix.block, Materials.Gold)
      *          .output(GTLiteOrePrefix.singularity, Materials.Gold)
      *          .EUt(VA[IV])
      *          .duration(800)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     For singularity processing, this recipe map is just a simple recipe map.
-     *     But we use a new method to init its recipes, please see {@link Condenser}.
-     *     Please use {@link GTLiteOrePrefix#singularity} for outputs.
+     *     Condenser is a special Machine for Singularity Processing (prototype is from Avaritia),
+     *     this machine is dependenced with Processing Array, because its fluid capacity is too low.
      * </p>
+     *
+     * @see GTLiteOrePrefix#singularity
+     * @see GTLiteMaterialFlags#GENERATE_SINGULARITY
+     * @see Condenser
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> CONDENSER_RECIPES = new RecipeMap<>("condenser", 1, 1, 1, 0, new SimpleRecipeBuilder(), false)
@@ -241,7 +256,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.SIMULATOR_RECIPES.recipeBuilder()
      *          .notConsumable(GTLiteMetaItems.MEMORY_CARD_ZOMBIE)
      *          .circuitMeta(1)
@@ -249,14 +264,16 @@ public class GTLiteRecipeMaps {
      *          .EUt(VA[LV])
      *          .duration(1200)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Recipe map for {@link GTLiteMetaTileEntities#SIMULATOR},
-     *     maybe seems like Simulator in <a href="https://github.com/xt9/DeepMobLearning">Deep Mob Learning</a> Mod.
-     *     If you add new recipe, then you can add it in your config, please see {@link GTLiteConfigHolder#machines},
-     *     of cause, this is just some QoL settings.
+     *     Simulator is a special Machine used to product mob drops and misc.
+     *     The prototype is a same function machine in Deep Mob Learning.
+     *     All chance of this machine can tweak in {@link GTLiteConfigHolder#machines},
+     *     and exist of this machine also can disable in this config.
      * </p>
+     *
+     * @see Simulator
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> SIMULATOR_RECIPES = new RecipeMap<>("simulator", 2, 2, 0, 0, new SimpleRecipeBuilder(), false)
@@ -270,7 +287,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.DRILLING_RECIPES.recipeBuilder()
      *          .input(new ItemStack(Blocks.BEDROCK))
      *          .chancedOutput(OrePrefix.dust, GTLiteMaterials.Bedrock, 5000, 500)
@@ -278,15 +295,16 @@ public class GTLiteRecipeMaps {
      *          .duration(200)
      *          .EUt(VA[UEV])
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     This recipe map is for {@link MetaTileEntityIndustrialDrillingRig}.
-     *     Pay attention, this multiblock machine has a special check, so please use block in input,
-     *     this machine will break the block which below the drill head block in structures.
-     *     If you use not consumable input, then drill head in this multiblock will not break the below block,
-     *     for the example, please see: {@link TaraniumProcessing}.
+     *     Industrial Drilling Rig is a special Multiblock Machine which used to drilling block,
+     *     this machine will break the block which below the Drill Heat block in Structures.
+     *     If you use not consumable input, then the below block cannot breaked.
      * </p>
+     *
+     * @see MetaTileEntityIndustrialDrillingRig
+     * @see TaraniumProcessing
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> DRILLING_RECIPES = new RecipeMap<>("industrial_drilling_rig", 1, 1, 0, 1, new SimpleRecipeBuilder(), false)
@@ -297,7 +315,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES.recipeBuilder()
      *          .notConsumable(OrePrefix.plate, Materials.Neutronium)
      *          .fluidInputs(GTLiteMaterials.Spacetime.getFluid(48000))
@@ -308,11 +326,16 @@ public class GTLiteRecipeMaps {
      *          .duration(200)
      *          .EUt(VA[UEV])
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Just simple recipe map, catalyst form is plate in not consumable input in same situation.
+     *     Catalytic Reformer is a Multiblock Machine used to rearrange molecules of material,
+     *     we use a not consumable plate as catalyst in common.
      * </p>
+     *
+     * @see MetaTileEntityCatalyticReformer
+     * @see OilChain
+     * @see ChlorineChain
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> CATALYTIC_REFORMER_RECIPES = new RecipeMap<>("catalytic_reformer", 1, 0, 1, 4, new SimpleRecipeBuilder(), false)
@@ -322,7 +345,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.SONICATION_RECIPES.recipeBuilder()
      *          .fluidInputs(GTLiteMaterials.Blood.getFluid(64000))
      *          .fluidOutputs(GTLiteMaterials.BloodCells.getFluid(16000))
@@ -330,14 +353,17 @@ public class GTLiteRecipeMaps {
      *          .EUt(VA[ZPM])
      *          .duration(200)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Just simple recipe map, used for some biological processing common,
-     *     such as Blood processing in {@link GoowareCircuits}.
-     *     This recipe map has a special overlay {@link GTLiteGuiTextures#FOIL_OVERLAY},
-     *     because is used for cycle Phosphorene foil in {@link KevlarChain}.
+     *     Sonicator is a Multiblock Machine used to extraction/stirring/separation,
+     *     we used this Recipe Map in some Biological recipes and Fantastic recipes.
      * </p>
+     *
+     * @see MetaTileEntitySonicator
+     * @see DragonChain
+     * @see PhosphorusChain
+     * @see GoowareCircuits
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> SONICATION_RECIPES = new RecipeMap<>("sonicator", 0, 1, 2, 2, new SimpleRecipeBuilder(), false)
@@ -351,7 +377,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.MOLECULAR_BEAM_RECIPES.recipeBuilder()
      *          .input(OrePrefix.foil, Materials.Nickel, 8)
      *          .input(OrePrefix.dust, Materials.Boron)
@@ -361,15 +387,20 @@ public class GTLiteRecipeMaps {
      *          .duration(80)
      *          .temperature(2900)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Please see {@link MetaTileEntityNanoscaleFabricator},
-     *     this machine has a special check, though we use {@link NoCoilTemperatureRecipeBuilder}, this machine still check temperature when run recipes,
-     *     the current temperature dependencies to temperature info in {@link BlockCrucible}.
-     *     And this recipe map has a special overlay {@link GTLiteGuiTextures#NANOSCALE_OVERLAY_1} and {@link GTLiteGuiTextures#NANOSCALE_OVERLAY_2},
-     *     these pictures are same, but one used for item, one used for fluid.
+     *     Nanoscale Fabricator is a Multiblock Machine from GregTech 6 (but has many different),
+     *     this machine use Crucible to predicate temperature, use {@link NoCoilTemperatureRecipeBuilder#temperature(int)}
+     *     to set temperature of recipe, but the predicate is in {@code MetaTileEntity} class.
      * </p>
+     *
+     * @see MetaTileEntityNanoscaleFabricator
+     * @see BlockCrucible
+     * @see BoronNitrideChain
+     * @see PhosphorusChain
+     * @see OpticalCircuits
+     * @see SpintronicCircuits
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> MOLECULAR_BEAM_RECIPES = new RecipeMap<>("nanoscale_fabricator", 6, 1, 2,  0, new NoCoilTemperatureRecipeBuilder(), false)
@@ -385,7 +416,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
      *          .input(OrePrefix.dust, Materials.Quicklime, 2)
      *          .input(OrePrefix.dust, Materials.Carbon, 3)
@@ -395,13 +426,17 @@ public class GTLiteRecipeMaps {
      *          .duration(500)
      *          .temperature(2473)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Used for {@link MetaTileEntityIndustrialRoaster},
-     *     this machine get temperature by {@link BlockFireboxCasing} via a special traceability predicate,
-     *     please see {@link GTLiteTraceabilityPredicate#FIRE_BOX}.
+     *     Industrial Roaster is a Multiblock Machine used to processing ore,
+     *     this machine use Fire Box Casing to predicate temperature,
+     *     but the predicate is in {@code MetaTileEntity} class.
      * </p>
+     *
+     * @see MetaTileEntityIndustrialRoaster
+     * @see BlockFireboxCasing
+     * @see GTLiteTraceabilityPredicate#FIRE_BOX
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> INDUSTRIAL_ROASTER_RECIPES = new RecipeMap<>("industrial_roaster", 3, 3, 3,  3, new NoCoilTemperatureRecipeBuilder(), false)
@@ -411,7 +446,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.CRYSTALLIZATION_RECIPES.recipeBuilder()
      *          .input(OrePrefix.dust, CubicZirconia, 64)
      *          .input(OrePrefix.dust, Europium, 8)
@@ -420,18 +455,22 @@ public class GTLiteRecipeMaps {
      *          .duration(120)
      *          .blastFurnaceTemp(3000)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     This recipe map is actually unused in the same situation,
-     *     just create some special boule (like {@link GTLiteMetaItems#STRONTIUM_CARBONATE_BOHRIUM_BOULE}) recipes,
-     *     because recipe handler {@link BouleRecipeHandler} generates all recipes (if gem has components).
-     *     If you want to add crystal seed/boule recipes, then you can add a special flags for your material,
-     *     please see {@link GTLiteMaterialFlags#GENERATE_BOULE},
-     *     if you do not wan to add, then use {@link GTLiteMaterialFlags#DISABLE_CRYSTALLIZATION}.
-     *     This recipe can auto-calculate temperature by components' temperature and amount (if not, then get common temperature like cupronickel coil),
-     *     this machine support new coil block in gtlitecore, so you should pay attention for the component temperature (sometime cause some problem).
+     *     Crystallization Crucible is a Multiblock Machine used to processing crystal.
+     *     This Recipe Map is actually unused in common situation, because we used auto-generated recipes.
+     *     In some special Crystal, like {@link GTLiteMetaItems#CUBIC_ZIRCONIA_EUROPIUM_BOULE},
+     *     we used this Recipe Map to tweak its recipe (this is the only situation in {@code gtlitecore}).
      * </p>
+     *
+     * @see MetaTileEntityCrystallizationCrucible
+     * @see GTLiteOrePrefix#seedCrystal
+     * @see GTLiteOrePrefix#boule
+     * @see GTLiteMaterialFlags#GENERATE_BOULE
+     * @see GTLiteMaterialFlags#DISABLE_CRYSTALLIZATION
+     * @see BouleRecipeHandler
+     *
      */
     @ZenProperty
     public static final RecipeMap<BlastRecipeBuilder> CRYSTALLIZATION_RECIPES = new RecipeMap<>("crystallization_crucible", 6, 1, 3, 0, new BlastRecipeBuilder(), false)
@@ -441,7 +480,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.CVD_UNIT_RECIPES.recipeBuilder()
      *          .inputs(GTFOMaterialHandler.LithiumCarbonate.getItemStack(6))
      *          .fluidInputs(GTLiteMaterials.CalciumTrifluoromethansulphonate.getFluid(1000))
@@ -451,12 +490,15 @@ public class GTLiteRecipeMaps {
      *          .duration(340)
      *          .temperature(1600)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Recipe map for CVD Unit, temperature is just a little tweak about recipe map GUI in JEI,
-     *     this parameter not affected recipe check.
+     *     Chemical Vapor Deposition Unit is a Multiblock Machine like Chemical Reactor function,
+     *     this machine also has temperature property, but not has pressure property (in Gregicality
+     *     Science, CVD Unit has both two properties, but it is too fussy in {@code gtlitecore}).
      * </p>
+     *
+     * @see MetaTileEntityCVDUnit
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CVD_UNIT_RECIPES = new RecipeMap<>("cvd_unit", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
@@ -466,7 +508,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
      *          .notConsumable(OrePrefix.plate, Materials.Rhenium)
      *          .fluidInputs(GTLiteMaterials.Acetylene.getFluid(3000))
@@ -478,18 +520,19 @@ public class GTLiteRecipeMaps {
      *          .duration(100)
      *          .temperature(993)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Plasma CVD Unit recipe is for some nanotube recipes now,
-     *     please see {@link NanotubesChain}. You should use different catalyst,
-     *     usually use plate or double plate, to create recipes,
-     *     if not, then will cause conflicts (not warning in log, but cannot run in game).
-     *     This machine's recipes have advanced version all, if use plate catalyst,
-     *     then use double plate catalyst in advanced recipe,
-     *     and x4 recipe consumes and products (of cause energy use, or you not want this).
-     *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this recipe map be advanced version of cvd unit recipes.
+     *     Plasma-enriched Chemical Vapor Deposition Unit is a Multiblock Machine
+     *     like CVD Unit (but needs to use plasma as catalyst). In {@code gtlitecore},
+     *     this machine use to product different Nanotubes, and use another catalyst
+     *     to resolve recipe conflicts (like plate or double plate).
+     *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this Recipe Map
+     *          be advanced version of CVD Unit recipes.
      * </p>
+     *
+     * @see MetaTileEntityPlasmaCVDUnit
+     * @see NanotubesChain
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> PLASMA_CVD_UNIT_RECIPES = new RecipeMap<>("plasma_cvd_unit", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
@@ -499,7 +542,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES.recipeBuilder()
      *          .input(OrePrefix.wireFine, GTLiteMaterials.SuperheavyHAlloy, 8)
      *          .input(OrePrefix.plate, GTLiteMaterials.Rhugnor)
@@ -510,15 +553,23 @@ public class GTLiteRecipeMaps {
      *          .temperature(5630)
      *          .cleanroom(CleanroomType.CLEANROOM)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Used for some advanced smd capacitor recipes (above gooware circuit),
-     *     such as {@link OpticalCircuits}, and some special materials,
-     *     like optical fiber, please see {@link GTLiteMetaItems#OPTICAL_FIBER}.
-     *     Sometimes recipes need use cleanroom and temperature both, in this situation, please put cleanroom at the last (for consistency of JEI pages).
-     *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this recipe map be advanced version of cvd unit recipes.
+     *     Laser-induced Chemical Vapor Deposition Unit is a Multiblock Machine
+     *     like CVD Unit. Just like Plasma CVD Unit, this machine is also an Advanced CVD
+     *     Unit. Used for all Advanced SMD Components (Optical-Supracausal), Optical Fiber
+     *     and some misc items.
+     *     TODO use {@link RecipeMap#onRecipeBuild(Consumer)} to tweak this Recipe Map
+     *          be advanced version of CVD Unit recipes.
      * </p>
+     *
+     * @see MetaTileEntityLaserCVDUnit
+     * @see NanotubesChain
+     * @see OpticalCircuits
+     * @see SpintronicCircuits
+     * @see CosmicCircuits
+     * @see SupracausalCircuits
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> LASER_CVD_UNIT_RECIPES = new RecipeMap<>("laser_cvd_unit", 2, 2, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
@@ -528,7 +579,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.BURNER_REACTOR_RECIPES.recipeBuilder()
      *          .notConsumable(OrePrefix.dust, Materials.Silver)
      *          .fluidInputs(Materials.Ethylene.getFluid(7000))
@@ -539,12 +590,13 @@ public class GTLiteRecipeMaps {
      *          .duration(150)
      *          .temperature(450)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Different to {@link GTLiteRecipeMaps#INDUSTRIAL_ROASTER_RECIPES}, this recipe map do not check temperature.
-     *     This parameter is just a tweak of JEI info, so you can add anythings (do not exceed max value of Integer).
+     *     Burner Reactor is a Multiblock Machine like Chemical Reactor function.
      * </p>
+     *
+     * @see MetaTileEntityBurnerReactor
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
@@ -554,7 +606,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.CRYOGENIC_REACTOR_RECIPES.recipeBuilder()
      *          .notConsumable(OrePrefix.dust, Materials.Iron)
      *          .fluidInputs(Materials.Butadiene.getFluid(1000))
@@ -565,12 +617,13 @@ public class GTLiteRecipeMaps {
      *          .duration(200)
      *          .temperature(286)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Same as {@link #BURNER_REACTOR_RECIPES}, just a low temperature version,
-     *     but please do not use high temperature in this recipes (if not, so why do not you use Burner Reactor recipe map).
+     *     Cryogenic Reactor is a Multiblock Machine like Chemical Reactor function.
      * </p>
+     *
+     * @see MetaTileEntityCryogenicReactor
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor", 3, 2, 3, 2, new NoCoilTemperatureRecipeBuilder(), false)
@@ -580,7 +633,7 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.FUEL_REFINE_FACTORY_RECIPES.recipeBuilder()
      *          .input(OrePrefix.dust, GTLiteMaterials.Tiberium)
      *          .input(OrePrefix.dust, GTLiteMaterials.OrichalcumEnergized)
@@ -593,7 +646,7 @@ public class GTLiteRecipeMaps {
      *          .EUt(VA[UEV])
      *          .duration(100)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
      *     Just a simple recipe map, used to product fuels (and some advanced recipes about low stage fuels,
