@@ -27,7 +27,7 @@ dependencies {
     implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5278333")
 
     //  [NAE2] Neeve's AE2 Additions - 1.6.1 (GTLite)
-    implementation rfg.deobf(files("libs/nae2-1.6.1-GTLite.jar"))
+    implementation rfg.deobf(files("libs/nae2-1.6.2-GTLite.jar"))
 
     //  [LN] Lib Nine - 1.2.1
     implementation rfg.deobf("curse.maven:libnine-322344:3509087")
