@@ -35,6 +35,9 @@ import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.*;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityExtremeHeatExchanger;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityMegaHeatExchanger;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkI;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkII;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.generator.MetaTileEntityHyperReactorMkIII;
 import magicbook.gtlitecore.loaders.chains.*;
 import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.handlers.BouleRecipeHandler;
@@ -649,12 +652,13 @@ public class GTLiteRecipeMaps {
      * }</pre>
      *
      * <p>
-     *     Just a simple recipe map, used to product fuels (and some advanced recipes about low stage fuels,
-     *     like {@link Materials#CetaneBoostedDiesel}). And some materials like {@link GTLiteMaterials#Vibranium},
-     *     can and only can product by this machine (some trivia: in
-     *      <a href="https://github.com/GregTechCEu/gregicality-science">Gregicality Science</a>,
-     *     this material product by a special recipe map 'Superheavy Reaction'.).
+     *     Fuel Refine Factory is a Multiblock Machine used to product many fuels,
+     *     part of function of this machine is called by `Superheavy Reaction` in Gregicality
+     *     Science. The special product of this machine is related of Hyper Reactor.
      * </p>
+     *
+     * @see MetaTileEntityFuelRefineFactory
+     * @see TaraniumProcessing
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> FUEL_REFINE_FACTORY_RECIPES = new RecipeMap<>("fuel_refine_factory", 3, 4, 4, 2, new SimpleRecipeBuilder(), false)
@@ -670,19 +674,20 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.HYPER_REACTOR_MK1_RECIPES.recipeBuilder()
      *          .fluidInputs(GTLiteMaterials.HyperFuelMkII.getFluid(1))
      *          .duration(300)
      *          .EUt(524288)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Like {@link #NAQUADAH_REACTOR_RECIPES}, you should add it in your config,
-     *     same like fuel's heat value tweak config in {@link GTLiteConfigHolder#misc},
-     *     of cause, this is just some QoL settings.
+     *     Hyper Reactors are Ultimate Naquadah Reactor (and have 3 tier), this is T1 Hyper Reactor.
      * </p>
+     *
+     * @see MetaTileEntityHyperReactorMkI
+     * @see TaraniumProcessing
      */
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK1_RECIPES = new RecipeMap<>("hyper_reactor_mk1", 0, 0, 1,0 , new FuelRecipeBuilder(), false)
@@ -693,18 +698,20 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.HYPER_REACTOR_MK2_RECIPES.recipeBuilder()
      *          .fluidInputs(GTLiteMaterials.HyperFuelMkIII.getFluid(1))
      *          .duration(600)
      *          .EUt(2097152)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Advanced Hyper Reactor recipe map, in this recipe map,
-     *     some materials product more energy (like {@link GTLiteMaterials#LightHyperFuel}).
+     *     Hyper Reactors are Ultimate Naquadah Reactor (and have 3 tier), this is T2 Hyper Reactor.
      * </p>
+     *
+     * @see MetaTileEntityHyperReactorMkII
+     * @see TaraniumProcessing
      */
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK2_RECIPES = new RecipeMap<>("hyper_reactor_mk2", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
@@ -715,17 +722,20 @@ public class GTLiteRecipeMaps {
     /**
      * Example:
      *
-     * <pre>
+     * <pre>{@code
      *     GTLiteRecipeMaps.HYPER_REACTOR_MK3_RECIPES.recipeBuilder()
      *          .fluidInputs(HyperFuelMkIV.getFluid(1))
      *          .duration(1200)
      *          .EUt(GTLiteConfigHolder.misc.heatValueHyperFuelMark4)
      *          .buildAndRegister();
-     * </pre>
+     * }</pre>
      *
      * <p>
-     *     Same like {@link #HYPER_REACTOR_MK1_RECIPES} and {@link #HYPER_REACTOR_MK2_RECIPES}.
+     *     Hyper Reactors are Ultimate Naquadah Reactor (and have 3 tier), this is T3 Hyper Reactor.
      * </p>
+     *
+     * @see MetaTileEntityHyperReactorMkIII
+     * @see TaraniumProcessing
      */
     @ZenProperty
     public static final RecipeMap<FuelRecipeBuilder> HYPER_REACTOR_MK3_RECIPES = new RecipeMap<>("hyper_reactor_mk3", 0, 0, 1, 0, new FuelRecipeBuilder(), false)
@@ -754,6 +764,11 @@ public class GTLiteRecipeMaps {
      *     and {@link GTLiteMetaItems#GRINDBALL_SOAPSTONE}).
      *     Please use 1 or 2 to tweak grindball material (one correspond soapstone and another correspond to aluminium).
      * </p>
+     *
+     * @see MetaTileEntityIsaMill
+     * @see GTLiteOrePrefix#milled
+     * @see GTLiteMaterialFlags#GENERATE_MILLED
+     * @see IsaMillOreProcessing
      */
     @ZenProperty
     public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES = new RecipeMap<>("isa_mill", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
