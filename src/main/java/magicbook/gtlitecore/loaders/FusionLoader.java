@@ -290,7 +290,7 @@ public class FusionLoader {
                 .EUToStart(450000000L) // MK3
                 .buildAndRegister();
 
-        //  Neon + Bedrock -> Taranium plasma
+        //  Neon + Bedrock -> Taranium (plasma)
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Neon.getFluid(L))
                 .fluidInputs(Bedrock.getFluid(L))
@@ -468,6 +468,28 @@ public class FusionLoader {
 
         /* -------------------------------- MK5 -------------------------------- */
 
+        //  Advanced Neptunium Plasma recipe
+        //  Xenon (plasma) + Yttrium -> Neptunium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Xenon.getPlasma(L * 2))
+                .fluidInputs(Yttrium.getFluid(L * 2))
+                .fluidOutputs(Neptunium.getPlasma(L * 2))
+                .EUt(VA[UEV])
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(1800000000L) // MK5
+                .buildAndRegister();
+
+        //  Advanced Fermium Plasma recipe
+        //  Taranium (plasma) + Rubidium -> Fermium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Taranium.getPlasma(L * 2))
+                .fluidInputs(Rubidium.getFluid(L * 2))
+                .fluidOutputs(Fermium.getPlasma(L * 2))
+                .EUt(VA[UEV])
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(1800000000L) // MK5
+                .buildAndRegister();
+
         //  Lutetium + Vanadium -> Plutonium-241 (plasma)
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Lutetium.getFluid(L))
@@ -579,7 +601,7 @@ public class FusionLoader {
                 .EUToStart(1300000000L) // MK5
                 .buildAndRegister();
 
-        //  Hikarium + Tairitsium -> Fatalium plasma
+        //  Hikarium + Tairitsium -> Fatalium (plasma)
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Hikarium.getFluid(L * 4))
                 .fluidInputs(Tairitsium.getFluid(L * 4))

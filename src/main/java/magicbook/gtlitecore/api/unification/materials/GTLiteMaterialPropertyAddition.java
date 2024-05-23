@@ -85,6 +85,7 @@ public class GTLiteMaterialPropertyAddition {
         Protactinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Radium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Roentgenium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Rubidium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Rutherfordium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Scandium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Seaborgium.setProperty(PropertyKey.FLUID, new FluidProperty());
