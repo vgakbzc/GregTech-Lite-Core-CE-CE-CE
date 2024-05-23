@@ -500,6 +500,7 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CATALYST_ORANGE_METAL;
     public static MetaItem<?>.MetaValueItem CATALYST_PURPLE_METAL;
     public static MetaItem<?>.MetaValueItem CATALYST_BROWN_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_PINK_METAL;
     public static MetaItem<?>.MetaValueItem CATALYST_FORMALDEHYDE;
     public static MetaItem<?>.MetaValueItem CATALYST_SOLID_ACID;
     public static MetaItem<?>.MetaValueItem CATALYST_INFINITY_MUTATION;

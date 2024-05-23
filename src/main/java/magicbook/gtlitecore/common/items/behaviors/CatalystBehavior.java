@@ -27,6 +27,6 @@ public class CatalystBehavior extends AbstractMaterialPartBehavior implements II
 
     @Override
     public int getMaxStackSize(ItemStack itemStack, int defaultValue) {
-        return 1;
+        return 16;
     }
 }
