@@ -9,8 +9,8 @@ import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
 
 public class GTLiteMaterialPropertyAddition {
-    public static void init() {
 
+    public static void init() {
         /* --------------------------------- Element Materials with Ingot -------------------------------- */
         Actinium.setProperty(PropertyKey.INGOT, new IngotProperty());
         Berkelium.setProperty(PropertyKey.INGOT, new IngotProperty());

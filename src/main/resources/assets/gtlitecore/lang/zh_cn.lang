@@ -3440,8 +3440,10 @@ gtlitecore.top.fluid_outputs=流体制作中：
 ##  Traceability Predicates
 gtlitecore.machine.pattern.firebox=必须使用同一种燃烧室方块
 
-##  Universal Tooltips
+##  Universal Texts
 gtlitecore.universal.tooltip.max_parallel=最大并行数：§e%s§7
 gtlitecore.universal.tooltip.get_parallel_by_voltage=根据输入电压获得并行。
 gtlitecore.universal.tooltip.laser_input=允许使用§b激光靶仓§7替代能源仓，且二者可以并存。
 gtlitecore.universal.tooltip.laser_output=允许使用§b激光源仓§7替代动力仓，且二者可以并存。
+
+gtlitecore.universal.multiblock.energy_per_tick=产能功率：%s EUt （%s）

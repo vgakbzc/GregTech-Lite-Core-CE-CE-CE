@@ -45,7 +45,7 @@ public class GTLiteGuiTextures {
     public static final TextureArea BLUE_OVERLAY = TextureArea.fullImage("textures/gui/overlay/blue_overlay.png");
 
     //  Button
-    public static final TextureArea BUTTON_STRUCTURE_SWITCHING = TextureArea.fullImage("textures/gui/widget/button_structure_switching.png");
+    public static final TextureArea BUTTON_HIGH_SPEED_MODE = TextureArea.fullImage("textures/gui/widget/button_high_speed_mode.png");
     public static final TextureArea BUTTON_YOTTA_MODE = TextureArea.fullImage("textures/gui/widget/button_yotta_mode.png");
     public static final TextureArea FUSION_REACTOR_MK4_TITLE = TextureArea.fullImage("textures/gui/widget/fusion_reactor_mk4_title.png");
     public static final TextureArea FUSION_REACTOR_MK5_TITLE = TextureArea.fullImage("textures/gui/widget/fusion_reactor_mk5_title.png");

@@ -35,6 +35,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
 
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
+
 public class MetaTileEntityLargeTurbine extends FuelMultiblockController implements ITieredMetaTileEntity, IProgressBarMultiblock {
 
     public final int tier;
@@ -113,46 +115,60 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         MultiblockFuelRecipeLogic recipeLogic = (MultiblockFuelRecipeLogic) this.recipeMapWorkable;
-        MultiblockDisplayText.builder(textList, isStructureFormed())
+        MultiblockDisplayText.builder(textList, this.isStructureFormed())
                 .setWorkingStatus(recipeLogic.isWorkingEnabled(), recipeLogic.isActive())
-                .addEnergyProductionLine(getMaxVoltage(), recipeLogic.getRecipeEUt())
+                .addEnergyProductionLine(this.getMaxVoltage(), recipeLogic.getRecipeEUt())
                 .addCustom((tl) -> {
-                    if (isStructureFormed()) {
-                        IRotorHolder rotorHolder = getRotorHolder();
+                    if (this.isStructureFormed()) {
+                        IRotorHolder rotorHolder = this.getRotorHolder();
                         if (rotorHolder.getRotorEfficiency() > 0) {
-                            ITextComponent efficiencyInfo = TextComponentUtil.stringWithColor(TextFormatting.AQUA, TextFormattingUtil.formatNumbers(rotorHolder.getTotalEfficiency()) + "%");
-                            tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.turbine.efficiency", efficiencyInfo));
+                            ITextComponent efficiencyInfo = TextComponentUtil.stringWithColor(
+                                    TextFormatting.AQUA,
+                                    formatNumbers(rotorHolder.getTotalEfficiency()) + "%");
+                            tl.add(TextComponentUtil.translationWithColor(
+                                    TextFormatting.GRAY,
+                                    "gregtech.multiblock.turbine.efficiency",
+                                    efficiencyInfo));
                         }
                     }})
-                .addFuelNeededLine(recipeLogic.getRecipeFluidInputInfo(), recipeLogic.getPreviousRecipeDuration()).addWorkingStatusLine();
+                .addFuelNeededLine(recipeLogic.getRecipeFluidInputInfo(), recipeLogic.getPreviousRecipeDuration())
+                .addWorkingStatusLine();
     }
 
     @Override
     protected void addWarningText(List<ITextComponent> textList) {
-        MultiblockDisplayText.builder(textList, isStructureFormed(), false)
+        MultiblockDisplayText.builder(textList, this.isStructureFormed(), false)
                 .addCustom((tl) -> {
-                    if (isStructureFormed()) {
-                        IRotorHolder rotorHolder = getRotorHolder();
+                    if (this.isStructureFormed()) {
+                        IRotorHolder rotorHolder = this.getRotorHolder();
                         if (rotorHolder.getRotorEfficiency() > 0 && rotorHolder.getRotorDurabilityPercent() <= 10) {
-                            tl.add(TextComponentUtil.translationWithColor(TextFormatting.YELLOW, "gregtech.multiblock.turbine.rotor_durability_low"));
+                            tl.add(TextComponentUtil.translationWithColor(
+                                    TextFormatting.YELLOW,
+                                    "gregtech.multiblock.turbine.rotor_durability_low"));
                         }
                     }})
-                .addLowDynamoTierLine(isDynamoTierTooLow())
-                .addMaintenanceProblemLines(getMaintenanceProblems());
+                .addLowDynamoTierLine(this.isDynamoTierTooLow())
+                .addMaintenanceProblemLines(this.getMaintenanceProblems());
     }
 
     @Override
     protected void addErrorText(List<ITextComponent> textList) {
         super.addErrorText(textList);
-        if (isStructureFormed()) {
-            if (!isRotorFaceFree()) {
-                textList.add(TextComponentUtil.translationWithColor(TextFormatting.RED, "gregtech.multiblock.turbine.obstructed"));
-                textList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.turbine.obstructed.desc"));
+        if (this.isStructureFormed()) {
+            if (!this.isRotorFaceFree()) {
+                textList.add(TextComponentUtil.translationWithColor(
+                        TextFormatting.RED,
+                        "gregtech.multiblock.turbine.obstructed"));
+                textList.add(TextComponentUtil.translationWithColor(
+                        TextFormatting.GRAY,
+                        "gregtech.multiblock.turbine.obstructed.desc"));
             }
 
-            IRotorHolder rotorHolder = getRotorHolder();
+            IRotorHolder rotorHolder = this.getRotorHolder();
             if (rotorHolder.getRotorEfficiency() <= 0) {
-                textList.add(TextComponentUtil.translationWithColor(TextFormatting.RED, "gregtech.multiblock.turbine.no_rotor"));
+                textList.add(TextComponentUtil.translationWithColor(
+                        TextFormatting.RED,
+                        "gregtech.multiblock.turbine.no_rotor"));
             }
         }
     }
@@ -262,15 +278,15 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
                     fuelAmount = getTotalFluidAmount(fluidStack, getInputFluidInventory());
                 }
             }
-            return fuelAmount[1] != 0 ? 1.0 * (double) fuelAmount[0] / (double) fuelAmount[1] : 0.0;
+            return fuelAmount[1] != 0 ? 1.0 * fuelAmount[0] / (double) fuelAmount[1] : 0.0;
         } else {
             IRotorHolder rotorHolder;
             if (index == 1) {
                 rotorHolder = this.getRotorHolder();
-                return rotorHolder != null ? 1.0 * (double) rotorHolder.getRotorSpeed() / (double) rotorHolder.getMaxRotorHolderSpeed() : 0.0;
+                return rotorHolder != null ? 1.0 * rotorHolder.getRotorSpeed() / (double) rotorHolder.getMaxRotorHolderSpeed() : 0.0;
             } else {
                 rotorHolder = this.getRotorHolder();
-                return rotorHolder != null ? 1.0 * (double) rotorHolder.getRotorDurabilityPercent() / 100.0 : 0.0;
+                return rotorHolder != null ? 1.0 * rotorHolder.getRotorDurabilityPercent() / 100.0 : 0.0;
             }
         }
     }
@@ -296,20 +312,30 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
                 if (rotorHolder != null && rotorHolder.getRotorEfficiency() > 0) {
                     rotorSpeed = rotorHolder.getRotorSpeed();
                     int rotorMaxSpeed = rotorHolder.getMaxRotorHolderSpeed();
-                    ITextComponent rpmTranslated = TextComponentUtil.translationWithColor(getRotorSpeedColor(rotorSpeed, rotorMaxSpeed), "gregtech.multiblock.turbine.rotor_rpm_unit_name");
-                    ITextComponent rotorInfo = TextComponentUtil.translationWithColor(getRotorSpeedColor(rotorSpeed, rotorMaxSpeed), "%s / %s %s", new Object[]{TextFormattingUtil.formatNumbers(rotorSpeed), TextFormattingUtil.formatNumbers(rotorMaxSpeed), rpmTranslated});
-                    hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.turbine.rotor_speed", rotorInfo));
+                    ITextComponent rpmTranslated = TextComponentUtil.translationWithColor(this.getRotorSpeedColor(rotorSpeed, rotorMaxSpeed), "gregtech.multiblock.turbine.rotor_rpm_unit_name");
+                    ITextComponent rotorInfo = TextComponentUtil.translationWithColor(this.getRotorSpeedColor(rotorSpeed, rotorMaxSpeed), "%s / %s %s", new Object[]{TextFormattingUtil.formatNumbers(rotorSpeed), TextFormattingUtil.formatNumbers(rotorMaxSpeed), rpmTranslated});
+                    hoverList.add(TextComponentUtil.translationWithColor(
+                            TextFormatting.GRAY,
+                            "gregtech.multiblock.turbine.rotor_speed",
+                            rotorInfo));
                 } else {
-                    hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.YELLOW, "gregtech.multiblock.turbine.no_rotor"));
+                    hoverList.add(TextComponentUtil.translationWithColor(
+                            TextFormatting.YELLOW,
+                            "gregtech.multiblock.turbine.no_rotor"));
                 }
             } else {
                 rotorHolder = this.getRotorHolder();
                 if (rotorHolder != null && rotorHolder.getRotorEfficiency() > 0) {
                     rotorSpeed = rotorHolder.getRotorDurabilityPercent();
-                    ITextComponent rotorInfo = TextComponentUtil.stringWithColor(getRotorDurabilityColor(rotorSpeed), rotorSpeed + "%");
-                    hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.turbine.rotor_durability", rotorInfo));
+                    ITextComponent rotorInfo = TextComponentUtil.stringWithColor(this.getRotorDurabilityColor(rotorSpeed), rotorSpeed + "%");
+                    hoverList.add(TextComponentUtil.translationWithColor(
+                            TextFormatting.GRAY,
+                            "gregtech.multiblock.turbine.rotor_durability",
+                            rotorInfo));
                 } else {
-                    hoverList.add(TextComponentUtil.translationWithColor(TextFormatting.YELLOW, "gregtech.multiblock.turbine.no_rotor"));
+                    hoverList.add(TextComponentUtil.translationWithColor(
+                            TextFormatting.YELLOW,
+                            "gregtech.multiblock.turbine.no_rotor"));
                 }
             }
         }
@@ -324,7 +350,7 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
     }
 
     private TextFormatting getRotorSpeedColor(int rotorSpeed, int maxRotorSpeed) {
-        double speedRatio = 1.0 * (double) rotorSpeed / (double)maxRotorSpeed;
+        double speedRatio = 1.0 * rotorSpeed / (double)maxRotorSpeed;
         if (speedRatio < 0.4) {
             return TextFormatting.RED;
         } else {
