@@ -248,6 +248,15 @@ public class GTLiteHigherDegreeMaterials {
                 .liquid(new FluidBuilder().temperature(2000000000).customStill())
                 .build()
                 .setFormula(addObfuscatedFormula(), false);
+
+        //  24096 Spacetime Continuum
+        SpacetimeContinuum = new Material.Builder(getID(), gregtechId("spacetime_continuum"))
+                .polymer()
+                .liquid(new FluidBuilder().temperature(1).customStill())
+                .color(0x000000)
+                .iconSet(BRIGHT)
+                .build()
+                .setFormula(addObfuscatedFormula(), false);
     }
 
 }

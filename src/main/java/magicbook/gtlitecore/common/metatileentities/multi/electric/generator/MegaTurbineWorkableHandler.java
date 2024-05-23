@@ -21,6 +21,7 @@ import net.minecraftforge.items.IItemHandlerModifiable;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
@@ -163,7 +164,7 @@ public class MegaTurbineWorkableHandler extends MultiblockFuelRecipeLogic {
 
         //  Rebuild the recipe and adjust voltage to match the turbine
         //  Thanks my friend to help me fix a little problem.
-        RecipeBuilder<?> recipeBuilder = getRecipeMap().recipeBuilder();
+        RecipeBuilder<?> recipeBuilder = Objects.requireNonNull(getRecipeMap()).recipeBuilder();
         recipeBuilder.append(recipe, parallel, false)
                 .EUt(turbineMaxVoltage);
         applyParallelBonus(recipeBuilder);

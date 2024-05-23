@@ -85,7 +85,7 @@ public class MetaTileEntityElectricImplosionCompressor extends RecipeMapMultiblo
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState())
                         .setMinGlobalLimited(80)
-                        .or(autoAbilities(true, true, true, true, false, false, false)))
+                        .or(autoAbilities(true, true, true, true, true, true, false)))
                 .where('P', states(getBoilerCasingState()))
                 .where('F', states(getFrameState()))
                 .where('G', states(getGlassState()))

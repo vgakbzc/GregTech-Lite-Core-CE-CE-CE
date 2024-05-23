@@ -619,7 +619,7 @@ public class GTLiteMaterials {
     public static Material PiranhaSolution;
 
     /////////////////////////////
-    //  High Degree Materials  //
+    //  Higher Degree Materials  //
     /////////////////////////////
 
     //  ID Range: 15001-16000
@@ -650,6 +650,7 @@ public class GTLiteMaterials {
     public static Material ResplendentDimensionallyTranscendentCatalyst;
     public static Material ExoticDimensionallyTranscendentCatalyst;
     public static Material ZenithDimensionallyTranscendentCatalyst;
+    public static Material SpacetimeContinuum;
 
     /////////////////////////////////////
     //  Unknown Composition Materials  //

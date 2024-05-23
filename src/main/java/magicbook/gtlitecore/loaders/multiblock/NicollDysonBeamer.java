@@ -684,6 +684,17 @@ public class NicollDysonBeamer {
                 .tier(2)
                 .buildAndRegister();
 
+        //  Supersolid Spacetime Continuum + Dimensional Gap -> Spacetime Continuum
+        ELECTRIC_IMPLOSION_RECIPES.recipeBuilder()
+                .input(SUPERSOLID_SPACETIME_CONTINUUM)
+                .input(COSMIC_FABRIC, 2)
+                .input(DIMENSION_GAP, 4)
+                .fluidInputs(Eternity.getFluid(L * 16))
+                .chancedOutput(dust, DarkAsh, 2500, 0)
+                .fluidOutputs(SpacetimeContinuum.getFluid(L * 4))
+                .EUt(VA[MAX])
+                .duration(20)
+                .buildAndRegister();
     }
 
 }
