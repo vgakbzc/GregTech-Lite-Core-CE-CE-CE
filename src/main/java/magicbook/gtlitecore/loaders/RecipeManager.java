@@ -190,5 +190,6 @@ public class RecipeManager {
         NicollDysonBeamer.init();
         EternityGarden.init();
         SuprachronalNeutroniumForge.init();
+        LargeChemicalComplex.init();
     }
 }

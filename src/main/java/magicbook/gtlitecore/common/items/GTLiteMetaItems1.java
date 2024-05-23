@@ -13,13 +13,17 @@ import gregtech.common.items.behaviors.ProspectorScannerBehavior;
 import gregtech.common.items.behaviors.TooltipBehavior;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
+import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.common.items.behaviors.CatalystBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
+import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import net.minecraft.client.resources.I18n;
 import org.lwjgl.input.Keyboard;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.*;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -1313,6 +1317,153 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .setUnificationData(OrePrefix.circuit, MarkerMaterials.Tier.MAX)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_CIRCUIT);
 
+        /* ---------------------------------------------------------------------- Catalysts ----------------------------------------------------------------------- */
+
+        CATALYST_BASE = this.addItem(925, "catalyst.base")
+                .addOreDict("catalystEmpty")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Steel, M * 8), // 8 * Steel plate
+                        new MaterialStack(Copper, (M / 8) * 4), // 4 * Copper fine wire
+                        new MaterialStack(Tin, (M / 9) * 6) // 6 * Tin screw
+                ));
+
+        CATALYST_GREEN_METAL = this.addItem(926,  "catalyst.green_metal")
+                .addOreDict("catalystGreenMetal")
+                .addOreDict("catalystAluminiumSilver")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_RED_METAL = this.addItem(927, "catalyst.red_metal")
+                .addOreDict("catalystRedMetal")
+                .addOreDict("catalystIronCopper")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_YELLOW_METAL = this.addItem(928, "catalyst.yellow_metal")
+                .addOreDict("catalystYellowMetal")
+                .addOreDict("catalystTungstenNickel")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BLUE_METAL = this.addItem(929, "catalyst.blue_metal")
+                .addOreDict("catalystBlueMetal")
+                .addOreDict("catalystCobaltTitanium")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_ORANGE_METAL = this.addItem(930, "catalyst.orange_metal")
+                .addOreDict("catalystOrangeMetal")
+                .addOreDict("catalystVanadiumPalladium")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_PURPLE_METAL = this.addItem(931, "catalyst.purple_metal")
+                .addOreDict("catalystPurpleMetal")
+                .addOreDict("catalystIridiumRuthenium")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BROWN_METAL = this.addItem(932, "catalyst.brown_metal")
+                .addOreDict("catalystBrownMetal")
+                .addOreDict("catalystNickelAluminium")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_FORMALDEHYDE = this.addItem(933, "catalyst.formaldehyde")
+                .addOreDict("catalystFormaldehyde")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_SOLID_ACID = this.addItem(934, "catalyst.solid_acid")
+                .addOreDict("catalystSolidAcid")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_INFINITY_MUTATION = this.addItem(935, "catalyst.infinity_mutation")
+                .addOreDict("catalystInfinityMutation")
+                .addComponents(new CatalystBehavior())
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_PLATINUM_GROUP = this.addItem(936, "catalyst.platinum_group")
+                .addOreDict("catalystPlatinumGroup")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_PLASTIC_POLYMER = this.addItem(937, "catalyst.plastic_polymer")
+                .addOreDict("catalystPlasticPolymer")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_RUBBER_POLYMER = this.addItem(938, "catalyst.rubber_polymer")
+                .addOreDict("catalystRubberPolymer")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_ADHESION_PROMOTER = this.addItem(939, "catalyst.adhesion_promoter")
+                .addOreDict("catalystAdhesionPromoter")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_INDIUM = this.addItem(940, "catalyst.indium")
+                .addOreDict("catalystIndium")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_RADIOACTIVITY = this.addItem(941, "catalyst.radioactivity")
+                .addOreDict("catalystRadioactivity")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_RARE_EARTH = this.addItem(942, "catalyst.rare_earth")
+                .addOreDict("catalystRareEarth")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_NAQUADAH = this.addItem(943, "catalyst.naquadah")
+                .addOreDict("catalystNaquadah")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_RAW_INTELLIGENCE = this.addItem(944, "catalyst.raw_intelligence")
+                .addOreDict("catalystRawIntelligence")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_ULTIMATE_PLASTIC = this.addItem(945, "catalyst.ultimate_plastic")
+                .addOreDict("catalystUltimatePlastic")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BIOLOGICAL_INTELLIGENCE = this.addItem(946, "catalyst.biological_intelligence")
+                .addOreDict("catalystBiologicalIntelligence")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_TEMPORAL_HARMONY = this.addItem(947, "catalyst.temporal_harmony")
+                .addOreDict("catalystTemporalHarmony")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_FLAWLESS_WATER = this.addItem(948, "catalyst.flawless_water")
+                .addOreDict("catalystFlawlessWater")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_PHOTOELECTRONIC = this.addItem(949, "catalyst.photoelectronic")
+                .addOreDict("catalystPhotoelectronic")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_PARTICLE_ACCELERATION = this.addItem(950, "catalyst.particle_acceleration")
+                .addOreDict("catalystParticleAcceleration")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_SYNCHROTRON_CAPABLE = this.addItem(951, "catalyst.synchrotron_capable")
+                .addOreDict("catalystSynchrotronCapable")
+                .addComponents(new CatalystBehavior())
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
 
         /* --------------------------------------------------------------------- Debug Items ---------------------------------------------------------------------- */
 

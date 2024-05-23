@@ -431,6 +431,36 @@ metaitem.component.optical.optical_imc_board.tooltip=存算一体光学基板
 metaitem.component.optical.photoelectron_soc.name=光电子 SoC
 metaitem.component.optical.photoelectron_soc.tooltip=荧光电路
 
+##  Catalysts
+metaitem.catalyst.base.name=催化剂载体
+metaitem.catalyst.green_metal.name=绿色金属催化剂
+metaitem.catalyst.red_metal.name=红色金属催化剂
+metaitem.catalyst.yellow_metal.name=黄色金属催化剂
+metaitem.catalyst.blue_metal.name=蓝色金属催化剂
+metaitem.catalyst.orange_metal.name=橙色金属催化剂
+metaitem.catalyst.purple_metal.name=紫色金属催化剂
+metaitem.catalyst.brown_metal.name=棕色金属催化剂
+metaitem.catalyst.pink_metal.name=粉色金属催化剂
+metaitem.catalyst.formaldehyde.name=甲醛催化剂
+metaitem.catalyst.solid_acid.name=固体酸催化剂
+metaitem.catalyst.infinity_mutation.name=无尽突变催化剂
+metaitem.catalyst.platinum_group.name=铂系金属催化剂
+metaitem.catalyst.plastic_polymer.name=塑料聚合物催化剂
+metaitem.catalyst.rubber_polymer.name=橡胶聚合物催化剂
+metaitem.catalyst.adhesion_promoter.name=粘合促进催化剂
+metaitem.catalyst.indium.name=铟萃取催化剂
+metaitem.catalyst.radioactivity.name=放射性催化剂
+metaitem.catalyst.rare_earth.name=稀土纯化催化剂
+metaitem.catalyst.naquadah.name=硅岩催化剂
+metaitem.catalyst.raw_intelligence.name=原生智能催化剂
+metaitem.catalyst.ultimate_plastic.name=终极增塑催化剂
+metaitem.catalyst.biological_intelligence.name=生物智能催化剂
+metaitem.catalyst.temporal_harmony.name=时间谐波催化剂
+metaitem.catalyst.flawless_water.name=超净水催化剂
+metaitem.catalyst.photoelectronic.name=光电物质催化剂
+metaitem.catalyst.particle_acceleration.name=粒子加速催化剂
+metaitem.catalyst.synchrotron_capable.name=同步加速催化剂
+
 ##  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
 metaitem.circuit.gooware_processor.tooltip=粘稠的有机浆液附着于表面/n§2ZPM级电路
@@ -3427,6 +3457,7 @@ recipemap.dimensionally_transcendent_neutronium_forge_transmutation_mode.name=�
 recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=等离子聚合超区段
 recipemap.dimensionally_transcendent_neutronium_forge_collision_mode.name=对撞加速超区段
 recipemap.electric_implosion_compressor.name=电动聚爆压缩机
+recipemap.large_chemical_complex.name=大型化工复合体
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

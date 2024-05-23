@@ -491,6 +491,35 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem GENERAL_CIRCUIT_OpV;
     public static MetaItem<?>.MetaValueItem GENERAL_CIRCUIT_MAX;
 
+    //  Catalysts
+    public static MetaItem<?>.MetaValueItem CATALYST_BASE;
+    public static MetaItem<?>.MetaValueItem CATALYST_GREEN_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_RED_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_YELLOW_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_BLUE_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_ORANGE_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_PURPLE_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_BROWN_METAL;
+    public static MetaItem<?>.MetaValueItem CATALYST_FORMALDEHYDE;
+    public static MetaItem<?>.MetaValueItem CATALYST_SOLID_ACID;
+    public static MetaItem<?>.MetaValueItem CATALYST_INFINITY_MUTATION;
+    public static MetaItem<?>.MetaValueItem CATALYST_PLATINUM_GROUP;
+    public static MetaItem<?>.MetaValueItem CATALYST_PLASTIC_POLYMER;
+    public static MetaItem<?>.MetaValueItem CATALYST_RUBBER_POLYMER;
+    public static MetaItem<?>.MetaValueItem CATALYST_ADHESION_PROMOTER;
+    public static MetaItem<?>.MetaValueItem CATALYST_INDIUM;
+    public static MetaItem<?>.MetaValueItem CATALYST_RADIOACTIVITY;
+    public static MetaItem<?>.MetaValueItem CATALYST_RARE_EARTH;
+    public static MetaItem<?>.MetaValueItem CATALYST_NAQUADAH;
+    public static MetaItem<?>.MetaValueItem CATALYST_RAW_INTELLIGENCE;
+    public static MetaItem<?>.MetaValueItem CATALYST_ULTIMATE_PLASTIC;
+    public static MetaItem<?>.MetaValueItem CATALYST_BIOLOGICAL_INTELLIGENCE;
+    public static MetaItem<?>.MetaValueItem CATALYST_TEMPORAL_HARMONY;
+    public static MetaItem<?>.MetaValueItem CATALYST_FLAWLESS_WATER;
+    public static MetaItem<?>.MetaValueItem CATALYST_PHOTOELECTRONIC;
+    public static MetaItem<?>.MetaValueItem CATALYST_PARTICLE_ACCELERATION;
+    public static MetaItem<?>.MetaValueItem CATALYST_SYNCHROTRON_CAPABLE;
+
     //  Debug Items
     public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
 

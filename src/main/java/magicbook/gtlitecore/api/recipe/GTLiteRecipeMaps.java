@@ -2192,5 +2192,14 @@ public class GTLiteRecipeMaps {
                     .hidden() // Hidden same recipes in Dimensional Oscillator.
                     .buildAndRegister());
 
+    @ZenProperty
+    public static final RecipeMap<SimpleRecipeBuilder> LARGE_CHEMICAL_COMPLEX_RECIPES = new RecipeMapLargeChemicalComplex<>("large_chemical_complex", 8, 8, 8, 8, new SimpleRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.CIRCULAR)
+            .setSlotOverlay(false, false, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(false, true, GuiTextures.MOLECULAR_OVERLAY_4)
+            .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)
+            .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
+            .setSound(GTSoundEvents.CHEMICAL_REACTOR);
+
     public GTLiteRecipeMaps() {}
 }
