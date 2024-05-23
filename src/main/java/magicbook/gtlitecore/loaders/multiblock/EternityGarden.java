@@ -12,6 +12,7 @@ public class EternityGarden {
 
     public static void init() {
 
+        /*
         ETERNITY_GARDEN_RECIPES.recipeBuilder()
                 .input(SUPERSOLID_SPACETIME_CONTINUUM)
                 .input(CHARGED_HYPERCUBE)
@@ -44,5 +45,6 @@ public class EternityGarden {
                 .EUt((int) V[MAX])
                 .duration(200)
                 .buildAndRegister();
+         */
     }
 }
