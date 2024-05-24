@@ -65,6 +65,9 @@ tile.structure_casing.naquadah_gearbox_casing.name=硅岩齿轮箱外壳
 tile.structure_casing.hattrium_casing.name=防冻提布莉姆合金机器外壳
 tile.structure_casing.circulative_cooling_casing.name=环流冷却机械方块
 tile.structure_casing.duraluminium_alloy_casing.name=洁净硬铝合金-65A机器外壳
+tile.structure_casing.polybenzimidazole_casing.name=化学惰性聚苯并咪唑机器外壳
+
+tile.support_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -324,6 +327,9 @@ tile.implosion_coil.transcendent_metal.name=超时空金属聚爆缓冲线圈
 tile.implosion_coil.transcendent_metal.tooltip=传奇缓冲组件
 tile.implosion_coil.eternity.name=永恒聚爆缓冲线圈
 tile.implosion_coil.eternity.tooltip=终焉缓冲组件
+
+tile.large_chemical_complex_casing.chemical_active_catalytic_framework_casing.name=化学活性催化框架外壳
+tile.large_chemical_complex_casing.chemical_active_catalytic_framework_casing.tooltip=100%%化学活性激发
 
 #  Items
 
@@ -2006,6 +2012,11 @@ gtlitecore.machine.electric_implosion_compressor.tooltip.2=爆炸就是艺术。
 gtlitecore.machine.electric_implosion_compressor.tooltip.3=拥有普通聚爆压缩机的全部配方，不需要使用爆炸物。
 gtlitecore.machine.electric_implosion_compressor.tooltip.4=根据§6聚爆缓冲线圈§7获得并行，所有线圈必须保持一致。
 gtlitecore.machine.electric_implosion_compressor.tooltip.5=最大并行数：§e4^(线圈等级-1)§7
+
+gtlitecore.machine.large_chemical_complex.name=大型化工复合体
+
+gtlitecore.machine.catalyst_hatch.name=催化剂仓
+gtlitecore.machine.large_chemical_complex.catalyst_hatch.only=仅能放入催化剂
 
 gtlitecore.machine.large_rock_breaker.name=大型碎岩塔
 

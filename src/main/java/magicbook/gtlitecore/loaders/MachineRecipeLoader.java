@@ -2736,6 +2736,18 @@ public class MachineRecipeLoader {
                 'A', new UnificationEntry(plate, Lafium),
                 'P', new UnificationEntry(pipeNormalFluid, Lafium),
                 'F', new UnificationEntry(frameGt, Lafium));
+
+        //  Polybenzimidazole Casing
+        createCasingRecipe("polybenzimidazole_casing",
+                GTLiteMetaBlocks.STRUCTURE_CASING,
+                BlockStructureCasing.StructureCasingType.POLYBENZIMIDAZOLE_CASING,
+                Polybenzimidazole);
+
+        //  Hastelloy-K243 Casing
+        createCasingRecipe("hastelloy_k243_casing",
+                GTLiteMetaBlocks.SUPPORT_CASING,
+                BlockSupportCasing.SupportCasingType.HASTELLOY_K243_CASING,
+                HastelloyK243);
     }
 
     private static void HighEnergyPhysicsCasings() {

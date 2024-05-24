@@ -95,6 +95,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/duraluminium_alloy_casing"
         }
+      },
+      "polybenzimidazole_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/polybenzimidazole_casing"
+        }
       }
     }
   }

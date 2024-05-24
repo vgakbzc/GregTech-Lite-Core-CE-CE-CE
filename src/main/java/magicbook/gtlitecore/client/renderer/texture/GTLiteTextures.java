@@ -152,6 +152,7 @@ public class GTLiteTextures {
     public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_65536x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.65536x");
     public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_262144x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.262144x");
     public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY_1048576x = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch.1048576x");
+    public static final GTLiteOverlayRenderer MULTIPART_CATALYST_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_catalyst_hatch");
 
     //  Simple Overlay Renderer
     public static final SimpleOverlayRenderer QC_EMPTY_COMPONENT_OVERLAY = new SimpleOverlayRenderer("overlay/machine/quantum_computer/empty");

@@ -14,6 +14,7 @@ import magicbook.gtlitecore.api.utils.ServerSupportI18n;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GTLiteBehaviorAddition;
+//import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
 import magicbook.gtlitecore.loaders.MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
@@ -79,6 +80,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.METAL_CASING);
         registry.register(GTLiteMetaBlocks.MACHINE_CASING);
         registry.register(GTLiteMetaBlocks.STRUCTURE_CASING);
+        registry.register(GTLiteMetaBlocks.SUPPORT_CASING);
         registry.register(GTLiteMetaBlocks.BOILER_CASING);
         registry.register(GTLiteMetaBlocks.UNIQUE_CASING);
         registry.register(GTLiteMetaBlocks.FUSION_CASING);
@@ -104,6 +106,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING);
         registry.register(GTLiteMetaBlocks.GRAVITON_CASING);
         registry.register(GTLiteMetaBlocks.IMPLOSION_COIL);
+        registry.register(GTLiteMetaBlocks.LARGE_CHEMICAL_COMPLEX_CASING);
     }
 
     /**
@@ -121,6 +124,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.METAL_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.MACHINE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.STRUCTURE_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.SUPPORT_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.BOILER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.UNIQUE_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.FUSION_CASING, VariantItemBlock::new));
@@ -146,6 +150,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.QUANTUM_COMPUTER_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.GRAVITON_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.IMPLOSION_COIL, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.LARGE_CHEMICAL_COMPLEX_CASING, VariantItemBlock::new));
 
         if (GTLiteConfigHolder.compats.enableDataItemRenderer) {
             GTLiteLog.logger.info("Registering Behavior Additions of GregTech...");
@@ -240,6 +245,9 @@ public class CommonProxy {
         PCBFactoryProperty.registerPCBFactoryTier(2, "2");
         PCBFactoryProperty.registerPCBFactoryTier(3, "3");
         PCBFactoryBioUpgradeProperty.registerPCBFactoryBioUpgradeTier(1, "");
+
+        //GTLiteLog.logger.info("Add Catalyst to Large Chemical Complex...");
+        //MetaTileEntityLargeChemicalComplex.CatalystWorkableHandler.addCatalyst();
 
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
         RecipeManager.init();

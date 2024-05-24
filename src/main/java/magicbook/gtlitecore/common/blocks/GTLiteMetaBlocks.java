@@ -16,6 +16,7 @@ public class GTLiteMetaBlocks {
     public static BlockMetalCasing METAL_CASING;
     public static BlockMachineCasing MACHINE_CASING;
     public static BlockStructureCasing STRUCTURE_CASING;
+    public static BlockSupportCasing SUPPORT_CASING;
     public static BlockBoilerCasing BOILER_CASING;
     public static BlockUniqueCasing UNIQUE_CASING;
     public static BlockFusionCasing FUSION_CASING;
@@ -41,6 +42,7 @@ public class GTLiteMetaBlocks {
     public static BlockQuantumComputerCasing QUANTUM_COMPUTER_CASING;
     public static BlockGravitonCasing GRAVITON_CASING;
     public static BlockImplosionCoil IMPLOSION_COIL;
+    public static BlockLargeChemicalComplexCasing LARGE_CHEMICAL_COMPLEX_CASING;
 
     private GTLiteMetaBlocks() {}
 
@@ -60,6 +62,10 @@ public class GTLiteMetaBlocks {
         STRUCTURE_CASING = new BlockStructureCasing();
         STRUCTURE_CASING.setRegistryName("structure_casing");
         STRUCTURE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        SUPPORT_CASING = new BlockSupportCasing();
+        SUPPORT_CASING.setRegistryName("support_casing");
+        SUPPORT_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
 
         BOILER_CASING = new BlockBoilerCasing();
         BOILER_CASING.setRegistryName("boiler_casing");
@@ -160,6 +166,10 @@ public class GTLiteMetaBlocks {
         IMPLOSION_COIL = new BlockImplosionCoil();
         IMPLOSION_COIL.setRegistryName("implosion_coil");
         IMPLOSION_COIL.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        LARGE_CHEMICAL_COMPLEX_CASING = new BlockLargeChemicalComplexCasing();
+        LARGE_CHEMICAL_COMPLEX_CASING.setRegistryName("large_chemical_complex_casing");
+        LARGE_CHEMICAL_COMPLEX_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -168,6 +178,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(METAL_CASING);
         registerItemModel(MACHINE_CASING);
         registerItemModel(STRUCTURE_CASING);
+        registerItemModel(SUPPORT_CASING);
         registerItemModel(BOILER_CASING);
         registerItemModel(UNIQUE_CASING);
         registerItemModel(FUSION_CASING);
@@ -189,6 +200,7 @@ public class GTLiteMetaBlocks {
         registerItemModel(QUANTUM_COMPUTER_CASING);
         registerItemModel(GRAVITON_CASING);
         registerItemModel(IMPLOSION_COIL);
+        registerItemModel(LARGE_CHEMICAL_COMPLEX_CASING);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();

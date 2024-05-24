@@ -105,6 +105,7 @@ public class GTLiteMetaTileEntities {
     public static final MetaTileEntityWirelessEnergyHatch[] WIRELESS_OUTPUT_ENERGY_HATCH_262144A = new MetaTileEntityWirelessEnergyHatch[15];
     public static final MetaTileEntityWirelessEnergyHatch[] WIRELESS_INPUT_ENERGY_HATCH_1048576A = new MetaTileEntityWirelessEnergyHatch[15];
     public static final MetaTileEntityWirelessEnergyHatch[] WIRELESS_OUTPUT_ENERGY_HATCH_1048576A = new MetaTileEntityWirelessEnergyHatch[15];
+    public static MetaTileEntityCatalystHatch CATALYST_HATCH;
 
     public static MetaTileEntityQCComponentEmpty QC_EMPTY_COMPONENT;
     public static final MetaTileEntityQCComponentComputation[] QC_COMPUTATION_COMPONENT = new MetaTileEntityQCComponentComputation[2];
@@ -442,6 +443,8 @@ public class GTLiteMetaTileEntities {
             WIRELESS_OUTPUT_ENERGY_HATCH_262144A[i]  = registerPartMetaTileEntity(78 + 300 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_262144a."  + tier), i, 262144,  true));
             WIRELESS_OUTPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(78 + 315 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1048576a." + tier), i, 1048576, true));
         }
+
+        CATALYST_HATCH = registerPartMetaTileEntity(450, new MetaTileEntityCatalystHatch(gtliteId("catalyst_hatch")));
 
         //  Quantum Computer Components
         QC_EMPTY_COMPONENT                        = registerPartMetaTileEntity(500, new MetaTileEntityQCComponentEmpty(      gtliteId("qc_empty_component")));
