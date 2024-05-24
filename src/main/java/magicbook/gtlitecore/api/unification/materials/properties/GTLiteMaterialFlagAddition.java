@@ -79,6 +79,7 @@ public class GTLiteMaterialFlagAddition {
         HastelloyC276.addFlags(GENERATE_DOUBLE_PLATE);
         Ruthenium.addFlags(GENERATE_DOUBLE_PLATE);
         IndiumGalliumPhosphide.addFlags(GENERATE_DOUBLE_PLATE);
+        NaquadahEnriched.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);

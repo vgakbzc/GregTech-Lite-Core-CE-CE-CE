@@ -14,6 +14,7 @@ import static gregtech.api.unification.material.Materials.SolderingAlloy;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.GTLiteValues.tierList;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SPACE_ELEVATOR_ASSEMBLING_MODULE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.CHARGED_HYPERCUBE;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.CRUDE_HYPERCUBE;
@@ -29,7 +30,7 @@ public class WirelessEnergyHatches {
             //  T1
 
             //  2A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(1)
                     .input(ENERGY_INPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -45,14 +46,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(ACTIVE_TRANSFORMER.getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  2A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(1)
                     .input(ENERGY_OUTPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -68,14 +66,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(ACTIVE_TRANSFORMER.getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  4A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(2)
                     .input(ENERGY_INPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -91,14 +86,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_4A[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH[final_i].getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  4A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(2)
                     .input(ENERGY_OUTPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -114,14 +106,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_4A[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH[final_i].getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  16A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(3)
                     .input(ENERGY_INPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -137,14 +126,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_16A[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_4A[final_i].getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  16A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(3)
                     .input(ENERGY_OUTPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -160,14 +146,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_16A[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_4A[final_i].getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  64A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(4)
                     .input(ENERGY_INPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -183,14 +166,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_64A[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_16A[final_i].getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  64A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(4)
                     .input(ENERGY_OUTPUT_HATCH[i])
                     .inputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.FUSION_COIL))
@@ -206,16 +186,13 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_64A[i])
                     .EUt(30000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_16A[final_i].getStackForm())
-                            .CWUt(256)
-                            .EUt(VA[UIV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  T2
 
             //  256A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(5)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -232,14 +209,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_256A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_64A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  256A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(5)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -256,14 +230,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_256A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_64A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  1024A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(6)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -280,14 +251,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_1024A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_256A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  1024A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(6)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -304,14 +272,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_1024A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_256A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  4096A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(7)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -328,14 +293,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_4096A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_1024A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  4096A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(7)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -352,14 +314,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_4096A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_1024A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  16384A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(8)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -376,14 +335,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_16384A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_4096A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  16384A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(8)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_64A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK2))
@@ -400,16 +356,13 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_16384A[i])
                     .EUt(100000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_4096A[final_i].getStackForm())
-                            .CWUt(512)
-                            .EUt(VA[UXV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  T3
 
             //  65536A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(9)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_256A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
@@ -426,14 +379,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_65536A[i])
                     .EUt(2000000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_16384A[final_i].getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[OpV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  65536A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(9)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_256A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
@@ -450,14 +400,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_65536A[i])
                     .EUt(2000000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_16384A[final_i].getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[OpV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  262144A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(10)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_256A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
@@ -474,14 +421,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_262144A[i])
                     .EUt(2000000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_65536A[final_i].getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[OpV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  262144A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(10)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_256A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
@@ -498,14 +442,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_262144A[i])
                     .EUt(2000000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_65536A[final_i].getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[OpV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  1048576A Energy Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(11)
                     .input(WIRELESS_INPUT_ENERGY_HATCH_256A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
@@ -522,14 +463,11 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_INPUT_ENERGY_HATCH_1048576A[i])
                     .EUt(2000000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_INPUT_ENERGY_HATCH_262144A[final_i].getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[OpV]))
+                    .tier(5)
                     .buildAndRegister();
 
             //  1048576A Dynamo Hatch
-            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+            SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
                     .circuitMeta(11)
                     .input(WIRELESS_OUTPUT_ENERGY_HATCH_256A[i])
                     .inputs(GTLiteMetaBlocks.FUSION_CASING.getItemVariant(magicbook.gtlitecore.common.blocks.BlockFusionCasing.FusionCasingType.FUSION_COIL_MK3))
@@ -546,10 +484,7 @@ public class WirelessEnergyHatches {
                     .output(WIRELESS_OUTPUT_ENERGY_HATCH_1048576A[i])
                     .EUt(2000000000)
                     .duration(200)
-                    .stationResearch(b -> b
-                            .researchStack(WIRELESS_OUTPUT_ENERGY_HATCH_262144A[final_i].getStackForm())
-                            .CWUt(1024)
-                            .EUt(VA[OpV]))
+                    .tier(5)
                     .buildAndRegister();
         }
     }

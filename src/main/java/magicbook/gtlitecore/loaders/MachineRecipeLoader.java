@@ -2229,6 +2229,7 @@ public class MachineRecipeLoader {
         DysonSwarmCasings();
         NicollDysonBeamerCasings();
         ImplosionCoils();
+        LargeChemicalComplexCasing();
     }
 
     private static void MetalCasings() {
@@ -4734,6 +4735,17 @@ public class MachineRecipeLoader {
                 .duration(20 * SECOND)
                 .tier(8) // OpV
                 .buildAndRegister();
+    }
+
+    private static void LargeChemicalComplexCasing() {
+
+        //  Chemical Active Catalytic Framework Casing
+        createCasingRecipe("chemical_active_catalytic_framework_casing",
+                GTLiteMetaBlocks.LARGE_CHEMICAL_COMPLEX_CASING,
+                BlockLargeChemicalComplexCasing.LCCCasingType.CHEMICAL_ACTIVE_CATALYTIC_FRAMEWORK_CASING,
+                NaquadahEnriched,
+                IncoloyMA813,
+                Duranium);
     }
 
     /**
