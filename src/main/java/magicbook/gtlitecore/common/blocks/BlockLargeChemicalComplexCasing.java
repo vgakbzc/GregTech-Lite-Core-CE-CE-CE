@@ -34,7 +34,8 @@ public class BlockLargeChemicalComplexCasing extends VariantBlock<BlockLargeChem
     }
 
     public enum LCCCasingType implements IStringSerializable {
-        CHEMICAL_ACTIVE_CATALYTIC_FRAMEWORK_CASING("chemical_active_catalytic_framework_casing");
+        CHEMICAL_ACTIVE_CATALYTIC_FRAMEWORK_CASING("chemical_active_catalytic_framework_casing"),
+        CATALYTIC_BED_SUPPORT_FRAMEWORK_CASING("catalytic_bed_support_framework_casing");
 
         private final String name;
 

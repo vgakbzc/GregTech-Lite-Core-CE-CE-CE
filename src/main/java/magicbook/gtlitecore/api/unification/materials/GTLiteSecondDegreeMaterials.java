@@ -1024,7 +1024,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(10800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 318)
                         .vacuumStats(VA[LuV], 109))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .build();
 
         //  12077 Duraluminium Alloy

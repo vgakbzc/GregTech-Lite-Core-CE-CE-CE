@@ -330,6 +330,8 @@ tile.implosion_coil.eternity.tooltip=终焉缓冲组件
 
 tile.large_chemical_complex_casing.chemical_active_catalytic_framework_casing.name=化学活性催化框架外壳
 tile.large_chemical_complex_casing.chemical_active_catalytic_framework_casing.tooltip=100%%化学活性激发
+tile.large_chemical_complex_casing.catalytic_bed_support_framework_casing.name=催化床承载框架外壳
+tile.large_chemical_complex_casing.catalytic_bed_support_framework_casing.tooltip=多重催化床存储器
 
 #  Items
 
@@ -2014,6 +2016,8 @@ gtlitecore.machine.electric_implosion_compressor.tooltip.4=根据§6聚爆缓冲
 gtlitecore.machine.electric_implosion_compressor.tooltip.5=最大并行数：§e4^(线圈等级-1)§7
 
 gtlitecore.machine.large_chemical_complex.name=大型化工复合体
+
+gtlitecore.machine.large_chemical_complex.tier=复合体等级：%s
 
 gtlitecore.machine.catalyst_hatch.name=催化剂仓
 gtlitecore.machine.large_chemical_complex.catalyst_hatch.only=仅能放入催化剂

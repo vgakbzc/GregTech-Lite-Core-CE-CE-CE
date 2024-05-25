@@ -2193,7 +2193,7 @@ public class GTLiteRecipeMaps {
                     .buildAndRegister());
 
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> LARGE_CHEMICAL_COMPLEX_RECIPES = new RecipeMapLargeChemicalComplex<>("large_chemical_complex", 8, 8, 8, 8, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<LargeChemicalComplexRecipeBuilder> LARGE_CHEMICAL_COMPLEX_RECIPES = new RecipeMapLargeChemicalComplex<>("large_chemical_complex", 8, 8, 8, 8, new LargeChemicalComplexRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MIXER, ProgressWidget.MoveType.CIRCULAR)
             .setSlotOverlay(false, false, GuiTextures.MOLECULAR_OVERLAY_1)
             .setSlotOverlay(false, true, GuiTextures.MOLECULAR_OVERLAY_4)

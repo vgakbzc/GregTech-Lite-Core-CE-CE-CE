@@ -7,6 +7,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/chemical_active_catalytic_framework_casing"
         }
+      },
+      "catalytic_bed_support_framework_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/catalytic_bed_support_framework_casing"
+        }
       }
     }
   }

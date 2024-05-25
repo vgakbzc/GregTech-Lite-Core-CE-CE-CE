@@ -4746,6 +4746,14 @@ public class MachineRecipeLoader {
                 NaquadahEnriched,
                 IncoloyMA813,
                 Duranium);
+
+        //  Catalytic Bed Support Framework Casing
+        createCasingRecipe("catalytic_bed_support_framework_casing",
+                GTLiteMetaBlocks.LARGE_CHEMICAL_COMPLEX_CASING,
+                BlockLargeChemicalComplexCasing.LCCCasingType.CATALYTIC_BED_SUPPORT_FRAMEWORK_CASING,
+                Hattrium,
+                Stellite,
+                HastelloyN);
     }
 
     /**
