@@ -2269,6 +2269,14 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Potassium, 1, Rhenium, 1, Oxygen, 4)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11257 Zirconium Tetrachloride
+        ZirconiumTetrachloride = new Material.Builder(getID(), gregtechId("zirconium_tetrachloride"))
+                .dust()
+                .color(Zirconium.getMaterialRGB() + Chlorine.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Zirconium, 1, Chlorine, 4)
+                .build();
     }
 
 }

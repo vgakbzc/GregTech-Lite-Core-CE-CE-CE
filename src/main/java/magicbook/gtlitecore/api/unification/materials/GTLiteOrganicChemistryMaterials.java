@@ -13,6 +13,7 @@ import static gregtech.api.util.GTUtility.gregtechId;
 import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.REAGENT;
 
 /**
  * Organic Chemistry Materials
@@ -1565,6 +1566,80 @@ public class GTLiteOrganicChemistryMaterials {
                 .liquid()
                 .color(0x5B59C7)
                 .components(HydrogenPeroxide, 1, SulfuricAcid, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13188 Phillips Chromium Catalyst
+        PhillipsChromiumCatalyst = new Material.Builder(getID(), gregtechId("phillips_chromium_catalyst"))
+                .dust()
+                .color(0x8CA4B9)
+                .iconSet(REAGENT)
+                .components(SilicaGel, 1, ChromiumTrioxide, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13189 Cobalt Acetate
+        CobaltAcetate = new Material.Builder(getID(), gregtechId("cobalt_acetate"))
+                .dust()
+                .color(0xED915C)
+                .iconSet(ROUGH)
+                .components(Cobalt, 1, Carbon, 4, Hydrogen, 6, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Co(C2H3O2)2", true);
+
+        //  13190 Triethylaluminum
+        Triethylaluminum = new Material.Builder(getID(), gregtechId("triethylaluminum"))
+                .liquid()
+                .color(0x32A0AA)
+                .iconSet(SHINY)
+                .components(Aluminium, 2, Carbon, 12, Hydrogen, 30)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Al2(C2H5)6", true);
+
+        //  13191 Ziegler-Natta Catalyst
+        ZieglerNattaCatalyst = new Material.Builder(getID(), gregtechId("ziegler_natta_catalyst"))
+                .dust()
+                .color(0xD063A4)
+                .iconSet(REAGENT)
+                .components(Triethylaluminum, 1, TitaniumTetrachloride, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13192 Zirconocene Dichloride
+        ZirconoceneDichloride = new Material.Builder(getID(), gregtechId("zirconocene_dichloride"))
+                .dust()
+                .color(0x2F9C5B)
+                .iconSet(DULL)
+                .components(Zirconium, 1, Carbon, 10, Hydrogen, 10, Chlorine, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Zr(C5H5)2Cl2", true);
+
+        //  13193 Sodium Cyclopentadiene
+        SodiumCyclopentadiene = new Material.Builder(getID(), gregtechId("sodium_cyclopentadiene"))
+                .liquid()
+                .color(0x469AD0)
+                .components(Sodium, 1, Cyclopentadiene, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13194 Methylaluminoxane
+        Methylaluminoxane = new Material.Builder(getID(), gregtechId("methylaluminoxane"))
+                .dust()
+                .color(0x79FFC9)
+                .iconSet(DULL)
+                .components(Aluminium, 1, Carbon, 1, Hydrogen, 3, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13195 Kaminsky Catalyst
+        KaminskyCatalyst = new Material.Builder(getID(), gregtechId("kaminsky_catalyst"))
+                .dust()
+                .color(0xEC386A)
+                .iconSet(REAGENT)
+                .components(ZirconoceneDichloride, 1, Methylaluminoxane, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 

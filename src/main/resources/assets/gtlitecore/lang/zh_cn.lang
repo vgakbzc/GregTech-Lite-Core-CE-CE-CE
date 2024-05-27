@@ -2917,6 +2917,7 @@ gregtech.material.potassium_pertechnetate=高锝酸钾
 gregtech.material.potassium_nonahydridorhenate=九氢合铼酸钾
 gregtech.material.potassium_nonahydridotechnetate=九氢合锝酸钾
 gregtech.material.potassium_perrhenate=高铼酸钾
+gregtech.material.zirconium_tetrachloride=四氯化锆
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3187,6 +3188,14 @@ gregtech.material.iodobenzoic_acid=间碘苯甲酸
 gregtech.material.tetraethylammonium_bromide=四乙基溴化铵
 gregtech.material.tetraethylammonium_nonahydriorhenidetechnetide=四乙基九氢铼锝化铵
 gregtech.material.piranha_solution=食人鱼洗液
+gregtech.material.phillips_chromium_catalyst=菲利普斯铬催化剂
+gregtech.material.cobalt_acetate=乙酸钴
+gregtech.material.triethylaluminum=三乙基铝
+gregtech.material.ziegler_natta_catalyst=齐格勒-纳塔催化剂
+gregtech.material.zirconocene_dichloride=双环戊二烯二氯化锆
+gregtech.material.sodium_cyclopentadiene=环戊二烯化钠
+gregtech.material.methylaluminoxane=甲基铝氧烷
+gregtech.material.kaminsky_catalyst=卡明斯基催化剂
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子

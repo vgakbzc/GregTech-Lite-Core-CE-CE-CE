@@ -338,6 +338,9 @@ public class GTLiteMaterials {
     public static Material PotassiumNonahydridorhenate;
     public static Material PotassiumNonahydridotechnetate;
     public static Material PotassiumPerrhenate;
+    public static Material ZirconiumTetrachloride;
+    public static Material Methylaluminoxane;
+    public static Material KaminskyCatalyst;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -618,6 +621,12 @@ public class GTLiteMaterials {
     public static Material TetraethylammoniumBromide;
     public static Material TetraethylammoniumNonahydriorhenidetechnetide;
     public static Material PiranhaSolution;
+    public static Material PhillipsChromiumCatalyst;
+    public static Material CobaltAcetate;
+    public static Material Triethylaluminum;
+    public static Material ZieglerNattaCatalyst;
+    public static Material ZirconoceneDichloride;
+    public static Material SodiumCyclopentadiene;
 
     /////////////////////////////
     //  Higher Degree Materials  //
