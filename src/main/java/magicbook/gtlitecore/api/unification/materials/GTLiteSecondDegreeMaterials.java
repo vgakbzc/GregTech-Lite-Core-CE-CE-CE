@@ -114,7 +114,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UHV], 1997)
                         .vacuumStats(VA[LuV], 340))
                 .components(NaquadahAlloy, 10, Rhenium, 5, Naquadria, 4, Gadolinium, 3, Strontium, 2, Polonium, 3, Rutherfordium, 2)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
                 .itemPipeProperties(630, 128)
                 .build();
 
@@ -245,7 +245,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 260))
                 .components(HastelloyN, 8, Naquadria, 4, Samarium, 2, Tungsten, 4, Aluminium, 6, Nickel, 8, Titanium, 4, Carbon, 2, Argon, 2)
                 .fluidPipeProperties(23000, 8000, true, true, true, true)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FRAME, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12016 Inconel-792
@@ -614,7 +614,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(9900, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UV], 800))
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12045 Alkaline Earth Group Alloy
@@ -652,7 +652,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1200))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12048 Refractory Alloy
@@ -996,7 +996,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(10650, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1024)
                         .vacuumStats(VA[ZPM], 338))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FOIL)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_FOIL, GENERATE_FRAME)
                 .build();
 
         //  12075 Incoloy-020
@@ -1053,6 +1053,20 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(6500, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[LuV], 160)
                         .vacuumStats(VA[EV], 480))
+                .build();
+
+        //  12079 Enriched Naquadah Alloy
+        EnrichedNaquadahAlloy = new Material.Builder(getID(), gregtechId("enriched_naquadah_alloy"))
+                .ingot()
+                .fluid()
+                .color(0x160740)
+                .iconSet(METALLIC)
+                .components(NaquadahEnriched, 8, Tritanium, 5, Californium, 3, Ruridit, 2)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .blast(b -> b
+                        .temp(10800, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UV], 500)
+                        .vacuumStats(VA[ZPM], 150))
                 .build();
     }
 

@@ -2005,29 +2005,6 @@ gtlitecore.machine.large_wiremill_array.name=高速线材加工阵列
 gtlitecore.machine.large_wiremill_array.tooltip.1=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.large_wiremill_array.tooltip.2=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
 
-gtlitecore.machine.circulative_cooling_tower.name=环流冷却塔
-gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
-gtlitecore.machine.circulative_cooling_tower.tooltip.2=支持你能想象得到的一切冷却相关配方
-gtlitecore.machine.circulative_cooling_tower.tooltip.3=根据§r环流冷却核心§7等级获得并行与配方时间减免
-gtlitecore.machine.circulative_cooling_tower.tooltip.4=运行§r压缩机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 6)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.5=运行§r真空室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.6=运行§r化学脱水机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.7=运行§r真空干燥炉§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.8=运行§r真空冷冻机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.9=运行§r低温反应室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.10=运行§r大型气体收集器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.11=运行§r等离子冷凝器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
-gtlitecore.machine.circulative_cooling_tower.tooltip.12=运行§r真空干燥炉§7配方时，不受配方温度限制影响。
-gtlitecore.machine.circulative_cooling_tower.tooltip.13=最大并行数：
-gtlitecore.machine.circulative_cooling_tower.tooltip.14=§r压缩机§7模式 -> §e[6 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.15=§r真空室§7模式 -> §e[4 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.16=§r化学脱水机§7模式 ->§e[4 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.17=§r真空干燥炉§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.18=§r真空冷冻机§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r低温反应室§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
-
 gtlitecore.machine.electric_implosion_compressor.name=电动聚爆压缩机
 gtlitecore.machine.electric_implosion_compressor.tooltip.1=机器类型：§e聚爆压缩机§7
 gtlitecore.machine.electric_implosion_compressor.tooltip.2=爆炸就是艺术。
@@ -2068,6 +2045,35 @@ gtlitecore.machine.dimensional_mixer.tooltip.16=§r超声震荡§7模式 -> §e2
 
 gtlitecore.machine.algae_farm.name=藻类农场
 gtlitecore.machine.algae_farm.running=藻类生长中
+
+gtlitecore.machine.mega_blast_furnace.name=巨型电力高炉
+gtlitecore.machine.mega_blast_furnace.tooltip=比相同电压等级的§r电力高炉§7快一倍
+
+gtlitecore.machine.mega_vacuum_freezer.name=巨型真空冷冻机
+gtlitecore.machine.mega_vacuum_freezer.tooltip.1=比相同电压等级的§r真空冷冻机§7快一倍
+
+gtlitecore.machine.circulative_cooling_tower.name=环流冷却塔
+gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
+gtlitecore.machine.circulative_cooling_tower.tooltip.2=支持你能想象得到的一切冷却相关配方
+gtlitecore.machine.circulative_cooling_tower.tooltip.3=根据§r环流冷却核心§7等级获得并行与配方时间减免
+gtlitecore.machine.circulative_cooling_tower.tooltip.4=运行§r压缩机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 6)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.5=运行§r真空室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.6=运行§r化学脱水机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 4)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.7=运行§r真空干燥炉§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.8=运行§r真空冷冻机§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.9=运行§r低温反应室§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.10=运行§r大型气体收集器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.11=运行§r等离子冷凝器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.12=运行§r真空干燥炉§7配方时，不受配方温度限制影响。
+gtlitecore.machine.circulative_cooling_tower.tooltip.13=最大并行数：
+gtlitecore.machine.circulative_cooling_tower.tooltip.14=§r压缩机§7模式 -> §e[6 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.15=§r真空室§7模式 -> §e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.16=§r化学脱水机§7模式 ->§e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.17=§r真空干燥炉§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.18=§r真空冷冻机§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r低温反应室§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
 
 gtlitecore.machine.large_auto_chisel.name=大型自动雕凿机
 
@@ -2991,6 +2997,7 @@ gregtech.material.incoloy_020=耐热铬铁合金-020
 gregtech.material.hattrium=提布莉姆合金
 gregtech.material.duraluminium_alloy=硬铝合金65A
 gregtech.material.artherium_b_47=艾瑟瑞姆合金-B47
+gregtech.material.enriched_naquadah_alloy=富集硅岩合金
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K

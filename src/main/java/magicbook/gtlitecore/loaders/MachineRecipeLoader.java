@@ -45,6 +45,8 @@ import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefi
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_BLAST_FURNACE;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_VACUUM_FREEZER;
 
 public class MachineRecipeLoader {
 
@@ -2209,6 +2211,38 @@ public class MachineRecipeLoader {
                 .EUt(VA[HV])
                 .duration(30 * SECOND)
                 .cleanroom(CleanroomType.STERILE_CLEANROOM)
+                .buildAndRegister();
+
+        //  Mega Blast Furnace
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, ArceusAlloy2B, 4)
+                .input(ELECTRIC_BLAST_FURNACE, 16)
+                .input(circuit, MarkerMaterials.Tier.UV, 16)
+                .input(plateDouble, EnrichedNaquadahAlloy, 4)
+                .input(plateDouble, Trinaquadalloy, 4)
+                .input(gear, TitanSteel, 4)
+                .input(gearSmall, AlkalisGroupAlloy, 16)
+                .input(cableGtQuadruple, Tritanium, 4)
+                .fluidInputs(PlatinumGroupAlloy.getFluid(L * 4))
+                .output(MEGA_BLAST_FURNACE)
+                .EUt(VA[UV])
+                .duration(MINUTE + 30 * SECOND)
+                .buildAndRegister();
+
+        //  Mega Vacuum Freezer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Cinobite, 4)
+                .input(VACUUM_FREEZER, 16)
+                .input(circuit, MarkerMaterials.Tier.UV, 16)
+                .input(plateDouble, Hattrium, 4)
+                .input(plateDouble, TransitionHAlloy, 4)
+                .input(gear, HastelloyX78, 4)
+                .input(gearSmall, Lafium, 16)
+                .input(cableGtQuadruple, Europium, 4)
+                .fluidInputs(Botmium.getFluid(L * 4))
+                .output(MEGA_VACUUM_FREEZER)
+                .EUt(VA[UV])
+                .duration(MINUTE + 30 * SECOND)
                 .buildAndRegister();
     }
 

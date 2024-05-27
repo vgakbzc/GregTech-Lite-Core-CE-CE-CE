@@ -240,12 +240,14 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityTroughTypeOreWasher TROUGH_TYPE_ORE_WASHER;
     public static MetaTileEntityFixedSiftingPlant FIXED_SIFTING_PLANT;
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
-    public static MetaTileEntityCirculativeCoolingTower CIRCULATIVE_COOLING_TOWER;
     public static MetaTileEntityElectricImplosionCompressor ELECTRIC_IMPLOSION_COMPRESSOR;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
     public static MetaTileEntityAlgaeFarm ALGAE_FARM;
+    public static MetaTileEntityMegaBlastFurnace MEGA_BLAST_FURNACE;
+    public static MetaTileEntityMegaVacuumFreezer MEGA_VACUUM_FREEZER;
+    public static MetaTileEntityCirculativeCoolingTower CIRCULATIVE_COOLING_TOWER;
     public static MetaTileEntityLargeAutoChisel LARGE_AUTO_CHISEL;
     public static MetaTileEntityIndustrial3DPrinter INDUSTRIAL_3D_PRINTER;
     public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
@@ -617,7 +619,7 @@ public class GTLiteMetaTileEntities {
         TROUGH_TYPE_ORE_WASHER = registerMultiMetaTileEntity(106, new MetaTileEntityTroughTypeOreWasher(gtliteId("trough_type_ore_washer")));
         FIXED_SIFTING_PLANT = registerMultiMetaTileEntity(107, new MetaTileEntityFixedSiftingPlant(gtliteId("fixed_sifting_plant")));
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
-        CIRCULATIVE_COOLING_TOWER = registerMultiMetaTileEntity(109, new MetaTileEntityCirculativeCoolingTower(gtliteId("circulative_cooling_tower")));
+        //  Free ID: 109
         ELECTRIC_IMPLOSION_COMPRESSOR = registerMultiMetaTileEntity(110, new MetaTileEntityElectricImplosionCompressor(gtliteId("electric_implosion_compressor")));
         //  111 MATERIAL_TRANSMUTATION_ARRAY
         //  112
@@ -630,7 +632,11 @@ public class GTLiteMetaTileEntities {
         //  119
         DIMENSIONAL_MIXER = registerMultiMetaTileEntity(120, new MetaTileEntityDimensionalMixer(gtliteId("dimensional_mixer")));
         ALGAE_FARM = registerMultiMetaTileEntity(121, new MetaTileEntityAlgaeFarm(gtliteId("algae_farm")));
-        //  Free ID: 122-139
+        MEGA_BLAST_FURNACE = registerMultiMetaTileEntity(122, new MetaTileEntityMegaBlastFurnace(gtliteId("mega_blast_furnace")));
+        MEGA_VACUUM_FREEZER = registerMultiMetaTileEntity(123, new MetaTileEntityMegaVacuumFreezer(gtliteId("mega_vacuum_freezer")));
+        //  Free ID: 123-129
+        CIRCULATIVE_COOLING_TOWER = registerMultiMetaTileEntity(130, new MetaTileEntityCirculativeCoolingTower(gtliteId("circulative_cooling_tower")));
+        //  Free ID: 131-139
         if (GTLiteConfigHolder.compats.enableChiselModule) {
             if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
                 LARGE_AUTO_CHISEL = registerMultiMetaTileEntity(140, new MetaTileEntityLargeAutoChisel(gtliteId("large_auto_chisel")));
