@@ -1,6 +1,10 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
+import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Material;
+import net.minecraft.item.ItemStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -344,34 +348,98 @@ public class LargeChemicalComplex {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        //  ULV
+        createCatalystBedRecipe(ULV, CATALYST_BED_ULV,
+                Copper,
+                OreDictUnifier.get(dust, TinChloride, 3),
+                OreDictUnifier.get(dust, SodiumOxide, 2));
 
-        //  LV
+        createCatalystBedRecipe(LV, CATALYST_BED_LV,
+                Bronze,
+                OreDictUnifier.get(dust, CobaltOxide, 2),
+                OreDictUnifier.get(dust, CopperChloride, 3));
 
-        //  MV
+        createCatalystBedRecipe(MV, CATALYST_BED_MV,
+                Steel,
+                OreDictUnifier.get(dust, ChromiumTrioxide, 4),
+                OreDictUnifier.get(dust, LithiumFluoride, 2));
 
-        //  HV
+        createCatalystBedRecipe(HV, CATALYST_BED_HV,
+                StainlessSteel,
+                OreDictUnifier.get(dust, Alumina, 5),
+                OreDictUnifier.get(dust, BoronTrioxide, 5));
 
-        //  EV
+        createCatalystBedRecipe(EV, CATALYST_BED_EV,
+                Titanium,
+                OreDictUnifier.get(dust, RedPhosphorus),
+                OreDictUnifier.get(dust, SeleniumDioxide, 3));
 
-        //  IV
+        createCatalystBedRecipe(IV, CATALYST_BED_IV,
+                TungstenSteel,
+                OreDictUnifier.get(dust, GermaniumDioxide, 3),
+                OreDictUnifier.get(dust, ThalliumCopperChloride, 5));
 
-        //  LuV
+        createCatalystBedRecipe(LuV, CATALYST_BED_LuV,
+                NiobiumTitanium,
+                OreDictUnifier.get(dust, StrontiumDichloride, 3),
+                OreDictUnifier.get(dust, BlackPhosphorus));
 
-        //  ZPM
+        createCatalystBedRecipe(ZPM, CATALYST_BED_ZPM,
+                Iridium,
+                OreDictUnifier.get(dust, HRAMagnesium),
+                OreDictUnifier.get(dust, MagnesiumBromide, 3));
 
-        //  UV
+        createCatalystBedRecipe(UV, CATALYST_BED_UV,
+                Naquadah,
+                OreDictUnifier.get(dust, TriniumTitanide, 3),
+                OreDictUnifier.get(dust, Picotite, 7));
 
-        //  UHV
+        createCatalystBedRecipe(UHV, CATALYST_BED_UHV,
+                Duranium,
+                OreDictUnifier.get(dust, CadmiumSelenide, 2),
+                OreDictUnifier.get(dust, BluePhosphorus));
 
-        //  UEV
+        createCatalystBedRecipe(UEV, CATALYST_BED_UEV,
+                Lafium,
+                OreDictUnifier.get(dust, BismuthChalcogenide, 5),
+                OreDictUnifier.get(dust, CubicHeterodiamond));
 
-        //  UIV
+        createCatalystBedRecipe(UIV, CATALYST_BED_UIV,
+                CrystalMatrix,
+                OreDictUnifier.get(dust, LithiumTrifluoromethansulphonate, 9),
+                OreDictUnifier.get(dust, NeptuniumAluminide, 4));
 
-        //  UXV
+        createCatalystBedRecipe(UXV, CATALYST_BED_UXV,
+                QuantumchromodynamicallyConfinedMatter,
+                OreDictUnifier.get(dust, LanthanumFullereneMixture, 4),
+                OreDictUnifier.get(dust, PalladiumFullereneMatrix));
 
-        //  OpV
+        createCatalystBedRecipe(OpV, CATALYST_BED_OpV,
+                Fatalium,
+                OreDictUnifier.get(dust, HassiumTetrachloride, 5),
+                OreDictUnifier.get(dust, Bisethylenedithiotetraselenafulvalene, 3));
 
-        //  MAX
+        //  TODO Find MAX Pipe Material
+        //createCatalystBedRecipe(MAX, CATALYST_BED_MAX,
+        //        Tritanium,
+        //        OreDictUnifier.get(dust, TetraethylammoniumNonahydriorhenidetechnetide, 2),
+        //        OreDictUnifier.get(dust, Hexanitrohexaaxaisowurtzitane));
     }
+
+    private static void createCatalystBedRecipe(int tier,
+                                                MetaItem<?>.MetaValueItem catalystBed,
+                                                Material pipeMaterial,
+                                                ItemStack catalystA,
+                                                ItemStack catalystB) {
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(CATALYST_BED_BASE)
+                .input(pipeTinyFluid, pipeMaterial, 2)
+                .inputs(catalystA)
+                .inputs(catalystB)
+                .fluidInputs(Nitrogen.getFluid(1000))
+                .outputs(catalystBed.getStackForm())
+                .EUt(VA[tier])
+                .duration((int) (2.5 * (tier + 1) * SECOND))
+                .buildAndRegister();
+    }
+
 }

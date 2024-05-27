@@ -4,7 +4,7 @@ import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
+import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
@@ -150,6 +150,7 @@ public class GTLiteThirdDegreeMaterials {
                 .color(0x931C24)
                 .iconSet(DIAMOND)
                 .components(Iron, 1, Chrome, 2, Oxygen, 4)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
                 .build();
     }
     
