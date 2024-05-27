@@ -775,6 +775,11 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         HYPERSTABLE_SELF_HEALING_ADHESIVE = this.addItem(344, "hyperstable_self_healing_adhesive");
         SUPERSOLID_SPACETIME_CONTINUUM = this.addItem(345, "supersolid_spacetime_continuum");
 
+        //  ID 346: Astral Array
+        ASTRAL_ARRAY = this.addItem(346, "astral_array")
+                .addComponents(new TooltipBehavior((lines) -> lines.add(translatedAnimatedText("metaitem.astral_array.desc",
+                        1, 400, AQUA + BOLD, BLUE + BOLD).get())));
+
         /* ------------------------------------------------------------------ High Energy Items ------------------------------------------------------------------- */
 
         //  ID 350-361: Containment Cell/Units

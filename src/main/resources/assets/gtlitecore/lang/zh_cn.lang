@@ -973,6 +973,8 @@ metaitem.hyperstable_self_healing_adhesive.name=超稳态自修复粘合剂
 metaitem.hyperstable_self_healing_adhesive.tooltip=选择性完全粘合，即使在撕裂或损坏时也有效
 metaitem.supersolid_spacetime_continuum.name=超固态时空连续体
 metaitem.supersolid_spacetime_continuum.tooltip=如液体般流动，不反射任何射线与粒子，完美地将其吸收与传递
+metaitem.astral_array.name=星阵
+metaitem.astral_array.desc=时空飘忽不定
 
 ##  Ore Prefix Items
 item.material.oreprefix.milled=碾磨%s矿石粉
