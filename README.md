@@ -78,3 +78,4 @@ Improve difficulty and QoL of GregTech CEu, based on GregTech 6, Gregicality Leg
 * Some textures and multiblocks from [GoodGenerator](https://github.com/GTNewHorizons/GoodGenerator).
 * Some textures from [Epimorphism](https://gitlab.com/gtcnc/epimorphism-core).
 * Some textures from [GTExpert Core](https://github.com/GTModpackTeam/GTExpert-Core/).
+* Some textures from [Supersymmetry](https://github.com/SymmetricDevs/Supersymmetry).

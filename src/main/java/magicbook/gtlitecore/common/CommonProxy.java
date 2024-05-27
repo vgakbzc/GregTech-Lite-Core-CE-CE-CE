@@ -15,6 +15,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GTLiteBehaviorAddition;
 //import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
 import magicbook.gtlitecore.loaders.MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
@@ -246,8 +247,14 @@ public class CommonProxy {
         PCBFactoryProperty.registerPCBFactoryTier(3, "3");
         PCBFactoryBioUpgradeProperty.registerPCBFactoryBioUpgradeTier(1, "");
 
-        //GTLiteLog.logger.info("Add Catalyst to Large Chemical Complex...");
-        //MetaTileEntityLargeChemicalComplex.CatalystWorkableHandler.addCatalyst();
+        GTLiteLog.logger.info("Registering Large Chemical Complex Tier for recipe...");
+        LargeChemicalComplexProperty.registerLargeChemicalComplexTier(1, "1");
+        LargeChemicalComplexProperty.registerLargeChemicalComplexTier(2, "2");
+        LargeChemicalComplexProperty.registerLargeChemicalComplexTier(3, "3");
+        LargeChemicalComplexProperty.registerLargeChemicalComplexTier(4, "4");
+
+        GTLiteLog.logger.info("Add Catalyst to Large Chemical Complex...");
+        MetaTileEntityLargeChemicalComplex.CatalystWorkableHandler.addCatalyst();
 
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
         RecipeManager.init();

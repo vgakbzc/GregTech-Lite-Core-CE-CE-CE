@@ -469,6 +469,26 @@ metaitem.catalyst.photoelectronic.name=光电物质催化剂
 metaitem.catalyst.particle_acceleration.name=粒子加速催化剂
 metaitem.catalyst.synchrotron_capable.name=同步加速催化剂
 
+metaitem.catalyst_bed.base.name=催化床载体
+metaitem.catalyst_bed.ulv.name=反应催化床（§8ULV§r）
+metaitem.catalyst_bed.lv.name=反应催化床（§7LV§r）
+metaitem.catalyst_bed.mv.name=反应催化床（§bMV§r）
+metaitem.catalyst_bed.hv.name=反应催化床（§6HV§r）
+metaitem.catalyst_bed.ev.name=反应催化床（§5EV§r）
+metaitem.catalyst_bed.iv.name=反应催化床（§1IV§r）
+metaitem.catalyst_bed.luv.name=反应催化床（§dLuV§r）
+metaitem.catalyst_bed.zpm.name=反应催化床（§cZPM§r）
+metaitem.catalyst_bed.uv.name=反应催化床（§3UV§r）
+metaitem.catalyst_bed.uhv.name=反应催化床（§4UHV§r）
+metaitem.catalyst_bed.uev.name=反应催化床（§aUEV§r）
+metaitem.catalyst_bed.uiv.name=反应催化床（§2UIV§r）
+metaitem.catalyst_bed.uxv.name=反应催化床（§eUXV§r）
+metaitem.catalyst_bed.opv.name=反应催化床（§9OpV§r）
+metaitem.catalyst_bed.max.name=反应催化床（§c§lMAX§r）
+
+metaitem.tool.tooltip.catalyst=§f类型：§d催化剂§r
+metaitem.tool.tooltip.catalyst_bed=§f类型：§e催化床§r
+
 ##  Circuits
 metaitem.circuit.gooware_processor.name=生物活性处理器
 metaitem.circuit.gooware_processor.tooltip=粘稠的有机浆液附着于表面/n§2ZPM级电路

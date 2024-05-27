@@ -1471,6 +1471,85 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .addComponents(new CatalystBehavior())
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
 
+        CATALYST_BED_BASE = this.addItem(1000, "catalyst_bed.base")
+                .addOreDict("catalystBedEmpty")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_ULV = this.addItem(1001, "catalyst_bed.ulv")
+                .addOreDict("catalystBedUlv")
+                .addComponents(new CatalystBehavior(true, ULV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_LV = this.addItem(1002, "catalyst_bed.lv")
+                .addOreDict("catalystBedLv")
+                .addComponents(new CatalystBehavior(true, LV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_MV = this.addItem(1003, "catalyst_bed.mv")
+                .addOreDict("catalystBedMv")
+                .addComponents(new CatalystBehavior(true, MV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_HV = this.addItem(1004, "catalyst_bed.hv")
+                .addOreDict("catalystBedHv")
+                .addComponents(new CatalystBehavior(true, HV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_EV = this.addItem(1005, "catalyst_bed.ev")
+                .addOreDict("catalystBedEv")
+                .addComponents(new CatalystBehavior(true, EV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_IV = this.addItem(1006, "catalyst_bed.iv")
+                .addOreDict("catalystBedIv")
+                .addComponents(new CatalystBehavior(true, IV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_LuV = this.addItem(1007, "catalyst_bed.luv")
+                .addOreDict("catalystBedLuv")
+                .addComponents(new CatalystBehavior(true, LuV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_ZPM = this.addItem(1008, "catalyst_bed.zpm")
+                .addOreDict("catalystBedZpm")
+                .addComponents(new CatalystBehavior(true, ZPM))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_UV = this.addItem(1009, "catalyst_bed.uv")
+                .addOreDict("catalystBedUv")
+                .addComponents(new CatalystBehavior(true, UV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_UHV = this.addItem(1010, "catalyst_bed.uhv")
+                .addOreDict("catalystBedUhv")
+                .addComponents(new CatalystBehavior(true, UHV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_UEV = this.addItem(1011, "catalyst_bed.uev")
+                .addOreDict("catalystBedUev")
+                .addComponents(new CatalystBehavior(true, UEV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_UIV = this.addItem(1012, "catalyst_bed.uiv")
+                .addOreDict("catalystBedUiv")
+                .addComponents(new CatalystBehavior(true, UIV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_UXV = this.addItem(1013, "catalyst_bed.uxv")
+                .addOreDict("catalystBedUxv")
+                .addComponents(new CatalystBehavior(true, UXV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_OpV = this.addItem(1014, "catalyst_bed.opv")
+                .addOreDict("catalystBedOpv")
+                .addComponents(new CatalystBehavior(true, OpV))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        CATALYST_BED_MAX = this.addItem(1015, "catalyst_bed.max")
+                .addOreDict("catalystBedMax")
+                .addComponents(new CatalystBehavior(true, MAX))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
         /* --------------------------------------------------------------------- Debug Items ---------------------------------------------------------------------- */
 
         STRUCTURE_WRITER = this.addItem(10000, "debug.structure_writer")

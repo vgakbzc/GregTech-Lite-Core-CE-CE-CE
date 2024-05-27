@@ -521,6 +521,23 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CATALYST_PARTICLE_ACCELERATION;
     public static MetaItem<?>.MetaValueItem CATALYST_SYNCHROTRON_CAPABLE;
 
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_BASE;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_ULV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_LV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_MV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_HV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_EV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_IV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_LuV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_ZPM;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_UV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_UHV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_UEV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_UIV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_UXV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_OpV;
+    public static MetaItem<?>.MetaValueItem CATALYST_BED_MAX;
+
     //  Debug Items
     public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
 

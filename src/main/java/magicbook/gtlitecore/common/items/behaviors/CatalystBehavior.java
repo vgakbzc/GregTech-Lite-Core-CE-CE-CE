@@ -17,6 +17,20 @@ import java.util.List;
  */
 public class CatalystBehavior extends AbstractMaterialPartBehavior implements IItemMaxStackSizeProvider {
 
+    private boolean isCatalystBed;
+    private int tier;
+
+    public CatalystBehavior() {}
+
+    public CatalystBehavior(boolean isCatalystBed) {
+        this.isCatalystBed = isCatalystBed;
+    }
+
+    public CatalystBehavior(boolean isCatalystBed, int tier) {
+        this.isCatalystBed = isCatalystBed;
+        this.tier = tier;
+    }
+
     public void applyCatalystDamage(ItemStack stack, int damageApplied) {
         int catalystDurability = this.getPartMaxDurability(stack);
         int resultDamage = getPartDamage(stack) + damageApplied;
@@ -44,18 +58,31 @@ public class CatalystBehavior extends AbstractMaterialPartBehavior implements II
 
     @Override
     public int getPartMaxDurability(ItemStack stack) {
-        return 50;
+        if (isCatalystBed) {
+            return 50 * tier;
+        } else {
+            return 50;
+        }
     }
 
     @Override
     public void addInformation(ItemStack stack, List<String> lines) {
         int maxDurability = getPartMaxDurability(stack);
         int damage = getPartDamage(stack);
+        if (isCatalystBed) {
+            lines.add(I18n.format("metaitem.tool.tooltip.catalyst_bed"));
+        } else {
+            lines.add(I18n.format("metaitem.tool.tooltip.catalyst"));
+        }
         lines.add(I18n.format("metaitem.tool.tooltip.durability", maxDurability - damage, maxDurability));
     }
 
     @Override
     public int getMaxStackSize(ItemStack itemStack, int defaultValue) {
-        return 16;
+        if (isCatalystBed) {
+            return 1;
+        } else {
+            return 16;
+        }
     }
 }
