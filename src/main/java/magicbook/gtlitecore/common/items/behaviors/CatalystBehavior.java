@@ -59,7 +59,7 @@ public class CatalystBehavior extends AbstractMaterialPartBehavior implements II
     @Override
     public int getPartMaxDurability(ItemStack stack) {
         if (isCatalystBed) {
-            return 50 * tier;
+            return 50 * (tier + 1);
         } else {
             return 50;
         }

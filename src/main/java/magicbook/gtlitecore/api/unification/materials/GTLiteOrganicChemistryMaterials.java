@@ -1291,8 +1291,10 @@ public class GTLiteOrganicChemistryMaterials {
 
         //  13154 Polyurethane
         Polyurethane = new Material.Builder(getID(), gregtechId("polyurethane"))
+                .polymer()
                 .liquid()
                 .color(0xEDF5E4)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL)
                 .components(Carbon, 17, Hydrogen, 16, Nitrogen, 2, Oxygen, 4)
                 .build();
 

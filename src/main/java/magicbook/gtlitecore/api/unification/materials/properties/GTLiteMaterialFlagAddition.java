@@ -126,6 +126,7 @@ public class GTLiteMaterialFlagAddition {
         TantalumCarbide.addFlags(GENERATE_FRAME);
         Duranium.addFlags(GENERATE_FRAME);
         Trinaquadalloy.addFlags(GENERATE_FRAME);
+        Polyethylene.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
