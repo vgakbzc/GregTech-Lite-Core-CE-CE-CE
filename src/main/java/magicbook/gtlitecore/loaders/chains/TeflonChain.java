@@ -20,7 +20,7 @@ public class TeflonChain {
                 .input(dust, Carbon)
                 .fluidInputs(Sodium.getFluid(1000))
                 .fluidOutputs(Teflon.getFluid(2880))
-                .EUt(VA[UHV])
+                .EUt(VA[LuV])
                 .duration(10 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();

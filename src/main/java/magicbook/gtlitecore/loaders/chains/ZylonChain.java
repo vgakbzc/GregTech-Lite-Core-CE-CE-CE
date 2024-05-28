@@ -27,6 +27,7 @@ public class ZylonChain {
 
         //  C6H4(CH3)2 + 2Br + 2O -> C7H6Br2 + 2H2O
         CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(1)
                 .fluidInputs(ParaXylene.getFluid(1000))
                 .fluidInputs(Bromine.getFluid(2000))
                 .fluidInputs(Oxygen.getFluid(2000))

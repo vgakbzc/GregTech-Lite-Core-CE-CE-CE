@@ -3199,6 +3199,10 @@ gregtech.material.sodium_cyclopentadiene=环戊二烯化钠
 gregtech.material.methylaluminoxane=甲基铝氧烷
 gregtech.material.kaminsky_catalyst=卡明斯基催化剂
 gregtech.material.teflon=特氟龙
+gregtech.material.para_toluic_acid=对甲基苯甲酸
+gregtech.material.methylparatoluate=对甲基苯甲酸甲酯
+gregtech.material.dimethyl_terephthalate=对苯二甲酸二甲酯
+gregtech.material.polyethylene_terephthalate=聚对苯二甲酸乙二醇酯（PET）
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子

@@ -112,6 +112,7 @@ public class RecipeManager {
         OilChain.init();
         PEDOTChain.init();
         PEEKChain.init();
+        PETChain.init();
         PhosphorusChain.init();
         PhotoresistivesChain.init();
         PMMAChain.init();

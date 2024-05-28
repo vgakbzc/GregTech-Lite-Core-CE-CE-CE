@@ -628,6 +628,10 @@ public class GTLiteMaterials {
     public static Material ZirconoceneDichloride;
     public static Material SodiumCyclopentadiene;
     public static Material Teflon;
+    public static Material ParaToluicAcid;
+    public static Material Methylparatoluate;
+    public static Material DimethylTerephthalate;
+    public static Material PolyethyleneTerephthalate;
 
     /////////////////////////////
     //  Higher Degree Materials  //

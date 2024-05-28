@@ -1651,7 +1651,34 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
+        //  13197 Para Toluic Acid
+        ParaToluicAcid = new Material.Builder(getID(), gregtechId("para_toluic_acid"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(0x4FA597)
+                .components(Carbon, 8, Hydrogen, 8, Oxygen, 2)
+                .build();
 
+        //  13198 Methylparatoluate
+        Methylparatoluate = new Material.Builder(getID(), gregtechId("methylparatoluate"))
+                .liquid()
+                .color(0x76BCB0)
+                .components(Carbon, 9, Hydrogen, 10, Oxygen, 2)
+                .build();
+
+        //  13199 Dimethyl Terephthalate
+        DimethylTerephthalate = new Material.Builder(getID(), gregtechId("dimethyl_terephthalate"))
+                .liquid()
+                .color(0x05D8AF)
+                .components(Carbon, 10, Hydrogen, 10, Oxygen, 4)
+                .build();
+
+        //  13200 Polyethylene Terephthalate (PET)
+        PolyethyleneTerephthalate = new Material.Builder(getID(), gregtechId("polyethylene_terephthalate"))
+                .polymer()
+                .liquid()
+                .color(0x1E5C58)
+                .components(Carbon, 10, Hydrogen, 6, Oxygen, 4)
+                .build();
     }
 
 }
