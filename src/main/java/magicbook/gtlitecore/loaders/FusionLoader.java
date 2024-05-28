@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
+import static gregtechfoodoption.GTFOMaterialHandler.Blood;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -466,6 +467,16 @@ public class FusionLoader {
                 .EUToStart(900000000L) // MK4
                 .buildAndRegister();
 
+        //  Concentrate Dragon Breath + Blood -> Dragon Blood (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(ConcentrateDragonBreath.getFluid(1000))
+                .fluidInputs(Blood.getFluid(1000))
+                .fluidOutputs(DragonBlood.getPlasma(1000))
+                .EUt(VA[UHV])
+                .duration(5 * SECOND)
+                .EUToStart(900000000L) // MK4
+                .buildAndRegister();
+
         /* -------------------------------- MK5 -------------------------------- */
 
         //  Advanced Neptunium Plasma recipe
@@ -598,6 +609,17 @@ public class FusionLoader {
                 .fluidOutputs(Neutronium.getFluid(32))
                 .EUt(VA[UEV])
                 .duration(10 * SECOND)
+                .EUToStart(1300000000L) // MK5
+                .buildAndRegister();
+
+        //  Advanced Rhugnor recipe
+        //  Dragon Blood (plasma) + Titanium (plasma) -> Rhugnor
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(DragonBlood.getPlasma(500))
+                .fluidInputs(Titanium.getPlasma(500))
+                .fluidOutputs(Rhugnor.getFluid(1000))
+                .EUt(VA[UEV])
+                .duration(SECOND)
                 .EUToStart(1300000000L) // MK5
                 .buildAndRegister();
 

@@ -554,6 +554,7 @@ public class GTLiteUnknownCompositionMaterials {
         //  24056 Dragon Blood
         DragonBlood = new Material.Builder(getID(), gregtechId("dragon_blood"))
                 .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
+                .plasma()
                 .color(0xDC2814)
                 .iconSet(DULL)
                 .build()

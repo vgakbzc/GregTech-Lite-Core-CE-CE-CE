@@ -64,6 +64,7 @@ public class SuprachronalNeutroniumForge {
         /* -------------------------------- MK4 -------------------------------- */
         createTransmutationRecipes(Neptunium);
         createTransmutationRecipes(Fermium);
+        createTransmutationRecipes(DragonBlood);
 
         /* -------------------------------- MK5 -------------------------------- */
         createTransmutationRecipes(Plutonium241);
