@@ -3198,6 +3198,7 @@ gregtech.material.zirconocene_dichloride=双环戊二烯二氯化锆
 gregtech.material.sodium_cyclopentadiene=环戊二烯化钠
 gregtech.material.methylaluminoxane=甲基铝氧烷
 gregtech.material.kaminsky_catalyst=卡明斯基催化剂
+gregtech.material.teflon=特氟龙
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子

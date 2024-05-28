@@ -1643,6 +1643,15 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
+        //  13196 Teflon
+        Teflon = new Material.Builder(getID(), gregtechId("teflon"))
+                .liquid(new FluidBuilder().temperature(605))
+                .color(0x6B2E60)
+                .components(Polytetrafluoroethylene, 15, Polyethylene, 3, Carbon, 1, Sodium, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+
     }
 
 }

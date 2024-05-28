@@ -120,6 +120,7 @@ public class RecipeManager {
         RubberChain.init();
         SeleniumTelluriumChain.init();
         SuperconductorsChain.init();
+        TeflonChain.init();
         TurpentineChain.init();
         ZirconiumChain.init();
         ZylonChain.init();

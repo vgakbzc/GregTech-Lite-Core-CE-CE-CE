@@ -627,6 +627,7 @@ public class GTLiteMaterials {
     public static Material ZieglerNattaCatalyst;
     public static Material ZirconoceneDichloride;
     public static Material SodiumCyclopentadiene;
+    public static Material Teflon;
 
     /////////////////////////////
     //  Higher Degree Materials  //
