@@ -361,6 +361,26 @@ public class NicollDysonBeamer {
                 .tier(3)
                 .buildAndRegister();
 
+        //  Advanced Transcendent Metal recipe
+        //  Cosmic Neutronium -> Transcendent Metal (Celestial Tungsten as secondary product)
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(10)
+                .input(block, CosmicNeutronium, 40)
+                .input(CRUDE_HYPERCUBE, 32)
+                .fluidInputs(GelidCryotheum.getFluid(25920))
+                .fluidInputs(BlazingPyrotheum.getFluid(25920))
+                .fluidInputs(TitanSteel.getFluid(51840))
+                .fluidInputs(Tungsten.getFluid(51840))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(5632))
+                .output(block, TranscendentMetal, 40)
+                .output(dust, TranscendentMetal, 24)
+                .fluidOutputs(CelestialTungsten.getFluid(25920))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(11264))
+                .EUt(VA[UXV])
+                .duration(20)
+                .tier(2)
+                .buildAndRegister();
+
         //  Quantum Anomaly
         NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
                 .notConsumable(CHROMATIC_LENS)
