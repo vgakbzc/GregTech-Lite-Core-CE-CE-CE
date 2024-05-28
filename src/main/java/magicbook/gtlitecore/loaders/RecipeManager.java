@@ -143,6 +143,7 @@ public class RecipeManager {
         ThalliumProcessing.init();
         TungstenProcessing.init();
         VanadiumProcessing.init();
+        ZirconiumHafniumProcessing.init();
     }
   
     private static void initCircuits() {
