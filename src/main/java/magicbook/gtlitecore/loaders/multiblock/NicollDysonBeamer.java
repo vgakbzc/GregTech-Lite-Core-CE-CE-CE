@@ -376,7 +376,7 @@ public class NicollDysonBeamer {
                 .output(dust, TranscendentMetal, 24)
                 .fluidOutputs(CelestialTungsten.getFluid(25920))
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(11264))
-                .EUt(VA[UXV])
+                .EUt(VZ[UXV])
                 .duration(20)
                 .tier(2)
                 .buildAndRegister();
