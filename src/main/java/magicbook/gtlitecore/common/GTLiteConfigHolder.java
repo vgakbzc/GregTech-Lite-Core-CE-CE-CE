@@ -233,6 +233,18 @@ public class GTLiteConfigHolder {
         @RangeInt(min = 1, max = 32768)
         public int heatValueExoticMutagen = 1920;
 
+        @Comment({"Thorium Based Liquid Fuel EU/t product in Combustion Generator.", "Default 25920"})
+        @RangeInt(min = 1, max = 32768)
+        public int heatValueThoriumBasedLiquidFuel = 6480;
+
+        @Comment({"Uranium Based Liquid Fuel EU/t product in Combustion Generator.", "Default: 6480"})
+        @RangeInt(min = 1, max = 131072)
+        public int heatValueUraniumBasedLiquidFuel = 25920;
+
+        @Comment({"Plutonium Based Liquid Fuel EU/t product in Combustion Generator.", "Default: 103680"})
+        @RangeInt(min = 1, max = 524288)
+        public int heatValuePlutoniumBasedLiquidFuel = 103680;
+
         @Comment({"Allow Bio Reactor use some GregTech vanilla recipes in Chemical Reactor.", "Default: true"})
         public boolean enableBioReactorVanillaRecipe = true;
 

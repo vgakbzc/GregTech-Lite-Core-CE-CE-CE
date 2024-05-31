@@ -24,6 +24,7 @@ import org.lwjgl.input.Keyboard;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -1554,6 +1555,26 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .addOreDict("catalystBedMax")
                 .addComponents(new CatalystBehavior(true, MAX))
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        /* -------------------------------------------------------------------- Nuclear Items --------------------------------------------------------------------- */
+
+        HIGH_DENSITY_THORIUM = this.addItem(1500, "high_density_thorium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(UraniumThoriumCarbides, M * 64), // 64 * Th12UC3
+                        new MaterialStack(TungstenSteel, (M / 4) * 16) // 16 * Tungsten Steel foil
+                ));
+
+        HIGH_DENSITY_URANIUM = this.addItem(1501, "high_density_uranium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(GraphiteUraniumMixture, M * 36), // 36 * C3U dust
+                        new MaterialStack(TungstenCarbide, (M / 4) * 16) // 16 * Tungsten Carbide foil
+                ));
+
+        HIGH_DENSITY_PLUTONIUM = this.addItem(1502, "high_density_plutonium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(PlutoniumUraniumOxides, M * 64), // 64 * Pu10O12U2C8
+                        new MaterialStack(HSSS, (M / 4) * 16) // 16 * HSSS foil
+                ));
 
         /* --------------------------------------------------------------------- Debug Items ---------------------------------------------------------------------- */
 

@@ -343,6 +343,12 @@ public class GTLiteMaterials {
     public static Material ZirconiumTetrachloride;
     public static Material AtomicSeparationCatalyst;
     public static Material MolybdenumTelluriumOxides;
+    public static Material UraniumThoriumCarbides;
+    public static Material ThoriumBasedLiquidFuel;
+    public static Material GraphiteUraniumMixture;
+    public static Material UraniumBasedLiquidFuel;
+    public static Material PlutoniumUraniumOxides;
+    public static Material PlutoniumBasedLiquidFuel;
 
     ///////////////////////////////
     //  Second Degree Materials  //

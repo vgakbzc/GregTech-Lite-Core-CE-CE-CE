@@ -539,6 +539,11 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CATALYST_BED_OpV;
     public static MetaItem<?>.MetaValueItem CATALYST_BED_MAX;
 
+    //  Nuclear Items
+    public static MetaItem<?>.MetaValueItem HIGH_DENSITY_THORIUM;
+    public static MetaItem<?>.MetaValueItem HIGH_DENSITY_URANIUM;
+    public static MetaItem<?>.MetaValueItem HIGH_DENSITY_PLUTONIUM;
+
     //  Debug Items
     public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
 
