@@ -78,6 +78,8 @@ public class GTLiteMaterials {
     public static Material Omnium;
     public static Material Magmatter;
     public static Material PrimordialMatter;
+    public static Material Quantium;
+    public static Material ExtremelyUnstableNaquadah;
 
     //////////////////////////////
     //  First Degree Materials  //
@@ -339,8 +341,8 @@ public class GTLiteMaterials {
     public static Material PotassiumNonahydridotechnetate;
     public static Material PotassiumPerrhenate;
     public static Material ZirconiumTetrachloride;
-    public static Material Methylaluminoxane;
-    public static Material KaminskyCatalyst;
+    public static Material AtomicSeparationCatalyst;
+    public static Material MolybdenumTelluriumOxides;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -627,6 +629,8 @@ public class GTLiteMaterials {
     public static Material ZieglerNattaCatalyst;
     public static Material ZirconoceneDichloride;
     public static Material SodiumCyclopentadiene;
+    public static Material Methylaluminoxane;
+    public static Material KaminskyCatalyst;
     public static Material Teflon;
     public static Material ParaToluicAcid;
     public static Material Methylparatoluate;

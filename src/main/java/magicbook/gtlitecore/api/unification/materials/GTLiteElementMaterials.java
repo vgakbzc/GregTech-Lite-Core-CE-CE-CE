@@ -480,5 +480,31 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 500, 125, false)
                 .build();
+
+        //  10033 Quantium
+        Quantium = new Material.Builder(getID(), gregtechId("quantium"))
+                .ingot()
+                .fluid()
+                .color(0x00D10B)
+                .iconSet(SHINY)
+                .element(GTLiteElements.Quantium)
+                .blast(b -> b
+                        .temp(5400, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[IV], 300)
+                        .vacuumStats(VA[IV], 295))
+                .build();
+
+        //  10034 Extremely Unstable Naquadah
+        ExtremelyUnstableNaquadah = new Material.Builder(getID(), gregtechId("extremely_unstable_naquadah"))
+                .ingot()
+                .fluid()
+                .color(0x062605)
+                .iconSet(SHINY)
+                .element(GTLiteElements.Nqx)
+                .blast(b -> b
+                        .temp(7000, BlastProperty.GasTier.HIGHER)
+                        .blastStats(VA[ZPM], 800)
+                        .vacuumStats(VA[LuV], 400))
+                .build();
     }
 }

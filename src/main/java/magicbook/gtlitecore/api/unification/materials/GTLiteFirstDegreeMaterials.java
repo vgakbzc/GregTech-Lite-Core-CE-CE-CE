@@ -2277,6 +2277,23 @@ public class GTLiteFirstDegreeMaterials {
                 .iconSet(ROUGH)
                 .components(Zirconium, 1, Chlorine, 4)
                 .build();
+
+        //  11258 Atomic Separation Catalyst
+        AtomicSeparationCatalyst = new Material.Builder(getID(), gregtechId("atomic_separation_catalyst"))
+                .dust()
+                .color(0xE85E0C)
+                .iconSet(REAGENT)
+                .components(NaquadahEnriched, 2, Quantium, 4, Plutonium239, 1)
+                .build()
+                .setFormula("Nq+2Qt4Pu", true);
+
+        //  11259 Molybdenum Tellurium Oxides
+        MolybdenumTelluriumOxides = new Material.Builder(getID(), gregtechId("molybdenum_tellurium_oxides"))
+                .dust()
+                .color(0x7F2057)
+                .iconSet(DULL)
+                .components(MolybdenumTrioxide, 4, TelluriumDioxide, 3)
+                .build();
     }
 
 }

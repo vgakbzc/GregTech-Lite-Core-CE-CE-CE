@@ -2661,6 +2661,8 @@ gregtech.material.fatalium=命识魂金
 gregtech.material.omnium=万象
 gregtech.material.magmatter=纯磁物质
 gregtech.material.primordial_matter=始源物质
+gregtech.material.quantium=量子
+gregtech.material.extremely_unstable_naquadah=极不稳定硅岩
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣
@@ -2920,6 +2922,8 @@ gregtech.material.potassium_nonahydridorhenate=九氢合铼酸钾
 gregtech.material.potassium_nonahydridotechnetate=九氢合锝酸钾
 gregtech.material.potassium_perrhenate=高铼酸钾
 gregtech.material.zirconium_tetrachloride=四氯化锆
+gregtech.material.atomic_separation_catalyst=原子分离催化剂
+gregtech.material.molybdenum_tellurium_oxides=钼碲氧化物混合物
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625

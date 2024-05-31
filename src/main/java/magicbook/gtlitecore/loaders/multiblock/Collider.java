@@ -191,6 +191,17 @@ public class Collider {
                 .tier(2)
                 .buildAndRegister();
 
+        //  Trinium + alpha -> Quantium
+        COLLIDER_RECIPES.recipeBuilder()
+                .notConsumable(QUANTUM_ANOMALY)
+                .input(ALPHA_PARTICLE)
+                .fluidInputs(Trinium.getFluid(L))
+                .fluidOutputs(Quantium.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(100)
+                .tier(1)
+                .buildAndRegister();
+
     }
 
     private static void HighEnergyPhysics() {

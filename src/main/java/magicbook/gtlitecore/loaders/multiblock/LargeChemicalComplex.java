@@ -232,7 +232,56 @@ public class LargeChemicalComplex {
 
     private static void RareEarthCatalystChain() {}
 
-    private static void NaquadahCatalystChain() {}
+    private static void NaquadahCatalystChain() {
+
+        //  *Nq* -> Nqx
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Naquadria, 6)
+                .fluidInputs(FluoroantimonicAcid.getFluid(2000))
+                .fluidInputs(Krypton.getPlasma(500))
+                .output(dust, ExtremelyUnstableNaquadah, 6)
+                .fluidOutputs(NaquadriaWaste.getFluid(2000))
+                .EUt(VA[ZPM])
+                .duration((int) (7.5 * SECOND))
+                .buildAndRegister();
+
+        //  Ke -> Qt
+        //  back to Collider recipes.
+
+        //  2Nq+ + 4Qt + Pu-239 -> Nq+2Qt4Pu (Atomic Separation Catalyst)
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, NaquadahEnriched, 2)
+                .input(dust, Quantium, 4)
+                .circuitMeta(3)
+                .fluidInputs(Plutonium239.getFluid(L))
+                .output(dust, AtomicSeparationCatalyst, 7)
+                .EUt(VA[HV])
+                .duration(3 * MINUTE)
+                .buildAndRegister();
+
+        //  MoO3 + TeO2 -> (MoO3)(TeO2)
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, MolybdenumTrioxide, 4)
+                .input(dust, TelluriumDioxide, 3)
+                .circuitMeta(2)
+                .output(dust, MolybdenumTelluriumOxides, 7)
+                .EUt(VA[HV])
+                .duration((int) (6.5 * SECOND))
+                .buildAndRegister();
+
+        //  Naquadah Catalyst
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(16)
+                .input(CATALYST_BASE, 4)
+                .input(dust, AtomicSeparationCatalyst, 2) // 2/7
+                .input(dust, MolybdenumTelluriumOxides, 3) // 3/7
+                .fluidInputs(Naquadah.getFluid(L * 2))
+                .output(CATALYST_NAQUADAH, 4)
+                .EUt(VA[ZPM])
+                .duration(MINUTE)
+                .buildAndRegister();
+
+    }
 
     private static void RawIntelligenceCatalystChain() {}
 

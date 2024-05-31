@@ -4,6 +4,8 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.MOLECULAR_TRANSFORMER_RECIPES;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Quantium;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Tiberium;
 
 public class MolecularTransformer {
 
@@ -79,6 +81,14 @@ public class MolecularTransformer {
                 .output(ingot, Osmium)
                 .EUt(VA[UV])
                 .duration(2400)
+                .buildAndRegister();
+
+        //  Qt -> *Tb*
+        MOLECULAR_TRANSFORMER_RECIPES.recipeBuilder()
+                .input(dust, Quantium)
+                .output(dust, Tiberium)
+                .EUt(VA[UHV])
+                .duration(1800)
                 .buildAndRegister();
     }
 }

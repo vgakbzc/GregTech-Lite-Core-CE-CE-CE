@@ -477,6 +477,16 @@ public class FusionLoader {
                 .EUToStart(900000000L) // MK4
                 .buildAndRegister();
 
+        //  Naquadria + Radon (plasma) -> Extremely Unstable Naquadah
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Naquadria.getFluid(32))
+                .fluidInputs(Radon.getPlasma(250))
+                .fluidOutputs(ExtremelyUnstableNaquadah.getFluid(8))
+                .EUt(VA[UHV] / 3)
+                .duration((int) (1.6 * SECOND))
+                .EUToStart(900000000L) // MK4
+                .buildAndRegister();
+
         /* -------------------------------- MK5 -------------------------------- */
 
         //  Advanced Neptunium Plasma recipe
