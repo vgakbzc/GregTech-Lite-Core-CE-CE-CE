@@ -25,6 +25,7 @@ import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockLargeChemicalComplexCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
+import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
@@ -176,15 +177,16 @@ public class MetaTileEntityLargeChemicalComplex extends RecipeMapMultiblockContr
      */
     public static class CatalystWorkableHandler {
 
-        public static List<ItemStack> nonConsumableCatalyst = new ArrayList<>();
+        public static List<ItemStack> notConsumableCatalyst = new ArrayList<>();
 
         public static void addCatalyst() {
-            nonConsumableCatalyst.add(MetaItems.INTEGRATED_CIRCUIT.getStackForm());
-            nonConsumableCatalyst.add(MetaItems.BLACKLIGHT.getStackForm());
+            notConsumableCatalyst.add(MetaItems.INTEGRATED_CIRCUIT.getStackForm());
+            notConsumableCatalyst.add(MetaItems.BLACKLIGHT.getStackForm());
+            notConsumableCatalyst.add(GTLiteMetaItems.CHROMATIC_LENS.getStackForm());
         }
 
         public static boolean checkCatalyst(ItemStack stack) {
-            for (ItemStack catalyst : nonConsumableCatalyst) {
+            for (ItemStack catalyst : notConsumableCatalyst) {
                 if (stack.isItemEqual(catalyst))
                     return true;
             }

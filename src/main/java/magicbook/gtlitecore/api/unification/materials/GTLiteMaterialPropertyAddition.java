@@ -69,10 +69,14 @@ public class GTLiteMaterialPropertyAddition {
         Copernicium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Curium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Dubnium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Dysprosium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Einsteinium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Erbium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Francium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Gadolinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Hafnium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Holmium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Iodine.setProperty(PropertyKey.FLUID, new FluidProperty());
         Lawrencium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Livermorium.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -82,6 +86,7 @@ public class GTLiteMaterialPropertyAddition {
         Nihonium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Nobelium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Polonium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Praseodymium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Protactinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Radium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Roentgenium.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -94,6 +99,8 @@ public class GTLiteMaterialPropertyAddition {
         Technetium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Tellurium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Tennessine.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Terbium.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Thulium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Ytterbium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Zirconium.setProperty(PropertyKey.FLUID, new FluidProperty());
 

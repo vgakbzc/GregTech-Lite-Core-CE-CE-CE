@@ -14,7 +14,7 @@ import magicbook.gtlitecore.api.utils.ServerSupportI18n;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GTLiteBehaviorAddition;
-//import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
+import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
 import magicbook.gtlitecore.loaders.MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.RecipeHandler;

@@ -795,6 +795,38 @@ public class GTLiteMaterials {
     public static Material CAT;
     public static Material MarineAlgae;
     public static Material AlienMarineAlgae;
+    public static Material LanthanumExtractingNanoResin;
+    public static Material PraseodymiumExtractingNanoResin;
+    public static Material NeodymiumExtractingNanoResin;
+    public static Material CeriumExtractingNanoResin;
+    public static Material ScandiumExtractingNanoResin;
+    public static Material EuropiumExtractingNanoResin;
+    public static Material GadoliniumExtractingNanoResin;
+    public static Material SamariumExtractingNanoResin;
+    public static Material YttriumExtractingNanoResin;
+    public static Material TerbiumExtractingNanoResin;
+    public static Material DysprosiumExtractingNanoResin;
+    public static Material HolmiumExtractingNanoResin;
+    public static Material ErbiumExtractingNanoResin;
+    public static Material ThuliumExtractingNanoResin;
+    public static Material YtterbiumExtractingNanoResin;
+    public static Material LutetiumExtractingNanoResin;
+    public static Material FilledLanthanumExtractingNanoResin;
+    public static Material FilledPraseodymiumExtractingNanoResin;
+    public static Material FilledNeodymiumExtractingNanoResin;
+    public static Material FilledCeriumExtractingNanoResin;
+    public static Material FilledScandiumExtractingNanoResin;
+    public static Material FilledEuropiumExtractingNanoResin;
+    public static Material FilledGadoliniumExtractingNanoResin;
+    public static Material FilledSamariumExtractingNanoResin;
+    public static Material FilledYttriumExtractingNanoResin;
+    public static Material FilledTerbiumExtractingNanoResin;
+    public static Material FilledDysprosiumExtractingNanoResin;
+    public static Material FilledHolmiumExtractingNanoResin;
+    public static Material FilledErbiumExtractingNanoResin;
+    public static Material FilledThuliumExtractingNanoResin;
+    public static Material FilledYtterbiumExtractingNanoResin;
+    public static Material FilledLutetiumExtractingNanoResin;
 
     //////////////////////////////
     //  Third Degree Materials  //
