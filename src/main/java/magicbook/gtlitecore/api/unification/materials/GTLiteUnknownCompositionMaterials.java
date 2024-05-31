@@ -1024,6 +1024,37 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(LutetiumOxide.getMaterialRGB())
                 .build();
+
+        //  24125 Enriched Naquadah Emulsion
+        EnrichedNaquadahEmulsion = new Material.Builder(getID(), gregtechId("enriched_naquadah_emulsion"))
+                .liquid()
+                .color(Naquadah.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("Nq+Ke?", true);
+
+        //  24126 Naquadria Emulsion
+        NaquadriaEmulsion = new Material.Builder(getID(), gregtechId("naquadria_emulsion"))
+                .liquid()
+                .color(Naquadria.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("*Nq*Ke?", true);
+
+        //  24127 Trinium Goo
+        TriniumGoo = new Material.Builder(getID(), gregtechId("trinium_goo"))
+                .liquid()
+                .color(TriniumSulfide.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("Ke?");
+
+        //  24128 Trinium Waste
+        TriniumWaste = new Material.Builder(getID(), gregtechId("trinium_waste"))
+                .liquid()
+                .color(0x9F4495)
+                .build()
+                .setFormula("GaTi(HNO3)?", true);
     }
 
 }

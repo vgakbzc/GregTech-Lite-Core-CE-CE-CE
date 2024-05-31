@@ -12,12 +12,10 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.Materials.SulfuricAcid;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.common.items.MetaItems.CARBON_MESH;
-import static gregtech.common.items.MetaItems.SHAPE_MOLD_BALL;
+import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LARGE_CHEMICAL_COMPLEX_RECIPES;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -25,12 +23,13 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class LargeChemicalComplex {
 
     public static void init() {
+        RareEarthNanoExtractProcessing();
+        NaquadahTriniumProcessing();
         CatalystRecipes();
         CatalystBedRecipes();
+    }
 
-        //  Rare Earth Nano Resin Processings
-        //  These recipes are a new method to product Rare Earth Elements
-        //  Use Carbon Nano Swarm and a little Rare Earth Element to product same two.
+    private static void RareEarthNanoExtractProcessing() {
 
         //  Lanthanum (La)-Praseodymium (Pr)-Neodymium (Nd)-Cerium (Ce)
         addNanoExtractingRecipe(
@@ -115,6 +114,88 @@ public class LargeChemicalComplex {
                 Lutetium,
                 LutetiumExtractingNanoResin,
                 FilledLutetiumExtractingNanoResin);
+    }
+
+    private static void NaquadahTriniumProcessing() {
+
+        //  Enriched Naquadah Emulsion
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_NAQUADAH)
+                .input(dust, SodiumHydroxide, 2)
+                .fluidInputs(EnrichedNaquadahSolution.getFluid(16000))
+                .fluidInputs(SulfuricAcid.getFluid(8000))
+                .fluidInputs(DistilledWater.getFluid(64000))
+                .fluidOutputs(EnrichedNaquadahEmulsion.getFluid(64000))
+                .EUt(VA[ZPM])
+                .duration(MINUTE)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(EnrichedNaquadahEmulsion.getFluid(8000))
+                .output(dust, NaquadahEnriched)
+                .chancedOutput(dust, NaquadahEnriched, 500, 250)
+                .chancedOutput(dust, NaquadahEnriched, 1000, 400)
+                .chancedOutput(dust, NaquadahEnriched, 1000, 400)
+                .chancedOutput(dust, NaquadahEnriched, 2500, 800)
+                .chancedOutput(dust, NaquadahEnriched, 5000, 150)
+                .fluidOutputs(TriniumGoo.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(350)
+                .buildAndRegister();
+
+        //  Naquadria Emulsion
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_NAQUADAH)
+                .input(dust, SodiumHydroxide, 2)
+                .fluidInputs(NaquadriaSolution.getFluid(16000))
+                .fluidInputs(HydrofluoricAcid.getFluid(8000))
+                .fluidInputs(DistilledWater.getFluid(64000))
+                .fluidOutputs(NaquadriaEmulsion.getFluid(64000))
+                .EUt(VA[UV])
+                .duration(MINUTE)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(EnrichedNaquadahEmulsion.getFluid(8000))
+                .output(dust, NaquadahEnriched)
+                .chancedOutput(dust, NaquadahEnriched, 500, 250)
+                .chancedOutput(dust, NaquadahEnriched, 1000, 400)
+                .chancedOutput(dust, NaquadahEnriched, 1000, 400)
+                .chancedOutput(dust, NaquadahEnriched, 2500, 800)
+                .chancedOutput(dust, NaquadahEnriched, 5000, 150)
+                .fluidOutputs(TriniumGoo.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(350)
+                .buildAndRegister();
+
+        //  Trinium Goo -> Trinium
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_SOLID_ACID)
+                .fluidInputs(TriniumGoo.getFluid(16000))
+                .fluidInputs(NitricAcid.getFluid(4000))
+                .output(dust, Trinium, 2)
+                .chancedOutput(dust, Trinium, 2, 2500, 100)
+                .chancedOutput(dust, Trinium, 2, 4000, 150)
+                .chancedOutput(dust, Trinium, 2, 6000, 200)
+                .output(dust, DeepIron, 4)
+                .chancedOutput(dust, DeepIron, 4, 2500, 100)
+                .chancedOutput(dust, DeepIron, 4, 4000, 150)
+                .fluidOutputs(TriniumWaste.getFluid(12000))
+                .EUt(VA[ZPM])
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
+
+        //  Trinium Waste -> InGaP + Ti(NO3)4 + W
+        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+                .fluidInputs(TriniumWaste.getFluid(3000))
+                .output(dust, Gallium)
+                .output(dust, Titanium)
+                .fluidOutputs(NitricAcid.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(2 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
     }
 
     private static void CatalystRecipes() {
@@ -353,9 +434,10 @@ public class LargeChemicalComplex {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(16)
                 .input(CATALYST_BASE, 4)
+                .input(dust, ExtremelyUnstableNaquadah) // 1/6
                 .input(dust, AtomicSeparationCatalyst, 2) // 2/7
                 .input(dust, MolybdenumTelluriumOxides, 3) // 3/7
-                .fluidInputs(Naquadah.getFluid(L * 2))
+                .fluidInputs(Quantium.getFluid(L * 2))
                 .output(CATALYST_NAQUADAH, 4)
                 .EUt(VA[ZPM])
                 .duration(MINUTE)

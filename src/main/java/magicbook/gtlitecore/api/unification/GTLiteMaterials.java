@@ -827,6 +827,10 @@ public class GTLiteMaterials {
     public static Material FilledThuliumExtractingNanoResin;
     public static Material FilledYtterbiumExtractingNanoResin;
     public static Material FilledLutetiumExtractingNanoResin;
+    public static Material EnrichedNaquadahEmulsion;
+    public static Material NaquadriaEmulsion;
+    public static Material TriniumGoo;
+    public static Material TriniumWaste;
 
     //////////////////////////////
     //  Third Degree Materials  //

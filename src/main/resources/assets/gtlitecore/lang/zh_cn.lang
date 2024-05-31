@@ -456,10 +456,10 @@ metaitem.catalyst.platinum_group.name=铂系金属催化剂
 metaitem.catalyst.plastic_polymer.name=塑料聚合物催化剂
 metaitem.catalyst.rubber_polymer.name=橡胶聚合物催化剂
 metaitem.catalyst.adhesion_promoter.name=粘合促进催化剂
-metaitem.catalyst.indium.name=铟萃取催化剂
+metaitem.catalyst.indium.name=铟纯化催化剂
 metaitem.catalyst.radioactivity.name=放射性催化剂
-metaitem.catalyst.rare_earth.name=稀土纯化催化剂
-metaitem.catalyst.naquadah.name=硅岩催化剂
+metaitem.catalyst.rare_earth.name=稀土萃取催化剂
+metaitem.catalyst.naquadah.name=硅岩嬗变催化剂
 metaitem.catalyst.raw_intelligence.name=原生智能催化剂
 metaitem.catalyst.ultimate_plastic.name=终极增塑催化剂
 metaitem.catalyst.biological_intelligence.name=生物智能催化剂
@@ -3395,6 +3395,10 @@ gregtech.material.filled_erbium_extracting_nano_resin=满溢铒萃取纳米树�
 gregtech.material.filled_thulium_extracting_nano_resin=满溢铥萃取纳米树脂
 gregtech.material.filled_ytterbium_extracting_nano_resin=满溢镱萃取纳米树脂
 gregtech.material.filled_lutetium_extracting_nano_resin=满溢镥萃取纳米树脂
+gregtech.material.enriched_naquadah_emulsion=富集硅岩乳液
+gregtech.material.naquadria_emulsion=超能硅岩乳液
+gregtech.material.trinium_goo=凯金粘浆
+gregtech.material.trinium_waste=凯金废液
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金
