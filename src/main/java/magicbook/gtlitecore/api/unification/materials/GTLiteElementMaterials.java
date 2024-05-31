@@ -365,7 +365,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .iconSet(CUSTOM_ETERNITY)
                 .element(GTLiteElements.En)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS, GENERATE_ROTOR)
                 .build();
 
         //  10025 Tiberium
@@ -444,7 +444,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[OpV], 27)
                         .vacuumStats(VA[OpV], 50))
                 .fluidPipeProperties(160000, 40000, true, true, true, true)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .build();
 
         //  10030 Omnium
@@ -505,6 +505,18 @@ public class GTLiteElementMaterials {
                         .temp(7000, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[ZPM], 800)
                         .vacuumStats(VA[LuV], 400))
+                .build();
+
+        //  10035 Aetherium
+        Aetherium = new Material.Builder(getID(), gregtechId("aetherium"))
+                .ingot()
+                .fluid()
+                .color(0xFF7687)
+                .iconSet(ENRICHED)
+                .element(GTLiteElements.Ae)
+                .flags(NO_SMASHING, NO_SMELTING)
+                .cableProperties(V[MAX], 1000, 1, false)
+                .fluidPipeProperties(999999, 999999, true)
                 .build();
     }
 }

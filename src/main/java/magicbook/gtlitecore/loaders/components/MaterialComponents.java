@@ -98,14 +98,16 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.pipeNormalFluid, CrystalMatrix)},
                 {12, new UnificationEntry(OrePrefix.pipeNormalFluid, QuantumchromodynamicallyConfinedMatter)},
                 {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Fatalium)},
+                {14, new UnificationEntry(OrePrefix.pipeNormalFluid, Aetherium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         PIPE_LARGE.appendIngredients(Stream.of(new Object[][]{
                 {9, new UnificationEntry(OrePrefix.pipeLargeFluid, Duranium)},
-                {10, new UnificationEntry(OrePrefix.pipeNormalFluid, Lafium)},
-                {11, new UnificationEntry(OrePrefix.pipeNormalFluid, CrystalMatrix)},
-                {12, new UnificationEntry(OrePrefix.pipeNormalFluid, QuantumchromodynamicallyConfinedMatter)},
-                {13, new UnificationEntry(OrePrefix.pipeNormalFluid, Fatalium)},
+                {10, new UnificationEntry(OrePrefix.pipeLargeFluid, Lafium)},
+                {11, new UnificationEntry(OrePrefix.pipeLargeFluid, CrystalMatrix)},
+                {12, new UnificationEntry(OrePrefix.pipeLargeFluid, QuantumchromodynamicallyConfinedMatter)},
+                {13, new UnificationEntry(OrePrefix.pipeLargeFluid, Fatalium)},
+                {14, new UnificationEntry(OrePrefix.pipeLargeFluid, Aetherium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         GLASS.appendIngredients(Stream.of(new Object[][]{

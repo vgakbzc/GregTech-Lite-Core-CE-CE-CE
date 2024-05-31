@@ -2668,6 +2668,7 @@ gregtech.material.magmatter=纯磁物质
 gregtech.material.primordial_matter=始源物质
 gregtech.material.quantium=量子
 gregtech.material.extremely_unstable_naquadah=极不稳定硅岩
+gregtech.material.aetherium=以太
 
 ##  First Degree Materials
 gregtech.material.platinum_group_residue=铂族金属残渣

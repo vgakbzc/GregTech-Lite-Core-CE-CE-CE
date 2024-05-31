@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -775,7 +776,25 @@ public class SuprachronalNeutroniumForge {
 
         //  Circuit 30:
 
-        //  Circuit 31:
+        //  Circuit 31: Aetherium Processing
+        //  Aetherium is a MAX stage Material.
+        PLASMA_COLLISION_RECIPES.recipeBuilder()
+                .circuitMeta(31)
+                .input(plate, Edenium, 4)
+                .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter, 8)
+                .input(plate, Hypogen, 16)
+                .input(plate, Legendarium, 24)
+                .input(stick, Shirabon, 12)
+                .input(ring, Infinity, 8)
+                .input(screw, Fatalium, 24)
+                .input(CHARGED_HYPERCUBE)
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(L * 64))
+                .fluidInputs(Spacetime.getFluid(L * 48))
+                .fluidInputs(Eternity.getFluid(L * 16))
+                .fluidOutputs(Aetherium.getFluid(L * 16))
+                .EUt(VZ[MAX])
+                .duration(5 * SECOND)
+                .buildAndRegister();
 
         //  Circuit 32: Spatially Transcendent Gravitational Lens
         //  Usage: 9 (per 9 times work).

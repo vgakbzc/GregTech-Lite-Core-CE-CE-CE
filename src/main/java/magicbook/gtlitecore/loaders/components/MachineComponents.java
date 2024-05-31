@@ -728,7 +728,27 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  MAX
-        //  todo needs to create a new material for pipe
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_MAX)
+                .input(pipeLargeFluid, Aetherium)
+                .input(plate, Omnium, 2)
+                .input(screw, Omnium, 8)
+                .input(ring, NitrileButadieneRubber, 64)
+                .input(rotor, Eternity)
+                .input(cableGtSingle, Universium, 2)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256))
+                .fluidInputs(Lubricant.getFluid(13000))
+                .fluidInputs(SpacetimeContinuum.getFluid(L * 32))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(ELECTRIC_PUMP_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(ELECTRIC_PUMP_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
+
     }
 
     private static void Emitter() {
@@ -996,8 +1016,8 @@ public class MachineComponents {
                 .input(plate, Omnium, 4)
                 .input(ZENITH_STAR)
                 .input(circuit, MarkerMaterials.Tier.MAX, 2)
-                .input(foil, Magmatter, 64) // todo find better material
-                .input(foil, Magmatter, 32)
+                .input(foil, Aetherium, 64)
+                .input(foil, Aetherium, 32)
                 .input(cableGtSingle, Universium, 4)
                 .fluidInputs(SolderingAlloy.getFluid(L * 512))
                 .fluidInputs(SpacetimeContinuum.getFluid(L * 32))

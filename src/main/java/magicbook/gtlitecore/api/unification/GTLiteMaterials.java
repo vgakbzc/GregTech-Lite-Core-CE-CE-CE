@@ -80,6 +80,7 @@ public class GTLiteMaterials {
     public static Material PrimordialMatter;
     public static Material Quantium;
     public static Material ExtremelyUnstableNaquadah;
+    public static Material Aetherium;
 
     //////////////////////////////
     //  First Degree Materials  //
