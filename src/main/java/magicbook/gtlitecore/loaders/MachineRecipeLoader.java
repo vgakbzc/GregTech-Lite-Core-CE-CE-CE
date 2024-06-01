@@ -36,9 +36,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
-import static java.util.Calendar.SECOND;
-import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
-import static magicbook.gtlitecore.api.GTLiteValues.VZ;
+import static magicbook.gtlitecore.api.GTLiteValues.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
@@ -2243,6 +2241,20 @@ public class MachineRecipeLoader {
                 .output(MEGA_VACUUM_FREEZER)
                 .EUt(VA[UV])
                 .duration(MINUTE + 30 * SECOND)
+                .buildAndRegister();
+
+        //  Catalyst Hatch
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(15)
+                .input(TIERED_HATCH[LV], 2)
+                .input(IMPORT_ITEM_HATCH[MV])
+                .input(gear, Bronze, 8)
+                .input(plate, Lead, 48)
+                .input(wireFine, SolderingAlloy, 16)
+                .fluidInputs(Bronze.getFluid(L * 8))
+                .output(CATALYST_HATCH)
+                .EUt(VA[MV])
+                .duration(MINUTE)
                 .buildAndRegister();
     }
 

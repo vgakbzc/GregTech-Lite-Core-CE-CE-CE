@@ -71,4 +71,7 @@ dependencies {
 
     //  [ ] Spark - 1.6.3
     //runtimeOnly rfg.deobf("curse.maven:spark-361579:3542217")
+
+    //  [SM] Smooth Font - 2.1.4
+    runtimeOnly rfg.deobf("curse.maven:smooth-font-285742:3944565")
 }
