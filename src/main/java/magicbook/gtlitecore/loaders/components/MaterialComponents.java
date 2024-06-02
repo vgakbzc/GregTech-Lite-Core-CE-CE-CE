@@ -201,7 +201,7 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.wireGtOctal, Abyssalloy)},
                 {12, new UnificationEntry(OrePrefix.wireGtOctal, BlackDwarfMatter)},
                 {13, new UnificationEntry(OrePrefix.wireGtOctal, Shirabon)},
-//                {14, new UnificationEntry(OrePrefix.wireGtOctal, Tritanium)}
+                {14, new UnificationEntry(OrePrefix.wireGtOctal, Magmatter)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         STICK_MAGNETIC.appendIngredients(Stream.of(new Object[][]{
@@ -275,6 +275,7 @@ public class MaterialComponents {
                 {11, new UnificationEntry(OrePrefix.spring, RutheniumTriniumAmericiumNeutronate)},
                 {12, new UnificationEntry(OrePrefix.spring, WhiteDwarfMatter)},
                 {13, new UnificationEntry(OrePrefix.spring, Edenium)},
+                {14, new UnificationEntry(OrePrefix.spring, Aetherium)}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
     }
 }

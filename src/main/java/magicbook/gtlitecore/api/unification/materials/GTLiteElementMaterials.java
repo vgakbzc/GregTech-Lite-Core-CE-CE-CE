@@ -514,7 +514,7 @@ public class GTLiteElementMaterials {
                 .color(0xFF7687)
                 .iconSet(ENRICHED)
                 .element(GTLiteElements.Ae)
-                .flags(NO_SMASHING, NO_SMELTING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_DOUBLE_PLATE, GENERATE_SPRING, GENERATE_SPRING_SMALL)
                 .cableProperties(V[MAX], 1000, 1, false)
                 .fluidPipeProperties(999999, 999999, true)
                 .build();
