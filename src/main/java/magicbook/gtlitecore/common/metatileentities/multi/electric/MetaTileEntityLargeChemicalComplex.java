@@ -182,7 +182,6 @@ public class MetaTileEntityLargeChemicalComplex extends RecipeMapMultiblockContr
         public static void addCatalyst() {
             notConsumableCatalyst.add(MetaItems.INTEGRATED_CIRCUIT.getStackForm());
             notConsumableCatalyst.add(MetaItems.BLACKLIGHT.getStackForm());
-            notConsumableCatalyst.add(GTLiteMetaItems.CHROMATIC_LENS.getStackForm());
         }
 
         public static boolean checkCatalyst(ItemStack stack) {

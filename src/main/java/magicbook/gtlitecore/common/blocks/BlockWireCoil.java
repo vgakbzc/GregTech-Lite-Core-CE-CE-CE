@@ -85,12 +85,14 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
     }
 
     public enum CoilType implements IStringSerializable, IHeatingCoilBlockStats {
-
+        //  10800K (Tritanium Coil) + 2701K (UHV)
         ADAMANTIUM("adamantium", 13501, 32, 16, GTLiteMaterials.Adamantium),
+        //  13501K (Adamantium Coil) + 3099K (UEV)
         ICHORIUM("ichorium", 16600, 64, 32, GTLiteMaterials.Ichorium),
-        ASTRALIUM("astralium", 18400, 128, 64, GTLiteMaterials.Astralium);
-
-        //  todo maybe add Hikarium Coil as a final coil.
+        //  16600K (Ichorium Coil) + 1800K (UIV)
+        ASTRALIUM("astralium", 18400, 128, 64, GTLiteMaterials.Astralium),
+        //  18400K (Astralium Coil) + 3600K (UXV, and the final Coil now)
+        HIKARIUM("hikarium", 22000, 256, 128, GTLiteMaterials.Hikarium);
 
         private final String name;
         private final int coilTemperature;

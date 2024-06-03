@@ -21,6 +21,8 @@ public class PipeRecipeHandler {
         OrePrefix.pipeNormalFluid.addProcessingHandler(PropertyKey.FLUID_PIPE, PipeRecipeHandler::processPipeNormal);
         OrePrefix.pipeLargeFluid.addProcessingHandler(PropertyKey.FLUID_PIPE, PipeRecipeHandler::processPipeLarge);
         OrePrefix.pipeHugeFluid.addProcessingHandler(PropertyKey.FLUID_PIPE, PipeRecipeHandler::processPipeHuge);
+
+        //TODO add item pipe recipes
     }
 
     /**
