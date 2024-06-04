@@ -159,8 +159,14 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem PICO_PIC_CHIP;
     public static MetaItem<?>.MetaValueItem FEMTO_PIC_WAFER;
     public static MetaItem<?>.MetaValueItem FEMTO_PIC_CHIP;
+
+    public static MetaItem<?>.MetaValueItem EUROPIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem EUROPIUM_WAFER;
+    public static MetaItem<?>.MetaValueItem AMERICIUM_BOULE;
+    public static MetaItem<?>.MetaValueItem AMERICIUM_WAFER;
     public static MetaItem<?>.MetaValueItem DUBNIUM_BOULE;
     public static MetaItem<?>.MetaValueItem DUBNIUM_WAFER;
+
     public static MetaItem<?>.MetaValueItem PHASE_CHANGE_MEMORY;
     public static MetaItem<?>.MetaValueItem OPTICAL_NOR_MEMORY_CHIP;
     public static MetaItem<?>.MetaValueItem SPIN_TRANSFER_TORQUE_MEMORY;

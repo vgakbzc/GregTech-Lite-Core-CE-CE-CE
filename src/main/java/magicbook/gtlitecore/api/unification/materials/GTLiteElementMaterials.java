@@ -505,6 +505,7 @@ public class GTLiteElementMaterials {
                         .temp(7000, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[ZPM], 800)
                         .vacuumStats(VA[LuV], 400))
+                .flags(GENERATE_PLATE, GENERATE_LENS)
                 .build();
 
         //  10035 Aetherium

@@ -57,52 +57,6 @@ public class PowerIntCircuitChain {
                 .duration(MINUTE)
                 .buildAndRegister();
 
-        //  Nano PIC Wafer
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
-                .notConsumable(lens, LithiumNiobate)
-                .output(NANO_PIC_WAFER)
-                .EUt(VA[UV])
-                .duration(SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(NEUTRONIUM_WAFER)
-                .notConsumable(lens, LithiumNiobate)
-                .output(NANO_PIC_WAFER, 2)
-                .EUt(VA[UHV])
-                .duration(SECOND / 4)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        //  Nano PIC Chip
-        CUTTER_RECIPES.recipeBuilder()
-                .input(NANO_PIC_WAFER)
-                .fluidInputs(Water.getFluid(1000))
-                .output(NANO_PIC_CHIP, 2)
-                .EUt(VA[ZPM])
-                .duration(MINUTE + MINUTE / 2)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(NANO_PIC_WAFER)
-                .fluidInputs(DistilledWater.getFluid(750))
-                .output(NANO_PIC_CHIP, 2)
-                .EUt(VA[ZPM])
-                .duration(MINUTE + 7 * SECOND + 10)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(NANO_PIC_WAFER)
-                .fluidInputs(Lubricant.getFluid(250))
-                .output(NANO_PIC_CHIP, 2)
-                .EUt(VA[ZPM])
-                .duration(45 * SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
     }
 
     private static void PicoPIC() {
@@ -140,43 +94,6 @@ public class PowerIntCircuitChain {
                 .fluidOutputs(Propene.getFluid(1000))
                 .EUt(VA[IV])
                 .duration(10 * SECOND)
-                .buildAndRegister();
-
-        //  Pico PIC
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(NANO_PIC_WAFER)
-                .notConsumable(lens, LuTmYVO)
-                .output(PICO_PIC_WAFER)
-                .EUt(VA[UHV])
-                .duration(2 * SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(PICO_PIC_WAFER)
-                .fluidInputs(Water.getFluid(1000))
-                .output(PICO_PIC_CHIP, 2)
-                .EUt(VA[UV])
-                .duration(MINUTE + MINUTE / 2)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(PICO_PIC_WAFER)
-                .fluidInputs(DistilledWater.getFluid(750))
-                .output(PICO_PIC_CHIP, 2)
-                .EUt(VA[UV])
-                .duration(MINUTE + 7 * SECOND + 10)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(PICO_PIC_WAFER)
-                .fluidInputs(Lubricant.getFluid(250))
-                .output(PICO_PIC_CHIP, 2)
-                .EUt(VA[UV])
-                .duration(45 * SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 
@@ -248,43 +165,6 @@ public class PowerIntCircuitChain {
                 .fluidOutputs(CarbonDioxide.getFluid(1000))
                 .EUt(VA[IV])
                 .duration(10 * SECOND)
-                .buildAndRegister();
-
-        //  Femto PIC
-        LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(PICO_PIC_WAFER)
-                .notConsumable(lens, PrHoYLF)
-                .output(FEMTO_PIC_WAFER)
-                .EUt(VA[UEV])
-                .duration(3 * SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(FEMTO_PIC_WAFER)
-                .fluidInputs(Water.getFluid(1000))
-                .output(FEMTO_PIC_CHIP, 2)
-                .EUt(VA[UHV])
-                .duration(MINUTE + MINUTE / 2)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(FEMTO_PIC_WAFER)
-                .fluidInputs(DistilledWater.getFluid(750))
-                .output(FEMTO_PIC_CHIP, 2)
-                .EUt(VA[UHV])
-                .duration(MINUTE + 7 * SECOND + 10)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(FEMTO_PIC_WAFER)
-                .fluidInputs(Lubricant.getFluid(250))
-                .output(FEMTO_PIC_CHIP, 2)
-                .EUt(VA[UHV])
-                .duration(45 * SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 }

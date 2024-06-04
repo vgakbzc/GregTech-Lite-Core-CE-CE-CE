@@ -17,11 +17,10 @@ import static gregtech.api.unification.material.MarkerMaterials.Color.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.NitrileButadieneRubber;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.PolyPhosphonitrileFluoroRubber;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.DUBNIUM_BOULE;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.DUBNIUM_WAFER;
+import static magicbook.gtlitecore.api.GTLiteValues.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class OverrideRecipeLoader {
 
@@ -46,8 +45,8 @@ public class OverrideRecipeLoader {
         //  Delete Neutronium Boule recipe
         GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
                 new ItemStack[]{OreDictUnifier.get(block, Silicon, 32),
-                        OreDictUnifier.get(ingot, Neutronium, 4),
-                        OreDictUnifier.get(dust, GalliumArsenide, 2)},
+                                OreDictUnifier.get(ingot, Neutronium, 4),
+                                OreDictUnifier.get(dust, GalliumArsenide, 2)},
                 new FluidStack[]{Xenon.getFluid(8000)});
 
         //  Delete Neutronium Boule -> Wafer recipes
@@ -63,93 +62,98 @@ public class OverrideRecipeLoader {
                 new ItemStack[]{NEUTRONIUM_BOULE.getStackForm()},
                 new FluidStack[]{Lubricant.getFluid(250)});
 
-        //  Dubnium Boule
+        //  Eu-doped Boule
         BLAST_RECIPES.recipeBuilder()
                 .input(block, Silicon, 32)
-                .input(ingot, Dubnium, 4)
+                .input(ingot, Europium, 4)
                 .input(dust, GalliumArsenide, 2)
                 .fluidInputs(Xenon.getFluid(8000))
-                .output(DUBNIUM_BOULE)
-                .blastFurnaceTemp(6484)
+                .output(EUROPIUM_BOULE)
                 .EUt(VA[IV])
-                .duration(18000)
+                .duration(QUAT_HOUR) // 900 sec
+                .blastFurnaceTemp(6484) // 5400K < x < 7500K (Naquadah Coil)
                 .buildAndRegister();
 
-        //  Neutronium Boule
+        //  Am-doped Boule
         BLAST_RECIPES.recipeBuilder()
                 .input(block, Silicon, 64)
-                .input(ingot, Neutronium, 8)
+                .input(ingot, Americium, 8)
                 .input(dust, GalliumArsenide, 4)
                 .fluidInputs(Radon.getFluid(8000))
+                .output(AMERICIUM_BOULE)
+                .EUt(VA[LuV])
+                .duration((int) (17.5 * MINUTE)) // 1050 sec
+                .blastFurnaceTemp(8860) // 7500K < x < 10800K (Trinium Coil)
+                .buildAndRegister();
+
+        //  Db-doped Boule
+        BLAST_RECIPES.recipeBuilder()
+                .input(block, SiliconCarbide, 32)
+                .input(ingot, Dubnium, 16)
+                .input(dust, GalliumArsenide, 8)
+                .fluidInputs(MetastableOganesson.getFluid(8000))
+                .output(DUBNIUM_BOULE)
+                .EUt(VA[ZPM])
+                .duration(20 * MINUTE) // 1200 sec
+                .blastFurnaceTemp(10400) // 10800K < x < 13501K (Tritanium Coil)
+                .buildAndRegister();
+
+        //  Nt-doped Boule
+        BLAST_RECIPES.recipeBuilder()
+                .input(block, SiliconCarbide, 64)
+                .input(ingot, Neutronium, 32)
+                .input(dust, GalliumArsenide, 16)
+                .fluidInputs(InertGasMixture.getFluid(8000))
                 .output(NEUTRONIUM_BOULE)
-                .blastFurnaceTemp(8864)
-                .EUt(VA[LuV])
-                .duration(21000)
+                .EUt(VA[UV])
+                .duration((int) (22.5 * MINUTE)) // 1350 sec
+                .blastFurnaceTemp(14860) // 13501K < x < 16600K
                 .buildAndRegister();
 
-        //  Dubnium Boule -> Dubnium Wafer
+        //  Eu-doped Boule -> Eu-doped Wafers
+        CUTTER_RECIPES.recipeBuilder()
+                .input(EUROPIUM_BOULE)
+                .output(EUROPIUM_WAFER, 64)
+                .output(EUROPIUM_WAFER, 32)
+                .EUt(VA[IV])
+                .duration(3 * MINUTE) // 180 sec
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Am-doped Boule -> Am-doped Wafers
+        CUTTER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_BOULE)
+                .output(AMERICIUM_WAFER, 64)
+                .output(AMERICIUM_WAFER, 64)
+                .EUt(VA[LuV])
+                .duration(4 * MINUTE) // 240 sec
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Db-doped Boule -> Db-doped Wafers
         CUTTER_RECIPES.recipeBuilder()
                 .input(DUBNIUM_BOULE)
-                .fluidInputs(Water.getFluid(1000))
+                .output(DUBNIUM_WAFER, 64)
                 .output(DUBNIUM_WAFER, 64)
                 .output(DUBNIUM_WAFER, 32)
-                .EUt(VA[IV])
-                .duration(4800)
+                .EUt(VA[ZPM])
+                .duration(5 * MINUTE) // 300 sec
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
-        CUTTER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_BOULE)
-                .fluidInputs(DistilledWater.getFluid(750))
-                .output(DUBNIUM_WAFER, 64)
-                .output(DUBNIUM_WAFER, 32)
-                .EUt(VA[IV])
-                .duration(3600)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_BOULE)
-                .fluidInputs(Lubricant.getFluid(250))
-                .output(DUBNIUM_WAFER, 64)
-                .output(DUBNIUM_WAFER, 32)
-                .EUt(VA[IV])
-                .duration(2400)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        //  Neutronium Boule -> Neutronium Wafer
+        //  Nt-doped Boule -> Nt-doped Wafers
         CUTTER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_BOULE)
-                .fluidInputs(Water.getFluid(1000))
                 .output(NEUTRONIUM_WAFER, 64)
                 .output(NEUTRONIUM_WAFER, 64)
-                .EUt(VA[LuV])
-                .duration(6400)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(NEUTRONIUM_BOULE)
-                .fluidInputs(DistilledWater.getFluid(750))
                 .output(NEUTRONIUM_WAFER, 64)
-                .output(NEUTRONIUM_WAFER, 64)
-                .EUt(VA[LuV])
-                .duration(4800)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
-
-        CUTTER_RECIPES.recipeBuilder()
-                .input(NEUTRONIUM_BOULE)
-                .fluidInputs(Lubricant.getFluid(250))
-                .output(NEUTRONIUM_WAFER, 64)
-                .output(NEUTRONIUM_WAFER, 64)
-                .EUt(VA[LuV])
-                .duration(3200)
+                .EUt(VA[UV])
+                .duration(6 * MINUTE) // 360 sec
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Add Laser Engraver recipe to Dubnium Wafer and Neutronium Wafer.
+        int baseDuration = 10 * SECOND;
 
         //  Red: Integrated Logic Circuit Wafer
         GTRecipeHandler.removeRecipesByInputs(LASER_ENGRAVER_RECIPES,
@@ -157,20 +161,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Red));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Red)
                 .output(INTEGRATED_LOGIC_CIRCUIT_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Red)
+                .output(INTEGRATED_LOGIC_CIRCUIT_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Red)
+                .output(INTEGRATED_LOGIC_CIRCUIT_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Red)
-                .output(INTEGRATED_LOGIC_CIRCUIT_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(INTEGRATED_LOGIC_CIRCUIT_WAFER, 64)
+                .output(INTEGRATED_LOGIC_CIRCUIT_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -180,20 +203,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Green));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Green)
                 .output(RANDOM_ACCESS_MEMORY_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Green)
+                .output(RANDOM_ACCESS_MEMORY_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Green)
+                .output(RANDOM_ACCESS_MEMORY_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Green)
-                .output(RANDOM_ACCESS_MEMORY_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(RANDOM_ACCESS_MEMORY_WAFER, 64)
+                .output(RANDOM_ACCESS_MEMORY_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -203,20 +245,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, LightBlue));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, LightBlue)
                 .output(CENTRAL_PROCESSING_UNIT_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, LightBlue)
+                .output(CENTRAL_PROCESSING_UNIT_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, LightBlue)
+                .output(CENTRAL_PROCESSING_UNIT_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, LightBlue)
-                .output(CENTRAL_PROCESSING_UNIT_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(CENTRAL_PROCESSING_UNIT_WAFER, 64)
+                .output(CENTRAL_PROCESSING_UNIT_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -226,20 +287,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Blue));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Blue)
                 .output(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Blue)
+                .output(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Blue)
+                .output(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Blue)
-                .output(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .output(ULTRA_LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -249,20 +329,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Orange));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Orange)
                 .output(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Orange)
+                .output(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(EUROPIUM_WAFER)
+                .notConsumable(craftingLens, Orange)
+                .output(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Orange)
-                .output(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .output(LOW_POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -272,20 +371,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Cyan));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Cyan)
                 .output(SIMPLE_SYSTEM_ON_CHIP_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Cyan)
+                .output(SIMPLE_SYSTEM_ON_CHIP_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Cyan)
+                .output(SIMPLE_SYSTEM_ON_CHIP_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Cyan)
-                .output(SIMPLE_SYSTEM_ON_CHIP_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(SIMPLE_SYSTEM_ON_CHIP_WAFER, 64)
+                .output(SIMPLE_SYSTEM_ON_CHIP_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -295,20 +413,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Gray));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Gray)
                 .output(NAND_MEMORY_CHIP_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Gray)
+                .output(NAND_MEMORY_CHIP_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Gray)
+                .output(NAND_MEMORY_CHIP_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Gray)
-                .output(NAND_MEMORY_CHIP_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(NAND_MEMORY_CHIP_WAFER, 64)
+                .output(NAND_MEMORY_CHIP_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -318,20 +455,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Pink));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Pink)
                 .output(NOR_MEMORY_CHIP_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Pink)
+                .output(NOR_MEMORY_CHIP_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Pink)
+                .output(NOR_MEMORY_CHIP_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Pink)
-                .output(NOR_MEMORY_CHIP_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(NOR_MEMORY_CHIP_WAFER, 64)
+                .output(NOR_MEMORY_CHIP_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -341,20 +497,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Brown));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Brown)
                 .output(POWER_INTEGRATED_CIRCUIT_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Brown)
+                .output(POWER_INTEGRATED_CIRCUIT_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Brown)
+                .output(POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Brown)
-                .output(POWER_INTEGRATED_CIRCUIT_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .output(POWER_INTEGRATED_CIRCUIT_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -364,20 +539,39 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Yellow));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
                 .notConsumable(craftingLens, Yellow)
                 .output(SYSTEM_ON_CHIP_WAFER, 16)
                 .EUt(VA[IV])
-                .duration(200)
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Yellow)
+                .output(SYSTEM_ON_CHIP_WAFER, 32)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Yellow)
+                .output(SYSTEM_ON_CHIP_WAFER, 64)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Yellow)
-                .output(SYSTEM_ON_CHIP_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(SYSTEM_ON_CHIP_WAFER, 64)
+                .output(SYSTEM_ON_CHIP_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -387,20 +581,38 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Purple));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(EUROPIUM_WAFER)
+                .notConsumable(craftingLens, Purple)
+                .output(ADVANCED_SYSTEM_ON_CHIP_WAFER, 4)
+                .EUt(VA[IV])
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
                 .notConsumable(craftingLens, Purple)
                 .output(ADVANCED_SYSTEM_ON_CHIP_WAFER, 16)
-                .EUt(VA[IV])
-                .duration(200)
+                .EUt(VA[LuV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(craftingLens, Purple)
+                .output(ADVANCED_SYSTEM_ON_CHIP_WAFER, 32)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Purple)
-                .output(ADVANCED_SYSTEM_ON_CHIP_WAFER, 32)
-                .EUt(VA[LuV])
-                .duration(50)
+                .output(ADVANCED_SYSTEM_ON_CHIP_WAFER, 64)
+                .EUt(VA[UV])
+                .duration(baseDuration / 64)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -410,11 +622,29 @@ public class OverrideRecipeLoader {
                 OreDictUnifier.get(craftingLens, Black));
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(EUROPIUM_WAFER)
+                .notConsumable(craftingLens, Black)
+                .output(HIGHLY_ADVANCED_SOC_WAFER)
+                .EUt(VA[IV])
+                .duration(45 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(craftingLens, Black)
+                .output(HIGHLY_ADVANCED_SOC_WAFER, 4)
+                .EUt(VA[LuV])
+                .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(DUBNIUM_WAFER)
                 .notConsumable(craftingLens, Black)
                 .output(HIGHLY_ADVANCED_SOC_WAFER, 16)
-                .EUt(VA[IV])
-                .duration(200)
+                .EUt(VA[ZPM])
+                .duration((int) (2.5 * SECOND))
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
@@ -422,8 +652,150 @@ public class OverrideRecipeLoader {
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(craftingLens, Black)
                 .output(HIGHLY_ADVANCED_SOC_WAFER, 32)
+                .EUt(VA[UV])
+                .duration(SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Chromatic: UHASoC Wafer
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(AMERICIUM_WAFER)
+                .notConsumable(CHROMATIC_LENS)
+                .output(UHASOC_WAFER)
                 .EUt(VA[LuV])
-                .duration(50)
+                .duration(45 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(CHROMATIC_LENS)
+                .output(UHASOC_WAFER, 4)
+                .EUt(VA[ZPM])
+                .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(NEUTRONIUM_WAFER)
+                .notConsumable(CHROMATIC_LENS)
+                .output(UHASOC_WAFER, 16)
+                .EUt(VA[UV])
+                .duration((int) (2.5 * SECOND))
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  UHASoC Wafer -> UHASoC Chips
+        CUTTER_RECIPES.recipeBuilder()
+                .input(UHASOC_WAFER)
+                .output(UHASOC_CHIP, 6)
+                .EUt(VA[LuV])
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Lithium Niobate: Nano PIC Wafer
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(lens, LithiumNiobate)
+                .output(NANO_PIC_WAFER)
+                .EUt(VA[ZPM])
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(NEUTRONIUM_WAFER)
+                .notConsumable(lens, LithiumNiobate)
+                .output(NANO_PIC_WAFER, 4)
+                .EUt(VA[UV])
+                .duration(baseDuration / 4)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Nano PIC Wafer -> Nano PIC Chips
+        CUTTER_RECIPES.recipeBuilder()
+                .input(NANO_PIC_WAFER)
+                .output(NANO_PIC_CHIP, 2)
+                .EUt(VA[ZPM])
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Lu/Tm-doped YVO: Pico PIC Wafer
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(NANO_PIC_WAFER)
+                .notConsumable(lens, LuTmYVO)
+                .output(PICO_PIC_WAFER)
+                .EUt(VA[UV])
+                .duration(baseDuration)
+                .buildAndRegister();
+
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(NANO_PIC_WAFER)
+                .notConsumable(lens, LuTmYVO)
+                .notConsumable(lens, Picotite)
+                .fluidInputs(Helium.getPlasma(L / 2))
+                .output(PICO_PIC_WAFER, 4)
+                .EUt(VA[UHV])
+                .duration(baseDuration / 4)
+                .buildAndRegister();
+
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(NANO_PIC_WAFER)
+                .notConsumable(lens, LuTmYVO)
+                .notConsumable(lens, Picotite)
+                .notConsumable(lens, CrystalMatrix)
+                .fluidInputs(Argon.getPlasma(L / 4))
+                .output(PICO_PIC_WAFER, 16)
+                .EUt(VA[UEV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(PICO_PIC_WAFER)
+                .output(PICO_PIC_CHIP, 2)
+                .EUt(VA[UV])
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Pr/Ho-YLF: Femto PIC Wafer
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(PICO_PIC_WAFER)
+                .notConsumable(lens, PrHoYLF)
+                .output(FEMTO_PIC_WAFER)
+                .EUt(VA[UHV])
+                .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(PICO_PIC_WAFER)
+                .notConsumable(lens, PrHoYLF)
+                .notConsumable(lens, ExtremelyUnstableNaquadah)
+                .fluidInputs(Neon.getPlasma(L / 2))
+                .output(FEMTO_PIC_WAFER, 4)
+                .EUt(VA[UEV])
+                .duration(baseDuration / 4)
+                .buildAndRegister();
+
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(PICO_PIC_WAFER)
+                .notConsumable(lens, PrHoYLF)
+                .notConsumable(lens, ExtremelyUnstableNaquadah)
+                .notConsumable(lens, Infinity)
+                .fluidInputs(Xenon.getPlasma(L / 4))
+                .output(FEMTO_PIC_WAFER, 16)
+                .EUt(VA[UIV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(FEMTO_PIC_WAFER)
+                .output(FEMTO_PIC_CHIP, 2)
+                .EUt(VA[UHV])
+                .duration(baseDuration)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 

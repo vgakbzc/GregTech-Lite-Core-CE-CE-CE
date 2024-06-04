@@ -628,6 +628,15 @@ public class MiscRecipes {
                 .duration(MINUTE)
                 .buildAndRegister();
 
+        //  Extremely Unstable Naquadah
+        LATHE_RECIPES.recipeBuilder()
+                .input(plate, ExtremelyUnstableNaquadah)
+                .output(lens, ExtremelyUnstableNaquadah)
+                .output(dustSmall, ExtremelyUnstableNaquadah)
+                .EUt(VA[UV])
+                .duration(MINUTE)
+                .buildAndRegister();
+
         //  Infinity Lens
         LATHE_RECIPES.recipeBuilder()
                 .input(plate, Infinity)

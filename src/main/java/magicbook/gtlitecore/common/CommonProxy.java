@@ -8,6 +8,7 @@ import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.loaders.recipe.CraftingComponent;
 import magicbook.gtlitecore.GTLiteCore;
+import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.*;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.ServerSupportI18n;
@@ -49,7 +50,9 @@ import static magicbook.gtlitecore.api.utils.ChatCalculatorHelper.eval;
 @Mod.EventBusSubscriber(modid = GTLiteCore.MODID)
 public class CommonProxy {
 
-    public void preLoad() {}
+    public void preLoad() {
+        GTLiteRecipeMaps.init();
+    }
 
     /**
      * Config register bus.

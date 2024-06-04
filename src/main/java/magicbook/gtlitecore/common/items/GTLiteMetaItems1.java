@@ -449,44 +449,48 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FEMTO_PIC_WAFER = this.addItem(204, "wafer.femto_pic");
         FEMTO_PIC_CHIP = this.addItem(205, "wafer.chip.femto_pic");
 
-        //  ID 206, 207: High Tier Boule and Wafers
-        DUBNIUM_BOULE = this.addItem(206, "boule.dubnium");
-        DUBNIUM_WAFER = this.addItem(207, "wafer.dubnium");
+        //  ID 206-211: High Tier Boule and Wafers
+        EUROPIUM_BOULE = this.addItem(206, "boule.europium");
+        EUROPIUM_WAFER = this.addItem(207, "wafer.europium");
+        AMERICIUM_BOULE = this.addItem(208, "boule.americium");
+        AMERICIUM_WAFER = this.addItem(209, "wafer.americium");
+        DUBNIUM_BOULE = this.addItem(210, "boule.dubnium");
+        DUBNIUM_WAFER = this.addItem(211, "wafer.dubnium");
 
-        //  ID 208-217: Special Wafer and Chips for Circuits
-        PHASE_CHANGE_MEMORY = this.addItem(208, "wafer.chip.phase_change_memory");
-        OPTICAL_NOR_MEMORY_CHIP = this.addItem(209, "wafer.chip.optical_nor_memory_chip");
-        SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(210, "wafer.chip.spin_transfer_torque_memory");
-        SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(211, "wafer.chip.spintronic_nand_memory_chip");
-        UNTREATED_COSMIC_CPU = this.addItem(212, "wafer.untreated_cosmic_cpu");
-        COSMIC_CPU = this.addItem(213, "wafer.cosmic_cpu");
-        COSMIC_CPU_CHIP = this.addItem(214, "wafer.chip.cosmic_cpu");
-        COSMIC_MEMORY_CHIP = this.addItem(215, "wafer.chip.cosmic_memory");
+        //  ID 212-219: Special Wafer and Chips for Circuits
+        PHASE_CHANGE_MEMORY = this.addItem(212, "wafer.chip.phase_change_memory");
+        OPTICAL_NOR_MEMORY_CHIP = this.addItem(213, "wafer.chip.optical_nor_memory_chip");
+        SPIN_TRANSFER_TORQUE_MEMORY = this.addItem(214, "wafer.chip.spin_transfer_torque_memory");
+        SPINTRONIC_NAND_MEMORY_CHIP = this.addItem(215, "wafer.chip.spintronic_nand_memory_chip");
+        UNTREATED_COSMIC_CPU = this.addItem(216, "wafer.untreated_cosmic_cpu");
+        COSMIC_CPU = this.addItem(217, "wafer.cosmic_cpu");
+        COSMIC_CPU_CHIP = this.addItem(218, "wafer.chip.cosmic_cpu");
+        COSMIC_MEMORY_CHIP = this.addItem(219, "wafer.chip.cosmic_memory");
 
-        //  Free ID 216: Maybe for Supracausal CPU Chip
+        //  Free ID 220-221: Maybe for Supracausal CPU Chip
 
-        SUPRACAUSAL_MEMORY_CHIP = this.addItem(217, "wafer.chip.supracausal_memory");
+        SUPRACAUSAL_MEMORY_CHIP = this.addItem(221, "wafer.chip.supracausal_memory");
 
-        //  ID 218, 219: High Tier SoC Wafer and Chips
-        UHASOC_WAFER = this.addItem(218, "wafer.uhasoc");
-        UHASOC_CHIP = this.addItem(219, "wafer.chip.uhasoc");
+        //  ID 222, 223: High Tier SoC Wafer and Chips
+        UHASOC_WAFER = this.addItem(222, "wafer.uhasoc");
+        UHASOC_CHIP = this.addItem(223, "wafer.chip.uhasoc");
 
-        //  ID 220-223: Special Crystal Boule and Wafers (for Crystal SoC)
-        CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(220, "boule.cubic_zirconia.europium");
-        CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(221, "wafer.cubic_zirconia.europium");
-        CRYSTAL_INTERFACE_WAFER = this.addItem(222, "wafer.crystal_interface");
-        CRYSTAL_INTERFACE_CHIP = this.addItem(223, "wafer.chip.crystal_interface");
+        //  ID 224-227: Special Crystal Boule and Wafers (for Crystal SoC)
+        CUBIC_ZIRCONIA_EUROPIUM_BOULE = this.addItem(224, "boule.cubic_zirconia.europium");
+        CUBIC_ZIRCONIA_EUROPIUM_WAFER = this.addItem(225, "wafer.cubic_zirconia.europium");
+        CRYSTAL_INTERFACE_WAFER = this.addItem(226, "wafer.crystal_interface");
+        CRYSTAL_INTERFACE_CHIP = this.addItem(227, "wafer.chip.crystal_interface");
 
-        //  ID 224: Gooware SoC
-        INTRAVITAL_SOC = this.addItem(224, "component.gooware.intravital_soc");
+        //  ID 228: Gooware SoC
+        INTRAVITAL_SOC = this.addItem(228, "component.gooware.intravital_soc");
 
-        //  ID 225-230: Optical SoC Components (Special Optical Crystal Boule and Wafers)
-        STRONTIUM_CARBONATE_BOHRIUM_BOULE = this.addItem(225, "boule.strontium_carbonate.bohrium");
-        STRONTIUM_CARBONATE_BOHRIUM_WAFER = this.addItem(226, "wafer.strontium_carbonate.bohrium");
-        STRONTIUM_CARBONATE_OPTICAL_WAFER = this.addItem(227, "component.optical.strontium_carbonate_wafer");
-        STRONTIUM_CARBONATE_OPTICAL_CHIP = this.addItem(228, "component.optical.strontium_carbonate_chip");
-        OPTICAL_IMC_BOARD = this.addItem(229, "component.optical.optical_imc_board");
-        PHOTOELECTRON_SOC = this.addItem(230, "component.optical.photoelectron_soc");
+        //  ID 229-234: Optical SoC Components (Special Optical Crystal Boule and Wafers)
+        STRONTIUM_CARBONATE_BOHRIUM_BOULE = this.addItem(229, "boule.strontium_carbonate.bohrium");
+        STRONTIUM_CARBONATE_BOHRIUM_WAFER = this.addItem(230, "wafer.strontium_carbonate.bohrium");
+        STRONTIUM_CARBONATE_OPTICAL_WAFER = this.addItem(231, "component.optical.strontium_carbonate_wafer");
+        STRONTIUM_CARBONATE_OPTICAL_CHIP = this.addItem(232, "component.optical.strontium_carbonate_chip");
+        OPTICAL_IMC_BOARD = this.addItem(233, "component.optical.optical_imc_board");
+        PHOTOELECTRON_SOC = this.addItem(234, "component.optical.photoelectron_soc");
 
         /* -------------------------------------------------------------------- Voltage Coils --------------------------------------------------------------------- */
 

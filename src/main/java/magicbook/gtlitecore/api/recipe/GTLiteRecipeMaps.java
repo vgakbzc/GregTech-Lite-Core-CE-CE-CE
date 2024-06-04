@@ -51,6 +51,9 @@ import stanhebben.zenscript.annotations.ZenProperty;
 import java.math.BigInteger;
 import java.util.function.Consumer;
 
+import static gregtech.api.recipes.RecipeMaps.CUTTER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.LASER_ENGRAVER_RECIPES;
+
 /**
  * Recipe Maps
  *
@@ -76,6 +79,8 @@ import java.util.function.Consumer;
 @ZenClass("mods.gtlitecore.recipe.RecipeMaps")
 @ZenRegister
 public class GTLiteRecipeMaps {
+
+    public GTLiteRecipeMaps() {}
 
     //////////////////////////////////
     //  Single Machine Recipe Maps  //
@@ -2201,5 +2206,8 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
             .setSound(GTSoundEvents.CHEMICAL_REACTOR);
 
-    public GTLiteRecipeMaps() {}
+    public static void init() {
+        CUTTER_RECIPES.setMaxOutputs(4);
+        LASER_ENGRAVER_RECIPES.setMaxOutputs(2);
+    }
 }
