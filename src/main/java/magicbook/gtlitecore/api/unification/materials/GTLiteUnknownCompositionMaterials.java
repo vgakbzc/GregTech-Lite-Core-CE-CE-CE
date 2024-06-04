@@ -561,7 +561,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
                 .color(0x9400D3)
                 .build()
-                .setFormula("Dc2?", true);
+                .setFormula("Dc?Ma", true);
 
         //  24056 Dragon Blood
         DragonBlood = new Material.Builder(getID(), gregtechId("dragon_blood"))
@@ -570,7 +570,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0xDC2814)
                 .iconSet(DULL)
                 .build()
-                .setFormula("*Dc*Rn?", true);
+                .setFormula("Dc+?Ma", true);
 
         //  24057 Chalcogen Anode Mud
         ChalcogenAnodeMud = new Material.Builder(getID(), gregtechId("chalcogen_anode_mud"))

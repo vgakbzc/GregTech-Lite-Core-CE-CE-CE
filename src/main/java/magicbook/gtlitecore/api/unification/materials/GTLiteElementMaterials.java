@@ -487,7 +487,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0x00D10B)
                 .iconSet(SHINY)
-                .element(GTLiteElements.Quantium)
+                .element(GTLiteElements.Qt)
                 .blast(b -> b
                         .temp(5400, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[IV], 300)

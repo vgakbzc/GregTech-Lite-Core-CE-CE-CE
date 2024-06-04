@@ -36,7 +36,7 @@ public class GTLiteElements {
     public static final Element Om                = addElement(99999,  99999,  "Omnium",                    "Om⦼");
     public static final Element M                 = addElement(1931,   1994,   "Magmatter",                 "M⎋");
     public static final Element Pm                = addElement(50000,  50000,  "PrimordialMatter",          "Pm⎋");
-    public static final Element Quantium          = addElement(300,    300,    "Quantium",                  "Qt");
+    public static final Element Qt                = addElement(300,    300,    "Quantium",                  "Qt");
     public static final Element Nqx               = addElement(174,    360,    "ExtremelyUnstableNaquadah", "Nq⚶");
     public static final Element Ae                = addElement(88888,  88888,  "Aetherium",                 "Ae⦼");
 

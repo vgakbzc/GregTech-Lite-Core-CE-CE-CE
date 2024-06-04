@@ -28,6 +28,8 @@ import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.boule;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.seedCrystal;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class MiscRecipes {
@@ -680,6 +682,52 @@ public class MiscRecipes {
                 .output(dustSmall, Eternity)
                 .EUt(VA[UXV])
                 .duration(MINUTE / 8)
+                .buildAndRegister();
+
+        //  Nether Star processing
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .input(dust, Platinum)
+                .fluidInputs(ConcentrateDragonBreath.getFluid(L * 4))
+                .output(seedCrystal, NetherStar)
+                .EUt(VA[EV])
+                .duration((int) (8.6 * SECOND))
+                .buildAndRegister();
+
+        CRYSTALLIZATION_RECIPES.recipeBuilder()
+                .input(seedCrystal, NetherStar)
+                .input(dust, Platinum)
+                .fluidInputs(ConcentrateDragonBreath.getFluid(1000))
+                .output(boule, NetherStar)
+                .EUt(VA[IV])
+                .duration((int) (6.7 * SECOND))
+                .blastFurnaceTemp(3200)
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(boule, NetherStar)
+                .fluidInputs(Water.getFluid(4))
+                .output(gem, NetherStar)
+                .output(seedCrystal, NetherStar)
+                .EUt(VA[LV])
+                .duration((int) (7.2 * SECOND))
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(boule, NetherStar)
+                .fluidInputs(DistilledWater.getFluid(3))
+                .output(gem, NetherStar)
+                .output(seedCrystal, NetherStar)
+                .EUt(VA[LV])
+                .duration((int) (5.4 * SECOND))
+                .buildAndRegister();
+
+        CUTTER_RECIPES.recipeBuilder()
+                .input(boule, NetherStar)
+                .fluidInputs(Lubricant.getFluid(1))
+                .output(gem, NetherStar)
+                .output(seedCrystal, NetherStar)
+                .EUt(VA[LV])
+                .duration((int) (3.6 * SECOND))
                 .buildAndRegister();
     }
 
