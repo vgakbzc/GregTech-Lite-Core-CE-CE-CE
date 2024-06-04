@@ -13,6 +13,7 @@ import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.DISABLE_CRYSTALLIZATION;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.FRONT;
 
 /**
  * Unknown Composition Materials
@@ -299,88 +300,99 @@ public class GTLiteUnknownCompositionMaterials {
 
         //  18042 Almandine Front
         AlmandineFront = new Material.Builder(getID(), gregtechId("almandine_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Almandine.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Almandine.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18043 Chalcopyrite Front
         ChalcopyriteFront = new Material.Builder(getID(), gregtechId("chalcopyrite_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Chalcopyrite.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Chalcopyrite.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18044 Monazite Front
         MonaziteFront = new Material.Builder(getID(), gregtechId("monazite_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Monazite.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Monazite.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18045 Grossular Front
         GrossularFront = new Material.Builder(getID(), gregtechId("grossular_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Grossular.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Grossular.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18046 Nickel Front
         NickelFront = new Material.Builder(getID(), gregtechId("nickel_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Nickel.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Nickel, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18047 Platinum Front
         PlatinumFront = new Material.Builder(getID(), gregtechId("platinum_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Platinum.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Platinum, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18048 Pyrope Front
         PyropeFront = new Material.Builder(getID(), gregtechId("pyrope_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Pyrope.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Pyrope.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18049 Redstone Front
         RedstoneFront = new Material.Builder(getID(), gregtechId("redstone_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Redstone.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Redstone.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18050 Spessartine Front
         SpessartineFront = new Material.Builder(getID(), gregtechId("spessartine_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Spessartine.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Spessartine.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18051 Sphalerite Front
         SphaleriteFront = new Material.Builder(getID(), gregtechId("sphalerite_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Sphalerite.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Sphalerite.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
         //  18052 Pentlandite Front
         PentlanditeFront = new Material.Builder(getID(), gregtechId("pentlandite_front"))
-                .liquid()
+                .liquid(new FluidBuilder().temperature(283))
                 .color(Pentlandite.getMaterialRGB())
+                .iconSet(FRONT)
                 .components(Pentlandite.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
                 .build();

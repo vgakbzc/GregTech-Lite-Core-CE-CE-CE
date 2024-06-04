@@ -51,8 +51,7 @@ import stanhebben.zenscript.annotations.ZenProperty;
 import java.math.BigInteger;
 import java.util.function.Consumer;
 
-import static gregtech.api.recipes.RecipeMaps.CUTTER_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.LASER_ENGRAVER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 
 /**
  * Recipe Maps
@@ -2208,6 +2207,7 @@ public class GTLiteRecipeMaps {
 
     public static void init() {
         CUTTER_RECIPES.setMaxOutputs(4);
+        ELECTROLYZER_RECIPES.setMaxFluidInputs(2);
         LASER_ENGRAVER_RECIPES.setMaxOutputs(2);
     }
 }

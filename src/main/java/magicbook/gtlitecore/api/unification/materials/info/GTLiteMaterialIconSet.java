@@ -9,7 +9,7 @@ import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavi
 /**
  * Material Icon Set
  *
- * @author Magic_Sweepy
+ * @author Magic_Sweepy, Gate Guardian, U.M.T
  *
  * <p>
  *     Material Icon set class for gtlitecore, like {@link MaterialIconSet}.
@@ -58,6 +58,18 @@ public class GTLiteMaterialIconSet {
      * @since 2.8.7-beta
      */
     public static final MaterialIconSet REAGENT = new MaterialIconSet("reagent", null, true);
+
+    /**
+     * Front Icon Set
+     *
+     * <p>
+     *     This icon set is from <a href="https://github.com/SymmetricDevs/Susy-Core">Susy Core</a>,
+     *     used to make some Flotation Materials from Isa Mill Ore Processing more beautiful.
+     * </p>
+     *
+     * @since 2.8.8-beta
+     */
+    public static final MaterialIconSet FRONT = new MaterialIconSet("front", MaterialIconSet.DULL, true);
 
     /**
      * Custom Icon Set: Infinity
@@ -136,7 +148,15 @@ public class GTLiteMaterialIconSet {
      */
     public static final MaterialIconSet CUSTOM_MAGNETO_RESONATIC = new MaterialIconSet("magneto_resonatic", null, true);
 
-    //  TODO Finish
+    /**
+     * Custom Icon Set: Omnium
+     *
+     * <p>
+     *     This icon set is for {@link GTLiteMaterials#Omnium}.
+     * </p>
+     *
+     * @since 2.8.7-beta
+     */
     public static final MaterialIconSet CUSTOM_OMNIUM = new MaterialIconSetWithRenderer("omnium", null, true, new HaloRenderItemBehavior(10, 0xFFFFFFFF, () -> GTLiteTextures.HALO, true));
 
     /**

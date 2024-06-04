@@ -15,18 +15,28 @@ public class SeleniumTelluriumChain {
 
     public static void init() {
 
+        //  Fix GTFO Blue Vitriol original Electrolyzer recipe
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .fluidInputs(BlueVitriol.getFluid(1000))
+                .output(dust, Copper)
+                .output(dust, Sulfur)
+                .fluidOutputs(Oxygen.getFluid(4000))
+                .EUt(VHA[MV])
+                .duration((int) (7.2 * SECOND))
+                .buildAndRegister();
+
         //  CuSO4 + H2O -> H2SO4 + Cu + O
-        CHEMICAL_RECIPES.recipeBuilder()
-                .notConsumable(stickLong, IronMagnetic)
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .circuitMeta(3)
                 .fluidInputs(BlueVitriol.getFluid(1000))
                 .fluidInputs(Water.getFluid(1000))
-                .circuitMeta(3)
                 .output(dust, Copper)
                 .chancedOutput(dust, ChalcogenAnodeMud, 500, 0)
                 .fluidOutputs(SulfuricAcid.getFluid(1000))
                 .fluidOutputs(Oxygen.getFluid(1000))
-                .EUt(VH[MV])
-                .duration(5 * SECOND)
+                .EUt(VHA[MV])
+                .duration((int) (3.6 * SECOND))
                 .buildAndRegister();
 
         //  Optional recovery of metals to provide some nice bonus
@@ -35,7 +45,7 @@ public class SeleniumTelluriumChain {
                 .output(dust, Silver)
                 .chancedOutput(dust, Copper, 1000, 1000)
                 .chancedOutput(dust, Gold, 750, 750)
-                .EUt((int) (V[MV] / 2))
+                .EUt(VHA[MV])
                 .duration(15 * SECOND)
                 .buildAndRegister();
 

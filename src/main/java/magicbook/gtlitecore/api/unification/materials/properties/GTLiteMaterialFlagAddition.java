@@ -10,6 +10,7 @@ import static gregtech.api.GTValues.UIV;
 import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtechfoodoption.GTFOMaterialHandler.BlueVitriol;
 import static gregtechfoodoption.GTFOMaterialHandler.RainbowSap;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.*;
@@ -457,5 +458,7 @@ public class GTLiteMaterialFlagAddition {
             Pyrochlore.addFlags(DISABLE_DECOMPOSITION);
             Tantalite.addFlags(DISABLE_DECOMPOSITION);
         }
+
+        BlueVitriol.addFlags(DISABLE_DECOMPOSITION);
     }
 }
