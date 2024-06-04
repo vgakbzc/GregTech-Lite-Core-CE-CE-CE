@@ -1198,7 +1198,7 @@ public class GTLiteFirstDegreeMaterials {
                 .ingot()
                 .color(0xC5C88D)
                 .iconSet(BRIGHT)
-                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE)
+                .flags(NO_SMASHING, NO_WORKING, DISABLE_DECOMPOSITION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .components(ZBLANGlass, 1, Praseodymium, 1)
                 .build()
                 .setFormula("(ZrF4)5(BaF2)2(LaF3)(AlF3)(NaF)2Pr", true);

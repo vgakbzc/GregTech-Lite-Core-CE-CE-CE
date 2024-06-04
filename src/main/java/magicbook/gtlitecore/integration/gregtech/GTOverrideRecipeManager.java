@@ -19,6 +19,7 @@ public class GTOverrideRecipeManager {
         MachineCasings.init();
         HermeticCasings.init();
         SuperconductorCoil.init();
+        MiscItems.init();
     }
 
     private static void initParts() {

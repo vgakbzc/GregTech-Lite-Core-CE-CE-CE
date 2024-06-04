@@ -309,7 +309,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UV], 800)
                         .vacuumStats(VA[LuV], 140))
                 .components(Zeron100, 8, Stellite100, 6, Titanium, 6, Naquadria, 4, Osmiridium, 3, Aluminium, 2, Tin, 1, Mercury, 1)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROTOR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROTOR, GENERATE_FOIL)
                 .build();
 
         //  12021 Titan Steel
@@ -982,7 +982,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8400, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[ZPM], 877)
                         .vacuumStats(VA[IV], 405))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_FOIL)
                 .build();
 
         //  12074 Arceus Alloy 2B

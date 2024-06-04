@@ -146,7 +146,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .polymer()
                 .liquid()
                 .color(9554657)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .components(Carbon, 5, Hydrogen, 8, Oxygen, 2)
                 .build();
 
@@ -214,7 +214,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .polymer()
                 .liquid()
                 .color(0xDFDFDF)
-                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE)
+                .flags(DISABLE_DECOMPOSITION, NO_SMASHING, NO_SMELTING, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .components(Carbon, 9, Hydrogen, 14, Oxygen, 3)
                 .build();
 
