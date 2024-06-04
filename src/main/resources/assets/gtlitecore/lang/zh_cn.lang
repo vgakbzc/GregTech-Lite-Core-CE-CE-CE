@@ -3481,6 +3481,33 @@ gregtech.material.mana_glass=魔力玻璃
 gregtech.material.alf_glass=精灵玻璃
 gregtech.material.bifrost_glass=彩虹桥玻璃
 
+##  Renamed Materials
+item.gregtech.material.platinum_group_residue.dust=铂族金属残渣
+item.gregtech.material.platinum_group_residue.dustSmall=小堆铂族金属残渣
+item.gregtech.material.platinum_group_residue.dustTiny=小撮铂族金属残渣
+
+item.gregtech.material.pedot_tma.ingot=PEDOT-TMA条
+item.gregtech.material.pedot_tma.nugget=PEDOT-TMA颗粒
+item.gregtech.material.pedot_tma.dust=PEDOT-TMA末
+item.gregtech.material.pedot_tma.dustSmall=小堆PEDOT-TMA末
+item.gregtech.material.pedot_tma.dustTiny=小撮PEDOT-TMA末
+item.gregtech.material.pedot_tma.plate=PEDOT-TMA片
+item.gregtech.material.pedot_tma.foil=薄PEDOT-TMA片
+
+item.gregtech.material.polymethylmethacrylate.wireFine=聚甲基丙烯酸甲酯（PMMA）纤维
+
+item.gregtech.material.cbdo_polycarbonate.wireFine=CBDO聚碳酸酯纤维
+
+item.gregtech.material.gst_glass.ingot=GST玻璃条
+
+item.gregtech.material.zblan_glass.ingot=ZBLAN玻璃条
+item.gregtech.material.zblan_glass.wireFine=ZBLAN玻璃纤维
+
+item.gregtech.material.erbium_doped_zblan_glass.ingot=铒掺杂的ZBLAN玻璃条
+
+item.gregtech.material.praseodymium_doped_zblan_glass.ingot=镨掺杂的ZBLAN玻璃条
+item.gregtech.material.praseodymium_doped_zblan_glass.wireFine=镨掺杂的ZBLAN玻璃纤维
+
 #  Universals
 
 ##  Chat Calculator Descriptions
