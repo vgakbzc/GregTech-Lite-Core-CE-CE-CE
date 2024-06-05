@@ -623,11 +623,10 @@ public class LargeChemicalComplex {
                 OreDictUnifier.get(dust, HassiumTetrachloride, 5),
                 OreDictUnifier.get(dust, Bisethylenedithiotetraselenafulvalene, 3));
 
-        //  TODO Find MAX Pipe Material
-        //createCatalystBedRecipe(MAX, CATALYST_BED_MAX,
-        //        Tritanium,
-        //        OreDictUnifier.get(dust, TetraethylammoniumNonahydriorhenidetechnetide, 2),
-        //        OreDictUnifier.get(dust, Hexanitrohexaaxaisowurtzitane));
+        createCatalystBedRecipe(MAX, CATALYST_BED_MAX,
+                Aetherium,
+                OreDictUnifier.get(dust, TetraethylammoniumNonahydriorhenidetechnetide, 2),
+                OreDictUnifier.get(dust, Hexanitrohexaaxaisowurtzitane));
     }
 
     private static void createCatalystBedRecipe(int tier,
