@@ -1,11 +1,13 @@
 package magicbook.gtlitecore.loaders;
 
+import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.common.blocks.*;
+import net.minecraft.block.state.IBlockState;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -191,7 +193,20 @@ public class MaterialInfoLoader {
                 new MaterialStack(Arcanium, M * 2)));
     }
 
+    /**
+     * Coil Block Material Info.
+     *
+     * <p>
+     *     Common Coil means Wire Coil which can used by {@link IHeatingCoilBlockStats},
+     *     and Special Coil means Unique Casing form coil, only can used as {@link IBlockState}.
+     *     Here are material lists of two Coil Blocks:
+     *     <ul>
+     *         <li>Coil Blocks -> 8x {@code wireGtDouble}, 8x {@code foil}, 144L {@code liquid};</li>
+     *     </ul>
+     * </p>
+     */
     private static void CoilBlocks() {
+
         //  Adamantium Coil Block
         OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.ADAMANTIUM), new ItemMaterialInfo(
                 new MaterialStack(Adamantium, M * 8),
@@ -209,6 +224,12 @@ public class MaterialInfoLoader {
                 new MaterialStack(Astralium, M * 8),
                 new MaterialStack(Abyssalloy, M * 2),
                 new MaterialStack(Ichorium, M)));
+
+        //  Hikarium Coil Block
+        OreDictUnifier.registerOre(GTLiteMetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.HIKARIUM), new ItemMaterialInfo(
+                new MaterialStack(Hikarium, M * 8),
+                new MaterialStack(BlackDwarfMatter, M * 2),
+                new MaterialStack(Astralium, M)));
 
         //  Other Unique Coil Blocks
 
