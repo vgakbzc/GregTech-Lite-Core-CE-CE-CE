@@ -832,6 +832,9 @@ public class GTLiteMaterials {
     public static Material NaquadriaEmulsion;
     public static Material TriniumGoo;
     public static Material TriniumWaste;
+    public static Material GreenSapphireJuice;
+    public static Material SapphireJuice;
+    public static Material RubyJuice;
 
     //////////////////////////////
     //  Third Degree Materials  //

@@ -132,6 +132,7 @@ public class RecipeManager {
     }
 
     private static void initOreProcessings() {
+        GemJuiceProcessing.init();
         GermaniumProcessing.init();
         IsaMillOreProcessing.init();
         MolybdenumProcessing.init();

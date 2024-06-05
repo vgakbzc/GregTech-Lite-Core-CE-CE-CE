@@ -1067,6 +1067,30 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0x9F4495)
                 .build()
                 .setFormula("GaTi(HNO3)?", true);
+
+        //  24129 Green Sapphire Juice
+        GreenSapphireJuice = new Material.Builder(getID(), gregtechId("green_sapphire_juice"))
+                .liquid()
+                .color(GreenSapphire.getMaterialRGB())
+                .components(GreenSapphire.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24130 Sapphire Juice
+        SapphireJuice = new Material.Builder(getID(), gregtechId("sapphire_juice"))
+                .liquid()
+                .color(Sapphire.getMaterialRGB())
+                .components(Sapphire.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24131 Ruby Juice
+        RubyJuice = new Material.Builder(getID(), gregtechId("ruby_juice"))
+                .liquid()
+                .color(Ruby.getMaterialRGB())
+                .components(Ruby.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
     }
 
 }

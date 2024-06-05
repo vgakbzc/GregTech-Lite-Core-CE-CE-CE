@@ -173,19 +173,13 @@ public class LargeChemicalComplex {
                 .notConsumable(CATALYST_SOLID_ACID)
                 .fluidInputs(TriniumGoo.getFluid(16000))
                 .fluidInputs(NitricAcid.getFluid(4000))
-                .output(dust, Trinium, 2)
-                .chancedOutput(dust, Trinium, 2, 2500, 100)
-                .chancedOutput(dust, Trinium, 2, 4000, 150)
-                .chancedOutput(dust, Trinium, 2, 6000, 200)
-                .output(dust, DeepIron, 4)
-                .chancedOutput(dust, DeepIron, 4, 2500, 100)
-                .chancedOutput(dust, DeepIron, 4, 4000, 150)
+                .output(dust, DeepIron, 8)
                 .fluidOutputs(TriniumWaste.getFluid(12000))
                 .EUt(VA[ZPM])
                 .duration((int) (4.8 * SECOND))
                 .buildAndRegister();
 
-        //  Trinium Waste -> InGaP + Ti(NO3)4 + W
+        //  Trinium Waste -> Ga + Ti + HNO3 (cycle)
         CHEMICAL_DRYER_RECIPES.recipeBuilder()
                 .fluidInputs(TriniumWaste.getFluid(3000))
                 .output(dust, Gallium)

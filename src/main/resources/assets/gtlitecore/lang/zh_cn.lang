@@ -3416,6 +3416,9 @@ gregtech.material.enriched_naquadah_emulsion=富集硅岩乳液
 gregtech.material.naquadria_emulsion=超能硅岩乳液
 gregtech.material.trinium_goo=凯金粘浆
 gregtech.material.trinium_waste=凯金废液
+gregtech.material.green_sapphire_juice=绿色蓝宝石汁
+gregtech.material.sapphire_juice=蓝宝石汁
+gregtech.material.ruby_juice=红宝石汁
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金
