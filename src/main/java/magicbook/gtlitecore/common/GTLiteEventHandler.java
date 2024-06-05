@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
-import java.util.Objects;
+import java.util.Arrays;
 
 import static net.minecraft.util.text.TextFormatting.*;
 
@@ -59,10 +59,8 @@ public class GTLiteEventHandler {
 
         @SubscribeEvent(priority = EventPriority.HIGHEST)
         public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-            Objects.requireNonNull(event.player);
-            for (String line : lines) {
-                event.player.sendMessage(new TextComponentString(line));
-            }
+            Arrays.stream(lines).map(TextComponentString::new)
+                    .forEach(event.player::sendMessage);
         }
     }
 }
