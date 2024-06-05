@@ -8,6 +8,7 @@ import magicbook.gtlitecore.api.unification.materials.GTLiteMaterialPropertyAddi
 import magicbook.gtlitecore.api.unification.materials.properties.GTLiteMaterialFlagAddition;
 import magicbook.gtlitecore.common.items.GTLiteTools;
 import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -46,20 +47,20 @@ public class GTLiteEventHandler {
     public static class PlayerLoginEventHandler {
 
         private static final String[] lines = {
-                GOLD + "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+",
-                BOLD + "欢迎来到格雷科技精简版 " + GREEN + " 0.0.1-alpha " + LIGHT_PURPLE + "[preview 70]",
+                "gtlitecore.universal.login_event.split",
+                "gtlitecore.universal.login_event.desc.1",
                 "",
-                GRAY + "当前游戏为" + RED + "测试版本" + GRAY + "或" + RED + "预览版本" + GRAY + "，在游玩过程中若遇到问题请及时反馈",
-                GRAY + "该版本中一切内容仅供预览，不保证能够按照正常的生存模式流程进行游戏。",
+                "gtlitecore.universal.login_event.desc.2",
+                "gtlitecore.universal.login_event.desc.3",
                 "",
-                GRAY + "官方交流群组：" + YELLOW + "901147549" + GRAY + "（QQ）",
-                GRAY + "问题反馈渠道：" + GREEN + "https://gitlab.com/sweep_tosho/gregtech-lite-core/-/issues",
-                GOLD + "+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+"
+                "gtlitecore.universal.login_event.desc.4",
+                "gtlitecore.universal.login_event.desc.5",
+                "gtlitecore.universal.login_event.split"
         };
 
         @SubscribeEvent(priority = EventPriority.HIGHEST)
         public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
-            Arrays.stream(lines).map(TextComponentString::new)
+            Arrays.stream(lines).map(TextComponentTranslation::new)
                     .forEach(event.player::sendMessage);
         }
     }
