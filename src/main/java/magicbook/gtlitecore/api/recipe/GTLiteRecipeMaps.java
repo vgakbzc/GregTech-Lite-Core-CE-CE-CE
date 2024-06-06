@@ -2208,6 +2208,7 @@ public class GTLiteRecipeMaps {
     public static void init() {
         CUTTER_RECIPES.setMaxOutputs(4);
         ELECTROLYZER_RECIPES.setMaxFluidInputs(2);
+        ELECTROLYZER_RECIPES.setSlotOverlay(false, true, false, GuiTextures.LIGHTNING_OVERLAY_2);
         LASER_ENGRAVER_RECIPES.setMaxOutputs(2);
     }
 }
