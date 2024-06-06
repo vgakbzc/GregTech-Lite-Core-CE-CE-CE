@@ -37,7 +37,7 @@
       "model": "gregtech:cube_2_layer_all",
       "textures": {
         "bot_all": "gtlitecore:blocks/coils/machine_coil_astralium",
-        "top_all": "gtlitecore:blocks/coils/machine_coil_astralium_bloom"
+        "top_all": "gtlitecore:blocks/coils/machine_coil_astralium"
       }
     },
     "active=false,variant=hikarium": {
@@ -50,7 +50,7 @@
       "model": "gregtech:cube_2_layer_all",
       "textures": {
         "bot_all": "gtlitecore:blocks/coils/machine_coil_hikarium",
-        "top_all": "gtlitecore:blocks/coils/machine_coil_hikarium_bloom"
+        "top_all": "gtlitecore:blocks/coils/machine_coil_hikarium"
       }
     }
   }
