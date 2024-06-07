@@ -94,7 +94,7 @@ public class MetaTileEntityLargeCircuitAssemblyLine extends MultiMapMultiblockCo
                 .where('O', abilities(MultiblockAbility.EXPORT_ITEMS)
                         .setExactLimit(1)
                         .addTooltips("gregtech.multiblock.pattern.location_end"))
-                .where('Y', states(getCasingState())
+                .where('Y', states(getSecondCasingState())
                         .or(abilities(MultiblockAbility.INPUT_ENERGY)
                                 .setMinGlobalLimited(1)
                                 .setMaxGlobalLimited(3)))
