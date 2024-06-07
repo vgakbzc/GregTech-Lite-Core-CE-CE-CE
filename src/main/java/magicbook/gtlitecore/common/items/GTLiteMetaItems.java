@@ -190,7 +190,8 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem STRONTIUM_CARBONATE_OPTICAL_CHIP;
     public static MetaItem<?>.MetaValueItem OPTICAL_IMC_BOARD;
     public static MetaItem<?>.MetaValueItem PHOTOELECTRON_SOC;
-
+    public static MetaItem<?>.MetaValueItem WETWARE_CRYSTAL_CHIP;
+    public static MetaItem<?>.MetaValueItem RICH_BACTERIA_SOC;
 
     //  Voltage Coils
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UHV;

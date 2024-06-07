@@ -492,6 +492,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         OPTICAL_IMC_BOARD = this.addItem(233, "component.optical.optical_imc_board");
         PHOTOELECTRON_SOC = this.addItem(234, "component.optical.photoelectron_soc");
 
+        //  ID 235-236 : Wetware SoC Components
+        WETWARE_CRYSTAL_CHIP = this.addItem(235, "component.wetware.crystal_chip");
+        RICH_BACTERIA_SOC = this.addItem(236, "component.wetware.rich_bacteria_soc");
+
         /* -------------------------------------------------------------------- Voltage Coils --------------------------------------------------------------------- */
 
         VOLTAGE_COIL_UHV = this.addItem(250, "voltage_coil.uhv");

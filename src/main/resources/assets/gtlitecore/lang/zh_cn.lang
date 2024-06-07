@@ -454,6 +454,10 @@ metaitem.component.optical.optical_imc_board.name=精密预装配光电子电路
 metaitem.component.optical.optical_imc_board.tooltip=存算一体光学基板
 metaitem.component.optical.photoelectron_soc.name=光电子 SoC
 metaitem.component.optical.photoelectron_soc.tooltip=荧光电路
+metaitem.component.wetware.crystal_chip.name=刻蚀活性晶片
+metaitem.component.wetware.crystal_chip.tooltip=新型生物晶体
+metaitem.component.wetware.rich_bacteria_soc.name=富菌 SoC
+metaitem.component.wetware.rich_bacteria_soc.tooltip=化学扩散计算系统
 
 ##  Catalysts
 metaitem.catalyst.base.name=催化剂载体
