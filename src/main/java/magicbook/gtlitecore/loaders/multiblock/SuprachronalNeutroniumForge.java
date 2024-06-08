@@ -783,7 +783,7 @@ public class SuprachronalNeutroniumForge {
                 .input(plate, Edenium, 4)
                 .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter, 8)
                 .input(plate, Hypogen, 16)
-                .input(plate, Legendarium, 24)
+                .input(plate, Octiron, 24)
                 .input(stick, Shirabon, 12)
                 .input(ring, Infinity, 8)
                 .input(screw, Fatalium, 24)
