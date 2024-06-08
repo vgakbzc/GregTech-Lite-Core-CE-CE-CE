@@ -2543,7 +2543,7 @@ public class GTLiteFirstDegreeMaterials {
                 .ingot()
                 .color(0xD5FF80)
                 .iconSet(MAGNETIC)
-                .flags(IS_MAGNETIC, GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
+                .flags(IS_MAGNETIC, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .components(Tengam, 1)
                 .ingotSmeltInto(Tengam)
                 .arcSmeltInto(Tengam)

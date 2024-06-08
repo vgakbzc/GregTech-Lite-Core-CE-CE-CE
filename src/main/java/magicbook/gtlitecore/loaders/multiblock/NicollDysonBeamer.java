@@ -690,7 +690,7 @@ public class NicollDysonBeamer {
                 .input(BOSE_EINSTEIN_CONDENSATE, 64)
                 .input(singularity, Taranium)
                 .input(HYPERSTABLE_SELF_HEALING_ADHESIVE, 4)
-                .input(wireFine, QuantumchromodynamicallyConfinedMatter, 32)
+                .input(wireFine, AttunedTengam, 32)
                 .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(64000))
                 .fluidInputs(MercuryCadmiumTelluride.getFluid(64000))
                 .fluidInputs(MBBA.getFluid(48000))
