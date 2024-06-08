@@ -6,7 +6,7 @@ import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.capability.IHeatingCoil;
-import gregtech.api.capability.IMaintenanceHatch;
+import gregtech.api.capability.IMufflerHatch;
 import gregtech.api.capability.impl.HeatingCoilRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -238,7 +238,7 @@ public class MetaTileEntityMegaBlastFurnace extends RecipeMapMultiblockControlle
     @SideOnly(Side.CLIENT)
     @Override
     public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        if (iMultiblockPart instanceof IMaintenanceHatch) {
+        if (iMultiblockPart instanceof IMufflerHatch) {
             return Textures.ROBUST_TUNGSTENSTEEL_CASING;
         } else {
             return Textures.HEAT_PROOF_CASING;
