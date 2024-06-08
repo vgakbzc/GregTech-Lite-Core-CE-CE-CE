@@ -2505,5 +2505,18 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
 
+        //  11284 Fluorocarborane
+        Fluorocarborane = new Material.Builder(getID(), gregtechId("fluorocarborane"))
+                .dust()
+                .color(0x59B35C)
+                .iconSet(BRIGHT)
+                .components(Carbon, 1, Hydrogen, 2, Boron, 11, Fluorine, 11)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("HCHB11F11", true);
+
+        //  11285 Cubic Fluoroheterodiamond
+
+
     }
 }

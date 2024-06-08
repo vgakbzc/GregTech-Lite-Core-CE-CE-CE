@@ -2977,6 +2977,8 @@ gregtech.material.caesium_carborane_precursor=碳硼烷铯预固化剂
 gregtech.material.caesium_hydroxide=氢氧化铯
 gregtech.material.sodium_borohydride=硼氢化钠
 gregtech.material.sodium_tetrafluoroborate=四氟硼酸钠
+gregtech.material.fluorocarborane=氟碳硼烷
+gregtech.material.cubic_fluoroheterodiamond=立方氟金刚石
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3260,11 +3262,10 @@ gregtech.material.para_toluic_acid=对甲基苯甲酸
 gregtech.material.methylparatoluate=对甲基苯甲酸甲酯
 gregtech.material.dimethyl_terephthalate=对苯二甲酸二甲酯
 gregtech.material.polyethylene_terephthalate=聚对苯二甲酸乙二醇酯（PET）
-gregtech.material.fluorocarborane=氟碳硼烷
 gregtech.material.perfluorobenzene=全氟苯
-gregtech.material.borane_dimethylsulfide=硼烷二甲硫醚
+gregtech.material.borane_dimethylsulfide=硼烷二甲硫醚（BMS）
 gregtech.material.decaborane=癸硼烷
-gregtech.material.boron_trifluoride_etherate=三氟化硼乙醚
+gregtech.material.boron_trifluoride_etherate=三氟化硼乙醚（BTE）
 gregtech.material.diethyl_ether=二乙醚
 
 ##  Higher Degree Materials

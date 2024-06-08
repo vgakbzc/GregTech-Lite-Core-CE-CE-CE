@@ -368,6 +368,7 @@ public class GTLiteMaterials {
     public static Material CaesiumHydroxide;
     public static Material SodiumBorohydride;
     public static Material SodiumTetrafluoroborate;
+    public static Material Fluorocarborane;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -661,7 +662,6 @@ public class GTLiteMaterials {
     public static Material Methylparatoluate;
     public static Material DimethylTerephthalate;
     public static Material PolyethyleneTerephthalate;
-    public static Material Fluorocarborane;
     public static Material Perfluorobenzene;
     public static Material BoraneDimethylsulfide;
     public static Material Decaborane;
