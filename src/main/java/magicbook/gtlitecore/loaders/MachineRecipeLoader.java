@@ -314,6 +314,8 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Isa Mill
+        //  Isa Mill Ore Processing Step 1, has Perfect Overclock,
+        //  required LuV tier, but is cheaper than Flotation Cell Regulator.
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(HULL[LuV])
                 .inputs(GTLiteMetaBlocks.MULTIBLOCK_CASING.getItemVariant(BlockMultiblockCasing.MultiblockCasingType.INCONEL625_GEARBOX_CASING, 2))
@@ -332,31 +334,33 @@ public class MachineRecipeLoader {
                 .scannerResearch(b -> b
                         .researchStack(MACERATOR[IV].getStackForm())
                         .EUt(VA[IV])
-                        .duration(600))
+                        .duration(MINUTE / 2))
                 .EUt(VA[LuV])
-                .duration(1200)
+                .duration(MINUTE)
                 .buildAndRegister();
 
         //  Grindball Hatch
         ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[EV])
-                .input(frameGt, TungstenSteel)
+                .circuitMeta(15)
+                .input(TIERED_HATCH[EV])
+                .input(ITEM_IMPORT_BUS[EV])
                 .input(gear, Titanium, 4)
                 .input(COMPONENT_GRINDER_TUNGSTEN)
                 .input(wireFine, Tungsten, 16)
-                .fluidInputs(RTMAlloy.getFluid(L * 4))
+                .fluidInputs(TinAlloy.getFluid(L * 8))
                 .output(MULTIPART_GRIND_BALL_HATCH)
-                .EUt(VA[IV])
-                .duration(600)
+                .EUt(VA[EV])
+                .duration(MINUTE / 2)
                 .buildAndRegister();
 
         //  Flotation Cell Regulator
+        //  Isa Mill Ore Processing Step 2, required Precise Assembler to get Trinium Coil.
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[ZPM])
+                .input(HULL[LuV])
                 .inputs(GTLiteMetaBlocks.UNIQUE_CASING.getItemVariant(BlockUniqueCasing.UniqueCasingType.FLOTATION_CELL, 2))
                 .input(plate, HastelloyN, 4)
                 .input(circuit, MarkerMaterials.Tier.ZPM, 4)
-                .input(ELECTRIC_PUMP_ZPM, 2)
+                .input(ELECTRIC_PUMP_LuV, 2)
                 .input(gear, Stellite, 2)
                 .input(gearSmall, Talonite, 4)
                 .input(screw, IncoloyMA813, 16)
@@ -368,34 +372,28 @@ public class MachineRecipeLoader {
                 .output(FLOTATION_CELL_REGULATOR)
                 .scannerResearch(b -> b
                         .researchStack(ORE_WASHER[IV].getStackForm())
-                        .EUt(VA[LuV])
-                        .duration(600))
-                .EUt(VA[ZPM])
-                .duration(1200)
+                        .EUt(VA[IV])
+                        .duration(MINUTE / 2))
+                .EUt(VA[LuV])
+                .duration(MINUTE)
                 .buildAndRegister();
 
         //  Vacuum Drying Furnace
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(HULL[IV])
-                .input(frameGt, RedSteel, 4)
-                .input(plate, TitaniumTungstenCarbide, 4)
+        //  Final Step of Isa Mill Ore Processing, require IV tier.
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, RedSteel)
+                .input(CHEMICAL_DRYER[IV], 4)
+                .input(plate, TitaniumTungstenCarbide, 2)
                 .input(circuit, MarkerMaterials.Tier.IV, 4)
                 .input(ELECTRIC_PISTON_IV, 2)
-                .input(gear, TanmolyiumBetaC, 2)
-                .input(gearSmall, EglinSteel, 4)
-                .input(screw, AusteniticStainlessSteel904L, 16)
-                .input(foil, StainlessSteel, 8)
-                .input(cableGtQuadruple, Platinum, 4)
-                .fluidInputs(SolderingAlloy.getFluid(5760))
-                .fluidInputs(Lubricant.getFluid(3000))
-                .fluidInputs(CobaltBrass.getFluid(L * 4))
+                .input(gear, TanmolyiumBetaC, 3)
+                .input(gearSmall, EglinSteel, 6)
+                .input(screw, AusteniticStainlessSteel904L, 24)
+                .fluidInputs(Platinum.getFluid(L * 4))
                 .output(VACUUM_DRYING_FURNACE)
-                .scannerResearch(b -> b
-                        .researchStack(CHEMICAL_DRYER[IV].getStackForm())
-                        .EUt(VA[EV])
-                        .duration(600))
                 .EUt(VA[IV])
-                .duration(1200)
+                .duration(45 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Volcanus

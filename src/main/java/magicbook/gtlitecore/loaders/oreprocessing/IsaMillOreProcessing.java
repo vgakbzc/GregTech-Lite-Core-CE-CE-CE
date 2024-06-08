@@ -6,6 +6,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.milled;
@@ -662,6 +663,7 @@ public class IsaMillOreProcessing {
 
         //  Almandine
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(1)
                 .fluidInputs(AlmandineFront.getFluid(4000))
                 .output(dust, Aluminium, 64)
                 .output(dust, Aluminium, 64)
@@ -670,6 +672,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Manganese, 26)
                 .output(dust, Yttrium, 25)
                 .output(dust, Ytterbium, 15)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -677,6 +681,7 @@ public class IsaMillOreProcessing {
 
         //  Chalcopyrite
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(2)
                 .fluidInputs(ChalcopyriteFront.getFluid(4000))
                 .output(dust, Copper, 64)
                 .output(dust, Copper, 64)
@@ -685,6 +690,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Iron, 44)
                 .output(dust, Cadmium, 50)
                 .output(dust, Indium, 10)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(4500)
@@ -692,6 +699,7 @@ public class IsaMillOreProcessing {
 
         //  Grossular
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(3)
                 .fluidInputs(GrossularFront.getFluid(4000))
                 .output(dust, Calcium, 64)
                 .output(dust, Calcium, 64)
@@ -700,6 +708,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Aluminium, 46)
                 .output(dust, Tungsten, 60)
                 .output(dust, Thallium, 15)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -707,12 +717,15 @@ public class IsaMillOreProcessing {
 
         //  Monazite
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(4)
                 .fluidInputs(MonaziteFront.getFluid(4000))
                 .output(dust, Erbium, 64)
                 .output(dust, Zirconium, 64)
                 .output(dust, Lanthanum, 32)
                 .output(dust, Lutetium, 16)
                 .output(dust, Europium, 8)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[ZPM])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -720,6 +733,7 @@ public class IsaMillOreProcessing {
 
         //  Nickel
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(5)
                 .fluidInputs(NickelFront.getFluid(4000))
                 .output(dust, Nickel, 64)
                 .output(dust, Nickel, 64)
@@ -728,6 +742,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Cobalt, 56)
                 .output(dust, Rhodium, 32)
                 .output(dust, Ruthenium, 16)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(4500)
@@ -735,6 +751,7 @@ public class IsaMillOreProcessing {
 
         //  Platinum
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(6)
                 .fluidInputs(PlatinumFront.getFluid(4000))
                 .output(dust, Platinum, 64)
                 .output(dust, Platinum, 64)
@@ -742,6 +759,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Selenium, 40)
                 .output(dust, Osmium, 20)
                 .output(dust, Tellurium, 10)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -749,6 +768,7 @@ public class IsaMillOreProcessing {
 
         //  Pyrope
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(7)
                 .fluidInputs(PyropeFront.getFluid(4000))
                 .output(dust, Magnesium, 64)
                 .output(dust, Magnesium, 46)
@@ -756,6 +776,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Manganese, 6)
                 .output(dust, Boron, 60)
                 .output(dust, Rhenium, 20)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[EV])
                 .duration(2400)
                 .blastFurnaceTemp(3500)
@@ -763,6 +785,7 @@ public class IsaMillOreProcessing {
 
         //  Redstone
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(8)
                 .fluidInputs(RedstoneFront.getFluid(4000))
                 .output(dust, Redstone, 64)
                 .output(dust, Redstone, 64)
@@ -771,6 +794,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Chrome, 60)
                 .output(dust, Rutile, 48)
                 .output(dust, Dysprosium, 16)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[IV])
                 .duration(2400)
                 .blastFurnaceTemp(4500)
@@ -778,6 +803,7 @@ public class IsaMillOreProcessing {
 
         //  Spessartine
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(9)
                 .fluidInputs(SpessartineFront.getFluid(4000))
                 .output(dust, Manganese, 64)
                 .output(dust, Manganese, 64)
@@ -786,6 +812,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Aluminium, 26)
                 .output(dust, Palladium, 30)
                 .output(dust, Strontium, 20)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -793,6 +821,7 @@ public class IsaMillOreProcessing {
 
         //  Sphalerite
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(10)
                 .fluidInputs(SphaleriteFront.getFluid(4000))
                 .output(dust, Zinc, 64)
                 .output(dust, Zinc, 64)
@@ -801,6 +830,8 @@ public class IsaMillOreProcessing {
                 .output(dust, Iron, 56)
                 .output(dust, Indium, 64)
                 .output(dust, Germanium, 15)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
@@ -808,6 +839,7 @@ public class IsaMillOreProcessing {
 
         //  Pentlandite
         VACUUM_DRYING_RECIPES.recipeBuilder()
+                .circuitMeta(11)
                 .fluidInputs(PentlanditeFront.getFluid(4000))
                 .output(dust, Iron, 64)
                 .output(dust, Iron, 64)
@@ -816,9 +848,29 @@ public class IsaMillOreProcessing {
                 .output(dust, Nickel, 36)
                 .output(dust, Promethium, 20)
                 .output(dust, Hafnium, 10)
+                .fluidOutputs(RedMud.getFluid(2000))
+                .fluidOutputs(Water.getFluid(2000))
                 .EUt(VA[LuV])
                 .duration(2400)
                 .blastFurnaceTemp(5500)
+                .buildAndRegister();
+
+        RedMudCycling();
+    }
+
+    private static void RedMudCycling() {
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(RedMud.getFluid(1000))
+                .chancedOutput(dustSmall, Iron, 3000, 250)
+                .chancedOutput(dustSmall, Copper, 3000, 250)
+                .chancedOutput(dustSmall, Tin, 2000, 400)
+                .chancedOutput(dustSmall, Sulfur, 2000, 400)
+                .chancedOutput(dustTiny, Nickel, 1000, 500)
+                .chancedOutput(dustTiny, Lead, 1000, 500)
+                .fluidOutputs(Water.getFluid(500))
+                .EUt(VA[LV])
+                .duration(MINUTE / 2)
                 .buildAndRegister();
     }
 }

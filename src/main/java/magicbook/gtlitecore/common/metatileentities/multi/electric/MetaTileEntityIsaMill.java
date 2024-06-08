@@ -16,6 +16,7 @@ import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.recipes.Recipe;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.core.advancement.AdvancementTriggers;
 import magicbook.gtlitecore.api.capability.IGrindBallHatch;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
@@ -26,16 +27,20 @@ import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.List;
 
 public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
@@ -176,6 +181,16 @@ public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
         return GTLiteTextures.ISA_MILL_OVERLAY;
     }
 
+    @Override
+    public void addInformation(@Nonnull ItemStack stack,
+                               @Nullable World player,
+                               @Nonnull List<String> tooltip,
+                               boolean advanced) {
+        super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        tooltip.add(I18n.format("gtlitecore.machine.isa_mill.tooltip.1"));
+    }
+
     @SuppressWarnings("InnerClassMayBeStatic")
     public class IsaMillRecipeLogic extends MultiblockRecipeLogic {
 
@@ -184,7 +199,7 @@ public class MetaTileEntityIsaMill extends RecipeMapMultiblockController {
         private int currentGrindballTier;
 
         public IsaMillRecipeLogic(MetaTileEntityIsaMill tileEntity) {
-            super(tileEntity);
+            super(tileEntity, true);
             this.metaTileEntity = tileEntity;
         }
 

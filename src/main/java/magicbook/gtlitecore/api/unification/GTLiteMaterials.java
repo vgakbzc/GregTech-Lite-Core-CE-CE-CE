@@ -350,6 +350,13 @@ public class GTLiteMaterials {
     public static Material UraniumBasedLiquidFuel;
     public static Material PlutoniumUraniumOxides;
     public static Material PlutoniumBasedLiquidFuel;
+    public static Material DirtyHexafluorosilicicAcid;
+    public static Material DilutedHexafluorosilicicAcid;
+    public static Material DioxygenDifluoride;
+    public static Material DilutedHydrofluoricAcid;
+    public static Material TritiumHydride;
+    public static Material Helium3Hydride;
+    public static Material XenicAcid;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -835,6 +842,33 @@ public class GTLiteMaterials {
     public static Material GreenSapphireJuice;
     public static Material SapphireJuice;
     public static Material RubyJuice;
+    public static Material RedMud;
+    public static Material StoneResidue;
+    public static Material SelectedStoneResidue;
+    public static Material PartiallyOxidizedStoneResidue;
+    public static Material OxidizedResidualStoneSlurry;
+    public static Material InertStoneResidue;
+    public static Material OxidizedStoneResidue;
+    public static Material HeavyOxidizedStoneResidue;
+    public static Material MetallicStoneResidue;
+    public static Material HeavyMetallicStoneResidue;
+    public static Material DiamagneticResidue;
+    public static Material ParamagneticResidue;
+    public static Material FerromagneticResidue;
+    public static Material HeavyDiamagneticResidue;
+    public static Material HeavyParamagneticResidue;
+    public static Material HeavyFerromagneticResidue;
+    public static Material SuperheavyStoneResidue;
+    public static Material CleanInertStoneResidue;
+    public static Material UltraacidicStoneResidueSolution;
+    public static Material DustyHelium3;
+    public static Material TaraniumEnrichedHelium3;
+    public static Material TaraniumSemidepletedHelium3;
+    public static Material TaraniumDepletedHelium3;
+    public static Material TaraniumRichDustyHelium3;
+    public static Material TaraniumRichHelium4;
+    public static Material TaraniumPoorHelium;
+    public static Material TaraniumPoorHeliumMixture;
 
     //////////////////////////////
     //  Third Degree Materials  //

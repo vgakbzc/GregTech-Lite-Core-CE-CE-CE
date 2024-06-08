@@ -1,5 +1,8 @@
 package magicbook.gtlitecore.loaders.oreprocessing;
 
+import gregtech.api.fluids.store.FluidStorageKey;
+import gregtech.api.fluids.store.FluidStorageKeys;
+import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
@@ -12,10 +15,11 @@ import net.minecraftforge.fluids.FluidStack;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.ingotHot;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 /**
  *
@@ -50,6 +54,7 @@ public class TaraniumProcessing {
         OrichalcumProcess();
         AdamantiumProcess();
         VibraniumProcess();
+        StoneProcess();
     }
 
     private static void Fuels() {
@@ -540,6 +545,410 @@ public class TaraniumProcessing {
                 .duration(400)
                 .EUt(500000)
                 .buildAndRegister();
+    }
+
+    /**
+     * Product Taranium by Stone dust and Red Mud.
+     *
+     * <p>
+     *     Required Isa Mill Ore Processing, and so many machines in LuV-UHV stage,
+     *     this chain is just a joke in nature. Basic Processing chain from Gregicality Legacy.
+     * </p>
+     *
+     * @see IsaMillOreProcessing
+     */
+    private static void StoneProcess() {
+
+        //  24 Stone + 6HF -> H2SiF6?
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, Stone, 24)
+                .fluidInputs(HydrofluoricAcid.getFluid(6000))
+                .fluidOutputs(DirtyHexafluorosilicicAcid.getFluid(3000))
+                .EUt(VA[MV])
+                .duration(SECOND * 2)
+                .buildAndRegister();
+
+        //  H2SiF6? + 4kL Red Mud -> + (H2SiF6)(H2O)2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(DirtyHexafluorosilicicAcid.getFluid(3000))
+                .fluidInputs(RedMud.getFluid(4000))
+                .output(dust, StoneResidue, 12)
+                .fluidOutputs(DilutedHexafluorosilicicAcid.getFluid(3000))
+                .EUt(VA[LV])
+                .duration(8 * SECOND)
+                .buildAndRegister();
+
+        //  (H2SiF6)(H2O)2 -> H2SiF6 + 2H2O
+        //  This is another recipe of H2SiF6 (for Power Int Circuit chain).
+        DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(DilutedHexafluorosilicicAcid.getFluid(3000))
+                .fluidOutputs(HexafluorosilicicAcid.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
+                .EUt(VA[HV])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  24 Stone Residue + NaOH + H2O -> Selected Stone Residue + Fe3O4 (chanced) + Red Mud
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .input(dust, StoneResidue, 24)
+                .notConsumable(SEPARATION_ELECTROMAGNET)
+                .fluidInputs(SodiumHydroxide.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
+                .output(dust, SelectedStoneResidue)
+                .chancedOutput(dust, Magnetite, 2500, 0)
+                .fluidOutputs(RedMud.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(10 * SECOND)
+                .buildAndRegister();
+
+        //  2O + 2F -> F2O2
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .notConsumable(MICROFOCUS_X_RAY_TUBE)
+                .fluidInputs(Oxygen.getFluid(FluidStorageKeys.LIQUID, 2000))
+                .fluidInputs(Fluorine.getFluid(2000))
+                .fluidOutputs(DioxygenDifluoride.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(4 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Selected Stone Residue + F2O2 -> Partically Oxidized Residue
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, SelectedStoneResidue)
+                .fluidInputs(DioxygenDifluoride.getFluid(1000))
+                .output(dust, PartiallyOxidizedStoneResidue)
+                .EUt(VA[MV])
+                .duration(12 * SECOND)
+                .buildAndRegister();
+
+        //  10 Partically Oxidized Residue + 10H2O -> 10 Oxidized Residual Stone Slurry + Inert Residue
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, PartiallyOxidizedStoneResidue, 10)
+                .fluidInputs(DistilledWater.getFluid(10000))
+                .output(dust, InertStoneResidue)
+                .fluidOutputs(OxidizedResidualStoneSlurry.getFluid(10000))
+                .EUt(VA[EV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  2 Oxidized Residual Stone Slurry -> Oxidized Stone Residue + Heavy Oxidized Residue
+        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+                .fluidInputs(OxidizedResidualStoneSlurry.getFluid(2000))
+                .output(dust, OxidizedStoneResidue)
+                .output(dust, HeavyOxidizedStoneResidue)
+                .EUt(VA[EV])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  10 Oxidized Stone Residue + 60H -> Metallic Stone Residue + 40(HF)(H2O)
+        BLAST_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(dust, OxidizedStoneResidue, 10)
+                .fluidInputs(Hydrogen.getFluid(60000))
+                .output(dust, MetallicStoneResidue)
+                .fluidOutputs(DilutedHydrofluoricAcid.getFluid(40000))
+                .EUt(VA[IV])
+                .duration(80 * SECOND)
+                .blastFurnaceTemp(3500)
+                .buildAndRegister();
+
+        //  10 Heavy Oxidized Residue + 60H -> Heavy Metallic Residue + 40(HF)(H2O)
+        BLAST_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(dust, HeavyOxidizedStoneResidue, 10)
+                .fluidInputs(Hydrogen.getFluid(60000))
+                .output(dust, HeavyMetallicStoneResidue)
+                .fluidOutputs(DilutedHydrofluoricAcid.getFluid(40000))
+                .EUt(VA[IV])
+                .duration(80 * SECOND)
+                .blastFurnaceTemp(4500)
+                .buildAndRegister();
+
+        //  (HF)(H2O) -> H2O + HF
+        DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(DilutedHydrofluoricAcid.getFluid(2000))
+                .fluidOutputs(Water.getFluid(1000))
+                .fluidOutputs(HydrofluoricAcid.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  10 Metallic Stone Residue -> Some residues
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, MetallicStoneResidue, 10)
+                .notConsumable(SEPARATION_ELECTROMAGNET)
+                .output(dust, DiamagneticResidue, 3)
+                .output(dust, ParamagneticResidue, 3)
+                .output(dust, FerromagneticResidue, 3)
+                .output(dust, SelectedStoneResidue)
+                .EUt(VA[IV])
+                .duration(20 * SECOND)
+                .buildAndRegister();
+
+        //  10 Heavy Metallic Stone Residue -> Some Heavy residues + Superheavy Stone Residue
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, HeavyMetallicStoneResidue, 10)
+                .notConsumable(SEPARATION_ELECTROMAGNET)
+                .output(dust, HeavyDiamagneticResidue, 3)
+                .output(dust, HeavyParamagneticResidue, 3)
+                .output(dust, HeavyFerromagneticResidue, 3)
+                .output(dust, SuperheavyStoneResidue)
+                .EUt(VA[LuV])
+                .duration(10 * SECOND)
+                .buildAndRegister();
+
+        //  Diamagnetic Residue -> Calcium, Zinc, Copper, Gallium, Berylium, Tin
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, DiamagneticResidue, 6)
+                .chancedOutput(dust, Calcium, 2500, 0)
+                .chancedOutput(dust, Zinc, 2500, 0)
+                .chancedOutput(dust, Copper, 2500, 0)
+                .chancedOutput(dust, Gallium, 2500, 0)
+                .chancedOutput(dust, Beryllium, 2500, 0)
+                .chancedOutput(dust, Tin, 2500, 0)
+                .EUt(VH[IV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  Paramagnetic Residue -> Sodium, Potassium, Magnesium, Titanium, Vanadium, Manganese
+        SIFTER_RECIPES.recipeBuilder()
+                .input(dust, ParamagneticResidue, 6)
+                .chancedOutput(dust, Sodium, 2500, 0)
+                .chancedOutput(dust, Potassium, 2500, 0)
+                .chancedOutput(dust, Magnesium, 2500, 0)
+                .chancedOutput(dust, Titanium, 2500, 0)
+                .chancedOutput(dust, Vanadium, 2500, 0)
+                .chancedOutput(dust, Manganese, 2500, 0)
+                .EUt(VH[IV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  Ferromagnetic Residue -> Iron, Nickel, Cobalt
+        ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
+                .input(dust, FerromagneticResidue, 6)
+                .chancedOutput(dust, Iron, 2500, 0)
+                .chancedOutput(dust, Nickel, 2500, 0)
+                .chancedOutput(dust, Cobalt, 2500, 0)
+                .EUt(VH[IV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  Heavy Diamagnetic Residue -> Lead, Cadmium, Indium, Gold, Bismuth
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, HeavyDiamagneticResidue, 6)
+                .chancedOutput(dust, Lead, 2500, 0)
+                .chancedOutput(dust, Cadmium, 2500, 0)
+                .chancedOutput(dust, Indium, 2500, 0)
+                .chancedOutput(dust, Gold, 2500, 0)
+                .chancedOutput(dust, Bismuth, 2500, 0)
+                .fluidOutputs(Mercury.getFluid(36))
+                .EUt(VH[LuV])
+                .duration((int) (2.5 * SECOND))
+                .buildAndRegister();
+
+        //  Heavy Paramagnetic Residue -> Thorium, Uranium-235, Tungsten, Hafnium, Tantalum, Thallium
+        SIFTER_RECIPES.recipeBuilder()
+                .input(dust, HeavyParamagneticResidue, 6)
+                .chancedOutput(dust, Thorium, 2500, 0)
+                .chancedOutput(dust, Uranium235, 2500, 0)
+                .chancedOutput(dust, Tungsten, 2500, 0)
+                .chancedOutput(dust, Hafnium, 2500, 0)
+                .chancedOutput(dust, Tantalum, 2500, 0)
+                .chancedOutput(dust, Thallium, 2500, 0)
+                .EUt(VH[LuV])
+                .duration((int) (2.5 * SECOND))
+                .buildAndRegister();
+
+        //  Heavy Ferromagnetic Residue -> Dy2O3
+        ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
+                .input(dust, HeavyFerromagneticResidue, 6)
+                .chancedOutput(dust, DysprosiumOxide, 5, 2500, 0)
+                .EUt(VH[LuV])
+                .duration((int) (2.5 * SECOND))
+                .buildAndRegister();
+
+        //  Superheavy Stone Residue Processing
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, SuperheavyStoneResidue, 16)
+                .input(dust, SodiumHydroxide, 3)
+                .input(PROTONATED_FULLERENE_SIEVING_MATRIX)
+                .circuitMeta(4)
+                .fluidInputs(DistilledWater.getFluid(2000))
+                .output(SATURATED_FULLERENE_SIEVING_MATRIX)//todo processing
+                .EUt(VA[UHV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  Inert Residue -> Clean Inert Resique + Naquadria
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, InertStoneResidue, 10)
+                .notConsumable(FluoroantimonicAcid.getFluid(1))
+                .output(dust, CleanInertStoneResidue, 10)
+                .chancedOutput(dust, Naquadria, 2500, 0)
+                .EUt(VA[ZPM])
+                .duration(16 * SECOND)
+                .buildAndRegister();
+
+        //  T + H -> TH
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Tritium.getFluid(1000))
+                .fluidInputs(Hydrogen.getFluid(1000))
+                .fluidOutputs(TritiumHydride.getFluid(2000))
+                .EUt(VH[EV])
+                .duration(8 * SECOND)
+                .buildAndRegister();
+
+        //  TH -> He-3H + TH
+        DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(TritiumHydride.getFluid(10000))
+                .fluidOutputs(Helium3Hydride.getFluid(100))
+                .fluidOutputs(TritiumHydride.getFluid(9900))
+                .EUt(VH[HV])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  Clean Inert Stone Residue + He-3H -> Ultraacidic Stone Residue Solution
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, CleanInertStoneResidue)
+                .fluidInputs(Helium3Hydride.getFluid(1000))
+                .fluidOutputs(UltraacidicStoneResidueSolution.getFluid(1000))
+                .EUt(VA[EV])
+                .duration(6 * SECOND)
+                .buildAndRegister();
+
+        //  Ultraacidic Stone Residue Solution -> Dusty Helium-3
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(UltraacidicStoneResidueSolution.getFluid(2000))
+                .fluidInputs(Oxygen.getFluid(FluidStorageKeys.LIQUID, 4000))
+                .fluidInputs(Xenon.getFluid(1000))
+                .fluidOutputs(DustyHelium3.getFluid(2000))
+                .fluidOutputs(XenicAcid.getFluid(1000))
+                .EUt(VA[LuV])
+                .duration(6 * SECOND)
+                .temperature(1355)
+                .buildAndRegister();
+
+        //  Another Application of H2XeO4: H2XeO4 -> XeO3 + H2O
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(XenicAcid.getFluid(1000))
+                .fluidOutputs(XenonTrioxide.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Dusty Helium-3 -> Taranium-enriched Helium-3 + Taranium-semidepleted Helium-3 + Taranium-depleted Helium-3
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(DustyHelium3.getFluid(1000))
+                .fluidOutputs(TaraniumEnrichedHelium3.getFluid(100))
+                .fluidOutputs(TaraniumSemidepletedHelium3.getFluid(300))
+                .fluidOutputs(TaraniumDepletedHelium3.getFluid(600))
+                .EUt(VA[UV])
+                .duration(20 * SECOND)
+                .buildAndRegister();
+
+        //  Taranium-enriched Helium-3 -> Taranium Rich Dusty Helium Plasma
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumEnrichedHelium3.getFluid(1000))
+                .fluidInputs(Helium3.getFluid(1000))
+                .fluidOutputs(TaraniumRichDustyHelium3.getPlasma(3000))
+                .EUt(VA[IV])
+                .duration(8 * SECOND)
+                .EUToStart(480000000L)
+                .buildAndRegister();
+
+        //  Taranium Rich Dusty Helium Plasma -> Taranium rich Helium-4 (liquid), Taranium-depleted Helium-3 (plasma), Hydrogen
+        CATALYTIC_REFORMER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumRichDustyHelium3.getPlasma(3000))
+                .notConsumable(plate, Bedrock)
+                .fluidOutputs(TaraniumRichHelium4.getPlasma(500))
+                .fluidOutputs(TaraniumDepletedHelium3.getPlasma(500))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[ZPM])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  Taranium-depleted Helium-3 (plasma) + He (plasma) -> Taranium-depleted Helium-3 (liquid)
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumDepletedHelium3.getPlasma(1000))
+                .fluidInputs(Helium.getPlasma(1000))
+                .fluidOutputs(TaraniumDepletedHelium3.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(10 * SECOND)
+                .buildAndRegister();
+
+        //  Taranium-depleted Helium-3 (liquid) -> Helium (plasma) + Clean Inert Stone Residue
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumDepletedHelium3.getFluid(10000))
+                .notConsumable(SEPARATION_ELECTROMAGNET.getStackForm())
+                .output(dust, CleanInertStoneResidue, 2)
+                .fluidOutputs(Helium.getPlasma(5000))
+                .EUt(VA[EV])
+                .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Taranium-semidepleted Helium-3 -> Taranium-enriched Helium-3 + Taranium-depleted Helium-3
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumSemidepletedHelium3.getFluid(1000))
+                .fluidOutputs(TaraniumEnrichedHelium3.getFluid(100))
+                .fluidOutputs(TaraniumDepletedHelium3.getFluid(900))
+                .EUt(VA[EV])
+                .duration(20 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Taranium rich He-4 -> Tn + Taranium Poor Helium
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumRichHelium4.getPlasma(400))
+                .output(dust, Taranium)
+                .fluidOutputs(TaraniumPoorHelium.getFluid(400))
+                .EUt(VA[UHV])
+                .duration(SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Taranium Poor Helium + He-3 -> Taranium Poor Helium Mixture
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumPoorHelium.getFluid(1000))
+                .fluidInputs(Helium3.getFluid(200))
+                .fluidOutputs(TaraniumPoorHeliumMixture.getFluid(1200))
+                .EUt(VA[LuV])
+                .duration(4 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Taranium Poor Helium Mixture -> He + Dusty He-3
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumPoorHeliumMixture.getFluid(1200))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.LIQUID, 1000))
+                .fluidOutputs(DustyHelium3.getFluid(200))
+                .EUt(VA[IV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  Taranium Rich He-4 (plasma) -> Taranium Rich He-4 (liquid)
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumRichHelium4.getPlasma(1000))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 100))
+                .circuitMeta(1)
+                .fluidOutputs(TaraniumRichHelium4.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 100))
+                .EUt(VA[IV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumRichHelium4.getPlasma(1000))
+                .fluidInputs(GelidCryotheum.getFluid(50))
+                .circuitMeta(1)
+                .fluidOutputs(TaraniumRichHelium4.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(50))
+                .EUt(VA[IV])
+                .duration(100)
+                .buildAndRegister();
+        
     }
 
     private static void NaquadahReactorRecipes() {

@@ -789,6 +789,15 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                 .addComponents(new TooltipBehavior((lines) -> lines.add(translatedAnimatedText("metaitem.astral_array.desc",
                         1, 400, AQUA + BOLD, BLUE + BOLD).get())));
 
+        //  ID 347-348: Fullerene Matrix
+        PROTONATED_FULLERENE_SIEVING_MATRIX = this.addItem(347, "protonated_fullerene_sieving_matrix")
+                .setMaxStackSize(1)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        SATURATED_FULLERENE_SIEVING_MATRIX = this.addItem(348, "saturated_fullerene_sieving_matrix")
+                .setMaxStackSize(1)
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
         /* ------------------------------------------------------------------ High Energy Items ------------------------------------------------------------------- */
 
         //  ID 350-361: Containment Cell/Units

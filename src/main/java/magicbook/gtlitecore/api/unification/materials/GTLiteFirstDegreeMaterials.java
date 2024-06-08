@@ -2352,6 +2352,61 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("Pu64Rb8Cs16Nq+2", true);
 
-    }
+        //  11266 Dirty Hexafluorosilicic Acid
+        DirtyHexafluorosilicicAcid = new Material.Builder(getID(), gregtechId("dirty_Hexafluorosilicic_acid"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(Stone.getMaterialRGB() + HydrofluoricAcid.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Hydrogen, 2, Silicon, 1, Fluorine, 6)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("H2SiF6?", true);
 
+        //  11267 Diluted Hexafluorosilicic Acid
+        DilutedHexafluorosilicicAcid = new Material.Builder(getID(), gregtechId("diluted_hexafluorosilicic_acid"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(Stone.getMaterialRGB() + HydrofluoricAcid.getMaterialRGB())
+                .components(Hydrogen, 6, Oxygen, 2, Silicon, 1, Fluorine, 6)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(H2SiF6)(H2O)2", true);
+
+        //  11268 Dioxygen Difluoride
+        DioxygenDifluoride = new Material.Builder(getID(), gregtechId("dioxygen_difluoride"))
+                .gas()
+                .color(Oxygen.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .components(Fluorine, 2, Oxygen, 2)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING)
+                .build();
+
+        //  11269 Diluted Hydrofluoric Acid
+        DilutedHydrofluoricAcid = new Material.Builder(getID(), gregtechId("diluted_hydrofluoric_acid"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color((HydrofluoricAcid.getMaterialRGB() + Water.getMaterialRGB()) / 3)
+                .components(HydrofluoricAcid, 1, Water, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11270 Tritium Hydride
+        TritiumHydride = new Material.Builder(getID(), gregtechId("tritium_hydride"))
+                .gas()
+                .color(Tritium.getMaterialRGB() + Hydrogen.getMaterialRGB())
+                .components(Tritium, 1, Hydrogen, 1)
+                .build();
+
+        //  11271 Helium-3 Hydride
+        Helium3Hydride = new Material.Builder(getID(), gregtechId("helium_3_hydride"))
+                .gas()
+                .color(Helium3.getMaterialRGB() + Hydrogen.getMaterialRGB())
+                .components(Helium3, 1, Hydrogen, 1)
+                .build();
+
+        //  11272 Xenic Acid
+        XenicAcid = new Material.Builder(getID(), gregtechId("xenic_acid"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(Xenon.getMaterialRGB() + Hydrogen.getMaterialRGB() + Oxygen.getMaterialRGB())
+                .components(Hydrogen, 2, Xenon, 1, Oxygen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+    }
 }

@@ -293,6 +293,8 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem HYPERSTABLE_SELF_HEALING_ADHESIVE;
     public static MetaItem<?>.MetaValueItem SUPERSOLID_SPACETIME_CONTINUUM;
     public static MetaItem<?>.MetaValueItem ASTRAL_ARRAY;
+    public static MetaItem<?>.MetaValueItem PROTONATED_FULLERENE_SIEVING_MATRIX;
+    public static MetaItem<?>.MetaValueItem SATURATED_FULLERENE_SIEVING_MATRIX;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;

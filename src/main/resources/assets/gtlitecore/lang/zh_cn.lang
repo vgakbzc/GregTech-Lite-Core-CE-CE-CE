@@ -1000,6 +1000,8 @@ metaitem.supersolid_spacetime_continuum.name=超固态时空连续体
 metaitem.supersolid_spacetime_continuum.tooltip=如液体般流动，不反射任何射线与粒子，完美地将其吸收与传递
 metaitem.astral_array.name=星阵
 metaitem.astral_array.desc=时空飘忽不定
+metaitem.protonated_fullerene_sieving_matrix.name=质子化富勒烯筛网
+metaitem.saturated_fullerene_sieving_matrix.name=饱和富勒烯筛网
 
 ##  Ore Prefix Items
 item.material.oreprefix.milled=碾磨%s矿石粉
@@ -1463,7 +1465,8 @@ gtlitecore.machine.hyper_reactor_mk3.tooltip=自控制超能聚变
 gtlitecore.machine.hyper_reactor_mk3.tooltip.boost=提供§f50 L/s§7的简并态铼等离子体，并消耗§f双倍§7燃料以产生高达§f%s§7 EU/t的功率。
 
 gtlitecore.machine.isa_mill.name=艾萨研磨机
-gtlitecore.machine.isa_mill.tooltip=工业级卧式湿法碾磨机
+gtlitecore.machine.isa_mill.tooltip.1=工业级卧式湿法碾磨机
+
 gtlitecore.machine.grind_ball_hatch.name=研磨球仓
 gtlitecore.machine.isa_mill.grindball_hatch.only=仅能放入研磨球
 gtlitecore.machine.isa_mill.grind_ball.soapstone=研磨球材质：皂石
@@ -2956,6 +2959,13 @@ gregtech.material.graphite_uranium_mixture=石墨铀混合物
 gregtech.material.uranium_based_liquid_fuel=铀基流体燃料
 gregtech.material.plutonium_uranium_oxides=氧化钚铀混合物
 gregtech.material.plutonium_based_liquid_fuel=钚基流体燃料
+gregtech.material.dirty_hexafluorosilicic_acid=浑浊六氟硅酸
+gregtech.material.diluted_hexafluorosilicic_acid=澄清六氟硅酸
+gregtech.material.dioxygen_difluoride=二氟化二氧
+gregtech.material.diluted_hydrofluoric_acid=稀氢氟酸
+gregtech.material.tritium_hydride=氢化氚
+gregtech.material.helium_3_hydride=氢化氦-3
+gregtech.material.xenic_acid=氢氙酸
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3423,6 +3433,33 @@ gregtech.material.trinium_waste=凯金废液
 gregtech.material.green_sapphire_juice=绿色蓝宝石汁
 gregtech.material.sapphire_juice=蓝宝石汁
 gregtech.material.ruby_juice=红宝石汁
+gregtech.material.red_mud=红色矿泥
+gregtech.material.stone_residue=混矿石头残渣
+gregtech.material.selected_stone_residue=精选石头残渣
+gregtech.material.partially_oxidized_stone_residue=部分氧化石头残渣
+gregtech.material.oxidized_residual_stone_slurry=氧化残余石头浆液
+gregtech.material.inert_stone_residue=惰性石头残渣
+gregtech.material.oxidized_stone_residue=不完全氧化石头残渣
+gregtech.material.heavy_oxidized_stone_residue=完全氧化石头残渣
+gregtech.material.metallic_stone_residue=轻质类金属石头残渣
+gregtech.material.heavy_metallic_stone_residue=重质类金属石头残渣
+gregtech.material.diamagnetic_residue=轻质抗磁性残余物
+gregtech.material.paramagnetic_residue=轻质顺磁性残余物
+gregtech.material.ferromagnetic_residue=轻质铁磁性残余物
+gregtech.material.heavy_diamagnetic_residue=重质抗磁性残余物
+gregtech.material.heavy_paramagnetic_residue=重质顺磁性残余物
+gregtech.material.heavy_ferromagnetic_residue=重质铁磁性残余物
+gregtech.material.superheavy_stone_residue=超重石头残渣
+gregtech.material.clean_inert_stone_residue=洁净惰性石头残渣
+gregtech.material.ultraacidic_stone_residue_solution=超酸性石头残渣溶液
+gregtech.material.dusty_helium_3=污浊液氦-3
+gregtech.material.taranium_enriched_helium_3=富集塔兰金属氦-3
+gregtech.material.taranium_semidepleted_helium_3=半枯竭塔兰金属氦-3
+gregtech.material.taranium_depleted_helium_3=枯竭塔兰金属氦-3
+gregtech.material.taranium_rich_dusty_helium_3=富塔兰金属污浊氦-3
+gregtech.material.taranium_rich_helium_4=富塔兰金属氦-4
+gregtech.material.taranium_poor_helium=枯竭塔兰金属液氦
+gregtech.material.taranium_poor_helium_mixture=枯竭塔兰金属氦-氦-3混合液
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金

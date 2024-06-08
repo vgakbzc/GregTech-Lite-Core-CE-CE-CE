@@ -90,6 +90,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(0x404040)
                 .iconSet(ROUGH)
+                .flags(GENERATE_PLATE)
                 .build();
 
         //  18008 Bedrock Smoke
@@ -1090,6 +1091,205 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(Ruby.getMaterialRGB())
                 .components(Ruby.getMaterialComponents())
                 .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  24132 Red Mud
+        RedMud = new Material.Builder(getID(),  gregtechId("red_mud"))
+                .liquid()
+                .color(0xFF0000)
+                .iconSet(DULL)
+                .build();
+
+        //  24133 Stone Residue
+        StoneResidue = new Material.Builder(getID(), gregtechId("stone_residue"))
+                .dust()
+                .color(Stone.getMaterialRGB() + RedMud.getMaterialRGB())
+                .iconSet(ROUGH)
+                .build();
+
+        //  24134 Selected Stone Residue
+        SelectedStoneResidue = new Material.Builder(getID(), gregtechId("selected_stone_residue"))
+                .dust()
+                .color(Stone.getMaterialRGB() + Naquadah.getMaterialRGB())
+                .iconSet(FINE)
+                .build();
+
+        //  24135 Partially Oxidized Stone Residue
+        PartiallyOxidizedStoneResidue = new Material.Builder(getID(), gregtechId("partially_oxidized_stone_residue"))
+                .dust()
+                .color(Stone.getMaterialRGB() + Oxygen.getMaterialRGB())
+                .iconSet(DULL)
+                .build();
+
+        //  24136 Oxidized Residual Stone Slurry
+        OxidizedResidualStoneSlurry = new Material.Builder(getID(), gregtechId("oxidized_residual_stone_slurry"))
+                .liquid()
+                .color(0x23ad7f)
+                .iconSet(DULL)
+                .build();
+
+        //  24137 Inert Stone Residue
+        InertStoneResidue = new Material.Builder(getID(), gregtechId("inert_stone_residue"))
+                .dust()
+                .iconSet(ROUGH)
+                .build();
+
+        //  24138 Oxidized Stone Residue
+        OxidizedStoneResidue = new Material.Builder(getID(), gregtechId("oxidized_stone_residue"))
+                .dust()
+                .color(0x9F0000)
+                .iconSet(DULL)
+                .build();
+
+        //  24139 Heavy Oxidized Stone Residue
+        HeavyOxidizedStoneResidue = new Material.Builder(getID(), gregtechId("heavy_oxidized_stone_residue"))
+                .dust()
+                .color(0x770000)
+                .iconSet(DULL)
+                .build();
+
+        //  24140 Metallic Stone Residue
+        MetallicStoneResidue = new Material.Builder(getID(), gregtechId("metallic_stone_residue"))
+                .dust()
+                .color(0x904A59)
+                .iconSet(SHINY)
+                .build();
+
+        //  24141 Heavy Metallic Stone Residue
+        HeavyMetallicStoneResidue = new Material.Builder(getID(), gregtechId("heavy_metallic_stone_residue"))
+                .dust()
+                .color(0x6C2635)
+                .iconSet(METALLIC)
+                .build();
+
+        //  24142 Diamagnetic Residue
+        DiamagneticResidue = new Material.Builder(getID(), gregtechId("diamagnetic_residue"))
+                .dust()
+                .color((Calcium.getMaterialRGB() + Zinc.getMaterialRGB() + Copper.getMaterialRGB() + Gallium.getMaterialRGB() + Beryllium.getMaterialRGB() + Tin.getMaterialRGB()) / 15)
+                .iconSet(DULL)
+                .build()
+                .setFormula("CaZnCuGaBeSn?", true);
+
+        //  24143 Paramagnetic Residue
+        ParamagneticResidue = new Material.Builder(getID(), gregtechId("paramagnetic_residue"))
+                .dust()
+                .color((Sodium.getMaterialRGB() + Potassium.getMaterialRGB() + Magnesium.getMaterialRGB() + Titanium.getMaterialRGB() + Vanadium.getMaterialRGB() + Manganese.getMaterialRGB()) / 15)
+                .iconSet(DULL)
+                .build()
+                .setFormula("NaKMgTiVMn?", true);
+
+        //  24144 Ferromagnetic Residue
+        FerromagneticResidue = new Material.Builder(getID(), gregtechId("ferromagnetic_residue"))
+                .dust()
+                .color(Iron.getMaterialRGB() + Nickel.getMaterialRGB() + Cobalt.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("FeNiCo?", true);
+
+        //  24145 Heavy Diamagnetic Residue
+        HeavyDiamagneticResidue = new Material.Builder(getID(), gregtechId("heavy_diamagnetic_residue"))
+                .dust()
+                .color((Lead.getMaterialRGB() + Mercury.getMaterialRGB() + Cadmium.getMaterialRGB() + Indium.getMaterialRGB() + Gold.getMaterialRGB() + Bismuth.getMaterialRGB()) / 15)
+                .iconSet(DULL)
+                .build()
+                .setFormula("PbCdInAuBi?", true);
+
+        //  24146 Heavy Paramagnetic Residue
+        HeavyParamagneticResidue = new Material.Builder(getID(), gregtechId("heavy_paramagnetic_residue"))
+                .dust()
+                .color((Thorium.getMaterialRGB() + Thallium.getMaterialRGB() + Uranium235.getMaterialRGB() + Tungsten.getMaterialRGB() + Hafnium.getMaterialRGB() + Tantalum.getMaterialRGB()) / 15)
+                .iconSet(DULL)
+                .build()
+                .setFormula("ThUWHfTaTl", true);
+
+        //  24147 Heavy Ferromagnetic Residue
+        HeavyFerromagneticResidue = new Material.Builder(getID(), gregtechId("heavy_ferromagnetic_residue"))
+                .dust()
+                .color(DysprosiumOxide.getMaterialRGB() * 3 / 11)
+                .iconSet(DULL)
+                .build()
+                .setFormula("Dy2O3?", true);
+
+        //  24148 Superheavy Stone Residue
+        SuperheavyStoneResidue = new Material.Builder(getID(), gregtechId("superheavy_stone_residue"))
+                .dust()
+                .color(0x59FF7E)
+                .iconSet(SHINY)
+                .build();
+
+        //  24149 Clean Inert Stone Residue
+        CleanInertStoneResidue = new Material.Builder(getID(), gregtechId("clean_inert_stone_residue"))
+                .dust()
+                .color(InertStoneResidue.getMaterialRGB() + FluoroantimonicAcid.getMaterialRGB())
+                .iconSet(SHINY)
+                .build();
+
+        //  24150 Ultra-acidic Stone Residue Solution
+        UltraacidicStoneResidueSolution = new Material.Builder(getID(), gregtechId("ultraacidic_stone_residue_solution"))
+                .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
+                .color(FluoroantimonicAcid.getMaterialRGB() + Helium3Hydride.getMaterialRGB())
+                .iconSet(DULL)
+                .build();
+
+        //  24151 Dusty Helium-3
+        DustyHelium3 = new Material.Builder(getID(), gregtechId("dusty_helium_3"))
+                .liquid()
+                .color(Helium3.getMaterialRGB() + Stone.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("He-3?", true);
+
+        //  24152 Taranium-enriched Helium-3
+        TaraniumEnrichedHelium3 = new Material.Builder(getID(), gregtechId("taranium_enriched_helium_3"))
+                .liquid()
+                .color(Taranium.getMaterialRGB() + Helium3.getMaterialRGB())
+                .iconSet(DULL)
+                .build()
+                .setFormula("TnHe-3?", true);
+
+        //  24153 Taranium-semidepleted Helium-3
+        TaraniumSemidepletedHelium3 = new Material.Builder(getID(), gregtechId("taranium_semidepleted_helium_3"))
+                .liquid()
+                .color(Taranium.getMaterialRGB() + Helium3.getMaterialRGB() - 10)
+                .iconSet(DULL)
+                .build()
+                .setFormula("TnHe-3?", true);
+
+        //  24154 Taranium-depleted Helium-3
+        TaraniumDepletedHelium3 = new Material.Builder(getID(), gregtechId("taranium_depleted_helium_3"))
+                .liquid()
+                .plasma()
+                .color(Taranium.getMaterialRGB() + Helium3.getMaterialRGB() - 50)
+                .iconSet(DULL)
+                .build()
+                .setFormula("TnHe-3?", true);
+
+        //  24155 Taranium Rich Dusty Helium-3
+        TaraniumRichDustyHelium3 = new Material.Builder(getID(), gregtechId("taranium_rich_dusty_helium_3"))
+                .plasma()
+                .color(Taranium.getMaterialRGB() + Helium3.getMaterialRGB())
+                .build()
+                .setFormula("TnHe-3?", true);
+
+        //  24156 Taranium Rich Helium4
+        TaraniumRichHelium4 = new Material.Builder(getID(), gregtechId("taranium_rich_helium_4"))
+                .liquid()
+                .plasma()
+                .color(Taranium.getMaterialRGB() + Krypton.getMaterialRGB())
+                .build()
+                .setFormula("TnHe-4?", true);
+
+        //  24157 Taranium Poor Helium
+        TaraniumPoorHelium = new Material.Builder(getID(), gregtechId("taranium_poor_helium"))
+                .liquid()
+                .color(Taranium.getMaterialRGB() + Helium.getMaterialRGB() - 80)
+                .build()
+                .setFormula("He?", true);
+
+        //  24158 Taranium Poor Helium Mixture
+        TaraniumPoorHeliumMixture = new Material.Builder(getID(), gregtechId("taranium_poor_helium_mixture"))
+                .liquid()
+                .color(Taranium.getMaterialRGB() + Helium3.getMaterialRGB() + Helium.getMaterialRGB())
                 .build();
     }
 
