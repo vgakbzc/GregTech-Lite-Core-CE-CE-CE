@@ -357,6 +357,17 @@ public class GTLiteMaterials {
     public static Material TritiumHydride;
     public static Material Helium3Hydride;
     public static Material XenicAcid;
+    public static Material KryptonDifluoride;
+    public static Material TriniumTetrafluoride;
+    public static Material PotassiumFluoride;
+    public static Material CaesiumCarborane;
+    public static Material SilverNitrate;
+    public static Material CaesiumNitrate;
+    public static Material SilverIodide;
+    public static Material CaesiumCarboranePrecursor;
+    public static Material CaesiumHydroxide;
+    public static Material SodiumBorohydride;
+    public static Material SodiumTetrafluoroborate;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -650,6 +661,12 @@ public class GTLiteMaterials {
     public static Material Methylparatoluate;
     public static Material DimethylTerephthalate;
     public static Material PolyethyleneTerephthalate;
+    public static Material Fluorocarborane;
+    public static Material Perfluorobenzene;
+    public static Material BoraneDimethylsulfide;
+    public static Material Decaborane;
+    public static Material BoronTrifluorideEtherate;
+    public static Material DiethylEther;
 
     /////////////////////////////
     //  Higher Degree Materials  //
@@ -869,6 +886,7 @@ public class GTLiteMaterials {
     public static Material TaraniumRichHelium4;
     public static Material TaraniumPoorHelium;
     public static Material TaraniumPoorHeliumMixture;
+    public static Material HeavyFluorinatedTriniumSolution;
 
     //////////////////////////////
     //  Third Degree Materials  //

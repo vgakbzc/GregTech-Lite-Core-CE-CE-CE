@@ -1291,6 +1291,12 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(Taranium.getMaterialRGB() + Helium3.getMaterialRGB() + Helium.getMaterialRGB())
                 .build();
+
+        //  24159 Heavy Fluorinated Trinium Solution
+        HeavyFluorinatedTriniumSolution = new Material.Builder(getID(), gregtechId("heavy_fluorinated_trinium_solution"))
+                .liquid()
+                .color(0x8C117D)
+                .build();
     }
 
 }

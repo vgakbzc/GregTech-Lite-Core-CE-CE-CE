@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.loaders.oreprocessing;
 
-import gregtech.api.fluids.store.FluidStorageKey;
 import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
@@ -16,6 +15,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
@@ -774,7 +774,7 @@ public class TaraniumProcessing {
                 .input(PROTONATED_FULLERENE_SIEVING_MATRIX)
                 .circuitMeta(4)
                 .fluidInputs(DistilledWater.getFluid(2000))
-                .output(SATURATED_FULLERENE_SIEVING_MATRIX)//todo processing
+                .output(SATURATED_FULLERENE_SIEVING_MATRIX)
                 .EUt(VA[UHV])
                 .duration(2 * SECOND)
                 .buildAndRegister();
@@ -948,7 +948,261 @@ public class TaraniumProcessing {
                 .EUt(VA[IV])
                 .duration(100)
                 .buildAndRegister();
-        
+
+        //  Fullerene Polymer Matrix Processing
+
+        //  HCHB11F11 + C6F6 + something -> Protonated Fullerene Sieving Matrix
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(dust, Fluorocarborane, 50)
+                .input(wireFine, Naquadah, 6)
+                .input(dust, Osmium)
+                .fluidInputs(Perfluorobenzene.getFluid(2000))
+                .output(PROTONATED_FULLERENE_SIEVING_MATRIX)
+                .EUt(VA[UV])
+                .duration(14 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Saturated Fullerene Sieving Matrix cycle
+
+        //  Saturated Fullerene Sieving Matrix + 8H2SbF7 + 16KrF2 -> 8SbF3 + 2HCHB11F11 + 16Kr + 8 Heavy Fluorinated Trinium Solution
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(SATURATED_FULLERENE_SIEVING_MATRIX)
+                .fluidInputs(FluoroantimonicAcid.getFluid(8000))
+                .fluidInputs(KryptonDifluoride.getFluid(16000))
+                .output(dust, AntimonyTrifluoride, 32)
+                .output(dust, Fluorocarborane, 50)
+                .fluidOutputs(Krypton.getFluid(16000))
+                .fluidOutputs(HeavyFluorinatedTriniumSolution.getFluid(8000))
+                .EUt(VA[ZPM])
+                .duration(9 * SECOND)
+                .buildAndRegister();
+
+        //  8 Heavy Fluorinated Draconium Solution -> 12KeF4 + 16F + 2C6H6
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(HeavyFluorinatedTriniumSolution.getFluid(8000))
+                .output(dust, TriniumTetrafluoride, 60)
+                .fluidOutputs(Fluorine.getFluid(16000))
+                .fluidOutputs(Perfluorobenzene.getFluid(2000))
+                .EUt(VA[LuV])
+                .duration(13 * SECOND)
+                .buildAndRegister();
+
+        //  KeF4 + 4Na -> 4NaF + Ke
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .input(dust, TriniumTetrafluoride, 5)
+                .input(dust, Sodium, 4)
+                .output(dust, Trinium)
+                .output(dust, SodiumFluoride, 8)
+                .EUt(VA[EV])
+                .duration(6 * SECOND)
+                .temperature(434)
+                .buildAndRegister();
+
+        //  Kr + 2F -> KrF2
+       CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Krypton.getFluid(1000))
+                .fluidInputs(Fluorine.getFluid(2000))
+                .fluidOutputs(KryptonDifluoride.getFluid(1000))
+                .EUt(VA[HV])
+                .duration((int) (6.5 * SECOND))
+                .buildAndRegister();
+
+        //  6KF + C6H6 + 6Cl -> 6KCl + C6F6 + 6H
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, Rhenium)
+                .input(dust, PotassiumFluoride, 12)
+                .fluidInputs(Benzene.getFluid(1000))
+                .fluidInputs(Chlorine.getFluid(6000))
+                .output(dust, RockSalt, 12)
+                .fluidOutputs(Perfluorobenzene.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(6000))
+                .EUt(VA[HV])
+                .duration((int) (8.5 * SECOND))
+                .buildAndRegister();
+
+        //  2CsCB11H12 + 2AgNO3 + 2I +44F + HCl + (CH3)3SiH -> 2HCHB11F11 + 2CsNO3 + 2AgI + 22HF + (CH3)3SiCl
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, CaesiumCarborane, 50)
+                .input(dust, SilverNitrate, 10)
+                .input(dust, Iodine, 2)
+                .fluidInputs(Fluorine.getFluid(44000))
+                .fluidInputs(HydrochloricAcid.getFluid(1000))
+                .fluidInputs(Trimethylsilane.getFluid(1000))
+                .output(dust, Fluorocarborane, 50)
+                .output(dust, CaesiumNitrate, 10)
+                .output(dust, SilverIodide, 4)
+                .fluidOutputs(HydrofluoricAcid.getFluid(22000))
+                .fluidOutputs(Trimethylchlorosilane.getFluid(1000))
+                .EUt(VA[UHV])
+                .duration(16 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Ag + HNO3 -> AgNO3 + H
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Silver)
+                .circuitMeta(1)
+                .fluidInputs(NitricAcid.getFluid(1000))
+                .output(dust, SilverNitrate, 5)
+                .fluidOutputs(Hydrogen.getFluid(1000))
+                .EUt(VA[MV])
+                .duration((int) (7.5 * SECOND))
+                .buildAndRegister();
+
+        //  Ag2O + 2HNO3 -> 2AgNO3 + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SilverOxide)
+                .circuitMeta(2)
+                .fluidInputs(NitricAcid.getFluid(2000))
+                .output(dust, SilverNitrate, 10)
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[MV])
+                .duration((int) (7.5 * SECOND))
+                .buildAndRegister();
+
+        //  CsB10H12CN(CH3)3Cl + LiH + C2H9BS + -> CsCB11H12 + LiCl + (CH3)3N + H2S + 2CH4
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, CaesiumCarboranePrecursor, 38)
+                .input(dust, LithiumHydride, 2)
+                .notConsumable(Tetrahydrofuran.getFluid(1))
+                .fluidInputs(BoraneDimethylsulfide.getFluid(1000))
+                .output(dust, CaesiumCarborane, 25)
+                .output(dust, LithiumChloride, 2)
+                .fluidOutputs(Trimethylamine.getFluid(1000))
+                .fluidOutputs(HydrogenSulfide.getFluid(1000))
+                .fluidOutputs(Methane.getFluid(2000))
+                .EUt(VA[LuV])
+                .duration(13 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  CsOH + B10H14 + NaCN + 2HCl + 3CH4O -> CsB10H12CN(CH3)3Cl + 2NaCl + 4H2O
+        CRYOGENIC_REACTOR_RECIPES.recipeBuilder()
+                .input(dust, CaesiumHydroxide, 3)
+                .input(dust, Decaborane, 24)
+                .inputs(SodiumCyanide.getItemStack(3))
+                .notConsumable(SulfuricAcid.getFluid(1))
+                .fluidInputs(HydrochloricAcid.getFluid(2000))
+                .fluidInputs(Methanol.getFluid(3000))
+                .output(dust, CaesiumCarboranePrecursor, 38)
+                .output(dust, Salt, 2)
+                .fluidOutputs(Water.getFluid(4000))
+                .EUt(VA[IV])
+                .duration(12 * SECOND)
+                .temperature(62)
+                .buildAndRegister();
+
+        //  2Cs + H2O2 -> 2CsOH
+        CHEMICAL_BATH_RECIPES.recipeBuilder()
+                .input(dust, Caesium, 2)
+                .fluidInputs(HydrogenPeroxide.getFluid(1000))
+                .output(dust, CaesiumHydroxide, 6)
+                .EUt(VA[HV])
+                .duration(9 * SECOND)
+                .buildAndRegister();
+
+        //  8.5NaBH4 + HF + 2H2O2 + 10(BF3)(C2H5)2O -> B10H14 + NaF + 7.5NaBF4 + H2O + 20H + 10(C2H5)2O
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .input(dust, SodiumBorohydride, 51)
+                .fluidInputs(HydrofluoricAcid.getFluid(1000))
+                .fluidInputs(HydrogenPeroxide.getFluid(2000))
+                .fluidInputs(BoronTrifluorideEtherate.getFluid(10000))
+                .output(dust, Decaborane, 24)
+                .output(dust, SodiumFluoride, 2)
+                .output(dust, SodiumTetrafluoroborate, 45)
+                .fluidOutputs(Water.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(20000))
+                .fluidOutputs(DiethylEther.getFluid(10000))
+                .EUt(VA[IV])
+                .duration(14 * SECOND)
+                .temperature(1494)
+                .buildAndRegister();
+
+        //  8Na + 4LiH -> NaBF4 + H3BO3 + 3C2H6O -> 3C2H5ONa + 4Li + 3H2O
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Sodium, 8)
+                .input(dust, LithiumHydride, 8)
+                .fluidInputs(BoricAcid.getFluid(1000))
+                .fluidInputs(Ethanol.getFluid(3000))
+                .notConsumable(SulfuricAcid.getFluid(1))
+                .output(dust, SodiumBorohydride, 6)
+                .output(dust, SodiumEthoxide, 27)
+                .output(dust, Lithium, 4)
+                .fluidOutputs(Water.getFluid(3000))
+                .EUt(VA[EV])
+                .duration(6 * SECOND)
+                .buildAndRegister();
+
+        //  NaBF4 -> NaF + BF3
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .input(dust, SodiumTetrafluoroborate, 6)
+                .output(dust, SodiumFluoride, 2)
+                .fluidOutputs(BoronTrifluoride.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(6 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  (C2H5)2O + BF3 -> (BF3)(C2H5)2O
+        MIXER_RECIPES.recipeBuilder()
+                .fluidInputs(DiethylEther.getFluid(1000))
+                .fluidInputs(BoronTrifluoride.getFluid(1000))
+                .fluidOutputs(BoronTrifluorideEtherate.getFluid(1000))
+                .EUt(VA[MV])
+                .duration((int) (7.5 * SECOND))
+                .buildAndRegister();
+
+        //  C2H6O + C2H4 -> (C2H5)2O
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .notConsumable(spring, Cupronickel)
+                .fluidInputs(Ethylene.getFluid(1000))
+                .fluidInputs(Ethanol.getFluid(1000))
+                .fluidOutputs(DiethylEther.getFluid(1000))
+                .EUt(VA[MV])
+                .duration(14 * SECOND)
+                .buildAndRegister();
+
+        //  B2H6 + (CH3)2S -> C2H9BS
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Diborane.getFluid(1000))
+                .fluidInputs(DimethylSulfide.getFluid(1000))
+                .fluidOutputs(BoraneDimethylsulfide.getFluid(2000))
+                .EUt(VA[LuV])
+                .duration(100)
+                .buildAndRegister();
+
+        //  2AgI + O -> Ag2O + 2I
+        INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
+                .input(dust, SilverIodide, 4)
+                .fluidInputs(Oxygen.getFluid(1000))
+                .output(dust, SilverOxide, 3)
+                .output(dust, Iodine, 2)
+                .EUt(VA[MV])
+                .duration((int) (10.5 * SECOND))
+                .temperature(1100)
+                .buildAndRegister();
+
+        //  LiH + (CH3)3SiCl -> LiCl + (CH3)3SiH
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, LithiumHydride, 2)
+                .fluidInputs(Trimethylchlorosilane.getFluid(1000))
+                .output(dust, LithiumChloride, 2)
+                .fluidOutputs(Trimethylsilane.getFluid(1000))
+                .EUt(VA[EV])
+                .duration((int) (6.5 * SECOND))
+                .buildAndRegister();
+
+        //  K + F -> KF
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Potassium)
+                .circuitMeta(1)
+                .fluidInputs(Fluorine.getFluid(1000))
+                .output(dust, PotassiumFluoride, 2)
+                .EUt(VA[MV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
     }
 
     private static void NaquadahReactorRecipes() {

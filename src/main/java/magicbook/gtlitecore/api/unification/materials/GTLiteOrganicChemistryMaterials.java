@@ -1679,6 +1679,59 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x1E5C58)
                 .components(Carbon, 10, Hydrogen, 6, Oxygen, 4)
                 .build();
+
+        //  13201 Fluorocarborane
+        Fluorocarborane = new Material.Builder(getID(), gregtechId("fluorocarborane"))
+                .dust()
+                .color(0x59B35C)
+                .iconSet(BRIGHT)
+                .components(Carbon, 1, Hydrogen, 2, Boron, 11, Fluorine, 11)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("HCHB11F11", true);
+
+        //  13202 Perfluorobenzene
+        Perfluorobenzene = new Material.Builder(getID(), gregtechId("perfluorobenzene"))
+                .liquid()
+                .color(0x39733B)
+                .components(Carbon, 6, Fluorine, 6)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13203 Borane Dimethylsulfide
+        BoraneDimethylsulfide = new Material.Builder(getID(), gregtechId("borane_dimethylsulfide"))
+                .liquid()
+                .color(Lead.getMaterialRGB() + Boron.getMaterialRGB())
+                .components(Carbon, 2, Hydrogen, 9, Boron, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13204 Decaborane
+        Decaborane = new Material.Builder(getID(), gregtechId("decaborane"))
+                .dust()
+                .color(0x4C994F)
+                .iconSet(ROUGH)
+                .components(Boron, 10, Hydrogen, 14)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  13205 Boron Trifluoride Etherate
+        BoronTrifluorideEtherate = new Material.Builder(getID(), gregtechId("boron_trifluoride_etherate"))
+                .liquid()
+                .color(0xBF6E6E)
+                .components(Boron, 1, Fluorine, 3, Carbon, 4, Hydrogen, 7, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(BF3)(C2H5)2O", true);
+
+        //  13206 Diethyl Ether
+        DiethylEther = new Material.Builder(getID(), gregtechId("diethyl_ether"))
+                .liquid()
+                .color(0xFFA4A3)
+                .components(Carbon, 4, Hydrogen, 10, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C2H5)2O", true);
     }
 
 }

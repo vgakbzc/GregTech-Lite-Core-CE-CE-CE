@@ -2408,5 +2408,102 @@ public class GTLiteFirstDegreeMaterials {
                 .components(Hydrogen, 2, Xenon, 1, Oxygen, 4)
                 .flags(DISABLE_DECOMPOSITION)
                 .build();
+
+        //  11273 Krypton Difluoride
+        KryptonDifluoride = new Material.Builder(getID(), gregtechId("krypton_difluoride"))
+                .gas()
+                .color(Krypton.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .components(Krypton, 1, Fluorine, 2)
+                .build();
+
+        //  11274 Trinium Tetrafluoride
+        TriniumTetrafluoride = new Material.Builder(getID(), gregtechId("trinium_tetrafluoride"))
+                .dust()
+                .color(0xBA16A6)
+                .iconSet(DULL)
+                .components(Trinium, 1, Fluorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11275 Potassium Fluoride
+        PotassiumFluoride = new Material.Builder(getID(), gregtechId("potassium_fluoride"))
+                .dust()
+                .color(Potassium.getMaterialRGB() + Fluorine.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Potassium, 1, Fluorine, 1)
+                .build();
+
+        //  11276 Caesium Carborane
+        CaesiumCarborane = new Material.Builder(getID(), gregtechId("caesium_carborane"))
+                .dust()
+                .color(Caesium.getMaterialRGB() + Carbon.getMaterialRGB())
+                .iconSet(DULL)
+                .components(Caesium, 1, Carbon, 1, Boron, 11, Hydrogen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11277 Silver Nitrate
+        SilverNitrate = new Material.Builder(getID(), gregtechId("silver_nitrate"))
+                .dust()
+                .color(Silver.getMaterialRGB() + NitricAcid.getMaterialRGB())
+                .iconSet(SHINY)
+                .components(Silver, 1, Nitrogen, 1, Oxygen, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11278 Caesium Nitrate
+        CaesiumNitrate = new Material.Builder(getID(), gregtechId("caesium_nitrate"))
+                .dust()
+                .color(Caesium.getMaterialRGB() + NitricAcid.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Caesium, 1, Nitrogen, 1, Oxygen, 3)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .build();
+
+        //  11279 Silver Iodide
+        SilverIodide = new Material.Builder(getID(), gregtechId("silver_iodide"))
+                .dust()
+                .iconSet(SHINY)
+                .color(Silver.getMaterialRGB() + Iodine.getMaterialRGB())
+                .components(Silver, 1, Iodine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11280 Caesium Carborane Precursor
+        CaesiumCarboranePrecursor = new Material.Builder(getID(), gregtechId("caesium_carborane_precursor"))
+                .dust()
+                .color(CaesiumCarborane.getMaterialRGB())
+                .iconSet(SAND)
+                .components(Caesium, 1, Boron, 10, Hydrogen, 21, Carbon, 4, Nitrogen, 1, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("CsB10H12CN(CH3)3Cl", true);
+
+        //  11281 Caesium Hydroxide
+        CaesiumHydroxide = new Material.Builder(getID(), gregtechId("caesium_hydroxide"))
+                .dust()
+                .color(Caesium.getMaterialRGB() + Hydrogen.getMaterialRGB() + Oxygen.getMaterialRGB())
+                .components(Caesium, 1, Oxygen, 1, Hydrogen, 1)
+                .flags(DECOMPOSITION_BY_ELECTROLYZING)
+                .build();
+
+        //  11282 Sodium Borohydride
+        SodiumBorohydride = new Material.Builder(getID(), gregtechId("sodium_borohydride"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + Boron.getMaterialRGB())
+                .iconSet(ROUGH)
+                .components(Sodium, 1, Boron, 1, Hydrogen, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
+        //  11283 Sodium Tetrafluoroborate
+        SodiumTetrafluoroborate = new Material.Builder(getID(), gregtechId("sodium_tetrafluoroborate"))
+                .dust()
+                .color(Sodium.getMaterialRGB() + BoronTrifluoride.getMaterialRGB())
+                .iconSet(SAND)
+                .components(Sodium, 1, Boron, 1, Fluorine, 4)
+                .flags(DISABLE_DECOMPOSITION)
+                .build();
+
     }
 }

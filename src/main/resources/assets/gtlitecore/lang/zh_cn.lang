@@ -2966,6 +2966,17 @@ gregtech.material.diluted_hydrofluoric_acid=稀氢氟酸
 gregtech.material.tritium_hydride=氢化氚
 gregtech.material.helium_3_hydride=氢化氦-3
 gregtech.material.xenic_acid=氢氙酸
+gregtech.material.krypton_difluoride=二氟化氪
+gregtech.material.trinium_tetrafluoride=四氟化凯金
+gregtech.material.potassium_fluoride=氟化钾
+gregtech.material.caesium_carborane=碳硼烷铯
+gregtech.material.silver_nitrate=硝酸银
+gregtech.material.caesium_nitrate=硝酸铯
+gregtech.material.silver_iodide=碘化银
+gregtech.material.caesium_carborane_precursor=碳硼烷铯预固化剂
+gregtech.material.caesium_hydroxide=氢氧化铯
+gregtech.material.sodium_borohydride=硼氢化钠
+gregtech.material.sodium_tetrafluoroborate=四氟硼酸钠
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3249,6 +3260,12 @@ gregtech.material.para_toluic_acid=对甲基苯甲酸
 gregtech.material.methylparatoluate=对甲基苯甲酸甲酯
 gregtech.material.dimethyl_terephthalate=对苯二甲酸二甲酯
 gregtech.material.polyethylene_terephthalate=聚对苯二甲酸乙二醇酯（PET）
+gregtech.material.fluorocarborane=氟碳硼烷
+gregtech.material.perfluorobenzene=全氟苯
+gregtech.material.borane_dimethylsulfide=硼烷二甲硫醚
+gregtech.material.decaborane=癸硼烷
+gregtech.material.boron_trifluoride_etherate=三氟化硼乙醚
+gregtech.material.diethyl_ether=二乙醚
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
@@ -3460,6 +3477,7 @@ gregtech.material.taranium_rich_dusty_helium_3=富塔兰金属污浊氦-3
 gregtech.material.taranium_rich_helium_4=富塔兰金属氦-4
 gregtech.material.taranium_poor_helium=枯竭塔兰金属液氦
 gregtech.material.taranium_poor_helium_mixture=枯竭塔兰金属氦-氦-3混合液
+gregtech.material.heavy_fluorinated_trinium_solution=重氟凯金溶液
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金
