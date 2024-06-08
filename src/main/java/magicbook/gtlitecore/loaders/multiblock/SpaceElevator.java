@@ -603,6 +603,20 @@ public class SpaceElevator {
 
         //  OpV Mining Drone
 
+        //  Raw Tengam-Enriched Mithril-Electrotine vein
+        createMiningModuleRecipe(1, MINING_DRONE_OpV,
+                RawTengam, 2000,
+                RawTengam, 2000,
+                RawTengam, 2000,
+                RawTengam, 2000,
+                EnrichedMithril, 4000,
+                EnrichedMithril, 4000,
+                Electrotine, 8000,
+                Electrotine, 8000,
+                Electrotine, 8000,
+                5,
+                VA[UXV]);
+
         //  MAX Mining Drone
 
     }

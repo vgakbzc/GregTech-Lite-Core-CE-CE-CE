@@ -2978,6 +2978,9 @@ gregtech.material.caesium_hydroxide=氢氧化铯
 gregtech.material.sodium_borohydride=硼氢化钠
 gregtech.material.sodium_tetrafluoroborate=四氟硼酸钠
 gregtech.material.fluorocarborane=氟碳硼烷
+gregtech.material.raw_tengam=生镃
+gregtech.material.tengam=镃
+gregtech.material.attuned_tengam=谐镃
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3059,6 +3062,7 @@ gregtech.material.hattrium=提布莉姆合金
 gregtech.material.duraluminium_alloy=硬铝合金65A
 gregtech.material.artherium_b_47=艾瑟瑞姆合金-B47
 gregtech.material.enriched_naquadah_alloy=富集硅岩合金
+gregtech.material.cosmic_matter_superconductor=宇宙物质超导体
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -3552,41 +3556,41 @@ item.gregtech.material.stone_residue.dust=混矿石头残渣
 item.gregtech.material.stone_residue.dustSmall=小堆混矿石头残渣
 item.gregtech.material.stone_residue.dustTiny=小撮混矿石头残渣
 
-gregtech.material.selected_stone_residue.dust=精选石头残渣
-gregtech.material.selected_stone_residue.dustSmall=小堆精选石头残渣
-gregtech.material.selected_stone_residue.dustTiny=小撮精选石头残渣
+item.gregtech.material.selected_stone_residue.dust=精选石头残渣
+item.gregtech.material.selected_stone_residue.dustSmall=小堆精选石头残渣
+item.gregtech.material.selected_stone_residue.dustTiny=小撮精选石头残渣
 
-gregtech.material.partially_oxidized_stone_residue.dust=部分氧化石头残渣
-gregtech.material.partially_oxidized_stone_residue.dustSmall=小堆部分氧化石头残渣
-gregtech.material.partially_oxidized_stone_residue.dustTiny=小撮部分氧化石头残渣
+item.gregtech.material.partially_oxidized_stone_residue.dust=部分氧化石头残渣
+item.gregtech.material.partially_oxidized_stone_residue.dustSmall=小堆部分氧化石头残渣
+item.gregtech.material.partially_oxidized_stone_residue.dustTiny=小撮部分氧化石头残渣
 
-gregtech.material.inert_stone_residue.dust=惰性石头残渣
-gregtech.material.inert_stone_residue.dustSmall=小堆惰性石头残渣
-gregtech.material.inert_stone_residue.dustTiny=小撮惰性石头残渣
+item.gregtech.material.inert_stone_residue.dust=惰性石头残渣
+item.gregtech.material.inert_stone_residue.dustSmall=小堆惰性石头残渣
+item.gregtech.material.inert_stone_residue.dustTiny=小撮惰性石头残渣
 
-gregtech.material.oxidized_stone_residue.dust=不完全氧化石头残渣
-gregtech.material.oxidized_stone_residue.dustSmall=小堆不完全氧化石头残渣
-gregtech.material.oxidized_stone_residue.dustTiny=小撮不完全氧化石头残渣
+item.gregtech.material.oxidized_stone_residue.dust=不完全氧化石头残渣
+item.gregtech.material.oxidized_stone_residue.dustSmall=小堆不完全氧化石头残渣
+item.gregtech.material.oxidized_stone_residue.dustTiny=小撮不完全氧化石头残渣
 
-gregtech.material.heavy_oxidized_stone_residue.dust=完全氧化石头残渣
-gregtech.material.heavy_oxidized_stone_residue.dustSmall=小堆完全氧化石头残渣
-gregtech.material.heavy_oxidized_stone_residue.dustTiny=小撮完全氧化石头残渣
+item.gregtech.material.heavy_oxidized_stone_residue.dust=完全氧化石头残渣
+item.gregtech.material.heavy_oxidized_stone_residue.dustSmall=小堆完全氧化石头残渣
+item.gregtech.material.heavy_oxidized_stone_residue.dustTiny=小撮完全氧化石头残渣
 
-gregtech.material.metallic_stone_residue.dust=轻质类金属石头残渣
-gregtech.material.metallic_stone_residue.dustSmall=小堆轻质类金属石头残渣
-gregtech.material.metallic_stone_residue.dustTiny=小撮轻质类金属石头残渣
+item.gregtech.material.metallic_stone_residue.dust=轻质类金属石头残渣
+item.gregtech.material.metallic_stone_residue.dustSmall=小堆轻质类金属石头残渣
+item.gregtech.material.metallic_stone_residue.dustTiny=小撮轻质类金属石头残渣
 
-gregtech.material.heavy_metallic_stone_residue.dust=重质类金属石头残渣
-gregtech.material.heavy_metallic_stone_residue.dustSmall=小堆重质类金属石头残渣
-gregtech.material.heavy_metallic_stone_residue.dustTiny=小撮重质类金属石头残渣
+item.gregtech.material.heavy_metallic_stone_residue.dust=重质类金属石头残渣
+item.gregtech.material.heavy_metallic_stone_residue.dustSmall=小堆重质类金属石头残渣
+item.gregtech.material.heavy_metallic_stone_residue.dustTiny=小撮重质类金属石头残渣
 
-gregtech.material.superheavy_stone_residue.dust=超重石头残渣
-gregtech.material.superheavy_stone_residue.dustSmall=小堆超重石头残渣
-gregtech.material.superheavy_stone_residue.dustTiny=小撮超重石头残渣
+item.gregtech.material.superheavy_stone_residue.dust=超重石头残渣
+item.gregtech.material.superheavy_stone_residue.dustSmall=小堆超重石头残渣
+item.gregtech.material.superheavy_stone_residue.dustTiny=小撮超重石头残渣
 
-gregtech.material.clean_inert_stone_residue.dust=洁净惰性石头残渣
-gregtech.material.clean_inert_stone_residue.dustSmall=小堆洁净惰性石头残渣
-gregtech.material.clean_inert_stone_residue.dustTiny=小撮洁净惰性石头残渣
+item.gregtech.material.clean_inert_stone_residue.dust=洁净惰性石头残渣
+item.gregtech.material.clean_inert_stone_residue.dustSmall=小堆洁净惰性石头残渣
+item.gregtech.material.clean_inert_stone_residue.dustTiny=小撮洁净惰性石头残渣
 
 item.gregtech.material.pedot_tma.ingot=PEDOT-TMA条
 item.gregtech.material.pedot_tma.nugget=PEDOT-TMA颗粒

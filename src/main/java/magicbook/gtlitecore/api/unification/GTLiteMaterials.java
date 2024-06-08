@@ -369,6 +369,9 @@ public class GTLiteMaterials {
     public static Material SodiumBorohydride;
     public static Material SodiumTetrafluoroborate;
     public static Material Fluorocarborane;
+    public static Material RawTengam;
+    public static Material Tengam;
+    public static Material AttunedTengam;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -456,6 +459,7 @@ public class GTLiteMaterials {
     public static Material DuraluminiumAlloy;
     public static Material ArtheriumB47;
     public static Material EnrichedNaquadahAlloy;
+    public static Material CosmicMatterSuperconductor;
 
     ///////////////////////////////////
     //  Organic Chemistry Materials  //

@@ -1219,6 +1219,97 @@ public class OverrideRecipeLoader {
                         .CWUt(96)
                         .EUt(VA[ZPM]))
                 .buildAndRegister();
+
+        //  Magnetic Materials Overrides
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(ingot, ChromiumGermaniumTelluride));
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(stick, ChromiumGermaniumTelluride));
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(stickLong, ChromiumGermaniumTelluride));
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(ingot, ChromiumGermaniumTelluride)
+                .output(ingot, ChromiumGermaniumTellurideMagnetic)
+                .EUt(VA[ZPM])
+                .duration((int) (5.05 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(stick, ChromiumGermaniumTelluride)
+                .output(stick, ChromiumGermaniumTellurideMagnetic)
+                .EUt(VA[ZPM])
+                .duration((int) (2.5 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(stickLong, ChromiumGermaniumTelluride)
+                .output(stickLong, ChromiumGermaniumTellurideMagnetic)
+                .EUt(VA[ZPM])
+                .duration((int) (5.05 * SECOND))
+                .buildAndRegister();
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(ingot, PhosphorusDopedEuropiumIronArsenide));
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(stick, PhosphorusDopedEuropiumIronArsenide));
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(stickLong, PhosphorusDopedEuropiumIronArsenide));
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(ingot, PhosphorusDopedEuropiumIronArsenide)
+                .output(ingot, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .EUt(VA[UHV])
+                .duration((int) (3.65 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(stick, PhosphorusDopedEuropiumIronArsenide)
+                .output(stick, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .EUt(VA[UHV])
+                .duration((int) (1.8 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(stickLong, PhosphorusDopedEuropiumIronArsenide)
+                .output(stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic)
+                .EUt(VA[UHV])
+                .duration((int) (3.65 * SECOND))
+                .buildAndRegister();
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(ingot, BismuthLawrenciumStrontiumCuprate));
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(stick, BismuthLawrenciumStrontiumCuprate));
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES,
+                OreDictUnifier.get(stickLong, BismuthLawrenciumStrontiumCuprate));
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(ingot, BismuthLawrenciumStrontiumCuprate)
+                .output(ingot, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .EUt(VA[UIV])
+                .duration((int) (3.85 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(stick, BismuthLawrenciumStrontiumCuprate)
+                .output(stick, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .EUt(VA[UIV])
+                .duration((int) (1.9 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(stickLong, BismuthLawrenciumStrontiumCuprate)
+                .output(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .EUt(VA[UIV])
+                .duration((int) (3.85 * SECOND))
+                .buildAndRegister();
     }
 
 }

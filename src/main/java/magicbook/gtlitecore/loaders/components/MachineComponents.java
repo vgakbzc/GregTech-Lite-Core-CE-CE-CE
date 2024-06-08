@@ -1152,6 +1152,25 @@ public class MachineComponents {
                 .buildAndRegister();
 
         //  MAX
-        //  todo needs to create max superconductor.
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, Omnium)
+                .input(plate, Omnium, 6)
+                .input(ZENITH_STAR)
+                .input(EMITTER_MAX, 2)
+                .input(circuit, MarkerMaterials.Tier.MAX, 2)
+                .input(wireFine, CosmicMatterSuperconductor, 64)
+                .input(wireFine, CosmicMatterSuperconductor, 64)
+                .input(cableGtSingle, Universium, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 64))
+                .fluidInputs(SpacetimeContinuum.getFluid(L * 32))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16))
+                .output(FIELD_GENERATOR_MAX)
+                .duration(4200)
+                .EUt(2000000000)
+                .stationResearch(b -> b
+                        .researchStack(FIELD_GENERATOR_OpV.getStackForm())
+                        .CWUt(2048)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
     }
 }

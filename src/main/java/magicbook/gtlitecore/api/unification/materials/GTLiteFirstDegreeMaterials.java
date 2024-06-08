@@ -2515,8 +2515,41 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("HCHB11F11", true);
 
-        //  11285 Cubic Fluoroheterodiamond
+        //  11285 Raw Tengam
+        RawTengam = new Material.Builder(getID(), gregtechId("raw_tengam"))
+                .dust()
+                .ore(2, 1, true)
+                .addOreByproducts(NeodymiumMagnetic, SamariumMagnetic)
+                .color(0xA0BF60)
+                .iconSet(METALLIC)
+                .build()
+                .setFormula("M", true);
 
+        //  11286 Tengam
+        Tengam = new Material.Builder(getID(), gregtechId("tengam"))
+                .ingot()
+                .color(0xBADF70)
+                .iconSet(METALLIC)
+                .blast(b -> b
+                        .temp(22000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UXV], 4500)
+                        .vacuumStats(VA[UXV], 2250))
+                .build()
+                .setFormula("M", true);
+
+        //  11287 Attuned Tengam
+        AttunedTengam = new Material.Builder(getID(), gregtechId("attuned_tengam"))
+                .ingot()
+                .color(0xD5FF80)
+                .iconSet(MAGNETIC)
+                .flags(IS_MAGNETIC)
+                .components(Tengam, 1)
+                .ingotSmeltInto(Tengam)
+                .arcSmeltInto(Tengam)
+                .macerateInto(Tengam)
+                .build();
+
+        Tengam.getProperty(PropertyKey.INGOT).setMagneticMaterial(AttunedTengam);
 
     }
 }

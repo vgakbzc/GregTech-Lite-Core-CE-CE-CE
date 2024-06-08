@@ -1,9 +1,18 @@
 package magicbook.gtlitecore.loaders.chains;
 
+import gregicality.multiblocks.api.fluids.GCYMFluidStorageKeys;
+import gregtech.api.recipes.GTRecipeHandler;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
+import gregtech.api.unification.OreDictUnifier;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fluids.FluidStack;
+
+import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_RECIPES;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.ingot;
 import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
@@ -281,5 +290,85 @@ public class SuperconductorsChain {
 
     private static void MAXSuperconductors() {
 
+        //  Raw Tengam -> Tengame
+        ELECTROMAGNETIC_SEPARATOR_RECIPES.recipeBuilder()
+                .input(dust, RawTengam)
+                .output(dust, Tengam)
+                .chancedOutput(dust, NeodymiumMagnetic, 1000, 250)
+                .chancedOutput(dust, SamariumMagnetic, 2000, 600)
+                .EUt(VA[OpV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  Remove original recipe
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES, OreDictUnifier.get(ingot, Tengam));
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(ingot, Tengam)
+                .output(ingot, AttunedTengam)
+                .EUt(VA[OpV])
+                .duration((int) (4.9 * SECOND))
+                .buildAndRegister();
+
+        GTRecipeHandler.removeRecipesByInputs(ALLOY_BLAST_RECIPES,
+                OreDictUnifier.get(dust, Octiron, 8),
+                OreDictUnifier.get(dust, RutheniumTriniumAmericiumNeutronate, 9),
+                OreDictUnifier.get(dust, HastelloyK243, 7),
+                OreDictUnifier.get(dust, AstralTitanium, 6),
+                OreDictUnifier.get(dust, CelestialTungsten, 6),
+                OreDictUnifier.get(dust, Shirabon, 2),
+                OreDictUnifier.get(dust, Fluorocarborane, 25),
+                OreDictUnifier.get(dust, AttunedTengam, 4),
+                IntCircuitIngredient.getIntegratedCircuit(8));
+
+        GTRecipeHandler.removeRecipesByInputs(ALLOY_BLAST_RECIPES,
+                new ItemStack[]{
+                        OreDictUnifier.get(dust, Octiron, 8),
+                        OreDictUnifier.get(dust, RutheniumTriniumAmericiumNeutronate, 9),
+                        OreDictUnifier.get(dust, HastelloyK243, 7),
+                        OreDictUnifier.get(dust, AstralTitanium, 6),
+                        OreDictUnifier.get(dust, CelestialTungsten, 6),
+                        OreDictUnifier.get(dust, Shirabon, 2),
+                        OreDictUnifier.get(dust, Fluorocarborane, 25),
+                        OreDictUnifier.get(dust, AttunedTengam, 4),
+                        IntCircuitIngredient.getIntegratedCircuit(18)},
+                new FluidStack[]{Krypton.getFluid(670)});
+
+        ALLOY_BLAST_RECIPES.recipeBuilder()
+                .input(dust, Octiron, 8)
+                .input(dust, RutheniumTriniumAmericiumNeutronate, 9)
+                .input(dust, HastelloyK243, 7)
+                .input(dust, AstralTitanium, 6)
+                .input(dust, CelestialTungsten, 6)
+                .input(dust, Shirabon, 2)
+                .input(dust, Fluorocarborane, 25)
+                .input(dust, AttunedTengam, 4)
+                .circuitMeta(8)
+                .fluidInputs(Eternity.getFluid(L * 40))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(16000))
+                .fluidOutputs(CosmicMatterSuperconductor.getFluid(GCYMFluidStorageKeys.MOLTEN, 9648))
+                .EUt((int) (V[MAX]))
+                .duration((int) (50.25 * SECOND))
+                .blastFurnaceTemp(22000)
+                .buildAndRegister();
+
+        ALLOY_BLAST_RECIPES.recipeBuilder()
+                .input(dust, Octiron, 8)
+                .input(dust, RutheniumTriniumAmericiumNeutronate, 9)
+                .input(dust, HastelloyK243, 7)
+                .input(dust, AstralTitanium, 6)
+                .input(dust, CelestialTungsten, 6)
+                .input(dust, Shirabon, 2)
+                .input(dust, Fluorocarborane, 25)
+                .input(dust, AttunedTengam, 4)
+                .circuitMeta(18)
+                .fluidInputs(MetastableOganesson.getFluid(670))
+                .fluidInputs(Eternity.getFluid(L * 40))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(16000))
+                .fluidOutputs(CosmicMatterSuperconductor.getFluid(GCYMFluidStorageKeys.MOLTEN, 9648))
+                .EUt((int) (V[MAX]))
+                .duration((int) (33.65 * SECOND))
+                .blastFurnaceTemp(22000)
+                .buildAndRegister();
     }
 }

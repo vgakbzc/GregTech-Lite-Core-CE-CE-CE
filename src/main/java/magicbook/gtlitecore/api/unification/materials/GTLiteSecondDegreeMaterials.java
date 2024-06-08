@@ -1068,6 +1068,22 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UV], 500)
                         .vacuumStats(VA[ZPM], 150))
                 .build();
+
+        //  12080 Cosmic Matter Superconductor
+        CosmicMatterSuperconductor = new Material.Builder(getID(), gregtechId("cosmic_matter_superconductor"))
+                .ingot()
+                .fluid()
+                .color(0x1A1A1A)
+                .iconSet(NUCLEAR)
+                .components(Octiron, 8, RutheniumTriniumAmericiumNeutronate, 9, HastelloyK243, 7, AstralTitanium, 6, CelestialTungsten, 6,
+                        Shirabon, 2, Fluorocarborane, 25, AttunedTengam, 4)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .cableProperties(VA[MAX], 2048, 0, true)
+                .blast(b -> b
+                        .temp(22000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[MAX], 20)
+                        .vacuumStats(VA[MAX], 10))
+                .build();
     }
 
 }
