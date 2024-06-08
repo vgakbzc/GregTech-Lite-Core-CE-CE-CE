@@ -11,8 +11,7 @@ import static gregicality.multiblocks.api.recipes.GCYMRecipeMaps.ALLOY_BLAST_REC
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.ingot;
+import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
@@ -308,6 +307,22 @@ public class SuperconductorsChain {
                 .output(ingot, AttunedTengam)
                 .EUt(VA[OpV])
                 .duration((int) (4.9 * SECOND))
+                .buildAndRegister();
+
+        GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES, OreDictUnifier.get(plate, Tengam));
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(plate, Tengam)
+                .output(plate, AttunedTengam)
+                .EUt(VA[OpV])
+                .duration((int) (4.9 * SECOND))
+                .buildAndRegister();
+
+        POLARIZER_RECIPES.recipeBuilder()
+                .input(plateDouble, Tengam)
+                .output(plateDouble, AttunedTengam)
+                .EUt(VA[OpV])
+                .duration((int) (9.8 * SECOND))
                 .buildAndRegister();
 
         GTRecipeHandler.removeRecipesByInputs(ALLOY_BLAST_RECIPES,

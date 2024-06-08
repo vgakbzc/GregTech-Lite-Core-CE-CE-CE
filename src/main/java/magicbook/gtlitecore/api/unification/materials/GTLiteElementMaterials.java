@@ -444,7 +444,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[OpV], 27)
                         .vacuumStats(VA[OpV], 50))
                 .fluidPipeProperties(160000, 40000, true, true, true, true)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .build();
 
         //  10030 Omnium

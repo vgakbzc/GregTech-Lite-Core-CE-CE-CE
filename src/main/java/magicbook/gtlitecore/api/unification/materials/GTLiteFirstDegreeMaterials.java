@@ -2534,6 +2534,7 @@ public class GTLiteFirstDegreeMaterials {
                         .temp(22000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 4500)
                         .vacuumStats(VA[UXV], 2250))
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
                 .build()
                 .setFormula("M", true);
 
@@ -2542,7 +2543,7 @@ public class GTLiteFirstDegreeMaterials {
                 .ingot()
                 .color(0xD5FF80)
                 .iconSet(MAGNETIC)
-                .flags(IS_MAGNETIC)
+                .flags(IS_MAGNETIC, GENERATE_PLATE, GENERATE_DOUBLE_PLATE)
                 .components(Tengam, 1)
                 .ingotSmeltInto(Tengam)
                 .arcSmeltInto(Tengam)
