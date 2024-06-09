@@ -229,7 +229,7 @@ public class NeutralNetworkNexus {
                 .fluidInputs(PCBCoolant.getFluid(32000))
                 .fluidInputs(HeavyQuarkEnrichedMixture.getFluid(8000))
                 .fluidInputs(CosmicComputingMixture.getFluid(L * 4))
-                .output(swarm, HeavyQuarkDegenerateMatter)
+                .output(swarm, HeavyQuarkDegenerateMatter, 4)
                 .EUt(VZ[UXV])
                 .duration(180)
                 .tier(3)
