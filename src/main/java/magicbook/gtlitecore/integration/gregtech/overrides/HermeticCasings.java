@@ -40,5 +40,10 @@ public class HermeticCasings {
                 "ppp", "pPp", "ppp",
                 'p', new UnificationEntry(plate, Spacetime),
                 'P', new UnificationEntry(pipeLargeFluid, Fatalium));
+
+        ModHandler.addShapedRecipe(true, "hermetic_casing_max", GTLiteMetaBlocks.HERMETIC_CASING.getItemVariant(BlockHermeticCasing.HermeticCasingType.HERMETIC_MAX),
+                "ppp", "pPp", "ppp",
+                'p', new UnificationEntry(plate, Eternity),
+                'P', new UnificationEntry(pipeLargeFluid, Aetherium));
     }
 }

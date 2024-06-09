@@ -7,11 +7,8 @@ import gregtech.api.capability.impl.MultiblockFuelRecipeLogic;
 import gregtech.api.gui.GuiTextures;
 import gregtech.api.gui.resources.TextureArea;
 import gregtech.api.metatileentity.ITieredMetaTileEntity;
-import gregtech.api.metatileentity.MetaTileEntity;
-import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.*;
 import gregtech.api.pattern.BlockPattern;
-import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.pattern.PatternMatchContext;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.TextComponentUtil;
@@ -19,7 +16,6 @@ import gregtech.api.util.TextFormattingUtil;
 import gregtech.client.renderer.ICubeRenderer;
 import magicbook.gtlitecore.api.capability.IReinforcedRotorHolder;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -37,38 +33,18 @@ import java.util.List;
 
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
 
-public class MetaTileEntityLargeTurbine extends FuelMultiblockController implements ITieredMetaTileEntity, IProgressBarMultiblock {
+public abstract class MetaTileEntityLargeTurbine extends FuelMultiblockController implements ITieredMetaTileEntity, IProgressBarMultiblock {
 
     public final int tier;
-    public final IBlockState casingState;
-    public final IBlockState gearboxState;
-    public final ICubeRenderer casingRenderer;
-    public final boolean hasMufflerHatch;
-    public final ICubeRenderer frontOverlay;
     public IFluidHandler exportFluidHandler;
 
     public MetaTileEntityLargeTurbine(ResourceLocation metaTileEntityId,
                                       RecipeMap<?> recipeMap,
-                                      int tier,
-                                      IBlockState casingState,
-                                      IBlockState gearboxState,
-                                      ICubeRenderer casingRenderer,
-                                      boolean hasMufflerHatch,
-                                      ICubeRenderer frontOverlay) {
+                                      int tier) {
         super(metaTileEntityId, recipeMap, tier);
-        this.casingState = casingState;
-        this.gearboxState = gearboxState;
-        this.casingRenderer = casingRenderer;
-        this.hasMufflerHatch = hasMufflerHatch;
-        this.frontOverlay = frontOverlay;
         this.tier = tier;
         this.recipeMapWorkable = new LargeTurbineWorkableHandler(this, tier);
         this.recipeMapWorkable.setMaximumOverclockVoltage(GTValues.V[tier]);
-    }
-
-    @Override
-    public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
-        return new MetaTileEntityLargeTurbine(metaTileEntityId, recipeMap, tier, casingState, gearboxState, casingRenderer, hasMufflerHatch, frontOverlay);
     }
 
     public IReinforcedRotorHolder getRotorHolder() {
@@ -185,55 +161,25 @@ public class MetaTileEntityLargeTurbine extends FuelMultiblockController impleme
 
     @Nonnull
     @Override
-    protected BlockPattern createStructurePattern() {
-        return FactoryBlockPattern.start()
-                .aisle("CCCC", "CHHC", "CCCC")
-                .aisle("CHHC", "RGGR", "CHHC")
-                .aisle("CCCC", "CSHC", "CCCC")
-                .where('S', selfPredicate())
-                .where('G', states(getTurbineCasingState()))
-                .where('C', states(getCasingState()))
-                .where('R', metaTileEntities(MultiblockAbility.REGISTRY.get(GTLiteMultiblockAbility.REINFORCED_ROTOR_HOLDER_ABILITY).stream()
-                        .filter(mte -> (mte instanceof ITieredMetaTileEntity) && (((ITieredMetaTileEntity) mte).getTier() >= tier))
-                        .toArray(MetaTileEntity[]::new))
-                        .addTooltips("gregtech.multiblock.pattern.clear_amount_3")
-                        .addTooltip("gregtech.multiblock.pattern.error.limited.1", GTValues.VN[tier])
-                        .setExactLimit(1)
-                        .or(abilities(MultiblockAbility.OUTPUT_ENERGY)).setExactLimit(1))
-                .where('H', states(getCasingState())
-                        .or(autoAbilities(false, true, false, false, true, true, true)))
-                .build();
-    }
+    protected abstract BlockPattern createStructurePattern();
 
     @Override
     public String[] getDescription() {
         return new String[]{I18n.format("gregtech.multiblock.large_turbine.description")};
     }
 
-    public IBlockState getCasingState() {
-        return casingState;
-    }
-
-    public IBlockState getTurbineCasingState() {
-        return gearboxState;
-    }
-
     @SideOnly(Side.CLIENT)
     @Override
-    public ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart) {
-        return casingRenderer;
-    }
+    public abstract ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart);
 
     @SideOnly(Side.CLIENT)
     @Nonnull
     @Override
-    protected ICubeRenderer getFrontOverlay() {
-        return frontOverlay;
-    }
+    protected abstract ICubeRenderer getFrontOverlay();
 
     @Override
     public boolean hasMufflerMechanics() {
-        return hasMufflerHatch;
+        return false;
     }
 
     @Override

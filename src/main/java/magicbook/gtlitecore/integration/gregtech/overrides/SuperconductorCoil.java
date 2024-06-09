@@ -74,6 +74,14 @@ public class SuperconductorCoil {
                 .duration(5 * SECOND)
                 .buildAndRegister();
 
-        //  TODO MAX Superconductor
+        //  MAX Superconductor (Cosmic Matter Superconductor)
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(wireGtDouble, CosmicMatterSuperconductor, 2)
+                .input(foil, NiobiumTitanium, 2)
+                .fluidInputs(Trinium.getFluid(L * 4))
+                .outputs(MetaBlocks.FUSION_CASING.getItemVariant(BlockFusionCasing.CasingType.SUPERCONDUCTOR_COIL, 16))
+                .EUt(VA[MAX])
+                .duration(5 * SECOND)
+                .buildAndRegister();
     }
 }
