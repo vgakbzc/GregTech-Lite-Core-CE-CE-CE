@@ -7,6 +7,7 @@ import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
+import magicbook.gtlitecore.api.utils.Mods;
 import net.minecraftforge.oredict.OreDictionary;
 
 import java.util.stream.Collectors;
@@ -20,7 +21,6 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.CONVEYOR_MODULE_HV;
 import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_HV;
 import static gregtech.loaders.recipe.CraftingComponent.*;
-import static magicbook.gtlitecore.api.GTLiteValues.MODID_CHISEL;
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
@@ -28,9 +28,9 @@ public class ChiselMachineRecipeLoader {
 
     public static void init() {
 
-        OreDictionary.registerOre("craftingChisel", getItemById(MODID_CHISEL, "chisel_iron"));
-        OreDictionary.registerOre("craftingChisel", getItemById(MODID_CHISEL, "chisel_diamond"));
-        OreDictionary.registerOre("craftingChisel", getItemById(MODID_CHISEL, "chisel_hitech"));
+        OreDictionary.registerOre("craftingChisel", getItemById(Mods.Chisel.getID(), "chisel_iron"));
+        OreDictionary.registerOre("craftingChisel", getItemById(Mods.Chisel.getID(), "chisel_diamond"));
+        OreDictionary.registerOre("craftingChisel", getItemById(Mods.Chisel.getID(), "chisel_hitech"));
 
         CraftingComponent.Component LOWER_CIRCUIT = new CraftingComponent.Component(Stream.of(
                         new Object[]{0, new UnificationEntry(gem, Diamond)},

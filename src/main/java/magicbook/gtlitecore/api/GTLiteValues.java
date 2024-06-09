@@ -7,6 +7,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
+import magicbook.gtlitecore.api.utils.Mods;
 import net.minecraft.util.text.TextFormatting;
 
 import java.math.BigInteger;
@@ -190,6 +191,7 @@ public class GTLiteValues {
      * This modid is same as {@link GTLiteCore#MODID}.
      * Hint: this parameter is internal, we use it on class in {@code gtlitecore}.
      * Do not use this parameter in external situation (please use the first).
+     * Used {@link Mods} is also a choice, it is also appropriate.
      */
     public static final String MODID = "gtlitecore";
 
@@ -207,60 +209,48 @@ public class GTLiteValues {
      */
     public static final String VERSION = "0.0.1-alpha";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/gregtech}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_GT = "gregtech";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/gcym}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_GCYM = "gcym";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/gregtechfoodoption}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_GTFO = "gregtechfoodoption";
 
-    /**
-     * Integration {@code modid}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_AE2 = "appliedenergistics2";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/nae2}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_NAE2 = "nae2";
 
-    /**
-     * Integration {@code modid}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_XU2 = "extrautils2";
 
-    /**
-     * @deprecated Integration {@code modid}.
-     */
+    /** @deprecated use {@link Mods}. **/
     @Deprecated
     public static final String MODID_EIO = "enderio";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/theoneprobe}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_TOP = "theoneprobe";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/architecturecraft}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_AC = "architecturecraft";
 
-    /**
-     * Integration {@code modid}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_AA = "actuallyadditions";
 
-    /**
-     * Integration {@code modid}, please see: {@code integration/chisel}.
-     */
+    /** @deprecated use {@link Mods}. **/
+    @Deprecated
     public static final String MODID_CHISEL = "chisel";
 
     private GTLiteValues() {}

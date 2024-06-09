@@ -19,6 +19,7 @@ import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicators;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
@@ -501,8 +502,8 @@ public class GTLiteMetaTileEntities {
         LIGHTNING_ROD[2] = registerMetaTileEntity(15069, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
 
         //  LV-HV Auto Chisel (Required Chisel Module enable)
-        if (GTLiteConfigHolder.compats.enableChiselModule) {
-            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+        if (Mods.Chisel.isModLoaded()) {
+            if (GTLiteConfigHolder.compats.enableChiselModule) {
                 AUTO_CHISEL[0] = registerMetaTileEntity(15070, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.lv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 1, true, GTUtility.genericGeneratorTankSizeFunction));
                 AUTO_CHISEL[1] = registerMetaTileEntity(15071, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.mv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 2, true, GTUtility.genericGeneratorTankSizeFunction));
                 AUTO_CHISEL[2] = registerMetaTileEntity(15072, new SimpleMachineMetaTileEntity(gtliteId("auto_chisel.hv"), GTLiteRecipeMaps.AUTO_CHISEL_RECIPES, Textures.AUTOCLAVE_OVERLAY, 3, true, GTUtility.genericGeneratorTankSizeFunction));
@@ -637,17 +638,18 @@ public class GTLiteMetaTileEntities {
         //  Free ID: 123-129
         CIRCULATIVE_COOLING_TOWER = registerMultiMetaTileEntity(130, new MetaTileEntityCirculativeCoolingTower(gtliteId("circulative_cooling_tower")));
         //  Free ID: 131-139
-        if (GTLiteConfigHolder.compats.enableChiselModule) {
-            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+        if (Mods.Chisel.isModLoaded()) {
+            if (GTLiteConfigHolder.compats.enableChiselModule) {
                 LARGE_AUTO_CHISEL = registerMultiMetaTileEntity(140, new MetaTileEntityLargeAutoChisel(gtliteId("large_auto_chisel")));
             }
         }
         //  141
-        if (GTLiteConfigHolder.compats.enableChiselModule) {
-            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+        if (Mods.Chisel.isModLoaded()) {
+            if (GTLiteConfigHolder.compats.enableChiselModule) {
                 INDUSTRIAL_3D_PRINTER = registerMultiMetaTileEntity(142, new MetaTileEntityIndustrial3DPrinter(gtliteId("industrial_3d_printer")));
             }
         }
+
         //  Free ID: 143-149
         YOTTA_FLUID_TANK = registerMultiMetaTileEntity(150, new MetaTileEntityYottaFluidTank(gtliteId("yotta_fluid_tank")));
         //  151 TWENTY_FIVE_FLUID_TANK

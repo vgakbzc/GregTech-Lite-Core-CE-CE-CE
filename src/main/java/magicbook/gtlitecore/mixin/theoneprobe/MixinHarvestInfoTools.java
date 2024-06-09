@@ -16,7 +16,7 @@ package magicbook.gtlitecore.mixin.theoneprobe;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 import com.llamalad7.mixinextras.sugar.ref.LocalRef;
-import magicbook.gtlitecore.api.GTLiteValues;
+import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.apiimpl.providers.HarvestInfoTools;
@@ -28,7 +28,6 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.Loader;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -68,7 +67,7 @@ public class MixinHarvestInfoTools {
     private static void getHarvestToolForArchitectureCraft(IProbeInfo probeInfo, World world, BlockPos pos, Block block,
                                                            IBlockState blockState, EntityPlayer player, CallbackInfo ci,
                                                            @Local LocalRef<String> harvestTool) {
-        if (!Loader.isModLoaded(GTLiteValues.MODID_AC) || !GTLiteConfigHolder.compats.enableArchitectureCraftModule || isNotShapeForArchitectureCraft(block))
+        if (!Mods.ArchitectureCraft.isModLoaded() || !GTLiteConfigHolder.compats.enableArchitectureCraftModule || isNotShapeForArchitectureCraft(block))
             return;
 
         var baseBlockState = getBaseBlockStateForArchitectureCraft(world, pos);
@@ -103,7 +102,7 @@ public class MixinHarvestInfoTools {
     private static void getHarvestLevelForArchitectureCraft(IProbeInfo probeInfo, World world, BlockPos pos,
                                                             Block block, IBlockState blockState, EntityPlayer player,
                                                             CallbackInfo ci, @Local LocalIntRef harvestLevel) {
-        if (!Loader.isModLoaded(GTLiteValues.MODID_AC) ||
+        if (!Mods.ArchitectureCraft.isModLoaded() ||
                 !GTLiteConfigHolder.compats.enableArchitectureCraftModule || isNotShapeForArchitectureCraft(block))
             return;
 

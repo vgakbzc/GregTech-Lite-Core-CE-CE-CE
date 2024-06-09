@@ -1,6 +1,6 @@
 package magicbook.gtlitecore.loaders;
 
-import magicbook.gtlitecore.api.GTLiteValues;
+import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.integration.chisel.AutoChiselRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMachineRecipeLoader;
@@ -18,7 +18,6 @@ import magicbook.gtlitecore.loaders.circuits.*;
 import magicbook.gtlitecore.loaders.components.MachineComponents;
 import magicbook.gtlitecore.loaders.multiblock.*;
 import magicbook.gtlitecore.loaders.oreprocessing.*;
-import net.minecraftforge.fml.common.Loader;
 
 public class RecipeManager {
 
@@ -29,19 +28,19 @@ public class RecipeManager {
         MachineComponents.init();
         MachineRecipeLoader.init();
 
-        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+        if (Mods.GregTechFoodOption.isModLoaded()) {
             GTFOMachineRecipeLoader.init();
         }
 
-        if (GTLiteConfigHolder.compats.enableChiselModule) {
-            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+        if (Mods.Chisel.isModLoaded()) {
+            if (GTLiteConfigHolder.compats.enableChiselModule) {
                 ChiselMachineRecipeLoader.init();
             }
         }
 
         MiscRecipes.init();
 
-        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+        if (Mods.GregTechFoodOption.isModLoaded()) {
             GTFOMiscRecipes.init();
         }
 
@@ -55,16 +54,16 @@ public class RecipeManager {
         FusionLoader.init();
         OverrideRecipeLoader.init();
 
-        if (Loader.isModLoaded(GTLiteValues.MODID_GCYM)) {
+        if (Mods.GregicalityMultiblocks.isModLoaded()) {
             GCYMOverrideRecipeLoader.init();
         }
 
-        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+        if (Mods.GregTechFoodOption.isModLoaded()) {
             GTFOOverrideRecipeLoader.init();
         }
 
-        if (GTLiteConfigHolder.compats.enableChiselModule) {
-            if (Loader.isModLoaded(GTLiteValues.MODID_CHISEL)) {
+        if (Mods.Chisel.isModLoaded()) {
+            if (GTLiteConfigHolder.compats.enableChiselModule) {
                 AutoChiselRecipeLoader.init();
             }
         }
@@ -126,7 +125,7 @@ public class RecipeManager {
         ZirconiumChain.init();
         ZylonChain.init();
 
-        if (Loader.isModLoaded(GTLiteValues.MODID_GTFO)) {
+        if (Mods.GregTechFoodOption.isModLoaded()) {
             GTFORecipeManager.initChains();
         }
     }
