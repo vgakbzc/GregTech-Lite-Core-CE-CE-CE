@@ -899,9 +899,30 @@ public class TaraniumProcessing {
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
+        //  Taranium Rich He-4 (plasma) -> Taranium Rich He-4 (liquid)
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumRichHelium4.getPlasma(1000))
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 100))
+                .circuitMeta(1)
+                .fluidOutputs(TaraniumRichHelium4.getFluid(1000))
+                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 100))
+                .EUt(VA[IV])
+                .duration(100)
+                .buildAndRegister();
+
+        PLASMA_CONDENSER_RECIPES.recipeBuilder()
+                .fluidInputs(TaraniumRichHelium4.getPlasma(1000))
+                .fluidInputs(GelidCryotheum.getFluid(50))
+                .circuitMeta(1)
+                .fluidOutputs(TaraniumRichHelium4.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(50))
+                .EUt(VA[IV])
+                .duration(100)
+                .buildAndRegister();
+
         //  Taranium rich He-4 -> Tn + Taranium Poor Helium
         CENTRIFUGE_RECIPES.recipeBuilder()
-                .fluidInputs(TaraniumRichHelium4.getPlasma(400))
+                .fluidInputs(TaraniumRichHelium4.getFluid(400))
                 .output(dust, Taranium)
                 .fluidOutputs(TaraniumPoorHelium.getFluid(400))
                 .EUt(VA[UHV])
@@ -926,27 +947,6 @@ public class TaraniumProcessing {
                 .fluidOutputs(DustyHelium3.getFluid(200))
                 .EUt(VA[IV])
                 .duration(2 * SECOND)
-                .buildAndRegister();
-
-        //  Taranium Rich He-4 (plasma) -> Taranium Rich He-4 (liquid)
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(TaraniumRichHelium4.getPlasma(1000))
-                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, 100))
-                .circuitMeta(1)
-                .fluidOutputs(TaraniumRichHelium4.getFluid(1000))
-                .fluidOutputs(Helium.getFluid(FluidStorageKeys.GAS, 100))
-                .EUt(VA[IV])
-                .duration(100)
-                .buildAndRegister();
-
-        PLASMA_CONDENSER_RECIPES.recipeBuilder()
-                .fluidInputs(TaraniumRichHelium4.getPlasma(1000))
-                .fluidInputs(GelidCryotheum.getFluid(50))
-                .circuitMeta(1)
-                .fluidOutputs(TaraniumRichHelium4.getFluid(1000))
-                .fluidOutputs(Ice.getFluid(50))
-                .EUt(VA[IV])
-                .duration(100)
                 .buildAndRegister();
 
         //  Fullerene Polymer Matrix Processing
@@ -978,7 +978,7 @@ public class TaraniumProcessing {
                 .duration(9 * SECOND)
                 .buildAndRegister();
 
-        //  8 Heavy Fluorinated Draconium Solution -> 12KeF4 + 16F + 2C6H6
+        //  8 Heavy Fluorinated Trinium Solution -> 12KeF4 + 16F + 2C6H6
         CENTRIFUGE_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyFluorinatedTriniumSolution.getFluid(8000))
                 .output(dust, TriniumTetrafluoride, 60)
