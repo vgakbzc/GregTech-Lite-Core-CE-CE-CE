@@ -567,6 +567,20 @@ public class SpaceElevator {
                 2,
                 VA[UHV]);
 
+        //  Xenotime-Zircophyllite-Lepersonnite vein
+        createMiningModuleRecipe(3, MINING_DRONE_UEV,
+                Xenotime, 6000,
+                Xenotime, 6000,
+                Xenotime, 6000,
+                Zircophyllite, 7000,
+                Zircophyllite, 7000,
+                Zircophyllite, 7000,
+                Lepersonnite, 8000,
+                Lepersonnite, 8000,
+                Lepersonnite, 8000,
+                2,
+                VA[UHV]);
+
         //  UEV Mining Drone
 
         //  Proto Adamantium-Trinium vein

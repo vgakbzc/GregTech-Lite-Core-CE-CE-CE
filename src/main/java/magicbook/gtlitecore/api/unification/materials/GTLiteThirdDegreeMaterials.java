@@ -152,6 +152,43 @@ public class GTLiteThirdDegreeMaterials {
                 .components(Iron, 1, Chrome, 2, Oxygen, 4)
                 .flags(GENERATE_PLATE, GENERATE_LENS)
                 .build();
+
+        //  20013 Xenotime
+        Xenotime = new Material.Builder(getID(), gregtechId("xenotime"))
+                .dust()
+                .ore(2, 1, false)
+                .addOreByproducts(Yttrium)
+                .addOreByproducts(Ytterbium)
+                .color(0xC5EB9E)
+                .iconSet(METALLIC)
+                .components(Yttrium, 2, Ytterbium, 2, Erbium, 2, Europium, 1, Phosphorus, 2, Oxygen, 8)
+                .build();
+
+        //  20014 Zircophyllite
+        Zircophyllite = new Material.Builder(getID(), gregtechId("zircophyllite"))
+                .gem()
+                .ore(2, 1, false)
+                .addOreByproducts(Zirconium)
+                .addOreByproducts(Titanium)
+                .color(0xCCFF00)
+                .iconSet(OPAL)
+                .components(Potassium, 3, Sodium, 3, Manganese, 7, Iron, 7, Zirconium, 2, Titanium, 2, Niobium, 2, Silicon, 8, Oxygen, 13, Fluorine, 7)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
+                .build();
+
+        //  20015 Lepersonnite
+        Lepersonnite = new Material.Builder(getID(), gregtechId("lepersonnite"))
+                .gem()
+                .ore(2, 1, false)
+                .addOreByproducts(Gadolinium)
+                .addOreByproducts(Dysprosium)
+                .color(0x61F555)
+                .iconSet(RUBY)
+                .components(Calcium, 1, Ytterbium, 3, Gadolinium, 2, Dysprosium, 2, Uranium235, 2, Oxygen, 29, Hydrogen, 24)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
+                .build()
+                .setFormula("CaYb3Gd2Dy2U2O29H24", true);
+
     }
     
 }

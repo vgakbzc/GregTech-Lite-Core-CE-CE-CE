@@ -43,9 +43,7 @@ public class GTLiteMaterialPropertyAddition {
         Technetium.setProperty(PropertyKey.INGOT, new IngotProperty());
 
         /* ---------------------------------- Element Materials with Dust -------------------------------- */
-        Dysprosium.setProperty(PropertyKey.DUST, new DustProperty());
         Erbium.setProperty(PropertyKey.DUST, new DustProperty());
-        Gadolinium.setProperty(PropertyKey.DUST, new DustProperty());
         Iodine.setProperty(PropertyKey.DUST, new DustProperty());
         Praseodymium.setProperty(PropertyKey.DUST, new DustProperty());
         Radium.setProperty(PropertyKey.DUST, new DustProperty());
@@ -55,8 +53,6 @@ public class GTLiteMaterialPropertyAddition {
         Terbium.setProperty(PropertyKey.DUST, new DustProperty());
         Thallium.setProperty(PropertyKey.DUST, new DustProperty());
         Thulium.setProperty(PropertyKey.DUST, new DustProperty());
-        Ytterbium.setProperty(PropertyKey.DUST, new DustProperty());
-        Zirconium.setProperty(PropertyKey.DUST, new DustProperty());
 
         /* --------------------------------- Element Materials with Fluid -------------------------------- */
         Actinium.setProperty(PropertyKey.FLUID, new FluidProperty());

@@ -1310,6 +1310,36 @@ public class OverrideRecipeLoader {
                 .EUt(VA[UIV])
                 .duration((int) (3.85 * SECOND))
                 .buildAndRegister();
+
+        //  Ore Decomposition Fix
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, Zircophyllite, 54)
+                .output(dust, Potassium, 3)
+                .output(dust, Sodium, 3)
+                .output(dust, Manganese, 7)
+                .output(dust, Iron, 7)
+                .output(dust, Zirconium, 2)
+                .output(dust, Titanium, 2)
+                .fluidOutputs(Niobium.getFluid(L * 2))
+                .fluidOutputs(Silicon.getFluid(L * 8))
+                .fluidOutputs(Oxygen.getFluid(13000))
+                .fluidOutputs(Fluorine.getFluid(7000))
+                .EUt(VA[EV])
+                .duration(14 * SECOND)
+                .buildAndRegister();
+
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .input(dust, Lepersonnite, 63)
+                .output(dust, Calcium)
+                .output(dust, Ytterbium, 3)
+                .output(dust, Gadolinium, 2)
+                .output(dust, Dysprosium, 2)
+                .output(dust, Uranium235, 2)
+                .fluidOutputs(Oxygen.getFluid(29000))
+                .fluidOutputs(Hydrogen.getFluid(24000))
+                .EUt(VA[EV])
+                .duration((int) (12.8 * SECOND))
+                .buildAndRegister();
     }
 
 }

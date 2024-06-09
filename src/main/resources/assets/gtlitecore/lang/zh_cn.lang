@@ -3496,6 +3496,9 @@ gregtech.material.gadolinite=硅铍钇矿
 gregtech.material.euxenite=黑稀金矿
 gregtech.material.platarsite=砷铂铑矿
 gregtech.material.picotite=铬尖晶石
+gregtech.material.xenotime=磷钇矿
+gregtech.material.zircophyllite=锆星叶石
+gregtech.material.lepersonnite=绿泥石
 
 ##  Mod Compatibility Materials
 gregtech.material.dark_steel=玄钢
