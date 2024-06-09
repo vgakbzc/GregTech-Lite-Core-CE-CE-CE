@@ -15,6 +15,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonK;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -22,6 +24,7 @@ public class WetwareCircuits {
 
     public static void init() {
         CircuitBoard();
+        AdvancedWetwareProcessingUnit();
         WetwareSoC();
         AssemblyBuffer();
     }
@@ -53,6 +56,22 @@ public class WetwareCircuits {
                     .EUt(VA[LuV])
                     .buildAndRegister();
         }
+    }
+
+    private static void AdvancedWetwareProcessingUnit() {
+
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, Polybenzimidazole)
+                .input(STEM_CELLS, 4)
+                .input(pipeTinyFluid, Gold)
+                .input(bolt, HSSS, 4)
+                .fluidInputs(KaptonE.getFluid(L * 4))
+                .fluidInputs(SterileGrowthMedium.getFluid(125))
+                .output(NEURO_PROCESSOR, 2)
+                .EUt(VA[UV])
+                .duration(10 * SECOND)
+                .tier(3)
+                .build();
     }
 
     private static void WetwareSoC() {
