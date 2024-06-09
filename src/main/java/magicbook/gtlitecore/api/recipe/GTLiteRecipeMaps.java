@@ -2136,19 +2136,11 @@ public class GTLiteRecipeMaps {
             .setSlotOverlay(false, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
             .setSlotOverlay(false, false, false, GuiTextures.IMPLOSION_OVERLAY_2)
             .setSlotOverlay(true, false, true, GuiTextures.IMPLOSION_OVERLAY_1)
-            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_FORGING_MODULE, ProgressWidget.MoveType.HORIZONTAL)
+            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_FOCUSING, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(SoundEvents.ENTITY_GENERIC_EXPLODE);
 
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> ETERNITY_GARDEN_RECIPES = new RecipeMapEternityGarden<>("eternity_garden", 7, 7, 7, 7, new SimpleRecipeBuilder(), false)
-            .setSlotOverlay(false, false, false, GTLiteGuiTextures.PINK_OVERLAY)
-            .setSlotOverlay(false, false, true, GTLiteGuiTextures.PINK_OVERLAY)
-            .setSlotOverlay(false, true, false, GTLiteGuiTextures.GREEN_OVERLAY)
-            .setSlotOverlay(false, true, true, GTLiteGuiTextures.GREEN_OVERLAY)
-            .setSlotOverlay(true, false, false, GTLiteGuiTextures.BLUE_OVERLAY)
-            .setSlotOverlay(true, false, true, GTLiteGuiTextures.BLUE_OVERLAY)
-            .setSlotOverlay(true, true, false, GTLiteGuiTextures.RED_OVERLAY)
-            .setSlotOverlay(true, true, true, GTLiteGuiTextures.RED_OVERLAY)
             .setSound(SoundEvents.BLOCK_CHORUS_FLOWER_GROW);
 
     @ZenProperty
@@ -2166,7 +2158,7 @@ public class GTLiteRecipeMaps {
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> PLASMA_FUSION_RECIPES = new RecipeMapDTNFFusionMode<>("dimensionally_transcendent_neutronium_forge_fusion_mode", 1, 0, 20, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
-            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_PLASMA_FUSION, ProgressWidget.MoveType.HORIZONTAL)
+            .setProgressBar(GTLiteGuiTextures.PROGRESS_BAR_REACTION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.MIXER);
 
     @ZenProperty
