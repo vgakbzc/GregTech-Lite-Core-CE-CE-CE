@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;

@@ -46,7 +46,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.DoubleSupplier;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.UEV;
+import static gregtech.api.GTValues.UHV;
 
 /**
  * Advanced Fusion Reactor

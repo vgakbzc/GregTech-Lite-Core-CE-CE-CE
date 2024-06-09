@@ -1,13 +1,9 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
-import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
-
 import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumCarbide;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.lens;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.QUANTUM_FORCE_TRANSFORMER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;

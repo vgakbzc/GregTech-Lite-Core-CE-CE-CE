@@ -2,7 +2,8 @@ package magicbook.gtlitecore.loaders.chains;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.LuV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;

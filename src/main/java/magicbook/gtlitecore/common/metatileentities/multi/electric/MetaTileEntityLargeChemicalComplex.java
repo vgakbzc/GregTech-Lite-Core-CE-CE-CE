@@ -25,7 +25,6 @@ import magicbook.gtlitecore.common.CommonProxy;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockLargeChemicalComplexCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
-import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.loaders.RecipeManager;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;

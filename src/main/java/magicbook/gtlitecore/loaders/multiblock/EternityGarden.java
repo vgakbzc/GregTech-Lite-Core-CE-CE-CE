@@ -1,13 +1,5 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.material.Materials.Neutronium;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.ETERNITY_GARDEN_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
-
 public class EternityGarden {
 
     public static void init() {

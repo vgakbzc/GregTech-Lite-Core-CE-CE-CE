@@ -10,7 +10,8 @@ import gregtech.api.util.GTUtility;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.ULV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.getVoltageMultiplier;

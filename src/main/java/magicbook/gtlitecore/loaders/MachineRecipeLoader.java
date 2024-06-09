@@ -41,10 +41,10 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
-import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_BLAST_FURNACE;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_VACUUM_FREEZER;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
 public class MachineRecipeLoader {
 

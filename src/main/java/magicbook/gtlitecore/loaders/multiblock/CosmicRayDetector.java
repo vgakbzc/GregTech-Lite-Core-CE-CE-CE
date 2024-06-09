@@ -2,7 +2,8 @@ package magicbook.gtlitecore.loaders.multiblock;
 
 import static gregtech.api.GTValues.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.COSMIC_RAY_DETECTOR_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.HeavyLepton;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.StarlightLiquid;
 
 public class CosmicRayDetector {
 

@@ -9,7 +9,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.FORMING_PRESS_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
@@ -71,7 +72,7 @@ public class WetwareCircuits {
                 .EUt(VA[UV])
                 .duration(10 * SECOND)
                 .tier(3)
-                .build();
+                .buildAndRegister();
     }
 
     private static void WetwareSoC() {

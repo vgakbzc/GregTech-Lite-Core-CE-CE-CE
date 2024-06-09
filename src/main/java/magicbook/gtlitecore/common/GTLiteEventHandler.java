@@ -7,7 +7,6 @@ import magicbook.gtlitecore.api.unification.OrePrefixAddition;
 import magicbook.gtlitecore.api.unification.materials.GTLiteMaterialPropertyAddition;
 import magicbook.gtlitecore.api.unification.materials.properties.GTLiteMaterialFlagAddition;
 import magicbook.gtlitecore.common.items.GTLiteTools;
-import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
@@ -15,8 +14,6 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 
 import java.util.Arrays;
-
-import static net.minecraft.util.text.TextFormatting.*;
 
 @Mod.EventBusSubscriber(modid = GTLiteValues.MODID)
 public class GTLiteEventHandler {
