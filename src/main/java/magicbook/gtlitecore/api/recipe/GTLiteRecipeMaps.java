@@ -775,7 +775,9 @@ public class GTLiteRecipeMaps {
      * @see IsaMillOreProcessing
      */
     @ZenProperty
-    public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES = new RecipeMap<>("isa_mill", 3, 3, 0, 0, new GrindBallRecipeBuilder(), false)
+    public static final RecipeMap<GrindBallRecipeBuilder> ISA_MILL_RECIPES = new RecipeMap<>("isa_mill", 2, 2, 0, 0, new GrindBallRecipeBuilder(), false)
+            .setSlotOverlay(false, false, true, GuiTextures.INT_CIRCUIT_OVERLAY)
+            .setSlotOverlay(true, false, GTLiteGuiTextures.MILLED_OVERLAY)
             .setProgressBar(GuiTextures.PROGRESS_BAR_MACERATE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.MACERATOR);
 
@@ -803,6 +805,10 @@ public class GTLiteRecipeMaps {
      */
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> FLOTATION_RECIPES = new RecipeMap<>("flotation_cell_regulator", 6, 0, 1, 1, new SimpleRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GTLiteGuiTextures.REAGENT_OVERLAY)
+            .setSlotOverlay(false, false, true, GTLiteGuiTextures.MILLED_OVERLAY)
+            .setSlotOverlay(false, true, GuiTextures.VIAL_OVERLAY_2)
+            .setSlotOverlay(true, true, GuiTextures.HEATING_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_BATH, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.BATH);
 
@@ -831,12 +837,10 @@ public class GTLiteRecipeMaps {
     @ZenProperty
     public static final RecipeMap<BlastRecipeBuilder> VACUUM_DRYING_RECIPES = new RecipeMap<>("vacuum_drying_furnace", 1, 9, 1, 2, new BlastRecipeBuilder(), false)
             .setProgressBar(GuiTextures.PROGRESS_BAR_SIFT, ProgressWidget.MoveType.HORIZONTAL)
-            .setSlotOverlay(false, false, false, GuiTextures.FURNACE_OVERLAY_1)
-            .setSlotOverlay(false, false, true, GuiTextures.FURNACE_OVERLAY_1)
-            .setSlotOverlay(false, true, false, GuiTextures.FURNACE_OVERLAY_2)
-            .setSlotOverlay(false, true, true, GuiTextures.FURNACE_OVERLAY_2)
-            .setSlotOverlay(true, true, false, GuiTextures.FURNACE_OVERLAY_2)
-            .setSlotOverlay(true, true, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(false, false, GuiTextures.INT_CIRCUIT_OVERLAY)
+            .setSlotOverlay(false, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY)
+            .setSlotOverlay(true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setSound(GTSoundEvents.FURNACE);
 
     /**

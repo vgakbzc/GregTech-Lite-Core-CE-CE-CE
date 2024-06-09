@@ -39,9 +39,23 @@ public class GTLiteGuiTextures {
     public static final TextureArea NANOSCALE_OVERLAY_1 = TextureArea.fullImage("textures/gui/overlay/nanoscale_overlay_1.png");
     public static final TextureArea NANOSCALE_OVERLAY_2 = TextureArea.fullImage("textures/gui/overlay/nanoscale_overlay_2.png");
     public static final TextureArea DISH_OVERLAY = TextureArea.fullImage("textures/gui/overlay/dish_overlay.png");
+    public static final TextureArea MILLED_OVERLAY = TextureArea.fullImage("textures/gui/overlay/milled_overlay.png");
+    public static final TextureArea REAGENT_OVERLAY = TextureArea.fullImage("textures/gui/overlay/reagent_overlay.png");
+
+    /** @deprecated */
+    @Deprecated
     public static final TextureArea GREEN_OVERLAY = TextureArea.fullImage("textures/gui/overlay/green_overlay.png");
+
+    /** @deprecated */
+    @Deprecated
     public static final TextureArea RED_OVERLAY = TextureArea.fullImage("textures/gui/overlay/red_overlay.png");
+
+    /** @deprecated */
+    @Deprecated
     public static final TextureArea PINK_OVERLAY = TextureArea.fullImage("textures/gui/overlay/pink_overlay.png");
+
+    /** @deprecated */
+    @Deprecated
     public static final TextureArea BLUE_OVERLAY = TextureArea.fullImage("textures/gui/overlay/blue_overlay.png");
 
     //  Button
