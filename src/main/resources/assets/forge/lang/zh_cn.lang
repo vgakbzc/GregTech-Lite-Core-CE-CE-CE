@@ -5,6 +5,7 @@ fml.mod.details.version=版本：%1$s (%2$s)
 fml.mod.details.modid=模组ID：'%1$s' 状态：%2$s
 fml.mod.details.credits=致谢：%s
 fml.mod.details.authors=作者：%s
+fml.mod.details.url=链接：%s
 fml.mod.details.nochildmods=此模组没有附属模组
 fml.mod.details.childmods=附属模组：%s
 fml.mod.details.updateavailable=可用更新：%s

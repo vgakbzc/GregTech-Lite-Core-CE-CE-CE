@@ -101,15 +101,24 @@ public abstract class MixinGuiModList {
 
     @ModifyArg(
             method = "updateCache()V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
-                    ordinal = 4
-            ),
+            at = @At(value = "INVOKE",
+                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
+                     ordinal = 4),
             remap = false
     )
     private Object updateCache$author(Object e) {
         return I18n.format("fml.mod.details.authors", selectedMod.getMetadata().getAuthorList());
+    }
+
+    @ModifyArg(
+            method = "updateCache()V",
+            at = @At(value = "INVOKE",
+                     target = "Ljava/util/List;add(Ljava/lang/Object;)Z",
+                     ordinal = 5),
+            remap = false
+    )
+    private Object updateCache$URL(Object e) {
+        return I18n.format("fml.mod.details.url", selectedMod.getMetadata().url);
     }
 
     @ModifyArg(
