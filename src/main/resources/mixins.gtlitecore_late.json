@@ -18,8 +18,6 @@
   ],
   "server": [],
   "client": [
-    "forge.MixinGuiModList",
-    "forge.MixinGuiSlotModList",
     "architecturecraft.MixinGuiSawbench",
     "architecturecraft.MixinRenderRoof",
     "gregtech.MixinMetaItem",

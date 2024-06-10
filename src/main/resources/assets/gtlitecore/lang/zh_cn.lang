@@ -3743,7 +3743,7 @@ gtlitecore.universal.tooltip.laser_output=允许使用§b激光源仓§7替代�
 gtlitecore.universal.multiblock.energy_per_tick=产能功率：%s EUt （%s）
 
 gtlitecore.universal.login_event.split=§6+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-gtlitecore.universal.login_event.desc.1=§l欢迎来到格雷科技精简版§r  §a0.1.0-alpha§r §d[preview 71]
+gtlitecore.universal.login_event.desc.1=§l欢迎来到格雷科技精简版§r  §a0.1.0-alpha§r §d[preview 72]
 gtlitecore.universal.login_event.desc.2=§7当前游戏为§c测试版本§7或§c预览版本§7，在游玩过程中若遇到问题请及时反馈。
 gtlitecore.universal.login_event.desc.3=§7该版本中一切内容仅供预览，不保证能够按照正常的生存模式流程进行游戏。
 gtlitecore.universal.login_event.desc.4=§7官方交流群组：§e901147549§7（更新），§e785124962§7（聊天）
