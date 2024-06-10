@@ -447,6 +447,10 @@ public class GTLiteRecipeMaps {
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> INDUSTRIAL_ROASTER_RECIPES = new RecipeMap<>("industrial_roaster", 3, 3, 3,  3, new NoCoilTemperatureRecipeBuilder(), false)
+            .setSlotOverlay(false, false, GuiTextures.FURNACE_OVERLAY_1)
+            .setSlotOverlay(false, false, GuiTextures.FURNACE_OVERLAY_1)
+            .setSlotOverlay(false, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FURNACE);
 
@@ -607,6 +611,12 @@ public class GTLiteRecipeMaps {
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> BURNER_REACTOR_RECIPES = new RecipeMap<>("burner_reactor", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
+            .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)
+            .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
+            .setSlotOverlay(false, true, GuiTextures.FURNACE_OVERLAY_2)
+            .setSlotOverlay(true, true, GuiTextures.FURNACE_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARC_FURNACE, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.ARC);
 
@@ -634,6 +644,13 @@ public class GTLiteRecipeMaps {
      */
     @ZenProperty
     public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor", 3, 2, 3, 2, new NoCoilTemperatureRecipeBuilder(), false)
+            .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
+            .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)
+            .setSlotOverlay(true, true, GuiTextures.VIAL_OVERLAY_2)
+            .setSlotOverlay(false, true, GuiTextures.BEAKER_OVERLAY_1)
+            .setSlotOverlay(true, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
+            .setSlotOverlay(true, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
             .setProgressBar(GuiTextures.PROGRESS_BAR_ARROW, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.COOLING);
 
