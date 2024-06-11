@@ -8,9 +8,11 @@ import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.ItemMaterialInfo;
 import gregtech.api.unification.stack.MaterialStack;
+import gregtech.api.util.RandomPotionEffect;
 import gregtech.client.utils.TooltipHelper;
 import gregtech.common.items.behaviors.ProspectorScannerBehavior;
 import gregtech.common.items.behaviors.TooltipBehavior;
+import gregtechfoodoption.item.GTFOFoodStats;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -20,10 +22,14 @@ import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
 import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.init.MobEffects;
+import net.minecraft.item.ItemStack;
 import org.lwjgl.input.Keyboard;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -1592,6 +1598,19 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                         new MaterialStack(PlutoniumUraniumOxides, M * 64), // 64 * Pu10O12U2C8
                         new MaterialStack(HSSS, (M / 4) * 16) // 16 * HSSS foil
                 ));
+
+        /* ------------------------------------------------------------------------ Foods ------------------------------------------------------------------------- */
+        BEDROCK_CHOCOLATE = this.addItem(5000, "food.bedrock_chocolate")
+                .addComponents(new GTFOFoodStats(5, 2.5F, false, false, ItemStack.EMPTY,
+                        new RandomPotionEffect(MobEffects.RESISTANCE, 2 * MINUTE, 4, 0), // 100% Resistance V 120s
+                        new RandomPotionEffect(MobEffects.INSTANT_DAMAGE, 1, 0, 0)) // 100% Instant Damage I 1tick
+                        .setEatingDuration(8 * SECOND))
+                .addComponents(new HaloRenderItemBehavior(10, 0x33FFFFFF, () -> GTLiteTextures.HALO_NOISE, true))
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_FOOD);
+
+        //  TODO Cinnamon Roll, Swiss Roll, Muffin (and Maple Sugar Chemistry?), Crepe, Waffle, Strawberry Cake, Strawberry Souffle, Madeline Cake,
+        //       Strawberry/Chocolate/Frosted Donut, Strawberry Juice/Milkshake/Smoothie, Strawberry Pie (and other fruits in GTFO?),
+        //       Peanut Butter Cookie.
 
         /* --------------------------------------------------------------------- Debug Items ---------------------------------------------------------------------- */
 

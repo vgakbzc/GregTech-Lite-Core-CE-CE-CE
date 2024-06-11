@@ -553,6 +553,9 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem HIGH_DENSITY_URANIUM;
     public static MetaItem<?>.MetaValueItem HIGH_DENSITY_PLUTONIUM;
 
+    //  Foods
+    public static MetaItem<?>.MetaValueItem BEDROCK_CHOCOLATE;
+
     //  Debug Items
     public static MetaItem<?>.MetaValueItem STRUCTURE_WRITER;
 

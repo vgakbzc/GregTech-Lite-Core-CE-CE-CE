@@ -874,6 +874,9 @@ metaitem.fluid_core.t8.name=流体存储核心 T8
 metaitem.fluid_core.t9.name=流体存储核心 T9
 metaitem.fluid_core.t10.name=流体存储核心 T10
 
+##  Foods
+metaitem.food.bedrock_chocolate.name=基岩巧克力板
+
 ##  High Energy Physics Items
 metaitem.plasma_containment_cell.name=等离子体遏制装置
 metaitem.plasma_containment_cell.tooltip=用于封装等离子体
@@ -3645,6 +3648,7 @@ itemGroup.gtlite.circuit=格雷科技精简版 | 电路
 itemGroup.gtlite.tool=格雷科技精简版 | 工具
 itemGroup.gtlite.particle=格雷科技精简版 | 粒子
 itemGroup.gtlite.wrap=格雷科技精简版 | 封装物品
+itemGroup.gtlite.food=格雷科技精简版 | 食物
 
 ##  Recipe Maps
 recipemap.chemical_dryer.name=脱水

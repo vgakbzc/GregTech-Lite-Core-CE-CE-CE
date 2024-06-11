@@ -13,6 +13,8 @@ import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 import static gregtech.api.GregTechAPI.HEATING_COILS;
 
@@ -26,6 +28,7 @@ public class GTLiteAPI {
     public static final BaseCreativeTab TAB_GTLITE_TOOL = new BaseCreativeTab("gtlite.tool", () -> GTLiteMetaItems.STRUCTURE_WRITER.getStackForm(), false);
     public static final BaseCreativeTab TAB_GTLITE_PARTICLE = new BaseCreativeTab("gtlite.particle", () -> GTLiteMetaItems.ALPHA_PARTICLE.getStackForm(), false);
     public static final BaseCreativeTab TAB_GTLITE_WRAP = new BaseCreativeTab("gtlite.wrap", () -> GTLiteMetaItems.WRAP_PLASTIC_CIRCUIT_BOARD.getStackForm(), false);
+    public static final BaseCreativeTab TAB_GTLITE_FOOD = new BaseCreativeTab("gtlite.food", () -> new ItemStack(Items.CAKE), false);
 
     //  Hash Maps
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();
