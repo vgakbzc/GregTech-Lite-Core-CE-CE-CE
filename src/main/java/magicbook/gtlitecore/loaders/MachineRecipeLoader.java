@@ -4546,7 +4546,7 @@ public class MachineRecipeLoader {
                 .EUt(VZ[OpV])
                 .duration(20)
                 .stationResearch(b -> b
-                        .researchStack(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getItemVariant(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK5))
+                        .researchStack(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_CORE))
                         .CWUt(1024)
                         .EUt(VA[OpV]))
                 .buildAndRegister();
@@ -4577,7 +4577,7 @@ public class MachineRecipeLoader {
                 .EUt(VZ[OpV])
                 .duration(20)
                 .stationResearch(b -> b
-                        .researchStack(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING))
+                        .researchStack(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.CONTROL_CASING))
                         .CWUt(1024)
                         .EUt(VA[OpV]))
                 .buildAndRegister();
