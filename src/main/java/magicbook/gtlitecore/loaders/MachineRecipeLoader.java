@@ -2254,6 +2254,13 @@ public class MachineRecipeLoader {
                 .EUt(VA[MV])
                 .duration(MINUTE)
                 .buildAndRegister();
+
+        //  Energy Substation
+        ModHandler.addShapedRecipe(true, "energy_substation", ENERGY_SUBSTATION.getStackForm(),
+                "XBX", "BHB", "XBX",
+                'H', MetaTileEntities.HULL[HV].getStackForm(),
+                'B', new UnificationEntry(battery, MarkerMaterials.Tier.HV),
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.HV));
     }
 
     private static void MachineCasingRecipes() {
@@ -2274,6 +2281,7 @@ public class MachineRecipeLoader {
         NicollDysonBeamerCasings();
         ImplosionCoils();
         LargeChemicalComplexCasing();
+        EnergyCells();
     }
 
     private static void MetalCasings() {
@@ -2793,6 +2801,25 @@ public class MachineRecipeLoader {
                 GTLiteMetaBlocks.SUPPORT_CASING,
                 BlockSupportCasing.SupportCasingType.HASTELLOY_K243_CASING,
                 HastelloyK243);
+
+        //  Substation External Casing
+        ModHandler.addShapedRecipe(true, "substation_external_casing", GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.SUBSTATION_EXTERNAL_CASING, 2),
+                "PFP", "RBR", "PFP",
+                'P', new UnificationEntry(plate, Tantalum),
+                'R', new UnificationEntry(stickLong, StainlessSteel),
+                'F', new UnificationEntry(frameGt, StainlessSteel),
+                'B', new UnificationEntry(block, Lapis));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(plate, Tantalum, 4)
+                .input(frameGt, StainlessSteel, 2)
+                .input(stickLong, StainlessSteel, 2)
+                .input(block, Lapis)
+                .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.SUBSTATION_EXTERNAL_CASING, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
     }
 
     private static void HighEnergyPhysicsCasings() {
@@ -4798,6 +4825,165 @@ public class MachineRecipeLoader {
                 Hattrium,
                 Stellite,
                 HastelloyN);
+    }
+
+    private static void EnergyCells() {
+
+        //  HV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, StainlessSteel)
+                .input(plateDense, Lead, 4)
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(wireGtSingle, MercuryBariumCalciumCuprate, 16)
+                .fluidInputs(Helium.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.HV))
+                .EUt(VA[HV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  EV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Titanium)
+                .input(plateDense, Vanadium, 4)
+                .input(circuit, MarkerMaterials.Tier.EV, 2)
+                .input(wireGtSingle, UraniumTriplatinum, 16)
+                .fluidInputs(Neon.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.EV))
+                .EUt(VA[EV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  IV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, TungstenSteel)
+                .input(plateDense, Molybdenum, 4)
+                .input(circuit, MarkerMaterials.Tier.IV, 2)
+                .input(wireGtSingle, SamariumIronArsenicOxide, 16)
+                .fluidInputs(Argon.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.IV))
+                .EUt(VA[IV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  LuV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, RhodiumPlatedPalladium)
+                .input(plateDense, VanadiumGallium, 4)
+                .input(circuit, MarkerMaterials.Tier.LuV, 2)
+                .input(wireGtSingle, IndiumTinBariumTitaniumCuprate, 16)
+                .fluidInputs(Krypton.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.LuV))
+                .EUt(VA[LuV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  ZPM
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, NaquadahAlloy)
+                .input(plateDense, HMS1J79Alloy, 4)
+                .input(circuit, MarkerMaterials.Tier.ZPM, 2)
+                .input(wireGtSingle, UraniumRhodiumDinaquadide, 16)
+                .fluidInputs(Xenon.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.ZPM))
+                .EUt(VA[ZPM])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  UV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Darmstadtium)
+                .input(plateDense, FluxedElectrum, 4)
+                .input(circuit, MarkerMaterials.Tier.UV, 2)
+                .input(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 16)
+                .fluidInputs(Radon.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UV))
+                .EUt(VA[UV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  UHV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Orichalcum)
+                .input(plateDense, Tairitsium, 4)
+                .input(circuit, MarkerMaterials.Tier.UHV, 2)
+                .input(wireGtSingle, PedotPSS, 16)
+                .fluidInputs(MetastableOganesson.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UHV))
+                .EUt(VA[UHV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  UEV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Adamantium)
+                .input(plateDense, HastelloyK243, 4)
+                .input(circuit, MarkerMaterials.Tier.UEV, 2)
+                .input(wireGtSingle, QuantumAlloy, 16)
+                .fluidInputs(MetastableFlerovium.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UEV))
+                .EUt(VA[UEV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  UIV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Infinity)
+                .input(plateDense, BlackPlutonium, 4)
+                .input(circuit, MarkerMaterials.Tier.UIV, 2)
+                .input(wireGtSingle, FullereneSuperconductor, 16)
+                .fluidInputs(MetastableHassium.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UIV))
+                .EUt(VA[UIV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  UXV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, CosmicNeutronium)
+                .input(plateDense, RutheniumTriniumAmericiumNeutronate, 4)
+                .input(circuit, MarkerMaterials.Tier.UXV, 2)
+                .input(wireGtSingle, BoronFranciumCarbideSuperconductor, 16)
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UXV))
+                .EUt(VA[UXV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  OpV
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Spacetime)
+                .input(plateDense, Hikarium, 4)
+                .input(circuit, MarkerMaterials.Tier.OpV, 2)
+                .input(wireGtSingle, NeutroniumSuperconductor, 16)
+                .fluidInputs(Periodicium.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.OpV))
+                .EUt(VA[OpV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  MAX
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(frameGt, Eternity)
+                .input(plateDense, Arcanium, 4)
+                .input(circuit, MarkerMaterials.Tier.MAX, 2)
+                .input(wireGtSingle, CosmicMatterSuperconductor, 16)
+                .fluidInputs(Omnium.getFluid(4000))
+                .outputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.MAX))
+                .EUt(VA[MAX])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
     }
 
     /**

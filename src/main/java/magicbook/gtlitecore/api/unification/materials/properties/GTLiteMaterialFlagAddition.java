@@ -81,6 +81,10 @@ public class GTLiteMaterialFlagAddition {
         Ruthenium.addFlags(GENERATE_DOUBLE_PLATE);
         IndiumGalliumPhosphide.addFlags(GENERATE_DOUBLE_PLATE);
         NaquadahEnriched.addFlags(GENERATE_DOUBLE_PLATE);
+        Vanadium.addFlags(GENERATE_DOUBLE_PLATE);
+        Molybdenum.addFlags(GENERATE_DOUBLE_PLATE);
+        VanadiumGallium.addFlags(GENERATE_DOUBLE_PLATE);
+        RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);
@@ -88,6 +92,11 @@ public class GTLiteMaterialFlagAddition {
         Tritanium.addFlags(GENERATE_DENSE);
         Osmiridium.addFlags(GENERATE_DENSE);
         WroughtIron.addFlags(GENERATE_DENSE);
+        Lead.addFlags(GENERATE_DENSE);
+        Vanadium.addFlags(GENERATE_DENSE);
+        Molybdenum.addFlags(GENERATE_DENSE);
+        VanadiumGallium.addFlags(GENERATE_DENSE);
+        RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_DENSE);
 
         //  Foil
         Nickel.addFlags(GENERATE_FOIL);

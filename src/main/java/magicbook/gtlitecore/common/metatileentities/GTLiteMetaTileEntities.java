@@ -12,7 +12,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockTurbineCasing;
 import gregtech.common.blocks.MetaBlocks;
-import magicbook.gtlitecore.api.GTLiteValues;
 import magicbook.gtlitecore.api.metatileentity.single.SimpleSteamMetaTileEntity;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicator;
 import magicbook.gtlitecore.api.metatileentity.single.SteamProgressIndicators;
@@ -33,7 +32,6 @@ import magicbook.gtlitecore.common.metatileentities.multi.part.*;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargePrimitiveBlastFurnace;
 import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLargeSteamCompressor;
 import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
-import net.minecraftforge.fml.common.Loader;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
@@ -252,6 +250,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityLargeAutoChisel LARGE_AUTO_CHISEL;
     public static MetaTileEntityIndustrial3DPrinter INDUSTRIAL_3D_PRINTER;
     public static MetaTileEntityYottaFluidTank YOTTA_FLUID_TANK;
+    public static MetaTileEntityEnergySubstation ENERGY_SUBSTATION;
     public static MetaTileEntityDimensionallyTranscendentPlasmaForge DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE;
     public static MetaTileEntityQuantumComputer QUANTUM_COMPUTER;
     public static MetaTileEntityNicollDysonBeamer NICOLL_DYSON_BEAMER;
@@ -653,7 +652,8 @@ public class GTLiteMetaTileEntities {
         //  Free ID: 143-149
         YOTTA_FLUID_TANK = registerMultiMetaTileEntity(150, new MetaTileEntityYottaFluidTank(gtliteId("yotta_fluid_tank")));
         //  151 TWENTY_FIVE_FLUID_TANK
-        //  Free ID: 152-199
+        ENERGY_SUBSTATION = registerMultiMetaTileEntity(152, new MetaTileEntityEnergySubstation(gtliteId("energy_substation")));
+        //  Free ID: 153-199
         DIMENSIONALLY_TRANSCENDENT_PLASMA_FORGE = registerMultiMetaTileEntity(200, new MetaTileEntityDimensionallyTranscendentPlasmaForge(gtliteId("dimensionally_transcendent_plasma_forge")));
         QUANTUM_COMPUTER = registerMultiMetaTileEntity(201, new MetaTileEntityQuantumComputer(gtliteId("quantum_computer")));
         NICOLL_DYSON_BEAMER = registerMultiMetaTileEntity(202, new MetaTileEntityNicollDysonBeamer(gtliteId("nicoll_dyson_beamer")));

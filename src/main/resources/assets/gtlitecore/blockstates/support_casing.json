@@ -7,6 +7,14 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/hastelloy_k243_casing"
         }
+      },
+      "substation_external_casing": {
+        "model": "minecraft:cube_bottom_top",
+        "textures": {
+          "bottom": "gtlitecore:blocks/casings/batteries/top",
+          "top": "#bottom",
+          "side": "gtlitecore:blocks/casings/batteries/side"
+        }
       }
     }
   }

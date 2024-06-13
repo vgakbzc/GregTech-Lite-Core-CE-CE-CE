@@ -180,6 +180,7 @@ public class GTLiteTextures {
     public static final SimpleOrientedCubeRenderer ADVANCED_GRATE_OSMIRIDIUM_FRONT = new SimpleOrientedCubeRenderer("casings/advanced_grate_osmiridium_front");
     public static final SimpleOrientedCubeRenderer FORCE_FIELD_CONSTRAINED_CASING = new SimpleOrientedCubeRenderer("casings/force_field_constrained_casing");
     public static final SimpleOrientedCubeRenderer RECEIVER_CASING = new SimpleOrientedCubeRenderer("casings/receiver_casing");
+    public static final SimpleOrientedCubeRenderer SUBSTATION_EXTERNAL_CASING = new SimpleOrientedCubeRenderer("casings/substation_external_casing");
 
     //  Sided Cube Renderer
     public static final ICubeRenderer COMPUTER_CASING = new SidedCubeRenderer("casings/quantum_computer_casing");

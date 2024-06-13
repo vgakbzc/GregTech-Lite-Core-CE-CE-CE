@@ -112,6 +112,7 @@ public class CommonProxy {
         registry.register(GTLiteMetaBlocks.GRAVITON_CASING);
         registry.register(GTLiteMetaBlocks.IMPLOSION_COIL);
         registry.register(GTLiteMetaBlocks.LARGE_CHEMICAL_COMPLEX_CASING);
+        registry.register(GTLiteMetaBlocks.ENERGY_CELL);
     }
 
     /**
@@ -156,6 +157,7 @@ public class CommonProxy {
         registry.register(createItemBlock(GTLiteMetaBlocks.GRAVITON_CASING, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.IMPLOSION_COIL, VariantItemBlock::new));
         registry.register(createItemBlock(GTLiteMetaBlocks.LARGE_CHEMICAL_COMPLEX_CASING, VariantItemBlock::new));
+        registry.register(createItemBlock(GTLiteMetaBlocks.ENERGY_CELL, VariantItemBlock::new));
 
         if (GTLiteConfigHolder.compats.enableDataItemRenderer) {
             GTLiteLog.logger.info("Registering Behavior Additions of GregTech...");

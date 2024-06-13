@@ -201,7 +201,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[LuV], 886)
                         .vacuumStats(VA[EV], 400))
                 .components(Nickel, 14, Iron, 12, Molybdenum, 11, CobaltBrass, 8, Chrome, 6, Silicon, 4)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_DENSE)
                 .build();
 
         //  12013 High Strength Structural Steel-HY130-1
@@ -532,7 +532,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(12960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV], 600))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_BOLT_SCREW, GENERATE_DENSE)
                 .components(Plutonium241, 18, Cerium, 9, Gadolinium, 3, Dysprosium, 3, Thulium, 2, TungstenCarbide, 6, RedSteel, 6, Duranium, 2, Radon, 2)
                 .toolStats(new ToolProperty(18.0F, 40.0F, 75000, 30))
                 .build();
@@ -839,7 +839,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(14400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 304)
                         .vacuumStats(VA[ZPM], 680))
-                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_DENSE)
                 .itemPipeProperties(1260, 256)
                 .build();
 
@@ -910,7 +910,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(7400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 400)
                         .vacuumStats(VA[EV], 130))
-                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_DENSE)
                 .build();
 
         //  12068 Transcendent Metal
@@ -933,7 +933,7 @@ public class GTLiteSecondDegreeMaterials {
                 .fluid()
                 .color(0xD54338)
                 .iconSet(BRIGHT)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE)
                 .blast(b -> b
                         .temp(18300, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 100)
@@ -982,7 +982,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(8400, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[ZPM], 877)
                         .vacuumStats(VA[IV], 405))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_FOIL)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_RING, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_DENSE)
                 .build();
 
         //  12074 Arceus Alloy 2B

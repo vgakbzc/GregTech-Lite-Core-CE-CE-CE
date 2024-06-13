@@ -68,6 +68,7 @@ tile.structure_casing.duraluminium_alloy_casing.name=洁净硬铝合金-65A机�
 tile.structure_casing.polybenzimidazole_casing.name=化学惰性聚苯并咪唑机器外壳
 
 tile.support_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
+tile.support_casing.substation_external_casing.name=储能塔外围机械方块
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -338,6 +339,19 @@ tile.large_chemical_complex_casing.chemical_active_catalytic_framework_casing.na
 tile.large_chemical_complex_casing.chemical_active_catalytic_framework_casing.tooltip=100%%化学活性激发
 tile.large_chemical_complex_casing.catalytic_bed_support_framework_casing.name=催化床承载框架外壳
 tile.large_chemical_complex_casing.catalytic_bed_support_framework_casing.tooltip=多重催化床存储器
+
+tile.energy_cell.hv.name=粗制能量单元
+tile.energy_cell.ev.name=原始能量单元
+tile.energy_cell.iv.name=稳定能量单元
+tile.energy_cell.luv.name=致密能量单元
+tile.energy_cell.zpm.name=先进能量单元
+tile.energy_cell.uv.name=卓越能量单元
+tile.energy_cell.uhv.name=完美能量单元
+tile.energy_cell.uev.name=极限能量单元
+tile.energy_cell.uiv.name=光辉能量单元
+tile.energy_cell.uxv.name=天顶能量单元
+tile.energy_cell.opv.name=太初能量单元
+tile.energy_cell.max.name=鸿蒙能量单元
 
 #  Items
 
@@ -2133,6 +2147,24 @@ gtlitecore.machine.yotta_fluid_tank.mode.enable=启用
 gtlitecore.machine.yotta_fluid_tank.mode.disable=禁用
 gtlitecore.machine.yotta_fluid_tank.mode.0=流体输出模式：§a启用
 gtlitecore.machine.yotta_fluid_tank.mode.1=流体输出模式：§c禁用
+
+gtlitecore.machine.energy_substation.name=储能塔
+gtlitecore.machine.energy_substation.tooltip.1=机器类型：§e能量缓存器§7
+gtlitecore.machine.energy_substation.tooltip.2=统筹管理你的能量。
+gtlitecore.machine.energy_substation.tooltip.3=结构中的§6能量单元§7决定了储能塔能够储存的最大能量。
+gtlitecore.machine.energy_substation.tooltip.4=最多放置§f%d层§7能量单元，且可以混搭不同等级。
+gtlitecore.machine.energy_substation.tooltip.5=现实时间每§f24小时§7损失总容量的§f1%%§7的能量。
+gtlitecore.machine.energy_substation.tooltip.6=每个能量单元的损失上限为§f%,d EU/t§7。
+gtlitecore.machine.energy_substation.tooltip.7=允许使用几乎所有种类的能量仓室，包括激光源/靶仓。
+gtlitecore.machine.energy_substation.tooltip.8=允许使用无线能源/动力仓。
+
+gtlitecore.machine.energy_substation.idling=缓存模式
+gtlitecore.machine.energy_substation.paused=待机模式
+gtlitecore.machine.energy_substation.running=桥接模式
+gtlitecore.machine.energy_substation.stored=已存储：%s
+gtlitecore.machine.energy_substation.capacity=最大容量：%s
+gtlitecore.machine.energy_substation.average_in_hover=储能塔内部的平均功率输入
+gtlitecore.machine.energy_substation.average_out_hover=储能塔内部的平均功率输出（包括被动损耗和输出）
 
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.name=超维度等离子锻炉
 gtlitecore.machine.dimensionally_transcendent_plasma_forge.tooltip.1=长时间开机或导致维度坍毁

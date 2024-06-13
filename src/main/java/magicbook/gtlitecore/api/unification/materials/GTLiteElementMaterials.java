@@ -355,7 +355,7 @@ public class GTLiteElementMaterials {
                         .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 480)
                         .vacuumStats(VA[UXV], 240))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_FINE_WIRE, GENERATE_DENSE)
                 .cableProperties(V[UXV], 64, 32, false)
                 .build();
 

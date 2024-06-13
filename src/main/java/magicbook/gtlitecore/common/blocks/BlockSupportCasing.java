@@ -34,7 +34,8 @@ public class BlockSupportCasing extends VariantBlock<BlockSupportCasing.SupportC
     }
 
     public enum SupportCasingType implements IStringSerializable {
-        HASTELLOY_K243_CASING("hastelloy_k243_casing");
+        HASTELLOY_K243_CASING("hastelloy_k243_casing"),
+        SUBSTATION_EXTERNAL_CASING("substation_external_casing");
 
         private final String name;
 
