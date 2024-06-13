@@ -4845,7 +4845,7 @@ public class MachineRecipeLoader {
         //  EV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Titanium)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.HV))
                 .input(plateDense, Vanadium, 4)
                 .input(circuit, MarkerMaterials.Tier.EV, 2)
                 .input(wireGtSingle, UraniumTriplatinum, 16)
@@ -4858,7 +4858,7 @@ public class MachineRecipeLoader {
         //  IV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, TungstenSteel)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.EV))
                 .input(plateDense, Molybdenum, 4)
                 .input(circuit, MarkerMaterials.Tier.IV, 2)
                 .input(wireGtSingle, SamariumIronArsenicOxide, 16)
@@ -4871,7 +4871,7 @@ public class MachineRecipeLoader {
         //  LuV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, RhodiumPlatedPalladium)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.IV))
                 .input(plateDense, VanadiumGallium, 4)
                 .input(circuit, MarkerMaterials.Tier.LuV, 2)
                 .input(wireGtSingle, IndiumTinBariumTitaniumCuprate, 16)
@@ -4884,7 +4884,7 @@ public class MachineRecipeLoader {
         //  ZPM
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, NaquadahAlloy)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.LuV))
                 .input(plateDense, HMS1J79Alloy, 4)
                 .input(circuit, MarkerMaterials.Tier.ZPM, 2)
                 .input(wireGtSingle, UraniumRhodiumDinaquadide, 16)
@@ -4897,7 +4897,7 @@ public class MachineRecipeLoader {
         //  UV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Darmstadtium)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.ZPM))
                 .input(plateDense, FluxedElectrum, 4)
                 .input(circuit, MarkerMaterials.Tier.UV, 2)
                 .input(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 16)
@@ -4910,7 +4910,7 @@ public class MachineRecipeLoader {
         //  UHV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Orichalcum)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UV))
                 .input(plateDense, Tairitsium, 4)
                 .input(circuit, MarkerMaterials.Tier.UHV, 2)
                 .input(wireGtSingle, PedotPSS, 16)
@@ -4923,7 +4923,7 @@ public class MachineRecipeLoader {
         //  UEV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Adamantium)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UHV))
                 .input(plateDense, HastelloyK243, 4)
                 .input(circuit, MarkerMaterials.Tier.UEV, 2)
                 .input(wireGtSingle, QuantumAlloy, 16)
@@ -4936,7 +4936,7 @@ public class MachineRecipeLoader {
         //  UIV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Infinity)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UEV))
                 .input(plateDense, BlackPlutonium, 4)
                 .input(circuit, MarkerMaterials.Tier.UIV, 2)
                 .input(wireGtSingle, FullereneSuperconductor, 16)
@@ -4949,7 +4949,7 @@ public class MachineRecipeLoader {
         //  UXV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, CosmicNeutronium)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UIV))
                 .input(plateDense, RutheniumTriniumAmericiumNeutronate, 4)
                 .input(circuit, MarkerMaterials.Tier.UXV, 2)
                 .input(wireGtSingle, BoronFranciumCarbideSuperconductor, 16)
@@ -4962,7 +4962,7 @@ public class MachineRecipeLoader {
         //  OpV
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Spacetime)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UXV))
                 .input(plateDense, Hikarium, 4)
                 .input(circuit, MarkerMaterials.Tier.OpV, 2)
                 .input(wireGtSingle, NeutroniumSuperconductor, 16)
@@ -4975,7 +4975,7 @@ public class MachineRecipeLoader {
         //  MAX
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(4)
-                .input(frameGt, Eternity)
+                .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.OpV))
                 .input(plateDense, Arcanium, 4)
                 .input(circuit, MarkerMaterials.Tier.MAX, 2)
                 .input(wireGtSingle, CosmicMatterSuperconductor, 16)
