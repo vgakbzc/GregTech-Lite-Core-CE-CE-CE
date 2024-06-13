@@ -345,7 +345,7 @@ public class SuprachronalNeutroniumForge {
                 .fluidInputs(Oxygen.getFluid(360000))
                 .fluidInputs(CrudeDimensionallyTranscendentCatalyst.getFluid(160000))
                 .fluidOutputs(SiliconeRubber.getFluid(184320))
-                .fluidOutputs(NitrileButadieneRubber.getFluid(184320))
+                .fluidOutputs(StyreneButadieneRubber.getFluid(184320))
                 .fluidOutputs(NitrileButadieneRubber.getFluid(184320))
                 .fluidOutputs(PolyPhosphonitrileFluoroRubber.getFluid(184320))
                 .fluidOutputs(PolyphenyleneSulfide.getFluid(368640))
