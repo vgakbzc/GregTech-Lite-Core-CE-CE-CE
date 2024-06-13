@@ -104,6 +104,7 @@ public class GTLiteMetaTileEntities {
     public static final MetaTileEntityWirelessEnergyHatch[] WIRELESS_OUTPUT_ENERGY_HATCH_262144A = new MetaTileEntityWirelessEnergyHatch[15];
     public static final MetaTileEntityWirelessEnergyHatch[] WIRELESS_INPUT_ENERGY_HATCH_1048576A = new MetaTileEntityWirelessEnergyHatch[15];
     public static final MetaTileEntityWirelessEnergyHatch[] WIRELESS_OUTPUT_ENERGY_HATCH_1048576A = new MetaTileEntityWirelessEnergyHatch[15];
+    public static final MetaTileEntityAdvancedSubstationEnergyHatch[] LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH = new MetaTileEntityAdvancedSubstationEnergyHatch[4];
     public static MetaTileEntityCatalystHatch CATALYST_HATCH;
 
     public static MetaTileEntityQCComponentEmpty QC_EMPTY_COMPONENT;
@@ -445,6 +446,11 @@ public class GTLiteMetaTileEntities {
             WIRELESS_OUTPUT_ENERGY_HATCH_262144A[i]  = registerPartMetaTileEntity(78 + 300 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_262144a."  + tier), i, 262144,  true));
             WIRELESS_OUTPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(78 + 315 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1048576a." + tier), i, 1048576, true));
         }
+
+        LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(410, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.lv"), LV, 64, true));
+        LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(411, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.mv"), MV, 64, true));
+        LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(412, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.hv"), HV, 64, true));
+        LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(413, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.ev"), EV, 64, true));
 
         CATALYST_HATCH = registerPartMetaTileEntity(450, new MetaTileEntityCatalystHatch(gtliteId("catalyst_hatch")));
 

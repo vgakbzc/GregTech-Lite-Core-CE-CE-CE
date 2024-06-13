@@ -99,6 +99,9 @@ public class GTLiteConfigHolder {
         @Comment({"Enable high tier 16A energy hatch (UEV-OpV) recipes.", "Default: true"})
         public boolean enableHighTier16AEnergyHatch = true;
 
+        @Comment({"Enable low power 64A substation energy hatch (LV-EV) recipes.", "Default: true"})
+        public boolean enableLowPower64ASubstationEnergyHatch = true;
+
         @Comment({"Enable high tier 64A substation energy hatch (UEV-OpV) recipes.", "Default: true"})
         public boolean enableHighTier64ASubstationEnergyHatch = true;
 

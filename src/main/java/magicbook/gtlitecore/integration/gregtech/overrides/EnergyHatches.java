@@ -535,6 +535,49 @@ public class EnergyHatches {
 
     private static void EnergyHatches64A() {
 
+        if (GTLiteConfigHolder.machines.enableLowPower64ASubstationEnergyHatch) {
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[LV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[0])
+                    .input(wireGtHex, Tin, 2)
+                    .input(plate, Steel, 6)
+                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[0])
+                    .EUt(VA[LV])
+                    .duration(400)
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[MV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[1])
+                    .input(wireGtHex, Copper, 2)
+                    .input(plate, Aluminium, 6)
+                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[1])
+                    .EUt(VA[MV])
+                    .duration(400)
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[HV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[2])
+                    .input(wireGtHex, Gold, 2)
+                    .input(plate, StainlessSteel, 6)
+                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[2])
+                    .EUt(VA[HV])
+                    .duration(400)
+                    .buildAndRegister();
+
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(POWER_TRANSFORMER[EV])
+                    .input(OUTPUT_ENERGY_HATCH_16A[3])
+                    .input(wireGtHex, Aluminium, 2)
+                    .input(plate, Titanium, 6)
+                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[3])
+                    .EUt(VA[EV])
+                    .duration(400)
+                    .buildAndRegister();
+        }
+
         //  Delete vanilla UHV recipes
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, POWER_TRANSFORMER[UV].getStackForm(), ENERGY_INPUT_HATCH_16A[4].getStackForm(), OreDictUnifier.get(wireGtHex, Europium, 2), OreDictUnifier.get(plate, Neutronium, 6));
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, POWER_TRANSFORMER[UV].getStackForm(), ENERGY_OUTPUT_HATCH_16A[4].getStackForm(), OreDictUnifier.get(wireGtHex, Europium, 2), OreDictUnifier.get(plate, Neutronium, 6));

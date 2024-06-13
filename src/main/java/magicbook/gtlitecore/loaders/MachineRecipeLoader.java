@@ -2245,7 +2245,7 @@ public class MachineRecipeLoader {
         ASSEMBLER_RECIPES.recipeBuilder()
                 .circuitMeta(15)
                 .input(TIERED_HATCH[LV], 2)
-                .input(IMPORT_ITEM_HATCH[MV])
+                .input(ITEM_IMPORT_BUS[MV])
                 .input(gear, Bronze, 8)
                 .input(plate, Lead, 48)
                 .input(wireFine, SolderingAlloy, 16)
