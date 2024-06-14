@@ -74,7 +74,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         LargeNaquadahReactorWorkableHandler recipeLogic = (LargeNaquadahReactorWorkableHandler) this.recipeMapWorkable;
-        MultiblockDisplayText.Builder builder = MultiblockDisplayText.builder(textList, this.isStructureFormed())
+        MultiblockDisplayText.builder(textList, this.isStructureFormed())
                 .setWorkingStatus(recipeLogic.isWorkingEnabled(), recipeLogic.isActive())
                 .addEnergyProductionLine(GTValues.V[UEV], recipeLogic.getRecipeEUt())
                 .addFuelNeededLine(recipeLogic.getRecipeFluidInputInfo(), recipeLogic.getPreviousRecipeDuration())
@@ -163,10 +163,11 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
         return Textures.POWER_SUBSTATION_OVERLAY;
     }
 
-    @SuppressWarnings("all")
+    @SideOnly(Side.CLIENT)
+    @Nonnull
     @Override
-    public void runMufflerEffect(float xPos, float yPos, float zPos, float xSpd, float ySpd, float zSpd) {
-        this.getWorld().spawnParticle(EnumParticleTypes.SPELL_WITCH, xPos, yPos, zPos, xSpd, ySpd, zSpd);
+    public EnumParticleTypes getMufflerParticle() {
+        return EnumParticleTypes.SPELL_WITCH;
     }
 
     @Override
@@ -204,7 +205,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
                 }
             }
 
-            return plasmaAmount[1] != 0 ? 1.0 * (double) plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
+            return plasmaAmount[1] != 0 ? 1.0 * plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
         } else {
             plasmaAmount = new int[2];
             if (this.getInputFluidInventory() != null && this.isBoostAllowed()) {
@@ -212,7 +213,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
                 plasmaAmount = this.getTotalFluidAmount(plasmaStack, this.getInputFluidInventory());
             }
 
-            return plasmaAmount[1] != 0 ? 1.0 * (double) plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
+            return plasmaAmount[1] != 0 ? 1.0 * plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
         }
     }
 
@@ -284,8 +285,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
 
         protected void drainPlasma() {
             if (this.isBoosted && this.totalContinuousRunningTime % 20L == 0L) {
-                FluidStack boosterStack = PLASMA_OXYGEN_STACK;
-                this.naquadahReactor.getInputFluidInventory().drain(boosterStack, true);
+                this.naquadahReactor.getInputFluidInventory().drain(PLASMA_OXYGEN_STACK, true);
             }
         }
 
