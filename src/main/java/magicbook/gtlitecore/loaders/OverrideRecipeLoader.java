@@ -696,20 +696,29 @@ public class OverrideRecipeLoader {
 
         //  Lithium Niobate: Nano PIC Wafer
         LASER_ENGRAVER_RECIPES.recipeBuilder()
-                .input(DUBNIUM_WAFER)
+                .input(AMERICIUM_WAFER)
                 .notConsumable(lens, LithiumNiobate)
                 .output(NANO_PIC_WAFER)
-                .EUt(VA[ZPM])
+                .EUt(VA[LuV])
                 .duration(baseDuration)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        LASER_ENGRAVER_RECIPES.recipeBuilder()
+                .input(DUBNIUM_WAFER)
+                .notConsumable(lens, LithiumNiobate)
+                .output(NANO_PIC_WAFER, 4)
+                .EUt(VA[ZPM])
+                .duration(baseDuration / 4)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         LASER_ENGRAVER_RECIPES.recipeBuilder()
                 .input(NEUTRONIUM_WAFER)
                 .notConsumable(lens, LithiumNiobate)
-                .output(NANO_PIC_WAFER, 4)
+                .output(NANO_PIC_WAFER, 16)
                 .EUt(VA[UV])
-                .duration(baseDuration / 4)
+                .duration(baseDuration / 16)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
