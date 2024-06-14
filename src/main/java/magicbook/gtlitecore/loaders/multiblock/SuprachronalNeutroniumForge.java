@@ -35,6 +35,7 @@ public class SuprachronalNeutroniumForge {
         createTransmutationRecipes(Calcium);
         createTransmutationRecipes(Boron);
         createTransmutationRecipes(Neon);
+        createTransmutationRecipes(Sodium);
 
         /* -------------------------------- MK2 -------------------------------- */
         createTransmutationRecipes(Oxygen);
@@ -47,6 +48,7 @@ public class SuprachronalNeutroniumForge {
         createTransmutationRecipes(Niobium);
         createTransmutationRecipes(Titanium);
         createTransmutationRecipes(Krypton);
+        createTransmutationRecipes(Rhenium);
         createTransmutationRecipes(Adamantium);
 
         /* -------------------------------- MK3 -------------------------------- */
@@ -56,20 +58,22 @@ public class SuprachronalNeutroniumForge {
         createTransmutationRecipes(Bismuth);
         createTransmutationRecipes(Xenon);
         createTransmutationRecipes(Radon);
+        createTransmutationRecipes(Chrome);
         createTransmutationRecipes(Vibranium);
         createTransmutationRecipes(Mithril);
         createTransmutationRecipes(Taranium);
 
-
         /* -------------------------------- MK4 -------------------------------- */
         createTransmutationRecipes(Neptunium);
         createTransmutationRecipes(Fermium);
+        createTransmutationRecipes(Gadolinium);
         createTransmutationRecipes(DragonBlood);
 
         /* -------------------------------- MK5 -------------------------------- */
         createTransmutationRecipes(Plutonium241);
         createTransmutationRecipes(Lead);
         createTransmutationRecipes(Thorium);
+        createTransmutationRecipes(Germanium);
         createTransmutationRecipes(Hypogen);
         createTransmutationRecipes(AstralTitanium);
         createTransmutationRecipes(CelestialTungsten);

@@ -69,8 +69,6 @@ public class GTLiteMaterialPropertyAddition {
         Einsteinium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Erbium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Francium.setProperty(PropertyKey.FLUID, new FluidProperty());
-        Gadolinium.setProperty(PropertyKey.FLUID, new FluidProperty());
-        Germanium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Hafnium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Holmium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Iodine.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -90,7 +88,6 @@ public class GTLiteMaterialPropertyAddition {
         Rutherfordium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Scandium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Seaborgium.setProperty(PropertyKey.FLUID, new FluidProperty());
-        Sodium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Strontium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Technetium.setProperty(PropertyKey.FLUID, new FluidProperty());
         Tellurium.setProperty(PropertyKey.FLUID, new FluidProperty());
@@ -161,6 +158,32 @@ public class GTLiteMaterialPropertyAddition {
 
         Thorium.getProperty(PropertyKey.FLUID).getStorage()
                 .enqueueRegistration(FluidStorageKeys.PLASMA, new FluidBuilder());
+
+        var fpPropertyGermanium = new FluidProperty();
+        fpPropertyGermanium.getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder());
+        fpPropertyGermanium.getStorage().enqueueRegistration(FluidStorageKeys.PLASMA, new FluidBuilder());
+        Germanium.setProperty(PropertyKey.FLUID, fpPropertyGermanium);
+
+        Chrome.getProperty(PropertyKey.FLUID).getStorage()
+                .enqueueRegistration(FluidStorageKeys.PLASMA, new FluidBuilder());
+
+        var fpPropertyGadolinium = new FluidProperty();
+        fpPropertyGadolinium.getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder());
+        fpPropertyGadolinium.getStorage().enqueueRegistration(FluidStorageKeys.PLASMA, new FluidBuilder());
+
+        Gadolinium.setProperty(PropertyKey.FLUID, fpPropertyGadolinium);
+
+        var fpPropertySodium = new FluidProperty();
+        fpPropertySodium.getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder());
+        fpPropertySodium.getStorage().enqueueRegistration(FluidStorageKeys.PLASMA, new FluidBuilder());
+
+        Sodium.setProperty(PropertyKey.FLUID, fpPropertySodium);
+
+        var fpPropertyRhenium = new FluidProperty();
+        fpPropertyRhenium.getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder());
+        fpPropertyRhenium.getStorage().enqueueRegistration(FluidStorageKeys.PLASMA, new FluidBuilder());
+
+        Rhenium.setProperty(PropertyKey.FLUID, fpPropertyRhenium);
 
         /* ---------------------------------------- Misc Materials --------------------------------------- */
         NetherStar.setProperty(PropertyKey.FLUID, new FluidProperty());

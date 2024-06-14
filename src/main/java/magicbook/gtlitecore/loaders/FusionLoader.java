@@ -65,6 +65,23 @@ public class FusionLoader {
                 .duration((int) (4.5 * SECOND))
                 .buildAndRegister();
 
+        //  Potassium + Helium (plasma) -> Sodium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Potassium.getFluid(L))
+                .fluidInputs(Helium.getPlasma(1000))
+                .fluidOutputs(Sodium.getPlasma(1000))
+                .EUt(VA[IV] / 3)
+                .duration((int) (0.4 * SECOND))
+                .EUToStart(100000000L) // MK1
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Sodium.getPlasma(1))
+                .fluidOutputs(Sodium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (2.5 * SECOND))
+                .buildAndRegister();
+
         /* -------------------------------- MK2 -------------------------------- */
 
         //  Aluminium + Lithium -> Sulfur (plasma)
@@ -152,6 +169,23 @@ public class FusionLoader {
                 .duration((int) (7.2 * SECOND))
                 .buildAndRegister();
 
+        //  Calcium (plasma) + Iron (plasma) -> Rhenium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Calcium.getPlasma(500))
+                .fluidInputs(Iron.getPlasma(500))
+                .fluidOutputs(Rhenium.getPlasma(500))
+                .EUt(VA[ZPM] / 3)
+                .duration((int) (2.4 * SECOND))
+                .EUToStart(300000000L) // MK2
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Rhenium.getPlasma(1))
+                .fluidOutputs(Rhenium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (10.4 * SECOND))
+                .buildAndRegister();
+
         //  Plutonium-241 + Neon -> Rutherfordium
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Plutonium241.getFluid(16))
@@ -230,6 +264,23 @@ public class FusionLoader {
                 .fluidOutputs(Radon.getFluid(1))
                 .EUt((int) V[EV])
                 .duration((int) (18.9 * SECOND))
+                .buildAndRegister();
+
+        //  Niobium (plasma) + Helium (plasma) -> Chrome (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Niobium.getPlasma(L))
+                .fluidInputs(Helium.getPlasma(1000))
+                .fluidOutputs(Chrome.getPlasma(500))
+                .EUt(VA[UV] / 3)
+                .duration((int) (2.5 * SECOND))
+                .EUToStart(450000000L) // MK3
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Chrome.getPlasma(1))
+                .fluidOutputs(Chrome.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (14.8 * SECOND))
                 .buildAndRegister();
 
         //  Americium + Neon -> Dubnium
@@ -336,6 +387,23 @@ public class FusionLoader {
                 .fluidOutputs(Fermium.getFluid(1))
                 .EUt((int) V[EV])
                 .duration((int) (38.7 * SECOND))
+                .buildAndRegister();
+
+        //  Rhenium (plasma) + Sodium (plasma) -> Gadolinium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Rhenium.getPlasma(1000))
+                .fluidInputs(Sodium.getPlasma(1000))
+                .fluidOutputs(Gadolinium.getPlasma(1000))
+                .EUt(VA[UHV] / 2)
+                .duration((int) (7.6 * SECOND))
+                .EUToStart(960000000L) // MK4
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Gadolinium.getPlasma(1))
+                .fluidOutputs(Gadolinium.getFluid(1))
+                .EUt(VA[EV])
+                .duration((int) (44.3 * SECOND))
                 .buildAndRegister();
 
         //  Plutonium-241 + Titanium -> Livermorium
@@ -561,6 +629,23 @@ public class FusionLoader {
                 .fluidOutputs(Thorium.getFluid(1))
                 .EUt((int) V[EV])
                 .duration((int) (52.2 * SECOND))
+                .buildAndRegister();
+
+        //  Chrome (plasma) + Oxygen (plasma) -> Germanium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Chrome.getPlasma(L))
+                .fluidInputs(Oxygen.getPlasma(1000))
+                .fluidOutputs(Germanium.getPlasma(500))
+                .EUt(VA[UEV])
+                .duration((int) (0.8 * SECOND))
+                .EUToStart(1800000000L) // MK5
+                .buildAndRegister();
+
+        PLASMA_GENERATOR_FUELS.recipeBuilder()
+                .fluidInputs(Germanium.getPlasma(1))
+                .fluidOutputs(Germanium.getFluid(1))
+                .EUt((int) V[EV])
+                .duration((int) (61.2 * SECOND))
                 .buildAndRegister();
 
         //  Scandium-Titanium Mixture + Radium-Radon Mixture -> Metastable Hassium
