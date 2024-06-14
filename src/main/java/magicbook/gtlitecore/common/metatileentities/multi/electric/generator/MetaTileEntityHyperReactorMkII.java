@@ -71,7 +71,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
     @Override
     protected void addDisplayText(List<ITextComponent> textList) {
         HyperReactorMark2WorkableHandler recipeLogic = (HyperReactorMark2WorkableHandler) this.recipeMapWorkable;
-        MultiblockDisplayText.Builder builder = MultiblockDisplayText.builder(textList, this.isStructureFormed())
+        MultiblockDisplayText.builder(textList, this.isStructureFormed())
                 .setWorkingStatus(recipeLogic.isWorkingEnabled(), recipeLogic.isActive())
                 .addEnergyProductionLine(V[UXV], recipeLogic.getRecipeEUt())
                 .addFuelNeededLine(recipeLogic.getRecipeFluidInputInfo(), recipeLogic.getPreviousRecipeDuration())
@@ -194,7 +194,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
                 }
             }
 
-            return plasmaAmount[1] != 0 ? 1.0 * (double) plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
+            return plasmaAmount[1] != 0 ? 1.0 * plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
         } else {
             plasmaAmount = new int[2];
             if (this.getInputFluidInventory() != null && this.isBoostAllowed()) {
@@ -202,7 +202,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
                 plasmaAmount = this.getTotalFluidAmount(plasmaStack, this.getInputFluidInventory());
             }
 
-            return plasmaAmount[1] != 0 ? 1.0 * (double) plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
+            return plasmaAmount[1] != 0 ? 1.0 * plasmaAmount[0] / (double) plasmaAmount[1] : 0.0;
         }
     }
 
@@ -274,8 +274,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
 
         protected void drainPlasma() {
             if (this.isBoosted && this.totalContinuousRunningTime % 20L == 0L) {
-                FluidStack boosterStack = PLASMA_AMERICIUM_STACK;
-                this.hyperReactor.getInputFluidInventory().drain(boosterStack, true);
+                this.hyperReactor.getInputFluidInventory().drain(PLASMA_AMERICIUM_STACK, true);
             }
         }
 
