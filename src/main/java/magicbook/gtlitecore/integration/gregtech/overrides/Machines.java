@@ -3,21 +3,61 @@ package magicbook.gtlitecore.integration.gregtech.overrides;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.stack.UnificationEntry;
+import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.BlockSteamCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
+import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
+import static gregtech.api.GTValues.ULV;
+import static gregtech.api.GTValues.V;
+import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.FORGE_HAMMER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.common.metatileentities.MetaTileEntities.ELECTRIC_BLAST_FURNACE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class Machines {
 
     public static void init() {
         SteamStageMachines();
+
+        //  Override of Electric Blast Furnace
+        if (Mods.FutureMC.isModLoaded()) {
+            ModHandler.removeRecipeByOutput(ELECTRIC_BLAST_FURNACE.getStackForm());
+            ModHandler.addShapedRecipe(true, "electric_blast_furnace", ELECTRIC_BLAST_FURNACE.getStackForm(),
+                    "FFF", "OCO", "WOW",
+                    'F', getItemById(Mods.FutureMC.getID(), "blast_furnace"),
+                    'C', MetaBlocks.METAL_CASING.getItemVariant(BlockMetalCasing.MetalCasingType.INVAR_HEATPROOF),
+                    'O', new UnificationEntry(circuit, MarkerMaterials.Tier.LV),
+                    'W', new UnificationEntry(cableGtSingle, Tin));
+        }
+
+        if (Mods.CraftTweaker.isModLoaded() && Mods.ContentTweaker.isModLoaded()) {
+
+            //  Sand -> Dust
+            FORGE_HAMMER_RECIPES.recipeBuilder()
+                    .inputs(new ItemStack(Blocks.SAND))
+                    .outputs(getItemById(Mods.ContentTweaker.getID(), "dust_block"))
+                    .EUt((int) V[ULV])
+                    .duration(SECOND / 2)
+                    .buildAndRegister();
+
+            //  Dust -> Clay
+            CHEMICAL_RECIPES.recipeBuilder()
+                    .inputs(getItemById(Mods.ContentTweaker.getID(), "dust_block"))
+                    .fluidInputs(Water.getFluid(1000))
+                    .outputs(new ItemStack(Blocks.CLAY))
+                    .EUt((int) V[ULV])
+                    .duration(5 * SECOND)
+                    .buildAndRegister();
+        }
     }
 
     /**

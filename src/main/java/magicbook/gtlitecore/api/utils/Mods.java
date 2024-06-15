@@ -25,6 +25,7 @@ public enum Mods {
 
     Chisel("chisel"),
     ConnectedTexturesMod("ctm"),
+    ContentTweaker("contenttweaker"),
     CraftTweaker("crafttweaker"),
 
     EnderCore("endercore"),
@@ -33,6 +34,7 @@ public enum Mods {
     EnderIOMachines("enderiomachines"),
     EnderIOConduits("enderioconduits"),
     EnderIOAE2Conduits("enderioconduitsappliedenergistics"),
+    EnderStorage("enderstorage"),
     EnderUtilities("enderutilities"),
     ExtraUtilities2("extrautils2"),
 
@@ -44,6 +46,7 @@ public enum Mods {
     EpimorphismCore("epcore"),
 
     FluidDrawers("fluiddrawers"),
+    FutureMC("futuremc"),
 
     GregTech("gregtech"),
     GregTechLiteCore("gtlitecore"),
@@ -75,7 +78,8 @@ public enum Mods {
     SuperSoundMuffler("supersoundmuffler"),
 
     TheOneProbe("theoneprobe"),
-    TOPAddons("topaddons");
+    TOPAddons("topaddons"),
+    TorchMaster("torchmaster");
 
     private final String ID;
     private final Function<Mods, Boolean> extraCheck;

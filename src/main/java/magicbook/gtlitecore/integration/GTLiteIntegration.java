@@ -7,8 +7,10 @@ import magicbook.gtlitecore.integration.architecturecraft.ArchitectureCraftRecip
 import magicbook.gtlitecore.integration.chisel.AutoChiselRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMachineRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMiscRecipes;
+import magicbook.gtlitecore.integration.enderstorage.EnderStorageRecipeLoader;
 import magicbook.gtlitecore.integration.fluiddrawers.FluidDrawersRecipeLoader;
 import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
+import magicbook.gtlitecore.integration.gregtech.CTMaterialRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
 import magicbook.gtlitecore.integration.ironchest.IronChestRecipeLoader;
 import magicbook.gtlitecore.integration.littletiles.LittleTilesRecipeLoader;
@@ -18,6 +20,7 @@ import magicbook.gtlitecore.integration.storagedrawers.StorageDrawersMiscRecipes
 import magicbook.gtlitecore.integration.supersoundmuffler.SuperSoundMufflerRecipeLoader;
 import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeFluidOutputInfoProvider;
 import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeItemOutputInfoProvider;
+import magicbook.gtlitecore.integration.torchmaster.TorchMasterRecipeLoader;
 import mcjty.theoneprobe.TheOneProbe;
 import mcjty.theoneprobe.api.ITheOneProbe;
 
@@ -51,9 +54,19 @@ public class GTLiteIntegration {
             ChiselMiscRecipes.init();
         }
 
+        //  Ender Storage
+        if (Mods.EnderStorage.isModLoaded()) {
+            EnderStorageRecipeLoader.init();
+        }
+
         //  Fluid Drawers
         if (Mods.FluidDrawers.isModLoaded()) {
             FluidDrawersRecipeLoader.init();
+        }
+
+        //  GregTech
+        if (Mods.CraftTweaker.isModLoaded() && Mods.GregTech.isModLoaded()) {
+            CTMaterialRecipeLoader.init();
         }
 
         //  Gregicality Multiblocks
@@ -95,6 +108,11 @@ public class GTLiteIntegration {
         //  Super Sound Muffler
         if (Mods.SuperSoundMuffler.isModLoaded()) {
             SuperSoundMufflerRecipeLoader.init();
+        }
+
+        //  Torch Master
+        if (Mods.TorchMaster.isModLoaded()) {
+            TorchMasterRecipeLoader.init();
         }
     }
 
