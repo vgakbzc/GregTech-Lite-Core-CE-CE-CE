@@ -1599,6 +1599,97 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
                         new MaterialStack(HSSS, (M / 4) * 16) // 16 * HSSS foil
                 ));
 
+        /* ---------------------------------------------------------------------- Materials ----------------------------------------------------------------------- */
+        REINFORCED_ALUMINIUM_PLATE = this.addItem(3000, "reinforced_aluminium_plate")
+                .addOreDict("plateReinforcedAluminium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Aluminium, M * 2), // 2 * Aluminium plate
+                        new MaterialStack(Iron, M * 4) // 4 * Iron plate
+                ));
+
+        COMPOSITE_REINFORCED_ALUMINIUM_PLATE = this.addItem(3001, "composite_reinforced_aluminium_plate")
+                .addOreDict("plateCompositeReinforcedAluminium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Aluminium, M * 2),
+                        new MaterialStack(Iron, M * 4),
+                        new MaterialStack(VanadiumSteel, M * 4) // 4 * Vanadium Steel plate
+                ));
+
+        IRRADIANT_REINFORCED_ALUMINIUM_PLATE = this.addItem(3002, "irradiant_reinforced_aluminium_plate")
+                .addOreDict("plateIrradiantReinforcedAluminium");
+
+        REINFORCED_TITANIUM_PLATE = this.addItem(3003, "reinforced_titanium_plate")
+                .addOreDict("plateReinforcedTitanium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Titanium, M * 2), // 2 * Aluminium plate
+                        new MaterialStack(Aluminium, M * 4) // 4 * Iron plate
+                ));
+
+        COMPOSITE_REINFORCED_TITANIUM_PLATE = this.addItem(3004, "composite_reinforced_titanium_plate")
+                .addOreDict("plateCompositeReinforcedTitanium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Titanium, M * 2),
+                        new MaterialStack(Aluminium, M * 4),
+                        new MaterialStack(Kanthal, M * 4) // 4 * Kanthal Steel plate
+                ));
+
+        IRRADIANT_REINFORCED_TITANIUM_PLATE = this.addItem(3005, "irradiant_reinforced_titanium_plate")
+                .addOreDict("plateIrradiantReinforcedTitanium");
+
+        REINFORCED_TUNGSTEN_PLATE = this.addItem(3006, "reinforced_tungsten_plate")
+                .addOreDict("plateReinforcedTungsten")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Tungsten, M * 2), // 2 * Tungsten plate
+                        new MaterialStack(Titanium, M * 4) // 4 * Titanium plate
+                ));
+
+        COMPOSITE_REINFORCED_TUNGSTEN_PLATE = this.addItem(3007, "composite_reinforced_tungsten_plate")
+                .addOreDict("plateCompositeReinforcedTungsten")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Tungsten, M * 2),
+                        new MaterialStack(Titanium, M * 4),
+                        new MaterialStack(RTMAlloy, M * 4) // 4 * RTM Alloy plate
+                ));
+
+        IRRADIANT_REINFORCED_TUNGSTEN_PLATE = this.addItem(3008, "irradiant_reinforced_tungsten_plate")
+                .addOreDict("plateIrradiantReinforcedTungsten");
+
+        REINFORCED_NAQUADAH_PLATE = this.addItem(3009, "reinforced_naquadah_plate")
+                .addOreDict("plateReinforcedNaquadah")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Naquadah, M * 2), // 2 * Naquadah plate
+                        new MaterialStack(Tungsten, M * 4) // 4 * Tungsten plate
+                ));
+
+        COMPOSITE_REINFORCED_NAQUADAH_PLATE = this.addItem(3010, "composite_reinforced_naquadah_plate")
+                .addOreDict("plateCompositeReinforcedNaquadah")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Naquadah, M * 2),
+                        new MaterialStack(Tungsten, M * 4),
+                        new MaterialStack(HSSS, M * 4) // 4 * HSSS plate
+                ));
+
+        IRRADIANT_REINFORCED_NAQUADAH_PLATE = this.addItem(3011, "irradiant_reinforced_naquadah_plate")
+                .addOreDict("plateIrradiantReinforcedNaquadah");
+
+        REINFORCED_NEUTRONIUM_PLATE = this.addItem(3012, "reinforced_neutronium_plate")
+                .addOreDict("plateReinforcedNeutronium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Neutronium, M * 2), // 2 * Neutronium plate
+                        new MaterialStack(Naquadah, M * 4) // 4 * Naquadah plate
+                ));
+
+        COMPOSITE_REINFORCED_NEUTRONIUM_PLATE = this.addItem(3013, "composite_reinforced_neutronium_plate")
+                .addOreDict("plateCompositeReinforcedNeutronium")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Neutronium, M * 2),
+                        new MaterialStack(Naquadah, M * 4),
+                        new MaterialStack(Hdcs, M * 4) // 4 * HDCS plate
+                ));
+
+        IRRADIANT_REINFORCED_NEUTRONIUM_PLATE = this.addItem(3014, "irradiant_reinforced_neutronium_plate")
+                .addOreDict("plateIrradiantReinforcedNeutronium");
+
         /* ------------------------------------------------------------------------ Foods ------------------------------------------------------------------------- */
         BEDROCK_CHOCOLATE = this.addItem(5000, "food.bedrock_chocolate")
                 .addComponents(new GTFOFoodStats(5, 2.5F, false, false, ItemStack.EMPTY,

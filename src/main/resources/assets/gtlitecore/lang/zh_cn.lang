@@ -924,6 +924,23 @@ metaitem.cosmic_fabric_plasma_containment_cell.tooltip.2=它们将制成的只�
 metaitem.cosmic_fabric_plasma_containment_cell.tooltip.3=真正的寰宇织网如今不过唾手可得之物。
 metaitem.cosmic_fabric_plasma_containment_cell.tooltip.4=使用§6等离子冷凝器§7进行冷却
 
+##  Materials
+metaitem.reinforced_aluminium_plate.name=强化铝板
+metaitem.composite_reinforced_aluminium_plate.name=复合强化铝板
+metaitem.irradiant_reinforced_aluminium_plate.name=光辉强化铝板
+metaitem.reinforced_titanium_plate.name=强化钛板
+metaitem.composite_reinforced_titanium_plate.name=复合强化钛板
+metaitem.irradiant_reinforced_titanium_plate.name=光辉强化钛板
+metaitem.reinforced_tungsten_plate.name=强化钨板
+metaitem.composite_reinforced_tungsten_plate.name=复合强化钨板
+metaitem.irradiant_reinforced_tungsten_plate.name=光辉强化钨板
+metaitem.reinforced_naquadah_plate.name=强化硅岩板
+metaitem.composite_reinforced_naquadah_plate.name=复合强化硅岩板
+metaitem.irradiant_reinforced_naquadah_plate.name=光辉强化硅岩板
+metaitem.reinforced_neutronium_plate.name=强化中子素板
+metaitem.composite_reinforced_neutronium_plate.name=复合强化中子素板
+metaitem.irradiant_reinforced_neutronium_plate.name=光辉强化中子素板
+
 ##  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
 metaitem.memory_card.zombie.name=僵尸意识存储卡

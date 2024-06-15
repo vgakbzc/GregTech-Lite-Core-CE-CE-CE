@@ -177,7 +177,7 @@ public class GTLiteElementMaterials {
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[OpV], 100)
                         .vacuumStats(VA[OpV], 100))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS, GENERATE_LONG_ROD)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS, GENERATE_LONG_ROD, GENERATE_FOIL)
                 .element(GTLiteElements.SpaceTime)
                 .rotorStats(360.0F, 1.0F, 524288000)
                 .build()
@@ -261,7 +261,7 @@ public class GTLiteElementMaterials {
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV]))
                 .element(GTLiteElements.CelestialTungsten)
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .itemPipeProperties(8360, 496)
                 .build();
 
@@ -402,7 +402,7 @@ public class GTLiteElementMaterials {
                         .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 144)
                         .vacuumStats(VA[UXV], 288))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_RING, GENERATE_DOUBLE_PLATE)
                 .cableProperties(V[OpV], 288, 144, false)
                 .build();
 
@@ -466,7 +466,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .iconSet(CUSTOM_MAGMATTER)
                 .element(GTLiteElements.M)
-                .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
+                .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .cableProperties(V[MAX], 1024, 36, false)
                 .build();
 
@@ -515,7 +515,7 @@ public class GTLiteElementMaterials {
                 .color(0xFF7687)
                 .iconSet(ENRICHED)
                 .element(GTLiteElements.Ae)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_DOUBLE_PLATE, GENERATE_SPRING, GENERATE_SPRING_SMALL)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_DOUBLE_PLATE, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_GEAR)
                 .cableProperties(V[MAX], 1000, 1, false)
                 .fluidPipeProperties(999999, 999999, true)
                 .build();

@@ -553,6 +553,23 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem HIGH_DENSITY_URANIUM;
     public static MetaItem<?>.MetaValueItem HIGH_DENSITY_PLUTONIUM;
 
+    //  Materials
+    public static MetaItem<?>.MetaValueItem REINFORCED_ALUMINIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_ALUMINIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_ALUMINIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem REINFORCED_TITANIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_TITANIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_TITANIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem REINFORCED_TUNGSTEN_PLATE;
+    public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_TUNGSTEN_PLATE;
+    public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_TUNGSTEN_PLATE;
+    public static MetaItem<?>.MetaValueItem REINFORCED_NAQUADAH_PLATE;
+    public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_NAQUADAH_PLATE;
+    public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_NAQUADAH_PLATE;
+    public static MetaItem<?>.MetaValueItem REINFORCED_NEUTRONIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_NEUTRONIUM_PLATE;
+    public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_NEUTRONIUM_PLATE;
+
     //  Foods
     public static MetaItem<?>.MetaValueItem BEDROCK_CHOCOLATE;
 

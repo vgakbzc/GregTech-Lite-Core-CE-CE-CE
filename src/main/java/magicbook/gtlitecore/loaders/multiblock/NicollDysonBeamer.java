@@ -614,6 +614,18 @@ public class NicollDysonBeamer {
                 .tier(3)
                 .buildAndRegister();
 
+        //  Magmatter Double Plate
+        NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
+                .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(swarm, Eternity, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .fluidInputs(Magmatter.getFluid(L))
+                .output(plateDense, Magmatter)
+                .EUt(VA[MAX])
+                .duration(20)
+                .tier(3)
+                .buildAndRegister();
+
         //  Magmatter Foil
         NICOLL_DYSON_BEAMER_FORGING_MODULE.recipeBuilder()
                 .input(foil, MagnetoHydrodynamicallyConstrainedStarMatter)

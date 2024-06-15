@@ -31,7 +31,7 @@ public enum Mods {
     EnderIOMachines("enderiomachines"),
     EnderIOConduits("enderioconduits"),
     EnderIOAE2Conduits("enderioconduitsappliedenergistics"),
-
+    EnderUtilities("enderutilities"),
     ExtraUtilities2("extrautils2"),
 
     /**
