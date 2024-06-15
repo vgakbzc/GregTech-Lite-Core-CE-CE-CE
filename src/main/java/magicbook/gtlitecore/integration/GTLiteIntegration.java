@@ -9,6 +9,7 @@ import magicbook.gtlitecore.integration.chisel.ChiselMachineRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMiscRecipes;
 import magicbook.gtlitecore.integration.enderstorage.EnderStorageRecipeLoader;
 import magicbook.gtlitecore.integration.fluiddrawers.FluidDrawersRecipeLoader;
+import magicbook.gtlitecore.integration.futuremc.FutureMCRecipeLoader;
 import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
 import magicbook.gtlitecore.integration.gregtech.CTMaterialRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
@@ -62,6 +63,11 @@ public class GTLiteIntegration {
         //  Fluid Drawers
         if (Mods.FluidDrawers.isModLoaded()) {
             FluidDrawersRecipeLoader.init();
+        }
+
+        //  Future MC
+        if (Mods.FutureMC.isModLoaded()) {
+            FutureMCRecipeLoader.init();
         }
 
         //  GregTech

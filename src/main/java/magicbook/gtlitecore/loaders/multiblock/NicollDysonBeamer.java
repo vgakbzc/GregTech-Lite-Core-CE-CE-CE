@@ -620,7 +620,7 @@ public class NicollDysonBeamer {
                 .input(swarm, Eternity, 2)
                 .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
                 .fluidInputs(Magmatter.getFluid(L))
-                .output(plateDense, Magmatter)
+                .output(plateDouble, Magmatter)
                 .EUt(VA[MAX])
                 .duration(20)
                 .tier(3)

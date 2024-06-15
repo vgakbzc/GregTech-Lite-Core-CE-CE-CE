@@ -12,6 +12,7 @@ import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
 import gregtech.api.metatileentity.multiblock.MultiblockAbility;
+import gregtech.api.metatileentity.multiblock.MultiblockDisplayText;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
@@ -22,6 +23,7 @@ import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.recipes.recipeproperties.TemperatureProperty;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.TextComponentUtil;
 import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.ConfigHolder;
@@ -37,6 +39,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -48,6 +52,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.UV;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
 
 public class MetaTileEntityMegaBlastFurnace extends RecipeMapMultiblockController implements IHeatingCoil {
 
@@ -276,6 +281,23 @@ public class MetaTileEntityMegaBlastFurnace extends RecipeMapMultiblockControlle
         blastFurnaceTemperature = 0;
         heatingCoilLevel = 0;
         heatingCoilDiscount = 0;
+    }
+
+    @Override
+    protected void addDisplayText(List<ITextComponent> textList) {
+        MultiblockDisplayText.builder(textList, this.isStructureFormed())
+                .setWorkingStatus(this.recipeMapWorkable.isWorkingEnabled(), this.recipeMapWorkable.isActive())
+                .addEnergyUsageLine(this.getEnergyContainer())
+                .addEnergyTierLine(GTUtility.getTierByVoltage(this.recipeMapWorkable.getMaxVoltage()))
+                .addCustom((tl) -> {
+                    if (this.isStructureFormed()) {
+                        ITextComponent heatString = TextComponentUtil.stringWithColor(TextFormatting.RED,
+                                formatNumbers(this.blastFurnaceTemperature) + "K");
+                        tl.add(TextComponentUtil.translationWithColor(TextFormatting.GRAY, "gregtech.multiblock.blast_furnace.max_temperature", heatString));
+                    }})
+                .addParallelsLine(this.recipeMapWorkable.getParallelLimit())
+                .addWorkingStatusLine()
+                .addProgressLine(this.recipeMapWorkable.getProgressPercent());
     }
 
     protected static class MegaBlastFurnaceRecipeLogic extends HeatingCoilRecipeLogic {
