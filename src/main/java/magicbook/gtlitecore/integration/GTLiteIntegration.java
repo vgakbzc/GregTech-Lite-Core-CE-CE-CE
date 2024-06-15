@@ -10,6 +10,8 @@ import magicbook.gtlitecore.integration.chisel.ChiselMiscRecipes;
 import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
 import magicbook.gtlitecore.integration.ironchest.IronChestRecipeLoader;
+import magicbook.gtlitecore.integration.snad.SnadRecipeLoader;
+import magicbook.gtlitecore.integration.storagedrawers.StorageDrawersMiscRecipes;
 import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeFluidOutputInfoProvider;
 import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeItemOutputInfoProvider;
 import mcjty.theoneprobe.TheOneProbe;
@@ -62,6 +64,15 @@ public class GTLiteIntegration {
             IronChestRecipeLoader.init();
         }
 
+        //  Snad
+        if (Mods.Snad.isModLoaded()) {
+            SnadRecipeLoader.init();
+        }
+
+        //  Storage Drawers
+        if (Mods.StorageDrawers.isModLoaded()) {
+            StorageDrawersMiscRecipes.init();
+        }
     }
 
 

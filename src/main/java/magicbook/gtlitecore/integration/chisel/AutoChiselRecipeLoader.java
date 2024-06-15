@@ -11,7 +11,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import team.chisel.api.carving.CarvingUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -21,6 +20,7 @@ import static gregtech.api.GTValues.VH;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.AUTO_CHISEL_RECIPES;
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
+import static magicbook.gtlitecore.integration.chisel.ChiselGroupHelper.addGroup;
 
 public class AutoChiselRecipeLoader {
 
@@ -415,16 +415,4 @@ public class AutoChiselRecipeLoader {
                 .buildAndRegister());
     }
 
-    public static void addGroup(String groupName) {
-        CarvingUtils.getChiselRegistry().addGroup(CarvingUtils.getDefaultGroupFor(groupName));
-    }
-
-    public static void addVariation(String groupName, ItemStack stack) {
-        CarvingUtils.getChiselRegistry().addVariation(groupName, CarvingUtils.variationFor(stack, stack.getItemDamage()));
-        OreDictionary.registerOre(groupName, stack);
-    }
-
-    public static void removeVariation(ItemStack stack, String groupName) {
-        CarvingUtils.getChiselRegistry().removeVariation(stack, groupName);
-    }
 }

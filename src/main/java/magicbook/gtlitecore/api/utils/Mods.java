@@ -65,6 +65,9 @@ public enum Mods {
      */
     NeevesAE2Addition("nae2"),
 
+    Snad("snad"),
+    StorageDrawers("storagedrawers"),
+
     TheOneProbe("theoneprobe"),
     TOPAddons("topaddons");
 
