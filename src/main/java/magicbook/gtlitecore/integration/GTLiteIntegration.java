@@ -3,15 +3,19 @@ package magicbook.gtlitecore.integration;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
-import magicbook.gtlitecore.integration.architecturecraft.ArchitectureCraftMiscRecipes;
+import magicbook.gtlitecore.integration.architecturecraft.ArchitectureCraftRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.AutoChiselRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMachineRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMiscRecipes;
+import magicbook.gtlitecore.integration.fluiddrawers.FluidDrawersRecipeLoader;
 import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
 import magicbook.gtlitecore.integration.ironchest.IronChestRecipeLoader;
+import magicbook.gtlitecore.integration.littletiles.LittleTilesRecipeLoader;
+import magicbook.gtlitecore.integration.naturescompass.NaturesCompassRecipeLoader;
 import magicbook.gtlitecore.integration.snad.SnadRecipeLoader;
 import magicbook.gtlitecore.integration.storagedrawers.StorageDrawersMiscRecipes;
+import magicbook.gtlitecore.integration.supersoundmuffler.SuperSoundMufflerRecipeLoader;
 import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeFluidOutputInfoProvider;
 import magicbook.gtlitecore.integration.theoneprobe.provider.RecipeItemOutputInfoProvider;
 import mcjty.theoneprobe.TheOneProbe;
@@ -20,14 +24,13 @@ import mcjty.theoneprobe.api.ITheOneProbe;
 public class GTLiteIntegration {
 
     public static void onInit() {
+
         //  The One Probe Integration
-        if (Mods.TheOneProbe.isModLoaded()) {
-            if (GTLiteConfigHolder.compats.enableTOPModule) {
+        if (Mods.TheOneProbe.isModLoaded() && GTLiteConfigHolder.compats.enableTOPModule) {
                 GTLiteLog.logger.info("Registering The One Probe Integration...");
                 ITheOneProbe oneProbe = TheOneProbe.theOneProbeImp;
                 oneProbe.registerProvider(new RecipeItemOutputInfoProvider());
                 oneProbe.registerProvider(new RecipeFluidOutputInfoProvider());
-            }
         }
     }
 
@@ -35,7 +38,7 @@ public class GTLiteIntegration {
 
         //  Architecture Craft
         if (Mods.ArchitectureCraft.isModLoaded()) {
-            ArchitectureCraftMiscRecipes.init();
+            ArchitectureCraftRecipeLoader.init();
         }
 
         //  Chisel
@@ -46,6 +49,11 @@ public class GTLiteIntegration {
 
         if (Mods.Chisel.isModLoaded()) {
             ChiselMiscRecipes.init();
+        }
+
+        //  Fluid Drawers
+        if (Mods.FluidDrawers.isModLoaded()) {
+            FluidDrawersRecipeLoader.init();
         }
 
         //  Gregicality Multiblocks
@@ -64,6 +72,16 @@ public class GTLiteIntegration {
             IronChestRecipeLoader.init();
         }
 
+        //  Little Tiles
+        if (Mods.LittleTiles.isModLoaded()) {
+            LittleTilesRecipeLoader.init();
+        }
+
+        //  Natures Compass
+        if (Mods.NaturesCompass.isModLoaded()) {
+            NaturesCompassRecipeLoader.init();
+        }
+
         //  Snad
         if (Mods.Snad.isModLoaded()) {
             SnadRecipeLoader.init();
@@ -72,6 +90,11 @@ public class GTLiteIntegration {
         //  Storage Drawers
         if (Mods.StorageDrawers.isModLoaded()) {
             StorageDrawersMiscRecipes.init();
+        }
+
+        //  Super Sound Muffler
+        if (Mods.SuperSoundMuffler.isModLoaded()) {
+            SuperSoundMufflerRecipeLoader.init();
         }
     }
 

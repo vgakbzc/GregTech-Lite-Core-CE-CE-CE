@@ -17,6 +17,8 @@ import java.util.function.Function;
 @SuppressWarnings("unused")
 public enum Mods {
 
+    //  Sort By first letter (A to Z).
+
     ActuallyAdditions("actuallyadditions"),
     AppliedEnergistics2("appliedenergistics2"),
     ArchitectureCraft("architecturecraft"),
@@ -41,22 +43,25 @@ public enum Mods {
      */
     EpimorphismCore("epcore"),
 
+    FluidDrawers("fluiddrawers"),
+
     GregTech("gregtech"),
     GregTechLiteCore("gtlitecore"),
     GregTechFoodOption("gregtechfoodoption"),
     GregicalityMultiblocks("gcym"),
-
     /**
      * TODO Add {@link #extraCheck} to hint player this mod is incompat,
      *      because {@code gtlitecore} is inheritor of {@code gcys},
      *      and {@code gtlitecore} use the same Mod Name of {@code gcys}.
      */
     GregicalityScience("gcys"),
-
     GroovyScript("groovyscript"),
 
     IronChest("ironchest"),
 
+    LittleTiles("littletiles"),
+
+    NaturesCompass("naturescompass"),
     /**
      * TODO Add {@link #extraCheck} to hint player this mod is incompat,
      *      because in GregTech Lite Modpack, this mod use special version,
@@ -67,6 +72,7 @@ public enum Mods {
 
     Snad("snad"),
     StorageDrawers("storagedrawers"),
+    SuperSoundMuffler("supersoundmuffler"),
 
     TheOneProbe("theoneprobe"),
     TOPAddons("topaddons");
