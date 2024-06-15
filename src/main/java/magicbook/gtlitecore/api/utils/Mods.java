@@ -26,6 +26,7 @@ public enum Mods {
     Chisel("chisel"),
     ConnectedTexturesMod("ctm"),
     ContentTweaker("contenttweaker"),
+    CraftingStation("craftingstation"),
     CraftTweaker("crafttweaker"),
 
     EnderCore("endercore"),
@@ -72,6 +73,8 @@ public enum Mods {
      *      do not use common version to change this Mod.
      */
     NeevesAE2Addition("nae2"),
+
+    PackagedAuto("packagedauto"),
 
     Snad("snad"),
     StorageDrawers("storagedrawers"),

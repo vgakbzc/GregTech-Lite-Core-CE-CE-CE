@@ -16,6 +16,7 @@ import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
 import magicbook.gtlitecore.integration.ironchest.IronChestRecipeLoader;
 import magicbook.gtlitecore.integration.littletiles.LittleTilesRecipeLoader;
 import magicbook.gtlitecore.integration.naturescompass.NaturesCompassRecipeLoader;
+import magicbook.gtlitecore.integration.packagedauto.PackagedAutoRecipeLoader;
 import magicbook.gtlitecore.integration.snad.SnadRecipeLoader;
 import magicbook.gtlitecore.integration.storagedrawers.StorageDrawersMiscRecipes;
 import magicbook.gtlitecore.integration.supersoundmuffler.SuperSoundMufflerRecipeLoader;
@@ -99,6 +100,11 @@ public class GTLiteIntegration {
         //  Natures Compass
         if (Mods.NaturesCompass.isModLoaded()) {
             NaturesCompassRecipeLoader.init();
+        }
+
+        //  Packaged Auto
+        if (Mods.PackagedAuto.isModLoaded()) {
+            PackagedAutoRecipeLoader.init();
         }
 
         //  Snad
