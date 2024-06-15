@@ -61,7 +61,7 @@ public class GTLiteCore {
     @Mod.EventHandler
     public void onInit(FMLInitializationEvent event) {
         GTLiteLog.logger.info("Registering Integration Modules...");
-        GTLiteIntegration.init();
+        GTLiteIntegration.onInit();
         MinecraftForge.EVENT_BUS.register(new WirelessEnergyNetworkWorldSavedData());
     }
 }

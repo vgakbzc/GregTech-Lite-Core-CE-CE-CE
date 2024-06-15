@@ -16,6 +16,7 @@ import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GTLiteBehaviorAddition;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
+import magicbook.gtlitecore.integration.GTLiteIntegration;
 import magicbook.gtlitecore.loaders.MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
@@ -263,7 +264,8 @@ public class CommonProxy {
         MetaTileEntityLargeChemicalComplex.CatalystWorkableHandler.addCatalyst();
 
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
-        RecipeManager.init();
+        RecipeManager.registerRecipes();
+        GTLiteIntegration.registerRecipes();
     }
 
     /**

@@ -85,6 +85,7 @@ public class GTLiteMaterialFlagAddition {
         Molybdenum.addFlags(GENERATE_DOUBLE_PLATE);
         VanadiumGallium.addFlags(GENERATE_DOUBLE_PLATE);
         RutheniumTriniumAmericiumNeutronate.addFlags(GENERATE_DOUBLE_PLATE);
+        Iron.addFlags(GENERATE_DOUBLE_PLATE);
 
         //  Dense
         Steel.addFlags(GENERATE_DENSE);

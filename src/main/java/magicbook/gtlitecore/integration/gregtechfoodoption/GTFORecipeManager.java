@@ -6,6 +6,12 @@ public class GTFORecipeManager {
 
     private GTFORecipeManager() {}
 
+    public static void init() {
+        GTFOMachineRecipeLoader.init();
+        GTFOMiscRecipes.init();
+        GTFOOverrideRecipeLoader.init();
+    }
+
     public static void initChains() {
         MineralWaterChain.init();
     }

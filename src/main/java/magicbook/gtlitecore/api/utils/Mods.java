@@ -55,6 +55,8 @@ public enum Mods {
 
     GroovyScript("groovyscript"),
 
+    IronChest("ironchest"),
+
     /**
      * TODO Add {@link #extraCheck} to hint player this mod is incompat,
      *      because in GregTech Lite Modpack, this mod use special version,
