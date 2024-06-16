@@ -3,6 +3,7 @@ package magicbook.gtlitecore.integration;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
+import magicbook.gtlitecore.integration.appliedenergistics2.AE2RecipeLoader;
 import magicbook.gtlitecore.integration.architecturecraft.ArchitectureCraftRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.AutoChiselRecipeLoader;
 import magicbook.gtlitecore.integration.chisel.ChiselMachineRecipeLoader;
@@ -40,6 +41,11 @@ public class GTLiteIntegration {
     }
 
     public static void registerRecipes() {
+
+        //  Applied Energistics 2
+        if (Mods.AppliedEnergistics2.isModLoaded()) {
+            AE2RecipeLoader.init();
+        }
 
         //  Architecture Craft
         if (Mods.ArchitectureCraft.isModLoaded()) {

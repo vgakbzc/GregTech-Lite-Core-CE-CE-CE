@@ -37,14 +37,14 @@ public enum Mods {
     EnderIOAE2Conduits("enderioconduitsappliedenergistics"),
     EnderStorage("enderstorage"),
     EnderUtilities("enderutilities"),
-    ExtraUtilities2("extrautils2"),
-
     /**
      * TODO Add {@link #extraCheck} to hint player this mod is incompat,
      *      because {@code epcore} (1.12.2) is a longterm unmaintained mod,
      *      this mod is also my mod (I am one of authors).
      */
     EpimorphismCore("epcore"),
+    ExtendedAE("extendedae"),
+    ExtraUtilities2("extrautils2"),
 
     FluidDrawers("fluiddrawers"),
     FutureMC("futuremc"),
@@ -63,6 +63,7 @@ public enum Mods {
 
     IronChest("ironchest"),
 
+    LazyAE2("threng"),
     LittleTiles("littletiles"),
 
     NaturesCompass("naturescompass"),
