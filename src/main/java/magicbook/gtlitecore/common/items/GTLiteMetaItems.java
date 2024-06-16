@@ -145,6 +145,9 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem SILICON_NITRIDE_FIBER;
     public static MetaItem<?>.MetaValueItem SILICON_NITRIDE_FIBER_MESH;
     public static MetaItem<?>.MetaValueItem ELECTRICAL_SILICON_NITRIDE_FILM;
+    public static MetaItem<?>.MetaValueItem CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT;
+    public static MetaItem<?>.MetaValueItem PHOTON_SHIELDING_CONTAINMENT_UNIT;
+    public static MetaItem<?>.MetaValueItem QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER;
 
     public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;

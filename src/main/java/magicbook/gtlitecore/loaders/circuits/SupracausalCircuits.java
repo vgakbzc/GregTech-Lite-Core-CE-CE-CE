@@ -249,12 +249,67 @@ public class SupracausalCircuits {
 
     private static void SoC() {
 
-        ElectricalSiliconNitrideFilmChain();
+        ElectricalSiliconNitrideFilm();
 
+        //  Coated Photonic Crystal Film
+
+        //  Quantum Amplitude Squeezed Light Stabilizer
+
+        /*
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(PHOTON_SHIELDING_CONTAINMENT_UNIT)
+                .input(COATED_PHOTONIC_CRYSTAL_FILM)
+                .input(plate, GalliumNitride, 2)
+                .input(plate, EnrichedNaquadahAlloy, 2)
+                .input(SENSOR_OpV)
+                .input(lens, Zircophyllite)
+                .input(OPTICAL_LASER_CONTROL_UNIT)
+                .input(ROTATING_TRANSPARENT_SURFACE)
+                .input(RYDBERG_SPINORIAL_ASSEMBLY)
+                .input(PHOTON, 4)
+                .input(BATTERY_MAX_LANTHANUM_NICKEL_OXIDE)
+                .input(PIEZOELECTRIC_CRYSTAL, 8)
+                .input(TOPOLOGICAL_INSULATOR_TUBE, 2)
+                .input(OPTICAL_FIBER, 16)
+                .fluidInputs(HalogenMixture.getFluid(16000))
+                .fluidInputs()
+                .fluidInputs()
+                .fluidInputs()
+                .output(QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER)
+                .EUt(VA[OpV])
+                .duration(SECOND)
+                .stationResearch()
+         */
+
+        //  Closed Lightlike Curve Receive Unit
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRICAL_SILICON_NITRIDE_FILM)
+                .input(plate, Botmium, 2)
+                .input(plate, Graphene, 2)
+                .input(QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER)
+                .input(NUCLEAR_CLOCK)
+                .input(CRYOGENIC_INTERFACE, 2)
+                .input(X_RAY_LASER)
+                .input(swarm, Solarium, 4)
+                .input(FEMTO_PIC_CHIP, 16)
+                .input(foil, NaquadahAlloy, 24)
+                .input(bolt, SuperheavyHAlloy, 8)
+                .fluidInputs(Glowstone.getFluid(30000))
+                .fluidInputs(ElectrolyteReflectorMixture.getFluid(6000))
+                .fluidInputs(CosmicComputingMixture.getFluid(2000))
+                .fluidInputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(L * 4))
+                .output(CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT)
+                .EUt(VA[OpV])
+                .duration(2 * SECOND)
+                .stationResearch(b -> b
+                        .researchStack(CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT.getStackForm())
+                        .CWUt(1024)
+                        .EUt(VA[OpV]))
+                .buildAndRegister();
 
     }
 
-    private static void ElectricalSiliconNitrideFilmChain() {
+    private static void ElectricalSiliconNitrideFilm() {
 
         //  CH3Cl3Si + 2H -> SiCl2H2 + CH3Cl
         CHEMICAL_RECIPES.recipeBuilder()
