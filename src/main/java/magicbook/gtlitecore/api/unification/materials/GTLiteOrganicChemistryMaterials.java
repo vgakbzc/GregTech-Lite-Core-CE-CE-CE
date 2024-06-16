@@ -1722,6 +1722,13 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("(C2H5)2O", true);
+
+        //  13206 Dichlorosilane
+        Dichlorosilane = new Material.Builder(getID(), gregtechId("dichlorosilane"))
+                .liquid()
+                .color(0x738449)
+                .components(Silicon, 1, Chlorine, 2, Hydrogen, 2)
+                .build();
     }
 
 }

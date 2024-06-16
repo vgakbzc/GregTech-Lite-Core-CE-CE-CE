@@ -1084,6 +1084,20 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[MAX], 20)
                         .vacuumStats(VA[MAX], 10))
                 .build();
+
+        //  12081 Enriched Holmium
+        EnrichedHolmium = new Material.Builder(getID(), gregtechId("enriched_holmium"))
+                .ingot()
+                .fluid()
+                .color(0x1264FF)
+                .iconSet(METALLIC)
+                .components(NaquadahEnriched, 8, Holmium, 2)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .blast(b -> b
+                        .temp(11000, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 140)
+                        .vacuumStats(VA[UHV], 70))
+                .build();
     }
 
 }

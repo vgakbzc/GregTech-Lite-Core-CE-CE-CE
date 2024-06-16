@@ -759,6 +759,11 @@ metaitem.component.cosmic.rotating_transparent_surface.name=周期性旋转全�
 metaitem.component.cosmic.rotating_transparent_surface.tooltip=透明旋转液晶屏幕
 metaitem.component.cosmic.universal_soc.name=寰宇SoC
 metaitem.component.cosmic.universal_soc.tooltip=宇宙信息辅助计算电路
+
+metaitem.component.supracausal.silicon_nitride_fiber.name=氮化硅纤维
+metaitem.component.supracausal.silicon_nitride_fiber_mesh.name=氮化硅纤维网
+metaitem.component.supracausal.electrical_silicon_nitride_film.name=电子级氮化硅薄膜
+
 metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
 metaitem.component.crystal.diamond_chip.tooltip=待处理晶体逻辑电路
@@ -3038,6 +3043,7 @@ gregtech.material.fluorocarborane=氟碳硼烷
 gregtech.material.raw_tengam=生镃
 gregtech.material.tengam=镃
 gregtech.material.attuned_tengam=谐镃
+gregtech.material.silicon_nitride=氮化硅
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3120,6 +3126,7 @@ gregtech.material.duraluminium_alloy=硬铝合金65A
 gregtech.material.artherium_b_47=艾瑟瑞姆合金-B47
 gregtech.material.enriched_naquadah_alloy=富集硅岩合金
 gregtech.material.cosmic_matter_superconductor=宇宙物质超导体
+gregtech.material.enriched_holmium=富集钬
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -3327,6 +3334,7 @@ gregtech.material.borane_dimethylsulfide=硼烷二甲硫醚（BMS）
 gregtech.material.decaborane=癸硼烷
 gregtech.material.boron_trifluoride_etherate=三氟化硼乙醚（BTE）
 gregtech.material.diethyl_ether=二乙醚
+gregtech.material.dichlorosilane=二氯硅烷
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子

@@ -142,6 +142,9 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COLORED_LEDS;
     public static MetaItem<?>.MetaValueItem ROTATING_TRANSPARENT_SURFACE;
     public static MetaItem<?>.MetaValueItem UNIVERSAL_SOC;
+    public static MetaItem<?>.MetaValueItem SILICON_NITRIDE_FIBER;
+    public static MetaItem<?>.MetaValueItem SILICON_NITRIDE_FIBER_MESH;
+    public static MetaItem<?>.MetaValueItem ELECTRICAL_SILICON_NITRIDE_FILM;
 
     public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;

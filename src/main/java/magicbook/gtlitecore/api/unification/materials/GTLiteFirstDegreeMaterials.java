@@ -2552,5 +2552,13 @@ public class GTLiteFirstDegreeMaterials {
 
         Tengam.getProperty(PropertyKey.INGOT).setMagneticMaterial(AttunedTengam);
 
+        //  11288 Silicon Nitride
+        SiliconNitride = new Material.Builder(getID(), gregtechId("silicon_nitride"))
+                .dust()
+                .color(0x8C7BB6)
+                .iconSet(SHINY)
+                .flags(GENERATE_PLATE)
+                .components(Silicon, 3, Nitrogen, 4)
+                .build();
     }
 }

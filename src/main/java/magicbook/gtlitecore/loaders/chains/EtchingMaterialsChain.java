@@ -79,6 +79,7 @@ public class EtchingMaterialsChain {
 
         //  CH3Cl3Si + 3CH4O -> CH3Si(CH3O)3 + 3HCl
         CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(1)
                 .fluidInputs(Methyltrichlorosilane.getFluid(1000))
                 .fluidInputs(Methanol.getFluid(3000))
                 .fluidOutputs(Methyltrimethoxysilane.getFluid(1000))

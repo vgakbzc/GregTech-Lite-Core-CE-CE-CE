@@ -372,6 +372,7 @@ public class GTLiteMaterials {
     public static Material RawTengam;
     public static Material Tengam;
     public static Material AttunedTengam;
+    public static Material SiliconNitride;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -460,6 +461,7 @@ public class GTLiteMaterials {
     public static Material ArtheriumB47;
     public static Material EnrichedNaquadahAlloy;
     public static Material CosmicMatterSuperconductor;
+    public static Material EnrichedHolmium;
 
     ///////////////////////////////////
     //  Organic Chemistry Materials  //
@@ -671,6 +673,7 @@ public class GTLiteMaterials {
     public static Material Decaborane;
     public static Material BoronTrifluorideEtherate;
     public static Material DiethylEther;
+    public static Material Dichlorosilane;
 
     /////////////////////////////
     //  Higher Degree Materials  //

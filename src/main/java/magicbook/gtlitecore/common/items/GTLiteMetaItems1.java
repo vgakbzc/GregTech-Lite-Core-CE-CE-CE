@@ -430,8 +430,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         ROTATING_TRANSPARENT_SURFACE = this.addItem(134, "component.cosmic.rotating_transparent_surface");
         UNIVERSAL_SOC = this.addItem(135, "component.cosmic.universal_soc");
 
-        //  Free ID 136-148
-        //  TODO Supracausal SoC and some related things.
+        //  ID 136-148: Supracausal SoC Components
+        SILICON_NITRIDE_FIBER = this.addItem(136, "component.supracausal.silicon_nitride_fiber");
+        SILICON_NITRIDE_FIBER_MESH = this.addItem(137, "component.supracausal.silicon_nitride_fiber_mesh");
+        ELECTRICAL_SILICON_NITRIDE_FILM = this.addItem(138, "component.supracausal.electrical_silicon_nitride_film");
 
         //  ID 149: Primitive Circuit Component
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");

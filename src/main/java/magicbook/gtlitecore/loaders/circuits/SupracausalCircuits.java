@@ -4,8 +4,7 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.unification.material.Materials.Neutronium;
-import static gregtech.api.unification.material.Materials.SolderingAlloy;
+import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
@@ -21,6 +20,7 @@ public class SupracausalCircuits {
         CircuitBoard();
         CircuitComponent();
         SMDs();
+        SoC();
         Circuits();
     }
 
@@ -243,6 +243,74 @@ public class SupracausalCircuits {
                 .output(SUPRACAUSAL_INDUCTOR, 32)
                 .EUt(VA[UIV])
                 .duration(8 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
+
+    private static void SoC() {
+
+        ElectricalSiliconNitrideFilmChain();
+
+
+    }
+
+    private static void ElectricalSiliconNitrideFilmChain() {
+
+        //  CH3Cl3Si + 2H -> SiCl2H2 + CH3Cl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .fluidInputs(Methyltrichlorosilane.getFluid(1000))
+                .fluidInputs(Hydrogen.getFluid(2000))
+                .fluidOutputs(Dichlorosilane.getFluid(1000))
+                .fluidOutputs(Chloromethane.getFluid(1000))
+                .EUt(VA[HV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  3SiCl2H2 + 4HNO3 + 3Xe (plasma) -> Si3N4 + 3H2XeO4 + 4HCl + 2Cl
+        PLASMA_CVD_UNIT_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_PLATE)
+                .fluidInputs(Dichlorosilane.getFluid(3000))
+                .fluidInputs(NitricAcid.getFluid(4000))
+                .fluidInputs(Xenon.getPlasma(3000))
+                .output(plate, SiliconNitride)
+                .fluidOutputs(XenicAcid.getFluid(3000))
+                .fluidOutputs(HydrochloricAcid.getFluid(4000))
+                .fluidOutputs(Chlorine.getFluid(2000))
+                .EUt(VA[UEV])
+                .duration((int) (2.5 * SECOND))
+                .temperature(1250)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Si3N4 -> Silicon Nitride Fiber
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_EXTRUDER_WIRE)
+                .input(dust, SiliconNitride)
+                .fluidInputs(SilicaGelBase.getFluid(1000))
+                .output(SILICON_NITRIDE_FIBER)
+                .EUt(VA[IV])
+                .duration((int) (3.5 * SECOND))
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Silicon Nitride Fiber -> Silicon Nitride Fiber Mesh
+        COMPRESSOR_RECIPES.recipeBuilder()
+                .input(SILICON_NITRIDE_FIBER, 2)
+                .output(SILICON_NITRIDE_FIBER_MESH)
+                .EUt(VA[HV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  Silicon Nitride Fiber Mesh -> Electrical Silicon Nitride Film
+        ION_IMPLANTATOR_RECIPES.recipeBuilder()
+                .notConsumable(ELECTRON_SOURCE)
+                .input(SILICON_NITRIDE_FIBER_MESH)
+                .input(foil, EnrichedHolmium, 4)
+                .fluidInputs(FreeElectronGas.getFluid(1000))
+                .output(ELECTRICAL_SILICON_NITRIDE_FILM)
+                .EUt(VA[UHV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
