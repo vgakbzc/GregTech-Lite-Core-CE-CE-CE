@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.loaders.circuits;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
+import gregtech.common.blocks.MetaBlocks;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
@@ -8,6 +9,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
+import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -396,7 +398,179 @@ public class SupracausalCircuits {
      */
     private static void CoatedPhotonicCrystalFilm() {
 
+        // ------------------------- (CH3)2C6H4COC(N(C2H4)2O)CH3S processing -------------------------
+
+        //  HOCH2CH2NH2 + H2SO4 + 2CO -> (C2H4)2ONH + SO3 + 3O
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(Ethanolamine.getFluid(1000))
+                .fluidInputs(SulfuricAcid.getFluid(1000))
+                .fluidInputs(CarbonMonoxide.getFluid(2000))
+                .fluidOutputs(Morpholine.getFluid(1000))
+                .fluidOutputs(SulfurTrioxide.getFluid(1000))
+                .fluidOutputs(Oxygen.getFluid(3000))
+                .EUt(VA[EV])
+                .duration(7 * SECOND)
+                .temperature(1784)
+                .buildAndRegister();
+
+        //  (CH3)2CHCO2H + SOCl2 -> (CH3)2CHCOCl + SO2 + HCl
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(IsobutyricAcid.getFluid(1000))
+                .fluidInputs(ThionylChloride.getFluid(1000))
+                .fluidOutputs(IsobutyrylChloride.getFluid(1000))
+                .fluidOutputs(SulfurDioxide.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[MV])
+                .duration((int) (3.5 * SECOND))
+                .temperature(1980)
+                .buildAndRegister();
+
+        //  (CH3)2CHCOCl + C6H5Cl -> (CH3)2C6H4COCHCl + HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .notConsumable(dust, AluminiumTrichloride)
+                .fluidInputs(IsobutyrylChloride.getFluid(1000))
+                .fluidInputs(Chlorobenzene.getFluid(1000))
+                .fluidOutputs(ChlorophenylIsopropylketone.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[IV])
+                .duration((int) (2.8 * SECOND))
+                .buildAndRegister();
+
+        //  H2S + CH4O -> CH3SH + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .fluidInputs(HydrogenSulfide.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(1000))
+                .fluidOutputs(MethylMercaptan.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[HV])
+                .duration((int) (4.5 * SECOND))
+                .buildAndRegister();
+
+        //  (CH3)2C6H4COCHCl + CH3SH + NaOH -> (CH3)2C6H4COCHCH3S + NaCl + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodiumHydroxide, 3)
+                .fluidInputs(ChlorophenylIsopropylketone.getFluid(1000))
+                .fluidInputs(MethylMercaptan.getFluid(1000))
+                .output(dust, Salt, 2)
+                .fluidOutputs(MethylthiophenylIsopropylketone.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[UV])
+                .duration((int) (2.4 * SECOND))
+                .buildAndRegister();
+
+        //  (CH3)2C6H4COCHCH3S + Cl -> (CH3)2C6H4COCClCH3S + HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(MethylthiophenylIsopropylketone.getFluid(1000))
+                .fluidInputs(Chlorine.getFluid(1000))
+                .fluidOutputs(MethylMethylthiophenylChloroAcetone.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[UHV])
+                .duration((int) (1.2 * SECOND))
+                .buildAndRegister();
+
+        //  (CH3)2C6H4COCClCH3S + CH3OK -> (CH3)2C6H4C(OCH3)OCCH3S + KCl
+        //  As solution, CH4O is cycled by the next step, and it is lossless.
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumFormate, 6)
+                .fluidInputs(MethylMethylthiophenylChloroAcetone.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(1000))
+                .output(dust, RockSalt, 2)
+                .fluidOutputs(MethylMethylthiophenylMethoxyEpoxypropane.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(3 * SECOND)
+                .buildAndRegister();
+
+        //  (CH3)2C6H4C(OCH3)OCCH3S + (C2H4)2ONH -> (CH3)2C6H4COC(N(C2H4)2O)CH3S + CH4O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(MethylMethylthiophenylMethoxyEpoxypropane.getFluid(1000))
+                .fluidInputs(Morpholine.getFluid(1000))
+                .fluidOutputs(MethylMethylthiophenylMorpholinAcetone.getFluid(1000))
+                .fluidOutputs(Methanol.getFluid(1000))
+                .EUt(VA[UEV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        // -------------------------------- (CH3)2C6H5COCOH processing -------------------------------
+
+        //  (CH3)2CHCOCl + C6H6 -> (CH3)2C6H5COCH + HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .notConsumable(dust, AluminiumTrichloride)
+                .fluidInputs(IsobutyrylChloride.getFluid(1000))
+                .fluidInputs(Benzene.getFluid(1000))
+                .fluidOutputs(Phenylisopropylketone.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[IV])
+                .duration((int) (1.4 * SECOND))
+                .buildAndRegister();
+
+        //  (CH3)2C6H5COCH + 2Cl -> (CH3)2C6H5COCCl + HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(Phenylisopropylketone.getFluid(1000))
+                .fluidInputs(Chlorine.getFluid(2000))
+                .fluidOutputs(ChloroMethylPhenylAcetone.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[EV])
+                .duration((int) (2.8 * SECOND))
+                .buildAndRegister();
+
+        //  (CH3)2C6H5COCCl + NaOH -> (CH3)2C6H5COCOH + (NaCl)(H2O)
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, SodiumHydroxide, 3)
+                .fluidInputs(ChloroMethylPhenylAcetone.getFluid(1000))
+                .fluidOutputs(HydroxyMethylPhenylAcetone.getFluid(1000))
+                .fluidOutputs(SaltWater.getFluid(1000))
+                .EUt(VA[IV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        // ------------------------------ C6H5COC(OCH3)2C6H5 processing ------------------------------
+
+        //  2C7H6O -> C6H5COCHOHC6H5
+        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+                .notConsumable(SodiumCyanide.getItemStack())
+                .fluidInputs(Benzaldehyde.getFluid(2000))
+                .fluidOutputs(Benzoin.getFluid(1000))
+                .EUt(VA[LuV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  C6H5COCHOHC6H5 -> (C6H5CO)2 + 2H
+        CENTRIFUGE_RECIPES.recipeBuilder()
+                .fluidInputs(Benzoin.getFluid(1000))
+                .fluidOutputs(Diphenylethylketone.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(2000))
+                .EUt(VA[EV])
+                .duration((int) (1.4 * SECOND))
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  (C6H5CO)2 + CH4O -> C6H5COC(OCH3)2C6H5 + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, CalciumChloride)
+                .fluidInputs(Diphenylethylketone.getFluid(1000))
+                .fluidInputs(Methanol.getFluid(1000))
+                .fluidOutputs(BenzoinDimethylEther.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[IV])
+                .duration((int) (3.5 * SECOND))
+                .buildAndRegister();
+
         //  Coated Photonic Crystal Film
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .input(plate, ArceusAlloy2B, 2)
+                .input(plate, ChargedCaesiumCeriumCobaltIndiumAlloy, 2)
+                .input(CHROMATIC_LENS)
+                .input(MetaBlocks.OPTICAL_PIPES[0], 4)
+                .fluidInputs(HydroxyMethylPhenylAcetone.getFluid(1000))
+                .fluidInputs(BenzoinDimethylEther.getFluid(1000))
+                .output(COATED_PHOTONIC_CRYSTAL_FILM, 2)
+                .EUt(VA[UEV])
+                .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
     }
 
     /**
@@ -610,7 +784,7 @@ public class SupracausalCircuits {
                 .input(MICROFOCUS_X_RAY_TUBE)
                 .input(plate, CubicZirconia, 2)
                 .input(ELECTRIC_PUMP_UEV)
-                .input(pipeSmallFluid, Duranium)
+                .input(pipeTinyFluid, Duranium)
                 .fluidInputs(NaquadahAlloy.getFluid(L * 4))
                 .output(LASER_COOLING_UNIT)
                 .EUt(VA[UHV])

@@ -687,6 +687,20 @@ public class GTLiteMaterials {
     public static Material TrimethylbenzoylChloride;
     public static Material TrimethylbenzoylDiphenylphosphine;
     public static Material TrimethylbenzoylDiphenylphosphineOxide;
+    public static Material Morpholine;
+    public static Material IsobutyrylChloride;
+    public static Material ChlorophenylIsopropylketone;
+    public static Material MethylMercaptan;
+    public static Material MethylthiophenylIsopropylketone;
+    public static Material MethylMethylthiophenylChloroAcetone;
+    public static Material MethylMethylthiophenylMethoxyEpoxypropane;
+    public static Material MethylMethylthiophenylMorpholinAcetone;
+    public static Material Phenylisopropylketone;
+    public static Material ChloroMethylPhenylAcetone;
+    public static Material HydroxyMethylPhenylAcetone;
+    public static Material Benzoin;
+    public static Material Diphenylethylketone;
+    public static Material BenzoinDimethylEther;
 
     /////////////////////////////
     //  Higher Degree Materials  //

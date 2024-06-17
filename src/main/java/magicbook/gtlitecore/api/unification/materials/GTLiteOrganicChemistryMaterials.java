@@ -186,7 +186,8 @@ public class GTLiteOrganicChemistryMaterials {
                 .liquid()
                 .color(Propene.getMaterialRGB() + Propadiene.getMaterialRGB())
                 .components(Carbon, 4, Hydrogen, 8, Oxygen, 2)
-                .build();
+                .build()
+                .setFormula("(CH3)2CHCO2H", true);
 
         //  13019 Isobutyric Anhydride
         IsobutyricAnhydride = new Material.Builder(getID(), gregtechId("isobutyric_anhydride"))
@@ -1834,10 +1835,137 @@ public class GTLiteOrganicChemistryMaterials {
         TrimethylbenzoylDiphenylphosphineOxide = new Material.Builder(getID(), gregtechId("trimethylbenzoyl_diphenylphosphine_oxide"))
                 .liquid()
                 .color(0xA16145)
-                .components()
+                .components(Carbon, 22, Hydrogen, 21, Oxygen, 2, Phosphorus, 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("(CH3)3C6H2COPO(C6H5)2", true);
+
+        //  13219 Morpholine
+        Morpholine = new Material.Builder(getID(), gregtechId("morpholine"))
+                .liquid()
+                .color(0xFF6FD4)
+                .components(Carbon, 4, Hydrogen, 9, Oxygen, 1, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C2H4)2ONH", true);
+
+        //  13220 Isobutyryl Chloride
+        IsobutyrylChloride = new Material.Builder(getID(), gregtechId("isobutyryl_chloride"))
+                .liquid()
+                .color(0xE191A9)
+                .components(Carbon, 4, Hydrogen, 7, Oxygen, 1, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2CHCOCl", true);
+
+        //  13221 p-Chlorophenyl Isopropylketone
+        ChlorophenylIsopropylketone = new Material.Builder(getID(), gregtechId("p_chlorophenyl_isopropylketone"))
+                .liquid()
+                .color(0x93D80D)
+                .components(Carbon, 10, Hydrogen, 11, Oxygen, 1, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H4COCHCl", true);
+
+        //  13222 Methyl Mercaptan
+        MethylMercaptan = new Material.Builder(getID(),  gregtechId("methyl_mercaptan"))
+                .gas()
+                .color(0x8B4842)
+                .components(Carbon, 1, Hydrogen, 4, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("CH3SH", true);
+
+        //  13223 p-Methylthiophenyl Isopropylketone
+        MethylthiophenylIsopropylketone = new Material.Builder(getID(), gregtechId("p_methylthiophenyl_isopropylketone"))
+                .liquid()
+                .color(0xC8B6D7)
+                .components(Carbon, 11, Hydrogen, 14, Oxygen, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H4COCHCH3S", true);
+
+        //  13224 2-Methyl-1-p-Methylthiophenyl-2-Chloro-1-Acetone
+        MethylMethylthiophenylChloroAcetone = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_chloro_acetone"))
+                .liquid()
+                .color(0x46F720)
+                .components(Carbon, 11, Hydrogen, 13, Oxygen, 1, Chlorine, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H4COCClCH3S", true);
+
+        //  13225 2-Methyl-1-p-Methylthiophenyl-1-Methoxy-1,2-Epoxypropane
+        MethylMethylthiophenylMethoxyEpoxypropane = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_methoxy_epoxypropane"))
+                .liquid()
+                .color(0x996699)
+                .components(Carbon, 12, Hydrogen, 16, Oxygen, 2, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H4C(OCH3)OCCH3S", true);
+
+        //  13226 2-Methyl-1-p-Methylthiophenyl-2-Morpholin-1-Acetone
+        MethylMethylthiophenylMorpholinAcetone = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_morpholin_acetone"))
+                .liquid()
+                .color(0xEBAFDB)
+                .components(Carbon, 15, Hydrogen, 21, Oxygen, 2, Nitrogen, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H4COC(N(C2H4)2O)CH3S", true);
+
+        //  13227 Phenylisopropylketone
+        Phenylisopropylketone = new Material.Builder(getID(), gregtechId("phenylisopropylketone"))
+                .liquid()
+                .color(0x145024)
+                .components(Carbon, 10, Hydrogen, 12, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H5COCH", true);
+
+        //  13228 2-Chloro-2-Methyl-1-Phenyl-1-Acetone
+        ChloroMethylPhenylAcetone = new Material.Builder(getID(), gregtechId("chloro_methyl_phenyl_acetone"))
+                .liquid()
+                .color(0xAF3476)
+                .components(Carbon, 10, Hydrogen, 11, Oxygen, 1, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H5COCCl", true);
+
+        //  13229 2-Hydroxy-2-Methyl-1-Phenyl-1-Acetone
+        HydroxyMethylPhenylAcetone = new Material.Builder(getID(), gregtechId("hydroxy_methyl_phenyl_acetone"))
+                .liquid()
+                .color(0xC38889)
+                .components(Carbon, 10, Hydrogen, 12, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H5COCOH", true);
+
+        //  13230 Benzoin
+        Benzoin = new Material.Builder(getID(), gregtechId("benzoin"))
+                .liquid()
+                .color(0x00FFB3)
+                .components(Carbon, 14, Hydrogen, 12, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H5COCHOHC6H5", true);
+
+        //  13231 Diphenylethylketone
+        Diphenylethylketone = new Material.Builder(getID(), gregtechId("diphenylethylketone"))
+                .liquid()
+                .color(0x00FF76)
+                .components(Carbon, 14, Hydrogen, 10, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C6H5CO)2", true);
+
+        //  13232 Benzoin Dimethyl Ether
+        BenzoinDimethylEther = new Material.Builder(getID(), gregtechId("benzoin_dimethyl_ether"))
+                .liquid()
+                .color(0xB6F5E4)
+                .components(Carbon, 16, Hydrogen, 16, Oxygen, 3)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H5COC(OCH3)2C6H5", true);
+
     }
 
 }

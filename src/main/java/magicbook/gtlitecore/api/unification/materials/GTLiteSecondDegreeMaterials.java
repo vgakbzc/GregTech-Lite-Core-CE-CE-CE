@@ -789,7 +789,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(15000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 353))
                 .components(Caesium, 1, Cerium, 1, Cobalt, 2, Indium, 10)
-                .flags(GENERATE_ROD, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12059 BETSPerrhenate

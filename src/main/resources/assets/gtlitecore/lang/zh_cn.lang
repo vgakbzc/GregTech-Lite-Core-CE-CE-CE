@@ -763,14 +763,14 @@ metaitem.component.cosmic.universal_soc.tooltip=宇宙信息辅助计算电路
 metaitem.component.supracausal.silicon_nitride_fiber.name=氮化硅纤维
 metaitem.component.supracausal.silicon_nitride_fiber_mesh.name=氮化硅纤维网
 metaitem.component.supracausal.electrical_silicon_nitride_film.name=电子级氮化硅薄膜
-metaitem.component.supracausal.closed_lightlike_curve_receive_unit.name=封闭类光曲线接收单元
-metaitem.component.supracausal.closed_lightlike_curve_receive_unit.tooltip=因果阐释者
 metaitem.component.supracausal.photon_shielding_containment_unit.name=光子屏蔽密闭外壳
 metaitem.component.supracausal.photon_shielding_containment_unit.toolipt=超级遏制外壳
 metaitem.component.supracausal.coated_photonic_crystal_film.name=镀层光电晶体薄膜
 metaitem.component.supracausal.coated_photonic_crystal_film.tooltip=光子吸收层
 metaitem.component.supracausal.quantum_amplitude_squeezed_light_stabilizer.name=量子振幅压缩光稳定器
 metaitem.component.supracausal.quantum_amplitude_squeezed_light_stabilizer.tooltip=物质界限维持器
+metaitem.component.supracausal.closed_lightlike_curve_receive_unit.name=封闭类光曲线接收单元
+metaitem.component.supracausal.closed_lightlike_curve_receive_unit.tooltip=因果阐释者
 
 metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
@@ -3360,6 +3360,20 @@ gregtech.material.trimethylbenzoic_acid=均三甲基苯甲酸
 gregtech.material.trimethylbenzoyl_chloride=均三甲基苯甲酰氯
 gregtech.material.trimethylbenzoyl_diphenylphosphine=2,4,6-(三甲基苯甲酰基)二苯基膦
 gregtech.material.trimethylbenzoyl_diphenylphosphine_oxide=2,4,6-(三甲基苯甲酰基)二苯基氧化膦（TBDO）
+gregtech.material.morpholine=吗啉
+gregtech.material.isobutyryl_chloride=异丁酰氯
+gregtech.material.p_chlorophenyl_isopropylketone=对氯苯基异丙基酮
+gregtech.material.methyl_mercaptan=甲硫醇
+gregtech.material.p_methylthiophenyl_isopropylketone=对甲硫基苯基异丙基酮（MTIK）
+gregtech.material.methyl_p_methylthiophenyl_chloro_acetone=2-甲基-1-对甲硫基苯基-2-氯-1-丙酮
+gregtech.material.methyl_p_methylthiophenyl_methoxy_epoxypropane=2-甲基-1-对甲硫基苯基-1-甲氧基-1,2-环氧丙烷
+gregtech.material.methyl_p_methylthiophenyl_morpholin_acetone=2-甲基-1-对甲硫基苯基-2-吗啉基-1-丙酮
+gregtech.material.phenylisopropylketone=苯基异丙基酮
+gregtech.material.chloro_methyl_phenyl_acetone=2-氯-2-甲基-1-苯基-1-丙酮
+gregtech.material.hydroxy_methyl_phenyl_acetone=2-羟基-2-甲基-1-苯基-1-丙酮（HMPA）
+gregtech.material.benzoin=安息香
+gregtech.material.diphenylethylketone=二苯乙二酮
+gregtech.material.benzoin_dimethyl_ether=安息香双甲醚（BDE）
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
