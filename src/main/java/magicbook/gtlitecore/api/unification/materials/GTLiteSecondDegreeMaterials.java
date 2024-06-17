@@ -1048,7 +1048,7 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x88BBBB)
                 .iconSet(SHINY)
                 .components(NaquadahEnriched, 12, HastelloyX, 9, Tin, 8, Arsenic, 7, Caesium, 4, Osmiridium, 3, Trinium, 2)
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_BOLT_SCREW)
                 .blast(b -> b
                         .temp(6500, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[LuV], 160)

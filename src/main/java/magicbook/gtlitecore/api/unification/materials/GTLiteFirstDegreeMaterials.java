@@ -2560,5 +2560,15 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(GENERATE_PLATE)
                 .components(Silicon, 3, Nitrogen, 4)
                 .build();
+
+        //  11289 Chromium Sulfate
+        ChromiumSulfate = new Material.Builder(getID(), gregtechId("chromium_sulfate"))
+                .dust()
+                .color(0xC5587D)
+                .iconSet(METALLIC)
+                .components(Chrome, 2, Sulfur, 3, Oxygen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("Cr2(SO4)3", true);
     }
 }

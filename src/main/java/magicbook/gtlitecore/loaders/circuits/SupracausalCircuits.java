@@ -253,6 +253,8 @@ public class SupracausalCircuits {
 
         //  Coated Photonic Crystal Film
 
+        PhotonShieldingContainmentUnit();
+
         //  Quantum Amplitude Squeezed Light Stabilizer
 
         /*
@@ -287,11 +289,11 @@ public class SupracausalCircuits {
                 .input(plate, Botmium, 2)
                 .input(plate, Graphene, 2)
                 .input(QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER)
+                .input(CHARGED_LEPTON_TRAP_CRYSTAL)
                 .input(NUCLEAR_CLOCK)
-                .input(CRYOGENIC_INTERFACE, 2)
+                .input(CRYOGENIC_INTERFACE)
                 .input(X_RAY_LASER)
-                .input(swarm, Solarium, 4)
-                .input(FEMTO_PIC_CHIP, 16)
+                .input(swarm, Solarium)
                 .input(foil, NaquadahAlloy, 24)
                 .input(bolt, SuperheavyHAlloy, 8)
                 .fluidInputs(Glowstone.getFluid(30000))
@@ -366,6 +368,111 @@ public class SupracausalCircuits {
                 .output(ELECTRICAL_SILICON_NITRIDE_FILM)
                 .EUt(VA[UHV])
                 .duration(5 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+    }
+
+    /**
+     * Photon Shielding Containment Unit processing
+     *
+     * @author Lunene, Magic_Sweepy
+     *
+     * <p>
+     *     Basic Processing Chain (and related Chemistry Chain) of Photon Shielding Containment Unit,
+     *     which is a component of Closed Lightlike Curve Receive Unit (Supracausal SoC Component).
+     *     Thanks Lunene create this chemistry chain of EDAB, I just do some tweak about actually situation.
+     * </p>
+     *
+     * @since 2.8.8-beta
+     */
+    private static void PhotonShieldingContainmentUnit() {
+
+        // ------------------------------ C6H4CO2C2H5(CH3)2N processing ------------------------------
+
+        //  C7H8 + (HNO3)(H2SO4) -> C6H4CH3NO2 + (H2SO4)2(H2O)
+        //  Player cost 3kL (HNO3)(H2SO4) and return 3kL (H2SO4)2(H2O), which return 2kL H2SO4,
+        //  you can add more HNO3 to make 4kL (HNO3)(H2SO4) via 2kL H2SO4, so this step is no losses.
+        CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .fluidInputs(Toluene.getFluid(1000))
+                .fluidInputs(NitrationMixture.getFluid(1000))
+                .fluidOutputs(Nitrotoluene.getFluid(1000))
+                .fluidOutputs(DilutedSulfuricAcid.getFluid(1000))
+                .EUt(VA[EV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  C6H4CH3NO2 + K2Cr2O7 + 3H2SO4 -> C6H4CO2HNO2 + Cr2(SO4)3 + 2KOH + 3H2O
+        //  This step cost many H2SO4 via the first step player got, and return Cr2(SO4)3 to player.
+        CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, PotassiumDichromate, 11)
+                .fluidInputs(Nitrotoluene.getFluid(1000))
+                .fluidInputs(SulfuricAcid.getFluid(3000))
+                .output(dust, ChromiumSulfate, 17)
+                .output(dust, Potash, 6)
+                .fluidOutputs(NitrobenzoicAcid.getFluid(1000))
+                .fluidOutputs(Water.getFluid(3000))
+                .EUt(VA[IV])
+                .duration((int) (2.5 * SECOND))
+                .buildAndRegister();
+
+        //  Cr2(SO4)3 -> 2CrO3 + 3SO2
+        //  This cycle allowed player use Cr2(SO4)3 to get CrO3, which is a original material
+        //  of K2Cr2O7, so this step is just a part of sub cycle of this chemistry chain.
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .input(dust, ChromiumSulfate, 17)
+                .output(dust, ChromiumTrioxide, 8)
+                .fluidOutputs(SulfurDioxide.getFluid(3000))
+                .EUt(VA[HV])
+                .duration((int) (1.4 * SECOND))
+                .buildAndRegister();
+
+        //  C6H4CO2HNO2 + C2H6O -> C6H4CO2C2H5NO2 + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(NitrobenzoicAcid.getFluid(1000))
+                .fluidInputs(Ethanol.getFluid(1000))
+                .fluidOutputs(EthylNitrobenzoate.getFluid(1000))
+                .fluidOutputs(SulfuricAcid.getFluid(1000))
+                .EUt(VA[MV])
+                .duration((int) (4.5 * SECOND))
+                .buildAndRegister();
+
+        //  C6H4CO2C2H5NO2 + 6H -> C6H4CO2C2H5NH2 + 2H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(EthylNitrobenzoate.getFluid(1000))
+                .fluidInputs(Hydrogen.getFluid(6000))
+                .fluidOutputs(EthylAminobenzoate.getFluid(1000))
+                .fluidOutputs(Water.getFluid(2000))
+                .EUt(VA[HV])
+                .duration((int) (3.2 * SECOND))
+                .buildAndRegister();
+
+        //  C6H4CO2C2H5NH2 + 2CH3Cl -> C6H4CO2C2H5(CH3)2N + 2HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, Palladium)
+                .fluidInputs(EthylAminobenzoate.getFluid(1000))
+                .fluidInputs(Chloromethane.getFluid(2000))
+                .fluidOutputs(EthylDimethylaminobenzoate.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(2000))
+                .EUt(VA[IV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        // ---------------------------- (CH3)3C6H2COPO(C6H5)2 processing -----------------------------
+
+        //  Photon Shielding Containment Unit
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(OPTICAL_IMC_BOARD)
+                .input(foil, PlatinumGroupAlloy, 2)
+                .input(foil, PolyethyleneTerephthalate, 2)
+                .input(bolt, ArtheriumB47, 8)
+                .fluidInputs(EthylDimethylaminobenzoate.getFluid(1000))
+                .fluidInputs()
+                .fluidInputs()
+                .fluidInputs()
+                .output(PHOTON_SHIELDING_CONTAINMENT_UNIT)
+                .EUt(VA[UXV])
+                .duration(2 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }

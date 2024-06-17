@@ -436,7 +436,8 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         ELECTRICAL_SILICON_NITRIDE_FILM = this.addItem(138, "component.supracausal.electrical_silicon_nitride_film");
         CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT = this.addItem(139, "component.supracausal.closed_lightlike_curve_receive_unit");
         PHOTON_SHIELDING_CONTAINMENT_UNIT = this.addItem(140, "component.supracausal.photon_shielding_containment_unit");
-        QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER = this.addItem(141, "component.supracausal.quantum_amplitude_squeezed_light_stabilizer");
+        COATED_PHOTONIC_CRYSTAL_FILM = this.addItem(141, "component.supracausal.coated_photonic_crystal_film");
+        QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER = this.addItem(142, "component.supracausal.quantum_amplitude_squeezed_light_stabilizer");
 
         //  ID 149: Primitive Circuit Component
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");

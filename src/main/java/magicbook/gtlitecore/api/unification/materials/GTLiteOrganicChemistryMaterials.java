@@ -1678,6 +1678,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .liquid()
                 .color(0x1E5C58)
                 .components(Carbon, 10, Hydrogen, 6, Oxygen, 4)
+                .flags(GENERATE_PLATE, GENERATE_FOIL)
                 .build();
 
         //  13201 Perfluorobenzene
@@ -1729,6 +1730,51 @@ public class GTLiteOrganicChemistryMaterials {
                 .color(0x738449)
                 .components(Silicon, 1, Chlorine, 2, Hydrogen, 2)
                 .build();
+
+        //  13207 p-Nitrotoluene
+        Nitrotoluene = new Material.Builder(getID(), gregtechId("p_nitrotoluene"))
+                .liquid()
+                .color(0x99236E)
+                .components(Carbon, 7, Hydrogen, 7, Nitrogen, 1, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H4CH3NO2", true);
+
+        //  13208 p-Nitrobenzoic Acid
+        NitrobenzoicAcid = new Material.Builder(getID(), gregtechId("p_nitrobenzoic_acid"))
+                .liquid()
+                .color(0x93736C)
+                .components(Carbon, 7, Hydrogen, 5, Oxygen, 4, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H4CO2HNO2", true);
+
+        //  13209 Ethyl p-Nitrobenzoate
+        EthylNitrobenzoate = new Material.Builder(getID(), gregtechId("ethyl_p_nitrobenzoate"))
+                .liquid()
+                .color(0x562964)
+                .components(Carbon, 9, Hydrogen, 9, Oxygen, 4, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H4CO2C2H5NO2", true);
+
+        //  13210 Ethyl p-Aminobenzoate
+        EthylAminobenzoate = new Material.Builder(getID(), gregtechId("ethyl_p_aminobenzoate"))
+                .liquid()
+                .color(0x978CA6)
+                .components(Carbon, 9, Hydrogen, 11, Oxygen, 2, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H4CO2C2H5NH2", true);
+
+        //  13211 Ethyl p-Dimethylaminobenzoate (EDAB)
+        EthylDimethylaminobenzoate = new Material.Builder(getID(), gregtechId("ethyl_p_dimethylaminobenzoate"))
+                .liquid()
+                .color(0x687359)
+                .components(Carbon, 11, Hydrogen, 15, Oxygen, 2, Nitrogen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H4CO2C2H5(CH3)2N", true);
     }
 
 }

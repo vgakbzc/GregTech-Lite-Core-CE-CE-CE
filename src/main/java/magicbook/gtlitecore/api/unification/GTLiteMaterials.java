@@ -373,6 +373,7 @@ public class GTLiteMaterials {
     public static Material Tengam;
     public static Material AttunedTengam;
     public static Material SiliconNitride;
+    public static Material ChromiumSulfate;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -674,6 +675,11 @@ public class GTLiteMaterials {
     public static Material BoronTrifluorideEtherate;
     public static Material DiethylEther;
     public static Material Dichlorosilane;
+    public static Material Nitrotoluene;
+    public static Material NitrobenzoicAcid;
+    public static Material EthylNitrobenzoate;
+    public static Material EthylAminobenzoate;
+    public static Material EthylDimethylaminobenzoate;
 
     /////////////////////////////
     //  Higher Degree Materials  //

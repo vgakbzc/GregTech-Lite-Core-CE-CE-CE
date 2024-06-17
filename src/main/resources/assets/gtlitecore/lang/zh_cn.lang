@@ -766,7 +766,9 @@ metaitem.component.supracausal.electrical_silicon_nitride_film.name=电子级氮
 metaitem.component.supracausal.closed_lightlike_curve_receive_unit.name=封闭类光曲线接收单元
 metaitem.component.supracausal.closed_lightlike_curve_receive_unit.tooltip=因果阐释者
 metaitem.component.supracausal.photon_shielding_containment_unit.name=光子屏蔽密闭外壳
-metaitem.component.supracausal.photon_shielding_containment_unit.toolipt=超级光电子外壳
+metaitem.component.supracausal.photon_shielding_containment_unit.toolipt=超级遏制外壳
+metaitem.component.supracausal.coated_photonic_crystal_film.name=镀层光电晶体薄膜
+metaitem.component.supracausal.coated_photonic_crystal_film.tooltip=光子吸收层
 metaitem.component.supracausal.quantum_amplitude_squeezed_light_stabilizer.name=量子振幅压缩光稳定器
 metaitem.component.supracausal.quantum_amplitude_squeezed_light_stabilizer.tooltip=物质界限维持器
 
@@ -3050,6 +3052,7 @@ gregtech.material.raw_tengam=生镃
 gregtech.material.tengam=镃
 gregtech.material.attuned_tengam=谐镃
 gregtech.material.silicon_nitride=氮化硅
+gregtech.material.chromium_sulfate=硫酸铬
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3341,6 +3344,11 @@ gregtech.material.decaborane=癸硼烷
 gregtech.material.boron_trifluoride_etherate=三氟化硼乙醚（BTE）
 gregtech.material.diethyl_ether=二乙醚
 gregtech.material.dichlorosilane=二氯硅烷
+gregtech.material.p_nitrotoluene=对硝基甲苯
+gregtech.material.p_nitrobenzoic_acid=对硝基苯甲酸（PNBA）
+gregtech.material.ethyl_p_nitrobenzoate=对硝基苯甲酸乙酯
+gregtech.material.ethyl_p_aminobenzoate=对氨基苯甲酸乙酯
+gregtech.material.ethyl_p_dimethylaminobenzoate=对二甲氨基苯甲酸乙酯（EDAB）
 
 ##  Higher Degree Materials
 gregtech.material.quark_gluon_plasma=夸克-胶子
