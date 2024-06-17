@@ -1049,6 +1049,10 @@ metaitem.astral_array.name=星阵
 metaitem.astral_array.desc=时空飘忽不定
 metaitem.protonated_fullerene_sieving_matrix.name=质子化富勒烯筛网
 metaitem.saturated_fullerene_sieving_matrix.name=饱和富勒烯筛网
+metaitem.nonlinear_optical_lens.name=非线性光学透镜
+
+metaitem.laser_diode.name=激光二极管
+metaitem.laser_cooling_unit.name=激光冷却单元
 
 ##  Ore Prefix Items
 item.material.oreprefix.milled=碾磨%s矿石粉

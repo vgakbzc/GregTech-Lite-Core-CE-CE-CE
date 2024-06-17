@@ -251,19 +251,18 @@ public class SupracausalCircuits {
     private static void SoC() {
 
         ElectricalSiliconNitrideFilm();
-
+        CoatedPhotonicCrystalFilm();
         PhotonShieldingContainmentUnit();
+        NonlinearOpticalLens();
 
         //  Quantum Amplitude Squeezed Light Stabilizer
-
-        /*
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(PHOTON_SHIELDING_CONTAINMENT_UNIT)
                 .input(COATED_PHOTONIC_CRYSTAL_FILM)
                 .input(plate, GalliumNitride, 2)
                 .input(plate, EnrichedNaquadahAlloy, 2)
                 .input(SENSOR_OpV)
-                .input(lens, Zircophyllite)
+                .input(NONLINEAR_OPTICAL_LENS)
                 .input(OPTICAL_LASER_CONTROL_UNIT)
                 .input(ROTATING_TRANSPARENT_SURFACE)
                 .input(RYDBERG_SPINORIAL_ASSEMBLY)
@@ -273,14 +272,15 @@ public class SupracausalCircuits {
                 .input(TOPOLOGICAL_INSULATOR_TUBE, 2)
                 .input(OPTICAL_FIBER, 16)
                 .fluidInputs(HalogenMixture.getFluid(16000))
-                .fluidInputs()
-                .fluidInputs()
-                .fluidInputs()
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
                 .output(QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER)
                 .EUt(VA[OpV])
                 .duration(SECOND)
-                .stationResearch()
-         */
+                .stationResearch(b -> b
+                        .researchStack(PHOTON_SHIELDING_CONTAINMENT_UNIT.getStackForm())
+                        .EUt(VA[OpV])
+                        .CWUt(1024))
+                .buildAndRegister();
 
         //  Closed Lightlike Curve Receive Unit
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
@@ -295,8 +295,6 @@ public class SupracausalCircuits {
                 .input(swarm, Solarium)
                 .input(foil, NaquadahAlloy, 24)
                 .input(bolt, SuperheavyHAlloy, 8)
-                .fluidInputs(Glowstone.getFluid(30000))
-                .fluidInputs(ElectrolyteReflectorMixture.getFluid(6000))
                 .fluidInputs(CosmicComputingMixture.getFluid(2000))
                 .fluidInputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(L * 4))
                 .output(CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT)
@@ -381,6 +379,24 @@ public class SupracausalCircuits {
                 .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
+    }
+
+    /**
+     * Coated Photonic Crystal Film processing
+     *
+     * @author Lunene, Magic_Sweepy
+     *
+     * <p>
+     *     Basic Processing Chain (and related Chemistry Chain) of Coated Photonic Crystal Film,
+     *     which is a component of Closed Lightlike Curve Receive Unit (Supracausal SoC Component).
+     *     Thanks Lunene create this chemistry chain, I just do some tweak about actually situation..
+     * </p>
+     *
+     * @since 2.8.8-beta
+     */
+    private static void CoatedPhotonicCrystalFilm() {
+
+        //  Coated Photonic Crystal Film
     }
 
     /**
@@ -571,6 +587,48 @@ public class SupracausalCircuits {
                 .EUt(VA[UXV])
                 .duration(2 * SECOND)
                 .tier(8) // OpV
+                .buildAndRegister();
+    }
+
+    private static void NonlinearOpticalLens() {
+
+        //  Laser Diode
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(ENGRAVED_LAPOTRON_CHIP)
+                .input(OPTICAL_DIODE, 2)
+                .input(DIELECTRIC_MIRROR)
+                .input(wireFine, FluxedElectrum, 4)
+                .fluidInputs(VanadiumGallium.getFluid(L * 4))
+                .output(LASER_DIODE)
+                .EUt(VA[UHV])
+                .duration(10 * SECOND)
+                .tier(4)
+                .buildAndRegister();
+
+        //  Laser Cooling Unit
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(MICROFOCUS_X_RAY_TUBE)
+                .input(plate, CubicZirconia, 2)
+                .input(ELECTRIC_PUMP_UEV)
+                .input(pipeSmallFluid, Duranium)
+                .fluidInputs(NaquadahAlloy.getFluid(L * 4))
+                .output(LASER_COOLING_UNIT)
+                .EUt(VA[UHV])
+                .duration(10 * SECOND)
+                .tier(4)
+                .buildAndRegister();
+
+        //  Nonlinear Optical Lens
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(lens, LithiumNiobate)
+                .input(LASER_DIODE)
+                .input(LASER_COOLING_UNIT)
+                .input(wireFine, Aluminium, 4)
+                .fluidInputs(TinAlloy.getFluid(1000))
+                .output(NONLINEAR_OPTICAL_LENS)
+                .EUt(VA[UV])
+                .duration(5 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
     }
 

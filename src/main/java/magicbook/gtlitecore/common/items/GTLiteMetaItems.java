@@ -252,7 +252,7 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MK4;
     public static MetaItem<?>.MetaValueItem ULTIMATE_BATTERY_MK5;
 
-    //  Others
+    //  Misc Items 1
     public static MetaItem<?>.MetaValueItem GRINDBALL_SOAPSTONE;
     public static MetaItem<?>.MetaValueItem GRINDBALL_ALUMINIUM;
     public static MetaItem<?>.MetaValueItem COMPONENT_GRINDER_BORON_NITRIDE;
@@ -302,6 +302,7 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem ASTRAL_ARRAY;
     public static MetaItem<?>.MetaValueItem PROTONATED_FULLERENE_SIEVING_MATRIX;
     public static MetaItem<?>.MetaValueItem SATURATED_FULLERENE_SIEVING_MATRIX;
+    public static MetaItem<?>.MetaValueItem NONLINEAR_OPTICAL_LENS;
 
     //  High Energy Physics Items
     public static MetaItem<?>.MetaValueItem PLASMA_CONTAINMENT_CELL;
@@ -576,6 +577,10 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem REINFORCED_NEUTRONIUM_PLATE;
     public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_NEUTRONIUM_PLATE;
     public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_NEUTRONIUM_PLATE;
+
+    //  Misc Items 2
+    public static MetaItem<?>.MetaValueItem LASER_DIODE;
+    public static MetaItem<?>.MetaValueItem LASER_COOLING_UNIT;
 
     //  Foods
     public static MetaItem<?>.MetaValueItem BEDROCK_CHOCOLATE;

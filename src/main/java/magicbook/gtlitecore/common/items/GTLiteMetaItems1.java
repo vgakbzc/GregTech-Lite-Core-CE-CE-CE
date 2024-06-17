@@ -706,7 +706,7 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
             }
         }
 
-        /* ---------------------------------------------------------------------- Misc Items ---------------------------------------------------------------------- */
+        /* --------------------------------------------------------------------- Misc Items 1 --------------------------------------------------------------------- */
 
         //  ID 300, 301: Grindballs
         GRINDBALL_SOAPSTONE = this.addItem(300, "grindball.soapstone")
@@ -809,6 +809,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         SATURATED_FULLERENE_SIEVING_MATRIX = this.addItem(348, "saturated_fullerene_sieving_matrix")
                 .setMaxStackSize(1)
                 .setCreativeTabs(GTLiteAPI.TAB_GTLITE_TOOL);
+
+        //  ID 349: Nonlinear Optical Lens
+        NONLINEAR_OPTICAL_LENS = this.addItem(349, "nonlinear_optical_lens")
+                .addOreDict("lensNonlinearOptical");
 
         /* ------------------------------------------------------------------ High Energy Items ------------------------------------------------------------------- */
 
@@ -1695,6 +1699,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         IRRADIANT_REINFORCED_NEUTRONIUM_PLATE = this.addItem(3014, "irradiant_reinforced_neutronium_plate")
                 .addOreDict("plateIrradiantReinforcedNeutronium");
+
+        /* --------------------------------------------------------------------- Misc Items 2 --------------------------------------------------------------------- */
+        LASER_DIODE = this.addItem(4000, "laser_diode");
+        LASER_COOLING_UNIT = this.addItem(4001, "laser_cooling_unit");
 
         /* ------------------------------------------------------------------------ Foods ------------------------------------------------------------------------- */
         BEDROCK_CHOCOLATE = this.addItem(5000, "food.bedrock_chocolate")

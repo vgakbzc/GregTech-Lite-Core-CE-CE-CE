@@ -887,7 +887,7 @@ public class GTLiteFirstDegreeMaterials {
                 .gem()
                 .color(0xFFDFE2)
                 .iconSet(DIAMOND)
-                .flags(DISABLE_DECOMPOSITION)
+                .flags(DISABLE_DECOMPOSITION, GENERATE_PLATE)
                 .components(Zirconium, 1, Oxygen, 2)
                 .build()
                 .setFormula("c-ZrO2", true);
