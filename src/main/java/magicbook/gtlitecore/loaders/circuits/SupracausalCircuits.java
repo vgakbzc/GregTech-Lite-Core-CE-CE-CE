@@ -7,6 +7,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
+import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -251,8 +252,6 @@ public class SupracausalCircuits {
 
         ElectricalSiliconNitrideFilm();
 
-        //  Coated Photonic Crystal Film
-
         PhotonShieldingContainmentUnit();
 
         //  Quantum Amplitude Squeezed Light Stabilizer
@@ -311,6 +310,18 @@ public class SupracausalCircuits {
 
     }
 
+    /**
+     * Electrical Silicon Nitride Film processing
+     *
+     * @author Magic_Sweepy
+     *
+     * <p>
+     *     Realization of the idea in talk of my and my friend Gate Guardian about Optical Circuit processing,
+     *     this processing also product H2XeO4 (although this is ridiculous, you should pay Xenon plasma to Plasma CVD).
+     * </p>
+     *
+     * @since 2.8.8-beta
+     */
     private static void ElectricalSiliconNitrideFilm() {
 
         //  CH3Cl3Si + 2H -> SiCl2H2 + CH3Cl
@@ -460,20 +471,106 @@ public class SupracausalCircuits {
 
         // ---------------------------- (CH3)3C6H2COPO(C6H5)2 processing -----------------------------
 
+        //  2Mg + C6H5Cl + PCl3 + 3(C2H5)2O -> (C6H5)3P + 2MgCl2 + 3H2O + 14H
+        CRYOGENIC_REACTOR_RECIPES.recipeBuilder()
+                .input(dust, Magnesium, 2)
+                .fluidInputs(Chlorobenzene.getFluid(1000))
+                .fluidInputs(PhosphorusTrichloride.getFluid(1000))
+                .fluidInputs(DiethylEther.getFluid(3000))
+                .output(dust, MagnesiumChloride, 6)
+                .fluidOutputs(Triphenylphosphine.getFluid(1000))
+                .fluidOutputs(Ice.getFluid(3000))
+                .fluidOutputs(Hydrogen.getFluid(14000))
+                .EUt(VA[LuV])
+                .duration(8 * SECOND)
+                .temperature(125)
+                .buildAndRegister();
+
+        //  C6H6 + 3CH3Cl -> C6H3(CH3)3 + 3HCl
+        CHEMICAL_RECIPES.recipeBuilder()
+                .circuitMeta(3)
+                .fluidInputs(Benzene.getFluid(1000))
+                .fluidInputs(Chloromethane.getFluid(3000))
+                .fluidOutputs(Trimethylbenzene.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(3000))
+                .EUt(VA[MV])
+                .duration(4 * SECOND)
+                .buildAndRegister();
+
+        //  C6H3(CH3)3 + C4H6O3 -> (CH3)3C6H2COCH3 + C2H4O2
+        CHEMICAL_RECIPES.recipeBuilder()
+                .notConsumable(dust, AluminiumTrichloride)
+                .fluidInputs(Trimethylbenzene.getFluid(1000))
+                .fluidInputs(AceticAnhydride.getFluid(1000))
+                .fluidOutputs(Trimethylacetophenone.getFluid(1000))
+                .fluidOutputs(AceticAcid.getFluid(1000))
+                .EUt(VA[IV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  (CH3)3C6H2COCH3 + 3HClO -> (CH3)3C6H2CO2H + CHCl3 + 2H2O
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .notConsumable(dust, TetramethylammoniumChloride)
+                .fluidInputs(Trimethylacetophenone.getFluid(1000))
+                .fluidInputs(HypochlorousAcid.getFluid(3000))
+                .fluidOutputs(TrimethylbenzoicAcid.getFluid(1000))
+                .fluidOutputs(Chloroform.getFluid(1000))
+                .fluidOutputs(Steam.getFluid(2000))
+                .EUt(VA[EV])
+                .duration(4 * SECOND)
+                .temperature(1322)
+                .buildAndRegister();
+
+        //  (CH3)3C6H2CO2H + SOCl2 -> (CH3)3C6H2COCl + SO2 + HCl
+        BURNER_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(TrimethylbenzoicAcid.getFluid(1000))
+                .fluidInputs(ThionylChloride.getFluid(1000))
+                .fluidOutputs(TrimethylbenzoylChloride.getFluid(1000))
+                .fluidOutputs(SulfurDioxide.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[IV])
+                .duration(2 * SECOND)
+                .temperature(1465)
+                .buildAndRegister();
+
+        //  Na + (CH3)3C6H2COCl + (C6H5)3P + H2O -> (CH3)3C6H2COP(C6H5)2 + C6H6 + NaOH + Cl
+        LARGE_CHEMICAL_RECIPES.recipeBuilder()
+                .input(dust, Sodium)
+                .fluidInputs(TrimethylbenzoylChloride.getFluid(1000))
+                .fluidInputs(Triphenylphosphine.getFluid(1000))
+                .fluidInputs(Water.getFluid(1000))
+                .output(dust, SodiumHydroxide, 3)
+                .fluidOutputs(TrimethylbenzoylDiphenylphosphine.getFluid(1000))
+                .fluidOutputs(Benzene.getFluid(1000))
+                .fluidOutputs(Chlorine.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  (CH3)3C6H2COP(C6H5)2 + H2O2 -> (CH3)3C6H2COPO(C6H5)2 + H2O
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(TrimethylbenzoylDiphenylphosphine.getFluid(1000))
+                .fluidInputs(HydrogenPeroxide.getFluid(1000))
+                .fluidOutputs(TrimethylbenzoylDiphenylphosphineOxide.getFluid(1000))
+                .fluidOutputs(Water.getFluid(1000))
+                .EUt(VA[MV])
+                .duration((int) (13.5 * SECOND))
+                .buildAndRegister();
+
         //  Photon Shielding Containment Unit
         PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(OPTICAL_IMC_BOARD)
                 .input(foil, PlatinumGroupAlloy, 2)
                 .input(foil, PolyethyleneTerephthalate, 2)
                 .input(bolt, ArtheriumB47, 8)
+                .fluidInputs(Hdcs.getFluid(L * 10))
+                .fluidInputs(Lubricant.getFluid(3000))
                 .fluidInputs(EthylDimethylaminobenzoate.getFluid(1000))
-                .fluidInputs()
-                .fluidInputs()
-                .fluidInputs()
+                .fluidInputs(TrimethylbenzoylDiphenylphosphineOxide.getFluid(1000))
                 .output(PHOTON_SHIELDING_CONTAINMENT_UNIT)
                 .EUt(VA[UXV])
                 .duration(2 * SECOND)
-                .cleanroom(CleanroomType.CLEANROOM)
+                .tier(8) // OpV
                 .buildAndRegister();
     }
 

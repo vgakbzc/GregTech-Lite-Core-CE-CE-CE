@@ -1775,6 +1775,69 @@ public class GTLiteOrganicChemistryMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("C6H4CO2C2H5(CH3)2N", true);
+
+        //  13212 Triphenylphosphine (TPP)
+        Triphenylphosphine = new Material.Builder(getID(), gregtechId("triphenylphosphine"))
+                .liquid()
+                .color(0xE8DE3A)
+                .components(Carbon, 18, Hydrogen, 15, Phosphorus, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(C6H5)3P", true);
+
+        //  13213 Trimethylbenzene
+        Trimethylbenzene = new Material.Builder(getID(), gregtechId("trimethylbenzene"))
+                .liquid()
+                .color(0x00F0FF)
+                .components(Carbon, 9, Hydrogen, 12)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("C6H3(CH3)3", true);
+
+        //  13214 Trimethylacetophenone
+        Trimethylacetophenone = new Material.Builder(getID(), gregtechId("trimethylacetophenone"))
+                .liquid()
+                .color(0xCDEBB8)
+                .components(Carbon, 11, Hydrogen, 14, Oxygen, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3C6H2COCH3", true);
+
+        //  13215 Trimethylbenzoic Acid
+        TrimethylbenzoicAcid = new Material.Builder(getID(), gregtechId("trimethylbenzoic_acid"))
+                .liquid()
+                .color(0x9AB08A)
+                .components(Carbon, 10, Hydrogen, 12, Oxygen, 2)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3C6H2CO2H", true);
+
+        //  13216 Trimethylbenzoyl Chloride
+        TrimethylbenzoylChloride = new Material.Builder(getID(), gregtechId("trimethylbenzoyl_chloride"))
+                .liquid()
+                .color(0x3DC2A1)
+                .components(Carbon, 10, Hydrogen, 11, Oxygen, 1, Chlorine, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3C6H2COCl", true);
+
+        //  13217 2,4,6-(Trimethylbenzoyl) Diphenylphosphine
+        TrimethylbenzoylDiphenylphosphine = new Material.Builder(getID(), gregtechId("trimethylbenzoyl_diphenylphosphine"))
+                .liquid()
+                .color(0x959505)
+                .components(Carbon, 22, Hydrogen, 21, Oxygen, 1, Phosphorus, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3C6H2COP(C6H5)2", true);
+
+        //  13218 2,4,6-(Trimethylbenzoyl) Diphenylphosphine Oxide
+        TrimethylbenzoylDiphenylphosphineOxide = new Material.Builder(getID(), gregtechId("trimethylbenzoyl_diphenylphosphine_oxide"))
+                .liquid()
+                .color(0xA16145)
+                .components()
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3C6H2COPO(C6H5)2", true);
     }
 
 }

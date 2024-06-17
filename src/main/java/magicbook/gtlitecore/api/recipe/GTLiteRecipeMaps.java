@@ -643,7 +643,7 @@ public class GTLiteRecipeMaps {
      * @see MetaTileEntityCryogenicReactor
      */
     @ZenProperty
-    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor", 3, 2, 3, 2, new NoCoilTemperatureRecipeBuilder(), false)
+    public static final RecipeMap<NoCoilTemperatureRecipeBuilder> CRYOGENIC_REACTOR_RECIPES = new RecipeMap<>("cryogenic_reactor", 3, 3, 3, 3, new NoCoilTemperatureRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.MOLECULAR_OVERLAY_1)
             .setSlotOverlay(false, false, true, GuiTextures.MOLECULAR_OVERLAY_2)
             .setSlotOverlay(true, false, GuiTextures.VIAL_OVERLAY_1)

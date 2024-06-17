@@ -680,6 +680,13 @@ public class GTLiteMaterials {
     public static Material EthylNitrobenzoate;
     public static Material EthylAminobenzoate;
     public static Material EthylDimethylaminobenzoate;
+    public static Material Triphenylphosphine;
+    public static Material Trimethylbenzene;
+    public static Material Trimethylacetophenone;
+    public static Material TrimethylbenzoicAcid;
+    public static Material TrimethylbenzoylChloride;
+    public static Material TrimethylbenzoylDiphenylphosphine;
+    public static Material TrimethylbenzoylDiphenylphosphineOxide;
 
     /////////////////////////////
     //  Higher Degree Materials  //
