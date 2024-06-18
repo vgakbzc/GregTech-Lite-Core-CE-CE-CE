@@ -771,6 +771,14 @@ metaitem.component.supracausal.quantum_amplitude_squeezed_light_stabilizer.name=
 metaitem.component.supracausal.quantum_amplitude_squeezed_light_stabilizer.tooltip=物质界限维持器
 metaitem.component.supracausal.closed_lightlike_curve_receive_unit.name=封闭类光曲线接收单元
 metaitem.component.supracausal.closed_lightlike_curve_receive_unit.tooltip=因果阐释者
+metaitem.component.supracausal.zero_point_accelerator.name=零点加速器
+metaitem.component.supracausal.zero_point_accelerator.tooltip=真空量子涨落
+metaitem.component.supracausal.qed_effector.name=量子电动力学效应器
+metaitem.component.supracausal.qed_effector.tooltip=量子光电效应
+metaitem.component.supracausal.spacetime_field_stabilizer.name=时空场稳定器
+metaitem.component.supracausal.spacetime_field_stabilizer.tooltip=压缩时空
+metaitem.component.supracausal.supracausal_soc.name=超因果SoC
+metaitem.component.supracausal.supracausal_soc.tooltip=跨维度因果信息计算电路
 
 metaitem.component.primitive.vacuum_tube_component.name=真空管组件
 metaitem.component.crystal.diamond_chip.name=刻蚀钻石晶片
@@ -1053,6 +1061,9 @@ metaitem.nonlinear_optical_lens.name=非线性光学透镜
 
 metaitem.laser_diode.name=激光二极管
 metaitem.laser_cooling_unit.name=激光冷却单元
+metaitem.fullerene_polymer_matrix_soft_tubing.name=富勒烯聚合物基质软管
+metaitem.fullerene_polymer_matrix_fine_tubing.name=富勒烯聚合物基质细管
+metaitem.alumino_silicate_glass_tube.name=硅酸铝玻璃管
 
 ##  Ore Prefix Items
 item.material.oreprefix.milled=碾磨%s矿石粉

@@ -194,7 +194,7 @@ public class GTLiteHigherDegreeMaterials {
                 .blast(b -> b
                         .temp(15800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV]))
-                .flags(GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .cableProperties(V[UXV], 256, 128, false)
                 .build()
                 .setFormula(addObfuscatedFormula(), false);
@@ -256,6 +256,7 @@ public class GTLiteHigherDegreeMaterials {
                 .liquid(new FluidBuilder().temperature(1).customStill())
                 .color(0x000000)
                 .iconSet(BRIGHT)
+                .flags(GENERATE_PLATE)
                 .build()
                 .setFormula(addObfuscatedFormula(), false);
     }

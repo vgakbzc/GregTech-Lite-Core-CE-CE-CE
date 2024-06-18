@@ -149,6 +149,10 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem PHOTON_SHIELDING_CONTAINMENT_UNIT;
     public static MetaItem<?>.MetaValueItem COATED_PHOTONIC_CRYSTAL_FILM;
     public static MetaItem<?>.MetaValueItem QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER;
+    public static MetaItem<?>.MetaValueItem ZERO_POINT_ACCELERATOR;
+    public static MetaItem<?>.MetaValueItem QED_EFFECTOR;
+    public static MetaItem<?>.MetaValueItem SPACETIME_FIELD_STABILIZER;
+    public static MetaItem<?>.MetaValueItem SUPRACAUSAL_SOC;
 
     public static MetaItem<?>.MetaValueItem VACUUM_TUBE_COMPONENT;
     public static MetaItem<?>.MetaValueItem DIAMOND_CHIP;
@@ -581,6 +585,9 @@ public final class GTLiteMetaItems {
     //  Misc Items 2
     public static MetaItem<?>.MetaValueItem LASER_DIODE;
     public static MetaItem<?>.MetaValueItem LASER_COOLING_UNIT;
+    public static MetaItem<?>.MetaValueItem FULLERENE_POLYMER_MATRIX_SOFT_TUBING;
+    public static MetaItem<?>.MetaValueItem FULLERENE_POLYMER_MATRIX_FINE_TUBING;
+    public static MetaItem<?>.MetaValueItem ALUMINO_SILICATE_GLASS_TUBE;
 
     //  Foods
     public static MetaItem<?>.MetaValueItem BEDROCK_CHOCOLATE;

@@ -438,6 +438,10 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         COATED_PHOTONIC_CRYSTAL_FILM = this.addItem(140, "component.supracausal.coated_photonic_crystal_film");
         QUANTUM_AMPLITUDE_SQUEEZED_LIGHT_STABILIZER = this.addItem(141, "component.supracausal.quantum_amplitude_squeezed_light_stabilizer");
         CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT = this.addItem(142, "component.supracausal.closed_lightlike_curve_receive_unit");
+        ZERO_POINT_ACCELERATOR = this.addItem(143, "component.supracausal.zero_point_accelerator");
+        QED_EFFECTOR = this.addItem(144, "component.supracausal.qed_effector");
+        SPACETIME_FIELD_STABILIZER = this.addItem(145, "component.supracausal.spacetime_field_stabilizer");
+        SUPRACAUSAL_SOC = this.addItem(146, "component.supracausal.supracausal_soc");
 
         //  ID 149: Primitive Circuit Component
         VACUUM_TUBE_COMPONENT = this.addItem(149, "component.primitive.vacuum_tube_component");
@@ -1703,6 +1707,9 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         /* --------------------------------------------------------------------- Misc Items 2 --------------------------------------------------------------------- */
         LASER_DIODE = this.addItem(4000, "laser_diode");
         LASER_COOLING_UNIT = this.addItem(4001, "laser_cooling_unit");
+        FULLERENE_POLYMER_MATRIX_SOFT_TUBING = this.addItem(4002, "fullerene_polymer_matrix_soft_tubing");
+        FULLERENE_POLYMER_MATRIX_FINE_TUBING = this.addItem(4003, "fullerene_polymer_matrix_fine_tubing");
+        ALUMINO_SILICATE_GLASS_TUBE = this.addItem(4004, "alumino_silicate_glass_tube");
 
         /* ------------------------------------------------------------------------ Foods ------------------------------------------------------------------------- */
         BEDROCK_CHOCOLATE = this.addItem(5000, "food.bedrock_chocolate")

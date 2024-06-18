@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.loaders.circuits;
 
+import gregtech.api.fluids.store.FluidStorageKeys;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.common.blocks.MetaBlocks;
 
@@ -10,8 +11,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtechfoodoption.GTFOMaterialHandler.AceticAnhydride;
 import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
-import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
-import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
+import static magicbook.gtlitecore.api.GTLiteValues.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
@@ -306,6 +306,135 @@ public class SupracausalCircuits {
                         .researchStack(CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT.getStackForm())
                         .CWUt(1024)
                         .EUt(VA[OpV]))
+                .buildAndRegister();
+
+        //  Fullerene Polymer Matrix Soft/Fine Tubing
+        VACUUM_CHAMBER_RECIPES.recipeBuilder()
+                .input(CLADDED_OPTICAL_FIBER_CORE)
+                .fluidInputs(FullerenePolymerMatrix.getFluid(L))
+                .fluidInputs(Azafullerene.getFluid(L))
+                .output(FULLERENE_POLYMER_MATRIX_SOFT_TUBING)
+                .EUt(VA[ZPM])
+                .duration(4 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        AUTOCLAVE_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_EXTRUDER_WIRE)
+                .input(FULLERENE_POLYMER_MATRIX_SOFT_TUBING)
+                .fluidInputs(Helium.getFluid(FluidStorageKeys.LIQUID, L))
+                .output(FULLERENE_POLYMER_MATRIX_FINE_TUBING, 2)
+                .EUt(VA[UV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  Zero Point Accelerator
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(frameGt, Laurenium)
+                .input(GRAVITON_TRANSDUCER, 2)
+                .input(FIELD_GENERATOR_OpV)
+                .input(FULLERENE_POLYMER_MATRIX_FINE_TUBING, 4)
+                .fluidInputs(ExtremelyUnstableNaquadah.getFluid(L * 40))
+                .fluidInputs(Quantium.getFluid(1000))
+                .output(ZERO_POINT_ACCELERATOR)
+                .EUt(VA[OpV])
+                .duration(SECOND)
+                .tier(8)
+                .buildAndRegister();
+
+        //  Alumino Silicate Glass Tube
+        INDUSTRIAL_ROASTER_RECIPES.recipeBuilder()
+                .notConsumable(SHAPE_MOLD_CYLINDER)
+                .input(dust, Alumina, 5)
+                .input(dust, Quartzite)
+                .output(ALUMINO_SILICATE_GLASS_TUBE)
+                .EUt(VA[MV])
+                .duration((int) (13.5 * SECOND))
+                .temperature(1800)
+                .buildAndRegister();
+
+        //  QED Effector
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(plate, BlackTitanium)
+                .input(TOPOLOGICAL_MANIPULATOR_UNIT)
+                .input(ALUMINO_SILICATE_GLASS_TUBE, 16)
+                .input(pipeTinyFluid, Lafium, 8)
+                .input(foil, HeavyQuarkDegenerateMatter, 4)
+                .input(ring, NaquadahEnriched, 64)
+                .input(bolt, TantalumHafniumSeaborgiumCarbide, 16)
+                .fluidInputs(SolderingAlloy.getFluid(L * 40))
+                .fluidInputs(FreeElectronGas.getFluid(16000))
+                .fluidInputs(QuantumchromodynamicallyConfinedMatter.getFluid(L * 4))
+                .output(QED_EFFECTOR)
+                .EUt(VA[OpV])
+                .duration(SECOND)
+                .tier(5)
+                .buildAndRegister();
+
+        //  Spacetime Field Stabilizer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter, 2)
+                .input(FIELD_GENERATOR_OpV)
+                .input(QCD_PROTECTIVE_PLATING, 4)
+                .input(RECURSIVELY_FOLDED_NEGATIVE_SPACE)
+                .input(screw, Tairitsium, 16)
+                .fluidInputs(CosmicComputingMixture.getFluid(L * 10))
+                .output(SPACETIME_FIELD_STABILIZER)
+                .EUt(VA[OpV])
+                .duration(2 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Supracausal SoC
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(frameGt, SuperheavyHAlloy)
+                .input(CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT)
+                .input(plate, SpacetimeContinuum, 4)
+                .input(CLOSED_TIMELIKE_CURVE_COMPUTATIONAL_UNIT)
+                .input(ESR_COMPUTATION_UNIT)
+                .input(ZERO_POINT_ACCELERATOR)
+                .input(QED_EFFECTOR)
+                .input(SPACETIME_FIELD_STABILIZER)
+                .input(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .input(gear, WhiteDwarfMatter, 16)
+                .input(gearSmall, Octiron, 24)
+                .input(UNSTABLE_STAR, 16)
+                .input(foil, BlackDwarfMatter, 64)
+                .input(wireGtDouble, CosmicMatterSuperconductor, 2)
+                .input(CHARGED_HYPERCUBE)
+                .fluidInputs(Infinity.getFluid(L * 80))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(L * 40))
+                .fluidInputs(Spacetime.getFluid(L * 20))
+                .fluidInputs(Eternity.getFluid(L * 10))
+                .output(SUPRACAUSAL_SOC, 4)
+                .EUt(VZ[MAX])
+                .duration(10 * SECOND)
+                .stationResearch(b -> b
+                        .researchStack(UNIVERSAL_SOC.getStackForm())
+                        .EUt(VA[MAX])
+                        .CWUt(4096))
+                .buildAndRegister();
+
+        SPACE_ELEVATOR_ASSEMBLING_MODULE.recipeBuilder()
+                .input(frameGt, TantalumHafniumSeaborgiumCarbide)
+                .input(SPACETIME_CONDENSER)
+                .input(plate, CosmicFabric, 4)
+                .input(NUCLEAR_CLOCK)
+                .input(TOPOLOGICAL_MANIPULATOR_UNIT)
+                .input(GRAVITON_TRANSDUCER)
+                .input(EIGENFOLDED_SPACETIME_MANIFOLD)
+                .input(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM)
+                .input(BOSE_EINSTEIN_CONDENSATE, 2)
+                .input(MANIFOLD_OSCILLATORY_POWER_CELL, 4)
+                .input(wireGtSingle, HeavyQuarkDegenerateMatter, 2)
+                .fluidInputs(CosmicComputingMixture.getFluid(4000))
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(2000))
+                .fluidInputs(Spacetime.getFluid(1000))
+                .fluidInputs(CosmicNeutronium.getFluid(1000))
+                .output(LIGHT_CONE_MODULE, 2)
+                .EUt(VA[UXV])
+                .duration(SECOND)
+                .tier(5)
                 .buildAndRegister();
 
     }
@@ -820,6 +949,18 @@ public class SupracausalCircuits {
                 .output(SUPRACAUSAL_PROCESSOR, 2)
                 .EUt(VA[UXV])
                 .duration(10 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(SPACETIME_CONDENSER)
+                .input(SUPRACAUSAL_SOC)
+                .input(wireFine, Shirabon, 8)
+                .input(bolt, Eternity, 8)
+                .solderMultiplier(1)
+                .output(SUPRACAUSAL_PROCESSOR, 4)
+                .EUt(VA[OpV])
+                .duration(5 * SECOND)
                 .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 

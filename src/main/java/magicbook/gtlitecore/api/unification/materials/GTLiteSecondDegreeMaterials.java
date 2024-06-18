@@ -588,7 +588,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(14960, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UIV], 1236))
-                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_BOLT_SCREW)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_BOLT_SCREW, GENERATE_FRAME)
                 .build();
 
         //  12043 Superheavy-L Alloy
@@ -881,7 +881,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(16600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[ULV], 88888)
                         .vacuumStats(VA[ULV], 88888))
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR)
                 .toolStats(new ToolProperty(36.0F, 80.0F, 100000, 30))
                 .build();
 
@@ -910,7 +910,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(7400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 400)
                         .vacuumStats(VA[EV], 130))
-                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_DENSE)
+                .flags(DECOMPOSITION_BY_CENTRIFUGING, GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_FRAME, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12068 Transcendent Metal
