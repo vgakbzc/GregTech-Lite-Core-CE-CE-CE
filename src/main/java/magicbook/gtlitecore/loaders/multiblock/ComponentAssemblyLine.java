@@ -118,11 +118,10 @@ public class ComponentAssemblyLine {
                 .input(stickLong, SamariumMagnetic, 64)
                 .input(stickLong, HSSS, 64)
                 .input(stickLong, HSSS, 64)
-                .input(stickLong, HSSS, 64)
                 .input(cableGtHex, NiobiumTitanium, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 64))
                 .fluidInputs(Lubricant.getFluid(16000))
-                .fluidInputs(HSSS.getFluid(L * 64))
+                .fluidInputs(HSSS.getFluid(8704))
                 .fluidInputs(Ruridit.getFluid(L * 8 * 64))
                 .output(ELECTRIC_MOTOR_LuV, 64)
                 .EUt(VA[LuV])
@@ -132,18 +131,16 @@ public class ComponentAssemblyLine {
 
         //  ZPM (60s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, SamariumMagnetic, 64) // magnetic long stick
-                .input(stickLong, Osmiridium, 64) // long stick
+                .input(stickLong, SamariumMagnetic, 64)
                 .input(stickLong, Osmiridium, 64)
                 .input(stickLong, Osmiridium, 64)
                 .input(stickLong, Osmiridium, 64)
-                .input(stickLong, Osmiridium, 64) // ring (1 long stick = 2ring)
                 .input(stickLong, Osmiridium, 64)
-                .input(cableGtHex, VanadiumGallium, 8) // cable
+                .input(cableGtHex, VanadiumGallium, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
                 .fluidInputs(Lubricant.getFluid(32000))
-                .fluidInputs(Osmiridium.getFluid(L * 64 * 2)) // round
-                .fluidInputs(Europium.getFluid(L * 12 * 64)) // wire fine
+                .fluidInputs(Osmiridium.getFluid(17408))
+                .fluidInputs(Europium.getFluid(L * 12 * 64))
                 .output(ELECTRIC_MOTOR_ZPM, 64)
                 .EUt(VA[ZPM])
                 .duration(1200)
@@ -152,19 +149,17 @@ public class ComponentAssemblyLine {
 
         //  UV (75s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, SamariumMagnetic, 64) // magnetic long stick
-                .input(stickLong, Tritanium, 64) // long stick
+                .input(stickLong, SamariumMagnetic, 64)
                 .input(stickLong, Tritanium, 64)
                 .input(stickLong, Tritanium, 64)
                 .input(stickLong, Tritanium, 64)
-                .input(stickLong, Tritanium, 64) // ring (1 long stick = 2 ring)
                 .input(stickLong, Tritanium, 64)
-                .input(cableGtHex, YttriumBariumCuprate, 8) // cable
+                .input(cableGtHex, YttriumBariumCuprate, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                 .fluidInputs(Lubricant.getFluid(64000))
                 .fluidInputs(Naquadria.getFluid(L * 4 * 64))
-                .fluidInputs(Tritanium.getFluid(L * 64 * 2)) // round
-                .fluidInputs(Americium.getFluid(L * 16 * 64)) // wire fine
+                .fluidInputs(Tritanium.getFluid(17408))
+                .fluidInputs(Americium.getFluid(L * 16 * 64))
                 .output(ELECTRIC_MOTOR_UV, 64)
                 .EUt(VA[UV])
                 .duration(1500)
@@ -173,19 +168,17 @@ public class ComponentAssemblyLine {
 
         //  UHV (75s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, ChromiumGermaniumTellurideMagnetic, 64) // magnetic long stick
-                .input(stickLong, Adamantium, 64) // long stick
+                .input(stickLong, ChromiumGermaniumTellurideMagnetic, 64)
                 .input(stickLong, Adamantium, 64)
                 .input(stickLong, Adamantium, 64)
                 .input(stickLong, Adamantium, 64)
-                .input(stickLong, Adamantium, 64) // ring (1 long stick = 2 ring)
                 .input(stickLong, Adamantium, 64)
                 .input(cableGtHex, Europium, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                 .fluidInputs(Lubricant.getFluid(192000))
                 .fluidInputs(Vibranium.getFluid(L * 64))
-                .fluidInputs(Adamantium.getFluid(L * 64 * 2)) // round
-                .fluidInputs(SiliconCarbide.getFluid(L * 16 * 64)) // wire fine
+                .fluidInputs(Adamantium.getFluid(17408))
+                .fluidInputs(SiliconCarbide.getFluid(L * 16 * 64))
                 .output(ELECTRIC_MOTOR_UHV, 64)
                 .EUt(VA[UHV])
                 .duration(1500)
@@ -194,20 +187,18 @@ public class ComponentAssemblyLine {
 
         //  UEV (90s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, ChromiumGermaniumTellurideMagnetic, 64) // magnetic long stick
-                .input(stickLong, Hdcs, 64) // long stick
+                .input(stickLong, ChromiumGermaniumTellurideMagnetic, 64)
                 .input(stickLong, Hdcs, 64)
                 .input(stickLong, Hdcs, 64)
                 .input(stickLong, Hdcs, 64)
-                .input(stickLong, Hdcs, 64) // ring (1 long stick = 2 ring)
                 .input(stickLong, Hdcs, 64)
                 .input(cableGtHex, PedotTMA, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
                 .fluidInputs(Lubricant.getFluid(320000))
                 .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
                 .fluidInputs(Ichorium.getFluid(L * 64))
-                .fluidInputs(Hdcs.getFluid(L * 64 * 2)) // round
-                .fluidInputs(Seaborgium.getFluid(L * 16 * 64)) // wire fine
+                .fluidInputs(Hdcs.getFluid(17408))
+                .fluidInputs(Seaborgium.getFluid(L * 16 * 64))
                 .output(ELECTRIC_MOTOR_UEV, 64)
                 .EUt(VA[UEV])
                 .duration(1800)
@@ -216,19 +207,18 @@ public class ComponentAssemblyLine {
 
         //  UIV (90s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic, 64) // magnetic long stick
-                .input(stickLong, Legendarium, 64) // long stick
+                .input(stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic, 64)
                 .input(stickLong, Legendarium, 64)
                 .input(stickLong, Legendarium, 64)
                 .input(stickLong, Legendarium, 64)
-                .input(stickLong, Legendarium, 64) // ring (1 long stick = 2 ring)
                 .input(stickLong, Legendarium, 64)
                 .input(cableGtHex, Solarium, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
                 .fluidInputs(Lubricant.getFluid(448000))
                 .fluidInputs(Zylon.getFluid(L * 4 * 64))
                 .fluidInputs(Astralium.getFluid(L * 2 * 64))
-                .fluidInputs(Abyssalloy.getFluid(L * 16 * 64)) // wire fine
+                .fluidInputs(Legendarium.getFluid(17408))
+                .fluidInputs(Abyssalloy.getFluid(L * 16 * 64))
                 .output(ELECTRIC_MOTOR_UIV, 64)
                 .EUt(VA[UIV])
                 .duration(1800)
@@ -237,19 +227,18 @@ public class ComponentAssemblyLine {
 
         //  UXV (105s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic, 64) // magnetic long stick
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64) // long stick
+                .input(stickLong, PhosphorusDopedEuropiumIronArsenideMagnetic, 64)
                 .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
                 .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
                 .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64) // ring (1 long stick = 2 ring)
                 .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(cableGtHex, Hypogen, 8) // cable
+                .input(cableGtHex, Hypogen, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
                 .fluidInputs(Lubricant.getFluid(576000))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
                 .fluidInputs(Hikarium.getFluid(L * 4 * 64))
-                .fluidInputs(BlackDwarfMatter.getFluid(L * 16 * 64)) // wire fine
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(17408))
+                .fluidInputs(BlackDwarfMatter.getFluid(L * 16 * 64))
                 .output(ELECTRIC_MOTOR_UXV, 64)
                 .EUt(VA[UXV])
                 .duration(2100)
@@ -258,19 +247,18 @@ public class ComponentAssemblyLine {
 
         //  OpV (105s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic, 64) // magnetic long stick
-                .input(stickLong, TranscendentMetal, 64) // long stick
+                .input(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic, 64)
                 .input(stickLong, TranscendentMetal, 64)
                 .input(stickLong, TranscendentMetal, 64)
                 .input(stickLong, TranscendentMetal, 64)
-                .input(stickLong, TranscendentMetal, 64) // ring (1 long stick = 2 ring)
                 .input(stickLong, TranscendentMetal, 64)
-                .input(cableGtHex, Galaxium, 8) // cable
+                .input(cableGtHex, Galaxium, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
                 .fluidInputs(Lubricant.getFluid(704000))
                 .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
                 .fluidInputs(Arcanium.getFluid(L * 8 * 64))
-                .fluidInputs(Shirabon.getFluid(L * 16 * 64)) // wire fine
+                .fluidInputs(TranscendentMetal.getFluid(17408))
+                .fluidInputs(Shirabon.getFluid(L * 16 * 64))
                 .output(ELECTRIC_MOTOR_OpV, 64)
                 .EUt(VA[OpV])
                 .duration(2100)
@@ -278,6 +266,24 @@ public class ComponentAssemblyLine {
                 .buildAndRegister();
 
         //  MAX (120s)
+        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(stickLong, BismuthLawrenciumStrontiumCuprateMagnetic, 64)
+                .input(stickLong, Omnium, 64)
+                .input(stickLong, Omnium, 64)
+                .input(stickLong, Omnium, 64)
+                .input(stickLong, Omnium, 64)
+                .input(cableGtHex, Universium, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
+                .fluidInputs(Lubricant.getFluid(13000 * 64))
+                .fluidInputs(SpacetimeContinuum.getFluid(L * 32 * 64))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16 * 64))
+                .fluidInputs(Omnium.getFluid(17408))
+                .fluidInputs(Magmatter.getFluid(L * 16 * 64))
+                .output(ELECTRIC_MOTOR_MAX, 64)
+                .EUt(VA[MAX])
+                .duration(2400)
+                .tier(MAX)
+                .buildAndRegister();
     }
 
     private static void Piston() {
@@ -875,7 +881,7 @@ public class ComponentAssemblyLine {
         //  ULV (15s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(pipeTinyFluid, Bronze, 64)
-                .input(stickLong, WroughtIron, 16)
+                .input(stickLong, WroughtIron, 8)
                 .input("wool", 64)
                 .input("wool", 64)
                 .input(ELECTRIC_MOTOR_ULV, 64)
@@ -896,7 +902,7 @@ public class ComponentAssemblyLine {
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 32)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(pipeTinyFluid, Bronze, 64)
-                    .input(stickLong, WroughtIron, 16)
+                    .input(stickLong, WroughtIron, 8)
                     .input(ELECTRIC_MOTOR_ULV, 64)
                     .circuitMeta(2)
                     .fluidInputs(Copper.getFluid(L * 3 * 64))
@@ -918,7 +924,7 @@ public class ComponentAssemblyLine {
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 32)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(cableGtHex, Tin, 4)
-                    .input(stickLong, Tin, 16)
+                    .input(stickLong, Tin, 8)
                     .input(ELECTRIC_MOTOR_LV, 64)
                     .circuitMeta(2)
                     .fluidInputs(Bronze.getFluid(L * 3 * 64)) // PipeNormalFluid
@@ -940,7 +946,7 @@ public class ComponentAssemblyLine {
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 32)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(cableGtHex, Copper, 4)
-                    .input(stickLong, Bronze, 16)
+                    .input(stickLong, Bronze, 8)
                     .input(ELECTRIC_MOTOR_MV, 64)
                     .circuitMeta(2)
                     .fluidInputs(Steel.getFluid(L * 3 * 64)) // PipeNormalFluid
@@ -962,7 +968,7 @@ public class ComponentAssemblyLine {
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 32)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(cableGtHex, Gold, 4)
-                    .input(stickLong, Steel, 16)
+                    .input(stickLong, Steel, 8)
                     .input(ELECTRIC_MOTOR_HV, 64)
                     .circuitMeta(2)
                     .fluidInputs(StainlessSteel.getFluid(L * 3 * 64)) // PipeNormalFluid
@@ -984,7 +990,7 @@ public class ComponentAssemblyLine {
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 32)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(cableGtHex, Aluminium, 4)
-                    .input(stickLong, StainlessSteel, 16)
+                    .input(stickLong, StainlessSteel, 8)
                     .input(ELECTRIC_MOTOR_EV, 64)
                     .circuitMeta(2)
                     .fluidInputs(Titanium.getFluid(L * 3 * 64)) // PipeNormalFluid
@@ -1005,7 +1011,7 @@ public class ComponentAssemblyLine {
                 PolyPhosphonitrileFluoroRubber.getFluid(L * 32)}) {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(cableGtHex, Tungsten, 4)
-                    .input(stickLong, TungstenSteel, 16)
+                    .input(stickLong, TungstenSteel, 8)
                     .input(ELECTRIC_MOTOR_IV, 64)
                     .circuitMeta(2)
                     .fluidInputs(TungstenSteel.getFluid(L * 3 * 64 + L * 4 * 64)) // PipeNormalFluid + Rotor
@@ -1024,7 +1030,6 @@ public class ComponentAssemblyLine {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(ELECTRIC_MOTOR_LuV, 64)
                     .input(plateDouble, HSSS, 64)
-                    .input(stickLong, HSSS, 64)
                     .input(stickLong, HSSS, 64)
                     .input(cableGtHex, NiobiumTitanium, 8)
                     .circuitMeta(2)
@@ -1048,7 +1053,6 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_ZPM, 64)
                     .input(plateDouble, Osmiridium, 64)
                     .input(stickLong, Osmiridium, 64)
-                    .input(stickLong, Osmiridium, 64)
                     .input(cableGtHex, VanadiumGallium, 8)
                     .circuitMeta(2)
                     .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
@@ -1070,7 +1074,6 @@ public class ComponentAssemblyLine {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(ELECTRIC_MOTOR_UV, 64)
                     .input(plateDouble, Tritanium, 64)
-                    .input(stickLong, Tritanium, 64)
                     .input(stickLong, Tritanium, 64)
                     .input(cableGtHex, YttriumBariumCuprate, 8)
                     .circuitMeta(2)
@@ -1095,7 +1098,6 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UHV, 64)
                     .input(plateDouble, Adamantium, 64)
                     .input(stickLong, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
                     .input(cableGtHex, Europium, 8)
                     .circuitMeta(2)
                     .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
@@ -1118,7 +1120,6 @@ public class ComponentAssemblyLine {
             COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(ELECTRIC_MOTOR_UEV, 64)
                     .input(plateDouble, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
                     .input(stickLong, Hdcs, 64)
                     .input(cableGtHex, PedotTMA, 8)
                     .circuitMeta(2)
@@ -1144,7 +1145,6 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UIV, 64)
                     .input(plateDouble, Legendarium, 64)
                     .input(stickLong, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
                     .input(cableGtHex, Solarium, 8)
                     .circuitMeta(2)
                     .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
@@ -1169,7 +1169,6 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UXV, 64)
                     .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
                     .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
                     .input(cableGtHex, Solarium, 8)
                     .circuitMeta(2)
                     .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
@@ -1193,7 +1192,6 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_OpV, 64)
                     .input(plateDouble, TranscendentMetal, 64)
                     .input(stickLong, TranscendentMetal, 64)
-                    .input(stickLong, TranscendentMetal, 64)
                     .input(cableGtHex, Galaxium, 8)
                     .circuitMeta(2)
                     .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
@@ -1211,7 +1209,28 @@ public class ComponentAssemblyLine {
         }
 
         //  MAX (120s)
-
+        for (FluidStack stack : new FluidStack[]{
+                SiliconeRubber.getFluid(L * 1024),
+                NitrileButadieneRubber.getFluid(L * 1024)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_MAX, 64)
+                    .input(plateDouble, Omnium, 64)
+                    .input(stickLong, Omnium, 64)
+                    .input(cableGtHex, Universium, 8)
+                    .circuitMeta(2)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
+                    .fluidInputs(Lubricant.getFluid(13000 * 64))
+                    .fluidInputs(SpacetimeContinuum.getFluid(L * 32 * 64))
+                    .fluidInputs(PrimordialMatter.getFluid(L * 16 * 64))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(Aetherium.getFluid(L * 6 * 64))
+                    .fluidInputs(Eternity.getFluid(L * 4 * 64))
+                    .output(ELECTRIC_PUMP_MAX, 64)
+                    .EUt(VA[MAX])
+                    .duration(2400)
+                    .tier(MAX)
+                    .buildAndRegister();
+        }
     }
 
     private static void RobotArm() {
