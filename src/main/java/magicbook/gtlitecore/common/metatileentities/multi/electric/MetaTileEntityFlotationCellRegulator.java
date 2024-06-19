@@ -100,6 +100,7 @@ public class MetaTileEntityFlotationCellRegulator extends RecipeMapMultiblockCon
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
+        tooltip.add(I18n.format("gtlitecore.machine.flotation_cell_regulator.tooltip.1"));
     }
 
     @Override

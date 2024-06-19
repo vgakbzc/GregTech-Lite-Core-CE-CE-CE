@@ -1535,7 +1535,7 @@ gtlitecore.machine.isa_mill.grind_ball.soapstone=研磨球材质：皂石
 gtlitecore.machine.isa_mill.grind_ball.aluminium=研磨球材质：铝
 
 gtlitecore.machine.flotation_cell_regulator.name=工业浮选机
-gtlitecore.machine.flotation_cell_regulator.tooltip=工业级浮游选矿池
+gtlitecore.machine.flotation_cell_regulator.tooltip.1=工业级浮游选矿池
 
 gtlitecore.machine.vacuum_drying_furnace.name=真空干燥炉
 

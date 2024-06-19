@@ -23,6 +23,11 @@ public class MaterialRecipes {
 
     public static void init() {
 
+        //  Remove some misc recipes.
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "materials/formationcore");
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "materials/annihilationcore");
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/wireless_booster");
+
         //  Fluix Logic Unit
         //  This is advanced version of all AE2 processors,
         //  used for some advanced machines, cells or components.
