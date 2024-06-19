@@ -380,12 +380,10 @@ public class ComponentAssemblyLine {
                 .input(plateDouble, HSSS, 64)
                 .input(stickLong, HSSS, 64)
                 .input(stickLong, HSSS, 64)
-                .input(stickLong, HSSS, 64)
-                .input(stickLong, HSSS, 64)
                 .input(cableGtHex, NiobiumTitanium, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 64))
                 .fluidInputs(Lubricant.getFluid(16000))
-                .fluidInputs(HSSS.getFluid(L * 4 * 64 + L * 4 * 64 + L * 2 * 64)) //  Gear (576 * 64) + Round (576 * 64) + Small Gear (144 * 2 * 64)
+                .fluidInputs(HSSS.getFluid(80896))
                 .output(ELECTRIC_PISTON_LUV, 64)
                 .EUt(VA[LuV])
                 .duration(1200)
@@ -395,16 +393,14 @@ public class ComponentAssemblyLine {
         //  ZPM (60s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ELECTRIC_MOTOR_ZPM, 64)
-                .input(plateDouble, Osmiridium, 64) // plate
                 .input(plateDouble, Osmiridium, 64)
-                .input(stickLong, Osmiridium, 64) // stick
+                .input(plateDouble, Osmiridium, 64)
                 .input(stickLong, Osmiridium, 64)
-                .input(stickLong, Osmiridium, 64) // ring
                 .input(stickLong, Osmiridium, 64)
-                .input(cableGtHex, VanadiumGallium, 8) // cable
+                .input(cableGtHex, VanadiumGallium, 8)
                 .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
                 .fluidInputs(Lubricant.getFluid(32000))
-                .fluidInputs(Osmiridium.getFluid(L * 4 * 64 + L * 4 * 64 + L * 2 * 64))  //  Gear (576 * 64) + Round (576 * 64) + Small Gear (144 * 2 * 64)
+                .fluidInputs(Osmiridium.getFluid(80896))
                 .output(ELECTRIC_PISTON_ZPM, 64)
                 .EUt(VA[ZPM])
                 .duration(1200)
@@ -418,14 +414,12 @@ public class ComponentAssemblyLine {
                 .input(plateDouble, Tritanium, 64)
                 .input(stickLong, Tritanium, 64) // stick
                 .input(stickLong, Tritanium, 64)
-                .input(stickLong, Tritanium, 64) // ring
-                .input(stickLong, Tritanium, 64)
                 .input(cableGtHex, YttriumBariumCuprate, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                 .fluidInputs(Lubricant.getFluid(64000))
                 .fluidInputs(Naquadria.getFluid(L * 4 * 64))
-                .fluidInputs(Tritanium.getFluid(L * 4 * 64)) // round
-                .fluidInputs(NaquadahAlloy.getFluid(L * 4 * 64 + L * 2 * 64)) //  Gear (576 * 64) + Small Gear (144 * 2 * 64)
+                .fluidInputs(Tritanium.getFluid(25600))
+                .fluidInputs(NaquadahAlloy.getFluid(L * 4 * 64 + L * 2 * 64))
                 .output(ELECTRIC_PISTON_UV, 64)
                 .EUt(VA[UV])
                 .duration(1500)
@@ -435,17 +429,15 @@ public class ComponentAssemblyLine {
         //  UHV (75s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ELECTRIC_MOTOR_UHV, 64)
-                .input(plateDouble, Adamantium, 64) // plate
                 .input(plateDouble, Adamantium, 64)
-                .input(stickLong, Adamantium, 64) // stick
+                .input(plateDouble, Adamantium, 64)
                 .input(stickLong, Adamantium, 64)
-                .input(stickLong, Adamantium, 64) // ring
                 .input(stickLong, Adamantium, 64)
                 .input(cableGtHex, Europium, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                 .fluidInputs(Lubricant.getFluid(192000))
                 .fluidInputs(Vibranium.getFluid(L * 64))
-                .fluidInputs(Adamantium.getFluid(L * 4 * 64)) // round
+                .fluidInputs(Adamantium.getFluid(25600))
                 .fluidInputs(Orichalcum.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
                 .output(ELECTRIC_PISTON_UHV, 64)
                 .EUt(VA[UHV])
@@ -456,18 +448,16 @@ public class ComponentAssemblyLine {
         //  UEV (90s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ELECTRIC_MOTOR_UEV, 64)
-                .input(plateDouble, Hdcs, 64) // plate
                 .input(plateDouble, Hdcs, 64)
-                .input(stickLong, Hdcs, 64) // stick
+                .input(plateDouble, Hdcs, 64)
                 .input(stickLong, Hdcs, 64)
-                .input(stickLong, Hdcs, 64) // ring
                 .input(stickLong, Hdcs, 64)
                 .input(cableGtHex, PedotTMA, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
                 .fluidInputs(Lubricant.getFluid(320000))
                 .fluidInputs(Polyetheretherketone.getFluid(L * 2 * 64))
                 .fluidInputs(Ichorium.getFluid(L * 64))
-                .fluidInputs(Hdcs.getFluid(L * 4 * 64)) // round
+                .fluidInputs(Hdcs.getFluid(25600))
                 .fluidInputs(Adamantium.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
                 .output(ELECTRIC_PISTON_UEV, 64)
                 .EUt(VA[UEV])
@@ -478,19 +468,17 @@ public class ComponentAssemblyLine {
         //  UIV (90s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(ELECTRIC_MOTOR_UIV, 64)
-                .input(plateDouble, Legendarium, 64) // plate
                 .input(plateDouble, Legendarium, 64)
-                .input(stickLong, Legendarium, 64) // stick
+                .input(plateDouble, Legendarium, 64)
                 .input(stickLong, Legendarium, 64)
-                .input(stickLong, Legendarium, 64) // ring
                 .input(stickLong, Legendarium, 64)
                 .input(cableGtHex, Solarium, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
                 .fluidInputs(Lubricant.getFluid(448000))
                 .fluidInputs(Zylon.getFluid(L * 4 * 64))
                 .fluidInputs(Astralium.getFluid(L * 2 * 64))
-                .fluidInputs(Legendarium.getFluid(L * 4 * 64)) // round
-                .fluidInputs(Infinity.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
+                .fluidInputs(Legendarium.getFluid(25600))
+                .fluidInputs(Infinity.getFluid(L * 4 * 64 + L * 2 * 64))
                 .output(ELECTRIC_PISTON_UIV, 64)
                 .EUt(VA[UIV])
                 .duration(1800)
@@ -502,16 +490,14 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_UXV, 64)
                 .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64) // plate
                 .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64) // stick
                 .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64) // ring
                 .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
                 .input(cableGtHex, Hypogen, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
                 .fluidInputs(Lubricant.getFluid(576000))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
                 .fluidInputs(Hikarium.getFluid(L * 4 * 64))
-                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64)) // round
+                .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(25600))
                 .fluidInputs(CosmicNeutronium.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
                 .output(ELECTRIC_PISTON_UXV, 64)
                 .EUt(VA[UXV])
@@ -524,16 +510,14 @@ public class ComponentAssemblyLine {
                 .input(ELECTRIC_MOTOR_OpV, 64)
                 .input(plateDouble, TranscendentMetal, 64) // plate
                 .input(plateDouble, TranscendentMetal, 64)
-                .input(stickLong, TranscendentMetal, 64) // stick
                 .input(stickLong, TranscendentMetal, 64)
-                .input(stickLong, TranscendentMetal, 64) // ring
                 .input(stickLong, TranscendentMetal, 64)
                 .input(cableGtHex, Galaxium, 8) // cable
                 .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
                 .fluidInputs(Lubricant.getFluid(704000))
                 .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
                 .fluidInputs(Arcanium.getFluid(L * 8 * 64))
-                .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64))
+                .fluidInputs(TranscendentMetal.getFluid(25600))
                 .fluidInputs(Spacetime.getFluid(L * 4 * 64 + L * 2 * 64)) // gear + small gear
                 .output(ELECTRIC_PISTON_OpV, 64)
                 .EUt(VA[OpV])
@@ -542,6 +526,24 @@ public class ComponentAssemblyLine {
                 .buildAndRegister();
 
         //  MAX (120s)
+        COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(ELECTRIC_MOTOR_MAX, 64)
+                .input(plateDouble, Omnium, 64)
+                .input(plateDouble, Omnium, 64)
+                .input(stickLong, Omnium, 64)
+                .input(stickLong, Omnium, 64)
+                .input(cableGtHex, Universium, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
+                .fluidInputs(Lubricant.getFluid(13000 * 64))
+                .fluidInputs(SpacetimeContinuum.getFluid(L * 32 * 64))
+                .fluidInputs(PrimordialMatter.getFluid(L * 16 * 64))
+                .fluidInputs(Omnium.getFluid(25600))
+                .fluidInputs(Eternity.getFluid(L * 4 * 64 + L * 2 * 64))
+                .output(ELECTRIC_PISTON_MAX, 64)
+                .EUt(VA[MAX])
+                .duration(2400)
+                .tier(MAX)
+                .buildAndRegister();
     }
 
     private static void Conveyor() {
@@ -690,14 +692,13 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_LuV, 64)
                     .input(ELECTRIC_MOTOR_LuV, 64)
                     .input(plateDouble, HSSS, 64)
-                    .input(stickLong, HSSS, 64)
-                    .input(stickLong, HSSS, 64)
+                    .input(stickLong, HSSS, 32)
                     .input(cableGtHex, NiobiumTitanium, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 64))
                     .fluidInputs(Lubricant.getFluid(16000))
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(HSSS.getFluid(L * 4 * 64 + L * 32)) //  Round + (1 Ingot -> 8 Bolt -> 8 Screw)
+                    .fluidInputs(HSSS.getFluid(25600))
                     .output(CONVEYOR_MODULE_LuV, 64)
                     .EUt(VA[LuV])
                     .duration(1200)
@@ -713,14 +714,13 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_ZPM, 64)
                     .input(ELECTRIC_MOTOR_ZPM, 64)
                     .input(plateDouble, Osmiridium, 64)
-                    .input(stickLong, Osmiridium, 64)
-                    .input(stickLong, Osmiridium, 64)
+                    .input(stickLong, Osmiridium, 32)
                     .input(cableGtHex, VanadiumGallium, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 2 * 64))
                     .fluidInputs(Lubricant.getFluid(32000))
                     .fluidInputs(new FluidStack[]{stack})
-                    .fluidInputs(Osmiridium.getFluid(L * 4 * 64 + L * 32)) //  Round + (1 Ingot -> 8 Bolt -> 8 Screw)
+                    .fluidInputs(Osmiridium.getFluid(25600))
                     .output(CONVEYOR_MODULE_ZPM, 64)
                     .EUt(VA[ZPM])
                     .duration(1200)
@@ -736,15 +736,14 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UV, 64)
                     .input(ELECTRIC_MOTOR_UV, 64)
                     .input(plateDouble, Tritanium, 64)
-                    .input(stickLong, Tritanium, 64)
-                    .input(stickLong, Tritanium, 64)
+                    .input(stickLong, Tritanium, 32)
                     .input(cableGtHex, YttriumBariumCuprate, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 4 * 64))
                     .fluidInputs(Lubricant.getFluid(64000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Naquadria.getFluid(L * 4 * 64))
-                    .fluidInputs(Tritanium.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(Tritanium.getFluid(25600))
                     .output(CONVEYOR_MODULE_UV, 64)
                     .EUt(VA[UV])
                     .duration(1500)
@@ -760,15 +759,14 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UHV, 64)
                     .input(ELECTRIC_MOTOR_UHV, 64)
                     .input(plateDouble, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
-                    .input(stickLong, Adamantium, 64)
+                    .input(stickLong, Adamantium, 32)
                     .input(cableGtHex, Europium, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 8 * 64))
                     .fluidInputs(Lubricant.getFluid(192000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Vibranium.getFluid(L * 64))
-                    .fluidInputs(Adamantium.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(Adamantium.getFluid(25600))
                     .output(CONVEYOR_MODULE_UHV, 64)
                     .EUt(VA[UHV])
                     .duration(1500)
@@ -784,15 +782,14 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UEV, 64)
                     .input(ELECTRIC_MOTOR_UEV, 64)
                     .input(plateDouble, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
-                    .input(stickLong, Hdcs, 64)
+                    .input(stickLong, Hdcs, 32)
                     .input(cableGtHex, PedotTMA, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 16 * 64))
                     .fluidInputs(Lubricant.getFluid(320000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Ichorium.getFluid(L * 2 * 64))
-                    .fluidInputs(Hdcs.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(Hdcs.getFluid(25600))
                     .output(CONVEYOR_MODULE_UEV, 64)
                     .EUt(VA[UEV])
                     .duration(1800)
@@ -808,15 +805,14 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UIV, 64)
                     .input(ELECTRIC_MOTOR_UIV, 64)
                     .input(plateDouble, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
-                    .input(stickLong, Legendarium, 64)
+                    .input(stickLong, Legendarium, 32)
                     .input(cableGtHex, Solarium, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 32 * 64))
                     .fluidInputs(Lubricant.getFluid(448000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Astralium.getFluid(L * 4 * 64))
-                    .fluidInputs(Legendarium.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(Legendarium.getFluid(25600))
                     .output(CONVEYOR_MODULE_UIV, 64)
                     .EUt(VA[UIV])
                     .duration(1800)
@@ -832,21 +828,19 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_UXV, 64)
                     .input(ELECTRIC_MOTOR_UXV, 64)
                     .input(plateDouble, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
-                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 64)
+                    .input(stickLong, MagnetoHydrodynamicallyConstrainedStarMatter, 32)
                     .input(cableGtHex, Hypogen, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
                     .fluidInputs(Lubricant.getFluid(576000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Hikarium.getFluid(L * 8 * 64))
-                    .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(25600)) // round + screw
                     .output(CONVEYOR_MODULE_UXV, 64)
                     .EUt(VA[UXV])
                     .duration(2100)
                     .tier(UXV)
                     .buildAndRegister();
-
         }
 
         //  OpV (105s)
@@ -858,14 +852,13 @@ public class ComponentAssemblyLine {
                     .input(ELECTRIC_MOTOR_OpV, 64)
                     .input(plateDouble, TranscendentMetal, 64)
                     .input(stickLong, TranscendentMetal, 64)
-                    .input(stickLong, TranscendentMetal, 64)
                     .input(cableGtHex, Galaxium, 8)
                     .circuitMeta(1)
                     .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
                     .fluidInputs(Lubricant.getFluid(704000))
                     .fluidInputs(new FluidStack[]{stack})
                     .fluidInputs(Arcanium.getFluid(L * 16 * 64))
-                    .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64 + L * 32)) // round + screw
+                    .fluidInputs(TranscendentMetal.getFluid(25600))
                     .output(CONVEYOR_MODULE_OpV, 64)
                     .EUt(VA[OpV])
                     .duration(2100)
@@ -874,6 +867,27 @@ public class ComponentAssemblyLine {
         }
 
         //  MAX (120s)
+        for (FluidStack stack : new FluidStack[]{
+                StyreneButadieneRubber.getFluid(L * 64 * 64),
+                PolyPhosphonitrileFluoroRubber.getFluid(L * 64 * 64)}) {
+            COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(ELECTRIC_MOTOR_MAX, 64)
+                    .input(ELECTRIC_MOTOR_MAX, 64)
+                    .input(plateDouble, Omnium, 64)
+                    .input(stickLong, Omnium, 64)
+                    .input(cableGtHex, Universium, 8)
+                    .circuitMeta(1)
+                    .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
+                    .fluidInputs(Lubricant.getFluid(13000 * 64))
+                    .fluidInputs(new FluidStack[]{stack})
+                    .fluidInputs(PrimordialMatter.getFluid(L * 32 * 64))
+                    .fluidInputs(Omnium.getFluid(25600))
+                    .output(CONVEYOR_MODULE_MAX, 64)
+                    .EUt(VA[MAX])
+                    .duration(2400)
+                    .tier(MAX)
+                    .buildAndRegister();
+        }
     }
 
     private static void Pump() {
