@@ -142,7 +142,7 @@ public class MaterialRecipes {
                 " E ", "POP", " P ",
                 'P', new UnificationEntry(plate, CertusQuartz),
                 'E', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 9), // Fluix Pearl
-                'O', getMetaItemById(Mods.AppliedEnergistics2.getID(), "part", 140));  // Quartz FIber
+                'O', getMetaItemById(Mods.AppliedEnergistics2.getID(), "part", 140));  // Quartz Fiber
 
         //  Wireless Booster
         ModHandler.removeRecipeByOutput(getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 42));
@@ -150,7 +150,8 @@ public class MaterialRecipes {
                 "   ", "DOE", "PPP",
                 'D', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 1), // Charged Certus Crystal
                 'E', new UnificationEntry(dust, EnderPearl),
-                'P', "plateElectricalSteel");
+                'P', "plateElectricalSteel",
+                'O', getMetaItemById(Mods.AppliedEnergistics2.getID(), "part", 140));  // Quartz Fiber
 
     }
 }
