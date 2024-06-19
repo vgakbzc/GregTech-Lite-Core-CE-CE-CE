@@ -448,7 +448,7 @@ public class SolarPanels {
         //  UHV Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Vibranium)
-                .input(COVER_SOLAR_PANEL_UHV, 2)
+                .input(COVER_SOLAR_PANEL_UV, 2)
                 .input(EUROPIUM_WAFER, 4)
                 .input(circuit, MarkerMaterials.Tier.UEV, 4)
                 .input(plate, Solarium)
@@ -472,7 +472,7 @@ public class SolarPanels {
         //  UEV Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, BlackTitanium)
-                .input(COVER_SOLAR_PANEL_UEV, 2)
+                .input(COVER_SOLAR_PANEL_UHV, 2)
                 .input(AMERICIUM_WAFER, 4)
                 .input(circuit, MarkerMaterials.Tier.UIV, 4)
                 .input(plate, Solarium, 2)
@@ -496,7 +496,7 @@ public class SolarPanels {
         //  UIV Solar Panel
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, BlackPlutonium)
-                .input(COVER_SOLAR_PANEL_UIV, 2)
+                .input(COVER_SOLAR_PANEL_UEV, 2)
                 .input(DUBNIUM_WAFER, 4)
                 .input(circuit, MarkerMaterials.Tier.UXV, 4)
                 .input(EMITTER_UIV, 2)
