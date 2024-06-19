@@ -1608,8 +1608,8 @@ public class ComponentAssemblyLine {
 
         //  ULV (15s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, Iron, 64)
-                .input(stickLong, Iron, 64)
+                .input(stickLong, TinAlloy, 64)
+                .input(stickLong, TinAlloy, 64)
                 .input(pipeTinyFluid, Bronze, 64)
                 .input(pipeTinyFluid, Bronze, 64)
                 .input(circuit, MarkerMaterials.Tier.ULV, 64)
@@ -1623,8 +1623,8 @@ public class ComponentAssemblyLine {
                 .buildAndRegister();
 
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, Iron, 64)
-                .input(stickLong, Iron, 64)
+                .input(stickLong, TinAlloy, 64)
+                .input(stickLong, TinAlloy, 64)
                 .input(pipeTinyFluid, Bronze, 64)
                 .input(pipeTinyFluid, Bronze, 64)
                 .input(WRAP_CIRCUIT_ULV, 8) // 8 * 16 = 2 * 64
@@ -1871,7 +1871,7 @@ public class ComponentAssemblyLine {
                 .input(cableGtHex, Solarium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 64 * 64))
                 .fluidInputs(Zylon.getFluid(L * 4 * 64))
-                .fluidInputs(Astralium.getFluid(L * 24 * 64 + L * 2 * 64)) // foil + recipe fluids
+                .fluidInputs(Astralium.getFluid(313344))
                 .fluidInputs(Legendarium.getFluid(L * 4 * 64)) // long stick
                 .output(EMITTER_UIV, 64)
                 .EUt(VA[UIV])
@@ -1889,7 +1889,7 @@ public class ComponentAssemblyLine {
                 .input(cableGtHex, Hypogen, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 128 * 64))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 8 * 64))
-                .fluidInputs(Hikarium.getFluid(L * 24 * 64 + L * 4 * 64)) // foil + recipe fluids
+                .fluidInputs(Hikarium.getFluid(331776))
                 .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(L * 4 * 64)) // long stick
                 .output(EMITTER_UXV, 64)
                 .EUt(VA[UXV])
@@ -1909,7 +1909,7 @@ public class ComponentAssemblyLine {
                 .input(cableGtHex, Galaxium, 16)
                 .fluidInputs(SolderingAlloy.getFluid(L * 256 * 64))
                 .fluidInputs(CosmicFabric.getFluid(L * 16 * 64))
-                .fluidInputs(Arcanium.getFluid(L * 24 * 64 + L * 8 * 64)) // foil + recipe fluids
+                .fluidInputs(Arcanium.getFluid(368640))
                 .fluidInputs(TranscendentMetal.getFluid(L * 4 * 64)) // long stick
                 .output(EMITTER_OpV, 64)
                 .EUt(VA[OpV])
@@ -1924,7 +1924,7 @@ public class ComponentAssemblyLine {
 
         //  ULV (15s)
         COMPONENT_ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(stickLong, Iron, 32)
+                .input(stickLong, TinAlloy, 32)
                 .input(plateDouble, WroughtIron, 64)
                 .input(plateDouble, WroughtIron, 64)
                 .input(circuit, MarkerMaterials.Tier.ULV, 64)
