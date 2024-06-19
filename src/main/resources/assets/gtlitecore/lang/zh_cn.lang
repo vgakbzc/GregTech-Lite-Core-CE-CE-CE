@@ -3149,6 +3149,8 @@ gregtech.material.hattrium=提布莉姆合金
 gregtech.material.duraluminium_alloy=硬铝合金65A
 gregtech.material.artherium_b_47=艾瑟瑞姆合金-B47
 gregtech.material.enriched_naquadah_alloy=富集硅岩合金
+gregtech.material.trimethylbenzoyl_diphenylphosphine_oxide=2,4,6-(三甲基苯甲酰基)二苯基氧化膦（TBDO）
+gregtech.material.methyl_p_methylthiophenyl_morpholin_acetone=2-甲基-1-对甲硫基苯基-2-吗啉基-1-丙酮（MMMA）
 gregtech.material.cosmic_matter_superconductor=宇宙物质超导体
 gregtech.material.enriched_holmium=富集钬
 
@@ -3370,7 +3372,6 @@ gregtech.material.trimethylacetophenone=均三甲基苯乙酮
 gregtech.material.trimethylbenzoic_acid=均三甲基苯甲酸
 gregtech.material.trimethylbenzoyl_chloride=均三甲基苯甲酰氯
 gregtech.material.trimethylbenzoyl_diphenylphosphine=2,4,6-(三甲基苯甲酰基)二苯基膦
-gregtech.material.trimethylbenzoyl_diphenylphosphine_oxide=2,4,6-(三甲基苯甲酰基)二苯基氧化膦（TBDO）
 gregtech.material.morpholine=吗啉
 gregtech.material.isobutyryl_chloride=异丁酰氯
 gregtech.material.p_chlorophenyl_isopropylketone=对氯苯基异丙基酮
@@ -3378,7 +3379,7 @@ gregtech.material.methyl_mercaptan=甲硫醇
 gregtech.material.p_methylthiophenyl_isopropylketone=对甲硫基苯基异丙基酮（MTIK）
 gregtech.material.methyl_p_methylthiophenyl_chloro_acetone=2-甲基-1-对甲硫基苯基-2-氯-1-丙酮
 gregtech.material.methyl_p_methylthiophenyl_methoxy_epoxypropane=2-甲基-1-对甲硫基苯基-1-甲氧基-1,2-环氧丙烷
-gregtech.material.methyl_p_methylthiophenyl_morpholin_acetone=2-甲基-1-对甲硫基苯基-2-吗啉基-1-丙酮
+
 gregtech.material.phenylisopropylketone=苯基异丙基酮
 gregtech.material.chloro_methyl_phenyl_acetone=2-氯-2-甲基-1-苯基-1-丙酮
 gregtech.material.hydroxy_methyl_phenyl_acetone=2-羟基-2-甲基-1-苯基-1-丙酮（HMPA）

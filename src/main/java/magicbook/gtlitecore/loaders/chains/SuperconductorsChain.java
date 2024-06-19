@@ -299,9 +299,8 @@ public class SuperconductorsChain {
                 .duration(SECOND)
                 .buildAndRegister();
 
-        //  Remove original recipe
+        //  Tengam -> Attuned Tengam (ingot)
         GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES, OreDictUnifier.get(ingot, Tengam));
-
         POLARIZER_RECIPES.recipeBuilder()
                 .input(ingot, Tengam)
                 .output(ingot, AttunedTengam)
@@ -309,8 +308,8 @@ public class SuperconductorsChain {
                 .duration((int) (4.9 * SECOND))
                 .buildAndRegister();
 
+        //  Tengam -> Attuned Tengam (plate)
         GTRecipeHandler.removeRecipesByInputs(POLARIZER_RECIPES, OreDictUnifier.get(plate, Tengam));
-
         POLARIZER_RECIPES.recipeBuilder()
                 .input(plate, Tengam)
                 .output(plate, AttunedTengam)
@@ -318,6 +317,7 @@ public class SuperconductorsChain {
                 .duration((int) (4.9 * SECOND))
                 .buildAndRegister();
 
+        //  Tengam -> Attuned Tengam (double plate)
         POLARIZER_RECIPES.recipeBuilder()
                 .input(plateDouble, Tengam)
                 .output(plateDouble, AttunedTengam)
@@ -325,31 +325,41 @@ public class SuperconductorsChain {
                 .duration((int) (9.8 * SECOND))
                 .buildAndRegister();
 
-        GTRecipeHandler.removeRecipesByInputs(ALLOY_BLAST_RECIPES,
-                OreDictUnifier.get(dust, Octiron, 8),
-                OreDictUnifier.get(dust, RutheniumTriniumAmericiumNeutronate, 9),
-                OreDictUnifier.get(dust, HastelloyK243, 7),
-                OreDictUnifier.get(dust, AstralTitanium, 6),
-                OreDictUnifier.get(dust, CelestialTungsten, 6),
-                OreDictUnifier.get(dust, Shirabon, 2),
-                OreDictUnifier.get(dust, Fluorocarborane, 25),
-                OreDictUnifier.get(dust, AttunedTengam, 4),
-                IntCircuitIngredient.getIntegratedCircuit(8));
+        //  Deleted original ABS recipe of MAX Superconductor,
+        //  because this recipe should use higher Protective Gas than Krypton.
+        //  TODO Maybe we can change all Protective Gas of high tier Superconductors.
+        //  Another TODO: Maybe find a universal property to tweak Gas Tier system of vanilla GregTech.
 
         GTRecipeHandler.removeRecipesByInputs(ALLOY_BLAST_RECIPES,
-                new ItemStack[]{
-                        OreDictUnifier.get(dust, Octiron, 8),
-                        OreDictUnifier.get(dust, RutheniumTriniumAmericiumNeutronate, 9),
-                        OreDictUnifier.get(dust, HastelloyK243, 7),
-                        OreDictUnifier.get(dust, AstralTitanium, 6),
-                        OreDictUnifier.get(dust, CelestialTungsten, 6),
-                        OreDictUnifier.get(dust, Shirabon, 2),
-                        OreDictUnifier.get(dust, Fluorocarborane, 25),
-                        OreDictUnifier.get(dust, AttunedTengam, 4),
-                        IntCircuitIngredient.getIntegratedCircuit(18)},
-                new FluidStack[]{Krypton.getFluid(670)});
+                new ItemStack[]{OreDictUnifier.get(dust, Octiron, 8),
+                                OreDictUnifier.get(dust, RutheniumTriniumAmericiumNeutronate, 9),
+                                OreDictUnifier.get(dust, HastelloyK243, 7),
+                                OreDictUnifier.get(dust, AstralTitanium, 6),
+                                OreDictUnifier.get(dust, CelestialTungsten, 6),
+                                OreDictUnifier.get(dust, Shirabon, 2),
+                                OreDictUnifier.get(dust, Fluorocarborane, 25),
+                                OreDictUnifier.get(dust, AttunedTengam, 4),
+                                IntCircuitIngredient.getIntegratedCircuit(20)},
+                new FluidStack[]{MethylMethylthiophenylMorpholinAcetone.getFluid(2000),
+                                 TrimethylbenzoylDiphenylphosphineOxide.getFluid(2000),
+                                 Krypton.getFluid(710)});
 
+        GTRecipeHandler.removeRecipesByInputs(ALLOY_BLAST_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Octiron, 8),
+                                OreDictUnifier.get(dust, RutheniumTriniumAmericiumNeutronate, 9),
+                                OreDictUnifier.get(dust, HastelloyK243, 7),
+                                OreDictUnifier.get(dust, AstralTitanium, 6),
+                                OreDictUnifier.get(dust, CelestialTungsten, 6),
+                                OreDictUnifier.get(dust, Shirabon, 2),
+                                OreDictUnifier.get(dust, Fluorocarborane, 25),
+                                OreDictUnifier.get(dust, AttunedTengam, 4),
+                                IntCircuitIngredient.getIntegratedCircuit(10)},
+                new FluidStack[]{MethylMethylthiophenylMorpholinAcetone.getFluid(2000),
+                                 TrimethylbenzoylDiphenylphosphineOxide.getFluid(2000)});
+
+        //  Used Metastable Oganesson as Protective Gas.
         ALLOY_BLAST_RECIPES.recipeBuilder()
+                .circuitMeta(20)
                 .input(dust, Octiron, 8)
                 .input(dust, RutheniumTriniumAmericiumNeutronate, 9)
                 .input(dust, HastelloyK243, 7)
@@ -358,16 +368,17 @@ public class SuperconductorsChain {
                 .input(dust, Shirabon, 2)
                 .input(dust, Fluorocarborane, 25)
                 .input(dust, AttunedTengam, 4)
-                .circuitMeta(8)
-                .fluidInputs(Eternity.getFluid(L * 40))
-                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(16000))
-                .fluidOutputs(CosmicMatterSuperconductor.getFluid(GCYMFluidStorageKeys.MOLTEN, 9648))
-                .EUt((int) (V[MAX]))
-                .duration((int) (50.25 * SECOND))
-                .blastFurnaceTemp(22000)
+                .fluidInputs(MethylMethylthiophenylMorpholinAcetone.getFluid(2000))
+                .fluidInputs(TrimethylbenzoylDiphenylphosphineOxide.getFluid(2000))
+                .fluidInputs(MetastableOganesson.getFluid(710))
+                .fluidOutputs(CosmicMatterSuperconductor.getFluid(GCYMFluidStorageKeys.MOLTEN, L * 71))
+                .EUt(VA[MAX])
+                .duration((int) (35.65 * SECOND))
+                .blastFurnaceTemp(22000) // Hikarium Coil
                 .buildAndRegister();
 
         ALLOY_BLAST_RECIPES.recipeBuilder()
+                .circuitMeta(10)
                 .input(dust, Octiron, 8)
                 .input(dust, RutheniumTriniumAmericiumNeutronate, 9)
                 .input(dust, HastelloyK243, 7)
@@ -376,14 +387,12 @@ public class SuperconductorsChain {
                 .input(dust, Shirabon, 2)
                 .input(dust, Fluorocarborane, 25)
                 .input(dust, AttunedTengam, 4)
-                .circuitMeta(18)
-                .fluidInputs(MetastableOganesson.getFluid(670))
-                .fluidInputs(Eternity.getFluid(L * 40))
-                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(16000))
-                .fluidOutputs(CosmicMatterSuperconductor.getFluid(GCYMFluidStorageKeys.MOLTEN, 9648))
-                .EUt((int) (V[MAX]))
-                .duration((int) (33.65 * SECOND))
-                .blastFurnaceTemp(22000)
+                .fluidInputs(MethylMethylthiophenylMorpholinAcetone.getFluid(2000))
+                .fluidInputs(TrimethylbenzoylDiphenylphosphineOxide.getFluid(2000))
+                .fluidOutputs(CosmicMatterSuperconductor.getFluid(GCYMFluidStorageKeys.MOLTEN, L * 71))
+                .EUt(VA[MAX])
+                .duration((int) (53.25 * SECOND))
+                .blastFurnaceTemp(22000) // Hikarium Coil
                 .buildAndRegister();
     }
 }

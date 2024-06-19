@@ -1831,16 +1831,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)3C6H2COP(C6H5)2", true);
 
-        //  13218 2,4,6-(Trimethylbenzoyl) Diphenylphosphine Oxide
-        TrimethylbenzoylDiphenylphosphineOxide = new Material.Builder(getID(), gregtechId("trimethylbenzoyl_diphenylphosphine_oxide"))
-                .liquid()
-                .color(0xA16145)
-                .components(Carbon, 22, Hydrogen, 21, Oxygen, 2, Phosphorus, 1)
-                .flags(DISABLE_DECOMPOSITION)
-                .build()
-                .setFormula("(CH3)3C6H2COPO(C6H5)2", true);
-
-        //  13219 Morpholine
+        //  13218 Morpholine
         Morpholine = new Material.Builder(getID(), gregtechId("morpholine"))
                 .liquid()
                 .color(0xFF6FD4)
@@ -1849,7 +1840,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(C2H4)2ONH", true);
 
-        //  13220 Isobutyryl Chloride
+        //  13219 Isobutyryl Chloride
         IsobutyrylChloride = new Material.Builder(getID(), gregtechId("isobutyryl_chloride"))
                 .liquid()
                 .color(0xE191A9)
@@ -1858,7 +1849,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2CHCOCl", true);
 
-        //  13221 p-Chlorophenyl Isopropylketone
+        //  13220 p-Chlorophenyl Isopropylketone
         ChlorophenylIsopropylketone = new Material.Builder(getID(), gregtechId("p_chlorophenyl_isopropylketone"))
                 .liquid()
                 .color(0x93D80D)
@@ -1867,7 +1858,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H4COCHCl", true);
 
-        //  13222 Methyl Mercaptan
+        //  13221 Methyl Mercaptan
         MethylMercaptan = new Material.Builder(getID(),  gregtechId("methyl_mercaptan"))
                 .gas()
                 .color(0x8B4842)
@@ -1876,7 +1867,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("CH3SH", true);
 
-        //  13223 p-Methylthiophenyl Isopropylketone
+        //  13222 p-Methylthiophenyl Isopropylketone
         MethylthiophenylIsopropylketone = new Material.Builder(getID(), gregtechId("p_methylthiophenyl_isopropylketone"))
                 .liquid()
                 .color(0xC8B6D7)
@@ -1885,7 +1876,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H4COCHCH3S", true);
 
-        //  13224 2-Methyl-1-p-Methylthiophenyl-2-Chloro-1-Acetone
+        //  13223 2-Methyl-1-p-Methylthiophenyl-2-Chloro-1-Acetone
         MethylMethylthiophenylChloroAcetone = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_chloro_acetone"))
                 .liquid()
                 .color(0x46F720)
@@ -1894,7 +1885,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H4COCClCH3S", true);
 
-        //  13225 2-Methyl-1-p-Methylthiophenyl-1-Methoxy-1,2-Epoxypropane
+        //  13224 2-Methyl-1-p-Methylthiophenyl-1-Methoxy-1,2-Epoxypropane
         MethylMethylthiophenylMethoxyEpoxypropane = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_methoxy_epoxypropane"))
                 .liquid()
                 .color(0x996699)
@@ -1903,16 +1894,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H4C(OCH3)OCCH3S", true);
 
-        //  13226 2-Methyl-1-p-Methylthiophenyl-2-Morpholin-1-Acetone
-        MethylMethylthiophenylMorpholinAcetone = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_morpholin_acetone"))
-                .liquid()
-                .color(0xEBAFDB)
-                .components(Carbon, 15, Hydrogen, 21, Oxygen, 2, Nitrogen, 1, Sulfur, 1)
-                .flags(DISABLE_DECOMPOSITION)
-                .build()
-                .setFormula("(CH3)2C6H4COC(N(C2H4)2O)CH3S", true);
-
-        //  13227 Phenylisopropylketone
+        //  13225 Phenylisopropylketone
         Phenylisopropylketone = new Material.Builder(getID(), gregtechId("phenylisopropylketone"))
                 .liquid()
                 .color(0x145024)
@@ -1921,7 +1903,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H5COCH", true);
 
-        //  13228 2-Chloro-2-Methyl-1-Phenyl-1-Acetone
+        //  13226 2-Chloro-2-Methyl-1-Phenyl-1-Acetone
         ChloroMethylPhenylAcetone = new Material.Builder(getID(), gregtechId("chloro_methyl_phenyl_acetone"))
                 .liquid()
                 .color(0xAF3476)
@@ -1930,7 +1912,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H5COCCl", true);
 
-        //  13229 2-Hydroxy-2-Methyl-1-Phenyl-1-Acetone
+        //  13227 2-Hydroxy-2-Methyl-1-Phenyl-1-Acetone
         HydroxyMethylPhenylAcetone = new Material.Builder(getID(), gregtechId("hydroxy_methyl_phenyl_acetone"))
                 .liquid()
                 .color(0xC38889)
@@ -1939,7 +1921,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(CH3)2C6H5COCOH", true);
 
-        //  13230 Benzoin
+        //  13228 Benzoin
         Benzoin = new Material.Builder(getID(), gregtechId("benzoin"))
                 .liquid()
                 .color(0x00FFB3)
@@ -1948,7 +1930,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("C6H5COCHOHC6H5", true);
 
-        //  13231 Diphenylethylketone
+        //  13229 Diphenylethylketone
         Diphenylethylketone = new Material.Builder(getID(), gregtechId("diphenylethylketone"))
                 .liquid()
                 .color(0x00FF76)
@@ -1957,7 +1939,7 @@ public class GTLiteOrganicChemistryMaterials {
                 .build()
                 .setFormula("(C6H5CO)2", true);
 
-        //  13232 Benzoin Dimethyl Ether
+        //  13230 Benzoin Dimethyl Ether
         BenzoinDimethylEther = new Material.Builder(getID(), gregtechId("benzoin_dimethyl_ether"))
                 .liquid()
                 .color(0xB6F5E4)

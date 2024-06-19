@@ -4,6 +4,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.annotation.MaterialIDRange;
+import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import net.minecraft.util.text.TextFormatting;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
@@ -1069,14 +1070,33 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[ZPM], 150))
                 .build();
 
-        //  12080 Cosmic Matter Superconductor
+        //  12080 2,4,6-(Trimethylbenzoyl) Diphenylphosphine Oxide
+        TrimethylbenzoylDiphenylphosphineOxide = new Material.Builder(getID(), gregtechId("trimethylbenzoyl_diphenylphosphine_oxide"))
+                .liquid()
+                .color(0xA16145)
+                .components(Carbon, 22, Hydrogen, 21, Oxygen, 2, Phosphorus, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)3C6H2COPO(C6H5)2", true);
+
+        //  12081 2-Methyl-1-p-Methylthiophenyl-2-Morpholin-1-Acetone
+        MethylMethylthiophenylMorpholinAcetone = new Material.Builder(getID(), gregtechId("methyl_p_methylthiophenyl_morpholin_acetone"))
+                .liquid()
+                .color(0xEBAFDB)
+                .components(Carbon, 15, Hydrogen, 21, Oxygen, 2, Nitrogen, 1, Sulfur, 1)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("(CH3)2C6H4COC(N(C2H4)2O)CH3S", true);
+
+        //  12082 Cosmic Matter Superconductor
         CosmicMatterSuperconductor = new Material.Builder(getID(), gregtechId("cosmic_matter_superconductor"))
                 .ingot()
                 .fluid()
                 .color(0x1A1A1A)
                 .iconSet(NUCLEAR)
                 .components(Octiron, 8, RutheniumTriniumAmericiumNeutronate, 9, HastelloyK243, 7, AstralTitanium, 6, CelestialTungsten, 6,
-                        Shirabon, 2, Fluorocarborane, 25, AttunedTengam, 4)
+                        Shirabon, 2, Fluorocarborane, 25, AttunedTengam, 4, MethylMethylthiophenylMorpholinAcetone, 2,
+                        TrimethylbenzoylDiphenylphosphineOxide, 2)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(VA[MAX], 2048, 0, true)
                 .blast(b -> b
@@ -1085,7 +1105,7 @@ public class GTLiteSecondDegreeMaterials {
                         .vacuumStats(VA[MAX], 10))
                 .build();
 
-        //  12081 Enriched Holmium
+        //  12083 Enriched Holmium
         EnrichedHolmium = new Material.Builder(getID(), gregtechId("enriched_holmium"))
                 .ingot()
                 .fluid()

@@ -298,6 +298,7 @@ public class SupracausalCircuits {
                 .input(foil, NaquadahAlloy, 24)
                 .input(bolt, SuperheavyHAlloy, 8)
                 .fluidInputs(CosmicComputingMixture.getFluid(2000))
+                .fluidInputs(MethylMethylthiophenylMorpholinAcetone.getFluid(1000))
                 .fluidInputs(ResplendentDimensionallyTranscendentCatalyst.getFluid(L * 4))
                 .output(CLOSED_LIGHTLIKE_CURVE_RECEIVE_UNIT)
                 .EUt(VA[OpV])

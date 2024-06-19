@@ -461,6 +461,8 @@ public class GTLiteMaterials {
     public static Material DuraluminiumAlloy;
     public static Material ArtheriumB47;
     public static Material EnrichedNaquadahAlloy;
+    public static Material TrimethylbenzoylDiphenylphosphineOxide;
+    public static Material MethylMethylthiophenylMorpholinAcetone;
     public static Material CosmicMatterSuperconductor;
     public static Material EnrichedHolmium;
 
@@ -686,7 +688,6 @@ public class GTLiteMaterials {
     public static Material TrimethylbenzoicAcid;
     public static Material TrimethylbenzoylChloride;
     public static Material TrimethylbenzoylDiphenylphosphine;
-    public static Material TrimethylbenzoylDiphenylphosphineOxide;
     public static Material Morpholine;
     public static Material IsobutyrylChloride;
     public static Material ChlorophenylIsopropylketone;
@@ -694,7 +695,6 @@ public class GTLiteMaterials {
     public static Material MethylthiophenylIsopropylketone;
     public static Material MethylMethylthiophenylChloroAcetone;
     public static Material MethylMethylthiophenylMethoxyEpoxypropane;
-    public static Material MethylMethylthiophenylMorpholinAcetone;
     public static Material Phenylisopropylketone;
     public static Material ChloroMethylPhenylAcetone;
     public static Material HydroxyMethylPhenylAcetone;
