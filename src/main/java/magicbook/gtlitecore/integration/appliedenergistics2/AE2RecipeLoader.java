@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.integration.appliedenergistics2;
 
 import magicbook.gtlitecore.integration.appliedenergistics2.recipes.CellRecipes;
+import magicbook.gtlitecore.integration.appliedenergistics2.recipes.MaterialRecipes;
 
 public class AE2RecipeLoader {
 
@@ -8,5 +9,6 @@ public class AE2RecipeLoader {
     //  just use ModHandler to tweak all recipes (consists of NAE2 and AE2FC).
     public static void init() {
         CellRecipes.init();
+        MaterialRecipes.init();
     }
 }
