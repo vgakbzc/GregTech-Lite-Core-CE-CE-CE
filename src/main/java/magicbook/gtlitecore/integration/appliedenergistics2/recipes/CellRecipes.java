@@ -30,6 +30,12 @@ public class CellRecipes {
         ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/cells/fluid_storage_cell_16k");
         ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/cells/fluid_storage_cell_64k");
 
+        //  Remove fake recipes of some misc cells like View Cells.
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/cells/view_cell");
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/cells/spatial_storage_cell_2_cubed");
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/cells/spatial_storage_cell_16_cubed");
+        ModHandler.removeRecipeByName(Mods.AppliedEnergistics2.getID() + ":" + "network/cells/spatial_storage_cell_128_cubed");
+
         // ---------------------------------------------------- ME Storage Housing ----------------------------------------------------
         //  This AE2 Material has 5 recipes (Basic, Advanced, Extreme, Elite, Ultimate), used different plates to get more products,
         //  Basic:    Redstone Alloy,    Electrical Steel;
@@ -296,6 +302,75 @@ public class CellRecipes {
         }
 
         // ---------------------------------------------------- Fluid Storage Cells ---------------------------------------------------
+        ModHandler.removeRecipeByOutput(getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 54));
+        ModHandler.addShapedRecipe(true, "storage_component.fluid.1k", getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 54, 4),
+                "PCP", "CXC", "PCP",
+                'P', new UnificationEntry(plate, CertusQuartz),
+                'C', new UnificationEntry(plate, Lapis),
+                'X', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 22)); // Logic Processor
+
+        ModHandler.removeRecipeByOutput(getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 55));
+        ModHandler.addShapedRecipe(true, "storage_component.fluid.4k", getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 55, 4),
+                "PCP", "CXC", "PCP",
+                'P', new UnificationEntry(plate, BlueAlloy),
+                'C', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 54),  // 1k Fluid Storage Component
+                'X', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 23)); // Calculation Processor
+
+        ModHandler.removeRecipeByOutput(getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 56));
+        if (Mods.CraftTweaker.isModLoaded()) {
+            ModHandler.addShapedRecipe(true, "storage_component.fluid.16k", getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 56, 4),
+                    "PCP", "CXC", "PCP",
+                    'P', getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32007),        // Ore Dict: platePulsatingIron
+                    'C', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 55),  // 4k Fluid Storage Component
+                    'X', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 24)); // Engineering Processor
+        }
+
+        ModHandler.removeRecipeByOutput(getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 57));
+        if (Mods.CraftTweaker.isModLoaded() && Mods.LazyAE2.isModLoaded()) {
+            ModHandler.addShapedRecipe(true, "storage_component.fluid.64k", getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 57, 4),
+                    "PCP", "CXC", "PCP",
+                    'P', getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32013),       // Ore Dict: plateEnergeticSilver
+                    'C', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 56), // 16k Fluid Storage Component
+                    'X', getMetaItemById(Mods.LazyAE2.getID(), "material", 6));             // Parallel Processor
+        }
+
+        if (Mods.NeevesAE2Addition.isModLoaded()) {
+            ModHandler.removeRecipeByOutput(getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 5));
+            if (Mods.CraftTweaker.isModLoaded() && Mods.LazyAE2.isModLoaded()) {
+                ModHandler.addShapedRecipe(true, "storage_component.fluid.256k", getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 5, 4),
+                        "PCP", "CXC", "PCP",
+                        'P', getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32014),         // Ore Dict: plateVividAlloy
+                        'C', getMetaItemById(Mods.AppliedEnergistics2.getID(), "material", 57),   // 64k Fluid Storage Component
+                        'X', getMetaItemById(Mods.LazyAE2.getID(), "material", 14));              // Speculative Processor
+            }
+
+            ModHandler.removeRecipeByOutput(getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 6));
+            if (Mods.CraftTweaker.isModLoaded() && Mods.ContentTweaker.isModLoaded()) {
+                ModHandler.addShapedRecipe(true, "storage_component.fluid.1024k", getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 6, 4),
+                        "PCP", "CXC", "PCP",
+                        'P', getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32004),    // Ore Dict: plateEndSteel
+                        'C', getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 5), // 256k Fluid Storage Component
+                        'X', getItemById(Mods.ContentTweaker.getID(), "material_deduction_processor"));
+            }
+
+            ModHandler.removeRecipeByOutput(getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 7));
+            if (Mods.CraftTweaker.isModLoaded() && Mods.LazyAE2.isModLoaded()) {
+                ModHandler.addShapedRecipe(true, "storage_component.fluid.4096k", getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 7, 4),
+                        "PCP", "CXC", "PCP",
+                        'P', getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32031),    // Ore Dict: plateLumium
+                        'C', getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 6), // 1024k Fluid Storage Component
+                        'X', getMetaItemById(Mods.LazyAE2.getID(), "material", 4));          // Fluix Logic Unit
+            }
+
+            ModHandler.removeRecipeByOutput(getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 8));
+            if (Mods.CraftTweaker.isModLoaded() && Mods.ContentTweaker.isModLoaded()) {
+                ModHandler.addShapedRecipe(true, "storage_component.fluid.16384k", getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 8, 4),
+                        "PCP", "CXC", "PCP",
+                        'P', getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32032),    // Ore Dict: plateSignalum
+                        'C', getMetaItemById(Mods.NeevesAE2Addition.getID(), "material", 7), // 4096k Fluid Storage Component
+                        'X', getItemById(Mods.ContentTweaker.getID(), "machine_core_assembly"));   // Fluix Logic Unit Assembly
+            }
+        }
 
         // -------------------------------------------- Digital Singularity Storage Cells  --------------------------------------------
 
