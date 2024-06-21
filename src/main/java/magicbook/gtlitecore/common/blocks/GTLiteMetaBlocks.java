@@ -44,6 +44,8 @@ public class GTLiteMetaBlocks {
     public static BlockImplosionCoil IMPLOSION_COIL;
     public static BlockLargeChemicalComplexCasing LARGE_CHEMICAL_COMPLEX_CASING;
     public static BlockEnergyCell ENERGY_CELL;
+    public static BlockModulationCavity MODULATION_CAVITY;
+    public static BlockResonantCavity RESONANT_CAVITY;
 
     private GTLiteMetaBlocks() {}
 
@@ -175,6 +177,14 @@ public class GTLiteMetaBlocks {
         ENERGY_CELL = new BlockEnergyCell();
         ENERGY_CELL.setRegistryName("energy_cell");
         ENERGY_CELL.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        MODULATION_CAVITY = new BlockModulationCavity();
+        MODULATION_CAVITY.setRegistryName("modulation_cavity");
+        MODULATION_CAVITY.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        RESONANT_CAVITY = new BlockResonantCavity();
+        RESONANT_CAVITY.setRegistryName("resonant_cavity");
+        RESONANT_CAVITY.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -207,6 +217,8 @@ public class GTLiteMetaBlocks {
         registerItemModel(IMPLOSION_COIL);
         registerItemModel(LARGE_CHEMICAL_COMPLEX_CASING);
         registerItemModel(ENERGY_CELL);
+        registerItemModel(MODULATION_CAVITY);
+        registerItemModel(RESONANT_CAVITY);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();

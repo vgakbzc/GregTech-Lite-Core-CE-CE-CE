@@ -10,19 +10,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
 import javax.annotation.Nonnull;
-import javax.annotation.ParametersAreNonnullByDefault;
 
-@ParametersAreNonnullByDefault
-public class BlockSupportCasing extends VariantBlock<BlockSupportCasing.SupportCasingType> {
+public class BlockModulationCavity extends VariantBlock<BlockModulationCavity.ModulationCavityTier> {
 
-    public BlockSupportCasing() {
+    public BlockModulationCavity() {
         super(Material.IRON);
-        this.setTranslationKey("support_casing");
+        this.setTranslationKey("modulation_cavity");
         this.setHardness(5.0F);
         this.setResistance(10.0F);
         this.setSoundType(SoundType.METAL);
-        this.setHarvestLevel("wrench", 2);
-        this.setDefaultState(this.getState(SupportCasingType.HASTELLOY_K243_CASING));
+        this.setHarvestLevel("wrench", 4);
+        this.setDefaultState(this.getState(ModulationCavityTier.I));
     }
 
     @Override
@@ -33,18 +31,15 @@ public class BlockSupportCasing extends VariantBlock<BlockSupportCasing.SupportC
         return false;
     }
 
-    public enum SupportCasingType implements IStringSerializable {
-        HASTELLOY_K243_CASING("hastelloy_k243_casing"),
-        SUBSTATION_EXTERNAL_CASING("substation_external_casing"),
-        MASS_FABRICATOR_COIL("mass_fabricator_coil"),
-        PARTICLE_SUPPRESSION_CASING("particle_suppression_casing"),
-        ELEMENT_CONSTRAINED_CASING("element_constrained_casing"),
-        MASS_FABRICATOR_CASING("mass_fabricator_casing"),
-        HIGH_VOLTAGE_CURRENT_CAPACITOR("high_voltage_current_capacitor");
+    public enum ModulationCavityTier implements IStringSerializable {
+        I("i"),
+        II("ii"),
+        III("iii"),
+        IV("iv");
 
         private final String name;
 
-        SupportCasingType(String name) {
+        ModulationCavityTier(String name) {
             this.name = name;
         }
 

@@ -12,6 +12,7 @@ import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.*;
+import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.loaders.recipe.CraftingComponent;
 import gregtech.loaders.recipe.MetaTileEntityLoader;
@@ -23,7 +24,9 @@ import magicbook.gtlitecore.common.blocks.BlockFusionCasing;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.*;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
@@ -2319,6 +2322,7 @@ public class MachineRecipeLoader {
         ImplosionCoils();
         LargeChemicalComplexCasing();
         EnergyCells();
+        UUMatterChainCasings();
     }
 
     private static void MetalCasings() {
@@ -5021,6 +5025,129 @@ public class MachineRecipeLoader {
                 .EUt(VA[MAX])
                 .duration((int) (3.2 * SECOND))
                 .buildAndRegister();
+    }
+
+    private static void UUMatterChainCasings() {
+
+        //  Modulation Cavities
+        ModHandler.addShapedRecipe(true, "modulation_cavity_1", GTLiteMetaBlocks.MODULATION_CAVITY.getItemVariant(BlockModulationCavity.ModulationCavityTier.I, 2),
+                "XPX", "PHP", "XPX",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.ZPM),
+                'P', new UnificationEntry(plate, Pikyonium64B),
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.ZPM));
+
+        ModHandler.addShapedRecipe(true, "modulation_cavity_2", GTLiteMetaBlocks.MODULATION_CAVITY.getItemVariant(BlockModulationCavity.ModulationCavityTier.II, 2),
+                "XPX", "PHP", "XPX",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                'P', new UnificationEntry(plate, Botmium),
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UV));
+
+        ModHandler.addShapedRecipe(true, "modulation_cavity_3", GTLiteMetaBlocks.MODULATION_CAVITY.getItemVariant(BlockModulationCavity.ModulationCavityTier.III, 2),
+                "XPX", "PHP", "XPX",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UHV),
+                'P', new UnificationEntry(plate, EnrichedHolmium),
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV));
+
+        ModHandler.addShapedRecipe(true, "modulation_cavity_4", GTLiteMetaBlocks.MODULATION_CAVITY.getItemVariant(BlockModulationCavity.ModulationCavityTier.IV, 2),
+                "XPX", "PHP", "XPX",
+                'X', new UnificationEntry(circuit, MarkerMaterials.Tier.UEV),
+                'P', new UnificationEntry(plate, HastelloyK243),
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV));
+
+        //  Resonant Cavities
+        ModHandler.addShapedRecipe(true, "resonant_cavity_1", GTLiteMetaBlocks.RESONANT_CAVITY.getItemVariant(BlockResonantCavity.ResonantCavityTier.I, 2),
+                "PFP", "FHF", "PFP",
+                'P', new UnificationEntry(plateDouble, Nitinol60),
+                'F', FIELD_GENERATOR_ZPM,
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.ZPM));
+
+        ModHandler.addShapedRecipe(true, "resonant_cavity_2", GTLiteMetaBlocks.RESONANT_CAVITY.getItemVariant(BlockResonantCavity.ResonantCavityTier.II, 2),
+                "PFP", "FHF", "PFP",
+                'P', new UnificationEntry(plateDouble, IncoloyDS),
+                'F', FIELD_GENERATOR_UV,
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UV));
+
+        ModHandler.addShapedRecipe(true, "resonant_cavity_3", GTLiteMetaBlocks.RESONANT_CAVITY.getItemVariant(BlockResonantCavity.ResonantCavityTier.III, 2),
+                "PFP", "FHF", "PFP",
+                'P', new UnificationEntry(plateDouble, ArtheriumB47),
+                'F', FIELD_GENERATOR_UHV,
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UHV));
+
+        ModHandler.addShapedRecipe(true, "resonant_cavity_4", GTLiteMetaBlocks.RESONANT_CAVITY.getItemVariant(BlockResonantCavity.ResonantCavityTier.IV, 2),
+                "PFP", "FHF", "PFP",
+                'P', new UnificationEntry(plateDouble, FluxedElectrum),
+                'F', FIELD_GENERATOR_UEV,
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UEV));
+
+        //  Mass Fabricator Coil
+        ModHandler.addShapedRecipe(true, "mass_fabricator_coil", GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.MASS_FABRICATOR_COIL, 2),
+                "APA", "FHF", "APA",
+                'A', new UnificationEntry(plate, Zeron100),
+                'P', new UnificationEntry(plate, EnrichedHolmium),
+                'F', new UnificationEntry(frameGt, Cinobite),
+                'H', MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UV));
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .inputs(MetaBlocks.MACHINE_CASING.getItemVariant(BlockMachineCasing.MachineCasingType.UV))
+                .input(plate, Zeron100, 4)
+                .input(plate, EnrichedHolmium, 2)
+                .input(frameGt, Cinobite, 2)
+                .circuitMeta(1)
+                .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.MASS_FABRICATOR_COIL, 2))
+                .EUt(VA[LV])
+                .duration(50)
+                .buildAndRegister();
+
+        //  Particle Suppression Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(16)
+                .inputs(new ItemStack(Blocks.GLOWSTONE, 16))
+                .input(gear, Nitinol60)
+                .input(wireGtDouble, NiobiumNitride, 4)
+                .input(FIELD_GENERATOR_EV, 2)
+                .input(circuit, MarkerMaterials.Tier.EV, 8)
+                .fluidInputs(Stellite.getFluid(L * 4))
+                .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.PARTICLE_SUPPRESSION_CASING, 2))
+                .EUt(VA[IV])
+                .duration(MINUTE / 2)
+                .buildAndRegister();
+
+        //  Element Constrained Casing
+        PRECISE_ASSEMBLER_RECIPES.recipeBuilder()
+                .input(HULL[LuV])
+                .input(plate, TitanSteel)
+                .input(FIELD_GENERATOR_HV, 2)
+                .input(TOOL_DATA_STICK, 4)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .fluidInputs(Inconel792.getFluid(L * 4))
+                .fluidInputs(Trinaquadalloy.getFluid(L))
+                .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.ELEMENT_CONSTRAINED_CASING, 2))
+                .EUt(VA[LuV])
+                .duration(MINUTE / 2)
+                .buildAndRegister();
+
+        //  Mass Fabricator Casing
+        createCasingRecipe("mass_fabricator_casing",
+                GTLiteMetaBlocks.SUPPORT_CASING,
+                BlockSupportCasing.SupportCasingType.MASS_FABRICATOR_CASING,
+                SiliconCarbide,
+                ZirconiumCarbide,
+                MARM200CeSteel);
+
+        //  High Voltage Current Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(16)
+                .input(frameGt, TanmolyiumBetaC)
+                .input(plate, AlkalineEarthGroupAlloy, 4)
+                .inputs(MetaBlocks.WIRE_COIL.getItemVariant(BlockWireCoil.CoilType.NICHROME, 2))
+                .input(circuit, MarkerMaterials.Tier.HV, 2)
+                .input(screw, Talonite, 16)
+                .fluidInputs(FreeElectronGas.getFluid(1000))
+                .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.HIGH_VOLTAGE_CURRENT_CAPACITOR, 2))
+                .EUt(VA[IV])
+                .duration(20 * SECOND)
+                .buildAndRegister();
+
     }
 
     /**

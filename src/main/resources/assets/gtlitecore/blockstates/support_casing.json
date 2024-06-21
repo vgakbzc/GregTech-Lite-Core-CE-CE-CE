@@ -15,6 +15,36 @@
           "top": "#bottom",
           "side": "gtlitecore:blocks/casings/batteries/side"
         }
+      },
+      "mass_fabricator_coil": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/mass_fabricator_coil"
+        }
+      },
+      "particle_suppression_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/particle_suppression_casing"
+        }
+      },
+      "element_constrained_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/element_constrained_casing"
+        }
+      },
+      "mass_fabricator_casing": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/mass_fabricator_casing"
+        }
+      },
+      "high_voltage_current_capacitor": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/high_voltage_current_capacitor"
+        }
       }
     }
   }

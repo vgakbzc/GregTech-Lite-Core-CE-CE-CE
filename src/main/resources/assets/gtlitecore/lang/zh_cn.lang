@@ -69,6 +69,11 @@ tile.structure_casing.polybenzimidazole_casing.name=化学惰性聚苯并咪唑�
 
 tile.support_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
 tile.support_casing.substation_external_casing.name=储能塔外围机械方块
+tile.support_casing.mass_fabricator_coil.name=质量发生线圈
+tile.support_casing.particle_suppression_casing.name=粒子抑制机械方块
+tile.support_casing.element_constrained_casing.name=元素约束机械方块
+tile.support_casing.mass_fabricator_casing.name=质量发生机械方块
+tile.support_casing.high_voltage_current_capacitor.name=高压流电容方块
 
 tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外壳
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
@@ -352,6 +357,24 @@ tile.energy_cell.uiv.name=光辉能量单元
 tile.energy_cell.uxv.name=天顶能量单元
 tile.energy_cell.opv.name=太初能量单元
 tile.energy_cell.max.name=鸿蒙能量单元
+
+tile.modulation_cavity.i.name=调制腔 I
+tile.modulation_cavity.i.tooltip=量子调制器
+tile.modulation_cavity.ii.name=调制腔 II
+tile.modulation_cavity.ii.tooltip=量子调制器
+tile.modulation_cavity.iii.name=调制腔 III
+tile.modulation_cavity.iii.tooltip=量子调制器
+tile.modulation_cavity.iv.name=调制腔 IV
+tile.modulation_cavity.iv.tooltip=量子调制器
+
+tile.resonant_cavity.i.name=谐振腔 I
+tile.resonant_cavity.i.tooltip=量子谐振腔
+tile.resonant_cavity.ii.name=谐振腔 II
+tile.resonant_cavity.ii.tooltip=量子谐振腔
+tile.resonant_cavity.iii.name=谐振腔 III
+tile.resonant_cavity.iii.tooltip=量子谐振腔
+tile.resonant_cavity.iv.name=谐振腔 IV
+tile.resonant_cavity.iv.tooltip=量子谐振腔
 
 #  Items
 
