@@ -11,5 +11,6 @@ public class RecipeHandler {
         PipeRecipeHandler.register();
         WireRecipeHandler.register();
         ToolRecipeHandler.register();
+        MassReplicationHandler.register();
     }
 }

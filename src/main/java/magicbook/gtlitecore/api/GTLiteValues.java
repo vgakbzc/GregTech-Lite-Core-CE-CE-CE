@@ -188,6 +188,16 @@ public class GTLiteValues {
     }
 
     /**
+     * Used to add obfuscated {@code formula}.
+     *
+     * @param formula  Formula String.
+     * @return         Obfuscated {@code formula} with string.
+     */
+    public static String addObfuscatedFormula(String formula) {
+        return TextFormatting.OBFUSCATED + formula;
+    }
+
+    /**
      * This modid is same as {@link GTLiteCore#MODID}.
      * Hint: this parameter is internal, we use it on class in {@code gtlitecore}.
      * Do not use this parameter in external situation (please use the first).

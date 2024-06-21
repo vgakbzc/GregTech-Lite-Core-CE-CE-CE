@@ -921,6 +921,8 @@ public class GTLiteMaterials {
     public static Material TaraniumPoorHelium;
     public static Material TaraniumPoorHeliumMixture;
     public static Material HeavyFluorinatedTriniumSolution;
+    public static Material FermionicUUMatter;
+    public static Material BosonicUUMatter;
 
     //////////////////////////////
     //  Third Degree Materials  //

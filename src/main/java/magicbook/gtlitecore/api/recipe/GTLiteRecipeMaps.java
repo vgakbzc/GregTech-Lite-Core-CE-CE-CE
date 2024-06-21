@@ -2223,5 +2223,9 @@ public class GTLiteRecipeMaps {
         ELECTROLYZER_RECIPES.setMaxFluidInputs(2);
         ELECTROLYZER_RECIPES.setSlotOverlay(false, true, false, GuiTextures.LIGHTNING_OVERLAY_2);
         LASER_ENGRAVER_RECIPES.setMaxOutputs(2);
+        MASS_FABRICATOR_RECIPES.setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY);
+        REPLICATOR_RECIPES.setMaxFluidInputs(3);
+        REPLICATOR_RECIPES.setSlotOverlay(false, false, GuiTextures.DUST_OVERLAY);
+        REPLICATOR_RECIPES.setSlotOverlay(true, false, GuiTextures.DUST_OVERLAY);
     }
 }

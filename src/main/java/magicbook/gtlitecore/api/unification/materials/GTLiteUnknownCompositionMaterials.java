@@ -10,6 +10,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
+import static magicbook.gtlitecore.api.GTLiteValues.addObfuscatedFormula;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialFlags.DISABLE_CRYSTALLIZATION;
@@ -1297,6 +1298,20 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid()
                 .color(0x8C117D)
                 .build();
+
+        //  24160 Fermionic UU Matter
+        FermionicUUMatter = new Material.Builder(getID(), gregtechId("fermionic_uu_matter"))
+                .liquid()
+                .color(UUMatter.getMaterialRGB() / 3)
+                .build()
+                .setFormula(addObfuscatedFormula("???"));
+
+        //  24161 Bosonic UU Matter
+        BosonicUUMatter = new Material.Builder(getID(), gregtechId("bosonic_uu_matter"))
+                .liquid()
+                .color(UUMatter.getMaterialRGB() - FermionicUUMatter.getMaterialRGB())
+                .build()
+                .setFormula(addObfuscatedFormula("???"));
     }
 
 }

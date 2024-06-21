@@ -3656,6 +3656,8 @@ gregtech.material.taranium_rich_helium_4=富塔兰金属氦-4
 gregtech.material.taranium_poor_helium=枯竭塔兰金属液氦
 gregtech.material.taranium_poor_helium_mixture=枯竭塔兰金属氦-氦-3混合液
 gregtech.material.heavy_fluorinated_trinium_solution=重氟凯金溶液
+gregtech.material.fermionic_uu_matter=费米子UU物质
+gregtech.material.bosonic_uu_matter=玻色子UU物质
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金

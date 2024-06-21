@@ -139,6 +139,11 @@ public class GTLiteConfigHolder {
         @RequiresMcRestart
         public boolean enableUUMatterChain = true;
 
+        @Comment({"Basic time factor of UU Matter Replication, change this to set the replication to be quicker or longer", "Default: 750"})
+        @RangeInt(min = 1)
+        @RequiresMcRestart
+        public int replicationTimeFactor = 750;
+
         public MachineOptions() {}
     }
 
