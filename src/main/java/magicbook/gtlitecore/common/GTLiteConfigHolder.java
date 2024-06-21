@@ -124,6 +124,7 @@ public class GTLiteConfigHolder {
         public boolean enableHighTier4096ALaserHatch = true;
 
         @Comment({"Enable Simulator (LV-IV), and its recipes.", "Default: true"})
+        @RequiresMcRestart
         public boolean enableSimulator = true;
 
         @Comment({"Set chance of Simulator recipes.", "Default: 1000"})
@@ -133,6 +134,10 @@ public class GTLiteConfigHolder {
         @Comment({"Set tier chance boost of Simulator recipes.", "Default: 100"})
         @RangeInt(min = 1, max = 10000)
         public int tierChanceBoostSimulator = 100;
+
+        @Comment({"Enable UU Matter related chains, consists of Mass Fabricator and some related machines and recipes.", "Default: true"})
+        @RequiresMcRestart
+        public boolean enableUUMatterChain = true;
 
         public MachineOptions() {}
     }

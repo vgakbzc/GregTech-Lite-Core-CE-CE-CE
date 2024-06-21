@@ -14,6 +14,20 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
+/**
+ * Mods Interaction/Compability Warning utilities
+ *
+ * @author Magic_Sweepy
+ *
+ * <p>
+ *     This class is a Mod Interaction utility class for GregTech Lite Modpack,
+ *     it is different as the same name class in GregTech, for example,
+ *     in GregTech, you should import the internal class {@code Names} to get {@code modid},
+ *     and in this class, you can use the method {@link #getID()}.
+ * </p>
+ *
+ * @since 2.8.8-beta
+ */
 @SuppressWarnings("unused")
 public enum Mods {
 
@@ -170,6 +184,13 @@ public enum Mods {
         }
     }
 
+    /**
+     * Throw a Client-only Incompability Exception.
+     *
+     * @param messages  Exception message.
+     *
+     * @see ModIncompatibilityException
+     */
     @SideOnly(Side.CLIENT)
     private static void throwClientIncompatibilityException(List<String> messages) {
         throw new ModIncompatibilityException(messages);
@@ -184,10 +205,18 @@ public enum Mods {
      */
     private static Function<Mods, Boolean> versionContains(String versionPart) {
         return mod -> {
-            if (mod.ID == null) return false;
-            if (!mod.isModLoaded()) return false;
+            //  If Mod ID is null, then return false.
+            if (mod.ID == null)
+                return false;
+            //  If mod is not be loaded, then return false.
+            if (!mod.isModLoaded())
+                return false;
+            //  Get Mod Container by Mod ID.
             ModContainer container = Loader.instance().getIndexedModList().get(mod.ID);
-            if (container == null) return false;
+            //  If Mod Container is null, then return false.
+            if (container == null)
+                return false;
+            //  Get Mod version by Mod Container.
             return container.getVersion().contains(versionPart);
         };
     }
@@ -199,10 +228,18 @@ public enum Mods {
      */
     private static Function<Mods, Boolean> versionExcludes(String versionPart) {
         return mod -> {
-            if (mod.ID == null) return false;
-            if (!mod.isModLoaded()) return false;
+            //  If Mod ID is null, then return false.
+            if (mod.ID == null)
+                return false;
+            //  If mod is not be loaded, then return false.
+            if (!mod.isModLoaded())
+                return false;
+            //  Get Mod Container by Mod ID.
             ModContainer container = Loader.instance().getIndexedModList().get(mod.ID);
-            if (container == null) return false;
+            //  If Mod Container is null, then return false.
+            if (container == null)
+                return false;
+            //  Get Mod version by Mod Container.
             return !container.getVersion().contains(versionPart);
         };
     }

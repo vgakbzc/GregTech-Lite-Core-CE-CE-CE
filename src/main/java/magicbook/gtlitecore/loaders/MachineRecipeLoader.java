@@ -178,6 +178,23 @@ public class MachineRecipeLoader {
                 'L', ENERGY_MODULE,
                 'C', HULL[ZPM].getStackForm(),
                 'M', MetaTileEntities.TRANSFORMER[7].getStackForm());
+
+        //  Mass Fabricator
+        MetaTileEntityLoader.registerMachineRecipe(true, MASS_FABRICATOR,
+                "XFX", "WHW", "XFX",
+                'X', CraftingComponent.BETTER_CIRCUIT,
+                'F', CraftingComponent.FIELD_GENERATOR,
+                'H', CraftingComponent.HULL,
+                'W', CraftingComponent.CABLE_QUAD);
+
+        //  Replicator
+        MetaTileEntityLoader.registerMachineRecipe(true, REPLICATOR,
+                "EFE", "XHX", "EWE",
+                'E', CraftingComponent.EMITTER,
+                'F', CraftingComponent.FIELD_GENERATOR,
+                'H', CraftingComponent.HULL,
+                'X', CraftingComponent.BETTER_CIRCUIT,
+                'W', CraftingComponent.CABLE_QUAD);
     }
 
     private static void MultiblockControllerRecipes() {
@@ -2261,6 +2278,26 @@ public class MachineRecipeLoader {
                 'H', MetaTileEntities.HULL[HV].getStackForm(),
                 'B', new UnificationEntry(battery, MarkerMaterials.Tier.HV),
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.HV));
+
+        if (GTLiteConfigHolder.machines.enableUUMatterChain) {
+            //  Large Mass Fabricator
+            ModHandler.addShapedRecipe(true, "large_mass_fabricator", GTLiteMetaTileEntities.LARGE_MASS_FABRICATOR.getStackForm(),
+                    "FCF", "ESE", "FWF",
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                    'S', MASS_FABRICATOR[ZPM].getStackForm(),
+                    'F', FIELD_GENERATOR_ZPM,
+                    'E', EMITTER_ZPM,
+                    'W', new UnificationEntry(cableGtDouble, VanadiumGallium));
+
+            //  Large Replicator
+            ModHandler.addShapedRecipe(true, "large_replicator", GTLiteMetaTileEntities.LARGE_REPLICATOR.getStackForm(),
+                    "FCF", "ESE", "FWF",
+                    'C', new UnificationEntry(circuit, MarkerMaterials.Tier.UV),
+                    'S', REPLICATOR[ZPM].getStackForm(),
+                    'F', FIELD_GENERATOR_ZPM,
+                    'E', MetaBlocks.FUSION_CASING.getItemVariant(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL),
+                    'W', new UnificationEntry(cableGtDouble, VanadiumGallium));
+        }
     }
 
     private static void MachineCasingRecipes() {

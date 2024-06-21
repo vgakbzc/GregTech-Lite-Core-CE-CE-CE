@@ -1,5 +1,7 @@
 package magicbook.gtlitecore.common.metatileentities;
 
+import gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaTileEntityLargeMassFabricator;
+import gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaTileEntityLargeReplicator;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
@@ -129,6 +131,8 @@ public class GTLiteMetaTileEntities {
     public static final SimpleGeneratorMetaTileEntity[] BIOMASS_GENERATOR = new SimpleGeneratorMetaTileEntity[3];
     public static final MetaTileEntityLightningRod[] LIGHTNING_ROD = new MetaTileEntityLightningRod[3];
     public static SimpleMachineMetaTileEntity[] AUTO_CHISEL = new SimpleMachineMetaTileEntity[3];
+    public static SimpleMachineMetaTileEntity[] MASS_FABRICATOR = new SimpleMachineMetaTileEntity[V.length - 1];
+    public static SimpleMachineMetaTileEntity[] REPLICATOR = new SimpleMachineMetaTileEntity[V.length - 1];
 
     ///////////////////////////
     //  Multiblock Machines  //
@@ -243,6 +247,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityElectricImplosionCompressor ELECTRIC_IMPLOSION_COMPRESSOR;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
+    public static MetaTileEntityLargeMassFabricator LARGE_MASS_FABRICATOR;
+    public static MetaTileEntityLargeReplicator LARGE_REPLICATOR;
     public static MetaTileEntityDimensionalMixer DIMENSIONAL_MIXER;
     public static MetaTileEntityAlgaeFarm ALGAE_FARM;
     public static MetaTileEntityMegaBlastFurnace MEGA_BLAST_FURNACE;
@@ -515,6 +521,11 @@ public class GTLiteMetaTileEntities {
             }
         }
 
+        if (GTLiteConfigHolder.machines.enableUUMatterChain) {
+            registerSimpleMetaTileEntity(MASS_FABRICATOR, 15073, "mass_fabricator", RecipeMaps.MASS_FABRICATOR_RECIPES, Textures.MASS_FABRICATOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+            registerSimpleMetaTileEntity(REPLICATOR, 15088, "replicator", RecipeMaps.REPLICATOR_RECIPES, Textures.REPLICATOR_OVERLAY, true, GTLiteUtils::gtliteId, GTUtility.hvCappedTankSizeFunction);
+        }
+
         //  Multiblock Machines
         //  Range: 16001-20000
         INDUSTRIAL_DRILLING_RIG = registerMultiMetaTileEntity(1, new MetaTileEntityIndustrialDrillingRig(gtliteId("industrial_drilling_rig")));
@@ -633,8 +644,10 @@ public class GTLiteMetaTileEntities {
         //  114
         LARGE_ROCK_BREAKER = registerMultiMetaTileEntity(115, new MetaTileEntityLargeRockBreaker(gtliteId("large_rock_breaker")));
         INDUSTRIAL_ROCK_BREAKER = registerMultiMetaTileEntity(116, new MetaTileEntityIndustrialRockBreaker(gtliteId("industrial_rock_breaker")));
-        //  117
-        //  118
+        if (GTLiteConfigHolder.machines.enableUUMatterChain) {
+            LARGE_MASS_FABRICATOR = registerMultiMetaTileEntity(117, new MetaTileEntityLargeMassFabricator(gtliteId("large_mass_fabricator")));
+            LARGE_REPLICATOR = registerMultiMetaTileEntity(118, new MetaTileEntityLargeReplicator(gtliteId("large_replicator")));
+        }
         //  119
         DIMENSIONAL_MIXER = registerMultiMetaTileEntity(120, new MetaTileEntityDimensionalMixer(gtliteId("dimensional_mixer")));
         ALGAE_FARM = registerMultiMetaTileEntity(121, new MetaTileEntityAlgaeFarm(gtliteId("algae_farm")));

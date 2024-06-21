@@ -1469,6 +1469,60 @@ gtlitecore.machine.auto_chisel.mv.tooltip=电子雕刻家
 gtlitecore.machine.auto_chisel.hv.name=进阶自动凿子 II
 gtlitecore.machine.auto_chisel.hv.tooltip=电子雕刻家
 
+gtlitecore.machine.mass_fabricator.lv.name=基础质量发生器
+gtlitecore.machine.mass_fabricator.lv.tooltip=UU物质=质量×制造^2
+gtlitecore.machine.mass_fabricator.mv.name=进阶质量发生器
+gtlitecore.machine.mass_fabricator.mv.tooltip=UU物质=质量×制造^2
+gtlitecore.machine.mass_fabricator.hv.name=进阶质量发生器 II
+gtlitecore.machine.mass_fabricator.hv.tooltip=UU物质=质量×制造^2
+gtlitecore.machine.mass_fabricator.ev.name=进阶质量发生器 III
+gtlitecore.machine.mass_fabricator.ev.tooltip=UU物质=质量×制造^2
+gtlitecore.machine.mass_fabricator.iv.name=精英质量发生器
+gtlitecore.machine.mass_fabricator.iv.tooltip=存在创造者
+gtlitecore.machine.mass_fabricator.luv.name=精英质量发生器 II
+gtlitecore.machine.mass_fabricator.luv.tooltip=存在创造者
+gtlitecore.machine.mass_fabricator.zpm.name=精英质量发生器 III
+gtlitecore.machine.mass_fabricator.zpm.tooltip=存在创造者
+gtlitecore.machine.mass_fabricator.uv.name=终极质量发生器
+gtlitecore.machine.mass_fabricator.uv.tooltip=创世纪
+gtlitecore.machine.mass_fabricator.uhv.name=史诗质量发生器
+gtlitecore.machine.mass_fabricator.uhv.tooltip=创世纪
+gtlitecore.machine.mass_fabricator.uev.name=史诗质量发生器 II
+gtlitecore.machine.mass_fabricator.uev.tooltip=创世纪
+gtlitecore.machine.mass_fabricator.uiv.name=史诗质量发生器 III
+gtlitecore.machine.mass_fabricator.uiv.tooltip=创世纪
+gtlitecore.machine.mass_fabricator.uxv.name=史诗质量发生器 IV
+gtlitecore.machine.mass_fabricator.uxv.tooltip=创世纪
+gtlitecore.machine.mass_fabricator.opv.name=传奇质量发生器
+gtlitecore.machine.mass_fabricator.opv.tooltip=创世纪
+
+gtlitecore.machine.replicator.lv.name=基础复制机
+gtlitecore.machine.replicator.lv.tooltip=单质复制者
+gtlitecore.machine.replicator.mv.name=进阶复制机
+gtlitecore.machine.replicator.mv.tooltip=单质复制者
+gtlitecore.machine.replicator.hv.name=进阶复制机 II
+gtlitecore.machine.replicator.hv.tooltip=单质复制者
+gtlitecore.machine.replicator.ev.name=进阶复制机 III
+gtlitecore.machine.replicator.ev.tooltip=单质复制者
+gtlitecore.machine.replicator.iv.name=精英复制机
+gtlitecore.machine.replicator.iv.tooltip=元素拓印仪
+gtlitecore.machine.replicator.luv.name=精英复制机 II
+gtlitecore.machine.replicator.luv.tooltip=元素拓印仪
+gtlitecore.machine.replicator.zpm.name=精英复制机 III
+gtlitecore.machine.replicator.zpm.tooltip=元素拓印仪
+gtlitecore.machine.replicator.uv.name=终极复制机
+gtlitecore.machine.replicator.uv.tooltip=物质聚合者
+gtlitecore.machine.replicator.uhv.name=史诗复制机
+gtlitecore.machine.replicator.uhv.tooltip=物质聚合者
+gtlitecore.machine.replicator.uev.name=史诗复制机 II
+gtlitecore.machine.replicator.uev.tooltip=物质聚合者
+gtlitecore.machine.replicator.uiv.name=史诗复制机 III
+gtlitecore.machine.replicator.uiv.tooltip=物质聚合者
+gtlitecore.machine.replicator.uxv.name=史诗复制机 IV
+gtlitecore.machine.replicator.uxv.tooltip=物质聚合者
+gtlitecore.machine.replicator.opv.name=传奇复制机
+gtlitecore.machine.replicator.opv.tooltip=物质聚合者
+
 ##  Multiblock Machines
 gtlitecore.machine.industrial_drilling_rig.name=工业钻机
 gtlitecore.machine.industrial_drilling_rig.tooltip.1=钻取放置在钻头下方的方块。
@@ -2116,6 +2170,10 @@ gtlitecore.machine.large_rock_breaker.name=大型碎岩塔
 gtlitecore.machine.industrial_rock_breaker.name=工业岩石制造厂
 gtlitecore.machine.industrial_rock_breaker.tooltip.1=输入小于等于§5EV§7级的电压时，始终获得§e64§7次并行。
 gtlitecore.machine.industrial_rock_breaker.tooltip.2=输入大于等于§1IV§7级的电压时，始终获得§e[64 * (电压等级 - 4)]§7次并行。
+
+gtlitecore.machine.large_mass_fabricator.name=大型质量发生器
+
+gtlitecore.machine.large_replicator.name=大型复制机
 
 gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
 gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
