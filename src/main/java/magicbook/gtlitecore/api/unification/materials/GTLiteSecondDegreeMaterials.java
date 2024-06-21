@@ -4,7 +4,6 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
 import magicbook.gtlitecore.api.annotation.MaterialIDRange;
-import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import net.minecraft.util.text.TextFormatting;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
@@ -1040,7 +1039,7 @@ public class GTLiteSecondDegreeMaterials {
                         .temp(4400, BlastProperty.GasTier.MID)
                         .blastStats(VA[IV], 540)
                         .vacuumStats(VA[HV], 280))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR)
                 .build();
 
         //  12078 Artherium-B47

@@ -5107,9 +5107,27 @@ public class MachineRecipeLoader {
                 .input(FIELD_GENERATOR_EV, 2)
                 .input(circuit, MarkerMaterials.Tier.EV, 8)
                 .fluidInputs(Stellite.getFluid(L * 4))
-                .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.PARTICLE_SUPPRESSION_CASING, 2))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_UNIQUE_CASING.getItemVariant(BlockTransparentUniqueCasing.TransparentUniqueCasingType.PARTICLE_SUPPRESSION_CASING, 2))
                 .EUt(VA[IV])
                 .duration(MINUTE / 2)
+                .cleanroom(CleanroomType.CLEANROOM)
+                .buildAndRegister();
+
+        //  Molecular Containment Casing
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(16)
+                .input(frameGt, HastelloyX78)
+                .input(plate, Mithril, 6)
+                .input(FIELD_GENERATOR_IV, 2)
+                .input(gear, DuraluminiumAlloy)
+                .input(ENERGY_LAPOTRONIC_ORB, 4)
+                .input(wireGtQuadruple, Platinum, 2)
+                .input(QUANTUM_ANOMALY)
+                .fluidInputs(Nichrome.getFluid(L * 2))
+                .outputs(GTLiteMetaBlocks.TRANSPARENT_UNIQUE_CASING.getItemVariant(BlockTransparentUniqueCasing.TransparentUniqueCasingType.MOLECULAR_CONTAINMENT_CASING, 2))
+                .EUt(VA[LuV])
+                .duration(MINUTE / 2)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
         //  Element Constrained Casing
@@ -5124,6 +5142,7 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.ELEMENT_CONSTRAINED_CASING, 2))
                 .EUt(VA[LuV])
                 .duration(MINUTE / 2)
+                .tier(3)
                 .buildAndRegister();
 
         //  Mass Fabricator Casing
@@ -5146,6 +5165,7 @@ public class MachineRecipeLoader {
                 .outputs(GTLiteMetaBlocks.SUPPORT_CASING.getItemVariant(BlockSupportCasing.SupportCasingType.HIGH_VOLTAGE_CURRENT_CAPACITOR, 2))
                 .EUt(VA[IV])
                 .duration(20 * SECOND)
+                .cleanroom(CleanroomType.CLEANROOM)
                 .buildAndRegister();
 
     }

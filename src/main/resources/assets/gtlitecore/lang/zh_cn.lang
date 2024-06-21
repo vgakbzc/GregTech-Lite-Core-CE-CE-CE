@@ -70,7 +70,6 @@ tile.structure_casing.polybenzimidazole_casing.name=化学惰性聚苯并咪唑�
 tile.support_casing.hastelloy_k243_casing.name=高耐久哈斯特洛伊合金-K243机器外壳
 tile.support_casing.substation_external_casing.name=储能塔外围机械方块
 tile.support_casing.mass_fabricator_coil.name=质量发生线圈
-tile.support_casing.particle_suppression_casing.name=粒子抑制机械方块
 tile.support_casing.element_constrained_casing.name=元素约束机械方块
 tile.support_casing.mass_fabricator_casing.name=质量发生机械方块
 tile.support_casing.high_voltage_current_capacitor.name=高压流电容方块
@@ -247,6 +246,9 @@ tile.transparent_casing.quantum_glass.name=量子玻璃
 tile.transparent_casing.quantum_glass.tooltip=究极力场约束玻璃/n§b§l透明且优雅
 tile.transparent_casing.spatially_transcendent_gravitational_lens.name=超空间引力透镜
 tile.transparent_casing.spatially_transcendent_gravitational_lens.tooltip=字面意义的引力透镜/n§b§l别用手摸它！
+
+tile.transparent_unique_casing.particle_suppression_casing.name=粒子抑制机械方块
+tile.transparent_unique_casing.molecular_containment_casing.name=分子遏制机械方块
 
 tile.explosive_block.naquadria_charge.name=超能硅岩爆弹
 tile.explosive_block.taranium_charge.name=塔兰金属爆弹
@@ -2382,6 +2384,10 @@ gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.2=使用§2聚变
 gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.3=使用§2高级聚变线圈方块§7：配方时间减少40%%
 gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.4=使用§2终极聚变线圈方块§7：配方时间减少60%%。
 gtlitecore.machine.suprachronal_neutronium_forge.tooltip_shift.5=使用§2恒星聚变线圈方块§7：配方时间减少80%%。
+
+gtlitecore.machine.mass_fabricator_cpu.name=质量发生器CPU
+gtlitecore.machine.mass_fabricator_cpu.tooltip=超级质量发生器
+gtlitecore.machine.mass_fabricator_cpu.tooltip.1=最大并行数：§e16 * (电压等级)§7
 
 ##  Multiblock Parts
 

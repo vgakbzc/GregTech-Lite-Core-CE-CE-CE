@@ -1,0 +1,33 @@
+{
+  "forge_marker": 1,
+  "variants": {
+    "active=false,variant=particle_suppression_casing": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/particle_suppression_casing"
+      }
+    },
+    "active=true,variant=particle_suppression_casing": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/particle_suppression_casing"
+      }
+    },
+    "active=false,variant=molecular_containment_casing": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/molecular_containment_casing"
+      }
+    },
+    "active=true,variant=molecular_containment_casing": {
+      "model": "minecraft:cube_all",
+      "ambientocclusion": false,
+      "textures": {
+        "all": "gtlitecore:blocks/casings/molecular_containment_casing"
+      }
+    }
+  }
+}

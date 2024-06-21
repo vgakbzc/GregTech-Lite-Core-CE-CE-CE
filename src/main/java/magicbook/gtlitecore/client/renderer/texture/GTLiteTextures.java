@@ -67,6 +67,7 @@ public class GTLiteTextures {
     public static final OrientedOverlayRenderer NICOLL_DYSON_BEAMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/nicoll_dyson_beamer");
     public static final OrientedOverlayRenderer SUPRACHRONAL_NEUTRONIUM_FORGE_OVERLAY = new OrientedOverlayRenderer("multiblocks/suprachronal_neutronium_forge");
     public static final OrientedOverlayRenderer ALGAE_FARM_OVERLAY = new OrientedOverlayRenderer("multiblocks/algae_farm");
+    public static final OrientedOverlayRenderer MASS_FABRICATOR_OVERLAY = new OrientedOverlayRenderer("multiblocks/mass_fabricator");
 
     //  GTLite Overlay Renderer
     public static final GTLiteOverlayRenderer INCONEL_625_CASING = new GTLiteOverlayRenderer("casings/inconel_625_casing");
@@ -140,6 +141,7 @@ public class GTLiteTextures {
     public static final GTLiteOverlayRenderer DURALUMINIUM_ALLOY_CASING = new GTLiteOverlayRenderer("casings/duraluminium_alloy_casing");
     public static final GTLiteOverlayRenderer LAWRENCIUM_CASING = new GTLiteOverlayRenderer("casings/lawrencium_casing");
     public static final GTLiteOverlayRenderer CHEMICAL_ACTIVE_CATALYTIC_FRAMEWORK_CASING = new GTLiteOverlayRenderer("casings/chemical_active_catalytic_framework_casing");
+    public static final GTLiteOverlayRenderer MASS_FABRICATOR_CASING = new GTLiteOverlayRenderer("casings/mass_fabricator_casing");
 
     public static final GTLiteOverlayRenderer MULTIPART_GRIND_BALL_HATCH = new GTLiteOverlayRenderer("multiparts/overlay_grind_ball_hatch");
     public static final GTLiteOverlayRenderer MULTIPART_WIRELESS_ENERGY = new GTLiteOverlayRenderer("multiparts/overlay_wireless_energy_hatch");

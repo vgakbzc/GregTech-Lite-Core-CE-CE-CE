@@ -22,12 +22,6 @@
           "all": "gtlitecore:blocks/casings/mass_fabricator_coil"
         }
       },
-      "particle_suppression_casing": {
-        "model": "minecraft:cube_all",
-        "textures": {
-          "all": "gtlitecore:blocks/casings/particle_suppression_casing"
-        }
-      },
       "element_constrained_casing": {
         "model": "minecraft:cube_all",
         "textures": {

@@ -246,4 +246,12 @@ public class GTLiteTraceabilityPredicate {
     //  Algae Culture Tank Predicate
     public static Supplier<TierTraceabilityPredicate> ACT_CASING = () -> new TierTraceabilityPredicate(MAP_ACT_CASING,
             Comparator.comparing((s) -> ((WrappedIntTier) MAP_ACT_CASING.get(s)).getIntTier()), "AlgaeCultureTankCasing", null);
+
+    //  Modulation Cavity Predicate
+    public static Supplier<TierTraceabilityPredicate> MODULATION_CAVITY = () -> new TierTraceabilityPredicate(MAP_MODULATION_CAVITY,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_MODULATION_CAVITY.get(s)).getIntTier()), "ModulationCavity", null);
+
+    //  Resonant Cavity Predicate
+    public static Supplier<TierTraceabilityPredicate> RESONANT_CAVITY = () -> new TierTraceabilityPredicate(MAP_RESONANT_CAVITY,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_RESONANT_CAVITY.get(s)).getIntTier()), "ResonantCavity", null);
 }

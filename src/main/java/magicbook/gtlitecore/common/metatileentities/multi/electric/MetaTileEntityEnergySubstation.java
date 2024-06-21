@@ -260,7 +260,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
                 .where('O', MetaTileEntities.ENERGY_OUTPUT_HATCH[GTValues.HV], EnumFacing.SOUTH)
                 .where('T', MetaTileEntities.SUBSTATION_ENERGY_OUTPUT_HATCH[0], EnumFacing.SOUTH)
                 .where('M', () -> ConfigHolder.machines.enableMaintenance ? MetaTileEntities.MAINTENANCE_HATCH : getCasingState(), EnumFacing.NORTH);
-        GTLiteAPI.ES_CELLS.entrySet().stream()
+        GTLiteAPI.MAP_ES_CELLS.entrySet().stream()
                 .filter(entry -> entry.getValue().getCapacity() > 0)
                 .sorted(Comparator.comparingInt(entry -> entry.getValue().getTier()))
                 .forEach(entry -> shapeInfo.add(builder.where('B', entry.getKey()).build()));
@@ -278,8 +278,8 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
     protected static final Supplier<TraceabilityPredicate> CELL_PREDICATE = () -> new TraceabilityPredicate(
             blockWorldState -> {
                 IBlockState state = blockWorldState.getBlockState();
-                if (GTLiteAPI.ES_CELLS.containsKey(state)) {
-                    ICellData cell = GTLiteAPI.ES_CELLS.get(state);
+                if (GTLiteAPI.MAP_ES_CELLS.containsKey(state)) {
+                    ICellData cell = GTLiteAPI.MAP_ES_CELLS.get(state);
                     // Allow unfilled batteries in the structure, but do not add them to match context.
                     // This lets you use empty batteries as "filler slots" for convenience if desired.
                     if (cell.getTier() != -1 && cell.getCapacity() > 0) {
@@ -291,7 +291,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
                     return true;
                 }
                 return false;
-            }, () -> GTLiteAPI.ES_CELLS.entrySet().stream()
+            }, () -> GTLiteAPI.MAP_ES_CELLS.entrySet().stream()
             .sorted(Comparator.comparingInt(entry -> entry.getValue().getTier()))
             .map(entry -> new BlockInfo(entry.getKey(), null))
             .toArray(BlockInfo[]::new));

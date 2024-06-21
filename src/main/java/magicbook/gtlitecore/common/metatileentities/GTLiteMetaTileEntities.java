@@ -262,6 +262,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityQuantumComputer QUANTUM_COMPUTER;
     public static MetaTileEntityNicollDysonBeamer NICOLL_DYSON_BEAMER;
     public static MetaTileEntitySuprachronalNeutroniumForge SUPRACHRONAL_NEUTRONIUM_FORGE;
+    public static MetaTileEntityMassFabricatorCPU MASS_FABRICATOR_CPU;
 
     /**
      * Register a Steam machine and its correspondence High Pressure Steam machine.
@@ -667,7 +668,6 @@ public class GTLiteMetaTileEntities {
                 INDUSTRIAL_3D_PRINTER = registerMultiMetaTileEntity(142, new MetaTileEntityIndustrial3DPrinter(gtliteId("industrial_3d_printer")));
             }
         }
-
         //  Free ID: 143-149
         YOTTA_FLUID_TANK = registerMultiMetaTileEntity(150, new MetaTileEntityYottaFluidTank(gtliteId("yotta_fluid_tank")));
         //  151 TWENTY_FIVE_FLUID_TANK
@@ -677,5 +677,6 @@ public class GTLiteMetaTileEntities {
         QUANTUM_COMPUTER = registerMultiMetaTileEntity(201, new MetaTileEntityQuantumComputer(gtliteId("quantum_computer")));
         NICOLL_DYSON_BEAMER = registerMultiMetaTileEntity(202, new MetaTileEntityNicollDysonBeamer(gtliteId("nicoll_dyson_beamer")));
         SUPRACHRONAL_NEUTRONIUM_FORGE = registerMultiMetaTileEntity(203, new MetaTileEntitySuprachronalNeutroniumForge(gtliteId("suprachronal_neutronium_forge")));
+        MASS_FABRICATOR_CPU = registerMultiMetaTileEntity(204, new MetaTileEntityMassFabricatorCPU(gtliteId("mass_fabricator_cpu")));
     }
 }

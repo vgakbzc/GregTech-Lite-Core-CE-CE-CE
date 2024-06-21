@@ -37,7 +37,6 @@ public class BlockSupportCasing extends VariantBlock<BlockSupportCasing.SupportC
         HASTELLOY_K243_CASING("hastelloy_k243_casing"),
         SUBSTATION_EXTERNAL_CASING("substation_external_casing"),
         MASS_FABRICATOR_COIL("mass_fabricator_coil"),
-        PARTICLE_SUPPRESSION_CASING("particle_suppression_casing"),
         ELEMENT_CONSTRAINED_CASING("element_constrained_casing"),
         MASS_FABRICATOR_CASING("mass_fabricator_casing"),
         HIGH_VOLTAGE_CURRENT_CAPACITOR("high_voltage_current_capacitor");

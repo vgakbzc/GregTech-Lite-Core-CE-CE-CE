@@ -26,4 +26,6 @@ public class GTLiteDataCode {
     public static final int ChannelWirelessEnergyHatchUUID = 9907;
     public static final int ChannelAlgaeCultureTank1 = 9908;
     public static final int ChannelAlgaeCultureTank2 = 9909;
+    public static final int ChannelElementReplicator1 = 9910;
+    public static final int ChannelElementReplicator2 = 9911;
 }

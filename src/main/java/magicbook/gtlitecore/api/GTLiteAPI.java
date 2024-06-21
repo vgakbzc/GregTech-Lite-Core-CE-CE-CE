@@ -44,7 +44,9 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_IMPLOSION_COIL = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_MACHINE_CASING = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_ACT_CASING = new Object2ObjectOpenHashMap<>();
-    public static final Object2ObjectOpenHashMap<IBlockState, ICellData> ES_CELLS = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, ICellData> MAP_ES_CELLS = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_MODULATION_CAVITY = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_RESONANT_CAVITY = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -60,7 +62,7 @@ public class GTLiteAPI {
 
         //  Energy Cell Init
         for (BlockEnergyCell.CellTier tier : BlockEnergyCell.CellTier.values()) {
-            ES_CELLS.put(GTLiteMetaBlocks.ENERGY_CELL.getState(tier), tier);
+            MAP_ES_CELLS.put(GTLiteMetaBlocks.ENERGY_CELL.getState(tier), tier);
         }
 
         //  Precise Assembler Casing Tier
@@ -279,5 +281,32 @@ public class GTLiteAPI {
 
         MAP_ACT_CASING.put(GTLiteMetaBlocks.METAL_CASING.getState(BlockMetalCasing.MetalCasingType.FERMIUM_CASING),
                 new WrappedIntTier(BlockMetalCasing.MetalCasingType.FERMIUM_CASING, 5));
+
+        //  Modulation Cavity
+        MAP_MODULATION_CAVITY.put(GTLiteMetaBlocks.MODULATION_CAVITY.getState(BlockModulationCavity.ModulationCavityTier.I),
+                new WrappedIntTier(BlockModulationCavity.ModulationCavityTier.I, 1));
+
+        MAP_MODULATION_CAVITY.put(GTLiteMetaBlocks.MODULATION_CAVITY.getState(BlockModulationCavity.ModulationCavityTier.II),
+                new WrappedIntTier(BlockModulationCavity.ModulationCavityTier.II, 2));
+
+        MAP_MODULATION_CAVITY.put(GTLiteMetaBlocks.MODULATION_CAVITY.getState(BlockModulationCavity.ModulationCavityTier.III),
+                new WrappedIntTier(BlockModulationCavity.ModulationCavityTier.III, 3));
+
+        MAP_MODULATION_CAVITY.put(GTLiteMetaBlocks.MODULATION_CAVITY.getState(BlockModulationCavity.ModulationCavityTier.IV),
+                new WrappedIntTier(BlockModulationCavity.ModulationCavityTier.IV, 4));
+
+        //  Resonant Cavity
+        MAP_RESONANT_CAVITY.put(GTLiteMetaBlocks.RESONANT_CAVITY.getState(BlockResonantCavity.ResonantCavityTier.I),
+                new WrappedIntTier(BlockResonantCavity.ResonantCavityTier.I, 1));
+
+        MAP_RESONANT_CAVITY.put(GTLiteMetaBlocks.RESONANT_CAVITY.getState(BlockResonantCavity.ResonantCavityTier.II),
+                new WrappedIntTier(BlockResonantCavity.ResonantCavityTier.II, 2));
+
+        MAP_RESONANT_CAVITY.put(GTLiteMetaBlocks.RESONANT_CAVITY.getState(BlockResonantCavity.ResonantCavityTier.III),
+                new WrappedIntTier(BlockResonantCavity.ResonantCavityTier.III, 3));
+
+        MAP_RESONANT_CAVITY.put(GTLiteMetaBlocks.RESONANT_CAVITY.getState(BlockResonantCavity.ResonantCavityTier.IV),
+                new WrappedIntTier(BlockResonantCavity.ResonantCavityTier.IV, 4));
+
     }
 }

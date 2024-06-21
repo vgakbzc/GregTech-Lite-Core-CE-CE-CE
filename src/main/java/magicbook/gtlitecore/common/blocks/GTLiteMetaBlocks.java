@@ -32,6 +32,7 @@ public class GTLiteMetaBlocks {
     public static BlockFieldCasing FIELD_CASING;
     public static BlockWireCoil WIRE_COIL;
     public static BlockTransparentCasing TRANSPARENT_CASING;
+    public static BlockTransparentUniqueCasing TRANSPARENT_UNIQUE_CASING;
     public static BlockExplosive EXPLOSIVE_BLOCK;
     public static BlockCrucible CRUCIBLE;
     public static BlockYottaTankCell YOTTA_TANK_CELL;
@@ -130,6 +131,10 @@ public class GTLiteMetaBlocks {
         TRANSPARENT_CASING.setRegistryName("transparent_casing");
         TRANSPARENT_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
 
+        TRANSPARENT_UNIQUE_CASING = new BlockTransparentUniqueCasing();
+        TRANSPARENT_UNIQUE_CASING.setRegistryName("transparent_unique_casing");
+        TRANSPARENT_UNIQUE_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
         EXPLOSIVE_BLOCK = new BlockExplosive();
         EXPLOSIVE_BLOCK.setRegistryName("explosive_block");
         EXPLOSIVE_BLOCK.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
@@ -222,6 +227,7 @@ public class GTLiteMetaBlocks {
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();
+        TRANSPARENT_UNIQUE_CASING.onModelRegister();
         ACTIVE_MULTIBLOCK_CASING.onModelRegister();
         ACTIVE_UNIQUE_CASING.onModelRegister();
     }
