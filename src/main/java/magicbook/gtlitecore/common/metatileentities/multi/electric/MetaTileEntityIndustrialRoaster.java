@@ -21,7 +21,6 @@ import gregtech.common.blocks.BlockFireboxCasing;
 import gregtech.common.blocks.BlockMetalCasing;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.NoCoilTemperatureProperty;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -50,6 +49,7 @@ import java.util.stream.Collectors;
 
 import static gregtech.api.GTValues.EV;
 import static gregtech.api.GTValues.LV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fireBoxes;
 
 public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockController implements IHeatingCoil {
 
@@ -123,7 +123,7 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
                 .where('P', states(getBoilerCasingState()))
                 .where('F', states(getFrameState()))
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH))
-                .where('B', GTLiteTraceabilityPredicate.FIRE_BOX.get())
+                .where('B', fireBoxes())
                 .where('#', air())
                 .where(' ', any())
                 .build();

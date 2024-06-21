@@ -26,7 +26,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -50,6 +49,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.UHV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fieldCasings;
 
 public class MetaTileEntityDimensionalMixer extends MultiMapMultiblockController {
 
@@ -124,7 +124,7 @@ public class MetaTileEntityDimensionalMixer extends MultiMapMultiblockController
                         .or(abilities(MultiblockAbility.EXPORT_FLUIDS)
                                 .setMaxGlobalLimited(8)))
                 .where('C', states(getThirdCasingState()))
-                .where('F', GTLiteTraceabilityPredicate.FIELD_CASING.get())
+                .where('F', fieldCasings())
                 .where('#', air())
                 .where(' ', any())
                 .build();

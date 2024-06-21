@@ -17,7 +17,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -42,6 +41,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.UV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.implosionCoils;
 
 public class MetaTileEntityElectricImplosionCompressor extends RecipeMapMultiblockController {
 
@@ -89,7 +89,7 @@ public class MetaTileEntityElectricImplosionCompressor extends RecipeMapMultiblo
                 .where('P', states(getBoilerCasingState()))
                 .where('F', states(getFrameState()))
                 .where('G', states(getGlassState()))
-                .where('I', GTLiteTraceabilityPredicate.IMPLOSION_COIL.get())
+                .where('I', implosionCoils())
                 .where('M', abilities(MultiblockAbility.MUFFLER_HATCH)
                         .setExactLimit(1))
                 .where('#', air())

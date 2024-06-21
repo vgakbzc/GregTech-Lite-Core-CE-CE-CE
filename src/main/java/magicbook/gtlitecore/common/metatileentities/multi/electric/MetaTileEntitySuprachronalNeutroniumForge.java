@@ -18,7 +18,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -42,6 +41,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.MAX;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fusionCoils;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
 
 public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultiblockController {
@@ -130,7 +130,7 @@ public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultibloc
                         .or(autoAbilities()))
                 .where('B', states(getSecondCasingState()))
                 .where('C', states(getCasingState()))
-                .where('D', GTLiteTraceabilityPredicate.FUSION_COIL.get())
+                .where('D', fusionCoils())
                 .where('E', states(getThirdCasingState()))
                 .where('F', states(getCasingState()))
                 .where('G', states(getCasingState()))

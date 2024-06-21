@@ -25,7 +25,6 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.capability.impl.AlgaeFarmRecipeLogic;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -48,6 +47,7 @@ import javax.annotation.Nonnull;
 import java.util.*;
 
 import static gregtech.api.GTValues.MV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.machineCasings;
 
 /**
  * @since 2.8.8-beta
@@ -125,7 +125,7 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
                                 .setPreviewCount(1))
                         .or(abilities(MultiblockAbility.IMPORT_FLUIDS)
                                 .setPreviewCount(1)))
-                .where('X', GTLiteTraceabilityPredicate.MACHINE_CASING.get())
+                .where('X', machineCasings())
                 .where(' ', any())
                 .build();
     }

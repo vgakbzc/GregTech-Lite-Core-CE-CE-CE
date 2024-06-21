@@ -18,7 +18,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
@@ -42,6 +41,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.ZPM;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fieldCasings;
 
 public class MetaTileEntityCollider extends RecipeMapMultiblockController {
 
@@ -107,7 +107,7 @@ public class MetaTileEntityCollider extends RecipeMapMultiblockController {
                         .setMinGlobalLimited(96)
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS))
                         .or(abilities(MultiblockAbility.EXPORT_ITEMS)))
-                .where('c', GTLiteTraceabilityPredicate.FIELD_CASING.get())
+                .where('c', fieldCasings())
                 .where('D', states(getCoilState()))
                 .where('e', states(getSecondCasingState()))
                 .where('I', states(getSecondCoilState()))

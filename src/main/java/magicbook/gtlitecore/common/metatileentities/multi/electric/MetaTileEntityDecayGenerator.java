@@ -14,7 +14,6 @@ import gregtech.common.ConfigHolder;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
@@ -38,6 +37,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.ZPM;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fieldCasings;
 
 public class MetaTileEntityDecayGenerator extends RecipeMapMultiblockController {
 
@@ -88,7 +88,7 @@ public class MetaTileEntityDecayGenerator extends RecipeMapMultiblockController 
                 .where('~', this.selfPredicate())
                 .where('A', states(getCasingState()))
                 .where('B', states(getSecondCasingState()))
-                .where('C', GTLiteTraceabilityPredicate.FIELD_CASING.get())
+                .where('C', fieldCasings())
                 .where('D', states(getThirdCasingState()))
                 .where('F', states(getCasingState())
                         .or(autoAbilities()))

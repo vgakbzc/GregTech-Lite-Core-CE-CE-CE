@@ -23,7 +23,6 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
@@ -49,6 +48,8 @@ import java.util.stream.Collectors;
 
 import static gregtech.api.GTValues.LV;
 import static gregtech.api.GTValues.LuV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.paCasings;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.paInternalCasings;
 
 /**
  * Precise Assembler MT-3662
@@ -150,13 +151,13 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                 .aisle("DMMMMMMMD", "DGGGGGGGD", "DGGGGGGGD", "DGGGGGGGD", "DDDDDDDDD")
                 .aisle("DDDDSDDDD", "F       F", "F       F", "F       F", "DDDDDDDDD")
                 .where('S', this.selfPredicate())
-                .where('D', GTLiteTraceabilityPredicate.PA_CASING.get()
+                .where('D', paCasings()
                         .setMinGlobalLimited(42)
                         .or(autoAbilities(true, true, true, true, true, true, false)))
                 .where('F', states(getFrameState()))
                 .where('G', states(getGlassState()))
                 .where('O', abilities(MultiblockAbility.MUFFLER_HATCH))
-                .where('M', GTLiteTraceabilityPredicate.PA_INTERNAL_CASING.get())
+                .where('M', paInternalCasings())
                 .build();
     }
 

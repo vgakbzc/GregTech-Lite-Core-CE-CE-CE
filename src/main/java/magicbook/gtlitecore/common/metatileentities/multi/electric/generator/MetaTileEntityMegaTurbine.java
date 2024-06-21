@@ -29,7 +29,6 @@ import magicbook.gtlitecore.api.capability.IReinforcedRotorHolder;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.metatileentity.multi.GTLiteMultiblockAbility;
 import magicbook.gtlitecore.api.metatileentity.multi.ITurbineMode;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
@@ -51,6 +50,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.rotorHolders;
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
 
 public class MetaTileEntityMegaTurbine extends FuelMultiblockController implements ITieredMetaTileEntity, ITurbineMode, IProgressBarMultiblock {
@@ -216,7 +216,7 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState()))
                 .where('G', states(getGearBoxState()))
-                .where('R', GTLiteTraceabilityPredicate.ROTOR_HOLDER.get())
+                .where('R', rotorHolders())
                 .where('M', states(getCasingState())
                         .or(abilities(MultiblockAbility.MUFFLER_HATCH))
                         .setPreviewCount(8))

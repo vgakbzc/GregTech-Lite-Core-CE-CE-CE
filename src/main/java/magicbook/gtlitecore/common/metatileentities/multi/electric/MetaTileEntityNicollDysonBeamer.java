@@ -16,7 +16,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.GravitonCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
@@ -41,6 +40,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.MAX;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.gravitonCasings;
 
 public class MetaTileEntityNicollDysonBeamer extends MultiMapMultiblockController {
 
@@ -282,11 +282,11 @@ public class MetaTileEntityNicollDysonBeamer extends MultiMapMultiblockControlle
                 .where('F', states(getFourthCasingState())
                         .setMinGlobalLimited(10)
                         .or(autoAbilities(false, true, true, true, true, true, false)))
-                .where('G', GTLiteTraceabilityPredicate.GRAVITON_CASING.get())
+                .where('G', gravitonCasings())
                 .where('H', states(getGlassState()))
-                .where('I', GTLiteTraceabilityPredicate.GRAVITON_CASING.get())
+                .where('I', gravitonCasings())
                 .where('J', states(getCasingState()))
-                .where('K', GTLiteTraceabilityPredicate.GRAVITON_CASING.get())
+                .where('K', gravitonCasings())
                 .where(' ', any())
                 .build();
     }

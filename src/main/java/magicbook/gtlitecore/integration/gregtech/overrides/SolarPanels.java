@@ -13,7 +13,8 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getFluidById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 /**

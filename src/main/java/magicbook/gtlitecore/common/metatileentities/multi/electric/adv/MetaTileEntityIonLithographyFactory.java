@@ -26,7 +26,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -50,6 +49,7 @@ import java.util.List;
 
 import static gregtech.api.GTValues.UHV;
 import static gregtech.api.GTValues.UV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fieldCasings;
 
 public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockController {
 
@@ -130,7 +130,7 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
                         .or(abilities(MultiblockAbility.EXPORT_FLUIDS)
                                 .setMaxGlobalLimited(8)))
                 .where('E', states(getThirdCasingState()))
-                .where('F', GTLiteTraceabilityPredicate.FIELD_CASING.get())
+                .where('F', fieldCasings())
                 .where('D', states(getFourthCasingState()))
                 .where('O', states(getCoilState()))
                 .where('o', states(getSecondCoilState()))

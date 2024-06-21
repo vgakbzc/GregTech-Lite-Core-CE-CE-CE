@@ -15,7 +15,6 @@ import gregtech.client.utils.BloomEffectUtil;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
@@ -55,6 +54,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.UHV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fieldCasings;
 
 /**
  * Quantum Force Transformer
@@ -120,7 +120,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
                 .aisle("               ", "               ", "               ", "  D         D  ", "  D         D  ", "  B         B  ", "  DFFFFFFFFFD  ", "   DDDFFFDDD   ", "      DGD      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
                 .aisle("    D     D    ", "    D     D    ", "    D     D    ", "   DA     AD   ", "   DDDDDDDDD   ", "   DDDDDDDDD   ", "   DDDDGDDDD   ", "      DAD      ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ", "               ")
                 .where('S', this.selfPredicate())
-                .where('A', GTLiteTraceabilityPredicate.FIELD_CASING.get())
+                .where('A', fieldCasings())
                 .where('B', states(getSecondCasingState()))
                 .where('C', states(getCoilState()))
                 .where('D', states(getCasingState()))

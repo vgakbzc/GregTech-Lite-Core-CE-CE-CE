@@ -16,7 +16,6 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.SpaceElevatorCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
@@ -35,6 +34,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.List;
+
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.spaceElevatorMotors;
 
 /**
  * Space Elevator for GregTech CEu
@@ -129,7 +130,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
                 .where('X', states(getThirdCasingState()))
                 .where('H', states(getFrameState()))
                 .where('F', states(getFourthCasingState()))
-                .where('C', GTLiteTraceabilityPredicate.SPACE_ELEVATOR_MOTOR.get())
+                .where('C', spaceElevatorMotors())
                 .where('A', states(getFifthCasingState()))
                 .where('D', states(getSixthCasingState()))
                 .where('I', states(getSixthCasingState())

@@ -18,7 +18,6 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.ComponentCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
@@ -45,6 +44,8 @@ import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.caCasings;
 
 /**
  * Component Assembly Line
@@ -134,7 +135,7 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
                 .where('D', states(getFrameState()))
                 .where('G', states(getBoilerCasingState()))
                 .where('E', states(getThirdCasingState()))
-                .where('B', GTLiteTraceabilityPredicate.CA_CASING.get())
+                .where('B', caCasings())
                 .where('J', states(getCasingState())
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS)
                                 .setMaxGlobalLimited(6)

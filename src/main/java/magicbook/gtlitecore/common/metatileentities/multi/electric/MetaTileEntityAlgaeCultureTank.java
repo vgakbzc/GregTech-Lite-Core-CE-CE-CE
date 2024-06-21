@@ -18,7 +18,6 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
-import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtils;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -42,6 +41,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 import static gregtech.api.GTValues.HV;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.actCasings;
 
 public class MetaTileEntityAlgaeCultureTank extends RecipeMapMultiblockController {
 
@@ -104,7 +104,7 @@ public class MetaTileEntityAlgaeCultureTank extends RecipeMapMultiblockControlle
                 .aisle("     ", "CDDDC", "G###G", "G###G", "CCCCC")
                 .aisle("C   C", "CCSCC", "CGGGC", "CGGGC", " CCC ")
                 .where('S', this.selfPredicate())
-                .where('C', GTLiteTraceabilityPredicate.ACT_CASING.get()
+                .where('C', actCasings()
                         .setMinGlobalLimited(40)
                         .or(autoAbilities()))
                 .where('D', states(getCasingState()))

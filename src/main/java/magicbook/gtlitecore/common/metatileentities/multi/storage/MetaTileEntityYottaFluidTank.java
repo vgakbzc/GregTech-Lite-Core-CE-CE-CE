@@ -50,7 +50,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.CELL_PREDICATE;
+import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fluidCells;
 import static magicbook.gtlitecore.api.utils.BigMath.summarizedValue;
 
 /**
@@ -152,7 +152,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                                 .setPreviewCount(1)))
                 .where('G', states(getGlassState()))
                 .where('F', states(getFrameState()))
-                .where('R', CELL_PREDICATE.get())
+                .where('R', fluidCells())
                 .build();
     }
 
