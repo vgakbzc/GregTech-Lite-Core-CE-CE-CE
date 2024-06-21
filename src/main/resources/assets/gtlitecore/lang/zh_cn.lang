@@ -2389,6 +2389,12 @@ gtlitecore.machine.mass_fabricator_cpu.name=质量发生器CPU
 gtlitecore.machine.mass_fabricator_cpu.tooltip=超级质量发生器
 gtlitecore.machine.mass_fabricator_cpu.tooltip.1=最大并行数：§e16 * (电压等级)§7
 
+gtlitecore.machine.element_replicator.name=大型元素复制机
+gtlitecore.machine.element_replicator.tooltip.1=UU物质吞噬者
+gtlitecore.machine.element_replicator.tooltip.2=根据§a调制腔§7的等级获得额外的并行系数。
+gtlitecore.machine.element_replicator.tooltip.3=根据§b谐振腔§7的等级获得配方时间减免。
+gtlitecore.machine.element_replicator.tooltip.4=最大并行数：§e4 * (调制腔等级 * 电压等级)§7
+
 ##  Multiblock Parts
 
 ###  Energy Hatches

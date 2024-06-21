@@ -28,4 +28,6 @@ public class GTLiteDataCode {
     public static final int ChannelAlgaeCultureTank2 = 9909;
     public static final int ChannelElementReplicator1 = 9910;
     public static final int ChannelElementReplicator2 = 9911;
+    public static final int ChannelElementReplicator3 = 9912;
+    public static final int ChannelElementReplicator4 = 9913;
 }

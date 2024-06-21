@@ -263,6 +263,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityNicollDysonBeamer NICOLL_DYSON_BEAMER;
     public static MetaTileEntitySuprachronalNeutroniumForge SUPRACHRONAL_NEUTRONIUM_FORGE;
     public static MetaTileEntityMassFabricatorCPU MASS_FABRICATOR_CPU;
+    public static MetaTileEntityElementReplicator ELEMENT_REPLICATOR;
 
     /**
      * Register a Steam machine and its correspondence High Pressure Steam machine.
@@ -678,5 +679,6 @@ public class GTLiteMetaTileEntities {
         NICOLL_DYSON_BEAMER = registerMultiMetaTileEntity(202, new MetaTileEntityNicollDysonBeamer(gtliteId("nicoll_dyson_beamer")));
         SUPRACHRONAL_NEUTRONIUM_FORGE = registerMultiMetaTileEntity(203, new MetaTileEntitySuprachronalNeutroniumForge(gtliteId("suprachronal_neutronium_forge")));
         MASS_FABRICATOR_CPU = registerMultiMetaTileEntity(204, new MetaTileEntityMassFabricatorCPU(gtliteId("mass_fabricator_cpu")));
+        ELEMENT_REPLICATOR = registerMultiMetaTileEntity(205, new MetaTileEntityElementReplicator(gtliteId("element_replicator")));
     }
 }
