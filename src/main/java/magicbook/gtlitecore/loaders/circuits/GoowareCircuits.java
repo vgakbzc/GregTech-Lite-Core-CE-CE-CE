@@ -367,9 +367,9 @@ public class GoowareCircuits {
 
         CIRCUIT_ASSEMBLER_RECIPES.recipeBuilder()
                 .input(GOOWARE_CIRCUIT_BOARD)
-                .input(NONLINEAR_CHEMICAL_OSCILLATOR)
-                .inputs(INTRAVITAL_SOC.getStackForm())
+                .input(INTRAVITAL_SOC)
                 .input(wireFine, Europium, 8)
+                .input(bolt, Orichalcum, 8)
                 .solderMultiplier(1)
                 .output(GOOWARE_PROCESSOR, 4)
                 .EUt(VA[UHV])
