@@ -640,7 +640,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(10800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 1050))
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SMALL_GEAR)
                 .build();
 
         //  12047 Transition-H Alloy
@@ -666,7 +666,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(11800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 860))
-                .flags(GENERATE_PLATE)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR)
                 .build();
 
         //  12049 Inert Gas Mixture
@@ -687,7 +687,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 400))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_BOLT_SCREW)
                 .build();
 
         //  12051 Lanthanum Group-H Alloy
@@ -700,7 +700,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(13100, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 420))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12051 Actinium Group-L Alloy
@@ -727,7 +727,7 @@ public class GTLiteSecondDegreeMaterials {
                 .blast(b -> b
                         .temp(14500, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 300))
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_GEAR, GENERATE_SMALL_GEAR)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_RING, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12053 Halogen Mixture
@@ -1112,7 +1112,7 @@ public class GTLiteSecondDegreeMaterials {
                 .color(0x1264FF)
                 .iconSet(METALLIC)
                 .components(NaquadahEnriched, 8, Holmium, 2)
-                .flags(GENERATE_PLATE, GENERATE_FOIL)
+                .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_GEAR)
                 .blast(b -> b
                         .temp(11000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 140)

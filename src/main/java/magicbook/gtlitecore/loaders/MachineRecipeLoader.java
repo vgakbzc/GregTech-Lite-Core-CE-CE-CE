@@ -2300,6 +2300,63 @@ public class MachineRecipeLoader {
                     'F', FIELD_GENERATOR_ZPM,
                     'E', MetaBlocks.FUSION_CASING.getItemVariant(gregtech.common.blocks.BlockFusionCasing.CasingType.FUSION_COIL),
                     'W', new UnificationEntry(cableGtDouble, VanadiumGallium));
+
+            //  Mass Fabricator CPU
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(GTLiteMetaTileEntities.LARGE_MASS_FABRICATOR, 4)
+                    .input(plateDouble, Tairitsium, 4)
+                    .input(circuit, MarkerMaterials.Tier.UEV, 8)
+                    .input(ELECTRIC_PUMP_UHV, 2)
+                    .input(FIELD_GENERATOR_UHV, 2)
+                    .input(ENERGY_CLUSTER)
+                    .input(gear, EnrichedHolmium, 4)
+                    .input(TOOL_DATA_MODULE, 16)
+                    .input(QUANTUM_ANOMALY, 2)
+                    .input(wireGtOctal, PedotPSS, 8)
+                    .fluidInputs(UUMatter.getFluid(64000))
+                    .fluidInputs(FreeElectronGas.getFluid(16000))
+                    .fluidInputs(NonMetallicMixture.getFluid(4000))
+                    .fluidInputs(EnrichedNaquadahAlloy.getFluid(L * 4))
+                    .output(MASS_FABRICATOR_CPU)
+                    .EUt(VA[UHV])
+                    .duration(MINUTE)
+                    .stationResearch(b -> b
+                            .researchStack(GTLiteMetaTileEntities.LARGE_MASS_FABRICATOR.getStackForm())
+                            .CWUt(128)
+                            .EUt(VA[UHV]))
+                    .buildAndRegister();
+
+            //  Element Replicator
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(HULL[UHV])
+                    .input(GTLiteMetaTileEntities.LARGE_REPLICATOR, 4)
+                    .input(plateDouble, ActiniumGroupHAlloy, 4)
+                    .input(plateDouble, LanthanumGroupHAlloy, 4)
+                    .input(circuit, MarkerMaterials.Tier.UEV, 16)
+                    .input(EMITTER_UHV, 8)
+                    .input(SENSOR_UHV, 8)
+                    .input(FIELD_GENERATOR_UHV, 4)
+                    .input(gear, RefractoryAlloy, 6)
+                    .input(gearSmall, TransitionLAlloy, 18)
+                    .input(NANO_PIC_CHIP, 32)
+                    .input(stick, ActiniumGroupLAlloy, 12)
+                    .input(wireGtHex, PedotPSS, 8)
+                    .input(TOOL_DATA_MODULE, 32)
+                    .input(screw, LanthanumGroupLAlloy, 24)
+                    .fluidInputs(Lafium.getFluid(L * 40))
+                    .fluidInputs(TransitionHAlloy.getFluid(L * 20))
+                    .fluidInputs(Trinaquadalloy.getFluid(L * 20))
+                    .fluidInputs(ArceusAlloy2B.getFluid(L * 10))
+                    .output(ELEMENT_REPLICATOR)
+                    .EUt(VA[UHV])
+                    .duration(MINUTE)
+                    .stationResearch(b -> b
+                            .researchStack(GTLiteMetaTileEntities.LARGE_REPLICATOR.getStackForm())
+                            .CWUt(256)
+                            .EUt(VA[UHV]))
+                    .buildAndRegister();
+
         }
     }
 
