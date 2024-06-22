@@ -1312,6 +1312,11 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(UUMatter.getMaterialRGB() - FermionicUUMatter.getMaterialRGB())
                 .build()
                 .setFormula(addObfuscatedFormula("???"));
+
+        //  24162 Pahoehoe Lava
+        PahoehoeLava = new Material.Builder(getID(), gregtechId("pahoehoe_lava"))
+                .liquid(new FluidBuilder().temperature(1200).customStill())
+                .build();
     }
 
 }

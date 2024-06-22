@@ -923,6 +923,7 @@ public class GTLiteMaterials {
     public static Material HeavyFluorinatedTriniumSolution;
     public static Material FermionicUUMatter;
     public static Material BosonicUUMatter;
+    public static Material PahoehoeLava;
 
     //////////////////////////////
     //  Third Degree Materials  //
