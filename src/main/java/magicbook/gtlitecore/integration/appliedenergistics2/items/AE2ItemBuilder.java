@@ -124,7 +124,7 @@ public class AE2ItemBuilder implements IAE2ItemBuilder {
 
         if (Platform.isClient()) {
             if (this.hidden && Mods.JustEnoughItems.isModLoaded()) {
-                GTLiteJEIPlugin.addAE2ItemToBlacklist(definition);
+                GTLiteJEIPlugin.addItemToBlacklist(definition);
             }
             this.itemRendering.apply(this.registry, item);
         }
