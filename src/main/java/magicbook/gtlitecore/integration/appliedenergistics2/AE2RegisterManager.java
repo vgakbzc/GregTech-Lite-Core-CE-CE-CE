@@ -2,7 +2,7 @@ package magicbook.gtlitecore.integration.appliedenergistics2;
 
 import appeng.bootstrap.components.*;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2Items;
-import magicbook.gtlitecore.integration.appliedenergistics2.utils.ModelLoaderWrapper;
+import magicbook.gtlitecore.integration.appliedenergistics2.models.ModelLoaderWrapper;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;

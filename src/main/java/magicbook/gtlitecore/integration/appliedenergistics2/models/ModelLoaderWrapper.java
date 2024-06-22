@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.integration.appliedenergistics2.utils;
+package magicbook.gtlitecore.integration.appliedenergistics2.models;
 
 import appeng.bootstrap.IModelRegistry;
 import net.minecraft.block.Block;
