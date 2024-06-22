@@ -77,6 +77,8 @@ public enum Mods {
 
     IronChest("ironchest"),
 
+    JustEnoughItems("jei"),
+
     LazyAE2("threng"),
     LittleTiles("littletiles"),
 

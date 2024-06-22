@@ -30,6 +30,7 @@ public class GTLiteAPI {
     public static final BaseCreativeTab TAB_GTLITE_PARTICLE = new BaseCreativeTab("gtlite.particle", () -> GTLiteMetaItems.ALPHA_PARTICLE.getStackForm(), false);
     public static final BaseCreativeTab TAB_GTLITE_WRAP = new BaseCreativeTab("gtlite.wrap", () -> GTLiteMetaItems.WRAP_PLASTIC_CIRCUIT_BOARD.getStackForm(), false);
     public static final BaseCreativeTab TAB_GTLITE_FOOD = new BaseCreativeTab("gtlite.food", () -> new ItemStack(Items.CAKE), false);
+    public static final BaseCreativeTab TAB_GTLITE_AE2_INTEGRATION = new BaseCreativeTab("gtlite.ae2_integration", () -> GTLiteMetaItems.ASTRAL_ARRAY.getStackForm(), false);
 
     //  Hash Maps
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PA_CASING = new Object2ObjectOpenHashMap<>();

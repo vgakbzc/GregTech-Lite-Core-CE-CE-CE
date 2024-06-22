@@ -3858,6 +3858,7 @@ itemGroup.gtlite.tool=格雷科技精简版 | 工具
 itemGroup.gtlite.particle=格雷科技精简版 | 粒子
 itemGroup.gtlite.wrap=格雷科技精简版 | 封装物品
 itemGroup.gtlite.food=格雷科技精简版 | 食物
+itemGroup.gtlite.ae2_integration=格雷科技精简版 | AE2联动
 
 ##  Recipe Maps
 recipemap.chemical_dryer.name=脱水
