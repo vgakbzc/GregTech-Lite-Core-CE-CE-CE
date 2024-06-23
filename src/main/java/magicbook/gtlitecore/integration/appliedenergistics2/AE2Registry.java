@@ -2,17 +2,24 @@ package magicbook.gtlitecore.integration.appliedenergistics2;
 
 import appeng.bootstrap.IBootstrapComponent;
 import appeng.util.Platform;
+import magicbook.gtlitecore.integration.appliedenergistics2.blocks.AE2BlockBuilder;
+import magicbook.gtlitecore.integration.appliedenergistics2.blocks.IAE2BlockBuilder;
 import magicbook.gtlitecore.integration.appliedenergistics2.components.AE2BuiltInModelComponent;
 import magicbook.gtlitecore.integration.appliedenergistics2.components.AE2ModelOverrideComponent;
 import magicbook.gtlitecore.integration.appliedenergistics2.components.AE2TileEntityComponent;
+import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2ItemBuilder;
+import magicbook.gtlitecore.integration.appliedenergistics2.items.IAE2ItemBuilder;
+import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.IBakedModel;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
 import net.minecraftforge.client.model.IModel;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.*;
 import java.util.function.BiFunction;
+import java.util.function.Supplier;
 
 public class AE2Registry {
 
@@ -98,5 +105,27 @@ public class AE2Registry {
     public void addModelOverride(String resourcePath,
                                  BiFunction<ModelResourceLocation, IBakedModel, IBakedModel> customizer) {
         this.modelOverrideComponent.addOverride(resourcePath, customizer);
+    }
+
+    /**
+     * Add AE2 Item by {@code id} and {@code itemSupplier}.
+     *
+     * @param id    Item ID.
+     * @param item  Item Supplier.
+     * @return      AE2 Item.
+     */
+    public IAE2ItemBuilder addItem(String id, Supplier<Item> item) {
+        return new AE2ItemBuilder(this, id, item);
+    }
+
+    /**
+     * Add AE2 Block by {@code id} and {@code blockSupplier}.
+     *
+     * @param id     Block ID.
+     * @param block  Block Supplier.
+     * @return       AE2 Block.
+     */
+    public IAE2BlockBuilder addBlock(String id, Supplier<Block> block) {
+        return new AE2BlockBuilder(this, id, block);
     }
 }

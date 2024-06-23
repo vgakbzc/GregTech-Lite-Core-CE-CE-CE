@@ -3,6 +3,7 @@ package magicbook.gtlitecore.integration.appliedenergistics2;
 import appeng.bootstrap.components.*;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2Items;
 import magicbook.gtlitecore.integration.appliedenergistics2.models.ModelLoaderWrapper;
+import magicbook.gtlitecore.integration.appliedenergistics2.upgrades.AE2Upgrades;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.MinecraftForge;
@@ -19,11 +20,13 @@ public class AE2RegisterManager {
 
     private final AE2Registry registry;
     private final AE2Items item;
+    private final AE2Upgrades upgrade;
 
     public AE2RegisterManager() {
         MinecraftForge.EVENT_BUS.register(this);
         this.registry = new AE2Registry();
         this.item = new AE2Items(this.registry);
+        this.upgrade = new AE2Upgrades(this.registry);
     }
 
     public void onPreInit(FMLPreInitializationEvent event) {
@@ -56,6 +59,14 @@ public class AE2RegisterManager {
         final var side = FMLCommonHandler.instance().getEffectiveSide();
         this.registry.getBootstrapComponents(IModelRegistrationComponent.class)
                 .forEachRemaining(b -> b.modelRegistration(side, registry));
+    }
+
+    public AE2Items getAE2Items() {
+        return this.item;
+    }
+
+    public AE2Upgrades getAE2Upgrades() {
+        return this.upgrade;
     }
 
 }

@@ -36,7 +36,7 @@ public class GTLiteCore {
                 serverSide = "magicbook.gtlitecore.common.CommonProxy")
     public static CommonProxy proxy;
 
-    private AE2RegisterManager ae2RegisterManager;
+    private static AE2RegisterManager ae2RegisterManager;
 
     public GTLiteCore() {}
 
@@ -48,7 +48,7 @@ public class GTLiteCore {
 
     @Mod.EventHandler
     public void onPreInit(FMLPreInitializationEvent event) {
-        this.ae2RegisterManager = new AE2RegisterManager();
+        ae2RegisterManager = new AE2RegisterManager();
 
         GTLiteLog.logger.info("Enabled highTierContent in GregTech...");
         ConfigHolder.machines.highTierContent = true;
@@ -63,7 +63,7 @@ public class GTLiteCore {
 
         proxy.preLoad();
 
-        this.ae2RegisterManager.onPreInit(event);
+        ae2RegisterManager.onPreInit(event);
     }
 
     @Mod.EventHandler
@@ -71,13 +71,17 @@ public class GTLiteCore {
         GTLiteLog.logger.info("Registering Integration Modules...");
         GTLiteIntegration.onInit();
 
-        this.ae2RegisterManager.onInit(event);
+        ae2RegisterManager.onInit(event);
 
         MinecraftForge.EVENT_BUS.register(new WirelessEnergyNetworkWorldSavedData());
     }
 
     @Mod.EventHandler
     public void onPostInit(FMLPostInitializationEvent event) {
-        this.ae2RegisterManager.onPostInit(event);
+        ae2RegisterManager.onPostInit(event);
+    }
+
+    public static AE2RegisterManager getAE2RegisterManager() {
+        return ae2RegisterManager;
     }
 }
