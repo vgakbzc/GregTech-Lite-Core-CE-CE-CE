@@ -1,10 +1,12 @@
-package magicbook.gtlitecore.integration.appliedenergistics2.materials;
+package magicbook.gtlitecore.integration.appliedenergistics2.items;
 
 import appeng.core.features.IStackSrc;
 import appeng.items.AEBaseItem;
 import com.google.common.base.Preconditions;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import magicbook.gtlitecore.GTLiteCore;
+import magicbook.gtlitecore.integration.appliedenergistics2.materials.AE2MaterialStackSrc;
+import magicbook.gtlitecore.integration.appliedenergistics2.materials.AE2MaterialType;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;

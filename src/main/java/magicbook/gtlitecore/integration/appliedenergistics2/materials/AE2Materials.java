@@ -3,7 +3,8 @@ package magicbook.gtlitecore.integration.appliedenergistics2.materials;
 import appeng.core.features.DamagedItemDefinition;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import magicbook.gtlitecore.integration.appliedenergistics2.AE2Registry;
-import magicbook.gtlitecore.integration.appliedenergistics2.items.DamagedItemRendering;
+import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2BaseItemMaterial;
+import magicbook.gtlitecore.integration.appliedenergistics2.rendering.DamagedItemRendering;
 import magicbook.gtlitecore.integration.appliedenergistics2.upgrades.IDamagedDefinition;
 import net.minecraft.item.ItemStack;
 

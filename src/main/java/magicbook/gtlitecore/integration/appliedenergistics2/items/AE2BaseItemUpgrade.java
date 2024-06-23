@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.integration.appliedenergistics2.upgrades;
+package magicbook.gtlitecore.integration.appliedenergistics2.items;
 
 import appeng.api.implementations.items.IItemGroup;
 import appeng.api.implementations.tiles.ISegmentedInventory;
@@ -11,6 +11,7 @@ import appeng.util.inv.AdaptorItemHandler;
 import com.google.common.base.Preconditions;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import magicbook.gtlitecore.GTLiteCore;
+import magicbook.gtlitecore.integration.appliedenergistics2.upgrades.*;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;

@@ -1,9 +1,11 @@
 package magicbook.gtlitecore.integration.appliedenergistics2;
 
 import appeng.bootstrap.components.*;
+import magicbook.gtlitecore.integration.appliedenergistics2.blocks.AE2Blocks;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2Items;
 import magicbook.gtlitecore.integration.appliedenergistics2.materials.AE2Materials;
 import magicbook.gtlitecore.integration.appliedenergistics2.models.ModelLoaderWrapper;
+import magicbook.gtlitecore.integration.appliedenergistics2.parts.AE2Parts;
 import magicbook.gtlitecore.integration.appliedenergistics2.upgrades.AE2Upgrades;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -22,6 +24,8 @@ public class AE2RegisterManager {
     private final AE2Registry registry;
     private final AE2Items item;
     private final AE2Materials material;
+    private final AE2Blocks block;
+    private final AE2Parts part;
     private final AE2Upgrades upgrade;
 
     public AE2RegisterManager() {
@@ -29,6 +33,8 @@ public class AE2RegisterManager {
         this.registry = new AE2Registry();
         this.item = new AE2Items(this.registry);
         this.material = new AE2Materials(this.registry);
+        this.block = new AE2Blocks(this.registry);
+        this.part = new AE2Parts(this.registry);
         this.upgrade = new AE2Upgrades(this.registry);
     }
 
@@ -70,6 +76,14 @@ public class AE2RegisterManager {
 
     public AE2Materials getAE2Materials() {
         return this.material;
+    }
+
+    public AE2Blocks getAE2Blocks() {
+        return this.block;
+    }
+
+    public AE2Parts getAE2Parts() {
+        return this.part;
     }
 
     public AE2Upgrades getAE2Upgrades() {

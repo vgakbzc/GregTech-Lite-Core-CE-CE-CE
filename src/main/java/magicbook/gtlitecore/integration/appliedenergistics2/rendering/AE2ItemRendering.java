@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.integration.appliedenergistics2.items;
+package magicbook.gtlitecore.integration.appliedenergistics2.rendering;
 
 import appeng.bootstrap.IItemRendering;
 import appeng.bootstrap.components.ItemColorComponent;

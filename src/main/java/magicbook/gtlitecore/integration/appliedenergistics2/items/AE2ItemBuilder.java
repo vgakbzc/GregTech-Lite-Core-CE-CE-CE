@@ -10,6 +10,7 @@ import co.neeve.nae2.common.features.IFeature;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.integration.appliedenergistics2.AE2Registry;
+import magicbook.gtlitecore.integration.appliedenergistics2.rendering.AE2ItemRendering;
 import magicbook.gtlitecore.integration.jei.GTLiteJEIPlugin;
 import net.minecraft.block.BlockDispenser;
 import net.minecraft.creativetab.CreativeTabs;

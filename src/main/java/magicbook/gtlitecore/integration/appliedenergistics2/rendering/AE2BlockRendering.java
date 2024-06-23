@@ -1,4 +1,4 @@
-package magicbook.gtlitecore.integration.appliedenergistics2.blocks;
+package magicbook.gtlitecore.integration.appliedenergistics2.rendering;
 
 import appeng.block.AEBaseTileBlock;
 import appeng.bootstrap.IBlockRendering;
