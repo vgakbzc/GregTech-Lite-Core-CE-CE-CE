@@ -2,6 +2,7 @@ package magicbook.gtlitecore.integration.appliedenergistics2;
 
 import appeng.bootstrap.components.*;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2Items;
+import magicbook.gtlitecore.integration.appliedenergistics2.materials.AE2Materials;
 import magicbook.gtlitecore.integration.appliedenergistics2.models.ModelLoaderWrapper;
 import magicbook.gtlitecore.integration.appliedenergistics2.upgrades.AE2Upgrades;
 import net.minecraft.item.Item;
@@ -20,12 +21,14 @@ public class AE2RegisterManager {
 
     private final AE2Registry registry;
     private final AE2Items item;
+    private final AE2Materials material;
     private final AE2Upgrades upgrade;
 
     public AE2RegisterManager() {
         MinecraftForge.EVENT_BUS.register(this);
         this.registry = new AE2Registry();
         this.item = new AE2Items(this.registry);
+        this.material = new AE2Materials(this.registry);
         this.upgrade = new AE2Upgrades(this.registry);
     }
 
@@ -63,6 +66,10 @@ public class AE2RegisterManager {
 
     public AE2Items getAE2Items() {
         return this.item;
+    }
+
+    public AE2Materials getAE2Materials() {
+        return this.material;
     }
 
     public AE2Upgrades getAE2Upgrades() {
