@@ -28,8 +28,8 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -175,7 +175,7 @@ public class MetaTileEntityWirelessEnergyHatch extends MetaTileEntityMultiblockP
     @Override
     public void addInformation(ItemStack stack,
                                World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         String tierName = GTValues.VNF[this.getTier()];
         tooltip.add(I18n.format("gtlitecore.machine.wireless_energy_hatch.tooltip.1"));

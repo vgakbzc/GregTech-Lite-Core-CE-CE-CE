@@ -40,8 +40,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -128,7 +128,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
      * @return This machine has a special property, if casing tier in multiblock structure is greater than or equal to recipe needs casing tier, then run recipe.
      */
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(AssemblyCasingTierProperty.getInstance(), 0) <= tier;
     }
@@ -141,7 +141,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         }
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -175,7 +175,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         if (this.CasingTier <= 3) {
@@ -266,7 +266,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.precise_assembler.tooltip.1"));

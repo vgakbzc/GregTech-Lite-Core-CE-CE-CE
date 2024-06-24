@@ -41,8 +41,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -98,7 +98,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
         this.energyContainer = new EnergyContainerList(energyContainer);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -195,7 +195,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_PROCESSING_FACTORY_OVERLAY;
@@ -265,7 +265,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.circulative_cooling_tower.tooltip.1"));

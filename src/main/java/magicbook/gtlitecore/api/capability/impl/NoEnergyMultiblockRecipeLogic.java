@@ -17,8 +17,8 @@ import net.minecraft.util.Tuple;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -72,9 +72,9 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
         return GTValues.LV;
     }
 
-    @Nonnull
+    @NotNull
     @Override
-    protected int[] runOverclockingLogic(@Nonnull IRecipePropertyStorage propertyStorage, int recipeEUt, long maxVoltage, int recipeDuration, int amountOC) {
+    protected int[] runOverclockingLogic(@NotNull IRecipePropertyStorage propertyStorage, int recipeEUt, long maxVoltage, int recipeDuration, int amountOC) {
         return standardOverclockingLogic(
                 1,
                 getMaxVoltage(),
@@ -143,7 +143,7 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
     }
 
     @Override
-    protected @Nonnull IMultipleTankHandler getInputTank() {
+    protected @NotNull IMultipleTankHandler getInputTank() {
         NoEnergyMultiblockController controller = (NoEnergyMultiblockController) metaTileEntity;
         return controller.getInputFluidInventory();
     }
@@ -312,7 +312,7 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
     }
 
     @Override
-    protected void modifyOverclockPre(@Nonnull int[] values, @Nonnull IRecipePropertyStorage storage) {
+    protected void modifyOverclockPre(@NotNull int[] values, @NotNull IRecipePropertyStorage storage) {
         super.modifyOverclockPre(values, storage);
 
         // apply maintenance bonuses
@@ -325,7 +325,7 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
     }
 
     @Override
-    protected void modifyOverclockPost(int[] overclockResults, @Nonnull IRecipePropertyStorage storage) {
+    protected void modifyOverclockPost(int[] overclockResults, @NotNull IRecipePropertyStorage storage) {
         super.modifyOverclockPost(overclockResults, storage);
 
         // apply maintenance penalties
@@ -337,7 +337,7 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
         }
     }
 
-    @Nonnull
+    @NotNull
     protected Tuple<Integer, Double> getMaintenanceValues() {
         MultiblockWithDisplayBase displayBase = this.metaTileEntity instanceof MultiblockWithDisplayBase ? (MultiblockWithDisplayBase) metaTileEntity : null;
         int numMaintenanceProblems = displayBase == null || !displayBase.hasMaintenanceMechanics() || !ConfigHolder.machines.enableMaintenance ? 0 : displayBase.getNumMaintenanceProblems();
@@ -349,7 +349,7 @@ public class NoEnergyMultiblockRecipeLogic extends AbstractRecipeLogic {
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe) {
+    public boolean checkRecipe(@NotNull Recipe recipe) {
         NoEnergyMultiblockController controller = (NoEnergyMultiblockController) metaTileEntity;
         if (controller.checkRecipe(recipe, false)) {
             controller.checkRecipe(recipe, true);

@@ -52,8 +52,8 @@ import net.minecraftforge.fluids.IFluidTank;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import java.util.List;
 
@@ -109,7 +109,7 @@ public class MetaTileEntityAdvancedFluidDrill extends MultiblockWithDisplayBase 
 
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -139,7 +139,7 @@ public class MetaTileEntityAdvancedFluidDrill extends MultiblockWithDisplayBase 
         }
     }
 
-    @Nonnull
+    @NotNull
     private TraceabilityPredicate getFrameState() {
         if (this.tier == 5) {
             return frames(Materials.HSSG);
@@ -196,7 +196,7 @@ public class MetaTileEntityAdvancedFluidDrill extends MultiblockWithDisplayBase 
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         tooltip.add(I18n.format("gregtech.machine.fluid_drilling_rig.description"));
         tooltip.add(I18n.format("gregtech.machine.fluid_drilling_rig.depletion", TextFormattingUtil.formatNumbers(100.0 / (double)this.getDepletionChance())));
@@ -211,7 +211,7 @@ public class MetaTileEntityAdvancedFluidDrill extends MultiblockWithDisplayBase 
     @Override
     public void addToolUsages(ItemStack stack,
                               @Nullable World world,
-                              @Nonnull List<String> tooltip,
+                              @NotNull List<String> tooltip,
                               boolean advanced) {
         tooltip.add(I18n.format("gregtech.tool_action.screwdriver.access_covers"));
         tooltip.add(I18n.format("gregtech.tool_action.wrench.set_facing"));
@@ -243,7 +243,7 @@ public class MetaTileEntityAdvancedFluidDrill extends MultiblockWithDisplayBase 
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     protected ICubeRenderer getFrontOverlay() {
         return Textures.FLUID_RIG_OVERLAY;
     }

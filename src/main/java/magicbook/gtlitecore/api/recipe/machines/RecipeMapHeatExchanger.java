@@ -8,7 +8,7 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Heat Exchanger Recipe Map
@@ -18,12 +18,12 @@ import javax.annotation.Nonnull;
  */
 public class RecipeMapHeatExchanger<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
-    public RecipeMapHeatExchanger(@Nonnull String unlocalizedName,
+    public RecipeMapHeatExchanger(@NotNull String unlocalizedName,
                                   int maxInputs,
                                   int maxOutputs,
                                   int maxFluidInputs,
                                   int maxFluidOutputs,
-                                  @Nonnull R defaultRecipeBuilder,
+                                  @NotNull R defaultRecipeBuilder,
                                   boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
     }

@@ -31,8 +31,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
@@ -80,7 +80,7 @@ public class MetaTileEntityCatalystHatch extends MetaTileEntityMultiblockPart im
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.large_chemical_complex.catalyst_hatch.only"));
@@ -172,7 +172,7 @@ public class MetaTileEntityCatalystHatch extends MetaTileEntityMultiblockPart im
     }
 
     @Override
-    public void setStackInSlot(int slot, @Nonnull ItemStack stack) {
+    public void setStackInSlot(int slot, @NotNull ItemStack stack) {
         this.catalystHolder.setStackInSlot(slot, stack);
     }
 
@@ -181,19 +181,19 @@ public class MetaTileEntityCatalystHatch extends MetaTileEntityMultiblockPart im
         return this.catalystHolder.getSlots();
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public ItemStack getStackInSlot(int slot) {
         return this.catalystHolder.getStackInSlot(slot);
     }
 
-    @Nonnull
+    @NotNull
     @Override
-    public ItemStack insertItem(int slot, @Nonnull ItemStack stack, boolean simulate) {
+    public ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
         return this.catalystHolder.insertItem(slot, stack, simulate);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public ItemStack extractItem(int slot, int amount, boolean simulate) {
         return this.catalystHolder.extractItem(slot, amount, simulate);
@@ -234,7 +234,7 @@ public class MetaTileEntityCatalystHatch extends MetaTileEntityMultiblockPart im
 
         @Override
         public boolean isItemValid(int slot,
-                                   @Nonnull ItemStack stack) {
+                                   @NotNull ItemStack stack) {
             return CatalystBehavior.getInstanceFor(stack) != null && super.isItemValid(slot, stack);
         }
 

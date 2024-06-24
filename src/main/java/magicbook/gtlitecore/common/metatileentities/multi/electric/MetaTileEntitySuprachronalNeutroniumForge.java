@@ -34,8 +34,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -76,7 +76,7 @@ public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultibloc
         this.casingTier = 0;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -160,7 +160,7 @@ public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultibloc
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.SUPRACHRONAL_NEUTRONIUM_FORGE_OVERLAY;
@@ -172,9 +172,9 @@ public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultibloc
     }
 
     @Override
-    public void addInformation(@Nonnull ItemStack stack,
+    public void addInformation(@NotNull ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(translatedAnimatedText("gtlitecore.machine.suprachronal_neutronium_forge.tooltip.1",

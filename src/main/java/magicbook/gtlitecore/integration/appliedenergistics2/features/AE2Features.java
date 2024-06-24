@@ -1,6 +1,6 @@
 package magicbook.gtlitecore.integration.appliedenergistics2.features;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import java.util.EnumSet;
 
 public enum AE2Features implements IAE2Feature {

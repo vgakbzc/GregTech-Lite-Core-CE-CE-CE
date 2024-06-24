@@ -12,7 +12,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 import static gregtech.api.GTValues.*;
@@ -31,7 +31,7 @@ public class BouleRecipeHandler {
         OrePrefix.gem.addProcessingHandler(PropertyKey.GEM, BouleRecipeHandler::processCrystallizer);
     }
 
-    public static void processCrystallizer(OrePrefix gem, @Nonnull Material material, GemProperty property) {
+    public static void processCrystallizer(OrePrefix gem, @NotNull Material material, GemProperty property) {
 
         //  If material has flag DISABLE_CRYSTALLIZATION, then do not generate crystallization of material.
         if (!material.hasFlag(MaterialFlags.CRYSTALLIZABLE) || material.hasFlag(DISABLE_CRYSTALLIZATION))

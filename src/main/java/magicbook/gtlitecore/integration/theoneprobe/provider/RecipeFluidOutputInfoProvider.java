@@ -17,7 +17,7 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +36,7 @@ public class RecipeFluidOutputInfoProvider extends CapabilityInfoProvider<IWorka
     public RecipeFluidOutputInfoProvider() {}
 
     @Override
-    protected @Nonnull Capability<IWorkable> getCapability() {
+    protected @NotNull Capability<IWorkable> getCapability() {
         return GregtechTileCapabilities.CAPABILITY_WORKABLE;
     }
 

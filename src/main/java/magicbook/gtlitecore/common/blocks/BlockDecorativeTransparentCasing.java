@@ -14,7 +14,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
@@ -41,15 +41,15 @@ public class BlockDecorativeTransparentCasing extends VariantBlock<BlockDecorati
     }
 
     @Override
-    public boolean canCreatureSpawn(@Nonnull IBlockState state,
-                                    @Nonnull IBlockAccess world,
-                                    @Nonnull BlockPos pos,
-                                    @Nonnull EntityLiving.SpawnPlacementType type) {
+    public boolean canCreatureSpawn(@NotNull IBlockState state,
+                                    @NotNull IBlockAccess world,
+                                    @NotNull BlockPos pos,
+                                    @NotNull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
     @Override
-    @Nonnull
+    @NotNull
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
@@ -104,7 +104,7 @@ public class BlockDecorativeTransparentCasing extends VariantBlock<BlockDecorati
             this.name = name;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {return this.name;}
     }

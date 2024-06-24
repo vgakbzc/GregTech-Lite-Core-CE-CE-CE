@@ -8,7 +8,7 @@ import magicbook.gtlitecore.api.recipe.properties.LargeChemicalComplexProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class LargeChemicalComplexRecipeBuilder extends RecipeBuilder<LargeChemicalComplexRecipeBuilder> {
 
@@ -29,7 +29,7 @@ public class LargeChemicalComplexRecipeBuilder extends RecipeBuilder<LargeChemic
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(LargeChemicalComplexProperty.KEY)) { // todo change key to properties key
             tier(((Number) value).intValue());
             return true;

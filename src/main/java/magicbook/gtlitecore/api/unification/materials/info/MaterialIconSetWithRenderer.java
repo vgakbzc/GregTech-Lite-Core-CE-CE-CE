@@ -5,27 +5,27 @@ import magicbook.gtlitecore.api.item.IItemRenderer;
 import magicbook.gtlitecore.api.item.IItemRendererManager;
 import net.minecraft.util.ResourceLocation;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class MaterialIconSetWithRenderer extends MaterialIconSet implements IItemRenderer, IItemRendererManager {
 
     private IItemRendererManager rendererManager;
 
-    public MaterialIconSetWithRenderer(@Nonnull String name,
+    public MaterialIconSetWithRenderer(@NotNull String name,
                                        IItemRendererManager rendererManager) {
         super(name);
         this.rendererManager = rendererManager;
     }
 
-    public MaterialIconSetWithRenderer(@Nonnull String name,
-                                       @Nonnull MaterialIconSet parentIconset,
+    public MaterialIconSetWithRenderer(@NotNull String name,
+                                       @NotNull MaterialIconSet parentIconset,
                                        IItemRendererManager rendererManager) {
         super(name, parentIconset);
         this.rendererManager = rendererManager;
     }
 
-    public MaterialIconSetWithRenderer(@Nonnull String name,
+    public MaterialIconSetWithRenderer(@NotNull String name,
                                        @Nullable MaterialIconSet parentIconset,
                                        boolean isRootIconset,
                                        IItemRendererManager rendererManager) {

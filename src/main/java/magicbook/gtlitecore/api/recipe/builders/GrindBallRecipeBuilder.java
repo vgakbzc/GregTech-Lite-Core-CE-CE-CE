@@ -8,7 +8,7 @@ import magicbook.gtlitecore.api.recipe.properties.GrindBallProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Grindball Recipe Builder
@@ -39,7 +39,7 @@ public class GrindBallRecipeBuilder extends RecipeBuilder<GrindBallRecipeBuilder
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key,
+    public boolean applyProperty(@NotNull String key,
                                  Object value) {
         if (key.equals(GrindBallProperty.KEY)) {
             this.grindBallTier(((Number) value).intValue());

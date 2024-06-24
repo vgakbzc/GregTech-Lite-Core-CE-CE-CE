@@ -8,7 +8,7 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * NDB Burning Module Recipe Map
@@ -17,12 +17,12 @@ import javax.annotation.Nonnull;
  */
 public class RecipeMapNDBBurningModule<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
-    public RecipeMapNDBBurningModule(@Nonnull String unlocalizedName,
+    public RecipeMapNDBBurningModule(@NotNull String unlocalizedName,
                                      int maxInputs,
                                      int maxOutputs,
                                      int maxFluidInputs,
                                      int maxFluidOutputs,
-                                     @Nonnull R defaultRecipeBuilder,
+                                     @NotNull R defaultRecipeBuilder,
                                      boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
     }

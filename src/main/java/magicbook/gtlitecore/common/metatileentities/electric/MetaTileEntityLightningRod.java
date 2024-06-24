@@ -34,7 +34,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.tuple.Pair;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 /**
@@ -127,20 +127,20 @@ public class MetaTileEntityLightningRod extends TieredMetaTileEntity {
     }
 
     @Override
-    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
         if (dataId == GregtechDataCodes.IS_WORKING)
             this.isActive = buf.readBoolean();
     }
 
     @Override
-    public void writeInitialSyncData(@Nonnull PacketBuffer buf) {
+    public void writeInitialSyncData(@NotNull PacketBuffer buf) {
         super.writeInitialSyncData(buf);
         buf.writeBoolean(isActive);
     }
 
     @Override
-    public void receiveInitialSyncData(@Nonnull PacketBuffer buf) {
+    public void receiveInitialSyncData(@NotNull PacketBuffer buf) {
         super.receiveInitialSyncData(buf);
         this.isActive = buf.readBoolean();
     }
@@ -200,7 +200,7 @@ public class MetaTileEntityLightningRod extends TieredMetaTileEntity {
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         String key = this.metaTileEntityId.getPath().split("\\.")[0];
         String mainKey = String.format("gregtech.machine.%s.tooltip", key);

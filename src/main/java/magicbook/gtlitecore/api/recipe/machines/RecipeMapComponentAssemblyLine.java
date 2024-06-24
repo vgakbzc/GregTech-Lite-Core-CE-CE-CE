@@ -9,7 +9,7 @@ import gregtech.api.recipes.RecipeMap;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Component Assembly Line Recipe Map
@@ -19,12 +19,12 @@ import javax.annotation.Nonnull;
  */
 public class RecipeMapComponentAssemblyLine<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
-    public RecipeMapComponentAssemblyLine(@Nonnull String unlocalizedName,
+    public RecipeMapComponentAssemblyLine(@NotNull String unlocalizedName,
                                           int maxInputs,
                                           int maxOutputs,
                                           int maxFluidInputs,
                                           int maxFluidOutputs,
-                                          @Nonnull R defaultRecipeBuilder,
+                                          @NotNull R defaultRecipeBuilder,
                                           boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
     }

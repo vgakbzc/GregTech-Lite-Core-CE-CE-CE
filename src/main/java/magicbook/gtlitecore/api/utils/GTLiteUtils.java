@@ -25,7 +25,7 @@ import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -46,8 +46,8 @@ public class GTLiteUtils {
      *              do not use this method in Materials init, please see {@link Materials}.
      *              You should use {@link GTUtility#gregtechId(String)}.
      */
-    @Nonnull
-    public static ResourceLocation gtliteId(@Nonnull String path) {
+    @NotNull
+    public static ResourceLocation gtliteId(@NotNull String path) {
         return new ResourceLocation("gtlitecore", path);
     }
 
@@ -58,8 +58,8 @@ public class GTLiteUtils {
      * @param path   Name in {@code modid} namespace.
      * @return       Namespace of {@code modid}.
      */
-    @Nonnull
-    public static ResourceLocation getId(String modid, @Nonnull String path) {
+    @NotNull
+    public static ResourceLocation getId(String modid, @NotNull String path) {
         return new ResourceLocation(modid, path);
     }
 
@@ -70,7 +70,7 @@ public class GTLiteUtils {
      * @param name   Item name.
      * @return       Item stack in {@code modid} which named by {@code name}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getItemById(String modid, String name) {
         return GameRegistry.makeItemStack(modid + ":" + name, 0, 1, null);
     }
@@ -83,7 +83,7 @@ public class GTLiteUtils {
      * @param amount  Amount of Item.
      * @return        Allocate amount Item stack in {@code modid} which named by {@code name}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getItemById(String modid, String name, int amount) {
         return GameRegistry.makeItemStack(modid + ":" + name, 0, amount, null);
     }
@@ -96,7 +96,7 @@ public class GTLiteUtils {
      * @param nbt    NBT data of Item.
      * @return       Item stack with NBT data in {@code modid} which named by {@code name}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getItemById(String modid, String name, NBTTagCompound nbt) {
         return GameRegistry.makeItemStack(modid + ":" + name, 0, 1, nbt != null ? nbt.toString() : null);
     }
@@ -110,7 +110,7 @@ public class GTLiteUtils {
      * @param nbt     NBT data of Item.
      * @return        Allocate amount Item stack with NBT data in {@code modid} which named by {@code name}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getItemById(String modid, String name, int amount, NBTTagCompound nbt) {
         return GameRegistry.makeItemStack(modid + ":" + name, 0, amount, nbt != null ? nbt.toString() : null);
     }
@@ -123,7 +123,7 @@ public class GTLiteUtils {
      * @param meta   Metadata of {@code name} item.
      * @return       Item stack in {@code modid} which named by {@code name} and has metadata {@code meta}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getMetaItemById(String modid, String name, int meta) {
         return GameRegistry.makeItemStack(modid + ":" + name, meta, 1, null);
     }
@@ -137,7 +137,7 @@ public class GTLiteUtils {
      * @param amount  Amount of {@code name} item.
      * @return        Allocate amount Item stack in {@code modid} which named by {@code name} and has metadata {@code meta}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getMetaItemById(String modid, String name, int meta, int amount) {
         return GameRegistry.makeItemStack(modid + ":" + name, meta, amount, null);
     }
@@ -151,7 +151,7 @@ public class GTLiteUtils {
      * @param nbt    NBT data of item.
      * @return       Item stack with NBT data in {@code modid} which named by {@code name} and has metadata {@code meta}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getMetaItemById(String modid, String name, int meta, NBTTagCompound nbt) {
         return GameRegistry.makeItemStack(modid + ":" + name, meta, 1, nbt != null ? nbt.toString() : null);
     }
@@ -166,7 +166,7 @@ public class GTLiteUtils {
      * @param nbt     NBT data of item.
      * @return        Allocate amount Item stack with NBT data in {@code modid} which named by {@code name} and has metadata {@code meta}.
      */
-    @Nonnull
+    @NotNull
     public static ItemStack getMetaItemById(String modid, String name, int meta, int amount, NBTTagCompound nbt) {
         return GameRegistry.makeItemStack(modid + ":" + name, meta, amount, nbt != null ? nbt.toString() : null);
     }
@@ -177,7 +177,7 @@ public class GTLiteUtils {
      * @param name  Fluid name.
      * @return      Fluid stack named by {@code name}.
      */
-    @Nonnull
+    @NotNull
     public static FluidStack getFluidById(String name) {
         return Objects.requireNonNull(FluidRegistry.getFluidStack(name, 1000));
     }
@@ -189,7 +189,7 @@ public class GTLiteUtils {
      * @param amount  Amount of {@code name} fluid.
      * @return        Allocate amount fluid stack named by {@code name}.
      */
-    @Nonnull
+    @NotNull
     public static FluidStack getFluidById(String name, int amount) {
         return Objects.requireNonNull(FluidRegistry.getFluidStack(name, amount));
     }

@@ -7,8 +7,8 @@ import gregtech.common.items.behaviors.AbstractMaterialPartBehavior;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
@@ -41,7 +41,7 @@ public class CatalystBehavior extends AbstractMaterialPartBehavior implements II
     }
 
     @Nullable
-    public static CatalystBehavior getInstanceFor(@Nonnull ItemStack stack) {
+    public static CatalystBehavior getInstanceFor(@NotNull ItemStack stack) {
         if (!(stack.getItem() instanceof MetaItem))
             return null;
 

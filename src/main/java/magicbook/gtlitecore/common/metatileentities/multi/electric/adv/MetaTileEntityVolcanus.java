@@ -44,8 +44,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -89,12 +89,12 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return this.blastFurnaceTemperature >= recipe.getProperty(TemperatureProperty.getInstance(), 0);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -149,7 +149,7 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.machine.electric_blast_furnace.tooltip.1"));
@@ -199,7 +199,7 @@ public class MetaTileEntityVolcanus extends RecipeMapMultiblockController implem
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.BLAST_FURNACE_OVERLAY;

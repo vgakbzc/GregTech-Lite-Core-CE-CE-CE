@@ -14,8 +14,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
 
@@ -33,18 +33,18 @@ public class BlockEnergyCell extends VariantBlock<BlockEnergyCell.CellTier> {
     }
 
     @Override
-    public boolean canCreatureSpawn(@Nonnull IBlockState state,
-                                    @Nonnull IBlockAccess world,
-                                    @Nonnull BlockPos pos,
-                                    @Nonnull EntityLiving.SpawnPlacementType type) {
+    public boolean canCreatureSpawn(@NotNull IBlockState state,
+                                    @NotNull IBlockAccess world,
+                                    @NotNull BlockPos pos,
+                                    @NotNull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
     @Override
-    public void addInformation(@Nonnull ItemStack stack,
+    public void addInformation(@NotNull ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
-                               @Nonnull ITooltipFlag advanced) {
+                               @NotNull List<String> tooltip,
+                               @NotNull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         CellTier cellTier = this.getState(stack);
         if (cellTier.getCapacity() != 0L) {
@@ -86,13 +86,13 @@ public class BlockEnergyCell extends VariantBlock<BlockEnergyCell.CellTier> {
             return this.capacity;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getCellName() {
             return this.name().toLowerCase();
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {
             return this.getCellName();

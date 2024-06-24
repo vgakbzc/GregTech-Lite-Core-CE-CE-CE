@@ -32,8 +32,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -51,7 +51,7 @@ public class MetaTileEntityCosmicRayDetector extends RecipeMapMultiblockControll
         return new MetaTileEntityCosmicRayDetector(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -112,7 +112,7 @@ public class MetaTileEntityCosmicRayDetector extends RecipeMapMultiblockControll
         return MetaBlocks.FRAMES.get(GTLiteMaterials.BlackTitanium).getBlock(GTLiteMaterials.BlackTitanium);
     }
 
-    @Nonnull
+    @NotNull
     protected TraceabilityPredicate altitudePredicate(IBlockState... allowedStates) {
         return new TraceabilityPredicate(blockWorldState -> {
             topBlockPos = blockWorldState.getPos();
@@ -146,7 +146,7 @@ public class MetaTileEntityCosmicRayDetector extends RecipeMapMultiblockControll
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.cosmic_ray_detector.tooltip.1"));
@@ -172,7 +172,7 @@ public class MetaTileEntityCosmicRayDetector extends RecipeMapMultiblockControll
         }
 
         @Override
-        public boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@NotNull Recipe recipe) {
             return super.checkRecipe(recipe) && recipe.getProperty(AltitudeProperty.getInstance(), -64) <= topBlockPos.getY();
         }
     }

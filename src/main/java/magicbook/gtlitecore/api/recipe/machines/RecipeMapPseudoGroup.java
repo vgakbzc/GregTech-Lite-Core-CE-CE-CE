@@ -8,8 +8,8 @@ import gregtech.common.items.MetaItems;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,12 +24,12 @@ public class RecipeMapPseudoGroup<R extends RecipeBuilder<R>> extends RecipeMap<
     private final RecipeMap<R> recipeMap2;
     private final RecipeMap<R> recipeMap3;
 
-    public RecipeMapPseudoGroup(@Nonnull String unlocalizedName,
+    public RecipeMapPseudoGroup(@NotNull String unlocalizedName,
                                 int maxInputs,
                                 int maxOutputs,
                                 int maxFluidInputs,
                                 int maxFluidOutputs,
-                                @Nonnull R defaultRecipeBuilder,
+                                @NotNull R defaultRecipeBuilder,
                                 RecipeMap<R> recipeMap1,
                                 RecipeMap<R> recipeMap2,
                                 RecipeMap<R> recipeMap3,
@@ -63,7 +63,7 @@ public class RecipeMapPseudoGroup<R extends RecipeBuilder<R>> extends RecipeMap<
                              boolean exactVoltage,
                              List<ItemStack> items,
                              List<FluidStack> fluids,
-                             @Nonnull RecipeMap<R> recipeMap) {
+                             @NotNull RecipeMap<R> recipeMap) {
         return recipeMap.find(items, fluids, recipe -> {
            if (exactVoltage && recipe.getEUt() != voltage) {
                return false; // if exact voltage is required, the recipe is not considered valid
@@ -76,7 +76,7 @@ public class RecipeMapPseudoGroup<R extends RecipeBuilder<R>> extends RecipeMap<
         });
     }
 
-    private int checkCircuit(@Nonnull List<ItemStack> inputs) {
+    private int checkCircuit(@NotNull List<ItemStack> inputs) {
         for (ItemStack stack : inputs) {
             if (MetaItems.INTEGRATED_CIRCUIT.isItemEqual(stack)) {
                 // only circuits with correct configuration will be considered

@@ -62,8 +62,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -118,19 +118,19 @@ public class MetaTileEntityQuantumComputer extends MultiblockWithDisplayBase imp
     @Override
     public int requestCWUt(int CWUt,
                            boolean simulate,
-                           @Nonnull Collection<IOpticalComputationProvider> seen) {
+                           @NotNull Collection<IOpticalComputationProvider> seen) {
         seen.add(this);
         return this.isActive() && this.isWorkingEnabled() && !this.hasNotEnoughEnergy ? this.qcHandler.allocateCWUt(CWUt, simulate) : 0;
     }
 
     @Override
-    public int getMaxCWUt(@Nonnull Collection<IOpticalComputationProvider> seen) {
+    public int getMaxCWUt(@NotNull Collection<IOpticalComputationProvider> seen) {
         seen.add(this);
         return this.isActive() && this.isWorkingEnabled() ? this.qcHandler.getMaxCWUt() : 0;
     }
 
     @Override
-    public boolean canBridge(@Nonnull Collection<IOpticalComputationProvider> seen) {
+    public boolean canBridge(@NotNull Collection<IOpticalComputationProvider> seen) {
         seen.add(this);
         return !this.isStructureFormed() || this.qcHandler.hasQCBridge();
     }
@@ -201,7 +201,7 @@ public class MetaTileEntityQuantumComputer extends MultiblockWithDisplayBase imp
 
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -309,7 +309,7 @@ public class MetaTileEntityQuantumComputer extends MultiblockWithDisplayBase imp
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.QUANTUM_COMPUTER_OVERLAY;
@@ -432,7 +432,7 @@ public class MetaTileEntityQuantumComputer extends MultiblockWithDisplayBase imp
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.quantum_computer.tooltip.1"));
@@ -482,7 +482,7 @@ public class MetaTileEntityQuantumComputer extends MultiblockWithDisplayBase imp
     }
 
     @Override
-    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
         if (dataId == GregtechDataCodes.WORKABLE_ACTIVE) {
             this.isActive = buf.readBoolean();

@@ -47,8 +47,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -95,12 +95,12 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(FieldCasingTierProperty.getInstance(), 0) <= casingTier;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -159,7 +159,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.QUANTUM_FORCE_TRANSFORMER_OVERLAY;
@@ -222,7 +222,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.quantum_force_transformer.tooltip.1"));

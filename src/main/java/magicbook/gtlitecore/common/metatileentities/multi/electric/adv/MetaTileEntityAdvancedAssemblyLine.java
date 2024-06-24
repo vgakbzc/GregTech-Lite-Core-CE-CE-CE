@@ -48,8 +48,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
@@ -87,7 +87,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         return new MetaTileEntityAdvancedAssemblyLine(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.FRONT, RelativeDirection.UP, RelativeDirection.RIGHT)
@@ -136,7 +136,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
     }
 
     @SuppressWarnings("unchecked")
-    @Nonnull
+    @NotNull
     protected static TraceabilityPredicate fluidInputPredicate() {
         return ConfigHolder.machines.orderedFluidAssembly ? metaTileEntities((MetaTileEntity[])((List) MultiblockAbility.REGISTRY.get(MultiblockAbility.IMPORT_FLUIDS)).stream()
                 .filter((mte) -> !(mte instanceof MetaTileEntityMultiFluidHatch))
@@ -144,7 +144,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
                 .setMaxGlobalLimited(4) : abilities(MultiblockAbility.IMPORT_FLUIDS);
     }
 
-    @Nonnull
+    @NotNull
     protected static TraceabilityPredicate dataHatchPredicate() {
         return ConfigHolder.machines.enableResearch ? abilities(MultiblockAbility.DATA_ACCESS_HATCH, MultiblockAbility.OPTICAL_DATA_RECEPTION)
                 .setExactLimit(1)
@@ -236,12 +236,12 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
 
     }
 
-    private void writeParticles(@Nonnull PacketBuffer buf) {
+    private void writeParticles(@NotNull PacketBuffer buf) {
         buf.writeVarInt(this.beamCount);
     }
 
     @SideOnly(Side.CLIENT)
-    private void readParticles(@Nonnull PacketBuffer buf) {
+    private void readParticles(@NotNull PacketBuffer buf) {
         this.beamCount = buf.readVarInt();
         if (this.beamParticles == null) {
             this.beamParticles = new GTLaserBeamParticle[17][2];
@@ -284,13 +284,13 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     private GTLaserBeamParticle createALParticles(Vector3 startPos, Vector3 endPos) {
         return (new GTLaserBeamParticle(this, startPos, endPos)).setBody(LASER_LOCATION).setBeamHeight(0.125F).setDoubleVertical(true).setHead(LASER_HEAD_LOCATION).setHeadWidth(0.1F).setEmit(0.2F);
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe, boolean consumeIfSuccess) {
+    public boolean checkRecipe(@NotNull Recipe recipe, boolean consumeIfSuccess) {
         if (consumeIfSuccess) {
             return true;
         } else {
@@ -342,7 +342,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
         }
     }
 
-    private static boolean isRecipeAvailable(@Nonnull Iterable<? extends IDataAccessHatch> hatches, @Nonnull Recipe recipe) {
+    private static boolean isRecipeAvailable(@NotNull Iterable<? extends IDataAccessHatch> hatches, @NotNull Recipe recipe) {
         Iterator var2 = hatches.iterator();
 
         IDataAccessHatch hatch;
@@ -363,7 +363,7 @@ public class MetaTileEntityAdvancedAssemblyLine extends RecipeMapMultiblockContr
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.advanced_assembly_line.tooltip.1"));

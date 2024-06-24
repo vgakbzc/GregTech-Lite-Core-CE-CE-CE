@@ -28,8 +28,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityPlasmaCVDUnit extends MultiMapMultiblockController {
@@ -46,7 +46,7 @@ public class MetaTileEntityPlasmaCVDUnit extends MultiMapMultiblockController {
         return new MetaTileEntityPlasmaCVDUnit(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -88,7 +88,7 @@ public class MetaTileEntityPlasmaCVDUnit extends MultiMapMultiblockController {
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.CVD_UNIT_OVERLAY;
@@ -97,7 +97,7 @@ public class MetaTileEntityPlasmaCVDUnit extends MultiMapMultiblockController {
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.plasma_cvd_unit.tooltip.1"));

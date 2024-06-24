@@ -5,7 +5,7 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.IStringSerializable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class BlockQuantumComputerCasing extends VariantBlock<BlockQuantumComputerCasing.QCCasingType> {
 
@@ -30,13 +30,13 @@ public class BlockQuantumComputerCasing extends VariantBlock<BlockQuantumCompute
             this.name = name;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {
             return this.name;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String toString() {
             return this.getName();

@@ -59,8 +59,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Collections;
 import java.util.List;
 
@@ -178,7 +178,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
         }
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -211,7 +211,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         int workingAreaChunks = this.minerLogic.getCurrentRadius() * 2 / 16;
         tooltip.add(I18n.format("gregtech.machine.miner.multi.modes"));
@@ -224,7 +224,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
     @Override
     public void addToolUsages(ItemStack stack,
                               @Nullable World world,
-                              @Nonnull List<String> tooltip,
+                              @NotNull List<String> tooltip,
                               boolean advanced) {
         tooltip.add(I18n.format("gregtech.tool_action.screwdriver.toggle_mode_covers"));
         tooltip.add(I18n.format("gregtech.tool_action.wrench.set_facing"));
@@ -308,7 +308,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
         }
     }
 
-    @Nonnull
+    @NotNull
     private TraceabilityPredicate getFrameState() {
         if (this.material.equals(Materials.Protactinium)) {
             return frames(Materials.Protactinium);
@@ -362,7 +362,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.LARGE_MINER_OVERLAY_ADVANCED_2;
@@ -413,7 +413,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
 
     }
 
-    @Nonnull
+    @NotNull
     protected Widget getFlexButton(int x, int y, int width, int height) {
         return (new ImageCycleButtonWidget(x, y, width, height, GuiTextures.BUTTON_MINER_MODES, 4, this::getCurrentMode, this::setCurrentMode)).setTooltipHoverString((mode) -> {
             String var10000;
@@ -533,7 +533,7 @@ public class MetaTileEntityAdvancedLargeMiner extends MultiblockWithDisplayBase 
         return this.minerLogic.isActive() && this.isWorkingEnabled();
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public List<ITextComponent> getDataInfo() {
         int workingArea = this.getWorkingArea(this.minerLogic.getCurrentRadius());

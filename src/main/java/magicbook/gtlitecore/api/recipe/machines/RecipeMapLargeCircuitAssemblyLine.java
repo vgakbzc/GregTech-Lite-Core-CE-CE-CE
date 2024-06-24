@@ -8,7 +8,7 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Large Circuit Assembly Line Recipe Map
@@ -17,12 +17,12 @@ import javax.annotation.Nonnull;
  */
 public class RecipeMapLargeCircuitAssemblyLine<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
-    public RecipeMapLargeCircuitAssemblyLine(@Nonnull String unlocalizedName,
+    public RecipeMapLargeCircuitAssemblyLine(@NotNull String unlocalizedName,
                                              int maxInputs,
                                              int maxOutputs,
                                              int maxFluidInputs,
                                              int maxFluidOutputs,
-                                             @Nonnull R defaultRecipeBuilder,
+                                             @NotNull R defaultRecipeBuilder,
                                              boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
     }
@@ -40,8 +40,8 @@ public class RecipeMapLargeCircuitAssemblyLine<R extends RecipeBuilder<R>> exten
     //  TODO Maybe we can rewrite this more clean...
     @Override
     protected void addInventorySlotGroup(ModularUI.Builder builder,
-                                         @Nonnull IItemHandlerModifiable itemHandler,
-                                         @Nonnull FluidTankList fluidHandler,
+                                         @NotNull IItemHandlerModifiable itemHandler,
+                                         @NotNull FluidTankList fluidHandler,
                                          boolean isOutputs,
                                          int yOffset) {
         //int startInputsX = 70 - 3 * 18;

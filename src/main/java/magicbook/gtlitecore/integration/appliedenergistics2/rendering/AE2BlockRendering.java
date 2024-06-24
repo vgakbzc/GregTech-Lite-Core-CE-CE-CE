@@ -24,7 +24,7 @@ import net.minecraftforge.client.resource.VanillaResourceType;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
@@ -116,7 +116,7 @@ public class AE2BlockRendering implements IBlockRendering, ISelectiveResourceRel
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void onResourceManagerReload(@Nonnull IResourceManager resourceManager,
+    public void onResourceManagerReload(@NotNull IResourceManager resourceManager,
                                         Predicate<IResourceType> resourcePredicate) {
         if (resourcePredicate.test(VanillaResourceType.MODELS)) {
             this.reloads.forEach(listener -> listener.onResourceManagerReload(resourceManager));

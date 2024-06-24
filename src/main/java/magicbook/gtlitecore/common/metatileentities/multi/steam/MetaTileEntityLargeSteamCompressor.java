@@ -23,8 +23,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityLargeSteamCompressor extends RecipeMapSteamMultiblockController {
@@ -42,7 +42,7 @@ public class MetaTileEntityLargeSteamCompressor extends RecipeMapSteamMultiblock
         return new MetaTileEntityLargeSteamCompressor(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -73,7 +73,7 @@ public class MetaTileEntityLargeSteamCompressor extends RecipeMapSteamMultiblock
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.COMPRESSOR_OVERLAY;
@@ -92,7 +92,7 @@ public class MetaTileEntityLargeSteamCompressor extends RecipeMapSteamMultiblock
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.parallel", 8));

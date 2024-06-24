@@ -22,7 +22,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 import static gregtech.api.GTValues.LuV;
 
@@ -37,7 +37,7 @@ public class MetaTileEntityLargeSupercriticalSteamTurbine extends MetaTileEntity
         return new MetaTileEntityLargeSupercriticalSteamTurbine(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -74,7 +74,7 @@ public class MetaTileEntityLargeSupercriticalSteamTurbine extends MetaTileEntity
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.LARGE_STEAM_TURBINE_OVERLAY;

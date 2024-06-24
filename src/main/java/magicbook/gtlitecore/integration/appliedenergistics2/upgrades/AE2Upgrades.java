@@ -7,8 +7,8 @@ import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2BaseItemUpg
 import magicbook.gtlitecore.integration.appliedenergistics2.rendering.DamagedItemRendering;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -46,7 +46,7 @@ public class AE2Upgrades implements IDamagedDefinition<DamagedItemDefinition, AE
         return Optional.ofNullable(this.itemIdList.getOrDefault(id, null));
     }
 
-    @Nonnull
+    @NotNull
     private DamagedItemDefinition registerUpgrade(AE2BaseItemUpgrade material, AE2UpgradeType upgradeType) {
         var damagedItemDefinition = new DamagedItemDefinition(upgradeType.getId(), material.registerUpgrade(upgradeType));
         this.itemIdList.put(upgradeType.getId(), damagedItemDefinition);

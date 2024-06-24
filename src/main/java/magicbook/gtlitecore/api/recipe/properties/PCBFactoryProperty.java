@@ -5,7 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
 import org.apache.commons.lang3.Validate;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -27,7 +27,7 @@ public class PCBFactoryProperty extends RecipeProperty<Integer> {
     }
 
     @Override
-    public void drawInfo(@Nonnull Minecraft minecraft, int x, int y, int color, Object value) {
+    public void drawInfo(@NotNull Minecraft minecraft, int x, int y, int color, Object value) {
         minecraft.fontRenderer.drawString(I18n.format("gtlitecore.machine.pcb_factory.tier", castValue(value).toString()) + getPCBFactoryTier(castValue(value)), x, y, color);
     }
 

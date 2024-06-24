@@ -19,7 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityMolecularTransformer extends RecipeMapMultiblockController {
 
@@ -32,7 +32,7 @@ public class MetaTileEntityMolecularTransformer extends RecipeMapMultiblockContr
         return new MetaTileEntityMolecularTransformer(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -67,7 +67,7 @@ public class MetaTileEntityMolecularTransformer extends RecipeMapMultiblockContr
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.HPCA_OVERLAY;

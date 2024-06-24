@@ -43,8 +43,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -114,7 +114,7 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe, boolean consumeIfSuccess) {
+    public boolean checkRecipe(@NotNull Recipe recipe, boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess) && checkRotors() && checkRotorMaterial();
     }
 
@@ -202,7 +202,7 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
         }
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -258,7 +258,7 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return frontOverlay;
@@ -354,7 +354,7 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[tier] * 2 * 16));
@@ -367,7 +367,7 @@ public class MetaTileEntityMegaTurbine extends FuelMultiblockController implemen
         return new String[]{I18n.format("gtlitecore.machine.mega_turbine.description")};
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected Widget getFlexButton(int x, int y, int width, int height) {
         return new ImageCycleButtonWidget(x, y, width, height, GTLiteGuiTextures.BUTTON_HIGH_SPEED_MODE, 2, this::getMode, this::setMode)

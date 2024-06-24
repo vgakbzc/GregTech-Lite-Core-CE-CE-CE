@@ -21,7 +21,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntitySonicator extends RecipeMapMultiblockController {
 
@@ -34,7 +34,7 @@ public class MetaTileEntitySonicator extends RecipeMapMultiblockController {
         return new MetaTileEntitySonicator(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -79,7 +79,7 @@ public class MetaTileEntitySonicator extends RecipeMapMultiblockController {
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.SONICATOR_OVERLAY;

@@ -8,16 +8,16 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class RecipeMapDTNFFusionMode<R extends RecipeBuilder<R>> extends RecipeMap<R> {
 
-    public RecipeMapDTNFFusionMode(@Nonnull String unlocalizedName,
+    public RecipeMapDTNFFusionMode(@NotNull String unlocalizedName,
                                      int maxInputs,
                                      int maxOutputs,
                                      int maxFluidInputs,
                                      int maxFluidOutputs,
-                                     @Nonnull R defaultRecipeBuilder,
+                                     @NotNull R defaultRecipeBuilder,
                                      boolean isHidden) {
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipeBuilder, isHidden);
     }

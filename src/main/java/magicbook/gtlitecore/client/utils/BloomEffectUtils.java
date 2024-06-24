@@ -5,7 +5,7 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 import static gregtech.client.utils.BloomEffectUtil.getEffectiveBloomLayer;
 
@@ -22,7 +22,7 @@ import static gregtech.client.utils.BloomEffectUtil.getEffectiveBloomLayer;
 @SideOnly(Side.CLIENT)
 public class BloomEffectUtils {
 
-    public static @Nonnull BlockRenderLayer getRealBloomLayer() {
+    public static @NotNull BlockRenderLayer getRealBloomLayer() {
         return getEffectiveBloomLayer();
     }
 }

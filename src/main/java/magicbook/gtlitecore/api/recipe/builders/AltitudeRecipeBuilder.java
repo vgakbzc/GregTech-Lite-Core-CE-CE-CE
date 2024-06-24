@@ -10,7 +10,7 @@ import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityCosmicRayDetector;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Altitude Recipe Builder
@@ -40,7 +40,7 @@ public class AltitudeRecipeBuilder extends RecipeBuilder<AltitudeRecipeBuilder> 
         return new AltitudeRecipeBuilder(this);
     }
 
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals("altitude")) {
             altitude(((Number)value).intValue());
             return true;

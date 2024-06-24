@@ -17,7 +17,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * TODO If add printer, then use GCYM Multi Map controller.
@@ -33,7 +33,7 @@ public class MetaTileEntityLargeAutoChisel extends GCYMRecipeMapMultiblockContro
         return new MetaTileEntityLargeAutoChisel(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()

@@ -12,7 +12,7 @@ import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * No Coil Temperature Recipe Builder
@@ -43,7 +43,7 @@ public class NoCoilTemperatureRecipeBuilder extends RecipeBuilder<NoCoilTemperat
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(NoCoilTemperatureProperty.KEY)) {
             temperature(((Number) value).intValue());
             return true;

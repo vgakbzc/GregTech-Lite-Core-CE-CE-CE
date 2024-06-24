@@ -33,7 +33,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -86,13 +86,13 @@ public class MetaTileEntityLargeChemicalComplex extends RecipeMapMultiblockContr
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess)
                 && recipe.getProperty(LargeChemicalComplexProperty.getInstance(), 0) <= this.mainUpgradeNumber;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -205,7 +205,7 @@ public class MetaTileEntityLargeChemicalComplex extends RecipeMapMultiblockContr
         }
 
         @Override
-        public boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@NotNull Recipe recipe) {
             if (super.checkRecipe(recipe)) {
                 //  Get item stacks in Catalyst Hatch (if it is not empty).
                 List<ItemStack> stacks = getAbilities(GTLiteMultiblockAbility.CATALYST_MULTIBLOCK_ABILITY).stream()

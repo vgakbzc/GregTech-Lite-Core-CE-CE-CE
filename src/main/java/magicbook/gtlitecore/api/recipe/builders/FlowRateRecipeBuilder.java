@@ -13,7 +13,7 @@ import magicbook.gtlitecore.api.recipe.properties.MaxRateProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Flow Rate Recipe Builder
@@ -47,7 +47,7 @@ public class FlowRateRecipeBuilder extends RecipeBuilder<FlowRateRecipeBuilder> 
         return new FlowRateRecipeBuilder(this);
     }
 
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(MaxRateProperty.KEY)) {
             flowRate(((Number) value).intValue());
             return true;

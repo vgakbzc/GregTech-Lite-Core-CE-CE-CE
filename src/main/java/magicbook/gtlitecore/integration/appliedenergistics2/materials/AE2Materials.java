@@ -8,8 +8,8 @@ import magicbook.gtlitecore.integration.appliedenergistics2.rendering.DamagedIte
 import magicbook.gtlitecore.integration.appliedenergistics2.upgrades.IDamagedDefinition;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 import java.util.Optional;
 
@@ -31,7 +31,7 @@ public class AE2Materials implements IDamagedDefinition<DamagedItemDefinition, A
         //  Please register your materials here use `registerMaterial()` method.
     }
 
-    @Nonnull
+    @NotNull
     private DamagedItemDefinition registerMaterial(AE2BaseItemMaterial material, AE2MaterialType materialType) {
         var damagedItemDefinition = new DamagedItemDefinition(materialType.getId(), material.registerMaterial(materialType));
         this.itemIdList.put(materialType.getId(), damagedItemDefinition);

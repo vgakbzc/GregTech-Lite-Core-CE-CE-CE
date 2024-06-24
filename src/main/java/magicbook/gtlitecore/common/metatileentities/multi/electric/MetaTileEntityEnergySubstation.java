@@ -44,8 +44,8 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.math.BigInteger;
 import java.time.Duration;
 import java.util.*;
@@ -219,7 +219,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
         return false;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RIGHT, FRONT, UP)
@@ -303,7 +303,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.FUSION_REACTOR_OVERLAY;
@@ -490,7 +490,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
     }
 
     @Override
-    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
         if (dataId == GregtechDataCodes.WORKABLE_ACTIVE) {
             isActive = buf.readBoolean();
@@ -512,7 +512,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         tooltip.add(I18n.format("gtlitecore.machine.energy_substation.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.energy_substation.tooltip.2"));
@@ -628,7 +628,7 @@ public class MetaTileEntityEnergySubstation extends MultiblockWithDisplayBase im
         }
 
         /** Rebuild energy storage with a new list of cells. **/
-        public EnergyBank rebuild(@Nonnull List<ICellData> cells) {
+        public EnergyBank rebuild(@NotNull List<ICellData> cells) {
             if (cells.isEmpty()) {
                 throw new IllegalArgumentException("Cannot rebuild Energy Substation power bank with no cells!");
             }

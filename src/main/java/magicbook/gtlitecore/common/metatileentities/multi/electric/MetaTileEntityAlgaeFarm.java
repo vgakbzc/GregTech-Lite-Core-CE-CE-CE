@@ -43,7 +43,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 import static gregtech.api.GTValues.MV;
@@ -103,7 +103,7 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
         this.itemImportInventory = new ItemHandlerList(Collections.emptyList());
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -141,7 +141,7 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.ALGAE_FARM_OVERLAY;
@@ -223,7 +223,7 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
         logic.setWorkingEnabled(b);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public List<ITextComponent> getDataInfo() {
         return new LinkedList<>();
@@ -234,7 +234,7 @@ public class MetaTileEntityAlgaeFarm extends MultiblockWithDisplayBase implement
     }
 
     @Override
-    public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
+    public NBTTagCompound writeToNBT(@NotNull NBTTagCompound data) {
         super.writeToNBT(data);
         return this.logic.writeToNBT(data);
     }

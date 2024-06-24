@@ -22,8 +22,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
@@ -38,7 +38,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
         this.setDefaultState(this.getState(BlockWireCoil.CoilType.ADAMANTIUM));
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.SOLID;
@@ -47,10 +47,10 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
     @SuppressWarnings("rawtypes, unchecked")
     @SideOnly(Side.CLIENT)
     @Override
-    public void addInformation(@Nonnull ItemStack itemStack,
+    public void addInformation(@NotNull ItemStack itemStack,
                                @Nullable World worldIn,
-                               @Nonnull List<String> lines,
-                               @Nonnull ITooltipFlag tooltipFlag) {
+                               @NotNull List<String> lines,
+                               @NotNull ITooltipFlag tooltipFlag) {
         super.addInformation(itemStack, worldIn, lines, tooltipFlag);
         VariantItemBlock itemBlock = (VariantItemBlock<CoilType, BlockWireCoil>) itemStack.getItem();
         IBlockState stackState = itemBlock.getBlockState(itemStack);
@@ -72,10 +72,10 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
     }
 
     @Override
-    public boolean canCreatureSpawn(@Nonnull IBlockState state,
-                                    @Nonnull IBlockAccess world,
-                                    @Nonnull BlockPos pos,
-                                    @Nonnull EntityLiving.SpawnPlacementType type) {
+    public boolean canCreatureSpawn(@NotNull IBlockState state,
+                                    @NotNull IBlockAccess world,
+                                    @NotNull BlockPos pos,
+                                    @NotNull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
@@ -108,7 +108,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
             this.material = material;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {
             return this.name;
@@ -139,7 +139,7 @@ public class BlockWireCoil extends VariantActiveBlock<BlockWireCoil.CoilType> {
             return this.material;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String toString() {
             return this.getName();

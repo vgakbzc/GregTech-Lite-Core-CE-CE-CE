@@ -32,8 +32,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.io.IOException;
 import java.util.List;
 
@@ -80,7 +80,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.isa_mill.grindball_hatch.only"));
@@ -216,7 +216,7 @@ public class MetaTileEntityGrindBallHatch extends MetaTileEntityMultiblockPart i
 
         @Override
         public boolean isItemValid(int slot,
-                                   @Nonnull ItemStack stack) {
+                                   @NotNull ItemStack stack) {
             return GrindBallBehavior.getInstanceFor(stack) != null && super.isItemValid(slot, stack);
         }
 

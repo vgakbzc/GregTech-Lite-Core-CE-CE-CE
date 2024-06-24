@@ -41,8 +41,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IReinforcedRotorHolder>, IReinforcedRotorHolder {
@@ -72,7 +72,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     }
 
     @Override
-    protected ModularUI createUI(@Nonnull EntityPlayer entityPlayer) {
+    protected ModularUI createUI(@NotNull EntityPlayer entityPlayer) {
         return ModularUI.defaultBuilder()
                 .label(6, 6, getMetaFullName())
                 .slot(inventory, 0, 79, 36, GuiTextures.SLOT, GuiTextures.TURBINE_OVERLAY)
@@ -83,7 +83,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.machine.rotor_holder.tooltip1"));
@@ -96,7 +96,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     @Override
     public void addToolUsages(ItemStack stack,
                               @Nullable World world,
-                              @Nonnull List<String> tooltip,
+                              @NotNull List<String> tooltip,
                               boolean advanced) {
         tooltip.add(I18n.format("gregtech.tool_action.screwdriver.access_covers"));
         tooltip.add(I18n.format("gregtech.tool_action.wrench.set_facing"));
@@ -189,7 +189,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
     }
 
     @Override
-    public void registerAbilities(@Nonnull List<IReinforcedRotorHolder> abilityList) {
+    public void registerAbilities(@NotNull List<IReinforcedRotorHolder> abilityList) {
         abilityList.add(this);
     }
 
@@ -234,7 +234,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
         return true;
     }
 
-    private boolean onRotorHolderInteract(@Nonnull EntityPlayer player) {
+    private boolean onRotorHolderInteract(@NotNull EntityPlayer player) {
         //if (player.isCreative()) return false;
 
         //if (!getWorld().isRemote && isRotorSpinning) {
@@ -533,11 +533,11 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
         }
 
         @Override
-        public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
+        public boolean isItemValid(int slot, @NotNull ItemStack stack) {
             return TurbineRotorBehavior.getInstanceFor(stack) != null && super.isItemValid(slot, stack);
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public ItemStack extractItem(int slot, int amount, boolean simulate) {
             ItemStack itemStack = super.extractItem(slot, amount, simulate);

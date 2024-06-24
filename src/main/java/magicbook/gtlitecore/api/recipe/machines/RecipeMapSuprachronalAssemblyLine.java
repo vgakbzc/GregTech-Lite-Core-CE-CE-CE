@@ -8,7 +8,7 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Suprachronal Assembly Line Recipe Map
@@ -27,7 +27,7 @@ public class RecipeMapSuprachronalAssemblyLine<R extends RecipeBuilder<R>> exten
         super(unlocalizedName, maxInputs, maxOutputs, maxFluidInputs, maxFluidOutputs, defaultRecipe, isHidden);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public ModularUI.Builder createJeiUITemplate(IItemHandlerModifiable importItems,
                                                  IItemHandlerModifiable exportItems,
@@ -43,8 +43,8 @@ public class RecipeMapSuprachronalAssemblyLine<R extends RecipeBuilder<R>> exten
 
     @Override
     protected void addInventorySlotGroup(ModularUI.Builder builder,
-                                         @Nonnull IItemHandlerModifiable itemHandler,
-                                         @Nonnull FluidTankList fluidHandler,
+                                         @NotNull IItemHandlerModifiable itemHandler,
+                                         @NotNull FluidTankList fluidHandler,
                                          boolean isOutputs,
                                          int yOffset) {
         int itemInputsCount = itemHandler.getSlots();

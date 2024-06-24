@@ -20,7 +20,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityLargeBioReactor extends GCYMRecipeMapMultiblockController {
 
@@ -33,7 +33,7 @@ public class MetaTileEntityLargeBioReactor extends GCYMRecipeMapMultiblockContro
         return new MetaTileEntityLargeBioReactor(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -71,7 +71,7 @@ public class MetaTileEntityLargeBioReactor extends GCYMRecipeMapMultiblockContro
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected OrientedOverlayRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_BIO_REACTOR_OVERLAY;

@@ -29,8 +29,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static gregtech.api.GTValues.EV;
@@ -51,7 +51,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
         return new MetaTileEntityLargeFluidPhaseTransformer(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -97,7 +97,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_FLUID_PHASE_TRANSFORMER_OVERLAY;
@@ -111,7 +111,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.large_fluid_phase_transformer.tooltip.1"));

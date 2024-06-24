@@ -39,8 +39,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -107,7 +107,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
         this.heatingCoilLevel = 0;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -152,7 +152,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.CRACKING_UNIT_OVERLAY;
@@ -161,7 +161,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.mega_oil_cracking_unit.tooltip.1"));
@@ -267,7 +267,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
          * @param resultOverclock Each coil above cupronickel (coilTier = 0) uses 10% less energy.
          */
         @Override
-        protected void modifyOverclockPost(int[] resultOverclock, @Nonnull IRecipePropertyStorage storage) {
+        protected void modifyOverclockPost(int[] resultOverclock, @NotNull IRecipePropertyStorage storage) {
             super.modifyOverclockPost(resultOverclock, storage);
 
             int coilTier = ((MetaTileEntityMegaOilCrackingUnit) metaTileEntity).getCoilTier();

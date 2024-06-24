@@ -8,7 +8,7 @@ import net.minecraft.world.storage.WorldSavedData;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.io.*;
 import java.math.BigInteger;
 import java.util.HashMap;
@@ -78,7 +78,7 @@ public class WirelessEnergyNetworkWorldSavedData extends WorldSavedData {
         }
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound tagCompound) {
         try {

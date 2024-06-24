@@ -35,8 +35,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public abstract class MetaTileEntityQCComponent extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IQCComponentHatch>, IQCComponentHatch {
@@ -129,7 +129,7 @@ public abstract class MetaTileEntityQCComponent extends MetaTileEntityMultiblock
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         if (this.isBridge()) {
             tooltip.add(I18n.format("gtlitecore.machine.qc_bridge_component.desc"));

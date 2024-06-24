@@ -25,8 +25,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static gregtech.api.GTValues.IV;
@@ -44,7 +44,7 @@ public class MetaTileEntityLargeRocketEngine extends FuelMultiblockController {
         return new MetaTileEntityLargeRocketEngine(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -87,7 +87,7 @@ public class MetaTileEntityLargeRocketEngine extends FuelMultiblockController {
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_ROCKET_ENGINE_OVERLAY;
@@ -96,7 +96,7 @@ public class MetaTileEntityLargeRocketEngine extends FuelMultiblockController {
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[IV]));

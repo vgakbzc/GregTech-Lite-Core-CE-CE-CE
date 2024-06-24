@@ -36,8 +36,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -92,12 +92,12 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(SwarmTierProperty.getInstance(), 0) <= auxiliaryUpgradeNumber;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -174,7 +174,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.NEUTRAL_NETWORK_NEXUS_OVERLAY;
@@ -183,7 +183,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));

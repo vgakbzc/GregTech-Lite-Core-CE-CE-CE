@@ -25,8 +25,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
@@ -52,7 +52,7 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
         return new MetaTileEntityLargeProcessingFactory(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -79,7 +79,7 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_PROCESSING_FACTORY_OVERLAY;
@@ -88,7 +88,7 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.large_processing_factory.tooltip.1"));
@@ -114,8 +114,8 @@ public class MetaTileEntityLargeProcessingFactory extends MultiMapMultiblockCont
         }
 
         @Override
-        protected void modifyOverclockPre(@Nonnull int[] values,
-                                          @Nonnull IRecipePropertyStorage storage) {
+        protected void modifyOverclockPre(@NotNull int[] values,
+                                          @NotNull IRecipePropertyStorage storage) {
             super.modifyOverclockPre(values, storage);
             values[0] *= 0.8;
             values[1] *= 0.4;

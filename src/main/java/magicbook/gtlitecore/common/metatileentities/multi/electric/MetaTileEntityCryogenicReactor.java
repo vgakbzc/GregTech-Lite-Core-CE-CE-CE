@@ -26,8 +26,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityCryogenicReactor extends RecipeMapMultiblockController {
@@ -42,7 +42,7 @@ public class MetaTileEntityCryogenicReactor extends RecipeMapMultiblockControlle
         return new MetaTileEntityCryogenicReactor(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -107,16 +107,16 @@ public class MetaTileEntityCryogenicReactor extends RecipeMapMultiblockControlle
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.CRYOGENIC_REACTOR_OVERLAY;
     }
 
     @Override
-    public void addInformation(@Nonnull ItemStack stack,
+    public void addInformation(@NotNull ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(TooltipHelper.RAINBOW_SLOW + I18n.format("gregtech.machine.perfect_oc"));
