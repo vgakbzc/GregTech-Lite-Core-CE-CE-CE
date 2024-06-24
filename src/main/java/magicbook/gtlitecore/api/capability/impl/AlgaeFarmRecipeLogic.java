@@ -6,6 +6,8 @@ import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.common.blocks.BlockMachineCasing;
 import gregtech.common.blocks.MetaBlocks;
+import lombok.Getter;
+import lombok.Setter;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityAlgaeFarm;
 import net.minecraft.block.Block;
@@ -28,18 +30,24 @@ public class AlgaeFarmRecipeLogic {
 
     public static final int MAX_PROGRESS = 189000;
 
+    @Getter
     private int progressTime = 0;
+
+    @Getter @Setter
     private int maxProgress = 0;
 
     private int casingTier = 1;
 
     private final MetaTileEntityAlgaeFarm tileEntity;
 
+    @Getter
     private boolean isActive;
+    @Getter
     private boolean isWorkingEnabled = true;
     private boolean wasActiveAndNeedsUpdate;
-    private boolean isDone = false;
-    protected boolean isInventoryFull = false;
+    private boolean isDone;
+    @Getter
+    protected boolean isInventoryFull;
     private boolean isEnergyNotEnough;
 
     public AlgaeFarmRecipeLogic(MetaTileEntityAlgaeFarm tileEntity,
@@ -264,32 +272,10 @@ public class AlgaeFarmRecipeLogic {
 
     }
 
-    /**
-     * Getter of {@link #maxProgress}.
-     *
-     * @return  Max Progress.
-     */
-    public int getMaxProgress() {
-        return this.maxProgress;
-    }
-
-    /**
-     * Setter of {@link #maxProgress}.
-     *
-     * @param maxProgress  Max Progress.
-     */
-    public void setMaxProgress(int maxProgress) {
-        this.maxProgress = maxProgress;
-    }
-
     public void invalidate() {
         this.progressTime = 0;
         this.maxProgress = 0;
         this.setActive(false);
-    }
-
-    public boolean isActive() {
-        return this.isActive;
     }
 
     /**
@@ -321,40 +307,14 @@ public class AlgaeFarmRecipeLogic {
     }
 
     /**
-     * Working Enable Checker.
-     *
-     * @return  Whether working is enabled for the logic
-     */
-    public boolean isWorkingEnabled() {
-        return this.isWorkingEnabled;
-    }
-
-    /**
      * @return  Whether it is currently working
      */
     public boolean isWorking() {
         return this.isActive && !this.isEnergyNotEnough && this.isWorkingEnabled;
     }
 
-    /**
-     *
-     * @return the current progress towards producing algae of Algae Farm.
-     */
-    public int getProgressTime() {
-        return this.progressTime;
-    }
-
     public double getProgressPercent() {
         return getProgressTime() * 1.0 / (int) (MAX_PROGRESS / Math.pow(2, (double) this.casingTier -1));
-    }
-
-
-    /**
-     *
-     * @return whether the inventory is full
-     */
-    public boolean isInventoryFull() {
-        return this.isInventoryFull;
     }
 
     /**

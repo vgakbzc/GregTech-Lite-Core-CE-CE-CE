@@ -12,7 +12,7 @@ public interface IFluidStyle {
         return this.width(width).height(height);
     }
 
-    int getWidth();
+    int width();
 
-    int getHeight();
+    int height();
 }
