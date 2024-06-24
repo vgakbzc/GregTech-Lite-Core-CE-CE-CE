@@ -12,7 +12,7 @@ public class WrappedIntTier extends WrappedTier {
     }
 
     @Override
-    public Object getTier() {
+    public Integer getTier() {
         return tier;
     }
 

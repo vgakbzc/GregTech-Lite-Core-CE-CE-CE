@@ -4,6 +4,8 @@ import gregtech.api.GTValues;
 import gregtech.api.capability.GregtechDataCodes;
 import gregtech.api.worldgen.bedrockFluids.BedrockFluidVeinHandler;
 import gregtech.common.ConfigHolder;
+import lombok.Getter;
+import lombok.Setter;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityAdvancedFluidDrill;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
@@ -14,12 +16,17 @@ import org.jetbrains.annotations.NotNull;
 public class AdvancedFluidDrillLogic {
 
     public static final int MAX_PROGRESS = 20;
+    @Getter
     private int progressTime = 0;
     private final MetaTileEntityAdvancedFluidDrill metaTileEntity;
+    @Getter
     private boolean isActive;
+    @Getter
     private boolean isWorkingEnabled = true;
-    private boolean wasActiveAndNeedsUpdate;
+    @Getter @Setter
+    private boolean needUpdate;
     private boolean isDone = false;
+    @Getter
     protected boolean isInventoryFull;
     private boolean hasNotEnoughEnergy;
     private Fluid veinFluid;
@@ -50,7 +57,7 @@ public class AdvancedFluidDrillLogic {
                                 } else {
                                     this.isInventoryFull = true;
                                     this.setActive(false);
-                                    this.setWasActiveAndNeedsUpdate(true);
+                                    this.setNeedUpdate(true);
                                 }
 
                             }
@@ -125,7 +132,7 @@ public class AdvancedFluidDrillLogic {
                 this.isInventoryFull = true;
                 if (this.isActive()) {
                     this.setActive(false);
-                    this.setWasActiveAndNeedsUpdate(true);
+                    this.setNeedUpdate(true);
                 }
 
                 return false;
@@ -139,10 +146,6 @@ public class AdvancedFluidDrillLogic {
 
     public int getChunkZ() {
         return Math.floorDiv(this.metaTileEntity.getPos().getZ(), 16);
-    }
-
-    public boolean isActive() {
-        return this.isActive;
     }
 
     public void setActive(boolean active) {
@@ -171,16 +174,8 @@ public class AdvancedFluidDrillLogic {
 
     }
 
-    public boolean isWorkingEnabled() {
-        return this.isWorkingEnabled;
-    }
-
     public boolean isWorking() {
         return this.isActive && !this.hasNotEnoughEnergy && this.isWorkingEnabled;
-    }
-
-    public int getProgressTime() {
-        return this.progressTime;
     }
 
     public double getProgressPercent() {
@@ -191,14 +186,10 @@ public class AdvancedFluidDrillLogic {
         return this.metaTileEntity.getEnergyTier() > this.metaTileEntity.getTier();
     }
 
-    public boolean isInventoryFull() {
-        return this.isInventoryFull;
-    }
-
     public NBTTagCompound writeToNBT(@NotNull NBTTagCompound data) {
         data.setBoolean("isActive", this.isActive);
         data.setBoolean("isWorkingEnabled", this.isWorkingEnabled);
-        data.setBoolean("wasActiveAndNeedsUpdate", this.wasActiveAndNeedsUpdate);
+        data.setBoolean("needUpdate", this.needUpdate);
         data.setBoolean("isDone", this.isDone);
         data.setInteger("progressTime", this.progressTime);
         data.setBoolean("isInventoryFull", this.isInventoryFull);
@@ -208,7 +199,7 @@ public class AdvancedFluidDrillLogic {
     public void readFromNBT(@NotNull NBTTagCompound data) {
         this.isActive = data.getBoolean("isActive");
         this.isWorkingEnabled = data.getBoolean("isWorkingEnabled");
-        this.wasActiveAndNeedsUpdate = data.getBoolean("wasActiveAndNeedsUpdate");
+        this.needUpdate = data.getBoolean("needUpdate");
         this.isDone = data.getBoolean("isDone");
         this.progressTime = data.getInteger("progressTime");
         this.isInventoryFull = data.getBoolean("isInventoryFull");
@@ -217,7 +208,7 @@ public class AdvancedFluidDrillLogic {
     public void writeInitialSyncData(@NotNull PacketBuffer buf) {
         buf.writeBoolean(this.isActive);
         buf.writeBoolean(this.isWorkingEnabled);
-        buf.writeBoolean(this.wasActiveAndNeedsUpdate);
+        buf.writeBoolean(this.needUpdate);
         buf.writeInt(this.progressTime);
         buf.writeBoolean(this.isInventoryFull);
     }
@@ -225,7 +216,7 @@ public class AdvancedFluidDrillLogic {
     public void receiveInitialSyncData(@NotNull PacketBuffer buf) {
         this.setActive(buf.readBoolean());
         this.setWorkingEnabled(buf.readBoolean());
-        this.setWasActiveAndNeedsUpdate(buf.readBoolean());
+        this.setNeedUpdate(buf.readBoolean());
         this.progressTime = buf.readInt();
         this.isInventoryFull = buf.readBoolean();
     }
@@ -239,13 +230,5 @@ public class AdvancedFluidDrillLogic {
             this.metaTileEntity.scheduleRenderUpdate();
         }
 
-    }
-
-    public boolean wasActiveAndNeedsUpdate() {
-        return this.wasActiveAndNeedsUpdate;
-    }
-
-    public void setWasActiveAndNeedsUpdate(boolean wasActiveAndNeedsUpdate) {
-        this.wasActiveAndNeedsUpdate = wasActiveAndNeedsUpdate;
     }
 }

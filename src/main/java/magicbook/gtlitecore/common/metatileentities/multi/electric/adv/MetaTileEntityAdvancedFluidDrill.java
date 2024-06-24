@@ -102,8 +102,8 @@ public class MetaTileEntityAdvancedFluidDrill extends MultiblockWithDisplayBase 
     @Override
     protected void updateFormedValid() {
         this.minerLogic.performDrilling();
-        if (!this.getWorld().isRemote && this.minerLogic.wasActiveAndNeedsUpdate()) {
-            this.minerLogic.setWasActiveAndNeedsUpdate(false);
+        if (!this.getWorld().isRemote && this.minerLogic.isNeedUpdate()) {
+            this.minerLogic.setNeedUpdate(false);
             this.minerLogic.setActive(false);
         }
 

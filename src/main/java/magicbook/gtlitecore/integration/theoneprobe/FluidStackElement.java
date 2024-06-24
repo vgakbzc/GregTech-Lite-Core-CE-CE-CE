@@ -47,8 +47,8 @@ public class FluidStackElement implements IElement {
         if (this.fluidStack.getFluid() != null) {
             GlStateManager.disableBlend();
             RenderUtil.drawFluidForGui(fluidStack, fluidStack.amount,
-                                x + (style.getWidth() - 18) / 2,
-                                y + (style.getHeight() - 18) / 2,
+                                x + (style.width() - 18) / 2,
+                                y + (style.height() - 18) / 2,
                                 16, 16);
 
             GlStateManager.pushMatrix();
@@ -69,12 +69,12 @@ public class FluidStackElement implements IElement {
 
     @Override
     public int getWidth() {
-        return this.style.getWidth();
+        return this.style.width();
     }
 
     @Override
     public int getHeight() {
-        return this.style.getHeight();
+        return this.style.height();
     }
 
     @Override
@@ -85,8 +85,8 @@ public class FluidStackElement implements IElement {
         } else {
             buf.writeBoolean(false);
         }
-        buf.writeInt(style.getWidth());
-        buf.writeInt(style.getHeight());
+        buf.writeInt(style.width());
+        buf.writeInt(style.height());
     }
 
     @Override
