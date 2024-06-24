@@ -5,7 +5,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.util.ResourceLocation;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class StateMapperHelper extends StateMapperBase {
 
@@ -15,9 +15,9 @@ public class StateMapperHelper extends StateMapperBase {
         this.registryName = registryName;
     }
 
-    @Nonnull
+    @NotNull
     @Override
-    public ModelResourceLocation getModelResourceLocation(@Nonnull IBlockState state) {
+    public ModelResourceLocation getModelResourceLocation(@NotNull IBlockState state) {
         return new ModelResourceLocation(this.registryName, this.getPropertyString(state.getProperties()));
     }
 }

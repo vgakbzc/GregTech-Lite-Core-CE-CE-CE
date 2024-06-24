@@ -30,7 +30,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultiblockController {
@@ -69,7 +69,7 @@ public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultibloc
         this.heatingCoilDiscount = 0;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -97,7 +97,7 @@ public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultibloc
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.MULTI_FURNACE_OVERLAY;
@@ -161,13 +161,13 @@ public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultibloc
             super(tileEntity);
         }
 
-        @Nonnull
+        @NotNull
         public ParallelLogicType getParallelLogicType() {
             return ParallelLogicType.APPEND_ITEMS;
         }
 
         @Override
-        public void applyParallelBonus(@Nonnull RecipeBuilder<?> builder) {
+        public void applyParallelBonus(@NotNull RecipeBuilder<?> builder) {
             builder.EUt(getEUtForParallel(builder.getParallel(), heatingCoilDiscount)).duration(getDurationForParallel(builder.getParallel(), this.getParallelLimit()));
         }
 

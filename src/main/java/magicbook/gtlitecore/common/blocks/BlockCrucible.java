@@ -11,8 +11,8 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
@@ -28,10 +28,10 @@ public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
     }
 
     @Override
-    public void addInformation(@Nonnull ItemStack stack,
+    public void addInformation(@NotNull ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
-                               @Nonnull ITooltipFlag advanced) {
+                               @NotNull List<String> tooltip,
+                               @NotNull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.multiblock.blast_furnace.max_temperature", TextFormatting.RED + GTLiteUtils.formatNumbers(getState(stack).getTemperature()) + "K"));
     }
@@ -53,7 +53,7 @@ public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
         private final String name;
         private final int temperature;
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {
             return name;

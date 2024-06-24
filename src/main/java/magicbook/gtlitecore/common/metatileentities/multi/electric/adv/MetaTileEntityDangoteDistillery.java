@@ -35,8 +35,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.function.Function;
 
@@ -57,7 +57,7 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
         return new MetaTileEntityDangoteDistillery(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.FRONT, RelativeDirection.UP)
@@ -134,7 +134,7 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.DISTILLATION_TOWER_OVERLAY;
@@ -143,7 +143,7 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.dangote_distillery.tooltip.1"));

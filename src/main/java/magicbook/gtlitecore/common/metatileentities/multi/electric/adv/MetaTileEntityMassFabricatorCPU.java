@@ -24,8 +24,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityMassFabricatorCPU extends RecipeMapMultiblockController {
@@ -40,7 +40,7 @@ public class MetaTileEntityMassFabricatorCPU extends RecipeMapMultiblockControll
         return new MetaTileEntityMassFabricatorCPU(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -79,14 +79,14 @@ public class MetaTileEntityMassFabricatorCPU extends RecipeMapMultiblockControll
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.MASS_FABRICATOR_OVERLAY;
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     public EnumParticleTypes getMufflerParticle() {
         return EnumParticleTypes.DRAGON_BREATH;
@@ -100,7 +100,7 @@ public class MetaTileEntityMassFabricatorCPU extends RecipeMapMultiblockControll
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.universal.tooltip.get_parallel_by_voltage"));

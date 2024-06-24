@@ -1,6 +1,6 @@
 package magicbook.gtlitecore.integration.appliedenergistics2.features;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 public enum AE2UpgradeFeatures implements IAE2SubFeature {
 

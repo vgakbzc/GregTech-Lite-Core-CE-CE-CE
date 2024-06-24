@@ -10,7 +10,7 @@ import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.adv.MetaTileEntityPreciseAssembler;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Precise Assembly Casing Recipe Builder
@@ -47,7 +47,7 @@ public class AssemblyCasingTierRecipeBuilder extends RecipeBuilder<AssemblyCasin
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(AssemblyCasingTierProperty.KEY)) {
             this.tier(((Number) value).intValue());
             return true;

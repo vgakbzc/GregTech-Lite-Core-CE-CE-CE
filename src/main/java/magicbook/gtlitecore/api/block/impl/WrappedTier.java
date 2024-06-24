@@ -3,7 +3,7 @@ package magicbook.gtlitecore.api.block.impl;
 import magicbook.gtlitecore.api.block.IBlockTier;
 import net.minecraft.util.IStringSerializable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class WrappedTier implements IBlockTier {
 
@@ -14,7 +14,7 @@ public class WrappedTier implements IBlockTier {
     }
 
     @Override
-    @Nonnull
+    @NotNull
     public String getName() {
         return inner.getName();
     }

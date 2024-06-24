@@ -12,7 +12,7 @@ import mezz.jei.api.ingredients.VanillaTypes;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
 @SuppressWarnings("unused")
@@ -26,7 +26,7 @@ public class GTLiteJEIPlugin implements IModPlugin {
     private static final Object2ObjectOpenHashMap<IItemDefinition, String[]> ingredientAE2Descriptions = new Object2ObjectOpenHashMap<>();
 
     @Override
-    public void register(@Nonnull IModRegistry registry) {
+    public void register(@NotNull IModRegistry registry) {
         //  Lazy AE2 Integration.
         registry.addGhostIngredientHandler(GuiLevelMaintainer.class, new LAEGuiHandler());
 

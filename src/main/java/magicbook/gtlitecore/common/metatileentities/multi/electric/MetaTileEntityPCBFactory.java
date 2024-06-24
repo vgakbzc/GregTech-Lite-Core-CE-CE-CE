@@ -50,8 +50,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -186,7 +186,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
      *                          when PCB Factory has this auxiliary structure exactly.
      */
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess)
                 && recipe.getProperty(PCBFactoryProperty.getInstance(), 0) <= this.mainUpgradeNumber
@@ -215,7 +215,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
      *
      * @return  Total Structure of PCB Factory.
      */
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -429,7 +429,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
      *
      * @return  Flex Button of Multiblock Controller GUI.
      */
-    @Nonnull
+    @NotNull
     @Override
     protected Widget getFlexButton(int x, int y, int width, int height) {
         WidgetGroup group = new WidgetGroup(x, y, width, height);
@@ -558,7 +558,7 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.pcb_factory.tooltip.1"));

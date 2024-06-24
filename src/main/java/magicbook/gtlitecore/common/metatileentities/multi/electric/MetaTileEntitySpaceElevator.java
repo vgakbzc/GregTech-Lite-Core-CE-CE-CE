@@ -31,8 +31,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.spaceElevatorMotors;
@@ -80,12 +80,12 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(SpaceElevatorCasingTierProperty.getInstance(), 0) <= casingTier;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.DOWN, RelativeDirection.FRONT)
@@ -175,7 +175,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.SPACE_ELEVATOR_OVERLAY;
@@ -184,7 +184,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.space_elevator.tooltip.1"));
@@ -202,19 +202,19 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
         tooltip.add(I18n.format("gtlitecore.machine.space_elevator.tooltip.13"));
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected TextureArea getLogo() {
         return GTLiteGuiTextures.SPACE_ELEVATOR_LOGO;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected TextureArea getWarningLogo() {
         return GTLiteGuiTextures.SPACE_ELEVATOR_LOGO_DARK;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected TextureArea getErrorLogo() {
         return GTLiteGuiTextures.SPACE_ELEVATOR_LOGO_DARK;

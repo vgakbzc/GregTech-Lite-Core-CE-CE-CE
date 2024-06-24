@@ -5,7 +5,7 @@ import magicbook.gtlitecore.integration.appliedenergistics2.IRegisterDefinition;
 import magicbook.gtlitecore.integration.appliedenergistics2.models.IModelProvider;
 import net.minecraft.item.ItemStack;
 
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 
 public interface IDamagedDefinition<T extends IItemDefinition, U extends IModelProvider> extends IRegisterDefinition<T> {

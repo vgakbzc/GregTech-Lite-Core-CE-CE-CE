@@ -21,8 +21,8 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
@@ -41,9 +41,9 @@ public class AE2BaseItemPart extends AEBaseItem implements IPartItem {
         INSTANCE = this;
     }
 
-    @Nonnull
+    @NotNull
     @Override
-    public String getTranslationKey(@Nonnull ItemStack stack) {
+    public String getTranslationKey(@NotNull ItemStack stack) {
         var type = this.getTypeByStack(stack);
         if (type == null)
             return "item.gtlitecore.invalid";
@@ -51,7 +51,7 @@ public class AE2BaseItemPart extends AEBaseItem implements IPartItem {
     }
 
     @Nullable
-    public AE2PartType getTypeByStack(final @Nonnull ItemStack stack) {
+    public AE2PartType getTypeByStack(final @NotNull ItemStack stack) {
         final var pt = this.registered.get(stack.getItemDamage());
         if (pt != null)
             return pt.part();
@@ -88,22 +88,22 @@ public class AE2BaseItemPart extends AEBaseItem implements IPartItem {
 
     }
 
-    @Nonnull
+    @NotNull
     @Override
-    public String getItemStackDisplayName(final @Nonnull ItemStack stack) {
+    public String getItemStackDisplayName(final @NotNull ItemStack stack) {
         final var pt = this.getTypeByStack(stack);
         if (pt != null && pt.getExtraName() != null)
             return super.getItemStackDisplayName(stack) + " - " + pt.getExtraName().getLocal();
         return super.getItemStackDisplayName(stack);
     }
 
-    @Nonnull
-    public EnumActionResult onItemUse(@Nonnull EntityPlayer player, @Nonnull World w, @Nonnull BlockPos pos, @Nonnull EnumHand hand, @Nonnull EnumFacing side,
+    @NotNull
+    public EnumActionResult onItemUse(@NotNull EntityPlayer player, @NotNull World w, @NotNull BlockPos pos, @NotNull EnumHand hand, @NotNull EnumFacing side,
                                       float hitX, float hitY, float hitZ) {
         return AEApi.instance().partHelper().placeBus(player.getHeldItem(hand), pos, side, player, hand, w);
     }
 
-    @Nonnull
+    @NotNull
     public final ItemStackSrc registerPart(AE2PartType partType) {
         Preconditions.checkNotNull(partType);
         return this.registerPart(partType, 0);

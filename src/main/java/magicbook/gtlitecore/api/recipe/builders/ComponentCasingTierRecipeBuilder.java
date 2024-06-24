@@ -10,7 +10,7 @@ import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityComponentAssemblyLine;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Component Assembly Line Casing Recipe builder
@@ -47,7 +47,7 @@ public class ComponentCasingTierRecipeBuilder extends RecipeBuilder<ComponentCas
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(ComponentCasingTierProperty.KEY)) {
             this.tier(((Number) value).intValue());
             return true;

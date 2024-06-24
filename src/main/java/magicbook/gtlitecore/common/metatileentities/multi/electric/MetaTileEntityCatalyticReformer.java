@@ -20,7 +20,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityCatalyticReformer extends RecipeMapMultiblockController {
 
@@ -33,7 +33,7 @@ public class MetaTileEntityCatalyticReformer extends RecipeMapMultiblockControll
         return new MetaTileEntityCatalyticReformer(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -71,7 +71,7 @@ public class MetaTileEntityCatalyticReformer extends RecipeMapMultiblockControll
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.CATALYTIC_REFORMER_OVERLAY;

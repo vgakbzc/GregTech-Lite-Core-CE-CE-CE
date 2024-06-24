@@ -19,7 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityLargeRockBreaker extends GCYMRecipeMapMultiblockController {
 
@@ -32,7 +32,7 @@ public class MetaTileEntityLargeRockBreaker extends GCYMRecipeMapMultiblockContr
         return new MetaTileEntityLargeRockBreaker(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -59,7 +59,7 @@ public class MetaTileEntityLargeRockBreaker extends GCYMRecipeMapMultiblockContr
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected OrientedOverlayRenderer getFrontOverlay() {
         return Textures.ROCK_BREAKER_OVERLAY;

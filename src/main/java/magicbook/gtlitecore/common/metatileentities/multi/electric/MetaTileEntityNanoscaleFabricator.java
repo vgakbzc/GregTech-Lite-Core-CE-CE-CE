@@ -36,7 +36,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -58,7 +58,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
         return new MetaTileEntityNanoscaleFabricator(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -104,7 +104,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
         return MetaBlocks.TRANSPARENT_CASING.getState(BlockGlassCasing.CasingType.LAMINATED_GLASS);
     }
 
-    @Nonnull
+    @NotNull
     private TraceabilityPredicate cruciblePredicate() {
         return new TraceabilityPredicate(blockWorldState -> {
             IBlockState state = blockWorldState.getBlockState();
@@ -149,7 +149,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.NANOSCALE_FABRICATOR_OVERLAY;
@@ -211,7 +211,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
         }
 
         @Override
-        public boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@NotNull Recipe recipe) {
             int delta = temperature - recipe.getProperty(NoCoilTemperatureProperty.getInstance(), 0);
             return (delta > 0 && delta < 250);
         }

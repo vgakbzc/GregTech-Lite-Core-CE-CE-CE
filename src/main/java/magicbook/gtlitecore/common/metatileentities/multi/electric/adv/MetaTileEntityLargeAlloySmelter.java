@@ -20,7 +20,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityLargeAlloySmelter extends GCYMRecipeMapMultiblockController {
 
@@ -33,7 +33,7 @@ public class MetaTileEntityLargeAlloySmelter extends GCYMRecipeMapMultiblockCont
         return new MetaTileEntityLargeAlloySmelter(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -65,7 +65,7 @@ public class MetaTileEntityLargeAlloySmelter extends GCYMRecipeMapMultiblockCont
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected OrientedOverlayRenderer getFrontOverlay() {
         return Textures.ALLOY_SMELTER_OVERLAY;

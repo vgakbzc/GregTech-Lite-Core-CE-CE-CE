@@ -35,8 +35,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static gregtech.api.gui.widgets.AdvancedTextWidget.withHoverTextTranslate;
@@ -70,7 +70,7 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
         return new MetaTileEntityMegaHeatExchanger(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -127,7 +127,7 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
     }
 
     @Override
-    @Nonnull
+    @NotNull
     protected Widget getFlexButton(int x, int y, int width, int height) {
         WidgetGroup group = new WidgetGroup(x, y, width, height);
         group.addWidget(new ClickButtonWidget(0, 0, 9, 18, "", this::decrementThreshold)
@@ -153,7 +153,7 @@ public class MetaTileEntityMegaHeatExchanger extends NoEnergyMultiblockControlle
     }
 
     @Override
-    public void addInformation(ItemStack stack, @Nullable World player, @Nonnull List<String> tooltip, boolean advanced) {
+    public void addInformation(ItemStack stack, @Nullable World player, @NotNull List<String> tooltip, boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.heat_exchanger.heat_time_tooltip", heatTime));
         tooltip.add(I18n.format("gtlitecore.machine.heat_exchanger.tooltip.parallel", parallel));

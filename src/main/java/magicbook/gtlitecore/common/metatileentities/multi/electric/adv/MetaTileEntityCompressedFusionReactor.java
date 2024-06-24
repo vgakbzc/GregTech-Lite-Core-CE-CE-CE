@@ -42,8 +42,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.function.DoubleSupplier;
 
@@ -100,7 +100,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         this.coilState = coilState;
         this.frameState = frameState;
         this.energyContainer = new EnergyContainerHandler(this, Integer.MAX_VALUE, 0, 0, 0, 0) {
-            @Nonnull
+            @NotNull
             @Override
             public String getName() {
                 return GregtechDataCodes.FUSION_REACTOR_ENERGY_CONTAINER_TRAIT;
@@ -114,7 +114,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         return new MetaTileEntityCompressedFusionReactor(metaTileEntityId, tier, casingState, coilState, frameState);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -227,7 +227,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.FUSION_REACTOR_OVERLAY;
@@ -256,7 +256,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         //  EU Capacity = Energy Hatch amount * Energy Stored (half of original Fusion Reactor).
         long euCapacity = calculateEnergyStorageFactor(energyInputs.size());
         this.energyContainer = new EnergyContainerHandler(this, euCapacity, V[tier], 0, 0, 0) {
-            @Nonnull
+            @NotNull
             @Override
             public String getName() {
                 return GregtechDataCodes.FUSION_REACTOR_ENERGY_CONTAINER_TRAIT;
@@ -399,7 +399,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         long actuallyEnergyStored = calculateEnergyStorageFactor(32) / 1000000L;
         super.addInformation(stack, player, tooltip, advanced);
@@ -679,7 +679,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         }
 
         @Override
-        public boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@NotNull Recipe recipe) {
             if (!super.checkRecipe(recipe))
                 return false;
 
@@ -764,7 +764,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             return true;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public NBTTagCompound serializeNBT() {
             NBTTagCompound tag = super.serializeNBT();
@@ -773,7 +773,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         }
 
         @Override
-        public void deserializeNBT(@Nonnull NBTTagCompound compound) {
+        public void deserializeNBT(@NotNull NBTTagCompound compound) {
             super.deserializeNBT(compound);
             heat = compound.getLong("Heat");
         }

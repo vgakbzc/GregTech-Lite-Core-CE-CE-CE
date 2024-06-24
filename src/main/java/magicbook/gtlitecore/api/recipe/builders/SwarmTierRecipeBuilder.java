@@ -8,7 +8,7 @@ import magicbook.gtlitecore.api.recipe.properties.SwarmTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class SwarmTierRecipeBuilder extends RecipeBuilder<SwarmTierRecipeBuilder> {
 
@@ -33,7 +33,7 @@ public class SwarmTierRecipeBuilder extends RecipeBuilder<SwarmTierRecipeBuilder
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(SwarmTierProperty.KEY)) {
             this.tier(((Number) value).intValue());
             return true;

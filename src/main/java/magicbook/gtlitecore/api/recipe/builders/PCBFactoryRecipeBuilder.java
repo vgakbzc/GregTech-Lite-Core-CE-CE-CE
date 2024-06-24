@@ -11,7 +11,7 @@ import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntit
 import magicbook.gtlitecore.loaders.multiblock.PCBFactory;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * PCB Factory Recipe Builder
@@ -50,7 +50,7 @@ public class PCBFactoryRecipeBuilder extends RecipeBuilder<PCBFactoryRecipeBuild
    }
 
    @Override
-   public boolean applyProperty(@Nonnull String key, Object value) {
+   public boolean applyProperty(@NotNull String key, Object value) {
        if (key.equals(PCBFactoryProperty.KEY)) {
            tier(((Number) value).intValue());
            return true;

@@ -52,8 +52,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -122,7 +122,7 @@ public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase i
         this.container = new EnergyContainerList(Lists.newArrayList());
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -165,7 +165,7 @@ public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase i
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.VACUUM_FREEZER_OVERLAY;
@@ -196,7 +196,7 @@ public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase i
     @Override
     public void addToolUsages(ItemStack stack,
                               @Nullable World world,
-                              @Nonnull List<String> tooltip,
+                              @NotNull List<String> tooltip,
                               boolean advanced) {
         tooltip.add(I18n.format("gregtech.tool_action.screwdriver.toggle_mode_covers"));
         tooltip.add(I18n.format("gregtech.tool_action.wrench.set_facing"));
@@ -302,7 +302,7 @@ public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase i
         return this.inputFluidInventory;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public List<ITextComponent> getDataInfo() {
         List<ITextComponent> list = new ArrayList<>();
@@ -335,7 +335,7 @@ public class MetaTileEntityZhuHaiFishingPond extends MultiblockWithDisplayBase i
     }
 
     @Override
-    public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
+    public NBTTagCompound writeToNBT(@NotNull NBTTagCompound data) {
         super.writeToNBT(data);
         return this.logic.writeToNBT(data);
     }

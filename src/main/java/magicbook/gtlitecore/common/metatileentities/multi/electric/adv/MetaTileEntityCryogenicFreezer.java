@@ -28,8 +28,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.GelidCryotheum;
@@ -46,7 +46,7 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
         return new MetaTileEntityCryogenicFreezer(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -76,7 +76,7 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.VACUUM_FREEZER_OVERLAY;
@@ -85,7 +85,7 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.cryogenic_freezer.tooltip.1"));

@@ -29,7 +29,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.oredict.OreDictionary;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
@@ -625,7 +625,7 @@ public class OreProcessorRecipeLogic implements IWorkable {
         metaTileEntity.markDirty();
     }
 
-    @Nonnull
+    @NotNull
     public MetaTileEntity getMetaTileEntity() {
         return metaTileEntity;
     }
@@ -683,7 +683,7 @@ public class OreProcessorRecipeLogic implements IWorkable {
         return recipeEUt;
     }
 
-    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
         if (dataId == GregtechDataCodes.WORKABLE_ACTIVE) {
             this.isActive = buf.readBoolean();
             getMetaTileEntity().scheduleRenderUpdate();
@@ -694,19 +694,19 @@ public class OreProcessorRecipeLogic implements IWorkable {
         }
     }
 
-    public void writeInitialData(@Nonnull PacketBuffer buf) {
+    public void writeInitialData(@NotNull PacketBuffer buf) {
         buf.writeBoolean(isActive);
         buf.writeBoolean(workingEnabled);
         buf.writeBoolean(isVoidStone);
     }
 
-    public void receiveInitialData(@Nonnull PacketBuffer buf) {
+    public void receiveInitialData(@NotNull PacketBuffer buf) {
         this.isActive = buf.readBoolean();
         this.workingEnabled = buf.readBoolean();
         this.isVoidStone = buf.readBoolean();
     }
 
-    @Nonnull
+    @NotNull
     public NBTTagCompound serializeNBT(NBTTagCompound compound) {
         compound.setBoolean("WorkEnabled", workingEnabled);
         compound.setBoolean("CanRecipeProgress", canRecipeProgress);
@@ -725,7 +725,7 @@ public class OreProcessorRecipeLogic implements IWorkable {
         return compound;
     }
 
-    public void deserializeNBT(@Nonnull NBTTagCompound compound) {
+    public void deserializeNBT(@NotNull NBTTagCompound compound) {
         this.workingEnabled = compound.getBoolean("WorkEnabled");
         this.canRecipeProgress = compound.getBoolean("CanRecipeProgress");
         this.isVoidStone = compound.getBoolean("isVoidStone");

@@ -8,7 +8,7 @@ import magicbook.gtlitecore.integration.appliedenergistics2.IRegisterDefinition;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2BaseItemPart;
 import magicbook.gtlitecore.integration.appliedenergistics2.rendering.AE2PartRendering;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.Optional;
 
 public class AE2Parts implements IRegisterDefinition<DamagedItemDefinition> {
@@ -44,7 +44,7 @@ public class AE2Parts implements IRegisterDefinition<DamagedItemDefinition> {
         return Optional.ofNullable(this.itemIdList.getOrDefault(id, null));
     }
 
-    @Nonnull
+    @NotNull
     private DamagedItemDefinition registerPart(AE2BaseItemPart part, AE2PartType partType) {
         var damagedItemDefinition = new DamagedItemDefinition(partType.getId(), part.registerPart(partType));
         this.itemIdList.put(partType.getId(), damagedItemDefinition);

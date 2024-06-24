@@ -40,7 +40,7 @@ import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.text.DecimalFormat;
 import java.util.Objects;
 import java.util.function.Function;
@@ -67,7 +67,7 @@ public class CommonProxy {
      * @param event  Config changed event.
      */
     @SubscribeEvent
-    public static void syncConfigValues(@Nonnull ConfigChangedEvent.OnConfigChangedEvent event) {
+    public static void syncConfigValues(@NotNull ConfigChangedEvent.OnConfigChangedEvent event) {
         if (event.getModID().equals(GTLiteCore.MODID)) {
             ConfigManager.sync(GTLiteCore.MODID, Config.Type.INSTANCE);
         }
@@ -79,7 +79,7 @@ public class CommonProxy {
      * @param event  Block register event.
      */
     @SubscribeEvent
-    public static void registerBlocks(@Nonnull RegistryEvent.Register<Block> event) {
+    public static void registerBlocks(@NotNull RegistryEvent.Register<Block> event) {
         IForgeRegistry<Block> registry = event.getRegistry();
         GTLiteLog.logger.info("Registering Blocks...");
         registry.register(GTLiteMetaBlocks.MULTIBLOCK_CASING);
@@ -125,7 +125,7 @@ public class CommonProxy {
      * @param event  Item Register Event.
      */
     @SubscribeEvent
-    public static void registerItems(@Nonnull RegistryEvent.Register<Item> event) {
+    public static void registerItems(@NotNull RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> registry = event.getRegistry();
         GTLiteLog.logger.info("Registering Items...");
 
@@ -359,7 +359,7 @@ public class CommonProxy {
      * @param event  Server chat event register event.
      */
     @SubscribeEvent
-    public static void registerServerChatEvents(@Nonnull ServerChatEvent event) {
+    public static void registerServerChatEvents(@NotNull ServerChatEvent event) {
         String message = event.getMessage();
 
         if (!message.startsWith("="))
@@ -413,9 +413,9 @@ public class CommonProxy {
      * @param producer  Item Block producer.
      * @return          Used to register item form of block.
      */
-    @Nonnull
-    private static <T extends Block> ItemBlock createItemBlock(@Nonnull T block,
-                                                               @Nonnull Function<T, ItemBlock> producer) {
+    @NotNull
+    private static <T extends Block> ItemBlock createItemBlock(@NotNull T block,
+                                                               @NotNull Function<T, ItemBlock> producer) {
         ItemBlock itemBlock = producer.apply(block);
         itemBlock.setRegistryName(Objects.requireNonNull(block.getRegistryName()));
         return itemBlock;

@@ -10,7 +10,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 @ParametersAreNonnullByDefault
@@ -27,14 +27,14 @@ public class BlockHermeticCasing extends VariantBlock<BlockHermeticCasing.Hermet
     }
 
     @Override
-    public boolean canCreatureSpawn(@Nonnull IBlockState state,
-                                    @Nonnull IBlockAccess world,
-                                    @Nonnull BlockPos pos,
-                                    @Nonnull EntityLiving.SpawnPlacementType type) {
+    public boolean canCreatureSpawn(@NotNull IBlockState state,
+                                    @NotNull IBlockAccess world,
+                                    @NotNull BlockPos pos,
+                                    @NotNull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
@@ -53,7 +53,7 @@ public class BlockHermeticCasing extends VariantBlock<BlockHermeticCasing.Hermet
             this.name = name;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {
             return name;

@@ -38,8 +38,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,7 +86,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[UIV]));
@@ -94,7 +94,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
         tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_output"));
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -153,7 +153,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.POWER_SUBSTATION_OVERLAY;

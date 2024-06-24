@@ -41,8 +41,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.input.Keyboard;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -103,12 +103,12 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
     }
 
     @Override
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return this.temperature >= recipe.getProperty(NoCoilTemperatureProperty.getInstance(), 0);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -148,7 +148,7 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.INDUSTRIAL_ROASTER_OVERLAY;
@@ -166,7 +166,7 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
@@ -194,7 +194,7 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
         return true;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public List<ITextComponent> getDataInfo() {
         List<ITextComponent> list = super.getDataInfo();

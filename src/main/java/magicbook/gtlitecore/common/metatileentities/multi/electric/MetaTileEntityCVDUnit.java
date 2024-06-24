@@ -21,7 +21,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityCVDUnit extends RecipeMapMultiblockController {
 
@@ -34,7 +34,7 @@ public class MetaTileEntityCVDUnit extends RecipeMapMultiblockController {
         return new MetaTileEntityCVDUnit(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -69,7 +69,7 @@ public class MetaTileEntityCVDUnit extends RecipeMapMultiblockController {
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.CVD_UNIT_OVERLAY;

@@ -27,8 +27,8 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
@@ -152,14 +152,14 @@ public abstract class MetaTileEntityLargeTurbine extends FuelMultiblockControlle
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[tier] * 2));
         tooltip.add(I18n.format("gregtech.multiblock.turbine.efficiency_tooltip", GTValues.VNF[tier]));
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected abstract BlockPattern createStructurePattern();
 
@@ -173,7 +173,7 @@ public abstract class MetaTileEntityLargeTurbine extends FuelMultiblockControlle
     public abstract ICubeRenderer getBaseTexture(IMultiblockPart iMultiblockPart);
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected abstract ICubeRenderer getFrontOverlay();
 

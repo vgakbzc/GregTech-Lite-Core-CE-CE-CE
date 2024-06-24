@@ -43,8 +43,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -129,7 +129,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
         this.outputFluidInventory = new FluidTankList(true);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.FRONT, RelativeDirection.UP)
@@ -156,7 +156,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
                 .build();
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected Widget getFlexButton(int x, int y, int width, int height) {
         WidgetGroup group = new WidgetGroup(x, y, width, height);
@@ -192,7 +192,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.tooltip.1"));
@@ -269,7 +269,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     }
 
     @Override
-    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
         if (dataId == GregtechDataCodes.WORKABLE_ACTIVE) {
             this.isActive = buf.readBoolean();
@@ -356,7 +356,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         if (this.isActive()) {
@@ -451,7 +451,7 @@ public class MetaTileEntityYottaFluidTank extends MultiblockWithDisplayBase impl
             return compound;
         }
 
-        public YOTFluidTank rebuild(@Nonnull List<IYottaTankData> cells) {
+        public YOTFluidTank rebuild(@NotNull List<IYottaTankData> cells) {
             if (cells.isEmpty()) {
                 throw new IllegalArgumentException("Cannot rebuild Yotta Fluid Tank with no cells!");
             }

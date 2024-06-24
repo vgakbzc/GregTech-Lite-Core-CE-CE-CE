@@ -31,7 +31,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Improves Determining Whether the Shape can be Harvested, and the Hardness of the Shape.
@@ -61,7 +61,7 @@ public class MixinBlockShape extends BlockArchitecture<TileShape> {
      */
     @SuppressWarnings("DuplicatedCode")
     @Override
-    public boolean canHarvestBlock(@Nonnull IBlockAccess world, @Nonnull BlockPos pos, @Nonnull EntityPlayer player) {
+    public boolean canHarvestBlock(@NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EntityPlayer player) {
         var te = TileShape.get(world, pos);
         if (te == null) return super.canHarvestBlock(world, pos, player);
 

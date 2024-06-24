@@ -38,8 +38,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityUltimateCombustionEngine extends FuelMultiblockController implements IProgressBarMultiblock {
@@ -94,7 +94,7 @@ public class MetaTileEntityUltimateCombustionEngine extends FuelMultiblockContro
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.base_production_eut", GTValues.V[this.tier]));
@@ -102,7 +102,7 @@ public class MetaTileEntityUltimateCombustionEngine extends FuelMultiblockContro
         tooltip.add(I18n.format("gtlitecore.machine.ultimate_combustion_engine.tooltip.boost_ultimate", GTValues.V[this.tier] * 4L));
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -147,7 +147,7 @@ public class MetaTileEntityUltimateCombustionEngine extends FuelMultiblockContro
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.EXTREME_COMBUSTION_ENGINE_OVERLAY;

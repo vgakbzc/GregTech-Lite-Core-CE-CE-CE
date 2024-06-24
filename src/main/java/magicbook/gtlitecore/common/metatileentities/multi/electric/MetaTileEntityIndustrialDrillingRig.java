@@ -34,8 +34,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockController {
@@ -73,7 +73,7 @@ public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockCont
         this.inputInventory = new NotifiableItemStackHandler(this, 1, this, false);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -123,7 +123,7 @@ public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockCont
         return MetaBlocks.FRAMES.get(GCYMMaterials.HSLASteel).getBlock(GCYMMaterials.HSLASteel);
     }
 
-    @Nonnull
+    @NotNull
     protected TraceabilityPredicate blockPredicate() {
         return new TraceabilityPredicate(blockWorldState -> {
             this.targetBlock = blockWorldState.getPos();
@@ -141,7 +141,7 @@ public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockCont
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.INDUSTRIAL_DRILL_OVERLAY;
@@ -150,7 +150,7 @@ public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockCont
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.industrial_drilling_rig.tooltip.1"));
@@ -168,15 +168,15 @@ public class MetaTileEntityIndustrialDrillingRig extends RecipeMapMultiblockCont
             super(tileEntity);
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public MetaTileEntityIndustrialDrillingRig getMetaTileEntity() {
             return (MetaTileEntityIndustrialDrillingRig) super.getMetaTileEntity();
         }
 
         @Override
-        protected boolean setupAndConsumeRecipeInputs(@Nonnull Recipe recipe,
-                                                      @Nonnull IItemHandlerModifiable importInventory) {
+        protected boolean setupAndConsumeRecipeInputs(@NotNull Recipe recipe,
+                                                      @NotNull IItemHandlerModifiable importInventory) {
             boolean result = super.setupAndConsumeRecipeInputs(recipe, importInventory);
 
             //  Break the block in world if it is consumable

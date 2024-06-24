@@ -40,8 +40,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.DoubleSupplier;
@@ -103,7 +103,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         this.divertorState = divertorState;
         this.vacuumState = vacuumState;
         this.energyContainer = new EnergyContainerHandler(this, Integer.MAX_VALUE, 0, 0, 0, 0) {
-            @Nonnull
+            @NotNull
             @Override
             public String getName() {
                 return GregtechDataCodes.FUSION_REACTOR_ENERGY_CONTAINER_TRAIT;
@@ -117,7 +117,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         return new MetaTileEntityAdvancedFusionReactor(metaTileEntityId, tier, casingState, coilState, cryostatState, divertorState, vacuumState);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -202,7 +202,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return Textures.FUSION_REACTOR_OVERLAY;
@@ -226,7 +226,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         this.inputEnergyContainers = new EnergyContainerList(energyInputs);
         long euCapacity = calculateEnergyStorageFactor(energyInputs.size());
         this.energyContainer = new EnergyContainerHandler(this, euCapacity, GTValues.V[tier], 0, 0, 0) {
-            @Nonnull
+            @NotNull
             @Override
             public String getName() {
                 return GregtechDataCodes.FUSION_REACTOR_ENERGY_CONTAINER_TRAIT;
@@ -351,7 +351,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", calculateEnergyStorageFactor(16) / 1000000L));
@@ -518,7 +518,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         }
 
         @Override
-        public boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@NotNull Recipe recipe) {
             if (!super.checkRecipe(recipe))
                 return false;
 
@@ -542,7 +542,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
             return true;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public NBTTagCompound serializeNBT() {
             NBTTagCompound tag = super.serializeNBT();
@@ -551,7 +551,7 @@ public class MetaTileEntityAdvancedFusionReactor extends RecipeMapMultiblockCont
         }
 
         @Override
-        public void deserializeNBT(@Nonnull NBTTagCompound compound) {
+        public void deserializeNBT(@NotNull NBTTagCompound compound) {
             super.deserializeNBT(compound);
             heat = compound.getLong("Heat");
         }

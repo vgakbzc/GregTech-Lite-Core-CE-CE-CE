@@ -49,8 +49,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase implements IWorkable, ITieredMetaTileEntity {
@@ -209,7 +209,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
         return getPos().getZ() / 16;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -257,7 +257,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.HYDRAULIC_FRACKER_OVERLAY;
@@ -300,7 +300,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.hydraulic_fracker.tooltip.1"));
@@ -353,7 +353,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
     }
 
     @Override
-    public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
+    public NBTTagCompound writeToNBT(@NotNull NBTTagCompound data) {
         super.writeToNBT(data);
         data.setBoolean("isActive", this.isActive);
         data.setBoolean("isWorkingEnabled", this.isWorkingEnabled);
@@ -363,7 +363,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
     }
 
     @Override
-    public void readFromNBT(@Nonnull NBTTagCompound data) {
+    public void readFromNBT(@NotNull NBTTagCompound data) {
         super.readFromNBT(data);
         this.isActive = data.getBoolean("isActive");
         this.isWorkingEnabled = data.getBoolean("isWorkingEnabled");
@@ -372,7 +372,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
     }
 
     @Override
-    public void writeInitialSyncData(@Nonnull PacketBuffer buf) {
+    public void writeInitialSyncData(@NotNull PacketBuffer buf) {
         super.writeInitialSyncData(buf);
         buf.writeBoolean(this.isActive);
         buf.writeBoolean(this.isWorkingEnabled);
@@ -381,7 +381,7 @@ public class MetaTileEntityHydraulicFracker extends MultiblockWithDisplayBase im
     }
 
     @Override
-    public void receiveInitialSyncData(@Nonnull PacketBuffer buf) {
+    public void receiveInitialSyncData(@NotNull PacketBuffer buf) {
         super.receiveInitialSyncData(buf);
         setActive(buf.readBoolean());
         setWorkingEnabled(buf.readBoolean());

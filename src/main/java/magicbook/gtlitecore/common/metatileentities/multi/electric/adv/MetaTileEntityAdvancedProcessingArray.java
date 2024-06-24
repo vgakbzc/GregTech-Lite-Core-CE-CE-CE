@@ -42,8 +42,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.apache.commons.lang3.ArrayUtils;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 /**
@@ -107,7 +107,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
         return this.tier == 0 ? 128 : 256;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -138,7 +138,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected OrientedOverlayRenderer getFrontOverlay() {
         return Textures.ADVANCED_PROCESSING_ARRAY_OVERLAY;
@@ -227,7 +227,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gregtech.universal.tooltip.parallel", this.getMachineLimit()));
@@ -338,7 +338,7 @@ public class MetaTileEntityAdvancedProcessingArray extends RecipeMapMultiblockCo
         }
 
         @Override
-        public boolean checkRecipe(@Nonnull Recipe recipe) {
+        public boolean checkRecipe(@NotNull Recipe recipe) {
             if (this.mte == null) {
                 return false;
             } else {

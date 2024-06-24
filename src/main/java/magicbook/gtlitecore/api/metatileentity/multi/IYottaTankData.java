@@ -1,11 +1,11 @@
 package magicbook.gtlitecore.api.metatileentity.multi;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public interface IYottaTankData {
     int getTier();
 
     long getCapacity();
 
-    @Nonnull String getFluidCellName();
+    @NotNull String getFluidCellName();
 }

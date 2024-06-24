@@ -9,7 +9,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import javax.annotation.ParametersAreNonnullByDefault;
 
 /**
@@ -34,10 +34,10 @@ public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceC
     }
 
     @Override
-    public boolean canCreatureSpawn(@Nonnull IBlockState state,
-                                    @Nonnull IBlockAccess world,
-                                    @Nonnull BlockPos pos,
-                                    @Nonnull EntityLiving.SpawnPlacementType type) {
+    public boolean canCreatureSpawn(@NotNull IBlockState state,
+                                    @NotNull IBlockAccess world,
+                                    @NotNull BlockPos pos,
+                                    @NotNull EntityLiving.SpawnPlacementType type) {
         return false;
     }
 
@@ -61,7 +61,7 @@ public class BlockScienceCasing extends VariantBlock<BlockScienceCasing.ScienceC
             this.name = name;
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public String getName() {
             return name;

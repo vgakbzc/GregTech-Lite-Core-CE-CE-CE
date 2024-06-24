@@ -10,7 +10,7 @@ import magicbook.gtlitecore.api.recipe.properties.NoCoilHigherTemperaturePropert
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityStellarFurnace;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.math.BigInteger;
 
 /**
@@ -42,7 +42,7 @@ public class NoCoilHigherTemperatureRecipeBuilder extends RecipeBuilder<NoCoilHi
     }
 
     @Override
-    public boolean applyProperty(@Nonnull String key, Object value) {
+    public boolean applyProperty(@NotNull String key, Object value) {
         if (key.equals(NoCoilHigherTemperatureProperty.KEY)) {
             temperature((BigInteger) value);
             return true;

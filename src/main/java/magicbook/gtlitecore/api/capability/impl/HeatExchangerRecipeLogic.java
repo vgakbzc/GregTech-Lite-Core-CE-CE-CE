@@ -14,7 +14,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fluids.FluidStack;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -178,7 +178,7 @@ public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
         return isSuperheat;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public NBTTagCompound serializeNBT() {
         NBTTagCompound compound = super.serializeNBT();
@@ -189,7 +189,7 @@ public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
     }
 
     @Override
-    public void deserializeNBT(@Nonnull NBTTagCompound compound) {
+    public void deserializeNBT(@NotNull NBTTagCompound compound) {
         super.deserializeNBT(compound);
         currentHeat = compound.getInteger("Heat");
         rate = compound.getInteger("Rate");
@@ -197,7 +197,7 @@ public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
     }
 
     @Override
-    public void writeInitialData(@Nonnull PacketBuffer buf) {
+    public void writeInitialData(@NotNull PacketBuffer buf) {
         super.writeInitialData(buf);
         buf.writeVarInt(currentHeat);
         buf.writeVarInt(rate);
@@ -205,7 +205,7 @@ public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
     }
 
     @Override
-    public void receiveInitialData(@Nonnull PacketBuffer buf) {
+    public void receiveInitialData(@NotNull PacketBuffer buf) {
         super.receiveInitialData(buf);
         this.currentHeat = buf.readVarInt();
         this.rate = buf.readVarInt();
@@ -213,7 +213,7 @@ public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
     }
 
     @Override
-    public void receiveCustomData(int dataId, @Nonnull PacketBuffer buf) {
+    public void receiveCustomData(int dataId, @NotNull PacketBuffer buf) {
         super.receiveCustomData(dataId, buf);
         if (dataId == GTLiteDataCode.ChannelHeatExchangerHeat) {
             this.currentHeat = buf.readVarInt();

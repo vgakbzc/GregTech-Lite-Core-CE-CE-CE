@@ -30,8 +30,8 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static gregtech.api.unification.material.Materials.Helium;
@@ -50,7 +50,7 @@ public class MetaTileEntityVirtualCosmosSimulator extends RecipeMapMultiblockCon
         return new MetaTileEntityVirtualCosmosSimulator(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start(RelativeDirection.RIGHT, RelativeDirection.FRONT, RelativeDirection.UP)
@@ -138,7 +138,7 @@ public class MetaTileEntityVirtualCosmosSimulator extends RecipeMapMultiblockCon
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.VIRTUAL_COSMOS_SIMULATOR_OVERLAY;
@@ -152,7 +152,7 @@ public class MetaTileEntityVirtualCosmosSimulator extends RecipeMapMultiblockCon
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.virtual_cosmos_simulator.tooltip.1"));

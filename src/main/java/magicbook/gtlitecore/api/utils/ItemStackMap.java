@@ -24,8 +24,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -134,8 +134,8 @@ public final class ItemStackMap<T> extends AbstractMap<ItemStack, T> {
     }
 
     @Override
-    public T merge(ItemStack key, @Nonnull T value,
-                   @Nonnull BiFunction<? super T, ? super T, ? extends T> remappingFunction) {
+    public T merge(ItemStack key, @NotNull T value,
+                   @NotNull BiFunction<? super T, ? super T, ? extends T> remappingFunction) {
         if (key == null || key.getItem() == null || value == null || remappingFunction == null)
             return null;
         DetailMap map = itemMap.get(key.getItem());
@@ -145,7 +145,7 @@ public final class ItemStackMap<T> extends AbstractMap<ItemStack, T> {
 
     @Override
     public T computeIfAbsent(ItemStack key,
-                             @Nonnull Function<? super ItemStack, ? extends T> mappingFunction) {
+                             @NotNull Function<? super ItemStack, ? extends T> mappingFunction) {
         if (key == null || key.getItem() == null || mappingFunction == null)
             return null;
         DetailMap map = itemMap.get(key.getItem());
@@ -159,7 +159,7 @@ public final class ItemStackMap<T> extends AbstractMap<ItemStack, T> {
         size = 0;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public Set<Entry<ItemStack, T>> entrySet() {
         return new SetView();
@@ -579,7 +579,7 @@ public final class ItemStackMap<T> extends AbstractMap<ItemStack, T> {
             return ItemStackMap.this.remove(entry.getKey(), entry.getValue());
         }
 
-        @Nonnull
+        @NotNull
         @Override
         public Iterator<Map.Entry<ItemStack, T>> iterator() {
             return Iterators.concat(Iterators.transform(itemMap.entrySet().iterator(), DetailIter::new));

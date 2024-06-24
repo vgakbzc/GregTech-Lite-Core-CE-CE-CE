@@ -20,8 +20,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockController {
@@ -35,7 +35,7 @@ public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockC
         return new MetaTileEntitySuprachronalAssemblyLine(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -95,7 +95,7 @@ public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockC
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.SUPRACHRONAL_ASSEMBLY_LINE_OVERLAY;
@@ -104,7 +104,7 @@ public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockC
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.suprachronal_assembly_line.tooltip.1"));

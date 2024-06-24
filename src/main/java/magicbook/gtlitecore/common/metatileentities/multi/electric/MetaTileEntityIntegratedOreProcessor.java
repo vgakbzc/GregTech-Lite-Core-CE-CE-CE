@@ -56,8 +56,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import org.lwjgl.input.Keyboard;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -128,7 +128,7 @@ public class MetaTileEntityIntegratedOreProcessor extends MultiblockWithDisplayB
         this.energyContainer = new EnergyContainerList(Lists.newArrayList());
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -199,7 +199,7 @@ public class MetaTileEntityIntegratedOreProcessor extends MultiblockWithDisplayB
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.CVD_UNIT_OVERLAY;
@@ -253,7 +253,7 @@ public class MetaTileEntityIntegratedOreProcessor extends MultiblockWithDisplayB
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World world,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, world, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.integrated_ore_processor.tooltip.1"));
@@ -307,7 +307,7 @@ public class MetaTileEntityIntegratedOreProcessor extends MultiblockWithDisplayB
     }
 
     @Override
-    public NBTTagCompound writeToNBT(@Nonnull NBTTagCompound data) {
+    public NBTTagCompound writeToNBT(@NotNull NBTTagCompound data) {
         super.writeToNBT(data);
         return this.logic.serializeNBT(data);
     }
@@ -345,7 +345,7 @@ public class MetaTileEntityIntegratedOreProcessor extends MultiblockWithDisplayB
         return super.getCapability(capability, side);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public List<ITextComponent> getDataInfo() {
         List<ITextComponent> list = new ArrayList<>();

@@ -22,7 +22,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public class MetaTileEntityLargeVacuumChamber extends GCYMRecipeMapMultiblockController {
 
@@ -35,7 +35,7 @@ public class MetaTileEntityLargeVacuumChamber extends GCYMRecipeMapMultiblockCon
         return new MetaTileEntityLargeVacuumChamber(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -75,7 +75,7 @@ public class MetaTileEntityLargeVacuumChamber extends GCYMRecipeMapMultiblockCon
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected OrientedOverlayRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_ROCKET_ENGINE_OVERLAY;

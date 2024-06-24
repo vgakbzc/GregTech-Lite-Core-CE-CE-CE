@@ -1,6 +1,6 @@
 package magicbook.gtlitecore.api.metatileentity.multi;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 public interface ICellData {
 
@@ -8,5 +8,5 @@ public interface ICellData {
 
     long getCapacity();
 
-    @Nonnull String getCellName();
+    @NotNull String getCellName();
 }

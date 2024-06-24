@@ -30,8 +30,8 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.ItemStackHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -93,7 +93,7 @@ public abstract class NoEnergyMultiblockController extends MultiblockWithDisplay
      * Performs extra checks for validity of given recipe before multiblock
      * will start it's processing.
      */
-    public boolean checkRecipe(@Nonnull Recipe recipe,
+    public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
         return true;
     }
@@ -257,7 +257,7 @@ public abstract class NoEnergyMultiblockController extends MultiblockWithDisplay
         return recipeMap.getSound();
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public List<ITextComponent> getDataInfo() {
         List<ITextComponent> list = new ArrayList<>();

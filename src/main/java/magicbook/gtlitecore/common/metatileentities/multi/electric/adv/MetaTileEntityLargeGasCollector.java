@@ -25,8 +25,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockController {
@@ -41,7 +41,7 @@ public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockControll
         return new MetaTileEntityLargeGasCollector(metaTileEntityId);
     }
 
-    @Nonnull
+    @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
         return FactoryBlockPattern.start()
@@ -82,7 +82,7 @@ public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockControll
     }
 
     @SideOnly(Side.CLIENT)
-    @Nonnull
+    @NotNull
     @Override
     protected ICubeRenderer getFrontOverlay() {
         return GTLiteTextures.LARGE_ROCKET_ENGINE_OVERLAY;
@@ -91,7 +91,7 @@ public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockControll
     @Override
     public void addInformation(ItemStack stack,
                                @Nullable World player,
-                               @Nonnull List<String> tooltip,
+                               @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.large_gas_collector.tooltip.1"));

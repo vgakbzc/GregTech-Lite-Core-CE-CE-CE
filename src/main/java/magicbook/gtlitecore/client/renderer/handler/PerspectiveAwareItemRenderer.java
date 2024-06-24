@@ -12,8 +12,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.common.model.IModelState;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public abstract class PerspectiveAwareItemRenderer implements IItemRenderer, IEntityItemTickCallback {
 
@@ -70,9 +70,9 @@ public abstract class PerspectiveAwareItemRenderer implements IItemRenderer, IEn
             this.callback = callback;
         }
 
-        @Nonnull
+        @NotNull
         @Override
-        public IBakedModel handleItemState(@Nonnull IBakedModel originalModel, @Nonnull ItemStack stack, World world, EntityLivingBase entity) {
+        public IBakedModel handleItemState(@NotNull IBakedModel originalModel, @NotNull ItemStack stack, World world, EntityLivingBase entity) {
             callback.onEntityStuffs(entity, world);
             return super.handleItemState(originalModel, stack, world, entity);
         }

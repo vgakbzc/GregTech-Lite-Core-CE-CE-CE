@@ -15,7 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +32,7 @@ import java.util.List;
 public class RecipeItemOutputInfoProvider extends CapabilityInfoProvider<IWorkable> {
 
     @Override
-    protected @Nonnull Capability<IWorkable> getCapability() {
+    protected @NotNull Capability<IWorkable> getCapability() {
         return GregtechTileCapabilities.CAPABILITY_WORKABLE;
     }
 

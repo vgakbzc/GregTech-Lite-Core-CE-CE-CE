@@ -11,8 +11,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class AE2BaseItemMaterial extends AEBaseItem {
 
@@ -24,7 +24,7 @@ public class AE2BaseItemMaterial extends AEBaseItem {
         INSTANCE = this;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public String getTranslationKey(ItemStack itemStack) {
         var material = GTLiteCore.getAE2RegisterManager().getAE2Materials().getById(itemStack.getItemDamage());

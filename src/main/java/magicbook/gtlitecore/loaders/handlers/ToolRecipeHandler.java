@@ -15,7 +15,7 @@ import magicbook.gtlitecore.common.items.GTLiteTools;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 import static gregtech.api.unification.material.properties.PropertyKey.GEM;
 import static gregtech.common.items.MetaItems.*;
@@ -168,8 +168,8 @@ public class ToolRecipeHandler {
         }
     }
 
-    public static void addToolRecipe(@Nonnull Material material,
-                                     @Nonnull IGTTool tool,
+    public static void addToolRecipe(@NotNull Material material,
+                                     @NotNull IGTTool tool,
                                      boolean mirrored, Object... recipe) {
         if (mirrored) {
             ModHandler.addMirroredShapedRecipe(String.format("%s_%s", tool.getToolId(), material),

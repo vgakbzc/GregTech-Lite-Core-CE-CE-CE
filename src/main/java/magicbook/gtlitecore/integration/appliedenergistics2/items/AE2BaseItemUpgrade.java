@@ -27,8 +27,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +42,7 @@ public class AE2BaseItemUpgrade extends AEBaseItem implements IUpgradeType {
         INSTANCE = this;
     }
 
-    @Nonnull
+    @NotNull
     @Override
     public String getTranslationKey(ItemStack itemStack) {
         var upgrade = GTLiteCore.getAE2RegisterManager().getAE2Upgrades().getById(itemStack.getItemDamage());
@@ -102,10 +102,10 @@ public class AE2BaseItemUpgrade extends AEBaseItem implements IUpgradeType {
         return GTLiteCore.getAE2RegisterManager().getAE2Upgrades().getById(stack.getItemDamage()).orElse(null);
     }
 
-    @Nonnull
+    @NotNull
     @Override
-    public EnumActionResult onItemUseFirst(EntityPlayer player, @Nonnull World world, @Nonnull BlockPos pos, @Nonnull EnumFacing side,
-                                           float hitX, float hitY, float hitZ, @Nonnull EnumHand hand) {
+    public EnumActionResult onItemUseFirst(EntityPlayer player, @NotNull World world, @NotNull BlockPos pos, @NotNull EnumFacing side,
+                                           float hitX, float hitY, float hitZ, @NotNull EnumHand hand) {
         if (player.isSneaking()) {
             var te = world.getTileEntity(pos);
             IItemHandler upgrades = null;
