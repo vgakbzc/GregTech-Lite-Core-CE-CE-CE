@@ -6,9 +6,9 @@ import magicbook.gtlitecore.integration.appliedenergistics2.AE2Registry;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2BaseItemUpgrade;
 import magicbook.gtlitecore.integration.appliedenergistics2.rendering.DamagedItemRendering;
 import net.minecraft.item.ItemStack;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.util.Collection;
 import java.util.Optional;
 

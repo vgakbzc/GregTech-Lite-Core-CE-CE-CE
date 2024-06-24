@@ -8,7 +8,6 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-
 import org.jetbrains.annotations.NotNull;
 
 public class BlockResonantCavity extends VariantBlock<BlockResonantCavity.ResonantCavityTier> {

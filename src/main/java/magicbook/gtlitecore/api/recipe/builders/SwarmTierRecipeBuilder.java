@@ -7,7 +7,6 @@ import gregtech.api.util.EnumValidationResult;
 import magicbook.gtlitecore.api.recipe.properties.SwarmTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import org.jetbrains.annotations.NotNull;
 
 public class SwarmTierRecipeBuilder extends RecipeBuilder<SwarmTierRecipeBuilder> {

@@ -5,7 +5,6 @@ import magicbook.gtlitecore.integration.appliedenergistics2.features.AE2Features
 import zone.rong.mixinbooter.ILateMixinLoader;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("unused")

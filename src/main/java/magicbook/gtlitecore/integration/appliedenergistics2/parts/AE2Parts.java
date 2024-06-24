@@ -7,8 +7,8 @@ import magicbook.gtlitecore.integration.appliedenergistics2.AE2Registry;
 import magicbook.gtlitecore.integration.appliedenergistics2.IRegisterDefinition;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2BaseItemPart;
 import magicbook.gtlitecore.integration.appliedenergistics2.rendering.AE2PartRendering;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Optional;
 
 public class AE2Parts implements IRegisterDefinition<DamagedItemDefinition> {

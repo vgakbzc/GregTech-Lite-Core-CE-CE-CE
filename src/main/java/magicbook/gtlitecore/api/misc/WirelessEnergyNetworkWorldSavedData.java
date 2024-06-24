@@ -7,8 +7,8 @@ import net.minecraft.world.storage.MapStorage;
 import net.minecraft.world.storage.WorldSavedData;
 import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.io.*;
 import java.math.BigInteger;
 import java.util.HashMap;

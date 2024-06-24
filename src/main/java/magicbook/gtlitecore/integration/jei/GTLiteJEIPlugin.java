@@ -11,8 +11,8 @@ import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.ingredients.VanillaTypes;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 
 @SuppressWarnings("unused")

@@ -4,7 +4,6 @@ import gregtech.api.unification.material.info.MaterialIconSet;
 import magicbook.gtlitecore.api.item.IItemRenderer;
 import magicbook.gtlitecore.api.item.IItemRendererManager;
 import net.minecraft.util.ResourceLocation;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

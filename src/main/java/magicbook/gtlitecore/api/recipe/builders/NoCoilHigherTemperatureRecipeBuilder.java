@@ -9,8 +9,8 @@ import gregtech.api.util.ValidationResult;
 import magicbook.gtlitecore.api.recipe.properties.NoCoilHigherTemperatureProperty;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityStellarFurnace;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.math.BigInteger;
 
 /**

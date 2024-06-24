@@ -11,7 +11,6 @@ import magicbook.gtlitecore.api.recipe.properties.NoCoilTemperatureProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNanoscaleFabricator;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import org.jetbrains.annotations.NotNull;
 
 /**

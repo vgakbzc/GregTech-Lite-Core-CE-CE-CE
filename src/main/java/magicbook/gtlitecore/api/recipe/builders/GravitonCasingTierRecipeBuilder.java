@@ -9,7 +9,6 @@ import magicbook.gtlitecore.api.recipe.properties.GravitonCasingTierProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityNicollDysonBeamer;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import org.jetbrains.annotations.NotNull;
 
 /**

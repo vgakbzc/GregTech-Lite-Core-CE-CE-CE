@@ -6,9 +6,9 @@ import gregtech.api.items.metaitem.stats.IItemMaxStackSizeProvider;
 import gregtech.common.items.behaviors.AbstractMaterialPartBehavior;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 /**

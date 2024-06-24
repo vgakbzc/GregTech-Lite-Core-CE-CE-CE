@@ -4,7 +4,6 @@ import gregtech.api.block.VariantBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.util.IStringSerializable;
-
 import org.jetbrains.annotations.NotNull;
 
 public class BlockQuantumComputerCasing extends VariantBlock<BlockQuantumComputerCasing.QCCasingType> {

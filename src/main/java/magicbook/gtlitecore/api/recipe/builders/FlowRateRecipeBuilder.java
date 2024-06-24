@@ -12,7 +12,6 @@ import magicbook.gtlitecore.api.recipe.properties.FlowRateProperty;
 import magicbook.gtlitecore.api.recipe.properties.MaxRateProperty;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-
 import org.jetbrains.annotations.NotNull;
 
 /**

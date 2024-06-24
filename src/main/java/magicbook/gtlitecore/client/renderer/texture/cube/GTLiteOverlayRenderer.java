@@ -18,7 +18,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.commons.lang3.ArrayUtils;
-
 import org.jetbrains.annotations.Nullable;
 
 import static magicbook.gtlitecore.client.utils.BloomEffectUtils.getRealBloomLayer;

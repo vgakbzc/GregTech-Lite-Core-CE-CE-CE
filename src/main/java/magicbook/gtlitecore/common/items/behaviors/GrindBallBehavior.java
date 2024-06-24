@@ -9,9 +9,9 @@ import gregtech.common.items.behaviors.AbstractMaterialPartBehavior;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 /**

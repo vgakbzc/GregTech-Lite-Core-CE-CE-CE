@@ -8,7 +8,6 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import net.minecraftforge.items.IItemHandlerModifiable;
-
 import org.jetbrains.annotations.NotNull;
 
 /**

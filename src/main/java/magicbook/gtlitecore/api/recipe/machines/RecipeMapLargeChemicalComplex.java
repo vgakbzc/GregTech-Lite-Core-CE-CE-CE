@@ -7,7 +7,6 @@ import gregtech.api.gui.widgets.RecipeProgressWidget;
 import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.recipes.RecipeMap;
 import net.minecraftforge.items.IItemHandlerModifiable;
-
 import org.jetbrains.annotations.NotNull;
 
 public class RecipeMapLargeChemicalComplex<R extends RecipeBuilder<R>> extends RecipeMap<R> {

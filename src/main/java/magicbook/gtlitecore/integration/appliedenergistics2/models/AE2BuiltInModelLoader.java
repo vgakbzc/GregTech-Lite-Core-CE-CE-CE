@@ -7,8 +7,8 @@ import net.minecraft.client.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ICustomModelLoader;
 import net.minecraftforge.client.model.IModel;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Map;
 
 public class AE2BuiltInModelLoader implements ICustomModelLoader {

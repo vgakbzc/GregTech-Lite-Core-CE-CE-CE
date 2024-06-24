@@ -11,8 +11,8 @@ import gregtech.api.unification.stack.MaterialStack;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import static gregtech.api.GTValues.*;

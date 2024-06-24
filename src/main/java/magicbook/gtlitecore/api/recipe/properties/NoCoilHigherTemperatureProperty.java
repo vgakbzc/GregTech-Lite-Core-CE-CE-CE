@@ -3,8 +3,8 @@ package magicbook.gtlitecore.api.recipe.properties;
 import gregtech.api.recipes.recipeproperties.RecipeProperty;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.math.BigInteger;
 
 public class NoCoilHigherTemperatureProperty extends RecipeProperty<BigInteger> {

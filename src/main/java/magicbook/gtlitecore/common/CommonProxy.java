@@ -39,8 +39,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.text.DecimalFormat;
 import java.util.Objects;
 import java.util.function.Function;

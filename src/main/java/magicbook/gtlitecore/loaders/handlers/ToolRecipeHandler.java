@@ -14,7 +14,6 @@ import gregtech.api.unification.stack.UnificationEntry;
 import magicbook.gtlitecore.common.items.GTLiteTools;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
-
 import org.jetbrains.annotations.NotNull;
 
 import static gregtech.api.unification.material.properties.PropertyKey.GEM;

@@ -21,8 +21,8 @@ import net.minecraft.world.WorldServer;
 import net.minecraft.world.storage.loot.LootContext;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.fluids.FluidStack;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import static magicbook.gtlitecore.api.utils.GTLiteUtils.getFluidById;

@@ -8,8 +8,8 @@ import gregtech.api.util.BlockInfo;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import magicbook.gtlitecore.api.block.IBlockTier;
 import net.minecraft.block.state.IBlockState;
-
 import org.jetbrains.annotations.Nullable;
+
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.function.Predicate;

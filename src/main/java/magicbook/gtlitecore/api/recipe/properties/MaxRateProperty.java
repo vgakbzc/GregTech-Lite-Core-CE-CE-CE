@@ -3,7 +3,6 @@ package magicbook.gtlitecore.api.recipe.properties;
 import gregtech.api.recipes.recipeproperties.RecipeProperty;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.I18n;
-
 import org.jetbrains.annotations.NotNull;
 
 public class MaxRateProperty extends RecipeProperty<Integer> {

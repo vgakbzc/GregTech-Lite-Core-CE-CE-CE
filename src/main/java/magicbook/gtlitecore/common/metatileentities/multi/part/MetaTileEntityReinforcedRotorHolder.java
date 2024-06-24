@@ -40,9 +40,9 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.items.IItemHandlerModifiable;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.util.List;
 
 public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultiblockPart implements IMultiblockAbilityPart<IReinforcedRotorHolder>, IReinforcedRotorHolder {

@@ -4,7 +4,6 @@ import appeng.api.util.AEColor;
 import appeng.bootstrap.IItemRendering;
 import appeng.bootstrap.ItemRenderingCustomizer;
 import appeng.client.render.StaticItemColor;
-import appeng.items.parts.ItemPartRendering;
 import magicbook.gtlitecore.integration.appliedenergistics2.items.AE2BaseItemPart;
 import magicbook.gtlitecore.integration.appliedenergistics2.parts.AE2PartType;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -13,7 +12,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.Arrays;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class AE2PartRendering extends ItemRenderingCustomizer {

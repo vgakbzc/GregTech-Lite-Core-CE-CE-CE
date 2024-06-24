@@ -4,7 +4,6 @@ import magicbook.gtlitecore.client.renderer.texture.cube.GTLiteOverlayRenderer;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import org.jetbrains.annotations.NotNull;
 
 import static gregtech.client.utils.BloomEffectUtil.getEffectiveBloomLayer;

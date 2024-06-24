@@ -6,7 +6,6 @@ import appeng.util.Platform;
 import co.neeve.nae2.common.registration.registry.helpers.PartModelsHelper;
 import com.google.common.collect.ImmutableList;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
-import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import magicbook.gtlitecore.integration.appliedenergistics2.features.AE2Features;
 import magicbook.gtlitecore.integration.appliedenergistics2.features.IAE2Feature;
 import magicbook.gtlitecore.integration.appliedenergistics2.models.IEnabled;
