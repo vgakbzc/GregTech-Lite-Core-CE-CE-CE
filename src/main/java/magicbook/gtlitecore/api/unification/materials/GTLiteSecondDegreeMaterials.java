@@ -309,7 +309,7 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UV], 800)
                         .vacuumStats(VA[LuV], 140))
                 .components(Zeron100, 8, Stellite100, 6, Titanium, 6, Naquadria, 4, Osmiridium, 3, Aluminium, 2, Tin, 1, Mercury, 1)
-                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROTOR, GENERATE_FOIL)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROTOR, GENERATE_FOIL, GENERATE_DOUBLE_PLATE)
                 .build();
 
         //  12021 Titan Steel

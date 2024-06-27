@@ -588,6 +588,15 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem FULLERENE_POLYMER_MATRIX_SOFT_TUBING;
     public static MetaItem<?>.MetaValueItem FULLERENE_POLYMER_MATRIX_FINE_TUBING;
     public static MetaItem<?>.MetaValueItem ALUMINO_SILICATE_GLASS_TUBE;
+    public static MetaItem<?>.MetaValueItem REDSTONE_ALLOY_BOARD;
+    public static MetaItem<?>.MetaValueItem PARALLEL_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem SPECULATIVE_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem DEDUCTION_CIRCUIT_BOARD;
+    public static MetaItem<?>.MetaValueItem DEDUCTION_PROCESSOR;
+    public static MetaItem<?>.MetaValueItem FLUIX_LOGIC_PROCESSOR;
+    public static MetaItem<?>.MetaValueItem FLUIX_LOGIC_ASSEMBLY;
+    public static MetaItem<?>.MetaValueItem FLUIX_LOGIC_COMPUTER;
+    public static MetaItem<?>.MetaValueItem FLUIX_LOGIC_MAINFRAME;
 
     //  Foods
     public static MetaItem<?>.MetaValueItem BEDROCK_CHOCOLATE;

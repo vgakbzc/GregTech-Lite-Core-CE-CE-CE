@@ -35,6 +35,12 @@ dependencies {
     //  [LAE] Lazy AE2 - 1.1.2.6
     implementation rfg.deobf("curse.maven:lazy-ae2-322347:3254160")
 
+    //  [BDL] BD Lib - 1.14.4.1
+    implementation rfg.deobf("curse.maven:bdlib-70496:4675629")
+
+    //  [AE2Su] AE2 Stuff Unofficial - 0.9
+    implementation rfg.deobf("curse.maven:ae2-stuff-unofficial-951064:5002181")
+
     //  [HEI] Had Enough Items - 4.25.1
     implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
 

@@ -12,7 +12,7 @@ import magicbook.gtlitecore.integration.enderstorage.EnderStorageRecipeLoader;
 import magicbook.gtlitecore.integration.fluiddrawers.FluidDrawersRecipeLoader;
 import magicbook.gtlitecore.integration.futuremc.FutureMCRecipeLoader;
 import magicbook.gtlitecore.integration.gcym.GCYMOverrideRecipeLoader;
-import magicbook.gtlitecore.integration.gregtech.CTMaterialRecipeLoader;
+import magicbook.gtlitecore.integration.gregtech.CompatMaterialRecipeLoader;
 import magicbook.gtlitecore.integration.gregtechfoodoption.GTFORecipeManager;
 import magicbook.gtlitecore.integration.ironchest.IronChestRecipeLoader;
 import magicbook.gtlitecore.integration.littletiles.LittleTilesRecipeLoader;
@@ -78,9 +78,8 @@ public class GTLiteIntegration {
         }
 
         //  GregTech
-        if (Mods.CraftTweaker.isModLoaded() && Mods.GregTech.isModLoaded()) {
-            CTMaterialRecipeLoader.init();
-        }
+        if (Mods.GregTech.isModLoaded())
+            CompatMaterialRecipeLoader.init(); // This class is recipes for Materials in {@link GTLiteModCompatibilityMaterials} class.
 
         //  Gregicality Multiblocks
         if (Mods.GregicalityMultiblocks.isModLoaded()) {
