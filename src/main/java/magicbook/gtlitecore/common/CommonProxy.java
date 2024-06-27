@@ -11,12 +11,14 @@ import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.*;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
+import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.api.utils.ServerSupportI18n;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GTLiteBehaviorAddition;
 import magicbook.gtlitecore.common.metatileentities.multi.electric.MetaTileEntityLargeChemicalComplex;
 import magicbook.gtlitecore.integration.GTLiteIntegration;
+import magicbook.gtlitecore.integration.appliedenergistics2.recipes.AE2MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.MaterialInfoLoader;
 import magicbook.gtlitecore.loaders.RecipeHandler;
 import magicbook.gtlitecore.loaders.RecipeManager;
@@ -292,7 +294,7 @@ public class CommonProxy {
     }
 
     /**
-     * Material Info register bug.
+     * Material Info register bus.
      *
      * <p>
      *     Used to register material info of item,
@@ -305,6 +307,9 @@ public class CommonProxy {
     public static void registerMaterialInfo(GregTechAPI.RegisterEvent<ItemMaterialInfo> event) {
         GTLiteLog.logger.info("Registering material infos...");
         MaterialInfoLoader.init();
+        if (Mods.AppliedEnergistics2.isModLoaded()) {
+            AE2MaterialInfoLoader.registerGTMaterialInfo();
+        }
     }
 
     /**

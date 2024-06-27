@@ -1711,6 +1711,37 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         FULLERENE_POLYMER_MATRIX_FINE_TUBING = this.addItem(4003, "fullerene_polymer_matrix_fine_tubing");
         ALUMINO_SILICATE_GLASS_TUBE = this.addItem(4004, "alumino_silicate_glass_tube");
 
+        REDSTONE_ALLOY_BOARD = this.addItem(4005, "redstone_alloy_board")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        PARALLEL_CIRCUIT_BOARD = this.addItem(4006, "parallel_circuit_board")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        SPECULATIVE_CIRCUIT_BOARD = this.addItem(4007, "speculative_circuit_board")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        DEDUCTION_CIRCUIT_BOARD = this.addItem(4008, "deduction_circuit_board")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        DEDUCTION_PROCESSOR = this.addItem(4009, "deduction_processor")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        FLUIX_LOGIC_PROCESSOR = this.addItem(4010, "fluix_logic_processor")
+                .addOreDict("circuitFluixBasic")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        FLUIX_LOGIC_ASSEMBLY = this.addItem(4011, "fluix_logic_assembly")
+                .addOreDict("circuitFluixAdvanced")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        FLUIX_LOGIC_COMPUTER = this.addItem(4012, "fluix_logic_computer")
+                .addOreDict("circuitFluixElite")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
+        FLUIX_LOGIC_MAINFRAME = this.addItem(4013, "fluix_logic_mainframe")
+                .addOreDict("circuitFluixMaster")
+                .setCreativeTabs(GTLiteAPI.TAB_GTLITE_AE2_INTEGRATION);
+
         /* ------------------------------------------------------------------------ Foods ------------------------------------------------------------------------- */
         BEDROCK_CHOCOLATE = this.addItem(5000, "food.bedrock_chocolate")
                 .addComponents(new GTFOFoodStats(5, 2.5F, false, false, ItemStack.EMPTY,

@@ -160,7 +160,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     }
 
     private static IBlockState getFrameState() {
-        return MetaBlocks.FRAMES.get(GTLiteMaterials.HastelloyC59).getBlock(GTLiteMaterials.HastelloyC59);
+        return MetaBlocks.FRAMES.get(GTLiteMaterials.StellarAlloy).getBlock(GTLiteMaterials.StellarAlloy);
     }
 
     private static IBlockState getSecondFrameState() {

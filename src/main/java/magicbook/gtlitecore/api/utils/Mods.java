@@ -1,6 +1,8 @@
 package magicbook.gtlitecore.api.utils;
 
 import gregtech.api.util.ModIncompatibilityException;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.ModContainer;
@@ -8,11 +10,15 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
+
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
 
 /**
  * Mods Interaction/Compability Warning utilities
@@ -36,6 +42,8 @@ public enum Mods {
     ActuallyAdditions("actuallyadditions"),
     AppliedEnergistics2("appliedenergistics2"),
     ArchitectureCraft("architecturecraft"),
+    AE2Stuff("ae2stuff"),
+    AE2FluidCrafting("ae2fc"),
 
     Chisel("chisel"),
     ConnectedTexturesMod("ctm"),
@@ -82,13 +90,9 @@ public enum Mods {
     LazyAE2("threng"),
     LittleTiles("littletiles"),
 
+    MoreFurnaces("morefurnaces"),
+
     NaturesCompass("naturescompass"),
-    /**
-     * TODO Add {@link #extraCheck} to hint player this mod is incompat,
-     *      because in GregTech Lite Modpack, this mod use special version,
-     *      called by {@code nae2-gtlite-edition}. We should hint player
-     *      do not use common version to change this Mod.
-     */
     NeevesAE2Addition("nae2"),
 
     PackagedAuto("packagedauto"),
@@ -139,6 +143,121 @@ public enum Mods {
      */
     public String getID() {
         return this.ID;
+    }
+
+    /**
+     * Get Item Stack by {@code name} in Mod ID.
+     *
+     * @param name  Item Stack name.
+     * @return      Item Stack in Mod ID mod.
+     *
+     * @see GTLiteUtils#getItemById(String, String)
+     */
+    @NotNull
+    public ItemStack getItemByID(String name) {
+        return getItemById(this.ID, name);
+    }
+
+    /**
+     * Get Item Stack by {@code name} in Mod ID.
+     *
+     * @param name    Item Stack name.
+     * @param amount  Amount of Item Stack.
+     * @return        Item Stack with current amount in Mod ID mod.
+     *
+     * @see GTLiteUtils#getItemById(String, String, int)
+     */
+    @NotNull
+    public ItemStack getItemByID(String name, int amount) {
+        return getItemById(this.ID, name, amount);
+    }
+
+    /**
+     * Get Item Stack by {@code name} and {@code nbt} in Mod ID.
+     *
+     * @param name  Item Stack name.
+     * @param nbt   Item Stack NBT data.
+     * @return      Item Stack with NBT tag in Mod ID mod.
+     *
+     * @see GTLiteUtils#getItemById(String, String, NBTTagCompound)
+     */
+    @NotNull
+    public ItemStack getItemByID(String name, NBTTagCompound nbt) {
+        return getItemById(this.ID, name, nbt);
+    }
+
+    /**
+     * Get Item Stack by {@code name} and {@code nbt} in Mod ID.
+     *
+     * @param name    Item Stack name.
+     * @param amount  Amount of Item Stack.
+     * @param nbt     Item Stack NBT data.
+     * @return        Item Stack with NBT tag and current amount in Mod ID mod.
+     *
+     * @see GTLiteUtils#getItemById(String, String, int, NBTTagCompound)
+     */
+    @NotNull
+    public ItemStack getItemByID(String name, int amount, NBTTagCompound nbt) {
+        return getItemById(this.ID, name, amount, nbt);
+    }
+
+    /**
+     * Get Item Stack by {@code name} of Item Stack which has Metadata.
+     *
+     * @param name  Item Stack name.
+     * @param meta  Metadata of {@code name} Item Stack.
+     * @return      Item stack in Mod ID mod which named by {@code name} and has metadata {@code meta}.
+     *
+     * @see GTLiteUtils#getMetaItemById(String, String, int)
+     */
+    @NotNull
+    public ItemStack getMetaItemByID(String name, int meta) {
+        return getMetaItemById(this.ID, name, meta);
+    }
+
+    /**
+     * Get Item Stack by {@code name} of Item Stack which has Metadata.
+     *
+     * @param name    Item Stack name.
+     * @param meta    Metadata of {@code name} Item Stack.
+     * @param amount  Amount of Item Stack.
+     * @return        Item stack with current amount in Mod ID mod which named by {@code name} and has metadata {@code meta}.
+     *
+     * @see GTLiteUtils#getMetaItemById(String, String, int, int)
+     */
+    @NotNull
+    public ItemStack getMetaItemByID(String name, int meta, int amount) {
+        return getMetaItemById(this.ID, name, meta, amount);
+    }
+
+    /**
+     * Get Item Stack with NBT data by {@code name} of Item Stack which has Metadata.
+     *
+     * @param name  Item Stack name.
+     * @param meta  Metadata of {@code name} Item Stack.
+     * @param nbt   NBT data of {@code name} Item Stack.
+     * @return      Item stack with NBT data in Mod ID mod which named by {@code name} and has metadata {@code meta}.
+     *
+     * @see GTLiteUtils#getMetaItemById(String, String, int, NBTTagCompound)
+     */
+    @NotNull
+    public ItemStack getMetaItemByID(String name, int meta, NBTTagCompound nbt) {
+        return getMetaItemById(this.ID, name, meta, nbt);
+    }
+
+    /**
+     * Get Item Stack with NBT data by {@code name} of Item Stack which has Metadata.
+     *
+     * @param name    Item Stack name.
+     * @param meta    Metadata of  {@code name} Item Stack.
+     * @param amount  Amount of {@code name} Item Stack.
+     * @param nbt     NBT data of {@code name} Item Stack.
+     * @return        Item stack with NBT data and current amount in Mod ID mod which named by {@code name} and has metadata {@code meta}.
+     *
+     * @see GTLiteUtils#getMetaItemById(String, String, int, int, NBTTagCompound)
+     */
+    public ItemStack getMetaItemByID(String name, int meta, int amount, NBTTagCompound nbt) {
+        return getMetaItemById(this.ID, name, meta, amount, nbt);
     }
 
     /**

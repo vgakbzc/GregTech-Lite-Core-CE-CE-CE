@@ -139,6 +139,7 @@ public class GTLiteMaterialFlagAddition {
         Trinaquadalloy.addFlags(GENERATE_FRAME);
         Polyethylene.addFlags(GENERATE_FRAME);
         Zeron100.addFlags(GENERATE_FRAME);
+        CertusQuartz.addFlags(GENERATE_FRAME);
 
         //  Stick
         Dubnium.addFlags(GENERATE_ROD);
@@ -160,6 +161,7 @@ public class GTLiteMaterialFlagAddition {
         Vanadium.addFlags(GENERATE_ROD);
         Trinaquadalloy.addFlags(GENERATE_ROD);
         Zeron100.addFlags(GENERATE_ROD);
+        CertusQuartz.addFlags(GENERATE_ROD);
 
         //  Long Stick
         IronMagnetic.addFlags(GENERATE_LONG_ROD);
@@ -188,6 +190,7 @@ public class GTLiteMaterialFlagAddition {
         Darmstadtium.addFlags(GENERATE_GEAR);
         Roentgenium.addFlags(GENERATE_GEAR);
         Lawrencium.addFlags(GENERATE_GEAR);
+        CertusQuartz.addFlags(GENERATE_GEAR);
 
         //  Small Gear
         WroughtIron.addFlags(GENERATE_SMALL_GEAR);
@@ -201,6 +204,7 @@ public class GTLiteMaterialFlagAddition {
         Livermorium.addFlags(GENERATE_BOLT_SCREW);
         BlueSteel.addFlags(GENERATE_BOLT_SCREW);
         Rutherfordium.addFlags(GENERATE_BOLT_SCREW);
+        CertusQuartz.addFlags(GENERATE_BOLT_SCREW);
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);
@@ -232,6 +236,7 @@ public class GTLiteMaterialFlagAddition {
         Chrome.addFlags(GENERATE_FINE_WIRE);
         Molybdenum.addFlags(GENERATE_FINE_WIRE);
         Vanadium.addFlags(GENERATE_FINE_WIRE);
+        CertusQuartz.addFlags(GENERATE_FINE_WIRE);
 
         //  Crystallization
         Monazite.addFlags(DISABLE_CRYSTALLIZATION);

@@ -29,8 +29,8 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultiblockController {

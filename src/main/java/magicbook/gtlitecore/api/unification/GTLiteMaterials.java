@@ -946,6 +946,29 @@ public class GTLiteMaterials {
     public static Material Zircophyllite;
     public static Material Lepersonnite;
 
+    //  Mod Compatibility Materials
+    public static Material Fluix;
+    public static Material DarkSteel;
+    public static Material ElectricalSteel;
+    public static Material RedstoneAlloy;
+    public static Material Soularium;
+    public static Material PulsatingIron;
+    public static Material ConductiveIron;
+    public static Material EnergeticAlloy;
+    public static Material VibrantAlloy;
+    public static Material EndSteel;
+    public static Material Lumium;
+    public static Material Signalum;
+    public static Material Enderium;
+    public static Material ConstructionAlloy;
+    public static Material EnrichedAlloy;
+    public static Material EnergeticSilver;
+    public static Material VividAlloy;
+    public static Material CrystallineAlloy;
+    public static Material CrystallinePinkSlime;
+    public static Material MelodicAlloy;
+    public static Material StellarAlloy;
+
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
         GTLiteFirstDegreeMaterials.register();        // 11001-12000
