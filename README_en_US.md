@@ -11,8 +11,6 @@
   <i>By Magic_Sweepy, Gate Guardian and U.M.T</i>
 </p>
 
-[中文](./README_zh_CN.md) | [English](./README_en_US.md)
-
 ## Welcome to GregTech Lite Core
 
 ### What is this?
@@ -72,24 +70,24 @@ Improve difficulty and QoL of GregTech CEu, based on GregTech 6, Gregicality Leg
 ### License
 
 * GregTech Lite Core Template ([TemplateDevEnv](https://github.com/CleanroomMC/TemplateDevEnv))
-  - Copyright (c) CleanroomMC
-  - [![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+    - Copyright (c) CleanroomMC
+    - [![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 * GregTech Lite Core API
-  - Copyright (c) Magic_Sweepy
-  - [![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+    - Copyright (c) Magic_Sweepy
+    - [![License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 * GregTech Lite Modpack
-  - Copyright (c) Magic_Sweepy
-  - [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg?style=flat-square)](https://gitlab.com/sweep_tosho/gregtech-lite/-/blob/main/license)
+    - Copyright (c) Magic_Sweepy
+    - [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg?style=flat-square)](https://gitlab.com/sweep_tosho/gregtech-lite/-/blob/main/license)
 
 * Texts, Translations and Questbook contents
-  - Copyright (c) Magic_Sweepy
-  - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+    - Copyright (c) Magic_Sweepy
+    - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 * Textures and Models
-  - Copyright (c) Magic_Sweepy and U.M.T
-  - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
+    - Copyright (c) Magic_Sweepy and U.M.T
+    - [![License](https://img.shields.io/badge/License-CC%20BY--NC--SA%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 ### Credit Works
 
