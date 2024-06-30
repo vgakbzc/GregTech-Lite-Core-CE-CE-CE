@@ -38,7 +38,7 @@ public class BlockSpaceElevatorCasing extends VariantBlock<BlockSpaceElevatorCas
         INTERNAL_STRUCTURE("internal_structure"),
         SUPPORT_STRUCTURE("support_structure"),
         FLOOR("floor"),
-        CABLE("cable_casing");
+        CABLE("cable");
 
         private final String name;
 

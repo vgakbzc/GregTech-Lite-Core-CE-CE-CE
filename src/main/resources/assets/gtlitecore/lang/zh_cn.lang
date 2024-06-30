@@ -148,8 +148,8 @@ tile.space_elevator_casing.support_structure.name=太空电梯支撑结构机械
 tile.space_elevator_casing.support_structure.tooltip=防止太空电梯坍塌/n§d§l我希望这些东西有足够的强度
 tile.space_elevator_casing.floor.name=超高强度塑料混凝土方块
 tile.space_elevator_casing.floor.tooltip=地基的最适宜材料/n§d§l牢固又耐用
-
-tile.space_elevator_casing.cable_casing.name=太空电梯动力系统控制核心
+tile.space_elevator_casing.cable.name=太空电梯纳米管线缆
+tile.space_elevator_casing.cable.tooltip=电梯牵拉器/n§d§l活体金属线
 
 tile.pcb_factory_casing.basic_photolithographic_framework_casing.name=精密光刻框架外壳
 tile.pcb_factory_casing.basic_photolithographic_framework_casing.tooltip=超高精度激光蚀刻

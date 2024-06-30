@@ -145,7 +145,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     }
 
     private static IBlockState getSecondCasingState() {
-        return GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getState(BlockSpaceElevatorCasing.ElevatorCasingType.CABLE_CASING);
+        return GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getState(BlockSpaceElevatorCasing.ElevatorCasingType.CABLE);
     }
 
     private static IBlockState getThirdCasingState() {
