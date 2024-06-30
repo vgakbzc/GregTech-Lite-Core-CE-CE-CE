@@ -3537,7 +3537,7 @@ public class MachineRecipeLoader {
                 .fluidInputs(SolderingAlloy.getFluid(L * 40))
                 .fluidInputs(Lubricant.getFluid(16000))
                 .fluidInputs(Tantalloy61.getFluid(L * 4))
-                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.CABLE_CASING))
+                .outputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.CABLE))
                 .EUt(VA[UV])
                 .duration(200)
                 .stationResearch(b -> b
