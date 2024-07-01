@@ -971,6 +971,7 @@ public class MachineComponents {
         //  UXV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, MagnetoHydrodynamicallyConstrainedStarMatter)
+                .input(ELECTRIC_MOTOR_UXV)
                 .input(plate, MagnetoHydrodynamicallyConstrainedStarMatter, 4)
                 .input(UNSTABLE_STAR, 2)
                 .input(circuit, MarkerMaterials.Tier.UXV, 2)
@@ -992,6 +993,7 @@ public class MachineComponents {
         //  OpV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, TranscendentMetal)
+                .input(ELECTRIC_MOTOR_OpV)
                 .input(plate, TranscendentMetal, 4)
                 .input(UNSTABLE_STAR, 4)
                 .input(circuit, MarkerMaterials.Tier.OpV, 2)
@@ -1013,6 +1015,7 @@ public class MachineComponents {
         //  MAX
         ASSEMBLY_LINE_RECIPES.recipeBuilder()
                 .input(frameGt, Omnium)
+                .input(ELECTRIC_MOTOR_MAX)
                 .input(plate, Omnium, 4)
                 .input(ZENITH_STAR)
                 .input(circuit, MarkerMaterials.Tier.MAX, 2)
