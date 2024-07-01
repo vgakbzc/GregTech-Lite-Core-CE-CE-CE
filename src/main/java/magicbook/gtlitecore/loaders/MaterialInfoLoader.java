@@ -191,6 +191,11 @@ public class MaterialInfoLoader {
         OreDictUnifier.registerOre(VOLTAGE_COIL_OpV.getStackForm(), new ItemMaterialInfo(
                 new MaterialStack(BismuthLawrenciumStrontiumCuprateMagnetic, M / 2),
                 new MaterialStack(Arcanium, M * 2)));
+
+        //  MAX Voltage Coil
+        OreDictUnifier.registerOre(VOLTAGE_COIL_MAX.getStackForm(), new ItemMaterialInfo(
+                new MaterialStack(BismuthLawrenciumStrontiumCuprateMagnetic, M / 2),
+                new MaterialStack(PrimordialMatter, M * 2))); // TODO Omnium?
     }
 
     /**

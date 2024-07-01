@@ -267,7 +267,8 @@ public class MaterialComponents {
                 {10, GTLiteMetaItems.VOLTAGE_COIL_UEV},
                 {11, GTLiteMetaItems.VOLTAGE_COIL_UIV},
                 {12, GTLiteMetaItems.VOLTAGE_COIL_UXV},
-                {13, GTLiteMetaItems.VOLTAGE_COIL_OpV}
+                {13, GTLiteMetaItems.VOLTAGE_COIL_OpV},
+                {14, GTLiteMetaItems.VOLTAGE_COIL_MAX}
         }).collect(Collectors.toMap(data -> (Integer) data[0], data -> data[1])));
 
         SPRING.appendIngredients(Stream.of(new Object[][]{

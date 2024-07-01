@@ -519,98 +519,99 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
         VOLTAGE_COIL_UIV = this.addItem(252, "voltage_coil.uiv");
         VOLTAGE_COIL_UXV = this.addItem(253, "voltage_coil.uxv");
         VOLTAGE_COIL_OpV = this.addItem(254, "voltage_coil.opv");
+        VOLTAGE_COIL_MAX = this.addItem(255, "voltage_coil.max");
 
         /* ------------------------------------------------------------------------ Covers ------------------------------------------------------------------------ */
 
         //  ID 255-262: ULV tier Components
-        ELECTRIC_MOTOR_ULV = this.addItem(255, "cover.electric_motor.ulv");
-        ELECTRIC_PISTON_ULV = this.addItem(256, "cover.electric_piston.ulv");
+        ELECTRIC_MOTOR_ULV = this.addItem(256, "cover.electric_motor.ulv");
+        ELECTRIC_PISTON_ULV = this.addItem(257, "cover.electric_piston.ulv");
 
-        ELECTRIC_PUMP_ULV = this.addItem(257, "cover.electric_pump.ulv")
+        ELECTRIC_PUMP_ULV = this.addItem(258, "cover.electric_pump.ulv")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.electric.pump.tooltip"));
                     lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 32));
                 }));
 
-        CONVEYOR_MODULE_ULV = this.addItem(258, "cover.conveyor_module.ulv")
+        CONVEYOR_MODULE_ULV = this.addItem(259, "cover.conveyor_module.ulv")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.conveyor.module.tooltip"));
                     lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate", 4));
                 }));
 
-        ROBOT_ARM_ULV = this.addItem(259, "cover.robot_arm.ulv")
+        ROBOT_ARM_ULV = this.addItem(260, "cover.robot_arm.ulv")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.robot.arm.tooltip"));
                     lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate", 4));
                 }));
 
-        EMITTER_ULV = this.addItem(260, "cover.emitter.ulv");
-        SENSOR_ULV = this.addItem(261, "cover.sensor.ulv");
-        FIELD_GENERATOR_ULV = this.addItem(262, "cover.field_generator.ulv");
-        ELECTRIC_MOTOR_MAX = this.addItem(263, "cover.electric_motor.max");
-        ELECTRIC_PISTON_MAX = this.addItem(264, "cover.electric_piston.max");
+        EMITTER_ULV = this.addItem(261, "cover.emitter.ulv");
+        SENSOR_ULV = this.addItem(262, "cover.sensor.ulv");
+        FIELD_GENERATOR_ULV = this.addItem(263, "cover.field_generator.ulv");
+        ELECTRIC_MOTOR_MAX = this.addItem(264, "cover.electric_motor.max");
+        ELECTRIC_PISTON_MAX = this.addItem(265, "cover.electric_piston.max");
 
         //  ID 265-270 MAX tier Components
-        ELECTRIC_PUMP_MAX = this.addItem(265, "cover.electric_pump.max")
+        ELECTRIC_PUMP_MAX = this.addItem(266, "cover.electric_pump.max")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.electric.pump.tooltip"));
                     lines.add(I18n.format("gregtech.universal.tooltip.fluid_transfer_rate", 1048576));
                 }));
 
-        CONVEYOR_MODULE_MAX = this.addItem(266, "cover.conveyor_module.max")
+        CONVEYOR_MODULE_MAX = this.addItem(267, "cover.conveyor_module.max")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.conveyor.module.tooltip"));
                     lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate_stacks", 16));
                 }));
 
-        ROBOT_ARM_MAX = this.addItem(267, "cover.robot_arm.max")
+        ROBOT_ARM_MAX = this.addItem(268, "cover.robot_arm.max")
                 .addComponents(new TooltipBehavior((lines) -> {
                     lines.add(I18n.format("metaitem.robot.arm.tooltip"));
                     lines.add(I18n.format("gregtech.universal.tooltip.item_transfer_rate_stacks", 16));
                 }));
 
-        EMITTER_MAX = this.addItem(268, "cover.emitter.max");
-        SENSOR_MAX = this.addItem(269, "cover.sensor.max");
-        FIELD_GENERATOR_MAX = this.addItem(270, "cover.field_generator.max");
+        EMITTER_MAX = this.addItem(269, "cover.emitter.max");
+        SENSOR_MAX = this.addItem(270, "cover.sensor.max");
+        FIELD_GENERATOR_MAX = this.addItem(271, "cover.field_generator.max");
 
         //  ID 271-276: High Tier Solar Panels (UHV-MAX)
         if (GTLiteConfigHolder.tools.enableHighTierSolarPanel) {
-            COVER_SOLAR_PANEL_UHV = this.addItem(271, "cover.solar_panel.uhv")
+            COVER_SOLAR_PANEL_UHV = this.addItem(272, "cover.solar_panel.uhv")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
                         lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UHV], VNF[UHV]));
                     }));
 
-            COVER_SOLAR_PANEL_UEV = this.addItem(272, "cover.solar_panel.uev")
+            COVER_SOLAR_PANEL_UEV = this.addItem(273, "cover.solar_panel.uev")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
                         lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UEV], VNF[UEV]));
                     }));
 
-            COVER_SOLAR_PANEL_UIV = this.addItem(273, "cover.solar_panel.uiv")
+            COVER_SOLAR_PANEL_UIV = this.addItem(274, "cover.solar_panel.uiv")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
                         lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UIV], VNF[UIV]));
                     }));
 
-            COVER_SOLAR_PANEL_UXV = this.addItem(274, "cover.solar_panel.uxv")
+            COVER_SOLAR_PANEL_UXV = this.addItem(275, "cover.solar_panel.uxv")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
                         lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[UXV], VNF[UXV]));
                     }));
 
-            COVER_SOLAR_PANEL_OpV = this.addItem(275, "cover.solar_panel.opv")
+            COVER_SOLAR_PANEL_OpV = this.addItem(276, "cover.solar_panel.opv")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));
                         lines.add(I18n.format("gregtech.universal.tooltip.voltage_out", V[OpV], VNF[OpV]));
                     }));
 
-            COVER_SOLAR_PANEL_MAX = this.addItem(276, "cover.solar_panel.max")
+            COVER_SOLAR_PANEL_MAX = this.addItem(277, "cover.solar_panel.max")
                     .addComponents(new TooltipBehavior((lines) -> {
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.1"));
                         lines.add(I18n.format("metaitem.cover.solar.panel.tooltip.2"));

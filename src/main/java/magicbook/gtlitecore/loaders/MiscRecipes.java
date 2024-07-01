@@ -547,6 +547,16 @@ public class MiscRecipes {
                 .EUt(VA[OpV])
                 .duration(200)
                 .buildAndRegister();
+
+        //  MAX Voltage Coil
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .input(stick, BismuthLawrenciumStrontiumCuprateMagnetic)
+                .input(wireFine, PrimordialMatter, 16) // TODO Omnium?
+                .circuitMeta(1)
+                .output(VOLTAGE_COIL_MAX)
+                .EUt(VA[MAX])
+                .duration(200)
+                .buildAndRegister();
     }
 
     private static void OtherRecipes() {

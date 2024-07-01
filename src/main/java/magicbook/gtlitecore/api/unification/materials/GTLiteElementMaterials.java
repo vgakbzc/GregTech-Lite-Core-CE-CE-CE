@@ -518,6 +518,11 @@ public class GTLiteElementMaterials {
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_DOUBLE_PLATE, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_GEAR)
                 .cableProperties(V[MAX], 1000, 1, false)
                 .fluidPipeProperties(999999, 999999, true)
+                .toolStats(ToolProperty.Builder.of(100.0F, 16000.0F, 1000000, 999)
+                        .unbreakable()
+                        .magnetic()
+                        .enchantment(Enchantments.SHARPNESS, 99)
+                        .build())
                 .build();
     }
 }

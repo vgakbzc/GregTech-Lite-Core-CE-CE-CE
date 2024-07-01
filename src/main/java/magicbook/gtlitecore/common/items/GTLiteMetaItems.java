@@ -210,6 +210,7 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UIV;
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_UXV;
     public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_OpV;
+    public static MetaItem<?>.MetaValueItem VOLTAGE_COIL_MAX;
 
     //  Covers
     public static MetaItem<?>.MetaValueItem ELECTRIC_MOTOR_ULV;
