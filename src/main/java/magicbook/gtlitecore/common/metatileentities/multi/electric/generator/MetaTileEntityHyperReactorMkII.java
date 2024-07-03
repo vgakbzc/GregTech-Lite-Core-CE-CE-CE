@@ -63,7 +63,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
     @Override
     protected void initializeAbilities() {
         this.inputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
-        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.OUTPUT_LASER));
+        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.OUTPUT_ENERGY));
         energyContainer.addAll(this.getAbilities(MultiblockAbility.OUTPUT_LASER));
         this.energyContainer = new EnergyContainerList(energyContainer);
     }

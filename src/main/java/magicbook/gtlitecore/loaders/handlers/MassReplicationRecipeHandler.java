@@ -24,7 +24,6 @@ import static magicbook.gtlitecore.api.unification.materials.helper.PeriodicMate
  * <p>
  *     Ref: {@code gregicadditions/recipes/RecipeHandler#matterReplication(Material)}.
  *     Thanks for original Gregicality Legacy devs, I just do some tweak in GTCEu environment.
- *     TODO Replaced this loop to Processing Handler system.
  * </p>
  *
  * @since 2.8.8-beta
