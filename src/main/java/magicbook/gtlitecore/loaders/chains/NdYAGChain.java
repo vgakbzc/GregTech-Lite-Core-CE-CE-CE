@@ -59,7 +59,7 @@ public class NdYAGChain {
                 .buildAndRegister();
 
         //  NH4CNO -> CH4N2O
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(AmmoniumCyanate.getFluid(1000))
                 .output(dust, Carbamide, 8)
                 .EUt(VA[HV])

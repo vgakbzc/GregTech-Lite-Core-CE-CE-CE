@@ -1345,32 +1345,32 @@ metaitem.wrap.supracausal_smd.inductor.tooltip=用于进行批量组装
 #  Machines
 
 ##  Single Machines
-gtlitecore.machine.chemical_dryer.lv.name=基础化学脱水机
-gtlitecore.machine.chemical_dryer.lv.tooltip=并不能用于烘干头发
-gtlitecore.machine.chemical_dryer.mv.name=进阶化学脱水机
-gtlitecore.machine.chemical_dryer.mv.tooltip=并不能用于烘干头发
-gtlitecore.machine.chemical_dryer.hv.name=进阶化学脱水机 II
-gtlitecore.machine.chemical_dryer.hv.tooltip=并不能用于烘干头发
-gtlitecore.machine.chemical_dryer.ev.name=进阶化学脱水机 III
-gtlitecore.machine.chemical_dryer.ev.tooltip=并不能用于烘干头发
-gtlitecore.machine.chemical_dryer.iv.name=精英化学脱水机
-gtlitecore.machine.chemical_dryer.iv.tooltip=并不能用于烘干衣物
-gtlitecore.machine.chemical_dryer.luv.name=精英化学脱水机 II
-gtlitecore.machine.chemical_dryer.luv.tooltip=并不能用于烘干衣物
-gtlitecore.machine.chemical_dryer.zpm.name=精英化学脱水机 III
-gtlitecore.machine.chemical_dryer.zpm.tooltip=并不能用于烘干衣物
-gtlitecore.machine.chemical_dryer.uv.name=终极化学脱水机
-gtlitecore.machine.chemical_dryer.uv.tooltip=水分湮灭者
-gtlitecore.machine.chemical_dryer.uhv.name=史诗化学脱水机
-gtlitecore.machine.chemical_dryer.uhv.tooltip=水分湮灭者
-gtlitecore.machine.chemical_dryer.uev.name=史诗化学脱水机 II
-gtlitecore.machine.chemical_dryer.uev.tooltip=水分湮灭者
-gtlitecore.machine.chemical_dryer.uiv.name=史诗化学脱水机 III
-gtlitecore.machine.chemical_dryer.uiv.tooltip=水分湮灭者
-gtlitecore.machine.chemical_dryer.uxv.name=史诗化学脱水机 IV
-gtlitecore.machine.chemical_dryer.uxv.tooltip=水分湮灭者
-gtlitecore.machine.chemical_dryer.opv.name=传奇化学脱水机
-gtlitecore.machine.chemical_dryer.opv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dehydrator.lv.name=基础化学脱水机
+gtlitecore.machine.chemical_dehydrator.lv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dehydrator.mv.name=进阶化学脱水机
+gtlitecore.machine.chemical_dehydrator.mv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dehydrator.hv.name=进阶化学脱水机 II
+gtlitecore.machine.chemical_dehydrator.hv.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dehydrator.ev.name=进阶化学脱水机 III
+gtlitecore.machine.chemical_dehydrator.ev.tooltip=并不能用于烘干头发
+gtlitecore.machine.chemical_dehydrator.iv.name=精英化学脱水机
+gtlitecore.machine.chemical_dehydrator.iv.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dehydrator.luv.name=精英化学脱水机 II
+gtlitecore.machine.chemical_dehydrator.luv.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dehydrator.zpm.name=精英化学脱水机 III
+gtlitecore.machine.chemical_dehydrator.zpm.tooltip=并不能用于烘干衣物
+gtlitecore.machine.chemical_dehydrator.uv.name=终极化学脱水机
+gtlitecore.machine.chemical_dehydrator.uv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dehydrator.uhv.name=史诗化学脱水机
+gtlitecore.machine.chemical_dehydrator.uhv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dehydrator.uev.name=史诗化学脱水机 II
+gtlitecore.machine.chemical_dehydrator.uev.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dehydrator.uiv.name=史诗化学脱水机 III
+gtlitecore.machine.chemical_dehydrator.uiv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dehydrator.uxv.name=史诗化学脱水机 IV
+gtlitecore.machine.chemical_dehydrator.uxv.tooltip=水分湮灭者
+gtlitecore.machine.chemical_dehydrator.opv.name=传奇化学脱水机
+gtlitecore.machine.chemical_dehydrator.opv.tooltip=水分湮灭者
 
 gtlitecore.machine.vacuum_chamber.bronze.name=蒸汽真空室
 gtlitecore.machine.vacuum_chamber.bronze.tooltip=你的第一片真空
@@ -3847,7 +3847,7 @@ itemGroup.gtlite.food=格雷科技精简版 | 食物
 itemGroup.gtlite.ae2_integration=格雷科技精简版 | AE2联动
 
 ##  Recipe Maps
-recipemap.chemical_dryer.name=脱水
+recipemap.chemical_dehydrator.name=脱水
 recipemap.vacuum_chamber.name=真空室
 recipemap.naquadah_reactor.name=硅岩聚变
 recipemap.rocket_engine.name=火箭引擎

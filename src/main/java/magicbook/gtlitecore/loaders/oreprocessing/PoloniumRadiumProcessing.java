@@ -111,7 +111,7 @@ public class PoloniumRadiumProcessing {
                 .buildAndRegister();
 
         //  Ra(OH)2 -> RaO + H2O
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, RadiumHydroxide, 5)
                 .output(dust, RadiumOxide, 2)
                 .fluidOutputs(Water.getFluid(1000))

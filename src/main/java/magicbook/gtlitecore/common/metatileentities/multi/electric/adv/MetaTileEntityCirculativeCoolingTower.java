@@ -58,7 +58,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
         super(metaTileEntityId, new RecipeMap[]{
                 RecipeMaps.COMPRESSOR_RECIPES,
                 GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES,
-                GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES,
+                GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES,
                 GTLiteRecipeMaps.VACUUM_DRYING_RECIPES,
                 RecipeMaps.VACUUM_RECIPES,
                 GTLiteRecipeMaps.CRYOGENIC_REACTOR_RECIPES,
@@ -315,8 +315,8 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
         /**
          * @return Check if machine in Chemical Dryer Mode.
          */
-        private boolean isChemicalDryerMode() {
-            return this.getRecipeMap() == GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES;
+        private boolean isChemicalDehydratorMode() {
+            return this.getRecipeMap() == GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
         }
 
         /**
@@ -372,7 +372,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
                 return (6 * getMaxParallel(casingTier));
             } else if (isVacuumChamberMode()) {
                 return (4 * getMaxParallel(casingTier));
-            } else if (isChemicalDryerMode()) {
+            } else if (isChemicalDehydratorMode()) {
                 return (4 * getMaxParallel(casingTier));
             } else if (isVacuumDryingMode()) {
                 return (2 * getMaxParallel(casingTier));
@@ -398,7 +398,7 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
             } else if (isVacuumChamberMode()) {
                 int maxProgressVacuumChamber = maxProgress / (casingTier + 4);
                 super.setMaxProgress(maxProgressVacuumChamber);
-            } else if (isChemicalDryerMode()) {
+            } else if (isChemicalDehydratorMode()) {
                 int maxProgressChemicalDryer = maxProgress / (casingTier + 4);
                 super.setMaxProgress(maxProgressChemicalDryer);
             } else if (isVacuumDryingMode()) {

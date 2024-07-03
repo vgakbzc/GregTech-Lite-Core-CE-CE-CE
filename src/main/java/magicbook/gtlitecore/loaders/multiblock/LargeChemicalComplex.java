@@ -179,7 +179,7 @@ public class LargeChemicalComplex {
                 .buildAndRegister();
 
         //  Trinium Waste -> Ga + Ti + HNO3 (cycle)
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(TriniumWaste.getFluid(3000))
                 .output(dust, Gallium)
                 .output(dust, Titanium)

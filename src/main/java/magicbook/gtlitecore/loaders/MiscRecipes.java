@@ -359,7 +359,7 @@ public class MiscRecipes {
                 .buildAndRegister();
 
         //  Celestial Crystal recycle
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, CelestialCrystal)
                 .output(dust, CertusQuartz)
                 .fluidOutputs(StarlightLiquid.getFluid(L))

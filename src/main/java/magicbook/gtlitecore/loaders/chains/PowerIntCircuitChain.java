@@ -84,7 +84,7 @@ public class PowerIntCircuitChain {
                 .buildAndRegister();
 
         //  Lu/Tm:YVO? + C2H6O -> Lu/Tm:YVO + (NH4)2CO3 + C3H6
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, LuTmDopedYttriumVanadateDeposition)
                 .fluidInputs(Ethanol.getFluid(1000))
                 .output(dust, LuTmYVO)

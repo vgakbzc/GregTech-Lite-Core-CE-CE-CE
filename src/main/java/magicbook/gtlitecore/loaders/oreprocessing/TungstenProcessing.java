@@ -10,7 +10,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.ingotHot;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.TungstenTrioxide;
 
 /**
@@ -40,7 +40,7 @@ public class TungstenProcessing {
 
     private static void TungstenProcess() {
         //  H2O(WO3) -> WO3 + H2O
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, TungsticAcid, 7)
                 .output(dust, TungstenTrioxide, 4)
                 .fluidOutputs(Water.getFluid(1000))

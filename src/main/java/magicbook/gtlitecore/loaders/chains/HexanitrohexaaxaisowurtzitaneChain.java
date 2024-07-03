@@ -58,7 +58,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .buildAndRegister();
 
         //  NH4CH3CO2 -> CH3CONH2
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, AmmoniumAcetate, 12)
                 .output(dust, Acetamide, 9)
                 .EUt(VA[MV])
@@ -66,7 +66,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .buildAndRegister();
 
         //  CH3CONH2 -> CH3CN
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, Acetamide, 9)
                 .output(dust, Acetonitrile, 6)
                 .EUt(VA[HV])
@@ -378,7 +378,7 @@ public class HexanitrohexaaxaisowurtzitaneChain {
                 .buildAndRegister();
 
         //  (SiO2)(HCl)(NaOH)(H2O) -> SiO2 + NaCl
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(SilicaGelBase.getFluid(1000))
                 .output(dust, SilicaGel, 3)
                 .output(dust, Salt, 2)

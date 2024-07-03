@@ -588,7 +588,7 @@ public class AlgaeChain {
                 .buildAndRegister();
 
         //  *Nq*F2CsF -> *Nq* (cycle) + Cs (cycle) + 3F
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(NaquadriaCaesiumfluoride.getFluid(1000))
                 .output(dust, Naquadria)
                 .output(dust, Caesium)

@@ -659,7 +659,7 @@ public class SupracausalCircuits {
         // ------------------------------ C6H5COC(OCH3)2C6H5 processing ------------------------------
 
         //  2C7H6O -> C6H5COCHOHC6H5
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .notConsumable(SodiumCyanide.getItemStack())
                 .fluidInputs(Benzaldehyde.getFluid(2000))
                 .fluidOutputs(Benzoin.getFluid(1000))

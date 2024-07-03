@@ -32,7 +32,7 @@ public class BoronNitrideChain {
                 .buildAndRegister();
 
         //  2H3BO3 -> B2O3 + 3H2O
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, BoricAcid, 8)
                 .output(dust, BoronTrioxide, 5)
                 .fluidOutputs(Water.getFluid(3000))
@@ -74,7 +74,7 @@ public class BoronNitrideChain {
                 .buildAndRegister();
 
         //  LiBF4 -> LiH + BF3
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .input(dust, LithiumTetrafluoroborate, 6)
                 .output(ingot, LithiumHydride, 2)
                 .fluidOutputs(BoronTrifluoride.getFluid(1000))

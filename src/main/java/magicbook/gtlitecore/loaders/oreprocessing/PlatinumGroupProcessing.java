@@ -311,7 +311,7 @@ public class PlatinumGroupProcessing {
                 .buildAndRegister();
 
         //  NaClO3 -> NaCl + 3O
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .inputs(SodiumChlorate.getItemStack(5))
                 .output(dust, Salt, 2)
                 .fluidOutputs(Oxygen.getFluid(3000))

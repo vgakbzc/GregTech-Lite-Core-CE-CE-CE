@@ -57,7 +57,7 @@ public class MetaTileEntityVacuumDryingFurnace extends MultiMapMultiblockControl
 
     public MetaTileEntityVacuumDryingFurnace(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, new RecipeMap[]{
-                GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES,
+                GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES,
                 GTLiteRecipeMaps.VACUUM_DRYING_RECIPES
         });
 

@@ -59,8 +59,8 @@ public class MachineRecipeLoader {
 
     private static void SingleMachineRecipes() {
 
-        //  Chemical Dryer
-        MetaTileEntityLoader.registerMachineRecipe(true, CHEMICAL_DRYER,
+        //  Chemical Dehydrator
+        MetaTileEntityLoader.registerMachineRecipe(true, CHEMICAL_DEHYDRATOR,
                 "WCW", "SHS", "WCW",
                 'W', CraftingComponent.CABLE,
                 'C', CraftingComponent.CIRCUIT,
@@ -402,7 +402,7 @@ public class MachineRecipeLoader {
         //  Final Step of Isa Mill Ore Processing, require IV tier.
         ASSEMBLER_RECIPES.recipeBuilder()
                 .input(frameGt, RedSteel)
-                .input(CHEMICAL_DRYER[IV], 4)
+                .input(CHEMICAL_DEHYDRATOR[IV], 4)
                 .input(plate, TitaniumTungstenCarbide, 2)
                 .input(circuit, MarkerMaterials.Tier.IV, 4)
                 .input(ELECTRIC_PISTON_IV, 2)

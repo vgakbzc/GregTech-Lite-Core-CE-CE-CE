@@ -15,7 +15,7 @@ import static gregtech.common.items.MetaItems.SHAPE_MOLD_PLATE;
 import static gregtechfoodoption.GTFOMaterialHandler.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.BIO_REACTOR_RECIPES;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
 
 /**
  * Overrides of GregTechFoodOptions
@@ -91,8 +91,7 @@ public class GTFOOverrideRecipeLoader {
             //  Mozzarella Curd
             //  Use Chemical Dryer, do not use Thermal Centrifuge!
             GTRecipeHandler.removeRecipesByInputs(THERMAL_CENTRIFUGE_RECIPES, SmallMozzarellaCurd.getItemStack());
-
-            CHEMICAL_DRYER_RECIPES.recipeBuilder()
+            CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                     .inputs(SmallMozzarellaCurd.getItemStack())
                     .outputs(DriedMozzarellaCurd.getItemStack())
                     .EUt(VA[LV])

@@ -86,7 +86,7 @@ public class VanadiumProcessing {
                 .buildAndRegister();
 
         //  BiVO4(H2O) -> BiVO4 + H2O
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(BismuthVanadateSolution.getFluid(1000))
                 .output(dust, BismuthVanadate, 6)
                 .fluidOutputs(Water.getFluid(200))

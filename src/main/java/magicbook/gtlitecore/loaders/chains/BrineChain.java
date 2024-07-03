@@ -5,7 +5,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DRYER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 
@@ -51,7 +51,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         //  I? -> I
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(IodineSlurry.getFluid(1200))
                 .output(dust, Iodine)
                 .EUt(VA[EV])
@@ -104,7 +104,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         //  Br(H2O) -> Br + H2O (lost)
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(WetBromine.getFluid(1000))
                 .fluidOutputs(Bromine.getFluid(1000))
                 .EUt(VHA[HV])
@@ -112,7 +112,7 @@ public class BrineChain {
                 .buildAndRegister();
 
         //  Salt Water recycle
-        CHEMICAL_DRYER_RECIPES.recipeBuilder()
+        CHEMICAL_DEHYDRATOR_RECIPES.recipeBuilder()
                 .fluidInputs(DebrominatedWater.getFluid(1000))
                 .fluidOutputs(SaltWater.getFluid(100))
                 .EUt(VH[HV])
