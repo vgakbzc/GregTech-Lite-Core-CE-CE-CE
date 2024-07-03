@@ -193,6 +193,7 @@ public class GTLiteMaterialPropertyAddition {
 
         /* --------------------------------------- Misc Properties --------------------------------------- */
         Germanium.setProperty(PropertyKey.BLAST, new BlastProperty(1211, BlastProperty.GasTier.HIGH));
+        Hafnium.setProperty(PropertyKey.BLAST, new BlastProperty(2227, BlastProperty.GasTier.HIGHER));
         Seaborgium.setProperty(PropertyKey.WIRE, new WireProperties((int) V[UEV], 32, 32, false));
 
         PalladiumRaw.setFormula("PdCl2", true);

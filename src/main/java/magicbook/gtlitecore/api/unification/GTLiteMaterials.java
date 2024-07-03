@@ -973,6 +973,8 @@ public class GTLiteMaterials {
     public static Material MelodicAlloy;
     public static Material StellarAlloy;
 
+    //  Nuclear Materials
+
     public static void init() {
         GTLiteElementMaterials.register();            // 10000-11000
         GTLiteFirstDegreeMaterials.register();        // 11001-12000
@@ -982,5 +984,6 @@ public class GTLiteMaterials {
         GTLiteUnknownCompositionMaterials.register(); // 18000-20000
         GTLiteThirdDegreeMaterials.register();        // 20001-21000
         GTLiteModCompatibilityMaterials.register();   // 21001-22000
+        GTLiteNuclearMaterials.register();            //  22001-24000
     }
 }

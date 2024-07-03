@@ -144,6 +144,10 @@ public class GTLiteConfigHolder {
         @RequiresMcRestart
         public int replicationTimeFactor = 750;
 
+        @Comment({"Enable Nuclear Fission related chains, consists of Nuclear Reactor, Isotope Material processing and recipes.", "Default: true"})
+        @RequiresMcRestart
+        public boolean enableNuclearFissionChain = true;
+
         public MachineOptions() {}
     }
 
