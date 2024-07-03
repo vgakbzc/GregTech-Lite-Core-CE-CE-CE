@@ -375,6 +375,9 @@ public class GTLiteMaterials {
     public static Material AttunedTengam;
     public static Material SiliconNitride;
     public static Material ChromiumSulfate;
+    public static Material ExcitedThoriumBasedLiquidFuel;
+    public static Material ExcitedUraniumBasedLiquidFuel;
+    public static Material ExcitedPlutoniumBasedLiquidFuel;
 
     ///////////////////////////////
     //  Second Degree Materials  //

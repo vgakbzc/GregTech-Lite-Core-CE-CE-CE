@@ -2570,5 +2570,33 @@ public class GTLiteFirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .build()
                 .setFormula("Cr2(SO4)3", true);
+
+        //  11290 Excited Thorium Based Liquid Fuel
+        ExcitedThoriumBasedLiquidFuel = new Material.Builder(getID(), gregtechId("excited_thorium_based_liquid_fuel"))
+                .liquid()
+                .color(ThoriumBasedLiquidFuel.getMaterialRGB() + 10)
+                .components(ThoriumBasedLiquidFuel.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("*" + ThoriumBasedLiquidFuel.getChemicalFormula() + "*", true);
+
+        //  11291 Excited Uranium Based Liquid Fuel
+        ExcitedUraniumBasedLiquidFuel = new Material.Builder(getID(), gregtechId("excited_uranium_based_liquid_fuel"))
+                .liquid()
+                .color(UraniumBasedLiquidFuel.getMaterialRGB() + 10)
+                .components(UraniumBasedLiquidFuel.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("*" + UraniumBasedLiquidFuel.getChemicalFormula() + "*", true);
+
+        //  11292 Excited Plutonium Based Liquid Fuel
+        ExcitedPlutoniumBasedLiquidFuel = new Material.Builder(getID(), gregtechId("excited_plutonium_based_liquid_fuel"))
+                .liquid()
+                .color(PlutoniumBasedLiquidFuel.getMaterialRGB() + 10)
+                .components(PlutoniumBasedLiquidFuel.getMaterialComponents())
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("*" + PlutoniumBasedLiquidFuel.getChemicalFormula() + "*", true);
+
     }
 }

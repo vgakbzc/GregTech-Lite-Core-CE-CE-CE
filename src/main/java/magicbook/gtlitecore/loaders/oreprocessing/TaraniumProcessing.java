@@ -1207,47 +1207,76 @@ public class TaraniumProcessing {
 
     private static void NaquadahReactorRecipes() {
 
+        // --------- Radioactive Liquid Fuels --------
+
+        //  *Th64Li4Ba2Hg*
+        NAQUADAH_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(ExcitedThoriumBasedLiquidFuel.getFluid(10))
+                .EUt(GTLiteConfigHolder.misc.heatValueThoriumBasedLiquidFuel * 4)
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  *U36K8Nq4Rn*
+        NAQUADAH_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(ExcitedUraniumBasedLiquidFuel.getFluid(10))
+                .EUt(GTLiteConfigHolder.misc.heatValueUraniumBasedLiquidFuel * 4)
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  *Pu64Rb8Cs16Nq+2*
+        NAQUADAH_REACTOR_RECIPES.recipeBuilder()
+                .fluidInputs(ExcitedPlutoniumBasedLiquidFuel.getFluid(10))
+                .EUt(GTLiteConfigHolder.misc.heatValuePlutoniumBasedLiquidFuel * 4)
+                .duration(SECOND)
+                .buildAndRegister();
+
+        // -------------- Naquadah Fuels -------------
+
         //  Heavy Naquadah Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyNaquadahFuel.getFluid(1))
                 .EUt(GTLiteConfigHolder.misc.heatValueNaquadahFuel)
-                .duration(180)
+                .duration(9 * SECOND)
                 .buildAndRegister();
 
         //  Medium Naquadah Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(MediumNaquadahFuel.getFluid(1))
                 .EUt(GTLiteConfigHolder.misc.heatValueNaquadahFuel)
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
 
         //  Light Naquadah Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(LightNaquadahFuel.getFluid(1))
                 .EUt(GTLiteConfigHolder.misc.heatValueNaquadahFuel)
-                .duration(60)
+                .duration(3 * SECOND)
                 .buildAndRegister();
+
+        // -------------- Taranium Fuels -------------
 
         //  Heavy Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(HeavyTaraniumFuel.getFluid(1))
                 .EUt(GTLiteConfigHolder.misc.heatValueTaraniumFuel)
-                .duration(360)
+                .duration(18 * SECOND)
                 .buildAndRegister();
 
         //  Medium Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(MediumTaraniumFuel.getFluid(1))
                 .EUt(GTLiteConfigHolder.misc.heatValueTaraniumFuel)
-                .duration(240)
+                .duration(12 * SECOND)
                 .buildAndRegister();
 
         //  Light Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
                 .fluidInputs(LightTaraniumFuel.getFluid(1))
                 .EUt(GTLiteConfigHolder.misc.heatValueTaraniumFuel)
-                .duration(120)
+                .duration(6 * SECOND)
                 .buildAndRegister();
+
+        // --------- Enriched Taranium Fuels ---------
 
         //  Heavy Enriched Taranium Fuel
         NAQUADAH_REACTOR_RECIPES.recipeBuilder()
@@ -1269,6 +1298,8 @@ public class TaraniumProcessing {
                 .EUt(GTLiteConfigHolder.misc.heatValueEnrichedTaraniumFuel)
                 .duration(240)
                 .buildAndRegister();
+
+        // ---------------- Misc Fuels ---------------
 
         //  Naquadah Gas
         if (GTLiteConfigHolder.misc.enableNaquadahGasTurbineRecipe) {

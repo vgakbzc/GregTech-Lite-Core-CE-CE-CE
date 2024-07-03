@@ -7,8 +7,7 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.ELECTRIC_IMPLOSION_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -95,6 +94,19 @@ public class OilChain {
                 .EUt(GTLiteConfigHolder.misc.heatValueThoriumBasedLiquidFuel)
                 .duration((int) (2.5 * SECOND))
                 .buildAndRegister();
+
+        //  Th64Li4Ba2Hg -> *Th64Li4Ba2Hg*
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(ThoriumBasedLiquidFuel.getFluid(1000))
+                .fluidInputs(Helium.getPlasma(250))
+                .fluidOutputs(ExcitedThoriumBasedLiquidFuel.getFluid(L))
+                .EUt(VA[IV])
+                .duration(SECOND)
+                .EUToStart(120000000L) // MK1
+                .buildAndRegister();
+
+        //  *Th64Li4Ba2Hg* Naquadah Reactor Recipe
+        //  back to Taranium Processing class.
     }
 
     private static void UraniumBasedLiquidFuelChain() {
@@ -145,6 +157,19 @@ public class OilChain {
                 .EUt(GTLiteConfigHolder.misc.heatValueUraniumBasedLiquidFuel)
                 .duration(5 * SECOND)
                 .buildAndRegister();
+
+        //  U36K8Nq4Rn -> *U36K8Nq4Rn*
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(UraniumBasedLiquidFuel.getFluid(1000))
+                .fluidInputs(Argon.getPlasma(250))
+                .fluidOutputs(ExcitedUraniumBasedLiquidFuel.getFluid(L))
+                .EUt(VA[LuV])
+                .duration(SECOND)
+                .EUToStart(240000000L) // MK2
+                .buildAndRegister();
+
+        //  *U36K8Nq4Rn* Naquadah Reactor recipe
+        //  back to Taranium Processing class.
     }
 
     private static void PlutoniumBasedLiquidFuelChain() {
@@ -197,6 +222,19 @@ public class OilChain {
                 .EUt(GTLiteConfigHolder.misc.heatValuePlutoniumBasedLiquidFuel)
                 .duration((int) (7.5 * SECOND))
                 .buildAndRegister();
+
+        //  Pu64Rb8Cs16Nq+2 -> *Pu64Rb8Cs16Nq+2*
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(PlutoniumBasedLiquidFuel.getFluid(1000))
+                .fluidInputs(Xenon.getPlasma(250))
+                .fluidOutputs(ExcitedPlutoniumBasedLiquidFuel.getFluid(L))
+                .EUt(VA[ZPM])
+                .duration(SECOND)
+                .EUToStart(360000000L) // MK3
+                .buildAndRegister();
+
+        //  *Pu64Rb8Cs16Nq+2* Naquadah Reactor recipe
+        //  back to Taranium Processing class
 
     }
 

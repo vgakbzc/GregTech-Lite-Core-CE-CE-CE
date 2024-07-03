@@ -3171,6 +3171,9 @@ gregtech.material.tengam=镃
 gregtech.material.attuned_tengam=谐镃
 gregtech.material.silicon_nitride=氮化硅
 gregtech.material.chromium_sulfate=硫酸铬
+gregtech.material.excited_thorium_based_liquid_fuel=钍基流体燃料（激发态）
+gregtech.material.excited_uranium_based_liquid_fuel=铀基流体燃料（激发态）
+gregtech.material.excited_plutonium_based_liquid_fuel=钚基流体燃料（激发态）
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
