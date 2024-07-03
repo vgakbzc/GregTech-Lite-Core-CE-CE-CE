@@ -29,7 +29,7 @@ public class GTLiteElements {
     public static final Element Ax                = addElement(290,    282,    "Astralium",                 "Ax⚶");
     public static final Element Hr                = addElement(640,    789,    "Hikarium",                  "Hr⚶");
     public static final Element En                = addElement(100000, 100000, "Eternity",                  "En⦼");
-    public static final Element Tb                = addElement(349,    175,    "Tiberium",                  "*Tb*");
+    public static final Element Tu                = addElement(349,    175,    "Tiberium",                  "Tu");
     public static final Element Sh                = addElement(230,    306,    "Shirabon",                  "Sh⏧");
     public static final Element Ed                = addElement(433,    362,    "Edenium",                   "◊Ed◊");
     public static final Element Ft                = addElement(655,    408,    "Fatalium",                  "Ft⏧");
@@ -39,6 +39,7 @@ public class GTLiteElements {
     public static final Element Qt                = addElement(300,    300,    "Quantium",                  "Qt");
     public static final Element Nqx               = addElement(174,    360,    "ExtremelyUnstableNaquadah", "Nq⚶");
     public static final Element Ae                = addElement(88888,  88888,  "Aetherium",                 "Ae⦼");
+    public static final Element Ou                = addElement(349,    375,    "Orundum",                   "Ou");
 
     /**
      * Add Element to GregTech Element.

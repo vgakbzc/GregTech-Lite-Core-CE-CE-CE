@@ -10,6 +10,7 @@ import magicbook.gtlitecore.api.unification.GTLiteElements;
 import net.minecraft.init.Enchantments;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.unification.material.Materials.NaquadahEnriched;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
@@ -370,11 +371,14 @@ public class GTLiteElementMaterials {
 
         //  10025 Tiberium
         Tiberium = new Material.Builder(getID(), gregtechId("tiberium"))
-                .dust()
+                .ore(2, 2)
+                .gem()
                 .liquid()
+                .addOreByproducts(NaquadahEnriched)
                 .color(0x79B349)
-                .iconSet(BRIGHT)
-                .element(GTLiteElements.Tb)
+                .iconSet(RUBY)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
+                .element(GTLiteElements.Tu)
                 .build();
 
         //  10026 Luna Silver
@@ -483,8 +487,10 @@ public class GTLiteElementMaterials {
 
         //  10033 Quantium
         Quantium = new Material.Builder(getID(), gregtechId("quantium"))
+                .ore(2, 2)
                 .ingot()
                 .fluid()
+                .plasma()
                 .color(0x00D10B)
                 .iconSet(SHINY)
                 .element(GTLiteElements.Qt)
@@ -523,6 +529,18 @@ public class GTLiteElementMaterials {
                         .magnetic()
                         .enchantment(Enchantments.SHARPNESS, 99)
                         .build())
+                .build();
+
+        //  10036 Orundum
+        Orundum = new Material.Builder(getID(), gregtechId("orundum"))
+                .ore(2, 2)
+                .gem()
+                .liquid()
+                .addOreByproducts(Tiberium)
+                .color(0xCD2626)
+                .iconSet(DIAMOND)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
+                .element(GTLiteElements.Ou)
                 .build();
     }
 }

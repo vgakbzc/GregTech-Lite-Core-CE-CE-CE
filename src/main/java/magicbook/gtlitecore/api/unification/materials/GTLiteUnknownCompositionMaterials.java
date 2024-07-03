@@ -286,19 +286,22 @@ public class GTLiteUnknownCompositionMaterials {
         HeavyHyperFuel = new Material.Builder(getID(), gregtechId("heavy_hyper_fuel"))
                 .liquid()
                 .color(0x1E5064)
-                .build();
+                .build()
+                .setFormula("OrTn2NqPu?", true);
 
         //  18040 Medium Hyper Fuel
         MediumHyperFuel = new Material.Builder(getID(), gregtechId("medium_hyper_fuel"))
                 .liquid()
                 .color(0xDC0A0A)
-                .build();
+                .build()
+                .setFormula("AmTn2NqU?", true);
 
         //  18041 Light Hyper Fuel
         LightHyperFuel = new Material.Builder(getID(), gregtechId("light_hyper_fuel"))
                 .liquid()
                 .color(0x8C148C)
-                .build();
+                .build()
+                .setFormula("EuTn2NqU?", true);
 
         //  18042 Almandine Front
         AlmandineFront = new Material.Builder(getID(), gregtechId("almandine_front"))
@@ -563,7 +566,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .liquid(new FluidBuilder().attributes(FluidAttributes.ACID))
                 .color(0x9400D3)
                 .build()
-                .setFormula("Dc?Ma", true);
+                .setFormula("Dc?", true);
 
         //  24056 Dragon Blood
         DragonBlood = new Material.Builder(getID(), gregtechId("dragon_blood"))
@@ -572,7 +575,7 @@ public class GTLiteUnknownCompositionMaterials {
                 .color(0xDC2814)
                 .iconSet(DULL)
                 .build()
-                .setFormula("Dc+?Ma", true);
+                .setFormula("Dc?", true);
 
         //  24057 Chalcogen Anode Mud
         ChalcogenAnodeMud = new Material.Builder(getID(), gregtechId("chalcogen_anode_mud"))
@@ -769,19 +772,22 @@ public class GTLiteUnknownCompositionMaterials {
         HyperFuelMkII = new Material.Builder(getID(), gregtechId("hyper_fuel_mk_ii"))
                 .liquid()
                 .color(0xE00059)
-                .build();
+                .build()
+                .setFormula("OuNq⚶Qt((Or, Am, Eu)Tn2NqPu)?", true);
 
         //  24084 Hyper Fuel Mk III
         HyperFuelMkIII = new Material.Builder(getID(), gregtechId("hyper_fuel_mk_iii"))
                 .liquid()
                 .color(0xB900FF)
-                .build();
+                .build()
+                .setFormula("§cR§de§eAx⚶(Mh2Nq+O14)(Ad3Pm2)?(OuNq⚶Qt((Or, Am, Eu)Tn2NqPu))2?", true);
 
         //  24085 Hyper Fuel Mk IV
         HyperFuelMkIV = new Material.Builder(getID(), gregtechId("hyper_fuel_mk_iv"))
                 .liquid()
                 .color(0xFFC951)
-                .build();
+                .build()
+                .setFormula("Hy⚶Dc2(§cR§de§eAx⚶(Mh2Nq+O14)(Ad3Pm2)?(OuNq⚶Qt((Or, Am, Eu)Tn2NqPu))2)4?", true);
 
         //  24086 Blood Cells
         BloodCells = new Material.Builder(getID(), gregtechId("blood_cells"))

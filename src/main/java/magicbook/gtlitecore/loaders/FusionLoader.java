@@ -283,6 +283,16 @@ public class FusionLoader {
                 .duration((int) (14.8 * SECOND))
                 .buildAndRegister();
 
+        //  Krypton (plasma) + Tiberium -> Quantium (plasma)
+        FUSION_RECIPES.recipeBuilder()
+                .fluidInputs(Krypton.getPlasma(1000))
+                .fluidInputs(Tiberium.getFluid(1000))
+                .fluidOutputs(Quantium.getPlasma(2000))
+                .EUt(VA[ZPM])
+                .duration(10 * SECOND)
+                .EUToStart(380000000L) // MK3
+                .buildAndRegister();
+
         //  Americium + Neon -> Dubnium
         FUSION_RECIPES.recipeBuilder()
                 .fluidInputs(Americium.getFluid(16))

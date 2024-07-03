@@ -597,6 +597,20 @@ public class SpaceElevator {
                 3,
                 VA[UEV]);
 
+        //  Orundum-Tiberium-Quantium vein
+        createMiningModuleRecipe(2, MINING_DRONE_UEV,
+                Orundum, 2000,
+                Orundum, 2000,
+                Tiberium, 4000,
+                Tiberium, 4000,
+                Tiberium, 4000,
+                Quantium, 8000,
+                Quantium, 8000,
+                Quantium, 8000,
+                Quantium, 8000,
+                3,
+                VA[UEV]);
+
         //  UIV Mining Drone
 
         //  Enriched Mithril-Proto Adamantium vein

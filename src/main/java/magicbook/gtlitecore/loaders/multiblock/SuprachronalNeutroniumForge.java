@@ -59,6 +59,7 @@ public class SuprachronalNeutroniumForge {
         createTransmutationRecipes(Xenon);
         createTransmutationRecipes(Radon);
         createTransmutationRecipes(Chrome);
+        createTransmutationRecipes(Quantium);
         createTransmutationRecipes(Vibranium);
         createTransmutationRecipes(Mithril);
         createTransmutationRecipes(Taranium);

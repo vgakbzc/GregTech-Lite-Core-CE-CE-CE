@@ -29,6 +29,7 @@ public class GTLiteThirdDegreeMaterials {
         //  20001 Proto Adamantium
         ProtoAdamantium = new Material.Builder(getID(), gregtechId("proto_adamantium"))
                 .dust()
+                .liquid()
                 .ore(1, 1, true)
                 .addOreByproducts(Adamantite)
                 .color(0xAA0D0D)
@@ -40,6 +41,7 @@ public class GTLiteThirdDegreeMaterials {
         //  20002 Enriched Mithril
         EnrichedMithril = new Material.Builder(getID(), gregtechId("enriched_mithril"))
                 .dust()
+                .liquid()
                 .ore(1, 1, true)
                 .addOreByproducts(Mithril)
                 .color(0x2B45DF)
