@@ -272,6 +272,7 @@ public class CommonProxy {
         MetaTileEntityLargeChemicalComplex.CatalystWorkableHandler.addCatalyst();
 
         GTLiteLog.logger.info("Registering all recipes and Integration recipes...");
+
         RecipeManager.registerRecipes();
         GTLiteIntegration.registerRecipes();
     }

@@ -1,7 +1,6 @@
 package magicbook.gtlitecore.api.unification.materials;
 
 import gregtech.api.fluids.FluidBuilder;
-import gregtech.api.unification.Elements;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.properties.BlastProperty;
 import gregtech.api.unification.material.properties.ToolProperty;
@@ -10,12 +9,15 @@ import magicbook.gtlitecore.api.unification.GTLiteElements;
 import net.minecraft.init.Enchantments;
 
 import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.V;
+import static gregtech.api.unification.Elements.*;
 import static gregtech.api.unification.material.Materials.NaquadahEnriched;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.GTLiteValues.addObfuscatedFormula;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
+import static magicbook.gtlitecore.api.unification.GTLiteElements.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
 
@@ -43,7 +45,7 @@ public class GTLiteElementMaterials {
                 .color(0x72A0C1)
                 .iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_ROTOR, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_FRAME, GENERATE_FINE_WIRE, GENERATE_LONG_ROD)
-                .element(GTLiteElements.Or)
+                .element(Or)
                 .toolStats(ToolProperty.Builder.of(7.0F, 25.0F, 17000, 22)
                                        .magnetic()
                                        .enchantment(Enchantments.FORTUNE, 5)
@@ -60,7 +62,7 @@ public class GTLiteElementMaterials {
                 .color(0xC880FF)
                 .iconSet(SHINY)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_DOUBLE_PLATE, GENERATE_FINE_WIRE, GENERATE_DENSE, GENERATE_FRAME)
-                .element(GTLiteElements.Vb)
+                .element(Vb)
                 .blast(4852, BlastProperty.GasTier.HIGH)
                 .rotorStats(30.0F, 15.0F, 640000)
                 .build();
@@ -73,7 +75,7 @@ public class GTLiteElementMaterials {
                 .color(0xFF0040)
                 .iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_ROUND, GENERATE_SPRING, GENERATE_DENSE, GENERATE_FINE_WIRE)
-                .element(GTLiteElements.Ad)
+                .element(Ad)
                 .blast(5225, BlastProperty.GasTier.HIGH)
                 .cableProperties(V[UHV], 24, 24, false)
                 .rotorStats(35.0F, 17.5F, 500000)
@@ -87,7 +89,7 @@ public class GTLiteElementMaterials {
                 .color(0x4F404F)
                 .iconSet(METALLIC)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME, GENERATE_ROTOR)
-                .element(GTLiteElements.Tn)
+                .element(Tn)
                 .itemPipeProperties(1920, 128)
                 .build();
 
@@ -98,7 +100,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0x428fdb)
                 .iconSet(METALLIC)
-                .element(GTLiteElements.Mh)
+                .element(Mh)
                 .blast(10400, BlastProperty.GasTier.HIGHEST)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
@@ -108,7 +110,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .liquid(new FluidBuilder().temperature((int) V[UIV]).customStill())
                 .iconSet(CUSTOM_INFINITY)
-                .element(GTLiteElements.Infinity)
+                .element(If)
                 .blast(b -> b
                         .temp(12600, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 5901))
@@ -128,7 +130,7 @@ public class GTLiteElementMaterials {
                 .liquid(new FluidBuilder().temperature(660450).customStill())
                 .color(0xC0FFFF)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.CrystalMatrix)
+                .element(Cy)
                 .fluidPipeProperties(40000, 10000, true, true, true, true)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_LENS)
                 .build();
@@ -143,7 +145,7 @@ public class GTLiteElementMaterials {
                         .temp(13500)
                         .blastStats(VA[UHV], 3660)
                         .vacuumStats(VA[ZPM], 1880))
-                .element(GTLiteElements.Ichorium)
+                .element(Icx)
                 .cableProperties(V[UEV], 36, 18, false)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .build();
@@ -152,7 +154,7 @@ public class GTLiteElementMaterials {
         IchorLiquid = new Material.Builder(getID(), gregtechId("ichor_liquid"))
                 .plasma(new FluidBuilder().temperature(214748))
                 .color(0xE5A559)
-                .element(GTLiteElements.IchorLiquid)
+                .element(Ic)
                 .build();
 
         //  10008 Cosmic Neutronium
@@ -166,7 +168,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[UXV], 200)
                         .blastStats(VA[UXV], 200))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_FINE_WIRE, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LONG_ROD)
-                .element(GTLiteElements.SpNt)
+                .element(SpNt)
                 .build();
 
         //  10009 Spacetime
@@ -179,7 +181,7 @@ public class GTLiteElementMaterials {
                         .blastStats(VA[OpV], 100)
                         .vacuumStats(VA[OpV], 100))
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_RING, GENERATE_ROTOR, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS, GENERATE_LONG_ROD, GENERATE_FOIL)
-                .element(GTLiteElements.SpaceTime)
+                .element(St)
                 .rotorStats(360.0F, 1.0F, 524288000)
                 .build()
                 .setFormula(addObfuscatedFormula(), false);
@@ -190,7 +192,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .color(0xFFFF33)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.So)
+                .element(So)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
@@ -205,7 +207,7 @@ public class GTLiteElementMaterials {
                 .liquid(new FluidBuilder().temperature((int) (V[UIV] - V[UV])))
                 .color(0xBE00FF)
                 .iconSet(NUCLEAR)
-                .element(GTLiteElements.Fs)
+                .element(Fs)
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV], 3340))
@@ -218,7 +220,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .liquid()
                 .plasma(new FluidBuilder().temperature((int) (V[UXV] - V[LuV])))
-                .element(GTLiteElements.Hy)
+                .element(Hy)
                 .color(0xDC784B)
                 .iconSet(ENRICHED)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_LENS)
@@ -231,7 +233,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .color(0x20142C)
                 .iconSet(DULL)
-                .element(GTLiteElements.Vd)
+                .element(Vd)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_ROD, GENERATE_FRAME)
                 .itemPipeProperties(36, 256)
                 .build();
@@ -246,7 +248,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV]))
-                .element(GTLiteElements.AstralTitanium)
+                .element(Tix)
                 .cableProperties(V[UIV], 32, 12, false)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_RING)
                 .build();
@@ -261,7 +263,7 @@ public class GTLiteElementMaterials {
                 .blast(b -> b
                         .temp(12000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UHV]))
-                .element(GTLiteElements.CelestialTungsten)
+                .element(Wx)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_ROD, GENERATE_BOLT_SCREW, GENERATE_FRAME, GENERATE_FINE_WIRE, GENERATE_GEAR)
                 .itemPipeProperties(8360, 496)
                 .build();
@@ -272,7 +274,7 @@ public class GTLiteElementMaterials {
                 .gas()
                 .color(0xE61C24)
                 .iconSet(SHINY)
-                .element(Elements.Og)
+                .element(Og)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_GEAR, GENERATE_ROTOR, GENERATE_FRAME)
                 .blast(10380, BlastProperty.GasTier.HIGHEST)
                 .build();
@@ -283,7 +285,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .color(0x521973)
                 .iconSet(SHINY)
-                .element(Elements.Fl)
+                .element(Fl)
                 .blast(11000, BlastProperty.GasTier.HIGHEST)
                 .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_BOLT_SCREW)
                 .build();
@@ -294,7 +296,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0x2D3A9D)
                 .iconSet(BRIGHT)
-                .element(Elements.Hs)
+                .element(Hs)
                 .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_GEAR, GENERATE_ROTOR)
                 .blast(14000, BlastProperty.GasTier.HIGHEST)
                 .build();
@@ -305,7 +307,7 @@ public class GTLiteElementMaterials {
                 .liquid(new FluidBuilder().temperature((int) (V[OpV] - V[IV])))
                 .color(0x29288A)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Gx)
+                .element(Gx)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE)
                 .cableProperties(V[OpV], 64, 32, false)
                 .build();
@@ -316,7 +318,7 @@ public class GTLiteElementMaterials {
                 .liquid(new FluidBuilder().temperature((int) V[MAX]))
                 .color(0xD872EB)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Uv)
+                .element(Uv)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FOIL, GENERATE_SPRING, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 128, 64, false)
                 .build();
@@ -328,7 +330,7 @@ public class GTLiteElementMaterials {
                 .plasma(new FluidBuilder().temperature((int) V[UV]))
                 .color(0x6666FF)
                 .iconSet(CUSTOM_DEGENERATE_RHENIUM)
-                .element(Elements.Rh)
+                .element(Rh)
                 .flags(GENERATE_PLATE)
                 .build()
                 .setFormula("§cR§de", false);
@@ -339,7 +341,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .color(0x3B48A7)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Ax)
+                .element(Ax)
                 .blast(15000, BlastProperty.GasTier.HIGHEST)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_SPRING)
                 .cableProperties(V[UIV], 48, 24, false)
@@ -351,7 +353,7 @@ public class GTLiteElementMaterials {
                 .liquid()
                 .color(0xCCF7FB)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Hr)
+                .element(Hr)
                 .blast(b -> b
                         .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 480)
@@ -365,7 +367,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .liquid()
                 .iconSet(CUSTOM_ETERNITY)
-                .element(GTLiteElements.En)
+                .element(En)
                 .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_FRAME, GENERATE_GEAR, GENERATE_SMALL_GEAR, GENERATE_LENS, GENERATE_ROTOR)
                 .build();
 
@@ -378,7 +380,7 @@ public class GTLiteElementMaterials {
                 .color(0x79B349)
                 .iconSet(RUBY)
                 .flags(GENERATE_PLATE, GENERATE_LENS)
-                .element(GTLiteElements.Tu)
+                .element(Tu)
                 .build();
 
         //  10026 Luna Silver
@@ -387,7 +389,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0x0B8596)
                 .iconSet(SHINY)
-                .element(GTLiteElements.Ln)
+                .element(Ln)
                 .blast(b -> b
                         .temp(14800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UEV], 800)
@@ -401,7 +403,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0xe0156d)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Sh)
+                .element(Sh)
                 .blast(b -> b
                         .temp(18000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[UXV], 144)
@@ -416,7 +418,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0xFFE140)
                 .iconSet(ENRICHED)
-                .element(GTLiteElements.Ed)
+                .element(Ed)
                 .blast(b -> b
                         .temp(17800, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[OpV], 365)
@@ -442,7 +444,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0xFFECEF)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Ft)
+                .element(Ft)
                 .blast(b -> b
                         .temp(16000, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[OpV], 27)
@@ -456,7 +458,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .fluid()
                 .iconSet(CUSTOM_OMNIUM)
-                .element(GTLiteElements.Om)
+                .element(Om)
                 .blast(b -> b
                         .temp(18400, BlastProperty.GasTier.HIGHEST)
                         .blastStats(VA[MAX], 999)
@@ -469,7 +471,7 @@ public class GTLiteElementMaterials {
                 .ingot()
                 .fluid()
                 .iconSet(CUSTOM_MAGMATTER)
-                .element(GTLiteElements.M)
+                .element(Mx)
                 .flags(NO_UNIFICATION, GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE, GENERATE_DOUBLE_PLATE)
                 .cableProperties(V[MAX], 1024, 36, false)
                 .build();
@@ -480,7 +482,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0xFFD6FB)
                 .iconSet(BRIGHT)
-                .element(GTLiteElements.Pm)
+                .element(Pi)
                 .flags(GENERATE_PLATE, GENERATE_FOIL, GENERATE_FINE_WIRE)
                 .cableProperties(V[MAX], 500, 125, false)
                 .build();
@@ -493,7 +495,7 @@ public class GTLiteElementMaterials {
                 .plasma()
                 .color(0x00D10B)
                 .iconSet(SHINY)
-                .element(GTLiteElements.Qt)
+                .element(Qt)
                 .blast(b -> b
                         .temp(5400, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[IV], 300)
@@ -506,7 +508,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0x062605)
                 .iconSet(SHINY)
-                .element(GTLiteElements.Nqx)
+                .element(Nqx)
                 .blast(b -> b
                         .temp(7000, BlastProperty.GasTier.HIGHER)
                         .blastStats(VA[ZPM], 800)
@@ -520,7 +522,7 @@ public class GTLiteElementMaterials {
                 .fluid()
                 .color(0xFF7687)
                 .iconSet(ENRICHED)
-                .element(GTLiteElements.Ae)
+                .element(Ae)
                 .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_DOUBLE_PLATE, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_GEAR)
                 .cableProperties(V[MAX], 1000, 1, false)
                 .fluidPipeProperties(999999, 999999, true)
@@ -540,7 +542,7 @@ public class GTLiteElementMaterials {
                 .color(0xCD2626)
                 .iconSet(DIAMOND)
                 .flags(GENERATE_PLATE, GENERATE_LENS)
-                .element(GTLiteElements.Ou)
+                .element(Ou)
                 .build();
     }
 }
