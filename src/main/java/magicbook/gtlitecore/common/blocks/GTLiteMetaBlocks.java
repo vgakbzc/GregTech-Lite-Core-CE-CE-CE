@@ -2,6 +2,7 @@ package magicbook.gtlitecore.common.blocks;
 
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.GTLiteAPI;
+import magicbook.gtlitecore.common.blocks.components.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -47,6 +48,14 @@ public class GTLiteMetaBlocks {
     public static BlockEnergyCell ENERGY_CELL;
     public static BlockModulationCavity MODULATION_CAVITY;
     public static BlockResonantCavity RESONANT_CAVITY;
+    public static BlockMotorCasing MOTOR_CASING;
+    public static BlockPistonCasing PISTON_CASING;
+    public static BlockRobotArmCasing ROBOT_ARM_CASING;
+    public static BlockPumpCasing PUMP_CASING;
+    public static BlockConveyorCasing CONVEYOR_CASING;
+    public static BlockEmitterCasing EMITTER_CASING;
+    public static BlockSensorCasing SENSOR_CASING;
+    public static BlockFieldGenCasing FIELD_GEN_CASING;
 
     private GTLiteMetaBlocks() {}
 
@@ -190,6 +199,38 @@ public class GTLiteMetaBlocks {
         RESONANT_CAVITY = new BlockResonantCavity();
         RESONANT_CAVITY.setRegistryName("resonant_cavity");
         RESONANT_CAVITY.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        MOTOR_CASING = new BlockMotorCasing();
+        MOTOR_CASING.setRegistryName("motor_casing");
+        MOTOR_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        PISTON_CASING = new BlockPistonCasing();
+        PISTON_CASING.setRegistryName("piston_casing");
+        PISTON_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        ROBOT_ARM_CASING = new BlockRobotArmCasing();
+        ROBOT_ARM_CASING.setRegistryName("robot_arm_casing");
+        ROBOT_ARM_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        PUMP_CASING = new BlockPumpCasing();
+        PUMP_CASING.setRegistryName("pump_casing");
+        PUMP_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        CONVEYOR_CASING = new BlockConveyorCasing();
+        CONVEYOR_CASING.setRegistryName("conveyor_casing");
+        CONVEYOR_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        EMITTER_CASING = new BlockEmitterCasing();
+        EMITTER_CASING.setRegistryName("emitter_casing");
+        EMITTER_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        SENSOR_CASING = new BlockSensorCasing();
+        SENSOR_CASING.setRegistryName("sensor_casing");
+        SENSOR_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
+
+        FIELD_GEN_CASING = new BlockFieldGenCasing();
+        FIELD_GEN_CASING.setRegistryName("field_gen_casing");
+        FIELD_GEN_CASING.setCreativeTab(GTLiteAPI.TAB_GTLITE_BLOCK);
     }
 
     @SideOnly(Side.CLIENT)
@@ -224,6 +265,14 @@ public class GTLiteMetaBlocks {
         registerItemModel(ENERGY_CELL);
         registerItemModel(MODULATION_CAVITY);
         registerItemModel(RESONANT_CAVITY);
+        registerItemModel(MOTOR_CASING);
+        registerItemModel(PISTON_CASING);
+        registerItemModel(ROBOT_ARM_CASING);
+        registerItemModel(PUMP_CASING);
+        registerItemModel(CONVEYOR_CASING);
+        registerItemModel(EMITTER_CASING);
+        registerItemModel(SENSOR_CASING);
+        registerItemModel(FIELD_GEN_CASING);
 
         WIRE_COIL.onModelRegister();
         TRANSPARENT_CASING.onModelRegister();
