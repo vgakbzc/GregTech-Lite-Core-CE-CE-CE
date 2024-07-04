@@ -51,7 +51,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.rotorHolders;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.formatNumbers;
 
 public class MetaTileEntityMegaTurbine extends FuelMultiblockController implements ITieredMetaTileEntity, ITurbineMode, IProgressBarMultiblock {
 

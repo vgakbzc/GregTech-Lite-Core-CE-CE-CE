@@ -41,7 +41,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 
 public class AE2BlockBuilder implements IAE2BlockBuilder {
 

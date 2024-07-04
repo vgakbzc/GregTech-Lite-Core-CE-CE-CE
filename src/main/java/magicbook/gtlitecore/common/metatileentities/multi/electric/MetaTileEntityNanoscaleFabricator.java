@@ -19,7 +19,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityItemBus;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.NoCoilTemperatureProperty;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockCrucible;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
@@ -159,7 +159,7 @@ public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockContro
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
             textList.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.max_temperature",
-                    TextFormatting.RED + GTLiteUtils.formatNumbers(temperature) + "K"));
+                    TextFormatting.RED + GTLiteUtility.formatNumbers(temperature) + "K"));
         }
         super.addDisplayText(textList);
     }

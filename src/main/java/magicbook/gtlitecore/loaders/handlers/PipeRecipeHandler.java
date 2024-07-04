@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.info.MaterialFlags.NO_SMASHING;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getVoltageMultiplier;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getVoltageMultiplier;
 
 public class PipeRecipeHandler {
 

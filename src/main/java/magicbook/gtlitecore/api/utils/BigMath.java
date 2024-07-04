@@ -93,8 +93,8 @@ public class BigMath {
      * @param max    Range Maximium point.
      * @return       Value in given range.
      *
-     * @see GTLiteUtils#clamp(int, int, int)
-     * @see GTLiteUtils#clamp(double, double, double)
+     * @see GTLiteUtility#clamp(int, int, int)
+     * @see GTLiteUtility#clamp(double, double, double)
      */
     public static BigInteger clamp(BigInteger value, BigInteger min, BigInteger max) {
         int result = value.compareTo(min);

@@ -25,8 +25,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getFluidById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.isNotStaticWater;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getFluidById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.isNotStaticWater;
 
 /**
  * Fishing Pond Recipe Logic.

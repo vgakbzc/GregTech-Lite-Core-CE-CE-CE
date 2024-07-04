@@ -19,7 +19,7 @@ import static gregtech.api.GTValues.ULV;
 import static gregtech.api.GTValues.VH;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.AUTO_CHISEL_RECIPES;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.*;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.*;
 import static magicbook.gtlitecore.integration.chisel.ChiselGroupHelper.addGroup;
 
 public class AutoChiselRecipeLoader {

@@ -60,7 +60,7 @@ import static gregtech.api.unification.material.Materials.Gold;
 import static gregtech.api.unification.material.Materials.Silver;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.optionalStates;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.clamp;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.clamp;
 
 /**
  * PCB Factory

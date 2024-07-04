@@ -1,7 +1,7 @@
 package magicbook.gtlitecore.common.blocks;
 
 import gregtech.api.block.VariantBlock;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.resources.I18n;
@@ -33,7 +33,7 @@ public class BlockCrucible extends VariantBlock<BlockCrucible.CrucibleType> {
                                @NotNull List<String> tooltip,
                                @NotNull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(I18n.format("gregtech.multiblock.blast_furnace.max_temperature", TextFormatting.RED + GTLiteUtils.formatNumbers(getState(stack).getTemperature()) + "K"));
+        tooltip.add(I18n.format("gregtech.multiblock.blast_furnace.max_temperature", TextFormatting.RED + GTLiteUtility.formatNumbers(getState(stack).getTemperature()) + "K"));
     }
 
     public enum CrucibleType implements IStringSerializable {

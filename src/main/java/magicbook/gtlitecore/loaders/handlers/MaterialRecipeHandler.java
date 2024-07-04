@@ -17,7 +17,7 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getVoltageMultiplier;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getVoltageMultiplier;
 
 public class MaterialRecipeHandler {
 

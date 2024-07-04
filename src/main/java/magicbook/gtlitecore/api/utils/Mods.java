@@ -17,8 +17,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 
 /**
  * Mods Interaction/Compability Warning utilities
@@ -151,7 +151,7 @@ public enum Mods {
      * @param name  Item Stack name.
      * @return      Item Stack in Mod ID mod.
      *
-     * @see GTLiteUtils#getItemById(String, String)
+     * @see GTLiteUtility#getItemById(String, String)
      */
     @NotNull
     public ItemStack getItemByID(String name) {
@@ -165,7 +165,7 @@ public enum Mods {
      * @param amount  Amount of Item Stack.
      * @return        Item Stack with current amount in Mod ID mod.
      *
-     * @see GTLiteUtils#getItemById(String, String, int)
+     * @see GTLiteUtility#getItemById(String, String, int)
      */
     @NotNull
     public ItemStack getItemByID(String name, int amount) {
@@ -179,7 +179,7 @@ public enum Mods {
      * @param nbt   Item Stack NBT data.
      * @return      Item Stack with NBT tag in Mod ID mod.
      *
-     * @see GTLiteUtils#getItemById(String, String, NBTTagCompound)
+     * @see GTLiteUtility#getItemById(String, String, NBTTagCompound)
      */
     @NotNull
     public ItemStack getItemByID(String name, NBTTagCompound nbt) {
@@ -194,7 +194,7 @@ public enum Mods {
      * @param nbt     Item Stack NBT data.
      * @return        Item Stack with NBT tag and current amount in Mod ID mod.
      *
-     * @see GTLiteUtils#getItemById(String, String, int, NBTTagCompound)
+     * @see GTLiteUtility#getItemById(String, String, int, NBTTagCompound)
      */
     @NotNull
     public ItemStack getItemByID(String name, int amount, NBTTagCompound nbt) {
@@ -208,7 +208,7 @@ public enum Mods {
      * @param meta  Metadata of {@code name} Item Stack.
      * @return      Item stack in Mod ID mod which named by {@code name} and has metadata {@code meta}.
      *
-     * @see GTLiteUtils#getMetaItemById(String, String, int)
+     * @see GTLiteUtility#getMetaItemById(String, String, int)
      */
     @NotNull
     public ItemStack getMetaItemByID(String name, int meta) {
@@ -223,7 +223,7 @@ public enum Mods {
      * @param amount  Amount of Item Stack.
      * @return        Item stack with current amount in Mod ID mod which named by {@code name} and has metadata {@code meta}.
      *
-     * @see GTLiteUtils#getMetaItemById(String, String, int, int)
+     * @see GTLiteUtility#getMetaItemById(String, String, int, int)
      */
     @NotNull
     public ItemStack getMetaItemByID(String name, int meta, int amount) {
@@ -238,7 +238,7 @@ public enum Mods {
      * @param nbt   NBT data of {@code name} Item Stack.
      * @return      Item stack with NBT data in Mod ID mod which named by {@code name} and has metadata {@code meta}.
      *
-     * @see GTLiteUtils#getMetaItemById(String, String, int, NBTTagCompound)
+     * @see GTLiteUtility#getMetaItemById(String, String, int, NBTTagCompound)
      */
     @NotNull
     public ItemStack getMetaItemByID(String name, int meta, NBTTagCompound nbt) {
@@ -254,7 +254,7 @@ public enum Mods {
      * @param nbt     NBT data of {@code name} Item Stack.
      * @return        Item stack with NBT data and current amount in Mod ID mod which named by {@code name} and has metadata {@code meta}.
      *
-     * @see GTLiteUtils#getMetaItemById(String, String, int, int, NBTTagCompound)
+     * @see GTLiteUtility#getMetaItemById(String, String, int, int, NBTTagCompound)
      */
     public ItemStack getMetaItemByID(String name, int meta, int amount, NBTTagCompound nbt) {
         return getMetaItemById(this.ID, name, meta, amount, nbt);

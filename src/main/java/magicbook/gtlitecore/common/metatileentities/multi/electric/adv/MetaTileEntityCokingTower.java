@@ -22,7 +22,7 @@ import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.*;
 import gregtech.common.metatileentities.MetaTileEntities;
 import gregtech.core.sound.GTSoundEvents;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.block.state.IBlockState;
@@ -71,10 +71,10 @@ public class MetaTileEntityCokingTower extends RecipeMapMultiblockController {
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        int maxLeng = GTLiteUtils.maxLength(new ArrayList<List<IBlockState>>() {{
+        int maxLeng = GTLiteUtility.maxLength(new ArrayList<List<IBlockState>>() {{
             add(listCoil);
         }});
-        finalListCoil = GTLiteUtils.consistentList(listCoil, maxLeng);
+        finalListCoil = GTLiteUtility.consistentList(listCoil, maxLeng);
 
         init = true;
     }

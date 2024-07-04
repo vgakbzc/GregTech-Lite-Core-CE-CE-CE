@@ -9,8 +9,8 @@ import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 
 public class StorageDrawersMiscRecipes {
 

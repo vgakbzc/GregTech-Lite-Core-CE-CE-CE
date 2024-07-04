@@ -21,7 +21,7 @@ import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.ComponentCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockCleanroomCasing;
@@ -75,7 +75,7 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
         Object type = context.get("CACasingTieredStats");
-        this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
+        this.casingTier = GTLiteUtility.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }
 

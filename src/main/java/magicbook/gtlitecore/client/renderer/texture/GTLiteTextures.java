@@ -13,7 +13,7 @@ import magicbook.gtlitecore.client.renderer.texture.custom.TurbineMixerRenderer;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.client.renderer.texture.TextureMap;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 
 public class GTLiteTextures {
 

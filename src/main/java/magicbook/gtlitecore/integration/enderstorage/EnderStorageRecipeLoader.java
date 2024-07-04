@@ -7,8 +7,8 @@ import net.minecraft.init.Items;
 
 import static gregtech.api.unification.material.Materials.Obsidian;
 import static gregtech.api.unification.ore.OrePrefix.plate;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.FIELD_GENERATOR_ULV;
 
 public class EnderStorageRecipeLoader {

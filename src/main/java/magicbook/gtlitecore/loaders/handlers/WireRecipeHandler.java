@@ -8,7 +8,7 @@ import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.ore.OrePrefix.wireGtSingle;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getVoltageMultiplier;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getVoltageMultiplier;
 
 public class WireRecipeHandler {
 

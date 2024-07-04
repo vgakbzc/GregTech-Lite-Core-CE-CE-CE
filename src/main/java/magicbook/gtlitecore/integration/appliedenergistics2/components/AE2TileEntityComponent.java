@@ -8,7 +8,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import java.util.ArrayList;
 import java.util.List;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 
 public class AE2TileEntityComponent implements IPreInitComponent {
 

@@ -17,7 +17,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockSupportCasing;
 import magicbook.gtlitecore.common.blocks.BlockTransparentUniqueCasing;
@@ -76,13 +76,13 @@ public class MetaTileEntityElementReplicator extends RecipeMapMultiblockControll
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        int maxLeng = GTLiteUtils.maxLength(new ArrayList<List<IBlockState>>() {{
+        int maxLeng = GTLiteUtility.maxLength(new ArrayList<List<IBlockState>>() {{
             add(ListModulationCavity);
             add(ListResonantCavity);
         }});
 
-        finalListModulationCavity = GTLiteUtils.consistentList(ListModulationCavity, maxLeng);
-        finalListResonantCavity = GTLiteUtils.consistentList(ListResonantCavity, maxLeng);
+        finalListModulationCavity = GTLiteUtility.consistentList(ListModulationCavity, maxLeng);
+        finalListResonantCavity = GTLiteUtility.consistentList(ListResonantCavity, maxLeng);
 
         init = true;
     }
@@ -92,10 +92,10 @@ public class MetaTileEntityElementReplicator extends RecipeMapMultiblockControll
         super.formStructure(context);
         Object modulationCavityTier = context.get("ModulationCavityTieredStats");
         Object resonantCavityTier = context.get("ResonantCavityTieredStats");
-        this.modulationCavityTier = GTLiteUtils.getOrDefault(
+        this.modulationCavityTier = GTLiteUtility.getOrDefault(
                 () -> modulationCavityTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) modulationCavityTier).getIntTier(), 0);
-        this.resonantCavityTier = GTLiteUtils.getOrDefault(
+        this.resonantCavityTier = GTLiteUtility.getOrDefault(
                 () -> resonantCavityTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) resonantCavityTier).getIntTier(), 0);
         this.writeCustomData(GTLiteDataCode.ChannelElementReplicator1, buf -> buf.writeInt(this.modulationCavityTier));

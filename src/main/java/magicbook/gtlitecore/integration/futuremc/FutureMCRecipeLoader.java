@@ -13,8 +13,8 @@ import static gregtech.api.recipes.RecipeMaps.ALLOY_SMELTER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 import static magicbook.gtlitecore.integration.chisel.ChiselGroupHelper.addGroup;
 import static magicbook.gtlitecore.integration.chisel.ChiselGroupHelper.addVariation;
 

@@ -18,7 +18,7 @@ import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockMachineCasing;
@@ -61,7 +61,7 @@ public class MetaTileEntityElectricImplosionCompressor extends RecipeMapMultiblo
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
         Object type = context.get("ImplosionCoilTieredStats");
-        this.tier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
+        this.tier = GTLiteUtility.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }
 

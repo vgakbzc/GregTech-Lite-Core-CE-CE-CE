@@ -244,7 +244,7 @@ public class AnimatedTooltipHandler {
      * @author glowredman
      */
     public static void addItemTooltip(String modid, String name, int meta, Supplier<String> tooltip) {
-        Item item = GTLiteUtils.getItemById(modid, name).getItem();
+        Item item = GTLiteUtility.getItemById(modid, name).getItem();
         if (item == null || tooltip == null)
             return;
         tooltipMap.merge(new ItemStack(item, 1, meta), tooltip, (a, b) -> chain(a, NEW_LINE, b));

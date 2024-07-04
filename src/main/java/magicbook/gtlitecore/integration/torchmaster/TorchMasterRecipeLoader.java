@@ -11,7 +11,7 @@ import static gregtech.api.recipes.RecipeMaps.CHEMICAL_BATH_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.SENSOR_ULV;
 
 public class TorchMasterRecipeLoader {

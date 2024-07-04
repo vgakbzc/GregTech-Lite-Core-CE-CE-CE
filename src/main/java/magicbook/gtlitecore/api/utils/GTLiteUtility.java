@@ -36,7 +36,7 @@ import java.util.function.Supplier;
 import static gregtech.api.GTValues.*;
 
 @SuppressWarnings("unused")
-public class GTLiteUtils {
+public class GTLiteUtility {
 
     /**
      * Get {@code ResourceLocation} of {@code gtlitecore}.

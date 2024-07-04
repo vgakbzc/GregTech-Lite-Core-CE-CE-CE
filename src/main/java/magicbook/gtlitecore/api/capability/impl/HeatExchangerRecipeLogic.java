@@ -9,7 +9,7 @@ import magicbook.gtlitecore.api.metatileentity.multi.IHeatExchanger;
 import magicbook.gtlitecore.api.metatileentity.multi.NoEnergyMultiblockController;
 import magicbook.gtlitecore.api.recipe.properties.FlowRateProperty;
 import magicbook.gtlitecore.api.recipe.properties.MaxRateProperty;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.PacketBuffer;
 import net.minecraftforge.fluids.FluidStack;
@@ -109,7 +109,7 @@ public class HeatExchangerRecipeLogic extends NoEnergyMultiblockRecipeLogic {
         int threshold = (int) Math.ceil(0.01 * recipe.getProperty(FlowRateProperty.getInstance(), 0) * mte.getThrottle());
 
         if (inputFluidStack != null) {
-            int amount = GTLiteUtils.clamp(inputFluidStack.amount, 0, tMaxInletFlow);
+            int amount = GTLiteUtility.clamp(inputFluidStack.amount, 0, tMaxInletFlow);
             if (amount >= threshold) {
                 setSuperheat(true);
                 return setRecipe(recipe, amount, 1);

@@ -26,7 +26,7 @@ import magicbook.gtlitecore.api.capability.GTLiteDataCode;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.AssemblyCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.block.state.IBlockState;
@@ -98,13 +98,13 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        int maxLeng = GTLiteUtils.maxLength(new ArrayList<List<IBlockState>>() {{
+        int maxLeng = GTLiteUtility.maxLength(new ArrayList<List<IBlockState>>() {{
             add(ListCasing);
             add(ListInternalCasing);
         }});
 
-        finalListCasing = GTLiteUtils.consistentList(ListCasing, maxLeng);
-        finalListInternalCasing = GTLiteUtils.consistentList(ListInternalCasing, maxLeng);
+        finalListCasing = GTLiteUtility.consistentList(ListCasing, maxLeng);
+        finalListInternalCasing = GTLiteUtility.consistentList(ListInternalCasing, maxLeng);
 
         init = true;
     }
@@ -114,10 +114,10 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
         super.formStructure(context);
         Object CasingTier = context.get("PACasingTieredStats");
         Object InternalCasingTier = context.get("PAInternalCasingTieredStats");
-        this.CasingTier = GTLiteUtils.getOrDefault(
+        this.CasingTier = GTLiteUtility.getOrDefault(
                 () -> CasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) CasingTier).getIntTier(), 0);
-        this.InternalCasingTier = GTLiteUtils.getOrDefault(
+        this.InternalCasingTier = GTLiteUtility.getOrDefault(
                 () -> InternalCasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) InternalCasingTier).getIntTier(), 0);
         this.tier = this.CasingTier;

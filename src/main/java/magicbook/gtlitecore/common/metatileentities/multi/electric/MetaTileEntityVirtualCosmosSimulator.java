@@ -15,7 +15,7 @@ import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockComputerCasing;
 import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockScienceCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -181,8 +181,8 @@ public class MetaTileEntityVirtualCosmosSimulator extends RecipeMapMultiblockCon
                 FluidStack HeliumStack = this.getInputFluidInventory().drain(Helium.getFluid(Integer.MAX_VALUE), false);
                 int hydrogenAmount = HydrogenStack == null ? 0 : HydrogenStack.amount;
                 int heliumAmount = HeliumStack == null ? 0 : HeliumStack.amount;
-                textList.add(new TextComponentTranslation("gtlitecore.machine.virtual_cosmos_simulator.hydrogen_amount", GTLiteUtils.formatNumbers(hydrogenAmount)));
-                textList.add(new TextComponentTranslation("gtlitecore.machine.virtual_cosmos_simulator.helium_amount", GTLiteUtils.formatNumbers(heliumAmount)));
+                textList.add(new TextComponentTranslation("gtlitecore.machine.virtual_cosmos_simulator.hydrogen_amount", GTLiteUtility.formatNumbers(hydrogenAmount)));
+                textList.add(new TextComponentTranslation("gtlitecore.machine.virtual_cosmos_simulator.helium_amount", GTLiteUtility.formatNumbers(heliumAmount)));
             }
         }
         super.addDisplayText(textList);

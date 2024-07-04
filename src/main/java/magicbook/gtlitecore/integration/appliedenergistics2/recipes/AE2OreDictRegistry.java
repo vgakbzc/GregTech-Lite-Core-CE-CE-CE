@@ -7,7 +7,7 @@ import net.minecraftforge.oredict.OreDictionary;
 
 import static gregtech.api.unification.ore.OrePrefix.gem;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Fluix;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 
 public class AE2OreDictRegistry {
 

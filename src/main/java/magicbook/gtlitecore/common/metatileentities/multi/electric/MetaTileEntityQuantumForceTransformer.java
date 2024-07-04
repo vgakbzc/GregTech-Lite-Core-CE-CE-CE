@@ -17,7 +17,7 @@ import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.FieldCasingTierProperty;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.handler.ForceFieldRenderer;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockScienceCasing;
@@ -84,7 +84,7 @@ public class MetaTileEntityQuantumForceTransformer extends RecipeMapMultiblockCo
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
         Object type = context.get("FieldCasingTieredStats");
-        this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
+        this.casingTier = GTLiteUtility.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }
 

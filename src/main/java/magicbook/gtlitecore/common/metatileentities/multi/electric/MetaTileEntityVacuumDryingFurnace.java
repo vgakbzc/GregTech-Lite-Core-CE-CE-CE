@@ -24,7 +24,7 @@ import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockMultiblockCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -73,7 +73,7 @@ public class MetaTileEntityVacuumDryingFurnace extends MultiMapMultiblockControl
     protected void addDisplayText(List<ITextComponent> textList) {
         if (isStructureFormed()) {
             textList.add(new TextComponentTranslation("gregtech.multiblock.blast_furnace.max_temperature",
-                    TextFormatting.RED + GTLiteUtils.formatNumbers(temperature) + "K"));
+                    TextFormatting.RED + GTLiteUtility.formatNumbers(temperature) + "K"));
         }
         super.addDisplayText(textList);
     }

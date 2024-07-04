@@ -11,8 +11,8 @@ import static gregtech.common.items.MetaItems.ELECTRIC_PISTON_HV;
 import static gregtech.common.items.MetaItems.ROBOT_ARM_HV;
 import static gregtech.common.metatileentities.MetaTileEntities.BUFFER;
 import static gregtech.common.metatileentities.MetaTileEntities.WORKBENCH;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 
 public class PackagedAutoRecipeLoader {
 

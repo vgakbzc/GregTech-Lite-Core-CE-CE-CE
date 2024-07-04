@@ -23,8 +23,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 import static gregtech.api.GTValues.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getFluidById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.isNotStaticWater;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getFluidById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.isNotStaticWater;
 
 public class AlgaeFarmRecipeLogic {
 

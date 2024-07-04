@@ -2,7 +2,7 @@ package magicbook.gtlitecore.common.blocks;
 
 import gregtech.api.block.VariantBlock;
 import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -49,7 +49,7 @@ public class BlockYottaTankCell extends VariantBlock<BlockYottaTankCell.YottaTan
                                @NotNull List<String> tooltip,
                                @NotNull ITooltipFlag advanced) {
         super.addInformation(stack, world, tooltip, advanced);
-        tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.cell_capacitor", GTLiteUtils.formatNumbers(getState(stack).getCapacity())));
+        tooltip.add(I18n.format("gtlitecore.machine.yotta_fluid_tank.cell_capacitor", GTLiteUtility.formatNumbers(getState(stack).getCapacity())));
     }
 
     public enum YottaTankCellTier implements IStringSerializable, IYottaTankData {

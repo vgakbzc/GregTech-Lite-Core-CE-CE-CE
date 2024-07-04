@@ -9,8 +9,8 @@ import net.minecraft.item.ItemStack;
 import static gregtech.api.unification.material.Materials.Cobalt;
 import static gregtech.api.unification.ore.OrePrefix.pipeSmallItem;
 import static gregtech.common.items.MetaItems.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 
 public class ChiselMiscRecipes {
 

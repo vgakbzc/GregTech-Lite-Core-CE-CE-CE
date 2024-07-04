@@ -19,7 +19,7 @@ import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
 import magicbook.gtlitecore.api.capability.GTLiteDataCode;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.block.state.IBlockState;
@@ -68,11 +68,11 @@ public class MetaTileEntityAlgaeCultureTank extends RecipeMapMultiblockControlle
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        int maxLeng = GTLiteUtils.maxLength(new ArrayList<List<IBlockState>>(){{
+        int maxLeng = GTLiteUtility.maxLength(new ArrayList<List<IBlockState>>(){{
             add(ListCasing);
         }});
 
-        finalListCasing = GTLiteUtils.consistentList(ListCasing, maxLeng);
+        finalListCasing = GTLiteUtility.consistentList(ListCasing, maxLeng);
         init = true;
     }
 
@@ -80,7 +80,7 @@ public class MetaTileEntityAlgaeCultureTank extends RecipeMapMultiblockControlle
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
         Object CasingTier = context.get("AlgaeCultureTankCasingTieredStats");
-        this.tier = GTLiteUtils.getOrDefault(
+        this.tier = GTLiteUtility.getOrDefault(
                 () -> CasingTier instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) CasingTier).getIntTier(), 0);
         this.writeCustomData(GTLiteDataCode.ChannelAlgaeCultureTank1, buf -> buf.writeInt(this.tier));

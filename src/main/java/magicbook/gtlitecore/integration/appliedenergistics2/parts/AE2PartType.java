@@ -20,7 +20,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import java.lang.reflect.Constructor;
 import java.util.*;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 
 public enum AE2PartType implements IEnabled {
 

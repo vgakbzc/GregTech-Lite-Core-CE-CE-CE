@@ -11,7 +11,7 @@ import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.Glass;
 import static gregtech.api.unification.material.Materials.Steel;
 import static gregtech.api.unification.ore.OrePrefix.plate;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 
 public class FluidDrawersRecipeLoader {
 

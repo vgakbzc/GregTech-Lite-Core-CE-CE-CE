@@ -3,7 +3,7 @@ package magicbook.gtlitecore.integration.snad;
 import gregtech.api.recipes.ModHandler;
 import magicbook.gtlitecore.api.utils.Mods;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 import static magicbook.gtlitecore.integration.chisel.ChiselGroupHelper.addGroup;
 import static magicbook.gtlitecore.integration.chisel.ChiselGroupHelper.addVariation;
 

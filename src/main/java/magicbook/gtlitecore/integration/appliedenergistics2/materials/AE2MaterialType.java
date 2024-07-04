@@ -11,7 +11,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.Arrays;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 
 public enum AE2MaterialType implements IModelProvider {
 

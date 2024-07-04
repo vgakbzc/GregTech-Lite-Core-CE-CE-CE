@@ -7,7 +7,7 @@ import magicbook.gtlitecore.api.utils.Mods;
 import static gregtech.api.unification.material.Materials.Iron;
 import static gregtech.api.unification.material.Materials.Lapis;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 
 public class LittleTilesRecipeLoader {
 

@@ -27,7 +27,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.metatileentities.MetaTileEntities;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.common.blocks.BlockBoilerCasing;
 import magicbook.gtlitecore.common.blocks.BlockTransparentCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -86,10 +86,10 @@ public class MetaTileEntityMegaAlloyBlastSmelter extends RecipeMapMultiblockCont
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        int maxLeng = GTLiteUtils.maxLength(new ArrayList<List<IBlockState>>() {{
+        int maxLeng = GTLiteUtility.maxLength(new ArrayList<List<IBlockState>>() {{
             add(listCoil);
         }});
-        finalListCoil = GTLiteUtils.consistentList(listCoil, maxLeng);
+        finalListCoil = GTLiteUtility.consistentList(listCoil, maxLeng);
 
         init = true;
     }

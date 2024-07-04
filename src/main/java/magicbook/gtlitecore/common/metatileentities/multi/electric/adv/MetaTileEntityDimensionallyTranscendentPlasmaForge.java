@@ -33,7 +33,7 @@ import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockScienceCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -93,10 +93,10 @@ public class MetaTileEntityDimensionallyTranscendentPlasmaForge extends MultiMap
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
 
-        int maxLeng = GTLiteUtils.maxLength(new ArrayList<List<IBlockState>>() {{
+        int maxLeng = GTLiteUtility.maxLength(new ArrayList<List<IBlockState>>() {{
             add(listCoil);
         }});
-        finalListCoil = GTLiteUtils.consistentList(listCoil, maxLeng);
+        finalListCoil = GTLiteUtility.consistentList(listCoil, maxLeng);
 
         init = true;
     }

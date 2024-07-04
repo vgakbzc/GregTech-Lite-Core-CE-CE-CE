@@ -19,7 +19,7 @@ import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.SpaceElevatorCasingTierProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.BlockSpaceElevatorCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
@@ -69,7 +69,7 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
     protected void formStructure(PatternMatchContext context) {
         super.formStructure(context);
         Object type = context.get("SpaceElevatorMotorTieredStats");
-        this.casingTier = GTLiteUtils.getOrDefault(() -> type instanceof WrappedIntTier,
+        this.casingTier = GTLiteUtility.getOrDefault(() -> type instanceof WrappedIntTier,
                 () -> ((WrappedIntTier) type).getIntTier(), 0);
     }
 

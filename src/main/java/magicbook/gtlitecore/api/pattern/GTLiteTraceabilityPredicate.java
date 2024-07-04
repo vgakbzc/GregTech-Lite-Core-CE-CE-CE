@@ -33,8 +33,8 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
 import static magicbook.gtlitecore.api.GTLiteAPI.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getCandidates;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getTileEntity;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getCandidates;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getTileEntity;
 
 /**
  * Traceability Predicate for gtlitecore

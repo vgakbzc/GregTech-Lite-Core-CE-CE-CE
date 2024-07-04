@@ -29,7 +29,7 @@ import static gregtech.common.metatileentities.MetaTileEntities.ALUMINIUM_DRUM;
 import static gregtech.common.metatileentities.MetaTileEntities.HULL;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class AE2MachineRecipeLoader {

@@ -4,8 +4,8 @@ import gregtech.api.recipes.ModHandler;
 import magicbook.gtlitecore.api.utils.Mods;
 import net.minecraft.init.Items;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 
 public class NaturesCompassRecipeLoader {
 

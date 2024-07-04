@@ -13,7 +13,7 @@ import static gregtech.common.items.MetaItems.SHAPE_MOLD_PLATE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Bedrock;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getMetaItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.BEDROCK_CHOCOLATE;
 
 public class GTFOMiscRecipes {

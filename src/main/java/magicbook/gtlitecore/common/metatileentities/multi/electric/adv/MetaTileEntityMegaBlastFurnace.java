@@ -52,7 +52,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static gregtech.api.GTValues.UV;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.formatNumbers;
 
 public class MetaTileEntityMegaBlastFurnace extends RecipeMapMultiblockController implements IHeatingCoil {
 

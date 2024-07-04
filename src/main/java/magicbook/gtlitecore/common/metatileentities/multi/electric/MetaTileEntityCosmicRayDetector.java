@@ -16,7 +16,7 @@ import gregtech.common.blocks.MetaBlocks;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.AltitudeProperty;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.blocks.*;
 import net.minecraft.block.state.IBlockState;
@@ -121,7 +121,7 @@ public class MetaTileEntityCosmicRayDetector extends RecipeMapMultiblockControll
                 blockWorldState.getMatchContext().getOrPut("VABlock", new LinkedList<>()).add(blockWorldState.getPos());
             }
             return ArrayUtils.contains(allowedStates, state);
-        }, GTLiteUtils.getCandidates(allowedStates));
+        }, GTLiteUtility.getCandidates(allowedStates));
     }
 
     private boolean canSeeSky() {

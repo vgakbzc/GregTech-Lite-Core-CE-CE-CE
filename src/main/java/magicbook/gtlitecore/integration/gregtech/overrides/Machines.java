@@ -20,7 +20,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.metatileentities.MetaTileEntities.ELECTRIC_BLAST_FURNACE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class Machines {

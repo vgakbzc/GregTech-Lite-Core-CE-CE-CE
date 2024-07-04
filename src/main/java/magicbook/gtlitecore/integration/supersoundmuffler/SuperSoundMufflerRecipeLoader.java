@@ -9,7 +9,7 @@ import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.Tin;
 import static gregtech.api.unification.ore.OrePrefix.spring;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 
 public class SuperSoundMufflerRecipeLoader {
 

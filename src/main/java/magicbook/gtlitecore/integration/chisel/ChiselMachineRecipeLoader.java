@@ -21,7 +21,7 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.CONVEYOR_MODULE_HV;
 import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_HV;
 import static gregtech.loaders.recipe.CraftingComponent.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.getItemById;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
 public class ChiselMachineRecipeLoader {

@@ -18,7 +18,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
-import magicbook.gtlitecore.api.utils.GTLiteUtils;
+import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.entity.player.EntityPlayer;
@@ -64,7 +64,7 @@ public class SimpleSteamMetaTileEntity extends SteamMetaTileEntity {
      * Create a steam meta tile entity.
      *
      * @param metaTileEntityId   ID of {@code MetaTileEntity}, should return {@code ResourceLocation}.
-     *                           Hint: If you add contents in your mod, do not use {@link GTLiteUtils#gtliteId(String)},
+     *                           Hint: If you add contents in your mod, do not use {@link GTLiteUtility#gtliteId(String)},
      *                           please use your namespace method (like this, if you want to init it in {@code gregtech},
      *                           then you should use {@link GTUtility#gregtechId(String)}).
      * @param recipeMap          Machine {@code RecipeMap}, you can use {@code RecipeMap} in {@link GTLiteRecipeMaps} or {@link RecipeMaps},

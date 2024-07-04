@@ -6,7 +6,7 @@ import gregtech.api.items.metaitem.MetaItem;
 import gregtech.common.covers.*;
 
 import static gregtech.api.GTValues.*;
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.gtliteId;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class GTLiteCoverBehavior {

@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-import static magicbook.gtlitecore.api.utils.GTLiteUtils.formatNumbers;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.formatNumbers;
 
 public abstract class MetaTileEntityLargeTurbine extends FuelMultiblockController implements ITieredMetaTileEntity, IProgressBarMultiblock {
 
