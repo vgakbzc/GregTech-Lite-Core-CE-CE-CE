@@ -21,8 +21,9 @@ import net.minecraftforge.fml.common.event.*;
      acceptedMinecraftVersions = "[1.12.2,1.13)",
      dependencies = "required:forge@[14.23.5.2847,);" +
                     "required-after:codechickenlib@[3.2.3,);" +
-                    "required-after:gregtech@[2.8.7-beta,);" +
-                             "after:gcym@[1.2.8,);" +
+                    "required-after:modularui@[2.4.3,);" +
+                    "required-after:gregtech@[2.8.9-beta,);" +
+                             "after:gcym@[1.2.9,);" +
                              "after:gregtechfoodoption@[1.11.1,);" +
                              "after:appliedenergistics2@[v0.56.6,);" +
                              "after:ae2fc@[2.6.2-r,);" +
