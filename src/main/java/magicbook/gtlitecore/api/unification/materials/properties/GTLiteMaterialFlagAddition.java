@@ -185,6 +185,9 @@ public class GTLiteMaterialFlagAddition {
         Osmium.addFlags(GENERATE_RING);
         NaquadahEnriched.addFlags(GENERATE_RING);
 
+        //  Round
+        Steel.addFlags(GENERATE_ROUND);
+
         //  Gear
         RhodiumPlatedPalladium.addFlags(GENERATE_GEAR);
         Darmstadtium.addFlags(GENERATE_GEAR);

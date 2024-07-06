@@ -48,6 +48,7 @@ import static magicbook.gtlitecore.api.utils.GTLiteUtility.getTileEntity;
  *
  * @since 2.8.7-beta
  */
+@SuppressWarnings("unused")
 public class GTLiteTraceabilityPredicate {
 
     /**
@@ -405,4 +406,109 @@ public class GTLiteTraceabilityPredicate {
     public static TraceabilityPredicate resonantCavities() {
         return RESONANT_CAVITY.get();
     }
+
+    //  Motor Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> MOTOR_CASING = () -> new TierTraceabilityPredicate(MAP_MOTOR_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_MOTOR_CASING.get(s)).getIntTier()), "MotorCasing", null);
+
+    /**
+     * Motor Casing Predicate Getter.
+     *
+     * @return  Get {@link #MOTOR_CASING} predicate.
+     */
+    public static TraceabilityPredicate motorCasings() {
+        return MOTOR_CASING.get();
+    }
+
+    //  Piston Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> PISTON_CASING = () -> new TierTraceabilityPredicate(MAP_PISTON_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_PISTON_CASING.get(s)).getIntTier()), "PistonCasing", null);
+
+    /**
+     * Piston Casing Predicate Getter.
+     *
+     * @return  Get {@link #PISTON_CASING} predicate.
+     */
+    public static TraceabilityPredicate pistonCasings() {
+        return PISTON_CASING.get();
+    }
+
+    //  Robot Arm Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> ROBOT_ARM_CASING = () -> new TierTraceabilityPredicate(MAP_ROBOT_ARM_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_ROBOT_ARM_CASING.get(s)).getIntTier()), "RobotArmCasing", null);
+
+    /**
+     * Robot Arm Casing Predicate Getter.
+     *
+     * @return  Get {@link #ROBOT_ARM_CASING} predicate.
+     */
+    public static TraceabilityPredicate robotArmCasings() {
+        return ROBOT_ARM_CASING.get();
+    }
+
+    //  Pump Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> PUMP_CASING = () -> new TierTraceabilityPredicate(MAP_PUMP_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_PUMP_CASING.get(s)).getIntTier()), "PumpCasing", null);
+
+    /**
+     * Pump Casing Predicate Getter.
+     *
+     * @return  Get {@link #PUMP_CASING} predicate.
+     */
+    public static TraceabilityPredicate pumpCasings() {
+        return PUMP_CASING.get();
+    }
+
+    //  Conveyor Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> CONVEYOR_CASING = () -> new TierTraceabilityPredicate(MAP_CONVEYOR_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_CONVEYOR_CASING.get(s)).getIntTier()), "ConveyorCasing", null);
+
+    /**
+     * Conveyor Casing Predicate Getter.
+     *
+     * @return  Get {@link #CONVEYOR_CASING} predicate.
+     */
+    public static TraceabilityPredicate conveyorCasings() {
+        return CONVEYOR_CASING.get();
+    }
+
+    //  Emitter Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> EMITTER_CASING = () -> new TierTraceabilityPredicate(MAP_EMITTER_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_EMITTER_CASING.get(s)).getIntTier()), "EmitterCasing", null);
+
+    /**
+     * Emitter Casing Predicate Getter.
+     *
+     * @return  Get {@link #EMITTER_CASING} predicate.
+     */
+    public static TraceabilityPredicate emitterCasings() {
+        return EMITTER_CASING.get();
+    }
+
+    //  Sensor Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> SENSOR_CASING = () -> new TierTraceabilityPredicate(MAP_SENSOR_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_SENSOR_CASING.get(s)).getIntTier()), "SensorCasing", null);
+
+    /**
+     * Sensor Casing Predicate Getter.
+     *
+     * @return  Get {@link #SENSOR_CASING} predicate.
+     */
+    public static TraceabilityPredicate sensorCasings() {
+        return SENSOR_CASING.get();
+    }
+
+    //  Field Gen Casing Predicate
+    public static Supplier<TierTraceabilityPredicate> FIELD_GEN_CASING = () -> new TierTraceabilityPredicate(MAP_FIELD_GEN_CASING,
+            Comparator.comparing((s) -> ((WrappedIntTier) MAP_FIELD_GEN_CASING.get(s)).getIntTier()), "FieldGenCasing", null);
+
+    /**
+     * Field Gen Casing Predicate Getter.
+     *
+     * @return  Get {@link #FIELD_GEN_CASING} predicate.
+     */
+    public static TraceabilityPredicate fieldGenCasings() {
+        return FIELD_GEN_CASING.get();
+    }
+
 }

@@ -12,6 +12,7 @@ import magicbook.gtlitecore.api.metatileentity.multi.ICellData;
 import magicbook.gtlitecore.api.metatileentity.multi.IYottaTankData;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.common.blocks.*;
+import magicbook.gtlitecore.common.blocks.components.*;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
@@ -48,6 +49,14 @@ public class GTLiteAPI {
     public static final Object2ObjectOpenHashMap<IBlockState, ICellData> MAP_ES_CELLS = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_MODULATION_CAVITY = new Object2ObjectOpenHashMap<>();
     public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_RESONANT_CAVITY = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_MOTOR_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PISTON_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_ROBOT_ARM_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_PUMP_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_CONVEYOR_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_EMITTER_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_SENSOR_CASING = new Object2ObjectOpenHashMap<>();
+    public static final Object2ObjectOpenHashMap<IBlockState, IBlockTier> MAP_FIELD_GEN_CASING = new Object2ObjectOpenHashMap<>();
 
     public static void init() {
 
@@ -64,6 +73,48 @@ public class GTLiteAPI {
         //  Energy Cell Init
         for (BlockEnergyCell.CellTier tier : BlockEnergyCell.CellTier.values()) {
             MAP_ES_CELLS.put(GTLiteMetaBlocks.ENERGY_CELL.getState(tier), tier);
+        }
+
+        //  Component Casings Init
+        //  Because Java {@code ordinal()} is beginning from 0, so we should +1.
+        for (BlockMotorCasing.MotorCasingTier tier : BlockMotorCasing.MotorCasingTier.values()) {
+            MAP_MOTOR_CASING.put(GTLiteMetaBlocks.MOTOR_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockPistonCasing.PistonCasingTier tier : BlockPistonCasing.PistonCasingTier.values()) {
+            MAP_PISTON_CASING.put(GTLiteMetaBlocks.PISTON_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockRobotArmCasing.RobotArmCasingTier tier : BlockRobotArmCasing.RobotArmCasingTier.values()) {
+            MAP_ROBOT_ARM_CASING.put(GTLiteMetaBlocks.ROBOT_ARM_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockPumpCasing.PumpCasingTier tier : BlockPumpCasing.PumpCasingTier.values()) {
+            MAP_PUMP_CASING.put(GTLiteMetaBlocks.PUMP_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockConveyorCasing.ConveyorCasingTier tier : BlockConveyorCasing.ConveyorCasingTier.values()) {
+            MAP_CONVEYOR_CASING.put(GTLiteMetaBlocks.CONVEYOR_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockEmitterCasing.EmitterCasingTier tier : BlockEmitterCasing.EmitterCasingTier.values()) {
+            MAP_EMITTER_CASING.put(GTLiteMetaBlocks.EMITTER_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockSensorCasing.SensorCasingTier tier : BlockSensorCasing.SensorCasingTier.values()) {
+            MAP_SENSOR_CASING.put(GTLiteMetaBlocks.SENSOR_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
+        for (BlockFieldGenCasing.FieldGenCasingTier tier : BlockFieldGenCasing.FieldGenCasingTier.values()) {
+            MAP_FIELD_GEN_CASING.put(GTLiteMetaBlocks.FIELD_GEN_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
         }
 
         //  Precise Assembler Casing Tier
