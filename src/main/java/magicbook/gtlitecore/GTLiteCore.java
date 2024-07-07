@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.event.*;
                     "required-after:codechickenlib@[3.2.3,);" +
                     "required-after:modularui@[2.4.3,);" +
                     "required-after:gregtech@[2.8.9-beta,);" +
-                             "after:gcym@[1.2.9,);" +
+                             "after:gcym@[1.2.10,);" +
                              "after:gregtechfoodoption@[1.11.1,);" +
                              "after:appliedenergistics2@[v0.56.6,);" +
                              "after:ae2fc@[2.6.2-r,);" +

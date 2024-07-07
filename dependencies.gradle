@@ -9,18 +9,12 @@ dependencies {
     implementation rfg.deobf("curse.maven:modularui-624243:5153413")
 
     //  [GT] GregTech - 2.8.9-beta
-    //  TODO Maybe use GTCEu Maven in future,
-    //       another possible: port this mod and use new fork mod as dep.
     implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5506419")
 
-    //  [GCYM] Gregicality Multiblocks - 1.2.9
-    //  TODO Maybe use GTCEu Maven in future,
-    //       another possible: port this mod and use new fork mod as dep.
-    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:5506497")
+    //  [GCYM] Gregicality Multiblocks - 1.2.10
+    implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:5508050")
 
     //  [GTFO] GregTech Food Option - 1.11.1
-    //  TODO Maybe delete this dep,
-    //       and use my own mod 'Gregicality Foods' to replace it.
     implementation rfg.deobf("curse.maven:gregtech-food-option-477021:5155451")
 
     //  [AE2uEL] AE2 Unofficial Extended Life - 0.56.6

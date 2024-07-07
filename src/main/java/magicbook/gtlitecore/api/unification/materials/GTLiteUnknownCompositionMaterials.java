@@ -621,7 +621,8 @@ public class GTLiteUnknownCompositionMaterials {
 
         //  24064 Free Electron Gas
         FreeElectronGas = new Material.Builder(getID(), gregtechId("free_electron_gas"))
-                .gas()
+                .gas(new FluidBuilder()
+                        .translation("gregtech.fluid.generic"))
                 .color(0x507BB3)
                 .build()
                 .setFormula(TextFormatting.OBFUSCATED  + "a" + TextFormatting.RESET + "§ee" + TextFormatting.OBFUSCATED + "a", false);
