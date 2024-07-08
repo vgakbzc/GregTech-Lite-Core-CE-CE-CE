@@ -223,7 +223,7 @@ public class GTLiteElementMaterials {
                 .element(Hy)
                 .color(0xDC784B)
                 .iconSet(ENRICHED)
-                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_LENS)
+                .flags(GENERATE_PLATE, GENERATE_DOUBLE_PLATE, GENERATE_DENSE, GENERATE_ROD, GENERATE_SPRING, GENERATE_SPRING_SMALL, GENERATE_FINE_WIRE, GENERATE_LENS, GENERATE_RING)
                 .cableProperties(V[UXV], 32, 16, false)
                 .build();
 

@@ -208,6 +208,7 @@ public class GTLiteMaterialFlagAddition {
         BlueSteel.addFlags(GENERATE_BOLT_SCREW);
         Rutherfordium.addFlags(GENERATE_BOLT_SCREW);
         CertusQuartz.addFlags(GENERATE_BOLT_SCREW);
+        Palladium.addFlags(GENERATE_BOLT_SCREW);
 
         //  Rotor
         WroughtIron.addFlags(GENERATE_ROTOR);

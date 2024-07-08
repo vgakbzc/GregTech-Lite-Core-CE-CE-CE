@@ -3,7 +3,6 @@ package magicbook.gtlitecore.api.unification.materials.helper;
 import gregtech.api.unification.material.Material;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class RadioactiveMaterialHelper {
