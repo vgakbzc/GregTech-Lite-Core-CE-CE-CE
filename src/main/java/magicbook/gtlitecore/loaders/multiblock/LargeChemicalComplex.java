@@ -16,103 +16,14 @@ import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class LargeChemicalComplex {
 
     public static void init() {
-        RareEarthNanoExtractProcessing();
         NaquadahTriniumProcessing();
         CatalystRecipes();
         CatalystBedRecipes();
-    }
-
-    private static void RareEarthNanoExtractProcessing() {
-
-        //  Lanthanum (La)-Praseodymium (Pr)-Neodymium (Nd)-Cerium (Ce)
-        addNanoExtractingRecipe(
-                Lanthanum,
-                LanthanumExtractingNanoResin,
-                FilledLanthanumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Praseodymium,
-                PraseodymiumExtractingNanoResin,
-                FilledPraseodymiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Neodymium,
-                NeodymiumExtractingNanoResin,
-                FilledNeodymiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Cerium,
-                CeriumExtractingNanoResin,
-                FilledCeriumExtractingNanoResin);
-
-        //  Scandium (Sc)-Europium (Eu)-Gadolinium (Gd)-Samarium(Sm)
-        addNanoExtractingRecipe(
-                Scandium,
-                ScandiumExtractingNanoResin,
-                FilledScandiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Europium,
-                EuropiumExtractingNanoResin,
-                FilledEuropiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Gadolinium,
-                GadoliniumExtractingNanoResin,
-                FilledGadoliniumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Samarium,
-                SamariumExtractingNanoResin,
-                FilledSamariumExtractingNanoResin);
-
-        //  Yttrium (Y)-Terbium (Tb)-Dysprosium (Dy)-Holmium (Ho)
-        addNanoExtractingRecipe(
-                Yttrium,
-                YttriumExtractingNanoResin,
-                FilledYttriumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Terbium,
-                TerbiumExtractingNanoResin,
-                FilledTerbiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Dysprosium,
-                DysprosiumExtractingNanoResin,
-                FilledDysprosiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Holmium,
-                HolmiumExtractingNanoResin,
-                FilledHolmiumExtractingNanoResin);
-
-        //  Erbium (Er)-Thulium (Tm)-Ytterbium (Yb)-Lutetium (Lu)
-        addNanoExtractingRecipe(
-                Erbium,
-                ErbiumExtractingNanoResin,
-                FilledErbiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Thulium,
-                ThuliumExtractingNanoResin,
-                FilledThuliumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Ytterbium,
-                YtterbiumExtractingNanoResin,
-                FilledYtterbiumExtractingNanoResin);
-
-        addNanoExtractingRecipe(
-                Lutetium,
-                LutetiumExtractingNanoResin,
-                FilledLutetiumExtractingNanoResin);
     }
 
     private static void NaquadahTriniumProcessing() {
@@ -645,42 +556,6 @@ public class LargeChemicalComplex {
                 .buildAndRegister();
     }
 
-    private static void addNanoExtractingRecipe(Material material,
-                                                Material resinMaterial,
-                                                Material filledResinMaterial) {
-        //  Step 1: {@code material} -> {@code resinMaterial}
-        //  For example: Lanthanum -> Lanthanum Extracting Nano Resin
-        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
-                .notConsumable(CATALYST_RARE_EARTH)
-                .input(dust, material)
-                .input(swarm, Carbon)
-                .fluidInputs(DiethylhexylPhosphoricAcid.getFluid(4000))
-                .fluidOutputs(resinMaterial.getFluid(1000))
-                .EUt(VA[UV])
-                .duration(10 * SECOND)
-                //  TODO ADD TIER
-                .buildAndRegister();
 
-        //  Step 2: {@code resinMaterial} -> {@code filledResinMaterial}
-        //  For example: Lanthanum Extracting Nano Resin -> Filled Lanthanum Extracting Nano Resin
-        CHEMICAL_RECIPES.recipeBuilder()
-                .fluidInputs(resinMaterial.getFluid(1000))
-                .fluidInputs(RareEarthChloridesSolution.getFluid(1000))
-                .fluidOutputs(filledResinMaterial.getFluid(1000))
-                .fluidOutputs(RareEarthHydroxidesSolution.getFluid(1000))
-                .EUt(VA[UV])
-                .duration(SECOND)
-                .buildAndRegister();
-
-        //  Step 3: {@code filledResinMaterial} -> {@code material} + {@code resinMaterial}
-        //  For example: Filled Lanthanum Extracting Nano Resin -> Lanthanum + Lanthanum Extracting Nano Resin
-        ELECTROLYZER_RECIPES.recipeBuilder()
-                .fluidInputs(filledResinMaterial.getFluid(1000))
-                .fluidOutputs(material.getFluid(1000))
-                .fluidOutputs(resinMaterial.getFluid(1000))
-                .EUt(VA[UV])
-                .duration(5 * SECOND)
-                .buildAndRegister();
-    }
 
 }

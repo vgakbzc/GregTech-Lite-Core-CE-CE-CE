@@ -1,6 +1,7 @@
 package magicbook.gtlitecore.common.items;
 
 import gregtech.api.GTValues;
+import gregtech.api.GregTechAPI;
 import gregtech.api.items.metaitem.ElectricStats;
 import gregtech.api.items.metaitem.StandardMetaItem;
 import gregtech.api.items.metaitem.stats.IItemComponent;
@@ -1704,6 +1705,21 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         IRRADIANT_REINFORCED_NEUTRONIUM_PLATE = this.addItem(3014, "irradiant_reinforced_neutronium_plate")
                 .addOreDict("plateIrradiantReinforcedNeutronium");
+
+        DIAMOND_LATTICE = this.addItem(3100, "diamond_lattice")
+                .addOreDict("latticeDiamond")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(Diamond, M * 2),
+                        new MaterialStack(VibrantAlloy, M / 2) // 1 * Vibrant Alloy small gear
+                ))
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_MATERIALS);
+
+        MYSTERIOUS_CRYSTAL_SHARD = this.addItem(3200, "mysterious_crystal_shard")
+                .addOreDict("shardMysteriousCrystal")
+                .setMaterialInfo(new ItemMaterialInfo(
+                        new MaterialStack(MysteriousCrystal, M * 4) // 4 * Mysterious Crystal dust
+                ))
+                .setCreativeTabs(GregTechAPI.TAB_GREGTECH_MATERIALS);
 
         /* --------------------------------------------------------------------- Misc Items 2 --------------------------------------------------------------------- */
         LASER_DIODE = this.addItem(4000, "laser_diode");

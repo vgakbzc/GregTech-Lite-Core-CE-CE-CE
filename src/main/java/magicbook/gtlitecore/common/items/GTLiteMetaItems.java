@@ -583,6 +583,10 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem COMPOSITE_REINFORCED_NEUTRONIUM_PLATE;
     public static MetaItem<?>.MetaValueItem IRRADIANT_REINFORCED_NEUTRONIUM_PLATE;
 
+    public static MetaItem<?>.MetaValueItem DIAMOND_LATTICE;
+
+    public static MetaItem<?>.MetaValueItem MYSTERIOUS_CRYSTAL_SHARD;
+
     //  Misc Items 2
     public static MetaItem<?>.MetaValueItem LASER_DIODE;
     public static MetaItem<?>.MetaValueItem LASER_COOLING_UNIT;

@@ -1,6 +1,9 @@
 package magicbook.gtlitecore.loaders.chains;
 
 import gregtech.api.metatileentity.multiblock.CleanroomType;
+import gregtech.api.recipes.ModHandler;
+import gregtech.api.unification.stack.UnificationEntry;
+import magicbook.gtlitecore.api.utils.Mods;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -9,13 +12,14 @@ import net.minecraft.item.ItemStack;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtechfoodoption.GTFOMaterialHandler.LithiumCarbonate;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class AlgaeChain {
@@ -24,6 +28,7 @@ public class AlgaeChain {
         CommonAlgae();
         CelluloseFiber();
         AlienAlgae();
+        MysteriousCrystalProcess();
 
         //  Piranha Solution
         MIXER_RECIPES.recipeBuilder()
@@ -57,7 +62,6 @@ public class AlgaeChain {
                 .EUt((int) V[MV] / 2)
                 .duration(5 * SECOND)
                 .buildAndRegister();
-
 
         //  Green Algae + Brown Algae + 5H2O -> 5H2SO4
         CHEMICAL_RECIPES.recipeBuilder()
@@ -396,6 +400,57 @@ public class AlgaeChain {
                 .EUt(VA[IV])
                 .duration(30 * SECOND)
                 .buildAndRegister();
+    }
+
+    private static void MysteriousCrystalProcess() {
+
+        //  Diamond -> Diamond Lattice
+        if (Mods.EnderIO.isModLoaded()) {
+            ModHandler.addShapedRecipe(true, "diamond_lattice", DIAMOND_LATTICE.getStackForm(2),
+                    "SPS", "PXP", "SPS",
+                    'P', new UnificationEntry(plate, Diamond),
+                    'S', new UnificationEntry(screw, Diamond),
+                    'X', getMetaItemById(Mods.EnderIO.getID(), "item_material", 15)); // Vibrant Crystal
+        } else {
+            ModHandler.addShapedRecipe(true, "diamond_lattice", DIAMOND_LATTICE.getStackForm(2),
+                    "SPS", "PXP", "SPS",
+                    'P', new UnificationEntry(plate, Diamond),
+                    'S', new UnificationEntry(screw, Diamond),
+                    'X', new UnificationEntry(gearSmall, VibrantAlloy));
+        }
+
+        FORMING_PRESS_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(plate, Diamond, 4)
+                .input(gearSmall, VibrantAlloy)
+                .output(DIAMOND_LATTICE, 2)
+                .EUt(VA[LV])
+                .duration(2 * SECOND)
+                .buildAndRegister();
+
+        //  Diamond Lattice -> Mysterious Crystal Shard
+        ALGAE_CULTURE_TANK_RECIPES.recipeBuilder()
+                .circuitMeta(10)
+                .input(PETRI_DISH)
+                .input(BLUE_ALGAE, 8)
+                .input(dust, Lapotron, 32)
+                .input(dust, Sapphire, 64)
+                .input(DIAMOND_LATTICE, 16)
+                .fluidInputs(MarineAlgae.getFluid(200))
+                .output(MYSTERIOUS_CRYSTAL_SHARD, 64)
+                .output(CONTAMINATED_PETRI_DISH)
+                .EUt(VA[ZPM])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  Mysterious Crystal Shard -> Mysterious Crystal dust
+        FORGE_HAMMER_RECIPES.recipeBuilder()
+                .input(MYSTERIOUS_CRYSTAL_SHARD)
+                .output(dust, MysteriousCrystal, 4)
+                .EUt(VA[ULV])
+                .duration(15)
+                .buildAndRegister();
+
     }
 
     private static void ExoticGasProcessing() {

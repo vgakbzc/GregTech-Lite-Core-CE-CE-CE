@@ -279,6 +279,16 @@ public class GTLiteModCompatibilityMaterials {
                         .vacuumStats(VA[IV], 800))
                 .build();
 
+        //  21022 Mysterious Crystal (Galaxy Space)
+        MysteriousCrystal = new Material.Builder(getID(), gregtechId("mysterious_crystal"))
+                .gem()
+                .ore(2, 2)
+                .color(0x16856C)
+                .iconSet(DIAMOND)
+                .flags(GENERATE_PLATE, GENERATE_LENS)
+                .build()
+                .setFormula("My", false);
+
     }
 
 }

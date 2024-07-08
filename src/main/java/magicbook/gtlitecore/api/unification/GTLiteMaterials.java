@@ -972,6 +972,7 @@ public class GTLiteMaterials {
     public static Material CrystallinePinkSlime;
     public static Material MelodicAlloy;
     public static Material StellarAlloy;
+    public static Material MysteriousCrystal;
 
     //  Nuclear Materials
 

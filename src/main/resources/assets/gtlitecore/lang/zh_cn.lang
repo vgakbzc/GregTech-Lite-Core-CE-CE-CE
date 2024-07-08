@@ -1107,6 +1107,10 @@ metaitem.reinforced_neutronium_plate.name=强化中子素板
 metaitem.composite_reinforced_neutronium_plate.name=复合强化中子素板
 metaitem.irradiant_reinforced_neutronium_plate.name=光辉强化中子素板
 
+metaitem.diamond_lattice.name=钻石晶格
+
+metaitem.mysterious_crystal_shard.name=神秘水晶碎片
+
 ##  Memory Cards
 metaitem.memory_card.base.name=意识存储卡
 metaitem.memory_card.zombie.name=僵尸意识存储卡
@@ -3867,6 +3871,7 @@ gregtech.material.crystalline_alloy=晶化合金
 gregtech.material.crystalline_pink_slime=晶化粉红史莱姆
 gregtech.material.melodic_alloy=旋律合金
 gregtech.material.stellar_alloy=恒星合金
+gregtech.material.mysterious_crystal=神秘水晶
 
 ##  Renamed Materials
 item.gregtech.material.platinum_group_residue.dust=铂族金属残渣

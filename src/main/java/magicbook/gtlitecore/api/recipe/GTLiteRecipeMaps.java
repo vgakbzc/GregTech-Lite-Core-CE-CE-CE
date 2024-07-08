@@ -1940,7 +1940,7 @@ public class GTLiteRecipeMaps {
      * </p>
      */
     @ZenProperty
-    public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES = new RecipeMap<>("nano_scale_mask_aligner", 4, 2, 2, 0, new SimpleRecipeBuilder(), false)
+    public static final RecipeMap<SimpleRecipeBuilder> NANO_SCALE_MASK_ALIGNER_RECIPES = new RecipeMap<>("nano_scale_mask_aligner", 4, 2, 2, 1, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.LENS_OVERLAY)
             .setSlotOverlay(false, false, true, GuiTextures.LENS_OVERLAY)
             .setSlotOverlay(false, true, true, GuiTextures.MOLECULAR_OVERLAY_4)

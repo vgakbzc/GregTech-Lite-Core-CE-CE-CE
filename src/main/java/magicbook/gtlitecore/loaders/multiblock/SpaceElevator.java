@@ -537,6 +537,9 @@ public class SpaceElevator {
                 1,
                 VH[UV]);
 
+        //  Mysterious Crystal-Ledox-Callisto Ice vein
+        //  TODO
+
         //  UHV Mining Drone
 
         //  Naquadah-Trinium vein

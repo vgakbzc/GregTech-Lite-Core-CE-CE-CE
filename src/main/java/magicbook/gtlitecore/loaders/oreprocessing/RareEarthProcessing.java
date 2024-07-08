@@ -2,14 +2,17 @@ package magicbook.gtlitecore.loaders.oreprocessing;
 
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.unification.OreDictUnifier;
+import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.api.unification.ore.OrePrefix.dustSmall;
+import static gregtech.api.unification.ore.OrePrefix.*;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 
 /**
  * The Rare Earth Extraction Process
@@ -29,6 +32,7 @@ public class RareEarthProcessing {
         removeVanillaRecipes();
         DiethylhexylPhosphoricAcid();
         RareEarthProcess();
+        NanoExtractingProcess();
     }
 
     private static void removeVanillaRecipes() {
@@ -152,4 +156,135 @@ public class RareEarthProcessing {
                 .EUt(VA[UV])
                 .buildAndRegister();
     }
+
+    private static void NanoExtractingProcess() {
+
+        //  Nano Resin Processing is an Advanced Rare Earth Processing for player which beyond ZPM tier,
+        //  required Mysterious Crystal lens and Nanoscale Mask Aligner (Mega Laser Engraver) to start.
+        //  Lanthanum (La)-Praseodymium (Pr)-Neodymium (Nd)-Cerium (Ce)
+        addNanoExtractingRecipe(
+                Lanthanum,
+                LanthanumExtractingNanoResin,
+                FilledLanthanumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Praseodymium,
+                PraseodymiumExtractingNanoResin,
+                FilledPraseodymiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Neodymium,
+                NeodymiumExtractingNanoResin,
+                FilledNeodymiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Cerium,
+                CeriumExtractingNanoResin,
+                FilledCeriumExtractingNanoResin);
+
+        //  Scandium (Sc)-Europium (Eu)-Gadolinium (Gd)-Samarium(Sm)
+        addNanoExtractingRecipe(
+                Scandium,
+                ScandiumExtractingNanoResin,
+                FilledScandiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Europium,
+                EuropiumExtractingNanoResin,
+                FilledEuropiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Gadolinium,
+                GadoliniumExtractingNanoResin,
+                FilledGadoliniumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Samarium,
+                SamariumExtractingNanoResin,
+                FilledSamariumExtractingNanoResin);
+
+        //  Yttrium (Y)-Terbium (Tb)-Dysprosium (Dy)-Holmium (Ho)
+        addNanoExtractingRecipe(
+                Yttrium,
+                YttriumExtractingNanoResin,
+                FilledYttriumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Terbium,
+                TerbiumExtractingNanoResin,
+                FilledTerbiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Dysprosium,
+                DysprosiumExtractingNanoResin,
+                FilledDysprosiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Holmium,
+                HolmiumExtractingNanoResin,
+                FilledHolmiumExtractingNanoResin);
+
+        //  Erbium (Er)-Thulium (Tm)-Ytterbium (Yb)-Lutetium (Lu)
+        addNanoExtractingRecipe(
+                Erbium,
+                ErbiumExtractingNanoResin,
+                FilledErbiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Thulium,
+                ThuliumExtractingNanoResin,
+                FilledThuliumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Ytterbium,
+                YtterbiumExtractingNanoResin,
+                FilledYtterbiumExtractingNanoResin);
+
+        addNanoExtractingRecipe(
+                Lutetium,
+                LutetiumExtractingNanoResin,
+                FilledLutetiumExtractingNanoResin);
+    }
+
+    private static void addNanoExtractingRecipe(Material material,
+                                                Material resinMaterial,
+                                                Material filledResinMaterial) {
+        //  Step 1: {@code material} -> {@code resinMaterial}
+        //  For example: Lanthanum -> Lanthanum Extracting Nano Resin
+        NANO_SCALE_MASK_ALIGNER_RECIPES.recipeBuilder()
+                .notConsumable(lens, MysteriousCrystal)
+                .input(dust, material)
+                .input(swarm, Carbon)
+                .fluidInputs(DiethylhexylPhosphoricAcid.getFluid(4000))
+                .fluidOutputs(resinMaterial.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(10 * SECOND)
+                .buildAndRegister();
+
+        //  Step 2: {@code resinMaterial} -> {@code filledResinMaterial} (doped 1kL HCl)
+        //  For example: Lanthanum Extracting Nano Resin -> Filled Lanthanum Extracting Nano Resin
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(resinMaterial.getFluid(1000))
+                .fluidInputs(RareEarthChloridesSolution.getFluid(1000))
+                .fluidOutputs(filledResinMaterial.getFluid(1000))
+                .fluidOutputs(RareEarthHydroxidesSolution.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  Step 3: {@code filledResinMaterial} -> {@code material} + {@code resinMaterial} (cycled 1kL HCl)
+        //  For example: Filled Lanthanum Extracting Nano Resin -> Lanthanum + Lanthanum Extracting Nano Resin
+        ELECTROLYZER_RECIPES.recipeBuilder()
+                .fluidInputs(filledResinMaterial.getFluid(1000))
+                .fluidOutputs(material.getFluid(1000))
+                .fluidOutputs(resinMaterial.getFluid(1000))
+                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(5 * SECOND)
+                .buildAndRegister();
+
+        //  The original NaOH cycled product for Rare Earth Hydroxides Solution -> Rare Earth Chlorides Solution
+        //  is as extended product for player (just like Waste Liquid recycling in GTNH).
+    }
+
 }
