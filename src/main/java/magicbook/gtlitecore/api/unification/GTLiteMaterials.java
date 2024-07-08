@@ -928,6 +928,10 @@ public class GTLiteMaterials {
     public static Material FermionicUUMatter;
     public static Material BosonicUUMatter;
     public static Material PahoehoeLava;
+    public static Material RareEarthChloridesConcentrate;
+    public static Material RareEarthChloridesEnrichedSolution;
+    public static Material RareEarthChloridesDilutedSolution;
+    public static Material ChlorinatedRareEarthWasteFluid;
 
     //////////////////////////////
     //  Third Degree Materials  //

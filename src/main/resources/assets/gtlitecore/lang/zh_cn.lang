@@ -3831,6 +3831,10 @@ gregtech.material.heavy_fluorinated_trinium_solution=重氟凯金溶液
 gregtech.material.fermionic_uu_matter=费米子UU物质
 gregtech.material.bosonic_uu_matter=玻色子UU物质
 gregtech.material.pahoehoe_lava=熔岩岩浆
+gregtech.material.rare_earth_chlorides_concentrate=稀土氯化物浓缩液
+gregtech.material.rare_earth_chlorides_enriched_solution=稀土氯化物富集液
+gregtech.material.rare_earth_chlorides_diluted_solution=稀土氯化物稀释液
+gregtech.material.chlorinated_rare_earth_waste_fluid=含氯稀土废液
 
 ##  Third Degree Materials
 gregtech.material.proto_adamantium=原始精金

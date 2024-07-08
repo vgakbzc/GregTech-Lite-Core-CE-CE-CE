@@ -73,8 +73,8 @@ public class RareEarthProcessing {
                 .fluidInputs(DiethylhexylPhosphoricAcid.getFluid(100))
                 .fluidInputs(Water.getFluid(900))
                 .fluidOutputs(RareEarthHydroxidesSolution.getFluid(1000))
-                .duration(120)
                 .EUt(VA[HV])
+                .duration(120)
                 .buildAndRegister();
 
         //  Step 2: Rare Earth Hydroxides Solution -> Rare Earth Chlorides Solution
@@ -83,8 +83,8 @@ public class RareEarthProcessing {
                 .fluidInputs(HydrochloricAcid.getFluid(1000))
                 .output(dust, SodiumHydroxide, 3)
                 .fluidOutputs(RareEarthChloridesSolution.getFluid(1000))
-                .duration(120)
                 .EUt(VA[LV])
+                .duration(120)
                 .buildAndRegister();
 
         //  Crude Neodymium Oxide Production, can still be obtained as ore byproducts
@@ -161,6 +161,16 @@ public class RareEarthProcessing {
 
         //  Nano Resin Processing is an Advanced Rare Earth Processing for player which beyond ZPM tier,
         //  required Mysterious Crystal lens and Nanoscale Mask Aligner (Mega Laser Engraver) to start.
+        BLAST_RECIPES.recipeBuilder()
+                .input(dust, RareEarth, 8)
+                .fluidInputs(Chlorine.getFluid(6000))
+                .output(dust, SiliconDioxide)
+                .fluidOutputs(RareEarthChloridesConcentrate.getFluid(1000))
+                .EUt(VA[ZPM])
+                .duration(2 * SECOND)
+                .blastFurnaceTemp(1600) // Cupronickel
+                .buildAndRegister();
+
         //  Lanthanum (La)-Praseodymium (Pr)-Neodymium (Nd)-Cerium (Ce)
         addNanoExtractingRecipe(
                 Lanthanum,
@@ -261,30 +271,58 @@ public class RareEarthProcessing {
                 .duration(10 * SECOND)
                 .buildAndRegister();
 
-        //  Step 2: {@code resinMaterial} -> {@code filledResinMaterial} (doped 1kL HCl)
+        //  Step 2: {@code resinMaterial} -> {@code filledResinMaterial}.
+        //  Catalyst Liquid Decay Chain: Concentrate -> Enriched Solution -> Diluted Solution -> Waste Fluid.
         //  For example: Lanthanum Extracting Nano Resin -> Filled Lanthanum Extracting Nano Resin
         CHEMICAL_RECIPES.recipeBuilder()
                 .fluidInputs(resinMaterial.getFluid(1000))
-                .fluidInputs(RareEarthChloridesSolution.getFluid(1000))
+                .fluidInputs(RareEarthChloridesConcentrate.getFluid(1000))
                 .fluidOutputs(filledResinMaterial.getFluid(1000))
-                .fluidOutputs(RareEarthHydroxidesSolution.getFluid(1000))
+                .fluidOutputs(RareEarthChloridesEnrichedSolution.getFluid(1000))
                 .EUt(VA[UV])
                 .duration(SECOND)
                 .buildAndRegister();
 
-        //  Step 3: {@code filledResinMaterial} -> {@code material} + {@code resinMaterial} (cycled 1kL HCl)
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(resinMaterial.getFluid(1000))
+                .fluidInputs(RareEarthChloridesEnrichedSolution.getFluid(1000))
+                .fluidOutputs(filledResinMaterial.getFluid(1000))
+                .fluidOutputs(RareEarthChloridesDilutedSolution.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(resinMaterial.getFluid(1000))
+                .fluidInputs(RareEarthChloridesDilutedSolution.getFluid(1000))
+                .fluidOutputs(filledResinMaterial.getFluid(1000))
+                .fluidOutputs(ChlorinatedRareEarthWasteFluid.getFluid(1000))
+                .EUt(VA[UV])
+                .duration(SECOND)
+                .buildAndRegister();
+
+        //  Step 3: {@code filledResinMaterial} -> {@code material} + {@code resinMaterial}.
         //  For example: Filled Lanthanum Extracting Nano Resin -> Lanthanum + Lanthanum Extracting Nano Resin
         ELECTROLYZER_RECIPES.recipeBuilder()
                 .fluidInputs(filledResinMaterial.getFluid(1000))
-                .fluidOutputs(material.getFluid(1000))
+                .fluidOutputs(material.getFluid(L))
                 .fluidOutputs(resinMaterial.getFluid(1000))
-                .fluidOutputs(HydrochloricAcid.getFluid(1000))
+                .fluidOutputs(Chlorine.getFluid(3000))
                 .EUt(VA[UV])
                 .duration(5 * SECOND)
                 .buildAndRegister();
 
-        //  The original NaOH cycled product for Rare Earth Hydroxides Solution -> Rare Earth Chlorides Solution
-        //  is as extended product for player (just like Waste Liquid recycling in GTNH).
+        //  Chlorinated Rare Earth Waste Fluid recycling
+        DISTILLATION_RECIPES.recipeBuilder()
+                .fluidInputs(ChlorinatedRareEarthWasteFluid.getFluid(10000))
+                .output(dust, Chrome, 3)
+                .fluidOutputs(SaltWater.getFluid(3000))
+                .fluidOutputs(Phenol.getFluid(2000))
+                .fluidOutputs(HydrochloricAcid.getFluid(5000))
+                .EUt(VA[HV])
+                .duration(15 * SECOND)
+                .buildAndRegister();
+
     }
 
 }

@@ -1324,6 +1324,35 @@ public class GTLiteUnknownCompositionMaterials {
         PahoehoeLava = new Material.Builder(getID(), gregtechId("pahoehoe_lava"))
                 .liquid(new FluidBuilder().temperature(1200).customStill())
                 .build();
+
+        //  24163 Rare Earth Chlorides Concentrate
+        RareEarthChloridesConcentrate = new Material.Builder(getID(), gregtechId("rare_earth_chlorides_concentrate"))
+                .liquid()
+                .color(RareEarthChloridesSolution.getMaterialRGB() - 10)
+                .iconSet(DULL)
+                .build();
+
+        //  24164 Rare Earth Chlorides Enriched Solution
+        RareEarthChloridesEnrichedSolution = new Material.Builder(getID(), gregtechId("rare_earth_chlorides_enriched_solution"))
+                .liquid()
+                .color(RareEarthChloridesSolution.getMaterialRGB() - 20)
+                .iconSet(DULL)
+                .build();
+
+        //  24165 Rare Earth Chlorides Diluted Solution
+        RareEarthChloridesDilutedSolution = new Material.Builder(getID(), gregtechId("rare_earth_chlorides_diluted_solution"))
+                .liquid()
+                .color(RareEarthChloridesSolution.getMaterialRGB() - 40)
+                .iconSet(DULL)
+                .build();
+
+        //  24166 Chlorinated Rare Earth Waste Fluid
+        ChlorinatedRareEarthWasteFluid = new Material.Builder(getID(), gregtechId("chlorinated_rare_earth_waste_fluid"))
+                .liquid()
+                .color(RareEarthChloridesSolution.getMaterialRGB() - 80)
+                .iconSet(DULL)
+                .build();
+
     }
 
 }
