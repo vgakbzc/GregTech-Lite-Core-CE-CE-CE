@@ -2,7 +2,6 @@ package magicbook.gtlitecore.loaders;
 
 import gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities;
 import gregtech.api.block.VariantBlock;
-import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
@@ -496,6 +495,167 @@ public class MachineRecipeLoader {
                 .EUt(VA[UV])
                 .duration(1200)
                 .buildAndRegister();
+
+        //  Space Elevator Assembling Module MK1
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .inputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING))
+        //        .input(ASSEMBLER[UV], 4)
+        //        .input(CIRCUIT_ASSEMBLER[UV], 4)
+        //        .input(gear, Taranium, 8)
+        //        .input(gearSmall, Taranium, 16)
+        //        .input(ROBOT_ARM_UV, 8)
+        //        .input(CONVEYOR_MODULE_UV, 16)
+        //        .input(ENERGY_CLUSTER, 32) // TODO Workstation MK3?
+        //        .input(circuit, MarkerMaterials.Tier.UV, 16)
+        //        .input(frameGt, Orichalcum, 8)
+        //        .input(screw, Orichalcum, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 16))
+        //        .fluidInputs(Lubricant.getFluid(16000))
+        //        .fluidInputs(Adamantium.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_ASSEMBLING_MODULE[0])
+        //        .EUt(VA[UHV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch(b -> b
+        //                .researchStack(PRECISE_ASSEMBLER.getStackForm())
+        //                .CWUt(256)
+        //                .EUt(VA[UV]))
+        //        .buildAndRegister();
+
+        //  Space Elevator Assembling Module MK2
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .inputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING))
+        //        .input(ASSEMBLER[UEV], 4)
+        //        .input(CIRCUIT_ASSEMBLER[UEV], 4)
+        //        .input(gear, CelestialTungsten, 8)
+        //        .input(gearSmall, CelestialTungsten, 16)
+        //        .input(ROBOT_ARM_UEV, 8)
+        //        .input(CONVEYOR_MODULE_UEV, 16)
+        //        .input(ULTIMATE_BATTERY, 32) // TODO Workstation MK4?
+        //        .input(frameGt, Infinity, 8)
+        //        .input(screw, Infinity, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 32))
+        //        .fluidInputs(Lubricant.getFluid(64000))
+        //        .fluidInputs(UUMatter.getFluid(16000))
+        //        .fluidInputs(AstralTitanium.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_ASSEMBLING_MODULE[1])
+        //        .EUt(VA[UEV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch(b -> b
+        //                .researchStack(SPACE_ELEVATOR_ASSEMBLING_MODULE[0].getStackForm())
+        //                .CWUt(512)
+        //                .EUt(VA[UHV]))
+        //        .buildAndRegister();
+
+        //  Space Elevator Assembling Module MK3
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .inputs(GTLiteMetaBlocks.SPACE_ELEVATOR_CASING.getItemVariant(BlockSpaceElevatorCasing.ElevatorCasingType.BASIC_CASING))
+        //        .input(ASSEMBLER[UXV], 4)
+        //        .input(CIRCUIT_ASSEMBLER[UXV], 4)
+        //        .input(gear, Hypogen, 8)
+        //        .input(gearSmall, Hypogen, 16)
+        //        .input(ROBOT_ARM_UXV, 8)
+        //        .input(CONVEYOR_MODULE_UXV, 16)
+        //        .input(ULTIMATE_BATTERY_MK2, 32) // TODO Workstation MK5?
+        //        .input(frameGt, CosmicNeutronium, 8)
+        //        .input(screw, CosmicNeutronium, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 64))
+        //        .fluidInputs(Lubricant.getFluid(256000))
+        //        .fluidInputs(UUMatter.getFluid(64000))
+        //        .fluidInputs(Spacetime.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_ASSEMBLING_MODULE[2])
+        //        .EUt(VA[UXV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch(b -> b
+        //                .researchStack(SPACE_ELEVATOR_ASSEMBLING_MODULE[1].getStackForm())
+        //                .CWUt(1024)
+        //                .EUt(VA[UEV]))
+        //        .buildAndRegister();
+
+        //  Space Elevator Mining Module MK1
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .input(EXTREME_LARGE_MINER)
+        //        .input(UNMANNED_DRONE_AIRPORT)
+        //        .input(FIELD_GENERATOR_UV, 4)
+        //        .input(circuit, MarkerMaterials.Tier.UV, 16)
+        //        .input(frameGt, Orichalcum, 24)
+        //        .input(wireGtQuadruple, EnrichedNaquadahTriniumEuropiumDuranide, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 8))
+        //        .fluidInputs(Lubricant.getFluid(16000))
+        //        .fluidInputs(ExtremelyUnstableNaquadah.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_MINING_MODULE[0])
+        //        .EUt(VA[UHV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch()
+        //        .buildAndRegister();
+
+        //  TODO MK2
+        //  TODO MK3
+
+        //  Space Elevator Drilling Module MK1
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .input(EXTREME_FLUID_DRILL_RIG)
+        //        .input(PLANETARY_GAS_SIPHON)
+        //        .input(COVER_ENDER_FLUID_LINK, 2)
+        //        .input(frameGt, Mithril, 4)
+        //        .input(circuit, MarkerMaterials.Tier.UHV, 4)
+        //        .input(ELECTRIC_PUMP_UV, 2)
+        //        .input(gear, Mithril, 4)
+        //        .input(screw, Adamantium, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 16))
+        //        .fluidInputs(Vibranium.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_DRILLING_MODULE[0])
+        //        .EUt(VA[UHV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch(b -> b
+        //                .researchStack(EXTREME_FLUID_DRILL_RIG.getStackForm())
+        //                .EUt(VA[UV])
+        //                .CWUt(256))
+        //        .buildAndRegister();
+
+        //  Space Elevator Drilling Module MK2
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .input(ULTIMATE_FLUID_DRILL_RIG)
+        //        .input(PLANETARY_GAS_SIPHON)
+        //        .input(COVER_ENDER_FLUID_LINK, 2)
+        //        .input(frameGt, MetastableOganesson, 4)
+        //        .input(circuit, MarkerMaterials.Tier.UEV, 4)
+        //        .input(ELECTRIC_PUMP_UHV, 2)
+        //        .input(gear, MetastableOganesson, 4)
+        //        .input(screw, Moscovium, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 32))
+        //        .fluidInputs(UUMatter.getFluid(16000))
+        //        .fluidInputs(Seaborgium.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_DRILLING_MODULE[1])
+        //        .EUt(VA[UEV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch(b -> b
+        //                .researchStack(ULTIMATE_FLUID_DRILL_RIG.getStackForm())
+        //                .EUt(VA[UHV])
+        //                .CWUt(512))
+        //        .buildAndRegister();
+
+        //  Space Elevator Drilling Module MK3
+        //ASSEMBLY_LINE_RECIPES.recipeBuilder()
+        //        .input(INFINITY_FLUID_DRILL_RIG)
+        //        .input(PLANETARY_GAS_SIPHON)
+        //        .input(COVER_ENDER_FLUID_LINK, 2)
+        //        .input(frameGt, MetastableHassium, 4)
+        //        .input(circuit, MarkerMaterials.Tier.UIV, 4)
+        //        .input(ELECTRIC_PUMP_UEV, 2)
+        //        .input(gear, MetastableHassium, 4)
+        //        .input(screw, Rhugnor, 32)
+        //        .fluidInputs(SolderingAlloy.getFluid(L * 64))
+        //        .fluidInputs(UUMatter.getFluid(64000))
+        //        .fluidInputs(Kevlar.getFluid(16000))
+        //        .fluidInputs(Infinity.getFluid(L * 4))
+        //        .output(SPACE_ELEVATOR_DRILLING_MODULE[2])
+        //        .EUt(VA[UIV])
+        //        .duration(2 * MINUTE)
+        //        .stationResearch(b -> b
+        //                .researchStack(INFINITY_FLUID_DRILL_RIG.getStackForm())
+        //                .EUt(VA[UEV])
+        //                .CWUt(1024))
+        //        .buildAndRegister();
 
         //  Fusion Reactor Mk IV
         ASSEMBLY_LINE_RECIPES.recipeBuilder()

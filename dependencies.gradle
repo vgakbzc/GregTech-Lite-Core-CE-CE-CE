@@ -8,8 +8,8 @@ dependencies {
     //  [MUI] Modular UI - 2.4.3
     implementation rfg.deobf("curse.maven:modularui-624243:5153413")
 
-    //  [GT] GregTech - 2.8.9-beta
-    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5506419")
+    //  [GT] GregTech - 2.8.10-beta
+    implementation rfg.deobf("curse.maven:gregtech-ce-unofficial-557242:5519022")
 
     //  [GCYM] Gregicality Multiblocks - 1.2.10
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:5508050")
