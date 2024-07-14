@@ -16,7 +16,7 @@ import java.lang.annotation.RetentionPolicy;
  *     This Annotation combines the following Annotations:
  *     <ul>
  *         <li>{@link NotNull}: Indicates that the elements annotated are guaranteed not to be {@code null};</li>
- *         <li>{@link TypeQualifierDefault}: Specifies that the default type qualifier for fields is applied;</li>
+ *         <li>{@link TypeQualifierDefault}: Specifies that the default type qualifier for fields is applied.</li>
  *     </ul>
  * </p>
  *

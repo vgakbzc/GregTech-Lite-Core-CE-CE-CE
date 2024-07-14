@@ -27,6 +27,7 @@ public class GTLiteValues {
     /**
      * Particle Voltage, this voltage is exactly like {@link GTValues#VA}, but use {@code long} like {@link GTValues#V},
      * it is also lower than the recipe to use a full amperage of that tier.
+     * {@code VP[tier]} list: 7, 30, 112, 450, 1800, 7200, 28800, 111360, 432000, 1689600, 6553600, 25480320, 98304000, 385875200, 192937600.
      */
     public static final long[] VP = Arrays.stream(V)
             .map(i -> BigInteger.valueOf(i)

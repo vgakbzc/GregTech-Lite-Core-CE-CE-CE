@@ -76,7 +76,6 @@ public class GTLiteAPI {
         }
 
         //  Component Casings Init
-        //  Because Java {@code ordinal()} is beginning from 0, so we should +1.
         for (BlockMotorCasing.MotorCasingTier tier : BlockMotorCasing.MotorCasingTier.values()) {
             MAP_MOTOR_CASING.put(GTLiteMetaBlocks.MOTOR_CASING.getState(tier),
                     new WrappedIntTier(tier, tier.ordinal() + 1));
@@ -118,22 +117,11 @@ public class GTLiteAPI {
         }
 
         //  Precise Assembler Casing Tier
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK1),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK1, 1));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK2),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK2, 2));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK3, 3));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK4),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK4, 4));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK5),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK5, 5));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK6),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK6, 6));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK7),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK7, 7));
-        MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK8),
-                new WrappedIntTier(BlockPreciseAssemblerCasing.AssemblyCasingTier.MK8, 8));
+        for (BlockPreciseAssemblerCasing.AssemblyCasingTier tier : BlockPreciseAssemblerCasing.AssemblyCasingTier.values()) {
+            MAP_PA_CASING.put(GTLiteMetaBlocks.PRECISE_ASSEMBLER_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
+
         MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LuV),
                 new WrappedIntTier(BlockMachineCasing.MachineCasingType.LuV, 1));
         MAP_PA_INTERNAL_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ZPM),
@@ -152,52 +140,16 @@ public class GTLiteAPI {
                 new WrappedIntTier(BlockMachineCasing.MachineCasingType.OpV, 8));
 
         //  Component Assembly Line Casing Tier
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.LV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.LV, 1));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.MV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.MV, 2));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.HV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.HV, 3));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.EV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.EV, 4));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.IV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.IV, 5));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.LuV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.LuV, 6));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.ZPM),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.ZPM, 7));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UV, 8));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UHV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UHV, 9));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UEV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UEV, 10));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UIV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UIV, 11));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.UXV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.UXV, 12));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.OpV),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.OpV, 13));
-        MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(BlockComponentAssemblyLineCasing.CasingTier.MAX),
-                new WrappedIntTier(BlockComponentAssemblyLineCasing.CasingTier.MAX, 14));
+        for (BlockComponentAssemblyLineCasing.CasingTier tier : BlockComponentAssemblyLineCasing.CasingTier.values()) {
+            MAP_CA_CASING.put(GTLiteMetaBlocks.COMPONENT_ASSEMBLY_LINE_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
 
         //  Field Casing Tier
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.ZPM),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.ZPM, 1));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UV),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UV, 2));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UHV),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UHV, 3));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UEV),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UEV, 4));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UIV),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UIV, 5));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.UXV),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.UXV, 6));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.OpV),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.OpV, 7));
-        MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(BlockFieldCasing.FieldCasingTier.MAX),
-                new WrappedIntTier(BlockFieldCasing.FieldCasingTier.MAX, 8));
+        for (BlockFieldCasing.FieldCasingTier tier : BlockFieldCasing.FieldCasingTier.values()) {
+            MAP_FIELD_CASING.put(GTLiteMetaBlocks.FIELD_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal() + 1));
+        }
 
         //  Space Elevator Motor Tier
         MAP_SPACE_ELEVATOR_MOTOR.put(GTLiteMetaBlocks.ACTIVE_MULTIBLOCK_CASING.getState(BlockActiveMultiblockCasing.ActiveCasingType.MOTOR_CASING_MK1),
@@ -273,50 +225,10 @@ public class GTLiteAPI {
                 new WrappedIntTier(BlockImplosionCoil.ImplosionCoilType.ETERNITY, 7));
 
         //  Machine Casing
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ULV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.ULV, 0));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.LV, 1));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.MV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.MV, 2));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.HV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.HV, 3));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.EV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.EV, 4));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.IV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.IV, 5));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.LuV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.LuV, 6));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.ZPM),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.ZPM, 7));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UV, 8));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UHV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UHV, 9));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UEV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UEV, 10));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UIV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UIV, 11));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.UXV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.UXV, 12));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.OpV),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.OpV, 13));
-
-        MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(BlockMachineCasing.MachineCasingType.MAX),
-                new WrappedIntTier(BlockMachineCasing.MachineCasingType.MAX, 14));
+        for (BlockMachineCasing.MachineCasingType tier : BlockMachineCasing.MachineCasingType.values()) {
+            MAP_MACHINE_CASING.put(MetaBlocks.MACHINE_CASING.getState(tier),
+                    new WrappedIntTier(tier, tier.ordinal()));
+        }
 
         //  Algae Culture Tank Casing
         MAP_ACT_CASING.put(MetaBlocks.METAL_CASING.getState(gregtech.common.blocks.BlockMetalCasing.MetalCasingType.STAINLESS_CLEAN),
