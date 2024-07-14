@@ -14,14 +14,14 @@ dependencies {
     //  [GCYM] Gregicality Multiblocks - 1.2.10
     implementation rfg.deobf("curse.maven:gregicality-multiblocks-564858:5508050")
 
-    //  [GTFO] GregTech Food Option - 1.11.1
-    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:5155451")
+    //  [GTFO] GregTech Food Option - 1.11.3
+    implementation rfg.deobf("curse.maven:gregtech-food-option-477021:5500516")
 
     //  [AE2uEL] AE2 Unofficial Extended Life - 0.56.6
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5411078")
 
-    //  [AE2FC] AE2 Fluid Crafting Rework - 2.6.2r
-    implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5440394")
+    //  [AE2FC] AE2 Fluid Crafting Rework - 2.6.3r
+    implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5504001")
 
     //  [NAE2] Neeve's AE2 Additions - 1.6.4
     implementation rfg.deobf("curse.maven:nae2-884359:5380800")
@@ -38,8 +38,8 @@ dependencies {
     //  [AE2Su] AE2 Stuff Unofficial - 0.9
     implementation rfg.deobf("curse.maven:ae2-stuff-unofficial-951064:5002181")
 
-    //  [HEI] Had Enough Items - 4.25.1
-    implementation rfg.deobf("curse.maven:had-enough-items-557549:4810661")
+    //  [HEI] Had Enough Items - 4.25.5
+    implementation rfg.deobf("curse.maven:had-enough-items-557549:5471944")
 
     //  [TOP] The One Probe - 1.4.28
     implementation rfg.deobf("curse.maven:top-245211:2667280")
