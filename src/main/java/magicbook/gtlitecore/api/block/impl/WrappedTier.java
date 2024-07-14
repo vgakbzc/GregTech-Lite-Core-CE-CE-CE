@@ -12,8 +12,8 @@ public class WrappedTier implements IBlockTier {
         this.inner = inner;
     }
 
-    @Override
     @NotNull
+    @Override
     public String getName() {
         return inner.getName();
     }
