@@ -1,21 +1,76 @@
 package magicbook.gtlitecore.api.utils;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 /**
- * Math class of BigInteger.
+ * Mathematic Utilities for {@code BigInteger}.
+ *
+ * @author Magic_Sweepy
  *
  * <p>
- *     This class is {@link Math} for {@link BigInteger},
- *     used to support some common calculates.
+ *     This class is Calculation class for {@code BigInteger},
+ *     supported some method in {@link Math} (but for {@code BigInteger}).
  * </p>
  *
- * TODO other methods.
+ * @see BigInteger
+ * @see BigDecimal
  */
 @SuppressWarnings("unused")
 public class BigMath {
 
     private BigMath() {}
+
+    /**
+     * Returns the trigonometric sine of an angle.  Special cases:
+     * <ul><li>If the argument is NaN or an infinity, then the
+     * result is NaN.
+     * <li>If the argument is zero, then the result is a zero with the
+     * same sign as the argument.</ul>
+     *
+     * <p>The computed result must be within 1 ulp of the exact result.
+     * Results must be semi-monotonic.
+     *
+     * @param   a   an angle, in radians.
+     * @return  the sine of the argument.
+     */
+    public static BigDecimal sin(BigDecimal a) {
+        return BigDecimal.valueOf(Math.sin(a.doubleValue()));
+    }
+
+    /**
+     * Returns the trigonometric cosine of an angle. Special cases:
+     * <ul><li>If the argument is NaN or an infinity, then the
+     * result is NaN.</ul>
+     *
+     * <p>The computed result must be within 1 ulp of the exact result.
+     * Results must be semi-monotonic.
+     *
+     * @param   a   an angle, in radians.
+     * @return  the cosine of the argument.
+     */
+    public static BigDecimal cos(BigDecimal a) {
+        return BigDecimal.valueOf(Math.cos(a.doubleValue()));
+    }
+
+    /**
+     * Returns the trigonometric tangent of an angle.  Special cases:
+     * <ul><li>If the argument is NaN or an infinity, then the result
+     * is NaN.
+     * <li>If the argument is zero, then the result is a zero with the
+     * same sign as the argument.</ul>
+     *
+     * <p>The computed result must be within 1 ulp of the exact result.
+     * Results must be semi-monotonic.
+     *
+     * @param   a   an angle, in radians.
+     * @return  the tangent of the argument.
+     */
+    public static BigDecimal tan(BigDecimal a) {
+        return BigDecimal.valueOf(Math.tan(a.doubleValue()));
+    }
+
+    //  TODO asin, acos, atan, exp, log, log10, sqrt, ceil, floor, pow, round
 
     /**
      * Returns the smaller of two {@code BigInteger} values.

@@ -13,7 +13,6 @@ import net.minecraft.util.text.TextComponentTranslation;
  *     This mod now public archive (based on MIT License), so I redo it in gtlitecore.
  * </p>
  */
-@SuppressWarnings("all")
 public class ChatCalculatorHelper {
 
     public static double eval(final String str, final EntityPlayer player) {
@@ -38,7 +37,8 @@ public class ChatCalculatorHelper {
                 nextChar();
                 double x = parseExpression();
                 if (pos < str.length())
-                    throw new RuntimeException(new TextComponentTranslation("gtlitecore.chat_calculator.error.unexpected_char", str.charAt(pos)).getFormattedText());
+                    throw new RuntimeException(
+                            new TextComponentTranslation("gtlitecore.chat_calculator.error.unexpected_char", str.charAt(pos)).getFormattedText());
                 return x;
             }
 
@@ -88,7 +88,8 @@ public class ChatCalculatorHelper {
                 if (eat('(')) { // parentheses
                     x = parseExpression();
                     if (!eat(')'))
-                        throw new RuntimeException(new TextComponentTranslation("chatcalculator.error.parenthesis_end").getFormattedText());
+                        throw new RuntimeException(
+                                new TextComponentTranslation("gtlitecore.chatcalculator.error.parenthesis_end").getFormattedText());
                 } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
                     while ((ch >= '0' && ch <= '9') || ch == '.')
                         nextChar();
@@ -110,7 +111,8 @@ public class ChatCalculatorHelper {
                     if (eat('(')) {
                         x = parseExpression();
                         if (!eat(')'))
-                            throw new RuntimeException(new TextComponentTranslation("gtlitecore.chat_calculator.error.parenthesis_func", func).getFormattedText());
+                            throw new RuntimeException(
+                                    new TextComponentTranslation("gtlitecore.chat_calculator.error.parenthesis_func", func).getFormattedText());
                     } else {
                         x = parseFactor();
                     }
@@ -124,10 +126,12 @@ public class ChatCalculatorHelper {
                         case "asin" -> Math.asin(Math.toRadians(x));
                         case "acos" -> Math.acos(Math.toRadians(x));
                         case "atan" -> Math.atan(Math.toRadians(x));
-                        default -> throw new RuntimeException(new TextComponentTranslation("gtlitecore.chat_calculator.error.unknown_func", func).getFormattedText());
+                        default -> throw new RuntimeException(
+                                new TextComponentTranslation("gtlitecore.chat_calculator.error.unknown_func", func).getFormattedText());
                     };
                 } else {
-                    throw new RuntimeException(new TextComponentTranslation("gtlitecore.chat_calculator.error.unexpected_char", str.charAt(str.length() - 1)).getFormattedText());
+                    throw new RuntimeException(
+                            new TextComponentTranslation("gtlitecore.chat_calculator.error.unexpected_char", str.charAt(str.length() - 1)).getFormattedText());
                 }
 
                 if (eat('^'))
