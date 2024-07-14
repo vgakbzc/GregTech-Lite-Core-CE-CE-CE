@@ -20,7 +20,7 @@ dependencies {
     //  [AE2uEL] AE2 Unofficial Extended Life - 0.56.6
     implementation rfg.deobf("curse.maven:ae2-extended-life-570458:5411078")
 
-    //  [AE2FC] AE2 Fluid Crafting Rework - 2.6.3r
+    //  [AE2FCr] AE2 Fluid Crafting Rework - 2.6.3r
     implementation rfg.deobf("curse.maven:ae2-fluid-crafting-rework-623955:5504001")
 
     //  [NAE2] Neeve's AE2 Additions - 1.6.4
@@ -76,5 +76,5 @@ dependencies {
     //runtimeOnly rfg.deobf("curse.maven:spark-361579:3542217")
 
     //  [SM] Smooth Font - 2.1.4
-    runtimeOnly rfg.deobf("curse.maven:smooth-font-285742:3944565")
+    //runtimeOnly rfg.deobf("curse.maven:smooth-font-285742:3944565")
 }
