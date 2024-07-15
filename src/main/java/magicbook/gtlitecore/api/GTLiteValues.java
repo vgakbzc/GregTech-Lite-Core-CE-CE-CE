@@ -5,6 +5,8 @@ import gregtech.api.recipes.RecipeBuilder;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Material;
 import gregtech.api.unification.ore.OrePrefix;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import magicbook.gtlitecore.GTLiteCore;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.api.utils.Mods;
@@ -16,6 +18,7 @@ import java.util.Arrays;
 import static gregtech.api.GTValues.*;
 
 @SuppressWarnings("unused")
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class GTLiteValues {
 
     /**
@@ -263,6 +266,4 @@ public class GTLiteValues {
     /** @deprecated use {@link Mods}. **/
     @Deprecated
     public static final String MODID_CHISEL = "chisel";
-
-    private GTLiteValues() {}
 }

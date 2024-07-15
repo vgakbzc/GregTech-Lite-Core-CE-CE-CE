@@ -989,6 +989,6 @@ public class GTLiteMaterials {
         GTLiteUnknownCompositionMaterials.register(); // 18000-20000
         GTLiteThirdDegreeMaterials.register();        // 20001-21000
         GTLiteModCompatibilityMaterials.register();   // 21001-22000
-        GTLiteNuclearMaterials.register();            //  22001-24000
+        GTLiteNuclearMaterials.register();            // 22001-24000
     }
 }
