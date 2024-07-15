@@ -43,7 +43,7 @@ public class BigMath {
 
     //  Math Context, used to set precision and round.
     //  Hint: I think this precision is enough for Minecraft :)
-    @Getter @Setter
+    @Getter
     private static final int DEFAULT_PRECISION = 100;
     @Getter
     private static final MathContext MC = new MathContext(DEFAULT_PRECISION, RoundingMode.HALF_UP);
@@ -236,8 +236,8 @@ public class BigMath {
      *
      * <p>
      *     This method returns the Natural Logarithm (base <i>e</i>) of {@code a} ({@code ln(a)}),
-     *      different with {@link Math#log(double)}, this method is for {@code BigInteger},
-     *      or we can see: {@code BigDecimal}.
+     *     different with {@link Math#log(double)}, this method is for {@code BigInteger},
+     *     or we can see: {@code BigDecimal}.
      * </p>
      *
      * @param a  A {@code BigDecimal} value.
@@ -260,16 +260,18 @@ public class BigMath {
     }
 
     /**
-     * Just do base changing of {@link #log(BigDecimal)} ^^.
+     * Raw {@code log10} function for {@code BigInteger}.
      *
-     * <pre>{@code
-     *     \log_{10}(x) = \frac{\log_{e}(x)}{\log_{e}(10)}
-     * }</pre>
-     *
-     * So log10 method = (log(x)/log(10))/log(e).
+     * <p>
+     *     Just do base changing of {@link #log(BigDecimal)} ^^.
+     *     <pre>{@code
+     *         \log_{10}(x) = \frac{\log_{e}(x)}{\log_{e}(10)}
+     *     }</pre>
+     *     So log10 method = (log(x)/log(10))/log(e).
+     * </p>
      *
      * @param a  {@code BigDecimal} Value.
-     * @return   The base 10 logarithm of  {@code a}.
+     * @return   The base 10 logarithm of {@code a}.
      */
     public static BigDecimal log10(BigDecimal a) {
         if (a.compareTo(BigDecimal.ZERO) <= 0) {
@@ -361,8 +363,14 @@ public class BigMath {
     }
 
     /**
-     * @param values  Long value.
-     * @return        Summarized values.
+     * Calculates sum of all elements in {@code values} ({@code long} array).
+     *
+     * <p>
+     *     Hint: Donot adding the next value in {@code values} to current sum, maybe cause an overflow.
+     * </p>
+     *
+     * @param values  Values to be summed.
+     * @return        A {@code BigInteger} representing the sum of elements in {@code values}.
      */
     public static BigInteger summarizedValue(long[] values) {
         BigInteger retValue = BigInteger.ZERO;

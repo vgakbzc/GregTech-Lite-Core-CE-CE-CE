@@ -12,7 +12,7 @@ import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.recipe.properties.*;
 import magicbook.gtlitecore.api.utils.GTLiteLog;
 import magicbook.gtlitecore.api.utils.Mods;
-import magicbook.gtlitecore.api.utils.ServerSupportI18n;
+import magicbook.gtlitecore.api.utils.Translator;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 import magicbook.gtlitecore.common.covers.GTLiteCoverBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GTLiteBehaviorAddition;
@@ -220,30 +220,30 @@ public class CommonProxy {
         FusionEUToStartProperty.registerFusionTier(10, "(MK5)");
 
         GTLiteLog.logger.info("Registering Precise Assembly Tier for recipe...");
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.1", "(MK1)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.2", "(MK2)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.3", "(MK3)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(4, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.4", "(MK4)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(5, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.5", "(MK5)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(6, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.6", "(MK6)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(7, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.7", "(MK7)"));
-        AssemblyCasingTierProperty.registerAssemblyCasingTier(8, ServerSupportI18n.format("gtlitecore.machine.precise_assembler.tier.8", "(MK8)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(1, Translator.format("gtlitecore.machine.precise_assembler.tier.1", "(MK1)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(2, Translator.format("gtlitecore.machine.precise_assembler.tier.2", "(MK2)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(3, Translator.format("gtlitecore.machine.precise_assembler.tier.3", "(MK3)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(4, Translator.format("gtlitecore.machine.precise_assembler.tier.4", "(MK4)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(5, Translator.format("gtlitecore.machine.precise_assembler.tier.5", "(MK5)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(6, Translator.format("gtlitecore.machine.precise_assembler.tier.6", "(MK6)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(7, Translator.format("gtlitecore.machine.precise_assembler.tier.7", "(MK7)"));
+        AssemblyCasingTierProperty.registerAssemblyCasingTier(8, Translator.format("gtlitecore.machine.precise_assembler.tier.8", "(MK8)"));
 
         GTLiteLog.logger.info("Registering Component Assembly Line Tier for recipe...");
-        ComponentCasingTierProperty.registerComponentCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.1", "(LV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.2", "(MV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.3", "(HV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(4, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.4", "(EV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(5, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.5", "(IV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(6, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.6", "(LuV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(7, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.7", "(ZPM)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(8, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.8", "(UV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(9, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.9", "(UHV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(10, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.10", "(UEV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(11, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.11", "(UIV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(12, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.12", "(UXV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(13, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.13", "(OpV)"));
-        ComponentCasingTierProperty.registerComponentCasingTier(14, ServerSupportI18n.format("gtlitecore.machine.component_assembly_line.tier.14", "(MAX)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(1, Translator.format("gtlitecore.machine.component_assembly_line.tier.1", "(LV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(2, Translator.format("gtlitecore.machine.component_assembly_line.tier.2", "(MV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(3, Translator.format("gtlitecore.machine.component_assembly_line.tier.3", "(HV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(4, Translator.format("gtlitecore.machine.component_assembly_line.tier.4", "(EV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(5, Translator.format("gtlitecore.machine.component_assembly_line.tier.5", "(IV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(6, Translator.format("gtlitecore.machine.component_assembly_line.tier.6", "(LuV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(7, Translator.format("gtlitecore.machine.component_assembly_line.tier.7", "(ZPM)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(8, Translator.format("gtlitecore.machine.component_assembly_line.tier.8", "(UV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(9, Translator.format("gtlitecore.machine.component_assembly_line.tier.9", "(UHV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(10, Translator.format("gtlitecore.machine.component_assembly_line.tier.10", "(UEV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(11, Translator.format("gtlitecore.machine.component_assembly_line.tier.11", "(UIV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(12, Translator.format("gtlitecore.machine.component_assembly_line.tier.12", "(UXV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(13, Translator.format("gtlitecore.machine.component_assembly_line.tier.13", "(OpV)"));
+        ComponentCasingTierProperty.registerComponentCasingTier(14, Translator.format("gtlitecore.machine.component_assembly_line.tier.14", "(MAX)"));
 
         GTLiteLog.logger.info("Registering Field Casing Tier for recipe...");
         FieldCasingTierProperty.registerFieldCasingTier(1, "1 (ZPM)");
@@ -263,9 +263,9 @@ public class CommonProxy {
         SpaceElevatorCasingTierProperty.registerSpaceElevatorCasingTier(5, "(MK5)");
 
         GTLiteLog.logger.info("Registering Graviton Casing Tier for recipe...");
-        GravitonCasingTierProperty.registerGravitonCasingTier(1, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.1", "Low"));
-        GravitonCasingTierProperty.registerGravitonCasingTier(2, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.2", "Medium"));
-        GravitonCasingTierProperty.registerGravitonCasingTier(3, ServerSupportI18n.format("gtlitecore.machine.nicoll_dyson_beamer.tier.3", "High"));
+        GravitonCasingTierProperty.registerGravitonCasingTier(1, Translator.format("gtlitecore.machine.nicoll_dyson_beamer.tier.1", "Low"));
+        GravitonCasingTierProperty.registerGravitonCasingTier(2, Translator.format("gtlitecore.machine.nicoll_dyson_beamer.tier.2", "Medium"));
+        GravitonCasingTierProperty.registerGravitonCasingTier(3, Translator.format("gtlitecore.machine.nicoll_dyson_beamer.tier.3", "High"));
 
         GTLiteLog.logger.info("Registering Swarm Tier for recipe...");
         SwarmTierProperty.registerSwarmTier(1, "I");
