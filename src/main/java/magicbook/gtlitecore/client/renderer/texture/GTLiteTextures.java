@@ -22,7 +22,11 @@ public class GTLiteTextures {
     public static final OrientedOverlayRenderer NAQUADAH_REACTOR_OVERLAY = new OrientedOverlayRenderer("machines/naquadah_reactor");
     public static final OrientedOverlayRenderer ROCKET_ENGINE_OVERLAY = new OrientedOverlayRenderer("machines/rocket_engine");
     public static final OrientedOverlayRenderer BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("machines/bio_reactor");
+
+    /** @deprecated **/
+    @Deprecated
     public static final OrientedOverlayRenderer CONDENSER_OVERLAY = new OrientedOverlayRenderer("machines/condenser");
+
     public static final OrientedOverlayRenderer SIMULATOR_OVERLAY = new OrientedOverlayRenderer("machines/simulator");
     public static final OrientedOverlayRenderer BIOMASS_GENERATOR_OVERLAY = new OrientedOverlayRenderer("machines/biomass_generator");
 

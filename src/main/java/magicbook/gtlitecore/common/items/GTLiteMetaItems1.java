@@ -21,6 +21,7 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.items.behaviors.CatalystBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
+import magicbook.gtlitecore.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.MobEffects;
@@ -1266,26 +1267,72 @@ public class GTLiteMetaItems1 extends StandardMetaItem {
 
         /* -------------------------------------------------------------------- Singularities --------------------------------------------------------------------- */
 
-        MAGIC_SINGULARITY = this.addItem(800, "singularity.magic")
-                .addOreDict("singularityMagic");
+        // ID 800-806: Eternitic Singularity Components
+        NITRONIC_SINGULARITY = this.addItem(800, "singularity_nitronic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityNitronic");
 
-        METRIC_SINGULARITY = this.addItem(801, "singularity.metric")
-                .addOreDict("singularityMetric");
+        PSYCHOTIC_SINGULARITY = this.addItem(801, "singularity_psychotic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityPsychotic");
 
-        EXOTIC_SINGULARITY = this.addItem(802, "singularity.exotic")
-                .addOreDict("singularityExotic");
+        FANTASTIC_SINGULARITY = this.addItem(802, "singularity_fantastic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityFantastic");
 
-        ANCIENT_SINGULARITY = this.addItem(803, "singularity.ancient")
-                .addOreDict("singularityAncient");
+        PNEUMATIC_SINGULARITY = this.addItem(803, "singularity_pneumatic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityPneumatic");
 
-        VOID_SINGULARITY = this.addItem(804, "singularity.void")
-                .addOreDict("singularityVoid");
+        CRYPTIC_SINGULARITY = this.addItem(804, "singularity_cryptic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityCryptic");
 
-        EIGEN_SINGULARITY = this.addItem(805, "singularity.eigen")
-                .addOreDict("singularityEigen");
+        HISTORIC_SINGULARITY = this.addItem(805, "singularity_historic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityHistoric");
 
-        WEIRD_SINGULARITY = this.addItem(806, "singularity.weird")
-                .addOreDict("singularityWeird");
+        METEORIC_SINGULARITY = this.addItem(806, "singularity_meteoric")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityMeteoric");
+
+        // ID: 807-813: Chronic Singularity Components
+        ANGELIC_SINGULARITY = this.addItem(807, "singularity_angelic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityAngelic");
+
+        CHROMATIC_SINGULARITY = this.addItem(808, "singularity_chromatic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityChromatic");
+
+        PRISMATIC_SINGULARITY = this.addItem(809, "singularity_prismatic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityPrismatic");
+
+        ROBOTIC_SINGULARITY = this.addItem(810, "singularity_robotic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityRobotic");
+
+        GALACTIC_SINGULARITY = this.addItem(811, "singularity_galactic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityGalactic");
+
+        HYDROLIC_SINGULARITY = this.addItem(812, "singularity_hydrolic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityHydrolic");
+
+        GEOLOGIC_SINGULARITY = this.addItem(813, "singularity_geologic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityGeologic");
+
+        // ID 814-815: Ultimate Singularities
+        ETERNITIC_SINGULARITY = this.addItem(814, "singularity_eternitic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityEternitic");
+
+        CHRONIC_SINGULARITY = this.addItem(815, "singularity_chronic")
+                .addComponents(new HaloRenderItemBehavior(10, 0xFF000000, () -> GTLiteTextures.HALO, true))
+                .addOreDict("singularityChronic");
 
         /* --------------------------------------------------------------------- Fluid Cores ---------------------------------------------------------------------- */
 

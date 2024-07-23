@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtlitecore:items/metaitems/singularities/cryptic",
+    "layer1": "gtlitecore:items/metaitems/singularities/cryptic_overlay"
+  }
+}

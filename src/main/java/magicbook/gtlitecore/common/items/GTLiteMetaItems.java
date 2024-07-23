@@ -477,13 +477,23 @@ public final class GTLiteMetaItems {
     public static MetaItem<?>.MetaValueItem CONTAMINATED_PETRI_DISH;
 
     //  Singularities
-    public static MetaItem<?>.MetaValueItem MAGIC_SINGULARITY;
-    public static MetaItem<?>.MetaValueItem METRIC_SINGULARITY;
-    public static MetaItem<?>.MetaValueItem EXOTIC_SINGULARITY;
-    public static MetaItem<?>.MetaValueItem ANCIENT_SINGULARITY;
-    public static MetaItem<?>.MetaValueItem VOID_SINGULARITY;
-    public static MetaItem<?>.MetaValueItem EIGEN_SINGULARITY;
-    public static MetaItem<?>.MetaValueItem WEIRD_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem NITRONIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem PSYCHOTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem FANTASTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem PNEUMATIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CRYPTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem HISTORIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem METEORIC_SINGULARITY;
+
+    public static MetaItem<?>.MetaValueItem ANGELIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CHROMATIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem PRISMATIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem ROBOTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem GALACTIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem HYDROLIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem GEOLOGIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem ETERNITIC_SINGULARITY;
+    public static MetaItem<?>.MetaValueItem CHRONIC_SINGULARITY;
 
     //  Fluid Cores
     public static MetaItem<?>.MetaValueItem FLUID_CORE_T1;

@@ -449,6 +449,18 @@ public class MiscRecipes {
                 .duration(240)
                 .buildAndRegister();
 
+        //  Black Iron
+        MIXER_RECIPES.recipeBuilder()
+                .circuitMeta(4)
+                .input(dust, BlackSteel)
+                .input(dust, Bedrock)
+                .input(dust, Fullerene)
+                .input(dust, CarbonNanotube)
+                .output(dust, BlackIron, 4)
+                .EUt(VA[UHV])
+                .duration(10 * SECOND)
+                .buildAndRegister();
+
     }
 
     private static void GlassesRecipes() {

@@ -66,6 +66,7 @@ public enum Mods {
      */
     EpimorphismCore("epcore"),
     ExtendedAE("extendedae"),
+    ExtendedCrafting("extendedcrafting"),
     ExtraUtilities2("extrautils2"),
 
     FluidDrawers("fluiddrawers"),

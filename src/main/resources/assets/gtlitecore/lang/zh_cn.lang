@@ -1261,13 +1261,26 @@ metaitem.particle.meson.name=介子
 metaitem.particle.eta_meson.name=η介子
 
 ##  Singularities
-metaitem.singularity.magic.name=魔源奇点
-metaitem.singularity.metric.name=度量奇点
-metaitem.singularity.exotic.name=超凡奇点
-metaitem.singularity.ancient.name=亘古奇点
-metaitem.singularity.void.name=虚空奇点
-metaitem.singularity.eigen.name=本征奇点
-metaitem.singularity.weird.name=诡秘奇点
+metaitem.singularity_nitronic.name=闪瞬奇点
+metaitem.singularity_psychotic.name=圣灵奇点
+metaitem.singularity_fantastic.name=幻梦奇点
+metaitem.singularity_pneumatic.name=大气奇点
+metaitem.singularity_cryptic.name=诡秘奇点
+metaitem.singularity_historic.name=史诗奇点
+metaitem.singularity_meteoric.name=星耀奇点
+
+metaitem.singularity_angelic.name=天使奇点
+metaitem.singularity_chromatic.name=七彩奇点
+metaitem.singularity_prismatic.name=棱镜奇点
+metaitem.singularity_robotic.name=智械奇点
+metaitem.singularity_galactic.name=太空奇点
+metaitem.singularity_hydrolic.name=水灵奇点
+metaitem.singularity_geologic.name=地心奇点
+
+metaitem.singularity_eternitic.name=永恒奇点
+metaitem.singularity_eternitic.tooltip=§o无限掌中置，刹那成永恒...
+metaitem.singularity_chronic.name=静空奇点
+metaitem.singularity_chronic.tooltip=§o我于万物之中...
 
 ##  SMDs
 metaitem.component.optical_smd.transistor.name=光学晶体管
@@ -3876,6 +3889,7 @@ gregtech.material.crystalline_pink_slime=晶化粉红史莱姆
 gregtech.material.melodic_alloy=旋律合金
 gregtech.material.stellar_alloy=恒星合金
 gregtech.material.mysterious_crystal=神秘水晶
+gregtech.material.black_iron=黑铁
 
 ##  Renamed Materials
 item.gregtech.material.platinum_group_residue.dust=铂族金属残渣

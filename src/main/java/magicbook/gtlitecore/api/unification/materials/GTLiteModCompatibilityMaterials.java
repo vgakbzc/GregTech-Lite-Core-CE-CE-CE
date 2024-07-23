@@ -289,6 +289,21 @@ public class GTLiteModCompatibilityMaterials {
                 .build()
                 .setFormula("My", false);
 
+        //  21023 Black Iron (ExtendedCrafting)
+        BlackIron = new Material.Builder(getID(), gregtechId("black_iron"))
+                .ingot()
+                .fluid()
+                .color(0x404040)
+                .iconSet(DULL)
+                .components(BlackSteel, 1, Bedrock, 1, Fullerene, 1, CarbonNanotube, 1)
+                .flags(EXT_METAL, GENERATE_FRAME)
+                .blast(b -> b
+                        .temp(13500, BlastProperty.GasTier.HIGHEST)
+                        .blastStats(VA[UHV], 2400)
+                        .vacuumStats(VA[UHV], 1200))
+                .build()
+                .setFormula("(Ni(AuAgCu3)Fe3)C60CNT?", true);
+
     }
 
 }

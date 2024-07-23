@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "gtlitecore:items/metaitems/singularities/hydrolic",
+    "layer1": "gtlitecore:items/metaitems/singularities/hydrolic_overlay"
+  }
+}

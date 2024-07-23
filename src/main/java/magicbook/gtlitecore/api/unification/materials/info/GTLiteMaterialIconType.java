@@ -21,5 +21,7 @@ public class GTLiteMaterialIconType {
     public static final MaterialIconType swarm = new MaterialIconType("swarm");
     public static final MaterialIconType nanotube = new MaterialIconType("nanotube");
     public static final MaterialIconType nanosensor = new MaterialIconType("nanosensor");
+    /** @deprecated **/
+    @Deprecated
     public static final MaterialIconType singularity = new MaterialIconType("singularity");
 }
