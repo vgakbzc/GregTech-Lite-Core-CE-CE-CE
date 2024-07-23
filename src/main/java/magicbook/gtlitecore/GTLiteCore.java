@@ -95,7 +95,7 @@ public class GTLiteCore {
         GTLiteMetaItems.init();
         GTLiteMetaBlocks.init();
         GTLiteAPI.init();
-        GTLiteMetaTileEntities.init();
+        GTLiteMetaTileEntities.register();
 
         proxy.preLoad();
 

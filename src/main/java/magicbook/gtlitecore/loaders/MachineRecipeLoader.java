@@ -134,16 +134,6 @@ public class MachineRecipeLoader {
                 'W', CraftingComponent.CABLE,
                 'M', CraftingComponent.MOTOR);
 
-        //  Condenser
-        MetaTileEntityLoader.registerMachineRecipe(true, CONDENSER,
-                "RFR", "PHP", "WXW",
-                'H', CraftingComponent.HULL,
-                'P', CraftingComponent.PISTON,
-                'F', CraftingComponent.FIELD_GENERATOR,
-                'W', CraftingComponent.CABLE,
-                'X', CraftingComponent.BETTER_CIRCUIT,
-                'R', CraftingComponent.STICK_RADIOACTIVE);
-
         if (GTLiteConfigHolder.machines.enableSimulator) {
             //  Simulator
             MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,

@@ -542,7 +542,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[0])
                     .input(wireGtHex, Tin, 2)
                     .input(plate, Steel, 6)
-                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[0])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[0])
                     .EUt(VA[LV])
                     .duration(400)
                     .buildAndRegister();
@@ -552,7 +552,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[1])
                     .input(wireGtHex, Copper, 2)
                     .input(plate, Aluminium, 6)
-                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[1])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[1])
                     .EUt(VA[MV])
                     .duration(400)
                     .buildAndRegister();
@@ -562,7 +562,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[2])
                     .input(wireGtHex, Gold, 2)
                     .input(plate, StainlessSteel, 6)
-                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[2])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[2])
                     .EUt(VA[HV])
                     .duration(400)
                     .buildAndRegister();
@@ -572,7 +572,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[3])
                     .input(wireGtHex, Aluminium, 2)
                     .input(plate, Titanium, 6)
-                    .output(LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH[3])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[3])
                     .EUt(VA[EV])
                     .duration(400)
                     .buildAndRegister();
@@ -619,7 +619,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[4])
                     .input(wireGtHex, PedotTMA, 2)
                     .input(plate, Adamantium, 6)
-                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[0])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[4])
                     .EUt(VA[UHV])
                     .duration(400)
                     .buildAndRegister();
@@ -640,7 +640,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[5])
                     .input(wireGtHex, Solarium, 2)
                     .input(plate, Infinity, 6)
-                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[1])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[5])
                     .EUt(VA[UEV])
                     .duration(400)
                     .buildAndRegister();
@@ -661,7 +661,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[6])
                     .input(wireGtHex, Hypogen, 2)
                     .input(plate, CosmicNeutronium, 6)
-                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[2])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[6])
                     .EUt(VA[UIV])
                     .duration(400)
                     .buildAndRegister();
@@ -682,7 +682,7 @@ public class EnergyHatches {
                     .input(OUTPUT_ENERGY_HATCH_16A[7])
                     .input(wireGtHex, Galaxium, 2)
                     .input(plate, Spacetime, 6)
-                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[3])
+                    .output(SUBSTATION_OUTPUT_ENERGY_HATCH[7])
                     .EUt(VA[UXV])
                     .duration(400)
                     .buildAndRegister();

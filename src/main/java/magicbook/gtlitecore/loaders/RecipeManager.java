@@ -142,7 +142,6 @@ public class RecipeManager {
         Simulator.init();
         HeatExchanger.init();
         LargeGasCollector.init();
-        Condenser.init();
         VirtualCosmosSimulator.init();
         LargeCircuitAssemblyLine.init();
         DysonSwarm.init();

@@ -12,14 +12,14 @@ import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.HULL;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MULTIPART_REINFORCED_ROTOR_HOLDER;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.REINFORCED_ROTOR_HOLDER;
 
 public class ReinforcedRotorHolder {
 
     public static void init() {
 
         //  LV
-        ModHandler.addShapedRecipe(true, "reinforced_rotor_holder.lv", MULTIPART_REINFORCED_ROTOR_HOLDER[0].getStackForm(),
+        ModHandler.addShapedRecipe(true, "reinforced_rotor_holder.lv", REINFORCED_ROTOR_HOLDER[0].getStackForm(),
                 "LFL", "GHG", "RMR",
                 'H', HULL[LV].getStackForm(),
                 'M', ELECTRIC_MOTOR_LV,
@@ -36,13 +36,13 @@ public class ReinforcedRotorHolder {
                 .input(rotor, Iron, 2)
                 .input(stickLong, Steel, 2)
                 .circuitMeta(7)
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[0])
+                .output(REINFORCED_ROTOR_HOLDER[0])
                 .EUt(VA[LV])
                 .duration(100)
                 .buildAndRegister();
 
         //  MV
-        ModHandler.addShapedRecipe(true, "reinforced_rotor_holder.mv", MULTIPART_REINFORCED_ROTOR_HOLDER[1].getStackForm(),
+        ModHandler.addShapedRecipe(true, "reinforced_rotor_holder.mv", REINFORCED_ROTOR_HOLDER[1].getStackForm(),
                 "LFL", "GHG", "RMR",
                 'H', HULL[MV].getStackForm(),
                 'M', ELECTRIC_MOTOR_MV,
@@ -59,7 +59,7 @@ public class ReinforcedRotorHolder {
                 .input(rotor, Steel, 2)
                 .input(stickLong, Aluminium, 2)
                 .circuitMeta(7)
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[1])
+                .output(REINFORCED_ROTOR_HOLDER[1])
                 .EUt(VA[MV])
                 .duration(150)
                 .buildAndRegister();
@@ -73,7 +73,7 @@ public class ReinforcedRotorHolder {
                 .input(rotor, Chrome, 2)
                 .input(stickLong, StainlessSteel, 2)
                 .circuitMeta(7)
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[2])
+                .output(REINFORCED_ROTOR_HOLDER[2])
                 .EUt(VA[HV])
                 .duration(200)
                 .buildAndRegister();
@@ -87,7 +87,7 @@ public class ReinforcedRotorHolder {
                 .input(rotor, Staballoy, 2)
                 .input(stickLong, Titanium, 2)
                 .circuitMeta(7)
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[3])
+                .output(REINFORCED_ROTOR_HOLDER[3])
                 .EUt(VA[EV])
                 .duration(250)
                 .cleanroom(CleanroomType.CLEANROOM)
@@ -102,7 +102,7 @@ public class ReinforcedRotorHolder {
                 .input(rotor, Inconel792, 2)
                 .input(stickLong, TungstenSteel, 2)
                 .circuitMeta(7)
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[4])
+                .output(REINFORCED_ROTOR_HOLDER[4])
                 .EUt(VA[IV])
                 .duration(300)
                 .cleanroom(CleanroomType.CLEANROOM)
@@ -118,11 +118,11 @@ public class ReinforcedRotorHolder {
                 .input(stickLong, RhodiumPlatedPalladium, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[5])
+                .output(REINFORCED_ROTOR_HOLDER[5])
                 .EUt(VA[LuV])
                 .duration(350)
                 .scannerResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[4].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[4].getStackForm())
                         .EUt(VA[IV])
                         .duration(200))
                 .buildAndRegister();
@@ -137,11 +137,11 @@ public class ReinforcedRotorHolder {
                 .input(stickLong, NaquadahAlloy, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[6])
+                .output(REINFORCED_ROTOR_HOLDER[6])
                 .EUt(VA[ZPM])
                 .duration(400)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[5].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[5].getStackForm())
                         .EUt(VA[LuV])
                         .CWUt(32))
                 .buildAndRegister();
@@ -156,11 +156,11 @@ public class ReinforcedRotorHolder {
                 .input(stickLong, Darmstadtium, 2)
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[7])
+                .output(REINFORCED_ROTOR_HOLDER[7])
                 .EUt(VA[UV])
                 .duration(450)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[6].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[6].getStackForm())
                         .EUt(VA[ZPM])
                         .CWUt(64))
                 .buildAndRegister();
@@ -176,11 +176,11 @@ public class ReinforcedRotorHolder {
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
                 .fluidInputs(Polyetheretherketone.getFluid(L * 4))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[8])
+                .output(REINFORCED_ROTOR_HOLDER[8])
                 .EUt(VA[UHV])
                 .duration(500)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[7].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[7].getStackForm())
                         .EUt(VA[UV])
                         .CWUt(128))
                 .buildAndRegister();
@@ -196,11 +196,11 @@ public class ReinforcedRotorHolder {
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
                 .fluidInputs(Kevlar.getFluid(L * 4))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[9])
+                .output(REINFORCED_ROTOR_HOLDER[9])
                 .EUt(VA[UEV])
                 .duration(550)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[8].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[8].getStackForm())
                         .EUt(VA[UHV])
                         .CWUt(256))
                 .buildAndRegister();
@@ -216,11 +216,11 @@ public class ReinforcedRotorHolder {
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
                 .fluidInputs(Zylon.getFluid(L * 4))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[10])
+                .output(REINFORCED_ROTOR_HOLDER[10])
                 .EUt(VA[UIV])
                 .duration(600)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[9].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[9].getStackForm())
                         .EUt(VA[UEV])
                         .CWUt(512))
                 .buildAndRegister();
@@ -236,11 +236,11 @@ public class ReinforcedRotorHolder {
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
                 .fluidInputs(FullerenePolymerMatrix.getFluid(L * 4))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[11])
+                .output(REINFORCED_ROTOR_HOLDER[11])
                 .EUt(VA[UXV])
                 .duration(650)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[10].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[10].getStackForm())
                         .EUt(VA[UIV])
                         .CWUt(1024))
                 .buildAndRegister();
@@ -256,11 +256,11 @@ public class ReinforcedRotorHolder {
                 .fluidInputs(SolderingAlloy.getFluid(L * 16))
                 .fluidInputs(Lubricant.getFluid(4000))
                 .fluidInputs(CosmicFabric.getFluid(L * 4))
-                .output(MULTIPART_REINFORCED_ROTOR_HOLDER[12])
+                .output(REINFORCED_ROTOR_HOLDER[12])
                 .EUt(VA[OpV])
                 .duration(700)
                 .stationResearch(b -> b
-                        .researchStack(MULTIPART_REINFORCED_ROTOR_HOLDER[11].getStackForm())
+                        .researchStack(REINFORCED_ROTOR_HOLDER[11].getStackForm())
                         .EUt(VA[UXV])
                         .CWUt(2048))
                 .buildAndRegister();

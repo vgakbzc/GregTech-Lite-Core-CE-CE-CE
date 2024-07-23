@@ -11,6 +11,5 @@ public class OrePrefixAddition {
         MetaItems.addOrePrefix(GTLiteOrePrefix.swarm);
         MetaItems.addOrePrefix(GTLiteOrePrefix.nanotube);
         MetaItems.addOrePrefix(GTLiteOrePrefix.nanosensor);
-        //MetaItems.addOrePrefix(GTLiteOrePrefix.singularity);
     }
 }

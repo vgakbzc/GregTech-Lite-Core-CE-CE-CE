@@ -38,10 +38,4 @@ public class GTLiteMaterialFlags {
 
     public static final MaterialFlag GENERATE_NANOSENSOR = new MaterialFlag.Builder("generate_nanosensor")
             .build();
-
-    /** @deprecated **/
-    @Deprecated
-    public static final MaterialFlag GENERATE_SINGULARITY = new MaterialFlag.Builder("generate_singularity")
-            .build();
-
 }

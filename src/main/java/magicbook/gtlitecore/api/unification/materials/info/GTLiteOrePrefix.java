@@ -41,8 +41,4 @@ public class GTLiteOrePrefix {
 
     public static final OrePrefix nanosensor = new OrePrefix("nanosensor", M, null, GTLiteMaterialIconType.nanosensor, ENABLE_UNIFICATION,
             mat -> mat.hasFlag(GENERATE_NANOSENSOR));
-
-    /** @deprecated **/
-    public static final OrePrefix singularity = new OrePrefix("singularity", M * 64, null, GTLiteMaterialIconType.singularity, ENABLE_UNIFICATION,
-            mat -> mat.hasFlag(GENERATE_SINGULARITY));
 }

@@ -27,10 +27,5 @@ public class MetaTileEntityAdvancedSubstationEnergyHatch extends MetaTileEntityS
             if (hatch != null)
                 subItems.add(hatch.getStackForm());
         }
-
-        for (MetaTileEntitySubstationEnergyHatch hatch : GTLiteMetaTileEntities.LOW_POWER_SUBSTATION_OUTPUT_ENERGY_HATCH) {
-            if (hatch != null)
-                subItems.add(hatch.getStackForm());
-        }
     }
 }
