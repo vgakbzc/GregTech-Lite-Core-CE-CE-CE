@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static gregtech.api.unification.material.Materials.*;
-
 public class NuclearRecipeHandler {
 
     //  Hash Map: (Material, Complexity)

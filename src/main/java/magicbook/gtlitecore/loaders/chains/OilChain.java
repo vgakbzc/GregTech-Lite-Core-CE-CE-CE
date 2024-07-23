@@ -7,7 +7,8 @@ import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.ELECTRIC_IMPLOSION_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 

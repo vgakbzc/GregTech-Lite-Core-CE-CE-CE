@@ -36,7 +36,6 @@ import java.util.function.Supplier;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.common.items.MetaItems.*;
-import static gregtech.common.items.MetaItems.CONVEYOR_MODULE_UV;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 @SuppressWarnings("unused")

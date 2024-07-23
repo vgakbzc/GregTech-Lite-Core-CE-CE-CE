@@ -22,7 +22,6 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.items.behaviors.CatalystBehavior;
 import magicbook.gtlitecore.common.items.behaviors.GrindBallBehavior;
 import magicbook.gtlitecore.common.items.behaviors.StructureWriterBehavior;
-import magicbook.gtlitecore.common.items.behaviors.renderer.CosmicRenderItemBehavior;
 import magicbook.gtlitecore.common.items.behaviors.renderer.HaloRenderItemBehavior;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.init.MobEffects;

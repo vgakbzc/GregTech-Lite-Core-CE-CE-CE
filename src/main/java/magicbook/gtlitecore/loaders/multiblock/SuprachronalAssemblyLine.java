@@ -1,6 +1,5 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.unification.material.MarkerMaterials;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
