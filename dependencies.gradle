@@ -48,7 +48,7 @@ dependencies {
     //  [CrT] CraftTweaker 2 API
     compileOnly rfg.deobf('CraftTweaker2:CraftTweaker2-API:4.1.20.684')
 
-    //  [CTM] Connected Textures Mod API
+    //  [CTM] Connected Textures Mod - 1.0.2.31
     compileOnly rfg.deobf("curse.maven:ctm-267602:2915363")
 
     /* ------------------- Soft Deps, Compile Time Declaration ------------------- */
