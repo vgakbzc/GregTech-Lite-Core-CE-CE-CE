@@ -68,7 +68,8 @@ public class Machines {
      * </p>
      */
     private static void SteamStageMachines() {
-        if (GTLiteConfigHolder.machines.enableHarderSteamStageMachine) {
+
+        if (GTLiteConfigHolder.machines.enableHarderSteamMachines) {
 
             //  Steam Coal Boiler
             ModHandler.removeRecipeByName("gregtech:steam_boiler_coal_bronze");

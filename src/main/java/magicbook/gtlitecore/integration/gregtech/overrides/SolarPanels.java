@@ -7,11 +7,15 @@ import gregtech.api.unification.stack.UnificationEntry;
 import magicbook.gtlitecore.api.utils.Mods;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.FORMING_PRESS_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
-import static magicbook.gtlitecore.api.GTLiteValues.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
+import static magicbook.gtlitecore.api.GTLiteValues.VZ;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.utils.GTLiteUtility.getFluidById;
 import static magicbook.gtlitecore.api.utils.GTLiteUtility.getMetaItemById;

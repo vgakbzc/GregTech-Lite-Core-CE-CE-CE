@@ -6,14 +6,18 @@ import gregtech.api.unification.material.properties.PropertyKey;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.IV;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.MASS_FABRICATOR_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.REPLICATOR_RECIPES;
 import static gregtech.api.unification.material.Materials.UUMatter;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.TURBINE_MIXER_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.BosonicUUMatter;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.FermionicUUMatter;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.FreeElectronGas;
 import static magicbook.gtlitecore.api.unification.materials.helper.PeriodicMaterialHelper.periodicTableMaterials;
 
 /**

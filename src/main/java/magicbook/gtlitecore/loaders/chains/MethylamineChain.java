@@ -1,13 +1,18 @@
 package magicbook.gtlitecore.loaders.chains;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.LuV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.DISTILLATION_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Alumina;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Methylamine;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.MethylamineMixture;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Trimethylamine;
 
 public class MethylamineChain {
 

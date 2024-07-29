@@ -11,7 +11,10 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.plate;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Abyssalloy;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.HeavyQuarkDegenerateMatter;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Mithril;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.TranscendentMetal;
 
 public class DecorativeBlocks {
 

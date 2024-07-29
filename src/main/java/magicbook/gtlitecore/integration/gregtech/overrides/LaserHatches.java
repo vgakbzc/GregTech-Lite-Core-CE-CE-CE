@@ -6,10 +6,17 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.Diamond;
 import static gregtech.api.unification.material.Materials.Europium;
+import static gregtech.api.unification.material.Materials.NiobiumTitanium;
+import static gregtech.api.unification.material.Materials.Platinum;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Galaxium;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Hypogen;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.PedotTMA;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Solarium;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
 
 public class LaserHatches {
 
@@ -17,11 +24,15 @@ public class LaserHatches {
         LaserHatches256A();
         LaserHatches1024A();
         LaserHatches4096A();
+        LaserHatches16384A();
+        LaserHatches65536A();
+        LaserHatches262144A();
+        LaserHatches1048576A();
     }
 
     private static void LaserHatches256A() {
 
-        if (GTLiteConfigHolder.machines.enableHighTier256ALaserHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTierLaserHatches) {
             //  UHV Input
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(HULL[UHV])
@@ -157,7 +168,7 @@ public class LaserHatches {
 
     private static void LaserHatches1024A() {
 
-        if (GTLiteConfigHolder.machines.enableHighTier1024ALaserHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTierLaserHatches ) {
             //  UHV Input
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(HULL[UHV])
@@ -292,7 +303,7 @@ public class LaserHatches {
 
     private static void LaserHatches4096A() {
 
-        if (GTLiteConfigHolder.machines.enableHighTier4096ALaserHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTierLaserHatches ) {
             //  UHV Input
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(HULL[UHV])
@@ -422,6 +433,196 @@ public class LaserHatches {
                     .EUt(VA[OpV])
                     .duration(1200)
                     .buildAndRegister();
+        }
+    }
+
+    private static void LaserHatches16384A() {
+
+        if (GTLiteConfigHolder.machines.enableHiAmpLaserHatches) {
+
+            //  IV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(4)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 8)
+                    .input(EMITTER_IV, 8)
+                    .input(ELECTRIC_PUMP_IV, 8)
+                    .input(cableGtOctal, Platinum, 4)
+                    .output(LASER_INPUT_HATCH_16384A[0])
+                    .EUt(VA[IV])
+                    .duration(2 * MINUTE)
+                    .buildAndRegister();
+
+            //  IV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(4)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 8)
+                    .input(SENSOR_IV, 8)
+                    .input(ELECTRIC_PUMP_IV, 8)
+                    .input(cableGtOctal, Platinum, 4)
+                    .output(LASER_OUTPUT_HATCH_16384A[0])
+                    .EUt(VA[IV])
+                    .duration(2 * MINUTE)
+                    .buildAndRegister();
+
+            //  LuV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(4)
+                    .input(HULL[LuV])
+                    .input(lens, Diamond, 8)
+                    .input(EMITTER_LuV, 8)
+                    .input(ELECTRIC_PUMP_LuV, 8)
+                    .input(cableGtOctal, NiobiumTitanium, 4)
+                    .output(LASER_INPUT_HATCH_16384A[0])
+                    .EUt(VA[LuV])
+                    .duration(2 * MINUTE)
+                    .buildAndRegister();
+
+            //  LuV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(4)
+                    .input(HULL[LuV])
+                    .input(lens, Diamond, 8)
+                    .input(SENSOR_LuV, 8)
+                    .input(ELECTRIC_PUMP_LuV, 8)
+                    .input(cableGtOctal, NiobiumTitanium, 4)
+                    .output(LASER_OUTPUT_HATCH_16384A[0])
+                    .EUt(VA[LuV])
+                    .duration(2 * MINUTE)
+                    .buildAndRegister();
+
+            //  ZPM Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(4)
+                    .input(HULL[LuV])
+                    .input(lens, Diamond, 8)
+                    .input(EMITTER_LuV, 8)
+                    .input(ELECTRIC_PUMP_LuV, 8)
+                    .input(cableGtOctal, NiobiumTitanium, 4)
+                    .output(LASER_INPUT_HATCH_16384A[0])
+                    .EUt(VA[LuV])
+                    .duration(2 * MINUTE)
+                    .buildAndRegister();
+
+            //  ZPM Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(4)
+                    .input(HULL[LuV])
+                    .input(lens, Diamond, 8)
+                    .input(SENSOR_LuV, 8)
+                    .input(ELECTRIC_PUMP_LuV, 8)
+                    .input(cableGtOctal, NiobiumTitanium, 4)
+                    .output(LASER_OUTPUT_HATCH_16384A[0])
+                    .EUt(VA[LuV])
+                    .duration(2 * MINUTE)
+                    .buildAndRegister();
+
+            //  TODO UV-OpV
+        }
+    }
+
+    private static void LaserHatches65536A() {
+
+        if (GTLiteConfigHolder.machines.enableHiAmpLaserHatches) {
+
+            //  IV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(5)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 16)
+                    .input(EMITTER_IV, 16)
+                    .input(ELECTRIC_PUMP_IV, 16)
+                    .input(cableGtHex, Platinum, 4)
+                    .output(LASER_INPUT_HATCH_65536A[0])
+                    .EUt(VA[IV])
+                    .duration(4 * MINUTE)
+                    .buildAndRegister();
+
+            //  IV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(5)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 16)
+                    .input(SENSOR_IV, 16)
+                    .input(ELECTRIC_PUMP_IV, 16)
+                    .input(cableGtHex, Platinum, 4)
+                    .output(LASER_OUTPUT_HATCH_65536A[0])
+                    .EUt(VA[IV])
+                    .duration(4 * MINUTE)
+                    .buildAndRegister();
+
+            //  TODO LuV-OpV
+
+        }
+    }
+
+    private static void LaserHatches262144A() {
+
+        if (GTLiteConfigHolder.machines.enableHiAmpLaserHatches) {
+
+            //  IV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(6)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 32)
+                    .input(EMITTER_IV, 32)
+                    .input(ELECTRIC_PUMP_IV, 32)
+                    .input(cableGtHex, Platinum, 8)
+                    .output(LASER_INPUT_HATCH_262144A[0])
+                    .EUt(VA[IV])
+                    .duration(8 * MINUTE)
+                    .buildAndRegister();
+
+            //  IV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(6)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 32)
+                    .input(SENSOR_IV, 32)
+                    .input(ELECTRIC_PUMP_IV, 32)
+                    .input(cableGtHex, Platinum, 8)
+                    .output(LASER_OUTPUT_HATCH_262144A[0])
+                    .EUt(VA[IV])
+                    .duration(8 * MINUTE)
+                    .buildAndRegister();
+
+            //  TODO LuV-OpV
+
+        }
+    }
+
+    private static void LaserHatches1048576A() {
+
+        if (GTLiteConfigHolder.machines.enableHiAmpLaserHatches) {
+
+            //  IV Input
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(7)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 64)
+                    .input(EMITTER_IV, 64)
+                    .input(ELECTRIC_PUMP_IV, 64)
+                    .input(cableGtHex, Platinum, 16)
+                    .output(LASER_INPUT_HATCH_1048576A[0])
+                    .EUt(VA[IV])
+                    .duration(16 * MINUTE)
+                    .buildAndRegister();
+
+            //  IV Output
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .circuitMeta(7)
+                    .input(HULL[IV])
+                    .input(lens, Diamond, 64)
+                    .input(SENSOR_IV, 64)
+                    .input(ELECTRIC_PUMP_IV, 64)
+                    .input(cableGtHex, Platinum, 16)
+                    .output(LASER_OUTPUT_HATCH_1048576A[0])
+                    .EUt(VA[IV])
+                    .duration(16 * MINUTE)
+                    .buildAndRegister();
+
+            //  TODO LuV-OpV
         }
     }
 }

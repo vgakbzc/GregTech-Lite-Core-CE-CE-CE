@@ -2,7 +2,9 @@ package magicbook.gtlitecore.loaders.chains;
 
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.MV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;

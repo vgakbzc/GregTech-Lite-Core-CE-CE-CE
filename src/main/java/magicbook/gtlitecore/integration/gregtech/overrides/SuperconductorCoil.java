@@ -9,7 +9,9 @@ import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.NiobiumTitanium;
+import static gregtech.api.unification.material.Materials.RutheniumTriniumAmericiumNeutronate;
+import static gregtech.api.unification.material.Materials.Trinium;
 import static gregtech.api.unification.ore.OrePrefix.foil;
 import static gregtech.api.unification.ore.OrePrefix.wireGtDouble;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;

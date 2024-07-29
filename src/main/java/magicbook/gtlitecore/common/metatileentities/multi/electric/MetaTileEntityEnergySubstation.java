@@ -51,7 +51,9 @@ import java.time.Duration;
 import java.util.*;
 import java.util.function.Supplier;
 
-import static gregtech.api.util.RelativeDirection.*;
+import static gregtech.api.util.RelativeDirection.FRONT;
+import static gregtech.api.util.RelativeDirection.RIGHT;
+import static gregtech.api.util.RelativeDirection.UP;
 import static magicbook.gtlitecore.api.GTLiteValues.HOUR;
 import static magicbook.gtlitecore.api.utils.BigMath.summarizedValue;
 

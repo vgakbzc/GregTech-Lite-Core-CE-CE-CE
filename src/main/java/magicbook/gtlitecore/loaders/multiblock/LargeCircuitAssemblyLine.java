@@ -8,7 +8,9 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LARGE_CIRCUIT_ASSEMBLY_LINE_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CarbonNanotube;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Hypogen;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Infinity;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class LargeCircuitAssemblyLine {

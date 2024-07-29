@@ -14,7 +14,10 @@ import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.ELECTRIC_PUMP_IV;
+import static gregtech.common.items.MetaItems.ELECTRIC_PUMP_LuV;
+import static gregtech.common.items.MetaItems.ELECTRIC_PUMP_ZPM;
+import static gregtech.common.items.MetaItems.ULTRA_HIGH_POWER_INTEGRATED_CIRCUIT;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -87,7 +90,7 @@ public class EnergyHatches {
                         .EUt(VA[UV]))
                 .buildAndRegister();
 
-        if (GTLiteConfigHolder.machines.enableHighTier1AEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTierEnergyHatches) {
             //  UEV
             ASSEMBLY_LINE_RECIPES.recipeBuilder()
                     .input(HULL[UEV])
@@ -248,7 +251,7 @@ public class EnergyHatches {
                 .duration(100)
                 .buildAndRegister();
 
-        if (GTLiteConfigHolder.machines.enableLVtoHV4AEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableLowPowerHighAmpEnergyHatches) {
             //  4A output addons for LV, MV, HV
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(ENERGY_OUTPUT_HATCH[LV])
@@ -297,7 +300,7 @@ public class EnergyHatches {
                 .duration(100)
                 .buildAndRegister();
 
-        if (GTLiteConfigHolder.machines.enableHighTier4AEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTier4AEnergyHatches) {
             //  UEV
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(ENERGY_INPUT_HATCH[UEV])
@@ -382,7 +385,7 @@ public class EnergyHatches {
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, HI_AMP_TRANSFORMER[UV].getStackForm(), ENERGY_INPUT_HATCH_4A[5].getStackForm(2), OreDictUnifier.get(wireGtOctal, Europium, 2), OreDictUnifier.get(plate, Neutronium, 4));
         GTRecipeHandler.removeRecipesByInputs(ASSEMBLER_RECIPES, HI_AMP_TRANSFORMER[UV].getStackForm(), ENERGY_OUTPUT_HATCH_4A[5].getStackForm(), OreDictUnifier.get(wireGtOctal, Europium, 2), OreDictUnifier.get(plate, Neutronium, 4));
 
-        if (GTLiteConfigHolder.machines.enableLVtoEV16AEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableLowPowerHighAmpEnergyHatches) {
             //  16A output addons for LV, MV, HV, EV
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(HI_AMP_TRANSFORMER[LV])
@@ -446,7 +449,7 @@ public class EnergyHatches {
                 .duration(200)
                 .buildAndRegister();
 
-        if (GTLiteConfigHolder.machines.enableHighTier16AEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTier16AEnergyHatches) {
             //  UEV
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(HI_AMP_TRANSFORMER[UEV])
@@ -535,7 +538,7 @@ public class EnergyHatches {
 
     private static void EnergyHatches64A() {
 
-        if (GTLiteConfigHolder.machines.enableLowPower64ASubstationEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableLowPowerHighAmpEnergyHatches) {
 
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(POWER_TRANSFORMER[LV])
@@ -602,7 +605,7 @@ public class EnergyHatches {
                 .duration(400)
                 .buildAndRegister();
 
-        if (GTLiteConfigHolder.machines.enableHighTier64ASubstationEnergyHatch) {
+        if (GTLiteConfigHolder.machines.enableHighTier64AEnergyHatches) {
             //  UEV
             ASSEMBLER_RECIPES.recipeBuilder()
                     .input(POWER_TRANSFORMER[UEV])

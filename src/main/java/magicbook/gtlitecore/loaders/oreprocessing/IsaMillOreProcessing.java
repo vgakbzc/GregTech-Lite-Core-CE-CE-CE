@@ -3,11 +3,16 @@ package magicbook.gtlitecore.loaders.oreprocessing;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.FLOTATION_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.ISA_MILL_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_DRYING_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.milled;
 

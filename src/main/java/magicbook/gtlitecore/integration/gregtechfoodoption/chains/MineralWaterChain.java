@@ -6,7 +6,9 @@ import gregtechfoodoption.item.GTFOMetaItem;
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.foil;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.ring;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_BALL;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_CYLINDER;
 

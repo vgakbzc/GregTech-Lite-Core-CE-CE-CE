@@ -1,8 +1,12 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.EV;
+import static gregtech.api.GTValues.MV;
+import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.HEAT_EXCHANGE_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.HIGH_PRESSURE_STEAM_TURBINE_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SUPERCRITICAL_STEAM_TURBINE_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.SupercriticalSteam;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.SuperheatedSteam;
 

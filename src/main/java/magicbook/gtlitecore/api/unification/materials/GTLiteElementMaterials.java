@@ -8,9 +8,11 @@ import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 import magicbook.gtlitecore.api.unification.GTLiteElements;
 import net.minecraft.init.Enchantments;
 
-import static gregtech.api.GTValues.V;
 import static gregtech.api.GTValues.*;
-import static gregtech.api.unification.Elements.*;
+import static gregtech.api.unification.Elements.Fl;
+import static gregtech.api.unification.Elements.Hs;
+import static gregtech.api.unification.Elements.Og;
+import static gregtech.api.unification.Elements.Rh;
 import static gregtech.api.unification.material.Materials.NaquadahEnriched;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;

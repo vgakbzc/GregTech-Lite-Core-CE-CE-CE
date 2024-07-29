@@ -15,7 +15,9 @@ import net.minecraft.util.text.TextFormatting;
 import java.math.BigInteger;
 import java.util.Arrays;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.V;
+import static gregtech.api.GTValues.VA;
 
 @SuppressWarnings("unused")
 @NoArgsConstructor(access = AccessLevel.PRIVATE)

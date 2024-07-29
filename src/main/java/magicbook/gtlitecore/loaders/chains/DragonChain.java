@@ -6,13 +6,17 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.CANNER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.CHEMICAL_BATH_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.EXTRACTOR_RECIPES;
 import static gregtech.api.unification.material.Materials.Endstone;
 import static gregtech.api.unification.material.Materials.Radon;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.SONICATION_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ConcentrateDragonBreath;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.DragonBlood;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.DragonBreath;
 
 public class DragonChain {
 

@@ -7,7 +7,9 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.plate;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CarbonTetrachloride;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ChlorinatedSolvents;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Dichloromethane;
 
 public class ChlorineChain {
 

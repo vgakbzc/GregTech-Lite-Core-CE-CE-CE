@@ -4,11 +4,15 @@ import static gregicality.multiblocks.api.unification.GCYMMaterials.TitaniumCarb
 import static gregtech.api.GTValues.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.EMITTER_UEV;
+import static gregtech.common.items.MetaItems.SENSOR_UEV;
+import static gregtech.common.items.MetaItems.STEM_CELLS;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.QUANTUM_FORCE_TRANSFORMER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.CHARGED_HYPERCUBE;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.CRUDE_HYPERCUBE;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.QUANTUM_ANOMALY;
 
 public class QuantumForceTransformer {
 

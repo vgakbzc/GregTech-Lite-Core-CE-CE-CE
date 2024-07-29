@@ -6,7 +6,9 @@ import magicbook.gtlitecore.api.utils.Mods;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.ULV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_BATH_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;

@@ -9,10 +9,15 @@ import net.minecraftforge.fluids.FluidStack;
 import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.MarkerMaterials.Component.Capacitor;
 import static gregtech.api.unification.material.MarkerMaterials.Component.Inductor;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.RedAlloy;
+import static gregtech.api.unification.material.Materials.SolderingAlloy;
+import static gregtech.api.unification.material.Materials.Tin;
 import static gregtech.api.unification.ore.OrePrefix.component;
 import static gregtech.api.unification.ore.OrePrefix.wireFine;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.PLASTIC_CIRCUIT_BOARD;
+import static gregtech.common.items.MetaItems.PROCESSOR_ASSEMBLY_HV;
+import static gregtech.common.items.MetaItems.PROCESSOR_MV;
+import static gregtech.common.items.MetaItems.RANDOM_ACCESS_MEMORY;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 
 public class ProcessorCircuits {

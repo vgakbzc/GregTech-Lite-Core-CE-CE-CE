@@ -17,9 +17,11 @@ import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 public class Simulator {
 
     public static void init() {
-        MemoryCards();
-        Simulation();
-        BiowareSimulation();
+        if (GTLiteConfigHolder.machines.enableSimulatorChain) {
+            MemoryCards();
+            Simulation();
+            BiowareSimulation();
+        }
     }
 
     private static void MemoryCards() {
@@ -174,340 +176,342 @@ public class Simulator {
 
     private static void Simulation() {
 
-        if (GTLiteConfigHolder.machines.enableSimulator) {
-            //  LV: Zombie, Skeleton, Creeper, Slime, Spider
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ZOMBIE)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.ROTTEN_FLESH, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        int outputChance = GTLiteConfigHolder.machines.outputChanceEachSimulate;
+        int outputChanceBoost = GTLiteConfigHolder.machines.outputChanceBoostEachSimulate;
+        int simulateDuration = GTLiteConfigHolder.machines.durationEachSimulate;
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ZOMBIE)
-                    .circuitMeta(2)
-                    .chancedOutput(ingot, Iron, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        //  LV: Zombie, Skeleton, Creeper, Slime, Spider
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ZOMBIE)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.ROTTEN_FLESH, 64), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ZOMBIE)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Items.CARROT, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ZOMBIE)
+                .circuitMeta(2)
+                .chancedOutput(ingot, Iron, 16, outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ZOMBIE)
-                    .circuitMeta(4)
-                    .chancedOutput(new ItemStack(Items.POTATO, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ZOMBIE)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Items.CARROT, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ZOMBIE)
-                    .circuitMeta(5)
-                    .chancedOutput(new ItemStack(Items.SKULL, 16, 2), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ZOMBIE)
+                .circuitMeta(4)
+                .chancedOutput(new ItemStack(Items.POTATO, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SKELETON)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.BONE, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ZOMBIE)
+                .circuitMeta(5)
+                .chancedOutput(new ItemStack(Items.SKULL, 16, 2), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SKELETON)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Items.ARROW, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SKELETON)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.BONE, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SKELETON)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Items.SKULL, 16, 0), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SKELETON)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Items.ARROW, 64), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SKELETON)
-                    .circuitMeta(4)
-                    .chancedOutput(ingot, Tin, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SKELETON)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Items.SKULL, 16, 0), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_CREEPER)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.GUNPOWDER, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SKELETON)
+                .circuitMeta(4)
+                .chancedOutput(ingot, Tin, 16, outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_CREEPER)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Items.COAL, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_CREEPER)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.GUNPOWDER, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_CREEPER)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Items.SKULL, 16, 4), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_CREEPER)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Items.COAL, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SLIME)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.SLIME_BALL, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_CREEPER)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Items.SKULL, 16, 4), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SLIME)
-                    .circuitMeta(2)
-                    .chancedOutput(ingot, Nickel, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SLIME)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.SLIME_BALL, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SPIDER)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.SPIDER_EYE, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SLIME)
+                .circuitMeta(2)
+                .chancedOutput(ingot, Nickel, 16, outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SPIDER)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Items.STRING, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SPIDER)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.SPIDER_EYE, 64), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SPIDER)
-                    .circuitMeta(3)
-                    .chancedOutput(ingot, Copper, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[LV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SPIDER)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Items.STRING, 32), outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            //  MV: Blaze, Ghast, Guardian, Wither Skeleton, Witch
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_BLAZE)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.BLAZE_ROD, 16), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SPIDER)
+                .circuitMeta(3)
+                .chancedOutput(ingot, Copper, 16, outputChance, outputChanceBoost)
+                .EUt(VA[LV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_BLAZE)
-                    .circuitMeta(2)
-                    .chancedOutput(dust, Sulfur, 32, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        //  MV: Blaze, Ghast, Guardian, Wither Skeleton, Witch
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_BLAZE)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.BLAZE_ROD, 16), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_BLAZE)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Items.MAGMA_CREAM, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_BLAZE)
+                .circuitMeta(2)
+                .chancedOutput(dust, Sulfur, 32, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GHAST)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.GHAST_TEAR, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_BLAZE)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Items.MAGMA_CREAM, 64), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GHAST)
-                    .circuitMeta(2)
-                    .chancedOutput(ingot, Silver, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GHAST)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.GHAST_TEAR, 32), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GUARDIAN)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.PRISMARINE_SHARD, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GHAST)
+                .circuitMeta(2)
+                .chancedOutput(ingot, Silver, 16, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GUARDIAN)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Items.PRISMARINE_CRYSTALS, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GUARDIAN)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.PRISMARINE_SHARD, 64), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GUARDIAN)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Items.FISH, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GUARDIAN)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Items.PRISMARINE_CRYSTALS, 64), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GUARDIAN)
-                    .circuitMeta(4)
-                    .chancedOutput(ingot, Gold, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GUARDIAN)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Items.FISH, 64), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_GUARDIAN)
-                    .circuitMeta(5)
-                    .chancedOutput(dust, Aluminium, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GUARDIAN)
+                .circuitMeta(4)
+                .chancedOutput(ingot, Gold, 16, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITHER_SKELETON)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.SKULL, 16, 1), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_GUARDIAN)
+                .circuitMeta(5)
+                .chancedOutput(dust, Aluminium, 16, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITHER_SKELETON)
-                    .circuitMeta(2)
-                    .chancedOutput(ingot, Lead, 16, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITHER_SKELETON)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.SKULL, 16, 1), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITHER_SKELETON)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Blocks.SOUL_SAND, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITHER_SKELETON)
+                .circuitMeta(2)
+                .chancedOutput(ingot, Lead, 16, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITCH)
-                    .circuitMeta(1)
-                    .chancedOutput(dust, Redstone, 32, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITHER_SKELETON)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Blocks.SOUL_SAND, 64), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITCH)
-                    .circuitMeta(2)
-                    .chancedOutput(dust, Glowstone, 32, GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITCH)
+                .circuitMeta(1)
+                .chancedOutput(dust, Redstone, 32, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITCH)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Items.SUGAR, 64), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[MV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITCH)
+                .circuitMeta(2)
+                .chancedOutput(dust, Glowstone, 32, outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            //  HV: Enderman, Shulker
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ENDERMAN)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.ENDER_PEARL, 16), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[HV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITCH)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Items.SUGAR, 64), outputChance, outputChanceBoost)
+                .EUt(VA[MV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ENDERMAN)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Items.EMERALD, 16), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[HV])
-                    .duration(1200)
-                    .buildAndRegister();
+        //  HV: Enderman, Shulker
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ENDERMAN)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.ENDER_PEARL, 16), outputChance, outputChanceBoost)
+                .EUt(VA[HV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ENDERMAN)
-                    .circuitMeta(3)
-                    .chancedOutput(new ItemStack(Blocks.END_STONE, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[HV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ENDERMAN)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Items.EMERALD, 16), outputChance, outputChanceBoost)
+                .EUt(VA[HV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SHULKER)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.SHULKER_SHELL, 16), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[HV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ENDERMAN)
+                .circuitMeta(3)
+                .chancedOutput(new ItemStack(Blocks.END_STONE, 32), outputChance, outputChanceBoost)
+                .EUt(VA[HV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_SHULKER)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Items.DIAMOND, 16), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[HV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SHULKER)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.SHULKER_SHELL, 16), outputChance, outputChanceBoost)
+                .EUt(VA[HV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            //  EV: Wither
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_WITHER)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.NETHER_STAR), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[EV])
-                    .duration(1200)
-                    .buildAndRegister();
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_SHULKER)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Items.DIAMOND, 16), outputChance, outputChanceBoost)
+                .EUt(VA[HV])
+                .duration(simulateDuration)
+                .buildAndRegister();
 
-            //  IV: Ender Dragon
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ENDER_DRAGON)
-                    .circuitMeta(1)
-                    .chancedOutput(new ItemStack(Items.DRAGON_BREATH, 32), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[IV])
-                    .duration(1200)
-                    .buildAndRegister();
+        //  EV: Wither
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_WITHER)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.NETHER_STAR), outputChance, outputChanceBoost)
+                .EUt(VA[EV])
+                .duration(1200)
+                .buildAndRegister();
 
-            SIMULATOR_RECIPES.recipeBuilder()
-                    .notConsumable(MEMORY_CARD_ENDER_DRAGON)
-                    .circuitMeta(2)
-                    .chancedOutput(new ItemStack(Blocks.DRAGON_EGG), GTLiteConfigHolder.machines.chanceSimulator, GTLiteConfigHolder.machines.tierChanceBoostSimulator)
-                    .EUt(VA[IV])
-                    .duration(1200)
-                    .buildAndRegister();
-        }
+        //  IV: Ender Dragon
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ENDER_DRAGON)
+                .circuitMeta(1)
+                .chancedOutput(new ItemStack(Items.DRAGON_BREATH, 32), outputChance, outputChanceBoost)
+                .EUt(VA[IV])
+                .duration(simulateDuration)
+                .buildAndRegister();
+
+        SIMULATOR_RECIPES.recipeBuilder()
+                .notConsumable(MEMORY_CARD_ENDER_DRAGON)
+                .circuitMeta(2)
+                .chancedOutput(new ItemStack(Blocks.DRAGON_EGG), outputChance, outputChanceBoost)
+                .EUt(VA[IV])
+                .duration(simulateDuration)
+                .buildAndRegister();
     }
 
     private static void BiowareSimulation() {

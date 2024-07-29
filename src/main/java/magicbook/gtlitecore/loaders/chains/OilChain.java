@@ -3,14 +3,21 @@ package magicbook.gtlitecore.loaders.chains;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.COMBUSTION_GENERATOR_FUELS;
+import static gregtech.api.recipes.RecipeMaps.FUSION_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.IMPLOSION_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.foil;
+import static gregtech.api.unification.ore.OrePrefix.plate;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CATALYTIC_REFORMER_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.ELECTRIC_IMPLOSION_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.HIGH_DENSITY_PLUTONIUM;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.HIGH_DENSITY_THORIUM;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.HIGH_DENSITY_URANIUM;
 
 public class OilChain {
 

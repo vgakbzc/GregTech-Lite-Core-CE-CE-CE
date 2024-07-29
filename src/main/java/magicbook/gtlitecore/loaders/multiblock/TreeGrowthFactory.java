@@ -6,7 +6,10 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.MV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.Biomass;
 import static gregtech.api.unification.material.Materials.Water;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.TREE_GROWTH_RECIPES;

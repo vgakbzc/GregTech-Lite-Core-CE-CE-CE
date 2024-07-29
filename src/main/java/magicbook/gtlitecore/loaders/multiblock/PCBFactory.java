@@ -15,7 +15,9 @@ import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PCB_FACTORY_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.GOOWARE_CIRCUIT_BOARD;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.OPTICAL_CIRCUIT_BOARD;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.SPINTRONIC_CIRCUIT_BOARD;
 
 public class PCBFactory {
 

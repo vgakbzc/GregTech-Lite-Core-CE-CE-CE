@@ -32,9 +32,14 @@ import magicbook.gtlitecore.common.metatileentities.multi.steam.MetaTileEntityLa
 import magicbook.gtlitecore.common.metatileentities.multi.storage.MetaTileEntityYottaFluidTank;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static gregtech.common.metatileentities.MetaTileEntities.LASER_INPUT_HATCH_256;
+import static gregtech.common.metatileentities.MetaTileEntities.registerMetaTileEntity;
+import static gregtech.common.metatileentities.MetaTileEntities.registerSimpleMetaTileEntity;
 import static magicbook.gtlitecore.api.utils.GTLiteUtility.gtliteId;
-import static magicbook.gtlitecore.api.utils.MultiblockRegistryHelper.*;
+import static magicbook.gtlitecore.api.utils.MultiblockRegistryHelper.TE_REGISTRY_ID;
+import static magicbook.gtlitecore.api.utils.MultiblockRegistryHelper.registerMultiMetaTileEntity;
+import static magicbook.gtlitecore.api.utils.MultiblockRegistryHelper.registerPartMetaTileEntity;
+import static magicbook.gtlitecore.api.utils.MultiblockRegistryHelper.registerSimpleSteamMetaTileEntity;
 
 /**
  * Meta Tile Entities
@@ -269,139 +274,177 @@ public class GTLiteMetaTileEntities {
     private static void registerMultiblockParts() {
 
         //  ID 14000-14003: UEV-OpV 4A Energy Hatches.
-        INPUT_ENERGY_HATCH_4A[0] = registerPartMetaTileEntity(0, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.uev"), UEV, 4, false));
-        INPUT_ENERGY_HATCH_4A[1] = registerPartMetaTileEntity(1, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.uiv"), UIV, 4, false));
-        INPUT_ENERGY_HATCH_4A[2] = registerPartMetaTileEntity(2, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.uxv"), UXV, 4, false));
-        INPUT_ENERGY_HATCH_4A[3] = registerPartMetaTileEntity(3, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.opv"), OpV, 4, false));
+        if (GTLiteConfigHolder.machines.enableHighTier4AEnergyHatches) {
+            INPUT_ENERGY_HATCH_4A[0] = registerPartMetaTileEntity(0, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.uev"), UEV, 4, false));
+            INPUT_ENERGY_HATCH_4A[1] = registerPartMetaTileEntity(1, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.uiv"), UIV, 4, false));
+            INPUT_ENERGY_HATCH_4A[2] = registerPartMetaTileEntity(2, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.uxv"), UXV, 4, false));
+            INPUT_ENERGY_HATCH_4A[3] = registerPartMetaTileEntity(3, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_4a.opv"), OpV, 4, false));
+        }
 
         //  ID 14004-14007: UEV-OpV 16A Energy Hatches.
-        INPUT_ENERGY_HATCH_16A[0] = registerPartMetaTileEntity(4, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.uev"), UEV, 16, false));
-        INPUT_ENERGY_HATCH_16A[1] = registerPartMetaTileEntity(5, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.uiv"), UIV, 16, false));
-        INPUT_ENERGY_HATCH_16A[2] = registerPartMetaTileEntity(6, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.uxv"), UXV, 16, false));
-        INPUT_ENERGY_HATCH_16A[3] = registerPartMetaTileEntity(7, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.opv"), OpV, 16, false));
+        if (GTLiteConfigHolder.machines.enableHighTier16AEnergyHatches) {
+            INPUT_ENERGY_HATCH_16A[0] = registerPartMetaTileEntity(4, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.uev"), UEV, 16, false));
+            INPUT_ENERGY_HATCH_16A[1] = registerPartMetaTileEntity(5, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.uiv"), UIV, 16, false));
+            INPUT_ENERGY_HATCH_16A[2] = registerPartMetaTileEntity(6, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.uxv"), UXV, 16, false));
+            INPUT_ENERGY_HATCH_16A[3] = registerPartMetaTileEntity(7, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.input_16a.opv"), OpV, 16, false));
+        }
 
         //  ID 14008-14014: LV-HV and UEV-OpV 4A Dynamo Hatches.
-        OUTPUT_ENERGY_HATCH_4A[0] = registerPartMetaTileEntity(8, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.lv"), LV, 4, true));
-        OUTPUT_ENERGY_HATCH_4A[1] = registerPartMetaTileEntity(9, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.mv"), MV, 4, true));
-        OUTPUT_ENERGY_HATCH_4A[2] = registerPartMetaTileEntity(10, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.hv"), HV, 4, true));
-        OUTPUT_ENERGY_HATCH_4A[3] = registerPartMetaTileEntity(11, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.uev"), UEV, 4, true));
-        OUTPUT_ENERGY_HATCH_4A[4] = registerPartMetaTileEntity(12, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.uiv"), UIV, 4, true));
-        OUTPUT_ENERGY_HATCH_4A[5] = registerPartMetaTileEntity(13, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.uxv"), UXV, 4, true));
-        OUTPUT_ENERGY_HATCH_4A[6] = registerPartMetaTileEntity(14, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.opv"), OpV, 4, true));
+        if (GTLiteConfigHolder.machines.enableLowPowerHighAmpEnergyHatches) {
+            OUTPUT_ENERGY_HATCH_4A[0] = registerPartMetaTileEntity(8, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.lv"), LV, 4, true));
+            OUTPUT_ENERGY_HATCH_4A[1] = registerPartMetaTileEntity(9, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.mv"), MV, 4, true));
+            OUTPUT_ENERGY_HATCH_4A[2] = registerPartMetaTileEntity(10, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.hv"), HV, 4, true));
+        }
+        if (GTLiteConfigHolder.machines.enableHighTier4AEnergyHatches) {
+            OUTPUT_ENERGY_HATCH_4A[3] = registerPartMetaTileEntity(11, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.uev"), UEV, 4, true));
+            OUTPUT_ENERGY_HATCH_4A[4] = registerPartMetaTileEntity(12, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.uiv"), UIV, 4, true));
+            OUTPUT_ENERGY_HATCH_4A[5] = registerPartMetaTileEntity(13, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.uxv"), UXV, 4, true));
+            OUTPUT_ENERGY_HATCH_4A[6] = registerPartMetaTileEntity(14, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_4a.opv"), OpV, 4, true));
+        }
 
         //  ID 14015-14022: LV-EV and UEV-OpV 16A Dynamo Hatches.
-        OUTPUT_ENERGY_HATCH_16A[0] = registerPartMetaTileEntity(15, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.lv"), LV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[1] = registerPartMetaTileEntity(16, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.mv"), MV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[2] = registerPartMetaTileEntity(17, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.hv"), HV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[3] = registerPartMetaTileEntity(18, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.ev"), EV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[4] = registerPartMetaTileEntity(19, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.uev"), UEV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[5] = registerPartMetaTileEntity(20, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.uiv"), UIV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[6] = registerPartMetaTileEntity(21, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.uxv"), UXV, 16, true));
-        OUTPUT_ENERGY_HATCH_16A[7] = registerPartMetaTileEntity(22, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.opv"), OpV, 16, true));
+        if (GTLiteConfigHolder.machines.enableLowPowerHighAmpEnergyHatches) {
+            OUTPUT_ENERGY_HATCH_16A[0] = registerPartMetaTileEntity(15, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.lv"), LV, 16, true));
+            OUTPUT_ENERGY_HATCH_16A[1] = registerPartMetaTileEntity(16, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.mv"), MV, 16, true));
+            OUTPUT_ENERGY_HATCH_16A[2] = registerPartMetaTileEntity(17, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.hv"), HV, 16, true));
+            OUTPUT_ENERGY_HATCH_16A[3] = registerPartMetaTileEntity(18, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.ev"), EV, 16, true));
+        }
+        if (GTLiteConfigHolder.machines.enableHighTier16AEnergyHatches) {
+            OUTPUT_ENERGY_HATCH_16A[4] = registerPartMetaTileEntity(19, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.uev"), UEV, 16, true));
+            OUTPUT_ENERGY_HATCH_16A[5] = registerPartMetaTileEntity(20, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.uiv"), UIV, 16, true));
+            OUTPUT_ENERGY_HATCH_16A[6] = registerPartMetaTileEntity(21, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.uxv"), UXV, 16, true));
+            OUTPUT_ENERGY_HATCH_16A[7] = registerPartMetaTileEntity(22, new MetaTileEntityAdvancedEnergyHatch(gtliteId("energy_hatch.output_16a.opv"), OpV, 16, true));
+        }
 
         //  ID 14023-14026: UEV-OpV 64A Substation Energy Hatches.
-        SUBSTATION_INPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(23, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uev"), UEV, 64, false));
-        SUBSTATION_INPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(24, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uiv"), UIV, 64, false));
-        SUBSTATION_INPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(25, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uxv"), UXV, 64, false));
-        SUBSTATION_INPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(26, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.opv"), OpV, 64, false));
+        if (GTLiteConfigHolder.machines.enableHighTier64AEnergyHatches) {
+            SUBSTATION_INPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(23, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uev"), UEV, 64, false));
+            SUBSTATION_INPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(24, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uiv"), UIV, 64, false));
+            SUBSTATION_INPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(25, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.uxv"), UXV, 64, false));
+            SUBSTATION_INPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(26, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.input_64a.opv"), OpV, 64, false));
+        }
 
         //  ID 14027-14034: LV-EV and UEV-OpV 64A Substation Dynamo Hatches.
-        SUBSTATION_OUTPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(27, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.lv"), LV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(28, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.mv"), MV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(29, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.hv"), HV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(30, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.ev"), EV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[4] = registerPartMetaTileEntity(31, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uev"), UEV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[5] = registerPartMetaTileEntity(32, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uiv"), UIV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[6] = registerPartMetaTileEntity(33, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uxv"), UXV, 64, true));
-        SUBSTATION_OUTPUT_ENERGY_HATCH[7] = registerPartMetaTileEntity(34, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.opv"), OpV, 64, true));
+        if (GTLiteConfigHolder.machines.enableLowPowerHighAmpEnergyHatches) {
+            SUBSTATION_OUTPUT_ENERGY_HATCH[0] = registerPartMetaTileEntity(27, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.lv"), LV, 64, true));
+            SUBSTATION_OUTPUT_ENERGY_HATCH[1] = registerPartMetaTileEntity(28, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.mv"), MV, 64, true));
+            SUBSTATION_OUTPUT_ENERGY_HATCH[2] = registerPartMetaTileEntity(29, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.hv"), HV, 64, true));
+            SUBSTATION_OUTPUT_ENERGY_HATCH[3] = registerPartMetaTileEntity(30, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.ev"), EV, 64, true));
+        }
+        if (GTLiteConfigHolder.machines.enableHighTier64AEnergyHatches) {
+            SUBSTATION_OUTPUT_ENERGY_HATCH[4] = registerPartMetaTileEntity(31, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uev"), UEV, 64, true));
+            SUBSTATION_OUTPUT_ENERGY_HATCH[5] = registerPartMetaTileEntity(32, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uiv"), UIV, 64, true));
+            SUBSTATION_OUTPUT_ENERGY_HATCH[6] = registerPartMetaTileEntity(33, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.uxv"), UXV, 64, true));
+            SUBSTATION_OUTPUT_ENERGY_HATCH[7] = registerPartMetaTileEntity(34, new MetaTileEntityAdvancedSubstationEnergyHatch(gtliteId("substation_hatch.output_64a.opv"), OpV, 64, true));
+        }
 
         //  ID 14035-14111: IV-OpV 16384A, 65536A, 262144A, 1048576A Laser Target/Source Hatches.
-        for (int i = 0; i < (GregTechAPI.isHighTier() ? LASER_INPUT_HATCH_256.length - 1 : Math.min(LASER_INPUT_HATCH_256.length - 1, 4)); ++i) {
-            String voltageName = VN[i + 5].toLowerCase();
-            LASER_INPUT_HATCH_16384A[i] = registerPartMetaTileEntity(35 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_16384a." + voltageName), i + 5, 16384, false));
-            LASER_INPUT_HATCH_65536A[i] = registerPartMetaTileEntity(44 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_65536a." + voltageName), i + 5, 65536, false));
-            LASER_INPUT_HATCH_262144A[i] = registerPartMetaTileEntity(53 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_262144a." + voltageName), i + 5, 262144, false));
-            LASER_INPUT_HATCH_1048576A[i] = registerPartMetaTileEntity(62 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_1048576a." + voltageName), i + 5, 1048576, false));
-            LASER_OUTPUT_HATCH_16384A[i] = registerPartMetaTileEntity(71 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_16384a." + voltageName), i + 5, 16384, true));
-            LASER_OUTPUT_HATCH_65536A[i] = registerPartMetaTileEntity(80 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_65536a." + voltageName), i + 5, 65536, true));
-            LASER_OUTPUT_HATCH_262144A[i] = registerPartMetaTileEntity(89 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_262144a." + voltageName), i + 5, 262144, true));
-            LASER_OUTPUT_HATCH_1048576A[i] = registerPartMetaTileEntity(98 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_1048576a." + voltageName), i + 5, 1048576, true));
+        if (GTLiteConfigHolder.machines.enableHiAmpLaserHatches) {
+            for (int i = 0; i < (GregTechAPI.isHighTier() ? LASER_INPUT_HATCH_256.length - 1 : Math.min(LASER_INPUT_HATCH_256.length - 1, 4)); ++i) {
+                String voltageName = VN[i + 5].toLowerCase();
+                LASER_INPUT_HATCH_16384A[i] = registerPartMetaTileEntity(35 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_16384a." + voltageName), i + 5, 16384, false));
+                LASER_INPUT_HATCH_65536A[i] = registerPartMetaTileEntity(44 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_65536a." + voltageName), i + 5, 65536, false));
+                LASER_INPUT_HATCH_262144A[i] = registerPartMetaTileEntity(53 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_262144a." + voltageName), i + 5, 262144, false));
+                LASER_INPUT_HATCH_1048576A[i] = registerPartMetaTileEntity(62 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.target_1048576a." + voltageName), i + 5, 1048576, false));
+                LASER_OUTPUT_HATCH_16384A[i] = registerPartMetaTileEntity(71 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_16384a." + voltageName), i + 5, 16384, true));
+                LASER_OUTPUT_HATCH_65536A[i] = registerPartMetaTileEntity(80 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_65536a." + voltageName), i + 5, 65536, true));
+                LASER_OUTPUT_HATCH_262144A[i] = registerPartMetaTileEntity(89 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_262144a." + voltageName), i + 5, 262144, true));
+                LASER_OUTPUT_HATCH_1048576A[i] = registerPartMetaTileEntity(98 + i, new MetaTileEntityAdvancedLaserHatch(gtliteId("laser_hatch.source_1048576a." + voltageName), i + 5, 1048576, true));
+            }
         }
 
         //  ID 14112-14442 : ULV-MAX 2A, 4A, 16A, 64A, 256A, 1024A, 4096A, 16384A, 65536A, 262144A, 1048576A Wireless Energy/Dynamo Hatches.
-        for (int i = 0; i < 15; i++) {
-            String voltageName = VN[i].toLowerCase();
-            WIRELESS_INPUT_ENERGY_HATCH[i] = registerPartMetaTileEntity(112 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input." + voltageName), i, 2, false));
-            WIRELESS_INPUT_ENERGY_HATCH_4A[i] = registerPartMetaTileEntity(112 + 15 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_4a." + voltageName), i, 4, false));
-            WIRELESS_INPUT_ENERGY_HATCH_16A[i] = registerPartMetaTileEntity(112 + 15 * 2 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_16a." + voltageName), i, 16, false));
-            WIRELESS_INPUT_ENERGY_HATCH_64A[i] = registerPartMetaTileEntity(112 + 15 * 3 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_64a." + voltageName), i, 64, false));
-            WIRELESS_INPUT_ENERGY_HATCH_256A[i] = registerPartMetaTileEntity(112 + 15 * 4 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_256a." + voltageName), i, 256, false));
-            WIRELESS_INPUT_ENERGY_HATCH_1024A[i] = registerPartMetaTileEntity(112 + 15 * 5 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_1024a." + voltageName), i, 1024, false));
-            WIRELESS_INPUT_ENERGY_HATCH_4096A[i] = registerPartMetaTileEntity(112 + 15 * 6 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_4096a." + voltageName), i, 4096, false));
-            WIRELESS_INPUT_ENERGY_HATCH_16384A[i] = registerPartMetaTileEntity(112 + 15 * 7 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_16384a." + voltageName), i, 16384, false));
-            WIRELESS_INPUT_ENERGY_HATCH_65536A[i] = registerPartMetaTileEntity(112 + 15 * 8 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_65536a." + voltageName), i, 65536, false));
-            WIRELESS_INPUT_ENERGY_HATCH_262144A[i] = registerPartMetaTileEntity(112 + 15 * 9 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_262144a." + voltageName), i, 262144, false));
-            WIRELESS_INPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(112 + 15 * 10 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_1048576a." + voltageName), i, 1048576, false));
-            WIRELESS_OUTPUT_ENERGY_HATCH[i] = registerPartMetaTileEntity(112 + 15 * 11 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output." + voltageName), i, 2, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_4A[i] = registerPartMetaTileEntity(112 + 15 * 12 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_4a." + voltageName), i, 4, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_16A[i] = registerPartMetaTileEntity(112 + 15 * 13 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_16a." + voltageName), i, 16, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_64A[i] = registerPartMetaTileEntity(112 + 15 * 14 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_64a." + voltageName), i, 64, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_256A[i] = registerPartMetaTileEntity(112 + 15 * 15 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_256a." + voltageName), i, 256, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_1024A[i] = registerPartMetaTileEntity(112 + 15 * 16 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1024a." + voltageName), i, 1024, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_4096A[i] = registerPartMetaTileEntity(112 + 15 * 17 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_4096a." + voltageName), i, 4096, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_16384A[i] = registerPartMetaTileEntity(112 + 15 * 18 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_16384a." + voltageName), i, 16384, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_65536A[i] = registerPartMetaTileEntity(112 + 15 * 19  + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_65536a." + voltageName), i, 65536, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_262144A[i] = registerPartMetaTileEntity(112 + 15 * 20 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_262144a." + voltageName), i, 262144, true));
-            WIRELESS_OUTPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(112 + 15 * 21 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1048576a." + voltageName), i, 1048576, true));
+        if (GTLiteConfigHolder.machines.enableWirelessEnergyHatches) {
+            for (int i = 0; i < 15; i++) {
+                String voltageName = VN[i].toLowerCase();
+                WIRELESS_INPUT_ENERGY_HATCH[i] = registerPartMetaTileEntity(112 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input." + voltageName), i, 2, false));
+                WIRELESS_INPUT_ENERGY_HATCH_4A[i] = registerPartMetaTileEntity(112 + 15 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_4a." + voltageName), i, 4, false));
+                WIRELESS_INPUT_ENERGY_HATCH_16A[i] = registerPartMetaTileEntity(112 + 15 * 2 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_16a." + voltageName), i, 16, false));
+                WIRELESS_INPUT_ENERGY_HATCH_64A[i] = registerPartMetaTileEntity(112 + 15 * 3 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_64a." + voltageName), i, 64, false));
+                WIRELESS_INPUT_ENERGY_HATCH_256A[i] = registerPartMetaTileEntity(112 + 15 * 4 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_256a." + voltageName), i, 256, false));
+                WIRELESS_INPUT_ENERGY_HATCH_1024A[i] = registerPartMetaTileEntity(112 + 15 * 5 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_1024a." + voltageName), i, 1024, false));
+                WIRELESS_INPUT_ENERGY_HATCH_4096A[i] = registerPartMetaTileEntity(112 + 15 * 6 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_4096a." + voltageName), i, 4096, false));
+                WIRELESS_INPUT_ENERGY_HATCH_16384A[i] = registerPartMetaTileEntity(112 + 15 * 7 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_16384a." + voltageName), i, 16384, false));
+                WIRELESS_INPUT_ENERGY_HATCH_65536A[i] = registerPartMetaTileEntity(112 + 15 * 8 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_65536a." + voltageName), i, 65536, false));
+                WIRELESS_INPUT_ENERGY_HATCH_262144A[i] = registerPartMetaTileEntity(112 + 15 * 9 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_262144a." + voltageName), i, 262144, false));
+                WIRELESS_INPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(112 + 15 * 10 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.input_1048576a." + voltageName), i, 1048576, false));
+                WIRELESS_OUTPUT_ENERGY_HATCH[i] = registerPartMetaTileEntity(112 + 15 * 11 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output." + voltageName), i, 2, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_4A[i] = registerPartMetaTileEntity(112 + 15 * 12 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_4a." + voltageName), i, 4, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_16A[i] = registerPartMetaTileEntity(112 + 15 * 13 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_16a." + voltageName), i, 16, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_64A[i] = registerPartMetaTileEntity(112 + 15 * 14 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_64a." + voltageName), i, 64, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_256A[i] = registerPartMetaTileEntity(112 + 15 * 15 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_256a." + voltageName), i, 256, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_1024A[i] = registerPartMetaTileEntity(112 + 15 * 16 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1024a." + voltageName), i, 1024, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_4096A[i] = registerPartMetaTileEntity(112 + 15 * 17 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_4096a." + voltageName), i, 4096, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_16384A[i] = registerPartMetaTileEntity(112 + 15 * 18 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_16384a." + voltageName), i, 16384, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_65536A[i] = registerPartMetaTileEntity(112 + 15 * 19 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_65536a." + voltageName), i, 65536, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_262144A[i] = registerPartMetaTileEntity(112 + 15 * 20 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_262144a." + voltageName), i, 262144, true));
+                WIRELESS_OUTPUT_ENERGY_HATCH_1048576A[i] = registerPartMetaTileEntity(112 + 15 * 21 + i, new MetaTileEntityWirelessEnergyHatch(gtliteId("wireless_energy_hatch.output_1048576a." + voltageName), i, 1048576, true));
+            }
         }
 
         //  ID 14443-14446: UEV-OpV Item Import Hatches.
-        IMPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(443, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.uev"), UEV, false));
-        IMPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(444, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.uiv"), UIV, false));
-        IMPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(445, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.uxv"), UXV, false));
-        IMPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(446, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.opv"), OpV, false));
+        if (GTLiteConfigHolder.machines.enableHighTierItemBuses) {
+            IMPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(443, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.uev"), UEV, false));
+            IMPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(444, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.uiv"), UIV, false));
+            IMPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(445, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.uxv"), UXV, false));
+            IMPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(446, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.import.opv"), OpV, false));
+        }
 
         //  ID 14447-14450: UEV-OpV Item Export Hatches.
-        EXPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(447, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.uev"), UEV, true));
-        EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(448, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.uiv"), UIV, true));
-        EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(449, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.uxv"), UXV, true));
-        EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(450, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.opv"), OpV, true));
+        if (GTLiteConfigHolder.machines.enableHighTierItemBuses) {
+            EXPORT_ITEM_HATCH[0] = registerPartMetaTileEntity(447, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.uev"), UEV, true));
+            EXPORT_ITEM_HATCH[1] = registerPartMetaTileEntity(448, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.uiv"), UIV, true));
+            EXPORT_ITEM_HATCH[2] = registerPartMetaTileEntity(449, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.uxv"), UXV, true));
+            EXPORT_ITEM_HATCH[3] = registerPartMetaTileEntity(450, new MetaTileEntityAdvancedItemBus(gtliteId("item_hatch.export.opv"), OpV, true));
+        }
 
         //  ID 14451-14454: UEV-OpV Fluid Import Hatches.
-        IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(451, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.uev"), UEV, false));
-        IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(452, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.uiv"), UIV, false));
-        IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(453, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.uxv"), UXV, false));
-        IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(454, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.opv"), OpV, false));
+        if (GTLiteConfigHolder.machines.enableHighTierFluidHatches) {
+            IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(451, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.uev"), UEV, false));
+            IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(452, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.uiv"), UIV, false));
+            IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(453, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.uxv"), UXV, false));
+            IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(454, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.import.opv"), OpV, false));
+        }
 
         //  ID 14455-14458: UEV-OpV Fluid Export Hatches.
-        EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(455, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.uev"), UEV, true));
-        EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(456, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.uiv"), UIV, true));
-        EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(457, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.uxv"), UXV, true));
-        EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(458, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.opv"), OpV, true));
+        if (GTLiteConfigHolder.machines.enableHighTierFluidHatches) {
+            EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(455, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.uev"), UEV, true));
+            EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(456, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.uiv"), UIV, true));
+            EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(457, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.uxv"), UXV, true));
+            EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(458, new MetaTileEntityAdvancedFluidHatch(gtliteId("fluid_hatch.export.opv"), OpV, true));
+        }
 
         //  ID 14459-14462: UEV-OpV Quadruple Fluid Import Hatches.
-        QUADRUPLE_IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(459, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uev"), UEV, 4, false));
-        QUADRUPLE_IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(460, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uiv"), UIV, 4, false));
-        QUADRUPLE_IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(461, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uxv"), UXV, 4, false));
-        QUADRUPLE_IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(462, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.opv"), OpV, 4, false));
+        if (GTLiteConfigHolder.machines.enableHighTierMultiFluidHatches) {
+            QUADRUPLE_IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(459, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uev"), UEV, 4, false));
+            QUADRUPLE_IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(460, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uiv"), UIV, 4, false));
+            QUADRUPLE_IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(461, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.uxv"), UXV, 4, false));
+            QUADRUPLE_IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(462, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_4x.opv"), OpV, 4, false));
+        }
 
         //  ID 14463-14466: UEV-OpV Nonuple Fluid Import Hatches.
-        NONUPLE_IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(463, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uev"), UEV, 9, false));
-        NONUPLE_IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(464, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uiv"), UIV, 9, false));
-        NONUPLE_IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(465, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uxv"), UXV, 9, false));
-        NONUPLE_IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(466, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.opv"), OpV, 9, false));
+        if (GTLiteConfigHolder.machines.enableHighTierMultiFluidHatches) {
+            NONUPLE_IMPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(463, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uev"), UEV, 9, false));
+            NONUPLE_IMPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(464, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uiv"), UIV, 9, false));
+            NONUPLE_IMPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(465, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.uxv"), UXV, 9, false));
+            NONUPLE_IMPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(466, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.import_9x.opv"), OpV, 9, false));
+        }
 
         //  ID 14467-14470: UEV-OpV Quadruple Fluid Export Hatches.
-        QUADRUPLE_EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(467, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uev"), UEV, 4, true));
-        QUADRUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(468, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uiv"), UIV, 4, true));
-        QUADRUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(469, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uxv"), UXV, 4, true));
-        QUADRUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(470, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.opv"), OpV, 4, true));
+        if (GTLiteConfigHolder.machines.enableHighTierMultiFluidHatches) {
+            QUADRUPLE_EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(467, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uev"), UEV, 4, true));
+            QUADRUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(468, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uiv"), UIV, 4, true));
+            QUADRUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(469, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.uxv"), UXV, 4, true));
+            QUADRUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(470, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_4x.opv"), OpV, 4, true));
+        }
 
         //  ID 14471-14474: UEV-OpV Nonuple Fluid Export Hatches.
-        NONUPLE_EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(471, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uev"), UEV, 9, true));
-        NONUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(472, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uiv"), UIV, 9, true));
-        NONUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(473, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uxv"), UXV, 9, true));
-        NONUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(474, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.opv"), OpV, 9, true));
+        if (GTLiteConfigHolder.machines.enableHighTierMultiFluidHatches) {
+            NONUPLE_EXPORT_FLUID_HATCH[0] = registerPartMetaTileEntity(471, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uev"), UEV, 9, true));
+            NONUPLE_EXPORT_FLUID_HATCH[1] = registerPartMetaTileEntity(472, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uiv"), UIV, 9, true));
+            NONUPLE_EXPORT_FLUID_HATCH[2] = registerPartMetaTileEntity(473, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.uxv"), UXV, 9, true));
+            NONUPLE_EXPORT_FLUID_HATCH[3] = registerPartMetaTileEntity(474, new MetaTileEntityAdvancedMultiFluidHatch(gtliteId("fluid_hatch.export_9x.opv"), OpV, 9, true));
+        }
 
         //  ID 14475-14490: LV-OpV Reinforced Rotor Holders.
         for (int i = 0; i < 13; i++) {
@@ -452,7 +495,9 @@ public class GTLiteMetaTileEntities {
         registerSimpleMetaTileEntity(BIO_REACTOR, TE_REGISTRY_ID + 57, "bio_reactor", GTLiteRecipeMaps.BIO_REACTOR_RECIPES, GTLiteTextures.BIO_REACTOR_OVERLAY, true, GTLiteUtility::gtliteId, (tier) -> 16000);
 
         //  ID 15072-15087: LV-IV Simulators.
-        registerSimpleMetaTileEntity(SIMULATOR, TE_REGISTRY_ID + 72, "simulator", GTLiteRecipeMaps.SIMULATOR_RECIPES, GTLiteTextures.SIMULATOR_OVERLAY, true, GTLiteUtility::gtliteId, GTUtility.hvCappedTankSizeFunction);
+        if (GTLiteConfigHolder.machines.enableSimulatorChain) {
+            registerSimpleMetaTileEntity(SIMULATOR, TE_REGISTRY_ID + 72, "simulator", GTLiteRecipeMaps.SIMULATOR_RECIPES, GTLiteTextures.SIMULATOR_OVERLAY, true, GTLiteUtility::gtliteId, GTUtility.hvCappedTankSizeFunction);
+        }
 
         //  ID 15088-15103: EV-LuV Biomass Generators.
         BIOMASS_GENERATOR[0] = registerMetaTileEntity(TE_REGISTRY_ID + 88, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.ev"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, EV, GTUtility.genericGeneratorTankSizeFunction));
@@ -460,9 +505,11 @@ public class GTLiteMetaTileEntities {
         BIOMASS_GENERATOR[2] = registerMetaTileEntity(TE_REGISTRY_ID + 90, new SimpleGeneratorMetaTileEntity(gtliteId("biomass_generator.luv"), GTLiteRecipeMaps.BIOMASS_GENERATOR_RECIPES, GTLiteTextures.BIOMASS_GENERATOR_OVERLAY, LuV, GTUtility.genericGeneratorTankSizeFunction));
 
         //  ID 15104-15119: HV-IV Lightning Rods.
-        LIGHTNING_ROD[0] = registerMetaTileEntity(TE_REGISTRY_ID + 104, new MetaTileEntityLightningRod(gtliteId("lightning_rod.hv"), HV));
-        LIGHTNING_ROD[1] = registerMetaTileEntity(TE_REGISTRY_ID + 105, new MetaTileEntityLightningRod(gtliteId("lightning_rod.ev"), EV));
-        LIGHTNING_ROD[2] = registerMetaTileEntity(TE_REGISTRY_ID + 106, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
+        if (GTLiteConfigHolder.machines.enableLightningRods) {
+            LIGHTNING_ROD[0] = registerMetaTileEntity(TE_REGISTRY_ID + 104, new MetaTileEntityLightningRod(gtliteId("lightning_rod.hv"), HV));
+            LIGHTNING_ROD[1] = registerMetaTileEntity(TE_REGISTRY_ID + 105, new MetaTileEntityLightningRod(gtliteId("lightning_rod.ev"), EV));
+            LIGHTNING_ROD[2] = registerMetaTileEntity(TE_REGISTRY_ID + 106, new MetaTileEntityLightningRod(gtliteId("lightning_rod.iv"), IV));
+        }
 
         //  ID 15120-15135: LV-HV Auto Chisels.
         if (Mods.Chisel.isModLoaded() && GTLiteConfigHolder.compats.enableChiselModule) {
@@ -609,7 +656,9 @@ public class GTLiteMetaTileEntities {
         INDUSTRIAL_VACUUM_CHAMBER = registerMultiMetaTileEntity(97, new MetaTileEntityIndustrialVacuumChamber(gtliteId("industrial_vacuum_chamber")));
         INDUSTRIAL_BIO_REACTOR = registerMultiMetaTileEntity(98, new MetaTileEntityIndustrialBioReactor(gtliteId("industrial_bio_reactor")));
         PLANETARY_GAS_SIPHON = registerMultiMetaTileEntity(99, new MetaTileEntityPlanetaryGasSiphon(gtliteId("planetary_gas_siphon")));
-        BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
+        if (GTLiteConfigHolder.machines.enableSimulatorChain) {
+            BIOWARE_SIMULATOR = registerMultiMetaTileEntity(100, new MetaTileEntityBiowareSimulator(gtliteId("bioware_simulator")));
+        }
         ALGAE_CULTURE_TANK = registerMultiMetaTileEntity(101, new MetaTileEntityAlgaeCultureTank(gtliteId("algae_culture_tank")));
         LARGE_GAS_COLLECTOR = registerMultiMetaTileEntity(102, new MetaTileEntityLargeGasCollector(gtliteId("large_gas_collector")));
         ULTIMATE_COMBUSTION_ENGINE = registerMultiMetaTileEntity(103, new MetaTileEntityUltimateCombustionEngine(gtliteId("ultimate_combustion_engine"), LuV));

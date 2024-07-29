@@ -15,7 +15,9 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.EV;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.AUTOCLAVE_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.CUTTER_RECIPES;
 import static gregtech.api.unification.material.Materials.DistilledWater;

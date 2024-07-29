@@ -2,7 +2,9 @@ package magicbook.gtlitecore.loaders.oreprocessing;
 
 import static gregtech.api.GTValues.MV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.BLAST_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;

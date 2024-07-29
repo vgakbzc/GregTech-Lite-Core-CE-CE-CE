@@ -18,7 +18,10 @@ import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.Duranium;
+import static gregtech.api.unification.material.Materials.Europium;
+import static gregtech.api.unification.material.Materials.Neutronium;
+import static gregtech.api.unification.material.Materials.Polybenzimidazole;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.blocks.BlockHermeticCasing.HermeticCasingsType.HERMETIC_UHV;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;

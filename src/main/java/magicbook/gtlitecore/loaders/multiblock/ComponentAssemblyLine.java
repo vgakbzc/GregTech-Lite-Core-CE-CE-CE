@@ -11,7 +11,9 @@ import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.COMPONENT_ASSEMBLY_LINE_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
-import static net.minecraft.init.Items.*;
+import static net.minecraft.init.Items.ENDER_EYE;
+import static net.minecraft.init.Items.ENDER_PEARL;
+import static net.minecraft.init.Items.NETHER_STAR;
 
 public class ComponentAssemblyLine {
 

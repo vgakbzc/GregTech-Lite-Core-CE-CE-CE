@@ -2,7 +2,9 @@ package magicbook.gtlitecore.loaders.chains;
 
 import static gregtech.api.GTValues.IV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.Oxygen;
+import static gregtech.api.unification.material.Materials.Yttrium;
+import static gregtech.api.unification.material.Materials.Zirconium;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.gem;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;

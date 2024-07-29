@@ -3,7 +3,10 @@ package magicbook.gtlitecore.loaders.multiblock;
 import gregtech.api.unification.material.MarkerMaterials;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.ULV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
@@ -11,7 +14,9 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.COMPONENT_ASSEMBL
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.NitrileButadieneRubber;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.PolyPhosphonitrileFluoroRubber;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
-import static net.minecraft.init.Items.*;
+import static net.minecraft.init.Items.ENDER_EYE;
+import static net.minecraft.init.Items.ENDER_PEARL;
+import static net.minecraft.init.Items.NETHER_STAR;
 
 public class ComponentAssembler {
 

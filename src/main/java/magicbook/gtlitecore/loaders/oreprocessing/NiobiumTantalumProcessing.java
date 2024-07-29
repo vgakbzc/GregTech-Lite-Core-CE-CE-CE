@@ -3,9 +3,15 @@ package magicbook.gtlitecore.loaders.oreprocessing;
 import static gregtech.api.GTValues.HV;
 import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_BATH_RECIPES;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.HydrofluoricAcid;
+import static gregtech.api.unification.material.Materials.Pyrochlore;
+import static gregtech.api.unification.material.Materials.Tantalite;
+import static gregtech.api.unification.material.Materials.Water;
 import static gregtech.api.unification.ore.OrePrefix.dust;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CalciumDifluoride;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ManganeseDifluoride;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.NiobiumPentoxide;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.TantalumPentoxide;
 
 /**
  * The Niobium-Tantalum Process

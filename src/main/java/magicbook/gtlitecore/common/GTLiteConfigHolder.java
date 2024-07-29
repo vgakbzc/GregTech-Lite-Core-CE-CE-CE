@@ -1,5 +1,6 @@
 package magicbook.gtlitecore.common;
 
+import lombok.NoArgsConstructor;
 import magicbook.gtlitecore.GTLiteCore;
 import net.minecraftforge.common.config.Config;
 
@@ -70,85 +71,185 @@ public class GTLiteConfigHolder {
         public CompatibilityOptions() {}
     }
 
+    @NoArgsConstructor
     public static class MachineOptions {
 
-        @Comment({"Enable harder Steam stage Machine recipes, requires ULV components.", "Default: true"})
-        public boolean enableHarderSteamStageMachine = true;
+        @Comment({"Enable High Tier Item Buses (UEV-OpV) and its recipes,",
+                  "these Advanced Item Buses have 121-196 slots.",
+                  "Default: true"})
+        @Name("Advanced Item Buses")
+        @RequiresMcRestart
+        public boolean enableHighTierItemBuses = true;
 
-        @Comment({"Enable high tier item hatch (UEV-OpV) recipes, these hatches may have issues.", "Default: true"})
-        public boolean enableHighTierItemHatch = true;
+        @Comment({"Enable High Tier Fluid Hatches (UEV-OpV) and its recipes,",
+                  "these Advanced Fluid Hatches have 8192kL-65536kL capacity.",
+                  "Default: true"})
+        @Name("Advanced Fluid Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTierFluidHatches = true;
 
-        @Comment({"Enable high tier fluid hatch (UEV-OpV) recipes, these hatches may have issues.", "Default: true"})
-        public boolean enableHighTierFluidHatch = true;
+        @Comment({"Enable High Tier Multi Fluid Hatches (UEV-OpV) and its recipes,",
+                  "these Multi Fluid Hatches have 4x and 9x two forms, just like vanilla:",
+                  "for 4x Fluid Hatches, these Advanced Hatches have 2048kL-16384kL capacity;",
+                  "for 9x Fluid Hatches, these Advanced hatches have 1024kL-8192kL capacity.",
+                  "Default: true"})
+        @Name("Advanced Multi Fluid Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTierMultiFluidHatches = true;
 
-        @Comment({"Enable high tier multi fluid hatch (UEV-OpV) recipes, these hatches may have issues.", "Default: true"})
-        public boolean enableHighTierMultiFluidHatch = true;
+        @Comment({"Enable High Tier Energy/Dynamo Hatches (UEV-OpV) and its recipes,",
+                  "Warning: this option does not cause UEV-OpV Energy/Dynamo Hatches not registried,",
+                  "only hidden them and not register recipes for them.",
+                  "Default: true"})
+        @Name("Advanced Energy/Dynamo Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTierEnergyHatches = true;
 
-        @Comment({"Enable high tier 1A energy hatch (UEV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier1AEnergyHatch = true;
+        @Comment({"Enable High Tier Laser Target/Source Hatches and its recipes.",
+                  "Warning: this option does not cause UEV-OpV Laser Target/Source Hatches not registried,",
+                  "only hidden them and not register recipes for them."})
+        @Name("Advanced Laser Target/Source Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTierLaserHatches = true;
 
-        @Comment({"Enable LV-HV 4A energy hatch recipes.", "Default: true"})
-        public boolean enableLVtoHV4AEnergyHatch = true;
+        @Comment({"Enable Hi-Amp Laser Target/Source Hatches (IV-OpV),",
+                  "consists of: 16384A, 65536A, 262144A and 1048576A."})
+        @Name("High-Amp Laser Target/Source Hatches")
+        @RequiresMcRestart
+        public boolean enableHiAmpLaserHatches = true;
 
-        @Comment({"Enable high tier 4A energy hatch (UEV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier4AEnergyHatch = true;
+        @Comment({"Enable High Tier 4A Energy/Dynamo Hatches (UEV-OpV) and its recipes.",
+                "Default: true"})
+        @Name("Advanced 4A Energy/Dynamo Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTier4AEnergyHatches = true;
 
-        @Comment({"Enable LV-EV 16A energy hatch recipes.", "Default: true"})
-        public boolean enableLVtoEV16AEnergyHatch = true;
+        @Comment({"Enable High Tier 16A Energy/Dynamo Hatches (UEV-OpV) and its recipes.",
+                  "Default: true"})
+        @Name("Advanced 16A Energy/Dynamo Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTier16AEnergyHatches = true;
 
-        @Comment({"Enable high tier 16A energy hatch (UEV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier16AEnergyHatch = true;
+        @Comment({"Enable High Tier 64A Substation Energy/Dynamo Hatches (UEV-OpV) and its recipes.",
+                  "Default: true"})
+        @Name("Advanced 64A Energy/Dynamo Hatches")
+        @RequiresMcRestart
+        public boolean enableHighTier64AEnergyHatches = true;
 
-        @Comment({"Enable low power 64A substation energy hatch (LV-EV) recipes.", "Default: true"})
-        public boolean enableLowPower64ASubstationEnergyHatch = true;
+        @Comment({"Enable High-Amp Energy Hatches for LV-EV and its recipes,",
+                  "consists of 4A, 16A Dynamo Hatches and 64A Substation Dynamo Hatches.",
+                  "Warning: This option will cause breaking change of vanilla GregTech games,",
+                  "please tweak it carefully.",
+                  "Default: true"
+        })
+        @Name("LV-EV High-Amp Energy Hatches")
+        @RequiresMcRestart
+        public boolean enableLowPowerHighAmpEnergyHatches = true;
 
-        @Comment({"Enable high tier 64A substation energy hatch (UEV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier64ASubstationEnergyHatch = true;
+        @Comment({"Enable Wireless Energy/Dynamo Hatches (ULV-MAX) and its recipes.",
+                  "These Energy/Dynamo Hatches will interact energy via `Wireless Energy Network`,",
+                  "which is a special World Saved Data in your saves, and its have many High-Amp versions,",
+                  "consists of: 2A (common), 4A, 16A, 64A, 256A, 1024A, 4096A, 16384A, 65536A",
+                  "262144A and 1048576A, each Wireless Energy/Dynamo Hatches has an owner.",
+                  "Default: true"})
+        @Name("Wireless Energy Hatches")
+        @RequiresMcRestart
+        public boolean enableWirelessEnergyHatches = true;
 
-        @Comment({"Enable high tier transformer (UEV-OpV) recipes.", "Default: true"})
+        @Comment({"Enable High Tier Transformers (UEV-OpV) and its recipes.",
+                  "Warning: this option does not cause UEV-OpV Transformers not registried,",
+                  "only hidden them and not register recipes for them.",
+                  "Default: true"})
+        @Name("Advanced Transformers")
+        @RequiresMcRestart
         public boolean enableHighTierTransformer = true;
 
-        @Comment({"Enable high tier power transformer (UEV-OpV) recipes.", "Default: true"})
+        @Comment({"Enable High Tier Power Transformers (UEV-OpV) and its recipes.",
+                  "Warning: this option does not cause UEV-OpV Power Transformers not registried,",
+                  "only hidden them and not register recipes for them.",
+                  "Default: true"})
+        @Name("Advanced Power Transformers")
+        @RequiresMcRestart
         public boolean enableHighTierPowerTransformer = true;
 
-        @Comment({"Enable high tier hi-amp transformer (UEV-OpV) recipes.", "Default: true"})
+        @Comment({"Enable High Tier Hi-Amp Transformers (UEV-OpV) and its recipes.",
+                  "Warning: this option does not cause UEV-OpV Hi-Amp Transformers not registried,",
+                  "only hidden them and not register recipes for them.",
+                  "Default: true"})
+        @Name("Advanced Hi-Amp Transformers")
+        @RequiresMcRestart
         public boolean enableHighTierHiAmpTransformer = true;
 
-        @Comment({"Enable high tier 256A laser hatch (UHV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier256ALaserHatch = true;
-
-        @Comment({"Enable high tier 1024A laser hatch (UHV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier1024ALaserHatch = true;
-
-        @Comment({"Enable high tier 4096A laser hatch (UHV-OpV) recipes.", "Default: true"})
-        public boolean enableHighTier4096ALaserHatch = true;
-
-        @Comment({"Enable Simulator (LV-IV), and its recipes.", "Default: true"})
+        @Comment({"Enable ME Crafting Input Bus."})
+        @Name("ME Crafting Input Bus")
         @RequiresMcRestart
-        public boolean enableSimulator = true;
+        public boolean enableMECraftingInputBus = false;
 
-        @Comment({"Set chance of Simulator recipes.", "Default: 1000"})
+        @Comment({"Enable ME Crafting Input Slave, required GregTech CEu version after 2.9.0."})
+        @Name("ME Crafting Input Slave")
+        @RequiresMcRestart
+        public boolean enableMECraftingInputSlave = false;
+
+        @Comment({"Enable Harder Steam Machine recipes, requires ULV components,",
+                  "such as ULV Motor, Piston and Conveyor Module.",
+                  "Default: true"})
+        @Name("Harder Steam Machines")
+        @RequiresMcRestart
+        public boolean enableHarderSteamMachines = true;
+
+        @Comment({"Enable LV-IV Simulators, Bioware Simulator and its recipes,",
+                  "specific change and other datas can tweak via config too,",
+                  "please see `outputChanceEachSimulate` (Output Chance of Simulator),",
+                  "`outputChanceBoostEachSimulate` (Output Chance Boost of Simulator),",
+                  "and `durationEachSimulate` (Duration of Simulator).",
+                  "Default: true"})
+        @Name("Simulator Chain")
+        @RequiresMcRestart
+        public boolean enableSimulatorChain = true;
+
+        @Comment({})
+        @Name("Output Chance of Simulator")
         @RangeInt(min = 1, max = 10000)
-        public int chanceSimulator = 1000;
+        @RequiresWorldRestart
+        public int outputChanceEachSimulate = 1000;
 
-        @Comment({"Set tier chance boost of Simulator recipes.", "Default: 100"})
+        @Comment({})
+        @Name("Output Chance Boost of Simulator")
         @RangeInt(min = 1, max = 10000)
-        public int tierChanceBoostSimulator = 100;
+        @RequiresWorldRestart
+        public int outputChanceBoostEachSimulate = 100;
 
-        @Comment({"Enable UU Matter related chains, consists of Mass Fabricator and some related machines and recipes.", "Default: true"})
+        @Comment({})
+        @Name("Duration of Each Simulator recipes")
+        @RangeInt(min = 1)
+        @RequiresWorldRestart
+        public int durationEachSimulate = 1200;
+
+        @Comment({"Enable LV-OpV Mass Fabricator, Replicator, correspondence Multiblock structures,",
+                  "and its recipes. Specific change and other datas can tweak via config too,",
+                  "please see: "})
+        @Name("UU Matter Chain")
         @RequiresMcRestart
         public boolean enableUUMatterChain = true;
 
-        @Comment({"Basic time factor of UU Matter Replication, change this to set the replication to be quicker or longer", "Default: 750"})
+        @Comment({"Basic Time Factor of Replicator, change this to set the Replication to be quicker or longer.",
+                  "Default: 750"})
+        @Name("Replicator Time Factor")
         @RangeInt(min = 1)
-        @RequiresMcRestart
+        @RequiresWorldRestart
         public int replicationTimeFactor = 750;
 
-        @Comment({"Enable Nuclear Fission related chains, consists of Nuclear Reactor, Isotope Material processing and recipes.", "Default: true"})
+        @Comment({"Enable IV-ZPM Lightning Rods."})
+        @Name("Lightning Rods")
         @RequiresMcRestart
-        public boolean enableNuclearFissionChain = true;
+        public boolean enableLightningRods = true;
 
-        public MachineOptions() {}
+        @Comment({"Enable Nuclear Fission and related chains, consists of Nuclear Reactor,",
+                  "Isotope Material processing and recipes.",
+                  "Default: false"})
+        @Name("Nuclear Fission")
+        @RequiresMcRestart
+        public boolean enableNuclearFissionChain = false;
     }
 
     public static class MiscOptions {

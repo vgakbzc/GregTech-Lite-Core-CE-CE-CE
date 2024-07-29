@@ -3,13 +3,21 @@ package magicbook.gtlitecore.loaders.multiblock;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.unification.material.MarkerMaterials;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.circuit;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.ring;
+import static gregtech.api.unification.ore.OrePrefix.wireFine;
 import static gregtech.common.items.MetaItems.CARBON_MESH;
 import static gregtech.common.items.MetaItems.POWER_THRUSTER_ADVANCED;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.DYSON_SWARM_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ActiniumGroupHAlloy;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CarbonNanotube;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.HY1301;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Polyetheretherketone;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.DYSON_SWARM_MODULE;
 
 public class DysonSwarm {

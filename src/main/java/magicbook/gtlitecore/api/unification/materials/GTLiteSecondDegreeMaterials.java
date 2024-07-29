@@ -14,7 +14,9 @@ import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.CUSTOM_MAGNETO_RESONATIC;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.ENRICHED;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteMaterialIconSet.NUCLEAR;
 
 /**
  * Second Degree Materials

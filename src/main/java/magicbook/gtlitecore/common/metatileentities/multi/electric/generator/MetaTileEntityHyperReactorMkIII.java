@@ -45,7 +45,9 @@ import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.OpV;
+import static gregtech.api.GTValues.UXV;
+import static gregtech.api.GTValues.V;
 
 public class MetaTileEntityHyperReactorMkIII extends FuelMultiblockController implements IProgressBarMultiblock {
 

@@ -42,7 +42,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.ULV;
+import static gregtech.api.GTValues.UV;
 
 public class MetaTileEntityNanoscaleFabricator extends RecipeMapMultiblockController {
 

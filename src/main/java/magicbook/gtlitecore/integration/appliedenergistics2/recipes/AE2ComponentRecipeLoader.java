@@ -5,12 +5,18 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.UnificationEntry;
 import magicbook.gtlitecore.api.utils.Mods;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.VN;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.screw;
+import static gregtech.api.unification.ore.OrePrefix.wireFine;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.DEDUCTION_PROCESSOR;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.FLUIX_LOGIC_ASSEMBLY;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.FLUIX_LOGIC_PROCESSOR;
 
 public class AE2ComponentRecipeLoader {
 

@@ -5,7 +5,9 @@ import gregtech.api.fluids.attribute.FluidAttributes;
 import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.UEV;
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;

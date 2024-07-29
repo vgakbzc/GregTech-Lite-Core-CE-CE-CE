@@ -6,7 +6,10 @@ import magicbook.gtlitecore.api.utils.Mods;
 import net.minecraft.init.Items;
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.pipeNormalItem;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.screw;
+import static gregtech.api.unification.ore.OrePrefix.stick;
 import static gregtech.common.items.MetaItems.ELECTRIC_PISTON_HV;
 import static gregtech.common.items.MetaItems.ROBOT_ARM_HV;
 import static gregtech.common.metatileentities.MetaTileEntities.BUFFER;

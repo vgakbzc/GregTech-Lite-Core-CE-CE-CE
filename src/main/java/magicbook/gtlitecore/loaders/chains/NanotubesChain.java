@@ -12,7 +12,9 @@ import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PLASMA_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.CARBON_ALLOTROPE_MIXTURE;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.EXOTIC_SHAPE_EXTRUDER_INGOT;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.GRAPHENE_ALIGNED_CNT;
 
 public class NanotubesChain {
 

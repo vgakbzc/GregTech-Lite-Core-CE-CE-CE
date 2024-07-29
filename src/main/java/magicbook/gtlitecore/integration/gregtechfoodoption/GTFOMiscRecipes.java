@@ -6,7 +6,9 @@ import gregtech.api.unification.stack.UnificationEntry;
 import gregtechfoodoption.item.GTFOMetaItem;
 import magicbook.gtlitecore.api.utils.Mods;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.unification.material.Materials.Bronze;
 import static gregtech.api.unification.ore.OrePrefix.plate;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_PLATE;

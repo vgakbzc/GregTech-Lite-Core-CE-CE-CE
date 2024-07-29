@@ -50,7 +50,9 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.MAX;
+import static gregtech.api.GTValues.UV;
+import static gregtech.api.GTValues.V;
 
 public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockController {
 

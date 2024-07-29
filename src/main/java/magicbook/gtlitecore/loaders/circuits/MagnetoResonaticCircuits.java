@@ -4,9 +4,15 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
-import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.recipes.RecipeMaps.AUTOCLAVE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.FORMING_PRESS_RECIPES;
+import static gregtech.api.unification.material.Materials.Boron;
+import static gregtech.api.unification.material.Materials.IndiumGalliumPhosphide;
+import static gregtech.api.unification.material.Materials.SolderingAlloy;
+import static gregtech.api.unification.ore.OrePrefix.dust;
+import static gregtech.api.unification.ore.OrePrefix.gem;
+import static gregtech.api.unification.ore.OrePrefix.gemExquisite;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.BismuthTellurite;

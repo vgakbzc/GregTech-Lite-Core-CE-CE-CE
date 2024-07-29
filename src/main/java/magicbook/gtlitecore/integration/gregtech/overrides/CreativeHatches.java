@@ -7,14 +7,18 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import magicbook.gtlitecore.common.blocks.BlockHermeticCasing;
 import magicbook.gtlitecore.common.blocks.GTLiteMetaBlocks;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.MAX;
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLY_LINE_RECIPES;
 import static gregtech.api.unification.material.Materials.SolderingAlloy;
 import static gregtech.api.unification.ore.OrePrefix.circuit;
 import static gregtech.api.unification.ore.OrePrefix.plate;
 import static gregtech.common.items.MetaItems.TOOL_DATA_MODULE;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Eternity;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Infinity;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Spacetime;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class CreativeHatches {

@@ -4,7 +4,9 @@ import gregtech.api.unification.material.Material;
 import magicbook.gtlitecore.api.annotation.MaterialIDRange;
 
 import static gregtech.api.unification.material.Materials.*;
-import static gregtech.api.unification.material.info.MaterialFlags.*;
+import static gregtech.api.unification.material.info.MaterialFlags.DECOMPOSITION_BY_CENTRIFUGING;
+import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_LENS;
+import static gregtech.api.unification.material.info.MaterialFlags.GENERATE_PLATE;
 import static gregtech.api.unification.material.info.MaterialIconSet.*;
 import static gregtech.api.util.GTUtility.gregtechId;
 import static magicbook.gtlitecore.api.annotation.processor.MaterialIDProvider.getID;

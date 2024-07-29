@@ -3,7 +3,9 @@ package magicbook.gtlitecore.loaders.chains;
 import gregtech.api.recipes.GTRecipeHandler;
 import magicbook.gtlitecore.common.GTLiteConfigHolder;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.VH;
 import static gregtech.api.recipes.RecipeMaps.COMBUSTION_GENERATOR_FUELS;
 import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;

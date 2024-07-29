@@ -6,8 +6,13 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.MV;
+import static gregtech.api.GTValues.VA;
+import static gregtech.api.recipes.RecipeMaps.BREWING_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.LARGE_CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;

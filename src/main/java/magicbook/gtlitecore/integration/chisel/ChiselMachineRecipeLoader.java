@@ -14,7 +14,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.HSLASteel;
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
@@ -22,7 +24,9 @@ import static gregtech.common.items.MetaItems.CONVEYOR_MODULE_HV;
 import static gregtech.common.items.MetaItems.ELECTRIC_MOTOR_HV;
 import static gregtech.loaders.recipe.CraftingComponent.*;
 import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
-import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.AUTO_CHISEL;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.INDUSTRIAL_3D_PRINTER;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.LARGE_AUTO_CHISEL;
 
 public class ChiselMachineRecipeLoader {
 

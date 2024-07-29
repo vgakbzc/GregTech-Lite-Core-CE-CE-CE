@@ -1,6 +1,8 @@
 package magicbook.gtlitecore.loaders.chains;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.EV;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.PYROLYSE_RECIPES;
 import static gregtech.api.unification.material.Materials.Steel;

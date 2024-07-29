@@ -13,7 +13,9 @@ import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import net.minecraft.item.ItemStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.M;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.EXTRUDER_RECIPES;
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;

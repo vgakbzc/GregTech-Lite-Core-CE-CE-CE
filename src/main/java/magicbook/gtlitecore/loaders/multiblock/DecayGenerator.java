@@ -6,12 +6,19 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.*;
+import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.FLUID_SOLIDFICATION_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.VACUUM_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.ingotHot;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_BLOCK;
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_INGOT;
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_NUGGET;
+import static gregtech.common.items.MetaItems.SHAPE_MOLD_PLATE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.DECAY_GENERATOR_RECIPES;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.FleroviumYtterbiumPlasma;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.MetastableFlerovium;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.QuasifissioningPlasma;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.ALPHA_PARTICLE;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.NEUTRON;
 

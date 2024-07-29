@@ -4,7 +4,9 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.BPAPolycarbonate;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.DimethylCarbonate;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.DiphenylCarbonate;
 
 public class BPAPolycarbonateChain {
 

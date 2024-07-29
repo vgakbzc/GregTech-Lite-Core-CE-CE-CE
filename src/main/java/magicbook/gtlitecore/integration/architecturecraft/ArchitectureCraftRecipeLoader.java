@@ -6,7 +6,9 @@ import magicbook.gtlitecore.api.utils.Mods;
 
 import static gregtech.api.unification.material.Materials.Iron;
 import static gregtech.api.unification.material.Materials.Wood;
-import static gregtech.api.unification.ore.OrePrefix.*;
+import static gregtech.api.unification.ore.OrePrefix.plate;
+import static gregtech.api.unification.ore.OrePrefix.stick;
+import static gregtech.api.unification.ore.OrePrefix.toolHeadBuzzSaw;
 import static magicbook.gtlitecore.api.utils.GTLiteUtility.getItemById;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.ELECTRIC_MOTOR_ULV;
 

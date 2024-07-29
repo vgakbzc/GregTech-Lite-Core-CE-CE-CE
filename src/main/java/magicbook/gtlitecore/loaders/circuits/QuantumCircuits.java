@@ -8,7 +8,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
 import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.Platinum;
+import static gregtech.api.unification.material.Materials.SolderingAlloy;
+import static gregtech.api.unification.material.Materials.Tin;
 import static gregtech.api.unification.ore.OrePrefix.wireFine;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;

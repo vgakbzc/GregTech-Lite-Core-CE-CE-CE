@@ -11,9 +11,14 @@ import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
-import static gregtech.common.items.MetaItems.*;
+import static gregtech.common.items.MetaItems.EMITTER_LV;
+import static gregtech.common.items.MetaItems.GELLED_TOLUENE;
+import static gregtech.common.items.MetaItems.SENSOR_LV;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.DarkSteel;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.ElectricalSteel;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Fluix;
+import static magicbook.gtlitecore.api.unification.GTLiteMaterials.RedstoneAlloy;
 import static magicbook.gtlitecore.integration.appliedenergistics2.utils.AE2RecipeHandler.removeInscriberRecipe;
 
 public class AE2MiscRecipes {

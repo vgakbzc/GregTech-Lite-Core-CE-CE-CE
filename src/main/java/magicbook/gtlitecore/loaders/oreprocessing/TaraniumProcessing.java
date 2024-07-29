@@ -19,7 +19,10 @@ import static gregtechfoodoption.GTFOMaterialHandler.SodiumCyanide;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.MICROFOCUS_X_RAY_TUBE;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.PROTONATED_FULLERENE_SIEVING_MATRIX;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.SATURATED_FULLERENE_SIEVING_MATRIX;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.SEPARATION_ELECTROMAGNET;
 
 /**
  *

@@ -9,7 +9,9 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.HV;
+import static gregtech.api.GTValues.LV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_PLATE;
 import static gregtechfoodoption.GTFOMaterialHandler.*;

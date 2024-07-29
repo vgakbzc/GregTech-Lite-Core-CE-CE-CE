@@ -4,7 +4,10 @@ import gregtech.api.metatileentity.multiblock.CleanroomType;
 
 import static gregtech.api.GTValues.LuV;
 import static gregtech.api.GTValues.VA;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.Carbon;
+import static gregtech.api.unification.material.Materials.Polyethylene;
+import static gregtech.api.unification.material.Materials.Polytetrafluoroethylene;
+import static gregtech.api.unification.material.Materials.Sodium;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;

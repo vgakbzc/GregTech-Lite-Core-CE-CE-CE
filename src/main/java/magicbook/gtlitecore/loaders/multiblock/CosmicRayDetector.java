@@ -1,6 +1,8 @@
 package magicbook.gtlitecore.loaders.multiblock;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.UHV;
+import static gregtech.api.GTValues.V;
+import static gregtech.api.GTValues.VA;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.COSMIC_RAY_DETECTOR_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.HeavyLepton;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.StarlightLiquid;

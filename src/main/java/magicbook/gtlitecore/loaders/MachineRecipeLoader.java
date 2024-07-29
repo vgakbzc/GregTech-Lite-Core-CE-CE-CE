@@ -1,12 +1,10 @@
 package magicbook.gtlitecore.loaders;
 
 import gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities;
-import gregtech.api.block.VariantBlock;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.ModHandler;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
-import gregtech.api.unification.material.Material;
 import gregtech.api.unification.stack.UnificationEntry;
 import gregtech.common.ConfigHolder;
 import gregtech.common.blocks.BlockMachineCasing;
@@ -28,7 +26,6 @@ import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IStringSerializable;
 
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
@@ -45,6 +42,7 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.*;
 import static magicbook.gtlitecore.api.utils.GTLiteUtility.*;
+import static magicbook.gtlitecore.api.utils.GTRecipeHelper.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.ELECTRIC_IMPLOSION_COMPRESSOR;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_BLAST_FURNACE;
@@ -134,7 +132,7 @@ public class MachineRecipeLoader {
                 'W', CraftingComponent.CABLE,
                 'M', CraftingComponent.MOTOR);
 
-        if (GTLiteConfigHolder.machines.enableSimulator) {
+        if (GTLiteConfigHolder.machines.enableSimulatorChain) {
             //  Simulator
             MetaTileEntityLoader.registerMachineRecipe(true, SIMULATOR,
                     "WAW", "OHO", "WAW",
@@ -156,40 +154,46 @@ public class MachineRecipeLoader {
                 'O', CraftingComponent.DOUBLE_PLATE);
 
         //  Lightning Rod
-        ModHandler.addShapedRecipe(true, "lightning_rod.iv", GTLiteMetaTileEntities.LIGHTNING_ROD[0].getStackForm(),
-                "LML", "MCM", "LML",
-                'L', ENERGY_LAPOTRONIC_ORB,
-                'C', HULL[IV].getStackForm(),
-                'M', MetaTileEntities.TRANSFORMER[5].getStackForm());
+        if (GTLiteConfigHolder.machines.enableLightningRods) {
+            ModHandler.addShapedRecipe(true, "lightning_rod.iv", GTLiteMetaTileEntities.LIGHTNING_ROD[0].getStackForm(),
+                    "LML", "MCM", "LML",
+                    'L', ENERGY_LAPOTRONIC_ORB,
+                    'C', HULL[IV].getStackForm(),
+                    'M', MetaTileEntities.TRANSFORMER[5].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "lightning_rod.luv", GTLiteMetaTileEntities.LIGHTNING_ROD[1].getStackForm(),
-                "LML", "MCM", "LML",
-                'L', ENERGY_LAPOTRONIC_ORB_CLUSTER,
-                'C', HULL[LuV].getStackForm(),
-                'M', MetaTileEntities.TRANSFORMER[6].getStackForm());
+            ModHandler.addShapedRecipe(true, "lightning_rod.luv", GTLiteMetaTileEntities.LIGHTNING_ROD[1].getStackForm(),
+                    "LML", "MCM", "LML",
+                    'L', ENERGY_LAPOTRONIC_ORB_CLUSTER,
+                    'C', HULL[LuV].getStackForm(),
+                    'M', MetaTileEntities.TRANSFORMER[6].getStackForm());
 
-        ModHandler.addShapedRecipe(true, "lightning_rod.zpm", GTLiteMetaTileEntities.LIGHTNING_ROD[2].getStackForm(),
-                "LML", "MCM", "LML",
-                'L', ENERGY_MODULE,
-                'C', HULL[ZPM].getStackForm(),
-                'M', MetaTileEntities.TRANSFORMER[7].getStackForm());
+            ModHandler.addShapedRecipe(true, "lightning_rod.zpm", GTLiteMetaTileEntities.LIGHTNING_ROD[2].getStackForm(),
+                    "LML", "MCM", "LML",
+                    'L', ENERGY_MODULE,
+                    'C', HULL[ZPM].getStackForm(),
+                    'M', MetaTileEntities.TRANSFORMER[7].getStackForm());
+        }
 
         //  Mass Fabricator
-        MetaTileEntityLoader.registerMachineRecipe(true, MASS_FABRICATOR,
-                "XFX", "WHW", "XFX",
-                'X', CraftingComponent.BETTER_CIRCUIT,
-                'F', CraftingComponent.FIELD_GENERATOR,
-                'H', CraftingComponent.HULL,
-                'W', CraftingComponent.CABLE_QUAD);
+        if (GTLiteConfigHolder.machines.enableUUMatterChain) {
+            MetaTileEntityLoader.registerMachineRecipe(true, MASS_FABRICATOR,
+                    "XFX", "WHW", "XFX",
+                    'X', CraftingComponent.BETTER_CIRCUIT,
+                    'F', CraftingComponent.FIELD_GENERATOR,
+                    'H', CraftingComponent.HULL,
+                    'W', CraftingComponent.CABLE_QUAD);
+        }
 
         //  Replicator
-        MetaTileEntityLoader.registerMachineRecipe(true, REPLICATOR,
-                "EFE", "XHX", "EWE",
-                'E', CraftingComponent.EMITTER,
-                'F', CraftingComponent.FIELD_GENERATOR,
-                'H', CraftingComponent.HULL,
-                'X', CraftingComponent.BETTER_CIRCUIT,
-                'W', CraftingComponent.CABLE_QUAD);
+        if (GTLiteConfigHolder.machines.enableUUMatterChain) {
+            MetaTileEntityLoader.registerMachineRecipe(true, REPLICATOR,
+                    "EFE", "XHX", "EWE",
+                    'E', CraftingComponent.EMITTER,
+                    'F', CraftingComponent.FIELD_GENERATOR,
+                    'H', CraftingComponent.HULL,
+                    'X', CraftingComponent.BETTER_CIRCUIT,
+                    'W', CraftingComponent.CABLE_QUAD);
+        }
     }
 
     private static void MultiblockControllerRecipes() {
@@ -1483,20 +1487,22 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Bioware Simulator
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(HULL[LuV])
-                .input(SIMULATOR[IV], 4)
-                .input(plate, Osmiridium, 4)
-                .input(FIELD_GENERATOR_LuV, 2)
-                .input(swarm, Carbon)
-                .input(circuit, MarkerMaterials.Tier.LuV, 2)
-                .input(wireFine, Kanthal, 16)
-                .fluidInputs(KPR.getFluid(L * 4))
-                .output(BIOWARE_SIMULATOR)
-                .EUt(VA[LuV])
-                .duration(300)
-                .cleanroom(CleanroomType.CLEANROOM)
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableSimulatorChain) {
+            ASSEMBLER_RECIPES.recipeBuilder()
+                    .input(HULL[LuV])
+                    .input(SIMULATOR[IV], 4)
+                    .input(plate, Osmiridium, 4)
+                    .input(FIELD_GENERATOR_LuV, 2)
+                    .input(swarm, Carbon)
+                    .input(circuit, MarkerMaterials.Tier.LuV, 2)
+                    .input(wireFine, Kanthal, 16)
+                    .fluidInputs(KPR.getFluid(L * 4))
+                    .output(BIOWARE_SIMULATOR)
+                    .EUt(VA[LuV])
+                    .duration(300)
+                    .cleanroom(CleanroomType.CLEANROOM)
+                    .buildAndRegister();
+        }
 
         //  Amazon Warehousing Depot
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -1713,35 +1719,67 @@ public class MachineRecipeLoader {
                 .buildAndRegister();
 
         //  Virtual Cosmos Simulator
-        ASSEMBLY_LINE_RECIPES.recipeBuilder()
-                .input(frameGt, TranscendentMetal, 4)
-                .input(DIMENSIONAL_OSCILLATOR, 2)
-                .input(SPACE_ELEVATOR, 4)
-                .input(BIOWARE_SIMULATOR, 16)
-                .input(circuit, MarkerMaterials.Tier.MAX, 8)
-                .input(FIELD_GENERATOR_UXV, 4)
-                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 16))
-                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_PRESERVE_CASING, 16))
-                .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 16))
-                .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.UXV, 16))
-                .input(plateDense, Spacetime, 4)
-                .input(plateDense, CosmicNeutronium, 4)
-                .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 16)
-                .input(gear, Infinity, 16)
-                .input(stickLong, Hypogen, 32)
-                .input(wireGtOctal, BoronFranciumCarbideSuperconductor, 4)
-                .fluidInputs(CosmicComputingMixture.getFluid(65536))
-                .fluidInputs(Arcanium.getFluid(57600))
-                .fluidInputs(BlackDwarfMatter.getFluid(28800))
-                .fluidInputs(WhiteDwarfMatter.getFluid(28800))
-                .output(VIRTUAL_COSMOS_SIMULATOR)
-                .EUt(VA[UXV])
-                .duration(1200)
-                .stationResearch(b -> b
-                        .researchStack(SPACE_ELEVATOR.getStackForm())
-                        .EUt(VA[UXV])
-                        .CWUt(576))
-                .buildAndRegister();
+        if (GTLiteConfigHolder.machines.enableSimulatorChain) {
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(frameGt, TranscendentMetal, 4)
+                    .input(DIMENSIONAL_OSCILLATOR, 2)
+                    .input(SPACE_ELEVATOR, 4)
+                    .input(BIOWARE_SIMULATOR, 16)
+                    .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                    .input(FIELD_GENERATOR_UXV, 4)
+                    .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 16))
+                    .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_PRESERVE_CASING, 16))
+                    .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 16))
+                    .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.UXV, 16))
+                    .input(plateDense, Spacetime, 4)
+                    .input(plateDense, CosmicNeutronium, 4)
+                    .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 16)
+                    .input(gear, Infinity, 16)
+                    .input(stickLong, Hypogen, 32)
+                    .input(wireGtOctal, BoronFranciumCarbideSuperconductor, 4)
+                    .fluidInputs(CosmicComputingMixture.getFluid(65536))
+                    .fluidInputs(Arcanium.getFluid(57600))
+                    .fluidInputs(BlackDwarfMatter.getFluid(28800))
+                    .fluidInputs(WhiteDwarfMatter.getFluid(28800))
+                    .output(VIRTUAL_COSMOS_SIMULATOR)
+                    .EUt(VA[UXV])
+                    .duration(1200)
+                    .stationResearch(b -> b
+                            .researchStack(SPACE_ELEVATOR.getStackForm())
+                            .EUt(VA[UXV])
+                            .CWUt(576))
+                    .buildAndRegister();
+        } else {
+            ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                    .input(frameGt, TranscendentMetal, 4)
+                    .input(DIMENSIONAL_OSCILLATOR, 2)
+                    .input(SPACE_ELEVATOR, 4)
+                    .input(ADVANCED_FUSION_REACTOR[1], 16)
+                    .input(circuit, MarkerMaterials.Tier.MAX, 8)
+                    .input(FIELD_GENERATOR_UXV, 4)
+                    .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_BRIDGE_CASING, 16))
+                    .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.DIMENSIONAL_PRESERVE_CASING, 16))
+                    .inputs(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING, 16))
+                    .inputs(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.UXV, 16))
+                    .input(plateDense, Spacetime, 4)
+                    .input(plateDense, CosmicNeutronium, 4)
+                    .input(gear, MagnetoHydrodynamicallyConstrainedStarMatter, 16)
+                    .input(gear, Infinity, 16)
+                    .input(stickLong, Hypogen, 32)
+                    .input(wireGtOctal, BoronFranciumCarbideSuperconductor, 4)
+                    .fluidInputs(CosmicComputingMixture.getFluid(65536))
+                    .fluidInputs(Arcanium.getFluid(57600))
+                    .fluidInputs(BlackDwarfMatter.getFluid(28800))
+                    .fluidInputs(WhiteDwarfMatter.getFluid(28800))
+                    .output(VIRTUAL_COSMOS_SIMULATOR)
+                    .EUt(VA[UXV])
+                    .duration(1200)
+                    .stationResearch(b -> b
+                            .researchStack(SPACE_ELEVATOR.getStackForm())
+                            .EUt(VA[UXV])
+                            .CWUt(576))
+                    .buildAndRegister();
+        }
 
         //  Horizontal Shaft Impact Macerator
         ASSEMBLER_RECIPES.recipeBuilder()
@@ -5640,114 +5678,6 @@ public class MachineRecipeLoader {
                     .buildAndRegister();
         }
 
-    }
-
-    /**
-     * Create common Metal Casing recipe.
-     *
-     * <p>
-     *     This method will add two recipe of each Metal Casing,
-     *     one is crafting table recipe by Hammer (hard) and Wrench,
-     *     another is assembler recipe.
-     * </p>
-     *
-     * @param regName           Register Name of recipe.
-     * @param outputCasingType  Variant Block class of {@code MetaBlock}.
-     * @param outputCasing      Casing type of {@code MetaBlock}.
-     * @param material          Basic {@code material} of Metal Casing,
-     *                          means plate and frame material.
-     */
-    private static <T extends Enum<T> & IStringSerializable> void createCasingRecipe(String regName,
-                                                                                     VariantBlock<T> outputCasingType,
-                                                                                     T outputCasing,
-                                                                                     Material material) {
-        ModHandler.addShapedRecipe(true, regName, outputCasingType.getItemVariant(outputCasing, ConfigHolder.recipes.casingsPerCraft),
-                "PhP", "PFP","PwP",
-                'P', new UnificationEntry(plate, material),
-                'F', new UnificationEntry(frameGt, material));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, material, 6)
-                .input(frameGt, material)
-                .circuitMeta(6)
-                .outputs(outputCasingType.getItemVariant(outputCasing, ConfigHolder.recipes.casingsPerCraft))
-                .EUt(VA[LV])
-                .duration(50)
-                .buildAndRegister();
-    }
-
-    /**
-     * Create Metal Casing recipe with different plate-frame material.
-     *
-     * <p>
-     *     This method will add two recipe of each Metal Casing,
-     *     one is crafting table recipe by Hammer (hard) and Wrench,
-     *     another is assembler recipe.
-     * </p>
-     *
-     * @param regName           Register Name of recipe.
-     * @param outputCasingType  Variant Block class of {@code MetaBlock}.
-     * @param outputCasing      Casing type of {@code MetaBlock}.
-     * @param plateMaterial     Plate {@code material} of Metal Casing.
-     * @param frameMaterial     Frame {@code material} of Metal Casing.
-     */
-    private static <T extends Enum<T> & IStringSerializable> void createCasingRecipe(String regName,
-                                                                                     VariantBlock<T> outputCasingType,
-                                                                                     T outputCasing,
-                                                                                     Material plateMaterial,
-                                                                                     Material frameMaterial) {
-        ModHandler.addShapedRecipe(true, regName, outputCasingType.getItemVariant(outputCasing, ConfigHolder.recipes.casingsPerCraft),
-                "PhP", "PFP","PwP",
-                'P', new UnificationEntry(plate, plateMaterial),
-                'F', new UnificationEntry(frameGt, frameMaterial));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plate, plateMaterial, 6)
-                .input(frameGt, frameMaterial)
-                .circuitMeta(6)
-                .outputs(outputCasingType.getItemVariant(outputCasing, ConfigHolder.recipes.casingsPerCraft))
-                .EUt(VA[LV])
-                .duration(50)
-                .buildAndRegister();
-    }
-
-    /**
-     * Create Metal Casing recipe with different plate-frame material and new double plate material.
-     *
-     * <p>
-     *     This method will add two recipe of each Metal Casing,
-     *     one is crafting table recipe by Hammer (hard) and Wrench,
-     *     another is assembler recipe.
-     * </p>
-     *
-     * @param regName              Register Name of recipe.
-     * @param outputCasingType     Variant Block class of {@code MetaBlock}.
-     * @param outputCasing         Casing type of {@code MetaBlock}.
-     * @param plateDoubleMaterial  Double Plate {@code material} of Metal Casing.
-     * @param plateMaterial        Plate {@code material} of Metal Casing.
-     * @param frameMaterial        Frame {@code material} of Metal Casing.
-     */
-    private static <T extends Enum<T> & IStringSerializable> void createCasingRecipe(String regName,
-                                                                                     VariantBlock<T> outputCasingType,
-                                                                                     T outputCasing,
-                                                                                     Material plateDoubleMaterial,
-                                                                                     Material plateMaterial,
-                                                                                     Material frameMaterial) {
-        ModHandler.addShapedRecipe(true, regName, outputCasingType.getItemVariant(outputCasing, ConfigHolder.recipes.casingsPerCraft),
-                "PhP", "TFT","PwP",
-                'P', new UnificationEntry(plateDouble, plateDoubleMaterial),
-                'T', new UnificationEntry(plate, plateMaterial),
-                'F', new UnificationEntry(frameGt, frameMaterial));
-
-        ASSEMBLER_RECIPES.recipeBuilder()
-                .input(plateDouble, plateDoubleMaterial, 4)
-                .input(plate, plateMaterial, 2)
-                .input(frameGt, frameMaterial)
-                .circuitMeta(6)
-                .outputs(outputCasingType.getItemVariant(outputCasing, ConfigHolder.recipes.casingsPerCraft))
-                .EUt(VA[LV])
-                .duration(50)
-                .buildAndRegister();
     }
 
 }

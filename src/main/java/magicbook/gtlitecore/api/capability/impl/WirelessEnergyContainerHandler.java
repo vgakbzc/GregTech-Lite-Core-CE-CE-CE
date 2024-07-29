@@ -8,7 +8,9 @@ import magicbook.gtlitecore.api.utils.BigMath;
 import java.math.BigInteger;
 import java.util.UUID;
 
-import static magicbook.gtlitecore.api.misc.WirelessEnergyNetworkManager.*;
+import static magicbook.gtlitecore.api.misc.WirelessEnergyNetworkManager.addEUToWirelessEnergyNetwork;
+import static magicbook.gtlitecore.api.misc.WirelessEnergyNetworkManager.getUserEU;
+import static magicbook.gtlitecore.api.misc.WirelessEnergyNetworkManager.strongCheckOrAddUser;
 
 /**
  * Wireless Energy Container Handler.

@@ -8,7 +8,10 @@ import magicbook.gtlitecore.common.GTLiteConfigHolder;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fluids.FluidStack;
 
-import static gregtech.api.GTValues.*;
+import static gregtech.api.GTValues.L;
+import static gregtech.api.GTValues.LuV;
+import static gregtech.api.GTValues.UV;
+import static gregtech.api.GTValues.VA;
 import static gregtech.api.recipes.RecipeMaps.CIRCUIT_ASSEMBLER_RECIPES;
 import static gregtech.api.recipes.RecipeMaps.FORMING_PRESS_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
@@ -19,7 +22,9 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NANO_SCALE_MASK_A
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.PRECISE_ASSEMBLER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.KaptonK;
-import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.RICH_BACTERIA_SOC;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.RUBY_CHIP;
+import static magicbook.gtlitecore.common.items.GTLiteMetaItems.WETWARE_CRYSTAL_CHIP;
 
 public class WetwareCircuits {
 
