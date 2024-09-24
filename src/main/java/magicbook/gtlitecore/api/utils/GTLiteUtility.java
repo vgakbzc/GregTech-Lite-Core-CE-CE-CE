@@ -9,6 +9,7 @@ import gregtech.api.unification.material.Material;
 import gregtech.api.unification.material.Materials;
 import gregtech.api.util.BlockInfo;
 import gregtech.api.util.GTUtility;
+import gregtech.api.util.SmallDigits;
 import gregtech.api.util.TextFormattingUtil;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.loaders.recipe.handlers.PartsRecipeHandler;
@@ -735,5 +736,67 @@ public class GTLiteUtility {
             case MAX -> FIELD_GENERATOR_MAX;
             default -> FIELD_GENERATOR_ULV;
         };
+    }
+
+    /**
+     * Sub-script style Formula Numbers.
+     *
+     * @author  Bartimaeusnek
+     *
+     * @param formula  Formula (used string, such as {@code "CO2"}).
+     * @return         Formula with Sub-script Numbers.
+     *
+     * @see  SmallDigits
+     */
+    public static String subscriptNumbers(String formula) {
+        char[] formulas = formula.toCharArray();
+        char[] chars = new char[formulas.length];
+        for (int i = 0; i < formulas.length; i++) {
+            chars[i] = switch (formulas[i]) {
+                case '0' -> '₀';
+                case '1' -> '₁';
+                case '2' -> '₂';
+                case '3' -> '₃';
+                case '4' -> '₄';
+                case '5' -> '₅';
+                case '6' -> '₆';
+                case '7' -> '₇';
+                case '8' -> '₈';
+                case '9' -> '₉';
+                default -> formulas[i];
+            };
+        }
+        return new String(chars);
+    }
+
+    /**
+     * Super-script style Formula Numbers.
+     *
+     * @author  Bartimaeusnek
+     *
+     * @param formula  Formula (used string, such as {@code "239Pu"}).
+     * @return         Formula with Super-script Numbers.
+     *
+     *
+     */
+    public static String superscriptNumbers(String formula) {
+        char[] formulas = formula.toCharArray();
+        char[] chars = new char[formulas.length];
+        for (int i = 0; i < formulas.length; i++) {
+            chars[i] = switch (formulas[i]) {
+                case '0' -> '⁰';
+                case '1' -> '¹';
+                case '2' -> '²';
+                case '3' -> '³';
+                case '4' -> '⁴';
+                case '5' -> '⁵';
+                case '6' -> '⁶';
+                case '7' -> '⁷';
+                case '8' -> '⁸';
+                case '9' -> '⁹';
+                default -> formulas[i];
+            };
+        }
+        return new String(chars);
     }
 }

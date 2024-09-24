@@ -7,6 +7,7 @@ import gregtech.api.unification.material.properties.*;
 import static gregtech.api.GTValues.UEV;
 import static gregtech.api.GTValues.V;
 import static gregtech.api.unification.material.Materials.*;
+import static magicbook.gtlitecore.api.utils.GTLiteUtility.superscriptNumbers;
 
 public class GTLiteMaterialPropertyAddition {
 
@@ -320,6 +321,11 @@ public class GTLiteMaterialPropertyAddition {
         PalladiumRaw.setFormula("PdCl2", true);
         RarestMetalMixture.setFormula("IrOs?", true);
         IridiumMetalResidue.setFormula("Ir2O3", true);
+
+        Uranium235.setFormula(superscriptNumbers("235U"), false);
+        Uranium238.setFormula(superscriptNumbers("238U"), false);
+        Plutonium239.setFormula(superscriptNumbers("239Pu"), false);
+        Plutonium241.setFormula(superscriptNumbers("241Pu"), false);
 
         Dysprosium.setMaterialRGB(0xDD79DD);
         Erbium.setMaterialRGB(0xCC6633);
