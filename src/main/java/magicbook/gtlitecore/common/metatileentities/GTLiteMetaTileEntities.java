@@ -2,6 +2,7 @@ package magicbook.gtlitecore.common.metatileentities;
 
 import gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaTileEntityLargeMassFabricator;
 import gregicality.multiblocks.common.metatileentities.multiblock.standard.MetaTileEntityLargeReplicator;
+import gregtech.api.GTValues;
 import gregtech.api.GregTechAPI;
 import gregtech.api.metatileentity.SimpleGeneratorMetaTileEntity;
 import gregtech.api.metatileentity.SimpleMachineMetaTileEntity;
@@ -115,6 +116,7 @@ public class GTLiteMetaTileEntities {
     public static final MetaTileEntityQCComponentComputation[] QC_COMPUTATION_COMPONENT = new MetaTileEntityQCComponentComputation[2];
     public static final MetaTileEntityQCComponentCooler[] QC_COOLER_COMPONENT = new MetaTileEntityQCComponentCooler[2];
     public static MetaTileEntityQCComponentBridge QC_BRIDGE_COMPONENT;
+    public static MetaTileEntityParallelHatch[] PARALLEL_HATCH = new MetaTileEntityParallelHatch[V.length - 1];
 
     /* ----------------------------------------------------------------- Single Machines ---------------------------------------------------------------- */
     public static SimpleMachineMetaTileEntity[] CHEMICAL_DEHYDRATOR = new SimpleMachineMetaTileEntity[V.length - 1];
@@ -464,6 +466,12 @@ public class GTLiteMetaTileEntities {
         QC_COOLER_COMPONENT[0] = registerPartMetaTileEntity(503, new MetaTileEntityQCComponentCooler(gtliteId("qc_heat_sink_component"), false));
         QC_COOLER_COMPONENT[1] = registerPartMetaTileEntity(504, new MetaTileEntityQCComponentCooler(gtliteId("qc_active_cooler_component"), true));
         QC_BRIDGE_COMPONENT = registerPartMetaTileEntity(505, new MetaTileEntityQCComponentBridge(gtliteId("qc_bridge_component")));
+
+        for (int i = 0; i < 14; i++) {
+            int id = 15481 + i;
+            String name = String.format("parallel_hatch.%s", GTValues.VN[i + 1]);
+            PARALLEL_HATCH[i] = registerMetaTileEntity(id, new MetaTileEntityParallelHatch(gtliteId(name), i + 1));
+        }
     }
 
     private static void registerSimpleMachines() {

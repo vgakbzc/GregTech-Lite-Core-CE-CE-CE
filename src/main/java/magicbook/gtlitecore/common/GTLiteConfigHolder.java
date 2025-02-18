@@ -73,6 +73,10 @@ public class GTLiteConfigHolder {
 
     @NoArgsConstructor
     public static class MachineOptions {
+        @Config.Comment("延迟巨构设备检测频率，可改善TPS性能(目前只在压缩聚变 光刻厂 加速器 PCB 锻炉测试实装，可能会造成未知后果！)")
+        @Config.RequiresMcRestart
+        @Config.Name("Delay Structure Check switch")
+        public boolean DelayStructureCheckSwitch = true;
 
         @Comment({"Enable High Tier Item Buses (UEV-OpV) and its recipes,",
                   "these Advanced Item Buses have 121-196 slots.",

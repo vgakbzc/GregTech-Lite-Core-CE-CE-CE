@@ -1,5 +1,9 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
+import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
+import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.capability.impl.ItemHandlerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -22,6 +26,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockController {
@@ -34,7 +39,16 @@ public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockC
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntitySuprachronalAssemblyLine(metaTileEntityId);
     }
-
+    @Override
+    protected void initializeAbilities() {
+        this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));
+        this.inputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
+        this.outputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.EXPORT_ITEMS));
+        this.outputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.INPUT_ENERGY));
+        energyContainer.addAll(this.getAbilities(MultiblockAbility.INPUT_LASER));
+        this.energyContainer = new EnergyContainerList(energyContainer);
+    }
     @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
@@ -61,6 +75,7 @@ public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockC
                 .where('W', states(getCoilState()))
                 .where('o', states(getFourthCasingState()))
                 .where('D', states(getCasingState())
+                        .or(abilities(MultiblockAbility.INPUT_LASER).setMaxGlobalLimited(1))
                         .or(autoAbilities(true, true, true, true, true, false, false)))
                 .where('O', abilities(MultiblockAbility.MUFFLER_HATCH))
                 .where('A', air())
@@ -109,5 +124,6 @@ public class MetaTileEntitySuprachronalAssemblyLine extends RecipeMapMultiblockC
         super.addInformation(stack, player, tooltip, advanced);
         tooltip.add(I18n.format("gtlitecore.machine.suprachronal_assembly_line.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.suprachronal_assembly_line.tooltip.2"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 }

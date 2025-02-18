@@ -147,7 +147,7 @@ public class MetaTileEntityLargeHighPressureFormingUnit extends MultiMapMultiblo
     private class HighPressureFormingUnitRecipeLogic extends MultiblockRecipeLogic {
 
         public HighPressureFormingUnitRecipeLogic(MetaTileEntityLargeHighPressureFormingUnit tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {

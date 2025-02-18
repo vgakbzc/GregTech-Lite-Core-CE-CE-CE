@@ -100,7 +100,7 @@ public class MetaTileEntityElectromagneticSeparationPlant extends MultiMapMultib
     @SuppressWarnings("InnerClassMayBeStatic")
     private class ElectromagneticSeparationPlantRecipeLogic extends MultiblockRecipeLogic {
         public ElectromagneticSeparationPlantRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {

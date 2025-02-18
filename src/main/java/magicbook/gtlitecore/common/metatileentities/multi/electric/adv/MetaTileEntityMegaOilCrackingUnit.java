@@ -3,6 +3,9 @@ package magicbook.gtlitecore.common.metatileentities.multi.electric.adv;
 import gregtech.api.GregTechAPI;
 import gregtech.api.block.IHeatingCoilBlockStats;
 import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
+import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.capability.impl.ItemHandlerList;
 import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
@@ -45,6 +48,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
+
 /**
  * Mega Oil Cracking Unit
  *
@@ -65,7 +70,25 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
         this.recipeMapWorkable = new MegaOilCrackingUnitWorkableHandler(this);
         initMap();
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
+    @Override
+    protected void initializeAbilities() {
+        this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));
+        this.inputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
+        this.outputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.EXPORT_ITEMS));
+        this.outputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.INPUT_ENERGY));
+        energyContainer.addAll(this.getAbilities(MultiblockAbility.INPUT_LASER));
+        this.energyContainer = new EnergyContainerList(energyContainer);
+    }
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityMegaOilCrackingUnit(metaTileEntityId);
@@ -125,6 +148,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
                         .setMinGlobalLimited(190)
                         .or(abilities(MultiblockAbility.IMPORT_ITEMS))
                         .or(abilities(MultiblockAbility.INPUT_ENERGY))
+                        .or(abilities(MultiblockAbility.INPUT_LASER).setMaxGlobalLimited(1))
                         .or(abilities(MultiblockAbility.MAINTENANCE_HATCH)))
                 .where('G', states(getGlassState()))
                 .where('L', heatingCoils())
@@ -167,6 +191,7 @@ public class MetaTileEntityMegaOilCrackingUnit extends RecipeMapMultiblockContro
         tooltip.add(I18n.format("gtlitecore.machine.mega_oil_cracking_unit.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.mega_oil_cracking_unit.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.mega_oil_cracking_unit.tooltip.3"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
     @Override

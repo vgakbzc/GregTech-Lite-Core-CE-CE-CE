@@ -254,7 +254,7 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
     public class IonLithographyFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public IonLithographyFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         /**

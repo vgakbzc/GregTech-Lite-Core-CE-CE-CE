@@ -36,6 +36,9 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static gregtech.common.metatileentities.MetaTileEntities.*;
+import static gregtech.common.metatileentities.MetaTileEntities.HULL;
+import static gregtech.loaders.recipe.CraftingComponent.*;
+import static gregtech.loaders.recipe.MetaTileEntityLoader.registerMachineRecipe;
 import static gregtechfoodoption.machines.GTFOTileEntities.GREENHOUSE;
 import static magicbook.gtlitecore.api.GTLiteValues.*;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
@@ -48,6 +51,7 @@ import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntitie
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_BLAST_FURNACE;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.MEGA_VACUUM_FREEZER;
 import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.*;
+import static magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities.PARALLEL_HATCH;
 
 public class MachineRecipeLoader {
 
@@ -58,6 +62,14 @@ public class MachineRecipeLoader {
     }
 
     private static void SingleMachineRecipes() {
+
+        registerMachineRecipe(PARALLEL_HATCH,
+                "SCE", "CHC", "WCW",
+                'C', CIRCUIT,
+                'H', CraftingComponent.HULL,
+                'S', SENSOR,
+                'E', EMITTER,
+                'W', WIRE_QUAD);
 
         //  Chemical Dehydrator
         MetaTileEntityLoader.registerMachineRecipe(true, CHEMICAL_DEHYDRATOR,
@@ -435,7 +447,7 @@ public class MachineRecipeLoader {
         //  Fuel Refine Factory
         ModHandler.addShapedRecipe(true, "fuel_refine_factory", FUEL_REFINE_FACTORY.getStackForm(),
                 "RFR", "CHC", "PWP",
-                'H', MetaTileEntities.HULL[UV].getStackForm(),
+                'H', HULL[UV].getStackForm(),
                 'P', ELECTRIC_PUMP_UV,
                 'F', new UnificationEntry(pipeHugeFluid, Duranium),
                 'R', new UnificationEntry(rotor, Orichalcum),
@@ -2469,7 +2481,7 @@ public class MachineRecipeLoader {
         //  Energy Substation
         ModHandler.addShapedRecipe(true, "energy_substation", ENERGY_SUBSTATION.getStackForm(),
                 "XBX", "BHB", "XBX",
-                'H', MetaTileEntities.HULL[HV].getStackForm(),
+                'H', HULL[HV].getStackForm(),
                 'B', new UnificationEntry(battery, MarkerMaterials.Tier.HV),
                 'X', new UnificationEntry(circuit, MarkerMaterials.Tier.HV));
 

@@ -54,7 +54,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
     public MetaTileEntityHyperReactorMkII(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.HYPER_REACTOR_MK2_RECIPES, UIV);
         this.recipeMapWorkable = new HyperReactorMark2WorkableHandler(this);
-        this.recipeMapWorkable.setMaximumOverclockVoltage(V[UIV]);
+        this.recipeMapWorkable.setMaximumOverclockVoltage(V[UXV]);
     }
 
     @Override
@@ -122,7 +122,7 @@ public class MetaTileEntityHyperReactorMkII extends FuelMultiblockController imp
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.OUTPUT_ENERGY).stream()
                                 .filter(mte -> {
                                     IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
-                                    return container != null && container.getOutputVoltage() == GTValues.V[UIV];})
+                                    return container != null && container.getOutputVoltage() <= GTValues.V[UXV];})
                                 .toArray(MetaTileEntity[]::new))
                                 .setMaxGlobalLimited(1)
                                 .setPreviewCount(1))

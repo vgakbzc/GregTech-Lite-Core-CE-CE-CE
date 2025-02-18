@@ -111,7 +111,7 @@ public class MetaTileEntityMassFabricatorCPU extends RecipeMapMultiblockControll
     private class MassFabricatorRecipeLogic extends MultiblockRecipeLogic {
 
         public MassFabricatorRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         @Override

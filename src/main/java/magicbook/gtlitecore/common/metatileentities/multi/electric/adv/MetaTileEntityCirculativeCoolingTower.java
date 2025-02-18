@@ -49,6 +49,7 @@ import java.util.List;
 
 import static gregtech.api.GTValues.UV;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.coolingCores;
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
 
 public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockController {
 
@@ -67,7 +68,15 @@ public class MetaTileEntityCirculativeCoolingTower extends MultiMapMultiblockCon
         });
         this.recipeMapWorkable = new CirculativeCoolingTowerRecipeLogic(this);
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityCirculativeCoolingTower(metaTileEntityId);

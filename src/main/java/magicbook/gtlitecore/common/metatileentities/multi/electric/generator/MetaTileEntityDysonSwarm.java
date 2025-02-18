@@ -39,6 +39,7 @@ import java.util.List;
 
 import static gregtech.api.GTValues.UIV;
 import static gregtech.api.GTValues.VA;
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
 
 public class MetaTileEntityDysonSwarm extends FuelMultiblockController {
 
@@ -52,7 +53,15 @@ public class MetaTileEntityDysonSwarm extends FuelMultiblockController {
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityDysonSwarm(metaTileEntityId);
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
     @Override
     protected void initializeAbilities() {
         this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));

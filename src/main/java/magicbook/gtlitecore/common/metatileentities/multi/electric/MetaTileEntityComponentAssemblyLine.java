@@ -1,5 +1,9 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
+import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
+import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.capability.impl.ItemHandlerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -46,6 +50,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.caCasings;
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
 
 /**
  * Component Assembly Line
@@ -65,7 +70,15 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
     public MetaTileEntityComponentAssemblyLine(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.COMPONENT_ASSEMBLY_LINE_RECIPES);
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityComponentAssemblyLine(metaTileEntityId);
@@ -90,7 +103,16 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
                                boolean consumeIfSuccess) {
         return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(ComponentCasingTierProperty.getInstance(), 0) <= casingTier;
     }
-
+    @Override
+    protected void initializeAbilities() {
+        this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));
+        this.inputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
+        this.outputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.EXPORT_ITEMS));
+        this.outputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.INPUT_ENERGY));
+        energyContainer.addAll(this.getAbilities(MultiblockAbility.INPUT_LASER));
+        this.energyContainer = new EnergyContainerList(energyContainer);
+    }
     @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
@@ -157,7 +179,9 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
                 .where('L', states(getCasingState())
                         .or(abilities(MultiblockAbility.INPUT_ENERGY)
                                 .setMaxGlobalLimited(2)
-                                .setPreviewCount(1)))
+                                .setPreviewCount(1))
+                        .or(abilities(MultiblockAbility.INPUT_LASER)
+                                .setMaxGlobalLimited(1)))
                 .where('I', states(getCasingState())
                         .or(abilities(MultiblockAbility.MAINTENANCE_HATCH)
                                 .setExactLimit(1)
@@ -279,6 +303,7 @@ public class MetaTileEntityComponentAssemblyLine extends RecipeMapMultiblockCont
         tooltip.add(I18n.format("gtlitecore.machine.component_assembly_line.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.component_assembly_line.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.component_assembly_line.tooltip.4"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
     @Override

@@ -36,6 +36,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.spaceElevatorMotors;
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
 
 /**
  * Space Elevator for GregTech CEu
@@ -78,7 +79,15 @@ public class MetaTileEntitySpaceElevator extends MultiMapMultiblockController {
         super.invalidateStructure();
         this.casingTier = 0;
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
     @Override
     public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {

@@ -28,6 +28,7 @@ import gregtech.client.renderer.ICubeRenderer;
 import gregtech.client.renderer.texture.Textures;
 import gregtech.common.blocks.BlockGlassCasing;
 import gregtech.common.blocks.MetaBlocks;
+import gregtech.common.metatileentities.multi.multiblockpart.MetaTileEntityLaserHatch;
 import magicbook.gtlitecore.api.gui.GTLiteGuiTextures;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
 import net.minecraft.block.state.IBlockState;
@@ -44,10 +45,13 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.DoubleSupplier;
 
 import static gregtech.api.GTValues.*;
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
 
 /**
  * Compressed Fusion Reactors
@@ -107,6 +111,15 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
             }
         };
         this.progressBarSupplier = new FusionProgressSupplier();
+    }
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
     }
 
     @Override
@@ -186,7 +199,30 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                                 })
                                 .toArray(MetaTileEntity[]::new))
                                 .setMaxGlobalLimited(32)
-                                .setPreviewCount(32)))
+                                .setPreviewCount(32))
+                        .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.INPUT_LASER)
+                                .stream()
+                                .filter(mte -> {
+                                    if(mte instanceof MetaTileEntityLaserHatch laserHatch ) {
+
+                                        // 使用反射获取 tier 字段的值
+                                        Field tierField = null;
+                                        try {
+                                            tierField = MetaTileEntityLaserHatch.class.getDeclaredField("tier");
+                                        } catch (NoSuchFieldException ignored) {}
+                                        tierField.setAccessible(true); // 设置字段可访问
+                                        try {
+                                            int level = (int) tierField.get(laserHatch);
+                                            return level==tier;
+                                        } catch (IllegalAccessException ignored) {}
+                                    }
+                                    return false;
+                                })
+                                .toArray(MetaTileEntity[]::new))
+                                .setMaxGlobalLimited(32)
+                                .setPreviewCount(0)
+                        )
+                )
                 .where('#', air())
                 .where(' ', any())
                 .build();
@@ -249,8 +285,8 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
         this.outputInventory = new ItemHandlerList(getAbilities(MultiblockAbility.EXPORT_ITEMS));
         this.outputFluidInventory = new FluidTankList(true, getAbilities(MultiblockAbility.EXPORT_FLUIDS));
 
-        //  Energy Input ability
-        List<IEnergyContainer> energyInputs = getAbilities(MultiblockAbility.INPUT_ENERGY);
+        List<IEnergyContainer> energyInputs = new ArrayList<>(this.getAbilities(MultiblockAbility.INPUT_ENERGY));
+        energyInputs.addAll(this.getAbilities(MultiblockAbility.INPUT_LASER));
         this.inputEnergyContainers = new EnergyContainerList(energyInputs);
 
         //  EU Capacity = Energy Hatch amount * Energy Stored (half of original Fusion Reactor).
@@ -413,6 +449,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.luv.tooltip.6"));
                 tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.common_oc"));
+                tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
             }
             case ZPM -> {
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.1"));
@@ -424,6 +461,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.zpm.tooltip.7"));
                 tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.common_oc"));
+                tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
             }
             case UV -> {
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.1"));
@@ -436,6 +474,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uv.tooltip.8"));
                 tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.common_oc"));
+                tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
             }
             case UHV -> {
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.1"));
@@ -449,6 +488,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uhv.tooltip.9"));
                 tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.perfect_oc"));
+                tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
             }
             case UEV -> {
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.1"));
@@ -463,6 +503,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.uev.tooltip.10"));
                 tooltip.add(I18n.format("gregtech.machine.fusion_reactor.capacity", actuallyEnergyStored));
                 tooltip.add(I18n.format("gtlitecore.machine.compressed_fusion_reactor.perfect_oc"));
+                tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
             }
         }
 
@@ -615,7 +656,7 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
          */
         @Override
         protected double getOverclockingDurationDivisor() {
-            if (tier >= 4) {
+            if (tier >= 9) {
                 return 4.0D;
             } else {
                 return 2.0D;
@@ -639,11 +680,16 @@ public class MetaTileEntityCompressedFusionReactor extends RecipeMapMultiblockCo
          */
         @Override
         protected double getOverclockingVoltageMultiplier() {
-            if (tier >= 4) {
+            if (tier >= 9) {
                 return 4.0D;
             } else {
                 return 2.0D;
             }
+        }
+
+        @Override
+        public long getMaximumOverclockVoltage() {
+            return inputEnergyContainers.getInputVoltage();
         }
 
         @Override

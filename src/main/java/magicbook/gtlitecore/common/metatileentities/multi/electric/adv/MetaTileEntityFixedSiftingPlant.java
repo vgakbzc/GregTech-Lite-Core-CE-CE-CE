@@ -142,7 +142,7 @@ public class MetaTileEntityFixedSiftingPlant extends RecipeMapMultiblockControll
     private class FixedSiftingPlantRecipeLogic extends MultiblockRecipeLogic {
 
         public FixedSiftingPlantRecipeLogic(MetaTileEntityFixedSiftingPlant tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {

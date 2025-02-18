@@ -21,6 +21,28 @@ public class NicollDysonBeamer {
         BurningModule();
         ForgingModule();
         OscillatingModule();
+        OmniumRecipes();
+    }
+
+    private static void OmniumRecipes() {
+        NICOLL_DYSON_BEAMER_BURNING_MODULE.recipeBuilder()
+                .circuitMeta(10)
+                .input(block, TranscendentMetal, 40)
+                .input(block, Hypogen, 40)
+                .input(CHARGED_HYPERCUBE, 32)
+                .fluidInputs(GelidCryotheum.getFluid(25920))
+                .fluidInputs(BlazingPyrotheum.getFluid(25920))
+                .fluidInputs(Galaxium.getFluid(51840))
+                .fluidInputs(Infinity.getFluid(51840))
+                .fluidInputs(ZenithDimensionallyTranscendentCatalyst.getFluid(5632))
+                .output(block, Omnium, 40)
+                .output(dust, Omnium, 24)
+                .fluidOutputs(CelestialTungsten.getFluid(25920))
+                .fluidOutputs(DimensionallyTranscendentResidue.getFluid(11264))
+                .EUt(VZ[OpV])
+                .duration(20)
+                .tier(3)
+                .buildAndRegister();
     }
 
     private static void BurningModule() {
@@ -327,6 +349,7 @@ public class NicollDysonBeamer {
                 .fluidOutputs(Galaxium.getFluid(589824))
                 .fluidOutputs(Edenium.getFluid(147456))
                 .fluidOutputs(Arcanium.getFluid(73728))
+                .fluidOutputs(PrimordialMatter.getFluid(6360))
                 .fluidOutputs(DimensionallyTranscendentResidue.getFluid(4632))
                 .EUt(VZ[MAX])
                 .duration(200)

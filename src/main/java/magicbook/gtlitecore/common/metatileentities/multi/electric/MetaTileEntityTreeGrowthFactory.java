@@ -103,7 +103,6 @@ public class MetaTileEntityTreeGrowthFactory extends RecipeMapMultiblockControll
          */
         @Override
         public int getParallelLimit() {
-
             if (this.getMaxVoltage() > V[HV]) {
                 int maxVoltage = GTUtility.getTierByVoltage(this.getMaxVoltage());
                 return (int) (2 * Math.pow(maxVoltage, 2) - 2 * maxVoltage + 5);

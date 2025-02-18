@@ -145,7 +145,7 @@ public class MetaTileEntityLargeTurrentLathingFactory extends MultiMapMultiblock
     private class TurrentLathingFactoryRecipeLogic extends MultiblockRecipeLogic {
 
         public TurrentLathingFactoryRecipeLogic(MetaTileEntityLargeTurrentLathingFactory tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {

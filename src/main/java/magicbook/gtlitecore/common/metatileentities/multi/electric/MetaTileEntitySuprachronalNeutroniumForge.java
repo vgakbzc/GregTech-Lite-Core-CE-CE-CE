@@ -43,6 +43,7 @@ import java.util.List;
 import static gregtech.api.GTValues.MAX;
 import static magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate.fusionCoils;
 import static magicbook.gtlitecore.api.utils.AnimatedTooltipHandler.*;
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
 
 public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultiblockController {
 
@@ -56,7 +57,15 @@ public class MetaTileEntitySuprachronalNeutroniumForge extends MultiMapMultibloc
         });
         this.recipeMapWorkable = new DTNFRecipeLogic(this);
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntitySuprachronalNeutroniumForge(metaTileEntityId);

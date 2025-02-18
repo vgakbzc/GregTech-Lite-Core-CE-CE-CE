@@ -172,7 +172,7 @@ public class MetaTileEntityTurbineMixer extends MultiMapMultiblockController {
     private class TurbineMixerRecipeLogic extends MultiblockRecipeLogic {
 
         public TurbineMixerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         /**

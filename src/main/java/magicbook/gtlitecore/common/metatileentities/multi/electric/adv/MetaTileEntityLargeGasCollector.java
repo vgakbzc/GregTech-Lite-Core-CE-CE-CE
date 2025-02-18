@@ -104,7 +104,7 @@ public class MetaTileEntityLargeGasCollector extends RecipeMapMultiblockControll
     private class LargeGasCollectorRecipeLogic extends MultiblockRecipeLogic {
 
         public LargeGasCollectorRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         /**

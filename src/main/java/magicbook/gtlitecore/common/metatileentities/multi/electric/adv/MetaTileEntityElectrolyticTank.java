@@ -134,7 +134,7 @@ public class MetaTileEntityElectrolyticTank extends RecipeMapMultiblockControlle
     @SuppressWarnings("InnerClassMayBeStatic")
     private class ElectrolyticTankRecipeLogic extends MultiblockRecipeLogic {
         public ElectrolyticTankRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {

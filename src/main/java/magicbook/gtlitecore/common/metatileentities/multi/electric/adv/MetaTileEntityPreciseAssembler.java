@@ -296,7 +296,7 @@ public class MetaTileEntityPreciseAssembler extends MultiMapMultiblockController
 
     protected class PreciseAssemblerRecipeLogic extends MultiblockRecipeLogic {
         public PreciseAssemblerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         /**

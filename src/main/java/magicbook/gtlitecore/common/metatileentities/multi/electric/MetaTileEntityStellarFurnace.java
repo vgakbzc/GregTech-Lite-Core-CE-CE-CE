@@ -1,8 +1,13 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
+import gregtech.api.capability.IEnergyContainer;
+import gregtech.api.capability.impl.EnergyContainerList;
+import gregtech.api.capability.impl.FluidTankList;
+import gregtech.api.capability.impl.ItemHandlerList;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
+import gregtech.api.metatileentity.multiblock.MultiblockAbility;
 import gregtech.api.metatileentity.multiblock.RecipeMapMultiblockController;
 import gregtech.api.pattern.BlockPattern;
 import gregtech.api.pattern.FactoryBlockPattern;
@@ -26,6 +31,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MetaTileEntityStellarFurnace extends RecipeMapMultiblockController {
@@ -38,7 +44,16 @@ public class MetaTileEntityStellarFurnace extends RecipeMapMultiblockController 
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityStellarFurnace(metaTileEntityId);
     }
-
+    @Override
+    protected void initializeAbilities() {
+        this.inputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.IMPORT_ITEMS));
+        this.inputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.IMPORT_FLUIDS));
+        this.outputInventory = new ItemHandlerList(this.getAbilities(MultiblockAbility.EXPORT_ITEMS));
+        this.outputFluidInventory = new FluidTankList(this.allowSameFluidFillForOutputs(), this.getAbilities(MultiblockAbility.EXPORT_FLUIDS));
+        List<IEnergyContainer> energyContainer = new ArrayList<>(this.getAbilities(MultiblockAbility.INPUT_ENERGY));
+        energyContainer.addAll(this.getAbilities(MultiblockAbility.INPUT_LASER));
+        this.energyContainer = new EnergyContainerList(energyContainer);
+    }
     @NotNull
     @Override
     protected BlockPattern createStructurePattern() {
@@ -61,6 +76,7 @@ public class MetaTileEntityStellarFurnace extends RecipeMapMultiblockController 
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState())
                         .setMinGlobalLimited(140)
+                        .or(abilities(MultiblockAbility.INPUT_LASER).setMaxGlobalLimited(1))
                         .or(autoAbilities()))
                 .where('X', states(getSecondCasingState()))
                 .where('F', states(getCoilState()))
@@ -108,6 +124,7 @@ public class MetaTileEntityStellarFurnace extends RecipeMapMultiblockController 
         tooltip.add(I18n.format("gtlitecore.machine.stellar_furnace.tooltip.3"));
         tooltip.add(I18n.format("gtlitecore.machine.stellar_furnace.tooltip.4"));
         tooltip.add(I18n.format("gtlitecore.machine.stellar_furnace.tooltip.5"));
+        tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
     @Override

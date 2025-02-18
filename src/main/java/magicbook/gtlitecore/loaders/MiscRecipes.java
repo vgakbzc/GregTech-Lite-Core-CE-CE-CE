@@ -424,6 +424,19 @@ public class MiscRecipes {
                 .duration(40)
                 .buildAndRegister();
 
+        //  Arcanium
+        MIXER_RECIPES.recipeBuilder()
+                .input(dust, PrimordialMatter)
+                .input(dust, Infinity)
+                .input(dust, Hypogen)
+                .input(dust, Spacetime)
+                .input(dust, Galaxium)
+                .input(dust, RedAlloy)
+                .output(dust, PrimordialMatter, 6)
+                .EUt(VA[OpV])
+                .duration(40)
+                .buildAndRegister();
+
         //  Laurenium
         MIXER_RECIPES.recipeBuilder()
                 .input(dust, EglinSteel, 8)

@@ -56,7 +56,7 @@ public class MetaTileEntityHyperReactorMkIII extends FuelMultiblockController im
     public MetaTileEntityHyperReactorMkIII(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.HYPER_REACTOR_MK3_RECIPES, UXV);
         this.recipeMapWorkable = new HyperReactorMark3WorkableHandler(this);
-        this.recipeMapWorkable.setMaximumOverclockVoltage(V[UXV]);
+        this.recipeMapWorkable.setMaximumOverclockVoltage(V[OpV]);
     }
 
     @Override
@@ -120,7 +120,7 @@ public class MetaTileEntityHyperReactorMkIII extends FuelMultiblockController im
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.OUTPUT_ENERGY).stream()
                                 .filter(mte -> {
                                     IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
-                                    return container != null && container.getOutputVoltage() == GTValues.V[UXV];})
+                                    return container != null && container.getOutputVoltage() <= GTValues.V[OpV];})
                                 .toArray(MetaTileEntity[]::new))
                                 .setExactLimit(1)
                                 .setPreviewCount(1)))

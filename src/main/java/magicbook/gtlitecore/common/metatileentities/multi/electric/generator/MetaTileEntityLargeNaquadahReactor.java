@@ -57,7 +57,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
     public MetaTileEntityLargeNaquadahReactor(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.NAQUADAH_REACTOR_RECIPES, UHV);
         this.recipeMapWorkable = new LargeNaquadahReactorWorkableHandler(this);
-        this.recipeMapWorkable.setMaximumOverclockVoltage(V[UHV]);
+        this.recipeMapWorkable.setMaximumOverclockVoltage(V[UEV]);
     }
 
     @Override
@@ -115,7 +115,7 @@ public class MetaTileEntityLargeNaquadahReactor extends FuelMultiblockController
                         .or(metaTileEntities(MultiblockAbility.REGISTRY.get(MultiblockAbility.OUTPUT_ENERGY).stream()
                                 .filter(mte -> {
                                     IEnergyContainer container = mte.getCapability(GregtechCapabilities.CAPABILITY_ENERGY_CONTAINER, null);
-                                    return container != null && container.getOutputVoltage() == GTValues.V[UHV];})
+                                    return container != null && container.getOutputVoltage() <= GTValues.V[UEV];})
                                 .toArray(MetaTileEntity[]::new))
                                 .setMaxGlobalLimited(1)
                                 .setPreviewCount(1))

@@ -115,7 +115,7 @@ public class MetaTileEntityHorizontalShaftImpactMacerator extends MultiMapMultib
     private class HorizontalShaftImpactMaceratorRecipeLogic extends MultiblockRecipeLogic {
 
         public HorizontalShaftImpactMaceratorRecipeLogic(MetaTileEntityHorizontalShaftImpactMacerator tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {

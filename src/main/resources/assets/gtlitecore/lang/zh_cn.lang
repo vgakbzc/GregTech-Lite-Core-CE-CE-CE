@@ -2502,6 +2502,21 @@ gtlitecore.machine.qc_bridge_component.name=爱因斯坦-罗森桥量子信息�
 gtlitecore.machine.qc_bridge_component.tooltip=跨时空信息桥接
 gtlitecore.machine.qc_bridge_component.desc=允许§f量子计算机§7与§f网络交换机§7连接
 
+gtlitecore.machine.parallel_hatch.lv.name=并行控制仓（§7LV§r）
+gtlitecore.machine.parallel_hatch.mv.name=并行控制仓（§bMV§r）
+gtlitecore.machine.parallel_hatch.hv.name=并行控制仓（§6HV§r）
+gtlitecore.machine.parallel_hatch.ev.name=并行控制仓（§5EV§r）
+gtlitecore.machine.parallel_hatch.iv.name=并行控制仓（§1IV§r）
+gtlitecore.machine.parallel_hatch.luv.name=并行控制仓（§dLuV§r）
+gtlitecore.machine.parallel_hatch.zpm.name=并行控制仓（§cZPM§r）
+gtlitecore.machine.parallel_hatch.uv.name=并行控制仓（§3UV§r）
+gtlitecore.machine.parallel_hatch.uhv.name=并行控制仓（§4UHV§r）
+gtlitecore.machine.parallel_hatch.uev.name=并行控制仓（§aUEV§r）
+gtlitecore.machine.parallel_hatch.uiv.name=并行控制仓（§2UIV§r）
+gtlitecore.machine.parallel_hatch.uxv.name=并行控制仓（§eUXV§r）
+gtlitecore.machine.parallel_hatch.opv.name=并行控制仓（§eOPV§r）
+gtlitecore.machine.parallel_hatch.max.name=并行控制仓（§eMAX§r）
+
 gtlitecore.machine.nicoll_dyson_beamer.name=尼科尔-戴森光束
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.1=能够弹指之间转移千兆尺度能量的疯狂机器，泄露的一丝能量能够摧毁整个超星系团。
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.2=对戴森球的研究中促成了你对这台巨大的武器与工具的灵感，并最终造就了这台机器。
@@ -4167,8 +4182,10 @@ gtlitecore.universal.tooltip.laser_output=允许使用§b激光源仓§7替代�
 gtlitecore.universal.multiblock.energy_per_tick=产能功率：%s EUt （%s）
 
 gtlitecore.universal.login_event.split=§6+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-gtlitecore.universal.login_event.desc.1=§l欢迎来到格雷科技精简版§r  §a0.1.0-alpha§r §d[preview 74]
+gtlitecore.universal.login_event.desc.1=§l欢迎来到格雷科技精简版§r  §a0.7.5-alpha§r §d[preview 75 ceu]
 gtlitecore.universal.login_event.desc.2=§7当前游戏为§c测试版本§7或§c预览版本§7，在游玩过程中若遇到问题请及时反馈。
 gtlitecore.universal.login_event.desc.3=§7该版本中一切内容仅供预览，不保证能够按照正常的生存模式流程进行游戏。
 gtlitecore.universal.login_event.desc.4=§7官方交流群组：§e901147549§7（更新），§e785124962§7（聊天）
 gtlitecore.universal.login_event.desc.5=§7问题反馈渠道：§ahttps://gitlab.com/sweep_tosho/gregtech-lite-core/-/issues
+gtlitecore.universal.login_event.desc.6=§7由于原作者的原因，本模组已停止更新，你所游玩的版本是社区修改版，出现任何问题请不要向原作者反馈。
+gtlitecore.universal.login_event.desc.7=§7改版作者QQ：1158677939。

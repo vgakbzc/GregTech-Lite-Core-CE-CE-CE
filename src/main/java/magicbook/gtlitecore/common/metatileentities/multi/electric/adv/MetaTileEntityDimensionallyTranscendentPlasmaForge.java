@@ -57,6 +57,8 @@ import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
+import static magicbook.gtlitecore.common.GTLiteConfigHolder.machines;
+
 public class MetaTileEntityDimensionallyTranscendentPlasmaForge extends MultiMapMultiblockController implements IHeatingCoil {
 
     private int blastFurnaceTemperature;
@@ -79,7 +81,15 @@ public class MetaTileEntityDimensionallyTranscendentPlasmaForge extends MultiMap
         this.recipeMapWorkable = new DTPFRecipeLogic(this);
         initMap();
     }
-
+    @Override
+    public void checkStructurePattern() {
+        if(machines.DelayStructureCheckSwitch) {
+            if (this.getOffsetTimer() % 100 == 0 || this.isFirstTick()) {
+                super.checkStructurePattern();
+            }
+        }
+        else super.checkStructurePattern();
+    }
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityDimensionallyTranscendentPlasmaForge(metaTileEntityId);

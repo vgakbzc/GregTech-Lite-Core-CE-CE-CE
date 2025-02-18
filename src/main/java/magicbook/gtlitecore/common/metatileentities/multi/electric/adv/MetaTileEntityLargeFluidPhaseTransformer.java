@@ -124,7 +124,7 @@ public class MetaTileEntityLargeFluidPhaseTransformer extends MultiMapMultiblock
     @SuppressWarnings("InnerClassMayBeStatic")
     private class LargeFluidPhaseTransformerRecipeLogic extends MultiblockRecipeLogic {
         public LargeFluidPhaseTransformerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity);
+            super(tileEntity,true);
         }
 
         private int ParallelTier(int tier) {
