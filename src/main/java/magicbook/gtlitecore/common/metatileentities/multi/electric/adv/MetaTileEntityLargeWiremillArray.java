@@ -130,7 +130,7 @@ public class MetaTileEntityLargeWiremillArray extends RecipeMapMultiblockControl
     private class WiremillArrayRecipeLogic extends MultiblockRecipeLogic {
 
         public WiremillArrayRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         private int ParallelTier(int tier) {

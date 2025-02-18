@@ -158,7 +158,7 @@ public class MetaTileEntityIndustrialInductionFurnace extends RecipeMapMultibloc
     protected class InductionFurnaceRecipeLogic extends MultiblockRecipeLogic {
 
         public InductionFurnaceRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         @NotNull

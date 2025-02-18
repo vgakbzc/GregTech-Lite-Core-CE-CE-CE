@@ -226,7 +226,7 @@ public class MetaTileEntityCokingTower extends RecipeMapMultiblockController {
     protected class CokingTowerRecipeLogic extends MultiblockRecipeLogic {
 
         public CokingTowerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         /**

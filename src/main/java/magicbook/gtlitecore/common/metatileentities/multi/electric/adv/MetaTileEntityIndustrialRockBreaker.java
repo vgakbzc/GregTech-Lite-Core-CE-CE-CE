@@ -113,7 +113,7 @@ public class MetaTileEntityIndustrialRockBreaker extends RecipeMapMultiblockCont
     private class IndustrialRockBreakerRecipeLogic extends MultiblockRecipeLogic {
 
         public IndustrialRockBreakerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         private int ParallelTier(int tier) {

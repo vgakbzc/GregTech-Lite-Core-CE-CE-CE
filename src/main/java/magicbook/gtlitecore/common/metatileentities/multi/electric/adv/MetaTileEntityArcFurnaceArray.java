@@ -111,7 +111,7 @@ public class MetaTileEntityArcFurnaceArray extends RecipeMapMultiblockController
     private class ArcFurnaceArrayRecipeLogic extends MultiblockRecipeLogic {
 
         public ArcFurnaceArrayRecipeLogic(MetaTileEntityArcFurnaceArray tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         private int ParallelTier(int tier) {

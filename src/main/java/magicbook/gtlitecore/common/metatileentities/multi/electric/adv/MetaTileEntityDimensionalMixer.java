@@ -219,7 +219,7 @@ public class MetaTileEntityDimensionalMixer extends MultiMapMultiblockController
     public class DimensionalMixerRecipeLogic extends MultiblockRecipeLogic {
 
         public DimensionalMixerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         /**

@@ -258,7 +258,7 @@ public class MetaTileEntityDangoteDistillery extends MultiMapMultiblockControlle
     protected class DangoteDistilleryRecipeLogic extends MultiblockRecipeLogic {
 
         public DangoteDistilleryRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         protected boolean applyFluidToOutputs(@NotNull List<FluidStack> fluids, boolean doFill) {

@@ -170,7 +170,7 @@ public class MetaTileEntityIndustrialCentrifuge extends MultiMapMultiblockContro
     private class IndustrialCentrifugeRecipeLogic extends MultiblockRecipeLogic {
 
         public IndustrialCentrifugeRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         /**

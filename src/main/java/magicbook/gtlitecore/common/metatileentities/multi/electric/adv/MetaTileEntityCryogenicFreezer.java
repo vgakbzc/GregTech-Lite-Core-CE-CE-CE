@@ -134,7 +134,7 @@ public class MetaTileEntityCryogenicFreezer extends RecipeMapMultiblockControlle
         private final MetaTileEntityCryogenicFreezer freezer;
 
         public CryogenicFreezerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
             this.freezer = (MetaTileEntityCryogenicFreezer) tileEntity;
         }
 

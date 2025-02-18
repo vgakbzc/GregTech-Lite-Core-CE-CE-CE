@@ -133,7 +133,7 @@ public class MetaTileEntityLargeEUVMaskAligner extends MultiMapMultiblockControl
     @SuppressWarnings("InnerClassMayBeStatic")
     private class LargeEUVMaskAlignerRecipeLogic extends MultiblockRecipeLogic {
         public LargeEUVMaskAlignerRecipeLogic(RecipeMapMultiblockController tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         /**

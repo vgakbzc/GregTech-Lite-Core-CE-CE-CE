@@ -117,7 +117,7 @@ public class MetaTileEntityTroughTypeOreWasher extends MultiMapMultiblockControl
     private class TroughTypeOreWasherRecipeLogic extends MultiblockRecipeLogic {
 
         public TroughTypeOreWasherRecipeLogic(MetaTileEntityTroughTypeOreWasher tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         private int ParallelTier(int tier) {

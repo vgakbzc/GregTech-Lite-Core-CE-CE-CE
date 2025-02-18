@@ -113,7 +113,7 @@ public class MetaTileEntityIndustrialVacuumChamber extends RecipeMapMultiblockCo
     private class IndustrialVacuumChamberRecipeLogic extends MultiblockRecipeLogic {
 
         public IndustrialVacuumChamberRecipeLogic(MetaTileEntityIndustrialVacuumChamber tileEntity) {
-            super(tileEntity,true);
+            super(tileEntity);
         }
 
         private int ParallelTier(int tier) {

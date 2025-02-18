@@ -1,7 +1,6 @@
 package magicbook.gtlitecore.common.metatileentities.multi.electric;
 
 import gregtech.api.capability.IHeatingCoil;
-import gregtech.api.capability.impl.MultiblockRecipeLogic;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.interfaces.IGregTechTileEntity;
 import gregtech.api.metatileentity.multiblock.IMultiblockPart;
@@ -58,7 +57,6 @@ public class MetaTileEntityIndustrialRoaster extends RecipeMapMultiblockControll
 
     public MetaTileEntityIndustrialRoaster(ResourceLocation metaTileEntityId) {
         super(metaTileEntityId, GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES);
-        this.recipeMapWorkable = new MultiblockRecipeLogic(this,true);
     }
 
     @Override
