@@ -133,6 +133,7 @@ public class RecipeManager {
         MolecularTransformer.init();
         StellarFurnace.init();
         CosmicRayDetector.init();
+        Condenser.init();
         DimensionalOscillator.init();
         PCBFactory.init();
         NeutralNetworkNexus.init();

@@ -134,6 +134,16 @@ public class MachineRecipeLoader {
                 'W', CraftingComponent.CABLE,
                 'X', CraftingComponent.CIRCUIT);
 
+        //  Condenser
+        MetaTileEntityLoader.registerMachineRecipe(true, CONDENSER,
+                "RFR", "PHP", "WXW",
+                'H', CraftingComponent.HULL,
+                'P', CraftingComponent.PISTON,
+                'F', CraftingComponent.FIELD_GENERATOR,
+                'W', CraftingComponent.CABLE,
+                'X', CraftingComponent.BETTER_CIRCUIT,
+                'R', CraftingComponent.STICK_RADIOACTIVE);
+
         //  Bio Reactor
         MetaTileEntityLoader.registerMachineRecipe(true, BIO_REACTOR,
                 "PXX", "pHp", "PMW",
@@ -1883,6 +1893,29 @@ public class MachineRecipeLoader {
                         .researchStack(LARGE_CIRCUIT_ASSEMBLER.getStackForm())
                         .EUt(VA[IV])
                         .duration(600))
+                .buildAndRegister();
+
+        //  Large Chemical Complex
+        ASSEMBLY_LINE_RECIPES.recipeBuilder()
+                .input(MEGA_CHEMICAL_REACTOR,1)
+                .input(frameGt, Tritanium, 4)
+                .input(LARGE_CHEMICAL_REACTOR, 4)
+                .input(CHEMICAL_REACTOR[UV], 16)
+                .input(ROBOT_ARM_UV, 4)
+                .input(ELECTRIC_PUMP_UV, 4)
+                .input(plate,Americium, 8)
+                .input(gear, Cinobite, 3)
+                .input(gearSmall, TitanSteel, 6)
+                .input(wireGtSingle, EnrichedNaquadahTriniumEuropiumDuranide, 32)
+                .fluidInputs(SolderingAlloy.getFluid(4608))
+                .fluidInputs(Lubricant.getFluid(16000))
+                .output(LARGE_CHEMICAL_COMPLEX)
+                .EUt(VA[UV])
+                .duration(1200)
+                .stationResearch(b -> b
+                        .researchStack(LARGE_CHEMICAL_REACTOR.getStackForm())
+                        .EUt(VA[ZPM])
+                        .CWUt(127))
                 .buildAndRegister();
 
         //  Electromagnetic Separation Factory
@@ -4867,8 +4900,7 @@ public class MachineRecipeLoader {
                 .input(QCD_PROTECTIVE_PLATING, 32)
                 .input(QUANTUM_CHEST[9])
                 .input(QUANTUM_TANK[9])
-                //FIXME .input("singularityBlackDwarfMatter")
-                .input(gear, BlackDwarfMatter, 2)
+                .input(singularity, BlackDwarfMatter)
                 .input(gear, BlackPlutonium, 2)
                 .input(screw, CelestialTungsten, 24)
                 .input(wireGtSingle, BoronFranciumCarbideSuperconductor, 2)

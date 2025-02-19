@@ -7,20 +7,15 @@ import gregtech.api.unification.material.Material;
 import net.minecraft.item.ItemStack;
 
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.ASSEMBLER_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CENTRIFUGE_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.MIXER_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.CARBON_MESH;
 import static gregtech.common.items.MetaItems.SHAPE_MOLD_BALL;
-import static magicbook.gtlitecore.api.GTLiteValues.MINUTE;
-import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.CHEMICAL_DEHYDRATOR_RECIPES;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LARGE_CHEMICAL_COMPLEX_RECIPES;
-import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.VACUUM_CHAMBER_RECIPES;
+import static magicbook.gtlitecore.api.GTLiteValues.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.*;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
 public class LargeChemicalComplex {
@@ -253,9 +248,37 @@ public class LargeChemicalComplex {
                 .buildAndRegister();
     }
 
-    private static void InfinityMutationCatalystChain() {}
+    private static void InfinityMutationCatalystChain() {
+        //无尽
 
-    private static void PlatinumGroupCatalystChain() {}
+    }
+
+    private static void PlatinumGroupCatalystChain() {
+        //铂系
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(11)
+                .input(CATALYST_BASE, 6)
+                .input(dust, PhillipsChromiumCatalyst, 14) // 2
+                .input(dust, Platinum, 30) // 2
+                .fluidInputs(Nitrogen.getFluid(600))
+                .output(CATALYST_PLASTIC_POLYMER, 6)
+                .EUt(VA[LuV])
+                .duration(MINUTE)
+                .buildAndRegister();
+        /////////////////////////////////////////////////////////////
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, PlatinumGroupSludge, 1)
+                .output(dust, Platinum, 1)
+                .output(dust, Palladium, 1)
+                .output(dust, Iridium, 1)
+                .output(dust, Osmium, 1)
+                .output(dust, Rhodium, 1)
+                .output(dust, Ruthenium, 1)
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+    }
 
     private static void PlasticPolymerCatalystChain() {
 
@@ -290,17 +313,186 @@ public class LargeChemicalComplex {
                 .EUt(VA[LuV])
                 .duration(MINUTE)
                 .buildAndRegister();
+
+        /////////////////////////////////////////////////////////////
+        // Polyethylene (C2H4)n
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 2)
+                .fluidInputs(Hydrogen.getFluid(4000))
+                .fluidOutputs(Polyethylene.getFluid(6000))
+                .EUt(VA[ZPM])
+                .circuitMeta(1)
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
+
+        // PolyvinylChloride (C2H3Cl)n
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 2)
+                .fluidInputs(Hydrogen.getFluid(3000), Chlorine.getFluid(1000))
+                .fluidOutputs(PolyvinylChloride.getFluid(6000))
+                .EUt(VA[ZPM])
+                .circuitMeta(2)
+                .duration((int) (4.8 * 2 * SECOND))
+                .buildAndRegister();
+
+        // Polytetrafluoroethylene (C2F4)n
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 2)
+                .fluidInputs(Fluorine.getFluid(4000))
+                .fluidOutputs(Polytetrafluoroethylene.getFluid(6000))
+                .EUt(VA[ZPM])
+                .circuitMeta(3)
+                .duration((int) (4.8 * 3 * SECOND))
+                .buildAndRegister();
+
+        // Epoxy Resin (C21H25ClO5)
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 21)
+                .fluidInputs(Hydrogen.getFluid(25000), Chlorine.getFluid(1000), Oxygen.getFluid(5000))
+                .fluidOutputs(Epoxy.getFluid(31000))
+                .EUt(VA[ZPM])
+                .circuitMeta(4)
+                .duration((int) (4.8 * 4 * SECOND))
+                .buildAndRegister();
+
+        // Reinforced Epoxy Resin（增强环氧树脂）
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 24)
+                .input(dust, Silicon, 2)
+                .fluidInputs(Hydrogen.getFluid(28000), Chlorine.getFluid(1500), Oxygen.getFluid(6000))
+                .fluidOutputs(ReinforcedEpoxyResin.getFluid(36000))
+                .EUt(VA[ZPM])
+                .circuitMeta(5)
+                .duration((int) (4.8 * 5 * SECOND))
+                .buildAndRegister();
+
+        // Polybenzimidazole (C7H5N2)n
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 7)
+                .fluidInputs(Hydrogen.getFluid(5000), Nitrogen.getFluid(2000))
+                .fluidOutputs(Polybenzimidazole.getFluid(14000))
+                .EUt(VA[ZPM])
+                .circuitMeta(6)
+                .duration((int) (4.8 * 6 * SECOND))
+                .buildAndRegister();
+
+
     }
 
-    private static void RubberPolymerCatalystChain() {}
+    private static void RubberPolymerCatalystChain() {
+        //  Rubber Polymer
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(11)
+                .input(CATALYST_BASE, 6)
+                .input(dust, PhillipsChromiumCatalyst, 14) // 2
+                .input(dust, CadmiumBromide, 30) // 2
+                .fluidInputs(Nitrogen.getFluid(600))
+                .output(CATALYST_PLASTIC_POLYMER, 6)
+                .EUt(VA[LuV])
+                .duration(MINUTE)
+                .buildAndRegister();
+        /////////////////////////////////////////////////////////////
+        // 天然橡胶 (C5H8)
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 5)
+                .fluidInputs(Hydrogen.getFluid(8000))
+                .fluidOutputs(Rubber.getFluid(13000)) // (5+8)*1000
+                .EUt(VA[ZPM])
+                .circuitMeta(1)
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
 
-    private static void AdhesionPromoterCatalystChain() {}
+        // 硅橡胶 Si(CH3)20 → SiC20H60
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Silicon, 1)
+                .input(dust, Carbon, 20)
+                .fluidInputs(Hydrogen.getFluid(60000)) // 60H
+                .fluidOutputs(SiliconeRubber.getFluid(81000)) // (1+20+60)*1000
+                .EUt(VA[ZPM])
+                .circuitMeta(2)
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
 
-    private static void IndiumCatalystChain() {}
+        // 丁苯橡胶 (C4H6)3C8H8 → C20H26
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 20)
+                .fluidInputs(Hydrogen.getFluid(26000))
+                .fluidOutputs(StyreneButadieneRubber.getFluid(46000)) // (20+26)*1000
+                .EUt(VA[ZPM])
+                .circuitMeta(3)
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
 
-    private static void RadioactivityCatalystChain() {}
+        // 丁腈橡胶 C7H9N → 需拆解为 C7H9N
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Carbon, 7)
+                .fluidInputs(Hydrogen.getFluid(9000), Nitrogen.getFluid(1000))
+                .fluidOutputs(NitrileButadieneRubber.getFluid(17000)) // (7+9+1)*1000
+                .EUt(VA[ZPM])
+                .circuitMeta(4)
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
 
-    private static void RareEarthCatalystChain() {}
+        // 聚膦腈氟橡胶 (PNF2)n → 磷+氮+氟复合
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_PLASTIC_POLYMER)
+                .input(dust, Phosphorus, 1)
+                .input(dust, Nitrogen, 1)
+                .fluidInputs(Fluorine.getFluid(2000))
+                .fluidOutputs(PolyPhosphonitrileFluoroRubber.getFluid(4000)) // (1+1+2)*1000
+                .EUt(VA[ZPM])
+                .circuitMeta(5)
+                .duration((int) (4.8 * SECOND))
+                .buildAndRegister();
+
+    }
+
+    private static void AdhesionPromoterCatalystChain() {
+    }
+
+    private static void IndiumCatalystChain() {
+    }
+
+    private static void RadioactivityCatalystChain() {
+    }
+
+    private static void RareEarthCatalystChain() {
+        //  Rare Earth Catalyst
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(12)
+                .input(CATALYST_BASE, 6)
+                .input(dust, Lanthanum, 14) // 2
+                .input(dust, CadmiumBromide, 30) // 2
+                .fluidInputs(Nitrogen.getFluid(600))
+                .output(CATALYST_RARE_EARTH, 6)
+                .EUt(VA[LuV])
+                .duration(MINUTE)
+                .buildAndRegister();
+        /////////////////////////////////////////////////////////////////
+        //  Rare Earth Group
+        LARGE_CHEMICAL_COMPLEX_RECIPES.recipeBuilder()
+                .notConsumable(CATALYST_RARE_EARTH)
+                .input(dust, Bastnasite, 1)
+                .output(dust, Lanthanum, 1)
+                .output(dust, Cerium, 1)
+                .output(dust, Praseodymium, 1)
+                .output(dust, Neodymium, 1)
+                .output(dust, Promethium, 1)
+                .output(dust, Samarium, 1)
+                .EUt(VA[UV])
+                .duration(100)
+                .buildAndRegister();
+    }
 
     private static void NaquadahCatalystChain() {
 
@@ -354,7 +546,8 @@ public class LargeChemicalComplex {
 
     }
 
-    private static void RawIntelligenceCatalystChain() {}
+    private static void RawIntelligenceCatalystChain() {
+    }
 
     private static void UltimatePlasticCatalystChain() {
 
@@ -442,17 +635,23 @@ public class LargeChemicalComplex {
                 .buildAndRegister();
     }
 
-    private static void BiologicalIntelligenceCatalystChain() {}
+    private static void BiologicalIntelligenceCatalystChain() {
+    }
 
-    private static void TemporalHarmonyCatalystChain() {}
+    private static void TemporalHarmonyCatalystChain() {
+    }
 
-    private static void FlawlessWaterCatalystChain() {}
+    private static void FlawlessWaterCatalystChain() {
+    }
 
-    private static void PhotoelectronicCatalystChain() {}
+    private static void PhotoelectronicCatalystChain() {
+    }
 
-    private static void ParticleAccelerationCatalystChain() {}
+    private static void ParticleAccelerationCatalystChain() {
+    }
 
-    private static void SynchrotronCapableCatalystChain() {}
+    private static void SynchrotronCapableCatalystChain() {
+    }
 
     private static void CatalystBedRecipes() {
 
@@ -560,7 +759,6 @@ public class LargeChemicalComplex {
                 .duration((int) (2.5 * (tier + 1) * SECOND))
                 .buildAndRegister();
     }
-
 
 
 }

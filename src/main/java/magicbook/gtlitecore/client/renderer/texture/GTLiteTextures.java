@@ -24,6 +24,7 @@ public class GTLiteTextures {
     public static final OrientedOverlayRenderer BIO_REACTOR_OVERLAY = new OrientedOverlayRenderer("machines/bio_reactor");
     public static final OrientedOverlayRenderer SIMULATOR_OVERLAY = new OrientedOverlayRenderer("machines/simulator");
     public static final OrientedOverlayRenderer BIOMASS_GENERATOR_OVERLAY = new OrientedOverlayRenderer("machines/biomass_generator");
+    public static final OrientedOverlayRenderer CONDENSER_OVERLAY = new OrientedOverlayRenderer("machines/condenser");
 
     public static final OrientedOverlayRenderer INDUSTRIAL_DRILL_OVERLAY = new OrientedOverlayRenderer("multiblocks/industrial_drilling_reg");
     public static final OrientedOverlayRenderer CATALYTIC_REFORMER_OVERLAY = new OrientedOverlayRenderer("multiblocks/catalytic_reformer");

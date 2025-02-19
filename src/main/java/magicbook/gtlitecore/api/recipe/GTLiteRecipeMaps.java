@@ -253,8 +253,7 @@ public class GTLiteRecipeMaps {
      * @see GTLiteMaterialFlags#GENERATE_SINGULARITY
      * @see Condenser
      */
-    /** @deprecated **/
-    @Deprecated
+
     @ZenProperty
     public static final RecipeMap<SimpleRecipeBuilder> CONDENSER_RECIPES = new RecipeMap<>("condenser", 1, 1, 1, 0, new SimpleRecipeBuilder(), false)
             .setSlotOverlay(false, false, false, GuiTextures.BOX_OVERLAY)

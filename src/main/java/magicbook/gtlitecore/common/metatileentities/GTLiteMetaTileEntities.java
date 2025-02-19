@@ -126,6 +126,7 @@ public class GTLiteMetaTileEntities {
     public static final SimpleGeneratorMetaTileEntity[] ROCKET_ENGINE = new SimpleGeneratorMetaTileEntity[3];
     public static SimpleMachineMetaTileEntity[] COMPONENT_ASSEMBLER = new SimpleMachineMetaTileEntity[IV + 1];
     public static SimpleMachineMetaTileEntity[] BIO_REACTOR = new SimpleMachineMetaTileEntity[V.length - 1];
+    public static SimpleMachineMetaTileEntity[] CONDENSER = new SimpleMachineMetaTileEntity[V.length - 1];
     public static SimpleMachineMetaTileEntity[] SIMULATOR = new SimpleMachineMetaTileEntity[IV + 1];
     public static final SimpleGeneratorMetaTileEntity[] BIOMASS_GENERATOR = new SimpleGeneratorMetaTileEntity[3];
     public static final MetaTileEntityLightningRod[] LIGHTNING_ROD = new MetaTileEntityLightningRod[3];
@@ -175,6 +176,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMegaOilCrackingUnit MEGA_OIL_CRACKING_UNIT;
     public static MetaTileEntityStellarFurnace STELLAR_FURNACE;
     public static MetaTileEntityPlasmaCondenser PLASMA_CONDENSER;
+
     public static MetaTileEntityCosmicRayDetector COSMIC_RAY_DETECTOR;
     public static MetaTileEntitySuprachronalAssemblyLine SUPRACHRONAL_ASSEMBLY_LINE;
     public static MetaTileEntityMolecularTransformer MOLECULAR_TRANSFORMER;
@@ -239,6 +241,7 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityTroughTypeOreWasher TROUGH_TYPE_ORE_WASHER;
     public static MetaTileEntityFixedSiftingPlant FIXED_SIFTING_PLANT;
     public static MetaTileEntityLargeWiremillArray LARGE_WIREMILL_ARRAY;
+    public static MetaTileEntityLargeChemicalComplex LARGE_CHEMICAL_COMPLEX;
     public static MetaTileEntityElectricImplosionCompressor ELECTRIC_IMPLOSION_COMPRESSOR;
     public static MetaTileEntityLargeRockBreaker LARGE_ROCK_BREAKER;
     public static MetaTileEntityIndustrialRockBreaker INDUSTRIAL_ROCK_BREAKER;
@@ -535,6 +538,9 @@ public class GTLiteMetaTileEntities {
         if (GTLiteConfigHolder.machines.enableUUMatterChain) {
             registerSimpleMetaTileEntity(REPLICATOR, TE_REGISTRY_ID + 152, "replicator", RecipeMaps.REPLICATOR_RECIPES, Textures.REPLICATOR_OVERLAY, true, GTLiteUtility::gtliteId, GTUtility.hvCappedTankSizeFunction);
         }
+        //  UV-OpV Condenser
+        registerSimpleMetaTileEntity(CONDENSER, TE_REGISTRY_ID + 168, "condenser", GTLiteRecipeMaps.CONDENSER_RECIPES, GTLiteTextures.CONDENSER_OVERLAY, true, GTLiteUtility::gtliteId, GTUtility.genericGeneratorTankSizeFunction);
+
     }
 
     private static void registerMultiblockMachines() {
@@ -675,6 +681,8 @@ public class GTLiteMetaTileEntities {
         TROUGH_TYPE_ORE_WASHER = registerMultiMetaTileEntity(106, new MetaTileEntityTroughTypeOreWasher(gtliteId("trough_type_ore_washer")));
         FIXED_SIFTING_PLANT = registerMultiMetaTileEntity(107, new MetaTileEntityFixedSiftingPlant(gtliteId("fixed_sifting_plant")));
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
+        LARGE_CHEMICAL_COMPLEX = registerMultiMetaTileEntity(109, new MetaTileEntityLargeChemicalComplex(gtliteId("large_chemical_complex")));
+
         //  Free ID: 109
         ELECTRIC_IMPLOSION_COMPRESSOR = registerMultiMetaTileEntity(110, new MetaTileEntityElectricImplosionCompressor(gtliteId("electric_implosion_compressor")));
         //  111 MATERIAL_TRANSMUTATION_ARRAY

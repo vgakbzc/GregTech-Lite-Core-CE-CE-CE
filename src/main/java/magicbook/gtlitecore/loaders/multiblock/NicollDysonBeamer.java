@@ -12,6 +12,7 @@ import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NICOLL_DYSON_BEAM
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NICOLL_DYSON_BEAMER_FORGING_MODULE;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NICOLL_DYSON_BEAMER_OSCILLATING_MODULE;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
+import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.singularity;
 import static magicbook.gtlitecore.api.unification.materials.info.GTLiteOrePrefix.swarm;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
 
@@ -295,8 +296,7 @@ public class NicollDysonBeamer {
                 .notConsumable(swarm, HSSS)
                 .notConsumable(GTLiteMetaBlocks.SCIENCE_CASING.getItemVariant(BlockScienceCasing.ScienceCasingType.SPACETIME_CASING))
                 .notConsumable(CHARGED_LEPTON_TRAP_CRYSTAL)
-                //FIXME .input("singularityRhodium")
-                .input(block, Rhodium, 64)
+                .input(singularity, Rhodium)
                 .input(DIMENSION_GAP, 4)
                 .input(swarm, Galaxium, 2)
                 .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(160000))
@@ -322,8 +322,7 @@ public class NicollDysonBeamer {
                 .circuitMeta(28)
                 .notConsumable(CHARGED_HYPERCUBE)
                 .notConsumable(RELATIVISTIC_SPINORIAL_MEMORY_SYSTEM)
-                //FIXME .notConsumable(singularity, TranscendentMetal)
-                .notConsumable(block, TranscendentMetal)
+                .notConsumable(singularity, TranscendentMetal)
                 .notConsumable(GTLiteMetaBlocks.FIELD_CASING.getItemVariant(BlockFieldCasing.FieldCasingTier.MAX))
                 .notConsumable(TOPOLOGICAL_INSULATOR_TUBE)
                 .input(plateDense, PlatinumGroupAlloy, 16)
@@ -686,8 +685,7 @@ public class NicollDysonBeamer {
                 .notConsumable(lens, CelestialCrystal)
                 .notConsumable(DIMENSION_GAP)
                 .input(GLUON)
-                //FIXME .input(singularity, Clay)
-                .input(block, Clay, 64)
+                .input(singularity, Clay)
                 .input(QUANTUM_ANOMALY)
                 .input(wireFine, SolderingAlloy, 8)
                 .fluidInputs(Lubricant.getFluid(5760000))
@@ -707,8 +705,7 @@ public class NicollDysonBeamer {
                 .notConsumable(EIGENFOLDED_SPACETIME_MANIFOLD)
                 .notConsumable(ROTATING_TRANSPARENT_SURFACE)
                 .input(HYPERSTABLE_SELF_HEALING_ADHESIVE)
-                //FIXME .input(singularity, Naquadria)
-                .input(block, Naquadria, 64)
+                .input(singularity, Naquadria)
                 .input(QUANTUM_ANOMALY)
                 .input(swarm, Galaxium, 2)
                 .fluidInputs(Hikarium.getFluid(L * 40))
@@ -729,8 +726,7 @@ public class NicollDysonBeamer {
                 .notConsumable(RYDBERG_SPINORIAL_ASSEMBLY)
                 .notConsumable(GTLiteMetaBlocks.DYSON_SWARM_CASING.getItemVariant(BlockDysonSwarmCasing.DysonSwarmCasingType.DEPLOYMENT_MAGNET))
                 .input(BOSE_EINSTEIN_CONDENSATE, 64)
-                //FIXME .input(singularity, Taranium)
-                .input(block, Taranium, 64)
+                .input(singularity, Taranium)
                 .input(HYPERSTABLE_SELF_HEALING_ADHESIVE, 4)
                 .input(wireFine, AttunedTengam, 32)
                 .fluidInputs(MagnetoHydrodynamicallyConstrainedStarMatter.getFluid(64000))
