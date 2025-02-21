@@ -27,6 +27,8 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
+import java.util.stream.IntStream;
+
 import static gregicality.multiblocks.api.unification.GCYMMaterials.*;
 import static gregicality.multiblocks.common.metatileentities.GCYMMetaTileEntities.*;
 import static gregtech.api.GTValues.*;
@@ -2509,6 +2511,92 @@ public class MachineRecipeLoader {
                 .output(CATALYST_HATCH)
                 .EUt(VA[MV])
                 .duration(MINUTE)
+                .buildAndRegister();
+
+        //  Single Input Bus
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(1)
+                .input(ITEM_IMPORT_BUS[LV])
+                .input(gear, Steel, 4)
+                .input(plate, Aluminium, 16)
+                .input(wireFine, Tin, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 4))
+                .output(SINGLE_INPUT_BUS)
+                .EUt(VA[LV])
+                .duration(10 * SECOND)
+                .buildAndRegister();
+
+        //  Super Input Bus
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(ITEM_IMPORT_BUS[HV])
+                .input(gear, StainlessSteel, 4)
+                .input(plate, Titanium, 16)
+                .input(wireFine, Platinum, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .output(SUPER_INPUT_BUS)
+                .EUt(VA[HV])
+                .duration(15 * SECOND)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(ITEM_IMPORT_BUS[IV])
+                .input(gear, StainlessSteel, 4)
+                .input(plate, Titanium, 16)
+                .input(wireFine, Platinum, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .output(BUDGET_CRIB_4)
+                .EUt(VA[IV])
+                .duration(15 * SECOND)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(ITEM_IMPORT_BUS[LuV])
+                .input(gear, StainlessSteel, 4)
+                .input(plate, Titanium, 16)
+                .input(wireFine, Platinum, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .output(BUDGET_CRIB_8)
+                .EUt(VA[LuV])
+                .duration(15 * SECOND)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(ITEM_IMPORT_BUS[ZPM])
+                .input(gear, StainlessSteel, 4)
+                .input(plate, Titanium, 16)
+                .input(wireFine, Platinum, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .output(BUDGET_CRIB_12)
+                .EUt(VA[ZPM])
+                .duration(15 * SECOND)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(ITEM_IMPORT_BUS[UV])
+                .input(gear, StainlessSteel, 4)
+                .input(plate, Titanium, 16)
+                .input(wireFine, Platinum, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .output(BUDGET_CRIB_16)
+                .EUt(VA[UV])
+                .duration(15 * SECOND)
+                .buildAndRegister();
+
+        ASSEMBLER_RECIPES.recipeBuilder()
+                .circuitMeta(2)
+                .input(ITEM_IMPORT_BUS[UHV])
+                .input(gear, StainlessSteel, 4)
+                .input(plate, Titanium, 16)
+                .input(wireFine, Platinum, 8)
+                .fluidInputs(SolderingAlloy.getFluid(L * 8))
+                .output(BUDGET_CRIB_20)
+                .EUt(VA[UV])
+                .duration(15 * SECOND)
                 .buildAndRegister();
 
         //  Energy Substation

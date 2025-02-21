@@ -69,6 +69,10 @@ public class GTLiteGuiTextures {
     public static final TextureArea QC_ICON_ACTIVE_COOLER_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/active_cooler_component.png");
     public static final TextureArea QC_ICON_BRIDGE_COMPONENT = TextureArea.fullImage("textures/gui/widget/quantum_computer/bridge_component.png");
 
+    public static final TextureArea AUTO_PULL= TextureArea.fullImage("textures/gui/widget/auto_pull.png");
+    public static final TextureArea ME_PATTERN_OVERLAY = TextureArea.fullImage("textures/gui/widget/pattern_me.png");
+    public static final TextureArea EXPORT = TextureArea.fullImage("textures/gui/widget/export.png");
+
     /* ------------------------ Icon ------------------------ */
     /** @deprecated **/
     @Deprecated

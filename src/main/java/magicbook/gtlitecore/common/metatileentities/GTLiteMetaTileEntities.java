@@ -116,6 +116,13 @@ public class GTLiteMetaTileEntities {
     public static final MetaTileEntityQCComponentComputation[] QC_COMPUTATION_COMPONENT = new MetaTileEntityQCComponentComputation[2];
     public static final MetaTileEntityQCComponentCooler[] QC_COOLER_COMPONENT = new MetaTileEntityQCComponentCooler[2];
     public static MetaTileEntityQCComponentBridge QC_BRIDGE_COMPONENT;
+    public static MetaTileEntitySingleInputBus SINGLE_INPUT_BUS;
+    public static MetaTileEntitySuperInputBus SUPER_INPUT_BUS;
+    public static MetaTileEntityBudgetCRIBA4 BUDGET_CRIB_4;
+    public static MetaTileEntityBudgetCRIBA8 BUDGET_CRIB_8;
+    public static MetaTileEntityBudgetCRIBA12 BUDGET_CRIB_12;
+    public static MetaTileEntityBudgetCRIBA16 BUDGET_CRIB_16;
+    public static MetaTileEntityBudgetCRIBA20 BUDGET_CRIB_20;
     public static MetaTileEntityParallelHatch[] PARALLEL_HATCH = new MetaTileEntityParallelHatch[V.length - 1];
 
     /* ----------------------------------------------------------------- Single Machines ---------------------------------------------------------------- */
@@ -471,10 +478,17 @@ public class GTLiteMetaTileEntities {
         QC_BRIDGE_COMPONENT = registerPartMetaTileEntity(505, new MetaTileEntityQCComponentBridge(gtliteId("qc_bridge_component")));
 
         for (int i = 0; i < 14; i++) {
-            int id = 15481 + i;
+            int id = 15480 + i;
             String name = String.format("parallel_hatch.%s", GTValues.VN[i + 1]);
             PARALLEL_HATCH[i] = registerMetaTileEntity(id, new MetaTileEntityParallelHatch(gtliteId(name), i + 1));
         }
+        SINGLE_INPUT_BUS = registerMetaTileEntity(15494, new MetaTileEntitySingleInputBus(gtliteId("single_input_bus")));
+        SUPER_INPUT_BUS = registerMetaTileEntity(15495, new MetaTileEntitySuperInputBus(gtliteId("super_input_bus")));
+        BUDGET_CRIB_4 = registerMetaTileEntity(15496, new MetaTileEntityBudgetCRIBA4(gtliteId("budget_crib_4")));
+        BUDGET_CRIB_8 = registerMetaTileEntity(15497, new MetaTileEntityBudgetCRIBA8(gtliteId("budget_crib_8")));
+        BUDGET_CRIB_12 = registerMetaTileEntity(15498, new MetaTileEntityBudgetCRIBA12(gtliteId("budget_crib_12")));
+        BUDGET_CRIB_16 = registerMetaTileEntity(15499, new MetaTileEntityBudgetCRIBA16(gtliteId("budget_crib_16")));
+        BUDGET_CRIB_20 = registerMetaTileEntity(15500, new MetaTileEntityBudgetCRIBA20(gtliteId("budget_crib_20")));
     }
 
     private static void registerSimpleMachines() {

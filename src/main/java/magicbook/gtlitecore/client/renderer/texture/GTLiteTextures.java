@@ -186,6 +186,8 @@ public class GTLiteTextures {
     public static final SimpleOrientedCubeRenderer RECEIVER_CASING = new SimpleOrientedCubeRenderer("casings/receiver_casing");
     public static final SimpleOrientedCubeRenderer SUBSTATION_EXTERNAL_CASING = new SimpleOrientedCubeRenderer("casings/substation_external_casing");
 
+    public static SimpleOverlayRenderer CRIB_ACTIVE= new SimpleOverlayRenderer("overlay/machine/overlay_me_crafting_input_buffer");
+    public static SimpleOverlayRenderer CRIB_INACTIVE= new SimpleOverlayRenderer("overlay/machine/overlay_me_crafting_input_bus");
     //  Sided Cube Renderer
     public static final ICubeRenderer COMPUTER_CASING = new SidedCubeRenderer("casings/quantum_computer_casing");
     public static final ICubeRenderer ADVANCED_COMPUTER_CASING = new SidedCubeRenderer("casings/advanced_quantum_computer_casing");

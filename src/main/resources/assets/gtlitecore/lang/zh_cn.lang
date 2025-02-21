@@ -2517,6 +2517,36 @@ gtlitecore.machine.parallel_hatch.uxv.name=并行控制仓（§eUXV§r）
 gtlitecore.machine.parallel_hatch.opv.name=并行控制仓（§eOPV§r）
 gtlitecore.machine.parallel_hatch.max.name=并行控制仓（§eMAX§r）
 
+gtlitecore.machine.budget_crib_4.name=集成样板总成
+gtlitecore.machine.budget_crib_8.name=初级样板总成
+gtlitecore.machine.budget_crib_12.name=进阶样板总成
+gtlitecore.machine.budget_crib_16.name=高级样板总成
+gtlitecore.machine.budget_crib_20.name=终极样板总成
+gtlitecore.machine.budget_crib.tooltip=直接将网络系统内的下单样板发送至多方块输入总线
+gtlitecore.machine.come_from_gtqt.tooltip=本设备来自GTQT
+
+gtlitecore.machine.budget_crib.blocking_button=单击以切换阻挡模式
+gtlitecore.machine.budget_crib.amount_tooltip=量: %s
+gtlitecore.machine.budget_crib.return_button=点击以将物品送回网络系统
+gtlitecore.machine.budget_crib.extra_item=额外物品槽，例如透镜，催化剂等
+gtlitecore.machine.budget_crib.data_stick_use=将位置写入数据球
+gtlitecore.machine.budget_crib.data_stick_name=样板总成位置信息
+
+gtlitecore.machine.single_item_input_bus.name=单物品输入总线
+gtlitecore.machine.single_item_input_bus.stack_size=§6最大堆叠数量: §f%,d
+gtlitecore.machine.single_input_bus.name=超级单槽输入总线
+gtlitecore.machine.super_input_bus.name=超级输入总线
+gtlitecore.machine.super_input_bus.tooltip=有 16 个槽位，但每个槽位可以容纳多达 MAX_INT 个物品！
+gtlitecore.machine.super_input_bus.return_items.button.enabled=停止返回物品
+gtlitecore.machine.super_input_bus.return_items.button.disabled=点击将物品返回到面对的方块
+gtlitecore.machine.super_input_bus.return_items.screwdriver.enabled=已开始返回物品
+gtlitecore.machine.super_input_bus.return_items.screwdriver.disabled=已停止返回物品
+gtlitecore.machine.super_input_bus.auto_pull.enabled=已启用物品自动拉取
+gtlitecore.machine.super_input_bus.auto_pull.disabled=已禁用物品自动拉取
+gtlitecore.machine.super_input_bus.slot_limit=设置槽位限制
+gtlitecore.machine.super_input_bus.screwdriver=§8使用螺丝刀切换将物品送回面对的方块
+gtlitecore.machine.super_input_bus.soft_mallet=§8使用软锤切换自动拉取物品
+
 gtlitecore.machine.nicoll_dyson_beamer.name=尼科尔-戴森光束
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.1=能够弹指之间转移千兆尺度能量的疯狂机器，泄露的一丝能量能够摧毁整个超星系团。
 gtlitecore.machine.nicoll_dyson_beamer.tooltip.2=对戴森球的研究中促成了你对这台巨大的武器与工具的灵感，并最终造就了这台机器。

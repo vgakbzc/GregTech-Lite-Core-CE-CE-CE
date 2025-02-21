@@ -1,8 +1,13 @@
 package magicbook.gtlitecore.api.utils;
 
+import gregtech.api.capability.INotifiableHandler;
+import gregtech.api.capability.impl.GhostCircuitItemStackHandler;
+import gregtech.api.capability.impl.ItemHandlerList;
+import gregtech.api.gui.widgets.SlotWidget;
 import gregtech.api.items.metaitem.MetaItem;
 import gregtech.api.metatileentity.MetaTileEntity;
 import gregtech.api.metatileentity.MetaTileEntityHolder;
+import gregtech.api.metatileentity.multiblock.MultiblockControllerBase;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.recipes.RecipeMaps;
 import gregtech.api.unification.material.Material;
@@ -23,9 +28,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -798,5 +805,55 @@ public class GTLiteUtility {
             };
         }
         return new String(chars);
+    }
+
+    public static void getCircuitSlotTooltip(SlotWidget widget,
+                                             GhostCircuitItemStackHandler circuitItemStackHandler) {
+        String configString;
+        if (circuitItemStackHandler.getCircuitValue() == GhostCircuitItemStackHandler.NO_CONFIG) {
+            configString = new TextComponentTranslation("gregtech.gui.configurator_slot.no_value").getFormattedText();
+        } else {
+            configString = String.valueOf(circuitItemStackHandler.getCircuitValue());
+        }
+
+        widget.setTooltipText("gregtech.gui.configurator_slot.tooltip", configString);
+    }
+
+    public static boolean isInventoryEmpty(IItemHandler inventory) {
+        for (int slot = 0; slot < inventory.getSlots(); slot++) {
+            if (!inventory.getStackInSlot(slot).isEmpty()) return false;
+        }
+
+        return true;
+    }
+
+    public static void addNotifiableToMTE(ItemHandlerList itemHandlerList, MultiblockControllerBase controllerBase,
+                                          MetaTileEntity sourceMTE, boolean isExport) {
+        for (IItemHandler handler : itemHandlerList.getBackingHandlers()) {
+            if (handler instanceof INotifiableHandler notifiableHandler) {
+                notifiableHandler.addNotifiableMetaTileEntity(controllerBase);
+                notifiableHandler.addToNotifiedList(sourceMTE, handler, isExport);
+            }
+        }
+    }
+
+    public static void removeNotifiableFromMTE(ItemHandlerList itemHandlerList,
+                                               MultiblockControllerBase controllerBase) {
+        for (IItemHandler handler : itemHandlerList.getBackingHandlers()) {
+            if (handler instanceof INotifiableHandler notifiableHandler) {
+                notifiableHandler.removeNotifiableMetaTileEntity(controllerBase);
+            }
+        }
+    }
+
+    public static void addNotifiableToMTE(INotifiableHandler notifiableHandler, MultiblockControllerBase controllerBase,
+                                          MetaTileEntity sourceMTE, boolean isExport) {
+        notifiableHandler.addNotifiableMetaTileEntity(controllerBase);
+        notifiableHandler.addToNotifiedList(sourceMTE, notifiableHandler, isExport);
+    }
+
+    public static void removeNotifiableFromMTE(INotifiableHandler notifiableHandler,
+                                               MultiblockControllerBase controllerBase) {
+        notifiableHandler.removeNotifiableMetaTileEntity(controllerBase);
     }
 }
