@@ -233,13 +233,6 @@ public class MetaTileEntityLargeChemicalComplex extends RecipeMapMultiblockContr
                 return false;
             }
         }
-
-        @Override
-        protected void completeRecipe() {
-            super.completeRecipe();
-            this.metaTileEntity.getCatalystHatch().catalystConsumed(1);
-        }
-
     }
 
 }

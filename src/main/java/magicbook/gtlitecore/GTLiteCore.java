@@ -1,5 +1,13 @@
 package magicbook.gtlitecore;
 
+import akka.japi.Pair;
+import gregicality.multiblocks.api.recipes.GCYMRecipeMaps;
+import gregtech.api.recipes.Recipe;
+import gregtech.api.recipes.RecipeMap;
+import gregtech.api.recipes.RecipeMaps;
+import gregtech.api.recipes.builders.SimpleRecipeBuilder;
+import gregtech.api.recipes.ingredients.GTRecipeInput;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.common.ConfigHolder;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.misc.WirelessEnergyNetworkWorldSavedData;
@@ -10,10 +18,21 @@ import magicbook.gtlitecore.common.items.GTLiteMetaItems;
 import magicbook.gtlitecore.common.metatileentities.GTLiteMetaTileEntities;
 import magicbook.gtlitecore.integration.GTLiteIntegration;
 import magicbook.gtlitecore.integration.appliedenergistics2.AE2RegisterManager;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.*;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 @Mod(modid        = GTLiteCore.MODID,
      name         = GTLiteCore.NAME,
@@ -151,7 +170,96 @@ public class GTLiteCore {
 
     /* ----------------- Server Started Stage Event ----------------- */
     @Mod.EventHandler
-    public void onServerStarted(FMLServerStartedEvent event) {}
+    public void onServerStarted(FMLServerStartedEvent event) {
+        findConflicts(RecipeMaps.LARGE_CHEMICAL_RECIPES, "conflicts/chemical_reactor.txt");
+        findConflicts(RecipeMaps.MIXER_RECIPES, "conflicts/mixer.txt");
+        findConflicts(GCYMRecipeMaps.ALLOY_BLAST_RECIPES, "conflicts/alloy_blast.txt");
+    }
+
+    private static void findConflicts(RecipeMap<?> rmap, String filename) {
+        List<Recipe> recipes = new ArrayList<>(rmap.getRecipeList().stream().map(Recipe::copy).collect(Collectors.toList()));
+        StringBuilder result =  new StringBuilder();
+        // check self conflict
+        List<Recipe> selfConflict = recipes.stream().filter(recipe -> {
+            Pair<List<ItemStack>, List<FluidStack>> normalized = normalizeRecipes(new Recipe[]{recipe});
+            return rmap.findRecipeCollisions(normalized.first(), normalized.second()).size() > 1;
+        }).collect(Collectors.toList());
+        selfConflict.forEach(recipe -> {
+            result.append(serializeRecipe(recipe));
+            result.append("\n");
+        });
+        result.append("--------------------------\n");
+        // check pair conflict
+        recipes.removeAll(selfConflict);
+        int siz = recipes.size();
+        for(int i = 0; i < siz; i++) {
+            int circuit_i = getRecipeCircuit(recipes.get(i));
+            for(int j = i + 1; j < siz; j++) {
+                int circuit_j = getRecipeCircuit(recipes.get(j));
+                if(circuit_i != circuit_j)
+                    continue;
+                Pair<List<ItemStack>, List<FluidStack>> normalized = normalizeRecipes(new Recipe[]{recipes.get(i), recipes.get(j)});
+                Set<Recipe> possibleRecipes = rmap.findRecipeCollisions(normalized.first(), normalized.second());
+                possibleRecipes.removeAll(Arrays.asList(recipes.get(i), recipes.get(j)));
+                int finalI = i;
+                int finalJ = j;
+                possibleRecipes.forEach(recipe -> {
+                    result.append(serializeRecipe(recipes.get(finalI)));
+                    result.append(" ");
+                    result.append(serializeRecipe(recipes.get(finalJ)));
+                    result.append(" ");
+                    result.append(serializeRecipe(recipe));
+                    result.append("\n");
+                });
+            }
+        }
+        // write to file
+        try(FileWriter fw = new FileWriter(filename)) {
+            fw.write(result.toString());
+        } catch (IOException e) {
+            // never
+        }
+    }
+
+    private static int getRecipeCircuit(Recipe recipe) {
+        AtomicReference<Integer> circuit = new AtomicReference<>(0);
+        recipe.getInputs().forEach(input -> {
+            for(ItemStack is : input.getInputStacks())
+                if(IntCircuitIngredient.isIntegratedCircuit(is))
+                    circuit.set(IntCircuitIngredient.getCircuitConfiguration(is));
+        });
+        return circuit.get();
+    }
+
+    private static Pair<List<ItemStack>, List<FluidStack>> normalizeRecipes(Recipe[] recipes) {
+        List<ItemStack> inputs = new ArrayList<>();
+        List<FluidStack> fluids = new ArrayList<>();
+        for(Recipe recipe : recipes) {
+            for(GTRecipeInput input : recipe.getInputs()) {
+                inputs.addAll(Arrays.stream(input.getInputStacks()).map(ItemStack::copy).collect(Collectors.toList()));
+            }
+            fluids.addAll(recipe.getFluidInputs().stream().map(input -> input.getInputFluidStack().copy()).collect(Collectors.toList()));
+        }
+        inputs.forEach(is -> is.setCount(100000));
+        fluids.forEach(fs -> fs.amount = 100000);
+        return new Pair<>(inputs, fluids);
+    }
+
+    private static String serializeRecipe(Recipe recipe) {
+        StringBuilder builder = new StringBuilder();
+        builder.append("{\"items\":[");
+        List<ItemStack> inputItems = new ArrayList<>();
+        recipe.getInputs().forEach(input -> inputItems.addAll(Arrays.asList(input.getInputStacks())));
+        builder.append(inputItems.stream().map(is -> {
+            if(IntCircuitIngredient.isIntegratedCircuit(is))
+                return "\"编程电路(" + IntCircuitIngredient.getCircuitConfiguration(is) + ")\"";
+            return "\"" + is.getDisplayName() + "\"";
+        }).collect(Collectors.joining(",")));
+        builder.append("],\"fluids\":[");
+        builder.append(recipe.getFluidInputs().stream().map(fs -> "\"" + fs.getInputFluidStack().getLocalizedName() + "\"").collect(Collectors.joining(",")));
+        builder.append("]}");
+        return builder.toString();
+    }
     /* -------------------------------------------------------------- */
 
     //  Hint: Server Started Event means events will be loaded when

@@ -39,7 +39,7 @@ public class PowerIntCircuitChain {
         BLAST_RECIPES.recipeBuilder()
                 .input(dust, NiobiumPentachloride, 6)
                 .input(dust, LithiumHydride, 2)
-                .notConsumable(dust, Hafnium)
+//                .notConsumable(dust, Hafnium)
                 .fluidInputs(HydrogenPeroxide.getFluid(2000))
                 .output(ingotHot, LithiumNiobate, 6)
                 .fluidOutputs(HydrochloricAcid.getFluid(5000))
