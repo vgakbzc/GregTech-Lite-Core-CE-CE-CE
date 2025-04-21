@@ -1,14 +1,13 @@
 package magicbook.gtlitecore.loaders.chains;
 
-import static gregtech.api.GTValues.LV;
-import static gregtech.api.GTValues.MV;
-import static gregtech.api.GTValues.VA;
+import static gregtech.api.GTValues.*;
 import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtech.api.unification.ore.OrePrefix.gem;
 import static magicbook.gtlitecore.api.GTLiteValues.SECOND;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.INDUSTRIAL_ROASTER_RECIPES;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.LASER_CVD_UNIT_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.Acetylene;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CalciumCarbide;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.CalciumHydroxide;

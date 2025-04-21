@@ -1727,6 +1727,7 @@ gtlitecore.machine.plasma_cvd_unit.tooltip.2=运行一般的§r化学气相沉�
 gtlitecore.machine.laser_cvd_unit.name=激光诱导化学气相沉积单元
 gtlitecore.machine.laser_cvd_unit.tooltip.1=利用激光束能量激发促进反应的新型气相沉积技术
 gtlitecore.machine.laser_cvd_unit.tooltip.2=运行一般的§r化学气相沉积§7配方时，运行耗时为§r(配方时间/2)§7。
+gtlitecore.machine.laser_cvd_unit.tooltip.3=获得§e(4*电压等级^1.5)§7次并行。
 
 gtlitecore.machine.burner_reactor.name=燃烧反应室
 
