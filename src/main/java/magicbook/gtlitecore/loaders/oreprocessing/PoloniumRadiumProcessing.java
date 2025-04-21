@@ -1,8 +1,9 @@
 package magicbook.gtlitecore.loaders.oreprocessing;
 
+import gregtech.api.unification.material.Material;
+
 import static gregtech.api.GTValues.*;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_BATH_RECIPES;
-import static gregtech.api.recipes.RecipeMaps.CHEMICAL_RECIPES;
+import static gregtech.api.recipes.RecipeMaps.*;
 import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.dust;
 import static gregtechfoodoption.GTFOMaterialHandler.SodiumSulfate;
@@ -66,6 +67,11 @@ public class PoloniumRadiumProcessing {
     }
 
     private static void RadiumProcessing() {
+
+        registerFluidToDust(Radium);
+        registerFluidToDust(Tellurium);
+        registerFluidToDust(Terbium);
+
 
         //  (UO2)3ThPb + 2HCl -> UO2 + RaCl2
         CHEMICAL_BATH_RECIPES.recipeBuilder()
@@ -134,4 +140,12 @@ public class PoloniumRadiumProcessing {
 
     }
 
+    private static void registerFluidToDust(Material material) {
+        FLUID_SOLIDFICATION_RECIPES.recipeBuilder()
+                .fluidInputs(material.getFluid(144))
+                .output(dust, material)
+                .EUt(VA[ULV])
+                .duration(20)
+                .buildAndRegister();
+    }
 }
