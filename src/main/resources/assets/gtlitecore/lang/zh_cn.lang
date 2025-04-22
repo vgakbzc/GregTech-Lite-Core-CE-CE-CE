@@ -4220,3 +4220,5 @@ gtlitecore.universal.login_event.desc.4=§7官方交流群组：§e901147549§7�
 gtlitecore.universal.login_event.desc.5=§7问题反馈渠道：§ahttps://gitlab.com/sweep_tosho/gregtech-lite-core/-/issues
 gtlitecore.universal.login_event.desc.6=§7由于原作者的原因，本模组已停止更新，你所游玩的版本是社区修改版，出现任何问题请不要向原作者反馈。
 gtlitecore.universal.login_event.desc.7=§7改版作者QQ：1158677939。
+
+gtlitecore.universal.tooltip.async_recipe=一次性执行多个配方。

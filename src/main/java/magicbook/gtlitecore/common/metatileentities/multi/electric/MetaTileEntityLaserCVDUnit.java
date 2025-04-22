@@ -10,8 +10,9 @@ import gregtech.api.pattern.FactoryBlockPattern;
 import gregtech.api.recipes.RecipeMap;
 import gregtech.api.util.GTUtility;
 import gregtech.client.renderer.ICubeRenderer;
+import gregtech.client.utils.TooltipHelper;
 import gregtech.common.blocks.MetaBlocks;
-import magicbook.gtlitecore.api.capability.impl.OverMaxRecipeLogic;
+import magicbook.gtlitecore.api.capability.impl.AdvancedRecipeLogic;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.unification.GTLiteMaterials;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -42,6 +43,11 @@ public class MetaTileEntityLaserCVDUnit extends MultiMapMultiblockController {
     @Override
     public MetaTileEntity createMetaTileEntity(IGregTechTileEntity tileEntity) {
         return new MetaTileEntityLaserCVDUnit(metaTileEntityId);
+    }
+
+    @Override
+    public boolean canBeDistinct() {
+        return true;
     }
 
     @NotNull
@@ -98,13 +104,15 @@ public class MetaTileEntityLaserCVDUnit extends MultiMapMultiblockController {
                                @NotNull List<String> tooltip,
                                boolean advanced) {
         super.addInformation(stack, player, tooltip, advanced);
+        tooltip.add(TooltipHelper.RAINBOW + I18n.format("gtlitecore.universal.tooltip.async_recipe"));
         tooltip.add(I18n.format("gtlitecore.machine.laser_cvd_unit.tooltip.1"));
         tooltip.add(I18n.format("gtlitecore.machine.laser_cvd_unit.tooltip.2"));
         tooltip.add(I18n.format("gtlitecore.machine.laser_cvd_unit.tooltip.3"));
+
     }
 
     @SuppressWarnings("InnerClassMayBeStatic")
-    private class LICVDRecipeLogic extends OverMaxRecipeLogic {
+    private class LICVDRecipeLogic extends AdvancedRecipeLogic {
 
         public LICVDRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);
@@ -132,6 +140,11 @@ public class MetaTileEntityLaserCVDUnit extends MultiMapMultiblockController {
         @Override
         public int getParallelLimit() {
             return 4 * (int)(Math.pow(GTUtility.getTierByVoltage(getMaxVoltage()), 1.5));
+        }
+
+        @Override
+        public boolean isAllowRecipeAsync() {
+            return true;
         }
     }
 }

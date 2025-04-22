@@ -27,10 +27,7 @@ import net.minecraftforge.fml.common.event.*;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Collectors;
 
@@ -174,10 +171,15 @@ public class GTLiteCore {
         findConflicts(RecipeMaps.LARGE_CHEMICAL_RECIPES, "conflicts/chemical_reactor.txt");
         findConflicts(RecipeMaps.MIXER_RECIPES, "conflicts/mixer.txt");
         findConflicts(GCYMRecipeMaps.ALLOY_BLAST_RECIPES, "conflicts/alloy_blast.txt");
+//        findConflicts(RecipeMaps.ASSEMBLER_RECIPES, "conflicts/assembler.txt"); // too hard
     }
 
     private static void findConflicts(RecipeMap<?> rmap, String filename) {
         List<Recipe> recipes = new ArrayList<>(rmap.getRecipeList().stream().map(Recipe::copy).collect(Collectors.toList()));
+        if(rmap == RecipeMaps.ASSEMBLER_RECIPES) {
+            List<Recipe> removing = recipes.stream().filter(recipe -> recipe.getAllItemOutputs().stream().anyMatch(is -> is.getItem().getRegistryName().toString().contains("cable_"))).collect(Collectors.toList());
+            recipes.removeAll(removing);
+        }
         StringBuilder result =  new StringBuilder();
         // check self conflict
         List<Recipe> selfConflict = recipes.stream().filter(recipe -> {
@@ -253,7 +255,13 @@ public class GTLiteCore {
         builder.append(inputItems.stream().map(is -> {
             if(IntCircuitIngredient.isIntegratedCircuit(is))
                 return "\"编程电路(" + IntCircuitIngredient.getCircuitConfiguration(is) + ")\"";
-            return "\"" + is.getDisplayName() + "\"";
+            String name = "";
+            try {
+                name = is.getDisplayName();
+            } catch (IllegalArgumentException e) {
+                name = "操你妈gtfo";
+            }
+            return "\"" + name + "\"";
         }).collect(Collectors.joining(",")));
         builder.append("],\"fluids\":[");
         builder.append(recipe.getFluidInputs().stream().map(fs -> "\"" + fs.getInputFluidStack().getLocalizedName() + "\"").collect(Collectors.joining(",")));
