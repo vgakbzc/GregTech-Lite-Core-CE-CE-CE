@@ -71,6 +71,7 @@ public class PoloniumRadiumProcessing {
         registerFluidToDust(Radium);
         registerFluidToDust(Tellurium);
         registerFluidToDust(Terbium);
+        registerFluidToDust(Rubidium);
 
 
         //  (UO2)3ThPb + 2HCl -> UO2 + RaCl2

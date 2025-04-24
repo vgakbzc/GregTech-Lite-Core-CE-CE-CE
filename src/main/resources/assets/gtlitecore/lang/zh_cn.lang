@@ -2373,6 +2373,7 @@ gtlitecore.machine.mega_blast_furnace.tooltip=比相同电压等级的§r电力�
 
 gtlitecore.machine.mega_vacuum_freezer.name=巨型真空冷冻机
 gtlitecore.machine.mega_vacuum_freezer.tooltip.1=比相同电压等级的§r真空冷冻机§7快一倍
+gtlitecore.machine.mega_vacuum_freezer.tooltip.2=§7基础并行：§e1024§7，§cUEV§7后每级功率再获得§e1.2§7倍并行
 
 gtlitecore.machine.circulative_cooling_tower.name=环流冷却塔
 gtlitecore.machine.circulative_cooling_tower.tooltip.1=将时空冻结成冰
@@ -4213,12 +4214,12 @@ gtlitecore.universal.tooltip.laser_output=允许使用§b激光源仓§7替代�
 gtlitecore.universal.multiblock.energy_per_tick=产能功率：%s EUt （%s）
 
 gtlitecore.universal.login_event.split=§6+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-gtlitecore.universal.login_event.desc.1=§l欢迎来到格雷科技精简版§r  §a0.7.5-alpha§r §d[preview 75 ceu]
+gtlitecore.universal.login_event.desc.1=§l欢迎来到格雷科技精简版§r  §a0.7.6-alpha§r §d[preview 76 ceu]
 gtlitecore.universal.login_event.desc.2=§7当前游戏为§c测试版本§7或§c预览版本§7，在游玩过程中若遇到问题请及时反馈。
 gtlitecore.universal.login_event.desc.3=§7该版本中一切内容仅供预览，不保证能够按照正常的生存模式流程进行游戏。
 gtlitecore.universal.login_event.desc.4=§7官方交流群组：§e901147549§7（更新），§e785124962§7（聊天）
 gtlitecore.universal.login_event.desc.5=§7问题反馈渠道：§ahttps://gitlab.com/sweep_tosho/gregtech-lite-core/-/issues
 gtlitecore.universal.login_event.desc.6=§7由于原作者的原因，本模组已停止更新，你所游玩的版本是社区修改版，出现任何问题请不要向原作者反馈。
-gtlitecore.universal.login_event.desc.7=§7改版作者QQ：1158677939。
+gtlitecore.universal.login_event.desc.7=§7改版作者QQ：1158677939 / 1072874017。
 
 gtlitecore.universal.tooltip.async_recipe=一次性执行多个配方。
