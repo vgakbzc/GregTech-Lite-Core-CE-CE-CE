@@ -251,5 +251,5 @@ tasks.register('compileAndZip', Zip) {
     include '更新一览.md'
 
     destinationDirectory = file("build")
-    archiveFileName = 'gtlite fork^1.zip'
+    archiveFileName = 'gtlite fork^2.zip'
 }

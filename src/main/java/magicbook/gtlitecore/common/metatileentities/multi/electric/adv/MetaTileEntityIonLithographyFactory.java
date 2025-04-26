@@ -26,6 +26,8 @@ import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
 import magicbook.gtlitecore.api.GTLiteAPI;
 import magicbook.gtlitecore.api.block.impl.WrappedIntTier;
+import magicbook.gtlitecore.api.capability.impl.AdvancedRecipeLogic;
+import magicbook.gtlitecore.api.pattern.GTLiteTraceabilityPredicate;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -251,7 +253,7 @@ public class MetaTileEntityIonLithographyFactory extends MultiMapMultiblockContr
         tooltip.add(I18n.format("gtlitecore.universal.tooltip.laser_input"));
     }
 
-    public class IonLithographyFactoryRecipeLogic extends MultiblockRecipeLogic {
+    public class IonLithographyFactoryRecipeLogic extends AdvancedRecipeLogic {
 
         public IonLithographyFactoryRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);

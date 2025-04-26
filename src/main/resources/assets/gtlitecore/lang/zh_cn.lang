@@ -2388,15 +2388,16 @@ gtlitecore.machine.circulative_cooling_tower.tooltip.9=运行§r低温反应室�
 gtlitecore.machine.circulative_cooling_tower.tooltip.10=运行§r大型气体收集器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 2)]§7。
 gtlitecore.machine.circulative_cooling_tower.tooltip.11=运行§r等离子冷凝器§7配方时，运行耗时为§r[配方时间/(冷却核心等级 + 1)]§7。
 gtlitecore.machine.circulative_cooling_tower.tooltip.12=运行§r真空干燥炉§7配方时，不受配方温度限制影响。
-gtlitecore.machine.circulative_cooling_tower.tooltip.13=最大并行数：
-gtlitecore.machine.circulative_cooling_tower.tooltip.14=§r压缩机§7模式 -> §e[6 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.15=§r真空室§7模式 -> §e[4 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.16=§r化学脱水机§7模式 ->§e[4 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.17=§r真空干燥炉§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.18=§r真空冷冻机§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r低温反应室§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
-gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.13=运行§r等离子冷凝器§7与§r低温反应室§7配方时，获得§e无损超频§7。
+gtlitecore.machine.circulative_cooling_tower.tooltip.14=最大并行数：
+gtlitecore.machine.circulative_cooling_tower.tooltip.15=§r压缩机§7模式 -> §e[6 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.16=§r真空室§7模式 -> §e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.17=§r化学脱水机§7模式 ->§e[4 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.18=§r真空干燥炉§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.19=§r真空冷冻机§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.20=§r低温反应室§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.21=§r大型气体收集器§7模式 ->§e[2 * 电压等级 * (冷却核心等级 * 64)]
+gtlitecore.machine.circulative_cooling_tower.tooltip.22=§r等离子冷凝器§7模式 ->§e[电压等级 * (冷却核心等级 * 64)]
 
 gtlitecore.machine.large_auto_chisel.name=大型自动雕凿机
 
@@ -4223,3 +4224,4 @@ gtlitecore.universal.login_event.desc.6=§7由于原作者的原因，本模组�
 gtlitecore.universal.login_event.desc.7=§7改版作者QQ：1158677939 / 1072874017。
 
 gtlitecore.universal.tooltip.async_recipe=一次性执行多个配方。
+gtlitecore.universal.tooltip.1toc_limit=超频至 1t 后，继续超频最多获得 §e%s§7 次并行。

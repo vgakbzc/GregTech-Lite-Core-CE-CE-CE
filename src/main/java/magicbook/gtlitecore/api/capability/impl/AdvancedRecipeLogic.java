@@ -69,32 +69,23 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
 
     public long recipeEUt = 0;
 
+    public double getDurationMult() {
+        return 1;
+    }
+
+    public double getEutMult() {
+        return 1;
+    }
+
+    public int get1tocLimit() {
+        return Integer.MAX_VALUE;
+    }
+
     @Override
     public boolean prepareRecipe(Recipe recipe, IItemHandlerModifiable inputInventory,
                                  IMultipleTankHandler inputFluidInventory) {
         recipe = Recipe.trimRecipeOutputs(recipe, getRecipeMap(), metaTileEntity.getItemOutputLimit(),
                 metaTileEntity.getFluidOutputLimit());
-
-        // as we have no api here, disable this logic
-        /*
-        double euDiscount = getEUtDiscount(), speedBonus = getSpeedBonus();
-        // apply EU/speed discount (if any) before parallel
-        if (euDiscount > 0 || speedBonus > 0) { // if-statement to avoid unnecessarily creating RecipeBuilder object
-            RecipeBuilder<?> builder = new RecipeBuilder<>(recipe, getRecipeMap());
-            if (euDiscount > 0) {
-                int newEUt = (int) Math.round(recipe.getEUt() * euDiscount);
-                if (newEUt <= 0) newEUt = 1;
-                builder.EUt(newEUt);
-            }
-            if (speedBonus > 0) {
-                int duration = recipe.getDuration();
-                int newDuration = (int) Math.round(duration * speedBonus);
-                if (newDuration <= 0) newDuration = 1;
-                builder.duration(newDuration);
-            }
-            recipe = builder.build().getResult();
-        }
-        */
 
         // Pass in the trimmed recipe to the parallel logic
         recipe = find1tocParallelRecipe(
@@ -119,11 +110,12 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
                                       IMultipleTankHandler fluidOutputs, long maxVoltage, int parallelLimit) {
         OCResult oc = makeOC(currentRecipe);
         if ((parallelLimit > 1 || oc.parallel > 1) && getRecipeMap() != null) {
+            parallelLimit = (int) Math.min((double) Integer.MAX_VALUE / currentRecipe.getEUt(), (double) parallelLimit * oc.parallel);
             RecipeBuilder<?> parallelBuilder = switch (getParallelLogicType()) {
                 case MULTIPLY -> findMultipliedParallelRecipe(getRecipeMap(), currentRecipe, inputs, fluidInputs,
-                        outputs, fluidOutputs, parallelLimit * oc.parallel, maxVoltage, getMetaTileEntity());
+                        outputs, fluidOutputs, parallelLimit, maxVoltage, getMetaTileEntity());
                 case APPEND_ITEMS -> findAppendedParallelItemRecipe(getRecipeMap(), inputs, outputs,
-                        parallelLimit * oc.parallel, maxVoltage, getMetaTileEntity());
+                        parallelLimit, maxVoltage, getMetaTileEntity());
             };
 
             // if the builder returned is null, no recipe was found.
@@ -162,7 +154,7 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
                     return new OCResult((long) eut, Math.round(duration), (int) Math.round(parallel));
                 eut *= parameter.eutMultiplier;
                 if(is1tick)
-                    parallel = Math.min(Integer.MAX_VALUE, parallel * parameter.durationMultiplier);
+                    parallel = Math.min(get1tocLimit(), parallel * parameter.durationMultiplier);
                 else {
                     duration = Math.max(duration / parameter.durationMultiplier, 1.0D);
                     if(Math.round(duration) == 1) {
@@ -221,11 +213,13 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
 
     @Override
     protected void trySearchNewRecipeDistinct() {
+        double eutMult = getEutMult();
+
         if(!isAllowRecipeAsync()) {
             super.trySearchNewRecipeDistinct();
             return;
         }
-        long maxEUt = Math.max(getEnergyContainer().getInputVoltage(), getEnergyContainer().getOutputVoltage());
+        long maxEUt = getInputEUt();
 
         List<IItemHandlerModifiable> importInventory = getInputBuses();
         IMultipleTankHandler importFluids = getInputTank();
@@ -260,7 +254,7 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
                 long finalCurrentEUt = currentEUt;
                 Recipe nxt = getRecipeMap().find(fakeItems, fakeFluids, recipe ->
                         0 < getEUt(recipe)
-                            && getEUt(recipe) < maxEUt - finalCurrentEUt
+                            && getEUt(recipe) * eutMult < maxEUt - finalCurrentEUt
                             && checkRecipe(recipe)
                             && recipe.matches(false, fakeItems, fakeFluids));
                 if(nxt == null) break;
@@ -288,6 +282,8 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
 
     @Override
     protected void trySearchNewRecipeCombined() {
+        double eutMult = getEutMult();
+
         if(!isAllowRecipeAsync()) {
             super.trySearchNewRecipeCombined();
             return;
@@ -316,7 +312,7 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
             long finalCurrentEUt = currentEUt;
             Recipe nxt = getRecipeMap().find(fakeItems, fakeFluids, recipe ->
                     0 < getEUt(recipe)
-                            && getEUt(recipe) < maxEUt - finalCurrentEUt
+                            && getEUt(recipe) * eutMult < maxEUt - finalCurrentEUt
                             && checkRecipe(recipe)
                             && recipe.matches(false, fakeItems, fakeFluids));
             if(nxt == null) break;
@@ -343,10 +339,10 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
     }
 
     private long getEUt(Recipe recipe) {
-        setMaxProgress(recipe.getDuration());
+        setMaxProgress((int) (recipe.getDuration() * getDurationMult()));
         double duration = maxProgressTime;
-        if(duration <= 64) return recipe.getEUt();
-        BigDecimal eut = BigDecimal.valueOf(recipe.getEUt());
+        if(duration <= 64) return (long) (recipe.getEUt() * getEutMult());
+        BigDecimal eut = BigDecimal.valueOf(recipe.getEUt() * getEutMult());
         if(getOverclockingDurationDivisor() < getOverclockingVoltageMultiplier()) {
             // not perfect oc => continuum perfect oc
             eut = eut.multiply(BigDecimal.valueOf(duration / 64D));
@@ -463,7 +459,7 @@ public class AdvancedRecipeLogic extends MultiblockRecipeLogic {
         this.recipeEUt = recipeEUt;
 
         if(!isAllowRecipeAsync()) {
-            OCResult result = makeOC(recipeEUt, (double) duration);
+            OCResult result = makeOC(recipeEUt * getEutMult(), duration * getDurationMult());
             setMaxProgress((int) Math.max(1, result.duration));
             this.recipeEUt = result.eut;
         } else {

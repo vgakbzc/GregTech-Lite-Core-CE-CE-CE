@@ -32,6 +32,7 @@ import gregtech.common.blocks.BlockComputerCasing;
 import gregtech.common.blocks.BlockWireCoil;
 import gregtech.common.blocks.MetaBlocks;
 import gregtech.common.metatileentities.MetaTileEntities;
+import magicbook.gtlitecore.api.capability.impl.AdvancedRecipeLogic;
 import magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps;
 import magicbook.gtlitecore.api.utils.GTLiteUtility;
 import magicbook.gtlitecore.client.renderer.texture.GTLiteTextures;
@@ -371,7 +372,7 @@ public class MetaTileEntityDimensionallyTranscendentPlasmaForge extends MultiMap
         return heatingCoilLevel * 256;
     }
 
-    protected class DTPFRecipeLogic extends HeatingCoilRecipeLogic {
+    protected class DTPFRecipeLogic extends AdvancedRecipeLogic {
 
         public DTPFRecipeLogic(RecipeMapMultiblockController tileEntity) {
             super(tileEntity);
