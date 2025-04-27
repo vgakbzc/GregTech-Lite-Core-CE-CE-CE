@@ -71,8 +71,8 @@ public class SolarPanels {
                     .circuitMeta(4)
                     .input(COMPOSITE_REINFORCED_ALUMINIUM_PLATE)
                     .inputs(getMetaItemById(Mods.EnderIO.getID(), "item_material", 14)) // Ore Dict: itemPulsatingCrystal
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32007, 2)) // Ore Dict: platePulsatingIron
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 32007, 4)) // Ore Dict: screwPulsatingIron
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 21006, 2)) // Ore Dict: platePulsatingIron
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 21006, 4)) // Ore Dict: screwPulsatingIron
                     .output(IRRADIANT_REINFORCED_ALUMINIUM_PLATE)
                     .EUt(VA[MV])
                     .duration(20 * SECOND)
@@ -110,9 +110,9 @@ public class SolarPanels {
                     .circuitMeta(4)
                     .input(COMPOSITE_REINFORCED_TITANIUM_PLATE)
                     .inputs(getMetaItemById(Mods.EnderIO.getID(), "item_material", 17)) // Ore Dict: itemAttractorCrystal
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32009)) // Ore Dict: plateCrystallineAlloy
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 21018)) // Ore Dict: plateCrystallineAlloy
                     .input(plate, Lapis, 2)
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 32006, 4)) // Ore Dict: screwConductiveIron
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 21007, 4)) // Ore Dict: screwConductiveIron
                     .output(IRRADIANT_REINFORCED_TITANIUM_PLATE)
                     .EUt(VA[EV])
                     .duration(20 * SECOND)
@@ -150,9 +150,9 @@ public class SolarPanels {
                     .circuitMeta(4)
                     .input(COMPOSITE_REINFORCED_TUNGSTEN_PLATE)
                     .inputs(getMetaItemById(Mods.EnderIO.getID(), "item_material", 15)) // Ore Dict: itemVibrantCrystal
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32012)) // Ore Dict: plateCrystallinePinkSlime
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32000, 2)) // Ore Dict: plateDarkSteel
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 32002, 4)) // Ore Dict: screwEnergeticAlloy
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 21019)) // Ore Dict: plateCrystallinePinkSlime
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 21002, 2)) // Ore Dict: plateDarkSteel
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 21008, 4)) // Ore Dict: screwEnergeticAlloy
                     .output(IRRADIANT_REINFORCED_TUNGSTEN_PLATE)
                     .EUt(VA[LuV])
                     .duration(20 * SECOND)
@@ -190,9 +190,9 @@ public class SolarPanels {
                     .circuitMeta(4)
                     .input(COMPOSITE_REINFORCED_NAQUADAH_PLATE)
                     .inputs(getMetaItemById(Mods.EnderIO.getID(), "item_material", 18)) // Ore Dict: itemWeatherCrystal
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 32010)) // Ore Dict: plateMelodicAlloy
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_plate", 21020)) // Ore Dict: plateMelodicAlloy
                     .input(plate, Osmiridium, 2)
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 32003, 4)) // Ore Dict: screwVibrantAlloy
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 21009, 4)) // Ore Dict: screwVibrantAlloy
                     .output(IRRADIANT_REINFORCED_NAQUADAH_PLATE)
                     .EUt(VA[UV])
                     .duration(20 * SECOND)
@@ -232,7 +232,7 @@ public class SolarPanels {
                     .inputs(getMetaItemById(Mods.EnderUtilities.getID(), "enderpart", 17)) // Ender Core MK3
                     .input(plate, Infinity)
                     .input(plate, Tritanium, 2)
-                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 32004, 4)) // Ore Dict: screwEndSteel
+                    .inputs(getMetaItemById(Mods.GregTech.getID(), "meta_screw", 21010, 4)) // Ore Dict: screwEndSteel
                     .output(IRRADIANT_REINFORCED_NEUTRONIUM_PLATE)
                     .EUt(VA[UEV])
                     .duration(20 * SECOND)
