@@ -100,18 +100,6 @@ public class OreProcessorRecipeLogic implements IWorkable {
         return getEnergyContainer().getEnergyCapacity();
     }
 
-    //  Get Input items
-    protected List<ItemStack> getInputItems() {
-        List<ItemStack> list = new ArrayList<>();
-        for (int i = 0; i < this.getInputInventory().getSlots(); i++) { //  traverse all index of item input hatch slots.
-            final ItemStack currentInputItem = getInputInventory().getStackInSlot(i);
-            if (currentInputItem.isEmpty()) //  skip empty slots.
-                continue;
-            list.add(this.getInputInventory().getStackInSlot(i));
-        }
-        return list;
-    }
-
     //  fluid depleted from recipes
     private void depleteInput(FluidStack fluid) {
         if (fluid == null)
@@ -302,7 +290,6 @@ public class OreProcessorRecipeLogic implements IWorkable {
 
     private void recipeProcessing() {
         int tCharged = MAX_PARALLEL;
-        List<ItemStack> tInput = getInputItems();
         List<FluidStack> tInputFluid = GTUtility.fluidHandlerToList(getInputTank());
 
         //  initialize amounts of lubricant and distilled water.
@@ -325,9 +312,11 @@ public class OreProcessorRecipeLogic implements IWorkable {
         List<ItemStack> tOres = new ArrayList<>();
         int tRealUsed = 0;
 
-        for (ItemStack ore : tInput) {
+        for (int i = 0;i<this.getInputInventory().getSlots(); i++) {
             if (tCharged <= 0)
                 break;
+            ItemStack ore = this.getInputInventory().getStackInSlot(i);
+            if(ore.isEmpty()) continue;
             int t_id = GTLiteUtility.stackToInt(ore);
             if (t_id == 0)
                 continue;
@@ -341,11 +330,11 @@ public class OreProcessorRecipeLogic implements IWorkable {
                     tRealUsed += ore.getCount();
                     tOres.add(GTUtility.copy(ore));
                     tCharged -= ore.getCount();
-                    ore.setCount(0);
+                    this.getInputInventory().extractItem(i, ore.getCount(), false);
                 } else {
                     tRealUsed = tCharged;
                     tOres.add(GTLiteUtility.copyAmountUnsafe(tCharged, ore));
-                    ore.setCount(ore.getCount() - tCharged);
+                    this.getInputInventory().extractItem(i, tCharged, false);
                     break;
                 }
             }
