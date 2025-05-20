@@ -29,7 +29,7 @@ jobs:
         uses: ./.github/actions/build_setup
 
       - name: Build Project
-        run: ./gradlew reobfjar --warning-mode --build-cache
+        run: ./gradlew reobfjar --warning-mode all --build-cache
 
       - name: Publish to GitHub
         uses: softprops/action-gh-release@v2
