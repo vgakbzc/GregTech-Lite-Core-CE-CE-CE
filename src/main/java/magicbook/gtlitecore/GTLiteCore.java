@@ -47,7 +47,6 @@ import java.util.stream.Collectors;
                              "after:libnine@[1.2.1,);" +
                              "after:threng@[1.1.26,);" +
                              "after:bdlib@[1.14.4.1,);" +
-                             "after:ae2stuff@[0.9,);" +
                              "after:jei@[4.25.1,);")
 public class GTLiteCore {
 

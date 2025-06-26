@@ -853,7 +853,7 @@ public class AE2MachineRecipeLoader {
                 .input(frameGt, FluxedElectrum)
                 .inputs(MetaBlocks.BATTERY_BLOCK.getItemVariant(BlockBatteryPart.BatteryPartType.ULTIMATE_UHV, 2))
                 .inputs(GTLiteMetaBlocks.ENERGY_CELL.getItemVariant(BlockEnergyCell.CellTier.UV, 4))
-                .inputs(Mods.AppliedEnergistics2.getItemByID("dense_energy_cell", 16))
+                .inputs(Mods.AppliedEnergistics2.getItemByID("fluix_block", 64))
                 .input(plateDouble, Duranium, 4)
                 .input(plateDouble, Cinobite, 4)
                 .input(circuit, MarkerMaterials.Tier.UHV, 6)
