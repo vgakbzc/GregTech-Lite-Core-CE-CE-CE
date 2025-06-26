@@ -139,7 +139,7 @@ public class MetaTileEntityCosmicRayDetector extends RecipeMapMultiblockControll
         super.addDisplayText(textList);
         if (this.isStructureFormed()) {
             textList.add(new TextComponentTranslation("gtlitecore.machine.cosmic_ray_detector.altitude", topBlockPos.getY()));
-            textList.add(new TextComponentTranslation("gtlitecore.machine.cosmic_ray_detector.property." + canSeeSky()));
+//            textList.add(new TextComponentTranslation("gtlitecore.machine.cosmic_ray_detector.property." + canSeeSky()));
         }
     }
 
