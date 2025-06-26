@@ -158,7 +158,7 @@ public class MetaTileEntityCatalystHatch extends MetaTileEntityMultiblockPart im
 
     @Override
     public void catalystConsumed(int amount) {
-        this.catalystHolder.damageCatalyst(amount);
+        this.catalystHolder.damageCatalyst(0);
     }
 
     @Override
@@ -222,7 +222,7 @@ public class MetaTileEntityCatalystHatch extends MetaTileEntityMultiblockPart im
         private void damageCatalyst(int damageAmount) {
             if (!this.hasCatalyst())
                 return;
-            Objects.requireNonNull(this.getCatalystBehavior()).applyCatalystDamage(this.getStackInSlot(0), damageAmount);
+            // Objects.requireNonNull(this.getCatalystBehavior()).applyCatalystDamage(this.getStackInSlot(0), damageAmount);
         }
 
         @Nullable

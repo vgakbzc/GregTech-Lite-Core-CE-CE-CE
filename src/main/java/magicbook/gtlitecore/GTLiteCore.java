@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
                     "required-after:gregtech@[2.8.9-beta,);" +
                              "after:gcym@[1.2.10,);" +
                              "after:gregtechfoodoption@[1.11.1,);" +
-                             "after:appliedenergistics2@[v0.56.6,);" +
+                             "after:appliedenergistics2@[v0.56.5,);" +
                              "after:ae2fc@[2.6.2-r,);" +
                              "after:nae2@[1.6.4,);" +
                              "after:libnine@[1.2.1,);" +

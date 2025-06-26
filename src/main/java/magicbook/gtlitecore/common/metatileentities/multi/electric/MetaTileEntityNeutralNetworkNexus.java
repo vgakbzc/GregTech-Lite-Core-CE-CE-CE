@@ -94,7 +94,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     @Override
     public boolean checkRecipe(@NotNull Recipe recipe,
                                boolean consumeIfSuccess) {
-        return super.checkRecipe(recipe, consumeIfSuccess) && recipe.getProperty(SwarmTierProperty.getInstance(), 0) <= auxiliaryUpgradeNumber;
+        return super.checkRecipe(recipe, consumeIfSuccess);
     }
 
     @NotNull
@@ -117,27 +117,17 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
                 .aisle(" aaaaaa               cccccc ", "                             ", "  ff                         ", "    ff                       ", "                             ", "                             ", "                             ", "                             ", "  ff                         ", "    ff                       ", "                             ", "                             ", "                             ", "                             ", "  ff                         ", "    ff                       ", "                             ", "                             ", "                             ", "                             ", "  ff                         ", "    ff                       ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ", "                             ")
                 .where('S', this.selfPredicate())
                 .where('C', states(getCasingState())
-                        .setMinGlobalLimited(50)
+                        .setMinGlobalLimited(1)
                         .or(autoAbilities()))
-                .where('c', optionalStates("AuxiliaryUpgradeTier2", getSecondCasingState())
-                        .setMinGlobalLimited(50)
-                        .or(optionalAbilities("AuxiliaryUpgradeTier2", MultiblockAbility.IMPORT_ITEMS))
-                        .or(optionalAbilities("AuxiliaryUpgradeTier2", MultiblockAbility.EXPORT_ITEMS))
-                        .or(optionalAbilities("AuxiliaryUpgradeTier2", MultiblockAbility.IMPORT_FLUIDS))
-                        .or(optionalAbilities("AuxiliaryUpgradeTier2", MultiblockAbility.EXPORT_FLUIDS)))
-                .where('a', optionalStates("AuxiliaryUpgradeTier3", getThirdCasingState())
-                        .setMinGlobalLimited(50)
-                        .or(optionalAbilities("AuxiliaryUpgradeTier3", MultiblockAbility.IMPORT_ITEMS))
-                        .or(optionalAbilities("AuxiliaryUpgradeTier3", MultiblockAbility.EXPORT_ITEMS))
-                        .or(optionalAbilities("AuxiliaryUpgradeTier3", MultiblockAbility.IMPORT_FLUIDS))
-                        .or(optionalAbilities("AuxiliaryUpgradeTier3", MultiblockAbility.EXPORT_FLUIDS)))
-                .where('b', optionalStates("AuxiliaryUpgradeTier3", getThirdCasingState()))
-                .where('d', optionalStates("AuxiliaryUpgradeTier2", getSecondCasingState()))
+                .where('c', states(getSecondCasingState()))
+                .where('a', states(getThirdCasingState()))
+                .where('b', states(getThirdCasingState()))
+                .where('d', states(getSecondCasingState()))
                 .where('D', states(getCasingState()))
                 .where('F', states(getFrameState()))
-                .where('f', optionalStates("AuxiliaryUpgradeTier3", getSecondFrameState()))
-                .where('x', optionalStates("AuxiliaryUpgradeTier2", getFourthCasingState()))
-                .where('y', optionalStates("AuxiliaryUpgradeTier3", getFourthCasingState()))
+                .where('f', states(getSecondFrameState()))
+                .where('x', states(getFourthCasingState()))
+                .where('y', states(getFourthCasingState()))
                 .where('#', air())
                 .where(' ', any())
                 .build();
@@ -164,7 +154,7 @@ public class MetaTileEntityNeutralNetworkNexus extends MultiMapMultiblockControl
     }
 
     private static IBlockState getSecondFrameState() {
-        return MetaBlocks.FRAMES.get(Materials.Neutronium).getBlock(Materials.Neutronium);
+        return MetaBlocks.FRAMES.get(GTLiteMaterials.StellarAlloy).getBlock(GTLiteMaterials.StellarAlloy);
     }
 
     @SideOnly(Side.CLIENT)

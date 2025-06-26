@@ -63,9 +63,9 @@ public class MetaTileEntityWirelessEnergyHatch extends MetaTileEntityMultiblockP
         this.amperage = amperage;
         this.isExport = isExport;
         if (isExport) {
-            this.energyContainer = WirelessEnergyContainerHandler.emitterContainer(this, GTValues.V[tier] * 64L * (long) amperage, GTValues.V[tier], amperage);
+            this.energyContainer = WirelessEnergyContainerHandler.emitterContainer(this, GTValues.V[tier] * 256L * (long) amperage, GTValues.V[tier], amperage);
         } else {
-            this.energyContainer = WirelessEnergyContainerHandler.receiverContainer(this, GTValues.V[tier] * 16L * (long) amperage, GTValues.V[tier], amperage);
+            this.energyContainer = WirelessEnergyContainerHandler.receiverContainer(this, GTValues.V[tier] * 64L * (long) amperage, GTValues.V[tier], amperage);
         }
     }
 

@@ -671,16 +671,19 @@ public class MetaTileEntityPCBFactory extends RecipeMapMultiblockController {
             IItemHandlerModifiable itemInputs = new ItemHandlerList(itemInputInventory);
             int parallelBase = 0;
             for (int i = 0; i < itemInputs.getSlots(); i++) {
-                parallelBase = itemInputs.getStackInSlot(i).getCount();
+                int itemCount = itemInputs.getStackInSlot(i).getCount();
                 if (mainUpgradeNumber == 2) {
                     if (itemInputs.getStackInSlot(i).isItemEqual(OreDictUnifier.get(swarm, Silver))) {
-                        return parallelBase;
+                        parallelBase += itemCount;
                     }
                 }
                 if (mainUpgradeNumber == 3) {
                     if (itemInputs.getStackInSlot(i).isItemEqual(OreDictUnifier.get(swarm, Gold))) {
-                        return parallelBase * 2;
+                        parallelBase += 2 * itemCount;
                     }
+                }
+                if (mainUpgradeNumber < 3 && parallelBase >= 256) {
+                    return parallelBase;
                 }
             }
             return parallelBase;

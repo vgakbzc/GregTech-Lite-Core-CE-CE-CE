@@ -30,6 +30,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 import static gregtech.api.GTValues.IV;
+import static gregtech.api.GTValues.ZPM;
 import static gregtech.api.GTValues.V;
 
 public class MetaTileEntityLargeRocketEngine extends FuelMultiblockController {

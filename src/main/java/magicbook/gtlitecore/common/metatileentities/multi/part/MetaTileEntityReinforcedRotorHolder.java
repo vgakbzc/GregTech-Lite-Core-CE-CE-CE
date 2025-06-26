@@ -528,7 +528,7 @@ public class MetaTileEntityReinforcedRotorHolder extends MetaTileEntityMultibloc
                         holder.invalidate();
                     }
                 }
-                this.getTurbineBehavior().applyRotorDamage(this.getStackInSlot(0), damageAmount);
+                this.getTurbineBehavior().applyRotorDamage(this.getStackInSlot(0), 0);
             }
         }
 
