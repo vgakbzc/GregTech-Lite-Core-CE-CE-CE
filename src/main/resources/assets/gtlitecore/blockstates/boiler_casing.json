@@ -25,6 +25,12 @@
         "textures": {
           "all": "gtlitecore:blocks/casings/lafium_pipe"
         }
+      },
+      "beryllium_scandium_oxide_pipe": {
+        "model": "minecraft:cube_all",
+        "textures": {
+          "all": "gtlitecore:blocks/casings/beryllium_scandium_oxide_pipe"
+        }
       }
     }
   }

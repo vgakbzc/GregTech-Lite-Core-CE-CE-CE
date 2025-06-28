@@ -3,6 +3,7 @@ package magicbook.gtlitecore.loaders;
 import gregtech.api.metatileentity.multiblock.CleanroomType;
 import gregtech.api.recipes.GTRecipeHandler;
 import gregtech.api.recipes.ModHandler;
+import gregtech.api.recipes.ingredients.IntCircuitIngredient;
 import gregtech.api.unification.OreDictUnifier;
 import gregtech.api.unification.material.MarkerMaterials;
 import gregtech.api.unification.material.Materials;
@@ -18,6 +19,7 @@ import static gregtech.api.unification.material.Materials.*;
 import static gregtech.api.unification.ore.OrePrefix.*;
 import static gregtech.common.items.MetaItems.*;
 import static magicbook.gtlitecore.api.GTLiteValues.*;
+import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES;
 import static magicbook.gtlitecore.api.recipe.GTLiteRecipeMaps.NANO_SCALE_MASK_ALIGNER_RECIPES;
 import static magicbook.gtlitecore.api.unification.GTLiteMaterials.*;
 import static magicbook.gtlitecore.common.items.GTLiteMetaItems.*;
@@ -49,6 +51,68 @@ public class OverrideRecipeLoader {
                                 OreDictUnifier.get(dust, GalliumArsenide, 2)},
                 new FluidStack[]{Xenon.getFluid(8000)});
 
+        CHEMICAL_RECIPES.recipeBuilder()
+                .fluidInputs(HydrochloricAcid.getFluid(3000))
+                .input(dust, Silicon, 1)
+                .fluidOutputs(Trichlorosilane.getFluid(1000))
+                .fluidOutputs(Hydrogen.getFluid(1000))
+                .EUt(VA[LV])
+                .duration(29 * 20 + 9)
+                .buildAndRegister();
+
+        // remove pure boule recipe
+        GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Silicon, 32),
+                        OreDictUnifier.get(dustSmall, GalliumArsenide, 1),
+                        IntCircuitIngredient.getIntegratedCircuit(2)});
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
+                .fluidInputs(Trichlorosilane.getFluid(16000))
+                .fluidInputs(Hydrogen.getFluid(16000))
+                .input(dustSmall, GalliumArsenide, 1)
+                .output(SILICON_BOULE)
+                .fluidOutputs(HydrochloricAcid.getFluid(48000))
+                .EUt(VA[MV])
+                .duration(450 * 20)
+                .blastFurnaceTemp(1784)
+                .buildAndRegister();
+
+
+        // remove P-doped boule
+        GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(dust, Silicon, 32),
+                        OreDictUnifier.get(dust, Phosphorus, 4),
+                        OreDictUnifier.get(dustSmall, GalliumArsenide, 2)},
+                new FluidStack[]{Nitrogen.getFluid(8000)});
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
+                .fluidInputs(Trichlorosilane.getFluid(64000))
+                .fluidInputs(Hydrogen.getFluid(64000))
+                .input(dust, Phosphorus, 4)
+                .input(dustSmall, GalliumArsenide, 2)
+                .fluidInputs(Nitrogen.getFluid(8000))
+                .fluidOutputs(HydrochloricAcid.getFluid(192000))
+                .output(PHOSPHORUS_BOULE)
+                .EUt(VA[HV])
+                .duration(600 * 20)
+                .blastFurnaceTemp(2484)
+                .buildAndRegister();
+
+        // remove Nq-doped boule
+        GTRecipeHandler.removeRecipesByInputs(BLAST_RECIPES,
+                new ItemStack[]{OreDictUnifier.get(block, Silicon, 16),
+                        OreDictUnifier.get(ingot, Naquadah, 1),
+                        OreDictUnifier.get(dust, GalliumArsenide, 1)},
+                new FluidStack[]{Argon.getFluid(8000)});
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
+                .input(block, Silicon, 16)
+                .input(ingot, Naquadah, 1)
+                .input(dust, GalliumArsenide, 1)
+                .fluidInputs(Argon.getFluid(8000))
+                .output(NAQUADAH_BOULE)
+                .EUt(VA[EV])
+                .duration(750 * 20)
+                .blastFurnaceTemp(5407)
+                .buildAndRegister();
+
         //  Delete Neutronium Boule -> Wafer recipes
         GTRecipeHandler.removeRecipesByInputs(CUTTER_RECIPES,
                 new ItemStack[]{NEUTRONIUM_BOULE.getStackForm()},
@@ -63,7 +127,7 @@ public class OverrideRecipeLoader {
                 new FluidStack[]{Lubricant.getFluid(250)});
 
         //  Eu-doped Boule
-        BLAST_RECIPES.recipeBuilder()
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
                 .input(block, Silicon, 32)
                 .input(ingot, Europium, 4)
                 .input(dust, GalliumArsenide, 2)
@@ -75,7 +139,7 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
 
         //  Am-doped Boule
-        BLAST_RECIPES.recipeBuilder()
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
                 .input(block, Silicon, 64)
                 .input(ingot, Americium, 8)
                 .input(dust, GalliumArsenide, 4)
@@ -87,7 +151,7 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
 
         //  Db-doped Boule
-        BLAST_RECIPES.recipeBuilder()
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
                 .input(block, SiliconCarbide, 32)
                 .input(ingot, Dubnium, 16)
                 .input(dust, GalliumArsenide, 8)
@@ -99,7 +163,7 @@ public class OverrideRecipeLoader {
                 .buildAndRegister();
 
         //  Nt-doped Boule
-        BLAST_RECIPES.recipeBuilder()
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES.recipeBuilder()
                 .input(block, SiliconCarbide, 64)
                 .input(ingot, Neutronium, 32)
                 .input(dust, GalliumArsenide, 16)

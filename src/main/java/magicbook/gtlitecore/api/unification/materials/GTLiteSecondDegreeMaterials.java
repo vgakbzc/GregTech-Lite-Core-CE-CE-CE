@@ -1120,6 +1120,28 @@ public class GTLiteSecondDegreeMaterials {
                         .blastStats(VA[UHV], 140)
                         .vacuumStats(VA[UHV], 70))
                 .build();
+
+        // 12084 Beryllium Scandium Oxide
+        BerylliumScandiumOxide = new Material.Builder(getID(), gregtechId("beryllium_scandium_oxide"))
+                .ingot()
+                .fluid()
+                .color(0x9cdf9a)
+                .iconSet(METALLIC)
+                .components(BerylliumOxide, 4, ScandiumOxide, 1)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_FRAME)
+                .fluidPipeProperties(5700, 48000, true, false, false, false)
+                .blast(b -> b
+                        .temp(5850, BlastProperty.GasTier.MID)
+                        .blastStats(VA[EV], 1080)
+                        .vacuumStats(VA[HV], 540)
+                )
+                .build();
+
+        //12085 Scandium Hydroxide Solution
+        ScandiumHydroxideSolution = new Material.Builder(getID(), gregtechId("scandium_hydroxide_solution"))
+                .fluid()
+                .color(0x778946)
+                .build().setFormula("Sc(OH)3?·H2O", true);
     }
 
 }

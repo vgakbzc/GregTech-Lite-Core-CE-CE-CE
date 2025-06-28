@@ -488,6 +488,11 @@ public class GTLiteRecipeMaps {
             .setProgressBar(GuiTextures.PROGRESS_BAR_CRYSTALLIZATION, ProgressWidget.MoveType.HORIZONTAL)
             .setSound(GTSoundEvents.FURNACE);
 
+    @ZenProperty
+    public static final RecipeMap<BlastRecipeBuilder> MONOCRYSTALLINE_SILICON_BLAST_SMELTER_RECIPES = new RecipeMap<>("monocrystalline_silicon_blast_smelter", 6, 6, 3, 3, new BlastRecipeBuilder(), false)
+            .setProgressBar(GuiTextures.PROGRESS_BAR_CRYSTALLIZATION, ProgressWidget.MoveType.HORIZONTAL)
+            .setSound(GTSoundEvents.FURNACE);
+
     /**
      * Example:
      *

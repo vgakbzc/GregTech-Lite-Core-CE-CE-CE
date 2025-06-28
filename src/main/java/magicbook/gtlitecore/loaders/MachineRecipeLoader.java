@@ -3213,6 +3213,13 @@ public class MachineRecipeLoader {
                 'P', new UnificationEntry(pipeNormalFluid, Lafium),
                 'F', new UnificationEntry(frameGt, Lafium));
 
+        //  Beryllium Scandium Oxide Pipe Casing
+        ModHandler.addShapedRecipe(true, "beryllium_scandium_oxide_pipe", GTLiteMetaBlocks.BOILER_CASING.getItemVariant(BlockBoilerCasing.BoilerCasingType.BERYLLIUM_SCANDIUM_OXIDE, 2),
+                "APA", "PFP", "APA",
+                'A', new UnificationEntry(plate, BerylliumScandiumOxide),
+                'P', new UnificationEntry(pipeNormalFluid, BerylliumScandiumOxide),
+                'F', new UnificationEntry(frameGt, BerylliumScandiumOxide));
+
         //  Polybenzimidazole Casing
         createCasingRecipe("polybenzimidazole_casing",
                 GTLiteMetaBlocks.STRUCTURE_CASING,

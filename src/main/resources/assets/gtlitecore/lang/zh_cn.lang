@@ -78,6 +78,7 @@ tile.boiler_casing.inconel_625_pipe.name=镍基合金-625温和分散管道外�
 tile.boiler_casing.hastelloy_n_pipe.name=哈斯特洛伊合金-N油膜管道外壳
 tile.boiler_casing.polybenzimidazole_pipe.name=聚苯并咪唑管道外壳
 tile.boiler_casing.lafium_pipe.name=路菲恩管道外壳
+tile.boiler_casing.beryllium_scandium_oxide_pipe.name=铍-钪氧化物合金管道外壳
 
 tile.unique_casing.flotation_cell.name=浮游选矿池机械方块
 tile.unique_casing.hyper_casing.name=黑钚强化超能硅岩机器外壳
@@ -2347,6 +2348,8 @@ gtlitecore.machine.large_mass_fabricator.name=大型质量发生器
 
 gtlitecore.machine.large_replicator.name=大型复制机
 
+gtlitecore.machine.monocrystalline_silicon_blast_smelter.name=单晶硅冶炼高炉
+
 gtlitecore.machine.dimensional_mixer.name=超时空次元搅拌塔
 gtlitecore.machine.dimensional_mixer.tooltip.1=长时间开机或导致时空紊乱
 gtlitecore.machine.dimensional_mixer.tooltip.2=混合时间与空间
@@ -3440,6 +3443,8 @@ gregtech.material.chromium_sulfate=硫酸铬
 gregtech.material.excited_thorium_based_liquid_fuel=钍基流体燃料（激发态）
 gregtech.material.excited_uranium_based_liquid_fuel=铀基流体燃料（激发态）
 gregtech.material.excited_plutonium_based_liquid_fuel=钚基流体燃料（激发态）
+gregtech.material.trichlorosilane=三氯硅烷
+gregtech.material.scandium_chloride=氯化钪
 
 ##  Second Degree Materials
 gregtech.material.inconel_625=镍基合金-625
@@ -3525,6 +3530,8 @@ gregtech.material.trimethylbenzoyl_diphenylphosphine_oxide=2,4,6-(三甲基苯�
 gregtech.material.methyl_p_methylthiophenyl_morpholin_acetone=2-甲基-1-对甲硫基苯基-2-吗啉基-1-丙酮（MMMA）
 gregtech.material.cosmic_matter_superconductor=宇宙物质超导体
 gregtech.material.enriched_holmium=富集钬
+gregtech.material.beryllium_scandium_oxide=铍-钪氧化物合金
+gregtech.material.scandium_hydroxide_solution=碱性钪化合物水溶液
 
 ##  Organic Chemistry Materials
 gregtech.material.kapton_k=聚酰亚胺-K
@@ -4192,6 +4199,7 @@ recipemap.dimensionally_transcendent_neutronium_forge_fusion_mode.name=等离子
 recipemap.dimensionally_transcendent_neutronium_forge_collision_mode.name=对撞加速超区段
 recipemap.electric_implosion_compressor.name=电动聚爆压缩机
 recipemap.large_chemical_complex.name=大型化工复合体
+recipemap.monocrystalline_silicon_blast_smelter.name=高纯单晶硅冶炼
 
 ##  Recipe Properties
 gtlitecore.recipe.temperature=温度：%,d K

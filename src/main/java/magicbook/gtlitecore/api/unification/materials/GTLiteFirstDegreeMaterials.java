@@ -2598,5 +2598,20 @@ public class GTLiteFirstDegreeMaterials {
                 .build()
                 .setFormula("*" + PlutoniumBasedLiquidFuel.getChemicalFormula() + "*", true);
 
+        // 11293 TriCloroSilane
+        Trichlorosilane = new Material.Builder(getID(), gregtechId("trichlorosilane"))
+                .liquid()
+                .color(0x4f784c)
+                .components(Silicon, 1, Hydrogen, 1, Chlorine, 3)
+                .build();
+
+        // 11294 Scandium Chloride
+        ScandiumChloride = new Material.Builder(getID(), gregtechId("scandium_chloride"))
+                .dust()
+                .color(0x7EB927)
+                .flags(DISABLE_DECOMPOSITION)
+                .build()
+                .setFormula("ScCl3", true);
+
     }
 }

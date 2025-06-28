@@ -37,7 +37,8 @@ public class BlockBoilerCasing extends VariantBlock<BlockBoilerCasing.BoilerCasi
         INCONEL625("inconel_625_pipe"),
         HASTELLOY_N("hastelloy_n_pipe"),
         POLYBENZIMIDAZOLE("polybenzimidazole_pipe"),
-        LAFIUM("lafium_pipe");
+        LAFIUM("lafium_pipe"),
+        BERYLLIUM_SCANDIUM_OXIDE("beryllium_scandium_oxide_pipe");
 
         private final String name;
 

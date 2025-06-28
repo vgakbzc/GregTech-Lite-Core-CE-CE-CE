@@ -270,6 +270,8 @@ public class GTLiteMetaTileEntities {
     public static MetaTileEntityMassFabricatorCPU MASS_FABRICATOR_CPU;
     public static MetaTileEntityElementReplicator ELEMENT_REPLICATOR;
 
+    public static MetaTileEntityMonocrystallineSiliconBlastSmelter MONOCRYSTALLINE_SILICON_BLAST_SMELTER;
+
     public static void register() {
         //  Multiblock Parts
         //  ID Range: 14000-15000
@@ -697,10 +699,10 @@ public class GTLiteMetaTileEntities {
         LARGE_WIREMILL_ARRAY = registerMultiMetaTileEntity(108, new MetaTileEntityLargeWiremillArray(gtliteId("large_wiremill_array")));
         LARGE_CHEMICAL_COMPLEX = registerMultiMetaTileEntity(109, new MetaTileEntityLargeChemicalComplex(gtliteId("large_chemical_complex")));
 
-        //  Free ID: 109
         ELECTRIC_IMPLOSION_COMPRESSOR = registerMultiMetaTileEntity(110, new MetaTileEntityElectricImplosionCompressor(gtliteId("electric_implosion_compressor")));
         //  111 MATERIAL_TRANSMUTATION_ARRAY
         //  112
+        MONOCRYSTALLINE_SILICON_BLAST_SMELTER = registerMultiMetaTileEntity(112, new MetaTileEntityMonocrystallineSiliconBlastSmelter(gtliteId("monocrystalline_silicon_blast_smelter")));
         //  113
         //  114
         LARGE_ROCK_BREAKER = registerMultiMetaTileEntity(115, new MetaTileEntityLargeRockBreaker(gtliteId("large_rock_breaker")));

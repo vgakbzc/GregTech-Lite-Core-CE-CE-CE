@@ -378,6 +378,9 @@ public class GTLiteMaterials {
     public static Material ExcitedThoriumBasedLiquidFuel;
     public static Material ExcitedUraniumBasedLiquidFuel;
     public static Material ExcitedPlutoniumBasedLiquidFuel;
+    // Extra 1st degree material
+    public static Material Trichlorosilane;
+    public static Material ScandiumChloride;
 
     ///////////////////////////////
     //  Second Degree Materials  //
@@ -469,6 +472,9 @@ public class GTLiteMaterials {
     public static Material MethylMethylthiophenylMorpholinAcetone;
     public static Material CosmicMatterSuperconductor;
     public static Material EnrichedHolmium;
+    // Extra 2nd Degree Material
+    public static Material BerylliumScandiumOxide;
+    public static Material ScandiumHydroxideSolution;
 
     ///////////////////////////////////
     //  Organic Chemistry Materials  //

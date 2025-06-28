@@ -85,6 +85,8 @@ public class RecipeManager {
         TurpentineChain.init();
         ZirconiumChain.init();
         ZylonChain.init();
+
+        BerylliumScandiumOxideChain.init();
     }
 
     private static void initOreProcessings() {
